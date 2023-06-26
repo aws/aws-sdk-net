@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement
     public partial class AmazonIdentityManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.0");
 
         private string _userAgent = UserAgentString;
 

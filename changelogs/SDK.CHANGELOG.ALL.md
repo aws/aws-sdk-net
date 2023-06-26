@@ -1,3 +1,15 @@
+### 3.7.577.0 (2023-06-26 18:23 UTC)
+* Connect (3.7.129.0)
+	* This release provides a way to search for existing tags within an instance. Before tagging a resource, ensure consistency by searching for pre-existing key:value pairs.
+* Glue (3.7.118.0)
+	* Timestamp Starting Position For Kinesis and Kafka Data Sources in a Glue Streaming Job
+* GuardDuty (3.7.107.0)
+	* Add support for user.extra.sessionName in Kubernetes Audit Logs Findings.
+* IdentityManagement (3.7.102.0)
+	* Support for a new API "GetMFADevice" to present MFA device metadata such as device certifications
+* Pinpoint (3.7.102.0)
+	* Added time zone estimation support for journeys
+
 ### 3.7.576.0 (2023-06-23 18:21 UTC)
 * DevOpsGuru (3.7.103.0)
 	* This release adds support for encryption via customer managed keys.
