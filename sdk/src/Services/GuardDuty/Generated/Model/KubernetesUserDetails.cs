@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class KubernetesUserDetails
     {
         private List<string> _groups = new List<string>();
+        private List<string> _sessionName = new List<string>();
         private string _uid;
         private string _username;
 
@@ -53,6 +54,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetGroups()
         {
             return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionName. 
+        /// <para>
+        /// Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to
+        /// that role.
+        /// </para>
+        /// </summary>
+        public List<string> SessionName
+        {
+            get { return this._sessionName; }
+            set { this._sessionName = value; }
+        }
+
+        // Check to see if SessionName property is set
+        internal bool IsSetSessionName()
+        {
+            return this._sessionName != null && this._sessionName.Count > 0; 
         }
 
         /// <summary>
