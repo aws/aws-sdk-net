@@ -631,6 +631,30 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetMFADeviceRequest.SerialNumber</property>
+    <min>9</min>
+    <max>256</max>
+    <pattern>[\w+=/:,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetMFADeviceRequest.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetMFADeviceResponse.SerialNumber</property>
+    <min>9</min>
+    <max>256</max>
+    <pattern>[\w+=/:,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetMFADeviceResponse.UserName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
     <min>20</min>
     <max>2048</max>

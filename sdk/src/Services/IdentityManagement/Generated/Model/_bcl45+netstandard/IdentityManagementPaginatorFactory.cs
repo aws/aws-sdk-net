@@ -140,6 +140,14 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListInstanceProfileTags operation
+        ///</summary>
+        public IListInstanceProfileTagsPaginator ListInstanceProfileTags(ListInstanceProfileTagsRequest request) 
+        {
+            return new ListInstanceProfileTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMFADevices operation
         ///</summary>
         public IListMFADevicesPaginator ListMFADevices(ListMFADevicesRequest request) 
@@ -148,11 +156,35 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListMFADeviceTags operation
+        ///</summary>
+        public IListMFADeviceTagsPaginator ListMFADeviceTags(ListMFADeviceTagsRequest request) 
+        {
+            return new ListMFADeviceTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOpenIDConnectProviderTags operation
+        ///</summary>
+        public IListOpenIDConnectProviderTagsPaginator ListOpenIDConnectProviderTags(ListOpenIDConnectProviderTagsRequest request) 
+        {
+            return new ListOpenIDConnectProviderTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request) 
         {
             return new ListPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyTags operation
+        ///</summary>
+        public IListPolicyTagsPaginator ListPolicyTags(ListPolicyTagsRequest request) 
+        {
+            return new ListPolicyTagsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -180,11 +212,35 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListRoleTags operation
+        ///</summary>
+        public IListRoleTagsPaginator ListRoleTags(ListRoleTagsRequest request) 
+        {
+            return new ListRoleTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSAMLProviderTags operation
+        ///</summary>
+        public IListSAMLProviderTagsPaginator ListSAMLProviderTags(ListSAMLProviderTagsRequest request) 
+        {
+            return new ListSAMLProviderTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServerCertificates operation
         ///</summary>
         public IListServerCertificatesPaginator ListServerCertificates(ListServerCertificatesRequest request) 
         {
             return new ListServerCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServerCertificateTags operation
+        ///</summary>
+        public IListServerCertificateTagsPaginator ListServerCertificateTags(ListServerCertificateTagsRequest request) 
+        {
+            return new ListServerCertificateTagsPaginator(this.client, request);
         }
 
         /// <summary>
