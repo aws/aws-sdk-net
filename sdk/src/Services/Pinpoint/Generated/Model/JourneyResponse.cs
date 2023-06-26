@@ -53,6 +53,7 @@ namespace Amazon.Pinpoint.Model
         private StartCondition _startCondition;
         private State _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _timezoneEstimationMethods = new List<string>();
         private bool? _waitForQuietTime;
 
         /// <summary>
@@ -477,6 +478,41 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimezoneEstimationMethods. 
+        /// <para>
+        /// An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+        /// time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode
+        /// and Endpoint.Location.Country.
+        /// </para>
+        ///  <note>
+        /// <para>
+        /// POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia,
+        /// New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint
+        /// is available.
+        /// </para>
+        /// </note></li> </ul>
+        /// </summary>
+        public List<string> TimezoneEstimationMethods
+        {
+            get { return this._timezoneEstimationMethods; }
+            set { this._timezoneEstimationMethods = value; }
+        }
+
+        // Check to see if TimezoneEstimationMethods property is set
+        internal bool IsSetTimezoneEstimationMethods()
+        {
+            return this._timezoneEstimationMethods != null && this._timezoneEstimationMethods.Count > 0; 
         }
 
         /// <summary>
