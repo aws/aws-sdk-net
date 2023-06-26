@@ -1598,6 +1598,27 @@
     <max>2500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchResourceTagsRequest.InstanceId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchResourceTagsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchResourceTagsRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchResourceTagsResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchRoutingProfilesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -3193,6 +3214,24 @@
     <property>Amazon.Connect.Model.StringReference.Value</property>
     <min>0</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TagSearchCondition.TagKey</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TagSearchCondition.TagValue</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TagSet.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(?!aws:)[a-zA-Z+-=._:/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TagSet.Value</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TaskActionDefinition.ContactFlowId</property>

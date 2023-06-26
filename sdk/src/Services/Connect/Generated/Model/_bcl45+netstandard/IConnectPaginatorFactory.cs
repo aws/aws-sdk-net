@@ -241,6 +241,11 @@ namespace Amazon.Connect.Model
         ISearchQuickConnectsPaginator SearchQuickConnects(SearchQuickConnectsRequest request);
 
         /// <summary>
+        /// Paginator for SearchResourceTags operation
+        ///</summary>
+        ISearchResourceTagsPaginator SearchResourceTags(SearchResourceTagsRequest request);
+
+        /// <summary>
         /// Paginator for SearchRoutingProfiles operation
         ///</summary>
         ISearchRoutingProfilesPaginator SearchRoutingProfiles(SearchRoutingProfilesRequest request);

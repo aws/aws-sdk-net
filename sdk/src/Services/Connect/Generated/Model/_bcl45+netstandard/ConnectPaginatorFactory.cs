@@ -380,6 +380,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchResourceTags operation
+        ///</summary>
+        public ISearchResourceTagsPaginator SearchResourceTags(SearchResourceTagsRequest request) 
+        {
+            return new SearchResourceTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchRoutingProfiles operation
         ///</summary>
         public ISearchRoutingProfilesPaginator SearchRoutingProfiles(SearchRoutingProfilesRequest request) 

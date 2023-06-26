@@ -1279,7 +1279,28 @@ namespace Amazon.Connect
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
         /// operation.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
         /// 
@@ -1332,7 +1353,28 @@ namespace Amazon.Connect
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
         /// operation.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -10739,7 +10781,28 @@ namespace Amazon.Connect
         /// 30 days. It cannot be searched for or claimed again until the period has ended. If
         /// you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
         /// 
@@ -10792,7 +10855,28 @@ namespace Amazon.Connect
         /// 30 days. It cannot be searched for or claimed again until the period has ended. If
         /// you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -11368,6 +11452,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchQuickConnectsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchResourceTags
+
+
+        /// <summary>
+        /// Searches tags used in an Amazon Connect instance using optional search criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResourceTags service method.</param>
+        /// 
+        /// <returns>The response from the SearchResourceTags service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.MaximumResultReturnedException">
+        /// Maximum number (1000) of tags have been returned with current request. Consider changing
+        /// request parameters to get more tags.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">REST API Reference for SearchResourceTags Operation</seealso>
+        public virtual SearchResourceTagsResponse SearchResourceTags(SearchResourceTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchResourceTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResourceTagsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchResourceTagsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches tags used in an Amazon Connect instance using optional search criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResourceTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchResourceTags service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.MaximumResultReturnedException">
+        /// Maximum number (1000) of tags have been returned with current request. Consider changing
+        /// request parameters to get more tags.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">REST API Reference for SearchResourceTags Operation</seealso>
+        public virtual Task<SearchResourceTagsResponse> SearchResourceTagsAsync(SearchResourceTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchResourceTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResourceTagsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchResourceTagsResponse>(request, options, cancellationToken);
         }
 
         #endregion
