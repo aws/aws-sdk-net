@@ -49,6 +49,7 @@ namespace Amazon.Glue.Model
         private long? _retryIntervalMs;
         private string _securityProtocol;
         private string _startingOffsets;
+        private DateTime? _startingTimestamp;
         private string _subscribePattern;
         private string _topicName;
 
@@ -366,6 +367,32 @@ namespace Amazon.Glue.Model
         internal bool IsSetStartingOffsets()
         {
             return this._startingOffsets != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingTimestamp. 
+        /// <para>
+        /// The timestamp of the record in the Kafka topic to start reading data from. The possible
+        /// values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code>
+        /// (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be
+        /// set.
+        /// </para>
+        /// </summary>
+        public DateTime StartingTimestamp
+        {
+            get { return this._startingTimestamp.GetValueOrDefault(); }
+            set { this._startingTimestamp = value; }
+        }
+
+        // Check to see if StartingTimestamp property is set
+        internal bool IsSetStartingTimestamp()
+        {
+            return this._startingTimestamp.HasValue; 
         }
 
         /// <summary>

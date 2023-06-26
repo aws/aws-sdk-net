@@ -4303,6 +4303,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly StartingPosition Latest = new StartingPosition("latest");
         /// <summary>
+        /// Constant Timestamp for StartingPosition
+        /// </summary>
+        public static readonly StartingPosition Timestamp = new StartingPosition("timestamp");
+        /// <summary>
         /// Constant Trim_horizon for StartingPosition
         /// </summary>
         public static readonly StartingPosition Trim_horizon = new StartingPosition("trim_horizon");

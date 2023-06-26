@@ -160,6 +160,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartingOffsets = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartingTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartingTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubscribePattern", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
