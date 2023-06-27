@@ -304,7 +304,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>PlaybackKeyPair Endpoints</b> 
+    ///  <b>Private Channel Endpoints</b> 
     /// </para>
     ///  
     /// <para>
@@ -333,6 +333,17 @@ namespace Amazon.IVS
     /// <para>
     ///  <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates
     /// future viewer tokens generated using the key pair’s <code>privateKey</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartViewerSessionRevocation</a> — Starts the process of revoking the viewer session
+    /// associated with a specified channel ARN and viewer ID. Optionally, you can provide
+    /// a version to revoke viewer sessions less than and including that version.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>BatchStartViewerSessionRevocation</a> — Performs <a>StartViewerSessionRevocation</a>
+    /// on multiple channel ARN and viewer ID pairs simultaneously.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -710,6 +721,64 @@ namespace Amazon.IVS
         public virtual BatchGetStreamKeyResponse EndBatchGetStreamKey(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetStreamKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchStartViewerSessionRevocation
+
+        /// <summary>
+        /// Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and viewer ID
+        /// pairs simultaneously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStartViewerSessionRevocation service method.</param>
+        /// 
+        /// <returns>The response from the BatchStartViewerSessionRevocation service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
+        public virtual BatchStartViewerSessionRevocationResponse BatchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartViewerSessionRevocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartViewerSessionRevocationResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStartViewerSessionRevocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchStartViewerSessionRevocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchStartViewerSessionRevocation operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchStartViewerSessionRevocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
+        public virtual IAsyncResult BeginBatchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartViewerSessionRevocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartViewerSessionRevocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchStartViewerSessionRevocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchStartViewerSessionRevocation.</param>
+        /// 
+        /// <returns>Returns a  BatchStartViewerSessionRevocationResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
+        public virtual BatchStartViewerSessionRevocationResponse EndBatchStartViewerSessionRevocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchStartViewerSessionRevocationResponse>(asyncResult);
         }
 
         #endregion
@@ -2210,6 +2279,76 @@ namespace Amazon.IVS
         public virtual PutMetadataResponse EndPutMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartViewerSessionRevocation
+
+        /// <summary>
+        /// Starts the process of revoking the viewer session associated with a specified channel
+        /// ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions
+        /// less than and including that version. For instructions on associating a viewer ID
+        /// with a viewer session, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Up Private Channels</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartViewerSessionRevocation service method.</param>
+        /// 
+        /// <returns>The response from the StartViewerSessionRevocation service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">REST API Reference for StartViewerSessionRevocation Operation</seealso>
+        public virtual StartViewerSessionRevocationResponse StartViewerSessionRevocation(StartViewerSessionRevocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartViewerSessionRevocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartViewerSessionRevocationResponseUnmarshaller.Instance;
+
+            return Invoke<StartViewerSessionRevocationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartViewerSessionRevocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartViewerSessionRevocation operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartViewerSessionRevocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">REST API Reference for StartViewerSessionRevocation Operation</seealso>
+        public virtual IAsyncResult BeginStartViewerSessionRevocation(StartViewerSessionRevocationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartViewerSessionRevocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartViewerSessionRevocationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartViewerSessionRevocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartViewerSessionRevocation.</param>
+        /// 
+        /// <returns>Returns a  StartViewerSessionRevocationResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">REST API Reference for StartViewerSessionRevocation Operation</seealso>
+        public virtual StartViewerSessionRevocationResponse EndStartViewerSessionRevocation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartViewerSessionRevocationResponse>(asyncResult);
         }
 
         #endregion

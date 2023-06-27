@@ -244,6 +244,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVS.Model.StartViewerSessionRevocationRequest.ChannelArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.StartViewerSessionRevocationRequest.ViewerId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.StartViewerSessionRevocationRequest.ViewerSessionVersionsLessThanOrEqualTo</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVS.Model.StopStreamRequest.ChannelArn</property>
     <min>1</min>
     <max>128</max>
@@ -284,6 +299,32 @@
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.BatchStartViewerSessionRevocationError.ChannelArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.BatchStartViewerSessionRevocationError.ViewerId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.BatchStartViewerSessionRevocationViewerSession.ChannelArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.BatchStartViewerSessionRevocationViewerSession.ViewerId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.BatchStartViewerSessionRevocationViewerSession.ViewerSessionVersionsLessThanOrEqualTo</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.Channel.Arn</property>
