@@ -159,6 +159,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReleaseLabel())
+                {
+                    context.Writer.WritePropertyName("releaseLabel");
+                    context.Writer.Write(publicRequest.ReleaseLabel);
+                }
+
                 if(publicRequest.IsSetWorkerTypeSpecifications())
                 {
                     context.Writer.WritePropertyName("workerTypeSpecifications");
