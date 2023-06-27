@@ -1714,6 +1714,10 @@ namespace Amazon.Macie2
         /// Constant NONE for ManagedDataIdentifierSelector
         /// </summary>
         public static readonly ManagedDataIdentifierSelector NONE = new ManagedDataIdentifierSelector("NONE");
+        /// <summary>
+        /// Constant RECOMMENDED for ManagedDataIdentifierSelector
+        /// </summary>
+        public static readonly ManagedDataIdentifierSelector RECOMMENDED = new ManagedDataIdentifierSelector("RECOMMENDED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

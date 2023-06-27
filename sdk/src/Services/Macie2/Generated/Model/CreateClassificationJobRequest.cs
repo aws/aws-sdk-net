@@ -213,13 +213,13 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify
-        /// this value, don't specify any values for the managedDataIdentifierIds property.
+        /// ALL (default) - Use all managed data identifiers. If you specify this value, don't
+        /// specify any values for the managedDataIdentifierIds property.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// EXCLUDE - Use all the managed data identifiers that Macie provides except the managed
-        /// data identifiers specified by the managedDataIdentifierIds property.
+        /// EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+        /// property.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -232,11 +232,30 @@ namespace Amazon.Macie2.Model
         /// at least one custom data identifier for the job (customDataIdentifierIds) and don't
         /// specify any values for the managedDataIdentifierIds property.
         /// </para>
+        /// </li> <li>
+        /// <para>
+        /// RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services
+        /// recommends for jobs. If you specify this value, don't specify any values for the managedDataIdentifierIds
+        /// property.
+        /// </para>
         /// </li></ul> 
         /// <para>
         /// If you don't specify a value for this property, the job uses all managed data identifiers.
-        /// If you don't specify a value for this property or you specify ALL or EXCLUDE for a
-        /// recurring job, the job also uses new managed data identifiers as they are released.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is a recurring job and you don't specify a value for this property or you
+        /// specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers
+        /// that are released. If you specify RECOMMENDED for a recurring job, each job run automatically
+        /// uses all the managed data identifiers that are in the recommended set when the job
+        /// starts to run.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about individual managed data identifiers or to determine which ones
+        /// are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+        /// managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+        /// managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
         /// </para>
         /// </summary>
         public ManagedDataIdentifierSelector ManagedDataIdentifierSelector

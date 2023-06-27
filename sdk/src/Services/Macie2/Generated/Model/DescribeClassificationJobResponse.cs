@@ -333,9 +333,12 @@ namespace Amazon.Macie2.Model
         /// An array of unique identifiers, one for each managed data identifier that the job
         /// is explicitly configured to include (use) or exclude (not use) when it analyzes data.
         /// Inclusion or exclusion depends on the managed data identifier selection type specified
-        /// for the job (managedDataIdentifierSelector). This value is null if the job's managed
-        /// data identifier selection type is ALL or the job uses only custom data identifiers
-        /// (customDataIdentifierIds) to analyze data.
+        /// for the job (managedDataIdentifierSelector).
+        /// </para>
+        /// 
+        /// <para>
+        /// This value is null if the job's managed data identifier selection type is ALL, NONE,
+        /// or RECOMMENDED.
         /// </para>
         /// </summary>
         public List<string> ManagedDataIdentifierIds
@@ -353,17 +356,17 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ManagedDataIdentifierSelector. 
         /// <para>
-        /// The selection type that determines which managed data identifiers the job uses to
-        /// analyze data. Possible values are:
+        /// The selection type that determines which managed data identifiers the job uses when
+        /// it analyzes data. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ALL - Use all the managed data identifiers that Amazon Macie provides.
+        /// ALL (default) - Use all managed data identifiers.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// EXCLUDE - Use all the managed data identifiers that Macie provides except the managed
-        /// data identifiers specified by the managedDataIdentifierIds property.
+        /// EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+        /// property.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -372,13 +375,31 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// NONE - Don't use any managed data identifiers.
+        /// NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services
+        /// recommends for jobs.
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// If this value is null, the job uses all managed data identifiers. If this value is
-        /// null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers
-        /// as they are released.
+        /// If this value is null, the job uses all managed data identifiers.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run
+        /// automatically uses new managed data identifiers that are released after the job was
+        /// created or the preceding run ended. If this value is RECOMMENDED for a recurring job,
+        /// each job run uses all the managed data identifiers that are in the recommended set
+        /// when the run starts.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about individual managed data identifiers or to determine which ones
+        /// are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+        /// managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+        /// managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
         /// </para>
         /// </summary>
         public ManagedDataIdentifierSelector ManagedDataIdentifierSelector
