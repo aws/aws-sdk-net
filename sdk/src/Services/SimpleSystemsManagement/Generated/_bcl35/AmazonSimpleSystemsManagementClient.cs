@@ -50,7 +50,7 @@ namespace Amazon.SimpleSystemsManagement
     ///  <ul> <li> 
     /// <para>
     /// For information about each of the capabilities that comprise Systems Manager, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
+    /// <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html">Systems
     /// Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     ///  </li> <li> 
@@ -439,9 +439,7 @@ namespace Amazon.SimpleSystemsManagement
         /// again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
-        /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
-        /// are the resource limits for OpsCenter?</a>.
+        /// The request caused OpsItems to exceed one or more quotas.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
@@ -1380,8 +1378,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Creates a new OpsItem. You must have permission in Identity and Access Management
-        /// (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+        /// up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -1411,9 +1409,7 @@ namespace Amazon.SimpleSystemsManagement
         /// again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
-        /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
-        /// are the resource limits for OpsCenter?</a>.
+        /// The request caused OpsItems to exceed one or more quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">REST API Reference for CreateOpsItem Operation</seealso>
         public virtual CreateOpsItemResponse CreateOpsItem(CreateOpsItemRequest request)
@@ -3795,22 +3791,22 @@ namespace Amazon.SimpleSystemsManagement
         #region  DescribeInstanceInformation
 
         /// <summary>
-        /// Describes one or more of your managed nodes, including information about the operating
-        /// system platform, the version of SSM Agent installed on the managed node, node status,
-        /// and so on.
+        /// Provides information about one or more of your managed nodes, including the operating
+        /// system platform, SSM Agent version, association status, and IP address. This operation
+        /// does not return information for nodes that are either Stopped or Terminated.
         /// 
         ///  
         /// <para>
-        /// If you specify one or more managed node IDs, it returns information for those managed
+        /// If you specify one or more node IDs, the operation returns information for those managed
         /// nodes. If you don't specify node IDs, it returns information for all your managed
         /// nodes. If you specify a node ID that isn't valid or a node that you don't own, you
         /// receive an error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
-        /// (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM
-        /// role for EC2 instances.
+        /// The <code>IamRole</code> field returned for this API operation is the Identity and
+        /// Access Management (IAM) role assigned to on-premises managed nodes. This operation
+        /// does not return the IAM role for EC2 instances.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3859,22 +3855,22 @@ namespace Amazon.SimpleSystemsManagement
         }
 
         /// <summary>
-        /// Describes one or more of your managed nodes, including information about the operating
-        /// system platform, the version of SSM Agent installed on the managed node, node status,
-        /// and so on.
+        /// Provides information about one or more of your managed nodes, including the operating
+        /// system platform, SSM Agent version, association status, and IP address. This operation
+        /// does not return information for nodes that are either Stopped or Terminated.
         /// 
         ///  
         /// <para>
-        /// If you specify one or more managed node IDs, it returns information for those managed
+        /// If you specify one or more node IDs, the operation returns information for those managed
         /// nodes. If you don't specify node IDs, it returns information for all your managed
         /// nodes. If you specify a node ID that isn't valid or a node that you don't own, you
         /// receive an error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
-        /// (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM
-        /// role for EC2 instances.
+        /// The <code>IamRole</code> field returned for this API operation is the Identity and
+        /// Access Management (IAM) role assigned to on-premises managed nodes. This operation
+        /// does not return the IAM role for EC2 instances.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4767,8 +4763,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Query a set of OpsItems. You must have permission in Identity and Access Management
-        /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+        /// up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6379,8 +6375,8 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about an OpsItem by using the ID. You must have permission in Identity
         /// and Access Management (IAM) to view information about an OpsItem. For more information,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+        /// up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -8253,9 +8249,7 @@ namespace Amazon.SimpleSystemsManagement
         /// again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
-        /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
-        /// are the resource limits for OpsCenter?</a>.
+        /// The request caused OpsItems to exceed one or more quotas.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
@@ -11359,8 +11353,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Edit or change an OpsItem. You must have permission in Identity and Access Management
-        /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-        /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+        /// up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -11389,9 +11383,7 @@ namespace Amazon.SimpleSystemsManagement
         /// again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
-        /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
-        /// are the resource limits for OpsCenter?</a>.
+        /// The request caused OpsItems to exceed one or more quotas.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.

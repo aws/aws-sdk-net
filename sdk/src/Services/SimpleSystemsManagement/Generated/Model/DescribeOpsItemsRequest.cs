@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeOpsItems operation.
     /// Query a set of OpsItems. You must have permission in Identity and Access Management
-    /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-    /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+    /// up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -190,6 +190,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Key: AutomationId
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations: Equals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key: AccountId
         /// </para>
         ///  
         /// <para>

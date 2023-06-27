@@ -154,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute
         /// Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the
         /// Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-        /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+        /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
         /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>
         /// </summary>
@@ -295,7 +295,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// SSM Agent for a hybrid environment (Windows)</a>. To retrieve the <code>Name</code>
         /// tag of an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation.
         /// For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-        /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+        /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
         /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>
         /// </summary>

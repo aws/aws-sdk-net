@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateOpsItem operation.
     /// Edit or change an OpsItem. You must have permission in Identity and Access Management
-    /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-    /// started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set
+    /// up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -189,7 +189,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Use the <code>/aws/resources</code> key in OperationalData to specify a related resource
         /// in the request. Use the <code>/aws/automations</code> key in OperationalData to associate
         /// an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands
-        /// that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+        /// that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
         /// OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
@@ -361,7 +361,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing
+        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
         /// OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
