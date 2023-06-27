@@ -36,6 +36,7 @@ namespace Amazon.Appflow.Model
         private string _applicationHostUrl;
         private string _applicationServicePath;
         private string _clientNumber;
+        private bool? _disablesso;
         private string _logonLanguage;
         private OAuthProperties _oAuthProperties;
         private int? _portNumber;
@@ -96,6 +97,34 @@ namespace Amazon.Appflow.Model
         internal bool IsSetClientNumber()
         {
             return this._clientNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableSSO. 
+        /// <para>
+        /// If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single
+        /// sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Whether you need this option depends on the types of credentials that you applied
+        /// to your SAP OData connection profile. If your profile uses basic authentication credentials,
+        /// SAP SSO can prevent Amazon AppFlow from connecting to your account with your username
+        /// and password. In this case, bypassing SSO makes it possible for Amazon AppFlow to
+        /// connect successfully. However, if your profile uses OAuth credentials, this parameter
+        /// has no affect.
+        /// </para>
+        /// </summary>
+        public bool DisableSSO
+        {
+            get { return this._disablesso.GetValueOrDefault(); }
+            set { this._disablesso = value; }
+        }
+
+        // Check to see if DisableSSO property is set
+        internal bool IsSetDisableSSO()
+        {
+            return this._disablesso.HasValue; 
         }
 
         /// <summary>

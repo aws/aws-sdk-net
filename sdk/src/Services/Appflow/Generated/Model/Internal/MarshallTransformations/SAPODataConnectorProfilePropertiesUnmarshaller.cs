@@ -82,6 +82,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disableSSO", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableSSO = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logonLanguage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
