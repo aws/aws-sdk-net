@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OnlineStoreConfig Marshaller
+    /// OnlineStoreConfigUpdate Marshaller
     /// </summary>
-    public class OnlineStoreConfigMarshaller : IRequestMarshaller<OnlineStoreConfig, JsonMarshallerContext> 
+    public class OnlineStoreConfigUpdateMarshaller : IRequestMarshaller<OnlineStoreConfigUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,25 +43,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnlineStoreConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(OnlineStoreConfigUpdate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEnableOnlineStore())
-            {
-                context.Writer.WritePropertyName("EnableOnlineStore");
-                context.Writer.Write(requestObject.EnableOnlineStore);
-            }
-
-            if(requestObject.IsSetSecurityConfig())
-            {
-                context.Writer.WritePropertyName("SecurityConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OnlineStoreSecurityConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetTtlDuration())
             {
                 context.Writer.WritePropertyName("TtlDuration");
@@ -78,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OnlineStoreConfigMarshaller Instance = new OnlineStoreConfigMarshaller();
+        public readonly static OnlineStoreConfigUpdateMarshaller Instance = new OnlineStoreConfigUpdateMarshaller();
 
     }
 }

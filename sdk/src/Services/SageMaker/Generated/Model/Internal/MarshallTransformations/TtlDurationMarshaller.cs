@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OnlineStoreConfig Marshaller
+    /// TtlDuration Marshaller
     /// </summary>
-    public class OnlineStoreConfigMarshaller : IRequestMarshaller<OnlineStoreConfig, JsonMarshallerContext> 
+    public class TtlDurationMarshaller : IRequestMarshaller<TtlDuration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnlineStoreConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TtlDuration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEnableOnlineStore())
+            if(requestObject.IsSetUnit())
             {
-                context.Writer.WritePropertyName("EnableOnlineStore");
-                context.Writer.Write(requestObject.EnableOnlineStore);
+                context.Writer.WritePropertyName("Unit");
+                context.Writer.Write(requestObject.Unit);
             }
 
-            if(requestObject.IsSetSecurityConfig())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("SecurityConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OnlineStoreSecurityConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTtlDuration())
-            {
-                context.Writer.WritePropertyName("TtlDuration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TtlDurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TtlDuration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -78,7 +62,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OnlineStoreConfigMarshaller Instance = new OnlineStoreConfigMarshaller();
+        public readonly static TtlDurationMarshaller Instance = new TtlDurationMarshaller();
 
     }
 }

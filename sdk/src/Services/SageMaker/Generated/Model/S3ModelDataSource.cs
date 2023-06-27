@@ -110,7 +110,7 @@ namespace Amazon.SageMaker.Model
         /// Ambiguous file names will result in model deployment failure. For example, if your
         /// uncompressed ML model consists of two S3 objects <code>s3://mybucket/model/weights</code>
         /// and <code>s3://mybucket/model/weights/part1</code> and you specify <code>s3://mybucket/model/</code>
-        /// as the value of <code>S3Uri</code> and <code>S3Prefix</code> as the value of S3DataType,
+        /// as the value of <code>S3Uri</code> and <code>S3Prefix</code> as the value of <code>S3DataType</code>,
         /// then it will result in name clash between <code>/opt/ml/model/weights</code> (a regular
         /// file) and <code>/opt/ml/model/weights/</code> (a directory).
         /// </para>
@@ -151,7 +151,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose S3Object, S3Uri identifies an object that is the ML model data to deploy.
+        /// If you choose <code>S3Object</code>, <code>S3Uri</code> identifies an object that
+        /// is the ML model data to deploy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

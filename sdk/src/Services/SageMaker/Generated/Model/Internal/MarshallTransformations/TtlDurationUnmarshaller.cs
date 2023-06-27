@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnlineStoreConfig Object
+    /// Response Unmarshaller for TtlDuration Object
     /// </summary>  
-    public class OnlineStoreConfigUnmarshaller : IUnmarshaller<OnlineStoreConfig, XmlUnmarshallerContext>, IUnmarshaller<OnlineStoreConfig, JsonUnmarshallerContext>
+    public class TtlDurationUnmarshaller : IUnmarshaller<TtlDuration, XmlUnmarshallerContext>, IUnmarshaller<TtlDuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OnlineStoreConfig IUnmarshaller<OnlineStoreConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TtlDuration IUnmarshaller<TtlDuration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnlineStoreConfig Unmarshall(JsonUnmarshallerContext context)
+        public TtlDuration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnlineStoreConfig unmarshalledObject = new OnlineStoreConfig();
+            TtlDuration unmarshalledObject = new TtlDuration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EnableOnlineStore", targetDepth))
+                if (context.TestExpression("Unit", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableOnlineStore = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SecurityConfig", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = OnlineStoreSecurityConfigUnmarshaller.Instance;
-                    unmarshalledObject.SecurityConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TtlDuration", targetDepth))
-                {
-                    var unmarshaller = TtlDurationUnmarshaller.Instance;
-                    unmarshalledObject.TtlDuration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OnlineStoreConfigUnmarshaller _instance = new OnlineStoreConfigUnmarshaller();        
+        private static TtlDurationUnmarshaller _instance = new TtlDurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnlineStoreConfigUnmarshaller Instance
+        public static TtlDurationUnmarshaller Instance
         {
             get
             {

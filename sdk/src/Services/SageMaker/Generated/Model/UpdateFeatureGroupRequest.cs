@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private List<FeatureDefinition> _featureAdditions = new List<FeatureDefinition>();
         private string _featureGroupName;
+        private OnlineStoreConfigUpdate _onlineStoreConfig;
 
         /// <summary>
         /// Gets and sets the property FeatureAdditions. 
@@ -75,6 +76,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFeatureGroupName()
         {
             return this._featureGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnlineStoreConfig. 
+        /// <para>
+        /// Updates the feature group online store configuration.
+        /// </para>
+        /// </summary>
+        public OnlineStoreConfigUpdate OnlineStoreConfig
+        {
+            get { return this._onlineStoreConfig; }
+            set { this._onlineStoreConfig = value; }
+        }
+
+        // Check to see if OnlineStoreConfig property is set
+        internal bool IsSetOnlineStoreConfig()
+        {
+            return this._onlineStoreConfig != null;
         }
 
     }

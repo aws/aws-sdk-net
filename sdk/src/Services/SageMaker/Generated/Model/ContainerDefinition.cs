@@ -201,7 +201,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently you cannot use <code>ModelDataSource</code> in conjuction with SageMaker
+        /// Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker
         /// batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints,
         /// and SageMaker Marketplace.
         /// </para>
