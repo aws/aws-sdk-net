@@ -230,6 +230,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Private5G.Model.Address.EmailAddress</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Private5G.Model.Address.Name</property>
     <min>1</min>
     <max>1024</max>
@@ -350,6 +355,10 @@
   <property-value-rule>
     <property>Amazon.Private5G.Model.Order.OrderArn</property>
     <pattern>^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Private5G.Model.OrderedResourceDefinition.Count</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Private5G.Model.ReturnInformation.ReplacementOrderArn</property>

@@ -70,6 +70,12 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("commitmentInformation", targetDepth))
+                {
+                    var unmarshaller = CommitmentInformationUnmarshaller.Instance;
+                    unmarshalledObject.CommitmentInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

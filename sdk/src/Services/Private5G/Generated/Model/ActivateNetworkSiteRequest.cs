@@ -35,6 +35,7 @@ namespace Amazon.Private5G.Model
     public partial class ActivateNetworkSiteRequest : AmazonPrivate5GRequest
     {
         private string _clientToken;
+        private CommitmentConfiguration _commitmentConfiguration;
         private string _networkSiteArn;
         private Address _shippingAddress;
 
@@ -57,6 +58,50 @@ namespace Amazon.Private5G.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CommitmentConfiguration. 
+        /// <para>
+        /// Determines the duration and renewal status of the commitment period for all pending
+        /// radio units.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+        /// action, you must specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year
+        /// period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether you want your commitment period to automatically renew for one more year after
+        /// your current commitment period expires.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services
+        /// Private 5G Pricing</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+        /// action, the commitment period is set to 60-days.
+        /// </para>
+        /// </summary>
+        public CommitmentConfiguration CommitmentConfiguration
+        {
+            get { return this._commitmentConfiguration; }
+            set { this._commitmentConfiguration = value; }
+        }
+
+        // Check to see if CommitmentConfiguration property is set
+        internal bool IsSetCommitmentConfiguration()
+        {
+            return this._commitmentConfiguration != null;
         }
 
         /// <summary>
