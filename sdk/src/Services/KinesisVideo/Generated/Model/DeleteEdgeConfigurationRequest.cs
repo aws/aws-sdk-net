@@ -29,13 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeEdgeConfiguration operation.
-    /// Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code>
-    /// API and the latest status of the edge agent's recorder and uploader jobs. Use this
-    /// API to get the status of the configuration to determine if the configuration is in
-    /// sync with the Edge Agent. Use this API to evaluate the health of the Edge Agent.
+    /// Container for the parameters to the DeleteEdgeConfiguration operation.
+    /// An asynchronous API that deletes a stream’s existing edge configuration, as well as
+    /// the corresponding media from the Edge Agent.
+    /// 
+    ///  
+    /// <para>
+    /// When you invoke this API, the sync status is set to <code>DELETING</code>. A deletion
+    /// process starts, in which active edge jobs are stopped and all media is deleted from
+    /// the edge device. The time to delete varies, depending on the total amount of stored
+    /// media. If the deletion process fails, the sync status changes to <code>DELETE_FAILED</code>.
+    /// You will need to re-try the deletion.
+    /// </para>
+    ///  
+    /// <para>
+    /// When the deletion process has completed successfully, the edge configuration is no
+    /// longer accessible.
+    /// </para>
     /// </summary>
-    public partial class DescribeEdgeConfigurationRequest : AmazonKinesisVideoRequest
+    public partial class DeleteEdgeConfigurationRequest : AmazonKinesisVideoRequest
     {
         private string _streamARN;
         private string _streamName;
@@ -43,8 +55,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or
-        /// the <code>StreamARN</code>.
+        /// The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>
+        /// or the <code>StreamARN</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -63,8 +75,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the stream whose edge configuration you want to update. Specify either
-        /// the <code>StreamName</code> or the <code>StreamARN</code>. 
+        /// The name of the stream from which to delete the edge configuration. Specify either
+        /// the <code>StreamName</code> or the <code>StreamARN</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

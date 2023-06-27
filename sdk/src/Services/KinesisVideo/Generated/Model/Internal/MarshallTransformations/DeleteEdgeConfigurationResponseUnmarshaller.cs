@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeEdgeConfiguration operation
+    /// Response Unmarshaller for DeleteEdgeConfiguration operation
     /// </summary>  
-    public class DescribeEdgeConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteEdgeConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,61 +45,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeEdgeConfigurationResponse response = new DescribeEdgeConfigurationResponse();
+            DeleteEdgeConfigurationResponse response = new DeleteEdgeConfigurationResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EdgeAgentStatus", targetDepth))
-                {
-                    var unmarshaller = EdgeAgentStatusUnmarshaller.Instance;
-                    response.EdgeAgentStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EdgeConfig", targetDepth))
-                {
-                    var unmarshaller = EdgeConfigUnmarshaller.Instance;
-                    response.EdgeConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FailedStatusDetails", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailedStatusDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SyncStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SyncStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -146,9 +93,9 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             return new AmazonKinesisVideoException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeEdgeConfigurationResponseUnmarshaller _instance = new DescribeEdgeConfigurationResponseUnmarshaller();        
+        private static DeleteEdgeConfigurationResponseUnmarshaller _instance = new DeleteEdgeConfigurationResponseUnmarshaller();        
 
-        internal static DescribeEdgeConfigurationResponseUnmarshaller GetInstance()
+        internal static DeleteEdgeConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +103,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeEdgeConfigurationResponseUnmarshaller Instance
+        public static DeleteEdgeConfigurationResponseUnmarshaller Instance
         {
             get
             {

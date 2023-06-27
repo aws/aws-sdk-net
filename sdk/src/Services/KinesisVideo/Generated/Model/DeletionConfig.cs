@@ -51,7 +51,7 @@ namespace Amazon.KinesisVideo.Model
         /// <para>
         /// Since the default value is set to <code>true</code>, configure the uploader schedule
         /// such that the media files are not being deleted before they are initially uploaded
-        /// to AWS cloud.
+        /// to the Amazon Web Services cloud.
         /// </para>
         /// </summary>
         public bool DeleteAfterUpload

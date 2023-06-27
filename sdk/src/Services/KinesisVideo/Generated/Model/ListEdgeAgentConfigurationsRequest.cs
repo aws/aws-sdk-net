@@ -29,24 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeMappedResourceConfiguration operation.
-    /// Returns the most current information about the stream. The <code>streamName</code>
-    /// or <code>streamARN</code> should be provided in the input.
+    /// Container for the parameters to the ListEdgeAgentConfigurations operation.
+    /// Returns an array of edge configurations associated with the specified Edge Agent.
+    /// 
+    ///  
+    /// <para>
+    /// In the request, you must specify the Edge Agent <code>HubDeviceArn</code>.
+    /// </para>
     /// </summary>
-    public partial class DescribeMappedResourceConfigurationRequest : AmazonKinesisVideoRequest
+    public partial class ListEdgeAgentConfigurationsRequest : AmazonKinesisVideoRequest
     {
+        private string _hubDeviceArn;
         private int? _maxResults;
         private string _nextToken;
-        private string _streamARN;
-        private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property HubDeviceArn. 
+        /// <para>
+        /// The "Internet of Things (IoT) Thing" Arn of the edge agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string HubDeviceArn
+        {
+            get { return this._hubDeviceArn; }
+            set { this._hubDeviceArn = value; }
+        }
+
+        // Check to see if HubDeviceArn property is set
+        internal bool IsSetHubDeviceArn()
+        {
+            return this._hubDeviceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in the response.
+        /// The maximum number of edge configurations to return in the response. The default is
+        /// 5.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,7 +85,10 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to provide in your next request, to get another batch of results.
+        /// If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code>
+        /// operation is truncated, the call returns the <code>NextToken</code> in the response.
+        /// To get another batch of edge configurations, provide this token in your next request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -76,44 +102,6 @@ namespace Amazon.KinesisVideo.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StreamARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the stream.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string StreamARN
-        {
-            get { return this._streamARN; }
-            set { this._streamARN = value; }
-        }
-
-        // Check to see if StreamARN property is set
-        internal bool IsSetStreamARN()
-        {
-            return this._streamARN != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StreamName. 
-        /// <para>
-        /// The name of the stream.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string StreamName
-        {
-            get { return this._streamName; }
-            set { this._streamName = value; }
-        }
-
-        // Check to see if StreamName property is set
-        internal bool IsSetStreamName()
-        {
-            return this._streamName != null;
         }
 
     }

@@ -44,6 +44,14 @@ namespace Amazon.KinesisVideo.Model
         }
 
         /// <summary>
+        /// Paginator for ListEdgeAgentConfigurations operation
+        ///</summary>
+        public IListEdgeAgentConfigurationsPaginator ListEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest request) 
+        {
+            return new ListEdgeAgentConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSignalingChannels operation
         ///</summary>
         public IListSignalingChannelsPaginator ListSignalingChannels(ListSignalingChannelsRequest request) 

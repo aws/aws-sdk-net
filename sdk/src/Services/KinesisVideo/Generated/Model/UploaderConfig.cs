@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutesdetails</code>,
-    /// that specify the scheduling to record from a camera, or local media file, onto the
-    /// Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge
-    /// Agent will always be in upload mode.
+    /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
+    /// details that specify the scheduling to record from a camera, or local media file,
+    /// onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>,
+    /// then the Edge Agent will upload at regular intervals (every 1 hour).
     /// </summary>
     public partial class UploaderConfig
     {
@@ -41,10 +41,10 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ScheduleConfig. 
         /// <para>
-        /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details
-        /// that specify the scheduling to record from a camera, or local media file, onto the
-        /// Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge
-        /// Agent will always be in recording mode.
+        /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
+        /// details that specify the scheduling to record from a camera, or local media file,
+        /// onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>,
+        /// then the Edge Agent will upload at regular intervals (every 1 hour).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

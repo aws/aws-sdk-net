@@ -36,8 +36,13 @@ namespace Amazon.KinesisVideo.Model
     /// 
     ///  
     /// <para>
-    /// If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always
-    /// be set to recording mode.
+    /// If the <code>ScheduleConfig</code> is not provided in the <code>RecorderConfig</code>,
+    /// then the Edge Agent will always be set to recording mode.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>,
+    /// then the Edge Agent will upload at regular intervals (every 1 hour).
     /// </para>
     /// </summary>
     public partial class ScheduleConfig

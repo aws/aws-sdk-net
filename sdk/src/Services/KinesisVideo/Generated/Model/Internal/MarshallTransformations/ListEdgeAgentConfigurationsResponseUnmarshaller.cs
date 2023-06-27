@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeEdgeConfiguration operation
+    /// Response Unmarshaller for ListEdgeAgentConfigurations operation
     /// </summary>  
-    public class DescribeEdgeConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListEdgeAgentConfigurationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,58 +45,22 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeEdgeConfigurationResponse response = new DescribeEdgeConfigurationResponse();
+            ListEdgeAgentConfigurationsResponse response = new ListEdgeAgentConfigurationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("EdgeConfigs", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ListEdgeAgentConfigurationsEdgeConfig, ListEdgeAgentConfigurationsEdgeConfigUnmarshaller>(ListEdgeAgentConfigurationsEdgeConfigUnmarshaller.Instance);
+                    response.EdgeConfigs = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EdgeAgentStatus", targetDepth))
-                {
-                    var unmarshaller = EdgeAgentStatusUnmarshaller.Instance;
-                    response.EdgeAgentStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EdgeConfig", targetDepth))
-                {
-                    var unmarshaller = EdgeConfigUnmarshaller.Instance;
-                    response.EdgeConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FailedStatusDetails", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailedStatusDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SyncStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SyncStatus = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -122,10 +86,6 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientLimitExceededException"))
                 {
                     return ClientLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -134,21 +94,17 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 {
                     return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("StreamEdgeConfigurationNotFoundException"))
-                {
-                    return StreamEdgeConfigurationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonKinesisVideoException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeEdgeConfigurationResponseUnmarshaller _instance = new DescribeEdgeConfigurationResponseUnmarshaller();        
+        private static ListEdgeAgentConfigurationsResponseUnmarshaller _instance = new ListEdgeAgentConfigurationsResponseUnmarshaller();        
 
-        internal static DescribeEdgeConfigurationResponseUnmarshaller GetInstance()
+        internal static ListEdgeAgentConfigurationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +112,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeEdgeConfigurationResponseUnmarshaller Instance
+        public static ListEdgeAgentConfigurationsResponseUnmarshaller Instance
         {
             get
             {

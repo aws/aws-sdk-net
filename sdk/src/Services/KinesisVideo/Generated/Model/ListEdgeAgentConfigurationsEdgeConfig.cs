@@ -29,12 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEdgeConfiguration operation.
+    /// A description of a single stream's edge configuration.
     /// </summary>
-    public partial class DescribeEdgeConfigurationResponse : AmazonWebServiceResponse
+    public partial class ListEdgeAgentConfigurationsEdgeConfig
     {
         private DateTime? _creationTime;
-        private EdgeAgentStatus _edgeAgentStatus;
         private EdgeConfig _edgeConfig;
         private string _failedStatusDetails;
         private DateTime? _lastUpdatedTime;
@@ -45,7 +44,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp at which a stream’s edge configuration was first created.
+        /// The timestamp when the stream first created the edge config.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -61,31 +60,7 @@ namespace Amazon.KinesisVideo.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EdgeAgentStatus. 
-        /// <para>
-        /// An object that contains the latest status details for an edge agent's recorder and
-        /// uploader jobs. Use this information to determine the current health of an edge agent.
-        /// </para>
-        /// </summary>
-        public EdgeAgentStatus EdgeAgentStatus
-        {
-            get { return this._edgeAgentStatus; }
-            set { this._edgeAgentStatus = value; }
-        }
-
-        // Check to see if EdgeAgentStatus property is set
-        internal bool IsSetEdgeAgentStatus()
-        {
-            return this._edgeAgentStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EdgeConfig. 
-        /// <para>
-        /// A description of the stream's edge configuration that will be used to sync with the
-        /// Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub
-        /// Device setup at your premise.
-        /// </para>
+        /// Gets and sets the property EdgeConfig.
         /// </summary>
         public EdgeConfig EdgeConfig
         {
@@ -120,7 +95,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The timestamp at which a stream’s edge configuration was last updated.
+        /// The timestamp when the stream last updated the edge config.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -157,7 +132,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the stream from which the edge configuration was updated.
+        /// The name of the stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -176,7 +151,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property SyncStatus. 
         /// <para>
-        /// The latest status of the edge configuration update.
+        /// The current sync status of the stream's edge configuration.
         /// </para>
         /// </summary>
         public SyncStatus SyncStatus

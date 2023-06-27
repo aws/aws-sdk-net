@@ -123,8 +123,8 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  
         /// <para>
-        /// If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>)
-        /// is used.
+        /// If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web
+        /// Services/kinesisvideo</code>) is used.
         /// </para>
         ///  
         /// <para>

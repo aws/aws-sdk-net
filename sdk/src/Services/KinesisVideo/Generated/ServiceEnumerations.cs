@@ -595,6 +595,60 @@ namespace Amazon.KinesisVideo
 
 
     /// <summary>
+    /// Constants used for properties of type RecorderStatus.
+    /// </summary>
+    public class RecorderStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUCCESS for RecorderStatus
+        /// </summary>
+        public static readonly RecorderStatus SUCCESS = new RecorderStatus("SUCCESS");
+        /// <summary>
+        /// Constant SYSTEM_ERROR for RecorderStatus
+        /// </summary>
+        public static readonly RecorderStatus SYSTEM_ERROR = new RecorderStatus("SYSTEM_ERROR");
+        /// <summary>
+        /// Constant USER_ERROR for RecorderStatus
+        /// </summary>
+        public static readonly RecorderStatus USER_ERROR = new RecorderStatus("USER_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecorderStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecorderStatus FindValue(string value)
+        {
+            return FindValue<RecorderStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecorderStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -721,6 +775,10 @@ namespace Amazon.KinesisVideo
         /// </summary>
         public static readonly SyncStatus DELETING = new SyncStatus("DELETING");
         /// <summary>
+        /// Constant DELETING_ACKNOWLEDGED for SyncStatus
+        /// </summary>
+        public static readonly SyncStatus DELETING_ACKNOWLEDGED = new SyncStatus("DELETING_ACKNOWLEDGED");
+        /// <summary>
         /// Constant IN_SYNC for SyncStatus
         /// </summary>
         public static readonly SyncStatus IN_SYNC = new SyncStatus("IN_SYNC");
@@ -812,6 +870,60 @@ namespace Amazon.KinesisVideo
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UpdateDataRetentionOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UploaderStatus.
+    /// </summary>
+    public class UploaderStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUCCESS for UploaderStatus
+        /// </summary>
+        public static readonly UploaderStatus SUCCESS = new UploaderStatus("SUCCESS");
+        /// <summary>
+        /// Constant SYSTEM_ERROR for UploaderStatus
+        /// </summary>
+        public static readonly UploaderStatus SYSTEM_ERROR = new UploaderStatus("SYSTEM_ERROR");
+        /// <summary>
+        /// Constant USER_ERROR for UploaderStatus
+        /// </summary>
+        public static readonly UploaderStatus USER_ERROR = new UploaderStatus("USER_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UploaderStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UploaderStatus FindValue(string value)
+        {
+            return FindValue<UploaderStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UploaderStatus(string value)
         {
             return FindValue(value);
         }
