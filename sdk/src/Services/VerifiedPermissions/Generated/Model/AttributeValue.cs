@@ -56,7 +56,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Boolean. 
         /// <para>
-        /// An attribute value of <a href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-boolean">Boolean</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a>
         /// type.
         /// </para>
         ///  
@@ -102,7 +102,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Long. 
         /// <para>
-        /// An attribute value of <a href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-long">Long</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#long">Long</a>
         /// type.
         /// </para>
         ///  
@@ -125,7 +125,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Record. 
         /// <para>
-        /// An attribute value of <a href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
         /// type.
         /// </para>
         ///  
@@ -148,7 +148,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Set. 
         /// <para>
-        /// An attribute value of <a href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a>
         /// type.
         /// </para>
         ///  
@@ -171,7 +171,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property String. 
         /// <para>
-        /// An attribute value of <a href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
         /// type.
         /// </para>
         ///  
