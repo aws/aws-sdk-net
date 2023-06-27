@@ -95,6 +95,17 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTtlDuration())
+                {
+                    context.Writer.WritePropertyName("TtlDuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TtlDurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TtlDuration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
