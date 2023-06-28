@@ -64,7 +64,11 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private string _domain;
+        private string _domainAuthSecretArn;
+        private List<string> _domainDnsIps = new List<string>();
+        private string _domainFqdn;
         private string _domainIAMRoleName;
+        private string _domainOu;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
@@ -451,6 +455,99 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainAuthSecretArn. 
+        /// <para>
+        /// The ARN for the Secrets Manager secret that contains the credentials for the user
+        /// performing the domain join.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Cannot be greater than 64 characters.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string DomainAuthSecretArn
+        {
+            get { return this._domainAuthSecretArn; }
+            set { this._domainAuthSecretArn = value; }
+        }
+
+        // Check to see if DomainAuthSecretArn property is set
+        internal bool IsSetDomainAuthSecretArn()
+        {
+            return this._domainAuthSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainDnsIps. 
+        /// <para>
+        /// The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Two IP addresses must be provided. If there isn't a secondary domain controller, use
+        /// the IP address of the primary domain controller for both entries in the list.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>123.124.125.126,234.235.236.237</code> 
+        /// </para>
+        /// </summary>
+        public List<string> DomainDnsIps
+        {
+            get { return this._domainDnsIps; }
+            set { this._domainDnsIps = value; }
+        }
+
+        // Check to see if DomainDnsIps property is set
+        internal bool IsSetDomainDnsIps()
+        {
+            return this._domainDnsIps != null && this._domainDnsIps.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainFqdn. 
+        /// <para>
+        /// Specifies the fully qualified domain name of an Active Directory domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Cannot be greater than 64 characters.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> 
+        /// </para>
+        /// </summary>
+        public string DomainFqdn
+        {
+            get { return this._domainFqdn; }
+            set { this._domainFqdn = value; }
+        }
+
+        // Check to see if DomainFqdn property is set
+        internal bool IsSetDomainFqdn()
+        {
+            return this._domainFqdn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
         /// Specify the name of the IAM role to be used when making API calls to the Directory
@@ -471,6 +568,41 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainOu. 
+        /// <para>
+        /// The Active Directory organizational unit for your DB instance to join.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the distinguished name format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be greater than 64 characters.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string DomainOu
+        {
+            get { return this._domainOu; }
+            set { this._domainOu = value; }
+        }
+
+        // Check to see if DomainOu property is set
+        internal bool IsSetDomainOu()
+        {
+            return this._domainOu != null;
         }
 
         /// <summary>

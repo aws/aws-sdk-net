@@ -33,10 +33,50 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DomainMembership
     {
+        private string _authSecretArn;
+        private List<string> _dnsIps = new List<string>();
         private string _domain;
         private string _fqdn;
         private string _iamRoleName;
+        private string _ou;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property AuthSecretArn. 
+        /// <para>
+        /// The ARN for the Secrets Manager secret that contains the credentials for the user
+        /// performing the domain join.
+        /// </para>
+        /// </summary>
+        public string AuthSecretArn
+        {
+            get { return this._authSecretArn; }
+            set { this._authSecretArn = value; }
+        }
+
+        // Check to see if AuthSecretArn property is set
+        internal bool IsSetAuthSecretArn()
+        {
+            return this._authSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIps. 
+        /// <para>
+        /// The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+        /// </para>
+        /// </summary>
+        public List<string> DnsIps
+        {
+            get { return this._dnsIps; }
+            set { this._dnsIps = value; }
+        }
+
+        // Check to see if DnsIps property is set
+        internal bool IsSetDnsIps()
+        {
+            return this._dnsIps != null && this._dnsIps.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -59,7 +99,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FQDN. 
         /// <para>
-        /// The fully qualified domain name of the Active Directory Domain.
+        /// The fully qualified domain name (FQDN) of the Active Directory Domain.
         /// </para>
         /// </summary>
         public string FQDN
@@ -90,6 +130,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetIAMRoleName()
         {
             return this._iamRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OU. 
+        /// <para>
+        /// The Active Directory organizational unit for your DB instance to join.
+        /// </para>
+        /// </summary>
+        public string OU
+        {
+            get { return this._ou; }
+            set { this._ou = value; }
+        }
+
+        // Check to see if OU property is set
+        internal bool IsSetOU()
+        {
+            return this._ou != null;
         }
 
         /// <summary>
