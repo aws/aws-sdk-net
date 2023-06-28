@@ -120,7 +120,7 @@ namespace Amazon.S3.Model
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -206,8 +206,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property KeyMarker. 
         /// <para>
-        /// Together with upload-id-marker, this parameter specifies the multipart upload after
-        /// which listing should begin.
+        /// Together with <code>upload-id-marker</code>, this parameter specifies the multipart
+        /// upload after which listing should begin.
         /// </para>
         ///  
         /// <para>
@@ -257,8 +257,8 @@ namespace Amazon.S3.Model
         /// <para>
         /// Lists in-progress uploads only for those keys that begin with the specified prefix.
         /// You can use prefixes to separate a bucket into different grouping of keys. (You can
-        /// think of using prefix to make groups in the same way you'd use a folder in a file
-        /// system.)
+        /// think of using <code>prefix</code> to make groups in the same way that you'd use a
+        /// folder in a file system.)
         /// </para>
         /// </summary>
         public string Prefix

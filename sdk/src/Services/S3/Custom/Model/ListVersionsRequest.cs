@@ -37,8 +37,8 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    ///  A 200 OK response can contain valid or invalid XML. Make sure to design your application
-    /// to parse the contents of the response and handle it appropriately.
+    /// A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design
+    /// your application to parse the contents of the response and handle it appropriately.
     /// </para>
     ///  </note> 
     /// <para>
@@ -81,6 +81,7 @@ namespace Amazon.S3.Model
         private string keyMarker;
         private int? maxKeys;
         private string prefix;
+        private List<string> _optionalObjectAttributes = new List<string>();
         private RequestPayer _requestPayer;
         private string versionIdMarker;
         private EncodingType encoding;
@@ -109,9 +110,9 @@ namespace Amazon.S3.Model
         /// <para>
         /// A delimiter is a character that you specify to group keys. All keys that contain the
         /// same string between the <code>prefix</code> and the first occurrence of the delimiter
-        /// are grouped under a single result element in CommonPrefixes. These groups are counted
-        /// as one result against the max-keys limitation. These keys are not returned elsewhere
-        /// in the response.
+        /// are grouped under a single result element in <code>CommonPrefixes</code>. These groups
+        /// are counted as one result against the <code>max-keys</code> limitation. These keys
+        /// are not returned elsewhere in the response.
         /// </para>
         /// </summary>
         public string Delimiter
@@ -144,11 +145,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property MaxKeys. 
         /// <para>
-        /// Sets the maximum number of keys returned in the response. By default the action returns
+        /// Sets the maximum number of keys returned in the response. By default, the action returns
         /// up to 1,000 key names. The response might contain fewer keys but will never contain
         /// more. If additional keys satisfy the search criteria, but were not returned because
-        /// max-keys was exceeded, the response contains &lt;isTruncated&gt;true&lt;/isTruncated&gt;.
-        /// To return the additional keys, see key-marker and version-id-marker.
+        /// <code>max-keys</code> was exceeded, the response contains <code>&lt;isTruncated&gt;true&lt;/isTruncated&gt;</code>.
+        /// To return the additional keys, see <code>key-marker</code> and <code>version-id-marker</code>.
         /// </para>
         /// </summary>
         public int MaxKeys
@@ -164,13 +165,32 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OptionalObjectAttributes. 
+        /// <para>
+        /// Specifies the optional fields that you want returned in the response. Fields that
+        /// you do not specify are not returned.
+        /// </para>
+        /// </summary>
+        public List<string> OptionalObjectAttributes
+        {
+            get { return this._optionalObjectAttributes; }
+            set { this._optionalObjectAttributes = value; }
+        }
+
+        // Check to see if OptionalObjectAttributes property is set
+        internal bool IsSetOptionalObjectAttributes()
+        {
+            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
+        }
+
+        /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
         /// Use this parameter to select only those keys that begin with the specified prefix.
         /// You can use prefixes to separate a bucket into different groupings of keys. (You can
-        /// think of using prefix to make groups in the same way you'd use a folder in a file
-        /// system.) You can use prefix with delimiter to roll up numerous objects into a single
-        /// result under CommonPrefixes. 
+        /// think of using <code>prefix</code> to make groups in the same way that you'd use a
+        /// folder in a file system.) You can use <code>prefix</code> with <code>delimiter</code>
+        /// to roll up numerous objects into a single result under <code>CommonPrefixes</code>.
         /// </para>
         /// </summary>
         public string Prefix

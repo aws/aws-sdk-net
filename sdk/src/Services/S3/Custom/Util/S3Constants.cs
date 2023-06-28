@@ -87,8 +87,8 @@ namespace Amazon.S3.Util
             AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation",
             AmzHeaderChecksumAlgorithm      = "x-amz-checksum-algorithm",
             AmzHeaderSdkChecksumAlgorithm   = "x-amz-sdk-checksum-algorithm",
-            AmzHeaderChecksumMode           = "x-amz-checksum-mode";
-
+            AmzHeaderChecksumMode           = "x-amz-checksum-mode",
+            AmzOptionalObjectAttributes     = "x-amz-optional-object-attributes";
         internal static string
             AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";
 

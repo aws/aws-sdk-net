@@ -128,8 +128,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request
-        /// parameter in a subsequent request.
+        /// Gets and sets the property NextPartNumberMarker. 
+        /// <para>
+        /// When a list is truncated, this element specifies the last part in the list, as well
+        /// as the value to use for the <code>part-number-marker</code> request parameter in a
+        /// subsequent request.
+        /// </para>
         ///  
         /// </summary>
         public int NextPartNumberMarker

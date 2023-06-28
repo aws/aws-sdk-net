@@ -16,7 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
-
+using Amazon.Util;
 #pragma warning disable 1591
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -46,6 +46,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listVersionsRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(listVersionsRequest.RequestPayer));
 
+            if (listVersionsRequest.IsSetOptionalObjectAttributes())
+                request.Headers.Add(S3Constants.AmzOptionalObjectAttributes, AWSSDKUtils.Join(listVersionsRequest.OptionalObjectAttributes));
             request.ResourcePath = "/";
 
             request.AddSubResource("versions");

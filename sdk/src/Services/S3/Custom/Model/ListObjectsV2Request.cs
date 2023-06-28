@@ -31,7 +31,7 @@ namespace Amazon.S3.Model
     /// sure to design your application to parse the contents of the response and handle it
     /// appropriately. Objects are returned sorted in an ascending order of the respective
     /// key names in the list. For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
-    /// object keys programmatically</a> 
+    /// object keys programmatically</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -44,13 +44,13 @@ namespace Amazon.S3.Model
     /// this permission by default and can grant this permission to others. For more information
     /// about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-    /// Access Permissions to Your Amazon S3 Resources</a>.
+    /// Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  <important> 
     /// <para>
     /// This section describes the latest revision of this action. We recommend that you use
-    /// this revised API for application development. For backward compatibility, Amazon S3
-    /// continues to support the prior version of this API, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.
+    /// this revised API operation for application development. For backward compatibility, Amazon S3
+    /// continues to support the prior version of this API operation, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -86,6 +86,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
         private bool? fetchOwner;
         private int? maxKeys;
+        private List<string> _optionalObjectAttributes = new List<string>();
         private string prefix;
         private RequestPayer requestPayer;
         private string startAfter;
@@ -111,7 +112,7 @@ namespace Amazon.S3.Model
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -129,8 +130,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
         /// <para>
-        /// ContinuationToken indicates Amazon S3 that the list is being continued on this bucket
-        /// with a token. ContinuationToken is obfuscated and is not a real key.
+        /// <code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued
+        /// on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not
+        /// a real key.
         /// </para>
         /// </summary>
         public string ContinuationToken
@@ -146,7 +148,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A delimiter is a character you use to group keys.
+        /// A delimiter is a character that you use to group keys.
         /// </summary>
         public string Delimiter
         {
@@ -203,9 +205,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The owner field is not present in ListObjectsV2 responses by default.
-        /// If you want to return owner field with each key in the result then set this field to true.
-        /// If not specified, the Owner field on S3Object will be null.
+        /// The owner field is not present in <code>ListObjectsV2</code> by default. If you want
+        /// to return the owner field with each key in the result, then set the <code>FetchOwner</code>
+        /// field to <code>true</code>..
         /// </summary>
         public bool FetchOwner
         {
@@ -237,6 +239,24 @@ namespace Amazon.S3.Model
         internal bool IsSetMaxKeys()
         {
             return this.maxKeys.HasValue;
+        }
+        /// <summary>
+        /// Gets and sets the property OptionalObjectAttributes. 
+        /// <para>
+        /// Specifies the optional fields that you want returned in the response. Fields that
+        /// you do not specify are not returned.
+        /// </para>
+        /// </summary>
+        public List<string> OptionalObjectAttributes
+        {
+            get { return this._optionalObjectAttributes; }
+            set { this._optionalObjectAttributes = value; }
+        }
+
+        // Check to see if OptionalObjectAttributes property is set
+        internal bool IsSetOptionalObjectAttributes()
+        {
+            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
         }
 
         /// <summary>

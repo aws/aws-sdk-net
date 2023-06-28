@@ -16,7 +16,7 @@
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Util;
 #pragma warning disable 1591
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -41,6 +41,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(listObjectsRequest.ExpectedBucketOwner));
 
+            if (listObjectsRequest.IsSetOptionalObjectAttributes())
+                request.Headers.Add(S3Constants.AmzOptionalObjectAttributes, AWSSDKUtils.Join(listObjectsRequest.OptionalObjectAttributes));
             request.HttpMethod = "GET";
 
             if (string.IsNullOrEmpty(listObjectsRequest.BucketName))
