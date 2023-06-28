@@ -124,6 +124,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelPackageGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RiskRating", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

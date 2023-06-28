@@ -86,7 +86,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PipelineDefinition. 
         /// <para>
-        /// The JSON pipeline definition of the pipeline.
+        /// The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+        /// pipeline definition</a> of the pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1048576)]
