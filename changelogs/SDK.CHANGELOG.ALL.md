@@ -1,3 +1,19 @@
+### 3.7.579.0 (2023-06-28 18:25 UTC)
+* InternetMonitor (3.7.103.0)
+	* This release adds a new feature for Amazon CloudWatch Internet Monitor that enables customers to set custom thresholds, for performance and availability drops, for triggering when to create a health event.
+* KinesisAnalyticsV2 (3.7.102.0)
+	* Support for new runtime environment in Kinesis Data Analytics Studio: Zeppelin-0.10, Apache Flink-1.15
+* Lambda (3.7.113.0)
+	* Surface ResourceConflictException in DeleteEventSourceMapping
+* Omics (3.7.104.0)
+	* Add Common Workflow Language (CWL) as a supported language for Omics workflows
+* RDS (3.7.120.0)
+	* Amazon Relational Database Service (RDS) now supports joining a RDS for SQL Server instance to a self-managed Active Directory.
+* S3 (3.7.107.0)
+	* The S3 LISTObjects, ListObjectsV2 and ListObjectVersions API now supports a new optional header x-amz-optional-object-attributes. If header contains RestoreStatus as the value, then S3 will include Glacier restore status i.e. isRestoreInProgress and RestoreExpiryDate in List response.
+* SageMaker (3.7.139.0)
+	* This release adds support for Model Cards Model Registry integration.
+
 ### 3.7.578.0 (2023-06-27 18:38 UTC)
 * AppFabric (3.7.100.0)
 	* Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.
