@@ -223,6 +223,13 @@ namespace ServiceClientGenerator
             },
             new ArgDeclaration
             {
+                OptionName = "createvsix",
+                ShortName = "cvx",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.CreateCodeAnalysisVsixAssets = true,
+                HelpText = "Creates a VSIX project and manifest for code analysis"
+            },
+            new ArgDeclaration
+            {
                 OptionName = "self.modelpath",
                 Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceModel = argValue,
                 HasValue = true,

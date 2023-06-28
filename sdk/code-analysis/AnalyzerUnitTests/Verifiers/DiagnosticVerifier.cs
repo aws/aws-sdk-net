@@ -1,5 +1,4 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
@@ -241,7 +240,7 @@ namespace TestHelper
                         {
                             Assert.IsTrue(location.IsInSource,
                                 string.Format("Test base does not currently handle diagnostics in metadata locations. Diagnostic in metadata: {0}\r\n",
-								              diagnostics[i]));
+                                              diagnostics[i]));
 
                             string resultMethodName = diagnostics[i].Location.SourceTree.FilePath.EndsWith(".cs") ? "GetCSharpResultAt" : "GetBasicResultAt";
                             var linePosition = diagnostics[i].Location.GetLineSpan().StartLinePosition;

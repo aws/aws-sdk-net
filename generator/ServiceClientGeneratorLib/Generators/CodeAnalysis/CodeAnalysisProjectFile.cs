@@ -29,115 +29,55 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
         /// </summary>
         public override string TransformText()
         {
-            this.Write(@"<?xml version=""1.0"" encoding=""utf-8""?>
-<Project ToolsVersion=""15.0"" DefaultTargets=""Build"" xmlns=""http://schemas.microsoft.com/developer/msbuild/2003"">
-  <Import Project=""$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"" Condition=""Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"" />
+            this.Write(@"<Project Sdk=""Microsoft.NET.Sdk"">
   <PropertyGroup>
-    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
-    <Configuration Condition="" '$(Configuration)' == '' "">Debug</Configuration>
-    <Platform Condition="" '$(Platform)' == '' "">AnyCPU</Platform>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ProjectGuid>");
             
-            #line 14 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 12 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
             #line hidden
-            this.Write("</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Prop" +
-                    "erties</AppDesignerFolder>\r\n    <RootNamespace>");
+            this.Write("</ProjectGuid>\r\n    <RootNamespace>");
             
-            #line 17 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 13 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 18 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 14 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(@"</AssemblyName>
-    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include=""Properties\AssemblyInfo.cs"" />
+    <PackageReference Include=""Microsoft.CodeAnalysis"" Version=""4.6.0"" />
   </ItemGroup>
+
   <ItemGroup>
+    <EmbeddedResource Include=""Generated\PropertyValueRules.xml"">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
 ");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
-
-    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
-    {
-
-            
-            #line default
-            #line hidden
-            this.Write("    <Compile Include=\"");
-            
-            #line 47 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
-            
-            #line default
-            #line hidden
-            this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
-            
-            #line 50 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
-
-    }
-
-            
-            #line default
-            #line hidden
-            this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n    <None Include=\"packages.config\" />\r\n  </ItemGr" +
-                    "oup>\r\n  <ItemGroup>\r\n    <Analyzer Include=\"..\\..\\..\\packages\\Microsoft.CodeAnal" +
-                    "ysis.Analyzers.3.3.4\\analyzers\\dotnet\\cs\\Microsoft.CodeAnalysis.Analyzers.dll\" /" +
-                    ">\r\n    <Analyzer Include=\"..\\..\\..\\packages\\Microsoft.CodeAnalysis.Analyzers.3.3" +
-                    ".4\\analyzers\\dotnet\\cs\\Microsoft.CodeAnalysis.CSharp.Analyzers.dll\" />\r\n  </Item" +
-                    "Group>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Includ" +
-                    "e=\"System.Xml.Linq\" />\r\n    <Reference Include=\"Microsoft.CodeAnalysis, Version=" +
-                    "1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture" +
-                    "=MSIL\">\r\n      <HintPath>..\\..\\..\\packages\\Microsoft.CodeAnalysis.Common.1.0.1\\l" +
-                    "ib\\net45\\Microsoft.CodeAnalysis.dll</HintPath>\r\n    </Reference>\r\n    <Reference" +
-                    " Include=\"Microsoft.CodeAnalysis.CSharp, Version=1.0.0.0, Culture=neutral, Publi" +
-                    "cKeyToken=31bf3856ad364e35, processorArchitecture=MSIL\">\r\n      <HintPath>..\\..\\" +
-                    "..\\packages\\Microsoft.CodeAnalysis.CSharp.1.0.1\\lib\\net45\\Microsoft.CodeAnalysis" +
-                    ".CSharp.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"Microsoft.Code" +
-                    "Analysis.CSharp.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31b" +
-                    "f3856ad364e35, processorArchitecture=MSIL\">\r\n      <HintPath>..\\..\\..\\packages\\M" +
-                    "icrosoft.CodeAnalysis.CSharp.Workspaces.1.0.1\\lib\\net45\\Microsoft.CodeAnalysis.C" +
-                    "Sharp.Workspaces.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"Micro" +
-                    "soft.CodeAnalysis.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3" +
-                    "1bf3856ad364e35, processorArchitecture=MSIL\">\r\n      <HintPath>..\\..\\..\\packages" +
-                    "\\Microsoft.CodeAnalysis.Workspaces.Common.1.0.1\\lib\\net45\\Microsoft.CodeAnalysis" +
-                    ".Workspaces.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Col" +
-                    "lections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11" +
-                    "d50a3a, processorArchitecture=MSIL\">\r\n      <HintPath>..\\..\\..\\packages\\System.C" +
-                    "ollections.Immutable.1.1.36\\lib\\portable-net45+win8+wp8+wpa81\\System.Collections" +
-                    ".Immutable.dll</HintPath>\r\n    </Reference>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    " +
-                    "<EmbeddedResource Include=\"Generated\\PropertyValueRules.xml\" />\r\n");
-            
-            #line 82 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 34 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
 
     foreach(string resource in ((IList<string>)this.Session["EmbeddedResources"]))
     {
@@ -145,25 +85,25 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             
             #line default
             #line hidden
-            this.Write("\t<EmbeddedResource Include=\"");
+            this.Write("    <EmbeddedResource Include=\"");
             
-            #line 86 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 38 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource));
             
             #line default
             #line hidden
-            this.Write("\" />\r\n");
+            this.Write("\">\r\n      <CopyToOutputDirectory>Always</CopyToOutputDirectory>\r\n    </EmbeddedRe" +
+                    "source>\r\n");
             
-            #line 87 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 41 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("  </ItemGroup>\r\n  <Import Project=\"..\\..\\SharedAnalysisCode\\SharedAnalysisCode.pr" +
-                    "ojitems\" Label=\"Shared\" />\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSh" +
-                    "arp.targets\" />\r\n</Project>");
+            this.Write("  </ItemGroup>\r\n\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\..\\SharedAnaly" +
+                    "sisCode\\SharedAnalysisCode.csproj\" />\r\n  </ItemGroup>\r\n</Project>");
             return this.GenerationEnvironment.ToString();
         }
     }

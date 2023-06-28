@@ -186,11 +186,9 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental %(ServiceName.FileName).sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
     </Target>
 
-
     <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator;build-custom-roslyn-analyzer;override-endpoints-file">
-        <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.CodeAnalysis.sln" WorkingDirectory="..\sdk"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.CodeAnalysis.sln /p:AWSKeyFile=$(CustomSnkFileLocation)" WorkingDirectory="..\sdk"/>
     </Target>
 
     <Target Name="build-sdk-netstandard" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file">
@@ -660,5 +658,11 @@
             Categories="$(IncludeTestCategories)"
             CategoriesToIgnore="$(ExcludeTestCategories)"
             KeepTestResults="true" />
+    </Target>
+
+    <Target Name="build-code-analysis-solution">
+        <Exec Command="dotnet restore -f AWSSDK.CodeAnalysis.sln" WorkingDirectory="../sdk" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.CodeAnalysis.sln" WorkingDirectory="../sdk"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.CodeAnalysis.sln /p:AWSKeyFile=$(CustomSnkFileLocation)" WorkingDirectory="../sdk"/>
     </Target>
 </Project>
