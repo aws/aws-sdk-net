@@ -1599,6 +1599,10 @@ namespace Amazon.Omics
     {
 
         /// <summary>
+        /// Constant CWL for WorkflowEngine
+        /// </summary>
+        public static readonly WorkflowEngine CWL = new WorkflowEngine("CWL");
+        /// <summary>
         /// Constant NEXTFLOW for WorkflowEngine
         /// </summary>
         public static readonly WorkflowEngine NEXTFLOW = new WorkflowEngine("NEXTFLOW");
