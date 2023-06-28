@@ -38,6 +38,7 @@ namespace Amazon.InternetMonitor.Model
         private DateTime? _endedAt;
         private string _eventArn;
         private string _eventId;
+        private double? _healthScoreThreshold;
         private List<ImpactedLocation> _impactedLocations = new List<ImpactedLocation>();
         private HealthEventImpactType _impactType;
         private DateTime? _lastUpdatedAt;
@@ -119,6 +120,26 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthScoreThreshold. 
+        /// <para>
+        /// The value of the threshold percentage for performance or availability that was configured
+        /// when Amazon CloudWatch Internet Monitor created the health event.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public double HealthScoreThreshold
+        {
+            get { return this._healthScoreThreshold.GetValueOrDefault(); }
+            set { this._healthScoreThreshold = value; }
+        }
+
+        // Check to see if HealthScoreThreshold property is set
+        internal bool IsSetHealthScoreThreshold()
+        {
+            return this._healthScoreThreshold.HasValue; 
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.InternetMonitor.Model
     public partial class GetMonitorResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private HealthEventsConfig _healthEventsConfig;
         private InternetMeasurementsLogDelivery _internetMeasurementsLogDelivery;
         private int? _maxCityNetworksToMonitor;
         private DateTime? _modifiedAt;
@@ -63,6 +64,27 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthEventsConfig. 
+        /// <para>
+        /// The list of health event thresholds. A health event threshold percentage, for performance
+        /// and availability, determines the level of impact at which Amazon CloudWatch Internet
+        /// Monitor creates a health event when there's an internet issue that affects your application
+        /// end users.
+        /// </para>
+        /// </summary>
+        public HealthEventsConfig HealthEventsConfig
+        {
+            get { return this._healthEventsConfig; }
+            set { this._healthEventsConfig = value; }
+        }
+
+        // Check to see if HealthEventsConfig property is set
+        internal bool IsSetHealthEventsConfig()
+        {
+            return this._healthEventsConfig != null;
         }
 
         /// <summary>
