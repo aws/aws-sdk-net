@@ -31,7 +31,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the DeleteFunction operation.
     /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-    /// parameter. Otherwise, all versions and aliases are deleted.
+    /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+    /// user to have explicit permissions for <a>DeleteAlias</a>.
     /// 
     ///  
     /// <para>

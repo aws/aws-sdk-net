@@ -642,9 +642,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// The position in a stream from which to start reading. Required for Amazon Kinesis,
-        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported
-        /// only for Amazon Kinesis streams and Amazon DocumentDB.
+        /// The position in a stream from which to start reading. Required for Amazon Kinesis
+        /// and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only
+        /// for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache
+        /// Kafka.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -663,7 +664,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property StartingPositionTimestamp. 
         /// <para>
         /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from
-        /// which to start reading.
+        /// which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.
         /// </para>
         /// </summary>
         public DateTime StartingPositionTimestamp

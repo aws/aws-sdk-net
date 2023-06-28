@@ -917,6 +917,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you tried to
         /// update an event source mapping in the CREATING state, or you tried to delete an event
@@ -968,7 +971,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+        /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
         ///  
         /// <para>
@@ -1001,7 +1005,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+        /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
         ///  
         /// <para>
