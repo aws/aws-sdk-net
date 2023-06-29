@@ -568,7 +568,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify a value between 600 and 360000.
+        /// Specify a value between 600 and 432000.
         /// </para>
         /// </summary>
         public int MaxUserDurationInSeconds

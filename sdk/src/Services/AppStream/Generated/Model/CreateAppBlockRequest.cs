@@ -50,6 +50,8 @@ namespace Amazon.AppStream.Model
         private string _description;
         private string _displayName;
         private string _name;
+        private PackagingType _packagingType;
+        private ScriptDetails _postSetupScriptDetails;
         private ScriptDetails _setupScriptDetails;
         private S3Location _sourceS3Location;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -112,12 +114,49 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SetupScriptDetails. 
+        /// Gets and sets the property PackagingType. 
         /// <para>
-        /// The setup script details of the app block.
+        /// The packaging type of the app block.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public PackagingType PackagingType
+        {
+            get { return this._packagingType; }
+            set { this._packagingType = value; }
+        }
+
+        // Check to see if PackagingType property is set
+        internal bool IsSetPackagingType()
+        {
+            return this._packagingType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostSetupScriptDetails. 
+        /// <para>
+        /// The post setup script details of the app block. This can only be provided for the
+        /// <code>APPSTREAM2</code> PackagingType.
+        /// </para>
+        /// </summary>
+        public ScriptDetails PostSetupScriptDetails
+        {
+            get { return this._postSetupScriptDetails; }
+            set { this._postSetupScriptDetails = value; }
+        }
+
+        // Check to see if PostSetupScriptDetails property is set
+        internal bool IsSetPostSetupScriptDetails()
+        {
+            return this._postSetupScriptDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SetupScriptDetails. 
+        /// <para>
+        /// The setup script details of the app block. This must be provided for the <code>CUSTOM</code>
+        /// PackagingType.
+        /// </para>
+        /// </summary>
         public ScriptDetails SetupScriptDetails
         {
             get { return this._setupScriptDetails; }

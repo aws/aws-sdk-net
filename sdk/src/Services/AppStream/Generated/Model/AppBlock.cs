@@ -46,13 +46,35 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class AppBlock
     {
+        private List<ErrorDetails> _appBlockErrors = new List<ErrorDetails>();
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
         private string _displayName;
         private string _name;
+        private PackagingType _packagingType;
+        private ScriptDetails _postSetupScriptDetails;
         private ScriptDetails _setupScriptDetails;
         private S3Location _sourceS3Location;
+        private AppBlockState _state;
+
+        /// <summary>
+        /// Gets and sets the property AppBlockErrors. 
+        /// <para>
+        /// The errors of the app block.
+        /// </para>
+        /// </summary>
+        public List<ErrorDetails> AppBlockErrors
+        {
+            get { return this._appBlockErrors; }
+            set { this._appBlockErrors = value; }
+        }
+
+        // Check to see if AppBlockErrors property is set
+        internal bool IsSetAppBlockErrors()
+        {
+            return this._appBlockErrors != null && this._appBlockErrors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -149,12 +171,55 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PackagingType. 
+        /// <para>
+        /// The packaging type of the app block.
+        /// </para>
+        /// </summary>
+        public PackagingType PackagingType
+        {
+            get { return this._packagingType; }
+            set { this._packagingType = value; }
+        }
+
+        // Check to see if PackagingType property is set
+        internal bool IsSetPackagingType()
+        {
+            return this._packagingType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostSetupScriptDetails. 
+        /// <para>
+        /// The post setup script details of the app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+        /// </para>
+        /// </summary>
+        public ScriptDetails PostSetupScriptDetails
+        {
+            get { return this._postSetupScriptDetails; }
+            set { this._postSetupScriptDetails = value; }
+        }
+
+        // Check to see if PostSetupScriptDetails property is set
+        internal bool IsSetPostSetupScriptDetails()
+        {
+            return this._postSetupScriptDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SetupScriptDetails. 
         /// <para>
         /// The setup script details of the app block.
         /// </para>
+        ///  
+        /// <para>
+        /// This only applies to app blocks with PackagingType <code>CUSTOM</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ScriptDetails SetupScriptDetails
         {
             get { return this._setupScriptDetails; }
@@ -183,6 +248,36 @@ namespace Amazon.AppStream.Model
         internal bool IsSetSourceS3Location()
         {
             return this._sourceS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state
+        /// if no application package (VHD) is assigned to it. After an application package (VHD)
+        /// is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Custom app blocks are always in the <code>ACTIVE</code> state and no action is required
+        /// to use them.
+        /// </para>
+        /// </summary>
+        public AppBlockState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
     }

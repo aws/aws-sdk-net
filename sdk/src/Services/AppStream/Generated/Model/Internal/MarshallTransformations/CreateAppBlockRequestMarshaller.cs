@@ -85,6 +85,23 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPackagingType())
+                {
+                    context.Writer.WritePropertyName("PackagingType");
+                    context.Writer.Write(publicRequest.PackagingType);
+                }
+
+                if(publicRequest.IsSetPostSetupScriptDetails())
+                {
+                    context.Writer.WritePropertyName("PostSetupScriptDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScriptDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PostSetupScriptDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSetupScriptDetails())
                 {
                     context.Writer.WritePropertyName("SetupScriptDetails");
