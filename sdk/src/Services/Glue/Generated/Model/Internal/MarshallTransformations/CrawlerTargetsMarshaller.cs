@@ -93,6 +93,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetIcebergTargets())
+            {
+                context.Writer.WritePropertyName("IcebergTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIcebergTargetsListValue in requestObject.IcebergTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IcebergTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIcebergTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetJdbcTargets())
             {
                 context.Writer.WritePropertyName("JdbcTargets");
