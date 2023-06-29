@@ -78,6 +78,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTimeSeriesForecastingJobConfig())
+            {
+                context.Writer.WritePropertyName("TimeSeriesForecastingJobConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimeSeriesForecastingJobConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeSeriesForecastingJobConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

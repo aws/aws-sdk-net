@@ -6406,6 +6406,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CandidateArtifactLocations.BacktestResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CandidateArtifactLocations.Explainability</property>
     <min>1</min>
   </property-value-rule>
@@ -9975,6 +9979,35 @@
     <property>Amazon.SageMaker.Model.TextClassificationJobConfig.TargetLabelColumn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TimeSeriesConfig.ItemIdentifierAttributeName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TimeSeriesConfig.TargetAttributeName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TimeSeriesConfig.TimestampAttributeName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TimeSeriesForecastingJobConfig.FeatureSpecificationS3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TimeSeriesForecastingJobConfig.ForecastFrequency</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^1Y|Y|([1-9]|1[0-1])M|M|[1-4]W|W|[1-6]D|D|([1-9]|1[0-9]|2[0-3])H|H|([1-9]|[1-5][0-9])min$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TimeSeriesForecastingJobConfig.ForecastHorizon</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TimeSeriesForecastingSettings.AmazonForecastRoleArn</property>

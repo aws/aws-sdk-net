@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLProblemTypeConfig Object
+    /// Response Unmarshaller for TimeSeriesTransformations Object
     /// </summary>  
-    public class AutoMLProblemTypeConfigUnmarshaller : IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeConfig, JsonUnmarshallerContext>
+    public class TimeSeriesTransformationsUnmarshaller : IUnmarshaller<TimeSeriesTransformations, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesTransformations, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLProblemTypeConfig IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeSeriesTransformations IUnmarshaller<TimeSeriesTransformations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLProblemTypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesTransformations Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLProblemTypeConfig unmarshalledObject = new AutoMLProblemTypeConfig();
+            TimeSeriesTransformations unmarshalledObject = new TimeSeriesTransformations();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageClassificationJobConfig", targetDepth))
+                if (context.TestExpression("Aggregation", targetDepth))
                 {
-                    var unmarshaller = ImageClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TabularJobConfig", targetDepth))
+                if (context.TestExpression("Filling", targetDepth))
                 {
-                    var unmarshaller = TabularJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TextClassificationJobConfig", targetDepth))
-                {
-                    var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeSeriesForecastingJobConfig", targetDepth))
-                {
-                    var unmarshaller = TimeSeriesForecastingJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesForecastingJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.Filling = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLProblemTypeConfigUnmarshaller _instance = new AutoMLProblemTypeConfigUnmarshaller();        
+        private static TimeSeriesTransformationsUnmarshaller _instance = new TimeSeriesTransformationsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLProblemTypeConfigUnmarshaller Instance
+        public static TimeSeriesTransformationsUnmarshaller Instance
         {
             get
             {

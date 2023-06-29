@@ -73,6 +73,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// For image or text classification problem types: <code>Accuracy</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

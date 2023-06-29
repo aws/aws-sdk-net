@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ImageClassificationJobConfig _imageClassificationJobConfig;
         private TabularJobConfig _tabularJobConfig;
         private TextClassificationJobConfig _textClassificationJobConfig;
+        private TimeSeriesForecastingJobConfig _timeSeriesForecastingJobConfig;
 
         /// <summary>
         /// Gets and sets the property ImageClassificationJobConfig. 
@@ -91,6 +92,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTextClassificationJobConfig()
         {
             return this._textClassificationJobConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSeriesForecastingJobConfig. 
+        /// <para>
+        /// Settings used to configure an AutoML job V2 for a time-series forecasting problem
+        /// type.
+        /// </para>
+        /// </summary>
+        public TimeSeriesForecastingJobConfig TimeSeriesForecastingJobConfig
+        {
+            get { return this._timeSeriesForecastingJobConfig; }
+            set { this._timeSeriesForecastingJobConfig = value; }
+        }
+
+        // Check to see if TimeSeriesForecastingJobConfig property is set
+        internal bool IsSetTimeSeriesForecastingJobConfig()
+        {
+            return this._timeSeriesForecastingJobConfig != null;
         }
 
     }

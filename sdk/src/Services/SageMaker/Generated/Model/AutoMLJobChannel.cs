@@ -46,6 +46,12 @@ namespace Amazon.SageMaker.Model
         /// The default value is <code>training</code>. Channels for <code>training</code> and
         /// <code>validation</code> must share the same <code>ContentType</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The type of channel defaults to <code>training</code> for the time-series forecasting
+        /// problem type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AutoMLChannelType ChannelType
         {
@@ -88,17 +94,22 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Tabular problem types: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// For tabular problem types: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
         /// The default value is <code>text/csv;header=present</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or <code>image/*</code>.
+        /// For image classification: <code>image/png</code>, <code>image/jpeg</code>, or <code>image/*</code>.
         /// The default value is <code>image/*</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For TextClassification: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// For text classification: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// The default value is <code>text/csv;header=present</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For time-series forecasting: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
         /// The default value is <code>text/csv;header=present</code>.
         /// </para>
         ///  </li> </ul>

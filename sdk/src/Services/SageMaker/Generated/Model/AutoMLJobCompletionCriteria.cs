@@ -70,8 +70,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
-        /// value is 1.
+        /// For text and image classification, as well as time-series forecasting problem types,
+        /// the supported value is 1. For tabular problem types, the maximum value is 750.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]

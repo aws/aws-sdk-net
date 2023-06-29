@@ -33,8 +33,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CandidateArtifactLocations
     {
+        private string _backtestResults;
         private string _explainability;
         private string _modelInsights;
+
+        /// <summary>
+        /// Gets and sets the property BacktestResults. 
+        /// <para>
+        /// The Amazon S3 prefix to the accuracy metrics and the inference results observed over
+        /// the testing window. Available only for the time-series forecasting problem type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string BacktestResults
+        {
+            get { return this._backtestResults; }
+            set { this._backtestResults = value; }
+        }
+
+        // Check to see if BacktestResults property is set
+        internal bool IsSetBacktestResults()
+        {
+            return this._backtestResults != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Explainability. 

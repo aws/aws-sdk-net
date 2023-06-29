@@ -86,15 +86,19 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
+        /// For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+        /// For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For TextClassification: <code>S3Prefix</code>.
+        /// For text classification: <code>S3Prefix</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For time-series forecasting: <code>S3Prefix</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -187,6 +191,12 @@ namespace Amazon.SageMaker.Model
         /// by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than
         /// 2 GB in size.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This attribute must not be set for the time-series forecasting problem type, as Autopilot
+        /// automatically splits the input dataset into training and validation sets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AutoMLDataSplitConfig DataSplitConfig
         {

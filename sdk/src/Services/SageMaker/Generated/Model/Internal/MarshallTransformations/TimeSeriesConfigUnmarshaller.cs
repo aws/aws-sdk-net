@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLProblemTypeConfig Object
+    /// Response Unmarshaller for TimeSeriesConfig Object
     /// </summary>  
-    public class AutoMLProblemTypeConfigUnmarshaller : IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeConfig, JsonUnmarshallerContext>
+    public class TimeSeriesConfigUnmarshaller : IUnmarshaller<TimeSeriesConfig, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLProblemTypeConfig IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeSeriesConfig IUnmarshaller<TimeSeriesConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLProblemTypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLProblemTypeConfig unmarshalledObject = new AutoMLProblemTypeConfig();
+            TimeSeriesConfig unmarshalledObject = new TimeSeriesConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageClassificationJobConfig", targetDepth))
+                if (context.TestExpression("GroupingAttributeNames", targetDepth))
                 {
-                    var unmarshaller = ImageClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.GroupingAttributeNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TabularJobConfig", targetDepth))
+                if (context.TestExpression("ItemIdentifierAttributeName", targetDepth))
                 {
-                    var unmarshaller = TabularJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ItemIdentifierAttributeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TextClassificationJobConfig", targetDepth))
+                if (context.TestExpression("TargetAttributeName", targetDepth))
                 {
-                    var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetAttributeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesForecastingJobConfig", targetDepth))
+                if (context.TestExpression("TimestampAttributeName", targetDepth))
                 {
-                    var unmarshaller = TimeSeriesForecastingJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesForecastingJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimestampAttributeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLProblemTypeConfigUnmarshaller _instance = new AutoMLProblemTypeConfigUnmarshaller();        
+        private static TimeSeriesConfigUnmarshaller _instance = new TimeSeriesConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLProblemTypeConfigUnmarshaller Instance
+        public static TimeSeriesConfigUnmarshaller Instance
         {
             get
             {
