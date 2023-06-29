@@ -1,3 +1,19 @@
+### 3.7.580.0 (2023-06-29 19:25 UTC)
+* AppStream (3.7.103.0)
+	* This release introduces app block builder, allowing customers to provision a resource to package applications into an app block
+* Chime (3.7.102.0)
+	* The Amazon Chime SDK APIs in the Chime namespace are no longer supported.  Customers should use APIs in the dedicated Amazon Chime SDK namespaces: ChimeSDKIdentity, ChimeSDKMediaPipelines, ChimeSDKMeetings, ChimeSDKMessaging, and ChimeSDKVoice.
+* CleanRooms (3.7.102.0)
+	* This release adds support for the OR operator in RSQL join match conditions and the ability to control which operators (AND, OR) are allowed in a join match condition.
+* DynamoDBv2 (3.7.105.0)
+	* This release adds ReturnValuesOnConditionCheckFailure parameter to PutItem, UpdateItem, DeleteItem, ExecuteStatement, BatchExecuteStatement and ExecuteTransaction APIs. When set to ALL_OLD,  API returns a copy of the item as it was when a conditional write failed
+* GameLift (3.7.105.0)
+	* Amazon GameLift now supports game builds that use the Amazon Linux 2023 (AL2023) operating system.
+* Glue (3.7.119.0)
+	* This release adds support for AWS Glue Crawler with Iceberg Tables, allowing Crawlers to discover Iceberg Tables in S3 and register them in Glue Data Catalog for query engines to query against.
+* SageMaker (3.7.140.0)
+	* Adding support for timeseries forecasting in the CreateAutoMLJobV2 API.
+
 ### 3.7.579.0 (2023-06-28 18:25 UTC)
 * InternetMonitor (3.7.103.0)
 	* This release adds a new feature for Amazon CloudWatch Internet Monitor that enables customers to set custom thresholds, for performance and availability drops, for triggering when to create a health event.
