@@ -32,6 +32,20 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the CreateSipRule operation.
     /// Creates a SIP rule which can be used to run a SIP media application as a target for
     /// a specific trigger type.
+    /// 
+    ///  <important> 
+    /// <para>
+    ///  <b>This API is is no longer supported and will not be updated.</b> We recommend using
+    /// the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipRule.html">CreateSipRule</a>,
+    /// in the Amazon Chime SDK.
+    /// </para>
+    ///  
+    /// <para>
+    /// Using the latest version requires migrating to a dedicated namespace. For more information,
+    /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating
+    /// from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateSipRuleRequest : AmazonChimeRequest
     {

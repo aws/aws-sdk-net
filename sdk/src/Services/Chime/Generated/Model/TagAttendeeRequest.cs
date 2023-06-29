@@ -30,7 +30,14 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the TagAttendee operation.
-    /// Applies the specified tags to the specified Amazon Chime SDK attendee.
+    /// Applies the specified tags to the specified Amazon Chime attendee.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// TagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your
+    /// application to remove calls to this API.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class TagAttendeeRequest : AmazonChimeRequest
     {

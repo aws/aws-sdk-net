@@ -30,9 +30,18 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMeetings operation.
-    /// Lists up to 100 active Amazon Chime SDK meetings. For more information about the
-    /// Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+    /// Lists up to 100 active Amazon Chime SDK meetings.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your
+    /// application to remove calls to this API.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
     /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListMeetingsRequest : AmazonChimeRequest
     {

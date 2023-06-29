@@ -31,6 +31,24 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Untags the specified tags from the specified Amazon Chime SDK meeting resource.
+    /// 
+    ///  
+    /// <para>
+    /// Applies the specified tags to the specified Amazon Chime SDK meeting resource.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    ///  <b>This API is is no longer supported and will not be updated.</b> We recommend using
+    /// the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_UntagResource.html">UntagResource</a>,
+    /// in the Amazon Chime SDK.
+    /// </para>
+    ///  
+    /// <para>
+    /// Using the latest version requires migrating to a dedicated namespace. For more information,
+    /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating
+    /// from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UntagResourceRequest : AmazonChimeRequest
     {
