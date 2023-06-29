@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Enables query structure and specified queries that product aggregate statistics.
+    /// Enables query structure and specified queries that produce aggregate statistics.
     /// </summary>
     public partial class AnalysisRuleAggregation
     {
         private List<AggregateColumn> _aggregateColumns = new List<AggregateColumn>();
+        private List<string> _allowedJoinOperators = new List<string>();
         private List<string> _dimensionColumns = new List<string>();
         private List<string> _joinColumns = new List<string>();
         private JoinRequiredOption _joinRequired;
@@ -57,6 +58,26 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAggregateColumns()
         {
             return this._aggregateColumns != null && this._aggregateColumns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedJoinOperators. 
+        /// <para>
+        /// Which logical operators (if any) are to be used in an INNER JOIN match condition.
+        /// Default is <code>AND</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> AllowedJoinOperators
+        {
+            get { return this._allowedJoinOperators; }
+            set { this._allowedJoinOperators = value; }
+        }
+
+        // Check to see if AllowedJoinOperators property is set
+        internal bool IsSetAllowedJoinOperators()
+        {
+            return this._allowedJoinOperators != null && this._allowedJoinOperators.Count > 0; 
         }
 
         /// <summary>
@@ -102,7 +123,7 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property JoinRequired. 
         /// <para>
         /// Control that requires member who runs query to do a join with their configured table
-        /// and/or other configured table in query
+        /// and/or other configured table in query.
         /// </para>
         /// </summary>
         public JoinRequiredOption JoinRequired

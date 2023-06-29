@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The parameters for an AWS Clean Rooms protected query.
+    /// The parameters for an Clean Rooms protected query.
     /// </summary>
     public partial class ProtectedQuery
     {

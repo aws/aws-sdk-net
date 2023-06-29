@@ -41,7 +41,7 @@ namespace Amazon.CleanRooms.Model
         /// The query string to be submitted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=15000)]
+        [AWSProperty(Min=0, Max=15000)]
         public string QueryString
         {
             get { return this._queryString; }

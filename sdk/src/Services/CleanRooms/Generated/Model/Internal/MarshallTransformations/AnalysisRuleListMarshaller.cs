@@ -45,6 +45,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnalysisRuleList requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllowedJoinOperators())
+            {
+                context.Writer.WritePropertyName("allowedJoinOperators");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAllowedJoinOperatorsListValue in requestObject.AllowedJoinOperators)
+                {
+                        context.Writer.Write(requestObjectAllowedJoinOperatorsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetJoinColumns())
             {
                 context.Writer.WritePropertyName("joinColumns");

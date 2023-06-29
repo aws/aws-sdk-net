@@ -88,7 +88,7 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property CollaborationCreatorAccountId. 
         /// <para>
         /// The identifier used to reference members of the collaboration. Currently only supports
-        /// AWS account ID.
+        /// Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
