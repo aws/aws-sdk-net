@@ -107,6 +107,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReturnConsumedCapacity);
                 }
 
+                if(publicRequest.IsSetReturnValuesOnConditionCheckFailure())
+                {
+                    context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
+                    context.Writer.Write(publicRequest.ReturnValuesOnConditionCheckFailure);
+                }
+
                 if(publicRequest.IsSetStatement())
                 {
                     context.Writer.WritePropertyName("Statement");

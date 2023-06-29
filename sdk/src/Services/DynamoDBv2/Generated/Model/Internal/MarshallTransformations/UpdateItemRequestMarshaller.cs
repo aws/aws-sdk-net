@@ -187,6 +187,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReturnValues);
                 }
 
+                if(publicRequest.IsSetReturnValuesOnConditionCheckFailure())
+                {
+                    context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
+                    context.Writer.Write(publicRequest.ReturnValuesOnConditionCheckFailure);
+                }
+
                 if(publicRequest.IsSetTableName())
                 {
                     context.Writer.WritePropertyName("TableName");

@@ -36,6 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     #endif
     public partial class ConditionalCheckFailedException : AmazonDynamoDBException
     {
+        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
 
         /// <summary>
         /// Constructs a new ConditionalCheckFailedException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.DynamoDBv2.Model
         protected ConditionalCheckFailedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Item = (Dictionary<string, AttributeValue>)info.GetValue("Item", typeof(Dictionary<string, AttributeValue>));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.DynamoDBv2.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Item", this.Item);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// Item which caused the <code>ConditionalCheckFailedException</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AttributeValue> Item
+        {
+            get { return this._item; }
+            set { this._item = value; }
+        }
+
+        // Check to see if Item property is set
+        internal bool IsSetItem()
+        {
+            return this._item != null && this._item.Count > 0; 
+        }
 
     }
 }
