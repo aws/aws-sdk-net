@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentConfig Object
+    /// Response Unmarshaller for RollingUpdatePolicy Object
     /// </summary>  
-    public class DeploymentConfigUnmarshaller : IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfig, JsonUnmarshallerContext>
+    public class RollingUpdatePolicyUnmarshaller : IUnmarshaller<RollingUpdatePolicy, XmlUnmarshallerContext>, IUnmarshaller<RollingUpdatePolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentConfig IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RollingUpdatePolicy IUnmarshaller<RollingUpdatePolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeploymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public RollingUpdatePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeploymentConfig unmarshalledObject = new DeploymentConfig();
+            RollingUpdatePolicy unmarshalledObject = new RollingUpdatePolicy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AutoRollbackConfiguration", targetDepth))
+                if (context.TestExpression("MaximumBatchSize", targetDepth))
                 {
-                    var unmarshaller = AutoRollbackConfigUnmarshaller.Instance;
-                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CapacitySizeUnmarshaller.Instance;
+                    unmarshalledObject.MaximumBatchSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("BlueGreenUpdatePolicy", targetDepth))
+                if (context.TestExpression("MaximumExecutionTimeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = BlueGreenUpdatePolicyUnmarshaller.Instance;
-                    unmarshalledObject.BlueGreenUpdatePolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumExecutionTimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RollingUpdatePolicy", targetDepth))
+                if (context.TestExpression("RollbackMaximumBatchSize", targetDepth))
                 {
-                    var unmarshaller = RollingUpdatePolicyUnmarshaller.Instance;
-                    unmarshalledObject.RollingUpdatePolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CapacitySizeUnmarshaller.Instance;
+                    unmarshalledObject.RollbackMaximumBatchSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WaitIntervalInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.WaitIntervalInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentConfigUnmarshaller _instance = new DeploymentConfigUnmarshaller();        
+        private static RollingUpdatePolicyUnmarshaller _instance = new RollingUpdatePolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentConfigUnmarshaller Instance
+        public static RollingUpdatePolicyUnmarshaller Instance
         {
             get
             {

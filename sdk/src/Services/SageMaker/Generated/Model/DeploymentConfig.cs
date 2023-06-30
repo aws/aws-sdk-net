@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private AutoRollbackConfig _autoRollbackConfiguration;
         private BlueGreenUpdatePolicy _blueGreenUpdatePolicy;
+        private RollingUpdatePolicy _rollingUpdatePolicy;
 
         /// <summary>
         /// Gets and sets the property AutoRollbackConfiguration. 
@@ -66,7 +67,6 @@ namespace Amazon.SageMaker.Model
         /// traffic shifting by default.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public BlueGreenUpdatePolicy BlueGreenUpdatePolicy
         {
             get { return this._blueGreenUpdatePolicy; }
@@ -77,6 +77,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetBlueGreenUpdatePolicy()
         {
             return this._blueGreenUpdatePolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RollingUpdatePolicy. 
+        /// <para>
+        /// Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+        /// </para>
+        /// </summary>
+        public RollingUpdatePolicy RollingUpdatePolicy
+        {
+            get { return this._rollingUpdatePolicy; }
+            set { this._rollingUpdatePolicy = value; }
+        }
+
+        // Check to see if RollingUpdatePolicy property is set
+        internal bool IsSetRollingUpdatePolicy()
+        {
+            return this._rollingUpdatePolicy != null;
         }
 
     }

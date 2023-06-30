@@ -4245,6 +4245,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly EndpointStatus SystemUpdating = new EndpointStatus("SystemUpdating");
         /// <summary>
+        /// Constant UpdateRollbackFailed for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus UpdateRollbackFailed = new EndpointStatus("UpdateRollbackFailed");
+        /// <summary>
         /// Constant Updating for EndpointStatus
         /// </summary>
         public static readonly EndpointStatus Updating = new EndpointStatus("Updating");

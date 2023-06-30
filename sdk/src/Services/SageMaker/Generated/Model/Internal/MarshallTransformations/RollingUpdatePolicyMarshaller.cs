@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentConfig Marshaller
+    /// RollingUpdatePolicy Marshaller
     /// </summary>
-    public class DeploymentConfigMarshaller : IRequestMarshaller<DeploymentConfig, JsonMarshallerContext> 
+    public class RollingUpdatePolicyMarshaller : IRequestMarshaller<RollingUpdatePolicy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RollingUpdatePolicy requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAutoRollbackConfiguration())
+            if(requestObject.IsSetMaximumBatchSize())
             {
-                context.Writer.WritePropertyName("AutoRollbackConfiguration");
+                context.Writer.WritePropertyName("MaximumBatchSize");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AutoRollbackConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutoRollbackConfiguration, context);
+                var marshaller = CapacitySizeMarshaller.Instance;
+                marshaller.Marshall(requestObject.MaximumBatchSize, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetBlueGreenUpdatePolicy())
+            if(requestObject.IsSetMaximumExecutionTimeoutInSeconds())
             {
-                context.Writer.WritePropertyName("BlueGreenUpdatePolicy");
+                context.Writer.WritePropertyName("MaximumExecutionTimeoutInSeconds");
+                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds);
+            }
+
+            if(requestObject.IsSetRollbackMaximumBatchSize())
+            {
+                context.Writer.WritePropertyName("RollbackMaximumBatchSize");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = BlueGreenUpdatePolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.BlueGreenUpdatePolicy, context);
+                var marshaller = CapacitySizeMarshaller.Instance;
+                marshaller.Marshall(requestObject.RollbackMaximumBatchSize, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRollingUpdatePolicy())
+            if(requestObject.IsSetWaitIntervalInSeconds())
             {
-                context.Writer.WritePropertyName("RollingUpdatePolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RollingUpdatePolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.RollingUpdatePolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("WaitIntervalInSeconds");
+                context.Writer.Write(requestObject.WaitIntervalInSeconds);
             }
 
         }
@@ -83,7 +84,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DeploymentConfigMarshaller Instance = new DeploymentConfigMarshaller();
+        public readonly static RollingUpdatePolicyMarshaller Instance = new RollingUpdatePolicyMarshaller();
 
     }
 }
