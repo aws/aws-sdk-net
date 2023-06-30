@@ -34,6 +34,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class As2ConnectorConfig
     {
+        private string _basicAuthSecretId;
         private CompressionEnum _compression;
         private EncryptionAlg _encryptionAlgorithm;
         private string _localProfileId;
@@ -42,6 +43,72 @@ namespace Amazon.Transfer.Model
         private string _messageSubject;
         private string _partnerProfileId;
         private SigningAlg _signingAlgorithm;
+
+        /// <summary>
+        /// Gets and sets the property BasicAuthSecretId. 
+        /// <para>
+        /// Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication,
+        /// you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value for this parameter is <code>null</code>, which indicates that Basic
+        /// authentication is not enabled for the connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the connector should use Basic authentication, the secret needs to be in the following
+        /// format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{ "Username": "user-name", "Password": "user-password" }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Replace <code>user-name</code> and <code>user-password</code> with the credentials
+        /// for the actual user that is being authenticated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You are storing these credentials in Secrets Manager, <i>not passing them directly</i>
+        /// into this API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using the API, SDKs, or CloudFormation to configure your connector, then
+        /// you must create the secret before you can enable Basic authentication. However, if
+        /// you are using the Amazon Web Services management console, you can have the system
+        /// create the secret for you.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you have previously enabled Basic authentication for a connector, you can disable
+        /// it by using the <code>UpdateConnector</code> API call. For example, if you are using
+        /// the CLI, you can run the following command to remove Basic authentication:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string BasicAuthSecretId
+        {
+            get { return this._basicAuthSecretId; }
+            set { this._basicAuthSecretId = value; }
+        }
+
+        // Check to see if BasicAuthSecretId property is set
+        internal bool IsSetBasicAuthSecretId()
+        {
+            return this._basicAuthSecretId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Compression. 

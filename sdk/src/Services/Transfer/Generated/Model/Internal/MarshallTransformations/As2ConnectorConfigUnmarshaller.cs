@@ -64,6 +64,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BasicAuthSecretId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BasicAuthSecretId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Compression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
