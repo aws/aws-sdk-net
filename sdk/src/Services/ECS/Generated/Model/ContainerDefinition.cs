@@ -36,6 +36,7 @@ namespace Amazon.ECS.Model
     {
         private List<string> _command = new List<string>();
         private int? _cpu;
+        private List<string> _credentialSpecs = new List<string>();
         private List<ContainerDependency> _dependsOn = new List<ContainerDependency>();
         private bool? _disableNetworking;
         private List<string> _dnsSearchDomains = new List<string>();
@@ -169,6 +170,42 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CredentialSpecs. 
+        /// <para>
+        /// A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;)
+        /// file that configures a container for Active Directory authentication. This parameter
+        /// is only used with domainless authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code>
+        /// with the ARN in SSM or Amazon S3.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing
+        /// the username, password, and the domain to connect to. For better security, the instance
+        /// isn't joined to the domain for domainless authentication. Other applications on the
+        /// instance can't use the domainless credentials. You can use this parameter to run tasks
+        /// on the same instance, even it the tasks need to join different domains. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+        /// gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+        /// gMSAs for Linux Containers</a>.
+        /// </para>
+        /// </summary>
+        public List<string> CredentialSpecs
+        {
+            get { return this._credentialSpecs; }
+            set { this._credentialSpecs = value; }
+        }
+
+        // Check to see if CredentialSpecs property is set
+        internal bool IsSetCredentialSpecs()
+        {
+            return this._credentialSpecs != null && this._credentialSpecs.Count > 0; 
         }
 
         /// <summary>
