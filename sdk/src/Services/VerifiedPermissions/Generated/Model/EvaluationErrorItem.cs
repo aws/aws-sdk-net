@@ -33,8 +33,8 @@ namespace Amazon.VerifiedPermissions.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a request parameter in the <a href="https://docs.aws.amazon.com/amazon-verified-permissions/latest/APIReference/API_IsAuthorized.html">IsAuthorized</a>
-    /// and <a href="https://docs.aws.amazon.com/amazon-verified-permissions/latest/APIReference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
+    /// This data type is used as a request parameter in the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>
+    /// and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
     /// operations.
     /// </para>
     /// </summary>
