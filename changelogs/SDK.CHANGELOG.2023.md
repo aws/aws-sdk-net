@@ -1,3 +1,19 @@
+### 3.7.581.0 (2023-06-30 18:26 UTC)
+* ECS (3.7.109.0)
+	* Added new field  "credentialspecs" to the ecs task definition to support gMSA of windows/linux in both domainless and domain-joined mode
+* IVS (3.7.105.0)
+	* Corrects the HTTP response code in the generated docs for PutMetadata and DeleteRecordingConfiguration APIs.
+* MediaConvert (3.7.112.1)
+	* This release includes improved color handling of overlays and general updates to user documentation.
+* PrometheusService (3.7.101.0)
+	* AWS SDK service model  generation tool version upgrade.
+* SageMaker (3.7.141.0)
+	* This release adds support for rolling deployment in SageMaker Inference.
+* Transfer (3.7.107.0)
+	* Add outbound Basic authentication support to AS2 connectors
+* VerifiedPermissions (3.7.100.5)
+	* This release corrects several broken links in the documentation.
+
 ### 3.7.580.0 (2023-06-29 19:25 UTC)
 * AppStream (3.7.103.0)
 	* This release introduces app block builder, allowing customers to provision a resource to package applications into an app block
