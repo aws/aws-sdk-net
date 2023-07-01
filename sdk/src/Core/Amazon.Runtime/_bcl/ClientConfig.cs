@@ -134,6 +134,34 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Returns a WebProxy instance to use for HTTPS connections if an
+        /// explicit web proxy hasn't been configured.
+        /// </summary>
+        public WebProxy GetHttpsProxy()
+        {
+            var httpsProxy = Environment.GetEnvironmentVariable("https_proxy");
+            if (!string.IsNullOrEmpty(httpsProxy))
+            {
+                return new WebProxy(httpsProxy);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Returns a WebProxy instance to use for HTTP connections if an
+        /// explicit web proxy hasn't been configured.
+        /// </summary>
+        public WebProxy GetHttpProxy()
+        {
+            var httpProxy = Environment.GetEnvironmentVariable("http_proxy");
+            if (!string.IsNullOrEmpty(httpProxy))
+            {
+                return new WebProxy(httpProxy);
+            }
+            return null;
+        }
+
+        /// <summary>
         /// Unpacks the host, port and any credentials info into the instance's
         /// proxy-related fields.
         /// </summary>

@@ -82,10 +82,17 @@ namespace Amazon.EC2.Util
                 if (ImageDefinitionsLoaded)
                     return;
             }
+            const string httpPrefix = "http://";
+            const string httpsPrefix = "https://";
 
             IWebProxy webProxy = null;
-            if (ec2Config != null)
+            IWebProxy httpProxy = null;
+            IWebProxy httpsProxy = null;
+            if (ec2Config != null) {
                 webProxy = ec2Config.GetWebProxy();
+                httpProxy = ec2Config.GetHttpProxy();
+                httpsProxy = ec2Config.GetHttpsProxy();
+            }
 
             int retries = 0;
             while (retries < MAX_DOWNLOAD_RETRIES)
@@ -95,9 +102,22 @@ namespace Amazon.EC2.Util
                     HttpWebResponse response = null;
                     foreach (var location in DownloadLocations)
                     {
+                        var useProxy = webProxy;
+                        if (useProxy == null)
+                        {
+                            if (location.StartsWith(httpPrefix))
+                            {
+                                useProxy = httpProxy;
+                            }
+                            else if (location.StartsWith(httpsPrefix))
+                            {
+                                useProxy = httpsProxy;
+                            }
+                        }
+
                         try
                         {
-                            response = DownloadControlFile(location, webProxy);
+                            response = DownloadControlFile(location, useProxy);
                             if (response != null)
                                 break;
                         }

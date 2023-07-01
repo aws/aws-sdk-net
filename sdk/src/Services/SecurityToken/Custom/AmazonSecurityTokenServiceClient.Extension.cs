@@ -40,11 +40,25 @@ namespace Amazon.SecurityToken
             TimeSpan credentialDuration,
             ICredentials userCredential)
         {
+            const string httpPrefix = "http://";
+            const string httpsPrefix = "https://";
             SAMLAssertion assertion;
 
             try
             {
-                var authController = new SAMLAuthenticationController(Config.GetWebProxy());
+                var proxy = Config.GetWebProxy();
+                if (proxy == null)
+                {
+                    if (endpoint.StartsWith(httpPrefix))
+                    {
+                        proxy = Config.GetHttpProxy();
+                    }
+                    else if (endpoint.StartsWith(httpsPrefix))
+                    {
+                        proxy = Config.GetHttpsProxy();
+                    }
+                }
+                var authController = new SAMLAuthenticationController(proxy);
                 assertion = authController.GetSAMLAssertion(endpoint, userCredential, authenticationType);
             }
             catch (Exception e)

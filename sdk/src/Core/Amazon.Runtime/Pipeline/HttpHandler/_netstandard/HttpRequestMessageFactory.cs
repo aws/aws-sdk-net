@@ -270,7 +270,11 @@ namespace Amazon.Runtime
             }
 
             try
-            { 
+            {
+                // HTTP Client will automatically read `HTTP_PROXY`,
+                // and `HTTPS_PROXY`. So we let it use those variables, since
+                // we don't know at client construction time whether they're
+                // using HTTP or HTTPS.
                 var proxy = clientConfig.GetWebProxy();
                 if (proxy != null)
                 {
