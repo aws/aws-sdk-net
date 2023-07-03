@@ -339,9 +339,14 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
-        /// The share identifier for the job. If the job queue doesn't have a scheduling policy,
-        /// then this parameter must not be specified. If the job queue has a scheduling policy,
-        /// then this parameter must be specified.
+        /// The share identifier for the job. Don't specify this parameter if the job queue doesn't
+        /// have a scheduling policy. If the job queue has a scheduling policy, then this parameter
+        /// must be specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// This string is limited to 255 alphanumeric characters, and can be followed by an asterisk
+        /// (*).
         /// </para>
         /// </summary>
         public string ShareIdentifier

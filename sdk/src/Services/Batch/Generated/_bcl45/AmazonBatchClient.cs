@@ -289,7 +289,18 @@ namespace Amazon.Batch
         /// <code>PENDING</code> are canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code>
         /// until it reaches the head of the job queue. Then the job status is updated to <code>FAILED</code>.
         /// 
+        ///  <note> 
+        /// <para>
+        /// A <code>PENDING</code> job is canceled after all dependency jobs are completed. Therefore,
+        /// it may take longer than expected to cancel a job in <code>PENDING</code> status.
+        /// </para>
         ///  
+        /// <para>
+        /// When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts
+        /// to cancel all child jobs. The array parent job is canceled when all child jobs are
+        /// completed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't
         /// canceled. However, the API operation still succeeds, even if no job is canceled. These
@@ -323,7 +334,18 @@ namespace Amazon.Batch
         /// <code>PENDING</code> are canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code>
         /// until it reaches the head of the job queue. Then the job status is updated to <code>FAILED</code>.
         /// 
+        ///  <note> 
+        /// <para>
+        /// A <code>PENDING</code> job is canceled after all dependency jobs are completed. Therefore,
+        /// it may take longer than expected to cancel a job in <code>PENDING</code> status.
+        /// </para>
         ///  
+        /// <para>
+        /// When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts
+        /// to cancel all child jobs. The array parent job is canceled when all child jobs are
+        /// completed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't
         /// canceled. However, the API operation still succeeds, even if no job is canceled. These
@@ -444,7 +466,9 @@ namespace Amazon.Batch
         ///  </li> <li> 
         /// <para>
         /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
-        /// to <code>true</code>.
+        /// to <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
+        /// when you update a compute environment. This parameter is ignored when you create a
+        /// compute environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -580,7 +604,9 @@ namespace Amazon.Batch
         ///  </li> <li> 
         /// <para>
         /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
-        /// to <code>true</code>.
+        /// to <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
+        /// when you update a compute environment. This parameter is ignored when you create a
+        /// compute environment.
         /// </para>
         ///  </li> <li> 
         /// <para>

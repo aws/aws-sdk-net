@@ -54,6 +54,7 @@ namespace Amazon.Batch.Model
         private bool? _readonlyRootFilesystem;
         private string _reason;
         private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private RuntimePlatform _runtimePlatform;
         private List<Secret> _secrets = new List<Secret>();
         private string _taskArn;
         private List<Ulimit> _ulimits = new List<Ulimit>();
@@ -510,6 +511,21 @@ namespace Amazon.Batch.Model
         internal bool IsSetResourceRequirements()
         {
             return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimePlatform.
+        /// </summary>
+        public RuntimePlatform RuntimePlatform
+        {
+            get { return this._runtimePlatform; }
+            set { this._runtimePlatform = value; }
+        }
+
+        // Check to see if RuntimePlatform property is set
+        internal bool IsSetRuntimePlatform()
+        {
+            return this._runtimePlatform != null;
         }
 
         /// <summary>
