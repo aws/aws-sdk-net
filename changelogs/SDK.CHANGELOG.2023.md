@@ -1,3 +1,12 @@
+### 3.7.582.0 (2023-07-03 18:28 UTC)
+* Batch (3.7.105.0)
+	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture and X86_64 CPU Architecture with Windows OS on Fargate Platform.
+* SageMaker (3.7.142.0)
+	* SageMaker Inference Recommender now accepts new fields SupportedEndpointType and ServerlessConfiguration to support serverless endpoints.
+* Core 3.7.107.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.581.0 (2023-06-30 18:26 UTC)
 * ECS (3.7.109.0)
 	* Added new field  "credentialspecs" to the ecs task definition to support gMSA of windows/linux in both domainless and domain-joined mode

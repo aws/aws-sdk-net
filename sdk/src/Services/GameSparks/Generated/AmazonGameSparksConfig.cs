@@ -32,7 +32,7 @@ namespace Amazon.GameSparks
     public partial class AmazonGameSparksConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.142");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.143");
 
         private string _userAgent = UserAgentString;
 
