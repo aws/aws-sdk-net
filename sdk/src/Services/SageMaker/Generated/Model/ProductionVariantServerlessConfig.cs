@@ -82,6 +82,13 @@ namespace Amazon.SageMaker.Model
         /// The amount of provisioned concurrency to allocate for the serverless endpoint. Should
         /// be less than or equal to <code>MaxConcurrency</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is not supported for serverless endpoint recommendations for Inference
+        /// Recommender jobs. For more information about creating an Inference Recommender job,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public int ProvisionedConcurrency

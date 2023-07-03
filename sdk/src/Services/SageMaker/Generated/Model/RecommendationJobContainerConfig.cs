@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         private string _frameworkVersion;
         private string _nearestModelName;
         private RecommendationJobPayloadConfig _payloadConfig;
+        private RecommendationJobSupportedEndpointType _supportedEndpointType;
         private List<string> _supportedInstanceTypes = new List<string>();
         private string _task;
 
@@ -174,6 +175,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPayloadConfig()
         {
             return this._payloadConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEndpointType. 
+        /// <para>
+        /// The endpoint type to receive recommendations for. By default this is null, and the
+        /// results of the inference recommendation job return a combined list of both real-time
+        /// and serverless benchmarks. By specifying a value for this field, you can receive a
+        /// longer list of benchmarks for the desired endpoint type.
+        /// </para>
+        /// </summary>
+        public RecommendationJobSupportedEndpointType SupportedEndpointType
+        {
+            get { return this._supportedEndpointType; }
+            set { this._supportedEndpointType = value; }
+        }
+
+        // Check to see if SupportedEndpointType property is set
+        internal bool IsSetSupportedEndpointType()
+        {
+            return this._supportedEndpointType != null;
         }
 
         /// <summary>

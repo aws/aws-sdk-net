@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private int? _maxInvocations;
         private float? _memoryUtilization;
         private int? _modelLatency;
+        private int? _modelSetupTime;
 
         /// <summary>
         /// Gets and sets the property CostPerHour. 
@@ -160,6 +161,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelLatency()
         {
             return this._modelLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelSetupTime. 
+        /// <para>
+        /// The time it takes to launch new compute resources for a serverless endpoint. The time
+        /// can vary depending on the model size, how long it takes to download the model, and
+        /// the start-up time of the container.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>NaN</code> indicates that the value is not available.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int ModelSetupTime
+        {
+            get { return this._modelSetupTime.GetValueOrDefault(); }
+            set { this._modelSetupTime = value; }
+        }
+
+        // Check to see if ModelSetupTime property is set
+        internal bool IsSetModelSetupTime()
+        {
+            return this._modelSetupTime.HasValue; 
         }
 
     }

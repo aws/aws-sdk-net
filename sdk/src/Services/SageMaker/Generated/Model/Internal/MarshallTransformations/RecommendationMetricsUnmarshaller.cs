@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelSetupTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ModelSetupTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

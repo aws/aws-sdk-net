@@ -7233,6 +7233,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.EndpointOutputConfiguration.InitialInstanceCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.EndpointSummary.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
@@ -9650,6 +9654,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationMetrics.MemoryUtilization</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationMetrics.ModelSetupTime</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
