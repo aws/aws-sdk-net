@@ -1,3 +1,15 @@
+### 3.7.583.0 (2023-07-05 18:22 UTC)
+* ComprehendMedical (3.7.102.7)
+	* Update to Amazon Comprehend Medical documentation.
+* Connect (3.7.129.3)
+	* GetMetricDataV2 API: Channels filters do not count towards overall limitation of 100 filter values.
+* KeyManagementService (3.7.104.0)
+	* Added Dry Run Feature to cryptographic and cross-account mutating KMS APIs (14 in all). This feature allows users to test their permissions and parameters before making the actual API call.
+* Mgn (3.7.103.0)
+	* This release introduces the Global view feature and new Replication state APIs.
+* SecurityHub (3.7.109.5)
+	* Documentation updates for AWS Security Hub
+
 ### 3.7.582.1 (2023-07-05 14:18 UTC)
 * Core 3.7.107.11
 	* fix: Revert update to analyzer projects (previous update unintentionally removed support for tooling such as VS2017)

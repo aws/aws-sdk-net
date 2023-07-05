@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.582.1",
+    "ProductVersion" : "3.7.583.0",
     "CoreVersion"    : "3.7.107.11",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -250,7 +250,7 @@
             "InPreview"               : false
         },
         "KeyManagementService" : {
-            "Version" : "3.7.103.8",
+            "Version" : "3.7.104.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.11"
@@ -1058,7 +1058,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.7.129.2",
+            "Version" : "3.7.129.3",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.11"
@@ -1274,7 +1274,7 @@
             "InPreview"               : false
         },
         "ComprehendMedical"               : {
-            "Version" : "3.7.102.6",
+            "Version" : "3.7.102.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.11"
@@ -1306,7 +1306,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.7.109.4",
+            "Version" : "3.7.109.5",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.11"
@@ -2090,7 +2090,7 @@
             "InPreview"               : false
         },
         "Mgn"                             : {
-            "Version" : "3.7.102.53",
+            "Version" : "3.7.103.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.11"
