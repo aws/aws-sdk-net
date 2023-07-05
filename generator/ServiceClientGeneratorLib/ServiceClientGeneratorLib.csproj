@@ -34,14 +34,9 @@
   </Choose>
   <ItemGroup>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>CodeAnalysisAssemblyInfo.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\CodeAnalysis\CodeAnalysisPackages.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CodeAnalysisPackages.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisSolutionFile.cs">
       <AutoGen>True</AutoGen>
@@ -704,10 +699,6 @@
     <None Update="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CodeAnalysisAssemblyInfo.cs</LastGenOutput>
-    </None>
-    <None Update="Generators\CodeAnalysis\CodeAnalysisPackages.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CodeAnalysisPackages.cs</LastGenOutput>
     </None>
     <None Update="Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

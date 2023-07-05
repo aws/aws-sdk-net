@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Amazon.CodeAnalysis.Shared</RootNamespace>
+    <ProjectGuid>16e2a13f-f4f6-4774-a2d8-ad8127e7ee4f</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.0.0" />
+  </ItemGroup>
+</Project>

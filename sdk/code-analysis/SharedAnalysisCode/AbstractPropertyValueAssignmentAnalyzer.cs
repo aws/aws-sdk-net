@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
-using System.Threading;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace Amazon.CodeAnalysis.Shared
 {
     public abstract class AbstractPropertyValueAssignmentAnalyzer : DiagnosticAnalyzer
     {
-        static IDictionary<string, PropertyValueRule> _propertyValueRules;
+        readonly IDictionary<string, PropertyValueRule> _propertyValueRules;
 
-        static AbstractPropertyValueAssignmentAnalyzer()
+        protected AbstractPropertyValueAssignmentAnalyzer()
         {
             _propertyValueRules = new Dictionary<string, PropertyValueRule>(StringComparer.Ordinal);
 
-            var assembly = typeof(AbstractPropertyValueAssignmentAnalyzer).GetTypeInfo().Assembly;
+            var assembly = GetType().GetTypeInfo().Assembly;
             foreach (var name in assembly.GetManifestResourceNames())
             {
                 if (!name.EndsWith(".PropertyValueRules.xml"))
@@ -37,7 +34,7 @@ namespace Amazon.CodeAnalysis.Shared
                 }
 
                 XDocument doc = XDocument.Parse(content);
-                foreach(var element in doc.Descendants("property-value-rule"))
+                foreach (var element in doc.Descendants("property-value-rule"))
                 {
                     var rule = new PropertyValueRule()
                     {
@@ -167,7 +164,6 @@ namespace Amazon.CodeAnalysis.Shared
             }
         }
 
-
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
         {
             get
@@ -178,6 +174,9 @@ namespace Amazon.CodeAnalysis.Shared
 
         public override void Initialize(AnalysisContext context)
         {
+            context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
+            context.EnableConcurrentExecution();
+
             if (_propertyValueRules.Count != 0)
                 context.RegisterSyntaxNodeAction(PropertyAssignmentValidation, SyntaxKind.SimpleAssignmentExpression);
         }
@@ -251,7 +250,7 @@ namespace Amazon.CodeAnalysis.Shared
                     }
                 }
             }
-            if(literalOpt.Value is int || literalOpt.Value is long)
+            if (literalOpt.Value is int || literalOpt.Value is long)
             {
                 var value = Convert.ToInt64(literalOpt.Value);
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 using ServiceClientGenerator.Generators.CodeAnalysis;
@@ -15,10 +14,9 @@ namespace ServiceClientGenerator
         public void Execute(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             SetupProjectFile(codeAnalysisRoot, serviceConfiguration);
-            SetupPackageConfigFile(codeAnalysisRoot, serviceConfiguration);
             GenerateAssemblyInfo(codeAnalysisRoot, serviceConfiguration);
-            GenerateProperyValueRules(codeAnalysisRoot, serviceConfiguration);
-            GenerateProperyValueAnalyzer(codeAnalysisRoot, serviceConfiguration);
+            GeneratePropertyValueRules(codeAnalysisRoot, serviceConfiguration);
+            GeneratePropertyValueAnalyzer(codeAnalysisRoot, serviceConfiguration);
         }
 
         void SetupProjectFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
@@ -56,13 +54,6 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(codeAnalysisRoot, string.Empty, projectFilename, generatedContent);
         }
 
-        private void SetupPackageConfigFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
-        {
-            CodeAnalysisPackages generator = new CodeAnalysisPackages();
-            var generatedContent = generator.TransformText();
-            GeneratorDriver.WriteFile(codeAnalysisRoot, string.Empty, "packages.config", generatedContent);
-        }
-
         private void GenerateAssemblyInfo(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             var generator = new CodeAnalysisAssemblyInfo { Config = serviceConfiguration };
@@ -70,7 +61,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(codeAnalysisRoot, "Properties", "AssemblyInfo.cs", text);
         }
 
-        private void GenerateProperyValueRules(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
+        private void GeneratePropertyValueRules(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             StringBuilder sb = new StringBuilder();
             using (var writer = XmlWriter.Create(sb, new XmlWriterSettings {Indent = true }))
@@ -85,12 +76,12 @@ namespace ServiceClientGenerator
                     {
                         if (operation.RequestStructure != null)
                         {
-                            GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
+                            GeneratePropertyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
                             requestAndResponseShapes.Add(operation.RequestStructure.Name);
                         }
                         if (operation.ResponseStructure != null)
                         {
-                            GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
+                            GeneratePropertyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
                             requestAndResponseShapes.Add(operation.ResponseStructure.Name);
                         }
                     }
@@ -102,7 +93,7 @@ namespace ServiceClientGenerator
 
                         if (shape.IsStructure)
                         {
-                            GenerateProperyValueRules(serviceConfiguration, writer, shape.Name, shape);
+                            GeneratePropertyValueRules(serviceConfiguration, writer, shape.Name, shape);
                         }
                     }
                 }
@@ -112,7 +103,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(Path.Combine(codeAnalysisRoot, "Generated"), string.Empty, "PropertyValueRules.xml", content);
         }
 
-        private void GenerateProperyValueRules(ServiceConfiguration serviceConfiguration, XmlWriter writer, string shapeName, Shape shape)
+        private void GeneratePropertyValueRules(ServiceConfiguration serviceConfiguration, XmlWriter writer, string shapeName, Shape shape)
         {
             foreach (var member in shape.Members)
             {
@@ -151,7 +142,7 @@ namespace ServiceClientGenerator
             }
         }
 
-        private void GenerateProperyValueAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
+        private void GeneratePropertyValueAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             var generator = new PropertyValueAssignmentAnalyzer { Config = serviceConfiguration };
             var text = generator.TransformText();
