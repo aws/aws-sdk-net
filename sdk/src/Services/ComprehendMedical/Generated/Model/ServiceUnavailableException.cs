@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-    /// retry your request.
+    /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+    /// then retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

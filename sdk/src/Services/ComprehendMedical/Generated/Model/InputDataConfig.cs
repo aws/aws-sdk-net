@@ -43,11 +43,6 @@ namespace Amazon.ComprehendMedical.Model
         /// The URI of the S3 bucket that contains the input data. The bucket must be in the same
         /// region as the API endpoint that you are calling.
         /// </para>
-        ///  
-        /// <para>
-        /// Each file in the document collection must be less than 40 KB. You can store a maximum
-        /// of 30 GB in the bucket.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
         public string S3Bucket

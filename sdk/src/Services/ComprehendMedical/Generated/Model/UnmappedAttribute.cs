@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// An attribute that was extracted, but Comprehend Medical; was unable to relate to
-    /// an entity.
+    /// An attribute that was extracted, but Amazon Comprehend Medical was unable to relate
+    /// to an entity.
     /// </summary>
     public partial class UnmappedAttribute
     {

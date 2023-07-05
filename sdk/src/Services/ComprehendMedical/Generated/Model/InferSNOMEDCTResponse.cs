@@ -63,8 +63,8 @@ namespace Amazon.ComprehendMedical.Model
         ///  The collection of medical concept entities extracted from the input text and their
         /// associated information. For each entity, the response provides the entity text, the
         /// entity category, where the entity text begins and ends, and the level of confidence
-        /// that Comprehend Medical has in the detection and analysis. Attributes and traits of
-        /// the entity are also returned. 
+        /// that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+        /// of the entity are also returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

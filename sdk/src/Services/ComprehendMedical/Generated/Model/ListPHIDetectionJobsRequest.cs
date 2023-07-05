@@ -30,7 +30,7 @@ namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPHIDetectionJobs operation.
-    /// Gets a list of protected health information (PHI) detection jobs that you have submitted.
+    /// Gets a list of protected health information (PHI) detection jobs you have submitted.
     /// </summary>
     public partial class ListPHIDetectionJobsRequest : AmazonComprehendMedicalRequest
     {

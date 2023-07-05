@@ -40,7 +40,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
+        /// The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
         /// operation returns this identifier in its response.
         /// </para>
         /// </summary>

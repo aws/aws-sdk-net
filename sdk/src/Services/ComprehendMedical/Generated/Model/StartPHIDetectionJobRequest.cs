@@ -46,8 +46,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for the request. If you don't set the client request token, Comprehend
-        /// Medical; generates one.
+        /// A unique identifier for the request. If you don't set the client request token, Amazon
+        /// Comprehend Medical generates one.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -67,7 +67,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Comprehend Medical; read access to your input data. For more information,
+        /// that grants Amazon Comprehend Medical read access to your input data. For more information,
         /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
         /// Role-Based Permissions Required for Asynchronous Operations</a>.
         /// </para>

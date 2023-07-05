@@ -79,8 +79,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        ///  The level of confidence Comprehend Medical has that the entity should be linked to
-        /// the identified SNOMED-CT concept. 
+        ///  The level of confidence Amazon Comprehend Medical has that the entity should be linked
+        /// to the identified SNOMED-CT concept. 
         /// </para>
         /// </summary>
         public float Score

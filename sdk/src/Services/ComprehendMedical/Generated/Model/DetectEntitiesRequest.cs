@@ -35,9 +35,9 @@ namespace Amazon.ComprehendMedical.Model
     /// 
     ///  
     /// <para>
-    ///  Inspects the clinical text for a variety of medical entities and returns specific
+    /// Inspects the clinical text for a variety of medical entities and returns specific
     /// information about them such as entity category, location, and confidence score on
-    /// that information .
+    /// that information.
     /// </para>
     /// </summary>
     public partial class DetectEntitiesRequest : AmazonComprehendMedicalRequest
@@ -48,7 +48,6 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Text. 
         /// <para>
         ///  A UTF-8 text string containing the clinical content being examined for entities.
-        /// Each string must contain fewer than 20,000 bytes of characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20000)]
