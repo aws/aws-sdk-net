@@ -18,13 +18,9 @@ namespace ServiceClientGenerator
         {
             var codeAnalysisProjects = GetListOfCodeAnalysisProjects();
 
-            if (Options.CreateCodeAnalysisVsixAssets)
-            {
-                GenerateVsixProject(codeAnalysisProjects);
-                GenerateVsixManifest(codeAnalysisProjects);
-            }
-
             GenerateSolutionFile(codeAnalysisProjects);
+            GenerateVsixProject(codeAnalysisProjects);
+            GenerateVsixManifest(codeAnalysisProjects);
         }
 
         public void GenerateSolutionFile(List<Project> codeAnalysisProjects)

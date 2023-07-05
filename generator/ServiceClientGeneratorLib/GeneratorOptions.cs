@@ -81,13 +81,6 @@ namespace ServiceClientGenerator
         /// </summary>
         public bool ForceSolutionRebuilt { get; set; }
 
-        /// <summary>
-        /// If set, the generator will create a vsix (Visual Studio Extension) project and manifest.
-        /// This project will reference all of the service specific code analysis projects.
-        /// The default behavior is not to create any assets.
-        /// </summary>
-        public bool CreateCodeAnalysisVsixAssets { get; set; }
-
         public string SelfServiceModel { get; set; }
         public string SelfServiceBaseName { get; set; }
         public string SelfServiceEndpointPrefix { get; set; }
@@ -108,7 +101,6 @@ namespace ServiceClientGenerator
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;
             Clean = false;
-            CreateCodeAnalysisVsixAssets = false;
         }
     }
 }
