@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchSecurityProfiles operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Searches security profiles in an Amazon Connect instance, with optional filtering.
-    /// </para>
     /// </summary>
     public partial class SearchSecurityProfilesRequest : AmazonConnectRequest
     {

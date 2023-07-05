@@ -1973,6 +1973,13 @@ namespace Amazon.Connect
         /// Region associated with the traffic distribution group, you must provide a full phone
         /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
+        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
@@ -10287,12 +10294,7 @@ namespace Amazon.Connect
         #region  SearchQueues
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches queues in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
         /// 
@@ -10503,12 +10505,7 @@ namespace Amazon.Connect
         #region  SearchRoutingProfiles
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
         /// 
@@ -10577,12 +10574,7 @@ namespace Amazon.Connect
         #region  SearchSecurityProfiles
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches security profiles in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchSecurityProfiles service method.</param>
         /// 
@@ -13531,6 +13523,13 @@ namespace Amazon.Connect
         /// group and you are calling this API using an instance in the alternate Amazon Web Services
         /// Region associated with the traffic distribution group, you must provide a full phone
         /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
+        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API.
         /// </para>
         ///  </important>
         /// </summary>
