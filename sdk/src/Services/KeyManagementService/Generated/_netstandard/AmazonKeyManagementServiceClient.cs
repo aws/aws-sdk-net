@@ -1566,6 +1566,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
         /// valid.
@@ -2183,6 +2186,9 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.IncorrectKeyException">
         /// The request was rejected because the specified KMS key cannot decrypt the data. The
@@ -4441,6 +4447,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
         /// </exception>
@@ -4689,6 +4698,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
         /// </exception>
@@ -4910,6 +4922,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
         /// </exception>
@@ -5105,6 +5120,9 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
@@ -5322,6 +5340,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
         /// </exception>
@@ -5467,6 +5488,9 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the GenerateMac service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
@@ -8009,6 +8033,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.IncorrectKeyException">
         /// The request was rejected because the specified KMS key cannot decrypt the data. The
         /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code> in
@@ -8388,6 +8415,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
         /// valid.
@@ -8504,6 +8534,9 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
@@ -8634,6 +8667,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
         /// valid.
@@ -8746,6 +8782,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. You can retry the request.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
         /// valid.
@@ -8825,9 +8864,9 @@ namespace Amazon.KeyManagementService
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
         /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
-        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
-        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
-        /// without deleting it, use <a>DisableKey</a>. 
+        /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
+        /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
+        /// deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -8958,9 +8997,9 @@ namespace Amazon.KeyManagementService
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
         /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
-        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
-        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
-        /// without deleting it, use <a>DisableKey</a>. 
+        /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
+        /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
+        /// deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -9022,7 +9061,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -9094,9 +9133,9 @@ namespace Amazon.KeyManagementService
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
         /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
-        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
-        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
-        /// without deleting it, use <a>DisableKey</a>. 
+        /// replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
+        /// or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without
+        /// deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -9319,6 +9358,9 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
@@ -10784,6 +10826,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
         /// </exception>
@@ -10929,6 +10974,9 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the VerifyMac service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
         /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.

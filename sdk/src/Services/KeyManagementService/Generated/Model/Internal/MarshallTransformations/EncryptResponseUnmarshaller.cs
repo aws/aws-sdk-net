@@ -100,6 +100,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return DisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DryRunOperationException"))
+                {
+                    return DryRunOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantTokenException"))
                 {
                     return InvalidGrantTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
