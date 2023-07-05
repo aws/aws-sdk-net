@@ -127,10 +127,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityControlStatus. 
         /// <para>
-        ///  The status of a security control based on the compliance status of its findings.
-        /// For more information about how control status is determined, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-        /// the overall status of a control from its findings</a> in the <i>Security Hub User
-        /// Guide</i>. 
+        ///  The enablement status of a security control in a specific standard. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

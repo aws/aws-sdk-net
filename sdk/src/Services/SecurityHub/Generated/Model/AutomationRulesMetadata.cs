@@ -111,7 +111,7 @@ namespace Amazon.SecurityHub.Model
         /// matches the rule criteria. This is useful when a finding matches the criteria for
         /// multiple rules, and each rule has different actions. If the value of this field is
         /// set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-        /// that matches the rule criteria and won't evaluate other rules for the finding.&#x2028;
+        /// that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028;
         /// The default value of this field is <code>false</code>. 
         /// </para>
         /// </summary>
@@ -188,9 +188,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RuleStatus. 
         /// <para>
         ///  Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>,
-        /// Security Hub will apply the rule to findings and finding updates after the rule is
-        /// created. To change the value of this parameter after creating a rule, use <code>BatchUpdateAutomationRules</code>.
-        /// 
+        /// Security Hub starts applying the rule to findings and finding updates after the rule
+        /// is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+        /// <code>BatchUpdateAutomationRules</code> </a>. 
         /// </para>
         /// </summary>
         public RuleStatus RuleStatus

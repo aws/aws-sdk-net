@@ -112,9 +112,9 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon
         /// Web Services Security Finding Format</a> finding field attributes and corresponding
-        /// expected values that Security Hub uses to filter findings. If a finding matches the
-        /// conditions specified in this parameter, Security Hub applies the rule action to the
-        /// finding. 
+        /// expected values that Security Hub uses to filter findings. If a rule is enabled and
+        /// a finding matches the conditions specified in this parameter, Security Hub applies
+        /// the rule action to the finding. 
         /// </para>
         /// </summary>
         public AutomationRulesFindingFilters Criteria
@@ -154,7 +154,7 @@ namespace Amazon.SecurityHub.Model
         /// matches the rule criteria. This is useful when a finding matches the criteria for
         /// multiple rules, and each rule has different actions. If the value of this field is
         /// set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-        /// that matches the rule criteria and won't evaluate other rules for the finding.&#x2028;
+        /// that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028;
         /// The default value of this field is <code>false</code>. 
         /// </para>
         /// </summary>
@@ -230,9 +230,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RuleStatus. 
         /// <para>
-        ///  Whether the rule is active after it is created. If this parameter is equal to <code>&gt;ENABLED</code>,
-        /// Security Hub will apply the rule to findings and finding updates after the rule is
-        /// created. 
+        ///  Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>,
+        /// Security Hub starts applying the rule to findings and finding updates after the rule
+        /// is created. 
         /// </para>
         /// </summary>
         public RuleStatus RuleStatus
