@@ -1,3 +1,8 @@
+### 3.7.582.1 (2023-07-05 14:18 UTC)
+* Core 3.7.107.11
+	* fix: Revert update to analyzer projects (previous update unintentionally removed support for tooling such as VS2017)
+	* All services packages updated to require new Core
+
 ### 3.7.582.0 (2023-07-03 18:28 UTC)
 * Batch (3.7.105.0)
 	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture and X86_64 CPU Architecture with Windows OS on Fargate Platform.
