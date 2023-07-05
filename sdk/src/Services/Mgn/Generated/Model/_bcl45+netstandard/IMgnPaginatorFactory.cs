@@ -81,6 +81,11 @@ namespace Amazon.Mgn.Model
         IListImportsPaginator ListImports(ListImportsRequest request);
 
         /// <summary>
+        /// Paginator for ListManagedAccounts operation
+        ///</summary>
+        IListManagedAccountsPaginator ListManagedAccounts(ListManagedAccountsRequest request);
+
+        /// <summary>
         /// Paginator for ListSourceServerActions operation
         ///</summary>
         IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request);

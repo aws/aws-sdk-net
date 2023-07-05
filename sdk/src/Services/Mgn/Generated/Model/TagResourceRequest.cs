@@ -65,7 +65,7 @@ namespace Amazon.Mgn.Model
         /// Tag resource by Tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

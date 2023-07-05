@@ -34,9 +34,29 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class DescribeSourceServersRequest : AmazonMgnRequest
     {
+        private string _accountid;
         private DescribeSourceServersRequestFilters _filters;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AccountID. 
+        /// <para>
+        /// Request to filter Source Servers list by Accoun ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountID
+        {
+            get { return this._accountid; }
+            set { this._accountid = value; }
+        }
+
+        // Check to see if AccountID property is set
+        internal bool IsSetAccountID()
+        {
+            return this._accountid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 

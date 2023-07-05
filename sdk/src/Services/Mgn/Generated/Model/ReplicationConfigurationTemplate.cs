@@ -48,6 +48,7 @@ namespace Amazon.Mgn.Model
         private Dictionary<string, string> _stagingAreaTags = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private bool? _useDedicatedReplicationServer;
+        private bool? _useFipsEndpoint;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -93,7 +94,7 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration template bandwidth throttling.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=10000)]
         public long BandwidthThrottling
         {
             get { return this._bandwidthThrottling.GetValueOrDefault(); }
@@ -279,7 +280,7 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration template Staging Area Tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> StagingAreaTags
         {
             get { return this._stagingAreaTags; }
@@ -298,7 +299,7 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration template Tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -327,6 +328,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetUseDedicatedReplicationServer()
         {
             return this._useDedicatedReplicationServer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseFipsEndpoint. 
+        /// <para>
+        /// Replication Configuration template use Fips Endpoint.
+        /// </para>
+        /// </summary>
+        public bool UseFipsEndpoint
+        {
+            get { return this._useFipsEndpoint.GetValueOrDefault(); }
+            set { this._useFipsEndpoint = value; }
+        }
+
+        // Check to see if UseFipsEndpoint property is set
+        internal bool IsSetUseFipsEndpoint()
+        {
+            return this._useFipsEndpoint.HasValue; 
         }
 
     }

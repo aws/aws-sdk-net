@@ -34,9 +34,29 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class UpdateWaveRequest : AmazonMgnRequest
     {
+        private string _accountid;
         private string _description;
         private string _name;
         private string _waveid;
+
+        /// <summary>
+        /// Gets and sets the property AccountID. 
+        /// <para>
+        /// Account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountID
+        {
+            get { return this._accountid; }
+            set { this._accountid = value; }
+        }
+
+        // Check to see if AccountID property is set
+        internal bool IsSetAccountID()
+        {
+            return this._accountid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

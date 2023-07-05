@@ -34,6 +34,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class UpdateLaunchConfigurationRequest : AmazonMgnRequest
     {
+        private string _accountid;
         private BootMode _bootMode;
         private bool? _copyPrivateIp;
         private bool? _copyTags;
@@ -45,6 +46,25 @@ namespace Amazon.Mgn.Model
         private PostLaunchActions _postLaunchActions;
         private string _sourceServerID;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
+
+        /// <summary>
+        /// Gets and sets the property AccountID. 
+        /// <para>
+        /// Update Launch configuration Account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountID
+        {
+            get { return this._accountid; }
+            set { this._accountid = value; }
+        }
+
+        // Check to see if AccountID property is set
+        internal bool IsSetAccountID()
+        {
+            return this._accountid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BootMode. 

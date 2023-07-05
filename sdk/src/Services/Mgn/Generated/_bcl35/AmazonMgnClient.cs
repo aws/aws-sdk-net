@@ -2429,6 +2429,66 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListManagedAccounts
+
+        /// <summary>
+        /// List Managed Accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedAccounts service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">REST API Reference for ListManagedAccounts Operation</seealso>
+        public virtual ListManagedAccountsResponse ListManagedAccounts(ListManagedAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedAccountsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedAccounts operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListManagedAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">REST API Reference for ListManagedAccounts Operation</seealso>
+        public virtual IAsyncResult BeginListManagedAccounts(ListManagedAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListManagedAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListManagedAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListManagedAccountsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">REST API Reference for ListManagedAccounts Operation</seealso>
+        public virtual ListManagedAccountsResponse EndListManagedAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListManagedAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSourceServerActions
 
         /// <summary>
@@ -2742,6 +2802,76 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  PauseReplication
+
+        /// <summary>
+        /// Pause Replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseReplication service method.</param>
+        /// 
+        /// <returns>The response from the PauseReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">REST API Reference for PauseReplication Operation</seealso>
+        public virtual PauseReplicationResponse PauseReplication(PauseReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<PauseReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PauseReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PauseReplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPauseReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">REST API Reference for PauseReplication Operation</seealso>
+        public virtual IAsyncResult BeginPauseReplication(PauseReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PauseReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPauseReplication.</param>
+        /// 
+        /// <returns>Returns a  PauseReplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">REST API Reference for PauseReplication Operation</seealso>
+        public virtual PauseReplicationResponse EndPauseReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PauseReplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutSourceServerAction
 
         /// <summary>
@@ -2998,6 +3128,76 @@ namespace Amazon.Mgn
         public virtual RemoveTemplateActionResponse EndRemoveTemplateAction(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTemplateActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResumeReplication
+
+        /// <summary>
+        /// Resume Replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeReplication service method.</param>
+        /// 
+        /// <returns>The response from the ResumeReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">REST API Reference for ResumeReplication Operation</seealso>
+        public virtual ResumeReplicationResponse ResumeReplication(ResumeReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeReplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">REST API Reference for ResumeReplication Operation</seealso>
+        public virtual IAsyncResult BeginResumeReplication(ResumeReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeReplication.</param>
+        /// 
+        /// <returns>Returns a  ResumeReplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">REST API Reference for ResumeReplication Operation</seealso>
+        public virtual ResumeReplicationResponse EndResumeReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResumeReplicationResponse>(asyncResult);
         }
 
         #endregion
@@ -3399,6 +3599,76 @@ namespace Amazon.Mgn
         public virtual StartTestResponse EndStartTest(IAsyncResult asyncResult)
         {
             return EndInvoke<StartTestResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopReplication
+
+        /// <summary>
+        /// Stop Replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual IAsyncResult BeginStopReplication(StopReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopReplication.</param>
+        /// 
+        /// <returns>Returns a  StopReplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual StopReplicationResponse EndStopReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopReplicationResponse>(asyncResult);
         }
 
         #endregion

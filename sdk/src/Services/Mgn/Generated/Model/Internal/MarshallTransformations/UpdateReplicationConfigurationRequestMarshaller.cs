@@ -65,6 +65,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountID())
+                {
+                    context.Writer.WritePropertyName("accountID");
+                    context.Writer.Write(publicRequest.AccountID);
+                }
+
                 if(publicRequest.IsSetAssociateDefaultSecurityGroup())
                 {
                     context.Writer.WritePropertyName("associateDefaultSecurityGroup");
@@ -176,6 +182,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("useDedicatedReplicationServer");
                     context.Writer.Write(publicRequest.UseDedicatedReplicationServer);
+                }
+
+                if(publicRequest.IsSetUseFipsEndpoint())
+                {
+                    context.Writer.WritePropertyName("useFipsEndpoint");
+                    context.Writer.Write(publicRequest.UseFipsEndpoint);
                 }
 
                 writer.WriteObjectEnd();

@@ -141,6 +141,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.UseDedicatedReplicationServer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("useFipsEndpoint", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.UseFipsEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

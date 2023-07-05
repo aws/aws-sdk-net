@@ -124,6 +124,14 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for ListManagedAccounts operation
+        ///</summary>
+        public IListManagedAccountsPaginator ListManagedAccounts(ListManagedAccountsRequest request) 
+        {
+            return new ListManagedAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSourceServerActions operation
         ///</summary>
         public IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request) 

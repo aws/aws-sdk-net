@@ -34,9 +34,29 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ListApplicationsRequest : AmazonMgnRequest
     {
+        private string _accountid;
         private ListApplicationsRequestFilters _filters;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AccountID. 
+        /// <para>
+        /// Applications list Account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountID
+        {
+            get { return this._accountid; }
+            set { this._accountid = value; }
+        }
+
+        // Check to see if AccountID property is set
+        internal bool IsSetAccountID()
+        {
+            return this._accountid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
