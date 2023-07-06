@@ -1,3 +1,18 @@
+### 3.7.584.0 (2023-07-06 18:25 UTC)
+* EC2 (3.7.140.0)
+	* Add Nitro Enclaves support on DescribeInstanceTypes
+* LocationService (3.7.105.0)
+	* This release adds support for authenticating with Amazon Location Service's Places & Routes APIs with an API Key. Also, with this release developers can publish tracked device position updates to Amazon EventBridge.
+* Outposts (3.7.105.0)
+	* Added paginator support to several APIs. Added the ISOLATED enum value to AssetState.
+* QuickSight (3.7.111.0)
+	* This release includes below three changes: small multiples axes improvement, field based coloring, removed required trait from Aggregation function for TopBottomFilter.
+* RDS (3.7.120.3)
+	* Updates Amazon RDS documentation for creating DB instances and creating Aurora global clusters.
+* Core 3.7.107.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.583.0 (2023-07-05 18:22 UTC)
 * ComprehendMedical (3.7.102.7)
 	* Update to Amazon Comprehend Medical documentation.
