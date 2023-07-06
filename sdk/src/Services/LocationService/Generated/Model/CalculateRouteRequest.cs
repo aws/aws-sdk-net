@@ -80,6 +80,7 @@ namespace Amazon.LocationService.Model
         private List<double> _destinationPosition = new List<double>();
         private DistanceUnit _distanceUnit;
         private bool? _includeLegGeometry;
+        private string _key;
         private TravelMode _travelMode;
         private CalculateRouteTruckModeOptions _truckModeOptions;
         private List<List<double>> _waypointPositions = new List<List<double>>();
@@ -302,6 +303,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetIncludeLegGeometry()
         {
             return this._includeLegGeometry.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// key</a> to authorize the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
         /// <summary>

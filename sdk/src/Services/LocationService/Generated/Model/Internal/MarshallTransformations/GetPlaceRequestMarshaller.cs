@@ -65,6 +65,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field PlaceId set");
             request.AddPathResource("{PlaceId}", StringUtils.FromString(publicRequest.PlaceId));
             
+            if (publicRequest.IsSetKey())
+                request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
+            
             if (publicRequest.IsSetLanguage())
                 request.Parameters.Add("language", StringUtils.FromString(publicRequest.Language));
             request.ResourcePath = "/places/v0/indexes/{IndexName}/places/{PlaceId}";

@@ -35,6 +35,7 @@ namespace Amazon.LocationService.Model
     public partial class UpdateTrackerRequest : AmazonLocationServiceRequest
     {
         private string _description;
+        private bool? _eventBridgeEnabled;
         private PositionFiltering _positionFiltering;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
@@ -57,6 +58,31 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventBridgeEnabled. 
+        /// <para>
+        /// Whether to enable position <code>UPDATE</code> events from this tracker to be sent
+        /// to EventBridge.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code>
+        /// events for geofences with this tracker. Those events are always sent to EventBridge.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool EventBridgeEnabled
+        {
+            get { return this._eventBridgeEnabled.GetValueOrDefault(); }
+            set { this._eventBridgeEnabled = value; }
+        }
+
+        // Check to see if EventBridgeEnabled property is set
+        internal bool IsSetEventBridgeEnabled()
+        {
+            return this._eventBridgeEnabled.HasValue; 
         }
 
         /// <summary>

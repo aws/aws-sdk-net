@@ -82,8 +82,12 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property GeofenceProperties. 
         /// <para>
-        /// Contains additional user-defined properties stored with the geofence. An array of
-        /// key-value pairs.
+        /// User defined properties of the geofence. A property is a key-value pair stored with
+        /// the geofence and added to any geofence event triggered with that geofence.
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <code>"key" : "value"</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=3)]
