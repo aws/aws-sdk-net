@@ -123,7 +123,7 @@ namespace Amazon.Outposts.Model
         /// Filters the results by state.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> StatusFilter
         {
             get { return this._statusFilter; }
