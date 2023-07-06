@@ -33,9 +33,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ColumnConfiguration
     {
+        private ColorsConfiguration _colorsConfiguration;
         private ColumnIdentifier _column;
         private FormatConfiguration _formatConfiguration;
         private ColumnRole _role;
+
+        /// <summary>
+        /// Gets and sets the property ColorsConfiguration. 
+        /// <para>
+        /// The color configurations of the column.
+        /// </para>
+        /// </summary>
+        public ColorsConfiguration ColorsConfiguration
+        {
+            get { return this._colorsConfiguration; }
+            set { this._colorsConfiguration = value; }
+        }
+
+        // Check to see if ColorsConfiguration property is set
+        internal bool IsSetColorsConfiguration()
+        {
+            return this._colorsConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Column. 

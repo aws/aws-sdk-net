@@ -201,7 +201,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExportFormat. 
         /// <para>
-        /// The format of the export.
+        /// The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted
+        /// file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code>
+        /// formatted file can be used in the CloudFormation console and with the CloudFormation
+        /// APIs.
         /// </para>
         /// </summary>
         public AssetBundleExportFormat ExportFormat

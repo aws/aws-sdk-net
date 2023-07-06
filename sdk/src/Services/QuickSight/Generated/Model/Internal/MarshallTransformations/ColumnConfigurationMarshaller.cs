@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ColumnConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetColorsConfiguration())
+            {
+                context.Writer.WritePropertyName("ColorsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ColorsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");

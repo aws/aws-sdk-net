@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SmallMultiplesOptions Object
+    /// Response Unmarshaller for CustomColor Object
     /// </summary>  
-    public class SmallMultiplesOptionsUnmarshaller : IUnmarshaller<SmallMultiplesOptions, XmlUnmarshallerContext>, IUnmarshaller<SmallMultiplesOptions, JsonUnmarshallerContext>
+    public class CustomColorUnmarshaller : IUnmarshaller<CustomColor, XmlUnmarshallerContext>, IUnmarshaller<CustomColor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SmallMultiplesOptions IUnmarshaller<SmallMultiplesOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomColor IUnmarshaller<CustomColor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SmallMultiplesOptions Unmarshall(JsonUnmarshallerContext context)
+        public CustomColor Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SmallMultiplesOptions unmarshalledObject = new SmallMultiplesOptions();
+            CustomColor unmarshalledObject = new CustomColor();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MaxVisibleColumns", targetDepth))
+                if (context.TestExpression("Color", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.MaxVisibleColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Color = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxVisibleRows", targetDepth))
+                if (context.TestExpression("FieldValue", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.MaxVisibleRows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FieldValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PanelConfiguration", targetDepth))
+                if (context.TestExpression("SpecialValue", targetDepth))
                 {
-                    var unmarshaller = PanelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PanelConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("XAxis", targetDepth))
-                {
-                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.XAxis = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("YAxis", targetDepth))
-                {
-                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.YAxis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpecialValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SmallMultiplesOptionsUnmarshaller _instance = new SmallMultiplesOptionsUnmarshaller();        
+        private static CustomColorUnmarshaller _instance = new CustomColorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SmallMultiplesOptionsUnmarshaller Instance
+        public static CustomColorUnmarshaller Instance
         {
             get
             {

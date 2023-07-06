@@ -36,6 +36,8 @@ namespace Amazon.QuickSight.Model
         private long? _maxVisibleColumns;
         private long? _maxVisibleRows;
         private PanelConfiguration _panelConfiguration;
+        private SmallMultiplesAxisProperties _xAxis;
+        private SmallMultiplesAxisProperties _yAxis;
 
         /// <summary>
         /// Gets and sets the property MaxVisibleColumns. 
@@ -103,6 +105,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPanelConfiguration()
         {
             return this._panelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XAxis. 
+        /// <para>
+        /// The properties of a small multiples X axis.
+        /// </para>
+        /// </summary>
+        public SmallMultiplesAxisProperties XAxis
+        {
+            get { return this._xAxis; }
+            set { this._xAxis = value; }
+        }
+
+        // Check to see if XAxis property is set
+        internal bool IsSetXAxis()
+        {
+            return this._xAxis != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property YAxis. 
+        /// <para>
+        /// The properties of a small multiples Y axis.
+        /// </para>
+        /// </summary>
+        public SmallMultiplesAxisProperties YAxis
+        {
+            get { return this._yAxis; }
+            set { this._yAxis = value; }
+        }
+
+        // Check to see if YAxis property is set
+        internal bool IsSetYAxis()
+        {
+            return this._yAxis != null;
         }
 
     }

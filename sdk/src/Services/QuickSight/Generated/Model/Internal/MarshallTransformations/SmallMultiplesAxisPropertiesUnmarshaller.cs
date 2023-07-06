@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SmallMultiplesOptions Object
+    /// Response Unmarshaller for SmallMultiplesAxisProperties Object
     /// </summary>  
-    public class SmallMultiplesOptionsUnmarshaller : IUnmarshaller<SmallMultiplesOptions, XmlUnmarshallerContext>, IUnmarshaller<SmallMultiplesOptions, JsonUnmarshallerContext>
+    public class SmallMultiplesAxisPropertiesUnmarshaller : IUnmarshaller<SmallMultiplesAxisProperties, XmlUnmarshallerContext>, IUnmarshaller<SmallMultiplesAxisProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SmallMultiplesOptions IUnmarshaller<SmallMultiplesOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SmallMultiplesAxisProperties IUnmarshaller<SmallMultiplesAxisProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SmallMultiplesOptions Unmarshall(JsonUnmarshallerContext context)
+        public SmallMultiplesAxisProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SmallMultiplesOptions unmarshalledObject = new SmallMultiplesOptions();
+            SmallMultiplesAxisProperties unmarshalledObject = new SmallMultiplesAxisProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MaxVisibleColumns", targetDepth))
+                if (context.TestExpression("Placement", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.MaxVisibleColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxVisibleRows", targetDepth))
+                if (context.TestExpression("Scale", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.MaxVisibleRows = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PanelConfiguration", targetDepth))
-                {
-                    var unmarshaller = PanelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PanelConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("XAxis", targetDepth))
-                {
-                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.XAxis = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("YAxis", targetDepth))
-                {
-                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.YAxis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scale = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SmallMultiplesOptionsUnmarshaller _instance = new SmallMultiplesOptionsUnmarshaller();        
+        private static SmallMultiplesAxisPropertiesUnmarshaller _instance = new SmallMultiplesAxisPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SmallMultiplesOptionsUnmarshaller Instance
+        public static SmallMultiplesAxisPropertiesUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SmallMultiplesOptions Object
+    /// Response Unmarshaller for ColorsConfiguration Object
     /// </summary>  
-    public class SmallMultiplesOptionsUnmarshaller : IUnmarshaller<SmallMultiplesOptions, XmlUnmarshallerContext>, IUnmarshaller<SmallMultiplesOptions, JsonUnmarshallerContext>
+    public class ColorsConfigurationUnmarshaller : IUnmarshaller<ColorsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ColorsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SmallMultiplesOptions IUnmarshaller<SmallMultiplesOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ColorsConfiguration IUnmarshaller<ColorsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SmallMultiplesOptions Unmarshall(JsonUnmarshallerContext context)
+        public ColorsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SmallMultiplesOptions unmarshalledObject = new SmallMultiplesOptions();
+            ColorsConfiguration unmarshalledObject = new ColorsConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MaxVisibleColumns", targetDepth))
+                if (context.TestExpression("CustomColors", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.MaxVisibleColumns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxVisibleRows", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.MaxVisibleRows = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PanelConfiguration", targetDepth))
-                {
-                    var unmarshaller = PanelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PanelConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("XAxis", targetDepth))
-                {
-                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.XAxis = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("YAxis", targetDepth))
-                {
-                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.YAxis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CustomColor, CustomColorUnmarshaller>(CustomColorUnmarshaller.Instance);
+                    unmarshalledObject.CustomColors = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SmallMultiplesOptionsUnmarshaller _instance = new SmallMultiplesOptionsUnmarshaller();        
+        private static ColorsConfigurationUnmarshaller _instance = new ColorsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SmallMultiplesOptionsUnmarshaller Instance
+        public static ColorsConfigurationUnmarshaller Instance
         {
             get
             {

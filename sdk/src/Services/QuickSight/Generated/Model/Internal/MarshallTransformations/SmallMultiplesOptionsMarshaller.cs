@@ -68,6 +68,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetXAxis())
+            {
+                context.Writer.WritePropertyName("XAxis");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SmallMultiplesAxisPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.XAxis, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetYAxis())
+            {
+                context.Writer.WritePropertyName("YAxis");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SmallMultiplesAxisPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.YAxis, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
