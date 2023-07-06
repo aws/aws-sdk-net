@@ -3330,7 +3330,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action applies only to Aurora DB clusters.
+        /// This operation applies only to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3376,7 +3376,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action applies only to Aurora DB clusters.
+        /// This operation applies only to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>

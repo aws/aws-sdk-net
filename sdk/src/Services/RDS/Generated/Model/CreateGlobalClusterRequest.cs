@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action applies only to Aurora DB clusters.
+    /// This operation applies only to Aurora DB clusters.
     /// </para>
     ///  </note>
     /// </summary>
@@ -60,10 +60,19 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name for your database of up to 64 alphanumeric characters. If you do not provide
-        /// a name, Amazon Aurora will not create a database in the global database cluster you
-        /// are creating.
+        /// The name for your database of up to 64 alphanumeric characters. If you don't specify
+        /// a name, Amazon Aurora doesn't create a database in the global database cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
+        /// case, Amazon Aurora uses the database name from the source DB cluster.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DatabaseName
         {
@@ -80,8 +89,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// The deletion protection setting for the new global database. The global database can't
-        /// be deleted when deletion protection is enabled.
+        /// Specifies whether to enable deletion protection for the new global database cluster.
+        /// The global database can't be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -99,8 +108,22 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this DB cluster.
+        /// The database engine to use for this global database cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>aurora-mysql | aurora-postgresql</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
+        /// case, Amazon Aurora uses the engine of the source DB cluster.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -117,8 +140,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version of the Aurora global database.
+        /// The engine version to use for this global database cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
+        /// case, Amazon Aurora uses the engine version of the source DB cluster.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EngineVersion
         {
@@ -135,7 +168,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        /// The cluster identifier of the new global database cluster. This parameter is stored
+        /// The cluster identifier for this global database cluster. This parameter is stored
         /// as a lowercase string.
         /// </para>
         /// </summary>
@@ -155,8 +188,29 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBClusterIdentifier. 
         /// <para>
         /// The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
-        /// This parameter is optional.
         /// </para>
+        ///  
+        /// <para>
+        /// If you provide a value for this parameter, don't specify values for the following
+        /// settings because Amazon Aurora uses the values from the specified source DB cluster:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DatabaseName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Engine</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EngineVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageEncrypted</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceDBClusterIdentifier
         {
@@ -173,8 +227,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// The storage encryption setting for the new global database cluster.
+        /// Specifies whether to enable storage encryption for the new global database cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
+        /// case, Amazon Aurora uses the setting from the source DB cluster.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool StorageEncrypted
         {

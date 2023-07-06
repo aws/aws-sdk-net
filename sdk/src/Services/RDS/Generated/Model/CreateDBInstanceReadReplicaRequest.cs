@@ -453,8 +453,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainAuthSecretArn. 
         /// <para>
-        /// The ARN for the Secrets Manager secret that contains the credentials for the user
-        /// performing the domain join.
+        /// The ARN for the Secrets Manager secret with the credentials for the user joining the
+        /// domain.
         /// </para>
         ///  
         /// <para>
@@ -508,7 +508,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainFqdn. 
         /// <para>
-        /// Specifies the fully qualified domain name of an Active Directory domain.
+        /// The fully qualified domain name (FQDN) of an Active Directory domain.
         /// </para>
         ///  
         /// <para>
@@ -516,7 +516,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Cannot be greater than 64 characters.
+        /// Can't be longer than 64 characters.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -572,7 +572,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be greater than 64 characters.
+        /// Can't be longer than 64 characters.
         /// </para>
         ///  </li> </ul> 
         /// <para>

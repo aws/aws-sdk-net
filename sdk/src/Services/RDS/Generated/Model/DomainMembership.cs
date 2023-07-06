@@ -44,8 +44,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AuthSecretArn. 
         /// <para>
-        /// The ARN for the Secrets Manager secret that contains the credentials for the user
-        /// performing the domain join.
+        /// The ARN for the Secrets Manager secret with the credentials for the user that's a
+        /// member of the domain.
         /// </para>
         /// </summary>
         public string AuthSecretArn
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DnsIps. 
         /// <para>
-        /// The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
+        /// The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.
         /// </para>
         /// </summary>
         public List<string> DnsIps
@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMRoleName. 
         /// <para>
-        /// The name of the IAM role to be used when making API calls to the Directory Service.
+        /// The name of the IAM role used when making API calls to the Directory Service.
         /// </para>
         /// </summary>
         public string IAMRoleName
@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OU. 
         /// <para>
-        /// The Active Directory organizational unit for your DB instance to join.
+        /// The Active Directory organizational unit for the DB instance or cluster.
         /// </para>
         /// </summary>
         public string OU
@@ -154,7 +154,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the Active Directory Domain membership for the DB instance or cluster.
-        /// Values include joined, pending-join, failed, and so on.
+        /// Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>,
+        /// and so on.
         /// </para>
         /// </summary>
         public string Status
