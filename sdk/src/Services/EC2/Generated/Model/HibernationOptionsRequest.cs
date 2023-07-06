@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Indicates whether your instance is configured for hibernation. This parameter is valid
-    /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+    /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
     /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
     /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Configured. 
         /// <para>
-        /// If you set this parameter to <code>true</code>, your instance is enabled for hibernation.
+        /// Set to <code>true</code> to enable your instance for hibernation.
         /// </para>
         ///  
         /// <para>

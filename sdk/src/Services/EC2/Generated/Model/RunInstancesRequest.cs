@@ -427,9 +427,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
         /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
-        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-        /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
-        /// Enclaves User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
+        /// is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -451,8 +451,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HibernationOptions. 
         /// <para>
-        /// Indicates whether an instance is enabled for hibernation. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+        /// Indicates whether an instance is enabled for hibernation. This parameter is valid
+        /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+        /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
         /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  

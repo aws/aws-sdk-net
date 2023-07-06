@@ -13261,6 +13261,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type NitroEnclavesSupport.
+    /// </summary>
+    public class NitroEnclavesSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Supported for NitroEnclavesSupport
+        /// </summary>
+        public static readonly NitroEnclavesSupport Supported = new NitroEnclavesSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for NitroEnclavesSupport
+        /// </summary>
+        public static readonly NitroEnclavesSupport Unsupported = new NitroEnclavesSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NitroEnclavesSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NitroEnclavesSupport FindValue(string value)
+        {
+            return FindValue<NitroEnclavesSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NitroEnclavesSupport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferingClassType.
     /// </summary>
     public class OfferingClassType : ConstantClass
