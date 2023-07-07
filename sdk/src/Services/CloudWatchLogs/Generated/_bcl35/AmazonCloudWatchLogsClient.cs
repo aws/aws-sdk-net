@@ -303,23 +303,66 @@ namespace Amazon.CloudWatchLogs
         #region  AssociateKmsKey
 
         /// <summary>
-        /// Associates the specified KMS key with the specified log group.
+        /// Associates the specified KMS key with either one log group in the account, or with
+        /// all stored CloudWatch Logs query insights results in the account.
         /// 
+        ///  
+        /// <para>
+        /// When you use <code>AssociateKmsKey</code>, you specify either the <code>logGroupName</code>
+        /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
+        /// of those parameters in the same operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the <code>logGroupName</code> parameter to cause all log events stored in
+        /// the log group to be encrypted with that key. Only the log events ingested after the
+        /// key is associated are encrypted with that key.
+        /// </para>
         ///  
         /// <para>
         /// Associating a KMS key with a log group overrides any existing associations between
         /// the log group and a KMS key. After a KMS key is associated with a log group, all newly
         /// ingested data for the log group is encrypted using the KMS key. This association is
-        /// stored as long as the data encrypted with the KMS keyis still within CloudWatch Logs.
+        /// stored as long as the data encrypted with the KMS key is still within CloudWatch Logs.
         /// This enables CloudWatch Logs to decrypt this data whenever it is requested.
         /// </para>
-        ///  <important> 
+        ///  
+        /// <para>
+        /// Associating a key with a log group does not cause the results of queries of that log
+        /// group to be encrypted with that key. To have query results encrypted with a KMS key,
+        /// you must use an <code>AssociateKmsKey</code> operation with the <code>resourceIdentifier</code>
+        /// parameter that specifies a <code>query-result</code> resource. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify the <code>resourceIdentifier</code> parameter with a <code>query-result</code>
+        /// resource, to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// operations in the account. The response from a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+        /// operation will still return the query results in plain text.
+        /// </para>
+        ///  
+        /// <para>
+        /// Even if you have not associated a key with your query results, the query results are
+        /// encrypted when stored, using the default CloudWatch Logs method.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you run a query from a monitoring account that queries logs in a source account,
+        /// the query results key from the monitoring account, if any, is used.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// If you delete the key that is used to encrypt log events or log group query results,
+        /// then all the associated stored log events or query results that were encrypted with
+        /// that key will be unencryptable and unusable.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric
-        /// KMS key with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+        /// KMS key with your log group or query results. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
         /// Symmetric and Asymmetric Keys</a>.
         /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// It can take up to 5 minutes for this operation to take effect.
         /// </para>
@@ -2167,18 +2210,35 @@ namespace Amazon.CloudWatchLogs
         #region  DisassociateKmsKey
 
         /// <summary>
-        /// Disassociates the associated KMS key from the specified log group.
+        /// Disassociates the specified KMS key from the specified log group or from all CloudWatch
+        /// Logs Insights query results in the account.
         /// 
         ///  
         /// <para>
-        /// After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting
-        /// newly ingested data for the log group. All previously ingested data remains encrypted,
-        /// and CloudWatch Logs requires permissions for the KMS key whenever the encrypted data
-        /// is requested.
+        /// When you use <code>DisassociateKmsKey</code>, you specify either the <code>logGroupName</code>
+        /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
+        /// of those parameters in the same operation.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Note that it can take up to 5 minutes for this operation to take effect.
+        /// Specify the <code>logGroupName</code> parameter to stop using the KMS key to encrypt
+        /// future log events ingested and stored in the log group. Instead, they will be encrypted
+        /// with the default CloudWatch Logs method. The log events that were ingested while the
+        /// key was associated with the log group are still encrypted with that key. Therefore,
+        /// CloudWatch Logs will need permissions for the key whenever that data is accessed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify the <code>resourceIdentifier</code> parameter with the <code>query-result</code>
+        /// resource to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// operations in the account. They will instead be encrypted with the default CloudWatch
+        /// Logs method. The results from queries that ran while the key was associated with the
+        /// account are still encrypted with that key. Therefore, CloudWatch Logs will need permissions
+        /// for the key whenever that data is accessed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// It can take up to 5 minutes for this operation to take effect.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateKmsKey service method.</param>
@@ -3754,7 +3814,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A logical destination that belongs to a different account, for cross-account delivery.
+        /// A logical destination created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>
+        /// that belongs to a different account, for cross-account delivery. We currently support
+        /// Kinesis Data Streams and Kinesis Data Firehose as logical destinations.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3852,6 +3914,20 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
         /// Logs Insights Query Syntax</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you run a query using <code>StartQuery</code>, the query results are stored
+        /// by CloudWatch Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+        /// to retrieve the results of a query, using the <code>queryId</code> that <code>StartQuery</code>
+        /// returns. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have associated a KMS key with the query results in this account, then <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// uses that key to encrypt the results when it stores them. If no key is associated
+        /// with query results, the query results are encrypted with the default CloudWatch Logs
+        /// encryption method.
         /// </para>
         ///  
         /// <para>

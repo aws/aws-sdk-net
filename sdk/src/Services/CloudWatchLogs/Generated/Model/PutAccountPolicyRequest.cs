@@ -201,9 +201,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies
+        /// Currently the only valid value for this parameter is <code>ALL</code>, which specifies
         /// that the data protection policy applies to all log groups in the account. If you omit
-        /// this parameter, the default of <code>GLOBAL</code> is used.
+        /// this parameter, the default of <code>ALL</code> is used.
         /// </para>
         /// </summary>
         public Scope Scope

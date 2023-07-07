@@ -47,7 +47,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A logical destination that belongs to a different account, for cross-account delivery.
+    /// A logical destination created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>
+    /// that belongs to a different account, for cross-account delivery. We currently support
+    /// Kinesis Data Streams and Kinesis Data Firehose as logical destinations.
     /// </para>
     ///  </li> <li> 
     /// <para>

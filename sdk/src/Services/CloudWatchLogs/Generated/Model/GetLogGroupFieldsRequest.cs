@@ -121,8 +121,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Time. 
         /// <para>
         /// The time to set as the center of the query. If you specify <code>time</code>, the
-        /// 15 minutes before this time are queries. If you omit <code>time</code>, the 8 minutes
-        /// before and 8 minutes after this time are searched.
+        /// 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>,
+        /// the most recent 15 minutes up to the current time are searched.
         /// </para>
         ///  
         /// <para>

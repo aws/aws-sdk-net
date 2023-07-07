@@ -79,6 +79,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LogGroupName);
                 }
 
+                if(publicRequest.IsSetResourceIdentifier())
+                {
+                    context.Writer.WritePropertyName("resourceIdentifier");
+                    context.Writer.Write(publicRequest.ResourceIdentifier);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
