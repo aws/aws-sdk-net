@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The subnet provided is invalid.
+    /// The subnet provided isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

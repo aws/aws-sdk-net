@@ -76,6 +76,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private SybaseSettings _sybaseSettings;
+        private TimestreamSettings _timestreamSettings;
         private string _username;
 
         /// <summary>
@@ -758,6 +759,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSybaseSettings()
         {
             return this._sybaseSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimestreamSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Amazon Timestream endpoint.
+        /// </para>
+        /// </summary>
+        public TimestreamSettings TimestreamSettings
+        {
+            get { return this._timestreamSettings; }
+            set { this._timestreamSettings = value; }
+        }
+
+        // Check to see if TimestreamSettings property is set
+        internal bool IsSetTimestreamSettings()
+        {
+            return this._timestreamSettings != null;
         }
 
         /// <summary>

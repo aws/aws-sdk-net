@@ -76,6 +76,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineEdition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngineVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceMemory", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

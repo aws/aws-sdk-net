@@ -124,6 +124,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MapBooleanAsBoolean = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MapJsonbAsClob", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MapJsonbAsClob = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MapLongVarcharAs", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MapLongVarcharAs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

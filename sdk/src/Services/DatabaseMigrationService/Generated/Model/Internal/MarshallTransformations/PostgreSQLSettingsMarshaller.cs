@@ -105,6 +105,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MapBooleanAsBoolean);
             }
 
+            if(requestObject.IsSetMapJsonbAsClob())
+            {
+                context.Writer.WritePropertyName("MapJsonbAsClob");
+                context.Writer.Write(requestObject.MapJsonbAsClob);
+            }
+
+            if(requestObject.IsSetMapLongVarcharAs())
+            {
+                context.Writer.WritePropertyName("MapLongVarcharAs");
+                context.Writer.Write(requestObject.MapLongVarcharAs);
+            }
+
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");

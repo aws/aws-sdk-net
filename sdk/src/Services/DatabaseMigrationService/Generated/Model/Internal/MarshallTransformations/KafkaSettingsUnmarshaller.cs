@@ -172,6 +172,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.SslClientKeyPassword = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SslEndpointIdentificationAlgorithm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SslEndpointIdentificationAlgorithm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Topic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

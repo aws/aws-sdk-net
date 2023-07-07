@@ -36,6 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _deploymentOption;
         private string _engineEdition;
+        private string _engineVersion;
         private double? _instanceMemory;
         private string _instanceType;
         private double? _instanceVcpu;
@@ -79,6 +80,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineEdition()
         {
             return this._engineEdition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// Describes the recommended target Amazon RDS engine version.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>

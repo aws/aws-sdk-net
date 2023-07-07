@@ -349,6 +349,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTimestreamSettings())
+                {
+                    context.Writer.WritePropertyName("TimestreamSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimestreamSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimestreamSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUsername())
                 {
                     context.Writer.WritePropertyName("Username");

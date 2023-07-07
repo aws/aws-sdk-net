@@ -53,6 +53,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _sslClientCertificateArn;
         private string _sslClientKeyArn;
         private string _sslClientKeyPassword;
+        private KafkaSslEndpointIdentificationAlgorithm _sslEndpointIdentificationAlgorithm;
         private string _topic;
 
         /// <summary>
@@ -416,6 +417,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSslClientKeyPassword()
         {
             return this._sslClientKeyPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslEndpointIdentificationAlgorithm. 
+        /// <para>
+        /// Sets hostname verification for the certificate. This setting is supported in DMS version
+        /// 3.5.1 and later. 
+        /// </para>
+        /// </summary>
+        public KafkaSslEndpointIdentificationAlgorithm SslEndpointIdentificationAlgorithm
+        {
+            get { return this._sslEndpointIdentificationAlgorithm; }
+            set { this._sslEndpointIdentificationAlgorithm = value; }
+        }
+
+        // Check to see if SslEndpointIdentificationAlgorithm property is set
+        internal bool IsSetSslEndpointIdentificationAlgorithm()
+        {
+            return this._sslEndpointIdentificationAlgorithm != null;
         }
 
         /// <summary>

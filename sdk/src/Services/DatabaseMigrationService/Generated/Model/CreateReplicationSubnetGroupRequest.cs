@@ -38,6 +38,14 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
     /// exception.
     /// </para>
+    ///  
+    /// <para>
+    /// If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup
+    /// action returns the following error message: The Replication Subnet Group already exists.
+    /// In this case, delete the existing replication subnet group. To do so, use the <a href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html">DeleteReplicationSubnetGroup</a>
+    /// action. Optionally, choose Subnet groups in the DMS console, then choose your subnet
+    /// group. Next, choose Delete from Actions.
+    /// </para>
     /// </summary>
     public partial class CreateReplicationSubnetGroupRequest : AmazonDatabaseMigrationServiceRequest
     {

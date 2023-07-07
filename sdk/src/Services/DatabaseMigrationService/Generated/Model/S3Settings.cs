@@ -190,17 +190,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to .csv or .parquet (columnar storage) output files. The default setting is <code>false</code>,
         /// but when <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
         /// only INSERTs and UPDATEs from the source database are migrated to the .csv or .parquet
-        /// file. 
+        /// file.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the
-        /// value of the <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code>
-        /// is set to <code>true</code>, the first field of every CDC record is set to either
-        /// <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source.
-        /// But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records
-        /// are written without an indication of INSERT or UPDATE operations at the source. For
-        /// more information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
+        /// DMS supports the use of the .parquet files in versions 3.4.7 and later.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+        /// parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first
+        /// field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate
+        /// INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code>
+        /// is set to <code>false</code>, CDC records are written without an indication of INSERT
+        /// or UPDATE operations at the source. For more information about how these settings
+        /// work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
         /// Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service
         /// User Guide.</i>.
         /// </para>
@@ -882,12 +886,18 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property IncludeOpForFullLoad. 
         /// <para>
         /// A value that enables a full load to write INSERT operations to the comma-separated
-        /// value (.csv) output files only to indicate how the rows were added to the source database.
+        /// value (.csv) or .parquet output files only to indicate how the rows were added to
+        /// the source database.
         /// </para>
         ///  <note> 
         /// <para>
         /// DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and
         /// later.
+        /// </para>
+        ///  
+        /// <para>
+        /// DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code>
+        /// parameter in versions 3.4.7 and later.
         /// </para>
         ///  </note> 
         /// <para>

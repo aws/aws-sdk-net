@@ -172,6 +172,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberDatatypeScale = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpenTransactionWindow", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OpenTransactionWindow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OraclePathPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

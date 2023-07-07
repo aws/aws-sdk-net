@@ -43,6 +43,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _heartbeatFrequency;
         private string _heartbeatSchema;
         private bool? _mapBooleanAsBoolean;
+        private bool? _mapJsonbAsClob;
+        private LongVarcharMappingType _mapLongVarcharAs;
         private int? _maxFileSize;
         private string _password;
         private PluginNameValue _pluginName;
@@ -265,6 +267,42 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MapJsonbAsClob. 
+        /// <para>
+        /// When true, DMS migrates JSONB values as CLOB.
+        /// </para>
+        /// </summary>
+        public bool MapJsonbAsClob
+        {
+            get { return this._mapJsonbAsClob.GetValueOrDefault(); }
+            set { this._mapJsonbAsClob = value; }
+        }
+
+        // Check to see if MapJsonbAsClob property is set
+        internal bool IsSetMapJsonbAsClob()
+        {
+            return this._mapJsonbAsClob.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapLongVarcharAs. 
+        /// <para>
+        /// When true, DMS migrates LONG values as VARCHAR.
+        /// </para>
+        /// </summary>
+        public LongVarcharMappingType MapLongVarcharAs
+        {
+            get { return this._mapLongVarcharAs; }
+            set { this._mapLongVarcharAs = value; }
+        }
+
+        // Check to see if MapLongVarcharAs property is set
+        internal bool IsSetMapLongVarcharAs()
+        {
+            return this._mapLongVarcharAs != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxFileSize. 
         /// <para>
         /// Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.
@@ -441,7 +479,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// For more information about setting the <code>CdcStartPosition</code> request parameter,
-        /// see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
         /// a CDC native start point</a> in the <i>Database Migration Service User Guide</i>.
         /// For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
         /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,

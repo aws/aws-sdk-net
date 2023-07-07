@@ -42,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The databse engine used for your source or target endpoint.
+        /// The database engine used for your source or target endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
