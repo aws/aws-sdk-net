@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HlsPlaylistSettings Marshaller
+    /// KeyValuePair Marshaller
     /// </summary>
-    public class HlsPlaylistSettingsMarshaller : IRequestMarshaller<HlsPlaylistSettings, JsonMarshallerContext> 
+    public class KeyValuePairMarshaller : IRequestMarshaller<KeyValuePair, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HlsPlaylistSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(KeyValuePair requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAdMarkupType())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("AdMarkupType");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectAdMarkupTypeListValue in requestObject.AdMarkupType)
-                {
-                        context.Writer.Write(requestObjectAdMarkupTypeListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("Key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetManifestWindowSeconds())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds);
+                context.Writer.WritePropertyName("Value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HlsPlaylistSettingsMarshaller Instance = new HlsPlaylistSettingsMarshaller();
+        public readonly static KeyValuePairMarshaller Instance = new KeyValuePairMarshaller();
 
     }
 }

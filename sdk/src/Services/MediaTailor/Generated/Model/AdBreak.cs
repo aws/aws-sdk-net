@@ -33,11 +33,31 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class AdBreak
     {
+        private List<KeyValuePair> _adBreakMetadata = new List<KeyValuePair>();
         private MessageType _messageType;
         private long? _offsetMillis;
         private SlateSource _slate;
         private SpliceInsertMessage _spliceInsertMessage;
         private TimeSignalMessage _timeSignalMessage;
+
+        /// <summary>
+        /// Gets and sets the property AdBreakMetadata. 
+        /// <para>
+        /// Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag
+        /// for <code>SCTE35_ENHANCED</code> output.
+        /// </para>
+        /// </summary>
+        public List<KeyValuePair> AdBreakMetadata
+        {
+            get { return this._adBreakMetadata; }
+            set { this._adBreakMetadata = value; }
+        }
+
+        // Check to see if AdBreakMetadata property is set
+        internal bool IsSetAdBreakMetadata()
+        {
+            return this._adBreakMetadata != null && this._adBreakMetadata.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MessageType. 

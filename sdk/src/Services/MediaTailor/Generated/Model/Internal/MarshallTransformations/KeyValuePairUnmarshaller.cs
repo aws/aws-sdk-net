@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HlsPlaylistSettings Object
+    /// Response Unmarshaller for KeyValuePair Object
     /// </summary>  
-    public class HlsPlaylistSettingsUnmarshaller : IUnmarshaller<HlsPlaylistSettings, XmlUnmarshallerContext>, IUnmarshaller<HlsPlaylistSettings, JsonUnmarshallerContext>
+    public class KeyValuePairUnmarshaller : IUnmarshaller<KeyValuePair, XmlUnmarshallerContext>, IUnmarshaller<KeyValuePair, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HlsPlaylistSettings IUnmarshaller<HlsPlaylistSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KeyValuePair IUnmarshaller<KeyValuePair, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HlsPlaylistSettings Unmarshall(JsonUnmarshallerContext context)
+        public KeyValuePair Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HlsPlaylistSettings unmarshalledObject = new HlsPlaylistSettings();
+            KeyValuePair unmarshalledObject = new KeyValuePair();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdMarkupType", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AdMarkupType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ManifestWindowSeconds", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static HlsPlaylistSettingsUnmarshaller _instance = new HlsPlaylistSettingsUnmarshaller();        
+        private static KeyValuePairUnmarshaller _instance = new KeyValuePairUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HlsPlaylistSettingsUnmarshaller Instance
+        public static KeyValuePairUnmarshaller Instance
         {
             get
             {
