@@ -109,7 +109,7 @@ namespace Amazon.AppFabric
         /// </summary>
         /// <param name="config">The AmazonAppFabricClient Configuration Object</param>
         public AmazonAppFabricClient(AmazonAppFabricConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -1,3 +1,8 @@
+### 3.7.585.0 (2023-07-07 14:09 UTC)
+* Core 3.7.108.0
+	* Feat: Add support for service specific and global custom endpoints, which can be set via the configuration file or environment variables. Add a Profile object which can reroute the SDK to use the correct Profile when set on the ClientConfig and passed in to a service client constructor. ServiceClients that accept a Config object now call the overloaded GetAWSCredentialsMethod which checks for the Profile object
+	* All services packages updated to require new Core
+
 ### 3.7.584.0 (2023-07-06 18:25 UTC)
 * EC2 (3.7.140.0)
 	* Add Nitro Enclaves support on DescribeInstanceTypes
