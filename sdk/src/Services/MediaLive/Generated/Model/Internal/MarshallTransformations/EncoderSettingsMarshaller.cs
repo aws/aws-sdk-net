@@ -170,6 +170,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetThumbnailConfiguration())
+            {
+                context.Writer.WritePropertyName("thumbnailConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ThumbnailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThumbnailConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimecodeConfig())
             {
                 context.Writer.WritePropertyName("timecodeConfig");

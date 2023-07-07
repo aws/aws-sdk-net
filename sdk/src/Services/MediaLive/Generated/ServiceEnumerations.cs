@@ -13811,6 +13811,106 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type ThumbnailState.
+    /// </summary>
+    public class ThumbnailState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for ThumbnailState
+        /// </summary>
+        public static readonly ThumbnailState AUTO = new ThumbnailState("AUTO");
+        /// <summary>
+        /// Constant DISABLED for ThumbnailState
+        /// </summary>
+        public static readonly ThumbnailState DISABLED = new ThumbnailState("DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThumbnailState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThumbnailState FindValue(string value)
+        {
+            return FindValue<ThumbnailState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThumbnailState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThumbnailType.
+    /// </summary>
+    public class ThumbnailType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENT_ACTIVE for ThumbnailType
+        /// </summary>
+        public static readonly ThumbnailType CURRENT_ACTIVE = new ThumbnailType("CURRENT_ACTIVE");
+        /// <summary>
+        /// Constant UNSPECIFIED for ThumbnailType
+        /// </summary>
+        public static readonly ThumbnailType UNSPECIFIED = new ThumbnailType("UNSPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThumbnailType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThumbnailType FindValue(string value)
+        {
+            return FindValue<ThumbnailType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThumbnailType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TimecodeBurninFontSize.
     /// </summary>
     public class TimecodeBurninFontSize : ConstantClass

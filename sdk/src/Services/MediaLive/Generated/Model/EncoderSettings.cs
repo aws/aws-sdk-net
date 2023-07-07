@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private MotionGraphicsConfiguration _motionGraphicsConfiguration;
         private NielsenConfiguration _nielsenConfiguration;
         private List<OutputGroup> _outputGroups = new List<OutputGroup>();
+        private ThumbnailConfiguration _thumbnailConfiguration;
         private TimecodeConfig _timecodeConfig;
         private List<VideoDescription> _videoDescriptions = new List<VideoDescription>();
 
@@ -198,6 +199,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetOutputGroups()
         {
             return this._outputGroups != null && this._outputGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailConfiguration. Thumbnail configuration settings.
+        /// </summary>
+        public ThumbnailConfiguration ThumbnailConfiguration
+        {
+            get { return this._thumbnailConfiguration; }
+            set { this._thumbnailConfiguration = value; }
+        }
+
+        // Check to see if ThumbnailConfiguration property is set
+        internal bool IsSetThumbnailConfiguration()
+        {
+            return this._thumbnailConfiguration != null;
         }
 
         /// <summary>
