@@ -135,14 +135,13 @@
     </Target>
 
     <Target Name="run-generator">
-        <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+        <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)/references.targets')" />
 
         <Message Text="Build and run code generator"/>
-        <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
-        <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
-        <Exec Command="ServiceClientGenerator.exe $(GeneratorPartialBuildArgument)"
-            WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+        <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="../generator" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="../generator"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild) AWSSDKGenerator.sln" WorkingDirectory="../generator"/>
+        <Exec Command="dotnet run -c $(Configuration) --project ../../ServiceClientGenerator.csproj -- $(GeneratorPartialBuildArgument)" WorkingDirectory="../generator/ServiceClientGenerator/bin/$(Configuration)"/>
     </Target>
     <Target Name="build-custom-roslyn-analyzer" Condition="$(RunAnalyzersDuringBuild)">
         <Message Text="Build Custom Roslyn Analyzer"/>
