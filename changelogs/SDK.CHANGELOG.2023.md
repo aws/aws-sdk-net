@@ -1,3 +1,18 @@
+### 3.7.586.0 (2023-07-07 18:21 UTC)
+* CloudWatchLogs (3.7.106.0)
+	* Add CMK encryption support for CloudWatch Logs Insights query result data
+* DatabaseMigrationService (3.7.104.0)
+	* Releasing DMS Serverless. Adding support for PostgreSQL 15.x as source and target endpoint. Adding support for DocDB Elastic Clusters with sharded collections, PostgreSQL datatype mapping customization and disabling hostname validation of the certificate authority in Kafka endpoint settings
+* Glue (3.7.120.0)
+	* This release enables customers to create new Apache Iceberg tables and associated metadata in Amazon S3 by using native AWS Glue CreateTable operation.
+* MediaLive (3.7.107.0)
+	* This release enables the use of Thumbnails in AWS Elemental MediaLive.
+* MediaTailor (3.7.106.0)
+	* The AWS Elemental MediaTailor SDK for Channel Assembly has added support for EXT-X-CUE-OUT and EXT-X-CUE-IN tags to specify ad breaks in HLS outputs, including support for EXT-OATCLS, EXT-X-ASSET, and EXT-X-CUE-OUT-CONT accessory tags.
+* Core 3.7.108.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.585.0 (2023-07-07 14:09 UTC)
 * Core 3.7.108.0
 	* Feat: Add support for service specific and global custom endpoints, which can be set via the configuration file or environment variables. Add a Profile object which can reroute the SDK to use the correct Profile when set on the ClientConfig and passed in to a service client constructor. ServiceClients that accept a Config object now call the overloaded GetAWSCredentialsMethod which checks for the Profile object

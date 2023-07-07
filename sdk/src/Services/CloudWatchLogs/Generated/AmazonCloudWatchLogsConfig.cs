@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchLogs
     public partial class AmazonCloudWatchLogsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.105.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.106.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
