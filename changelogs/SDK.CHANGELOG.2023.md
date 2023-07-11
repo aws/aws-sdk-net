@@ -1,3 +1,7 @@
+### 3.7.587.0 (2023-07-11 04:43 UTC)
+* CognitoIdentityProvider (3.7.102.0)
+	* API model updated in Amazon Cognito
+
 ### 3.7.586.0 (2023-07-07 18:21 UTC)
 * CloudWatchLogs (3.7.106.0)
 	* Add CMK encryption support for CloudWatch Logs Insights query result data
