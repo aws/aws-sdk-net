@@ -334,6 +334,11 @@ namespace Amazon.DynamoDBv2
             return ConverterCache.HasConverter(type);
         }
 
+        internal bool TryGetConverter(Type type, out Converter converter)
+        {
+            return ConverterCache.TryGetConverter(type, out converter);
+        }
+
         internal IEnumerable<DynamoDBEntry> ConvertToEntries(Type elementType, IEnumerable values)
         {
             if (values == null) throw new ArgumentNullException("values");

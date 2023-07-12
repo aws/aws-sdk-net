@@ -61,6 +61,7 @@ namespace Amazon.DynamoDBv2.DataModel
             TableNamePrefix = AWSConfigsDynamoDB.Context.TableNamePrefix;
             Conversion = DynamoDBEntryConversion.CurrentConversion;
             MetadataCachingMode = AWSConfigsDynamoDB.Context.MetadataCachingMode;
+            DisableFetchingTableMetadata = AWSConfigsDynamoDB.Context.DisableFetchingTableMetadata;
         }
 
         /// <summary>
@@ -117,6 +118,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// .NET and DynamoDB types happens.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
+
+        /// <summary>
+        /// If true disables fetching table metadata automatically from DynamoDB. Table metadata must be 
+        /// defined by<see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
+        /// </summary>
+        /// <remarks>
+        /// Setting this to true can avoid latency and potential deadlocks due to the internal  <see cref="DescribeTableRequest"/> call that is used to populate the SDK's cache of 
+        /// table metadata. It requires that the table's index schema be fully described via the above methods, otherwise exceptions may be thrown and/or 
+        /// the results of certain DynamoDB operations may change. It is recommended to test your application prior to setting it to true in production code.
+        /// </remarks>
+        public bool? DisableFetchingTableMetadata { get; set; }
     }
 
     /// <summary>
@@ -320,6 +332,8 @@ namespace Amazon.DynamoDBv2.DataModel
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
+            bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
+
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             string overrideTableName =
                 !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
@@ -346,6 +360,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ConditionalOperator = conditionalOperator;
             Conversion = conversion;
             MetadataCachingMode = metadataCachingMode;
+            DisableFetchingTableMetadata = disableFetchingTableMetadata;
 
             State = new OperationState();
         }
@@ -434,6 +449,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// .NET and DynamoDB types happens.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
+
+        /// <inheritdoc cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
+        public bool DisableFetchingTableMetadata { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }

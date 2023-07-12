@@ -136,7 +136,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException("flatConfig");
 
             string tableName = GetTableName(storageConfig.TableName, flatConfig);
-            var unconfiguredTable = GetUnconfiguredTable(tableName);
+            var unconfiguredTable = GetUnconfiguredTable(tableName, flatConfig.DisableFetchingTableMetadata);
             ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
 
             var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer,
@@ -149,7 +149,7 @@ namespace Amazon.DynamoDBv2.DataModel
         // Retrieves Config-less Table from cache or constructs it on cache-miss
         // This Table should not be used for data operations.
         // To use for data operations, Copy with a TableConfig first.
-        internal Table GetUnconfiguredTable(string tableName)
+        internal Table GetUnconfiguredTable(string tableName, bool disableFetchingTableMetadata = false)
         {
             Table table;
             
@@ -174,12 +174,18 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 _readerWriterLockSlim.EnterWriteLock();
                 
-                // Check to see if another thread go the write lock before this thread and filled the cache.
+                // Check to see if another thread got the write lock before this thread and filled the cache.
                 if (tablesMap.TryGetValue(tableName, out table))
                 {
                     return table;
                 }
 
+                
+                if (disableFetchingTableMetadata)
+                {
+                    return null;
+                }
+                
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
                     storeAsEpoch: null, isEmptyStringValueEnabled: false, metadataCachingMode: Config.MetadataCachingMode);
                 table = Table.LoadTable(Client, emptyConfig);
@@ -190,6 +196,55 @@ namespace Amazon.DynamoDBv2.DataModel
             finally
             {
                 if(_readerWriterLockSlim.IsWriteLockHeld)
+                {
+                    _readerWriterLockSlim.ExitWriteLock();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Stores a table in the cache if there is not an existing entry for the given key
+        /// </summary>
+        /// <param name="tableName">Name of the table used as the cache key</param>
+        /// <param name="tableToStore">Table to store if not already present in the cache</param>
+        /// <returns>Table that was either found in the cache or newly stored</returns>
+        internal void StoreUnconfiguredTable(string tableName, Table tableToStore)
+        {
+            try
+            {
+                _readerWriterLockSlim.EnterReadLock();
+
+                // Check to see if the cache was filled since this was invoked
+                if (tablesMap.TryGetValue(tableName, out Table table))
+                {
+                    return;
+                }
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsReadLockHeld)
+                {
+                    _readerWriterLockSlim.ExitReadLock();
+                }
+            }
+
+            try
+            {
+                _readerWriterLockSlim.EnterWriteLock();
+
+                // Check to see if the cache was filled since this was invoked
+                if (tablesMap.TryGetValue(tableName, out Table table))
+                {
+                    return;
+                }
+
+                tablesMap.Add(tableName, tableToStore);
+
+                return;
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsWriteLockHeld)
                 {
                     _readerWriterLockSlim.ExitWriteLock();
                 }
