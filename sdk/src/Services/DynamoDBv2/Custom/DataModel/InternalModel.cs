@@ -650,7 +650,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     if (tableCache == null)
                     {
-                        var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
+                        var baseStorageConfig = CreateStorageConfig(type, actualTableName: null, flatConfig);
                         tableCache = new ConfigTableCache(baseStorageConfig);
                         Cache[type] = tableCache;
                     }
@@ -671,7 +671,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     return config;
                 }
 
-                config = CreateStorageConfig(type, actualTableName);
+                config = CreateStorageConfig(type, actualTableName, flatConfig);
                 tableCache.Cache[actualTableName] = config;
 
                 return config;
@@ -689,7 +689,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return (config.LowerCamelCaseProperties ? Utils.ToLowerCamelCase(value) : value);
         }
-        private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName)
+
+        private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName, DynamoDBFlatConfig flatConfig)
         {
             if (baseType == null) throw new ArgumentNullException("baseType");
             ITypeInfo typeInfo = TypeFactory.GetTypeInfo(baseType);
@@ -704,7 +705,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 Table table;
                 try
                 {
-                    table = Context.GetUnconfiguredTable(actualTableName);
+                    table = Context.GetUnconfiguredTable(actualTableName, flatConfig.DisableFetchingTableMetadata);
                 }
                 catch
                 {
@@ -718,6 +719,21 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             config.Denormalize(Context);
+
+            if (flatConfig.DisableFetchingTableMetadata)
+            {
+                if (string.IsNullOrEmpty(actualTableName))
+                {
+                    actualTableName = DynamoDBContext.GetTableName(config.TableName, flatConfig);
+                }
+                var emptyConfig = new TableConfig(actualTableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
+                    storeAsEpoch: null, isEmptyStringValueEnabled: false, metadataCachingMode: flatConfig.MetadataCachingMode);
+                var table = Table.CreateTableFromItemStorageConfig(Context.Client, emptyConfig, config, flatConfig);
+
+                // The table info must be cached under the actual table name exactly how it exists in the DynamoDB service.
+                // This is done to mimic the caching behavior when DisableFetchingTableMetadata is set to false.
+                Context.StoreUnconfiguredTable(actualTableName, table);
+            }
             return config;
         }
 

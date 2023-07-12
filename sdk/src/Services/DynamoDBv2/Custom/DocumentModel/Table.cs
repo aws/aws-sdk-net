@@ -139,6 +139,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return SdkCache.GetCache<string, TableDescription>(DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
         }
 
+        private static ScalarAttributeType PrimitiveToScalar(DynamoDBEntryType primitiveEntryType)
+        {
+            switch (primitiveEntryType)
+            {
+                case DynamoDBEntryType.String:
+                    return ScalarAttributeType.S;
+                case DynamoDBEntryType.Numeric:
+                    return ScalarAttributeType.N;
+                case DynamoDBEntryType.Binary:
+                    return ScalarAttributeType.B;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(primitiveEntryType), $"{primitiveEntryType} is not a known DynamoDB {nameof(ScalarAttributeType)}"); ;
+            }
+        }
+
         private void LoadTableInfo(ICache<string, TableDescription> tableDescriptionCache)
         {
             ClearTableData();
@@ -424,6 +439,160 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Table table = new Table(ddbClient, config);
             var tableDescriptionCache = table.GetTableDescriptionCache();
             table.LoadTableInfo(tableDescriptionCache);
+            return table;
+        }
+
+        /// <summary>
+        /// Attempts to determine the primitive data type for a given .NET property that is mapped to a DynamoDB attribute
+        /// </summary>
+        /// <param name="property">.NET Property that is to be stored in DynamoDB</param>
+        /// <param name="flatConfig">Normalized, internal high-level DynamoDB configuration</param>
+        /// <returns><see cref="DynamoDBEntryType"/> if it can be determined for the given property, otherwise an exception will be thrown</returns>
+        private static DynamoDBEntryType GetPrimitiveEntryTypeForProperty(PropertyStorage property, DynamoDBFlatConfig flatConfig)
+        {
+            if (property.StoreAsEpoch)
+            {
+                return DynamoDBEntryType.Numeric;
+            }
+
+            // Get the converter that would be used for this property
+            flatConfig.Conversion.TryGetConverter(property.MemberType, out Converter converter);
+
+            // Converters can only convert an actual value, we can't just look up the resulting type 
+            // so create a default value and attempt to convert it
+            object hypotheticalValue;
+            if (property.MemberType == typeof(string))
+            {
+                hypotheticalValue = string.Empty; // Activator.CreateInstance throws for string due to no default constructor
+            }
+            else
+            {
+                hypotheticalValue = Activator.CreateInstance(property.MemberType);
+            }
+
+            // This will throw an exception if the conversion fails, or if the resulting entry isn't a primitive
+            return converter.ToEntry(hypotheticalValue).ToPrimitive().Type;
+        }
+
+        /// <summary>
+        /// Creates a document model <see cref="Table"/> object from an object persistence model's <see cref="ItemStorageConfig"/>
+        /// This contains the index information for a given table which is used to construct and validate the data plane operations.
+        /// </summary>
+        /// <param name="client">DynamoDB client that the resulting table will use for operations</param>
+        /// <param name="config">Table configuration</param>
+        /// <param name="itemStorageConfig">The object persistence configuration for a .NET class that is mapped to the given table</param>
+        /// <param name="flatConfig">Normalized, internal high-level DynamoDB configuration</param>
+        internal static Table CreateTableFromItemStorageConfig(IAmazonDynamoDB client, TableConfig config, ItemStorageConfig itemStorageConfig, DynamoDBFlatConfig flatConfig)
+        {
+            Table table = new Table(client, config);
+            table.ClearTableData(); // initializes collections
+
+            //
+            // Add Hash Key in the Table metadata
+            // 
+            foreach (var hashKeyPropertyName in itemStorageConfig.HashKeyPropertyNames)
+            {
+                var property = itemStorageConfig.GetPropertyStorage(hashKeyPropertyName);
+                var primitiveType = GetPrimitiveEntryTypeForProperty(property, flatConfig);
+
+                table.HashKeys.Add(property.AttributeName);
+
+                table.Keys.Add(property.AttributeName, new KeyDescription
+                {
+                    IsHash = true,
+                    Type = primitiveType
+                });
+
+                table.Attributes.Add(new AttributeDefinition { AttributeName = property.AttributeName, AttributeType = PrimitiveToScalar(primitiveType) });
+            }
+
+            //
+            // Add Range Key in the table metadata
+            //
+            foreach (var rangeKeyPropertyName in itemStorageConfig.RangeKeyPropertyNames)
+            {
+                var property = itemStorageConfig.GetPropertyStorage(rangeKeyPropertyName);
+                var primitiveType = GetPrimitiveEntryTypeForProperty(property, flatConfig);
+
+                table.RangeKeys.Add(property.AttributeName);
+
+                table.Keys.Add(property.AttributeName, new KeyDescription
+                {
+                    IsHash = false,
+                    Type = primitiveType
+                });
+
+                table.Attributes.Add(new AttributeDefinition { AttributeName = property.AttributeName, AttributeType = PrimitiveToScalar(primitiveType) });
+            }
+            
+            //
+            // Add Local Secondary Indices in the table metadata
+            //
+            foreach (var lsiIndexName in itemStorageConfig.IndexNameToLSIRangePropertiesMapping.Keys)
+            {
+                table.LocalSecondaryIndexNames.Add(lsiIndexName);
+
+                var indexDescription = new LocalSecondaryIndexDescription()
+                {
+                    IndexName = lsiIndexName,
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement
+                        {
+                            AttributeName = table.HashKeys[0], // A LSI always reuses the main hash key
+                            KeyType = KeyType.HASH
+                        }
+                    }
+                };
+
+                foreach (var lsiRangePropertyName in itemStorageConfig.IndexNameToLSIRangePropertiesMapping[lsiIndexName])
+                {
+                    var lsiRangeProperty = itemStorageConfig.GetPropertyStorage(lsiRangePropertyName);
+                    var primitiveType = GetPrimitiveEntryTypeForProperty(lsiRangeProperty, flatConfig);
+
+                    indexDescription.KeySchema.Add(new KeySchemaElement
+                    {
+                        AttributeName = lsiRangeProperty.AttributeName,
+                        KeyType = KeyType.RANGE
+                    });
+
+                    table.Attributes.Add(new AttributeDefinition { AttributeName = lsiRangeProperty.AttributeName, AttributeType = PrimitiveToScalar(primitiveType) });
+                }
+
+                table.LocalSecondaryIndexes[lsiIndexName] = indexDescription;
+            }
+
+            //
+            // Add Global Secondary Indices in the table metadata
+            //
+            foreach (var gsiIndexName in itemStorageConfig.IndexNameToGSIMapping.Keys)
+            {
+                table.GlobalSecondaryIndexNames.Add(gsiIndexName);
+
+                var gsi = itemStorageConfig.GetGSIConfig(gsiIndexName);
+
+                var indexDescription = new GlobalSecondaryIndexDescription()
+                {
+                    IndexName = gsiIndexName
+                };
+
+                var hashKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
+                indexDescription.KeySchema.Add(new KeySchemaElement()
+                {
+                    AttributeName = hashKeyProperty.AttributeName,
+                    KeyType = KeyType.HASH
+                });
+
+                var rangeKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
+                indexDescription.KeySchema.Add(new KeySchemaElement()
+                {
+                    AttributeName = rangeKeyProperty.AttributeName,
+                    KeyType = KeyType.RANGE
+                });
+
+                table.GlobalSecondaryIndexes[gsiIndexName] = indexDescription;
+            }
+
             return table;
         }
 

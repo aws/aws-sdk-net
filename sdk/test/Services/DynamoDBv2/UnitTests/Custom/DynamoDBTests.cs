@@ -15,6 +15,7 @@ using Amazon.DynamoDBv2.Model;
 using ThirdParty.Json.LitJson;
 
 using Moq;
+using Amazon;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -328,6 +329,60 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual(document["V"].AsInt(), 1);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestGetTargetTable_DisableFetchingTableMetadata()
+        {
+            var dynamoDBContextConfig = new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true,
+                TableNamePrefix = "DotnetTest-"
+            };
+            var dynamoDBClient = new Mock<IAmazonDynamoDB>();
+            var dynamoDBContext = new DynamoDBContext(dynamoDBClient.Object, dynamoDBContextConfig);
+
+            var table = dynamoDBContext.GetTargetTable<Employee>();
+            Assert.IsNotNull(table);
+            Assert.AreEqual("DotnetTest-EmployeeDetails", table.TableName);
+            Assert.AreEqual(2, table.Keys.Count);
+            Assert.IsTrue(table.Keys.ContainsKey("Name"));
+            Assert.IsTrue(table.Keys.ContainsKey("Age"));
+
+            Assert.AreEqual(1, table.HashKeys.Count);
+            Assert.AreEqual("Name", table.HashKeys[0]);
+
+            Assert.AreEqual(1, table.RangeKeys.Count);
+            Assert.AreEqual("Age", table.RangeKeys[0]);
+
+            Assert.AreEqual(1, table.GlobalSecondaryIndexes.Count);
+            var gsi = table.GlobalSecondaryIndexes["GlobalIndex"];
+            Assert.AreEqual("GlobalIndex", gsi.IndexName);
+            Assert.AreEqual(2, gsi.KeySchema.Count);
+            Assert.AreEqual("Company", gsi.KeySchema[0].AttributeName);
+            Assert.AreEqual(KeyType.HASH, gsi.KeySchema[0].KeyType);
+            Assert.AreEqual("Score", gsi.KeySchema[1].AttributeName);
+            Assert.AreEqual(KeyType.RANGE, gsi.KeySchema[1].KeyType);
+
+            Assert.AreEqual(1, table.LocalSecondaryIndexes.Count);
+            var lsi = table.LocalSecondaryIndexes["LocalIndex"];
+            Assert.AreEqual("LocalIndex", lsi.IndexName);
+            Assert.AreEqual(2, lsi.KeySchema.Count);
+            Assert.AreEqual("Name", lsi.KeySchema[0].AttributeName);
+            Assert.AreEqual(KeyType.HASH, lsi.KeySchema[0].KeyType);
+            Assert.AreEqual("Manager", lsi.KeySchema[1].AttributeName);
+            Assert.AreEqual(KeyType.RANGE, lsi.KeySchema[1].KeyType);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestDisableFetchingTableMetadata_UsingGlobalContext()
+        {
+            AWSConfigsDynamoDB.Context.DisableFetchingTableMetadata = true;
+            var config = new DynamoDBContextConfig();
+            Assert.AreEqual(true, config.DisableFetchingTableMetadata);
+            AWSConfigsDynamoDB.Context.DisableFetchingTableMetadata = false;
+        }
+
         public class Parent
         {
             [DynamoDBProperty("actualPropertyName")]
@@ -340,6 +395,27 @@ namespace AWSSDK_DotNet35.UnitTests
         public class Child : Parent
         {
             public override string Property1 { get; set; }
+        }
+
+        [DynamoDBTable("EmployeeDetails")]
+        public class Employee
+        {
+            // Hash key
+            [DynamoDBHashKey]
+            public string Name { get; set; }
+
+            // Range key
+            [DynamoDBRangeKey]
+            public int Age { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+            public string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public int Score { get; set; }
+
+            [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex", AttributeName = "Manager")]
+            public string ManagerName { get; set; }
         }
 
 #if ASYNC_AWAIT
