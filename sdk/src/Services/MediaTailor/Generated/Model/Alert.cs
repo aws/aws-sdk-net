@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     {
         private string _alertCode;
         private string _alertMessage;
+        private AlertCategory _category;
         private DateTime? _lastModifiedTime;
         private List<string> _relatedResourceArns = new List<string>();
         private string _resourceArn;
@@ -75,6 +76,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAlertMessage()
         {
             return this._alertMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category that MediaTailor assigns to the alert.
+        /// </para>
+        /// </summary>
+        public AlertCategory Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
         }
 
         /// <summary>

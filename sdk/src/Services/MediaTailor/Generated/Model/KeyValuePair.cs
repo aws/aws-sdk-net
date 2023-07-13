@@ -61,8 +61,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes this value,
-        /// and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag.
+        /// For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes this
+        /// value, and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag.
         /// If you specify a value, you must also specify a corresponding key.
         /// </para>
         /// </summary>
