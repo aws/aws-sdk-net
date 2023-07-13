@@ -138,7 +138,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceAccessUrl. 
         /// <para>
-        /// This URL allows contact center users to access Amazon Connect admin website.
+        /// This URL allows contact center users to access the Amazon Connect admin website.
         /// </para>
         /// </summary>
         public string InstanceAccessUrl

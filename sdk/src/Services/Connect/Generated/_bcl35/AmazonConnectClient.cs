@@ -3474,6 +3474,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteQueue
+
+        /// <summary>
+        /// Deletes a queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        public virtual IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueue.</param>
+        /// 
+        /// <returns>Returns a  DeleteQueueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        public virtual DeleteQueueResponse EndDeleteQueue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQueueResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteQuickConnect
 
         /// <summary>
@@ -3539,6 +3611,78 @@ namespace Amazon.Connect
         public virtual DeleteQuickConnectResponse EndDeleteQuickConnect(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteQuickConnectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRoutingProfile
+
+        /// <summary>
+        /// Deletes a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRoutingProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">REST API Reference for DeleteRoutingProfile Operation</seealso>
+        public virtual DeleteRoutingProfileResponse DeleteRoutingProfile(DeleteRoutingProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoutingProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoutingProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRoutingProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingProfile operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoutingProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">REST API Reference for DeleteRoutingProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRoutingProfile(DeleteRoutingProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoutingProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoutingProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRoutingProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRoutingProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteRoutingProfileResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">REST API Reference for DeleteRoutingProfile Operation</seealso>
+        public virtual DeleteRoutingProfileResponse EndDeleteRoutingProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRoutingProfileResponse>(asyncResult);
         }
 
         #endregion
