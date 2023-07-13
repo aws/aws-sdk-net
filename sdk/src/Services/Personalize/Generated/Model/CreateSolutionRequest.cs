@@ -245,7 +245,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RecipeArn. 
         /// <para>
-        /// The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code>
+        /// The ARN of the recipe to use for model training. This is required when <code>performAutoML</code>
         /// is false.
         /// </para>
         /// </summary>

@@ -228,7 +228,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RecipeArn. 
         /// <para>
-        /// The ARN of the recipe used to create the solution.
+        /// The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code>
+        /// is false.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

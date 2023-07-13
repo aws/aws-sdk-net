@@ -38,6 +38,7 @@ namespace Amazon.Personalize.Model
         private string _datasetGroupArn;
         private string _datasetType;
         private DateTime? _lastUpdatedDateTime;
+        private DatasetUpdateSummary _latestDatasetUpdate;
         private string _name;
         private string _schemaArn;
         private string _status;
@@ -146,6 +147,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDatasetUpdate. 
+        /// <para>
+        /// Describes the latest update to the dataset.
+        /// </para>
+        /// </summary>
+        public DatasetUpdateSummary LatestDatasetUpdate
+        {
+            get { return this._latestDatasetUpdate; }
+            set { this._latestDatasetUpdate = value; }
+        }
+
+        // Check to see if LatestDatasetUpdate property is set
+        internal bool IsSetLatestDatasetUpdate()
+        {
+            return this._latestDatasetUpdate != null;
         }
 
         /// <summary>

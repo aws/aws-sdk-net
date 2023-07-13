@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Dataset Object
+    /// Response Unmarshaller for DatasetUpdateSummary Object
     /// </summary>  
-    public class DatasetUnmarshaller : IUnmarshaller<Dataset, XmlUnmarshallerContext>, IUnmarshaller<Dataset, JsonUnmarshallerContext>
+    public class DatasetUpdateSummaryUnmarshaller : IUnmarshaller<DatasetUpdateSummary, XmlUnmarshallerContext>, IUnmarshaller<DatasetUpdateSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Dataset IUnmarshaller<Dataset, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DatasetUpdateSummary IUnmarshaller<DatasetUpdateSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Dataset Unmarshall(JsonUnmarshallerContext context)
+        public DatasetUpdateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Dataset unmarshalledObject = new Dataset();
+            DatasetUpdateSummary unmarshalledObject = new DatasetUpdateSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,40 +70,16 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("datasetArn", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatasetArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("datasetGroupArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatasetGroupArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("datasetType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatasetType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestDatasetUpdate", targetDepth))
-                {
-                    var unmarshaller = DatasetUpdateSummaryUnmarshaller.Instance;
-                    unmarshalledObject.LatestDatasetUpdate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("schemaArn", targetDepth))
@@ -124,12 +100,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatasetUnmarshaller _instance = new DatasetUnmarshaller();        
+        private static DatasetUpdateSummaryUnmarshaller _instance = new DatasetUpdateSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatasetUnmarshaller Instance
+        public static DatasetUpdateSummaryUnmarshaller Instance
         {
             get
             {
