@@ -37,8 +37,10 @@ namespace Amazon.Proton.Model
         private DateTime? _createdAt;
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
+        private string _lastAttemptedDeploymentId;
         private DateTime? _lastDeploymentAttemptedAt;
         private DateTime? _lastDeploymentSucceededAt;
+        private string _lastSucceededDeploymentId;
         private string _spec;
         private string _templateMajorVersion;
         private string _templateMinorVersion;
@@ -121,6 +123,24 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastAttemptedDeploymentId. 
+        /// <para>
+        /// The ID of the last attempted deployment of this service pipeline.
+        /// </para>
+        /// </summary>
+        public string LastAttemptedDeploymentId
+        {
+            get { return this._lastAttemptedDeploymentId; }
+            set { this._lastAttemptedDeploymentId = value; }
+        }
+
+        // Check to see if LastAttemptedDeploymentId property is set
+        internal bool IsSetLastAttemptedDeploymentId()
+        {
+            return this._lastAttemptedDeploymentId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastDeploymentAttemptedAt. 
         /// <para>
         /// The time when a deployment of the service pipeline was last attempted.
@@ -156,6 +176,24 @@ namespace Amazon.Proton.Model
         internal bool IsSetLastDeploymentSucceededAt()
         {
             return this._lastDeploymentSucceededAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSucceededDeploymentId. 
+        /// <para>
+        /// The ID of the last successful deployment of this service pipeline.
+        /// </para>
+        /// </summary>
+        public string LastSucceededDeploymentId
+        {
+            get { return this._lastSucceededDeploymentId; }
+            set { this._lastSucceededDeploymentId = value; }
+        }
+
+        // Check to see if LastSucceededDeploymentId property is set
+        internal bool IsSetLastSucceededDeploymentId()
+        {
+            return this._lastSucceededDeploymentId != null;
         }
 
         /// <summary>

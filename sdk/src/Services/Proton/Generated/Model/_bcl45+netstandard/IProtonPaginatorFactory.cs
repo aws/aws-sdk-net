@@ -41,6 +41,11 @@ namespace Amazon.Proton.Model
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
+        /// Paginator for ListDeployments operation
+        ///</summary>
+        IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnvironmentAccountConnections operation
         ///</summary>
         IListEnvironmentAccountConnectionsPaginator ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request);

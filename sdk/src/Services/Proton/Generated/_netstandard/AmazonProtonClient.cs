@@ -1658,6 +1658,55 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  DeleteDeployment
+
+        internal virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeploymentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEnvironment
 
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
@@ -2330,6 +2379,55 @@ namespace Amazon.Proton
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDeployment
+
+        internal virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeploymentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get detailed data for a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3323,6 +3421,56 @@ namespace Amazon.Proton
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDeployments
+
+        internal virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeploymentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List deployments. You can filter the result list by environment, service, or a single
+        /// service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeployments service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        public virtual Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDeploymentsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -88,6 +88,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastAttemptedDeploymentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastAttemptedDeploymentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastDeploymentAttemptedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastDeploymentSucceededAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastSucceededDeploymentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastSucceededDeploymentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("spec", targetDepth))

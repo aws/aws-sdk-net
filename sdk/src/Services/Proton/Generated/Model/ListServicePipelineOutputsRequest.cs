@@ -34,8 +34,27 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class ListServicePipelineOutputsRequest : AmazonProtonRequest
     {
+        private string _deploymentId;
         private string _nextToken;
         private string _serviceName;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentId. 
+        /// <para>
+        /// The ID of the deployment you want the outputs for.
+        /// </para>
+        /// </summary>
+        public string DeploymentId
+        {
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
+        }
+
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
+        {
+            return this._deploymentId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

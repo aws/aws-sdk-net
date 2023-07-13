@@ -41,6 +41,7 @@ namespace Amazon.Proton.Model
     public partial class ListComponentOutputsRequest : AmazonProtonRequest
     {
         private string _componentName;
+        private string _deploymentId;
         private string _nextToken;
 
         /// <summary>
@@ -60,6 +61,24 @@ namespace Amazon.Proton.Model
         internal bool IsSetComponentName()
         {
             return this._componentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentId. 
+        /// <para>
+        /// The ID of the deployment whose outputs you want.
+        /// </para>
+        /// </summary>
+        public string DeploymentId
+        {
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
+        }
+
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
+        {
+            return this._deploymentId != null;
         }
 
         /// <summary>
