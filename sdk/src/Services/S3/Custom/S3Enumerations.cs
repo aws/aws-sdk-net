@@ -1424,6 +1424,16 @@ namespace Amazon.S3
         public static readonly InventoryOptionalField ChecksumAlgorithm = new InventoryOptionalField("ChecksumAlgorithm");
 
         /// <summary>
+        /// Constant ObjectAccessControlList for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ObjectAccessControlList = new InventoryOptionalField("ObjectAccessControlList");
+
+        /// <summary>
+        /// Constant ObjectOwner for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ObjectOwner = new InventoryOptionalField("ObjectOwner");
+
+        /// <summary>
         /// Construct instance of InventoryOptionalField.
         /// </summary>
         /// <param name="value"></param>

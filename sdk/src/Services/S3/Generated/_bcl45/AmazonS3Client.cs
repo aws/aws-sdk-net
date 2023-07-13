@@ -914,8 +914,9 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
-        /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 pricing</a>.
+        /// for the destination object. The request can also result in a data retrieval charge
+        /// for the source if the source storage class bills for data retrieval. For pricing information,
+        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1187,8 +1188,9 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
-        /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 pricing</a>.
+        /// for the destination object. The request can also result in a data retrieval charge
+        /// for the source if the source storage class bills for data retrieval. For pricing information,
+        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1462,8 +1464,9 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
-        /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 pricing</a>.
+        /// for the destination object. The request can also result in a data retrieval charge
+        /// for the source if the source storage class bills for data retrieval. For pricing information,
+        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1731,8 +1734,9 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
-        /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 pricing</a>.
+        /// for the destination object. The request can also result in a data retrieval charge
+        /// for the source if the source storage class bills for data retrieval. For pricing information,
+        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2007,8 +2011,9 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
-        /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 pricing</a>.
+        /// for the destination object. The request can also result in a data retrieval charge
+        /// for the source if the source storage class bills for data retrieval. For pricing information,
+        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2285,8 +2290,9 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
-        /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-        /// S3 pricing</a>.
+        /// for the destination object. The request can also result in a data retrieval charge
+        /// for the source if the source storage class bills for data retrieval. For pricing information,
+        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
         /// </para>
         ///  <important> 
         /// <para>
