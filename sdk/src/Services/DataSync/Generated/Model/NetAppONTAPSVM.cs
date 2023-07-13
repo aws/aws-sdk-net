@@ -37,6 +37,7 @@ namespace Amazon.DataSync.Model
         private long? _cifsShareCount;
         private string _clusterUuid;
         private List<string> _enabledProtocols = new List<string>();
+        private long? _lunCount;
         private MaxP95Performance _maxP95Performance;
         private long? _nfsExportedVolumes;
         private List<Recommendation> _recommendations = new List<Recommendation>();
@@ -101,6 +102,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetEnabledProtocols()
         {
             return this._enabledProtocols != null && this._enabledProtocols.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LunCount. 
+        /// <para>
+        /// The number of LUNs (logical unit numbers) in the SVM.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long LunCount
+        {
+            get { return this._lunCount.GetValueOrDefault(); }
+            set { this._lunCount = value; }
+        }
+
+        // Check to see if LunCount property is set
+        internal bool IsSetLunCount()
+        {
+            return this._lunCount.HasValue; 
         }
 
         /// <summary>

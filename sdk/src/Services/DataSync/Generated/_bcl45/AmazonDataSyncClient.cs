@@ -40,10 +40,9 @@ namespace Amazon.DataSync
     ///
     /// DataSync 
     /// <para>
-    /// DataSync is a managed data transfer service that makes it simpler for you to automate
-    /// moving data between on-premises storage and Amazon Web Services storage services.
-    /// You also can use DataSync to transfer data between other cloud providers and Amazon
-    /// Web Services storage services.
+    /// DataSync is an online data movement and discovery service that simplifies data migration
+    /// and helps you quickly, easily, and securely transfer your file or object data to,
+    /// from, and between Amazon Web Services storage services.
     /// </para>
     ///  
     /// <para>
@@ -407,30 +406,29 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Activates an DataSync agent that you have deployed in your storage environment. The
-        /// activation process associates your agent with your account. In the activation process,
-        /// you specify information such as the Amazon Web Services Region that you want to activate
-        /// the agent in. You activate the agent in the Amazon Web Services Region where your
-        /// target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this
-        /// Amazon Web Services Region.
+        /// Activates an DataSync agent that you've deployed in your storage environment. The
+        /// activation process associates the agent with your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-        /// to a VPC endpoint so you can run tasks without going over the public internet.
+        /// If you haven't deployed an agent yet, see the following topics to learn more:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You can use an agent for more than one location. If a task uses multiple agents, all
-        /// of them need to have status AVAILABLE for the task to run. If you use multiple agents
-        /// for a source location, the status of all the agents must be AVAILABLE for the task
-        /// to run. 
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
+        /// requirements</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Agents are automatically updated by Amazon Web Services on a regular basis, using
-        /// a mechanism that ensures minimal interruption to your tasks.
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
+        /// an agent</a> 
         /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you're transferring between Amazon Web Services storage services, you don't need
+        /// a DataSync agent. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// 
@@ -453,30 +451,29 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Activates an DataSync agent that you have deployed in your storage environment. The
-        /// activation process associates your agent with your account. In the activation process,
-        /// you specify information such as the Amazon Web Services Region that you want to activate
-        /// the agent in. You activate the agent in the Amazon Web Services Region where your
-        /// target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this
-        /// Amazon Web Services Region.
+        /// Activates an DataSync agent that you've deployed in your storage environment. The
+        /// activation process associates the agent with your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-        /// to a VPC endpoint so you can run tasks without going over the public internet.
+        /// If you haven't deployed an agent yet, see the following topics to learn more:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You can use an agent for more than one location. If a task uses multiple agents, all
-        /// of them need to have status AVAILABLE for the task to run. If you use multiple agents
-        /// for a source location, the status of all the agents must be AVAILABLE for the task
-        /// to run. 
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
+        /// requirements</a> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Agents are automatically updated by Amazon Web Services on a regular basis, using
-        /// a mechanism that ensures minimal interruption to your tasks.
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
+        /// an agent</a> 
         /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you're transferring between Amazon Web Services storage services, you don't need
+        /// a DataSync agent. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// <param name="cancellationToken">

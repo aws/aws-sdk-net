@@ -30,30 +30,29 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgent operation.
-    /// Activates an DataSync agent that you have deployed in your storage environment. The
-    /// activation process associates your agent with your account. In the activation process,
-    /// you specify information such as the Amazon Web Services Region that you want to activate
-    /// the agent in. You activate the agent in the Amazon Web Services Region where your
-    /// target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this
-    /// Amazon Web Services Region.
+    /// Activates an DataSync agent that you've deployed in your storage environment. The
+    /// activation process associates the agent with your Amazon Web Services account.
     /// 
     ///  
     /// <para>
-    /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-    /// to a VPC endpoint so you can run tasks without going over the public internet.
+    /// If you haven't deployed an agent yet, see the following topics to learn more:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You can use an agent for more than one location. If a task uses multiple agents, all
-    /// of them need to have status AVAILABLE for the task to run. If you use multiple agents
-    /// for a source location, the status of all the agents must be AVAILABLE for the task
-    /// to run. 
+    ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
+    /// requirements</a> 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Agents are automatically updated by Amazon Web Services on a regular basis, using
-    /// a mechanism that ensures minimal interruption to your tasks.
+    ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
+    /// an agent</a> 
     /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// If you're transferring between Amazon Web Services storage services, you don't need
+    /// a DataSync agent. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateAgentRequest : AmazonDataSyncRequest
     {
@@ -67,20 +66,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ActivationKey. 
         /// <para>
-        /// Your agent activation key. You can get the activation key either by sending an HTTP
-        /// GET request with redirects that enable you to get the agent IP address (port 80).
-        /// Alternatively, you can get it from the DataSync console.
-        /// </para>
-        ///  
-        /// <para>
-        /// The redirect URL returned in the response provides you the activation key for your
-        /// agent in the query string parameter <code>activationKey</code>. It might also include
-        /// other activation-related parameters; however, these are merely defaults. The arguments
-        /// you pass to this API call determine the actual configuration of your agent.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see Activating an Agent in the <i>DataSync User Guide.</i> 
+        /// Specifies your DataSync agent's activation key. If you don't have an activation key,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate
+        /// your agent</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=29)]
@@ -99,8 +87,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentName. 
         /// <para>
-        /// The name you configured for your agent. This value is a text reference that is used
-        /// to identify the agent in the console.
+        /// Specifies a name for your agent. You can see this name in the DataSync console.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -119,8 +106,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The ARNs of the security groups used to protect your data transfer task subnets. See
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.
+        /// Specifies the Amazon Resource Name (ARN) of the security group that protects your
+        /// task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
+        /// interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
+        /// a virtual private cloud (VPC) endpoint</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -139,13 +128,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SubnetArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic
-        /// network interfaces for each data transfer task. The agent that runs a task must be
-        /// private. When you start a task that is associated with an agent created in a VPC,
-        /// or one that has access to an IP address in a VPC, then the task is also private. In
-        /// this case, DataSync creates four network interfaces for each task in your subnet.
-        /// For a data transfer to work, the agent must be able to route to all these four network
-        /// interfaces.
+        /// Specifies the ARN of the subnet where you want to run your DataSync task when using
+        /// a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
+        /// interfaces</a> for your transfer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -164,16 +149,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents the tag that you want to associate with the agent.
-        /// The value can be an empty string. This value helps you manage, filter, and search
-        /// for your agents.
+        /// Specifies labels that help you categorize, filter, and search for your Amazon Web
+        /// Services resources. We recommend creating at least one tag for your agent.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Valid characters for key and value are letters, spaces, and numbers representable
-        /// in UTF-8 format, and the following special characters: + - = . _ : / @. 
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags
@@ -191,15 +169,14 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This
-        /// is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink
-        /// VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-        /// a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
+        /// Specifies the ID of the VPC endpoint that you want your agent to connect to. For example,
+        /// a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+        /// The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).
         /// </para>
+        ///  </important>
         /// </summary>
         public string VpcEndpointId
         {
