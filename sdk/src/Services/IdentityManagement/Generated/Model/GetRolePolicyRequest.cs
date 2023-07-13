@@ -54,8 +54,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-    /// roles to delegate permissions and federate identities</a>.
+    ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+    /// roles</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetRolePolicyRequest : AmazonIdentityManagementServiceRequest

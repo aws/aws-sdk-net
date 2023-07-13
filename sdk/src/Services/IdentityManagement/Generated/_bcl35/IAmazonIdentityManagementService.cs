@@ -134,9 +134,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method.</param>
@@ -984,11 +985,11 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted certificate authorities (CAs) instead of using a certificate
-        /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
-        /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
-        /// used for validation.
+        /// through our library of trusted root certificate authorities (CAs) instead of using
+        /// a certificate thumbprint to verify your IdP server certificate. These OIDC IdPs include
+        /// Auth0, GitHub, Google, and those that use an Amazon S3 bucket to host a JSON Web Key
+        /// Set (JWKS) endpoint. In these cases, your legacy thumbprint remains in your configuration,
+        /// but is no longer used for validation.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -1208,11 +1209,15 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new role for your Amazon Web Services account. For more information about
-        /// roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-        /// roles</a>. For information about quotas for role names and the number of roles you
-        /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// Creates a new role for your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>. For information about quotas for role names
+        /// and the number of roles you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
         /// and STS quotas</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// 
@@ -2029,8 +2034,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
@@ -4575,7 +4580,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves information about the specified instance profile, including the instance
         /// profile's path, GUID, ARN, and role. For more information about instance profiles,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
         /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile service method.</param>
@@ -5008,8 +5013,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves information about the specified role, including the role's path, GUID, ARN,
         /// and the role's trust policy that grants permission to assume the role. For more information
-        /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -5090,8 +5095,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// roles to delegate permissions and federate identities</a>.
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy service method.</param>
@@ -6312,8 +6317,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the operation returns an empty list. For more information about instance profiles,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -6339,8 +6344,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the operation returns an empty list. For more information about instance profiles,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -6398,8 +6403,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified associated IAM role. If there
         /// are none, the operation returns an empty list. For more information about instance
-        /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7129,8 +7134,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -7170,8 +7175,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -8245,9 +8250,9 @@ namespace Amazon.IdentityManagement
         /// role's access (permissions) policy. The role's trust policy is created at the same
         /// time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
         /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
-        /// <code>UpdateAssumerolePolicy</code> </a>. For more information about IAM roles, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// roles to delegate permissions and federate identities</a>.
+        /// <code>UpdateAssumeRolePolicy</code> </a>. For more information about roles, see <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM roles</a>
+        /// in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8547,9 +8552,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        ///  For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile service method.</param>
@@ -10755,11 +10761,11 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted certificate authorities (CAs) instead of using a certificate
-        /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
-        /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
-        /// used for validation.
+        /// through our library of trusted root certificate authorities (CAs) instead of using
+        /// a certificate thumbprint to verify your IdP server certificate. These OIDC IdPs include
+        /// Auth0, GitHub, Google, and those that use an Amazon S3 bucket to host a JSON Web Key
+        /// Set (JWKS) endpoint. In these cases, your legacy thumbprint remains in your configuration,
+        /// but is no longer used for validation.
         /// </para>
         ///  </note> <note> 
         /// <para>

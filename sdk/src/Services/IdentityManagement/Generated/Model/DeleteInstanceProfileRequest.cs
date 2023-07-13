@@ -41,8 +41,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// instance profiles</a>.
+    /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+    /// instance profiles</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteInstanceProfileRequest : AmazonIdentityManagementServiceRequest

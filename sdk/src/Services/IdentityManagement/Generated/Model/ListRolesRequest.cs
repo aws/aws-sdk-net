@@ -31,8 +31,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListRoles operation.
     /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-    /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with roles</a>.
+    /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+    /// roles</a> in the <i>IAM User Guide</i>.
     /// 
     ///  <note> 
     /// <para>

@@ -38,9 +38,9 @@ namespace Amazon.IdentityManagement.Model
     /// role's access (permissions) policy. The role's trust policy is created at the same
     /// time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
     /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
-    /// <code>UpdateAssumerolePolicy</code> </a>. For more information about IAM roles, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-    /// roles to delegate permissions and federate identities</a>.
+    /// <code>UpdateAssumeRolePolicy</code> </a>. For more information about roles, see <a
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM roles</a>
+    /// in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
