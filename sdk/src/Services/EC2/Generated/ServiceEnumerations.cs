@@ -7955,6 +7955,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gMetal = new InstanceType("c7g.metal");
         /// <summary>
+        /// Constant C7gn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn12xlarge = new InstanceType("c7gn.12xlarge");
+        /// <summary>
+        /// Constant C7gn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn16xlarge = new InstanceType("c7gn.16xlarge");
+        /// <summary>
+        /// Constant C7gn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn2xlarge = new InstanceType("c7gn.2xlarge");
+        /// <summary>
+        /// Constant C7gn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn4xlarge = new InstanceType("c7gn.4xlarge");
+        /// <summary>
+        /// Constant C7gn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn8xlarge = new InstanceType("c7gn.8xlarge");
+        /// <summary>
+        /// Constant C7gnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnLarge = new InstanceType("c7gn.large");
+        /// <summary>
+        /// Constant C7gnMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnMedium = new InstanceType("c7gn.medium");
+        /// <summary>
+        /// Constant C7gnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnXlarge = new InstanceType("c7gn.xlarge");
+        /// <summary>
         /// Constant C7gXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gXlarge = new InstanceType("c7g.xlarge");
@@ -8202,6 +8234,18 @@ namespace Amazon.EC2
         /// Constant Hpc6id32xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hpc6id32xlarge = new InstanceType("hpc6id.32xlarge");
+        /// <summary>
+        /// Constant Hpc7g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7g16xlarge = new InstanceType("hpc7g.16xlarge");
+        /// <summary>
+        /// Constant Hpc7g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7g4xlarge = new InstanceType("hpc7g.4xlarge");
+        /// <summary>
+        /// Constant Hpc7g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7g8xlarge = new InstanceType("hpc7g.8xlarge");
         /// <summary>
         /// Constant Hs18xlarge for InstanceType
         /// </summary>
