@@ -1,3 +1,34 @@
+### 3.7.588.0 (2023-07-13 18:30 UTC)
+* CognitoIdentityProvider (3.7.103.0)
+	* API model updated in Amazon Cognito
+* Connect (3.7.130.0)
+	* Add support for deleting Queues and Routing Profiles.
+* DatabaseMigrationService (3.7.105.0)
+	* Enhanced PostgreSQL target endpoint settings for providing Babelfish support.
+* DataSync (3.7.106.0)
+	* Added LunCount to the response object of DescribeStorageSystemResourcesResponse, LunCount represents the number of LUNs on a storage system resource.
+* EC2 (3.7.141.0)
+	* This release adds support for the C7gn and Hpc7g instances. C7gn instances are powered by AWS Graviton3 processors and the fifth-generation AWS Nitro Cards. Hpc7g instances are powered by AWS Graviton 3E processors and provide up to 200 Gbps network bandwidth.
+* FSx (3.7.104.0)
+	* Amazon FSx for NetApp ONTAP now supports SnapLock, an ONTAP feature that enables you to protect your files in a volume by transitioning them to a write once, read many (WORM) state.
+* IdentityManagement (3.7.102.6)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* MediaTailor (3.7.107.0)
+	* Adds categories to MediaTailor channel assembly alerts
+* Personalize (3.7.103.0)
+	* This release provides ability to customers to change schema associated with their datasets in Amazon Personalize
+* Proton (3.7.106.0)
+	* This release adds support for deployment history for Proton provisioned resources
+* S3 (3.7.108.0)
+	* S3 Inventory now supports Object Access Control List and Object Owner as available object metadata fields in inventory reports.
+* SageMaker (3.7.143.0)
+	* Amazon SageMaker Canvas adds WorkspeceSettings support for CanvasAppSettings
+* SecretsManager (3.7.102.65)
+	* Documentation updates for Secrets Manager
+* Core 3.7.108.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.587.0 (2023-07-11 04:43 UTC)
 * CognitoIdentityProvider (3.7.102.0)
 	* API model updated in Amazon Cognito
