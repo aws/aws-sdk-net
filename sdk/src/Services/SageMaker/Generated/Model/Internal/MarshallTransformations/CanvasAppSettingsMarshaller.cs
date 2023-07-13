@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWorkspaceSettings())
+            {
+                context.Writer.WritePropertyName("WorkspaceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WorkspaceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkspaceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -39,7 +39,12 @@ namespace Amazon.SageMaker.Model
         private int? _waitIntervalInSeconds;
 
         /// <summary>
-        /// Gets and sets the property MaximumBatchSize.
+        /// Gets and sets the property MaximumBatchSize. 
+        /// <para>
+        /// Batch size for each rolling step to provision capacity and turn on traffic on the
+        /// new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be
+        /// between 5% to 50% of the variant's total instance count.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public CapacitySize MaximumBatchSize
@@ -74,7 +79,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RollbackMaximumBatchSize.
+        /// Gets and sets the property RollbackMaximumBatchSize. 
+        /// <para>
+        /// Batch size for rollback to the old endpoint fleet. Each rolling step to provision
+        /// capacity and turn on traffic on the old endpoint fleet, and terminate capacity on
+        /// the new endpoint fleet. If this field is absent, the default value will be set to
+        /// 100% of total capacity which means to bring up the whole capacity of the old fleet
+        /// at once during rollback.
+        /// </para>
         /// </summary>
         public CapacitySize RollbackMaximumBatchSize
         {

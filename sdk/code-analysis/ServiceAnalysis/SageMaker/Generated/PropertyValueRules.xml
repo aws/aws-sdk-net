@@ -10503,6 +10503,16 @@
     <pattern>^vpc-[0-9a-z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.WorkspaceSettings.S3ArtifactPath</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.WorkspaceSettings.S3KmsKeyId</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Workteam.Description</property>
     <min>1</min>
     <max>200</max>
