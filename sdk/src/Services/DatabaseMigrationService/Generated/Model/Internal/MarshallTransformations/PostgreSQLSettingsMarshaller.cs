@@ -51,10 +51,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfterConnectScript);
             }
 
+            if(requestObject.IsSetBabelfishDatabaseName())
+            {
+                context.Writer.WritePropertyName("BabelfishDatabaseName");
+                context.Writer.Write(requestObject.BabelfishDatabaseName);
+            }
+
             if(requestObject.IsSetCaptureDdls())
             {
                 context.Writer.WritePropertyName("CaptureDdls");
                 context.Writer.Write(requestObject.CaptureDdls);
+            }
+
+            if(requestObject.IsSetDatabaseMode())
+            {
+                context.Writer.WritePropertyName("DatabaseMode");
+                context.Writer.Write(requestObject.DatabaseMode);
             }
 
             if(requestObject.IsSetDatabaseName())

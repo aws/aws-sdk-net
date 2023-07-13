@@ -34,7 +34,9 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class PostgreSQLSettings
     {
         private string _afterConnectScript;
+        private string _babelfishDatabaseName;
         private bool? _captureDdls;
+        private DatabaseMode _databaseMode;
         private string _databaseName;
         private string _ddlArtifactsSchema;
         private int? _executeTimeout;
@@ -80,6 +82,24 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BabelfishDatabaseName. 
+        /// <para>
+        /// The Babelfish for Aurora PostgreSQL database name for the endpoint.
+        /// </para>
+        /// </summary>
+        public string BabelfishDatabaseName
+        {
+            get { return this._babelfishDatabaseName; }
+            set { this._babelfishDatabaseName = value; }
+        }
+
+        // Check to see if BabelfishDatabaseName property is set
+        internal bool IsSetBabelfishDatabaseName()
+        {
+            return this._babelfishDatabaseName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CaptureDdls. 
         /// <para>
         /// To capture DDL events, DMS creates various artifacts in the PostgreSQL database when
@@ -101,6 +121,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCaptureDdls()
         {
             return this._captureDdls.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseMode. 
+        /// <para>
+        /// Specifies whether to use default or custom replication behavior for PostgreSQL-compatible
+        /// endpoints. You can use this setting to specify replication behavior for endpoints
+        /// that require additional configuration, such as Babelfish endpoints.
+        /// </para>
+        /// </summary>
+        public DatabaseMode DatabaseMode
+        {
+            get { return this._databaseMode; }
+            set { this._databaseMode = value; }
+        }
+
+        // Check to see if DatabaseMode property is set
+        internal bool IsSetDatabaseMode()
+        {
+            return this._databaseMode != null;
         }
 
         /// <summary>

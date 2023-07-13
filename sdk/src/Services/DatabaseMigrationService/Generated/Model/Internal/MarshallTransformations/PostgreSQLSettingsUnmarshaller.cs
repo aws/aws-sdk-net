@@ -70,10 +70,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AfterConnectScript = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BabelfishDatabaseName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BabelfishDatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CaptureDdls", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.CaptureDdls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatabaseMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DatabaseName", targetDepth))
