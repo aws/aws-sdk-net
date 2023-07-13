@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteVolumeOntapConfiguration Marshaller
+    /// RetentionPeriod Marshaller
     /// </summary>
-    public class DeleteVolumeOntapConfigurationMarshaller : IRequestMarshaller<DeleteVolumeOntapConfiguration, JsonMarshallerContext> 
+    public class RetentionPeriodMarshaller : IRequestMarshaller<RetentionPeriod, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeleteVolumeOntapConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RetentionPeriod requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBypassSnaplockEnterpriseRetention())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("BypassSnaplockEnterpriseRetention");
-                context.Writer.Write(requestObject.BypassSnaplockEnterpriseRetention);
+                context.Writer.WritePropertyName("Type");
+                context.Writer.Write(requestObject.Type);
             }
 
-            if(requestObject.IsSetFinalBackupTags())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("FinalBackupTags");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectFinalBackupTagsListValue in requestObject.FinalBackupTags)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(requestObjectFinalBackupTagsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetSkipFinalBackup())
-            {
-                context.Writer.WritePropertyName("SkipFinalBackup");
-                context.Writer.Write(requestObject.SkipFinalBackup);
+                context.Writer.WritePropertyName("Value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -78,7 +62,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DeleteVolumeOntapConfigurationMarshaller Instance = new DeleteVolumeOntapConfigurationMarshaller();
+        public readonly static RetentionPeriodMarshaller Instance = new RetentionPeriodMarshaller();
 
     }
 }

@@ -87,6 +87,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>LogConfiguration</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>LustreRootSquashConfiguration</code> 
     /// </para>
     ///  </li> <li> 

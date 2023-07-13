@@ -37,6 +37,7 @@ namespace Amazon.FSx.Model
         private string _junctionPath;
         private SecurityStyle _securityStyle;
         private int? _sizeInMegabytes;
+        private UpdateSnaplockConfiguration _snaplockConfiguration;
         private string _snapshotPolicy;
         private bool? _storageEfficiencyEnabled;
         private TieringPolicy _tieringPolicy;
@@ -87,7 +88,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SecurityStyle. 
         /// <para>
-        /// The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>,
+        /// The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>,
         /// or <code>MIXED</code>.
         /// </para>
         /// </summary>
@@ -109,7 +110,7 @@ namespace Amazon.FSx.Model
         /// Specifies the size of the volume in megabytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2147483647)]
+        [AWSProperty(Min=0, Max=314572800)]
         public int SizeInMegabytes
         {
             get { return this._sizeInMegabytes.GetValueOrDefault(); }
@@ -120,6 +121,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetSizeInMegabytes()
         {
             return this._sizeInMegabytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnaplockConfiguration. 
+        /// <para>
+        /// The configuration object for updating the SnapLock configuration of an FSx for ONTAP
+        /// SnapLock volume. 
+        /// </para>
+        /// </summary>
+        public UpdateSnaplockConfiguration SnaplockConfiguration
+        {
+            get { return this._snaplockConfiguration; }
+            set { this._snaplockConfiguration = value; }
+        }
+
+        // Check to see if SnaplockConfiguration property is set
+        internal bool IsSetSnaplockConfiguration()
+        {
+            return this._snaplockConfiguration != null;
         }
 
         /// <summary>

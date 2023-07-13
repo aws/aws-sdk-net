@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteVolumeOntapConfiguration Marshaller
+    /// SnaplockRetentionPeriod Marshaller
     /// </summary>
-    public class DeleteVolumeOntapConfigurationMarshaller : IRequestMarshaller<DeleteVolumeOntapConfiguration, JsonMarshallerContext> 
+    public class SnaplockRetentionPeriodMarshaller : IRequestMarshaller<SnaplockRetentionPeriod, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,39 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeleteVolumeOntapConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SnaplockRetentionPeriod requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBypassSnaplockEnterpriseRetention())
+            if(requestObject.IsSetDefaultRetention())
             {
-                context.Writer.WritePropertyName("BypassSnaplockEnterpriseRetention");
-                context.Writer.Write(requestObject.BypassSnaplockEnterpriseRetention);
+                context.Writer.WritePropertyName("DefaultRetention");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetentionPeriodMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultRetention, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetFinalBackupTags())
+            if(requestObject.IsSetMaximumRetention())
             {
-                context.Writer.WritePropertyName("FinalBackupTags");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectFinalBackupTagsListValue in requestObject.FinalBackupTags)
-                {
-                    context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("MaximumRetention");
+                context.Writer.WriteObjectStart();
 
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(requestObjectFinalBackupTagsListValue, context);
+                var marshaller = RetentionPeriodMarshaller.Instance;
+                marshaller.Marshall(requestObject.MaximumRetention, context);
 
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSkipFinalBackup())
+            if(requestObject.IsSetMinimumRetention())
             {
-                context.Writer.WritePropertyName("SkipFinalBackup");
-                context.Writer.Write(requestObject.SkipFinalBackup);
+                context.Writer.WritePropertyName("MinimumRetention");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetentionPeriodMarshaller.Instance;
+                marshaller.Marshall(requestObject.MinimumRetention, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -78,7 +83,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DeleteVolumeOntapConfigurationMarshaller Instance = new DeleteVolumeOntapConfigurationMarshaller();
+        public readonly static SnaplockRetentionPeriodMarshaller Instance = new SnaplockRetentionPeriodMarshaller();
 
     }
 }

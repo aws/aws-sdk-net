@@ -100,6 +100,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.SizeInMegabytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnaplockConfiguration", targetDepth))
+                {
+                    var unmarshaller = SnaplockConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SnaplockConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

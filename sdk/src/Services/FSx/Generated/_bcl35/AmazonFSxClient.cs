@@ -3621,6 +3621,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>LogConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>LustreRootSquashConfiguration</code> 
         /// </para>
         ///  </li> <li> 
