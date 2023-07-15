@@ -74,7 +74,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// If property is not set, version checks are performed.
         /// </summary>
         public bool? SkipVersionCheck { get; set; }
-
+        
         /// <summary>
         /// Property that directs DynamoDBContext to prefix all table names
         /// with a specific string.
@@ -82,6 +82,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to prefix table description
+        /// cache keys with a specific string.
+        /// If property is null or empty, the combination of credentials,
+        /// region and service url will be used.
+        /// </summary>
+        public string TableDescriptionCachePrefix { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values
@@ -278,6 +286,7 @@ namespace Amazon.DynamoDBv2.DataModel
             OverrideTableName = null,
             SkipVersionCheck = null,
             TableNamePrefix = null,
+            TableDescriptionCachePrefix = null,
             IgnoreNullValues = null,
             BackwardQuery = null,
             IndexName = null,
@@ -290,6 +299,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ConsistentRead = null,
             SkipVersionCheck = null,
             TableNamePrefix = null,
+            TableDescriptionCachePrefix = null,
             IgnoreNullValues = null,
             Conversion = null,
             IsEmptyStringValueEnabled = null
@@ -311,6 +321,9 @@ namespace Amazon.DynamoDBv2.DataModel
             string tableNamePrefix =
                 !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
+            string tableDescriptionCachePrefix =
+                !string.IsNullOrEmpty(operationConfig.TableDescriptionCachePrefix) ? operationConfig.TableDescriptionCachePrefix :
+                !string.IsNullOrEmpty(contextConfig.TableDescriptionCachePrefix) ? contextConfig.TableDescriptionCachePrefix : string.Empty;
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
@@ -324,6 +337,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
             OverrideTableName = overrideTableName;
             TableNamePrefix = tableNamePrefix;
+            TableDescriptionCachePrefix = tableDescriptionCachePrefix;
             BackwardQuery = backwardQuery;
             IndexName = indexName;
             QueryFilter = queryFilter;
@@ -353,6 +367,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to prefix table description
+        /// cache keys with a specific string.
+        /// If property is null or empty, the combination of credentials,
+        /// region and service url will be used.
+        /// </summary>
+        public string TableDescriptionCachePrefix { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values

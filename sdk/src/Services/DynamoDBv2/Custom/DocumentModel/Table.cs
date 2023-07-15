@@ -125,13 +125,27 @@ namespace Amazon.DynamoDBv2.DocumentModel
             throw new InvalidOperationException("Unknown attribute type");
         }
 
-        private void LoadTableInfo()
+        private ICache<string, TableDescription> GetTableDescriptionCache()
+        {
+            if (string.IsNullOrEmpty(this.Config.TableDescriptionCachePrefix))
+            {
+                // Use credentials, region and service url to form the cache key. Each of these
+                // could identify a different physical table
+                return SdkCache.GetCache<string, TableDescription>(this.DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
+            }
+
+            // Use an explicit prefix to enable cache reuse when the consumer is certain
+            // different credentials identify the same physical table
+            var cacheIdentifier = $"{this.Config.TableDescriptionCachePrefix}-{TableInfoCacheIdentifier}";
+            return SdkCache.GetCache<string, TableDescription>(null, cacheIdentifier, StringComparer.Ordinal);
+        }
+
+        private void LoadTableInfo(ICache<string, TableDescription> tableDescriptionCache)
         {
             ClearTableData();
 
-            var tableInfoCache = SdkCache.GetCache<string, TableDescription>(DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
             bool staleCacheData;
-            TableDescription table = tableInfoCache.GetValue(TableName, this.DescribeTable, out staleCacheData);
+            TableDescription table = tableDescriptionCache.GetValue(TableName, this.DescribeTable, out staleCacheData);
             if (staleCacheData)
             {
                 var logger = Logger.GetLogger(typeof(Table));
@@ -409,7 +423,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static Table LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
         {
             Table table = new Table(ddbClient, config);
-            table.LoadTableInfo();
+            var tableDescriptionCache = table.GetTableDescriptionCache();
+            table.LoadTableInfo(tableDescriptionCache);
             return table;
         }
 
@@ -469,10 +484,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <param name="tableDescriptionCachePrefix">Explicit cache prefix to use for the table description.</param>
         /// <returns>Table object representing the specified table.</returns>
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, string tableDescriptionCachePrefix = null)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, tableDescriptionCachePrefix: tableDescriptionCachePrefix);
 
             return LoadTable(ddbClient, config);
         }
@@ -548,7 +564,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, tableDescriptionCachePrefix: null);
             return TryLoadTable(ddbClient, config, out table);
         }
 

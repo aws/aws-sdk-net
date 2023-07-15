@@ -140,7 +140,8 @@ namespace Amazon.DynamoDBv2.DataModel
             ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
 
             var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer,
-                storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled);
+                storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled,
+                flatConfig.TableDescriptionCachePrefix);
             var table = unconfiguredTable.Copy(tableConfig);
             return table;
         }
@@ -180,7 +181,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
 
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
-                    storeAsEpoch: null, isEmptyStringValueEnabled: false);
+                    storeAsEpoch: null, isEmptyStringValueEnabled: false, tableDescriptionCachePrefix: this.Config.TableDescriptionCachePrefix);
                 table = Table.LoadTable(Client, emptyConfig);
                 tablesMap[tableName] = table;
 

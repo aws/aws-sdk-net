@@ -31,6 +31,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public string TableName { get; set; }
 
         /// <summary>
+        /// Property that directs DynamoDBContext to prefix table description
+        /// cache keys with a specific string.
+        /// If property is null or empty, the combination of credentials,
+        /// region and service url will be used.
+        /// </summary>
+        public string TableDescriptionCachePrefix { get; set; }
+
+        /// <summary>
         /// Conversion to use for converting .NET values to DynamoDB values.
         /// Default is AWSConfigs.DynamoDBConfig.ConversionSchema.
         /// </summary>
@@ -54,16 +62,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         public TableConfig(string tableName)
             : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null,
-                false)
+                false, tableDescriptionCachePrefix: null)
         {
         }
 
         internal TableConfig(string tableName, DynamoDBEntryConversion conversion, Table.DynamoDBConsumer consumer,
-            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled)
+            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled, string tableDescriptionCachePrefix)
         {
             if (string.IsNullOrEmpty(tableName)) throw new ArgumentNullException("tableName");
 
             TableName = tableName;
+            TableDescriptionCachePrefix = tableDescriptionCachePrefix;
             Conversion = conversion;
             Consumer = consumer;
             IsEmptyStringValueEnabled = isEmptyStringValueEnabled;

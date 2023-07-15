@@ -18,6 +18,58 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     {
         [TestMethod]
         [TestCategory("DynamoDBv2")]
+        public void DescribeTable_is_called_twice_for_different_credentials_when_TableDescriptionCachePrefix_is_null()
+        {
+            var config = new DynamoDBContextConfig
+            {
+                TableDescriptionCachePrefix = null,
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DescribeTable_is_called_once_for_same_credentials_when_TableDescriptionCachePrefix_is_null()
+        {
+            var config = new DynamoDBContextConfig
+            {
+                TableDescriptionCachePrefix = null,
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DescribeTable_is_called_once_for_different_credentials_when_TableDescriptionCachePrefix_is_set()
+        {
+            var config = new DynamoDBContextConfig
+            {
+                TableDescriptionCachePrefix = "ArbitraryValue",
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DescribeTable_is_called_once_for_same_credentials_when_TableDescriptionCachePrefix_is_set()
+        {
+            var config = new DynamoDBContextConfig
+            {
+                TableDescriptionCachePrefix = "ArbitraryValue",
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public void TestContextWithEmptyStringEnabled()
         {
             // It is a known bug that this test currently fails due to an AOT-compilation
