@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ThumbnailConfiguration Object
+    /// Response Unmarshaller for RenditionConfiguration Object
     /// </summary>  
-    public class ThumbnailConfigurationUnmarshaller : IUnmarshaller<ThumbnailConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ThumbnailConfiguration, JsonUnmarshallerContext>
+    public class RenditionConfigurationUnmarshaller : IUnmarshaller<RenditionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RenditionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ThumbnailConfiguration IUnmarshaller<ThumbnailConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RenditionConfiguration IUnmarshaller<RenditionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ThumbnailConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RenditionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ThumbnailConfiguration unmarshalledObject = new ThumbnailConfiguration();
+            RenditionConfiguration unmarshalledObject = new RenditionConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("recordingMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecordingMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resolution", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storage", targetDepth))
+                if (context.TestExpression("renditions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Storage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Renditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetIntervalSeconds", targetDepth))
+                if (context.TestExpression("renditionSelection", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TargetIntervalSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RenditionSelection = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ThumbnailConfigurationUnmarshaller _instance = new ThumbnailConfigurationUnmarshaller();        
+        private static RenditionConfigurationUnmarshaller _instance = new RenditionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ThumbnailConfigurationUnmarshaller Instance
+        public static RenditionConfigurationUnmarshaller Instance
         {
             get
             {

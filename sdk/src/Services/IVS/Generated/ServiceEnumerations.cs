@@ -237,6 +237,118 @@ namespace Amazon.IVS
 
 
     /// <summary>
+    /// Constants used for properties of type RenditionConfigurationRendition.
+    /// </summary>
+    public class RenditionConfigurationRendition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_HD for RenditionConfigurationRendition
+        /// </summary>
+        public static readonly RenditionConfigurationRendition FULL_HD = new RenditionConfigurationRendition("FULL_HD");
+        /// <summary>
+        /// Constant HD for RenditionConfigurationRendition
+        /// </summary>
+        public static readonly RenditionConfigurationRendition HD = new RenditionConfigurationRendition("HD");
+        /// <summary>
+        /// Constant LOWEST_RESOLUTION for RenditionConfigurationRendition
+        /// </summary>
+        public static readonly RenditionConfigurationRendition LOWEST_RESOLUTION = new RenditionConfigurationRendition("LOWEST_RESOLUTION");
+        /// <summary>
+        /// Constant SD for RenditionConfigurationRendition
+        /// </summary>
+        public static readonly RenditionConfigurationRendition SD = new RenditionConfigurationRendition("SD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RenditionConfigurationRendition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RenditionConfigurationRendition FindValue(string value)
+        {
+            return FindValue<RenditionConfigurationRendition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RenditionConfigurationRendition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RenditionConfigurationRenditionSelection.
+    /// </summary>
+    public class RenditionConfigurationRenditionSelection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RenditionConfigurationRenditionSelection
+        /// </summary>
+        public static readonly RenditionConfigurationRenditionSelection ALL = new RenditionConfigurationRenditionSelection("ALL");
+        /// <summary>
+        /// Constant CUSTOM for RenditionConfigurationRenditionSelection
+        /// </summary>
+        public static readonly RenditionConfigurationRenditionSelection CUSTOM = new RenditionConfigurationRenditionSelection("CUSTOM");
+        /// <summary>
+        /// Constant NONE for RenditionConfigurationRenditionSelection
+        /// </summary>
+        public static readonly RenditionConfigurationRenditionSelection NONE = new RenditionConfigurationRenditionSelection("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RenditionConfigurationRenditionSelection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RenditionConfigurationRenditionSelection FindValue(string value)
+        {
+            return FindValue<RenditionConfigurationRenditionSelection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RenditionConfigurationRenditionSelection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StreamHealth.
     /// </summary>
     public class StreamHealth : ConstantClass
@@ -334,6 +446,114 @@ namespace Amazon.IVS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThumbnailConfigurationResolution.
+    /// </summary>
+    public class ThumbnailConfigurationResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_HD for ThumbnailConfigurationResolution
+        /// </summary>
+        public static readonly ThumbnailConfigurationResolution FULL_HD = new ThumbnailConfigurationResolution("FULL_HD");
+        /// <summary>
+        /// Constant HD for ThumbnailConfigurationResolution
+        /// </summary>
+        public static readonly ThumbnailConfigurationResolution HD = new ThumbnailConfigurationResolution("HD");
+        /// <summary>
+        /// Constant LOWEST_RESOLUTION for ThumbnailConfigurationResolution
+        /// </summary>
+        public static readonly ThumbnailConfigurationResolution LOWEST_RESOLUTION = new ThumbnailConfigurationResolution("LOWEST_RESOLUTION");
+        /// <summary>
+        /// Constant SD for ThumbnailConfigurationResolution
+        /// </summary>
+        public static readonly ThumbnailConfigurationResolution SD = new ThumbnailConfigurationResolution("SD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThumbnailConfigurationResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThumbnailConfigurationResolution FindValue(string value)
+        {
+            return FindValue<ThumbnailConfigurationResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThumbnailConfigurationResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThumbnailConfigurationStorage.
+    /// </summary>
+    public class ThumbnailConfigurationStorage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LATEST for ThumbnailConfigurationStorage
+        /// </summary>
+        public static readonly ThumbnailConfigurationStorage LATEST = new ThumbnailConfigurationStorage("LATEST");
+        /// <summary>
+        /// Constant SEQUENTIAL for ThumbnailConfigurationStorage
+        /// </summary>
+        public static readonly ThumbnailConfigurationStorage SEQUENTIAL = new ThumbnailConfigurationStorage("SEQUENTIAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThumbnailConfigurationStorage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThumbnailConfigurationStorage FindValue(string value)
+        {
+            return FindValue<ThumbnailConfigurationStorage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThumbnailConfigurationStorage(string value)
         {
             return FindValue(value);
         }

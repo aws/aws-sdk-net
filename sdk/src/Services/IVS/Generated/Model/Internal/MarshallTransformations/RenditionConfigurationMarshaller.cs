@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ThumbnailConfiguration Marshaller
+    /// RenditionConfiguration Marshaller
     /// </summary>
-    public class ThumbnailConfigurationMarshaller : IRequestMarshaller<ThumbnailConfiguration, JsonMarshallerContext> 
+    public class RenditionConfigurationMarshaller : IRequestMarshaller<RenditionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,23 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ThumbnailConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RenditionConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRecordingMode())
+            if(requestObject.IsSetRenditions())
             {
-                context.Writer.WritePropertyName("recordingMode");
-                context.Writer.Write(requestObject.RecordingMode);
-            }
-
-            if(requestObject.IsSetResolution())
-            {
-                context.Writer.WritePropertyName("resolution");
-                context.Writer.Write(requestObject.Resolution);
-            }
-
-            if(requestObject.IsSetStorage())
-            {
-                context.Writer.WritePropertyName("storage");
+                context.Writer.WritePropertyName("renditions");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectStorageListValue in requestObject.Storage)
+                foreach(var requestObjectRenditionsListValue in requestObject.Renditions)
                 {
-                        context.Writer.Write(requestObjectStorageListValue);
+                        context.Writer.Write(requestObjectRenditionsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetTargetIntervalSeconds())
+            if(requestObject.IsSetRenditionSelection())
             {
-                context.Writer.WritePropertyName("targetIntervalSeconds");
-                context.Writer.Write(requestObject.TargetIntervalSeconds);
+                context.Writer.WritePropertyName("renditionSelection");
+                context.Writer.Write(requestObject.RenditionSelection);
             }
 
         }
@@ -79,7 +67,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ThumbnailConfigurationMarshaller Instance = new ThumbnailConfigurationMarshaller();
+        public readonly static RenditionConfigurationMarshaller Instance = new RenditionConfigurationMarshaller();
 
     }
 }

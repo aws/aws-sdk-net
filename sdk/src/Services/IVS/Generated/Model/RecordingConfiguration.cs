@@ -37,6 +37,7 @@ namespace Amazon.IVS.Model
         private DestinationConfiguration _destinationConfiguration;
         private string _name;
         private int? _recordingReconnectWindowSeconds;
+        private RenditionConfiguration _renditionConfiguration;
         private RecordingConfigurationState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ThumbnailConfiguration _thumbnailConfiguration;
@@ -117,6 +118,24 @@ namespace Amazon.IVS.Model
         internal bool IsSetRecordingReconnectWindowSeconds()
         {
             return this._recordingReconnectWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RenditionConfiguration. 
+        /// <para>
+        /// Object that describes which renditions should be recorded for a stream.
+        /// </para>
+        /// </summary>
+        public RenditionConfiguration RenditionConfiguration
+        {
+            get { return this._renditionConfiguration; }
+            set { this._renditionConfiguration = value; }
+        }
+
+        // Check to see if RenditionConfiguration property is set
+        internal bool IsSetRenditionConfiguration()
+        {
+            return this._renditionConfiguration != null;
         }
 
         /// <summary>

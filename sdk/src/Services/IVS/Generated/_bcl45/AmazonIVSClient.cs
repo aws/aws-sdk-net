@@ -708,6 +708,15 @@ namespace Amazon.IVS
         /// <param name="request">Container for the necessary parameters to execute the BatchStartViewerSessionRevocation service method.</param>
         /// 
         /// <returns>The response from the BatchStartViewerSessionRevocation service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// 
         /// </exception>
@@ -732,6 +741,15 @@ namespace Amazon.IVS
         /// </param>
         /// 
         /// <returns>The response from the BatchStartViewerSessionRevocation service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// 
         /// </exception>
@@ -2292,6 +2310,12 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
         /// 
         /// </exception>
@@ -2326,6 +2350,12 @@ namespace Amazon.IVS
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
