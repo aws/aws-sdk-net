@@ -18,52 +18,62 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     {
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DescribeTable_is_called_twice_for_different_credentials_when_TableDescriptionCachePrefix_is_null()
+        public void DescribeTable_is_called_twice_for_different_credentials_when_SingleAccountMode_is_null_or_false()
         {
             var config = new DynamoDBContextConfig
             {
-                TableDescriptionCachePrefix = null,
+                SingleAccountMode = null,
             };
             Context = new DynamoDBContext(Client, config);
+
+            // TODO: Would need to create two Clients with different credentials here
+            // TODO: Would need to perform an action on two different contexts
+            
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DescribeTable_is_called_once_for_same_credentials_when_SingleAccountMode_is_null_or_false()
+        {
+            var config = new DynamoDBContextConfig
+            {
+                SingleAccountMode = null,
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            // TODO: Would need to perform an action on two different contexts
 
             Assert.Fail();
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DescribeTable_is_called_once_for_same_credentials_when_TableDescriptionCachePrefix_is_null()
+        public void DescribeTable_is_called_once_for_different_credentials_when_SingleAccountMode_is_true()
         {
             var config = new DynamoDBContextConfig
             {
-                TableDescriptionCachePrefix = null,
+                SingleAccountMode = true,
             };
             Context = new DynamoDBContext(Client, config);
+
+            // TODO: Would need to create two Clients with different credentials here
+            // TODO: Would need to perform an action on two different contexts
 
             Assert.Fail();
         }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DescribeTable_is_called_once_for_different_credentials_when_TableDescriptionCachePrefix_is_set()
+        public void DescribeTable_is_called_once_for_same_credentials_when_SingleAccountMode_is_true()
         {
             var config = new DynamoDBContextConfig
             {
-                TableDescriptionCachePrefix = "ArbitraryValue",
+                SingleAccountMode = true,
             };
             Context = new DynamoDBContext(Client, config);
 
-            Assert.Fail();
-        }
-
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
-        public void DescribeTable_is_called_once_for_same_credentials_when_TableDescriptionCachePrefix_is_set()
-        {
-            var config = new DynamoDBContextConfig
-            {
-                TableDescriptionCachePrefix = "ArbitraryValue",
-            };
-            Context = new DynamoDBContext(Client, config);
+            // TODO: Would need to perform an action on two different contexts
 
             Assert.Fail();
         }

@@ -84,12 +84,12 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableNamePrefix { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to prefix table description
-        /// cache keys with a specific string.
-        /// If property is null or empty, the combination of credentials,
-        /// region and service url will be used.
+        /// Property that directs DynamoDBContext to use only the table name
+        /// when constructing a cache key.
+        /// If property is false (or not set), the combination of credentials,
+        /// region and service url will be used in addition to table name.
         /// </summary>
-        public string TableDescriptionCachePrefix { get; set; }
+        public bool? SingleAccountMode { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values
@@ -286,7 +286,7 @@ namespace Amazon.DynamoDBv2.DataModel
             OverrideTableName = null,
             SkipVersionCheck = null,
             TableNamePrefix = null,
-            TableDescriptionCachePrefix = null,
+            SingleAccountMode = null,
             IgnoreNullValues = null,
             BackwardQuery = null,
             IndexName = null,
@@ -299,7 +299,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ConsistentRead = null,
             SkipVersionCheck = null,
             TableNamePrefix = null,
-            TableDescriptionCachePrefix = null,
+            SingleAccountMode = null,
             IgnoreNullValues = null,
             Conversion = null,
             IsEmptyStringValueEnabled = null
@@ -321,9 +321,7 @@ namespace Amazon.DynamoDBv2.DataModel
             string tableNamePrefix =
                 !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
-            string tableDescriptionCachePrefix =
-                !string.IsNullOrEmpty(operationConfig.TableDescriptionCachePrefix) ? operationConfig.TableDescriptionCachePrefix :
-                !string.IsNullOrEmpty(contextConfig.TableDescriptionCachePrefix) ? contextConfig.TableDescriptionCachePrefix : string.Empty;
+            bool singleAccountMode = operationConfig.SingleAccountMode ?? contextConfig.SingleAccountMode ?? false;
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
@@ -337,7 +335,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
             OverrideTableName = overrideTableName;
             TableNamePrefix = tableNamePrefix;
-            TableDescriptionCachePrefix = tableDescriptionCachePrefix;
+            SingleAccountMode = singleAccountMode;
             BackwardQuery = backwardQuery;
             IndexName = indexName;
             QueryFilter = queryFilter;
@@ -369,12 +367,12 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableNamePrefix { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to prefix table description
-        /// cache keys with a specific string.
-        /// If property is null or empty, the combination of credentials,
-        /// region and service url will be used.
+        /// Property that directs DynamoDBContext to use only the table name
+        /// when constructing a cache key.
+        /// If property is false, the combination of credentials,
+        /// region and service url will be used in addition to table name.
         /// </summary>
-        public string TableDescriptionCachePrefix { get; set; }
+        public bool SingleAccountMode { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values

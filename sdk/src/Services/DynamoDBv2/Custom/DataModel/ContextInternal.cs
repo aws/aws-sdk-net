@@ -141,7 +141,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer,
                 storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled,
-                flatConfig.TableDescriptionCachePrefix);
+                flatConfig.SingleAccountMode);
             var table = unconfiguredTable.Copy(tableConfig);
             return table;
         }
@@ -181,7 +181,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
 
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
-                    storeAsEpoch: null, isEmptyStringValueEnabled: false, tableDescriptionCachePrefix: this.Config.TableDescriptionCachePrefix);
+                    storeAsEpoch: null, isEmptyStringValueEnabled: false, singleAccountMode: this.Config.SingleAccountMode ?? false);
                 table = Table.LoadTable(Client, emptyConfig);
                 tablesMap[tableName] = table;
 

@@ -127,17 +127,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ICache<string, TableDescription> GetTableDescriptionCache()
         {
-            if (string.IsNullOrEmpty(this.Config.TableDescriptionCachePrefix))
+            if (this.Config.SingleAccountMode)
             {
-                // Use credentials, region and service url to form the cache key. Each of these
-                // could identify a different physical table
-                return SdkCache.GetCache<string, TableDescription>(this.DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
+                // Use only the table name as the cache key to enable cache reuse when the consumer is certain
+                // different credentials identify the same physical table
+                return SdkCache.GetCache<string, TableDescription>(null, TableInfoCacheIdentifier, StringComparer.Ordinal);
             }
-
-            // Use an explicit prefix to enable cache reuse when the consumer is certain
-            // different credentials identify the same physical table
-            var cacheIdentifier = $"{this.Config.TableDescriptionCachePrefix}-{TableInfoCacheIdentifier}";
-            return SdkCache.GetCache<string, TableDescription>(null, cacheIdentifier, StringComparer.Ordinal);
+            
+            // Use credentials, region and service url to form the cache key. Each of these
+            // could identify a different physical table
+            return SdkCache.GetCache<string, TableDescription>(this.DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
         }
 
         private void LoadTableInfo(ICache<string, TableDescription> tableDescriptionCache)
@@ -484,11 +483,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
-        /// <param name="tableDescriptionCachePrefix">Explicit cache prefix to use for the table description.</param>
         /// <returns>Table object representing the specified table.</returns>
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, string tableDescriptionCachePrefix = null)
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, tableDescriptionCachePrefix: tableDescriptionCachePrefix);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, singleAccountMode: false);
+
+            return LoadTable(ddbClient, config);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will throw an exception if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <param name="singleAccountMode">Use only the table name when constructing a cache key.</param>
+        /// <returns>Table object representing the specified table.</returns>
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, bool singleAccountMode)
+        {
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, singleAccountMode: singleAccountMode);
 
             return LoadTable(ddbClient, config);
         }
@@ -564,7 +581,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, tableDescriptionCachePrefix: null);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, singleAccountMode: false);
             return TryLoadTable(ddbClient, config, out table);
         }
 

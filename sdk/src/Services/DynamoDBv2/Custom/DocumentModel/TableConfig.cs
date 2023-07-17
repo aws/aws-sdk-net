@@ -31,12 +31,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public string TableName { get; set; }
 
         /// <summary>
-        /// Property that directs DynamoDBContext to prefix table description
-        /// cache keys with a specific string.
-        /// If property is null or empty, the combination of credentials,
-        /// region and service url will be used.
+        /// Property that directs DynamoDBContext to use only the table name
+        /// when constructing a cache key.
+        /// If property is false, the combination of credentials,
+        /// region and service url will be used in addition to table name.
         /// </summary>
-        public string TableDescriptionCachePrefix { get; set; }
+        public bool SingleAccountMode { get; set; }
 
         /// <summary>
         /// Conversion to use for converting .NET values to DynamoDB values.
@@ -62,17 +62,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         public TableConfig(string tableName)
             : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null,
-                false, tableDescriptionCachePrefix: null)
+                false, singleAccountMode: false)
         {
         }
 
         internal TableConfig(string tableName, DynamoDBEntryConversion conversion, Table.DynamoDBConsumer consumer,
-            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled, string tableDescriptionCachePrefix)
+            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled, bool singleAccountMode)
         {
             if (string.IsNullOrEmpty(tableName)) throw new ArgumentNullException("tableName");
 
             TableName = tableName;
-            TableDescriptionCachePrefix = tableDescriptionCachePrefix;
+            SingleAccountMode = singleAccountMode;
             Conversion = conversion;
             Consumer = consumer;
             IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
