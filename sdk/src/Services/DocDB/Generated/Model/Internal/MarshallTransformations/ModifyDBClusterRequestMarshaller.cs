@@ -58,6 +58,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllowMajorVersionUpgrade())
+                {
+                    request.Parameters.Add("AllowMajorVersionUpgrade", StringUtils.FromBool(publicRequest.AllowMajorVersionUpgrade));
+                }
                 if(publicRequest.IsSetApplyImmediately())
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));

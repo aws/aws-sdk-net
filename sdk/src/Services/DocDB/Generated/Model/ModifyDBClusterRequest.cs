@@ -36,6 +36,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonDocDBRequest
     {
+        private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
         private int? _backupRetentionPeriod;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
@@ -49,6 +50,30 @@ namespace Amazon.DocDB.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private List<string> _vpcSecurityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowMajorVersionUpgrade. 
+        /// <para>
+        /// A value that indicates whether major version upgrades are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: You must allow major version upgrades when specifying a value for the
+        /// <code>EngineVersion</code> parameter that is a different major version than the DB
+        /// cluster's current version.
+        /// </para>
+        /// </summary>
+        public bool AllowMajorVersionUpgrade
+        {
+            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            set { this._allowMajorVersionUpgrade = value; }
+        }
+
+        // Check to see if AllowMajorVersionUpgrade property is set
+        internal bool IsSetAllowMajorVersionUpgrade()
+        {
+            return this._allowMajorVersionUpgrade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -206,8 +231,19 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to which you want to upgrade. Modifying
-        /// engine version is not supported on Amazon DocumentDB.
+        /// The version number of the database engine to which you want to upgrade. Changing this
+        /// parameter results in an outage. The change is applied during the next maintenance
+        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for Amazon DocumentDB use the following
+        /// command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
         /// </para>
         /// </summary>
         public string EngineVersion
