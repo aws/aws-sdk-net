@@ -1,3 +1,20 @@
+### 3.7.589.0 (2023-07-17 18:36 UTC)
+* CodeArtifact (3.7.104.56)
+	* Doc only update for AWS CodeArtifact
+* DocDB (3.7.102.0)
+	* Added major version upgrade option in ModifyDBCluster API
+* EC2 (3.7.142.0)
+	* Add Nitro TPM support on DescribeInstanceTypes
+* Glue (3.7.121.0)
+	* Adding new supported permission type flags to get-unfiltered endpoints that callers may pass to indicate support for enforcing Lake Formation fine-grained access control on nested column attributes.
+* IVS (3.7.106.0)
+	* This release provides the flexibility to configure what renditions or thumbnail qualities to record when creating recording configuration.
+* LakeFormation (3.7.105.0)
+	* Adds supports for ReadOnlyAdmins and AllowFullTableExternalDataAccess. Adds NESTED_PERMISSION and NESTED_CELL_PERMISSION to SUPPORTED_PERMISSION_TYPES enum. Adds CREATE_LF_TAG on catalog resource and ALTER, DROP, and GRANT_WITH_LF_TAG_EXPRESSION on LF Tag resource.
+* Core 3.7.108.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.588.0 (2023-07-13 18:30 UTC)
 * CognitoIdentityProvider (3.7.103.0)
 	* API model updated in Amazon Cognito
