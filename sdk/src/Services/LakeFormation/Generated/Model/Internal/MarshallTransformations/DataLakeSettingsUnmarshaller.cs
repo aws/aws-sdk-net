@@ -70,6 +70,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowExternalDataFiltering = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AuthorizedSessionTagValueList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -104,6 +110,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadOnlyAdmins", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
+                    unmarshalledObject.ReadOnlyAdmins = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrustedResourceOwners", targetDepth))

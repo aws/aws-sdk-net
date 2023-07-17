@@ -51,6 +51,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AllowExternalDataFiltering);
             }
 
+            if(requestObject.IsSetAllowFullTableExternalDataAccess())
+            {
+                context.Writer.WritePropertyName("AllowFullTableExternalDataAccess");
+                context.Writer.Write(requestObject.AllowFullTableExternalDataAccess);
+            }
+
             if(requestObject.IsSetAuthorizedSessionTagValueList())
             {
                 context.Writer.WritePropertyName("AuthorizedSessionTagValueList");
@@ -138,6 +144,22 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectParametersValue);
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetReadOnlyAdmins())
+            {
+                context.Writer.WritePropertyName("ReadOnlyAdmins");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectReadOnlyAdminsListValue in requestObject.ReadOnlyAdmins)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(requestObjectReadOnlyAdminsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetTrustedResourceOwners())

@@ -36,12 +36,14 @@ namespace Amazon.LakeFormation.Model
     public partial class DataLakeSettings
     {
         private bool? _allowExternalDataFiltering;
+        private bool? _allowFullTableExternalDataAccess;
         private List<string> _authorizedSessionTagValueList = new List<string>();
         private List<PrincipalPermissions> _createDatabaseDefaultPermissions = new List<PrincipalPermissions>();
         private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private List<DataLakePrincipal> _dataLakeAdmins = new List<DataLakePrincipal>();
         private List<DataLakePrincipal> _externalDataFilteringAllowList = new List<DataLakePrincipal>();
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private List<DataLakePrincipal> _readOnlyAdmins = new List<DataLakePrincipal>();
         private List<string> _trustedResourceOwners = new List<string>();
 
         /// <summary>
@@ -61,8 +63,8 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-        /// Allow Data Filtering on Amazon EMR</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+        /// Allow external data filtering</a>.
         /// </para>
         /// </summary>
         public bool AllowExternalDataFiltering
@@ -75,6 +77,25 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetAllowExternalDataFiltering()
         {
             return this._allowExternalDataFiltering.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowFullTableExternalDataAccess. 
+        /// <para>
+        /// Whether to allow a third-party query engine to get data access credentials without
+        /// session tags when a caller has full data access permissions.
+        /// </para>
+        /// </summary>
+        public bool AllowFullTableExternalDataAccess
+        {
+            get { return this._allowFullTableExternalDataAccess.GetValueOrDefault(); }
+            set { this._allowFullTableExternalDataAccess = value; }
+        }
+
+        // Check to see if AllowFullTableExternalDataAccess property is set
+        internal bool IsSetAllowFullTableExternalDataAccess()
+        {
+            return this._allowFullTableExternalDataAccess.HasValue; 
         }
 
         /// <summary>
@@ -228,6 +249,26 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadOnlyAdmins. 
+        /// <para>
+        /// A list of Lake Formation principals with only view access to the resources, without
+        /// the ability to make changes. Supported principals are IAM users or IAM roles.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public List<DataLakePrincipal> ReadOnlyAdmins
+        {
+            get { return this._readOnlyAdmins; }
+            set { this._readOnlyAdmins = value; }
+        }
+
+        // Check to see if ReadOnlyAdmins property is set
+        internal bool IsSetReadOnlyAdmins()
+        {
+            return this._readOnlyAdmins != null && this._readOnlyAdmins.Count > 0; 
         }
 
         /// <summary>

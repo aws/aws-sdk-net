@@ -315,13 +315,13 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission CREATE_DATABASE = new Permission("CREATE_DATABASE");
         /// <summary>
+        /// Constant CREATE_LF_TAG for Permission
+        /// </summary>
+        public static readonly Permission CREATE_LF_TAG = new Permission("CREATE_LF_TAG");
+        /// <summary>
         /// Constant CREATE_TABLE for Permission
         /// </summary>
         public static readonly Permission CREATE_TABLE = new Permission("CREATE_TABLE");
-        /// <summary>
-        /// Constant CREATE_TAG for Permission
-        /// </summary>
-        public static readonly Permission CREATE_TAG = new Permission("CREATE_TAG");
         /// <summary>
         /// Constant DATA_LOCATION_ACCESS for Permission
         /// </summary>
@@ -338,6 +338,10 @@ namespace Amazon.LakeFormation
         /// Constant DROP for Permission
         /// </summary>
         public static readonly Permission DROP = new Permission("DROP");
+        /// <summary>
+        /// Constant GRANT_WITH_LF_TAG_EXPRESSION for Permission
+        /// </summary>
+        public static readonly Permission GRANT_WITH_LF_TAG_EXPRESSION = new Permission("GRANT_WITH_LF_TAG_EXPRESSION");
         /// <summary>
         /// Constant INSERT for Permission
         /// </summary>
@@ -396,6 +400,14 @@ namespace Amazon.LakeFormation
         /// Constant COLUMN_PERMISSION for PermissionType
         /// </summary>
         public static readonly PermissionType COLUMN_PERMISSION = new PermissionType("COLUMN_PERMISSION");
+        /// <summary>
+        /// Constant NESTED_CELL_PERMISSION for PermissionType
+        /// </summary>
+        public static readonly PermissionType NESTED_CELL_PERMISSION = new PermissionType("NESTED_CELL_PERMISSION");
+        /// <summary>
+        /// Constant NESTED_PERMISSION for PermissionType
+        /// </summary>
+        public static readonly PermissionType NESTED_PERMISSION = new PermissionType("NESTED_PERMISSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

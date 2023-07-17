@@ -45,7 +45,9 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ColumnNames. 
         /// <para>
-        /// A list of column names.
+        /// A list of column names and/or nested column attributes. When specifying nested attributes,
+        /// use a qualified dot (.) delimited format such as "address"."zip". Nested attributes
+        /// within this list may not exceed a depth of 5.
         /// </para>
         /// </summary>
         public List<string> ColumnNames
