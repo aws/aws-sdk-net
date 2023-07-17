@@ -175,6 +175,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         /// A format that specifies the type of the package version with the requested asset file.
         /// </para>
+        ///  
+        /// <para>
+        /// The only supported value is <code>generic</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format
