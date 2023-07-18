@@ -1,3 +1,7 @@
+### 3.7.600.0 (2023-18-07 00:00 UTC)
+* All (Core and Services) updated to version 3.7.200.0
+	* Updated code analyzers to target `netstandard2.0` (from `net45`). With this update, there'll be impact if you're using Visual Studio 2017 (or earlier) _and_ configured your project to treat warnings as errors (the `Microsoft.CodeAnalysis` dependency was upgraded to `3.0.0` - which only supports Visual Studio 2019 and later). If using a newer version of compiler tooling is not an option, see https://github.com/aws/aws-sdk-net/issues/2998 for alternatives.
+
 ### 3.7.589.0 (2023-07-17 18:36 UTC)
 * CodeArtifact (3.7.104.56)
 	* Doc only update for AWS CodeArtifact
