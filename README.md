@@ -57,7 +57,7 @@ Classes and interfaces with `Internal` in the namespace name are logically inter
 
 Each service package includes a code analyzer that's automatically included when installing from NuGet. These analyzers are created based on the rules from the service model, and will generate a warning if you use a property value that's not valid (for example, shorter than the minimum length expected by the service).
 
-Starting with version 3.7.600 of the AWS SDK for .NET, the analyzers target [.NET Standard 2.0](https://learn.microsoft.com/en-us/dotnet/standard/net-standard) and support Visual Studio 2019 RTM and later (announcement: https://github.com/aws/aws-sdk-net/issues/2998).
+Starting with the 3.7.200 versions of the AWS SDK for .NET NuGet packages, the analyzers target [.NET Standard 2.0](https://learn.microsoft.com/en-us/dotnet/standard/net-standard) and support Visual Studio 2019 RTM and later (announcement: https://github.com/aws/aws-sdk-net/issues/2998).
 
 Users on Visual Studio 2017 (or earlier) can still use new versions of the SDK, but there'll be a new warning (`CS8032`) about analyzers failing to run. If the build system is configured to treat warnings as errors, this new warning will need to be suppressed or ignored (using [WarningsNotAsErrors](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors)).
 
