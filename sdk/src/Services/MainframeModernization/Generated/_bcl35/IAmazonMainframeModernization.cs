@@ -905,6 +905,55 @@ namespace Amazon.MainframeModernization
 
         #endregion
         
+        #region  GetSignedBluinsightsUrl
+
+
+        /// <summary>
+        /// Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSignedBluinsightsUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetSignedBluinsightsUrl service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
+        GetSignedBluinsightsUrlResponse GetSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSignedBluinsightsUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSignedBluinsightsUrl operation on AmazonMainframeModernizationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSignedBluinsightsUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
+        IAsyncResult BeginGetSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSignedBluinsightsUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSignedBluinsightsUrl.</param>
+        /// 
+        /// <returns>Returns a  GetSignedBluinsightsUrlResult from MainframeModernization.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
+        GetSignedBluinsightsUrlResponse EndGetSignedBluinsightsUrl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListApplications
 
 

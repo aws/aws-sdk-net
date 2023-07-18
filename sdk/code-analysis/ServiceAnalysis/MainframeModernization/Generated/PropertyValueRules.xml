@@ -242,11 +242,6 @@
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MainframeModernization.Model.GetEnvironmentResponse.ActualCapacity</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.GetEnvironmentResponse.Description</property>
     <min>0</min>
     <max>500</max>
@@ -286,7 +281,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListApplicationsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListApplicationsRequest.NextToken</property>
@@ -303,7 +298,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListApplicationVersionsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListApplicationVersionsRequest.NextToken</property>
@@ -320,7 +315,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListBatchJobDefinitionsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListBatchJobDefinitionsRequest.NextToken</property>
@@ -341,7 +336,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListBatchJobExecutionsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListBatchJobExecutionsRequest.NextToken</property>
@@ -358,7 +353,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDataSetImportHistoryRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDataSetImportHistoryRequest.NextToken</property>
@@ -375,7 +370,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDataSetsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDataSetsRequest.NextToken</property>
@@ -396,7 +391,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDeploymentsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDeploymentsRequest.NextToken</property>
@@ -409,7 +404,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListEngineVersionsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListEngineVersionsRequest.NextToken</property>
@@ -422,7 +417,7 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListEnvironmentsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListEnvironmentsRequest.NextToken</property>
@@ -476,11 +471,6 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.UpdateApplicationResponse.ApplicationVersion</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MainframeModernization.Model.UpdateEnvironmentRequest.DesiredCapacity</property>
-    <min>1</min>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.UpdateEnvironmentRequest.EngineVersion</property>
@@ -639,11 +629,6 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.GdgDetailAttributes.RollDisposition</property>
     <pattern>^\S{1,50}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MainframeModernization.Model.HighAvailabilityConfig.DesiredCapacity</property>
-    <min>1</min>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.LogGroupSummary.LogGroupName</property>

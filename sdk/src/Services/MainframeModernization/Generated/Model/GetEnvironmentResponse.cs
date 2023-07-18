@@ -64,7 +64,6 @@ namespace Amazon.MainframeModernization.Model
         /// environment has a maximum of two instances. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public int ActualCapacity
         {
             get { return this._actualCapacity.GetValueOrDefault(); }

@@ -29,31 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
-    /// Defines the details of a high availability configuration.
+    /// Container for the parameters to the GetSignedBluinsightsUrl operation.
+    /// Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
     /// </summary>
-    public partial class HighAvailabilityConfig
+    public partial class GetSignedBluinsightsUrlRequest : AmazonMainframeModernizationRequest
     {
-        private int? _desiredCapacity;
-
-        /// <summary>
-        /// Gets and sets the property DesiredCapacity. 
-        /// <para>
-        /// The number of instances in a high availability configuration. The minimum possible
-        /// value is 1 and the maximum is 100.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public int DesiredCapacity
-        {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
-            set { this._desiredCapacity = value; }
-        }
-
-        // Check to see if DesiredCapacity property is set
-        internal bool IsSetDesiredCapacity()
-        {
-            return this._desiredCapacity.HasValue; 
-        }
 
     }
 }

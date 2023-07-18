@@ -979,6 +979,52 @@ namespace Amazon.MainframeModernization
 
         #endregion
         
+        #region  GetSignedBluinsightsUrl
+
+
+        /// <summary>
+        /// Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSignedBluinsightsUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetSignedBluinsightsUrl service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
+        GetSignedBluinsightsUrlResponse GetSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request);
+
+
+
+        /// <summary>
+        /// Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSignedBluinsightsUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSignedBluinsightsUrl service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
+        Task<GetSignedBluinsightsUrlResponse> GetSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApplications
 
 
