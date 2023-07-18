@@ -54,5 +54,10 @@ namespace Amazon.Snowball.Model
         /// Paginator for ListLongTermPricing operation
         ///</summary>
         IListLongTermPricingPaginator ListLongTermPricing(ListLongTermPricingRequest request);
+
+        /// <summary>
+        /// Paginator for ListPickupLocations operation
+        ///</summary>
+        IListPickupLocationsPaginator ListPickupLocations(ListPickupLocationsRequest request);
     }
 }

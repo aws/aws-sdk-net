@@ -44,9 +44,30 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class Notification
     {
+        private string _devicePickupSnsTopicARN;
         private List<string> _jobStatesToNotify = new List<string>();
         private bool? _notifyAll;
         private string _snsTopicARN;
+
+        /// <summary>
+        /// Gets and sets the property DevicePickupSnsTopicARN. 
+        /// <para>
+        /// Used to send SNS notifications for the person picking up the device (identified during
+        /// job creation).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string DevicePickupSnsTopicARN
+        {
+            get { return this._devicePickupSnsTopicARN; }
+            set { this._devicePickupSnsTopicARN = value; }
+        }
+
+        // Check to see if DevicePickupSnsTopicARN property is set
+        internal bool IsSetDevicePickupSnsTopicARN()
+        {
+            return this._devicePickupSnsTopicARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobStatesToNotify. 

@@ -82,5 +82,13 @@ namespace Amazon.Snowball.Model
         {
             return new ListLongTermPricingPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListPickupLocations operation
+        ///</summary>
+        public IListPickupLocationsPaginator ListPickupLocations(ListPickupLocationsRequest request) 
+        {
+            return new ListPickupLocationsPaginator(this.client, request);
+        }
     }
 }

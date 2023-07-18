@@ -277,6 +277,20 @@ namespace AWSSDKDocSamples.Amazon.Snowball.Generated
             #endregion
         }
 
+        public void SnowballListPickupLocations()
+        {
+            #region to-get-a-list-of-locations-from-which-the-customer-can-choose-to-pickup-a-device-1482542167627
+
+            var client = new AmazonSnowballClient();
+            var response = client.ListPickupLocations(new ListPickupLocationsRequest 
+            {
+            });
+
+            List<Address> addresses = response.Addresses;
+
+            #endregion
+        }
+
         public void SnowballUpdateCluster()
         {
             #region to-update-a-cluster-1482863900595

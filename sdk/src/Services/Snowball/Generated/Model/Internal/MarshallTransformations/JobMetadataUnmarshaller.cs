@@ -106,6 +106,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.ForwardingAddressId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImpactLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImpactLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -154,6 +160,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.OnDeviceServiceConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PickupDetails", targetDepth))
+                {
+                    var unmarshaller = PickupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.PickupDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RemoteManagement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -182,6 +194,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnowballCapacityPreference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnowballId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnowballId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnowballType", targetDepth))

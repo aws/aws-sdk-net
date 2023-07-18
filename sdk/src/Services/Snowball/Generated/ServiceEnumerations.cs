@@ -25,6 +25,56 @@ namespace Amazon.Snowball
 {
 
     /// <summary>
+    /// Constants used for properties of type AddressType.
+    /// </summary>
+    public class AddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SHIP for AddressType
+        /// </summary>
+        public static readonly AddressType AWS_SHIP = new AddressType("AWS_SHIP");
+        /// <summary>
+        /// Constant CUST_PICKUP for AddressType
+        /// </summary>
+        public static readonly AddressType CUST_PICKUP = new AddressType("CUST_PICKUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AddressType FindValue(string value)
+        {
+            return FindValue<AddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterState.
     /// </summary>
     public class ClusterState : ConstantClass
@@ -130,6 +180,68 @@ namespace Amazon.Snowball
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceServiceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImpactLevel.
+    /// </summary>
+    public class ImpactLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IL2 for ImpactLevel
+        /// </summary>
+        public static readonly ImpactLevel IL2 = new ImpactLevel("IL2");
+        /// <summary>
+        /// Constant IL4 for ImpactLevel
+        /// </summary>
+        public static readonly ImpactLevel IL4 = new ImpactLevel("IL4");
+        /// <summary>
+        /// Constant IL5 for ImpactLevel
+        /// </summary>
+        public static readonly ImpactLevel IL5 = new ImpactLevel("IL5");
+        /// <summary>
+        /// Constant IL6 for ImpactLevel
+        /// </summary>
+        public static readonly ImpactLevel IL6 = new ImpactLevel("IL6");
+        /// <summary>
+        /// Constant IL99 for ImpactLevel
+        /// </summary>
+        public static readonly ImpactLevel IL99 = new ImpactLevel("IL99");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImpactLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImpactLevel FindValue(string value)
+        {
+            return FindValue<ImpactLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImpactLevel(string value)
         {
             return FindValue(value);
         }
@@ -352,6 +464,10 @@ namespace Amazon.Snowball
         /// Constant INSTALLED_ONLY for RemoteManagement
         /// </summary>
         public static readonly RemoteManagement INSTALLED_ONLY = new RemoteManagement("INSTALLED_ONLY");
+        /// <summary>
+        /// Constant NOT_INSTALLED for RemoteManagement
+        /// </summary>
+        public static readonly RemoteManagement NOT_INSTALLED = new RemoteManagement("NOT_INSTALLED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -619,6 +735,10 @@ namespace Amazon.Snowball
         /// </summary>
         public static readonly SnowballCapacity T100 = new SnowballCapacity("T100");
         /// <summary>
+        /// Constant T13 for SnowballCapacity
+        /// </summary>
+        public static readonly SnowballCapacity T13 = new SnowballCapacity("T13");
+        /// <summary>
         /// Constant T14 for SnowballCapacity
         /// </summary>
         public static readonly SnowballCapacity T14 = new SnowballCapacity("T14");
@@ -708,6 +828,10 @@ namespace Amazon.Snowball
         /// Constant EDGE_S for SnowballType
         /// </summary>
         public static readonly SnowballType EDGE_S = new SnowballType("EDGE_S");
+        /// <summary>
+        /// Constant RACK_5U_C for SnowballType
+        /// </summary>
+        public static readonly SnowballType RACK_5U_C = new SnowballType("RACK_5U_C");
         /// <summary>
         /// Constant SNC1_HDD for SnowballType
         /// </summary>

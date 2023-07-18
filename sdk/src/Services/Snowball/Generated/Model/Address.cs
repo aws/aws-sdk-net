@@ -51,6 +51,7 @@ namespace Amazon.Snowball.Model
         private string _street1;
         private string _street2;
         private string _street3;
+        private AddressType _type;
 
         /// <summary>
         /// Gets and sets the property AddressId. 
@@ -317,6 +318,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetStreet3()
         {
             return this._street3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Differentiates between delivery address and pickup address in the customer account.
+        /// Provided at job creation.
+        /// </para>
+        /// </summary>
+        public AddressType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

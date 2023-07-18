@@ -129,6 +129,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Street3);
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.Write(requestObject.Type);
+            }
+
         }
 
         /// <summary>

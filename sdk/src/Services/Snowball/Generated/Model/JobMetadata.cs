@@ -42,6 +42,7 @@ namespace Amazon.Snowball.Model
         private string _description;
         private DeviceConfiguration _deviceConfiguration;
         private string _forwardingAddressId;
+        private ImpactLevel _impactLevel;
         private string _jobId;
         private JobLogs _jobLogInfo;
         private JobState _jobState;
@@ -50,11 +51,13 @@ namespace Amazon.Snowball.Model
         private string _longTermPricingId;
         private Notification _notification;
         private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
+        private PickupDetails _pickupDetails;
         private RemoteManagement _remoteManagement;
         private JobResource _resources;
         private string _roleARN;
         private ShippingDetails _shippingDetails;
         private SnowballCapacity _snowballCapacityPreference;
+        private string _snowballId;
         private SnowballType _snowballType;
         private TaxDocuments _taxDocuments;
 
@@ -186,6 +189,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetForwardingAddressId()
         {
             return this._forwardingAddressId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImpactLevel. 
+        /// <para>
+        /// The highest impact level of data that will be stored or processed on the device, provided
+        /// at job creation.
+        /// </para>
+        /// </summary>
+        public ImpactLevel ImpactLevel
+        {
+            get { return this._impactLevel; }
+            set { this._impactLevel = value; }
+        }
+
+        // Check to see if ImpactLevel property is set
+        internal bool IsSetImpactLevel()
+        {
+            return this._impactLevel != null;
         }
 
         /// <summary>
@@ -345,6 +367,24 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PickupDetails. 
+        /// <para>
+        /// Information identifying the person picking up the device.
+        /// </para>
+        /// </summary>
+        public PickupDetails PickupDetails
+        {
+            get { return this._pickupDetails; }
+            set { this._pickupDetails = value; }
+        }
+
+        // Check to see if PickupDetails property is set
+        internal bool IsSetPickupDetails()
+        {
+            return this._pickupDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoteManagement. 
         /// <para>
         /// Allows you to securely operate and manage Snowcone devices remotely from outside of
@@ -447,6 +487,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetSnowballCapacityPreference()
         {
             return this._snowballCapacityPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowballId. 
+        /// <para>
+        /// Unique ID associated with a device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string SnowballId
+        {
+            get { return this._snowballId; }
+            set { this._snowballId = value; }
+        }
+
+        // Check to see if SnowballId property is set
+        internal bool IsSetSnowballId()
+        {
+            return this._snowballId != null;
         }
 
         /// <summary>

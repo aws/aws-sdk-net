@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Notification Object
+    /// Response Unmarshaller for PickupDetails Object
     /// </summary>  
-    public class NotificationUnmarshaller : IUnmarshaller<Notification, XmlUnmarshallerContext>, IUnmarshaller<Notification, JsonUnmarshallerContext>
+    public class PickupDetailsUnmarshaller : IUnmarshaller<PickupDetails, XmlUnmarshallerContext>, IUnmarshaller<PickupDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Notification IUnmarshaller<Notification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PickupDetails IUnmarshaller<PickupDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,57 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Notification Unmarshall(JsonUnmarshallerContext context)
+        public PickupDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Notification unmarshalledObject = new Notification();
+            PickupDetails unmarshalledObject = new PickupDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DevicePickupSnsTopicARN", targetDepth))
+                if (context.TestExpression("DevicePickupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DevicePickupSnsTopicARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DevicePickupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JobStatesToNotify", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.JobStatesToNotify = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NotifyAll", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.NotifyAll = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SnsTopicARN", targetDepth))
+                if (context.TestExpression("Email", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnsTopicARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Email = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentificationExpirationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.IdentificationExpirationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentificationIssuingOrg", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentificationIssuingOrg = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentificationNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentificationNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PhoneNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +112,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         }
 
 
-        private static NotificationUnmarshaller _instance = new NotificationUnmarshaller();        
+        private static PickupDetailsUnmarshaller _instance = new PickupDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NotificationUnmarshaller Instance
+        public static PickupDetailsUnmarshaller Instance
         {
             get
             {

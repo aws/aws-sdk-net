@@ -113,6 +113,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPickupDetails())
+                {
+                    context.Writer.WritePropertyName("PickupDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PickupDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PickupDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResources())
                 {
                     context.Writer.WritePropertyName("Resources");

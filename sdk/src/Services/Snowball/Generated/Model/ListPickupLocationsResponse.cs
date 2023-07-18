@@ -29,46 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListCompatibleImages operation.
-    /// This action returns a list of the different Amazon EC2-compatible Amazon Machine Images
-    /// (AMIs) that are owned by your Amazon Web Services accountthat would be supported for
-    /// use on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu
-    /// 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
-    /// Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported
-    /// in the Market, but still supported for use on devices through Amazon EC2 VM Import/Export
-    /// and running locally in AMIs.
+    /// This is the response object from the ListPickupLocations operation.
     /// </summary>
-    public partial class ListCompatibleImagesRequest : AmazonSnowballRequest
+    public partial class ListPickupLocationsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<Address> _addresses = new List<Address>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Addresses. 
         /// <para>
-        /// The maximum number of results for the list of compatible images. Currently, a Snowball
-        /// Edge device can store 10 AMIs.
+        /// Information about the address of pickup locations.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public int MaxResults
+        public List<Address> Addresses
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._addresses; }
+            set { this._addresses = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Addresses property is set
+        internal bool IsSetAddresses()
         {
-            return this._maxResults.HasValue; 
+            return this._addresses != null && this._addresses.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. To identify what object comes "next" in the list of compatible
-        /// images, you can specify a value for <code>NextToken</code> as the starting point for
-        /// your list of returned images.
+        /// HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code>
+        /// objects, you have the option of specifying <code>NextToken</code> as the starting
+        /// point for your returned list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

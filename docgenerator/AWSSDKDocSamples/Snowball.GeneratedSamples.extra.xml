@@ -299,6 +299,25 @@ The default service limit for the number of Snowballs that you can have at one t
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.ListPickupLocations(Amazon.Snowball.Model.ListPickupLocationsRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.ListPickupLocations(Amazon.Snowball.Model.ListPickupLocationsRequest)" />
+            <member name="T:Amazon.Snowball.Model.ListPickupLocationsRequest" />
+            <member name="T:Amazon.Snowball.Model.ListPickupLocationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a specified number of Address objects. Each Address is a pickup location address for Snow Family devices.
+                </para>
+                <code
+                    title="To get a list of locations from which the customer can choose to pickup a device."
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-get-a-list-of-locations-from-which-the-customer-can-choose-to-pickup-a-device-1482542167627" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Snowball.IAmazonSnowball.UpdateCluster(Amazon.Snowball.Model.UpdateClusterRequest)" />
             <member name="M:Amazon.Snowball.AmazonSnowballClient.UpdateCluster(Amazon.Snowball.Model.UpdateClusterRequest)" />
             <member name="T:Amazon.Snowball.Model.UpdateClusterRequest" />
