@@ -27,10 +27,10 @@ namespace ServiceClientGenerator
             var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1] + ".CodeAnalysis";
             var projectFilename = string.Concat(assemblyName, ".csproj");
             string projectGuid;
-            if (File.Exists(Path.Combine(codeAnalysisRoot, projectFilename)))
+            if (File.Exists(Utils.PathCombineAlt(codeAnalysisRoot, projectFilename)))
             {
                 Console.WriteLine("...updating existing project file {0}", projectFilename);
-                var projectPath = Path.Combine(codeAnalysisRoot, projectFilename);
+                var projectPath = Utils.PathCombineAlt(codeAnalysisRoot, projectFilename);
                 projectGuid = Utils.GetProjectGuid(projectPath);
             }
             else
@@ -100,7 +100,7 @@ namespace ServiceClientGenerator
                 writer.WriteEndElement();
             }
             var content = sb.ToString();
-            GeneratorDriver.WriteFile(Path.Combine(codeAnalysisRoot, "Generated"), string.Empty, "PropertyValueRules.xml", content);
+            GeneratorDriver.WriteFile(Utils.PathCombineAlt(codeAnalysisRoot, "Generated"), string.Empty, "PropertyValueRules.xml", content);
         }
 
         private void GeneratePropertyValueRules(ServiceConfiguration serviceConfiguration, XmlWriter writer, string shapeName, Shape shape)
@@ -154,13 +154,13 @@ namespace ServiceClientGenerator
         {
             var embeddedResources = new List<string>();
 
-            foreach(var file in Directory.GetFiles(codeAnalysisRoot, "*.xml", SearchOption.AllDirectories))
+            foreach(var file in Directory.GetFiles(codeAnalysisRoot, "*.xml", SearchOption.AllDirectories).OrderBy(f => f))
             {
-                var relativePath = file.Substring(codeAnalysisRoot.Length);
-                if (!relativePath.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                var relativePath = Utils.ConvertPathAlt(file.Substring(codeAnalysisRoot.Length));
+                if (!relativePath.StartsWith("/Custom", StringComparison.OrdinalIgnoreCase))
                     continue;
 
-                embeddedResources.Add(relativePath.TrimStart('\\'));
+                embeddedResources.Add(relativePath.TrimStart('/'));
             }
 
             return embeddedResources;
@@ -176,22 +176,22 @@ namespace ServiceClientGenerator
 
             if (Directory.Exists(codeAnalysisRoot))
             {
-                var subFolders = Directory.GetDirectories(codeAnalysisRoot, "*", SearchOption.AllDirectories);
+                var subFolders = Directory.GetDirectories(codeAnalysisRoot, "*", SearchOption.AllDirectories).OrderBy(d => d);
                 foreach (var folder in subFolders)
                 {
-                    var serviceRelativeFolder = folder.Substring(codeAnalysisRoot.Length);
+                    var serviceRelativeFolder = Utils.ConvertPathAlt(folder.Substring(codeAnalysisRoot.Length));
 
-                    if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                    if (!serviceRelativeFolder.StartsWith("/Custom", StringComparison.OrdinalIgnoreCase))
                         continue;
 
-                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
+                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('/'));
                 }
             }
 
             var foldersThatExist = new List<string>();
             foreach (var folder in sourceCodeFolders)
             {
-                if (Directory.Exists(Path.Combine(codeAnalysisRoot, folder)))
+                if (Directory.Exists(Utils.PathCombineAlt(codeAnalysisRoot, folder)))
                     foldersThatExist.Add(folder);
             }
 

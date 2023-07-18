@@ -39,7 +39,7 @@ namespace ServiceClientGenerator.DefaultConfiguration
         /// <inheritdoc cref="IDefaultConfigurationController.LoadDefaultConfiguration"/>
         public DefaultConfigurationModel LoadDefaultConfiguration(string repositoryRootDirectoryPath)
         {
-            var filePath = Path.Combine(repositoryRootDirectoryPath, "sdk","src","Core","sdk-default-configuration.json");
+            var filePath = Utils.PathCombineAlt(repositoryRootDirectoryPath, "sdk","src","Core","sdk-default-configuration.json");
 
             string json;
             try

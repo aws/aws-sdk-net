@@ -71,112 +71,112 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("ChangeBatch", "https://route53.amazonaws.com/doc/2013-04-01/");            
                     if(publicRequest.ChangeBatch.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.ChangeBatch.Comment));                 
-    
+
                     var publicRequestChangeBatchChanges = publicRequest.ChangeBatch.Changes;
                     if (publicRequestChangeBatchChanges != null && publicRequestChangeBatchChanges.Count > 0) 
                     {                        
                         xmlWriter.WriteStartElement("Changes", "https://route53.amazonaws.com/doc/2013-04-01/");
                         foreach (var publicRequestChangeBatchChangesValue in publicRequestChangeBatchChanges) 
                         {
-                        
+                
                         if (publicRequestChangeBatchChangesValue != null) 
                         {
                             xmlWriter.WriteStartElement("Change", "https://route53.amazonaws.com/doc/2013-04-01/");            
                             if(publicRequestChangeBatchChangesValue.IsSetAction())
                                 xmlWriter.WriteElementString("Action", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.Action));                 
-            
-                            
+
+                
                             if (publicRequestChangeBatchChangesValue.ResourceRecordSet != null) 
                             {
                                 xmlWriter.WriteStartElement("ResourceRecordSet", "https://route53.amazonaws.com/doc/2013-04-01/");            
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetName())
                                     xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Name));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetType())
                                     xmlWriter.WriteElementString("Type", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Type));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetSetIdentifier())
                                     xmlWriter.WriteElementString("SetIdentifier", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.SetIdentifier));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetWeight())
                                     xmlWriter.WriteElementString("Weight", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.Weight));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetRegion())
                                     xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Region));                 
+
                 
-                                
                                 if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation != null) 
                                 {
                                     xmlWriter.WriteStartElement("GeoLocation", "https://route53.amazonaws.com/doc/2013-04-01/");            
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.IsSetContinentCode())
                                         xmlWriter.WriteElementString("ContinentCode", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.ContinentCode));                 
-                    
+
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.IsSetCountryCode())
                                         xmlWriter.WriteElementString("CountryCode", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.CountryCode));                 
-                    
+
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.IsSetSubdivisionCode())
                                         xmlWriter.WriteElementString("SubdivisionCode", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.SubdivisionCode));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetFailover())
                                     xmlWriter.WriteElementString("Failover", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Failover));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetMultiValueAnswer())
                                     xmlWriter.WriteElementString("MultiValueAnswer", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.MultiValueAnswer));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTTL())
                                     xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.TTL));                 
-                
+
                                 var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords = publicRequestChangeBatchChangesValue.ResourceRecordSet.ResourceRecords;
                                 if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords != null && publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords.Count > 0) 
                                 {                        
                                     xmlWriter.WriteStartElement("ResourceRecords", "https://route53.amazonaws.com/doc/2013-04-01/");
                                     foreach (var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue in publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords) 
                                     {
-                                    
+                
                                     if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue != null) 
                                     {
                                         xmlWriter.WriteStartElement("ResourceRecord", "https://route53.amazonaws.com/doc/2013-04-01/");            
                                         if(publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue.IsSetValue())
                                             xmlWriter.WriteElementString("Value", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue.Value));                 
-                        
+
                                         xmlWriter.WriteEndElement();
                                     }
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
-                                
+                
                                 if (publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget != null) 
                                 {
                                     xmlWriter.WriteStartElement("AliasTarget", "https://route53.amazonaws.com/doc/2013-04-01/");            
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.IsSetHostedZoneId())
                                         xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.HostedZoneId));                 
-                    
+
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.IsSetDNSName())
                                         xmlWriter.WriteElementString("DNSName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.DNSName));                 
-                    
+
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.IsSetEvaluateTargetHealth())
                                         xmlWriter.WriteElementString("EvaluateTargetHealth", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.EvaluateTargetHealth));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetHealthCheckId())
                                     xmlWriter.WriteElementString("HealthCheckId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.HealthCheckId));                 
-                
+
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTrafficPolicyInstanceId())
                                     xmlWriter.WriteElementString("TrafficPolicyInstanceId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.TrafficPolicyInstanceId));                 
+
                 
-                                
                                 if (publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig != null) 
                                 {
                                     xmlWriter.WriteStartElement("CidrRoutingConfig", "https://route53.amazonaws.com/doc/2013-04-01/");            
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.IsSetCollectionId())
                                         xmlWriter.WriteElementString("CollectionId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.CollectionId));                 
-                    
+
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.IsSetLocationName())
                                         xmlWriter.WriteElementString("LocationName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.LocationName));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();

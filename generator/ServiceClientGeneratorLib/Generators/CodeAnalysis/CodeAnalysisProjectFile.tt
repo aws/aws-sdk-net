@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Generated\PropertyValueRules.xml">
+    <EmbeddedResource Include="Generated/PropertyValueRules.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
 <#
@@ -44,6 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SharedAnalysisCode\SharedAnalysisCode.csproj" />
+    <ProjectReference Include="../../SharedAnalysisCode/SharedAnalysisCode.csproj" />
   </ItemGroup>
 </Project>

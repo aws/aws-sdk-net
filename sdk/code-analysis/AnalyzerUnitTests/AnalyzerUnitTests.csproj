@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MockAnalyzer\MockAnalyzer.csproj" />
+    <ProjectReference Include="../MockAnalyzer/MockAnalyzer.csproj" />
   </ItemGroup>
 </Project>

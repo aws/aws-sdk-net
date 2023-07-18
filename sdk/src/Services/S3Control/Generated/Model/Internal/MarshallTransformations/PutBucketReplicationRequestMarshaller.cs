@@ -74,134 +74,134 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("ReplicationConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.ReplicationConfiguration.IsSetRole())
                         xmlWriter.WriteElementString("Role", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ReplicationConfiguration.Role));                    
-    
+
                     var publicRequestReplicationConfigurationRules = publicRequest.ReplicationConfiguration.Rules;
                     if (publicRequestReplicationConfigurationRules != null && publicRequestReplicationConfigurationRules.Count > 0) 
                     {                        
                         xmlWriter.WriteStartElement("Rules", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestReplicationConfigurationRulesValue in publicRequestReplicationConfigurationRules) 
                         {
-                        
+                
                         if (publicRequestReplicationConfigurationRulesValue != null) 
                         {
                             xmlWriter.WriteStartElement("Rule", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             if(publicRequestReplicationConfigurationRulesValue.IsSetBucket())
                                 xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Bucket));                 
-            
-                            
+
+                
                             if (publicRequestReplicationConfigurationRulesValue.DeleteMarkerReplication != null) 
                             {
                                 xmlWriter.WriteStartElement("DeleteMarkerReplication", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                 if(publicRequestReplicationConfigurationRulesValue.DeleteMarkerReplication.IsSetStatus())
                                     xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.DeleteMarkerReplication.Status));                 
-                
+
                                 xmlWriter.WriteEndElement();
                             }
-                            
+                
                             if (publicRequestReplicationConfigurationRulesValue.Destination != null) 
                             {
                                 xmlWriter.WriteStartElement("Destination", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                                
+                
                                 if (publicRequestReplicationConfigurationRulesValue.Destination.AccessControlTranslation != null) 
                                 {
                                     xmlWriter.WriteStartElement("AccessControlTranslation", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.Destination.AccessControlTranslation.IsSetOwner())
                                         xmlWriter.WriteElementString("Owner", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.AccessControlTranslation.Owner));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestReplicationConfigurationRulesValue.Destination.IsSetAccount())
                                     xmlWriter.WriteElementString("Account", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.Account));                 
-                
+
                                 if(publicRequestReplicationConfigurationRulesValue.Destination.IsSetBucket())
                                     xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.Bucket));                 
+
                 
-                                
                                 if (publicRequestReplicationConfigurationRulesValue.Destination.EncryptionConfiguration != null) 
                                 {
                                     xmlWriter.WriteStartElement("EncryptionConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.Destination.EncryptionConfiguration.IsSetReplicaKmsKeyID())
                                         xmlWriter.WriteElementString("ReplicaKmsKeyID", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.EncryptionConfiguration.ReplicaKmsKeyID));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
-                                
+                
                                 if (publicRequestReplicationConfigurationRulesValue.Destination.Metrics != null) 
                                 {
                                     xmlWriter.WriteStartElement("Metrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                                    
+                
                                     if (publicRequestReplicationConfigurationRulesValue.Destination.Metrics.EventThreshold != null) 
                                     {
                                         xmlWriter.WriteStartElement("EventThreshold", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                         if(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.EventThreshold.IsSetMinutes())
                                             xmlWriter.WriteElementString("Minutes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.EventThreshold.Minutes));                 
-                        
+
                                         xmlWriter.WriteEndElement();
                                     }
                                     if(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.IsSetStatus())
                                         xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.Status));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
-                                
+                
                                 if (publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime != null) 
                                 {
                                     xmlWriter.WriteStartElement("ReplicationTime", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.IsSetStatus())
                                         xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Status));                 
-                    
-                                    
+
+                
                                     if (publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Time != null) 
                                     {
                                         xmlWriter.WriteStartElement("Time", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                         if(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Time.IsSetMinutes())
                                             xmlWriter.WriteElementString("Minutes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Time.Minutes));                 
-                        
+
                                         xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestReplicationConfigurationRulesValue.Destination.IsSetStorageClass())
                                     xmlWriter.WriteElementString("StorageClass", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Destination.StorageClass));                 
-                
+
                                 xmlWriter.WriteEndElement();
                             }
-                            
+                
                             if (publicRequestReplicationConfigurationRulesValue.ExistingObjectReplication != null) 
                             {
                                 xmlWriter.WriteStartElement("ExistingObjectReplication", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                 if(publicRequestReplicationConfigurationRulesValue.ExistingObjectReplication.IsSetStatus())
                                     xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.ExistingObjectReplication.Status));                 
-                
+
                                 xmlWriter.WriteEndElement();
                             }
-                            
+                
                             if (publicRequestReplicationConfigurationRulesValue.Filter != null) 
                             {
                                 xmlWriter.WriteStartElement("Filter", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                                
+                
                                 if (publicRequestReplicationConfigurationRulesValue.Filter.And != null) 
                                 {
                                     xmlWriter.WriteStartElement("And", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.Filter.And.IsSetPrefix())
                                         xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Filter.And.Prefix));                 
-                    
+
                                     var publicRequestReplicationConfigurationRulesValueFilterAndTags = publicRequestReplicationConfigurationRulesValue.Filter.And.Tags;
                                     if (publicRequestReplicationConfigurationRulesValueFilterAndTags != null && publicRequestReplicationConfigurationRulesValueFilterAndTags.Count > 0) 
                                     {                        
                                         xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                         foreach (var publicRequestReplicationConfigurationRulesValueFilterAndTagsValue in publicRequestReplicationConfigurationRulesValueFilterAndTags) 
                                         {
-                                        
+                
                                         if (publicRequestReplicationConfigurationRulesValueFilterAndTagsValue != null) 
                                         {
                                             xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                             if(publicRequestReplicationConfigurationRulesValueFilterAndTagsValue.IsSetKey())
                                                 xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValueFilterAndTagsValue.Key));                 
-                            
+
                                             if(publicRequestReplicationConfigurationRulesValueFilterAndTagsValue.IsSetValue())
                                                 xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValueFilterAndTagsValue.Value));                 
-                            
+
                                             xmlWriter.WriteEndElement();
                                         }
                                         }            
@@ -211,63 +211,63 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }
                                 if(publicRequestReplicationConfigurationRulesValue.Filter.IsSetPrefix())
                                     xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Filter.Prefix));                 
+
                 
-                                
                                 if (publicRequestReplicationConfigurationRulesValue.Filter.Tag != null) 
                                 {
                                     xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.Filter.Tag.IsSetKey())
                                         xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Filter.Tag.Key));                 
-                    
+
                                     if(publicRequestReplicationConfigurationRulesValue.Filter.Tag.IsSetValue())
                                         xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Filter.Tag.Value));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequestReplicationConfigurationRulesValue.IsSetID())
                                 xmlWriter.WriteElementString("ID", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.ID));                 
-            
+
                             if(publicRequestReplicationConfigurationRulesValue.IsSetPrefix())
                                 xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Prefix));                 
-            
+
                             if(publicRequestReplicationConfigurationRulesValue.IsSetPriority())
                                 xmlWriter.WriteElementString("Priority", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Priority));                 
-            
-                            
+
+                
                             if (publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria != null) 
                             {
                                 xmlWriter.WriteStartElement("SourceSelectionCriteria", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                                
+                
                                 if (publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications != null) 
                                 {
                                     xmlWriter.WriteStartElement("ReplicaModifications", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.IsSetStatus())
                                         xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria.ReplicaModifications.Status));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
-                                
+                
                                 if (publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects != null) 
                                 {
                                     xmlWriter.WriteStartElement("SseKmsEncryptedObjects", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetStatus())
                                         xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria.SseKmsEncryptedObjects.Status));                 
-                    
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequestReplicationConfigurationRulesValue.IsSetStatus())
                                 xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Status));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

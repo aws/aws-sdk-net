@@ -20,9 +20,9 @@ EndProject
 <#
     }
 #>
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedAnalysisCode", "code-analysis\SharedAnalysisCode\SharedAnalysisCode.csproj", "{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedAnalysisCode", "code-analysis/SharedAnalysisCode/SharedAnalysisCode.csproj", "{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockAnalyzer", "code-analysis\MockAnalyzer\MockAnalyzer.csproj", "{9BC3B08B-9F09-444E-AD15-67045FA3AF19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockAnalyzer", "code-analysis/MockAnalyzer/MockAnalyzer.csproj", "{9BC3B08B-9F09-444E-AD15-67045FA3AF19}"
 EndProject
 
 Global

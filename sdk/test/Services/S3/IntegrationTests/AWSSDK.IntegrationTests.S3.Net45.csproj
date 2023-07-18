@@ -24,7 +24,7 @@
     <None Remove="**/35/**" />
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
-    <Compile Include="..\..\KeyManagementService\IntegrationTests\KeyManagementService.cs" />
+    <Compile Include="../../KeyManagementService/IntegrationTests/KeyManagementService.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,13 +38,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3Control\AWSSDK.S3Control.Net45.csproj" />
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj" />
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/KeyManagementService/AWSSDK.KeyManagementService.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,7 +59,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="EmbeddedResource\*" />
+    <EmbeddedResource Include="EmbeddedResource/*" />
   </ItemGroup>
 
 </Project>

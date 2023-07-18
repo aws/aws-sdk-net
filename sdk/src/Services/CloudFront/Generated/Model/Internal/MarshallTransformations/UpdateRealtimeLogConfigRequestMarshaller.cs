@@ -71,25 +71,25 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("EndPoints", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
                     {
-                    
+                
                     if (publicRequestEndPointsValue != null) 
                     {
                         xmlWriter.WriteStartElement("member", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                        
+                
                         if (publicRequestEndPointsValue.KinesisStreamConfig != null) 
                         {
                             xmlWriter.WriteStartElement("KinesisStreamConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
                                 xmlWriter.WriteElementString("RoleARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));                 
-            
+
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
                                 xmlWriter.WriteElementString("StreamARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequestEndPointsValue.IsSetStreamType())
                             xmlWriter.WriteElementString("StreamType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestEndPointsValue.StreamType));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
                     }            

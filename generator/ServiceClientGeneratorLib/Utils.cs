@@ -156,8 +156,8 @@ namespace ServiceClientGenerator
             var serviceDirectories = new List<string>();
             if (string.IsNullOrEmpty(options.ServiceModels))
             {
-                serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder));
-                serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder));
+                serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder).OrderBy(d => d));
+                serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder).OrderBy(d => d));
             }
             else
             {
@@ -165,11 +165,31 @@ namespace ServiceClientGenerator
                 // only get specified models folders
                 foreach (var service in services)
                 {
-                    serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder, service));
-                    serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder, service));
+                    serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder, service).OrderBy(d => d));
+                    serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder, service).OrderBy(d => d));
                 }
             }
             return serviceDirectories;
+        }
+
+        /// <summary>
+        /// Forces the path to use the AltDirectorySeparatorChar even on Windows.
+        /// </summary>
+        /// <param name="segments">The path segments to join</param>
+        /// <returns>The combined path.</returns>
+        public static string PathCombineAlt(params string[] segments)
+        {
+            return ConvertPathAlt(Path.Combine(segments));
+        }
+
+        /// <summary>
+        /// Converts path characters of Path.DirectorySeparatorChar to Path.AltDirectorySeparatorChar.
+        /// </summary>
+        /// <param name="path">The path to convert to use Path.AltDirectorySeparatorChar characters.</param>
+        /// <returns>The converted path.</returns>
+        public static string ConvertPathAlt(string path)
+        {
+            return path.Replace(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
         }
     }
 }

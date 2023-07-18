@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

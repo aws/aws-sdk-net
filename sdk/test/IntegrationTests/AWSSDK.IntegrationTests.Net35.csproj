@@ -35,10 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
-    <ProjectReference Include="..\..\src\Services\*\*.Net35.csproj"/>
-    <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net35.csproj"/>
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
+    <ProjectReference Include="../../src/Services/*/*.Net35.csproj"/>
+    <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net35.csproj"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -59,12 +59,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
-    <EmbeddedResource Include="Tests\ListObjectsResponse.xml" />
+    <EmbeddedResource Include="Tests/CloudTrailBucketPolicy.json" />
+    <EmbeddedResource Include="Tests/ListObjectsResponse.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="..\Services\S3\IntegrationTests\EmbeddedResource\*" />
+    <EmbeddedResource Include="../Services/S3/IntegrationTests/EmbeddedResource/*" />
   </ItemGroup>
 
 </Project>

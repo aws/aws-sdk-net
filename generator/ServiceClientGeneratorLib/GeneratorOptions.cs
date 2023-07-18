@@ -100,11 +100,11 @@ namespace ServiceClientGenerator
 
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release
-            Manifest = Path.Combine("..", "..", "..", "ServiceModels", "_manifest.json");
-            Versions = Path.Combine("..", "..", "..", "ServiceModels", "_sdk-versions.json");
-            ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
-            TestModelsFolder = Path.Combine("..", "..", "..", "TestServiceModels");
-            SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
+            Manifest = Utils.PathCombineAlt("..", "..", "..", "ServiceModels", "_manifest.json");
+            Versions = Utils.PathCombineAlt("..", "..", "..", "ServiceModels", "_sdk-versions.json");
+            ModelsFolder = Utils.PathCombineAlt("..", "..", "..", "ServiceModels");
+            TestModelsFolder = Utils.PathCombineAlt("..", "..", "..", "TestServiceModels");
+            SdkRootFolder = Utils.PathCombineAlt("..", "..", "..", "..", "sdk");
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;
             Clean = false;

@@ -19,7 +19,7 @@
 
     <NoWarn>CS1591</NoWarn>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>	
-	<OutputPath>bin\$(Configuration)\net35</OutputPath>
+	<OutputPath>bin/$(Configuration)/net35</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>    
@@ -43,8 +43,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\..\src\Services\*\*.Net35.csproj"/>
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../../src/Services/*/*.Net35.csproj"/>
   </ItemGroup>
   
   <ItemGroup>

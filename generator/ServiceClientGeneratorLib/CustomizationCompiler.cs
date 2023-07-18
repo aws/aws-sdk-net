@@ -39,8 +39,8 @@ namespace ServiceClientGenerator
             foreach (string serviceDirectory in serviceDirectories)
             {
                 var s = Path.GetFileName(serviceDirectory);
-                var compiledFilePath = Path.Combine(compiledCustomizationsDirectory, s + ".customizations.json");
-                var customizationFiles = Directory.GetFiles(serviceDirectory, "*.customizations*.json");
+                var compiledFilePath = Utils.PathCombineAlt(compiledCustomizationsDirectory, s + ".customizations.json");
+                var customizationFiles = Directory.GetFiles(serviceDirectory, "*.customizations*.json").OrderBy(f => f);
 
                 var jsonWriter = new JsonWriter { PrettyPrint = true };
 

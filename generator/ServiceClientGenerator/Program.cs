@@ -11,6 +11,9 @@ namespace ServiceClientGenerator
     {
         static int Main(string[] args)
         {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
             var commandArguments = CommandArguments.Parse(args);
             if (!string.IsNullOrEmpty(commandArguments.Error))
             {
@@ -42,7 +45,8 @@ namespace ServiceClientGenerator
                     ConcurrentDictionary<string, string> generatedFiles = new ConcurrentDictionary<string, string>();
                     GeneratorDriver.GenerateCoreProjects(generationManifest, options);
                     GeneratorDriver.GeneratePartitions(options);
-                    Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = 16 }, (serviceConfig, state) =>
+                    Console.WriteLine($"Setting MaxDegreeOfParallelism = {Environment.ProcessorCount * 2}");
+                    Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount * 2 }, (serviceConfig, state) =>
                     {
                         if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))
                         {
@@ -88,10 +92,10 @@ namespace ServiceClientGenerator
                     serviceConfig.GenerateConstructors = true;
 
 
-                    var relativePathToCustomizations = Path.Combine("customizations", string.Format("{0}.customizations.json", options.SelfServiceBaseName.ToLowerInvariant()));
+                    var relativePathToCustomizations = Utils.PathCombineAlt("customizations", string.Format("{0}.customizations.json", options.SelfServiceBaseName.ToLowerInvariant()));
                     if (File.Exists(relativePathToCustomizations))
                     {
-                        serviceConfig.CustomizationsPath = Path.GetFullPath(relativePathToCustomizations);
+                        serviceConfig.CustomizationsPath = Utils.ConvertPathAlt(Path.GetFullPath(relativePathToCustomizations));
                         Console.WriteLine("Using customization file: {0}", serviceConfig.CustomizationsPath);
                     }
                     
@@ -99,7 +103,7 @@ namespace ServiceClientGenerator
                     var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                     driver.Execute();
 
-                    // Skip orphan clean for DynamoDB because of the complex nature of DynamDB and DynamoDB Streams
+                    // Skip orphan clean for DynamoDB because of the complex nature of DynamoDB and DynamoDB Streams
                     if (!serviceConfig.ClassName.StartsWith("DynamoDB") && !options.SkipRemoveOrphanCleanup)
                     {
                         GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
@@ -118,6 +122,9 @@ namespace ServiceClientGenerator
 
                     throw;
             }
+
+            sw.Stop();
+            Console.WriteLine($"Generator executed in: {sw.Elapsed}");
 
             if (options.WaitOnExit)
             {

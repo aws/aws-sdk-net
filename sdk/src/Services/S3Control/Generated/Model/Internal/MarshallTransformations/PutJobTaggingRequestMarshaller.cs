@@ -76,16 +76,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                    
+                
                     if (publicRequestTagsValue != null) 
                     {
                         xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequestTagsValue.IsSetKey())
                             xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Key));                 
-        
+
                         if(publicRequestTagsValue.IsSetValue())
                             xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Value));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
                     }            

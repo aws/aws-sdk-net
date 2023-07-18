@@ -109,8 +109,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.CreateBucketConfiguration.IsSetLocationConstraint())
                         xmlWriter.WriteElementString("LocationConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.CreateBucketConfiguration.LocationConstraint));                    
-    
-    
+
+
                     xmlWriter.WriteEndElement();
                 }
             }

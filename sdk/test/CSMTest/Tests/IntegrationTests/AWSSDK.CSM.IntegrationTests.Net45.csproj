@@ -20,10 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**\_bcl35\**" />
-    <Compile Remove="**\obj\**" />
-    <Compile Remove="obj\**" />
-    <None Remove="obj\**" />
+    <Compile Remove="**/_bcl35/**" />
+    <Compile Remove="**/obj/**" />
+    <Compile Remove="obj/**" />
+    <None Remove="obj/**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,10 +41,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
-    <ProjectReference Include="..\..\Utilities\AWSSDK.CSM.Utilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="../../Utilities/AWSSDK.CSM.Utilities.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>

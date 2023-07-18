@@ -29,11 +29,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj"/>
-    <ProjectReference Include="..\..\..\Common\AWSSDK.CommonTest.csproj"/>
-    <ProjectReference Include="..\..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.Net35.csproj"/>
-    <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net35.csproj"/>
-    <ProjectReference Include="..\..\..\..\src\Services\EMRContainers\AWSSDK.EMRContainers.Net35.csproj"/>
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj"/>
+    <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj"/>
+    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.Net35.csproj"/>
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net35.csproj"/>
+    <ProjectReference Include="../../../../src/Services/EMRContainers/AWSSDK.EMRContainers.Net35.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">

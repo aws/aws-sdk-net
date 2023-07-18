@@ -15,9 +15,9 @@ namespace ServiceClientGenerator
         public GeneratorOptions Options { get; private set; }
 
         private Dictionary<string, object> session;
-        private static string corePath = Path.Combine("src", "Core");
-        private static string assemblyInfoPath = Path.Combine("Properties", "AssemblyInfo.cs");
-        private static string internalSdkUtilPath = Path.Combine("Amazon.Util","Internal","InternalSDKUtils.generated.cs");
+        private static string corePath = Utils.PathCombineAlt("src", "Core");
+        private static string assemblyInfoPath = Utils.PathCombineAlt("Properties", "AssemblyInfo.cs");
+        private static string internalSdkUtilPath = Utils.PathCombineAlt("Amazon.Util","Internal","InternalSDKUtils.generated.cs");
         private const string nuspecPath = "AWSSDK.Core.nuspec";
 
 

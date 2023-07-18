@@ -20,14 +20,14 @@
 
     <!-- Compensate for the fact that we're testing .NET 3.5 assemblies but we're using .NET 4.5 to run the tests. -->
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>bin\$(Configuration)\net35</OutputPath>
+    <OutputPath>bin/$(Configuration)/net35</OutputPath>
   </PropertyGroup>
   
   <ItemGroup>
-    <Compile Remove="**\_bcl45+netstandard\**" />
-    <Compile Remove="**\_bcl45\**" />
-    <Compile Remove="obj\**" />
-    <None Remove="obj\**" />
+    <Compile Remove="**/_bcl45+netstandard/**" />
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="obj/**" />
+    <None Remove="obj/**" />
   </ItemGroup>
   
   <ItemGroup>
@@ -42,8 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.Net35.csproj" />
   </ItemGroup>
  
   <ItemGroup>

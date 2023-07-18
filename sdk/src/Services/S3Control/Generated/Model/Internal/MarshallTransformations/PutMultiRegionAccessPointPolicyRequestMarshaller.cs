@@ -78,10 +78,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Details", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Details.Name));                 
-    
+
                     if(publicRequest.Details.IsSetPolicy())
                         xmlWriter.WriteElementString("Policy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Details.Policy));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
 

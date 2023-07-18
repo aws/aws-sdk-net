@@ -79,11 +79,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("VersioningConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.VersioningConfiguration.IsSetMFADelete())
                         xmlWriter.WriteElementString("MfaDelete", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.VersioningConfiguration.MFADelete));                    
-    
+
                     if(publicRequest.VersioningConfiguration.IsSetStatus())
                         xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.VersioningConfiguration.Status));                    
-    
-    
+
+
                     xmlWriter.WriteEndElement();
                 }
             }

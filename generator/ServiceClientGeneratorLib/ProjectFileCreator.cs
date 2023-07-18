@@ -45,10 +45,10 @@ namespace ServiceClientGenerator
                 else
                 {
                     string projectGuid;
-                    if (File.Exists(Path.Combine(coreFilesRoot, projectFilename)))
+                    if (File.Exists(Utils.PathCombineAlt(coreFilesRoot, projectFilename)))
                     {
                         Console.WriteLine("...updating existing project file {0}", projectFilename);
-                        var projectPath = Path.Combine(coreFilesRoot, projectFilename);
+                        var projectPath = Utils.PathCombineAlt(coreFilesRoot, projectFilename);
                         projectGuid = Utils.GetProjectGuid(projectPath);
                     }
                     else
@@ -68,16 +68,16 @@ namespace ServiceClientGenerator
                     {
                         "endpoints.json",
                     };
-                    projectProperties.KeyFilePath = @"..\..\awssdk.dll.snk";
+                    projectProperties.KeyFilePath = Utils.PathCombineAlt("..", "..", "awssdk.dll.snk");
                     projectProperties.SupressWarnings = "419,1570,1591";
-                    projectProperties.NugetPackagesLocation = @"..\..\packages\";
-                    projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\AWSDotNetSDK.ruleset";
-                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\AWSDotNetSDKForBuild.ruleset";
+                    projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "packages");
+                    projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "AWSDotNetSDK.ruleset");
+                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "AWSDotNetSDKForBuild.ruleset");
                     projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
                     projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
                     projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
                     projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
-                    projectProperties.CustomRoslynAnalyzersDllDirectory = @"..\..\..\buildtools\CustomRoslynAnalyzers.dll";
+                    projectProperties.CustomRoslynAnalyzersDllDirectory = Utils.PathCombineAlt("..", "..", "..", "buildtools", "CustomRoslynAnalyzers.dll");
 
                     var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                     var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -121,20 +121,16 @@ namespace ServiceClientGenerator
 
                         projectReferenceList.Add(new ProjectReference
                         {
-                            IncludePath = string.Format(@"..\..\Services\{0}\AWSSDK.{1}.{2}.csproj", dependency, dependency, projectType)
+                            IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
                         });
                     }
-
-                    var corePath = @"..\..\Core\AWSSDK.Core.{0}.csproj";
-                    if (serviceConfiguration.IsTestService)
-                    {
-                        corePath = @"..\..\..\src\Core\AWSSDK.Core.{0}.csproj";
-                    }
-
+                                        
                     projectReferenceList.Add(new ProjectReference
                     {
-                        IncludePath = string.Format(corePath, projectType)
-                    });
+                        IncludePath = serviceConfiguration.IsTestService
+                            ? Utils.PathCombineAlt("..", "..", "..", "src", "Core", $"AWSSDK.Core.{projectType}.csproj")
+                            : Utils.PathCombineAlt("..", "..", "Core", $"AWSSDK.Core.{projectType}.csproj")
+                    }); ;
 
                     projectFileConfiguration.ProjectReferences = projectReferenceList;
                     GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration);
@@ -144,10 +140,10 @@ namespace ServiceClientGenerator
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
                 string projectGuid;
-                if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
+                if (File.Exists(Utils.PathCombineAlt(serviceFilesRoot, projectFilename)))
                 {
                     Console.WriteLine("...updating existing project file {0}", projectFilename);
-                    var projectPath = Path.Combine(serviceFilesRoot, projectFilename);
+                    var projectPath = Utils.PathCombineAlt(serviceFilesRoot, projectFilename);
                     projectGuid = Utils.GetProjectGuid(projectPath);
                 }
                 else
@@ -165,14 +161,14 @@ namespace ServiceClientGenerator
                 projectProperties.RootNamespace = serviceConfiguration.Namespace;
                 projectProperties.AssemblyName = assemblyName;
                 projectProperties.SourceDirectories = GetProjectSourceFolders(projectFileConfiguration, serviceFilesRoot);
-                projectProperties.NugetPackagesLocation = @"..\..\..\packages\";
-                projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\AWSDotNetSDK.ruleset";
-                projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\..\AWSDotNetSDKForBuild.ruleset";
+                projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "..", "packages");
+                projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDK.ruleset");
+                projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDKForBuild.ruleset");
                 projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
                 projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
                 projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
                 projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
-                projectProperties.CustomRoslynAnalyzersDllDirectory = @"..\..\..\..\buildtools\CustomRoslynAnalyzers.dll";
+                projectProperties.CustomRoslynAnalyzersDllDirectory = Utils.PathCombineAlt("..", "..", "..", "..", "buildtools", "CustomRoslynAnalyzers.dll");
 
                 var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                 var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -191,17 +187,17 @@ namespace ServiceClientGenerator
                         string dependencyProject;
                         if (string.Equals(dependency.Key, "Core", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            dependencyProject = string.Concat(@"..\..\", dependency.Key, "\\", dependencyProjectName, ".csproj");
+                            dependencyProject = Utils.PathCombineAlt("..", "..", dependency.Key, dependencyProjectName, ".csproj");
                         }
                         else
                         {
-                            dependencyProject = string.Concat(@"..\", dependency.Key, "\\", dependencyProjectName, ".csproj");
+                            dependencyProject = Utils.PathCombineAlt("..", dependency.Key, dependencyProjectName, ".csproj");
                         }
 
                         projectReferences.Add(new ProjectReference
                         {
                             IncludePath = dependencyProject,
-                            ProjectGuid = Utils.GetProjectGuid(Path.Combine(serviceFilesRoot, dependencyProject)),
+                            ProjectGuid = Utils.GetProjectGuid(Utils.PathCombineAlt(serviceFilesRoot, dependencyProject)),
                             Name = dependencyProjectName
                         });
                     }
@@ -275,9 +271,9 @@ namespace ServiceClientGenerator
             projectProperties.SupressWarnings       = projectFileConfiguration.NoWarn;
             projectProperties.SignBinaries          = true;
             projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
-            projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\AWSDotNetSDK.ruleset";
-            projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\..\AWSDotNetSDKForBuild.ruleset";
-            projectProperties.CustomRoslynAnalyzersDllDirectory = @"..\..\..\..\buildtools\CustomRoslynAnalyzers.dll";
+            projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDK.ruleset");
+            projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDKForBuild.ruleset");
+            projectProperties.CustomRoslynAnalyzersDllDirectory = Utils.PathCombineAlt("..", "..", "..", "..", "buildtools", "CustomRoslynAnalyzers.dll");
 
             List<Dependency> dependencies;
             List<PackageReference> references = new List<PackageReference>();
@@ -333,13 +329,14 @@ namespace ServiceClientGenerator
                 "."
             };
 
-            var childDirectories = Directory.GetDirectories(coreRootFolder, "*", SearchOption.AllDirectories);
+            var childDirectories = Directory.GetDirectories(coreRootFolder, "*", SearchOption.AllDirectories).OrderBy(d => d);
             foreach (var childDirectory in childDirectories)
             {
-                var folder = childDirectory.Substring(coreRootFolder.Length).TrimStart('\\');
+                var childDirectoryAlt = Utils.ConvertPathAlt(childDirectory);
+                var folder = childDirectoryAlt.Substring(coreRootFolder.Length).TrimStart('/');
 
-                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) ||
-                    folder.StartsWith(e + "\\", StringComparison.InvariantCulture)))
+                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) ||                    
+                    folder.StartsWith(e + "/", StringComparison.InvariantCulture)))
                     continue;
 
                 if (projectFileConfiguration.IsPlatformCodeFolder(folder))
@@ -351,50 +348,15 @@ namespace ServiceClientGenerator
                 {
                     sourceCodeFolders.Add(folder);
                 }
-
-
             }
-
-
-
-            //var platformSubFolders = projectFileConfiguration.PlatformCodeFolders;
-            //sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Path.Combine(@"Generated", folder)));
-
-            //// Augment the returned folders with any custom subfolders already in existence. If the custom folder 
-            //// ends with a recognised platform, only add it to the set if it matches the platform being generated
-            ////if (Directory.Exists(serviceRootFolder))
-            //{
-            //    var subFolders = Directory.GetDirectories(coreRootFolder, "*", SearchOption.AllDirectories);
-            //    subFolders = subFolders.Except(exclusionList).ToArray();
-            //    if (subFolders.Any())
-            //    {
-            //        foreach (var folder in subFolders)
-            //        {
-            //            var serviceRelativeFolder = folder.Substring(coreRootFolder.Length);
-
-            //            if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
-            //                continue;
-
-            //            if (projectFileConfiguration.IsPlatformCodeFolder(serviceRelativeFolder))
-            //            {
-            //                if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(serviceRelativeFolder))
-            //                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
-            //            }
-            //            else
-            //                sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
-            //        }
-            //    }
-            //}
 
             var foldersThatExist = new List<string>();
             foreach (var folder in sourceCodeFolders)
             {
-                if (Directory.Exists(Path.Combine(coreRootFolder, folder)))
+                if (Directory.Exists(Utils.PathCombineAlt(coreRootFolder, folder)))
                     foldersThatExist.Add(folder);
             }
 
-            // sort so we get a predictable layout
-            foldersThatExist.Sort(StringComparer.OrdinalIgnoreCase);
             return foldersThatExist;
         }
 
@@ -416,36 +378,36 @@ namespace ServiceClientGenerator
             var sourceCodeFolders = new List<string>
             {
                 "Generated",
-                @"Generated\Internal",
-                @"Generated\Model", 
-                @"Generated\Model\Internal", 
-                @"Generated\Model\Internal\MarshallTransformations"
+                Utils.PathCombineAlt("Generated", "Internal"),
+                Utils.PathCombineAlt("Generated", "Model"),
+                Utils.PathCombineAlt("Generated", "Model", "Internal"),
+                Utils.PathCombineAlt("Generated", "Model", "Internal", "MarshallTransformations")
             };
 
             var platformSubFolders = projectFileConfiguration.PlatformCodeFolders;
-            sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Path.Combine(@"Generated", folder)));
+            sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Utils.PathCombineAlt(@"Generated", folder)));
 
             // Augment the returned folders with any custom subfolders already in existence. If the custom folder 
             // ends with a recognised platform, only add it to the set if it matches the platform being generated
             if (Directory.Exists(serviceRootFolder))
             {
-                var subFolders = Directory.GetDirectories(serviceRootFolder, "*", SearchOption.AllDirectories);
+                var subFolders = Directory.GetDirectories(serviceRootFolder, "*", SearchOption.AllDirectories).OrderBy(d => d);
                 if (subFolders.Any())
                 {
                     foreach (var folder in subFolders)
-                    {
-                        var serviceRelativeFolder = folder.Substring(serviceRootFolder.Length);
+                    {                        
+                        var serviceRelativeFolder = Utils.ConvertPathAlt(folder.Substring(serviceRootFolder.Length));
 
-                        if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                        if (!serviceRelativeFolder.StartsWith(@"/Custom", StringComparison.OrdinalIgnoreCase))
                             continue;
 
                         if (projectFileConfiguration.IsPlatformCodeFolder(serviceRelativeFolder))
                         {
                             if (projectFileConfiguration.IsValidPlatformPathForProject(serviceRelativeFolder))
-                                sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
+                                sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('/'));
                         }
                         else
-                            sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
+                            sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('/'));
                     }
                 }
             }
@@ -453,8 +415,9 @@ namespace ServiceClientGenerator
             var foldersThatExist = new List<string>();
             foreach (var folder in sourceCodeFolders)
             {
-                if (Directory.Exists(Path.Combine(serviceRootFolder, folder)))
-                    foldersThatExist.Add(folder);
+                var folderAlt = Utils.ConvertPathAlt(folder);
+                if (Directory.Exists(Utils.PathCombineAlt(serviceRootFolder, folderAlt)))
+                    foldersThatExist.Add(folderAlt);
             }
 
             // sort so we get a predictable layout

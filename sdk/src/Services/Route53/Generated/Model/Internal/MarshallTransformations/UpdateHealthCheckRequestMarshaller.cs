@@ -128,10 +128,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("AlarmIdentifier", "https://route53.amazonaws.com/doc/2013-04-01/");            
                     if(publicRequest.AlarmIdentifier.IsSetRegion())
                         xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.AlarmIdentifier.Region));                 
-    
+
                     if(publicRequest.AlarmIdentifier.IsSetName())
                         xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.AlarmIdentifier.Name));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetInsufficientDataHealthStatus())

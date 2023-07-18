@@ -24,7 +24,7 @@
     <None Remove="**/35/**" />
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
-    <Compile Include="..\..\S3\IntegrationTests\S3TestUtils.cs" />
+    <Compile Include="../../S3/IntegrationTests/S3TestUtils.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,10 +38,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/ElasticTranscoder/AWSSDK.ElasticTranscoder.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>

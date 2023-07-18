@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SharedAnalysisCode\SharedAnalysisCode.csproj" />
+    <ProjectReference Include="../SharedAnalysisCode/SharedAnalysisCode.csproj" />
   </ItemGroup>
 </Project>

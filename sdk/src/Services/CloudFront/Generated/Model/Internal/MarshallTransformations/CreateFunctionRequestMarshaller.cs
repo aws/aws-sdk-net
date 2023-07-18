@@ -71,10 +71,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("FunctionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                     if(publicRequest.FunctionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FunctionConfig.Comment));                 
-    
+
                     if(publicRequest.FunctionConfig.IsSetRuntime())
                         xmlWriter.WriteElementString("Runtime", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetName())

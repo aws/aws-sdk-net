@@ -150,8 +150,7 @@ namespace ServiceClientGenerator
         /// </summary>
         private void LoadDefaultConfiguration(string manifestPath)
         {
-            // ../../../ServiceModels/ + ../../
-            var repositoryRootDirectoryPath = Path.Combine(manifestPath, "..","..");
+            var repositoryRootDirectoryPath = Utils.PathCombineAlt(manifestPath, "..","..");
 
             DefaultConfiguration = _defaultConfigurationController.LoadDefaultConfiguration(repositoryRootDirectoryPath);
         }
@@ -172,7 +171,7 @@ namespace ServiceClientGenerator
 
             foreach (string serviceDirectory in serviceDirectories)
             {
-                string metadataJsonFile = Path.Combine(serviceDirectory, "metadata.json");
+                string metadataJsonFile = Utils.PathCombineAlt(serviceDirectory, "metadata.json");
                 if (File.Exists(metadataJsonFile))
                 {
                     JsonData metadataNode = LoadJsonFromFile(metadataJsonFile);
@@ -285,8 +284,8 @@ namespace ServiceClientGenerator
 
         private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
         {
-            var modelFullPath = Path.Combine(serviceDirectoryPath, serviceModelFileName);
-            var paginatorsFullPath = Path.Combine(serviceDirectoryPath, servicePaginatorsFileName);
+            var modelFullPath = Utils.PathCombineAlt(serviceDirectoryPath, serviceModelFileName);
+            var paginatorsFullPath = Utils.PathCombineAlt(serviceDirectoryPath, servicePaginatorsFileName);
 
             JsonData metadata = JsonMapper.ToObject(File.ReadAllText(modelFullPath))[ServiceModel.MetadataKey];
 
@@ -381,7 +380,7 @@ namespace ServiceClientGenerator
             // Provides a way to specify a customizations file rather than using a generated one
             config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null
                 ? DetermineCustomizationsPath(config.ServiceDirectoryName)
-                : Path.Combine(serviceDirectoryPath, modelNode[ModelsSectionKeys.CustomizationFileKey].ToString());
+                : Utils.PathCombineAlt(serviceDirectoryPath, modelNode[ModelsSectionKeys.CustomizationFileKey].ToString());
 
             if (modelNode[ModelsSectionKeys.MaxRetriesKey] != null && modelNode[ModelsSectionKeys.MaxRetriesKey].IsInt)
                 config.OverrideMaxRetries = Convert.ToInt32(modelNode[ModelsSectionKeys.MaxRetriesKey].ToString());

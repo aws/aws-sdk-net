@@ -88,6 +88,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 
 	void ProcessRequestBodyMembers(string variableName, Operation operation)
 	{
+		var level = 0;
 #>
 			var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
 			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
@@ -106,7 +107,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.MarshallName#>", "<#=operation.XmlNamespace#>");
 <#+
-			PushIndent("	");
+			level++;
 		}
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
 		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
@@ -114,27 +115,27 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{			
 			if(member.IsStructure)
 			{
-				ProcessStructure(variableName, member, operation.XmlNamespace);				
+				ProcessStructure(level, variableName, member, operation.XmlNamespace);				
 			}
 			else if(member.IsList)
 			{
-				ProcessList(variableName, member, operation.XmlNamespace);
+				ProcessList(level, variableName, member, operation.XmlNamespace);
 			}
 			else if(member.IsMap)
 			{				
-				ProcessMap(variableName, member, operation.XmlNamespace);
+				ProcessMap(level, variableName, member, operation.XmlNamespace);
 			}
 			else
 			{
 #>
-				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
+<#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
 <#+
 				if(member.IsIdempotent)
 				{
 #>
 				else				
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", Guid.NewGuid().ToString());				
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", Guid.NewGuid().ToString());				
 <#+					
 				}
 #>
@@ -145,14 +146,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		}  
 #>
 
-				xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>				xmlWriter.WriteEndElement();
 <#+
 		if(operation.RequestPayloadMember!=null)
 		{
 #>
-			}
+<#=new string(' ', level * 4)#>			}
 <#+
-			PopIndent();
+			level--;
 		}
 #>
 			}
@@ -173,34 +174,34 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#+				       
 	}
 
-	void ProcessMembers(string variableName, IEnumerable<Member> members, string xmlNamespace)
+	void ProcessMembers(int level, string variableName, IEnumerable<Member> members, string xmlNamespace)
 	{
 		foreach(var member in members)
 		{
 			if(member.IsStructure)
 			{
-				ProcessStructure(variableName, member, xmlNamespace);				
+				ProcessStructure(level, variableName, member, xmlNamespace);				
 			}
 			else if(member.IsList)
 			{
-				ProcessList(variableName, member, xmlNamespace);	
+				ProcessList(level, variableName, member, xmlNamespace);	
 			}
 			else if(member.IsMap)
 			{				
-				ProcessMap(variableName, member, xmlNamespace);
+				ProcessMap(level, variableName, member, xmlNamespace);
 			}
 			else
 			{
 #>
-				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
+<#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
 
 <#+
 			}
 		}
 	}
 
-	void ProcessStructure(string variableName, Member member, string xmlNamespace)
+	void ProcessStructure(int level, string variableName, Member member, string xmlNamespace)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
 			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
@@ -208,35 +209,32 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			// Use shape's ListMarshallName if the structure is a list.
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
 #>				
-				if (<#=variableName#> != null) 
-				{
-					xmlWriter.WriteStartElement("<#=marshallName#>", "<#=xmlNamespace#>");			
-<#+
-			PushIndent("	");
-			ProcessMembers(variableName, shape.Members, xmlNamespace);
-			PopIndent();
+<#=new string(' ', level * 4)#>				if (<#=variableName#> != null) 
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>", "<#=xmlNamespace#>");			
+<#+			
+			ProcessMembers(level + 1, variableName, shape.Members, xmlNamespace);			
 #>
-					xmlWriter.WriteEndElement();
-				}
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>				}
 <#+		
 	}
 
-	void ProcessList(string variableName, Member member, string xmlNamespace)
+	void ProcessList(int level, string variableName, Member member, string xmlNamespace)
 	{
 				var listVariable = (variableName + member.PropertyName).Replace(".",string.Empty);
 				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
 #>
-				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
-				if (<#=listVariable#> != null && <#=listVariable#>.Count > 0) 
-				{						
-					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
-					foreach (var <#=listItemVariable#> in <#=listVariable#>) 
-					{
-<#+
-			PushIndent("	");			
+<#=new string(' ', level * 4)#>				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
+<#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && <#=listVariable#>.Count > 0) 
+<#=new string(' ', level * 4)#>				{						
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>					foreach (var <#=listItemVariable#> in <#=listVariable#>) 
+<#=new string(' ', level * 4)#>					{
+<#+			
 			if(member.Shape.ListShape.IsStructure)
 			{
-					ProcessStructure(listItemVariable, member, xmlNamespace);	
+					ProcessStructure(level + 1, listItemVariable, member, xmlNamespace);	
 			}
 			else
 			{
@@ -245,9 +243,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>
-					xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
-                    xmlWriter.WriteValue(<#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=listItemVariable#>));
-                    xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=listItemVariable#>));
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+				
 
 				}
@@ -255,38 +253,31 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>
-					xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
-                    xmlWriter.WriteValue(<#=listItemVariable#>);
-                    xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=listItemVariable#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+				
 				}
-			}
-			PopIndent();			
+			}			
 #>
-					}			
-					xmlWriter.WriteEndElement();			
-				}
+<#=new string(' ', level * 4)#>					}			
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();			
+<#=new string(' ', level * 4)#>				}
 <#+				
 	}
 
-	void ProcessMap(string variableName, Member member, string xmlNamespace)
+	void ProcessMap(int level, string variableName, Member member, string xmlNamespace)
 	{				
 #>
-					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
-					foreach (var kvp in <#=variableName#>.<#=member.PropertyName#>) 
-					{
-<#+
-			PushIndent("	");						
-#>
-					xmlWriter.WriteStartElement("entry", "<#=xmlNamespace#>");
-					xmlWriter.WriteElementString("key", "<#=xmlNamespace#>", kvp.Key);
-					xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp.Value);
-					xmlWriter.WriteEndElement();
-<#+				
-			PopIndent();			
-#>
-					}			
-					xmlWriter.WriteEndElement();				
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>					foreach (var kvp in <#=variableName#>.<#=member.PropertyName#>) 
+<#=new string(' ', level * 4)#>					{
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("entry", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("key", "<#=xmlNamespace#>", kvp.Key);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp.Value);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>					}			
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();				
 <#+				
 	}
 #>

@@ -12,13 +12,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update=".\TestFiles\*">
+    <None Update="./TestFiles/*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AWSSDK.Extensions.NETCore.Setup\AWSSDK.Extensions.NETCore.Setup.csproj" />
+    <ProjectReference Include="../../src/AWSSDK.Extensions.NETCore.Setup/AWSSDK.Extensions.NETCore.Setup.csproj" />
   </ItemGroup>
 
   <ItemGroup>

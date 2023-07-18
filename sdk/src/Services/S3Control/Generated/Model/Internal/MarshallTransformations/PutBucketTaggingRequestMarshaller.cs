@@ -78,22 +78,22 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("TagSet", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 
                         {
-                        
+                
                         if (publicRequestTaggingTagSetValue != null) 
                         {
                             xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             if(publicRequestTaggingTagSetValue.IsSetKey())
                                 xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));                 
-            
+
                             if(publicRequestTaggingTagSetValue.IsSetValue())
                                 xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

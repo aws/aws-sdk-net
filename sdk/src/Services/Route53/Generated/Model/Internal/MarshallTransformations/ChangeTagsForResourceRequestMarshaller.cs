@@ -74,16 +74,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("AddTags", "https://route53.amazonaws.com/doc/2013-04-01/");
                     foreach (var publicRequestAddTagsValue in publicRequestAddTags) 
                     {
-                    
+                
                     if (publicRequestAddTagsValue != null) 
                     {
                         xmlWriter.WriteStartElement("Tag", "https://route53.amazonaws.com/doc/2013-04-01/");            
                         if(publicRequestAddTagsValue.IsSetKey())
                             xmlWriter.WriteElementString("Key", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestAddTagsValue.Key));                 
-        
+
                         if(publicRequestAddTagsValue.IsSetValue())
                             xmlWriter.WriteElementString("Value", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestAddTagsValue.Value));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
                     }            
