@@ -30,39 +30,39 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the Query operation.
-    /// Searches an active index. Use this API to search your documents using query. The <code>Query</code>
-    /// API enables to do faceted search and to filter results based on document attributes.
+    /// Searches an index given an input query.
     /// 
     ///  
     /// <para>
-    /// It also enables you to provide user context that Amazon Kendra uses to enforce document
-    /// access control in the search results.
+    /// You can configure boosting or relevance tuning at the query level to override boosting
+    /// at the index level, filter based on document fields/attributes and faceted search,
+    /// and filter based on the user or their group access to documents. You can also include
+    /// certain fields in the response that might provide useful additional information.
     /// </para>
     ///  
     /// <para>
-    /// Amazon Kendra searches your index for text content and question and answer (FAQ) content.
-    /// By default the response contains three types of results.
+    /// A query response contains three types of results.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Relevant passages
+    /// Relevant suggested answers. The answers can be either a text excerpt or table excerpt.
+    /// The answer can be highlighted in the excerpt.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Matching FAQs
+    /// Matching FAQs or questions-answer from your FAQ file.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Relevant documents
+    /// Relevant documents. This result type includes an excerpt of the document with the
+    /// document title. The searched terms can be highlighted in the excerpt.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code>
-    /// parameter.
-    /// </para>
-    ///  
-    /// <para>
-    /// Each query returns the 100 most relevant results. 
+    /// parameter. Each query returns the 100 most relevant results. If you filter result
+    /// type to only question-answers, a maximum of four results are returned. If you filter
+    /// result type to only answers, a maximum of three results are returned.
     /// </para>
     /// </summary>
     public partial class QueryRequest : AmazonKendraRequest
@@ -84,13 +84,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
         /// <para>
-        /// Enables filtered searches based on document attributes. You can only provide one attribute
+        /// Filters search results by document fields/attributes. You can only provide one attribute
         /// filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code>
         /// parameters contain a list of other filters.
         /// </para>
         ///  
         /// <para>
-        /// The <code>AttributeFilter</code> parameter enables you to create a set of filtering
+        /// The <code>AttributeFilter</code> parameter means you can create a set of filtering
         /// rules that a document must satisfy to be included in the query results.
         /// </para>
         /// </summary>
@@ -109,8 +109,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentRelevanceOverrideConfigurations. 
         /// <para>
-        /// Overrides relevance tuning configurations of fields or attributes set at the index
-        /// level.
+        /// Overrides relevance tuning configurations of fields/attributes set at the index level.
         /// </para>
         ///  
         /// <para>
@@ -120,13 +119,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// If there is relevance tuning configured at the index level, but you do not use this
-        /// API to override any relevance tuning in the index, then Amazon Kendra uses the relevance
-        /// tuning that is configured at the index level.
-        /// </para>
-        ///  
-        /// <para>
-        /// If there is relevance tuning configured for fields at the index level, but you use
+        /// If there is relevance tuning configured for fields at the index level, and you use
         /// this API to override only some of these fields, then for the fields you did not override,
         /// the importance is set to 1.
         /// </para>
@@ -147,8 +140,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Facets. 
         /// <para>
-        /// An array of documents attributes. Amazon Kendra returns a count for each attribute
-        /// key specified. This helps your users narrow their search.
+        /// An array of documents fields/attributes for faceted search. Amazon Kendra returns
+        /// a count for each field key specified. This helps your users narrow their search.
         /// </para>
         /// </summary>
         public List<Facet> Facets
@@ -166,8 +159,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index to search. The identifier is returned in the response
-        /// from the <code>CreateIndex</code> API.
+        /// The identifier of the index for the search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -226,7 +218,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryResultTypeFilter. 
         /// <para>
-        /// Sets the type of query. Only results for the specified query type are returned.
+        /// Sets the type of query result or response. Only results for the specified type are
+        /// returned.
         /// </para>
         /// </summary>
         public QueryResultType QueryResultTypeFilter
@@ -249,7 +242,6 @@ namespace Amazon.Kendra.Model
         /// or more advanced, complex queries. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public string QueryText
         {
             get { return this._queryText; }
@@ -265,9 +257,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RequestedDocumentAttributes. 
         /// <para>
-        /// An array of document attributes to include in the response. You can limit the response
-        /// to include certain document attributes. By default all document attributes are included
-        /// in the response.
+        /// An array of document fields/attributes to include in the response. You can limit the
+        /// response to include certain document fields. By default, all document attributes are
+        /// included in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

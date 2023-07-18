@@ -32,16 +32,26 @@ namespace Amazon.MigrationHub
     public partial class AmazonMigrationHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Migration Hub";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Migration Hub";
             this.AuthenticationServiceName = "mgh";
             this.EndpointProvider = new AmazonMigrationHubEndpointProvider();
         }

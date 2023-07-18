@@ -138,7 +138,7 @@ namespace Amazon.DeviceFarm
         /// </summary>
         /// <param name="config">The AmazonDeviceFarmClient Configuration Object</param>
         public AmazonDeviceFarmClient(AmazonDeviceFarmConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDeviceFarmClient with AWS Credentials

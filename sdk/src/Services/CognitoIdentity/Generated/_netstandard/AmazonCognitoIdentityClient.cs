@@ -126,7 +126,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         /// <param name="config">The AmazonCognitoIdentityClient Configuration Object</param>
         public AmazonCognitoIdentityClient(AmazonCognitoIdentityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

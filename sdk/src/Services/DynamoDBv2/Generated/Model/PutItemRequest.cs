@@ -78,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         private ReturnConsumedCapacity _returnConsumedCapacity;
         private ReturnItemCollectionMetrics _returnItemCollectionMetrics;
         private ReturnValue _returnValues;
+        private ReturnValuesOnConditionCheckFailure _returnValuesOnConditionCheckFailure;
         private string _tableName;
 
         /// <summary>
@@ -444,6 +445,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReturnValues()
         {
             return this._returnValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnValuesOnConditionCheckFailure. 
+        /// <para>
+        /// An optional parameter that returns the item attributes for a <code>PutItem</code>
+        /// operation that failed a condition check.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is no additional cost associated with requesting a return value aside from the
+        /// small network and processing overhead of receiving a larger response. No read capacity
+        /// units are consumed.
+        /// </para>
+        /// </summary>
+        public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure
+        {
+            get { return this._returnValuesOnConditionCheckFailure; }
+            set { this._returnValuesOnConditionCheckFailure = value; }
+        }
+
+        // Check to see if ReturnValuesOnConditionCheckFailure property is set
+        internal bool IsSetReturnValuesOnConditionCheckFailure()
+        {
+            return this._returnValuesOnConditionCheckFailure != null;
         }
 
         /// <summary>

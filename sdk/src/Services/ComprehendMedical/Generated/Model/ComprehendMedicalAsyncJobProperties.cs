@@ -51,8 +51,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your
-        /// input data.
+        /// The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to
+        /// your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

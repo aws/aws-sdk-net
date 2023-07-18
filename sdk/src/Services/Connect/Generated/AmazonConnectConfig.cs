@@ -32,16 +32,26 @@ namespace Amazon.Connect
     public partial class AmazonConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.127.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.130.0");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Connect";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Connect";
             this.AuthenticationServiceName = "connect";
             this.EndpointProvider = new AmazonConnectEndpointProvider();
         }

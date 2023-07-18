@@ -32,16 +32,26 @@ namespace Amazon.Route53Resolver
     public partial class AmazonRoute53ResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.25");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Route53Resolver";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRoute53ResolverConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53ResolverDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Route53Resolver";
             this.AuthenticationServiceName = "route53resolver";
             this.EndpointProvider = new AmazonRoute53ResolverEndpointProvider();
         }

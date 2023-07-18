@@ -133,8 +133,8 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities
-        /// of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services
-        /// Regions where Amazon FSx for OpenZFS is available, except US West (Oregon).
+        /// of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services
+        /// Regions where Amazon FSx for OpenZFS is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -201,17 +201,17 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes
-        /// per second (MB/s). Valid values depend on the DeploymentType you choose, as follows:
+        /// per second (MBps). Valid values depend on the DeploymentType you choose, as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
-        /// or 4096 MB/s.
+        /// or 4096 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120,
-        /// 7680, or 10240 MB/s.
+        /// 7680, or 10240 MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>

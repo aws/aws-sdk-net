@@ -32,16 +32,26 @@ namespace Amazon.Account
     public partial class AmazonAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.59");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Account";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAccountConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccountDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Account";
             this.AuthenticationServiceName = "account";
             this.EndpointProvider = new AmazonAccountEndpointProvider();
         }

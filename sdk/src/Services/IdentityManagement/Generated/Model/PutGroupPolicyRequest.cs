@@ -35,8 +35,9 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// A user can also have managed policies attached to it. To attach a managed policy to
-    /// a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
-    /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html">
+    /// <code>AttachGroupPolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+    /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
     /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -70,7 +71,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="groupName">The name of the group to associate the policy with. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.</param>
         /// <param name="policyName">The name of the policy document. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
-        /// <param name="policyDocument">The policy document. You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to = IAM. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>) </li> <li> The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) </li> </ul></param>
+        /// <param name="policyDocument">The policy document. You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>) </li> <li> The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) </li> </ul></param>
         public PutGroupPolicyRequest(string groupName, string policyName, string policyDocument)
         {
             _groupName = groupName;
@@ -112,7 +113,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// You must provide policies in JSON format in IAM. However, for CloudFormation templates
         /// formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation
-        /// always converts a YAML policy to JSON format before submitting it to = IAM.
+        /// always converts a YAML policy to JSON format before submitting it to IAM.
         /// </para>
         ///  
         /// <para>

@@ -10,31 +10,12 @@
         <value>
             <example>
                 <para>
-                    This example allocates an Elastic IP address to use with an instance in a VPC.
+                    This example allocates an Elastic IP address.
                 </para>
                 <code
-                    title="To allocate an Elastic IP address for EC2-VPC"
+                    title="To allocate an Elastic IP address"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-allocate-address-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.AllocateAddress(Amazon.EC2.Model.AllocateAddressRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.AllocateAddress(Amazon.EC2.Model.AllocateAddressRequest)" />
-            <member name="T:Amazon.EC2.Model.AllocateAddressRequest" />
-            <member name="T:Amazon.EC2.Model.AllocateAddressResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example allocates an Elastic IP address to use with an instance in EC2-Classic.
-                </para>
-                <code
-                    title="To allocate an Elastic IP address for EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-allocate-address-2" />
             </example>
         </value>
     </doc>
@@ -86,10 +67,10 @@
         <value>
             <example>
                 <para>
-                    This example associates the specified Elastic IP address with the specified instance in a VPC.
+                    This example associates the specified Elastic IP address with the specified instance.
                 </para>
                 <code
-                    title="To associate an Elastic IP address in EC2-VPC"
+                    title="To associate an Elastic IP address"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-associate-address-1" />
             </example>
@@ -111,25 +92,6 @@
                     title="To associate an Elastic IP address with a network interface"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-associate-address-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
-            <member name="T:Amazon.EC2.Model.AssociateAddressRequest" />
-            <member name="T:Amazon.EC2.Model.AssociateAddressResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example associates an Elastic IP address with an instance in EC2-Classic.
-                </para>
-                <code
-                    title="To associate an Elastic IP address in EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-associate-address-3" />
             </example>
         </value>
     </doc>
@@ -1333,44 +1295,6 @@
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
-            <member name="T:Amazon.EC2.Model.DescribeAddressesRequest" />
-            <member name="T:Amazon.EC2.Model.DescribeAddressesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes your Elastic IP addresses for use with instances in a VPC.
-                </para>
-                <code
-                    title="To describe your Elastic IP addresses for EC2-VPC"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-describe-addresses-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
-            <member name="T:Amazon.EC2.Model.DescribeAddressesRequest" />
-            <member name="T:Amazon.EC2.Model.DescribeAddressesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes your Elastic IP addresses for use with instances in EC2-Classic.
-                </para>
-                <code
-                    title="To describe your Elastic IP addresses for EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-describe-addresses-3" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DescribeAvailabilityZones(Amazon.EC2.Model.DescribeAvailabilityZonesRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAvailabilityZones(Amazon.EC2.Model.DescribeAvailabilityZonesRequest)" />
             <member name="T:Amazon.EC2.Model.DescribeAvailabilityZonesRequest" />
@@ -1887,44 +1811,6 @@
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.DescribeScheduledInstanceAvailability(Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeScheduledInstanceAvailability(Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest)" />
-            <member name="T:Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest" />
-            <member name="T:Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes a schedule that occurs every week on Sunday, starting on the specified date. Note that the output contains a single schedule as an example.
-                </para>
-                <code
-                    title="To describe an available schedule"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-describe-scheduled-instance-availability-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.DescribeScheduledInstances(Amazon.EC2.Model.DescribeScheduledInstancesRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeScheduledInstances(Amazon.EC2.Model.DescribeScheduledInstancesRequest)" />
-            <member name="T:Amazon.EC2.Model.DescribeScheduledInstancesRequest" />
-            <member name="T:Amazon.EC2.Model.DescribeScheduledInstancesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example describes the specified Scheduled Instance.
-                </para>
-                <code
-                    title="To describe your Scheduled Instances"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-describe-scheduled-instances-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecurityGroupReferences(Amazon.EC2.Model.DescribeSecurityGroupReferencesRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecurityGroupReferences(Amazon.EC2.Model.DescribeSecurityGroupReferencesRequest)" />
             <member name="T:Amazon.EC2.Model.DescribeSecurityGroupReferencesRequest" />
@@ -2427,31 +2313,12 @@
         <value>
             <example>
                 <para>
-                    This example disassociates an Elastic IP address from an instance in a VPC.
+                    This example disassociates an Elastic IP address from an instance.
                 </para>
                 <code
-                    title="To disassociate an Elastic IP address in EC2-VPC"
+                    title="To disassociate an Elastic IP address"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-disassociate-address-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.DisassociateAddress(Amazon.EC2.Model.DisassociateAddressRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateAddress(Amazon.EC2.Model.DisassociateAddressRequest)" />
-            <member name="T:Amazon.EC2.Model.DisassociateAddressRequest" />
-            <member name="T:Amazon.EC2.Model.DisassociateAddressResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example disassociates an Elastic IP address from an instance in EC2-Classic.
-                </para>
-                <code
-                    title="To disassociate an Elastic IP addresses in EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-disassociate-address-2" />
             </example>
         </value>
     </doc>
@@ -2913,25 +2780,6 @@
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.PurchaseScheduledInstances(Amazon.EC2.Model.PurchaseScheduledInstancesRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.PurchaseScheduledInstances(Amazon.EC2.Model.PurchaseScheduledInstancesRequest)" />
-            <member name="T:Amazon.EC2.Model.PurchaseScheduledInstancesRequest" />
-            <member name="T:Amazon.EC2.Model.PurchaseScheduledInstancesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example purchases a Scheduled Instance.
-                </para>
-                <code
-                    title="To purchase a Scheduled Instance"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-purchase-scheduled-instances-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.RebootInstances(Amazon.EC2.Model.RebootInstancesRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.RebootInstances(Amazon.EC2.Model.RebootInstancesRequest)" />
             <member name="T:Amazon.EC2.Model.RebootInstancesRequest" />
@@ -2959,31 +2807,12 @@
         <value>
             <example>
                 <para>
-                    This example releases an Elastic IP address for use with instances in a VPC.
+                    This example releases the specified Elastic IP address.
                 </para>
                 <code
-                    title="To release an Elastic IP address for EC2-VPC"
+                    title="To release an Elastic IP address"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-release-address-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
-            <member name="T:Amazon.EC2.Model.ReleaseAddressRequest" />
-            <member name="T:Amazon.EC2.Model.ReleaseAddressResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example releases an Elastic IP address for use with instances in EC2-Classic.
-                </para>
-                <code
-                    title="To release an Elastic IP addresses for EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-release-address-2" />
             </example>
         </value>
     </doc>
@@ -3092,7 +2921,7 @@
         <value>
             <example>
                 <para>
-                    This example creates a Spot fleet request with two launch specifications that differ only by Availability Zone. The Spot fleet launches the instances in the specified Availability Zone with the lowest price. If your account supports EC2-VPC only, Amazon EC2 launches the Spot instances in the default subnet of the Availability Zone. If your account supports EC2-Classic, Amazon EC2 launches the instances in EC2-Classic in the Availability Zone.
+                    This example creates a Spot fleet request with two launch specifications that differ only by Availability Zone. The Spot fleet launches the instances in the specified Availability Zone with the lowest price. If your account supports EC2-VPC only, Amazon EC2 launches the Spot instances in the default subnet of the Availability Zone.
                 </para>
                 <code
                     title="To request a Spot fleet in the Availability Zone with the lowest price"
@@ -3149,7 +2978,7 @@
         <value>
             <example>
                 <para>
-                    This example creates a one-time Spot Instance request for five instances in the specified Availability Zone. If your account supports EC2-VPC only, Amazon EC2 launches the instances in the default subnet of the specified Availability Zone. If your account supports EC2-Classic, Amazon EC2 launches the instances in EC2-Classic in the specified Availability Zone.
+                    This example creates a one-time Spot Instance request for five instances in the specified Availability Zone. If your account supports EC2-VPC only, Amazon EC2 launches the instances in the default subnet of the specified Availability Zone.
                 </para>
                 <code
                     title="To create a one-time Spot Instance request"
@@ -3236,25 +3065,6 @@
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.RestoreAddressToClassic(Amazon.EC2.Model.RestoreAddressToClassicRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.RestoreAddressToClassic(Amazon.EC2.Model.RestoreAddressToClassicRequest)" />
-            <member name="T:Amazon.EC2.Model.RestoreAddressToClassicRequest" />
-            <member name="T:Amazon.EC2.Model.RestoreAddressToClassicResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example restores the specified Elastic IP address to the EC2-Classic platform.
-                </para>
-                <code
-                    title="To restore an address to EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-restore-address-to-classic-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.RunInstances(Amazon.EC2.Model.RunInstancesRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.RunInstances(Amazon.EC2.Model.RunInstancesRequest)" />
             <member name="T:Amazon.EC2.Model.RunInstancesRequest" />
@@ -3269,44 +3079,6 @@
                     title="To launch an instance"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="to-launch-an-instance-1529360150806" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
-            <member name="T:Amazon.EC2.Model.RunScheduledInstancesRequest" />
-            <member name="T:Amazon.EC2.Model.RunScheduledInstancesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example launches the specified Scheduled Instance in a VPC.
-                </para>
-                <code
-                    title="To launch a Scheduled Instance in a VPC"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-run-scheduled-instances-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.EC2.IAmazonEC2.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
-            <member name="M:Amazon.EC2.AmazonEC2Client.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
-            <member name="T:Amazon.EC2.Model.RunScheduledInstancesRequest" />
-            <member name="T:Amazon.EC2.Model.RunScheduledInstancesResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example launches the specified Scheduled Instance in EC2-Classic.
-                </para>
-                <code
-                    title="To launch a Scheduled Instance in EC2-Classic"
-                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
-                    region="ec2-run-scheduled-instances-2" />
             </example>
         </value>
     </doc>

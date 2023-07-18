@@ -100,7 +100,7 @@ namespace Amazon.Mgn
         /// </summary>
         /// <param name="config">The AmazonMgnClient Configuration Object</param>
         public AmazonMgnClient(AmazonMgnConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -1752,6 +1752,46 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListManagedAccounts
+
+        internal virtual ListManagedAccountsResponse ListManagedAccounts(ListManagedAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedAccountsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List Managed Accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedAccounts service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">REST API Reference for ListManagedAccounts Operation</seealso>
+        public virtual Task<ListManagedAccountsResponse> ListManagedAccountsAsync(ListManagedAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListManagedAccountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSourceServerActions
 
         internal virtual ListSourceServerActionsResponse ListSourceServerActions(ListSourceServerActionsRequest request)
@@ -1965,6 +2005,56 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  PauseReplication
+
+        internal virtual PauseReplicationResponse PauseReplication(PauseReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<PauseReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Pause Replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PauseReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PauseReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">REST API Reference for PauseReplication Operation</seealso>
+        public virtual Task<PauseReplicationResponse> PauseReplicationAsync(PauseReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PauseReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PauseReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PauseReplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutSourceServerAction
 
         internal virtual PutSourceServerActionResponse PutSourceServerAction(PutSourceServerActionRequest request)
@@ -2141,6 +2231,56 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTemplateActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResumeReplication
+
+        internal virtual ResumeReplicationResponse ResumeReplication(ResumeReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Resume Replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResumeReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">REST API Reference for ResumeReplication Operation</seealso>
+        public virtual Task<ResumeReplicationResponse> ResumeReplicationAsync(ResumeReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResumeReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumeReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2422,6 +2562,56 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = StartTestResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopReplication
+
+        internal virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stop Replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual Task<StopReplicationResponse> StopReplicationAsync(StopReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion

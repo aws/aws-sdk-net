@@ -32,16 +32,26 @@ namespace Amazon.CostExplorer
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.107");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.117");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Cost Explorer";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCostExplorerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostExplorerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Cost Explorer";
             this.AuthenticationServiceName = "ce";
             this.EndpointProvider = new AmazonCostExplorerEndpointProvider();
         }

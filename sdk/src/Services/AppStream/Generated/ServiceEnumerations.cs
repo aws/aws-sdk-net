@@ -141,6 +141,260 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type AppBlockBuilderAttribute.
+    /// </summary>
+    public class AppBlockBuilderAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_ENDPOINTS for AppBlockBuilderAttribute
+        /// </summary>
+        public static readonly AppBlockBuilderAttribute ACCESS_ENDPOINTS = new AppBlockBuilderAttribute("ACCESS_ENDPOINTS");
+        /// <summary>
+        /// Constant IAM_ROLE_ARN for AppBlockBuilderAttribute
+        /// </summary>
+        public static readonly AppBlockBuilderAttribute IAM_ROLE_ARN = new AppBlockBuilderAttribute("IAM_ROLE_ARN");
+        /// <summary>
+        /// Constant VPC_CONFIGURATION_SECURITY_GROUP_IDS for AppBlockBuilderAttribute
+        /// </summary>
+        public static readonly AppBlockBuilderAttribute VPC_CONFIGURATION_SECURITY_GROUP_IDS = new AppBlockBuilderAttribute("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppBlockBuilderAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppBlockBuilderAttribute FindValue(string value)
+        {
+            return FindValue<AppBlockBuilderAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppBlockBuilderAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppBlockBuilderPlatformType.
+    /// </summary>
+    public class AppBlockBuilderPlatformType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2019 for AppBlockBuilderPlatformType
+        /// </summary>
+        public static readonly AppBlockBuilderPlatformType WINDOWS_SERVER_2019 = new AppBlockBuilderPlatformType("WINDOWS_SERVER_2019");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppBlockBuilderPlatformType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppBlockBuilderPlatformType FindValue(string value)
+        {
+            return FindValue<AppBlockBuilderPlatformType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppBlockBuilderPlatformType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppBlockBuilderState.
+    /// </summary>
+    public class AppBlockBuilderState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RUNNING for AppBlockBuilderState
+        /// </summary>
+        public static readonly AppBlockBuilderState RUNNING = new AppBlockBuilderState("RUNNING");
+        /// <summary>
+        /// Constant STARTING for AppBlockBuilderState
+        /// </summary>
+        public static readonly AppBlockBuilderState STARTING = new AppBlockBuilderState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for AppBlockBuilderState
+        /// </summary>
+        public static readonly AppBlockBuilderState STOPPED = new AppBlockBuilderState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for AppBlockBuilderState
+        /// </summary>
+        public static readonly AppBlockBuilderState STOPPING = new AppBlockBuilderState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppBlockBuilderState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppBlockBuilderState FindValue(string value)
+        {
+            return FindValue<AppBlockBuilderState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppBlockBuilderState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppBlockBuilderStateChangeReasonCode.
+    /// </summary>
+    public class AppBlockBuilderStateChangeReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for AppBlockBuilderStateChangeReasonCode
+        /// </summary>
+        public static readonly AppBlockBuilderStateChangeReasonCode INTERNAL_ERROR = new AppBlockBuilderStateChangeReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppBlockBuilderStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppBlockBuilderStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<AppBlockBuilderStateChangeReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppBlockBuilderStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppBlockState.
+    /// </summary>
+    public class AppBlockState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AppBlockState
+        /// </summary>
+        public static readonly AppBlockState ACTIVE = new AppBlockState("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for AppBlockState
+        /// </summary>
+        public static readonly AppBlockState INACTIVE = new AppBlockState("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppBlockState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppBlockState FindValue(string value)
+        {
+            return FindValue<AppBlockState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppBlockState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationAttribute.
     /// </summary>
     public class ApplicationAttribute : ConstantClass
@@ -996,6 +1250,56 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackagingType.
+    /// </summary>
+    public class PackagingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPSTREAM2 for PackagingType
+        /// </summary>
+        public static readonly PackagingType APPSTREAM2 = new PackagingType("APPSTREAM2");
+        /// <summary>
+        /// Constant CUSTOM for PackagingType
+        /// </summary>
+        public static readonly PackagingType CUSTOM = new PackagingType("CUSTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackagingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackagingType FindValue(string value)
+        {
+            return FindValue<PackagingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackagingType(string value)
         {
             return FindValue(value);
         }

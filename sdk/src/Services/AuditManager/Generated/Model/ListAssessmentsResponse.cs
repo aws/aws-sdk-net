@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentMetadata. 
         /// <para>
-        ///  The metadata that's associated with the assessment. 
+        /// The metadata that the <code>ListAssessments</code> API returns for each assessment.
         /// </para>
         /// </summary>
         public List<AssessmentMetadataItem> AssessmentMetadata

@@ -34,7 +34,9 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class PostgreSQLSettings
     {
         private string _afterConnectScript;
+        private string _babelfishDatabaseName;
         private bool? _captureDdls;
+        private DatabaseMode _databaseMode;
         private string _databaseName;
         private string _ddlArtifactsSchema;
         private int? _executeTimeout;
@@ -43,6 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _heartbeatFrequency;
         private string _heartbeatSchema;
         private bool? _mapBooleanAsBoolean;
+        private bool? _mapJsonbAsClob;
+        private LongVarcharMappingType _mapLongVarcharAs;
         private int? _maxFileSize;
         private string _password;
         private PluginNameValue _pluginName;
@@ -78,6 +82,24 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BabelfishDatabaseName. 
+        /// <para>
+        /// The Babelfish for Aurora PostgreSQL database name for the endpoint.
+        /// </para>
+        /// </summary>
+        public string BabelfishDatabaseName
+        {
+            get { return this._babelfishDatabaseName; }
+            set { this._babelfishDatabaseName = value; }
+        }
+
+        // Check to see if BabelfishDatabaseName property is set
+        internal bool IsSetBabelfishDatabaseName()
+        {
+            return this._babelfishDatabaseName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CaptureDdls. 
         /// <para>
         /// To capture DDL events, DMS creates various artifacts in the PostgreSQL database when
@@ -99,6 +121,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCaptureDdls()
         {
             return this._captureDdls.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseMode. 
+        /// <para>
+        /// Specifies whether to use default or custom replication behavior for PostgreSQL-compatible
+        /// endpoints. You can use this setting to specify replication behavior for endpoints
+        /// that require additional configuration, such as Babelfish endpoints.
+        /// </para>
+        /// </summary>
+        public DatabaseMode DatabaseMode
+        {
+            get { return this._databaseMode; }
+            set { this._databaseMode = value; }
+        }
+
+        // Check to see if DatabaseMode property is set
+        internal bool IsSetDatabaseMode()
+        {
+            return this._databaseMode != null;
         }
 
         /// <summary>
@@ -262,6 +304,42 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMapBooleanAsBoolean()
         {
             return this._mapBooleanAsBoolean.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapJsonbAsClob. 
+        /// <para>
+        /// When true, DMS migrates JSONB values as CLOB.
+        /// </para>
+        /// </summary>
+        public bool MapJsonbAsClob
+        {
+            get { return this._mapJsonbAsClob.GetValueOrDefault(); }
+            set { this._mapJsonbAsClob = value; }
+        }
+
+        // Check to see if MapJsonbAsClob property is set
+        internal bool IsSetMapJsonbAsClob()
+        {
+            return this._mapJsonbAsClob.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapLongVarcharAs. 
+        /// <para>
+        /// When true, DMS migrates LONG values as VARCHAR.
+        /// </para>
+        /// </summary>
+        public LongVarcharMappingType MapLongVarcharAs
+        {
+            get { return this._mapLongVarcharAs; }
+            set { this._mapLongVarcharAs = value; }
+        }
+
+        // Check to see if MapLongVarcharAs property is set
+        internal bool IsSetMapLongVarcharAs()
+        {
+            return this._mapLongVarcharAs != null;
         }
 
         /// <summary>
@@ -441,7 +519,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// For more information about setting the <code>CdcStartPosition</code> request parameter,
-        /// see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
         /// a CDC native start point</a> in the <i>Database Migration Service User Guide</i>.
         /// For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
         /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,

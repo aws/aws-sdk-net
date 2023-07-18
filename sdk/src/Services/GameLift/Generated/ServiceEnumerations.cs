@@ -2757,6 +2757,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX_2 = new OperatingSystem("AMAZON_LINUX_2");
         /// <summary>
+        /// Constant AMAZON_LINUX_2023 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2023 = new OperatingSystem("AMAZON_LINUX_2023");
+        /// <summary>
         /// Constant WINDOWS_2012 for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem WINDOWS_2012 = new OperatingSystem("WINDOWS_2012");

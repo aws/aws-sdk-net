@@ -100,7 +100,7 @@ namespace Amazon.MTurk
         /// </summary>
         /// <param name="config">The AmazonMTurkClient Configuration Object</param>
         public AmazonMTurkClient(AmazonMTurkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

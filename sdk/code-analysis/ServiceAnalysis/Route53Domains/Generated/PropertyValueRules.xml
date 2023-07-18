@@ -154,7 +154,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListPricesRequest.MaxItems</property>
-    <max>100</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListPricesRequest.Tld</property>

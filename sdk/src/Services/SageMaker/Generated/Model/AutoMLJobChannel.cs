@@ -30,10 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A channel is a named input source that training algorithms can consume. This channel
-    /// is used for the non tabular training data of an AutoML job using the V2 API. For tabular
-    /// training data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLChannel.html">
-    /// AutoMLChannel</a>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
-    /// Channel</a>.
+    /// is used for AutoML jobs V2 (jobs created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>).
     /// </summary>
     public partial class AutoMLJobChannel
     {
@@ -49,6 +46,12 @@ namespace Amazon.SageMaker.Model
         /// The default value is <code>training</code>. Channels for <code>training</code> and
         /// <code>validation</code> must share the same <code>ContentType</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The type of channel defaults to <code>training</code> for the time-series forecasting
+        /// problem type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AutoMLChannelType ChannelType
         {
@@ -65,10 +68,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        /// The allowed compression types depend on the input format. We allow the compression
-        /// type <code>Gzip</code> for <code>S3Prefix</code> inputs only. For all other inputs,
-        /// the compression type should be <code>None</code>. If no compression type is provided,
-        /// we default to <code>None</code>.
+        /// The allowed compression types depend on the input format and problem type. We allow
+        /// the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs on tabular
+        /// data only. For all other inputs, the compression type should be <code>None</code>.
+        /// If no compression type is provided, we default to <code>None</code>.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -91,12 +94,23 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, <code>image/*</code>
-        /// 
+        /// For tabular problem types: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// The default value is <code>text/csv;header=present</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// TextClassification: <code>text/csv;header=present</code> 
+        /// For image classification: <code>image/png</code>, <code>image/jpeg</code>, or <code>image/*</code>.
+        /// The default value is <code>image/*</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For text classification: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// The default value is <code>text/csv;header=present</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For time-series forecasting: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// The default value is <code>text/csv;header=present</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -116,7 +130,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data source for an AutoML channel.
+        /// The data source for an AutoML channel (Required).
         /// </para>
         /// </summary>
         public AutoMLDataSource DataSource

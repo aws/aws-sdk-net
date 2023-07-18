@@ -32,16 +32,26 @@ namespace Amazon.IoTRoboRunner
     public partial class AmazonIoTRoboRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.122");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.132");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoT RoboRunner";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTRoboRunnerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTRoboRunnerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoT RoboRunner";
             this.AuthenticationServiceName = "iotroborunner";
             this.EndpointProvider = new AmazonIoTRoboRunnerEndpointProvider();
         }

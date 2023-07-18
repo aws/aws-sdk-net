@@ -41,8 +41,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        ///  A UTF-8 text string containing the clinical content being examined for PHI entities.
-        /// Each string must contain fewer than 20,000 bytes of characters.
+        /// A UTF-8 text string containing the clinical content being examined for PHI entities.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20000)]

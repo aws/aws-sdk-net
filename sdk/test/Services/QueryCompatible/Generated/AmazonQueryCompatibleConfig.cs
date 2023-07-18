@@ -35,13 +35,23 @@ namespace Amazon.QueryCompatible
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AWSQueryCompatible";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonQueryCompatibleConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQueryCompatibleDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AWSQueryCompatible";
             this.AuthenticationServiceName = "aws-query-compatible";
         }
 

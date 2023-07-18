@@ -94,6 +94,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latestDatasetUpdate", targetDepth))
+                {
+                    var unmarshaller = DatasetUpdateSummaryUnmarshaller.Instance;
+                    unmarshalledObject.LatestDatasetUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -11,7 +11,7 @@ using Amazon.SecurityToken;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
-    
+    [Trait(TestBase.CategoryAttribute, "RequiresIAMUser")]
     public class CredentialsTests
     {
         [Fact]

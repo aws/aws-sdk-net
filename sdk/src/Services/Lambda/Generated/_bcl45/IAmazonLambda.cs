@@ -1204,6 +1204,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you tried to
         /// update an event source mapping in the CREATING state, or you tried to delete an event
@@ -1243,6 +1246,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you tried to
         /// update an event source mapping in the CREATING state, or you tried to delete an event
@@ -1268,7 +1274,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+        /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
         ///  
         /// <para>
@@ -1301,7 +1308,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+        /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
         ///  
         /// <para>
@@ -1335,7 +1343,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+        /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
         ///  
         /// <para>
@@ -1372,7 +1381,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
-        /// parameter. Otherwise, all versions and aliases are deleted.
+        /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
+        /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
         ///  
         /// <para>
@@ -2913,6 +2923,10 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
         /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
@@ -3084,6 +3098,10 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
@@ -3288,6 +3306,10 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
         /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
@@ -3416,6 +3438,10 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.

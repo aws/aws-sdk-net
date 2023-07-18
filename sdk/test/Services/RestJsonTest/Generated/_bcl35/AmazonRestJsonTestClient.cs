@@ -97,8 +97,7 @@ namespace Amazon.RestJsonTest
         /// </summary>
         /// <param name="config">The AmazonRestJsonTestClient Configuration Object</param>
         public AmazonRestJsonTestClient(AmazonRestJsonTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonRestJsonTestClient with AWS Credentials
         /// </summary>

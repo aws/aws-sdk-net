@@ -142,7 +142,7 @@ namespace Amazon.Glacier
         /// </summary>
         /// <param name="config">The AmazonGlacierClient Configuration Object</param>
         public AmazonGlacierClient(AmazonGlacierConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

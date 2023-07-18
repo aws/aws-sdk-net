@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// Returns information about the XML element or attribute that was sanitized in the configuration.
+    /// Returns information about the configuration element or attribute that was sanitized
+    /// in the configuration.
     /// </summary>
     public partial class SanitizationWarning
     {
@@ -40,7 +41,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the XML attribute that has been sanitized.
+        /// The name of the configuration attribute that has been sanitized.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -58,7 +59,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property ElementName. 
         /// <para>
-        /// The name of the XML element that has been sanitized.
+        /// The name of the configuration element that has been sanitized.
         /// </para>
         /// </summary>
         public string ElementName
@@ -76,7 +77,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// Required. The reason for which the XML elements or attributes were sanitized.
+        /// The reason for which the configuration elements or attributes were sanitized.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

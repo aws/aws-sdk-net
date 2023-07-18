@@ -115,8 +115,7 @@ namespace Amazon.TimestreamQuery
         /// </summary>
         /// <param name="config">The AmazonTimestreamQueryClient Configuration Object</param>
         public AmazonTimestreamQueryClient(AmazonTimestreamQueryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonTimestreamQueryClient with AWS Credentials
         /// </summary>

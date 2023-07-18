@@ -82,6 +82,12 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("emailAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

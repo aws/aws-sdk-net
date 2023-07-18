@@ -113,7 +113,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="config">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(AmazonCloudSearchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

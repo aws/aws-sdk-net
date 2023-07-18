@@ -32,16 +32,26 @@ namespace Amazon.CodeArtifact
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.45");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.55");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "codeartifact";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeArtifactConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeArtifactDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "codeartifact";
             this.AuthenticationServiceName = "codeartifact";
             this.EndpointProvider = new AmazonCodeArtifactEndpointProvider();
         }

@@ -622,6 +622,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// Constant ZEPPELINFLINK2_0 for RuntimeEnvironment
         /// </summary>
         public static readonly RuntimeEnvironment ZEPPELINFLINK2_0 = new RuntimeEnvironment("ZEPPELIN-FLINK-2_0");
+        /// <summary>
+        /// Constant ZEPPELINFLINK3_0 for RuntimeEnvironment
+        /// </summary>
+        public static readonly RuntimeEnvironment ZEPPELINFLINK3_0 = new RuntimeEnvironment("ZEPPELIN-FLINK-3_0");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

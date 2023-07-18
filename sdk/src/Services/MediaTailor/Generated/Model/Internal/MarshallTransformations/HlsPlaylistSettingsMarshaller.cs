@@ -45,6 +45,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsPlaylistSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdMarkupType())
+            {
+                context.Writer.WritePropertyName("AdMarkupType");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdMarkupTypeListValue in requestObject.AdMarkupType)
+                {
+                        context.Writer.Write(requestObjectAdMarkupTypeListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");

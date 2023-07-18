@@ -3142,6 +3142,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DatabaseIdentifier.Region</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DatabaseInput.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -3621,6 +3626,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GrokClassifier.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergInput.Version</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -4809,6 +4819,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TableIdentifier.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.TableIdentifier.Region</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

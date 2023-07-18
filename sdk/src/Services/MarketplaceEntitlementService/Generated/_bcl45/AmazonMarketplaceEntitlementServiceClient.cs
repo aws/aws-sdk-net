@@ -118,7 +118,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// </summary>
         /// <param name="config">The AmazonMarketplaceEntitlementServiceClient Configuration Object</param>
         public AmazonMarketplaceEntitlementServiceClient(AmazonMarketplaceEntitlementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMarketplaceEntitlementServiceClient with AWS Credentials

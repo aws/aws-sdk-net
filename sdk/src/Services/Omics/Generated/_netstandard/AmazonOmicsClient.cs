@@ -102,7 +102,7 @@ namespace Amazon.Omics
         /// </summary>
         /// <param name="config">The AmazonOmicsClient Configuration Object</param>
         public AmazonOmicsClient(AmazonOmicsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

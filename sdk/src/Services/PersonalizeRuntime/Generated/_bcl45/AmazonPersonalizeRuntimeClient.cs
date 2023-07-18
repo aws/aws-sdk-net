@@ -99,7 +99,7 @@ namespace Amazon.PersonalizeRuntime
         /// </summary>
         /// <param name="config">The AmazonPersonalizeRuntimeClient Configuration Object</param>
         public AmazonPersonalizeRuntimeClient(AmazonPersonalizeRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonPersonalizeRuntimeClient with AWS Credentials

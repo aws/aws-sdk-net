@@ -44,8 +44,10 @@ namespace Amazon.Rekognition.Model
     public partial class ListFacesRequest : AmazonRekognitionRequest
     {
         private string _collectionId;
+        private List<string> _faceIds = new List<string>();
         private int? _maxResults;
         private string _nextToken;
+        private string _userId;
 
         /// <summary>
         /// Gets and sets the property CollectionId. 
@@ -64,6 +66,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetCollectionId()
         {
             return this._collectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FaceIds. 
+        /// <para>
+        /// An array of face IDs to match when listing faces in a collection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public List<string> FaceIds
+        {
+            get { return this._faceIds; }
+            set { this._faceIds = value; }
+        }
+
+        // Check to see if FaceIds property is set
+        internal bool IsSetFaceIds()
+        {
+            return this._faceIds != null && this._faceIds.Count > 0; 
         }
 
         /// <summary>
@@ -104,6 +125,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// An array of user IDs to match when listing faces in a collection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
         }
 
     }

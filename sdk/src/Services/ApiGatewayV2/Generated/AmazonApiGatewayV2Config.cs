@@ -32,16 +32,26 @@ namespace Amazon.ApiGatewayV2
     public partial class AmazonApiGatewayV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ApiGatewayV2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonApiGatewayV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApiGatewayV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ApiGatewayV2";
             this.AuthenticationServiceName = "apigateway";
             this.EndpointProvider = new AmazonApiGatewayV2EndpointProvider();
         }

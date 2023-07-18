@@ -32,16 +32,26 @@ namespace Amazon.BackupGateway
     public partial class AmazonBackupGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.106");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.116");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Backup Gateway";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonBackupGatewayConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupGatewayDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Backup Gateway";
             this.AuthenticationServiceName = "backup-gateway";
             this.EndpointProvider = new AmazonBackupGatewayEndpointProvider();
         }

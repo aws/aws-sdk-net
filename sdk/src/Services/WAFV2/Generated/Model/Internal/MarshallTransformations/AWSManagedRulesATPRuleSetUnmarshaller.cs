@@ -64,6 +64,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EnableRegexInPath", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableRegexInPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LoginPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

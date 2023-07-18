@@ -96,14 +96,6 @@ namespace Amazon.Redshift.Internal
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    if (Equals(refs["Region"], "us-gov-east-1"))
-                    {
-                        return new Endpoint("https://redshift.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-gov-west-1"))
-                    {
-                        return new Endpoint("https://redshift.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
                     return new Endpoint(Interpolate(@"https://redshift.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
             }

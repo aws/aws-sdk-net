@@ -32,16 +32,26 @@ namespace Amazon.IoTSiteWise
     public partial class AmazonIoTSiteWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.17");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.27");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoTSiteWise";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTSiteWiseConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSiteWiseDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoTSiteWise";
             this.AuthenticationServiceName = "iotsitewise";
             this.EndpointProvider = new AmazonIoTSiteWiseEndpointProvider();
         }

@@ -136,8 +136,7 @@ namespace Amazon.IAMRolesAnywhere
         /// </summary>
         /// <param name="config">The AmazonIAMRolesAnywhereClient Configuration Object</param>
         public AmazonIAMRolesAnywhereClient(AmazonIAMRolesAnywhereConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIAMRolesAnywhereClient with AWS Credentials
         /// </summary>

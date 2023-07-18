@@ -32,16 +32,26 @@ namespace Amazon.ResilienceHub
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.29");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "resiliencehub";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonResilienceHubConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResilienceHubDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "resiliencehub";
             this.AuthenticationServiceName = "resiliencehub";
             this.EndpointProvider = new AmazonResilienceHubEndpointProvider();
         }

@@ -43,6 +43,23 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateAutomationRuleRequest.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateAutomationRuleRequest.RuleName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateAutomationRuleRequest.RuleOrder</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CreateAutomationRuleResponse.RuleArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.CreateFindingAggregatorRequest.RegionLinkingMode</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -187,6 +204,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetInsightsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListAutomationRulesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -384,6 +406,58 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AssociationStateDetails.StatusMessage</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesConfig.CreatedBy</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesConfig.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesConfig.RuleArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesConfig.RuleName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesConfig.RuleOrder</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesFindingFieldsUpdate.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesFindingFieldsUpdate.Criticality</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesMetadata.CreatedBy</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesMetadata.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesMetadata.RuleArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesMetadata.RuleName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AutomationRulesMetadata.RuleOrder</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AvailabilityZone.SubnetId</property>
@@ -6061,6 +6135,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnprocessedAutomationRule.ErrorMessage</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnprocessedAutomationRule.RuleArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.UnprocessedSecurityControl.ErrorReason</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6075,6 +6157,23 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UnprocessedStandardsControlAssociationUpdate.ErrorReason</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateAutomationRulesRequestItem.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateAutomationRulesRequestItem.RuleArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateAutomationRulesRequestItem.RuleName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateAutomationRulesRequestItem.RuleOrder</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.VolumeMount.MountPath</property>

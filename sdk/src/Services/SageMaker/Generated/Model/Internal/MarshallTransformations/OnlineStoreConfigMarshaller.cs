@@ -62,6 +62,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTtlDuration())
+            {
+                context.Writer.WritePropertyName("TtlDuration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TtlDurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TtlDuration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

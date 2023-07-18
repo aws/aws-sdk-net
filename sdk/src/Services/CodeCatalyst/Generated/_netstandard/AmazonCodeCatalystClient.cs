@@ -238,7 +238,7 @@ namespace Amazon.CodeCatalyst
         /// </summary>
         /// <param name="config">The AmazonCodeCatalystClient Configuration Object</param>
         public AmazonCodeCatalystClient(AmazonCodeCatalystConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config, fallbackToAnonymous: true), config){}
 
 
         /// <summary>

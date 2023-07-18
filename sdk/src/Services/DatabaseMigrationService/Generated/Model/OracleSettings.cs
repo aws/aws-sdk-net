@@ -51,6 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private List<int> _extraArchivedLogDestIds = new List<int>();
         private bool? _failTasksOnLobTruncation;
         private int? _numberDatatypeScale;
+        private int? _openTransactionWindow;
         private string _oraclePathPrefix;
         private int? _parallelAsmReadThreads;
         private string _password;
@@ -492,6 +493,34 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetNumberDatatypeScale()
         {
             return this._numberDatatypeScale.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenTransactionWindow. 
+        /// <para>
+        /// The timeframe in minutes to check for open transactions for a CDC-only task.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify an integer value between 0 (the default) and 240 (the maximum). 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window
+        /// of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int OpenTransactionWindow
+        {
+            get { return this._openTransactionWindow.GetValueOrDefault(); }
+            set { this._openTransactionWindow = value; }
+        }
+
+        // Check to see if OpenTransactionWindow property is set
+        internal bool IsSetOpenTransactionWindow()
+        {
+            return this._openTransactionWindow.HasValue; 
         }
 
         /// <summary>

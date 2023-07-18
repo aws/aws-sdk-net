@@ -32,16 +32,26 @@ namespace Amazon.MediaStoreData
     public partial class AmazonMediaStoreDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaStore Data";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaStoreDataConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaStoreDataDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaStore Data";
             this.AuthenticationServiceName = "mediastore";
             this.EndpointProvider = new AmazonMediaStoreDataEndpointProvider();
         }

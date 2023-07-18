@@ -32,16 +32,26 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.48");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.58");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WorkDocs";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWorkDocsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkDocsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WorkDocs";
             this.AuthenticationServiceName = "workdocs";
             this.EndpointProvider = new AmazonWorkDocsEndpointProvider();
         }

@@ -102,8 +102,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="config">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Credentials
         /// </summary>

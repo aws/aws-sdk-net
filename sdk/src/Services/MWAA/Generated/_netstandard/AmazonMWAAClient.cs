@@ -190,7 +190,7 @@ namespace Amazon.MWAA
         /// </summary>
         /// <param name="config">The AmazonMWAAClient Configuration Object</param>
         public AmazonMWAAClient(AmazonMWAAConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

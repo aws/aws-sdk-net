@@ -774,6 +774,11 @@
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{4,253}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.AutocommitPeriod.Value</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.Backup.BackupId</property>
     <min>12</min>
     <max>128</max>
@@ -992,7 +997,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateOntapVolumeConfiguration.SizeInMegabytes</property>
     <min>0</min>
-    <max>2147483647</max>
+    <max>314572800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateOntapVolumeConfiguration.SnapshotPolicy</property>
@@ -1458,6 +1463,12 @@
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{9,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.OntapFileSystemConfiguration.FsxAdminPassword</property>
+    <min>8</min>
+    <max>50</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{8,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.PreferredSubnetId</property>
     <min>15</min>
     <max>24</max>
@@ -1483,7 +1494,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapVolumeConfiguration.SizeInMegabytes</property>
     <min>0</min>
-    <max>2147483647</max>
+    <max>314572800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapVolumeConfiguration.SnapshotPolicy</property>
@@ -1601,6 +1612,11 @@
     <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.RetentionPeriod.Value</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.DomainName</property>
     <min>1</min>
     <max>255</max>
@@ -1653,6 +1669,24 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.DomainName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.FileSystemAdministratorsGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.OrganizationalUnitDistinguishedName</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.Password</property>
@@ -1858,7 +1892,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateOntapVolumeConfiguration.SizeInMegabytes</property>
     <min>0</min>
-    <max>2147483647</max>
+    <max>314572800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateOntapVolumeConfiguration.SnapshotPolicy</property>
@@ -1879,6 +1913,12 @@
     <property>Amazon.FSx.Model.UpdateOpenZFSVolumeConfiguration.StorageCapacityReservationGiB</property>
     <min>-1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSvmActiveDirectoryConfiguration.NetBiosName</property>
+    <min>1</min>
+    <max>15</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.Volume.FileSystemId</property>

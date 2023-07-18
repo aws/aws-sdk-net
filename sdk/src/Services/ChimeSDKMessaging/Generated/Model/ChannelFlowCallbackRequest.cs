@@ -30,8 +30,8 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the ChannelFlowCallback operation.
-    /// Calls back Chime SDK Messaging with a processing response message. This should be
-    /// invoked from the processor Lambda. This is a developer API.
+    /// Calls back Amazon Chime SDK messaging with a processing response message. This should
+    /// be invoked from the processor Lambda. This is a developer API.
     /// 
     ///  
     /// <para>

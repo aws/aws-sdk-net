@@ -312,6 +312,11 @@ namespace Amazon.ECS.Model
         /// your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code>
+        /// request parameter.
+        /// </para>
         /// </summary>
         public bool EnableECSManagedTags
         {
@@ -587,6 +592,10 @@ namespace Amazon.ECS.Model
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
         /// task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>NONE</code>.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags

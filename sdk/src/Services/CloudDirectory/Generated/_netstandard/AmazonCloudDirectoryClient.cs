@@ -109,7 +109,7 @@ namespace Amazon.CloudDirectory
         /// </summary>
         /// <param name="config">The AmazonCloudDirectoryClient Configuration Object</param>
         public AmazonCloudDirectoryClient(AmazonCloudDirectoryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

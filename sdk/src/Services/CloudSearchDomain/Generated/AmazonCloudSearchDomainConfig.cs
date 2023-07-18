@@ -32,16 +32,26 @@ namespace Amazon.CloudSearchDomain
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudSearch Domain";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudSearchDomainConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudSearchDomainDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudSearch Domain";
             this.AuthenticationServiceName = "cloudsearch";
             this.EndpointProvider = new AmazonCloudSearchDomainEndpointProvider();
         }

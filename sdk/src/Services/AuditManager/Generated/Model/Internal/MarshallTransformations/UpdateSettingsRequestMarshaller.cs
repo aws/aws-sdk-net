@@ -76,6 +76,17 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDefaultExportDestination())
+                {
+                    context.Writer.WritePropertyName("defaultExportDestination");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefaultExportDestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultExportDestination, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefaultProcessOwners())
                 {
                     context.Writer.WritePropertyName("defaultProcessOwners");

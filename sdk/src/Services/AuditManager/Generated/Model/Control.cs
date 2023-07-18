@@ -318,7 +318,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of control, such as a custom control or a standard control. 
+        ///  Specifies whether the control is a standard control or a custom control.
         /// </para>
         /// </summary>
         public ControlType Type

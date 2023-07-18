@@ -136,7 +136,7 @@ namespace Amazon.DevOpsGuru
         /// </summary>
         /// <param name="config">The AmazonDevOpsGuruClient Configuration Object</param>
         public AmazonDevOpsGuruClient(AmazonDevOpsGuruConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDevOpsGuruClient with AWS Credentials
@@ -294,17 +294,10 @@ namespace Amazon.DevOpsGuru
         ///  
         /// <para>
         /// If you use an Amazon SNS topic in another account, you must attach a policy to it
-        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. DevOps
-        /// Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
-        /// for cross account Amazon SNS topics</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you use an Amazon SNS topic in another account, you must attach a policy to it
-        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. For
-        /// more information, see Permissions for cross account Amazon SNS topics.
+        /// that grants DevOps Guru permission to send it notifications. DevOps Guru adds the
+        /// required policy on your behalf to send notifications using Amazon SNS in your account.
+        /// DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+        /// for Amazon SNS topics</a>.
         /// </para>
         ///  
         /// <para>
@@ -360,17 +353,10 @@ namespace Amazon.DevOpsGuru
         ///  
         /// <para>
         /// If you use an Amazon SNS topic in another account, you must attach a policy to it
-        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. DevOps
-        /// Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
-        /// for cross account Amazon SNS topics</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you use an Amazon SNS topic in another account, you must attach a policy to it
-        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. For
-        /// more information, see Permissions for cross account Amazon SNS topics.
+        /// that grants DevOps Guru permission to send it notifications. DevOps Guru adds the
+        /// required policy on your behalf to send notifications using Amazon SNS in your account.
+        /// DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+        /// for Amazon SNS topics</a>.
         /// </para>
         ///  
         /// <para>

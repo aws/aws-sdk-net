@@ -129,7 +129,7 @@ namespace Amazon.DatabaseMigrationService
         /// </summary>
         /// <param name="config">The AmazonDatabaseMigrationServiceClient Configuration Object</param>
         public AmazonDatabaseMigrationServiceClient(AmazonDatabaseMigrationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDatabaseMigrationServiceClient with AWS Credentials
@@ -850,6 +850,101 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateReplicationConfig
+
+
+        /// <summary>
+        /// Creates a configuration that you can later provide to configure and start an DMS Serverless
+        /// replication. You can also provide options to validate the configuration inputs before
+        /// you start the replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
+        /// The subnet provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">REST API Reference for CreateReplicationConfig Operation</seealso>
+        public virtual CreateReplicationConfigResponse CreateReplicationConfig(CreateReplicationConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReplicationConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a configuration that you can later provide to configure and start an DMS Serverless
+        /// replication. You can also provide options to validate the configuration inputs before
+        /// you start the replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
+        /// The subnet provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">REST API Reference for CreateReplicationConfig Operation</seealso>
+        public virtual Task<CreateReplicationConfigResponse> CreateReplicationConfigAsync(CreateReplicationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateReplicationConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReplicationInstance
 
 
@@ -879,7 +974,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
         /// DMS cannot access the KMS key.
@@ -940,7 +1035,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
         /// DMS cannot access the KMS key.
@@ -985,6 +1080,14 @@ namespace Amazon.DatabaseMigrationService
         /// Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
         /// exception.
         /// </para>
+        ///  
+        /// <para>
+        /// If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup
+        /// action returns the following error message: The Replication Subnet Group already exists.
+        /// In this case, delete the existing replication subnet group. To do so, use the <a href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html">DeleteReplicationSubnetGroup</a>
+        /// action. Optionally, choose Subnet groups in the DMS console, then choose your subnet
+        /// group. Next, choose Delete from Actions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// 
@@ -993,7 +1096,7 @@ namespace Amazon.DatabaseMigrationService
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -1028,6 +1131,14 @@ namespace Amazon.DatabaseMigrationService
         /// Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
         /// exception.
         /// </para>
+        ///  
+        /// <para>
+        /// If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup
+        /// action returns the following error message: The Replication Subnet Group already exists.
+        /// In this case, delete the existing replication subnet group. To do so, use the <a href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html">DeleteReplicationSubnetGroup</a>
+        /// action. Optionally, choose Subnet groups in the DMS console, then choose your subnet
+        /// group. Next, choose Delete from Actions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1039,7 +1150,7 @@ namespace Amazon.DatabaseMigrationService
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -1475,6 +1586,71 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteFleetAdvisorDatabasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteReplicationConfig
+
+
+        /// <summary>
+        /// Deletes an DMS Serverless replication configuration. This effectively deprovisions
+        /// any and all replications that use this configuration. You can't delete the configuration
+        /// for an DMS Serverless replication that is ongoing. You can delete the configuration
+        /// when the replication is in a non-RUNNING and non-STARTING state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">REST API Reference for DeleteReplicationConfig Operation</seealso>
+        public virtual DeleteReplicationConfigResponse DeleteReplicationConfig(DeleteReplicationConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReplicationConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an DMS Serverless replication configuration. This effectively deprovisions
+        /// any and all replications that use this configuration. You can't delete the configuration
+        /// for an DMS Serverless replication that is ongoing. You can delete the configuration
+        /// when the replication is in a non-RUNNING and non-STARTING state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">REST API Reference for DeleteReplicationConfig Operation</seealso>
+        public virtual Task<DeleteReplicationConfigResponse> DeleteReplicationConfigAsync(DeleteReplicationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteReplicationConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2767,6 +2943,55 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeReplicationConfigs
+
+
+        /// <summary>
+        /// Returns one or more existing DMS Serverless replication configurations as a list of
+        /// structures.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationConfigs service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">REST API Reference for DescribeReplicationConfigs Operation</seealso>
+        public virtual DescribeReplicationConfigsResponse DescribeReplicationConfigs(DescribeReplicationConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationConfigsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns one or more existing DMS Serverless replication configurations as a list of
+        /// structures.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReplicationConfigs service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">REST API Reference for DescribeReplicationConfigs Operation</seealso>
+        public virtual Task<DescribeReplicationConfigsResponse> DescribeReplicationConfigsAsync(DescribeReplicationConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationConfigsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeReplicationConfigsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeReplicationInstances
 
 
@@ -2867,6 +3092,55 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeReplications
+
+
+        /// <summary>
+        /// Provides details on replication progress by returning status information for one or
+        /// more provisioned DMS Serverless replications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplications service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">REST API Reference for DescribeReplications Operation</seealso>
+        public virtual DescribeReplicationsResponse DescribeReplications(DescribeReplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides details on replication progress by returning status information for one or
+        /// more provisioned DMS Serverless replications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReplications service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">REST API Reference for DescribeReplications Operation</seealso>
+        public virtual Task<DescribeReplicationsResponse> DescribeReplicationsAsync(DescribeReplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeReplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeReplicationSubnetGroups
 
 
@@ -2910,6 +3184,61 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeReplicationSubnetGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeReplicationTableStatistics
+
+
+        /// <summary>
+        /// Returns table and schema statistics for one or more provisioned replications that
+        /// use a given DMS Serverless replication configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTableStatistics service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationTableStatistics service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">REST API Reference for DescribeReplicationTableStatistics Operation</seealso>
+        public virtual DescribeReplicationTableStatisticsResponse DescribeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTableStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTableStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationTableStatisticsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns table and schema statistics for one or more provisioned replications that
+        /// use a given DMS Serverless replication configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTableStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReplicationTableStatistics service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">REST API Reference for DescribeReplicationTableStatistics Operation</seealso>
+        public virtual Task<DescribeReplicationTableStatisticsResponse> DescribeReplicationTableStatisticsAsync(DescribeReplicationTableStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTableStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTableStatisticsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeReplicationTableStatisticsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3572,6 +3901,107 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ModifyReplicationConfig
+
+
+        /// <summary>
+        /// Modifies an existing DMS Serverless replication configuration that you can use to
+        /// start a replication. This command includes input validation and logic to check the
+        /// state of any replication that uses this configuration. You can only modify a replication
+        /// configuration before any replication that uses it has started. As soon as you have
+        /// initially started a replication with a given configuiration, you can't modify that
+        /// configuration, even if you stop it.
+        /// 
+        ///  
+        /// <para>
+        /// Other run statuses that allow you to run this command include FAILED and CREATED.
+        /// A provisioning state that allows you to run this command is FAILED_PROVISION.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationConfig service method.</param>
+        /// 
+        /// <returns>The response from the ModifyReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
+        /// The subnet provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">REST API Reference for ModifyReplicationConfig Operation</seealso>
+        public virtual ModifyReplicationConfigResponse ModifyReplicationConfig(ModifyReplicationConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReplicationConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies an existing DMS Serverless replication configuration that you can use to
+        /// start a replication. This command includes input validation and logic to check the
+        /// state of any replication that uses this configuration. You can only modify a replication
+        /// configuration before any replication that uses it has started. As soon as you have
+        /// initially started a replication with a given configuiration, you can't modify that
+        /// configuration, even if you stop it.
+        /// 
+        ///  
+        /// <para>
+        /// Other run statuses that allow you to run this command include FAILED and CREATED.
+        /// A provisioning state that allows you to run this command is FAILED_PROVISION.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
+        /// The subnet provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">REST API Reference for ModifyReplicationConfig Operation</seealso>
+        public virtual Task<ModifyReplicationConfigResponse> ModifyReplicationConfigAsync(ModifyReplicationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyReplicationConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyReplicationInstance
 
 
@@ -3680,7 +4110,7 @@ namespace Amazon.DatabaseMigrationService
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -3719,7 +4149,7 @@ namespace Amazon.DatabaseMigrationService
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -4032,6 +4462,73 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ReloadReplicationTables
+
+
+        /// <summary>
+        /// Reloads the target database table with the source data for a given DMS Serverless
+        /// replication configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can only use this operation with a task in the RUNNING state, otherwise the service
+        /// will throw an <code>InvalidResourceStateFault</code> exception.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReloadReplicationTables service method.</param>
+        /// 
+        /// <returns>The response from the ReloadReplicationTables service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">REST API Reference for ReloadReplicationTables Operation</seealso>
+        public virtual ReloadReplicationTablesResponse ReloadReplicationTables(ReloadReplicationTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReloadReplicationTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReloadReplicationTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ReloadReplicationTablesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Reloads the target database table with the source data for a given DMS Serverless
+        /// replication configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can only use this operation with a task in the RUNNING state, otherwise the service
+        /// will throw an <code>InvalidResourceStateFault</code> exception.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReloadReplicationTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReloadReplicationTables service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">REST API Reference for ReloadReplicationTables Operation</seealso>
+        public virtual Task<ReloadReplicationTablesResponse> ReloadReplicationTablesAsync(ReloadReplicationTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReloadReplicationTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReloadReplicationTablesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReloadReplicationTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ReloadTables
 
 
@@ -4268,6 +4765,73 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = StartRecommendationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartReplication
+
+
+        /// <summary>
+        /// For a given DMS Serverless replication configuration, DMS connects to the source endpoint
+        /// and collects the metadata to analyze the replication workload. Using this metadata,
+        /// DMS then computes and provisions the required capacity and starts replicating to the
+        /// target endpoint using the server resources that DMS has provisioned for the DMS Serverless
+        /// replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartReplication service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// For a given DMS Serverless replication configuration, DMS connects to the source endpoint
+        /// and collects the metadata to analyze the replication workload. Using this metadata,
+        /// DMS then computes and provisions the required capacity and starts replicating to the
+        /// target endpoint using the server resources that DMS has provisioned for the DMS Serverless
+        /// replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartReplication service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual Task<StartReplicationResponse> StartReplicationAsync(StartReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4575,6 +5139,67 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = StartReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartReplicationTaskAssessmentRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopReplication
+
+
+        /// <summary>
+        /// For a given DMS Serverless replication configuration, DMS stops any and all ongoing
+        /// DMS Serverless replications. This command doesn't deprovision the stopped replications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopReplication service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// For a given DMS Serverless replication configuration, DMS stops any and all ongoing
+        /// DMS Serverless replications. This command doesn't deprovision the stopped replications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopReplication service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual Task<StopReplicationResponse> StopReplicationAsync(StopReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopReplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion

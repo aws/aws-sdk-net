@@ -100,7 +100,7 @@ namespace Amazon.AppSync
         /// </summary>
         /// <param name="config">The AmazonAppSyncClient Configuration Object</param>
         public AmazonAppSyncClient(AmazonAppSyncConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAppSyncClient with AWS Credentials

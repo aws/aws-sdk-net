@@ -100,7 +100,7 @@ namespace Amazon.ForecastQueryService
         /// </summary>
         /// <param name="config">The AmazonForecastQueryServiceClient Configuration Object</param>
         public AmazonForecastQueryServiceClient(AmazonForecastQueryServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

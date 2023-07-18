@@ -43,7 +43,6 @@ namespace Amazon.QuickSight.Model
         /// The function that aggregates the values in <code>Column</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AggregationFunction AggregationFunction
         {
             get { return this._aggregationFunction; }

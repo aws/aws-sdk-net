@@ -159,6 +159,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerId);
                 }
 
+                if(publicRequest.IsSetStructuredLogDestinations())
+                {
+                    context.Writer.WritePropertyName("StructuredLogDestinations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStructuredLogDestinationsListValue in publicRequest.StructuredLogDestinations)
+                    {
+                            context.Writer.Write(publicRequestStructuredLogDestinationsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetWorkflowDetails())
                 {
                     context.Writer.WritePropertyName("WorkflowDetails");

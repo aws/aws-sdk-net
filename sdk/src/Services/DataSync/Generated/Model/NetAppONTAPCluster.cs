@@ -39,6 +39,7 @@ namespace Amazon.DataSync.Model
         private long? _clusterBlockStorageSize;
         private long? _clusterBlockStorageUsed;
         private string _clusterName;
+        private long? _lunCount;
         private MaxP95Performance _maxP95Performance;
         private long? _nfsExportedVolumes;
         private List<Recommendation> _recommendations = new List<Recommendation>();
@@ -139,6 +140,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LunCount. 
+        /// <para>
+        /// The number of LUNs (logical unit numbers) in the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long LunCount
+        {
+            get { return this._lunCount.GetValueOrDefault(); }
+            set { this._lunCount = value; }
+        }
+
+        // Check to see if LunCount property is set
+        internal bool IsSetLunCount()
+        {
+            return this._lunCount.HasValue; 
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Stores the configuration information for the image classification problem of an AutoML
-    /// job using the V2 API.
+    /// job V2.
     /// </summary>
     public partial class ImageClassificationJobConfig
     {

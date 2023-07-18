@@ -134,7 +134,7 @@ namespace Amazon.SSOAdmin
         /// </summary>
         /// <param name="config">The AmazonSSOAdminClient Configuration Object</param>
         public AmazonSSOAdminClient(AmazonSSOAdminConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

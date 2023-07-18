@@ -32,16 +32,26 @@ namespace Amazon.ChimeSDKMeetings
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.27");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.37");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Chime SDK Meetings";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKMeetingsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKMeetingsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Chime SDK Meetings";
             this.AuthenticationServiceName = "chime";
             this.EndpointProvider = new AmazonChimeSDKMeetingsEndpointProvider();
         }

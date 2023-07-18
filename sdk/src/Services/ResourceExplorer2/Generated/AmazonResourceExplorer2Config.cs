@@ -32,16 +32,26 @@ namespace Amazon.ResourceExplorer2
     public partial class AmazonResourceExplorer2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.102");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.112");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Resource Explorer 2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonResourceExplorer2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceExplorer2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Resource Explorer 2";
             this.AuthenticationServiceName = "resource-explorer-2";
             this.EndpointProvider = new AmazonResourceExplorer2EndpointProvider();
         }

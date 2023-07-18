@@ -32,16 +32,26 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Application Insights";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonApplicationInsightsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationInsightsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Application Insights";
             this.AuthenticationServiceName = "applicationinsights";
             this.EndpointProvider = new AmazonApplicationInsightsEndpointProvider();
         }

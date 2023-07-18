@@ -88,6 +88,7 @@ namespace Amazon.LocationService.Model
         private DateTime? _departureTime;
         private List<List<double>> _destinationPositions = new List<List<double>>();
         private DistanceUnit _distanceUnit;
+        private string _key;
         private TravelMode _travelMode;
         private CalculateRouteTruckModeOptions _truckModeOptions;
 
@@ -293,6 +294,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDistanceUnit()
         {
             return this._distanceUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// key</a> to authorize the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlternateTransferFunctionSei = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bandwidthReductionFilter", targetDepth))
+                {
+                    var unmarshaller = BandwidthReductionFilterUnmarshaller.Instance;
+                    unmarshalledObject.BandwidthReductionFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bitrate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

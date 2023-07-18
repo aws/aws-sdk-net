@@ -41,6 +41,7 @@ namespace Amazon.Drs.Model
         private ReplicationDirection _replicationDirection;
         private string _reversedDirectionSourceServerArn;
         private SourceCloudProperties _sourceCloudProperties;
+        private string _sourceNetworkID;
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
         private StagingArea _stagingArea;
@@ -192,6 +193,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetSourceCloudProperties()
         {
             return this._sourceCloudProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceNetworkID. 
+        /// <para>
+        /// ID of the Source Network which is protecting this Source Server's network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=20)]
+        public string SourceNetworkID
+        {
+            get { return this._sourceNetworkID; }
+            set { this._sourceNetworkID = value; }
+        }
+
+        // Check to see if SourceNetworkID property is set
+        internal bool IsSetSourceNetworkID()
+        {
+            return this._sourceNetworkID != null;
         }
 
         /// <summary>

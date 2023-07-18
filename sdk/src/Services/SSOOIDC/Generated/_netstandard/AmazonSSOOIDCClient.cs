@@ -150,7 +150,7 @@ namespace Amazon.SSOOIDC
         /// </summary>
         /// <param name="config">The AmazonSSOOIDCClient Configuration Object</param>
         public AmazonSSOOIDCClient(AmazonSSOOIDCConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

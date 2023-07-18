@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED
-    /// state.
+    /// Action required for a broker.
     /// </summary>
     public partial class ActionRequired
     {
@@ -40,12 +39,8 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property ActionRequiredCode. 
         /// <para>
-        /// The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED
-        /// state. You can find instructions by choosing the link for your code from the list
-        /// of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon
-        /// MQ action required codes</a>. Each code references a topic with detailed information,
-        /// instructions, and recommendations for how to resolve the issue and prevent future
-        /// occurrences.
+        /// The code you can use to find instructions on the action required to resolve your broker
+        /// issue.
         /// </para>
         /// </summary>
         public string ActionRequiredCode
@@ -63,8 +58,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property ActionRequiredInfo. 
         /// <para>
-        /// Information about the action required to resolve your broker issue when the broker
-        /// is in a CRITICAL_ACTION_REQUIRED state.
+        /// Information about the action required to resolve your broker issue.
         /// </para>
         /// </summary>
         public string ActionRequiredInfo

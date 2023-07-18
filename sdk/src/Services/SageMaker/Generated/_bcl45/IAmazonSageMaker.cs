@@ -478,16 +478,30 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Autopilot job.
+        /// Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
+        /// We recommend using the new versions <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>,
+        /// which offer backward compatibility.
         /// </para>
         ///  
         /// <para>
-        /// For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
-        /// Model Development with Amazon SageMaker Autopilot</a>.
+        ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
+        /// of its previous version <code>CreateAutoMLJob</code>, as well as non-tabular problem
+        /// types such as image or text classification.
+        /// </para>
+        ///  
+        /// <para>
+        /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can find the best-performing model after you run an AutoML job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
+        /// (recommended) or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJob service method.</param>
@@ -506,16 +520,30 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Autopilot job.
+        /// Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
+        /// We recommend using the new versions <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>,
+        /// which offer backward compatibility.
         /// </para>
         ///  
         /// <para>
-        /// For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
-        /// Model Development with Amazon SageMaker Autopilot</a>.
+        ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
+        /// of its previous version <code>CreateAutoMLJob</code>, as well as non-tabular problem
+        /// types such as image or text classification.
+        /// </para>
+        ///  
+        /// <para>
+        /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can find the best-performing model after you run an AutoML job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
+        /// (recommended) or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJob service method.</param>
@@ -540,23 +568,38 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or
-        /// text for Computer Vision or Natural Language Processing problems.
+        /// Creates an Autopilot job also referred to as Autopilot experiment or AutoML job V2.
         /// 
-        ///  
-        /// <para>
-        /// Find the resulting model after you run an AutoML job V2 by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To create an <code>AutoMLJob</code> using tabular data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// This API action is callable through SageMaker Canvas only. Calling it directly from
-        /// the CLI or an SDK results in an error.
+        ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
+        /// are new versions of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
+        /// which offer backward compatibility.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
+        /// of its previous version <code>CreateAutoMLJob</code>, as well as non-tabular problem
+        /// types such as image or text classification.
+        /// </para>
+        ///  
+        /// <para>
+        /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For the list of available problem types supported by <code>CreateAutoMLJobV2</code>,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html">AutoMLProblemTypeConfig</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can find the best-performing model after you run an AutoML job V2 by calling <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 service method.</param>
         /// 
@@ -574,23 +617,38 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or
-        /// text for Computer Vision or Natural Language Processing problems.
+        /// Creates an Autopilot job also referred to as Autopilot experiment or AutoML job V2.
         /// 
-        ///  
-        /// <para>
-        /// Find the resulting model after you run an AutoML job V2 by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To create an <code>AutoMLJob</code> using tabular data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// This API action is callable through SageMaker Canvas only. Calling it directly from
-        /// the CLI or an SDK results in an error.
+        ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
+        /// are new versions of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
+        /// which offer backward compatibility.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
+        /// of its previous version <code>CreateAutoMLJob</code>, as well as non-tabular problem
+        /// types such as image or text classification.
+        /// </para>
+        ///  
+        /// <para>
+        /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+        /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+        /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For the list of available problem types supported by <code>CreateAutoMLJobV2</code>,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html">AutoMLProblemTypeConfig</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can find the best-performing model after you run an AutoML job V2 by calling <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 service method.</param>
         /// <param name="cancellationToken">
@@ -6208,7 +6266,14 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about an Amazon SageMaker AutoML job.
+        /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AutoML jobs created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// cannot be described by <code>DescribeAutoMLJob</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJob service method.</param>
         /// 
@@ -6222,7 +6287,14 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about an Amazon SageMaker AutoML job.
+        /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AutoML jobs created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// cannot be described by <code>DescribeAutoMLJob</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJob service method.</param>
         /// <param name="cancellationToken">
@@ -6242,14 +6314,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about an Amazon SageMaker AutoML V2 job.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This API action is callable through SageMaker Canvas only. Calling it directly from
-        /// the CLI or an SDK results in an error.
-        /// </para>
-        ///  </note>
+        /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 service method.</param>
         /// 
@@ -6263,14 +6329,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns information about an Amazon SageMaker AutoML V2 job.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This API action is callable through SageMaker Canvas only. Calling it directly from
-        /// the CLI or an SDK results in an error.
-        /// </para>
-        ///  </note>
+        /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+        /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 service method.</param>
         /// <param name="cancellationToken">

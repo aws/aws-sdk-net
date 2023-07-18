@@ -118,8 +118,7 @@ namespace Amazon.Glue
         /// </summary>
         /// <param name="config">The AmazonGlueClient Configuration Object</param>
         public AmazonGlueClient(AmazonGlueConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonGlueClient with AWS Credentials
         /// </summary>

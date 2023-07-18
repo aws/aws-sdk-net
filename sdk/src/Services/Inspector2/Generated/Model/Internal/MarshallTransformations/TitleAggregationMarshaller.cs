@@ -45,6 +45,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TitleAggregation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFindingType())
+            {
+                context.Writer.WritePropertyName("findingType");
+                context.Writer.Write(requestObject.FindingType);
+            }
+
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("resourceType");

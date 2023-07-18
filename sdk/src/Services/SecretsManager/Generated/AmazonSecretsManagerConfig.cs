@@ -32,16 +32,26 @@ namespace Amazon.SecretsManager
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.55");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.65");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Secrets Manager";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSecretsManagerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecretsManagerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Secrets Manager";
             this.AuthenticationServiceName = "secretsmanager";
             this.EndpointProvider = new AmazonSecretsManagerEndpointProvider();
         }

@@ -59,6 +59,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property SharedBy.
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string SharedBy
         {
             get { return this._sharedBy; }
@@ -120,6 +121,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

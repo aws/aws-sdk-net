@@ -122,6 +122,35 @@ namespace Amazon.RDS.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
+            var immutableCredentials = credentials.GetCredentials();
+            return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
+        }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Generate a token for IAM authentication to an RDS database.
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="region">The region of the RDS database.</param>
+        /// <param name="hostname">Hostname of the RDS database.</param>
+        /// <param name="port">Port of the RDS database.</param>
+        /// <param name="dbUser">Database user for the token.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateAuthTokenAsync(AWSCredentials credentials, RegionEndpoint region, string hostname, int port, string dbUser)
+        {
+            if (credentials == null)
+                throw new ArgumentNullException("credentials");
+
+            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
+        }
+#endif
+
+        private static string GenerateAuthToken(ImmutableCredentials immutableCredentials, RegionEndpoint region, string hostname, int port, string dbUser)
+        {
+            if (immutableCredentials == null)
+                throw new ArgumentNullException("immutableCredentials");
+
             if (region == null)
                 throw new ArgumentNullException("region");
 
@@ -146,7 +175,6 @@ namespace Amazon.RDS.Util
             request.Parameters.Add(ActionKey, ActionValue);
             request.Endpoint = new UriBuilder(HTTPS, hostname, port).Uri;
 
-            var immutableCredentials = credentials.GetCredentials();
             if (immutableCredentials.UseToken)
             {
                 request.Parameters[XAmzSecurityToken] = immutableCredentials.Token;

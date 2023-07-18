@@ -49,7 +49,7 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  
     /// <para>
-    ///  To sign out users without suspending them, use the <a>LogoutUser</a> action. 
+    ///  To sign out users without suspending them, use the <a>LogoutUser</a> action.
     /// </para>
     /// </summary>
     public partial class BatchSuspendUserRequest : AmazonChimeRequest

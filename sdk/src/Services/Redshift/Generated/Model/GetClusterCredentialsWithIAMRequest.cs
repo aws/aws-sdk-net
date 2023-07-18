@@ -49,6 +49,7 @@ namespace Amazon.Redshift.Model
     public partial class GetClusterCredentialsWithIAMRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
+        private string _customDomainName;
         private string _dbName;
         private int? _durationSeconds;
 
@@ -59,7 +60,7 @@ namespace Amazon.Redshift.Model
         /// requesting credentials. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -70,6 +71,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name for the IAM message cluster credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
         }
 
         /// <summary>

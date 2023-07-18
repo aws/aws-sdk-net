@@ -116,8 +116,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
         /// </summary>
         /// <param name="config">The AmazonLicenseManagerUserSubscriptionsClient Configuration Object</param>
         public AmazonLicenseManagerUserSubscriptionsClient(AmazonLicenseManagerUserSubscriptionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonLicenseManagerUserSubscriptionsClient with AWS Credentials
         /// </summary>

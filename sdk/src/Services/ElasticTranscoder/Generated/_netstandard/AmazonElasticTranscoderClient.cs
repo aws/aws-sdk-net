@@ -103,7 +103,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="config">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(AmazonElasticTranscoderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

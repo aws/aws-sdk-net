@@ -108,7 +108,7 @@ namespace Amazon.ServiceDiscovery
         /// </summary>
         /// <param name="config">The AmazonServiceDiscoveryClient Configuration Object</param>
         public AmazonServiceDiscoveryClient(AmazonServiceDiscoveryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

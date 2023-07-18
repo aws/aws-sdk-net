@@ -91,6 +91,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDataReplicationMode())
+                {
+                    context.Writer.WritePropertyName("dataReplicationMode");
+                    context.Writer.Write(publicRequest.DataReplicationMode);
+                }
+
                 if(publicRequest.IsSetEngineVersion())
                 {
                     context.Writer.WritePropertyName("engineVersion");

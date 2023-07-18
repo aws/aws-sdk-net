@@ -158,6 +158,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NumberDatatypeScale);
             }
 
+            if(requestObject.IsSetOpenTransactionWindow())
+            {
+                context.Writer.WritePropertyName("OpenTransactionWindow");
+                context.Writer.Write(requestObject.OpenTransactionWindow);
+            }
+
             if(requestObject.IsSetOraclePathPrefix())
             {
                 context.Writer.WritePropertyName("OraclePathPrefix");

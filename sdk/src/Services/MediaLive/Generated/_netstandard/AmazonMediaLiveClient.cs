@@ -100,7 +100,7 @@ namespace Amazon.MediaLive
         /// </summary>
         /// <param name="config">The AmazonMediaLiveClient Configuration Object</param>
         public AmazonMediaLiveClient(AmazonMediaLiveConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -1503,6 +1503,58 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  DescribeAccountConfiguration
+
+        internal virtual DescribeAccountConfigurationResponse DescribeAccountConfiguration(DescribeAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get account configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountConfiguration service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">REST API Reference for DescribeAccountConfiguration Operation</seealso>
+        public virtual Task<DescribeAccountConfigurationResponse> DescribeAccountConfigurationAsync(DescribeAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeChannel
 
         internal virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
@@ -2049,6 +2101,64 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeThumbnails
+
+        internal virtual DescribeThumbnailsResponse DescribeThumbnails(DescribeThumbnailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThumbnailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThumbnailsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThumbnailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describe the latest thumbnails data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThumbnails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeThumbnails service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails">REST API Reference for DescribeThumbnails Operation</seealso>
+        public virtual Task<DescribeThumbnailsResponse> DescribeThumbnailsAsync(DescribeThumbnailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThumbnailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThumbnailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeThumbnailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3109,6 +3219,61 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<TransferInputDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountConfiguration
+
+        internal virtual UpdateAccountConfigurationResponse UpdateAccountConfiguration(UpdateAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update account configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountConfiguration service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
+        public virtual Task<UpdateAccountConfigurationResponse> UpdateAccountConfigurationAsync(UpdateAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAccountConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -32,16 +32,26 @@ namespace Amazon.RDS
     public partial class AmazonRDSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.119.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.120.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "RDS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRDSConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRDSDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "RDS";
             this.AuthenticationServiceName = "rds";
             this.EndpointProvider = new AmazonRDSEndpointProvider();
         }

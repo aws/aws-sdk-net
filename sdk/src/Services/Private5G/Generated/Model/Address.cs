@@ -36,6 +36,7 @@ namespace Amazon.Private5G.Model
         private string _city;
         private string _company;
         private string _country;
+        private string _emailAddress;
         private string _name;
         private string _phoneNumber;
         private string _postalCode;
@@ -102,6 +103,25 @@ namespace Amazon.Private5G.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
+        /// The recipient's email address.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string EmailAddress
+        {
+            get { return this._emailAddress; }
+            set { this._emailAddress = value; }
+        }
+
+        // Check to see if EmailAddress property is set
+        internal bool IsSetEmailAddress()
+        {
+            return this._emailAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The recipient's name for this address.
@@ -123,7 +143,7 @@ namespace Amazon.Private5G.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number for this address.
+        /// The recipient's phone number.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

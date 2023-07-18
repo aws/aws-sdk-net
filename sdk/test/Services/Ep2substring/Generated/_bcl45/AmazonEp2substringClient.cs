@@ -99,7 +99,7 @@ namespace Amazon.Ep2substring
         /// </summary>
         /// <param name="config">The AmazonEp2substringClient Configuration Object</param>
         public AmazonEp2substringClient(AmazonEp2substringConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonEp2substringClient with AWS Credentials

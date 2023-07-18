@@ -126,8 +126,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property RelationshipScore. 
         /// <para>
-        ///  The level of confidence that Comprehend Medical has that this attribute is correctly
-        /// related to this entity. 
+        ///  The level of confidence that Amazon Comprehend Medical has that this attribute is
+        /// correctly related to this entity. 
         /// </para>
         /// </summary>
         public float RelationshipScore
@@ -164,8 +164,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        ///  The level of confidence that Comprehend Medical has that the segment of text is correctly
-        /// recognized as an attribute. 
+        ///  The level of confidence that Amazon Comprehend Medical has that the segment of text
+        /// is correctly recognized as an attribute. 
         /// </para>
         /// </summary>
         public float Score

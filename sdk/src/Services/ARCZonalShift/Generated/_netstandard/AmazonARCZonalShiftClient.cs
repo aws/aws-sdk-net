@@ -137,7 +137,7 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         /// <param name="config">The AmazonARCZonalShiftClient Configuration Object</param>
         public AmazonARCZonalShiftClient(AmazonARCZonalShiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

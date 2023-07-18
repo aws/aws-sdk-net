@@ -127,7 +127,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateNextRun. 
         /// <para>
-        /// This is no longer supported, and does not return a value.
+        /// The next date when the pipeline is scheduled to run.
         /// </para>
         /// </summary>
         public string DateNextRun

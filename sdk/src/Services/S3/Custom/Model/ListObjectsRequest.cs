@@ -75,6 +75,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
         private string marker;
         private int? maxKeys;
+        private List<string> _optionalObjectAttributes = new List<string>();
         private string prefix;
         private RequestPayer requestPayer;
 
@@ -99,7 +100,7 @@ namespace Amazon.S3.Model
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -115,7 +116,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A delimiter is a character you use to group keys.
+        /// A delimiter is a character that you use to group keys.
         /// </summary>
         public string Delimiter
         {
@@ -208,6 +209,25 @@ namespace Amazon.S3.Model
         internal bool IsSetMaxKeys()
         {
             return this.maxKeys.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionalObjectAttributes. 
+        /// <para>
+        /// Specifies the optional fields that you want returned in the response. Fields that
+        /// you do not specify are not returned.
+        /// </para>
+        /// </summary>
+        public List<string> OptionalObjectAttributes
+        {
+            get { return this._optionalObjectAttributes; }
+            set { this._optionalObjectAttributes = value; }
+        }
+
+        // Check to see if OptionalObjectAttributes property is set
+        internal bool IsSetOptionalObjectAttributes()
+        {
+            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
         }
 
         /// <summary>

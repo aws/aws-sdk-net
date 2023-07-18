@@ -43,10 +43,12 @@ namespace Amazon.DatabaseMigrationService.Model
         private NestingLevelValue _nestingLevel;
         private string _password;
         private int? _port;
+        private bool? _replicateShardCollections;
         private string _secretsManagerAccessRoleArn;
         private string _secretsManagerSecretId;
         private string _serverName;
         private string _username;
+        private bool? _useUpdateLookUp;
 
         /// <summary>
         /// Gets and sets the property AuthMechanism. 
@@ -266,6 +268,38 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicateShardCollections. 
+        /// <para>
+        /// If <code>true</code>, DMS replicates data to shard collections. DMS only uses this
+        /// setting if the target endpoint is a DocumentDB elastic cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this setting is <code>true</code>, note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool ReplicateShardCollections
+        {
+            get { return this._replicateShardCollections.GetValueOrDefault(); }
+            set { this._replicateShardCollections = value; }
+        }
+
+        // Check to see if ReplicateShardCollections property is set
+        internal bool IsSetReplicateShardCollections()
+        {
+            return this._replicateShardCollections.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
@@ -352,6 +386,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetUsername()
         {
             return this._username != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseUpdateLookUp. 
+        /// <para>
+        /// If <code>true</code>, DMS retrieves the entire document from the MongoDB source during
+        /// migration. This may cause a migration failure if the server response exceeds bandwidth
+        /// limits. To fetch only updates and deletes during migration, set this parameter to
+        /// <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool UseUpdateLookUp
+        {
+            get { return this._useUpdateLookUp.GetValueOrDefault(); }
+            set { this._useUpdateLookUp = value; }
+        }
+
+        // Check to see if UseUpdateLookUp property is set
+        internal bool IsSetUseUpdateLookUp()
+        {
+            return this._useUpdateLookUp.HasValue; 
         }
 
     }

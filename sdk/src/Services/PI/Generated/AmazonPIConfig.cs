@@ -32,16 +32,26 @@ namespace Amazon.PI
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.60");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.70");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "PI";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPIConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPIDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "PI";
             this.AuthenticationServiceName = "pi";
             this.EndpointProvider = new AmazonPIEndpointProvider();
         }

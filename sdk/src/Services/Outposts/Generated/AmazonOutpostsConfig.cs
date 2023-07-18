@@ -32,16 +32,26 @@ namespace Amazon.Outposts
     public partial class AmazonOutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.75");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Outposts";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOutpostsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOutpostsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Outposts";
             this.AuthenticationServiceName = "outposts";
             this.EndpointProvider = new AmazonOutpostsEndpointProvider();
         }

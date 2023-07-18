@@ -19,6 +19,7 @@ using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -39,8 +40,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
-                 
-                        
+
+            IWebResponseData responseData = context.ResponseData;
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
+                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
+
             return response;
         }
 

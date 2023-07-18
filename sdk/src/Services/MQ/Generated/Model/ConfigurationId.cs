@@ -30,12 +30,6 @@ namespace Amazon.MQ.Model
 {
     /// <summary>
     /// A list of information about the configuration.
-    /// 
-    ///  <important>
-    /// <para>
-    /// Does not apply to RabbitMQ brokers.
-    /// </para>
-    /// </important>
     /// </summary>
     public partial class ConfigurationId
     {

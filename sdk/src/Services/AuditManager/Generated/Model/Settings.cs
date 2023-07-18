@@ -34,6 +34,7 @@ namespace Amazon.AuditManager.Model
     public partial class Settings
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
+        private DefaultExportDestination _defaultExportDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
         private DeregistrationPolicy _deregistrationPolicy;
         private EvidenceFinderEnablement _evidenceFinderEnablement;
@@ -44,7 +45,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DefaultAssessmentReportsDestination. 
         /// <para>
-        ///  The default storage destination for assessment reports. 
+        /// The default S3 destination bucket for storing assessment reports.
         /// </para>
         /// </summary>
         public AssessmentReportsDestination DefaultAssessmentReportsDestination
@@ -57,6 +58,24 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultAssessmentReportsDestination()
         {
             return this._defaultAssessmentReportsDestination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultExportDestination. 
+        /// <para>
+        /// The default S3 destination bucket for storing evidence finder exports.
+        /// </para>
+        /// </summary>
+        public DefaultExportDestination DefaultExportDestination
+        {
+            get { return this._defaultExportDestination; }
+            set { this._defaultExportDestination = value; }
+        }
+
+        // Check to see if DefaultExportDestination property is set
+        internal bool IsSetDefaultExportDestination()
+        {
+            return this._defaultExportDestination != null;
         }
 
         /// <summary>

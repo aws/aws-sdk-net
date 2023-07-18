@@ -65,6 +65,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountID())
+                {
+                    context.Writer.WritePropertyName("accountID");
+                    context.Writer.Write(publicRequest.AccountID);
+                }
+
                 if(publicRequest.IsSetJobID())
                 {
                     context.Writer.WritePropertyName("jobID");

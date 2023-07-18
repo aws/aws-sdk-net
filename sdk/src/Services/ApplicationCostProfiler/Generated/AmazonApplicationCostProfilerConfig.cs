@@ -32,16 +32,26 @@ namespace Amazon.ApplicationCostProfiler
     public partial class AmazonApplicationCostProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ApplicationCostProfiler";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonApplicationCostProfilerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationCostProfilerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ApplicationCostProfiler";
             this.AuthenticationServiceName = "application-cost-profiler";
             this.EndpointProvider = new AmazonApplicationCostProfilerEndpointProvider();
         }

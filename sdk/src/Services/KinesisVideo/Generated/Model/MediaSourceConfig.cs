@@ -41,8 +41,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MediaUriSecretArn. 
         /// <para>
-        /// The AWS Secrets Manager ARN for the username and password of the camera, or a local
-        /// media file location.
+        /// The Amazon Web Services Secrets Manager ARN for the username and password of the camera,
+        /// or a local media file location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=20, Max=2048)]

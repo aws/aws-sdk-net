@@ -42,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The session that should be passed both ways in challenge-response calls to the service.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

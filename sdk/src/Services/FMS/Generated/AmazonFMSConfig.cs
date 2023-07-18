@@ -32,16 +32,26 @@ namespace Amazon.FMS
     public partial class AmazonFMSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.105.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.20");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "FMS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonFMSConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFMSDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "FMS";
             this.AuthenticationServiceName = "fms";
             this.EndpointProvider = new AmazonFMSEndpointProvider();
         }

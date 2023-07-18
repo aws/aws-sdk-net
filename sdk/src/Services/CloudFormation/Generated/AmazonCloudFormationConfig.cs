@@ -32,16 +32,26 @@ namespace Amazon.CloudFormation
     public partial class AmazonCloudFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.107.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.108.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudFormation";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudFormationConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudFormationDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudFormation";
             this.AuthenticationServiceName = "cloudformation";
             this.EndpointProvider = new AmazonCloudFormationEndpointProvider();
         }

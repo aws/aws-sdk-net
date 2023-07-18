@@ -171,6 +171,11 @@ namespace Amazon.EC2.Model
         IDescribeImportSnapshotTasksPaginator DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request);
 
         /// <summary>
+        /// Paginator for DescribeInstanceConnectEndpoints operation
+        ///</summary>
+        IDescribeInstanceConnectEndpointsPaginator DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInstanceCreditSpecifications operation
         ///</summary>
         IDescribeInstanceCreditSpecificationsPaginator DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request);

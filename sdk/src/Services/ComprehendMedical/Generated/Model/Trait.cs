@@ -57,7 +57,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        ///  The level of confidence that Comprehend Medical; has in the accuracy of this trait.
+        ///  The level of confidence that Amazon Comprehend Medical has in the accuracy of this
+        /// trait.
         /// </para>
         /// </summary>
         public float Score

@@ -32,16 +32,26 @@ namespace Amazon.Translate
     public partial class AmazonTranslateConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.20");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Translate";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTranslateConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranslateDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Translate";
             this.AuthenticationServiceName = "translate";
             this.EndpointProvider = new AmazonTranslateEndpointProvider();
         }

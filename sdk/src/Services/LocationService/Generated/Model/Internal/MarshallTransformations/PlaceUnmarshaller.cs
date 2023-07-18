@@ -70,6 +70,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddressNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Categories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Country", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupplementalCategories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupplementalCategories = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeZone", targetDepth))

@@ -32,16 +32,26 @@ namespace Amazon.ServerlessApplicationRepository
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.81");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.91");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ServerlessApplicationRepository";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonServerlessApplicationRepositoryConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerlessApplicationRepositoryDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ServerlessApplicationRepository";
             this.AuthenticationServiceName = "serverlessrepo";
             this.EndpointProvider = new AmazonServerlessApplicationRepositoryEndpointProvider();
         }

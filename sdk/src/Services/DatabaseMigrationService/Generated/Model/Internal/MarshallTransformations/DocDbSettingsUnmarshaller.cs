@@ -106,6 +106,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicateShardCollections", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReplicateShardCollections = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecretsManagerAccessRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseUpdateLookUp", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseUpdateLookUp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

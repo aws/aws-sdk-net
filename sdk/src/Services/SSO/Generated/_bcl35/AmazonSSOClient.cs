@@ -140,8 +140,7 @@ namespace Amazon.SSO
         /// </summary>
         /// <param name="config">The AmazonSSOClient Configuration Object</param>
         public AmazonSSOClient(AmazonSSOConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSSOClient with AWS Credentials
         /// </summary>

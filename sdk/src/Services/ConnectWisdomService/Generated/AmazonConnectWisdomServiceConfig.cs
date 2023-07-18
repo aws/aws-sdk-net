@@ -32,16 +32,26 @@ namespace Amazon.ConnectWisdomService
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.54");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.64");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Wisdom";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectWisdomServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectWisdomServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Wisdom";
             this.AuthenticationServiceName = "wisdom";
             this.EndpointProvider = new AmazonConnectWisdomServiceEndpointProvider();
         }

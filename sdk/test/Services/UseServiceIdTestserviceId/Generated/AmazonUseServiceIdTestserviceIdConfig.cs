@@ -35,13 +35,23 @@ namespace Amazon.UseServiceIdTestserviceId
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Use Service Id Test - service Id";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonUseServiceIdTestserviceIdConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonUseServiceIdTestserviceIdDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Use Service Id Test - service Id";
             this.AuthenticationServiceName = "Rest-Json-Test";
         }
 

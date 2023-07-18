@@ -32,16 +32,26 @@ namespace Amazon.LexModelBuildingService
     public partial class AmazonLexModelBuildingServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Lex Model Building Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLexModelBuildingServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLexModelBuildingServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Lex Model Building Service";
             this.AuthenticationServiceName = "lex";
             this.EndpointProvider = new AmazonLexModelBuildingServiceEndpointProvider();
         }

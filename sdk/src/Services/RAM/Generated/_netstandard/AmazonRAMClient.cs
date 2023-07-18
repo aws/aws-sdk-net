@@ -121,7 +121,7 @@ namespace Amazon.RAM
         /// </summary>
         /// <param name="config">The AmazonRAMClient Configuration Object</param>
         public AmazonRAMClient(AmazonRAMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

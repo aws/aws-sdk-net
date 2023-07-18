@@ -121,7 +121,7 @@ namespace Amazon.Lightsail
         /// </summary>
         /// <param name="config">The AmazonLightsailClient Configuration Object</param>
         public AmazonLightsailClient(AmazonLightsailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonLightsailClient with AWS Credentials
@@ -8653,7 +8653,7 @@ namespace Amazon.Lightsail
         /// 
         ///  <note> 
         /// <para>
-        /// To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from
+        /// To get a summary of a certificate, omit <code>includeCertificateDetails</code> from
         /// your request. The response will include only the certificate Amazon Resource Name
         /// (ARN), certificate name, domain name, and tags.
         /// </para>
@@ -8703,7 +8703,7 @@ namespace Amazon.Lightsail
         /// 
         ///  <note> 
         /// <para>
-        /// To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from
+        /// To get a summary of a certificate, omit <code>includeCertificateDetails</code> from
         /// your request. The response will include only the certificate Amazon Resource Name
         /// (ARN), certificate name, domain name, and tags.
         /// </para>

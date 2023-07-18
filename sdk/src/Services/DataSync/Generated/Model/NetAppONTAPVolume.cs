@@ -38,6 +38,7 @@ namespace Amazon.DataSync.Model
         private long? _capacityUsed;
         private long? _cifsShareCount;
         private long? _logicalCapacityUsed;
+        private long? _lunCount;
         private MaxP95Performance _maxP95Performance;
         private bool? _nfsExported;
         private List<Recommendation> _recommendations = new List<Recommendation>();
@@ -124,6 +125,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetLogicalCapacityUsed()
         {
             return this._logicalCapacityUsed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LunCount. 
+        /// <para>
+        /// The number of LUNs (logical unit numbers) in the volume.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long LunCount
+        {
+            get { return this._lunCount.GetValueOrDefault(); }
+            set { this._lunCount = value; }
+        }
+
+        // Check to see if LunCount property is set
+        internal bool IsSetLunCount()
+        {
+            return this._lunCount.HasValue; 
         }
 
         /// <summary>

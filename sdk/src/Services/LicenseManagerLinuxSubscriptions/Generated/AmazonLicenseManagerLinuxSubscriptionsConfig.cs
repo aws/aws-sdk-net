@@ -32,16 +32,26 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
     public partial class AmazonLicenseManagerLinuxSubscriptionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.101");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.111");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "License Manager Linux Subscriptions";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLicenseManagerLinuxSubscriptionsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLicenseManagerLinuxSubscriptionsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "License Manager Linux Subscriptions";
             this.AuthenticationServiceName = "license-manager-linux-subscriptions";
             this.EndpointProvider = new AmazonLicenseManagerLinuxSubscriptionsEndpointProvider();
         }

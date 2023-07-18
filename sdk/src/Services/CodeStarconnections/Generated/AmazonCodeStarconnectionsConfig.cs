@@ -32,16 +32,26 @@ namespace Amazon.CodeStarconnections
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodeStar connections";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeStarconnectionsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarconnectionsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodeStar connections";
             this.AuthenticationServiceName = "codestar-connections";
             this.EndpointProvider = new AmazonCodeStarconnectionsEndpointProvider();
         }

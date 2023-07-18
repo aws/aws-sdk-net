@@ -32,16 +32,26 @@ namespace Amazon.Comprehend
     public partial class AmazonComprehendConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.28");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.38");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Comprehend";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonComprehendConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Comprehend";
             this.AuthenticationServiceName = "comprehend";
             this.EndpointProvider = new AmazonComprehendEndpointProvider();
         }

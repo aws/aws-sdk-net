@@ -123,7 +123,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="config">The AmazonDynamoDBClient Configuration Object</param>
         public AmazonDynamoDBClient(AmazonDynamoDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -401,10 +401,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
         /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-        /// limit is exceeded, the table's provisioned throughput is exceeded, or an internal
-        /// processing failure occurs. If a partial result is returned, the operation returns
-        /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
-        /// starting with the next item to get.
+        /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
+        /// partition is requested, or an internal processing failure occurs. If a partial result
+        /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
+        /// use this value to retry the operation starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
@@ -509,10 +509,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
         /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-        /// limit is exceeded, the table's provisioned throughput is exceeded, or an internal
-        /// processing failure occurs. If a partial result is returned, the operation returns
-        /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
-        /// starting with the next item to get.
+        /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
+        /// partition is requested, or an internal processing failure occurs. If a partial result
+        /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
+        /// use this value to retry the operation starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
@@ -616,10 +616,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
         /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-        /// limit is exceeded, the table's provisioned throughput is exceeded, or an internal
-        /// processing failure occurs. If a partial result is returned, the operation returns
-        /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
-        /// starting with the next item to get.
+        /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
+        /// partition is requested, or an internal processing failure occurs. If a partial result
+        /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
+        /// use this value to retry the operation starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1138,6 +1138,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
         /// A target table with the specified name is either being created or deleted.
@@ -1293,6 +1302,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
         /// A source table with the name <code>TableName</code> does not currently exist within
@@ -1388,6 +1406,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -1464,6 +1491,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -1547,6 +1583,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
@@ -1869,6 +1914,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -1956,6 +2010,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -2152,9 +2215,8 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Returns the regional endpoint information. This action must be included in your VPC
-        /// endpoint policies, or access to the DescribeEndpoints API will be denied. For more
-        /// information on policy permissions, please see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork
+        /// Returns the regional endpoint information. For more information on policy permissions,
+        /// please see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork
         /// traffic privacy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
@@ -2226,6 +2288,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
@@ -2836,6 +2907,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -2913,6 +2993,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -3464,6 +3553,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
         /// Point in time recovery has not yet been enabled for this source table.
@@ -3703,6 +3801,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -3866,6 +3973,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3978,6 +4094,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
@@ -4670,6 +4795,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
         /// A target table with the specified name already exists.
@@ -4814,6 +4948,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
@@ -5223,6 +5366,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -6086,6 +6238,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -6395,6 +6556,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
         /// The specified replica is no longer part of the global table.
@@ -6702,6 +6872,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -6791,6 +6970,15 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// There is a soft account quota of 2,500 tables.
         /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
@@ -6870,6 +7058,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -6981,6 +7178,15 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">

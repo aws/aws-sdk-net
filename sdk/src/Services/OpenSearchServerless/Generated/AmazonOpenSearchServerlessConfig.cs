@@ -32,16 +32,26 @@ namespace Amazon.OpenSearchServerless
     public partial class AmazonOpenSearchServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.42");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.52");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "OpenSearchServerless";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOpenSearchServerlessConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpenSearchServerlessDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "OpenSearchServerless";
             this.AuthenticationServiceName = "aoss";
             this.EndpointProvider = new AmazonOpenSearchServerlessEndpointProvider();
         }

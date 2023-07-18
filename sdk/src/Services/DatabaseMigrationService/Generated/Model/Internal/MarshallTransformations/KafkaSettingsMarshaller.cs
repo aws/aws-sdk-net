@@ -153,6 +153,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SslClientKeyPassword);
             }
 
+            if(requestObject.IsSetSslEndpointIdentificationAlgorithm())
+            {
+                context.Writer.WritePropertyName("SslEndpointIdentificationAlgorithm");
+                context.Writer.Write(requestObject.SslEndpointIdentificationAlgorithm);
+            }
+
             if(requestObject.IsSetTopic())
             {
                 context.Writer.WritePropertyName("Topic");

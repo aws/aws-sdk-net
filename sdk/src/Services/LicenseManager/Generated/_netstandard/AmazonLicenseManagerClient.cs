@@ -101,7 +101,7 @@ namespace Amazon.LicenseManager
         /// </summary>
         /// <param name="config">The AmazonLicenseManagerClient Configuration Object</param>
         public AmazonLicenseManagerClient(AmazonLicenseManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

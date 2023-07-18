@@ -145,7 +145,7 @@ namespace Amazon.AppStream
         /// </summary>
         /// <param name="config">The AmazonAppStreamClient Configuration Object</param>
         public AmazonAppStreamClient(AmazonAppStreamConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAppStreamClient with AWS Credentials
@@ -293,6 +293,77 @@ namespace Amazon.AppStream
         #endregion
 
 
+        #region  AssociateAppBlockBuilderAppBlock
+
+
+        /// <summary>
+        /// Associates the specified app block builder with the specified app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAppBlockBuilderAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAppBlockBuilderAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock">REST API Reference for AssociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual AssociateAppBlockBuilderAppBlockResponse AssociateAppBlockBuilderAppBlock(AssociateAppBlockBuilderAppBlockRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateAppBlockBuilderAppBlockResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates the specified app block builder with the specified app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAppBlockBuilderAppBlock service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateAppBlockBuilderAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock">REST API Reference for AssociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual Task<AssociateAppBlockBuilderAppBlockResponse> AssociateAppBlockBuilderAppBlockAsync(AssociateAppBlockBuilderAppBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateAppBlockBuilderAppBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateApplicationFleet
 
 
@@ -786,6 +857,164 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = CreateAppBlockResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateAppBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAppBlockBuilder
+
+
+        /// <summary>
+        /// Creates an app block builder.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder">REST API Reference for CreateAppBlockBuilder Operation</seealso>
+        public virtual CreateAppBlockBuilderResponse CreateAppBlockBuilder(CreateAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppBlockBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an app block builder.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder">REST API Reference for CreateAppBlockBuilder Operation</seealso>
+        public virtual Task<CreateAppBlockBuilderResponse> CreateAppBlockBuilderAsync(CreateAppBlockBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAppBlockBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAppBlockBuilderStreamingURL
+
+
+        /// <summary>
+        /// Creates a URL to start a create app block builder streaming session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilderStreamingURL service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppBlockBuilderStreamingURL service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL">REST API Reference for CreateAppBlockBuilderStreamingURL Operation</seealso>
+        public virtual CreateAppBlockBuilderStreamingURLResponse CreateAppBlockBuilderStreamingURL(CreateAppBlockBuilderStreamingURLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderStreamingURLResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppBlockBuilderStreamingURLResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a URL to start a create app block builder streaming session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilderStreamingURL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppBlockBuilderStreamingURL service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL">REST API Reference for CreateAppBlockBuilderStreamingURL Operation</seealso>
+        public virtual Task<CreateAppBlockBuilderStreamingURLResponse> CreateAppBlockBuilderStreamingURLAsync(CreateAppBlockBuilderStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderStreamingURLResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAppBlockBuilderStreamingURLResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1782,6 +2011,81 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteAppBlockBuilder
+
+
+        /// <summary>
+        /// Deletes an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// An app block builder can only be deleted when it has no association with an app block.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder">REST API Reference for DeleteAppBlockBuilder Operation</seealso>
+        public virtual DeleteAppBlockBuilderResponse DeleteAppBlockBuilder(DeleteAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppBlockBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// An app block builder can only be deleted when it has no association with an app block.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlockBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder">REST API Reference for DeleteAppBlockBuilder Operation</seealso>
+        public virtual Task<DeleteAppBlockBuilderResponse> DeleteAppBlockBuilderAsync(DeleteAppBlockBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppBlockBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAppBlockBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApplication
 
 
@@ -2376,6 +2680,112 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAppBlockBuilderAppBlockAssociations
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app block builder associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilderAppBlockAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppBlockBuilderAppBlockAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">REST API Reference for DescribeAppBlockBuilderAppBlockAssociations Operation</seealso>
+        public virtual DescribeAppBlockBuilderAppBlockAssociationsResponse DescribeAppBlockBuilderAppBlockAssociations(DescribeAppBlockBuilderAppBlockAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuilderAppBlockAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuilderAppBlockAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppBlockBuilderAppBlockAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app block builder associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilderAppBlockAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppBlockBuilderAppBlockAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">REST API Reference for DescribeAppBlockBuilderAppBlockAssociations Operation</seealso>
+        public virtual Task<DescribeAppBlockBuilderAppBlockAssociationsResponse> DescribeAppBlockBuilderAppBlockAssociationsAsync(DescribeAppBlockBuilderAppBlockAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuilderAppBlockAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuilderAppBlockAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAppBlockBuilderAppBlockAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAppBlockBuilders
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app block builders.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppBlockBuilders service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">REST API Reference for DescribeAppBlockBuilders Operation</seealso>
+        public virtual DescribeAppBlockBuildersResponse DescribeAppBlockBuilders(DescribeAppBlockBuildersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuildersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuildersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppBlockBuildersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app block builders.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppBlockBuilders service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">REST API Reference for DescribeAppBlockBuilders Operation</seealso>
+        public virtual Task<DescribeAppBlockBuildersResponse> DescribeAppBlockBuildersAsync(DescribeAppBlockBuildersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuildersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuildersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAppBlockBuildersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3211,6 +3621,71 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DisassociateAppBlockBuilderAppBlock
+
+
+        /// <summary>
+        /// Disassociates a specified app block builder from a specified app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAppBlockBuilderAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAppBlockBuilderAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock">REST API Reference for DisassociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual DisassociateAppBlockBuilderAppBlockResponse DisassociateAppBlockBuilderAppBlock(DisassociateAppBlockBuilderAppBlockRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateAppBlockBuilderAppBlockResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a specified app block builder from a specified app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAppBlockBuilderAppBlock service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateAppBlockBuilderAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock">REST API Reference for DisassociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual Task<DisassociateAppBlockBuilderAppBlockResponse> DisassociateAppBlockBuilderAppBlockAsync(DisassociateAppBlockBuilderAppBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateAppBlockBuilderAppBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateApplicationFleet
 
 
@@ -3694,6 +4169,113 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  StartAppBlockBuilder
+
+
+        /// <summary>
+        /// Starts an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// An app block builder can only be started when it's associated with an app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Starting an app block builder starts a new instance, which is equivalent to an elastic
+        /// fleet instance with application builder assistance functionality.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StartAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder">REST API Reference for StartAppBlockBuilder Operation</seealso>
+        public virtual StartAppBlockBuilderResponse StartAppBlockBuilder(StartAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StartAppBlockBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// An app block builder can only be started when it's associated with an app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Starting an app block builder starts a new instance, which is equivalent to an elastic
+        /// fleet instance with application builder assistance functionality.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAppBlockBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder">REST API Reference for StartAppBlockBuilder Operation</seealso>
+        public virtual Task<StartAppBlockBuilderResponse> StartAppBlockBuilderAsync(StartAppBlockBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAppBlockBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAppBlockBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartFleet
 
 
@@ -3856,6 +4438,77 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartImageBuilderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAppBlockBuilder
+
+
+        /// <summary>
+        /// Stops an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// Stopping an app block builder terminates the instance, and the instance state is not
+        /// persisted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StopAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder">REST API Reference for StopAppBlockBuilder Operation</seealso>
+        public virtual StopAppBlockBuilderResponse StopAppBlockBuilder(StopAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StopAppBlockBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// Stopping an app block builder terminates the instance, and the instance state is not
+        /// persisted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAppBlockBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder">REST API Reference for StopAppBlockBuilder Operation</seealso>
+        public virtual Task<StopAppBlockBuilderResponse> StopAppBlockBuilderAsync(StopAppBlockBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAppBlockBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAppBlockBuilderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4130,6 +4783,127 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAppBlockBuilder
+
+
+        /// <summary>
+        /// Updates an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code>
+        /// state, you can't update it. If the app block builder is in the <code>RUNNING</code>
+        /// state, you can only update the DisplayName and Description. If the app block builder
+        /// is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder">REST API Reference for UpdateAppBlockBuilder Operation</seealso>
+        public virtual UpdateAppBlockBuilderResponse UpdateAppBlockBuilder(UpdateAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppBlockBuilderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code>
+        /// state, you can't update it. If the app block builder is in the <code>RUNNING</code>
+        /// state, you can only update the DisplayName and Description. If the app block builder
+        /// is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppBlockBuilder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder">REST API Reference for UpdateAppBlockBuilder Operation</seealso>
+        public virtual Task<UpdateAppBlockBuilderResponse> UpdateAppBlockBuilderAsync(UpdateAppBlockBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppBlockBuilderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAppBlockBuilderResponse>(request, options, cancellationToken);
         }
 
         #endregion

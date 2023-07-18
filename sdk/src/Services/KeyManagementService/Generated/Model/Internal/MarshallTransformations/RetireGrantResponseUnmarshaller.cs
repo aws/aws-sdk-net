@@ -73,6 +73,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return DependencyTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DryRunOperationException"))
+                {
+                    return DryRunOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
                 {
                     return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

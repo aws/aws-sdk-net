@@ -45,6 +45,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeleteVolumeOntapConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBypassSnaplockEnterpriseRetention())
+            {
+                context.Writer.WritePropertyName("BypassSnaplockEnterpriseRetention");
+                context.Writer.Write(requestObject.BypassSnaplockEnterpriseRetention);
+            }
+
             if(requestObject.IsSetFinalBackupTags())
             {
                 context.Writer.WritePropertyName("FinalBackupTags");

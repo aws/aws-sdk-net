@@ -301,7 +301,6 @@ namespace Amazon.AppStream.Model
         /// The name of the image used to create the fleet.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ImageName
         {
             get { return this._imageName; }

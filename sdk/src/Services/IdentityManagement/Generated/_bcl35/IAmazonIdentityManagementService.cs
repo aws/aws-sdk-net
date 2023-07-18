@@ -134,9 +134,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method.</param>
@@ -254,7 +255,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You use this operation to attach a managed policy to a group. To embed an inline policy
-        /// in a group, use <a>PutGroupPolicy</a>.
+        /// in a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html">
+        /// <code>PutGroupPolicy</code> </a>.
         /// </para>
         ///  
         /// <para>
@@ -331,14 +333,15 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// You cannot use a managed policy as the role's trust policy. The role's trust policy
-        /// is created at the same time as the role, using <a>CreateRole</a>. You can update a
-        /// role's trust policy using <a>UpdateAssumeRolePolicy</a>.
+        /// is created at the same time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
+        /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+        /// <code>UpdateAssumerolePolicy</code> </a>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Use this operation to attach a <i>managed</i> policy to a role. To embed an inline
-        /// policy in a role, use <a>PutRolePolicy</a>. For more information about policies, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// policy in a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html">
+        /// <code>PutRolePolicy</code> </a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -416,7 +419,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You use this operation to attach a <i>managed</i> policy to a user. To embed an inline
-        /// policy in a user, use <a>PutUserPolicy</a>.
+        /// policy in a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html">
+        /// <code>PutUserPolicy</code> </a>.
         /// </para>
         ///  
         /// <para>
@@ -981,11 +985,11 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted certificate authorities (CAs) instead of using a certificate
-        /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
-        /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
-        /// used for validation.
+        /// through our library of trusted root certificate authorities (CAs) instead of using
+        /// a certificate thumbprint to verify your IdP server certificate. These OIDC IdPs include
+        /// Auth0, GitHub, Google, and those that use an Amazon S3 bucket to host a JSON Web Key
+        /// Set (JWKS) endpoint. In these cases, your legacy thumbprint remains in your configuration,
+        /// but is no longer used for validation.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -1205,11 +1209,15 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new role for your Amazon Web Services account. For more information about
-        /// roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-        /// roles</a>. For information about quotas for role names and the number of roles you
-        /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+        /// Creates a new role for your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>. For information about quotas for role names
+        /// and the number of roles you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
         /// and STS quotas</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// 
@@ -2026,8 +2034,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
@@ -4572,7 +4580,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves information about the specified instance profile, including the instance
         /// profile's path, GUID, ARN, and role. For more information about instance profiles,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
         /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile service method.</param>
@@ -4677,6 +4685,53 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  GetLoginProfileResult from IdentityManagementService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         GetLoginProfileResponse EndGetLoginProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMFADevice
+
+
+        /// <summary>
+        /// Retrieves information about an MFA device for a specified user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMFADevice service method.</param>
+        /// 
+        /// <returns>The response from the GetMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetMFADevice">REST API Reference for GetMFADevice Operation</seealso>
+        GetMFADeviceResponse GetMFADevice(GetMFADeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMFADevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMFADevice operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMFADevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetMFADevice">REST API Reference for GetMFADevice Operation</seealso>
+        IAsyncResult BeginGetMFADevice(GetMFADeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMFADevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMFADevice.</param>
+        /// 
+        /// <returns>Returns a  GetMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetMFADevice">REST API Reference for GetMFADevice Operation</seealso>
+        GetMFADeviceResponse EndGetMFADevice(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4958,8 +5013,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves information about the specified role, including the role's path, GUID, ARN,
         /// and the role's trust policy that grants permission to assume the role. For more information
-        /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -5040,8 +5095,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// roles to delegate permissions and federate identities</a>.
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRolePolicy service method.</param>
@@ -6262,8 +6317,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the operation returns an empty list. For more information about instance profiles,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -6289,8 +6344,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the operation returns an empty list. For more information about instance profiles,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -6348,8 +6403,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the instance profiles that have the specified associated IAM role. If there
         /// are none, the operation returns an empty list. For more information about instance
-        /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7079,14 +7134,30 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a role, see <a>GetRole</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RoleLastUsed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a role, see <a>GetRole</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7104,14 +7175,30 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
-        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>.
+        /// returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a role, see <a>GetRole</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RoleLastUsed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a role, see <a>GetRole</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7770,8 +7857,20 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a user, see <a>GetUser</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a user, see <a>GetUser</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7795,8 +7894,20 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a user, see <a>GetUser</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a user, see <a>GetUser</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7979,8 +8090,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A user can also have managed policies attached to it. To attach a managed policy to
-        /// a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
-        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html">
+        /// <code>AttachGroupPolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+        /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -8136,15 +8248,18 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// When you embed an inline policy in a role, the inline policy is used as part of the
         /// role's access (permissions) policy. The role's trust policy is created at the same
-        /// time as the role, using <a>CreateRole</a>. You can update a role's trust policy using
-        /// <a>UpdateAssumeRolePolicy</a>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-        /// roles to delegate permissions and federate identities</a>.
+        /// time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
+        /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+        /// <code>UpdateAssumeRolePolicy</code> </a>. For more information about roles, see <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM roles</a>
+        /// in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// A role can also have a managed policy attached to it. To attach a managed policy to
-        /// a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
-        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html">
+        /// <code>AttachRolePolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+        /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -8295,8 +8410,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM user can also have a managed policy attached to it. To attach a managed policy
-        /// to a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
-        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// to a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html">
+        /// <code>AttachUserPolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+        /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -8436,9 +8552,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        ///  For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// instance profiles</a>.
+        ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+        /// instance profiles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile service method.</param>
@@ -10644,11 +10761,11 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted certificate authorities (CAs) instead of using a certificate
-        /// thumbprint to verify your IdP server certificate. These OIDC IdPs include Google,
-        /// Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
-        /// In these cases, your legacy thumbprint remains in your configuration, but is no longer
-        /// used for validation.
+        /// through our library of trusted root certificate authorities (CAs) instead of using
+        /// a certificate thumbprint to verify your IdP server certificate. These OIDC IdPs include
+        /// Auth0, GitHub, Google, and those that use an Amazon S3 bucket to host a JSON Web Key
+        /// Set (JWKS) endpoint. In these cases, your legacy thumbprint remains in your configuration,
+        /// but is no longer used for validation.
         /// </para>
         ///  </note> <note> 
         /// <para>

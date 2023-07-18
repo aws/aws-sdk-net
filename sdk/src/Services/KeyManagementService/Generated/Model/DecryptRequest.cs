@@ -147,6 +147,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class DecryptRequest : AmazonKeyManagementServiceRequest
     {
         private MemoryStream _ciphertextBlob;
+        private bool? _dryRun;
         private EncryptionAlgorithmSpec _encryptionAlgorithm;
         private Dictionary<string, string> _encryptionContext = new Dictionary<string, string>();
         private List<string> _grantTokens = new List<string>();
@@ -170,6 +171,30 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetCiphertextBlob()
         {
             return this._ciphertextBlob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+        /// your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool DryRun
+        {
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

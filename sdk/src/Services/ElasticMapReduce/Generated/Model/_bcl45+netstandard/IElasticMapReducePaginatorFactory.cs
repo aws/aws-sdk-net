@@ -79,5 +79,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// Paginator for ListStudioSessionMappings operation
         ///</summary>
         IListStudioSessionMappingsPaginator ListStudioSessionMappings(ListStudioSessionMappingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSupportedInstanceTypes operation
+        ///</summary>
+        IListSupportedInstanceTypesPaginator ListSupportedInstanceTypes(ListSupportedInstanceTypesRequest request);
     }
 }

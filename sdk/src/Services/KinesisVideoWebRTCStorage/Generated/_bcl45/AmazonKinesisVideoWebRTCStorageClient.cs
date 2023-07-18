@@ -99,7 +99,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoWebRTCStorageClient Configuration Object</param>
         public AmazonKinesisVideoWebRTCStorageClient(AmazonKinesisVideoWebRTCStorageConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonKinesisVideoWebRTCStorageClient with AWS Credentials

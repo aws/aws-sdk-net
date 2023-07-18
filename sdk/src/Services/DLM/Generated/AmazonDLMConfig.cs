@@ -32,16 +32,26 @@ namespace Amazon.DLM
     public partial class AmazonDLMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.35");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.45");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DLM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDLMConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDLMDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DLM";
             this.AuthenticationServiceName = "dlm";
             this.EndpointProvider = new AmazonDLMEndpointProvider();
         }

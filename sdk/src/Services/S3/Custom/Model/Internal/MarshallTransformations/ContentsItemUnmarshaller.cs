@@ -78,6 +78,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if(context.TestExpression("RestoreStatus", targetDepth))
+                    {
+                        contentsItem.RestoreStatus = RestoreStatusUnmarshaller.Instance.Unmarshall(context);
+                        
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -11,6 +11,31 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 {
     class RekognitionSamples : ISample
     {
+        public void RekognitionAssociateFaces()
+        {
+            #region associatefaces-1686181269281
+
+            var client = new AmazonRekognitionClient();
+            var response = client.AssociateFaces(new AssociateFacesRequest 
+            {
+                ClientRequestToken = "550e8400-e29b-41d4-a716-446655440002",
+                CollectionId = "MyCollection",
+                FaceIds = new List<string> {
+                    "f5817d37-94f6-4335-bfee-6cf79a3d806e",
+                    "851cb847-dccc-4fea-9309-9f4805967855",
+                    "35ebbb41-7f67-4263-908d-dd0ecba05ab9"
+                },
+                UserId = "DemoUser",
+                UserMatchThreshold = 70
+            });
+
+            List<AssociatedFace> associatedFaces = response.AssociatedFaces;
+            List<UnsuccessfulFaceAssociation> unsuccessfulFaceAssociations = response.UnsuccessfulFaceAssociations;
+            string userStatus = response.UserStatus;
+
+            #endregion
+        }
+
         public void RekognitionCompareFaces()
         {
             #region to-compare-two-images-1482181985581
@@ -77,6 +102,21 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionCreateUser()
+        {
+            #region createuser-1686181562299
+
+            var client = new AmazonRekognitionClient();
+            var response = client.CreateUser(new CreateUserRequest 
+            {
+                CollectionId = "MyCollection",
+                UserId = "DemoUser"
+            });
+
+
+            #endregion
+        }
+
         public void RekognitionDeleteCollection()
         {
             #region to-delete-a-collection-1481838179973
@@ -126,6 +166,22 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionDeleteUser()
+        {
+            #region deleteuser-1686181913475
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DeleteUser(new DeleteUserRequest 
+            {
+                ClientRequestToken = "550e8400-e29b-41d4-a716-446655440001",
+                CollectionId = "MyCollection",
+                UserId = "DemoUser"
+            });
+
+
+            #endregion
+        }
+
         public void RekognitionDetectFaces()
         {
             #region to-detect-faces-in-an-image-1481841782793
@@ -161,6 +217,29 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<Label> labels = response.Labels;
+
+            #endregion
+        }
+
+        public void RekognitionDisassociateFaces()
+        {
+            #region disassociatefaces-1686182627295
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DisassociateFaces(new DisassociateFacesRequest 
+            {
+                ClientRequestToken = "550e8400-e29b-41d4-a716-446655440003",
+                CollectionId = "MyCollection",
+                FaceIds = new List<string> {
+                    "f5817d37-94f6-4335-bfee-6cf79a3d806e",
+                    "c92265d4-5f9c-43af-a58e-12be0ce02bc3"
+                },
+                UserId = "DemoUser"
+            });
+
+            List<DisassociatedFace> disassociatedFaces = response.DisassociatedFaces;
+            List<UnsuccessfulFaceDisassociation> unsuccessfulFaceDisassociations = response.UnsuccessfulFaceDisassociations;
+            string userStatus = response.UserStatus;
 
             #endregion
         }
@@ -214,6 +293,7 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
                 MaxResults = 20
             });
 
+            string faceModelVersion = response.FaceModelVersion;
             List<Face> faces = response.Faces;
 
             #endregion
@@ -233,6 +313,22 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
             string nextToken = response.NextToken;
             List<ProjectPolicy> projectPolicies = response.ProjectPolicies;
+
+            #endregion
+        }
+
+        public void RekognitionListUsers()
+        {
+            #region listusers-1686182360075
+
+            var client = new AmazonRekognitionClient();
+            var response = client.ListUsers(new ListUsersRequest 
+            {
+                CollectionId = "MyCollection"
+            });
+
+            string nextToken = response.NextToken;
+            List<User> users = response.Users;
 
             #endregion
         }
@@ -293,6 +389,51 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             List<FaceMatch> faceMatches = response.FaceMatches;
             BoundingBox searchedFaceBoundingBox = response.SearchedFaceBoundingBox;
             float searchedFaceConfidence = response.SearchedFaceConfidence;
+
+            #endregion
+        }
+
+        public void RekognitionSearchUsers()
+        {
+            #region searchusers-1686182912030
+
+            var client = new AmazonRekognitionClient();
+            var response = client.SearchUsers(new SearchUsersRequest 
+            {
+                CollectionId = "MyCollection",
+                MaxUsers = 2,
+                UserId = "DemoUser",
+                UserMatchThreshold = 70
+            });
+
+            string faceModelVersion = response.FaceModelVersion;
+            SearchedUser searchedUser = response.SearchedUser;
+            List<UserMatch> userMatches = response.UserMatches;
+
+            #endregion
+        }
+
+        public void RekognitionSearchUsersByImage()
+        {
+            #region searchusersbyimage-1686183178610
+
+            var client = new AmazonRekognitionClient();
+            var response = client.SearchUsersByImage(new SearchUsersByImageRequest 
+            {
+                CollectionId = "MyCollection",
+                Image = new Image { S3Object = new S3Object {
+                    Bucket = "bucket",
+                    Name = "input.jpg"
+                } },
+                MaxUsers = 2,
+                QualityFilter = "MEDIUM",
+                UserMatchThreshold = 70
+            });
+
+            string faceModelVersion = response.FaceModelVersion;
+            SearchedFaceDetails searchedFace = response.SearchedFace;
+            List<UnsearchedFace> unsearchedFaces = response.UnsearchedFaces;
+            List<UserMatch> userMatches = response.UserMatches;
 
             #endregion
         }

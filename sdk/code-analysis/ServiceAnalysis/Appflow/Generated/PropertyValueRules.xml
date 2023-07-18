@@ -272,6 +272,26 @@
     <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.ApiVersion</property>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.ConnectorEntityName</property>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.ConnectorProfileName</property>
+    <max>256</max>
+    <pattern>[\w/!@#+=.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.EntitiesPath</property>
+    <max>256</max>
+    <pattern>[\s\w/!@#+=,.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.StartFlowRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>

@@ -32,16 +32,26 @@ namespace Amazon.PersonalizeEvents
     public partial class AmazonPersonalizeEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.124");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.134");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Personalize Events";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPersonalizeEventsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeEventsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Personalize Events";
             this.AuthenticationServiceName = "personalize";
             this.EndpointProvider = new AmazonPersonalizeEventsEndpointProvider();
         }

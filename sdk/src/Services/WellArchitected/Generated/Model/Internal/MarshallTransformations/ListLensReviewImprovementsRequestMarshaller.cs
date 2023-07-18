@@ -76,6 +76,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPillarId())
                 request.Parameters.Add("PillarId", StringUtils.FromString(publicRequest.PillarId));
+            
+            if (publicRequest.IsSetQuestionPriority())
+                request.Parameters.Add("QuestionPriority", StringUtils.FromString(publicRequest.QuestionPriority));
             request.ResourcePath = "/workloads/{WorkloadId}/lensReviews/{LensAlias}/improvements";
             request.UseQueryString = true;
 

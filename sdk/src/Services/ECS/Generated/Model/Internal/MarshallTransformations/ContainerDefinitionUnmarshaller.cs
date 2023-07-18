@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("credentialSpecs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CredentialSpecs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dependsOn", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ContainerDependency, ContainerDependencyUnmarshaller>(ContainerDependencyUnmarshaller.Instance);

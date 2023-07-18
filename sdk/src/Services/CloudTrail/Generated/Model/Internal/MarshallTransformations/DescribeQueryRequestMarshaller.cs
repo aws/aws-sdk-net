@@ -73,6 +73,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EventDataStore);
                 }
 
+                if(publicRequest.IsSetQueryAlias())
+                {
+                    context.Writer.WritePropertyName("QueryAlias");
+                    context.Writer.Write(publicRequest.QueryAlias);
+                }
+
                 if(publicRequest.IsSetQueryId())
                 {
                     context.Writer.WritePropertyName("QueryId");

@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChangeLogs operation.
-    /// Returns a list of changelogs from Audit Manager.
+    /// Gets a list of changelogs from Audit Manager.
     /// </summary>
     public partial class GetChangeLogsRequest : AmazonAuditManagerRequest
     {

@@ -33,7 +33,7 @@ namespace Amazon.Runtime
 {
     public abstract class AmazonServiceClient : IDisposable
     {
-        private static volatile bool _isProtocolUpdate;
+        private static volatile bool _isProtocolUpdated;
         private readonly object _lock = new object();
 
         private bool _disposed;

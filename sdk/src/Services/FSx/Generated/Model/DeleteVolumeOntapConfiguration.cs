@@ -29,12 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Use to specify skipping a final backup, or to add tags to a final backup.
+    /// Use to specify skipping a final backup, adding tags to a final backup, or bypassing
+    /// the retention period of an FSx for ONTAP SnapLock Enterprise volume when deleting
+    /// an FSx for ONTAP volume.
     /// </summary>
     public partial class DeleteVolumeOntapConfiguration
     {
+        private bool? _bypassSnaplockEnterpriseRetention;
         private List<Tag> _finalBackupTags = new List<Tag>();
         private bool? _skipFinalBackup;
+
+        /// <summary>
+        /// Gets and sets the property BypassSnaplockEnterpriseRetention. 
+        /// <para>
+        /// Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx
+        /// for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files.
+        /// The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required
+        /// to delete SnapLock Enterprise volumes with unexpired WORM files. The default value
+        /// is <code>false</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
+        /// Deleting a SnapLock volume </a>. 
+        /// </para>
+        /// </summary>
+        public bool BypassSnaplockEnterpriseRetention
+        {
+            get { return this._bypassSnaplockEnterpriseRetention.GetValueOrDefault(); }
+            set { this._bypassSnaplockEnterpriseRetention = value; }
+        }
+
+        // Check to see if BypassSnaplockEnterpriseRetention property is set
+        internal bool IsSetBypassSnaplockEnterpriseRetention()
+        {
+            return this._bypassSnaplockEnterpriseRetention.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FinalBackupTags.

@@ -45,6 +45,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AWSManagedRulesATPRuleSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEnableRegexInPath())
+            {
+                context.Writer.WritePropertyName("EnableRegexInPath");
+                context.Writer.Write(requestObject.EnableRegexInPath);
+            }
+
             if(requestObject.IsSetLoginPath())
             {
                 context.Writer.WritePropertyName("LoginPath");

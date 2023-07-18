@@ -138,7 +138,7 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         /// <param name="config">The AmazonCostAndUsageReportClient Configuration Object</param>
         public AmazonCostAndUsageReportClient(AmazonCostAndUsageReportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCostAndUsageReportClient with AWS Credentials

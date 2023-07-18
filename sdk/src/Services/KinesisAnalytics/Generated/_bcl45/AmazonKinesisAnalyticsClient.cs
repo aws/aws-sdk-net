@@ -114,7 +114,7 @@ namespace Amazon.KinesisAnalytics
         /// </summary>
         /// <param name="config">The AmazonKinesisAnalyticsClient Configuration Object</param>
         public AmazonKinesisAnalyticsClient(AmazonKinesisAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonKinesisAnalyticsClient with AWS Credentials

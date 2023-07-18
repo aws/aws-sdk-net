@@ -36,6 +36,7 @@ namespace Amazon.Inspector2.Model
         private Status _ec2;
         private Status _ecr;
         private Status _lambda;
+        private Status _lambdaCode;
 
         /// <summary>
         /// Gets and sets the property Ec2. 
@@ -91,6 +92,25 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetLambda()
         {
             return this._lambda != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaCode. 
+        /// <para>
+        /// The status of Amazon Inspector scanning for custom application code for Amazon Web
+        /// Services Lambda functions. 
+        /// </para>
+        /// </summary>
+        public Status LambdaCode
+        {
+            get { return this._lambdaCode; }
+            set { this._lambdaCode = value; }
+        }
+
+        // Check to see if LambdaCode property is set
+        internal bool IsSetLambdaCode()
+        {
+            return this._lambdaCode != null;
         }
 
     }

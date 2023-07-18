@@ -32,16 +32,26 @@ namespace Amazon.PinpointSMSVoiceV2
     public partial class AmazonPinpointSMSVoiceV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Pinpoint SMS Voice V2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPinpointSMSVoiceV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointSMSVoiceV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Pinpoint SMS Voice V2";
             this.AuthenticationServiceName = "sms-voice";
             this.EndpointProvider = new AmazonPinpointSMSVoiceV2EndpointProvider();
         }

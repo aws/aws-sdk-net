@@ -117,7 +117,7 @@ namespace Amazon.SsmSap
         /// </summary>
         /// <param name="config">The AmazonSsmSapClient Configuration Object</param>
         public AmazonSsmSapClient(AmazonSsmSapConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSsmSapClient with AWS Credentials

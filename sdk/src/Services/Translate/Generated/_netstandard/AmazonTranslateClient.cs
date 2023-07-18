@@ -100,7 +100,7 @@ namespace Amazon.Translate
         /// </summary>
         /// <param name="config">The AmazonTranslateClient Configuration Object</param>
         public AmazonTranslateClient(AmazonTranslateConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

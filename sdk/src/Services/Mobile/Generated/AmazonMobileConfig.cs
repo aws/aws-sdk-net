@@ -32,16 +32,26 @@ namespace Amazon.Mobile
     public partial class AmazonMobileConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Mobile";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMobileConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMobileDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Mobile";
             this.AuthenticationServiceName = "AWSMobileHubService";
             this.EndpointProvider = new AmazonMobileEndpointProvider();
         }

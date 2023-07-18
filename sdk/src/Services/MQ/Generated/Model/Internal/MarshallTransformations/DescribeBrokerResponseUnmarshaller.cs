@@ -111,6 +111,18 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataReplicationMetadata", targetDepth))
+                {
+                    var unmarshaller = DataReplicationMetadataOutputUnmarshaller.Instance;
+                    response.DataReplicationMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dataReplicationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DataReplicationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -163,6 +175,18 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PendingAuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingDataReplicationMetadata", targetDepth))
+                {
+                    var unmarshaller = DataReplicationMetadataOutputUnmarshaller.Instance;
+                    response.PendingDataReplicationMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingDataReplicationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PendingDataReplicationMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pendingEngineVersion", targetDepth))

@@ -82,6 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.DynamoDBTargets = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IcebergTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IcebergTarget, IcebergTargetUnmarshaller>(IcebergTargetUnmarshaller.Instance);
+                    unmarshalledObject.IcebergTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JdbcTargets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<JdbcTarget, JdbcTargetUnmarshaller>(JdbcTargetUnmarshaller.Instance);

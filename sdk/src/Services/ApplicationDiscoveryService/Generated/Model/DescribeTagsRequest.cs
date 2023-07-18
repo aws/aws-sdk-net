@@ -51,8 +51,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Also, all configuration items associated with your user account that have tags can
-    /// be listed if you call <code>DescribeTags</code> as is without passing any parameters.
+    /// Also, all configuration items associated with your user that have tags can be listed
+    /// if you call <code>DescribeTags</code> as is without passing any parameters.
     /// </para>
     /// </summary>
     public partial class DescribeTagsRequest : AmazonApplicationDiscoveryServiceRequest

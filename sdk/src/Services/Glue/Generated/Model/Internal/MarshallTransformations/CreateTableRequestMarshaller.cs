@@ -79,6 +79,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetOpenTableFormatInput())
+                {
+                    context.Writer.WritePropertyName("OpenTableFormatInput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OpenTableFormatInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenTableFormatInput, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPartitionIndexes())
                 {
                     context.Writer.WritePropertyName("PartitionIndexes");

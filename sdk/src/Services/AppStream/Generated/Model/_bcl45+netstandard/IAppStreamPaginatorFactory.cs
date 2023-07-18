@@ -26,6 +26,16 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeAppBlockBuilderAppBlockAssociations operation
+        ///</summary>
+        IDescribeAppBlockBuilderAppBlockAssociationsPaginator DescribeAppBlockBuilderAppBlockAssociations(DescribeAppBlockBuilderAppBlockAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeAppBlockBuilders operation
+        ///</summary>
+        IDescribeAppBlockBuildersPaginator DescribeAppBlockBuilders(DescribeAppBlockBuildersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeImagePermissions operation
         ///</summary>
         IDescribeImagePermissionsPaginator DescribeImagePermissions(DescribeImagePermissionsRequest request);

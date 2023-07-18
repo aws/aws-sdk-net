@@ -65,6 +65,17 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCommitmentConfiguration())
+                {
+                    context.Writer.WritePropertyName("commitmentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CommitmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CommitmentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNetworkResourceArn())
                 {
                     context.Writer.WritePropertyName("networkResourceArn");

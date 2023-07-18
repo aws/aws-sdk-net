@@ -68,6 +68,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Password);
             }
 
+            if(requestObject.IsSetReplicationUser())
+            {
+                context.Writer.WritePropertyName("replicationUser");
+                context.Writer.Write(requestObject.ReplicationUser);
+            }
+
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("username");

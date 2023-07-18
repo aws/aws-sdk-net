@@ -197,8 +197,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InferenceContainerDefinitions. 
         /// <para>
         /// The mapping of all supported processing unit (CPU, GPU, etc...) to inference container
-        /// definitions for the candidate. This field is populated for the V2 API only (for example,
-        /// for jobs created by calling <code>CreateAutoMLJobV2</code>).
+        /// definitions for the candidate. This field is populated for the AutoML jobs V2 (for
+        /// example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image
+        /// or text classification problem types only.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]

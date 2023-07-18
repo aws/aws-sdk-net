@@ -103,7 +103,7 @@ namespace Amazon.Tnb
         /// </summary>
         /// <param name="config">The AmazonTnbClient Configuration Object</param>
         public AmazonTnbClient(AmazonTnbConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

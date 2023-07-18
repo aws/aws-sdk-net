@@ -32,16 +32,26 @@ namespace Amazon.Tnb
     public partial class AmazonTnbConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.54");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.64");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "tnb";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTnbConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTnbDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "tnb";
             this.AuthenticationServiceName = "tnb";
             this.EndpointProvider = new AmazonTnbEndpointProvider();
         }

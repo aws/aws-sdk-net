@@ -57,6 +57,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.DeletedFaces = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UnsuccessfulFaceDeletions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UnsuccessfulFaceDeletion, UnsuccessfulFaceDeletionUnmarshaller>(UnsuccessfulFaceDeletionUnmarshaller.Instance);
+                    response.UnsuccessfulFaceDeletions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

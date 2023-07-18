@@ -32,16 +32,26 @@ namespace Amazon.ConnectParticipant
     public partial class AmazonConnectParticipantConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.81");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.91");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ConnectParticipant";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectParticipantConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectParticipantDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ConnectParticipant";
             this.AuthenticationServiceName = "execute-api";
             this.EndpointProvider = new AmazonConnectParticipantEndpointProvider();
         }

@@ -122,7 +122,7 @@ namespace Amazon.Shield
         /// </summary>
         /// <param name="config">The AmazonShieldClient Configuration Object</param>
         public AmazonShieldClient(AmazonShieldConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonShieldClient with AWS Credentials

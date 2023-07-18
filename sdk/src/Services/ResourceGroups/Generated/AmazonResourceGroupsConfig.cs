@@ -32,16 +32,26 @@ namespace Amazon.ResourceGroups
     public partial class AmazonResourceGroupsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.89");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.99");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Resource Groups";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonResourceGroupsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceGroupsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Resource Groups";
             this.AuthenticationServiceName = "resource-groups";
             this.EndpointProvider = new AmazonResourceGroupsEndpointProvider();
         }

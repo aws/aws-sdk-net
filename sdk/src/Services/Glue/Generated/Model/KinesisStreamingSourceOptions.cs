@@ -51,6 +51,7 @@ namespace Amazon.Glue.Model
         private string _roleArn;
         private string _roleSessionName;
         private StartingPosition _startingPosition;
+        private DateTime? _startingTimestamp;
         private string _streamArn;
         private string _streamName;
 
@@ -394,8 +395,15 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property StartingPosition. 
         /// <para>
         /// The starting position in the Kinesis data stream to read data from. The possible values
-        /// are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>.
+        /// are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or
+        /// a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code>
+        /// (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00").
         /// The default value is <code>"latest"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Using a value that is a timestamp string in UTC format for "startingPosition"
+        /// is supported only for Glue version 4.0 or later.
         /// </para>
         /// </summary>
         public StartingPosition StartingPosition
@@ -408,6 +416,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetStartingPosition()
         {
             return this._startingPosition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingTimestamp. 
+        /// <para>
+        /// The timestamp of the record in the Kinesis data stream to start reading data from.
+        /// The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code>
+        /// (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime StartingTimestamp
+        {
+            get { return this._startingTimestamp.GetValueOrDefault(); }
+            set { this._startingTimestamp = value; }
+        }
+
+        // Check to see if StartingTimestamp property is set
+        internal bool IsSetStartingTimestamp()
+        {
+            return this._startingTimestamp.HasValue; 
         }
 
         /// <summary>

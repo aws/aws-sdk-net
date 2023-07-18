@@ -32,16 +32,26 @@ namespace Amazon.SQS
     public partial class AmazonSQSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.11");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SQS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSQSConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSQSDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SQS";
             this.AuthenticationServiceName = "sqs";
             this.EndpointProvider = new AmazonSQSEndpointProvider();
         }

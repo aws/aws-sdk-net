@@ -32,16 +32,26 @@ namespace Amazon.IoTFleetHub
     public partial class AmazonIoTFleetHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoTFleetHub";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTFleetHubConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTFleetHubDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoTFleetHub";
             this.AuthenticationServiceName = "iotfleethub";
             this.EndpointProvider = new AmazonIoTFleetHubEndpointProvider();
         }

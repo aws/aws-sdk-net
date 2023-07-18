@@ -60,6 +60,14 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Paginator for ListDeployments operation
+        ///</summary>
+        public IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request) 
+        {
+            return new ListDeploymentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironmentAccountConnections operation
         ///</summary>
         public IListEnvironmentAccountConnectionsPaginator ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request) 

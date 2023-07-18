@@ -100,7 +100,7 @@ namespace Amazon.Ep2s3hostlabel
         /// </summary>
         /// <param name="config">The AmazonEp2s3hostlabelClient Configuration Object</param>
         public AmazonEp2s3hostlabelClient(AmazonEp2s3hostlabelConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

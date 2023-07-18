@@ -166,7 +166,7 @@ namespace Amazon.GameLift
         /// </summary>
         /// <param name="config">The AmazonGameLiftClient Configuration Object</param>
         public AmazonGameLiftClient(AmazonGameLiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Amazon.GameLift
         /// To claim a game server, identify a game server group. You can also specify a game
         /// server ID, although this approach bypasses Amazon GameLift FleetIQ placement optimization.
         /// Optionally, include game data to pass to the game server at the start of a game session,
-        /// such as a game map or player information. Filter options may be included to further
-        /// restrict how a game server is chosen, such as only allowing game servers on <code>ACTIVE</code>
+        /// such as a game map or player information. Add filter options to further restrict how
+        /// a game server is chosen, such as only allowing game servers on <code>ACTIVE</code>
         /// instances to be claimed.
         /// </para>
         ///  
@@ -483,8 +483,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the game server is running on an instance in <code>DRAINING</code> status and provided
-        /// filter option does not allow placing on <code>DRAINING</code> instances.
+        /// If the game server is running on an instance in <code>DRAINING</code> status and the
+        /// provided filter option does not allow placing on <code>DRAINING</code> instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>

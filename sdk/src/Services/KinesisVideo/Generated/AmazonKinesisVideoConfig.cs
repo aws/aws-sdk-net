@@ -32,16 +32,26 @@ namespace Amazon.KinesisVideo
     public partial class AmazonKinesisVideoConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.103");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kinesis Video";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kinesis Video";
             this.AuthenticationServiceName = "kinesisvideo";
             this.EndpointProvider = new AmazonKinesisVideoEndpointProvider();
         }

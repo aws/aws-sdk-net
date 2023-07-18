@@ -100,7 +100,7 @@ namespace Amazon.GameSparks
         /// </summary>
         /// <param name="config">The AmazonGameSparksClient Configuration Object</param>
         public AmazonGameSparksClient(AmazonGameSparksConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

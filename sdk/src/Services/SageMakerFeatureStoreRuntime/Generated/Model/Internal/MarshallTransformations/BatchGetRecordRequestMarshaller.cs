@@ -65,6 +65,12 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExpirationTimeResponse())
+                {
+                    context.Writer.WritePropertyName("ExpirationTimeResponse");
+                    context.Writer.Write(publicRequest.ExpirationTimeResponse);
+                }
+
                 if(publicRequest.IsSetIdentifiers())
                 {
                     context.Writer.WritePropertyName("Identifiers");

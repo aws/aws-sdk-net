@@ -185,6 +185,12 @@
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.Ec2RecommendationsExportPreferences.PreferredRegion</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>[a-z]{2}-[a-z\-]+-[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.ExportFilter.Condition</property>
     <max>200</max>
     <pattern>\S+</pattern>
@@ -255,5 +261,14 @@
     <property>Amazon.ApplicationDiscoveryService.Model.TagFilter.Name</property>
     <max>1000</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.UsageMetricBasis.Name</property>
+    <pattern>^(p(\d{1,2}|100)|AVG|SPEC|MAX)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.UsageMetricBasis.PercentageAdjust</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
 </property-value-rules>

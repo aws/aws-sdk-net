@@ -32,16 +32,26 @@ namespace Amazon.VPCLattice
     public partial class AmazonVPCLatticeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.41");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.51");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "VPC Lattice";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonVPCLatticeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonVPCLatticeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "VPC Lattice";
             this.AuthenticationServiceName = "vpc-lattice";
             this.EndpointProvider = new AmazonVPCLatticeEndpointProvider();
         }

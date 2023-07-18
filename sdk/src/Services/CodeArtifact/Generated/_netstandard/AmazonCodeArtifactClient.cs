@@ -393,7 +393,7 @@ namespace Amazon.CodeArtifact
         /// </summary>
         /// <param name="config">The AmazonCodeArtifactClient Configuration Object</param>
         public AmazonCodeArtifactClient(AmazonCodeArtifactConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

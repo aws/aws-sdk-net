@@ -147,7 +147,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property RxNormConcepts. 
         /// <para>
-        ///  The RxNorm concepts that the entity could refer to, along with a score indicating
+        /// The RxNorm concepts that the entity could refer to, along with a score indicating
         /// the likelihood of the match.
         /// </para>
         /// </summary>
@@ -204,7 +204,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Traits. 
         /// <para>
-        ///  Contextual information for the entity.
+        /// Contextual information for the entity.
         /// </para>
         /// </summary>
         public List<RxNormTrait> Traits

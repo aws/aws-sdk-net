@@ -31,7 +31,8 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes
     /// (64 KB) of the response JSON. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code>. 
+    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
+    /// 
     /// 
     ///  <note> 
     /// <para>
@@ -49,8 +50,9 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property FailureValues. 
         /// <para>
         /// Values for the specified identifier in the response JSON that indicate a failed login
-        /// attempt. To be counted as a failed login, the value must be an exact match, including
-        /// case. Each value must be unique among the success and failure values. 
+        /// or account creation attempt. To be counted as a failure, the value must be an exact
+        /// match, including case. Each value must be unique among the success and failure values.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -78,7 +80,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"Identifier": [ "/login/success" ]</code> 
+        /// JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier":
+        /// [ "/sign-up/success" ]</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -98,8 +101,9 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property SuccessValues. 
         /// <para>
         /// Values for the specified identifier in the response JSON that indicate a successful
-        /// login attempt. To be counted as a successful login, the value must be an exact match,
-        /// including case. Each value must be unique among the success and failure values. 
+        /// login or account creation attempt. To be counted as a success, the value must be an
+        /// exact match, including case. Each value must be unique among the success and failure
+        /// values. 
         /// </para>
         ///  
         /// <para>

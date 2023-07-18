@@ -31,10 +31,10 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     /// <summary>
     /// Container for the parameters to the DeleteRecord operation.
     /// Deletes a <code>Record</code> from a <code>FeatureGroup</code> in the <code>OnlineStore</code>.
-    /// Feature Store supports both <code>SOFT_DELETE</code> and <code>HARD_DELETE</code>.
-    /// For <code>SOFT_DELETE</code> (default), feature columns are set to <code>null</code>
-    /// and the record is no longer retrievable by <code>GetRecord</code> or <code>BatchGetRecord</code>.
-    /// For<code> HARD_DELETE</code>, the complete <code>Record</code> is removed from the
+    /// Feature Store supports both <code>SoftDelete</code> and <code>HardDelete</code>. For
+    /// <code>SoftDelete</code> (default), feature columns are set to <code>null</code> and
+    /// the record is no longer retrievable by <code>GetRecord</code> or <code>BatchGetRecord</code>.
+    /// For <code>HardDelete</code>, the complete <code>Record</code> is removed from the
     /// <code>OnlineStore</code>. In both cases, Feature Store appends the deleted record
     /// marker to the <code>OfflineStore</code> with feature values set to <code>null</code>,
     /// <code>is_deleted</code> value set to <code>True</code>, and <code>EventTime</code>
@@ -48,12 +48,12 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For <code>SOFT_DELETE</code>, the existing (undeleted) record remains in the <code>OnlineStore</code>,
+    /// For <code>SoftDelete</code>, the existing (undeleted) record remains in the <code>OnlineStore</code>,
     /// though the delete record marker is still written to the <code>OfflineStore</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>HARD_DELETE</code> returns <code>EventTime</code>: <code>400 ValidationException</code>
+    ///  <code>HardDelete</code> returns <code>EventTime</code>: <code>400 ValidationException</code>
     /// to indicate that the delete operation failed. No delete record marker is written to
     /// the <code>OfflineStore</code>.
     /// </para>

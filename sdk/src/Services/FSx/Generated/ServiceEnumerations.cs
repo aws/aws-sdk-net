@@ -219,6 +219,72 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type AutocommitPeriodType.
+    /// </summary>
+    public class AutocommitPeriodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for AutocommitPeriodType
+        /// </summary>
+        public static readonly AutocommitPeriodType DAYS = new AutocommitPeriodType("DAYS");
+        /// <summary>
+        /// Constant HOURS for AutocommitPeriodType
+        /// </summary>
+        public static readonly AutocommitPeriodType HOURS = new AutocommitPeriodType("HOURS");
+        /// <summary>
+        /// Constant MINUTES for AutocommitPeriodType
+        /// </summary>
+        public static readonly AutocommitPeriodType MINUTES = new AutocommitPeriodType("MINUTES");
+        /// <summary>
+        /// Constant MONTHS for AutocommitPeriodType
+        /// </summary>
+        public static readonly AutocommitPeriodType MONTHS = new AutocommitPeriodType("MONTHS");
+        /// <summary>
+        /// Constant NONE for AutocommitPeriodType
+        /// </summary>
+        public static readonly AutocommitPeriodType NONE = new AutocommitPeriodType("NONE");
+        /// <summary>
+        /// Constant YEARS for AutocommitPeriodType
+        /// </summary>
+        public static readonly AutocommitPeriodType YEARS = new AutocommitPeriodType("YEARS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutocommitPeriodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutocommitPeriodType FindValue(string value)
+        {
+            return FindValue<AutocommitPeriodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutocommitPeriodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoImportPolicyType.
     /// </summary>
     public class AutoImportPolicyType : ConstantClass
@@ -1921,6 +1987,60 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type PrivilegedDelete.
+    /// </summary>
+    public class PrivilegedDelete : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for PrivilegedDelete
+        /// </summary>
+        public static readonly PrivilegedDelete DISABLED = new PrivilegedDelete("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for PrivilegedDelete
+        /// </summary>
+        public static readonly PrivilegedDelete ENABLED = new PrivilegedDelete("ENABLED");
+        /// <summary>
+        /// Constant PERMANENTLY_DISABLED for PrivilegedDelete
+        /// </summary>
+        public static readonly PrivilegedDelete PERMANENTLY_DISABLED = new PrivilegedDelete("PERMANENTLY_DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrivilegedDelete(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivilegedDelete FindValue(string value)
+        {
+            return FindValue<PrivilegedDelete>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivilegedDelete(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportFormat.
     /// </summary>
     public class ReportFormat : ConstantClass
@@ -2113,6 +2233,80 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type RetentionPeriodType.
+    /// </summary>
+    public class RetentionPeriodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType DAYS = new RetentionPeriodType("DAYS");
+        /// <summary>
+        /// Constant HOURS for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType HOURS = new RetentionPeriodType("HOURS");
+        /// <summary>
+        /// Constant INFINITE for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType INFINITE = new RetentionPeriodType("INFINITE");
+        /// <summary>
+        /// Constant MINUTES for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType MINUTES = new RetentionPeriodType("MINUTES");
+        /// <summary>
+        /// Constant MONTHS for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType MONTHS = new RetentionPeriodType("MONTHS");
+        /// <summary>
+        /// Constant SECONDS for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType SECONDS = new RetentionPeriodType("SECONDS");
+        /// <summary>
+        /// Constant UNSPECIFIED for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType UNSPECIFIED = new RetentionPeriodType("UNSPECIFIED");
+        /// <summary>
+        /// Constant YEARS for RetentionPeriodType
+        /// </summary>
+        public static readonly RetentionPeriodType YEARS = new RetentionPeriodType("YEARS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetentionPeriodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetentionPeriodType FindValue(string value)
+        {
+            return FindValue<RetentionPeriodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetentionPeriodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SecurityStyle.
     /// </summary>
     public class SecurityStyle : ConstantClass
@@ -2242,6 +2436,56 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceLimit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnaplockType.
+    /// </summary>
+    public class SnaplockType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANCE for SnaplockType
+        /// </summary>
+        public static readonly SnaplockType COMPLIANCE = new SnaplockType("COMPLIANCE");
+        /// <summary>
+        /// Constant ENTERPRISE for SnaplockType
+        /// </summary>
+        public static readonly SnaplockType ENTERPRISE = new SnaplockType("ENTERPRISE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnaplockType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnaplockType FindValue(string value)
+        {
+            return FindValue<SnaplockType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnaplockType(string value)
         {
             return FindValue(value);
         }

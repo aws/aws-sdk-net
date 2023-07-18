@@ -120,8 +120,7 @@ namespace Amazon.WorkSpacesWeb
         /// </summary>
         /// <param name="config">The AmazonWorkSpacesWebClient Configuration Object</param>
         public AmazonWorkSpacesWebClient(AmazonWorkSpacesWebConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonWorkSpacesWebClient with AWS Credentials
         /// </summary>

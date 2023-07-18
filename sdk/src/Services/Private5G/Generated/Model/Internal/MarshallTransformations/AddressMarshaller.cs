@@ -63,6 +63,12 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Country);
             }
 
+            if(requestObject.IsSetEmailAddress())
+            {
+                context.Writer.WritePropertyName("emailAddress");
+                context.Writer.Write(requestObject.EmailAddress);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

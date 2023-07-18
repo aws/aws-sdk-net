@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Information about agents or connectors that were instructed to start collecting data.
-    /// Information includes the agent/connector ID, a description of the operation, and whether
-    /// the agent/connector configuration was updated.
+    /// Information about agents that were instructed to start collecting data. Information
+    /// includes the agent ID, a description of the operation, and whether the agent configuration
+    /// was updated.
     /// </summary>
     public partial class AgentConfigurationStatus
     {
@@ -42,7 +42,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// The agent/connector ID.
+        /// The agent ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -81,8 +81,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property OperationSucceeded. 
         /// <para>
         /// Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-        /// operations. The system has recorded the data collection operation. The agent/connector
-        /// receives this command the next time it polls for a new command. 
+        /// operations. The system has recorded the data collection operation. The agent receives
+        /// this command the next time it polls for a new command. 
         /// </para>
         /// </summary>
         public bool OperationSucceeded

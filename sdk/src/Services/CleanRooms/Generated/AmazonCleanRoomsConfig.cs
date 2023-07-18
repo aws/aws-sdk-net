@@ -32,16 +32,26 @@ namespace Amazon.CleanRooms
     public partial class AmazonCleanRoomsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.47");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CleanRooms";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCleanRoomsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCleanRoomsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CleanRooms";
             this.AuthenticationServiceName = "cleanrooms";
             this.EndpointProvider = new AmazonCleanRoomsEndpointProvider();
         }

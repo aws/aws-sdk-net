@@ -128,8 +128,7 @@ namespace Amazon.OpenSearchService
         /// </summary>
         /// <param name="config">The AmazonOpenSearchServiceClient Configuration Object</param>
         public AmazonOpenSearchServiceClient(AmazonOpenSearchServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonOpenSearchServiceClient with AWS Credentials
         /// </summary>

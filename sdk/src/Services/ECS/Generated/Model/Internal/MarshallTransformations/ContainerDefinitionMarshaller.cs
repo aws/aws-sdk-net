@@ -62,6 +62,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Cpu);
             }
 
+            if(requestObject.IsSetCredentialSpecs())
+            {
+                context.Writer.WritePropertyName("credentialSpecs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCredentialSpecsListValue in requestObject.CredentialSpecs)
+                {
+                        context.Writer.Write(requestObjectCredentialSpecsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDependsOn())
             {
                 context.Writer.WritePropertyName("dependsOn");

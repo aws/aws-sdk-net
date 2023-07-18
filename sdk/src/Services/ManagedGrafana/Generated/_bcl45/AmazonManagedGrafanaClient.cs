@@ -127,7 +127,7 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         /// <param name="config">The AmazonManagedGrafanaClient Configuration Object</param>
         public AmazonManagedGrafanaClient(AmazonManagedGrafanaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonManagedGrafanaClient with AWS Credentials

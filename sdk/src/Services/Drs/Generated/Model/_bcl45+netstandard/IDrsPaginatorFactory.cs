@@ -56,6 +56,11 @@ namespace Amazon.Drs.Model
         IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSourceNetworks operation
+        ///</summary>
+        IDescribeSourceNetworksPaginator DescribeSourceNetworks(DescribeSourceNetworksRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSourceServers operation
         ///</summary>
         IDescribeSourceServersPaginator DescribeSourceServers(DescribeSourceServersRequest request);

@@ -118,7 +118,7 @@ namespace Amazon.SimSpaceWeaver
         /// </summary>
         /// <param name="config">The AmazonSimSpaceWeaverClient Configuration Object</param>
         public AmazonSimSpaceWeaverClient(AmazonSimSpaceWeaverConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

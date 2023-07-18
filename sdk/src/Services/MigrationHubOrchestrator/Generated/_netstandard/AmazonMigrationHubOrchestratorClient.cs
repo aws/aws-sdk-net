@@ -104,7 +104,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// </summary>
         /// <param name="config">The AmazonMigrationHubOrchestratorClient Configuration Object</param>
         public AmazonMigrationHubOrchestratorClient(AmazonMigrationHubOrchestratorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

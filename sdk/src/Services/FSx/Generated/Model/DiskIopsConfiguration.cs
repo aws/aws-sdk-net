@@ -30,10 +30,10 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The SSD IOPS (input/output operations per second) configuration for an Amazon FSx
-    /// for NetApp ONTAP or Amazon FSx for OpenZFS file system. The default is 3 IOPS per
-    /// GB of storage capacity, but you can provision additional IOPS per GB of storage. The
-    /// configuration consists of the total number of provisioned SSD IOPS and how the amount
-    /// was provisioned (by the customer or by the system).
+    /// for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically
+    /// provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per
+    /// GB of storage. The configuration consists of the total number of provisioned SSD IOPS
+    /// and how it is was provisioned, or the mode (by the customer or by Amazon FSx).
     /// </summary>
     public partial class DiskIopsConfiguration
     {
@@ -62,8 +62,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Specifies whether the number of IOPS for the file system is using the system default
-        /// (<code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+        /// Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD
+        /// IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code>
+        /// value.
         /// </para>
         /// </summary>
         public DiskIopsConfigurationMode Mode

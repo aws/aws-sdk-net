@@ -116,8 +116,7 @@ namespace Amazon.MediaStore
         /// </summary>
         /// <param name="config">The AmazonMediaStoreClient Configuration Object</param>
         public AmazonMediaStoreClient(AmazonMediaStoreConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMediaStoreClient with AWS Credentials
         /// </summary>

@@ -170,7 +170,7 @@ namespace Amazon.Cloud9
         /// </summary>
         /// <param name="config">The AmazonCloud9Client Configuration Object</param>
         public AmazonCloud9Client(AmazonCloud9Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

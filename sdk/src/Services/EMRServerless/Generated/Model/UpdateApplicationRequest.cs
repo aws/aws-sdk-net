@@ -44,6 +44,7 @@ namespace Amazon.EMRServerless.Model
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = new Dictionary<string, InitialCapacityConfig>();
         private MaximumAllowedResources _maximumCapacity;
         private NetworkConfiguration _networkConfiguration;
+        private string _releaseLabel;
         private Dictionary<string, WorkerTypeSpecificationInput> _workerTypeSpecifications = new Dictionary<string, WorkerTypeSpecificationInput>();
 
         /// <summary>
@@ -211,6 +212,26 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReleaseLabel. 
+        /// <para>
+        /// The Amazon EMR release label for the application. You can change the release label
+        /// to use a different release of Amazon EMR.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ReleaseLabel
+        {
+            get { return this._releaseLabel; }
+            set { this._releaseLabel = value; }
+        }
+
+        // Check to see if ReleaseLabel property is set
+        internal bool IsSetReleaseLabel()
+        {
+            return this._releaseLabel != null;
         }
 
         /// <summary>

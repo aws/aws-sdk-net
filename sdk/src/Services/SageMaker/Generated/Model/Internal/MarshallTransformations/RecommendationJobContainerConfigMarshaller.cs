@@ -86,6 +86,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSupportedEndpointType())
+            {
+                context.Writer.WritePropertyName("SupportedEndpointType");
+                context.Writer.Write(requestObject.SupportedEndpointType);
+            }
+
             if(requestObject.IsSetSupportedInstanceTypes())
             {
                 context.Writer.WritePropertyName("SupportedInstanceTypes");

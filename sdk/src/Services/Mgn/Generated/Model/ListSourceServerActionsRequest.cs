@@ -34,10 +34,30 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ListSourceServerActionsRequest : AmazonMgnRequest
     {
+        private string _accountid;
         private SourceServerActionsRequestFilters _filters;
         private int? _maxResults;
         private string _nextToken;
         private string _sourceServerID;
+
+        /// <summary>
+        /// Gets and sets the property AccountID. 
+        /// <para>
+        /// Account ID to return when listing source server post migration custom actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountID
+        {
+            get { return this._accountid; }
+            set { this._accountid = value; }
+        }
+
+        // Check to see if AccountID property is set
+        internal bool IsSetAccountID()
+        {
+            return this._accountid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 

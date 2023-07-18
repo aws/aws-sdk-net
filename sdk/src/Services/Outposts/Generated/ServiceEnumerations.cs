@@ -85,6 +85,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly AssetState ACTIVE = new AssetState("ACTIVE");
         /// <summary>
+        /// Constant ISOLATED for AssetState
+        /// </summary>
+        public static readonly AssetState ISOLATED = new AssetState("ISOLATED");
+        /// <summary>
         /// Constant RETIRING for AssetState
         /// </summary>
         public static readonly AssetState RETIRING = new AssetState("RETIRING");

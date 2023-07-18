@@ -41,10 +41,10 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        ///  The collection of medical entities extracted from the input text and their associated
+        /// The collection of medical entities extracted from the input text and their associated
         /// information. For each entity, the response provides the entity text, the entity category,
-        /// where the entity text begins and ends, and the level of confidence that Comprehend
-        /// Medical; has in the detection and analysis. Attributes and traits of the entity are
+        /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
+        /// Medical has in the detection and analysis. Attributes and traits of the entity are
         /// also returned.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        ///  If the result of the previous request to <code>DetectEntities</code> was truncated,
+        /// If the result of the previous request to <code>DetectEntities</code> was truncated,
         /// include the <code>PaginationToken</code> to fetch the next page of entities.
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property UnmappedAttributes. 
         /// <para>
-        ///  Attributes extracted from the input text that we were unable to relate to an entity.
+        /// Attributes extracted from the input text that we were unable to relate to an entity.
         /// </para>
         /// </summary>
         public List<UnmappedAttribute> UnmappedAttributes

@@ -101,7 +101,7 @@ namespace Amazon.HealthLake
         /// </summary>
         /// <param name="config">The AmazonHealthLakeClient Configuration Object</param>
         public AmazonHealthLakeClient(AmazonHealthLakeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

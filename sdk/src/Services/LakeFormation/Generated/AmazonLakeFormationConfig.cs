@@ -32,16 +32,26 @@ namespace Amazon.LakeFormation
     public partial class AmazonLakeFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.39");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.49");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "LakeFormation";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLakeFormationConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLakeFormationDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "LakeFormation";
             this.AuthenticationServiceName = "lakeformation";
             this.EndpointProvider = new AmazonLakeFormationEndpointProvider();
         }

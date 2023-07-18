@@ -115,7 +115,7 @@ namespace Amazon.MediaPackageVod
         /// </summary>
         /// <param name="config">The AmazonMediaPackageVodClient Configuration Object</param>
         public AmazonMediaPackageVodClient(AmazonMediaPackageVodConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMediaPackageVodClient with AWS Credentials

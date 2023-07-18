@@ -32,16 +32,26 @@ namespace Amazon.ElasticLoadBalancingV2
     public partial class AmazonElasticLoadBalancingV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Elastic Load Balancing v2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticLoadBalancingV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticLoadBalancingV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Elastic Load Balancing v2";
             this.AuthenticationServiceName = "elasticloadbalancing";
             this.EndpointProvider = new AmazonElasticLoadBalancingV2EndpointProvider();
         }

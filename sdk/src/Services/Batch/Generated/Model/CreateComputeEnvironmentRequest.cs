@@ -114,7 +114,9 @@ namespace Amazon.Batch.Model
     ///  </li> <li> 
     /// <para>
     /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
-    /// to <code>true</code>.
+    /// to <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
+    /// when you update a compute environment. This parameter is ignored when you create a
+    /// compute environment.
     /// </para>
     ///  </li> <li> 
     /// <para>

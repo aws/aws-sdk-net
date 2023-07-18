@@ -64,6 +64,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdMarkupType", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdMarkupType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ManifestWindowSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

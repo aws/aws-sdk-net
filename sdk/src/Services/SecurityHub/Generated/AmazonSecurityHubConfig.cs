@@ -32,16 +32,26 @@ namespace Amazon.SecurityHub
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.108.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.109.9");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SecurityHub";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSecurityHubConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityHubDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SecurityHub";
             this.AuthenticationServiceName = "securityhub";
             this.EndpointProvider = new AmazonSecurityHubEndpointProvider();
         }

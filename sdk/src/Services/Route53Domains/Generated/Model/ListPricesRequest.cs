@@ -98,7 +98,7 @@ namespace Amazon.Route53Domains.Model
         /// Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=1000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

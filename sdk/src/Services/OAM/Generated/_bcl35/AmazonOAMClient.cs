@@ -128,8 +128,7 @@ namespace Amazon.OAM
         /// </summary>
         /// <param name="config">The AmazonOAMClient Configuration Object</param>
         public AmazonOAMClient(AmazonOAMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonOAMClient with AWS Credentials
         /// </summary>

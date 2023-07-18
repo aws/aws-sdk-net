@@ -32,16 +32,26 @@ namespace Amazon.MediaPackageV2
     public partial class AmazonMediaPackageV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.21");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaPackageV2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaPackageV2";
             this.AuthenticationServiceName = "mediapackagev2";
             this.EndpointProvider = new AmazonMediaPackageV2EndpointProvider();
         }

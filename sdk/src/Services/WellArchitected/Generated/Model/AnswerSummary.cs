@@ -39,6 +39,7 @@ namespace Amazon.WellArchitected.Model
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
+        private QuestionType _questionType;
         private AnswerReason _reason;
         private Risk _risk;
         private List<string> _selectedChoices = new List<string>();
@@ -137,6 +138,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetQuestionTitle()
         {
             return this._questionTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuestionType. 
+        /// <para>
+        /// The type of the question.
+        /// </para>
+        /// </summary>
+        public QuestionType QuestionType
+        {
+            get { return this._questionType; }
+            set { this._questionType = value; }
+        }
+
+        // Check to see if QuestionType property is set
+        internal bool IsSetQuestionType()
+        {
+            return this._questionType != null;
         }
 
         /// <summary>

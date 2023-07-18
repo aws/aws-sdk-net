@@ -30,7 +30,28 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags applied to an Amazon Chime SDK meeting resource.
+    /// Lists the tags applied to an Amazon Chime SDK meeting and messaging resources.
+    /// 
+    ///  <important> 
+    /// <para>
+    ///  <b>This API is is no longer supported and will not be updated.</b> We recommend using
+    /// the applicable latest version in the Amazon Chime SDK.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For meetings: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListTagsForResource.html">ListTagsForResource</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For messaging: <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListTagsForResource.html">ListTagsForResource</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Using the latest version requires migrating to a dedicated namespace. For more information,
+    /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating
+    /// from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonChimeRequest
     {

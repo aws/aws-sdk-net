@@ -155,8 +155,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         /// <param name="config">The AmazonElasticLoadBalancingV2Client Configuration Object</param>
         public AmazonElasticLoadBalancingV2Client(AmazonElasticLoadBalancingV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingV2Client with AWS Credentials
         /// </summary>

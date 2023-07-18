@@ -94,6 +94,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Password);
                 }
 
+                if(publicRequest.IsSetReplicationUser())
+                {
+                    context.Writer.WritePropertyName("replicationUser");
+                    context.Writer.Write(publicRequest.ReplicationUser);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

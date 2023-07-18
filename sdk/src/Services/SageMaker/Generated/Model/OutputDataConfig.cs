@@ -33,8 +33,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class OutputDataConfig
     {
+        private OutputCompressionType _compressionType;
         private string _kmsKeyId;
         private string _s3OutputPath;
+
+        /// <summary>
+        /// Gets and sets the property CompressionType. 
+        /// <para>
+        /// The model output compression type. Select <code>None</code> to output an uncompressed
+        /// model, recommended for large model outputs. Defaults to gzip.
+        /// </para>
+        /// </summary>
+        public OutputCompressionType CompressionType
+        {
+            get { return this._compressionType; }
+            set { this._compressionType = value; }
+        }
+
+        // Check to see if CompressionType property is set
+        internal bool IsSetCompressionType()
+        {
+            return this._compressionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 

@@ -31,6 +31,11 @@ namespace Amazon.KinesisVideo.Model
         IDescribeMappedResourceConfigurationPaginator DescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request);
 
         /// <summary>
+        /// Paginator for ListEdgeAgentConfigurations operation
+        ///</summary>
+        IListEdgeAgentConfigurationsPaginator ListEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListSignalingChannels operation
         ///</summary>
         IListSignalingChannelsPaginator ListSignalingChannels(ListSignalingChannelsRequest request);

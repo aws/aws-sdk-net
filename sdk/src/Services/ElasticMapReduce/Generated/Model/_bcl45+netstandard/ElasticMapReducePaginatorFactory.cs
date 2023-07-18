@@ -122,5 +122,13 @@ namespace Amazon.ElasticMapReduce.Model
         {
             return new ListStudioSessionMappingsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSupportedInstanceTypes operation
+        ///</summary>
+        public IListSupportedInstanceTypesPaginator ListSupportedInstanceTypes(ListSupportedInstanceTypesRequest request) 
+        {
+            return new ListSupportedInstanceTypesPaginator(this.client, request);
+        }
     }
 }

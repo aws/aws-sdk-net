@@ -34,7 +34,29 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     /// </summary>
     public partial class BatchGetRecordRequest : AmazonSageMakerFeatureStoreRuntimeRequest
     {
+        private ExpirationTimeResponse _expirationTimeResponse;
         private List<BatchGetRecordIdentifier> _identifiers = new List<BatchGetRecordIdentifier>();
+
+        /// <summary>
+        /// Gets and sets the property ExpirationTimeResponse. 
+        /// <para>
+        /// Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>,
+        /// <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it
+        /// is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return
+        /// null.
+        /// </para>
+        /// </summary>
+        public ExpirationTimeResponse ExpirationTimeResponse
+        {
+            get { return this._expirationTimeResponse; }
+            set { this._expirationTimeResponse = value; }
+        }
+
+        // Check to see if ExpirationTimeResponse property is set
+        internal bool IsSetExpirationTimeResponse()
+        {
+            return this._expirationTimeResponse != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Identifiers. 

@@ -32,16 +32,26 @@ namespace Amazon.AugmentedAIRuntime
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SageMaker A2I Runtime";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAugmentedAIRuntimeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAugmentedAIRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SageMaker A2I Runtime";
             this.AuthenticationServiceName = "sagemaker";
             this.EndpointProvider = new AmazonAugmentedAIRuntimeEndpointProvider();
         }

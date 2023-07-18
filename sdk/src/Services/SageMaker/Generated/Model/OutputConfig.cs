@@ -274,6 +274,12 @@ namespace Amazon.SageMaker.Model
         /// OS, architecture, and accelerator using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
         /// fields. It can be used instead of <code>TargetPlatform</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region,
+        /// and <code>ml_inf2</code> is available only in US East (Ohio) Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetDevice TargetDevice
         {

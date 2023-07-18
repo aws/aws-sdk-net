@@ -108,8 +108,7 @@ namespace Amazon.DLM
         /// </summary>
         /// <param name="config">The AmazonDLMClient Configuration Object</param>
         public AmazonDLMClient(AmazonDLMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDLMClient with AWS Credentials
         /// </summary>

@@ -32,16 +32,26 @@ namespace Amazon.SageMakerFeatureStoreRuntime
     public partial class AmazonSageMakerFeatureStoreRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.40");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SageMaker FeatureStore Runtime";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSageMakerFeatureStoreRuntimeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSageMakerFeatureStoreRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SageMaker FeatureStore Runtime";
             this.AuthenticationServiceName = "sagemaker";
             this.EndpointProvider = new AmazonSageMakerFeatureStoreRuntimeEndpointProvider();
         }

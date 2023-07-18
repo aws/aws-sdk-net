@@ -101,7 +101,7 @@ namespace Amazon.WorkMailMessageFlow
         /// </summary>
         /// <param name="config">The AmazonWorkMailMessageFlowClient Configuration Object</param>
         public AmazonWorkMailMessageFlowClient(AmazonWorkMailMessageFlowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

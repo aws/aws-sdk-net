@@ -30,7 +30,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDataCollectionByAgentIds operation.
-    /// Instructs the specified agents or connectors to start collecting data.
+    /// Instructs the specified agents to start collecting data.
     /// </summary>
     public partial class StartDataCollectionByAgentIdsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -39,13 +39,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The IDs of the agents or connectors from which to start collecting data. If you send
-        /// a request to an agent/connector ID that you do not have permission to contact, according
-        /// to your Amazon Web Services account, the service does not throw an exception. Instead,
-        /// it returns the error in the <i>Description</i> field. If you send a request to multiple
-        /// agents/connectors and you do not have permission to contact some of those agents/connectors,
-        /// the system does not throw an exception. Instead, the system shows <code>Failed</code>
-        /// in the <i>Description</i> field.
+        /// The IDs of the agents from which to start collecting data. If you send a request to
+        /// an agent ID that you do not have permission to contact, according to your Amazon Web
+        /// Services account, the service does not throw an exception. Instead, it returns the
+        /// error in the <i>Description</i> field. If you send a request to multiple agents and
+        /// you do not have permission to contact some of those agents, the system does not throw
+        /// an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
+        /// field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

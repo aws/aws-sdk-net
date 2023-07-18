@@ -32,16 +32,26 @@ namespace Amazon.Rekognition
     public partial class AmazonRekognitionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.107.14");
+            InternalSDKUtils.BuildUserAgentString("3.7.108.9");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Rekognition";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRekognitionConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRekognitionDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Rekognition";
             this.AuthenticationServiceName = "rekognition";
             this.EndpointProvider = new AmazonRekognitionEndpointProvider();
         }

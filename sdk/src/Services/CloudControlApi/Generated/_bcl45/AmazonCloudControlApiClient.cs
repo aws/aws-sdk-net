@@ -116,7 +116,7 @@ namespace Amazon.CloudControlApi
         /// </summary>
         /// <param name="config">The AmazonCloudControlApiClient Configuration Object</param>
         public AmazonCloudControlApiClient(AmazonCloudControlApiConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCloudControlApiClient with AWS Credentials

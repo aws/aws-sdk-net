@@ -124,7 +124,7 @@ namespace Amazon.WAFRegional
         /// </summary>
         /// <param name="config">The AmazonWAFRegionalClient Configuration Object</param>
         public AmazonWAFRegionalClient(AmazonWAFRegionalConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonWAFRegionalClient with AWS Credentials

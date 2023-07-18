@@ -100,7 +100,7 @@ namespace Amazon.PaginatorsTest
         /// </summary>
         /// <param name="config">The AmazonPaginatorsTestClient Configuration Object</param>
         public AmazonPaginatorsTestClient(AmazonPaginatorsTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -1261,6 +1261,10 @@
     <pattern>^.{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.NetAppONTAPCluster.LunCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.NetAppONTAPCluster.NfsExportedVolumes</property>
     <min>0</min>
   </property-value-rule>
@@ -1275,6 +1279,10 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.NetAppONTAPSVM.ClusterUuid</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.NetAppONTAPSVM.LunCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.NetAppONTAPSVM.NfsExportedVolumes</property>
@@ -1319,6 +1327,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.NetAppONTAPVolume.LogicalCapacityUsed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.NetAppONTAPVolume.LunCount</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>

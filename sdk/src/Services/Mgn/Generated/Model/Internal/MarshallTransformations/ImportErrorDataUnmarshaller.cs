@@ -64,6 +64,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accountID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccountID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("applicationID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

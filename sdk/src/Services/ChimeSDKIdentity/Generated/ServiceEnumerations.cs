@@ -421,4 +421,112 @@ namespace Amazon.ChimeSDKIdentity
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type StandardMessages.
+    /// </summary>
+    public class StandardMessages : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for StandardMessages
+        /// </summary>
+        public static readonly StandardMessages ALL = new StandardMessages("ALL");
+        /// <summary>
+        /// Constant AUTO for StandardMessages
+        /// </summary>
+        public static readonly StandardMessages AUTO = new StandardMessages("AUTO");
+        /// <summary>
+        /// Constant MENTIONS for StandardMessages
+        /// </summary>
+        public static readonly StandardMessages MENTIONS = new StandardMessages("MENTIONS");
+        /// <summary>
+        /// Constant NONE for StandardMessages
+        /// </summary>
+        public static readonly StandardMessages NONE = new StandardMessages("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StandardMessages(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandardMessages FindValue(string value)
+        {
+            return FindValue<StandardMessages>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandardMessages(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetedMessages.
+    /// </summary>
+    public class TargetedMessages : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for TargetedMessages
+        /// </summary>
+        public static readonly TargetedMessages ALL = new TargetedMessages("ALL");
+        /// <summary>
+        /// Constant NONE for TargetedMessages
+        /// </summary>
+        public static readonly TargetedMessages NONE = new TargetedMessages("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetedMessages(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetedMessages FindValue(string value)
+        {
+            return FindValue<TargetedMessages>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetedMessages(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

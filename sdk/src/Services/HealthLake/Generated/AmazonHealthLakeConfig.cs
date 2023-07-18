@@ -32,16 +32,26 @@ namespace Amazon.HealthLake
     public partial class AmazonHealthLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "HealthLake";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonHealthLakeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHealthLakeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "HealthLake";
             this.AuthenticationServiceName = "healthlake";
             this.EndpointProvider = new AmazonHealthLakeEndpointProvider();
         }

@@ -112,7 +112,7 @@ namespace Amazon.SSMIncidents
         /// </summary>
         /// <param name="config">The AmazonSSMIncidentsClient Configuration Object</param>
         public AmazonSSMIncidentsClient(AmazonSSMIncidentsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

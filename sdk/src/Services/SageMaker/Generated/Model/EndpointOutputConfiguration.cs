@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _endpointName;
         private int? _initialInstanceCount;
         private ProductionVariantInstanceType _instanceType;
+        private ProductionVariantServerlessConfig _serverlessConfig;
         private string _variantName;
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// The number of instances recommended to launch initially.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Min=1)]
         public int InitialInstanceCount
         {
             get { return this._initialInstanceCount.GetValueOrDefault(); }
@@ -82,7 +83,6 @@ namespace Amazon.SageMaker.Model
         /// The instance type recommended by Amazon SageMaker Inference Recommender.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProductionVariantInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -93,6 +93,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessConfig.
+        /// </summary>
+        public ProductionVariantServerlessConfig ServerlessConfig
+        {
+            get { return this._serverlessConfig; }
+            set { this._serverlessConfig = value; }
+        }
+
+        // Check to see if ServerlessConfig property is set
+        internal bool IsSetServerlessConfig()
+        {
+            return this._serverlessConfig != null;
         }
 
         /// <summary>

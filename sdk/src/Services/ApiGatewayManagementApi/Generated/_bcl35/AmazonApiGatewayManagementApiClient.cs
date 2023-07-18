@@ -101,8 +101,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// </summary>
         /// <param name="config">The AmazonApiGatewayManagementApiClient Configuration Object</param>
         public AmazonApiGatewayManagementApiClient(AmazonApiGatewayManagementApiConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonApiGatewayManagementApiClient with AWS Credentials
         /// </summary>

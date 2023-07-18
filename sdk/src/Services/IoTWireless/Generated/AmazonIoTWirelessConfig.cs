@@ -32,16 +32,26 @@ namespace Amazon.IoTWireless
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.105.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.17");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoT Wireless";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTWirelessConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTWirelessDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoT Wireless";
             this.AuthenticationServiceName = "iotwireless";
             this.EndpointProvider = new AmazonIoTWirelessEndpointProvider();
         }

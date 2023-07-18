@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceFrequency. 
         /// <para>
-        ///  The frequency of evidence collection for the control mapping source. 
+        /// Specifies how often evidence is collected from the control mapping source. 
         /// </para>
         /// </summary>
         public SourceFrequency SourceFrequency

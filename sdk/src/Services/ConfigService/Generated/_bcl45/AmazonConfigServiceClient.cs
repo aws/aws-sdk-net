@@ -138,7 +138,7 @@ namespace Amazon.ConfigService
         /// </summary>
         /// <param name="config">The AmazonConfigServiceClient Configuration Object</param>
         public AmazonConfigServiceClient(AmazonConfigServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonConfigServiceClient with AWS Credentials

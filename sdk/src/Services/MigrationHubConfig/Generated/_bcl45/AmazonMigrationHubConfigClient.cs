@@ -144,7 +144,7 @@ namespace Amazon.MigrationHubConfig
         /// </summary>
         /// <param name="config">The AmazonMigrationHubConfigClient Configuration Object</param>
         public AmazonMigrationHubConfigClient(AmazonMigrationHubConfigConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMigrationHubConfigClient with AWS Credentials

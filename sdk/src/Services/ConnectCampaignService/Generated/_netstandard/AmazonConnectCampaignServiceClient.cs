@@ -100,7 +100,7 @@ namespace Amazon.ConnectCampaignService
         /// </summary>
         /// <param name="config">The AmazonConnectCampaignServiceClient Configuration Object</param>
         public AmazonConnectCampaignServiceClient(AmazonConnectCampaignServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

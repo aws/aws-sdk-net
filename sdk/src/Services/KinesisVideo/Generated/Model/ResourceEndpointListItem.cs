@@ -31,6 +31,11 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code>
     /// API.
+    /// 
+    ///  
+    /// <para>
+    /// The media server endpoint will correspond to the <code>WEBRTC</code> Protocol.
+    /// </para>
     /// </summary>
     public partial class ResourceEndpointListItem
     {

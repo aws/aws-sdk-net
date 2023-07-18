@@ -32,16 +32,26 @@ namespace Amazon.ARCZonalShift
     public partial class AmazonARCZonalShiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.119");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.129");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ARC Zonal Shift";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonARCZonalShiftConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonARCZonalShiftDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ARC Zonal Shift";
             this.AuthenticationServiceName = "arc-zonal-shift";
             this.EndpointProvider = new AmazonARCZonalShiftEndpointProvider();
         }

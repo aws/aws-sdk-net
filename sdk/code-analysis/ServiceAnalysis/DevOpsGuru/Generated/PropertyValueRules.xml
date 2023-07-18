@@ -374,6 +374,18 @@
     <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.KMSServerSideEncryptionIntegration.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.KMSServerSideEncryptionIntegrationConfig.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ListEventsFilters.EventSource</property>
     <min>10</min>
     <max>50</max>

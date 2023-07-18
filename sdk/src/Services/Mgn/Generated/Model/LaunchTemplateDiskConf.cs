@@ -43,7 +43,7 @@ namespace Amazon.Mgn.Model
         /// Launch template disk iops configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=100, Max=64000)]
         public long Iops
         {
             get { return this._iops.GetValueOrDefault(); }
@@ -62,7 +62,7 @@ namespace Amazon.Mgn.Model
         /// Launch template disk throughput configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=125, Max=1000)]
         public long Throughput
         {
             get { return this._throughput.GetValueOrDefault(); }

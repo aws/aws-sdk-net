@@ -32,16 +32,26 @@ namespace Amazon.LocationService
     public partial class AmazonLocationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Location";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLocationServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLocationServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Location";
             this.AuthenticationServiceName = "geo";
             this.EndpointProvider = new AmazonLocationServiceEndpointProvider();
         }

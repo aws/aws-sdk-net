@@ -51,6 +51,9 @@ namespace Amazon.Redshift.Model
         private string _clusterStatus;
         private string _clusterSubnetGroupName;
         private string _clusterVersion;
+        private string _customDomainCertificateArn;
+        private DateTime? _customDomainCertificateExpiryDate;
+        private string _customDomainName;
         private DataTransferProgress _dataTransferProgress;
         private string _dbName;
         private string _defaultIamRoleArn;
@@ -535,6 +538,62 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterVersion()
         {
             return this._clusterVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainCertificateArn. 
+        /// <para>
+        /// The certificate Amazon Resource Name (ARN) for the custom domain name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string CustomDomainCertificateArn
+        {
+            get { return this._customDomainCertificateArn; }
+            set { this._customDomainCertificateArn = value; }
+        }
+
+        // Check to see if CustomDomainCertificateArn property is set
+        internal bool IsSetCustomDomainCertificateArn()
+        {
+            return this._customDomainCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainCertificateExpiryDate. 
+        /// <para>
+        /// The expiration date for the certificate associated with the custom domain name.
+        /// </para>
+        /// </summary>
+        public DateTime CustomDomainCertificateExpiryDate
+        {
+            get { return this._customDomainCertificateExpiryDate.GetValueOrDefault(); }
+            set { this._customDomainCertificateExpiryDate = value; }
+        }
+
+        // Check to see if CustomDomainCertificateExpiryDate property is set
+        internal bool IsSetCustomDomainCertificateExpiryDate()
+        {
+            return this._customDomainCertificateExpiryDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name associated with the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
         }
 
         /// <summary>

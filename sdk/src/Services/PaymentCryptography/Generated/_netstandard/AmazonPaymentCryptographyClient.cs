@@ -130,7 +130,7 @@ namespace Amazon.PaymentCryptography
         /// </summary>
         /// <param name="config">The AmazonPaymentCryptographyClient Configuration Object</param>
         public AmazonPaymentCryptographyClient(AmazonPaymentCryptographyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

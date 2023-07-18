@@ -100,7 +100,7 @@ namespace Amazon.MediaConnect
         /// </summary>
         /// <param name="config">The AmazonMediaConnectClient Configuration Object</param>
         public AmazonMediaConnectClient(AmazonMediaConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -33,10 +33,29 @@ namespace Amazon.ChimeSDKIdentity.Model
     /// </summary>
     public partial class LexConfiguration
     {
+        private InvokedBy _invokedBy;
         private string _lexBotAliasArn;
         private string _localeId;
         private RespondsTo _respondsTo;
         private string _welcomeIntent;
+
+        /// <summary>
+        /// Gets and sets the property InvokedBy. 
+        /// <para>
+        /// Specifies the type of message that triggers a bot.
+        /// </para>
+        /// </summary>
+        public InvokedBy InvokedBy
+        {
+            get { return this._invokedBy; }
+            set { this._invokedBy = value; }
+        }
+
+        // Check to see if InvokedBy property is set
+        internal bool IsSetInvokedBy()
+        {
+            return this._invokedBy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LexBotAliasArn. 
@@ -81,13 +100,16 @@ namespace Amazon.ChimeSDKIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RespondsTo. 
+        /// Gets and sets the property RespondsTo. <important> 
+        /// <para>
+        ///  <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Determines whether the Amazon Lex V2 bot responds to all standard messages. Control
         /// messages are not supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RespondsTo RespondsTo
         {
             get { return this._respondsTo; }

@@ -196,6 +196,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProgramDateTimePeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("progressiveWriteHlsManifest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProgressiveWriteHlsManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

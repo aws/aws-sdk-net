@@ -32,16 +32,26 @@ namespace Amazon.QuickSight
     public partial class AmazonQuickSightConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.110.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.111.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "QuickSight";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonQuickSightConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQuickSightDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "QuickSight";
             this.AuthenticationServiceName = "quicksight";
             this.EndpointProvider = new AmazonQuickSightEndpointProvider();
         }

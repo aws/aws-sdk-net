@@ -172,6 +172,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeReplicationConfigs operation
+        ///</summary>
+        public IDescribeReplicationConfigsPaginator DescribeReplicationConfigs(DescribeReplicationConfigsRequest request) 
+        {
+            return new DescribeReplicationConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReplicationInstances operation
         ///</summary>
         public IDescribeReplicationInstancesPaginator DescribeReplicationInstances(DescribeReplicationInstancesRequest request) 
@@ -188,11 +196,27 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeReplications operation
+        ///</summary>
+        public IDescribeReplicationsPaginator DescribeReplications(DescribeReplicationsRequest request) 
+        {
+            return new DescribeReplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReplicationSubnetGroups operation
         ///</summary>
         public IDescribeReplicationSubnetGroupsPaginator DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request) 
         {
             return new DescribeReplicationSubnetGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeReplicationTableStatistics operation
+        ///</summary>
+        public IDescribeReplicationTableStatisticsPaginator DescribeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request) 
+        {
+            return new DescribeReplicationTableStatisticsPaginator(this.client, request);
         }
 
         /// <summary>

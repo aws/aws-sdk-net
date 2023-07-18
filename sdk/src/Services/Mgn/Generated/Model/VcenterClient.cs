@@ -124,7 +124,7 @@ namespace Amazon.Mgn.Model
         /// Tags for Source Server of vCenter client.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> SourceServerTags
         {
             get { return this._sourceServerTags; }
@@ -143,7 +143,7 @@ namespace Amazon.Mgn.Model
         /// Tags for vCenter client.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

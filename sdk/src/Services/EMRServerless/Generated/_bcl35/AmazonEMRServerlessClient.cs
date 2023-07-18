@@ -35,11 +35,11 @@ namespace Amazon.EMRServerless
     /// <summary>
     /// Implementation for accessing EMRServerless
     ///
-    /// Amazon EMR Serverless is a new deployment option for Amazon EMR. EMR Serverless provides
-    /// a serverless runtime environment that simplifies running analytics applications using
-    /// the latest open source frameworks such as Apache Spark and Apache Hive. With EMR Serverless,
-    /// you don’t have to configure, optimize, secure, or operate clusters to run applications
-    /// with these frameworks.
+    /// Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless
+    /// provides a serverless runtime environment that simplifies running analytics applications
+    /// using the latest open source frameworks such as Apache Spark and Apache Hive. With
+    /// Amazon EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters
+    /// to run applications with these frameworks.
     /// 
     ///  
     /// <para>
@@ -142,8 +142,7 @@ namespace Amazon.EMRServerless
         /// </summary>
         /// <param name="config">The AmazonEMRServerlessClient Configuration Object</param>
         public AmazonEMRServerlessClient(AmazonEMRServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonEMRServerlessClient with AWS Credentials
         /// </summary>

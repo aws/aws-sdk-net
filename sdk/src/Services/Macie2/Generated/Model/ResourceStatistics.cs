@@ -147,10 +147,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TotalItemsSkipped. 
         /// <para>
-        /// The total number of objects that Amazon Macie hasn't analyzed in the bucket due to
-        /// an error or issue. For example, the object is a malformed file. This value includes
-        /// objects that Macie hasn't analyzed for reasons reported by other statistics in the
-        /// ResourceStatistics object.
+        /// The total number of objects that Amazon Macie wasn't able to analyze in the bucket
+        /// due to an object-level issue or error. For example, the object is a malformed file.
+        /// This value includes objects that Macie wasn't able to analyze for reasons reported
+        /// by other statistics in the ResourceStatistics object.
         /// </para>
         /// </summary>
         public long TotalItemsSkipped
@@ -168,8 +168,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TotalItemsSkippedInvalidEncryption. 
         /// <para>
-        /// The total number of objects that Amazon Macie hasn't analyzed in the bucket because
-        /// the objects are encrypted with a key that Macie isn't allowed to use.
+        /// The total number of objects that Amazon Macie wasn't able to analyze in the bucket
+        /// because the objects are encrypted with a key that Macie can't access. The objects
+        /// use server-side encryption with customer-provided keys (SSE-C).
         /// </para>
         /// </summary>
         public long TotalItemsSkippedInvalidEncryption
@@ -187,8 +188,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TotalItemsSkippedInvalidKms. 
         /// <para>
-        /// The total number of objects that Amazon Macie hasn't analyzed in the bucket because
-        /// the objects are encrypted with an KMS key that was disabled or deleted.
+        /// The total number of objects that Amazon Macie wasn't able to analyze in the bucket
+        /// because the objects are encrypted with KMS keys that were disabled, are scheduled
+        /// for deletion, or were deleted.
         /// </para>
         /// </summary>
         public long TotalItemsSkippedInvalidKms
@@ -206,8 +208,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TotalItemsSkippedPermissionDenied. 
         /// <para>
-        /// The total number of objects that Amazon Macie hasn't analyzed in the bucket because
-        /// Macie isn't allowed to access the objects.
+        /// The total number of objects that Amazon Macie wasn't able to analyze in the bucket
+        /// due to the permissions settings for the objects or the permissions settings for the
+        /// keys that were used to encrypt the objects.
         /// </para>
         /// </summary>
         public long TotalItemsSkippedPermissionDenied

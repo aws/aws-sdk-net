@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// and <code>WaitIntervalInSeconds</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=600, Max=14400)]
+        [AWSProperty(Min=600, Max=28800)]
         public int MaximumExecutionTimeoutInSeconds
         {
             get { return this._maximumExecutionTimeoutInSeconds.GetValueOrDefault(); }

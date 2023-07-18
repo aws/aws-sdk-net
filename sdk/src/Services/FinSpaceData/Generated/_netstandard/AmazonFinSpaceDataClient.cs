@@ -100,7 +100,7 @@ namespace Amazon.FinSpaceData
         /// </summary>
         /// <param name="config">The AmazonFinSpaceDataClient Configuration Object</param>
         public AmazonFinSpaceDataClient(AmazonFinSpaceDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -32,16 +32,26 @@ namespace Amazon.Omics
     public partial class AmazonOmicsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Omics";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOmicsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOmicsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Omics";
             this.AuthenticationServiceName = "omics";
             this.EndpointProvider = new AmazonOmicsEndpointProvider();
         }

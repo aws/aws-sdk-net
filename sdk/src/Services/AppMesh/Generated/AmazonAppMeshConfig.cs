@@ -32,16 +32,26 @@ namespace Amazon.AppMesh
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "App Mesh";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppMeshConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppMeshDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "App Mesh";
             this.AuthenticationServiceName = "appmesh";
             this.EndpointProvider = new AmazonAppMeshEndpointProvider();
         }

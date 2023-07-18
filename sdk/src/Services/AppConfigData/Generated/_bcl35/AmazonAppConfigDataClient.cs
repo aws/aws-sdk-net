@@ -169,8 +169,7 @@ namespace Amazon.AppConfigData
         /// </summary>
         /// <param name="config">The AmazonAppConfigDataClient Configuration Object</param>
         public AmazonAppConfigDataClient(AmazonAppConfigDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAppConfigDataClient with AWS Credentials
         /// </summary>

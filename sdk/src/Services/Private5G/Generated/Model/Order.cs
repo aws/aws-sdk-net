@@ -38,6 +38,7 @@ namespace Amazon.Private5G.Model
         private string _networkArn;
         private string _networkSiteArn;
         private string _orderArn;
+        private List<OrderedResourceDefinition> _orderedResources = new List<OrderedResourceDefinition>();
         private Address _shippingAddress;
         private List<TrackingInformation> _trackingInformation = new List<TrackingInformation>();
 
@@ -129,6 +130,24 @@ namespace Amazon.Private5G.Model
         internal bool IsSetOrderArn()
         {
             return this._orderArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderedResources. 
+        /// <para>
+        /// A list of the network resources placed in the order.
+        /// </para>
+        /// </summary>
+        public List<OrderedResourceDefinition> OrderedResources
+        {
+            get { return this._orderedResources; }
+            set { this._orderedResources = value; }
+        }
+
+        // Check to see if OrderedResources property is set
+        internal bool IsSetOrderedResources()
+        {
+            return this._orderedResources != null && this._orderedResources.Count > 0; 
         }
 
         /// <summary>

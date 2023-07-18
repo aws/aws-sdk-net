@@ -157,8 +157,7 @@ namespace Amazon.SecurityLake
         /// </summary>
         /// <param name="config">The AmazonSecurityLakeClient Configuration Object</param>
         public AmazonSecurityLakeClient(AmazonSecurityLakeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSecurityLakeClient with AWS Credentials
         /// </summary>

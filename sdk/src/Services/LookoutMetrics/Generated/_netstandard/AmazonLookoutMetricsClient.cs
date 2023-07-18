@@ -102,7 +102,7 @@ namespace Amazon.LookoutMetrics
         /// </summary>
         /// <param name="config">The AmazonLookoutMetricsClient Configuration Object</param>
         public AmazonLookoutMetricsClient(AmazonLookoutMetricsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.Drs.Model
     {
         private bool? _copyPrivateIp;
         private bool? _copyTags;
+        private string _exportBucketArn;
         private string _launchConfigurationTemplateID;
         private LaunchDisposition _launchDisposition;
         private Licensing _licensing;
@@ -75,6 +76,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetCopyTags()
         {
             return this._copyTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportBucketArn. 
+        /// <para>
+        /// S3 bucket ARN to export Source Network templates.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExportBucketArn
+        {
+            get { return this._exportBucketArn; }
+            set { this._exportBucketArn = value; }
+        }
+
+        // Check to see if ExportBucketArn property is set
+        internal bool IsSetExportBucketArn()
+        {
+            return this._exportBucketArn != null;
         }
 
         /// <summary>

@@ -103,8 +103,17 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code>
+    /// This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code>
     /// action. 
+    /// </para>
+    ///  
+    /// <para>
+    /// File systems can be tagged on creation. If tags are specified in the creation action,
+    /// IAM performs additional authorization on the <code>elasticfilesystem:TagResource</code>
+    /// action to verify if users have permissions to create tags. Therefore, you must grant
+    /// explicit permissions to use the <code>elasticfilesystem:TagResource</code> action.
+    /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+    /// permissions to tag resources during creation</a>.
     /// </para>
     /// </summary>
     public partial class CreateFileSystemRequest : AmazonElasticFileSystemRequest

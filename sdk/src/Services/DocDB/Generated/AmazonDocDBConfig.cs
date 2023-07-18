@@ -32,16 +32,26 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.35");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.45");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DocDB";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDocDBConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDocDBDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DocDB";
             this.AuthenticationServiceName = "rds";
             this.EndpointProvider = new AmazonDocDBEndpointProvider();
         }

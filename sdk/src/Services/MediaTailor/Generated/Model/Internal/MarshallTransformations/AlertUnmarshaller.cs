@@ -76,6 +76,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlertMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

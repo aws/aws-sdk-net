@@ -33,7 +33,51 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class UpdateStateMachineResponse : AmazonWebServiceResponse
     {
+        private string _revisionId;
+        private string _stateMachineVersionArn;
         private DateTime? _updateDate;
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision identifier for the updated state machine.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMachineVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the published state machine version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns
+        /// null.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateMachineVersionArn
+        {
+            get { return this._stateMachineVersionArn; }
+            set { this._stateMachineVersionArn = value; }
+        }
+
+        // Check to see if StateMachineVersionArn property is set
+        internal bool IsSetStateMachineVersionArn()
+        {
+            return this._stateMachineVersionArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UpdateDate. 

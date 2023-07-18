@@ -103,7 +103,7 @@ namespace Amazon.Comprehend
         /// </summary>
         /// <param name="config">The AmazonComprehendClient Configuration Object</param>
         public AmazonComprehendClient(AmazonComprehendConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

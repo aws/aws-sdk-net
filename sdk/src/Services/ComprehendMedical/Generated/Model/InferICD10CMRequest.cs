@@ -42,8 +42,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The input text used for analysis. The input for InferICD10CM is a string from 1 to
-        /// 10000 characters.
+        /// The input text used for analysis.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]

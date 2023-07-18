@@ -47,7 +47,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The ContinuationToken that represents a placeholder from where this request should begin.
+        /// The <code>ContinuationToken</code> that represents a placeholder from where this request
+        /// should begin.
         /// </summary>
         public string ContinuationToken
         {

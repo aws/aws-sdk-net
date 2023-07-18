@@ -19,6 +19,7 @@ using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Amazon.Runtime.CredentialManagement
 {
@@ -29,6 +30,21 @@ namespace Amazon.Runtime.CredentialManagement
     {
         private Dictionary<string, string> _properties;
 
+        private Dictionary<string, Dictionary<string, string>> _nestedProperties;
+        /// <summary>
+        /// An optional Dictionary of Dictionaries that can contain nested properties.
+        /// For example: in a configuration file like so:
+        /// [profile foo]
+        /// s3 = 
+        ///   max_retries = 10
+        ///   max_concurrent_requests = 50
+        /// NestedProperties contains: {{s3:{max_retries:10},{max_concurrent_requests:50}}}
+        /// </summary>
+        internal Dictionary<string, Dictionary<string, string>> NestedProperties
+        {
+            get => _nestedProperties ?? (_nestedProperties = new Dictionary<string, Dictionary<string,string>>());
+            set => _nestedProperties = value;
+        }
         /// <summary>
         /// The name of the CredentialProfile
         /// </summary>
@@ -115,6 +131,17 @@ namespace Amazon.Runtime.CredentialManagement
         /// for the configured region.
         /// </summary>
         public bool? UseFIPSEndpoint { get; set; }
+
+        /// <summary>
+        /// If this flag is set to true, the SDK will ignore the configured endpoint urls set in the
+        /// configuration file.
+        /// </summary>
+        public bool? IgnoreConfiguredEndpointUrls { get; set; }
+        /// <summary>
+        /// This configures the global endpoint URL for a profile. This cannot be used in a services section 
+        /// and will be ignored if set in the services section.
+        /// </summary>
+        public string EndpointUrl { get; set; }
 
         /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile

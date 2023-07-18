@@ -128,8 +128,7 @@ namespace Amazon.MediaTailor
         /// </summary>
         /// <param name="config">The AmazonMediaTailorClient Configuration Object</param>
         public AmazonMediaTailorClient(AmazonMediaTailorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMediaTailorClient with AWS Credentials
         /// </summary>

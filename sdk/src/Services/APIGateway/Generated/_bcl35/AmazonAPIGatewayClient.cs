@@ -121,8 +121,7 @@ namespace Amazon.APIGateway
         /// </summary>
         /// <param name="config">The AmazonAPIGatewayClient Configuration Object</param>
         public AmazonAPIGatewayClient(AmazonAPIGatewayConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAPIGatewayClient with AWS Credentials
         /// </summary>

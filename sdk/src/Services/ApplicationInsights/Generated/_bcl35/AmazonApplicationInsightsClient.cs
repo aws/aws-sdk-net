@@ -131,8 +131,7 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         /// <param name="config">The AmazonApplicationInsightsClient Configuration Object</param>
         public AmazonApplicationInsightsClient(AmazonApplicationInsightsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonApplicationInsightsClient with AWS Credentials
         /// </summary>

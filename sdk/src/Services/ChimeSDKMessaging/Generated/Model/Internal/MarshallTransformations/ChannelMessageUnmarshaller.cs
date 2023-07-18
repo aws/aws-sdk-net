@@ -148,6 +148,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubChannelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Target", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Target, TargetUnmarshaller>(TargetUnmarshaller.Instance);
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

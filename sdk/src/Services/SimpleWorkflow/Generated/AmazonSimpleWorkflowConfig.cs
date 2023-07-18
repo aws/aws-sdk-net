@@ -32,16 +32,26 @@ namespace Amazon.SimpleWorkflow
     public partial class AmazonSimpleWorkflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.16");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.26");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SWF";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleWorkflowConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleWorkflowDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SWF";
             this.AuthenticationServiceName = "swf";
             this.EndpointProvider = new AmazonSimpleWorkflowEndpointProvider();
         }

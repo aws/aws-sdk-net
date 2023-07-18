@@ -32,16 +32,26 @@ namespace Amazon.Kinesis
     public partial class AmazonKinesisConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.80");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.90");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kinesis";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kinesis";
             this.AuthenticationServiceName = "kinesis";
             this.EndpointProvider = new AmazonKinesisEndpointProvider();
         }

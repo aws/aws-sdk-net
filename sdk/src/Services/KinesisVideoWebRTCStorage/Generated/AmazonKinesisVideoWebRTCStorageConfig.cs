@@ -32,16 +32,26 @@ namespace Amazon.KinesisVideoWebRTCStorage
     public partial class AmazonKinesisVideoWebRTCStorageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.100");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.110");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kinesis Video WebRTC Storage";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoWebRTCStorageConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoWebRTCStorageDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kinesis Video WebRTC Storage";
             this.AuthenticationServiceName = "kinesisvideo";
             this.EndpointProvider = new AmazonKinesisVideoWebRTCStorageEndpointProvider();
         }

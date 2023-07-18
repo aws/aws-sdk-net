@@ -163,7 +163,7 @@ namespace Amazon.Appflow
         /// </summary>
         /// <param name="config">The AmazonAppflowClient Configuration Object</param>
         public AmazonAppflowClient(AmazonAppflowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAppflowClient with AWS Credentials
@@ -1535,6 +1535,101 @@ namespace Amazon.Appflow
             options.ResponseUnmarshaller = RegisterConnectorResponseUnmarshaller.Instance;
             
             return InvokeAsync<RegisterConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetConnectorMetadataCache
+
+
+        /// <summary>
+        /// Resets metadata about your connector entities that Amazon AppFlow stored in its cache.
+        /// Use this action when you want Amazon AppFlow to return the latest information about
+        /// the data that you have in a source application.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities
+        /// or DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches
+        /// the metadata to reduce the number of API requests that it must send to the source
+        /// application. Amazon AppFlow automatically resets the cache once every hour, but you
+        /// can use this action when you want to get the latest metadata right away.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetConnectorMetadataCache service method.</param>
+        /// 
+        /// <returns>The response from the ResetConnectorMetadataCache service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache">REST API Reference for ResetConnectorMetadataCache Operation</seealso>
+        public virtual ResetConnectorMetadataCacheResponse ResetConnectorMetadataCache(ResetConnectorMetadataCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetConnectorMetadataCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetConnectorMetadataCacheResponseUnmarshaller.Instance;
+
+            return Invoke<ResetConnectorMetadataCacheResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Resets metadata about your connector entities that Amazon AppFlow stored in its cache.
+        /// Use this action when you want Amazon AppFlow to return the latest information about
+        /// the data that you have in a source application.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities
+        /// or DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches
+        /// the metadata to reduce the number of API requests that it must send to the source
+        /// application. Amazon AppFlow automatically resets the cache once every hour, but you
+        /// can use this action when you want to get the latest metadata right away.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetConnectorMetadataCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetConnectorMetadataCache service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache">REST API Reference for ResetConnectorMetadataCache Operation</seealso>
+        public virtual Task<ResetConnectorMetadataCacheResponse> ResetConnectorMetadataCacheAsync(ResetConnectorMetadataCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetConnectorMetadataCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetConnectorMetadataCacheResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResetConnectorMetadataCacheResponse>(request, options, cancellationToken);
         }
 
         #endregion

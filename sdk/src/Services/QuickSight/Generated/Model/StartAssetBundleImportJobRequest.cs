@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
     /// QuickSight account. You can also choose to import a naming prefix and specified configuration
     /// overrides. The assets that are contained in the bundle file that you provide are used
     /// to create or update a new or existing asset in your Amazon QuickSight account. Each
-    /// Amazon QuickSight account can run up to 10 import jobs concurrently.
+    /// Amazon QuickSight account can run up to 5 import jobs concurrently.
     /// </para>
     ///  
     /// <para>
@@ -79,6 +79,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AssetBundleImportSource. 
         /// <para>
         /// The source of the asset bundle zip file that contains the data that you want to import.
+        /// The file must be in <code>QUICKSIGHT_JSON</code> format. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

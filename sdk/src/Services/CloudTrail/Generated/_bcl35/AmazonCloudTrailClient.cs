@@ -64,244 +64,6 @@ namespace Amazon.CloudTrail
     /// User Guide</a> for information about the data that is included with each Amazon Web
     /// Services API call listed in the log files.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Actions available for CloudTrail trails</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following actions are available for CloudTrail trails.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>AddTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateTrail</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteTrail</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeTrails</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetEventSelectors</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetInsightSelectors</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetTrail</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetTrailStatus</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListTrails</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutEventSelectors</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutInsightSelectors</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RemoveTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartLogging</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopLogging</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateTrail</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Actions available for CloudTrail event data stores</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following actions are available for CloudTrail event data stores.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>AddTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CancelQuery</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateEventDataStore</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteEventDataStore</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeQuery</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetEventDataStore</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetQueryResults</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListEventDataStores</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListQueries</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RemoveTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RestoreEventDataStore</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartEventDataStoreIngestion</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartImport</a> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following additional actions are available for imports.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>GetImport</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListImportFailures</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListImports</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopImport</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>StartQuery</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartEventDataStoreIngestion</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateEventDataStore</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Actions available for CloudTrail channels</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following actions are available for CloudTrail channels.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>AddTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateChannel</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteChannel</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteResourcePolicy</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetChannel</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetResourcePolicy</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListChannels</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutResourcePolicy</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RemoveTags</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateChannel</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Actions available for managing delegated administrators</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following actions are available for adding or a removing a delegated administrator
-    /// to manage an Organizations organization’s CloudTrail resources.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DeregisterOrganizationDelegatedAdmin</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RegisterOrganizationDelegatedAdmin</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonCloudTrailClient : AmazonServiceClient, IAmazonCloudTrail
     {
@@ -381,8 +143,7 @@ namespace Amazon.CloudTrail
         /// </summary>
         /// <param name="config">The AmazonCloudTrailClient Configuration Object</param>
         public AmazonCloudTrailClient(AmazonCloudTrailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCloudTrailClient with AWS Credentials
         /// </summary>
@@ -1753,8 +1514,15 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Returns metadata about a query, including query run time in milliseconds, number of
-        /// events scanned and matched, and query status. You must specify an ARN for <code>EventDataStore</code>,
-        /// and a value for <code>QueryID</code>.
+        /// events scanned and matched, and query status. If the query results were delivered
+        /// to an S3 bucket, the response also provides the S3 URI and the delivery status.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying
+        /// the <code>QueryAlias</code> parameter returns information about the last query run
+        /// for the alias.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuery service method.</param>
         /// 
@@ -2470,7 +2238,7 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Gets event data results of a query. You must specify the <code>QueryID</code> value
-        /// returned by the <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+        /// returned by the <code>StartQuery</code> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
         /// 
@@ -4895,9 +4663,17 @@ namespace Amazon.CloudTrail
         #region  StartQuery
 
         /// <summary>
-        /// Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter
-        /// provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
+        /// Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide
+        /// your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
         /// parameter to deliver the query results to an S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>StartQuery</code> requires you specify either the <code>QueryStatement</code>
+        /// parameter, or a <code>QueryAlias</code> and any <code>QueryParameters</code>. In the
+        /// current release, the <code>QueryAlias</code> and <code>QueryParameters</code> parameters
+        /// are used only for the queries that populate the CloudTrail Lake dashboards.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQuery service method.</param>
         /// 
@@ -5405,8 +5181,7 @@ namespace Amazon.CloudTrail
         /// <para>
         /// For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes
         /// or excludes management and data events in your event data store. For more information
-        /// about <code>AdvancedEventSelectors</code>, see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
-        /// 
+        /// about <code>AdvancedEventSelectors</code>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
         /// </para>
         ///  
         /// <para>
@@ -5423,6 +5198,9 @@ namespace Amazon.CloudTrail
         /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
         /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
         /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreAlreadyExistsException">
+        /// An event data store with that name already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store

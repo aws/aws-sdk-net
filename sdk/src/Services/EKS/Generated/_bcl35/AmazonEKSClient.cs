@@ -129,8 +129,7 @@ namespace Amazon.EKS
         /// </summary>
         /// <param name="config">The AmazonEKSClient Configuration Object</param>
         public AmazonEKSClient(AmazonEKSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonEKSClient with AWS Credentials
         /// </summary>

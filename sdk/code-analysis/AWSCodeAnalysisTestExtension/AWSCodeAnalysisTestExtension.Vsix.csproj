@@ -100,6 +100,10 @@
       <Project>{684FAC4A-AC97-45E3-B30B-FDADCDF2FC2C}</Project>
       <Name>AWSSDK.AppConfigData.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppFabric/AWSSDK.AppFabric.CodeAnalysis.csproj">
+      <Project>{031658D9-9F8F-45A1-9784-B5021A907F00}</Project>
+      <Name>AWSSDK.AppFabric.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Appflow/AWSSDK.Appflow.CodeAnalysis.csproj">
       <Project>{46F6224C-A560-4D5C-A932-0D4A587F205F}</Project>
       <Name>AWSSDK.Appflow.CodeAnalysis</Name>
@@ -335,6 +339,10 @@
     <ProjectReference Include="../ServiceAnalysis/CodeGuruReviewer/AWSSDK.CodeGuruReviewer.CodeAnalysis.csproj">
       <Project>{F1A2D6CA-C586-40AA-8E90-697D715219D1}</Project>
       <Name>AWSSDK.CodeGuruReviewer.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeGuruSecurity/AWSSDK.CodeGuruSecurity.CodeAnalysis.csproj">
+      <Project>{E0B96EC2-6E65-4A80-AC16-6B57C6434E30}</Project>
+      <Name>AWSSDK.CodeGuruSecurity.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodePipeline/AWSSDK.CodePipeline.CodeAnalysis.csproj">
       <Project>{ECDB9DA6-F184-479F-B658-1DAD5D9A5BE8}</Project>
@@ -1387,6 +1395,10 @@
     <ProjectReference Include="../ServiceAnalysis/Translate/AWSSDK.Translate.CodeAnalysis.csproj">
       <Project>{0C6C821A-0A1D-4618-A8A8-38752F65113A}</Project>
       <Name>AWSSDK.Translate.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/VerifiedPermissions/AWSSDK.VerifiedPermissions.CodeAnalysis.csproj">
+      <Project>{7FBDC567-0F65-46C8-B196-3C9C47B958E1}</Project>
+      <Name>AWSSDK.VerifiedPermissions.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/VoiceID/AWSSDK.VoiceID.CodeAnalysis.csproj">
       <Project>{0C6BDFBF-3A9E-4E72-8D52-0484B38DC018}</Project>

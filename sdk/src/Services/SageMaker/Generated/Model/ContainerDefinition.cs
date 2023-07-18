@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private ImageConfig _imageConfig;
         private string _inferenceSpecificationName;
         private ContainerMode _mode;
+        private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
         private string _modelPackageName;
         private MultiModelConfig _multiModelConfig;
@@ -191,6 +192,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDataSource. 
+        /// <para>
+        /// Specifies the location of ML model data to deploy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker
+        /// batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints,
+        /// and SageMaker Marketplace.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ModelDataSource ModelDataSource
+        {
+            get { return this._modelDataSource; }
+            set { this._modelDataSource = value; }
+        }
+
+        // Check to see if ModelDataSource property is set
+        internal bool IsSetModelDataSource()
+        {
+            return this._modelDataSource != null;
         }
 
         /// <summary>

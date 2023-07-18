@@ -32,16 +32,26 @@ namespace Amazon.CloudDirectory
     public partial class AmazonCloudDirectoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.81");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.91");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudDirectory";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudDirectoryConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudDirectoryDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudDirectory";
             this.AuthenticationServiceName = "clouddirectory";
             this.EndpointProvider = new AmazonCloudDirectoryEndpointProvider();
         }

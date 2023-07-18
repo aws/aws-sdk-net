@@ -32,16 +32,26 @@ namespace Amazon.MainframeModernization
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "m2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMainframeModernizationConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMainframeModernizationDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "m2";
             this.AuthenticationServiceName = "m2";
             this.EndpointProvider = new AmazonMainframeModernizationEndpointProvider();
         }

@@ -32,16 +32,26 @@ namespace Amazon.CloudWatchEvidently
     public partial class AmazonCloudWatchEvidentlyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.56");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.66");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Evidently";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEvidentlyConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEvidentlyDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Evidently";
             this.AuthenticationServiceName = "evidently";
             this.EndpointProvider = new AmazonCloudWatchEvidentlyEndpointProvider();
         }

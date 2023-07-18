@@ -25,7 +25,7 @@ The [GitHub issues][sdk-issues] are intended for bug reports and feature request
 
 ## SDK Change Log
 
-The change log for the SDK can be found in the [SDK.CHANGELOG.ALL.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.ALL.md) file. Change logs divided up by year can be found in the [changelogs folder](https://github.com/aws/aws-sdk-net/tree/master/changelogs).
+The change log for the SDK can be found in the [SDK.CHANGELOG.ALL.md](https://github.com/aws/aws-sdk-net/blob/master/changelogs/SDK.CHANGELOG.ALL.md) file. Change logs divided up by year can be found in the [changelogs folder](https://github.com/aws/aws-sdk-net/tree/master/changelogs).
 
 ## Maintenance and support for SDK major versions
 
@@ -128,6 +128,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing AWS AppConfig, a new service that enables customers to quickly deploy validated configurations to applications of any size in a controlled and monitored fashion.
 * [AWSSDK.AppConfigData](https://www.nuget.org/packages/AWSSDK.AppConfigData/)
 	* AWS AppConfig Data is a new service that allows you to retrieve configuration deployed by AWS AppConfig. See the AppConfig user guide for more details on getting started. https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html
+* [AWSSDK.AppFabric](https://www.nuget.org/packages/AWSSDK.AppFabric/)
+	* Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.
 * [AWSSDK.Appflow](https://www.nuget.org/packages/AWSSDK.Appflow/)
 	* Amazon AppFlow is a fully managed integration service that securely transfers data between AWS services and SaaS applications. This update releases the first version of Amazon AppFlow APIs and SDK.
 * [AWSSDK.AppIntegrationsService](https://www.nuget.org/packages/AWSSDK.AppIntegrationsService/)
@@ -246,6 +248,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* (New Service) Amazon CodeGuru Profiler analyzes application CPU utilization and latency characteristics to show you where you are spending the most cycles in your application. This analysis is presented in an interactive flame graph that helps you easily understand which paths consume the most resources, verify that your application is performing as expected, and uncover areas that can be optimized further.
 * [AWSSDK.CodeGuruReviewer](https://www.nuget.org/packages/AWSSDK.CodeGuruReviewer/)
 	* This is the preview release of Amazon CodeGuru Reviewer.
+* [AWSSDK.CodeGuruSecurity](https://www.nuget.org/packages/AWSSDK.CodeGuruSecurity/)
+	* Initial release of Amazon CodeGuru Security APIs
 * [AWSSDK.CodePipeline](https://www.nuget.org/packages/AWSSDK.CodePipeline/)
 	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
 * [AWSSDK.CodeStar](https://www.nuget.org/packages/AWSSDK.CodeStar/)
@@ -772,6 +776,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Transfer for SFTP is a fully managed service that enables transfer of secure data over the internet into and out of Amazon S3. SFTP is deeply embedded in data exchange workflows across different industries such as financial services, healthcare, advertising, and retail, among others.
 * [AWSSDK.Translate](https://www.nuget.org/packages/AWSSDK.Translate/)
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
+* [AWSSDK.VerifiedPermissions](https://www.nuget.org/packages/AWSSDK.VerifiedPermissions/)
+	* GA release of Amazon Verified Permissions.
 * [AWSSDK.VoiceID](https://www.nuget.org/packages/AWSSDK.VoiceID/)
 	* Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.
 * [AWSSDK.VPCLattice](https://www.nuget.org/packages/AWSSDK.VPCLattice/)

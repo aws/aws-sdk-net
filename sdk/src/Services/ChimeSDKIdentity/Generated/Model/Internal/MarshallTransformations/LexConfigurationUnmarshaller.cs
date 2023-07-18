@@ -64,6 +64,12 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("InvokedBy", targetDepth))
+                {
+                    var unmarshaller = InvokedByUnmarshaller.Instance;
+                    unmarshalledObject.InvokedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LexBotAliasArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

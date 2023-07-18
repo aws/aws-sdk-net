@@ -32,16 +32,26 @@ namespace Amazon.EC2InstanceConnect
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "EC2 Instance Connect";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEC2InstanceConnectConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2InstanceConnectDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "EC2 Instance Connect";
             this.AuthenticationServiceName = "ec2-instance-connect";
             this.EndpointProvider = new AmazonEC2InstanceConnectEndpointProvider();
         }

@@ -32,16 +32,26 @@ namespace Amazon.AWSSupport
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.25");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Support";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAWSSupportConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSSupportDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Support";
             this.AuthenticationServiceName = "support";
             this.EndpointProvider = new AmazonAWSSupportEndpointProvider();
         }

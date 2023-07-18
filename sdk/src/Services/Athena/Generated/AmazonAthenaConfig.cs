@@ -32,16 +32,26 @@ namespace Amazon.Athena
     public partial class AmazonAthenaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.111.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.111.10");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Athena";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAthenaConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAthenaDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Athena";
             this.AuthenticationServiceName = "athena";
             this.EndpointProvider = new AmazonAthenaEndpointProvider();
         }

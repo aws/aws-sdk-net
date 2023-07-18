@@ -101,7 +101,7 @@ namespace Amazon.KendraRanking
         /// </summary>
         /// <param name="config">The AmazonKendraRankingClient Configuration Object</param>
         public AmazonKendraRankingClient(AmazonKendraRankingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

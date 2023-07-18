@@ -113,7 +113,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// <param name="config">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AmazonSimpleEmailServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

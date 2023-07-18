@@ -39,9 +39,8 @@ namespace Amazon.Chime.Model
     /// 
     ///  
     /// <para>
-    ///  Previously suspended users who are unsuspended using this action are returned to
-    /// <code>Registered</code> status. Users who are not previously suspended are ignored.
-    /// 
+    /// Previously suspended users who are unsuspended using this action are returned to <code>Registered</code>
+    /// status. Users who are not previously suspended are ignored.
     /// </para>
     /// </summary>
     public partial class BatchUnsuspendUserRequest : AmazonChimeRequest

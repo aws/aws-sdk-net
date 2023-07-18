@@ -149,8 +149,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DesiredvCpus. 
         /// <para>
-        /// The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies
-        /// this value between the minimum and maximum values based on job queue demand.
+        /// The desired number of vCPUS in the compute environment. Batch modifies this value
+        /// between the minimum and maximum values based on job queue demand.
         /// </para>
         ///  <note> 
         /// <para>
@@ -363,7 +363,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MaxvCpus. 
         /// <para>
-        /// The maximum number of Amazon EC2 vCPUs that a compute environment can reach.
+        /// The maximum number of vCPUs that a compute environment can support.
         /// </para>
         ///  <note> 
         /// <para>
@@ -392,8 +392,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MinvCpus. 
         /// <para>
-        /// The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if
-        /// the compute environment is <code>DISABLED</code>).
+        /// The minimum number of vCPUs that a compute environment should maintain (even if the
+        /// compute environment is <code>DISABLED</code>).
         /// </para>
         ///  <note> 
         /// <para>

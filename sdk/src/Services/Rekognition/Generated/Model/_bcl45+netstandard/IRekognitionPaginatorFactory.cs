@@ -104,5 +104,10 @@ namespace Amazon.Rekognition.Model
         /// Paginator for ListStreamProcessors operation
         ///</summary>
         IListStreamProcessorsPaginator ListStreamProcessors(ListStreamProcessorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListUsers operation
+        ///</summary>
+        IListUsersPaginator ListUsers(ListUsersRequest request);
     }
 }

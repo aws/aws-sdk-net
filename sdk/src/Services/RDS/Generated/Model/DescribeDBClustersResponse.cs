@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a later DescribeDBClusters request.
+        /// A pagination token that can be used in a later <code>DescribeDBClusters</code> request.
         /// </para>
         /// </summary>
         public string Marker

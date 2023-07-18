@@ -100,6 +100,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.IndexFacesModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

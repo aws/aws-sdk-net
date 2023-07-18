@@ -32,16 +32,26 @@ namespace Amazon.CognitoIdentity
     public partial class AmazonCognitoIdentityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Cognito Identity";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCognitoIdentityConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCognitoIdentityDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Cognito Identity";
             this.AuthenticationServiceName = "cognito-identity";
             this.EndpointProvider = new AmazonCognitoIdentityEndpointProvider();
         }

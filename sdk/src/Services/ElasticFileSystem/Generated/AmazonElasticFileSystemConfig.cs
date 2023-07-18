@@ -32,16 +32,26 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.21");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.31");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "EFS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticFileSystemConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticFileSystemDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "EFS";
             this.AuthenticationServiceName = "elasticfilesystem";
             this.EndpointProvider = new AmazonElasticFileSystemEndpointProvider();
         }

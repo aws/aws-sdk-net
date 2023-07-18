@@ -33,7 +33,19 @@ namespace Amazon.Chime.Model
     /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
     /// promoted user can perform the following actions. 
     /// 
-    ///  <ul> <li> 
+    ///  <important> 
+    /// <para>
+    ///  <b>This API is is no longer supported and will not be updated.</b> We recommend using
+    /// the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html">CreateAppInstanceAdmin</a>,
+    /// in the Amazon Chime SDK.
+    /// </para>
+    ///  
+    /// <para>
+    /// Using the latest version requires migrating to a dedicated namespace. For more information,
+    /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating
+    /// from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+    /// </para>
+    ///  </important> <ul> <li> 
     /// <para>
     ///  <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
     /// </para>

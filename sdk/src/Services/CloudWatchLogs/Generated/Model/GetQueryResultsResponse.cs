@@ -33,9 +33,32 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class GetQueryResultsResponse : AmazonWebServiceResponse
     {
+        private string _encryptionKey;
         private List<List<ResultField>> _results = new List<List<ResultField>>();
         private QueryStatistics _statistics;
         private QueryStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey. 
+        /// <para>
+        /// If you associated an KMS key with the CloudWatch Logs Insights query results in this
+        /// account, this field displays the ARN of the key that's used to encrypt the query results
+        /// when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// stores them.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string EncryptionKey
+        {
+            get { return this._encryptionKey; }
+            set { this._encryptionKey = value; }
+        }
+
+        // Check to see if EncryptionKey property is set
+        internal bool IsSetEncryptionKey()
+        {
+            return this._encryptionKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -65,8 +88,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Statistics. 
         /// <para>
         /// Includes the number of log events scanned by the query, the number of log events that
-        /// matched the query criteria, and the total number of bytes in the log events that were
-        /// scanned. These values reflect the full raw results of the query.
+        /// matched the query criteria, and the total number of bytes in the scanned log events.
+        /// These values reflect the full raw results of the query.
         /// </para>
         /// </summary>
         public QueryStatistics Statistics

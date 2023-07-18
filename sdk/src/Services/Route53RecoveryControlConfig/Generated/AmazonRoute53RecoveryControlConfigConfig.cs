@@ -32,16 +32,26 @@ namespace Amazon.Route53RecoveryControlConfig
     public partial class AmazonRoute53RecoveryControlConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.99");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.109");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Route53 Recovery Control Config";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRoute53RecoveryControlConfigConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryControlConfigDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Route53 Recovery Control Config";
             this.AuthenticationServiceName = "route53-recovery-control-config";
             this.EndpointProvider = new AmazonRoute53RecoveryControlConfigEndpointProvider();
         }

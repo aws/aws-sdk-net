@@ -104,6 +104,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLimitExceeded"))
+                {
+                    return ServiceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("VolumeNotFound"))
                 {
                     return VolumeNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

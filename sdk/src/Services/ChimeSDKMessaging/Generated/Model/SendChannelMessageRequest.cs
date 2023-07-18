@@ -40,8 +40,13 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  
     /// <para>
-    /// Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-    /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.
+    /// Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
+    /// Metadata is arbitrary, and you can use it in a variety of ways, such as containing
+    /// a link to an attachment.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
     /// </para>
     ///  </note>
     /// </summary>
@@ -57,6 +62,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private ChannelMessagePersistenceType _persistence;
         private PushNotificationConfiguration _pushNotification;
         private string _subChannelId;
+        private List<Target> _target = new List<Target>();
         private ChannelMessageType _type;
 
         /// <summary>
@@ -120,7 +126,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the message.
+        /// The content of the channel message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]
@@ -250,9 +256,41 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// The target of a message. Must be a member of the channel, such as another user, a
+        /// bot, or the sender. Only the target and the sender can view targeted messages. Only
+        /// users who can see targeted messages can take actions on them. However, administrators
+        /// can delete targeted messages that they can’t see. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Target> Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null && this._target.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata
+        /// is arbitrary, and you can use it in a variety of ways, such as containing a link to
+        /// an attachment.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

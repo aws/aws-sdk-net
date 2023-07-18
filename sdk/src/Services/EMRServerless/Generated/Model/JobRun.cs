@@ -30,7 +30,7 @@ namespace Amazon.EMRServerless.Model
 {
     /// <summary>
     /// Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive
-    /// query, or SparkSQL query, that you submit to an EMR Serverless application.
+    /// query, or SparkSQL query, that you submit to an Amazon EMR Serverless application.
     /// </summary>
     public partial class JobRun
     {
@@ -95,10 +95,10 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property BilledResourceUtilization. 
         /// <para>
-        /// The aggregate vCPU, memory, and storage that AWS has billed for the job run. The billed
-        /// resources include a 1-minute minimum usage for workers, plus additional storage over
-        /// 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized
-        /// workers.
+        /// The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the
+        /// job run. The billed resources include a 1-minute minimum usage for workers, plus additional
+        /// storage over 20 GB per worker. Note that billed resources do not include usage for
+        /// idle pre-initialized workers.
         /// </para>
         /// </summary>
         public ResourceUtilization BilledResourceUtilization
@@ -283,7 +283,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// The EMR release associated with the application your job is running on.
+        /// The Amazon EMR release associated with the application your job is running on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

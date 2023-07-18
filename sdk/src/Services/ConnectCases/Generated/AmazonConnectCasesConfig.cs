@@ -32,16 +32,26 @@ namespace Amazon.ConnectCases
     public partial class AmazonConnectCasesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.21");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ConnectCases";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectCasesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectCasesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ConnectCases";
             this.AuthenticationServiceName = "cases";
             this.EndpointProvider = new AmazonConnectCasesEndpointProvider();
         }

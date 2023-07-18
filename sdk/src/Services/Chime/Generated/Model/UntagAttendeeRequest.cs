@@ -31,6 +31,13 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the UntagAttendee operation.
     /// Untags the specified tags from the specified Amazon Chime SDK attendee.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// UntagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update
+    /// your application to remove calls to this API.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UntagAttendeeRequest : AmazonChimeRequest
     {

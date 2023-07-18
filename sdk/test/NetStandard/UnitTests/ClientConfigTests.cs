@@ -56,7 +56,12 @@ namespace UnitTests
             "IsMaxErrorRetrySet",
             "RetryMode",
             "FastFailRequests",
-            "EndpointProvider"
+            "EndpointProvider",
+            "Profile",
+            "IgnoreConfiguredEndpointUrls",
+            "ServiceId",
+            "CredentialProfileStoreChain",
+
         };
 
         [Fact]

@@ -62,7 +62,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property LastMessageTimestamp. 
         /// <para>
-        /// The time at which the last persistent message in a channel was sent.
+        /// The time at which the last persistent message visible to the caller in a channel was
+        /// sent.
         /// </para>
         /// </summary>
         public DateTime LastMessageTimestamp

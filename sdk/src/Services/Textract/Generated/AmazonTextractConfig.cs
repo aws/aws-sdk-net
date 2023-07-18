@@ -32,16 +32,26 @@ namespace Amazon.Textract
     public partial class AmazonTextractConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.105.45");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.55");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Textract";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTextractConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTextractDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Textract";
             this.AuthenticationServiceName = "textract";
             this.EndpointProvider = new AmazonTextractEndpointProvider();
         }

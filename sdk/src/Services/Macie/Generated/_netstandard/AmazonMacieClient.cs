@@ -112,7 +112,7 @@ namespace Amazon.Macie
         /// </summary>
         /// <param name="config">The AmazonMacieClient Configuration Object</param>
         public AmazonMacieClient(AmazonMacieConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -146,8 +146,7 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         /// <param name="config">The AmazonMediaPackageV2Client Configuration Object</param>
         public AmazonMediaPackageV2Client(AmazonMediaPackageV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMediaPackageV2Client with AWS Credentials
         /// </summary>

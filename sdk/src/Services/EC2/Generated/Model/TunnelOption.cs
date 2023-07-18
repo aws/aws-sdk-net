@@ -314,6 +314,7 @@ namespace Amazon.EC2.Model
         /// gateway and the customer gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSharedKey
         {
             get { return this._preSharedKey; }

@@ -118,8 +118,7 @@ namespace Amazon.WAF
         /// </summary>
         /// <param name="config">The AmazonWAFClient Configuration Object</param>
         public AmazonWAFClient(AmazonWAFConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonWAFClient with AWS Credentials
         /// </summary>

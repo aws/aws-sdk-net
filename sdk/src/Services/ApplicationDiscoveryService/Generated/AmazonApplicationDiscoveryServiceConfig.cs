@@ -32,16 +32,26 @@ namespace Amazon.ApplicationDiscoveryService
     public partial class AmazonApplicationDiscoveryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.81");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Application Discovery Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonApplicationDiscoveryServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationDiscoveryServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Application Discovery Service";
             this.AuthenticationServiceName = "discovery";
             this.EndpointProvider = new AmazonApplicationDiscoveryServiceEndpointProvider();
         }

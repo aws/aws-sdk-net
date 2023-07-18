@@ -132,7 +132,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="config">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials

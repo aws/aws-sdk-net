@@ -101,7 +101,7 @@ namespace Amazon.EC2InstanceConnect
         /// </summary>
         /// <param name="config">The AmazonEC2InstanceConnectClient Configuration Object</param>
         public AmazonEC2InstanceConnectClient(AmazonEC2InstanceConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonEC2InstanceConnectClient with AWS Credentials

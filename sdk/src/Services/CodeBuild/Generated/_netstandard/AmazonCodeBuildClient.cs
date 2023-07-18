@@ -111,7 +111,7 @@ namespace Amazon.CodeBuild
         /// </summary>
         /// <param name="config">The AmazonCodeBuildClient Configuration Object</param>
         public AmazonCodeBuildClient(AmazonCodeBuildConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

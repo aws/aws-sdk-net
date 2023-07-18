@@ -53,6 +53,11 @@
     <pattern>[a-zA-Z0-9/_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.GetHealthEventResponse.HealthScoreThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
@@ -147,6 +152,21 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9/_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.HealthEvent.HealthScoreThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.HealthEventsConfig.AvailabilityScoreThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.HealthEventsConfig.PerformanceScoreThreshold</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.Monitor.MonitorArn</property>

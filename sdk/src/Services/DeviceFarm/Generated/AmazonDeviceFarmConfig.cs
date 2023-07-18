@@ -32,16 +32,26 @@ namespace Amazon.DeviceFarm
     public partial class AmazonDeviceFarmConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Device Farm";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDeviceFarmConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDeviceFarmDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Device Farm";
             this.AuthenticationServiceName = "devicefarm";
             this.EndpointProvider = new AmazonDeviceFarmEndpointProvider();
         }

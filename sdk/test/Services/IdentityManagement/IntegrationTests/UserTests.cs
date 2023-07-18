@@ -52,6 +52,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         [TestMethod]
         [TestCategory("IdentityManagement")]
+        [TestCategory("RequiresIAMUser")]
         public void TestGetUserImplicit()
         {
             GetUserRequest request = new GetUserRequest();

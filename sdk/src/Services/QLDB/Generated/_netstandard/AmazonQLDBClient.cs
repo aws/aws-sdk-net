@@ -100,7 +100,7 @@ namespace Amazon.QLDB
         /// </summary>
         /// <param name="config">The AmazonQLDBClient Configuration Object</param>
         public AmazonQLDBClient(AmazonQLDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

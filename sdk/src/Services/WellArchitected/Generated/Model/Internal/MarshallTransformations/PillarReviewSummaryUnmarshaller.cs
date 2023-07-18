@@ -82,6 +82,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.PillarName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrioritizedRiskCounts", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.PrioritizedRiskCounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RiskCounts", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);

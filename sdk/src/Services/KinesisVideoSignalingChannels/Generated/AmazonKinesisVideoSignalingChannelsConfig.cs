@@ -32,16 +32,26 @@ namespace Amazon.KinesisVideoSignalingChannels
     public partial class AmazonKinesisVideoSignalingChannelsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kinesis Video Signaling";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoSignalingChannelsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoSignalingChannelsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kinesis Video Signaling";
             this.AuthenticationServiceName = "kinesisvideo";
             this.EndpointProvider = new AmazonKinesisVideoSignalingChannelsEndpointProvider();
         }

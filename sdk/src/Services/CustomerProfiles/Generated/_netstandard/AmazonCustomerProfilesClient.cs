@@ -109,7 +109,7 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         /// <param name="config">The AmazonCustomerProfilesClient Configuration Object</param>
         public AmazonCustomerProfilesClient(AmazonCustomerProfilesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

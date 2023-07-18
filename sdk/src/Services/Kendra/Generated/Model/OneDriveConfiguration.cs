@@ -73,7 +73,7 @@ namespace Amazon.Kendra.Model
         /// The pattern is applied to the file name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
         {
             get { return this._exclusionPatterns; }
@@ -124,7 +124,7 @@ namespace Amazon.Kendra.Model
         /// The pattern is applied to the file name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
         {
             get { return this._inclusionPatterns; }

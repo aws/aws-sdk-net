@@ -31,6 +31,13 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the ListAttendeeTags operation.
     /// Lists the tags applied to an Amazon Chime SDK attendee resource.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// ListAttendeeTags is not supported in the Amazon Chime SDK Meetings Namespace. Update
+    /// your application to remove calls to this API.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListAttendeeTagsRequest : AmazonChimeRequest
     {

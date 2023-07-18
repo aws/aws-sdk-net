@@ -38,6 +38,7 @@ namespace Amazon.MQ.Model
         private bool? _autoMinorVersionUpgrade;
         private string _brokerId;
         private ConfigurationId _configuration;
+        private DataReplicationMode _dataReplicationMode;
         private string _engineVersion;
         private string _hostInstanceType;
         private LdapServerMetadataInput _ldapServerMetadata;
@@ -118,6 +119,24 @@ namespace Amazon.MQ.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationMode. 
+        /// <para>
+        /// Defines whether this broker is a part of a data replication pair.
+        /// </para>
+        /// </summary>
+        public DataReplicationMode DataReplicationMode
+        {
+            get { return this._dataReplicationMode; }
+            set { this._dataReplicationMode = value; }
+        }
+
+        // Check to see if DataReplicationMode property is set
+        internal bool IsSetDataReplicationMode()
+        {
+            return this._dataReplicationMode != null;
         }
 
         /// <summary>

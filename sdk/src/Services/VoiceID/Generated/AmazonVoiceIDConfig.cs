@@ -32,16 +32,26 @@ namespace Amazon.VoiceID
     public partial class AmazonVoiceIDConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.44");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.54");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Voice ID";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonVoiceIDConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonVoiceIDDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Voice ID";
             this.AuthenticationServiceName = "voiceid";
             this.EndpointProvider = new AmazonVoiceIDEndpointProvider();
         }

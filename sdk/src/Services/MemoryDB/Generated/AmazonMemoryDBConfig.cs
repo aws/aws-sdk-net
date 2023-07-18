@@ -32,16 +32,26 @@ namespace Amazon.MemoryDB
     public partial class AmazonMemoryDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MemoryDB";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMemoryDBConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMemoryDBDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MemoryDB";
             this.AuthenticationServiceName = "memorydb";
             this.EndpointProvider = new AmazonMemoryDBEndpointProvider();
         }

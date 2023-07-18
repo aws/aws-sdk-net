@@ -116,8 +116,7 @@ namespace Amazon.IoTRoboRunner
         /// </summary>
         /// <param name="config">The AmazonIoTRoboRunnerClient Configuration Object</param>
         public AmazonIoTRoboRunnerClient(AmazonIoTRoboRunnerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIoTRoboRunnerClient with AWS Credentials
         /// </summary>

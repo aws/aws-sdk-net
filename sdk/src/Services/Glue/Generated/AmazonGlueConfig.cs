@@ -32,16 +32,26 @@ namespace Amazon.Glue
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.116.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.120.1");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Glue";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGlueConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlueDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Glue";
             this.AuthenticationServiceName = "glue";
             this.EndpointProvider = new AmazonGlueEndpointProvider();
         }

@@ -34,6 +34,9 @@ namespace Amazon.Inspector2.Model
     public partial class FilterCriteria
     {
         private List<StringFilter> _awsAccountId = new List<StringFilter>();
+        private List<StringFilter> _codeVulnerabilityDetectorName = new List<StringFilter>();
+        private List<StringFilter> _codeVulnerabilityDetectorTags = new List<StringFilter>();
+        private List<StringFilter> _codeVulnerabilityFilePath = new List<StringFilter>();
         private List<StringFilter> _componentId = new List<StringFilter>();
         private List<StringFilter> _componentType = new List<StringFilter>();
         private List<StringFilter> _ec2InstanceImageId = new List<StringFilter>();
@@ -45,6 +48,7 @@ namespace Amazon.Inspector2.Model
         private List<StringFilter> _ecrImageRegistry = new List<StringFilter>();
         private List<StringFilter> _ecrImageRepositoryName = new List<StringFilter>();
         private List<StringFilter> _ecrImageTags = new List<StringFilter>();
+        private List<NumberFilter> _epssScore = new List<NumberFilter>();
         private List<StringFilter> _exploitAvailable = new List<StringFilter>();
         private List<StringFilter> _findingArn = new List<StringFilter>();
         private List<StringFilter> _findingStatus = new List<StringFilter>();
@@ -89,6 +93,69 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null && this._awsAccountId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVulnerabilityDetectorName. 
+        /// <para>
+        /// The name of the detector used to identify a code vulnerability in a Lambda function
+        /// used to filter findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeVulnerabilityDetectorName
+        {
+            get { return this._codeVulnerabilityDetectorName; }
+            set { this._codeVulnerabilityDetectorName = value; }
+        }
+
+        // Check to see if CodeVulnerabilityDetectorName property is set
+        internal bool IsSetCodeVulnerabilityDetectorName()
+        {
+            return this._codeVulnerabilityDetectorName != null && this._codeVulnerabilityDetectorName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVulnerabilityDetectorTags. 
+        /// <para>
+        /// The detector type tag associated with the vulnerability used to filter findings. Detector
+        /// tags group related vulnerabilities by common themes or tactics. For a list of available
+        /// tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+        /// tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+        /// tags</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeVulnerabilityDetectorTags
+        {
+            get { return this._codeVulnerabilityDetectorTags; }
+            set { this._codeVulnerabilityDetectorTags = value; }
+        }
+
+        // Check to see if CodeVulnerabilityDetectorTags property is set
+        internal bool IsSetCodeVulnerabilityDetectorTags()
+        {
+            return this._codeVulnerabilityDetectorTags != null && this._codeVulnerabilityDetectorTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVulnerabilityFilePath. 
+        /// <para>
+        /// The file path to the file in a Lambda function that contains a code vulnerability
+        /// used to filter findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeVulnerabilityFilePath
+        {
+            get { return this._codeVulnerabilityFilePath; }
+            set { this._codeVulnerabilityFilePath = value; }
+        }
+
+        // Check to see if CodeVulnerabilityFilePath property is set
+        internal bool IsSetCodeVulnerabilityFilePath()
+        {
+            return this._codeVulnerabilityFilePath != null && this._codeVulnerabilityFilePath.Count > 0; 
         }
 
         /// <summary>
@@ -298,6 +365,25 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEcrImageTags()
         {
             return this._ecrImageTags != null && this._ecrImageTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EpssScore. 
+        /// <para>
+        /// The EPSS score used to filter findings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<NumberFilter> EpssScore
+        {
+            get { return this._epssScore; }
+            set { this._epssScore = value; }
+        }
+
+        // Check to see if EpssScore property is set
+        internal bool IsSetEpssScore()
+        {
+            return this._epssScore != null && this._epssScore.Count > 0; 
         }
 
         /// <summary>

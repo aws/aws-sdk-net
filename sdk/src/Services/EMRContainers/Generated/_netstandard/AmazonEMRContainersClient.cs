@@ -129,7 +129,7 @@ namespace Amazon.EMRContainers
         /// </summary>
         /// <param name="config">The AmazonEMRContainersClient Configuration Object</param>
         public AmazonEMRContainersClient(AmazonEMRContainersConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

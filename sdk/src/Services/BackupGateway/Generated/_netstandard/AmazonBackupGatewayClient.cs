@@ -123,7 +123,7 @@ namespace Amazon.BackupGateway
         /// </summary>
         /// <param name="config">The AmazonBackupGatewayClient Configuration Object</param>
         public AmazonBackupGatewayClient(AmazonBackupGatewayConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

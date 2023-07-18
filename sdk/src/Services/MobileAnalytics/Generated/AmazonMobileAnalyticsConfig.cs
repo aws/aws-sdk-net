@@ -32,16 +32,26 @@ namespace Amazon.MobileAnalytics
     public partial class AmazonMobileAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Mobile Analytics";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMobileAnalyticsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMobileAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Mobile Analytics";
             this.AuthenticationServiceName = "mobileanalytics";
             this.EndpointProvider = new AmazonMobileAnalyticsEndpointProvider();
         }

@@ -94,6 +94,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LunCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LunCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxP95Performance", targetDepth))
                 {
                     var unmarshaller = MaxP95PerformanceUnmarshaller.Instance;

@@ -32,16 +32,26 @@ namespace Amazon.ForecastService
     public partial class AmazonForecastServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.79");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.89");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "forecast";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonForecastServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonForecastServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "forecast";
             this.AuthenticationServiceName = "forecast";
             this.EndpointProvider = new AmazonForecastServiceEndpointProvider();
         }

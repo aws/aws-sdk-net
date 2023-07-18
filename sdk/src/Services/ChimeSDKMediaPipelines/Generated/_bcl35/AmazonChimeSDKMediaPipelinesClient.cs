@@ -118,8 +118,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// </summary>
         /// <param name="config">The AmazonChimeSDKMediaPipelinesClient Configuration Object</param>
         public AmazonChimeSDKMediaPipelinesClient(AmazonChimeSDKMediaPipelinesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonChimeSDKMediaPipelinesClient with AWS Credentials
         /// </summary>

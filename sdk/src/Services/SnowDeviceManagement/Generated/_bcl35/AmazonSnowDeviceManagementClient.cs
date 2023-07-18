@@ -115,8 +115,7 @@ namespace Amazon.SnowDeviceManagement
         /// </summary>
         /// <param name="config">The AmazonSnowDeviceManagementClient Configuration Object</param>
         public AmazonSnowDeviceManagementClient(AmazonSnowDeviceManagementConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSnowDeviceManagementClient with AWS Credentials
         /// </summary>

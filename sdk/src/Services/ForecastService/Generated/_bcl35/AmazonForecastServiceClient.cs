@@ -115,8 +115,7 @@ namespace Amazon.ForecastService
         /// </summary>
         /// <param name="config">The AmazonForecastServiceClient Configuration Object</param>
         public AmazonForecastServiceClient(AmazonForecastServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonForecastServiceClient with AWS Credentials
         /// </summary>

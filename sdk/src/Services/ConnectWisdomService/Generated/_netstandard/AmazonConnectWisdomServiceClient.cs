@@ -104,7 +104,7 @@ namespace Amazon.ConnectWisdomService
         /// </summary>
         /// <param name="config">The AmazonConnectWisdomServiceClient Configuration Object</param>
         public AmazonConnectWisdomServiceClient(AmazonConnectWisdomServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

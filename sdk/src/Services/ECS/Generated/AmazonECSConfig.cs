@@ -32,16 +32,26 @@ namespace Amazon.ECS
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.108.18");
+            InternalSDKUtils.BuildUserAgentString("3.7.109.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ECS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonECSConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECSDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ECS";
             this.AuthenticationServiceName = "ecs";
             this.EndpointProvider = new AmazonECSEndpointProvider();
         }

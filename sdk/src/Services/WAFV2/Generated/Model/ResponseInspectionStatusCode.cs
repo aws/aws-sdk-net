@@ -30,7 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Configures inspection of the response status code. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code>. 
+    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
+    /// 
     /// 
     ///  <note> 
     /// <para>
@@ -46,9 +47,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FailureCodes. 
         /// <para>
-        /// Status codes in the response that indicate a failed login attempt. To be counted as
-        /// a failed login, the response status code must match one of these. Each code must be
-        /// unique among the success and failure status codes. 
+        /// Status codes in the response that indicate a failed login or account creation attempt.
+        /// To be counted as a failure, the response status code must match one of these. Each
+        /// code must be unique among the success and failure status codes. 
         /// </para>
         ///  
         /// <para>
@@ -71,9 +72,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SuccessCodes. 
         /// <para>
-        /// Status codes in the response that indicate a successful login attempt. To be counted
-        /// as a successful login, the response status code must match one of these. Each code
-        /// must be unique among the success and failure status codes. 
+        /// Status codes in the response that indicate a successful login or account creation
+        /// attempt. To be counted as a success, the response status code must match one of these.
+        /// Each code must be unique among the success and failure status codes. 
         /// </para>
         ///  
         /// <para>

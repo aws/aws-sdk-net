@@ -101,7 +101,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </summary>
         /// <param name="config">The AmazonRoute53RecoveryControlConfigClient Configuration Object</param>
         public AmazonRoute53RecoveryControlConfigClient(AmazonRoute53RecoveryControlConfigConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

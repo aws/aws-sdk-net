@@ -128,7 +128,7 @@ namespace Amazon.CloudWatchEvidently
         /// </summary>
         /// <param name="config">The AmazonCloudWatchEvidentlyClient Configuration Object</param>
         public AmazonCloudWatchEvidentlyClient(AmazonCloudWatchEvidentlyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCloudWatchEvidentlyClient with AWS Credentials

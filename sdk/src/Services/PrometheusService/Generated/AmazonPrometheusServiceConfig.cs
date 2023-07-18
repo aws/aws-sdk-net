@@ -32,16 +32,26 @@ namespace Amazon.PrometheusService
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "amp";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPrometheusServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPrometheusServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "amp";
             this.AuthenticationServiceName = "aps";
             this.EndpointProvider = new AmazonPrometheusServiceEndpointProvider();
         }

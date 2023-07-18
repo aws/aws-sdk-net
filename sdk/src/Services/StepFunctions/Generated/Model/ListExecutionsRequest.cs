@@ -36,6 +36,12 @@ namespace Amazon.StepFunctions.Model
     /// 
     ///  
     /// <para>
+    /// You can also provide a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+    /// ARN or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>
+    /// ARN to list the executions associated with a specific alias or version.
+    /// </para>
+    ///  
+    /// <para>
     /// Results are sorted by time, with the most recent execution first.
     /// </para>
     ///  
@@ -149,6 +155,12 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>,
         /// but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+        /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+        /// by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

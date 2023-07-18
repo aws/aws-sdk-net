@@ -130,7 +130,7 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         /// <param name="config">The AmazonAccessAnalyzerClient Configuration Object</param>
         public AmazonAccessAnalyzerClient(AmazonAccessAnalyzerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAccessAnalyzerClient with AWS Credentials

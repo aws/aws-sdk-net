@@ -45,6 +45,17 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LexConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetInvokedBy())
+            {
+                context.Writer.WritePropertyName("InvokedBy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InvokedByMarshaller.Instance;
+                marshaller.Marshall(requestObject.InvokedBy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLexBotAliasArn())
             {
                 context.Writer.WritePropertyName("LexBotAliasArn");

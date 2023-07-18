@@ -17,10 +17,29 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
+using Amazon.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal.Util
 {
+    /// <summary>
+    /// A NestedProperty is a value in a configuration file that has a parent key 
+    /// and one or more key value pairs associate with it.
+    /// For example 
+    /// s3 = 
+    ///   max_retries = 10
+    /// s3 is the parent key, SubpropertyKeys contains ["max_retries"] and SubpropertyValues
+    /// contains ["10"]
+    /// </summary>
+    internal class NestedProperty
+    {
+        public string ParentKey { get; set; }
+        public List<string> SubpropertyKeys { get; set; } = new List<string> ();
+        public List<string> SubpropertyValues { get; set; } = new List<string> ();
+    }
+
     /// <summary>
     /// Provides read/write access to a file in the INI format.
     ///
@@ -28,6 +47,18 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class IniFile
     {
+#if BCL35
+        private class Tuple<T1, T2>
+        {
+            internal T1 Item1 { get; private set; }
+            internal T2 Item2 { get; private set; }
+            internal Tuple(T1 item1, T2 item2)
+            {
+                Item1 = item1;
+                Item2 = item2;
+            }
+        }
+#endif
         private const string sectionNamePrefix = "[";
         private const string sectionNameSuffix = "]";
         private const string keyValueSeparator = "=";
@@ -233,7 +264,8 @@ namespace Amazon.Runtime.Internal.Util
                 lineNumber++;
                 string propertyName;
                 string propertyValue;
-                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue))
+                NestedProperty nestedProperty;
+                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue, out nestedProperty))
                 {
                     var propertyDeleted = false;
                     if (propertiesLookup.ContainsKey(propertyName))
@@ -352,7 +384,8 @@ namespace Amazon.Runtime.Internal.Util
                 lineNumber++;
                 string propertyName;
                 string propertyValue;
-                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue))
+                NestedProperty nestedProperty;
+                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue, out nestedProperty))
                 {
                     if (IsDuplicateProperty(properties, propertyName, sectionName, lineNumber))
                     {
@@ -377,9 +410,20 @@ namespace Amazon.Runtime.Internal.Util
         public bool TryGetSection(Regex sectionNameRegex, out Dictionary<string, string> properties)
         {
             string dummy = null;
-            return TryGetSection(sectionNameRegex, out dummy, out properties);
+            return TryGetSection(sectionNameRegex, out _, out properties);
         }
-
+        /// <summary>
+        /// Returns the properties and subproperties for a section if it exists
+        /// </summary>
+        /// <param name="sectionNameRegex"></param>
+        /// <param name="properties"></param>
+        /// <param name="nestedProperties"></param>
+        /// <returns></returns>
+        public bool TryGetSection(Regex sectionNameRegex, out Dictionary<string,string> properties, out Dictionary<string,Dictionary<string,string>> nestedProperties)
+        {
+            string dummy = null;
+            return TryGetSection(sectionNameRegex, out _, out properties, out nestedProperties);
+        }
         /// <summary>
         /// Return the properties for the section if it exists.
         /// </summary>
@@ -397,7 +441,8 @@ namespace Amazon.Runtime.Internal.Util
                 lineNumber++;
                 string propertyName;
                 string propertyValue;
-                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue))
+                NestedProperty nestedProperty;
+                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue, out nestedProperty))
                 {
                     if (IsDuplicateProperty(properties, propertyName, sectionName, lineNumber))
                     {
@@ -407,6 +452,76 @@ namespace Amazon.Runtime.Internal.Util
                     }
 
                     properties.Add(propertyName, propertyValue);
+                    lineNumber++;
+                }
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Return the properties for the section if it exists.
+        /// </summary>
+        /// <param name="sectionNameRegex">Regex to match name of section to get</param>
+        /// <param name="sectionName">name of section if regex matches</param>
+        /// <param name="properties">properties contained in the section</param>
+        /// <param name = "nestedProperties">properties with nested attributes in the section</param>
+        /// For example, for a profile with the following values:
+        /// [profile foo]
+        /// s3 = 
+        ///   max_retries = 10
+        ///   max_concurrent_requests_ = 50
+        /// nestedProperties will contain:{s3: {max_retries: 10}, {max_concurrent_requests:50}}
+        /// <returns>True if the section was found, false otherwise</returns>
+        public bool TryGetSection(Regex sectionNameRegex, out string sectionName,
+            out Dictionary<string, string> properties, out Dictionary<string, Dictionary<string, string>> nestedProperties)
+        {
+            var lineNumber = 0;
+            properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            nestedProperties = new Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
+            if (TrySeekSection(sectionNameRegex, ref lineNumber, out sectionName))
+            {
+                lineNumber++;
+                string propertyName;
+                string propertyValue;
+                NestedProperty nestedProperty;
+                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue, out nestedProperty))
+                {
+                    if (IsDuplicateProperty(properties, propertyName, sectionName, lineNumber))
+                    {
+                        sectionName = null;
+                        properties.Clear();
+                        return false;
+                    }
+                    if(nestedProperty?.ParentKey != null)
+                    {
+                        // Following the example in the summary section, nestedProperty would look like
+                        // nestedProperty.ParentKey = "s3"
+                        // nestedProperty.SubpropertyKeys = ["max_retries","max_concurrent_requests"]
+                        // nestedProperty.SubpropertyValues = ["10","50"]
+#if BCL35
+                        List<Tuple<string,string>> keyValuePairs =  InternalSDKUtils.Zip(nestedProperty.SubpropertyKeys,nestedProperty.SubpropertyValues, (k, v) => new Tuple<string, string>(k, v)).ToList();
+#else
+
+                        List<Tuple<string,string>> keyValuePairs = nestedProperty.SubpropertyKeys.Zip(nestedProperty.SubpropertyValues, (k, v) => new Tuple<string,string>(k, v)).ToList();
+#endif
+                        foreach (var keyValuePair in keyValuePairs)
+                        {
+                            if (nestedProperties.ContainsKey(nestedProperty.ParentKey))
+                            {
+                                nestedProperties[nestedProperty.ParentKey][keyValuePair.Item1] = keyValuePair.Item2;
+                            }
+                            else
+                            {
+                                nestedProperties.Add(nestedProperty.ParentKey, new Dictionary<string, string>() {{ keyValuePair.Item1, keyValuePair.Item2 }});
+                            }
+                        }
+                    }
+                    else
+                    {
+                        properties.Add(propertyName, propertyValue);
+                    }
+
                     lineNumber++;
                 }
                 return true;
@@ -475,13 +590,19 @@ namespace Amazon.Runtime.Internal.Util
             sectionName = null;
             return false;
         }
-
-        private bool SeekProperty(ref int lineNumber, out string propertyName, out string propertyValue)
+        private bool SeekProperty(ref int lineNumber, out string propertyName, out string propertyValue, out NestedProperty nestedProperty)
         {
             while (lineNumber < Lines.Count)
             {
+                nestedProperty = null;
                 if (TryParseProperty(Lines[lineNumber], out propertyName, out propertyValue))
                 {
+                    //if propertyValue is empty, that means that it is a continuation property
+                    if (String.IsNullOrEmpty(propertyValue))
+                    {
+                        lineNumber++;
+                        TryParseSubproperties(ref lineNumber, propertyName, out nestedProperty);
+                    }
                     return true;
                 }
                 else if (IsSection(Lines[lineNumber]))
@@ -497,11 +618,46 @@ namespace Amazon.Runtime.Internal.Util
                     throw new InvalidDataException(GetErrorMessage(lineNumber));
                 }
             }
+            nestedProperty = null;
             propertyName = null;
             propertyValue = null;
             return false;
         }
-
+        private bool TryParseSubproperties(ref int lineNumber, string propertyName, out NestedProperty nestedProperty)
+        {
+            nestedProperty = new NestedProperty();
+            while (lineNumber < Lines.Count)
+            {
+                string currentLine = Lines[lineNumber];
+                string trimmedLine = currentLine.Trim();
+                string subpropertyName;
+                string subpropertyValue;
+                if (!StartsWithWhitespace(currentLine) || IsSection(currentLine))
+                {
+                    lineNumber--;
+                    return false;
+                }
+                else if (IsCommentOrBlank(currentLine))
+                {
+                }
+                else if (StartsWithWhitespace(currentLine))
+                {
+                    var separatorIndex = trimmedLine.IndexOf(keyValueSeparator, StringComparison.Ordinal);
+                    subpropertyName = trimmedLine.Substring(0, separatorIndex).Trim();
+                    subpropertyValue = trimmedLine.Substring(separatorIndex + 1).Trim();
+                    nestedProperty.SubpropertyKeys.Add(subpropertyName);
+                    nestedProperty.SubpropertyValues.Add(subpropertyValue);
+                }
+                else
+                {
+                    throw new InvalidDataException(GetErrorMessage(lineNumber));
+                }
+                lineNumber++;
+                nestedProperty.ParentKey = propertyName;
+            }
+            return true;
+        }  
+        
         private string GetErrorMessage(int lineNumber)
         {
             return string.Format(CultureInfo.InvariantCulture,
@@ -583,5 +739,10 @@ namespace Amazon.Runtime.Internal.Util
         {
             return string.Concat("(", this.FilePath, ":line ", lineNumber + 1, ")");
         }
+        private static bool StartsWithWhitespace(string line)
+        {
+            return line.Length > 0 && char.IsWhiteSpace(line[0]);
+        }
+
     }
 }

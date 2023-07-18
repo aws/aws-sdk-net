@@ -74,6 +74,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEventBridgeEnabled())
+                {
+                    context.Writer.WritePropertyName("EventBridgeEnabled");
+                    context.Writer.Write(publicRequest.EventBridgeEnabled);
+                }
+
                 if(publicRequest.IsSetPositionFiltering())
                 {
                     context.Writer.WritePropertyName("PositionFiltering");

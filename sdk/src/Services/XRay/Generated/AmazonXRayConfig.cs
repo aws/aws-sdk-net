@@ -32,16 +32,26 @@ namespace Amazon.XRay
     public partial class AmazonXRayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.124");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.134");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "XRay";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonXRayConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonXRayDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "XRay";
             this.AuthenticationServiceName = "xray";
             this.EndpointProvider = new AmazonXRayEndpointProvider();
         }

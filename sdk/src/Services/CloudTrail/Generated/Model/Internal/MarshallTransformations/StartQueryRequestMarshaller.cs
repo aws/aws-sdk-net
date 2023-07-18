@@ -73,6 +73,23 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeliveryS3Uri);
                 }
 
+                if(publicRequest.IsSetQueryAlias())
+                {
+                    context.Writer.WritePropertyName("QueryAlias");
+                    context.Writer.Write(publicRequest.QueryAlias);
+                }
+
+                if(publicRequest.IsSetQueryParameters())
+                {
+                    context.Writer.WritePropertyName("QueryParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestQueryParametersListValue in publicRequest.QueryParameters)
+                    {
+                            context.Writer.Write(publicRequestQueryParametersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetQueryStatement())
                 {
                     context.Writer.WritePropertyName("QueryStatement");

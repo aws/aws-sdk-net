@@ -332,8 +332,7 @@ namespace Amazon.CodePipeline
         /// </summary>
         /// <param name="config">The AmazonCodePipelineClient Configuration Object</param>
         public AmazonCodePipelineClient(AmazonCodePipelineConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCodePipelineClient with AWS Credentials
         /// </summary>

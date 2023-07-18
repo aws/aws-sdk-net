@@ -34,7 +34,9 @@ namespace Amazon.Inspector2.Model
     public partial class Finding
     {
         private string _awsAccountId;
+        private CodeVulnerabilityDetails _codeVulnerabilityDetails;
         private string _description;
+        private EpssDetails _epss;
         private ExploitabilityDetails _exploitabilityDetails;
         private ExploitAvailable _exploitAvailable;
         private string _findingArn;
@@ -73,6 +75,25 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CodeVulnerabilityDetails. 
+        /// <para>
+        /// Details about the code vulnerability identified in a Lambda function used to filter
+        /// findings.
+        /// </para>
+        /// </summary>
+        public CodeVulnerabilityDetails CodeVulnerabilityDetails
+        {
+            get { return this._codeVulnerabilityDetails; }
+            set { this._codeVulnerabilityDetails = value; }
+        }
+
+        // Check to see if CodeVulnerabilityDetails property is set
+        internal bool IsSetCodeVulnerabilityDetails()
+        {
+            return this._codeVulnerabilityDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the finding.
@@ -89,6 +110,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Epss. 
+        /// <para>
+        /// The finding's EPSS score.
+        /// </para>
+        /// </summary>
+        public EpssDetails Epss
+        {
+            get { return this._epss; }
+            set { this._epss = value; }
+        }
+
+        // Check to see if Epss property is set
+        internal bool IsSetEpss()
+        {
+            return this._epss != null;
         }
 
         /// <summary>

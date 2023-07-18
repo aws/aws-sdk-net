@@ -26,7 +26,31 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.CreateStateMachineRequest.VersionDescription</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.CreateStateMachineResponse.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.CreateStateMachineResponse.StateMachineVersionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.CreateStateMachineAliasRequest.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.CreateStateMachineAliasRequest.Name</property>
+    <min>1</min>
+    <max>80</max>
+    <pattern>^(?=.*[a-zA-Z_\-\.])[a-zA-Z0-9_\-\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.CreateStateMachineAliasResponse.StateMachineAliasArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -39,6 +63,16 @@
     <property>Amazon.StepFunctions.Model.DeleteStateMachineRequest.StateMachineArn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DeleteStateMachineAliasRequest.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DeleteStateMachineVersionRequest.StateMachineVersionArn</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeActivityRequest.ActivityArn</property>
@@ -94,7 +128,17 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeExecutionResponse.StateMachineVersionArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -142,6 +186,10 @@
     <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineResponse.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineResponse.Name</property>
     <min>1</min>
     <max>80</max>
@@ -153,6 +201,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.DescribeStateMachineResponse.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineAliasRequest.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineAliasResponse.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineAliasResponse.Name</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.DescribeStateMachineAliasResponse.StateMachineAliasArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -286,6 +353,26 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineAliasesRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineAliasesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineAliasesRequest.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineAliasesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListStateMachinesRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
@@ -301,7 +388,41 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineVersionsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineVersionsRequest.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListStateMachineVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.PublishStateMachineVersionRequest.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.PublishStateMachineVersionRequest.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.PublishStateMachineVersionResponse.StateMachineVersionArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -474,6 +595,24 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineRequest.VersionDescription</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineResponse.StateMachineVersionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineAliasRequest.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UpdateStateMachineAliasRequest.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -583,7 +722,17 @@
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ExecutionListItem.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionListItem.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ExecutionListItem.StateMachineVersionArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -593,6 +742,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionStartedEventDetails.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ExecutionStartedEventDetails.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ExecutionStartedEventDetails.StateMachineVersionArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -776,6 +935,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.RoutingConfigurationListItem.StateMachineVersionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.RoutingConfigurationListItem.Weight</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateEnteredEventDetails.Input</property>
     <max>262144</max>
   </property-value-rule>
@@ -794,6 +963,11 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StateMachineAliasListItem.StateMachineAliasArn</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateMachineListItem.Name</property>
     <min>1</min>
     <max>80</max>
@@ -802,6 +976,11 @@
     <property>Amazon.StepFunctions.Model.StateMachineListItem.StateMachineArn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StateMachineVersionListItem.StateMachineVersionArn</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.Tag.Key</property>

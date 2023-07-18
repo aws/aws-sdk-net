@@ -99,7 +99,7 @@ namespace Amazon.BearerTokenAuthTest
         /// </summary>
         /// <param name="config">The AmazonBearerTokenAuthTestClient Configuration Object</param>
         public AmazonBearerTokenAuthTestClient(AmazonBearerTokenAuthTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config, fallbackToAnonymous: true), config){}
 
         /// <summary>
         /// Constructs AmazonBearerTokenAuthTestClient with AWS Credentials

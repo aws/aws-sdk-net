@@ -51,6 +51,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("encryptionKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("results", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<List<ResultField>, ListUnmarshaller<ResultField, ResultFieldUnmarshaller>>(new ListUnmarshaller<ResultField, ResultFieldUnmarshaller>(ResultFieldUnmarshaller.Instance));

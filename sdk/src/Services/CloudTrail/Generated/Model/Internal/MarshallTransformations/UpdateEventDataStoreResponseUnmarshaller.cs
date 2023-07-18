@@ -144,6 +144,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return CloudTrailAccessNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EventDataStoreAlreadyExistsException"))
+                {
+                    return EventDataStoreAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EventDataStoreARNInvalidException"))
                 {
                     return EventDataStoreARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

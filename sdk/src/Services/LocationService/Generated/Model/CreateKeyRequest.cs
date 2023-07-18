@@ -31,16 +31,14 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Container for the parameters to the CreateKey operation.
     /// Creates an API key resource in your Amazon Web Services account, which lets you grant
-    /// <code>geo:GetMap*</code> actions for Amazon Location Map resources to the API key
-    /// bearer.
+    /// actions for Amazon Location resources to the API key bearer.
     /// 
-    ///  <important> 
+    ///  <note> 
     /// <para>
-    /// The API keys feature is in preview. We may add, change, or remove features before
-    /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
     /// API keys</a>.
     /// </para>
-    ///  </important>
+    ///  </note>
     /// </summary>
     public partial class CreateKeyRequest : AmazonLocationServiceRequest
     {

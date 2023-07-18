@@ -75,6 +75,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SizeInMegabytes);
             }
 
+            if(requestObject.IsSetSnaplockConfiguration())
+            {
+                context.Writer.WritePropertyName("SnaplockConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateSnaplockConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnaplockConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSnapshotPolicy())
             {
                 context.Writer.WritePropertyName("SnapshotPolicy");

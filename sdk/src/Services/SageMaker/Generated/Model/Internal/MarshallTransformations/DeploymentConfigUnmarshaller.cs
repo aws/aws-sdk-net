@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.BlueGreenUpdatePolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RollingUpdatePolicy", targetDepth))
+                {
+                    var unmarshaller = RollingUpdatePolicyUnmarshaller.Instance;
+                    unmarshalledObject.RollingUpdatePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

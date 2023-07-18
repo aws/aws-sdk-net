@@ -32,16 +32,26 @@ namespace Amazon.DirectoryService
     public partial class AmazonDirectoryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.24");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.34");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Directory Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDirectoryServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDirectoryServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Directory Service";
             this.AuthenticationServiceName = "ds";
             this.EndpointProvider = new AmazonDirectoryServiceEndpointProvider();
         }

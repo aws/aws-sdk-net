@@ -39,8 +39,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the property to sort the results by. This value can be the name of any
-        /// property that Amazon Macie defines for a finding.
+        /// The name of the property to sort the results by. Valid values are: count, createdAt,
+        /// policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen,
+        /// resourcesAffected, severity.score, type, and updatedAt.
         /// </para>
         /// </summary>
         public string AttributeName

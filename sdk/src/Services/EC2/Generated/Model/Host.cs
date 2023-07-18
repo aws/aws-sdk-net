@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _allocationTime;
         private AllowsMultipleInstanceTypes _allowsMultipleInstanceTypes;
+        private string _assetId;
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private string _availabilityZoneId;
@@ -90,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllowsMultipleInstanceTypes()
         {
             return this._allowsMultipleInstanceTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+        /// </para>
+        /// </summary>
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
         }
 
         /// <summary>

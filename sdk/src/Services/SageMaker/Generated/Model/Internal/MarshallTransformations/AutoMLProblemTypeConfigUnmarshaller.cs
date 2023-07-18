@@ -70,10 +70,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TabularJobConfig", targetDepth))
+                {
+                    var unmarshaller = TabularJobConfigUnmarshaller.Instance;
+                    unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TextClassificationJobConfig", targetDepth))
                 {
                     var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
                     unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeSeriesForecastingJobConfig", targetDepth))
+                {
+                    var unmarshaller = TimeSeriesForecastingJobConfigUnmarshaller.Instance;
+                    unmarshalledObject.TimeSeriesForecastingJobConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

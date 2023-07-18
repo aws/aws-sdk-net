@@ -32,16 +32,26 @@ namespace Amazon.CodePipeline
     public partial class AmazonCodePipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.18");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodePipeline";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodePipelineConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodePipelineDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodePipeline";
             this.AuthenticationServiceName = "codepipeline";
             this.EndpointProvider = new AmazonCodePipelineEndpointProvider();
         }

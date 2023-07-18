@@ -32,16 +32,26 @@ namespace Amazon.AWSMarketplaceMetering
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Marketplace Metering";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAWSMarketplaceMeteringConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSMarketplaceMeteringDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Marketplace Metering";
             this.AuthenticationServiceName = "aws-marketplace";
             this.EndpointProvider = new AmazonAWSMarketplaceMeteringEndpointProvider();
         }

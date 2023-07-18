@@ -32,16 +32,26 @@ namespace Amazon.Elasticsearch
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.25");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Elasticsearch Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticsearchConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticsearchDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Elasticsearch Service";
             this.AuthenticationServiceName = "es";
             this.EndpointProvider = new AmazonElasticsearchEndpointProvider();
         }

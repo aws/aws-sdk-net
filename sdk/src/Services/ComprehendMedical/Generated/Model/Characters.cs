@@ -38,8 +38,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property OriginalTextCharacters. 
         /// <para>
-        ///  The number of characters present in the input text document as processed by Comprehend
-        /// Medical. 
+        ///  The number of characters present in the input text document as processed by Amazon
+        /// Comprehend Medical. 
         /// </para>
         /// </summary>
         public int OriginalTextCharacters

@@ -32,16 +32,26 @@ namespace Amazon.KendraRanking
     public partial class AmazonKendraRankingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.92");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.102");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kendra Ranking";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKendraRankingConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKendraRankingDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kendra Ranking";
             this.AuthenticationServiceName = "kendra-ranking";
             this.EndpointProvider = new AmazonKendraRankingEndpointProvider();
         }

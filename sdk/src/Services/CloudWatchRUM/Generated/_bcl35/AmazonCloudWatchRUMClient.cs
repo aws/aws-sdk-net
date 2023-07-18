@@ -128,8 +128,7 @@ namespace Amazon.CloudWatchRUM
         /// </summary>
         /// <param name="config">The AmazonCloudWatchRUMClient Configuration Object</param>
         public AmazonCloudWatchRUMClient(AmazonCloudWatchRUMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCloudWatchRUMClient with AWS Credentials
         /// </summary>

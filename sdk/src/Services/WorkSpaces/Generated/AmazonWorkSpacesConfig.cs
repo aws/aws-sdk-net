@@ -32,16 +32,26 @@ namespace Amazon.WorkSpaces
     public partial class AmazonWorkSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.123");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.133");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WorkSpaces";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWorkSpacesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkSpacesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WorkSpaces";
             this.AuthenticationServiceName = "workspaces";
             this.EndpointProvider = new AmazonWorkSpacesEndpointProvider();
         }

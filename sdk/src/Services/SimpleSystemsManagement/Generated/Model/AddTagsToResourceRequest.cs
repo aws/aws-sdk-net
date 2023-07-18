@@ -120,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For the <code>Document</code> and <code>Parameter</code> values, use the name of the
-        /// resource.
+        /// resource. If you're tagging a shared document, you must use the full ARN of the document.
         /// </para>
         ///  
         /// <para>

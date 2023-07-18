@@ -32,16 +32,26 @@ namespace Amazon.PersonalizeRuntime
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Personalize Runtime";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPersonalizeRuntimeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Personalize Runtime";
             this.AuthenticationServiceName = "personalize";
             this.EndpointProvider = new AmazonPersonalizeRuntimeEndpointProvider();
         }

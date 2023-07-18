@@ -62,6 +62,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+                if(publicRequest.IsSetCustomDomainName())
+                {
+                    request.Parameters.Add("CustomDomainName", StringUtils.FromString(publicRequest.CustomDomainName));
+                }
                 if(publicRequest.IsSetDbName())
                 {
                     request.Parameters.Add("DbName", StringUtils.FromString(publicRequest.DbName));

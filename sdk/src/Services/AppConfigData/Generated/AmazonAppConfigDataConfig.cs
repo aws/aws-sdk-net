@@ -32,16 +32,26 @@ namespace Amazon.AppConfigData
     public partial class AmazonAppConfigDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.70");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.80");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AppConfigData";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppConfigDataConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppConfigDataDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AppConfigData";
             this.AuthenticationServiceName = "appconfig";
             this.EndpointProvider = new AmazonAppConfigDataEndpointProvider();
         }

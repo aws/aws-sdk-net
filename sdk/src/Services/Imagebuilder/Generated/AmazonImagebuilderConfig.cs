@@ -32,16 +32,26 @@ namespace Amazon.Imagebuilder
     public partial class AmazonImagebuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.41");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.51");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "imagebuilder";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonImagebuilderConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonImagebuilderDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "imagebuilder";
             this.AuthenticationServiceName = "imagebuilder";
             this.EndpointProvider = new AmazonImagebuilderEndpointProvider();
         }

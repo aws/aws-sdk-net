@@ -26,7 +26,53 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVersions operation.
-    /// <para>Returns metadata about all of the versions of objects in a bucket.</para>
+    /// Returns metadata about all versions of the objects in a bucket. You can also use request
+    /// parameters as selection criteria to return metadata about a subset of all the object
+    /// versions.
+    /// 
+    ///  <important> 
+    /// <para>
+    ///  To use this operation, you must have permissions to perform the <code>s3:ListBucketVersions</code>
+    /// action. Be aware of the name difference. 
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design
+    /// your application to parse the contents of the response and handle it appropriately.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// To use this operation, you must have READ access to the bucket.
+    /// </para>
+    ///  
+    /// <para>
+    /// This action is not supported by Amazon S3 on Outposts.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>ListObjectVersions</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListVersionsRequest : AmazonWebServiceRequest
     {
@@ -35,12 +81,17 @@ namespace Amazon.S3.Model
         private string keyMarker;
         private int? maxKeys;
         private string prefix;
+        private List<string> _optionalObjectAttributes = new List<string>();
+        private RequestPayer _requestPayer;
         private string versionIdMarker;
         private EncodingType encoding;
         private string expectedBucketOwner;
 
         /// <summary>
-        /// <para>The bucket name that contains the objects.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name that contains the objects. 
+        /// </para>
         /// </summary>
         public string BucketName
         {
@@ -48,14 +99,21 @@ namespace Amazon.S3.Model
             set { this.bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
         }
 
         /// <summary>
-        /// A delimiter is a character you use to group keys.
+        /// Gets and sets the property Delimiter. 
+        /// <para>
+        /// A delimiter is a character that you specify to group keys. All keys that contain the
+        /// same string between the <code>prefix</code> and the first occurrence of the delimiter
+        /// are grouped under a single result element in <code>CommonPrefixes</code>. These groups
+        /// are counted as one result against the <code>max-keys</code> limitation. These keys
+        /// are not returned elsewhere in the response.
+        /// </para>
         /// </summary>
         public string Delimiter
         {
@@ -85,7 +143,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
+        /// Gets and sets the property MaxKeys. 
+        /// <para>
+        /// Sets the maximum number of keys returned in the response. By default, the action returns
+        /// up to 1,000 key names. The response might contain fewer keys but will never contain
+        /// more. If additional keys satisfy the search criteria, but were not returned because
+        /// <code>max-keys</code> was exceeded, the response contains <code>&lt;isTruncated&gt;true&lt;/isTruncated&gt;</code>.
+        /// To return the additional keys, see <code>key-marker</code> and <code>version-id-marker</code>.
+        /// </para>
         /// </summary>
         public int MaxKeys
         {
@@ -100,7 +165,33 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Limits the response to keys that begin with the specified prefix.
+        /// Gets and sets the property OptionalObjectAttributes. 
+        /// <para>
+        /// Specifies the optional fields that you want returned in the response. Fields that
+        /// you do not specify are not returned.
+        /// </para>
+        /// </summary>
+        public List<string> OptionalObjectAttributes
+        {
+            get { return this._optionalObjectAttributes; }
+            set { this._optionalObjectAttributes = value; }
+        }
+
+        // Check to see if OptionalObjectAttributes property is set
+        internal bool IsSetOptionalObjectAttributes()
+        {
+            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// Use this parameter to select only those keys that begin with the specified prefix.
+        /// You can use prefixes to separate a bucket into different groupings of keys. (You can
+        /// think of using <code>prefix</code> to make groups in the same way that you'd use a
+        /// folder in a file system.) You can use <code>prefix</code> with <code>delimiter</code>
+        /// to roll up numerous objects into a single result under <code>CommonPrefixes</code>.
+        /// </para>
         /// </summary>
         public string Prefix
         {
@@ -112,6 +203,21 @@ namespace Amazon.S3.Model
         internal bool IsSetPrefix()
         {
             return this.prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestPayer.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this._requestPayer; }
+            set { this._requestPayer = value; }
+        }
+
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
+        {
+            return this._requestPayer != null;
         }
 
         /// <summary>

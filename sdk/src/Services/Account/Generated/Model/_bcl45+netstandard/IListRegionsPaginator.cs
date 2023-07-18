@@ -29,5 +29,10 @@ namespace Amazon.Account.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListRegionsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Regions
+        /// </summary>
+        IPaginatedEnumerable<Region> Regions { get; }
     }
 }

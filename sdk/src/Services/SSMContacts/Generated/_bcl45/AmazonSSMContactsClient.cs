@@ -127,7 +127,7 @@ namespace Amazon.SSMContacts
         /// </summary>
         /// <param name="config">The AmazonSSMContactsClient Configuration Object</param>
         public AmazonSSMContactsClient(AmazonSSMContactsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSSMContactsClient with AWS Credentials

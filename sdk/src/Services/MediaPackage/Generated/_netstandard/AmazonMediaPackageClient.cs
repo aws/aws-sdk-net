@@ -100,7 +100,7 @@ namespace Amazon.MediaPackage
         /// </summary>
         /// <param name="config">The AmazonMediaPackageClient Configuration Object</param>
         public AmazonMediaPackageClient(AmazonMediaPackageConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

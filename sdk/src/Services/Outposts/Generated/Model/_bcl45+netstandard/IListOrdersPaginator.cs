@@ -29,5 +29,10 @@ namespace Amazon.Outposts.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListOrdersResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Orders
+        /// </summary>
+        IPaginatedEnumerable<OrderSummary> Orders { get; }
     }
 }

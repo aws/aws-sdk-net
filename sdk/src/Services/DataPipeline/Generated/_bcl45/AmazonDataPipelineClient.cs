@@ -138,7 +138,7 @@ namespace Amazon.DataPipeline
         /// </summary>
         /// <param name="config">The AmazonDataPipelineClient Configuration Object</param>
         public AmazonDataPipelineClient(AmazonDataPipelineConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with AWS Credentials

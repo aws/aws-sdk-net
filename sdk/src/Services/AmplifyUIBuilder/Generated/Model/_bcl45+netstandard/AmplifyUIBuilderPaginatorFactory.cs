@@ -60,6 +60,14 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
+        /// Paginator for ListCodegenJobs operation
+        ///</summary>
+        public IListCodegenJobsPaginator ListCodegenJobs(ListCodegenJobsRequest request) 
+        {
+            return new ListCodegenJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
         public IListComponentsPaginator ListComponents(ListComponentsRequest request) 

@@ -4225,6 +4225,72 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type Ec2InstanceConnectEndpointState.
+    /// </summary>
+    public class Ec2InstanceConnectEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState CreateComplete = new Ec2InstanceConnectEndpointState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState CreateFailed = new Ec2InstanceConnectEndpointState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState CreateInProgress = new Ec2InstanceConnectEndpointState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState DeleteComplete = new Ec2InstanceConnectEndpointState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState DeleteFailed = new Ec2InstanceConnectEndpointState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState DeleteInProgress = new Ec2InstanceConnectEndpointState("delete-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ec2InstanceConnectEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ec2InstanceConnectEndpointState FindValue(string value)
+        {
+            return FindValue<Ec2InstanceConnectEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ec2InstanceConnectEndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ElasticGpuState.
     /// </summary>
     public class ElasticGpuState : ConstantClass
@@ -7889,6 +7955,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gMetal = new InstanceType("c7g.metal");
         /// <summary>
+        /// Constant C7gn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn12xlarge = new InstanceType("c7gn.12xlarge");
+        /// <summary>
+        /// Constant C7gn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn16xlarge = new InstanceType("c7gn.16xlarge");
+        /// <summary>
+        /// Constant C7gn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn2xlarge = new InstanceType("c7gn.2xlarge");
+        /// <summary>
+        /// Constant C7gn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn4xlarge = new InstanceType("c7gn.4xlarge");
+        /// <summary>
+        /// Constant C7gn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gn8xlarge = new InstanceType("c7gn.8xlarge");
+        /// <summary>
+        /// Constant C7gnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnLarge = new InstanceType("c7gn.large");
+        /// <summary>
+        /// Constant C7gnMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnMedium = new InstanceType("c7gn.medium");
+        /// <summary>
+        /// Constant C7gnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnXlarge = new InstanceType("c7gn.xlarge");
+        /// <summary>
         /// Constant C7gXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gXlarge = new InstanceType("c7g.xlarge");
@@ -8136,6 +8234,18 @@ namespace Amazon.EC2
         /// Constant Hpc6id32xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hpc6id32xlarge = new InstanceType("hpc6id.32xlarge");
+        /// <summary>
+        /// Constant Hpc7g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7g16xlarge = new InstanceType("hpc7g.16xlarge");
+        /// <summary>
+        /// Constant Hpc7g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7g4xlarge = new InstanceType("hpc7g.4xlarge");
+        /// <summary>
+        /// Constant Hpc7g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7g8xlarge = new InstanceType("hpc7g.8xlarge");
         /// <summary>
         /// Constant Hs18xlarge for InstanceType
         /// </summary>
@@ -13195,6 +13305,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type NitroEnclavesSupport.
+    /// </summary>
+    public class NitroEnclavesSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Supported for NitroEnclavesSupport
+        /// </summary>
+        public static readonly NitroEnclavesSupport Supported = new NitroEnclavesSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for NitroEnclavesSupport
+        /// </summary>
+        public static readonly NitroEnclavesSupport Unsupported = new NitroEnclavesSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NitroEnclavesSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NitroEnclavesSupport FindValue(string value)
+        {
+            return FindValue<NitroEnclavesSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NitroEnclavesSupport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferingClassType.
     /// </summary>
     public class OfferingClassType : ConstantClass
@@ -14786,6 +14946,10 @@ namespace Amazon.EC2
         /// Constant Instance for ResourceType
         /// </summary>
         public static readonly ResourceType Instance = new ResourceType("instance");
+        /// <summary>
+        /// Constant InstanceConnectEndpoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType InstanceConnectEndpoint = new ResourceType("instance-connect-endpoint");
         /// <summary>
         /// Constant InstanceEventWindow for ResourceType
         /// </summary>

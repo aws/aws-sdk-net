@@ -96,6 +96,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetOnStackFailure())
+                {
+                    request.Parameters.Add("OnStackFailure", StringUtils.FromString(publicRequest.OnStackFailure));
+                }
                 if(publicRequest.IsSetParameters())
                 {
                     int publicRequestlistValueIndex = 1;

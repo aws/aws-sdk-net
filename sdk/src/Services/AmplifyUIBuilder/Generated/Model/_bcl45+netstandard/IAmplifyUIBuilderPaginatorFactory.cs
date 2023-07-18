@@ -41,6 +41,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         IExportThemesPaginator ExportThemes(ExportThemesRequest request);
 
         /// <summary>
+        /// Paginator for ListCodegenJobs operation
+        ///</summary>
+        IListCodegenJobsPaginator ListCodegenJobs(ListCodegenJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListComponents operation
         ///</summary>
         IListComponentsPaginator ListComponents(ListComponentsRequest request);

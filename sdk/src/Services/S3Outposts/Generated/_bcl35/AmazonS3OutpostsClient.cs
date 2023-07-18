@@ -115,8 +115,7 @@ namespace Amazon.S3Outposts
         /// </summary>
         /// <param name="config">The AmazonS3OutpostsClient Configuration Object</param>
         public AmazonS3OutpostsClient(AmazonS3OutpostsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonS3OutpostsClient with AWS Credentials
         /// </summary>

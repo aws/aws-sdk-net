@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2
     /// Amazon DynamoDB 
     /// <para>
     /// Amazon DynamoDB Streams provides API actions for accessing streams and processing
-    /// stream records. To learn more about application development with Streams, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
+    /// stream records. To learn more about application development with Streams, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
     /// Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
     /// </para>
     /// </summary>
@@ -102,8 +102,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="config">The AmazonDynamoDBStreamsClient Configuration Object</param>
         public AmazonDynamoDBStreamsClient(AmazonDynamoDBStreamsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDynamoDBStreamsClient with AWS Credentials
         /// </summary>
@@ -282,7 +281,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual DescribeStreamResponse DescribeStream(string streamArn)
@@ -318,7 +318,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
@@ -399,14 +400,42 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
-        /// that receive this exception. Your request is eventually successful, unless your retry
-        /// queue is too large to finish. Reduce the frequency of requests and use exponential
-        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
-        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -417,12 +446,12 @@ namespace Amazon.DynamoDBv2
         /// age exceeds this limit are subject to removal (trimming) from the stream. You might
         /// receive a TrimmedDataAccessException if:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// You request a shard iterator with a sequence number older than the trim point (24
         /// hours).
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
@@ -470,14 +499,42 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
-        /// that receive this exception. Your request is eventually successful, unless your retry
-        /// queue is too large to finish. Reduce the frequency of requests and use exponential
-        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
-        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -488,12 +545,12 @@ namespace Amazon.DynamoDBv2
         /// age exceeds this limit are subject to removal (trimming) from the stream. You might
         /// receive a TrimmedDataAccessException if:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// You request a shard iterator with a sequence number older than the trim point (24
         /// hours).
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
@@ -567,7 +624,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -578,12 +636,12 @@ namespace Amazon.DynamoDBv2
         /// age exceeds this limit are subject to removal (trimming) from the stream. You might
         /// receive a TrimmedDataAccessException if:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// You request a shard iterator with a sequence number older than the trim point (24
         /// hours).
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
@@ -656,7 +714,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams()
@@ -682,7 +741,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
-        /// The operation tried to access a nonexistent stream.
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)

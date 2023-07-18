@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchQueues operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Searches queues in an Amazon Connect instance, with optional filtering.
-    /// </para>
     /// </summary>
     public partial class SearchQueuesRequest : AmazonConnectRequest
     {

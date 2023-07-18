@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTabularJobConfig())
+            {
+                context.Writer.WritePropertyName("TabularJobConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TabularJobConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TabularJobConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTextClassificationJobConfig())
             {
                 context.Writer.WritePropertyName("TextClassificationJobConfig");
@@ -63,6 +74,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = TextClassificationJobConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextClassificationJobConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTimeSeriesForecastingJobConfig())
+            {
+                context.Writer.WritePropertyName("TimeSeriesForecastingJobConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimeSeriesForecastingJobConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeSeriesForecastingJobConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }

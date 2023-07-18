@@ -127,6 +127,16 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             };
             _partitionsByRegex.Add(@"^eu\-isoe\-\w+\-\d+$", aws_iso_e);
 
+            var aws_iso_f = new PartitionAttributesShape
+            {
+                name = "aws-iso-f",
+                dnsSuffix = "csp.hci.ic.gov",
+                dualStackDnsSuffix = "csp.hci.ic.gov",
+                supportsFIPS = true,
+                supportsDualStack = false
+            };
+            _partitionsByRegex.Add(@"^us\-isof\-\w+\-\d+$", aws_iso_f);
+
             _defaultPartition = aws;
         }
     }

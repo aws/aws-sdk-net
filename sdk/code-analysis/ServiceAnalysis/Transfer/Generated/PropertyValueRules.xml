@@ -1076,6 +1076,11 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.As2ConnectorConfig.BasicAuthSecretId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.As2ConnectorConfig.LocalProfileId</property>
     <min>19</min>
     <max>19</max>

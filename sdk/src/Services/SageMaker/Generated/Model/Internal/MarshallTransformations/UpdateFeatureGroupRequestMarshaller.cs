@@ -89,6 +89,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FeatureGroupName);
                 }
 
+                if(publicRequest.IsSetOnlineStoreConfig())
+                {
+                    context.Writer.WritePropertyName("OnlineStoreConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnlineStoreConfigUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnlineStoreConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

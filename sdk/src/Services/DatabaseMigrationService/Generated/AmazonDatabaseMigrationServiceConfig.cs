@@ -32,16 +32,26 @@ namespace Amazon.DatabaseMigrationService
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.49");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.0");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Database Migration Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDatabaseMigrationServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDatabaseMigrationServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Database Migration Service";
             this.AuthenticationServiceName = "dms";
             this.EndpointProvider = new AmazonDatabaseMigrationServiceEndpointProvider();
         }

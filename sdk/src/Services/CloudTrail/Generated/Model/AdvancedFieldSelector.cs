@@ -171,6 +171,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::CodeWhisperer::Profile</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::Cognito::IdentityPool</code> 
         /// </para>
         ///  </li> <li> 
@@ -180,6 +184,10 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::EC2::Snapshot</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EMRWAL::Workspace</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -285,6 +293,17 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When resources.type equals <code>AWS::CodeWhisperer::Profile</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator
         /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
         /// format:
@@ -314,6 +333,17 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::EMRWAL::Workspace</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 

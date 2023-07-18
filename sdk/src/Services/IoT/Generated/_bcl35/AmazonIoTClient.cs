@@ -144,8 +144,7 @@ namespace Amazon.IoT
         /// </summary>
         /// <param name="config">The AmazonIoTClient Configuration Object</param>
         public AmazonIoTClient(AmazonIoTConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIoTClient with AWS Credentials
         /// </summary>

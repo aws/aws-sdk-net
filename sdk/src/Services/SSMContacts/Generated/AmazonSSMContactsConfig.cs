@@ -32,16 +32,26 @@ namespace Amazon.SSMContacts
     public partial class AmazonSSMContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.43");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.53");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SSM Contacts";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSSMContactsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSMContactsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SSM Contacts";
             this.AuthenticationServiceName = "ssm-contacts";
             this.EndpointProvider = new AmazonSSMContactsEndpointProvider();
         }

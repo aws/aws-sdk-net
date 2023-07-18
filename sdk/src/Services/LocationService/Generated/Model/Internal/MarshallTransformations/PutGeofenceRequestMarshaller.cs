@@ -71,6 +71,20 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGeofenceProperties())
+                {
+                    context.Writer.WritePropertyName("GeofenceProperties");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestGeofencePropertiesKvp in publicRequest.GeofenceProperties)
+                    {
+                        context.Writer.WritePropertyName(publicRequestGeofencePropertiesKvp.Key);
+                        var publicRequestGeofencePropertiesValue = publicRequestGeofencePropertiesKvp.Value;
+
+                            context.Writer.Write(publicRequestGeofencePropertiesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGeometry())
                 {
                     context.Writer.WritePropertyName("Geometry");

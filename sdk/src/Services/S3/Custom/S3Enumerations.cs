@@ -782,6 +782,11 @@ namespace Amazon.S3
         public static readonly ServerSideEncryptionMethod AWSKMS = new ServerSideEncryptionMethod("aws:kms");
 
         /// <summary>
+        /// Use AWS Key Management Service for server side double encryption 
+        /// </summary>
+        public static readonly ServerSideEncryptionMethod AWSKMSDSSE = new ServerSideEncryptionMethod("aws:kms:dsse");
+
+        /// <summary>
         /// Construct instance of ServerSideEncryptionMethod.
         /// </summary>
         /// <param name="value"></param>
@@ -1417,6 +1422,16 @@ namespace Amazon.S3
         /// Constant ChecksumAlgorithm for InventoryOptionalField
         /// </summary>
         public static readonly InventoryOptionalField ChecksumAlgorithm = new InventoryOptionalField("ChecksumAlgorithm");
+
+        /// <summary>
+        /// Constant ObjectAccessControlList for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ObjectAccessControlList = new InventoryOptionalField("ObjectAccessControlList");
+
+        /// <summary>
+        /// Constant ObjectOwner for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ObjectOwner = new InventoryOptionalField("ObjectOwner");
 
         /// <summary>
         /// Construct instance of InventoryOptionalField.
@@ -2202,6 +2217,50 @@ namespace Amazon.S3
         /// Converts the string to ObjectLockMode instance
         /// </summary>
         public static implicit operator ObjectLockMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    /// <summary>
+    /// Constants used for properties of type OptionalObjectAttributes.
+    /// </summary>
+    public sealed class OptionalObjectAttributes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RestoreStatus for OptionalObjectAttributes
+        /// </summary>
+        public static readonly OptionalObjectAttributes RestoreStatus = new OptionalObjectAttributes("RestoreStatus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptionalObjectAttributes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptionalObjectAttributes FindValue(string value)
+        {
+            return FindValue<OptionalObjectAttributes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptionalObjectAttributes(string value)
         {
             return FindValue(value);
         }

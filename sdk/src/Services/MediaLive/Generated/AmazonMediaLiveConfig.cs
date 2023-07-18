@@ -32,16 +32,26 @@ namespace Amazon.MediaLive
     public partial class AmazonMediaLiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.106.44");
+            InternalSDKUtils.BuildUserAgentString("3.7.107.1");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaLive";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaLiveConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaLiveDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaLive";
             this.AuthenticationServiceName = "medialive";
             this.EndpointProvider = new AmazonMediaLiveEndpointProvider();
         }

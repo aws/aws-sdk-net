@@ -71,6 +71,11 @@ namespace Amazon.Redshift.Model
         IDescribeClusterVersionsPaginator DescribeClusterVersions(DescribeClusterVersionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCustomDomainAssociations operation
+        ///</summary>
+        IDescribeCustomDomainAssociationsPaginator DescribeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDataShares operation
         ///</summary>
         IDescribeDataSharesPaginator DescribeDataShares(DescribeDataSharesRequest request);

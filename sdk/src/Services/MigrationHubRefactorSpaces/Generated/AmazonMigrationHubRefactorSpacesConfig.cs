@@ -32,16 +32,26 @@ namespace Amazon.MigrationHubRefactorSpaces
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.18");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Migration Hub Refactor Spaces";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubRefactorSpacesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubRefactorSpacesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Migration Hub Refactor Spaces";
             this.AuthenticationServiceName = "refactor-spaces";
             this.EndpointProvider = new AmazonMigrationHubRefactorSpacesEndpointProvider();
         }

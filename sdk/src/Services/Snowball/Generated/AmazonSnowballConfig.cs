@@ -32,16 +32,26 @@ namespace Amazon.Snowball
     public partial class AmazonSnowballConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.27");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.37");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Snowball";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSnowballConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSnowballDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Snowball";
             this.AuthenticationServiceName = "snowball";
             this.EndpointProvider = new AmazonSnowballEndpointProvider();
         }

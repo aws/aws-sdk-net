@@ -43,12 +43,24 @@ namespace Amazon.Chime.Model
     /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
     /// API in the <i>Amazon Transcribe Developer Guide</i>.
     /// </para>
-    ///  <important> 
+    ///  <note> 
     /// <para>
     /// Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
     /// Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS Service
     /// Terms</a>, including the terms specific to the AWS Machine Learning and Artificial
     /// Intelligence Services.
+    /// </para>
+    ///  </note> <important> 
+    /// <para>
+    ///  <b>This API is is no longer supported and will not be updated.</b> We recommend using
+    /// the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_StartMeetingTranscription.html">StartMeetingTranscription</a>,
+    /// in the Amazon Chime SDK.
+    /// </para>
+    ///  
+    /// <para>
+    /// Using the latest version requires migrating to a dedicated namespace. For more information,
+    /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating
+    /// from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>

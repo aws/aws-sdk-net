@@ -33,14 +33,35 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisRuleList
     {
+        private List<string> _allowedJoinOperators = new List<string>();
         private List<string> _joinColumns = new List<string>();
         private List<string> _listColumns = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowedJoinOperators. 
+        /// <para>
+        /// Which logical operators (if any) are to be used in an INNER JOIN match condition.
+        /// Default is <code>AND</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> AllowedJoinOperators
+        {
+            get { return this._allowedJoinOperators; }
+            set { this._allowedJoinOperators = value; }
+        }
+
+        // Check to see if AllowedJoinOperators property is set
+        internal bool IsSetAllowedJoinOperators()
+        {
+            return this._allowedJoinOperators != null && this._allowedJoinOperators.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property JoinColumns. 
         /// <para>
         /// Columns that can be used to join a configured table with the table of the member who
-        /// can query and another members' configured tables.
+        /// can query and other members' configured tables.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

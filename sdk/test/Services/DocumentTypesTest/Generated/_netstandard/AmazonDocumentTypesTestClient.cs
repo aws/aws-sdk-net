@@ -100,7 +100,7 @@ namespace Amazon.DocumentTypesTest
         /// </summary>
         /// <param name="config">The AmazonDocumentTypesTestClient Configuration Object</param>
         public AmazonDocumentTypesTestClient(AmazonDocumentTypesTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -206,7 +206,7 @@ namespace Amazon.CodeStarconnections
         /// </summary>
         /// <param name="config">The AmazonCodeStarconnectionsClient Configuration Object</param>
         public AmazonCodeStarconnectionsClient(AmazonCodeStarconnectionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCodeStarconnectionsClient with AWS Credentials

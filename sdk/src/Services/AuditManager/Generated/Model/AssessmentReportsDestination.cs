@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        ///  The destination of the assessment report. 
+        ///  The destination bucket where Audit Manager stores assessment reports. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

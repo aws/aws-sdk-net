@@ -57,6 +57,12 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EdgeAgentStatus", targetDepth))
+                {
+                    var unmarshaller = EdgeAgentStatusUnmarshaller.Instance;
+                    response.EdgeAgentStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EdgeConfig", targetDepth))
                 {
                     var unmarshaller = EdgeConfigUnmarshaller.Instance;

@@ -36,6 +36,22 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAppBlockBuilderAppBlockAssociations operation
+        ///</summary>
+        public IDescribeAppBlockBuilderAppBlockAssociationsPaginator DescribeAppBlockBuilderAppBlockAssociations(DescribeAppBlockBuilderAppBlockAssociationsRequest request) 
+        {
+            return new DescribeAppBlockBuilderAppBlockAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAppBlockBuilders operation
+        ///</summary>
+        public IDescribeAppBlockBuildersPaginator DescribeAppBlockBuilders(DescribeAppBlockBuildersRequest request) 
+        {
+            return new DescribeAppBlockBuildersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeImagePermissions operation
         ///</summary>
         public IDescribeImagePermissionsPaginator DescribeImagePermissions(DescribeImagePermissionsRequest request) 

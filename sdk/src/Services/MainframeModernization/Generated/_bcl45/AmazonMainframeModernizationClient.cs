@@ -120,7 +120,7 @@ namespace Amazon.MainframeModernization
         /// </summary>
         /// <param name="config">The AmazonMainframeModernizationClient Configuration Object</param>
         public AmazonMainframeModernizationClient(AmazonMainframeModernizationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMainframeModernizationClient with AWS Credentials

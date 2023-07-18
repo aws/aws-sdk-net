@@ -32,16 +32,26 @@ namespace Amazon.LookoutEquipment
     public partial class AmazonLookoutEquipmentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.102");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.112");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "LookoutEquipment";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLookoutEquipmentConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutEquipmentDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "LookoutEquipment";
             this.AuthenticationServiceName = "lookoutequipment";
             this.EndpointProvider = new AmazonLookoutEquipmentEndpointProvider();
         }

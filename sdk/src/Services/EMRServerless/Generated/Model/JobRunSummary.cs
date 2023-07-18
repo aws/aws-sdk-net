@@ -182,7 +182,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// The EMR release associated with the application your job is running on.
+        /// The Amazon EMR release associated with the application your job is running on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

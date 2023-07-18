@@ -32,16 +32,26 @@ namespace Amazon.DynamoDBv2
     public partial class AmazonDynamoDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DynamoDB";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDynamoDBConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDynamoDBDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DynamoDB";
             this.AuthenticationServiceName = "dynamodb";
             this.MaxErrorRetry = 10;
             this.EndpointProvider = new AmazonDynamoDBEndpointProvider();

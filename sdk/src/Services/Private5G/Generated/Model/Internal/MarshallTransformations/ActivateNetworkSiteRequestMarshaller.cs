@@ -71,6 +71,17 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                if(publicRequest.IsSetCommitmentConfiguration())
+                {
+                    context.Writer.WritePropertyName("commitmentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CommitmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CommitmentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNetworkSiteArn())
                 {
                     context.Writer.WritePropertyName("networkSiteArn");

@@ -40,10 +40,10 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        ///  The collection of PHI entities extracted from the input text and their associated
+        /// The collection of PHI entities extracted from the input text and their associated
         /// information. For each entity, the response provides the entity text, the entity category,
-        /// where the entity text begins and ends, and the level of confidence that Comprehend
-        /// Medical; has in its detection. 
+        /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
+        /// Medical has in its detection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        ///  If the result of the previous request to <code>DetectPHI</code> was truncated, include
+        /// If the result of the previous request to <code>DetectPHI</code> was truncated, include
         /// the <code>PaginationToken</code> to fetch the next page of PHI entities. 
         /// </para>
         /// </summary>

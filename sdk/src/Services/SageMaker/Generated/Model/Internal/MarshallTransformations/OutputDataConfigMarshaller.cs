@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCompressionType())
+            {
+                context.Writer.WritePropertyName("CompressionType");
+                context.Writer.Write(requestObject.CompressionType);
+            }
+
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");

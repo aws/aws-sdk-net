@@ -23,8 +23,21 @@ This project file should not be used as part of a release pipeline.
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
         <NoWarn>CS1591</NoWarn>
-    </PropertyGroup>
 
+        <SignAssembly>True</SignAssembly>
+    </PropertyGroup>
+   <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
     <ItemGroup>
         <!-- Intentionally exclude these tests as they require a large number of unique Service dependencies -->
         <Compile Remove="Custom\Runtime\SignerTests.cs" />

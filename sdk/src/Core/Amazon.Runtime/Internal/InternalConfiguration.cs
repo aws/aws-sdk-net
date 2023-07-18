@@ -16,6 +16,7 @@ using System;
 
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
+using System.Linq;
 #if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
@@ -69,6 +70,13 @@ namespace Amazon.Runtime.Internal
         /// for the configured region.
         /// </summary>
         public bool? UseFIPSEndpoint { get; set; }
+    
+        /// <summary>
+        /// Configures the SDK To ignore configured endpoint URLs in the configuration files or environment variables.
+        /// The environment variable overrides the value set in the configuration file.
+        /// </summary>
+        public bool? IgnoreConfiguredEndpointUrls { get; set; }
+
     }
 
 #if BCL || NETSTANDARD
@@ -88,7 +96,7 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT = "AWS_USE_DUALSTACK_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT = "AWS_USE_FIPS_ENDPOINT";
-
+        public const string ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS = "AWS_IGNORE_CONFIGURED_ENDPOINT_URLS";
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
         /// variables. If an environment variable value isn't found then the individual value 
@@ -105,6 +113,25 @@ namespace Amazon.Runtime.Internal
             EC2MetadataServiceEndpointMode = GetEnvironmentVariable<EC2MetadataServiceEndpointMode>(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE);
             UseDualstackEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT);
             UseFIPSEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT);
+            IgnoreConfiguredEndpointUrls = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS, false);
+        }
+
+        private bool GetEnvironmentVariable(string name, bool defaultValue)
+        {
+            if(!TryGetEnvironmentVariable(name, out var value))
+            {
+                return defaultValue;
+            }
+            try
+            {
+                return bool.Parse(value);
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, e.Message);
+                throw new FormatException(e.Message, e.InnerException);
+                
+            }
         }
 
         private bool TryGetEnvironmentVariable(string environmentVariableName, out string value)
@@ -227,6 +254,7 @@ namespace Amazon.Runtime.Internal
                 EC2MetadataServiceEndpointMode = profile.EC2MetadataServiceEndpointMode;
                 UseDualstackEndpoint = profile.UseDualstackEndpoint;
                 UseFIPSEndpoint = profile.UseFIPSEndpoint;
+                IgnoreConfiguredEndpointUrls = profile.IgnoreConfiguredEndpointUrls;
             }
             else
             {
@@ -243,7 +271,9 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint", profile.EC2MetadataServiceEndpoint),
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode),
                 new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint),
-                new KeyValuePair<string, object>("use_fips_endpoint", profile.UseFIPSEndpoint)
+                new KeyValuePair<string, object>("use_fips_endpoint", profile.UseFIPSEndpoint),
+                new KeyValuePair<string,object>( "ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
+                new KeyValuePair<string, object>("endpoint_url", profile.EndpointUrl)
             };
 
             foreach(var item in items)
@@ -307,6 +337,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.EC2MetadataServiceEndpointMode = SeekValue(standardGenerators, (c) => c.EC2MetadataServiceEndpointMode);
             _cachedConfiguration.UseDualstackEndpoint = SeekValue(standardGenerators, (c) => c.UseDualstackEndpoint);
             _cachedConfiguration.UseFIPSEndpoint = SeekValue(standardGenerators, (c) => c.UseFIPSEndpoint);
+            _cachedConfiguration.IgnoreConfiguredEndpointUrls = SeekValue(standardGenerators, (c) => c.IgnoreConfiguredEndpointUrls);
+
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -429,6 +461,17 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.UseFIPSEndpoint;
+            }
+        }
+        /// <summary>
+        /// Configures the SDK To ignore configured endpoint URLs in the configuration files or environment variables.
+        /// The environment variable overrides the value set in the configuration file.
+        /// </summary>
+        public static bool? IgnoreConfiguredEndpointUrls
+        {
+            get
+            {
+                return _cachedConfiguration.IgnoreConfiguredEndpointUrls;
             }
         }
     }

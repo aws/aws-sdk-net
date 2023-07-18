@@ -141,8 +141,7 @@ namespace Amazon.WorkSpaces
         /// </summary>
         /// <param name="config">The AmazonWorkSpacesClient Configuration Object</param>
         public AmazonWorkSpacesClient(AmazonWorkSpacesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonWorkSpacesClient with AWS Credentials
         /// </summary>

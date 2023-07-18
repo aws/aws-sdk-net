@@ -51,6 +51,20 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GeofenceId);
             }
 
+            if(requestObject.IsSetGeofenceProperties())
+            {
+                context.Writer.WritePropertyName("GeofenceProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectGeofencePropertiesKvp in requestObject.GeofenceProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectGeofencePropertiesKvp.Key);
+                    var requestObjectGeofencePropertiesValue = requestObjectGeofencePropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectGeofencePropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGeometry())
             {
                 context.Writer.WritePropertyName("Geometry");

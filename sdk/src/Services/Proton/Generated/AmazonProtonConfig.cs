@@ -32,16 +32,26 @@ namespace Amazon.Proton
     public partial class AmazonProtonConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.105.36");
+            InternalSDKUtils.BuildUserAgentString("3.7.106.0");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Proton";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonProtonConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonProtonDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Proton";
             this.AuthenticationServiceName = "proton";
             this.EndpointProvider = new AmazonProtonEndpointProvider();
         }

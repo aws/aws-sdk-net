@@ -355,8 +355,7 @@ namespace Amazon.Proton
         /// </summary>
         /// <param name="config">The AmazonProtonClient Configuration Object</param>
         public AmazonProtonClient(AmazonProtonConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonProtonClient with AWS Credentials
         /// </summary>
@@ -2015,6 +2014,75 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  DeleteDeployment
+
+        /// <summary>
+        /// Delete the deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeploymentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeployment.</param>
+        /// 
+        /// <returns>Returns a  DeleteDeploymentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDeploymentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEnvironment
 
         /// <summary>
@@ -2927,6 +2995,75 @@ namespace Amazon.Proton
         public virtual GetComponentResponse EndGetComponent(IAsyncResult asyncResult)
         {
             return EndInvoke<GetComponentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDeployment
+
+        /// <summary>
+        /// Get detailed data for a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeploymentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployment.</param>
+        /// 
+        /// <returns>Returns a  GetDeploymentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        public virtual GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDeploymentResponse>(asyncResult);
         }
 
         #endregion
@@ -4300,6 +4437,76 @@ namespace Amazon.Proton
         public virtual ListComponentsResponse EndListComponents(IAsyncResult asyncResult)
         {
             return EndInvoke<ListComponentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDeployments
+
+        /// <summary>
+        /// List deployments. You can filter the result list by environment, service, or a single
+        /// service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListDeployments service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        public virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeploymentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployments operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeployments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        public virtual IAsyncResult BeginListDeployments(ListDeploymentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeployments.</param>
+        /// 
+        /// <returns>Returns a  ListDeploymentsResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        public virtual ListDeploymentsResponse EndListDeployments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDeploymentsResponse>(asyncResult);
         }
 
         #endregion

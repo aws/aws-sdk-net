@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _endpointIpAddressRange;
         private FileSystemEndpoints _endpoints;
+        private string _fsxAdminPassword;
         private string _preferredSubnetId;
         private List<string> _routeTableIds = new List<string>();
         private int? _throughputCapacity;
@@ -171,6 +172,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetEndpoints()
         {
             return this._endpoints != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsxAdminPassword. 
+        /// <para>
+        /// You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI
+        /// and REST API. The password value is always redacted in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
+        public string FsxAdminPassword
+        {
+            get { return this._fsxAdminPassword; }
+            set { this._fsxAdminPassword = value; }
+        }
+
+        // Check to see if FsxAdminPassword property is set
+        internal bool IsSetFsxAdminPassword()
+        {
+            return this._fsxAdminPassword != null;
         }
 
         /// <summary>

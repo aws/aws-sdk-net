@@ -97,8 +97,7 @@ namespace Amazon.UseServiceIdTestserviceId
         /// </summary>
         /// <param name="config">The AmazonUseServiceIdTestserviceIdClient Configuration Object</param>
         public AmazonUseServiceIdTestserviceIdClient(AmazonUseServiceIdTestserviceIdConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonUseServiceIdTestserviceIdClient with AWS Credentials
         /// </summary>

@@ -45,7 +45,6 @@ namespace Amazon.Kendra.Model
         /// The text of the conflicting query.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public string QueryText
         {
             get { return this._queryText; }

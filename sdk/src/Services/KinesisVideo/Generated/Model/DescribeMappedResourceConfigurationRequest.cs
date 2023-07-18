@@ -30,14 +30,8 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMappedResourceConfiguration operation.
-    /// Returns the most current information about the stream. Either streamName or streamARN
-    /// should be provided in the input.
-    /// 
-    ///  
-    /// <para>
     /// Returns the most current information about the stream. The <code>streamName</code>
     /// or <code>streamARN</code> should be provided in the input.
-    /// </para>
     /// </summary>
     public partial class DescribeMappedResourceConfigurationRequest : AmazonKinesisVideoRequest
     {

@@ -32,16 +32,26 @@ namespace Amazon.GameSparks
     public partial class AmazonGameSparksConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.138");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.148");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "GameSparks";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGameSparksConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGameSparksDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "GameSparks";
             this.AuthenticationServiceName = "gamesparks";
             this.EndpointProvider = new AmazonGameSparksEndpointProvider();
         }

@@ -88,6 +88,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code> (supported for 12.1.0.2 DB snapshots)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
         /// </para>
         ///  </li> <li> 

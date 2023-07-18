@@ -107,7 +107,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="config">The AmazonDirectConnectClient Configuration Object</param>
         public AmazonDirectConnectClient(AmazonDirectConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

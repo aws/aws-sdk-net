@@ -32,16 +32,26 @@ namespace Amazon.DirectConnect
     public partial class AmazonDirectConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.144");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.154");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Direct Connect";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDirectConnectConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDirectConnectDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Direct Connect";
             this.AuthenticationServiceName = "directconnect";
             this.EndpointProvider = new AmazonDirectConnectEndpointProvider();
         }

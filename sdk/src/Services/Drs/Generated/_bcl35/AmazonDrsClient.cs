@@ -115,8 +115,7 @@ namespace Amazon.Drs
         /// </summary>
         /// <param name="config">The AmazonDrsClient Configuration Object</param>
         public AmazonDrsClient(AmazonDrsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDrsClient with AWS Credentials
         /// </summary>
@@ -264,6 +263,84 @@ namespace Amazon.Drs
         #endregion
 
 
+        #region  AssociateSourceNetworkStack
+
+        /// <summary>
+        /// Associate a Source Network to an existing CloudFormation Stack and modify launch templates
+        /// to use this network. Can be used for reverting to previously deployed CloudFormation
+        /// stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceNetworkStack service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceNetworkStack service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
+        public virtual AssociateSourceNetworkStackResponse AssociateSourceNetworkStack(AssociateSourceNetworkStackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceNetworkStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceNetworkStackResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSourceNetworkStackResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSourceNetworkStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceNetworkStack operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSourceNetworkStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSourceNetworkStack(AssociateSourceNetworkStackRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceNetworkStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceNetworkStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSourceNetworkStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSourceNetworkStack.</param>
+        /// 
+        /// <returns>Returns a  AssociateSourceNetworkStackResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
+        public virtual AssociateSourceNetworkStackResponse EndAssociateSourceNetworkStack(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSourceNetworkStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateExtendedSourceServer
 
         /// <summary>
@@ -480,6 +557,82 @@ namespace Amazon.Drs
         public virtual CreateReplicationConfigurationTemplateResponse EndCreateReplicationConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReplicationConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSourceNetwork
+
+        /// <summary>
+        /// Create a new Source Network resource for a provided VPC ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceNetwork service method.</param>
+        /// 
+        /// <returns>The response from the CreateSourceNetwork service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
+        public virtual CreateSourceNetworkResponse CreateSourceNetwork(CreateSourceNetworkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSourceNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSourceNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSourceNetworkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSourceNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceNetwork operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSourceNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
+        public virtual IAsyncResult BeginCreateSourceNetwork(CreateSourceNetworkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSourceNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSourceNetworkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSourceNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSourceNetwork.</param>
+        /// 
+        /// <returns>Returns a  CreateSourceNetworkResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
+        public virtual CreateSourceNetworkResponse EndCreateSourceNetwork(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSourceNetworkResponse>(asyncResult);
         }
 
         #endregion
@@ -762,6 +915,76 @@ namespace Amazon.Drs
         public virtual DeleteReplicationConfigurationTemplateResponse EndDeleteReplicationConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReplicationConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSourceNetwork
+
+        /// <summary>
+        /// Delete Source Network resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSourceNetwork service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
+        public virtual DeleteSourceNetworkResponse DeleteSourceNetwork(DeleteSourceNetworkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSourceNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSourceNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSourceNetworkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSourceNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceNetwork operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSourceNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSourceNetwork(DeleteSourceNetworkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSourceNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSourceNetworkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSourceNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSourceNetwork.</param>
+        /// 
+        /// <returns>Returns a  DeleteSourceNetworkResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
+        public virtual DeleteSourceNetworkResponse EndDeleteSourceNetwork(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSourceNetworkResponse>(asyncResult);
         }
 
         #endregion
@@ -1247,6 +1470,72 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  DescribeSourceNetworks
+
+        /// <summary>
+        /// Lists all Source Networks or multiple Source Networks filtered by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceNetworks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceNetworks service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
+        public virtual DescribeSourceNetworksResponse DescribeSourceNetworks(DescribeSourceNetworksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSourceNetworksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSourceNetworksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSourceNetworksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceNetworks operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSourceNetworks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSourceNetworks(DescribeSourceNetworksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSourceNetworksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSourceNetworksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSourceNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSourceNetworks.</param>
+        /// 
+        /// <returns>Returns a  DescribeSourceNetworksResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
+        public virtual DescribeSourceNetworksResponse EndDescribeSourceNetworks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSourceNetworksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSourceServers
 
         /// <summary>
@@ -1471,6 +1760,79 @@ namespace Amazon.Drs
         public virtual DisconnectSourceServerResponse EndDisconnectSourceServer(IAsyncResult asyncResult)
         {
             return EndInvoke<DisconnectSourceServerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportSourceNetworkCfnTemplate
+
+        /// <summary>
+        /// Export the Source Network CloudFormation template to an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSourceNetworkCfnTemplate service method.</param>
+        /// 
+        /// <returns>The response from the ExportSourceNetworkCfnTemplate service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
+        public virtual ExportSourceNetworkCfnTemplateResponse ExportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportSourceNetworkCfnTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportSourceNetworkCfnTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<ExportSourceNetworkCfnTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportSourceNetworkCfnTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportSourceNetworkCfnTemplate operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportSourceNetworkCfnTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
+        public virtual IAsyncResult BeginExportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportSourceNetworkCfnTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportSourceNetworkCfnTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportSourceNetworkCfnTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportSourceNetworkCfnTemplate.</param>
+        /// 
+        /// <returns>Returns a  ExportSourceNetworkCfnTemplateResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
+        public virtual ExportSourceNetworkCfnTemplateResponse EndExportSourceNetworkCfnTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportSourceNetworkCfnTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -2322,6 +2684,151 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  StartSourceNetworkRecovery
+
+        /// <summary>
+        /// Deploy VPC for the specified Source Network and modify launch templates to use this
+        /// network. The VPC will be deployed using a dedicated CloudFormation stack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkRecovery service method.</param>
+        /// 
+        /// <returns>The response from the StartSourceNetworkRecovery service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
+        public virtual StartSourceNetworkRecoveryResponse StartSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSourceNetworkRecoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSourceNetworkRecoveryResponseUnmarshaller.Instance;
+
+            return Invoke<StartSourceNetworkRecoveryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSourceNetworkRecovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkRecovery operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSourceNetworkRecovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
+        public virtual IAsyncResult BeginStartSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSourceNetworkRecoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSourceNetworkRecoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSourceNetworkRecovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSourceNetworkRecovery.</param>
+        /// 
+        /// <returns>Returns a  StartSourceNetworkRecoveryResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
+        public virtual StartSourceNetworkRecoveryResponse EndStartSourceNetworkRecovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSourceNetworkRecoveryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartSourceNetworkReplication
+
+        /// <summary>
+        /// Starts replication for a Source Network. This action would make the Source Network
+        /// protected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartSourceNetworkReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
+        public virtual StartSourceNetworkReplicationResponse StartSourceNetworkReplication(StartSourceNetworkReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSourceNetworkReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSourceNetworkReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartSourceNetworkReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSourceNetworkReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkReplication operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSourceNetworkReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
+        public virtual IAsyncResult BeginStartSourceNetworkReplication(StartSourceNetworkReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSourceNetworkReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSourceNetworkReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSourceNetworkReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSourceNetworkReplication.</param>
+        /// 
+        /// <returns>Returns a  StartSourceNetworkReplicationResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
+        public virtual StartSourceNetworkReplicationResponse EndStartSourceNetworkReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSourceNetworkReplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopFailback
 
         /// <summary>
@@ -2456,6 +2963,80 @@ namespace Amazon.Drs
         public virtual StopReplicationResponse EndStopReplication(IAsyncResult asyncResult)
         {
             return EndInvoke<StopReplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopSourceNetworkReplication
+
+        /// <summary>
+        /// Stops replication for a Source Network. This action would make the Source Network
+        /// unprotected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSourceNetworkReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopSourceNetworkReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
+        public virtual StopSourceNetworkReplicationResponse StopSourceNetworkReplication(StopSourceNetworkReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSourceNetworkReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSourceNetworkReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopSourceNetworkReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSourceNetworkReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSourceNetworkReplication operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopSourceNetworkReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
+        public virtual IAsyncResult BeginStopSourceNetworkReplication(StopSourceNetworkReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSourceNetworkReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSourceNetworkReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopSourceNetworkReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopSourceNetworkReplication.</param>
+        /// 
+        /// <returns>Returns a  StopSourceNetworkReplicationResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
+        public virtual StopSourceNetworkReplicationResponse EndStopSourceNetworkReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopSourceNetworkReplicationResponse>(asyncResult);
         }
 
         #endregion

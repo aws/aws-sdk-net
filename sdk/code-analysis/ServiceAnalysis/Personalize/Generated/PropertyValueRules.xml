@@ -767,6 +767,21 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.UpdateDatasetRequest.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.UpdateDatasetRequest.SchemaArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.UpdateDatasetResponse.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.UpdateMetricAttributionRequest.MetricAttributionArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
@@ -1185,6 +1200,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.DatasetSummary.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetUpdateSummary.SchemaArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DatasetUpdateSummary.Status</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

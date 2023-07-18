@@ -32,16 +32,26 @@ namespace Amazon.IoTEvents
     public partial class AmazonIoTEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoT Events";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTEventsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTEventsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoT Events";
             this.AuthenticationServiceName = "iotevents";
             this.EndpointProvider = new AmazonIoTEventsEndpointProvider();
         }

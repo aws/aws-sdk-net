@@ -25,36 +25,69 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketWebsite operation.
-    /// <para>Returns the website configuration for a bucket.</para>
+    /// Returns the website configuration for a bucket. To host website on Amazon S3, you
+    /// can configure a bucket as website by adding a website configuration. For more information
+    /// about hosting websites, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+    /// Websites on Amazon S3</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// This GET action requires the <code>S3:GetBucketWebsite</code> permission. By default,
+    /// only the bucket owner can read the bucket website configuration. However, bucket owners
+    /// can allow other users to read the website configuration by writing a bucket policy
+    /// granting them the <code>S3:GetBucketWebsite</code> permission.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>DeleteBucketWebsite</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketWebsiteRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string expectedBucketOwner;
+        private string _bucketName;
+        private string _expectedBucketOwner;
 
         /// <summary>
-        /// The name of the bucket to be queried.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name for which to get the website configuration.
+        /// </para>
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request fails with the HTTP status code <code>403 Forbidden</code> (access
+        /// denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
         /// <summary>
@@ -63,7 +96,7 @@ namespace Amazon.S3.Model
         /// <returns>true, if ExpectedBucketOwner property is set.</returns>
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
     }
 }

@@ -105,7 +105,7 @@ namespace Amazon.IoTSiteWise
         /// </summary>
         /// <param name="config">The AmazonIoTSiteWiseClient Configuration Object</param>
         public AmazonIoTSiteWiseClient(AmazonIoTSiteWiseConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

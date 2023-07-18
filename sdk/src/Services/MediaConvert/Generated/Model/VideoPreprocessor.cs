@@ -93,7 +93,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Hdr10Plus. Enable HDR10+ analyis and metadata injection.
+        /// Gets and sets the property Hdr10Plus. Enable HDR10+ analysis and metadata injection.
         /// Compatible with HEVC only.
         /// </summary>
         public Hdr10Plus Hdr10Plus

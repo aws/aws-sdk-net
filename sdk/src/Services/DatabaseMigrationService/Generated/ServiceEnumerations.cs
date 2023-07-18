@@ -357,6 +357,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type DatabaseMode.
+    /// </summary>
+    public class DatabaseMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Babelfish for DatabaseMode
+        /// </summary>
+        public static readonly DatabaseMode Babelfish = new DatabaseMode("babelfish");
+        /// <summary>
+        /// Constant Default for DatabaseMode
+        /// </summary>
+        public static readonly DatabaseMode Default = new DatabaseMode("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseMode FindValue(string value)
+        {
+            return FindValue<DatabaseMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataFormatValue.
     /// </summary>
     public class DataFormatValue : ConstantClass
@@ -848,6 +898,110 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KafkaSecurityProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KafkaSslEndpointIdentificationAlgorithm.
+    /// </summary>
+    public class KafkaSslEndpointIdentificationAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Https for KafkaSslEndpointIdentificationAlgorithm
+        /// </summary>
+        public static readonly KafkaSslEndpointIdentificationAlgorithm Https = new KafkaSslEndpointIdentificationAlgorithm("https");
+        /// <summary>
+        /// Constant None for KafkaSslEndpointIdentificationAlgorithm
+        /// </summary>
+        public static readonly KafkaSslEndpointIdentificationAlgorithm None = new KafkaSslEndpointIdentificationAlgorithm("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaSslEndpointIdentificationAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaSslEndpointIdentificationAlgorithm FindValue(string value)
+        {
+            return FindValue<KafkaSslEndpointIdentificationAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaSslEndpointIdentificationAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LongVarcharMappingType.
+    /// </summary>
+    public class LongVarcharMappingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Clob for LongVarcharMappingType
+        /// </summary>
+        public static readonly LongVarcharMappingType Clob = new LongVarcharMappingType("clob");
+        /// <summary>
+        /// Constant Nclob for LongVarcharMappingType
+        /// </summary>
+        public static readonly LongVarcharMappingType Nclob = new LongVarcharMappingType("nclob");
+        /// <summary>
+        /// Constant Wstring for LongVarcharMappingType
+        /// </summary>
+        public static readonly LongVarcharMappingType Wstring = new LongVarcharMappingType("wstring");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LongVarcharMappingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LongVarcharMappingType FindValue(string value)
+        {
+            return FindValue<LongVarcharMappingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LongVarcharMappingType(string value)
         {
             return FindValue(value);
         }

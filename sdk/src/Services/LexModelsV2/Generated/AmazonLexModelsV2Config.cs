@@ -32,16 +32,26 @@ namespace Amazon.LexModelsV2
     public partial class AmazonLexModelsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.11");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Lex Models V2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLexModelsV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLexModelsV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Lex Models V2";
             this.AuthenticationServiceName = "lex";
             this.EndpointProvider = new AmazonLexModelsV2EndpointProvider();
         }

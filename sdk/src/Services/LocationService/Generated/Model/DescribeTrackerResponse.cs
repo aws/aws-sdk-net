@@ -35,6 +35,7 @@ namespace Amazon.LocationService.Model
     {
         private DateTime? _createTime;
         private string _description;
+        private bool? _eventBridgeEnabled;
         private string _kmsKeyId;
         private PositionFiltering _positionFiltering;
         private PricingPlan _pricingPlan;
@@ -81,6 +82,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventBridgeEnabled. 
+        /// <para>
+        /// Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If
+        /// set to <code>true</code> these events will be sent to EventBridge.
+        /// </para>
+        /// </summary>
+        public bool EventBridgeEnabled
+        {
+            get { return this._eventBridgeEnabled.GetValueOrDefault(); }
+            set { this._eventBridgeEnabled = value; }
+        }
+
+        // Check to see if EventBridgeEnabled property is set
+        internal bool IsSetEventBridgeEnabled()
+        {
+            return this._eventBridgeEnabled.HasValue; 
         }
 
         /// <summary>

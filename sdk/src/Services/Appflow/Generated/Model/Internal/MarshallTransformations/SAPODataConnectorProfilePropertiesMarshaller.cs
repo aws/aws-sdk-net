@@ -63,6 +63,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ClientNumber);
             }
 
+            if(requestObject.IsSetDisableSSO())
+            {
+                context.Writer.WritePropertyName("disableSSO");
+                context.Writer.Write(requestObject.DisableSSO);
+            }
+
             if(requestObject.IsSetLogonLanguage())
             {
                 context.Writer.WritePropertyName("logonLanguage");

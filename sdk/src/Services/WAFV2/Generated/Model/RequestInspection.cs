@@ -52,11 +52,12 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PasswordField. 
         /// <para>
-        /// Details about your login page password field. 
+        /// The name of the field in the request payload that contains your customer's password.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// How you specify this depends on the payload type.
+        /// How you specify this depends on the request inspection payload type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -67,9 +68,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "login": { "username": "THE_USERNAME", "password":
-        /// "THE_PASSWORD" } }</code>, the username field specification is <code>/login/username</code>
-        /// and the password field specification is <code>/login/password</code>.
+        /// For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>,
+        /// the password field specification is <code>/form/password</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -77,9 +77,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with input elements named <code>username1</code> and
-        /// <code>password1</code>, the username field specification is <code>username1</code>
-        /// and the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with the input element named <code>password1</code>,
+        /// the password field specification is <code>password1</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -118,11 +117,12 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property UsernameField. 
         /// <para>
-        /// Details about your login page username field. 
+        /// The name of the field in the request payload that contains your customer's username.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// How you specify this depends on the payload type.
+        /// How you specify this depends on the request inspection payload type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -133,9 +133,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "login": { "username": "THE_USERNAME", "password":
-        /// "THE_PASSWORD" } }</code>, the username field specification is <code>/login/username</code>
-        /// and the password field specification is <code>/login/password</code>.
+        /// For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>,
+        /// the username field specification is <code>/form/username</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -143,9 +142,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with input elements named <code>username1</code> and
-        /// <code>password1</code>, the username field specification is <code>username1</code>
-        /// and the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with the input element named <code>username1</code>,
+        /// the username field specification is <code>username1</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

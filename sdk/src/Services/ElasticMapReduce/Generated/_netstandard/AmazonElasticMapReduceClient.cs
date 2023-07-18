@@ -103,7 +103,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="config">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -1989,6 +1989,47 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = ListStudioSessionMappingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStudioSessionMappingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSupportedInstanceTypes
+
+        internal virtual ListSupportedInstanceTypesResponse ListSupportedInstanceTypes(ListSupportedInstanceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupportedInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupportedInstanceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSupportedInstanceTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A list of the instance types that Amazon EMR supports. You can filter the list by
+        /// Amazon Web Services Region and Amazon EMR release.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupportedInstanceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSupportedInstanceTypes service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSupportedInstanceTypes">REST API Reference for ListSupportedInstanceTypes Operation</seealso>
+        public virtual Task<ListSupportedInstanceTypesResponse> ListSupportedInstanceTypesAsync(ListSupportedInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupportedInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupportedInstanceTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSupportedInstanceTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion

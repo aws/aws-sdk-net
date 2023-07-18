@@ -43,7 +43,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private long? _serversMappedtoTags;
 
         /// <summary>
-        /// Gets and sets the property AgentlessCollectorSummary.
+        /// Gets and sets the property AgentlessCollectorSummary. 
+        /// <para>
+        ///  Details about Agentless Collector collectors, including status. 
+        /// </para>
         /// </summary>
         public CustomerAgentlessCollectorInfo AgentlessCollectorSummary
         {

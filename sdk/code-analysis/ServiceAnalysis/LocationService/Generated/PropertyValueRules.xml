@@ -54,10 +54,20 @@
     <pattern>^[-._\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.CalculateRouteRequest.Key</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.CalculateRouteMatrixRequest.CalculatorName</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[-._\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.CalculateRouteMatrixRequest.Key</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.CreateGeofenceCollectionRequest.CollectionName</property>
@@ -547,6 +557,11 @@
     <pattern>^[-._\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.GetPlaceRequest.Key</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.GetPlaceRequest.Language</property>
     <min>2</min>
     <max>35</max>
@@ -735,6 +750,11 @@
     <pattern>^[-._\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForPositionRequest.Key</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForPositionRequest.Language</property>
     <min>2</min>
     <max>35</max>
@@ -749,6 +769,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[-._\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForSuggestionsRequest.Key</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForSuggestionsRequest.Language</property>
@@ -770,6 +795,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[-._\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForTextRequest.Key</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForTextRequest.Language</property>

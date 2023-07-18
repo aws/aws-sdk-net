@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ColorsConfiguration", targetDepth))
+                {
+                    var unmarshaller = ColorsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ColorsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Column", targetDepth))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;

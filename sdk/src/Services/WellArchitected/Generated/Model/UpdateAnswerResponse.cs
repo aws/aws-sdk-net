@@ -90,6 +90,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

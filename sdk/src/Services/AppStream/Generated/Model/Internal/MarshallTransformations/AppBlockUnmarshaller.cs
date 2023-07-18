@@ -64,6 +64,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppBlockErrors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
+                    unmarshalledObject.AppBlockErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +100,18 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PackagingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PackagingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PostSetupScriptDetails", targetDepth))
+                {
+                    var unmarshaller = ScriptDetailsUnmarshaller.Instance;
+                    unmarshalledObject.PostSetupScriptDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SetupScriptDetails", targetDepth))
                 {
                     var unmarshaller = ScriptDetailsUnmarshaller.Instance;
@@ -104,6 +122,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;
                     unmarshalledObject.SourceS3Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

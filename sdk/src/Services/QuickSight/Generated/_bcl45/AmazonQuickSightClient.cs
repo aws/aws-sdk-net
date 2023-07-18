@@ -121,7 +121,7 @@ namespace Amazon.QuickSight
         /// </summary>
         /// <param name="config">The AmazonQuickSightClient Configuration Object</param>
         public AmazonQuickSightClient(AmazonQuickSightConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonQuickSightClient with AWS Credentials
@@ -12411,7 +12411,7 @@ namespace Amazon.QuickSight
         /// and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When
         /// a job is successfully completed, a download URL that contains the exported assets
         /// is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code>
-        /// API call. Each Amazon QuickSight account can run up to 10 export jobs concurrently.
+        /// API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.
         /// </para>
         ///  
         /// <para>
@@ -12470,7 +12470,7 @@ namespace Amazon.QuickSight
         /// and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When
         /// a job is successfully completed, a download URL that contains the exported assets
         /// is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code>
-        /// API call. Each Amazon QuickSight account can run up to 10 export jobs concurrently.
+        /// API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.
         /// </para>
         ///  
         /// <para>
@@ -12535,7 +12535,7 @@ namespace Amazon.QuickSight
         /// QuickSight account. You can also choose to import a naming prefix and specified configuration
         /// overrides. The assets that are contained in the bundle file that you provide are used
         /// to create or update a new or existing asset in your Amazon QuickSight account. Each
-        /// Amazon QuickSight account can run up to 10 import jobs concurrently.
+        /// Amazon QuickSight account can run up to 5 import jobs concurrently.
         /// </para>
         ///  
         /// <para>
@@ -12594,7 +12594,7 @@ namespace Amazon.QuickSight
         /// QuickSight account. You can also choose to import a naming prefix and specified configuration
         /// overrides. The assets that are contained in the bundle file that you provide are used
         /// to create or update a new or existing asset in your Amazon QuickSight account. Each
-        /// Amazon QuickSight account can run up to 10 import jobs concurrently.
+        /// Amazon QuickSight account can run up to 5 import jobs concurrently.
         /// </para>
         ///  
         /// <para>

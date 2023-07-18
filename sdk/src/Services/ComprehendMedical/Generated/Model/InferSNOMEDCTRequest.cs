@@ -40,8 +40,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        ///  The input text to be analyzed using InferSNOMEDCT. The text should be a string with
-        /// 1 to 10000 characters. 
+        /// The input text to be analyzed using InferSNOMEDCT.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]

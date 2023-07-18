@@ -729,6 +729,14 @@ namespace Amazon.Drs
     {
 
         /// <summary>
+        /// Constant ASSOCIATE_NETWORK_RECOVERY for InitiatedBy
+        /// </summary>
+        public static readonly InitiatedBy ASSOCIATE_NETWORK_RECOVERY = new InitiatedBy("ASSOCIATE_NETWORK_RECOVERY");
+        /// <summary>
+        /// Constant CREATE_NETWORK_RECOVERY for InitiatedBy
+        /// </summary>
+        public static readonly InitiatedBy CREATE_NETWORK_RECOVERY = new InitiatedBy("CREATE_NETWORK_RECOVERY");
+        /// <summary>
         /// Constant DIAGNOSTIC for InitiatedBy
         /// </summary>
         public static readonly InitiatedBy DIAGNOSTIC = new InitiatedBy("DIAGNOSTIC");
@@ -752,6 +760,10 @@ namespace Amazon.Drs
         /// Constant TERMINATE_RECOVERY_INSTANCES for InitiatedBy
         /// </summary>
         public static readonly InitiatedBy TERMINATE_RECOVERY_INSTANCES = new InitiatedBy("TERMINATE_RECOVERY_INSTANCES");
+        /// <summary>
+        /// Constant UPDATE_NETWORK_RECOVERY for InitiatedBy
+        /// </summary>
+        public static readonly InitiatedBy UPDATE_NETWORK_RECOVERY = new InitiatedBy("UPDATE_NETWORK_RECOVERY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -819,6 +831,18 @@ namespace Amazon.Drs
         /// </summary>
         public static readonly JobLogEvent CONVERSION_START = new JobLogEvent("CONVERSION_START");
         /// <summary>
+        /// Constant DEPLOY_NETWORK_CONFIGURATION_END for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent DEPLOY_NETWORK_CONFIGURATION_END = new JobLogEvent("DEPLOY_NETWORK_CONFIGURATION_END");
+        /// <summary>
+        /// Constant DEPLOY_NETWORK_CONFIGURATION_FAILED for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent DEPLOY_NETWORK_CONFIGURATION_FAILED = new JobLogEvent("DEPLOY_NETWORK_CONFIGURATION_FAILED");
+        /// <summary>
+        /// Constant DEPLOY_NETWORK_CONFIGURATION_START for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent DEPLOY_NETWORK_CONFIGURATION_START = new JobLogEvent("DEPLOY_NETWORK_CONFIGURATION_START");
+        /// <summary>
         /// Constant JOB_CANCEL for JobLogEvent
         /// </summary>
         public static readonly JobLogEvent JOB_CANCEL = new JobLogEvent("JOB_CANCEL");
@@ -839,6 +863,10 @@ namespace Amazon.Drs
         /// </summary>
         public static readonly JobLogEvent LAUNCH_START = new JobLogEvent("LAUNCH_START");
         /// <summary>
+        /// Constant NETWORK_RECOVERY_FAIL for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent NETWORK_RECOVERY_FAIL = new JobLogEvent("NETWORK_RECOVERY_FAIL");
+        /// <summary>
         /// Constant SERVER_SKIPPED for JobLogEvent
         /// </summary>
         public static readonly JobLogEvent SERVER_SKIPPED = new JobLogEvent("SERVER_SKIPPED");
@@ -854,6 +882,30 @@ namespace Amazon.Drs
         /// Constant SNAPSHOT_START for JobLogEvent
         /// </summary>
         public static readonly JobLogEvent SNAPSHOT_START = new JobLogEvent("SNAPSHOT_START");
+        /// <summary>
+        /// Constant UPDATE_LAUNCH_TEMPLATE_END for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent UPDATE_LAUNCH_TEMPLATE_END = new JobLogEvent("UPDATE_LAUNCH_TEMPLATE_END");
+        /// <summary>
+        /// Constant UPDATE_LAUNCH_TEMPLATE_FAILED for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent UPDATE_LAUNCH_TEMPLATE_FAILED = new JobLogEvent("UPDATE_LAUNCH_TEMPLATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_LAUNCH_TEMPLATE_START for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent UPDATE_LAUNCH_TEMPLATE_START = new JobLogEvent("UPDATE_LAUNCH_TEMPLATE_START");
+        /// <summary>
+        /// Constant UPDATE_NETWORK_CONFIGURATION_END for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent UPDATE_NETWORK_CONFIGURATION_END = new JobLogEvent("UPDATE_NETWORK_CONFIGURATION_END");
+        /// <summary>
+        /// Constant UPDATE_NETWORK_CONFIGURATION_FAILED for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent UPDATE_NETWORK_CONFIGURATION_FAILED = new JobLogEvent("UPDATE_NETWORK_CONFIGURATION_FAILED");
+        /// <summary>
+        /// Constant UPDATE_NETWORK_CONFIGURATION_START for JobLogEvent
+        /// </summary>
+        public static readonly JobLogEvent UPDATE_NETWORK_CONFIGURATION_START = new JobLogEvent("UPDATE_NETWORK_CONFIGURATION_START");
         /// <summary>
         /// Constant USING_PREVIOUS_SNAPSHOT for JobLogEvent
         /// </summary>
@@ -1597,6 +1649,76 @@ namespace Amazon.Drs
 
 
     /// <summary>
+    /// Constants used for properties of type RecoveryResult.
+    /// </summary>
+    public class RecoveryResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATE_FAIL for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult ASSOCIATE_FAIL = new RecoveryResult("ASSOCIATE_FAIL");
+        /// <summary>
+        /// Constant ASSOCIATE_SUCCESS for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult ASSOCIATE_SUCCESS = new RecoveryResult("ASSOCIATE_SUCCESS");
+        /// <summary>
+        /// Constant FAIL for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult FAIL = new RecoveryResult("FAIL");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult IN_PROGRESS = new RecoveryResult("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult NOT_STARTED = new RecoveryResult("NOT_STARTED");
+        /// <summary>
+        /// Constant PARTIAL_SUCCESS for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult PARTIAL_SUCCESS = new RecoveryResult("PARTIAL_SUCCESS");
+        /// <summary>
+        /// Constant SUCCESS for RecoveryResult
+        /// </summary>
+        public static readonly RecoveryResult SUCCESS = new RecoveryResult("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryResult FindValue(string value)
+        {
+            return FindValue<RecoveryResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecoverySnapshotsOrder.
     /// </summary>
     public class RecoverySnapshotsOrder : ConstantClass
@@ -1768,6 +1890,10 @@ namespace Amazon.Drs
         /// Constant DEFAULT for ReplicationConfigurationEbsEncryption
         /// </summary>
         public static readonly ReplicationConfigurationEbsEncryption DEFAULT = new ReplicationConfigurationEbsEncryption("DEFAULT");
+        /// <summary>
+        /// Constant NONE for ReplicationConfigurationEbsEncryption
+        /// </summary>
+        public static readonly ReplicationConfigurationEbsEncryption NONE = new ReplicationConfigurationEbsEncryption("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1918,6 +2044,64 @@ namespace Amazon.Drs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicationDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationStatus.
+    /// </summary>
+    public class ReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus ERROR = new ReplicationStatus("ERROR");
+        /// <summary>
+        /// Constant IN_PROGRESS for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus IN_PROGRESS = new ReplicationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PROTECTED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PROTECTED = new ReplicationStatus("PROTECTED");
+        /// <summary>
+        /// Constant STOPPED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus STOPPED = new ReplicationStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStatus(string value)
         {
             return FindValue(value);
         }

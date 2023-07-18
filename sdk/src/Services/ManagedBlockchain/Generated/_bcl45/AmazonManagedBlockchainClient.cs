@@ -133,7 +133,7 @@ namespace Amazon.ManagedBlockchain
         /// </summary>
         /// <param name="config">The AmazonManagedBlockchainClient Configuration Object</param>
         public AmazonManagedBlockchainClient(AmazonManagedBlockchainConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonManagedBlockchainClient with AWS Credentials

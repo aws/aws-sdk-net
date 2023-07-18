@@ -915,7 +915,28 @@ namespace Amazon.Connect
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
         /// operation.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
         /// 
@@ -962,7 +983,28 @@ namespace Amazon.Connect
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
         /// operation.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -1698,6 +1740,13 @@ namespace Amazon.Connect
         /// Region associated with the traffic distribution group, you must provide a full phone
         /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
+        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
@@ -1746,6 +1795,13 @@ namespace Amazon.Connect
         /// group and you are calling this API using an instance in the alternate Amazon Web Services
         /// Region associated with the traffic distribution group, you must provide a full phone
         /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
+        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3107,6 +3163,70 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteQueue
+
+
+        /// <summary>
+        /// Deletes a queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        DeleteQueueResponse DeleteQueue(DeleteQueueRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteQuickConnect
 
 
@@ -3162,6 +3282,70 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">REST API Reference for DeleteQuickConnect Operation</seealso>
         Task<DeleteQuickConnectResponse> DeleteQuickConnectAsync(DeleteQuickConnectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRoutingProfile
+
+
+        /// <summary>
+        /// Deletes a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRoutingProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">REST API Reference for DeleteRoutingProfile Operation</seealso>
+        DeleteRoutingProfileResponse DeleteRoutingProfile(DeleteRoutingProfileRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a routing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRoutingProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">REST API Reference for DeleteRoutingProfile Operation</seealso>
+        Task<DeleteRoutingProfileResponse> DeleteRoutingProfileAsync(DeleteRoutingProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8854,7 +9038,28 @@ namespace Amazon.Connect
         /// 30 days. It cannot be searched for or claimed again until the period has ended. If
         /// you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
         /// 
@@ -8901,7 +9106,28 @@ namespace Amazon.Connect
         /// 30 days. It cannot be searched for or claimed again until the period has ended. If
         /// you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim and release numbers frequently during a 30 day period, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until 30 days past the oldest number released
+        /// has expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default you can claim and release up to 200% of your maximum number of active phone
+        /// numbers during any 30 day period. If you claim and release phone numbers using the
+        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
+        /// level quota, you will be blocked from claiming any more numbers until 30 days past
+        /// the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed numbers and a service level quota of 99
+        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
+        /// any more numbers until you open an Amazon Web Services support ticket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -9030,11 +9256,11 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call.
+        /// this API resumes recording the call or screen.
         /// 
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
@@ -9056,11 +9282,11 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call.
+        /// this API resumes recording the call or screen.
         /// 
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
@@ -9261,12 +9487,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches queues in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
         /// 
@@ -9292,12 +9513,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches queues in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
         /// <param name="cancellationToken">
@@ -9383,16 +9599,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchResourceTags
+
+
+        /// <summary>
+        /// Searches tags used in an Amazon Connect instance using optional search criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResourceTags service method.</param>
+        /// 
+        /// <returns>The response from the SearchResourceTags service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.MaximumResultReturnedException">
+        /// Maximum number (1000) of tags have been returned with current request. Consider changing
+        /// request parameters to get more tags.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">REST API Reference for SearchResourceTags Operation</seealso>
+        SearchResourceTagsResponse SearchResourceTags(SearchResourceTagsRequest request);
+
+
+
+        /// <summary>
+        /// Searches tags used in an Amazon Connect instance using optional search criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResourceTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchResourceTags service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.MaximumResultReturnedException">
+        /// Maximum number (1000) of tags have been returned with current request. Consider changing
+        /// request parameters to get more tags.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">REST API Reference for SearchResourceTags Operation</seealso>
+        Task<SearchResourceTagsResponse> SearchResourceTagsAsync(SearchResourceTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchRoutingProfiles
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
         /// 
@@ -9418,12 +9695,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -9455,12 +9727,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches security profiles in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchSecurityProfiles service method.</param>
         /// 
@@ -9486,12 +9753,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Searches security profiles in an Amazon Connect instance, with optional filtering.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchSecurityProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -10515,18 +10777,19 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call. For example,
-        /// you might suspend the call recording while collecting sensitive information, such
-        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// When a contact is being recorded, this API suspends recording the call or screen.
+        /// For example, you might suspend the call or screen recording while collecting sensitive
+        /// information, such as a credit card number. Then use ResumeContactRecording to restart
+        /// recording.
         /// 
         ///  
         /// <para>
         /// The period of time that the recording is suspended is filled with silence in the final
-        /// recording. 
+        /// recording.
         /// </para>
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
@@ -10547,18 +10810,19 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call. For example,
-        /// you might suspend the call recording while collecting sensitive information, such
-        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// When a contact is being recorded, this API suspends recording the call or screen.
+        /// For example, you might suspend the call or screen recording while collecting sensitive
+        /// information, such as a credit card number. Then use ResumeContactRecording to restart
+        /// recording.
         /// 
         ///  
         /// <para>
         /// The period of time that the recording is suspended is filled with silence in the final
-        /// recording. 
+        /// recording.
         /// </para>
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
@@ -12385,6 +12649,13 @@ namespace Amazon.Connect
         /// Region associated with the traffic distribution group, you must provide a full phone
         /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
+        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
@@ -12428,6 +12699,13 @@ namespace Amazon.Connect
         /// group and you are calling this API using an instance in the alternate Amazon Web Services
         /// Region associated with the traffic distribution group, you must provide a full phone
         /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
+        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API.
         /// </para>
         ///  </important>
         /// </summary>

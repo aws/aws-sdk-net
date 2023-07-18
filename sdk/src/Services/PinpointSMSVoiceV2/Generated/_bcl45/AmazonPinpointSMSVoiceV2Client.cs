@@ -135,7 +135,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         /// <param name="config">The AmazonPinpointSMSVoiceV2Client Configuration Object</param>
         public AmazonPinpointSMSVoiceV2Client(AmazonPinpointSMSVoiceV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonPinpointSMSVoiceV2Client with AWS Credentials

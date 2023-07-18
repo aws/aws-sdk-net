@@ -32,16 +32,26 @@ namespace Amazon.FIS
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.81");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.91");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "fis";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonFISConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFISDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "fis";
             this.AuthenticationServiceName = "fis";
             this.EndpointProvider = new AmazonFISEndpointProvider();
         }

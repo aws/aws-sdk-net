@@ -39,11 +39,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentsInfo. 
         /// <para>
-        /// Lists agents or the Connector by ID or lists all agents/Connectors associated with
-        /// your user account if you did not specify an agent/Connector ID. The output includes
-        /// agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector
-        /// health, host name where the agent/Connector resides, and the version number of each
-        /// agent/Connector.
+        /// Lists agents or the collector by ID or lists all agents/collectors associated with
+        /// your user, if you did not specify an agent/collector ID. The output includes agent/collector
+        /// IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host
+        /// name where the agent/collector resides, and the version number of each agent/collector.
         /// </para>
         /// </summary>
         public List<AgentInfo> AgentsInfo

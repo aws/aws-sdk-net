@@ -32,16 +32,26 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.132");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.142");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ACM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCertificateManagerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCertificateManagerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ACM";
             this.AuthenticationServiceName = "acm";
             this.EndpointProvider = new AmazonCertificateManagerEndpointProvider();
         }

@@ -54,6 +54,8 @@ namespace Amazon.Runtime.Internal.Settings
         public const string CredentialSourceField = "CredentialSource";
         public const string CredentialProcess = "credential_process";
         public const string WebIdentityTokenFile = "WebIdentityTokenFile";
+        public const string Services = "services";
+        public const string EndpointUrl = "endpoint_url";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

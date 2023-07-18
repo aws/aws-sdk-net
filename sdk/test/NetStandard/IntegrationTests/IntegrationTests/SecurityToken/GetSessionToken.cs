@@ -10,7 +10,7 @@ using Amazon.SecurityToken.Model;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    
+    [Trait(CategoryAttribute, "RequiresIAMUser")]
     public class GetSessionToken : TestBase<AmazonSecurityTokenServiceClient>
     {   
         [Fact]

@@ -25,6 +25,216 @@ namespace Amazon.AmplifyUIBuilder
 {
 
     /// <summary>
+    /// Constants used for properties of type CodegenGenericDataFieldDataType.
+    /// </summary>
+    public class CodegenGenericDataFieldDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSDate for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSDate = new CodegenGenericDataFieldDataType("AWSDate");
+        /// <summary>
+        /// Constant AWSDateTime for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSDateTime = new CodegenGenericDataFieldDataType("AWSDateTime");
+        /// <summary>
+        /// Constant AWSEmail for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSEmail = new CodegenGenericDataFieldDataType("AWSEmail");
+        /// <summary>
+        /// Constant AWSIPAddress for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSIPAddress = new CodegenGenericDataFieldDataType("AWSIPAddress");
+        /// <summary>
+        /// Constant AWSJSON for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSJSON = new CodegenGenericDataFieldDataType("AWSJSON");
+        /// <summary>
+        /// Constant AWSPhone for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSPhone = new CodegenGenericDataFieldDataType("AWSPhone");
+        /// <summary>
+        /// Constant AWSTime for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSTime = new CodegenGenericDataFieldDataType("AWSTime");
+        /// <summary>
+        /// Constant AWSTimestamp for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSTimestamp = new CodegenGenericDataFieldDataType("AWSTimestamp");
+        /// <summary>
+        /// Constant AWSURL for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType AWSURL = new CodegenGenericDataFieldDataType("AWSURL");
+        /// <summary>
+        /// Constant Boolean for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType Boolean = new CodegenGenericDataFieldDataType("Boolean");
+        /// <summary>
+        /// Constant Enum for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType Enum = new CodegenGenericDataFieldDataType("Enum");
+        /// <summary>
+        /// Constant Float for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType Float = new CodegenGenericDataFieldDataType("Float");
+        /// <summary>
+        /// Constant ID for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType ID = new CodegenGenericDataFieldDataType("ID");
+        /// <summary>
+        /// Constant Int for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType Int = new CodegenGenericDataFieldDataType("Int");
+        /// <summary>
+        /// Constant Model for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType Model = new CodegenGenericDataFieldDataType("Model");
+        /// <summary>
+        /// Constant NonModel for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType NonModel = new CodegenGenericDataFieldDataType("NonModel");
+        /// <summary>
+        /// Constant String for CodegenGenericDataFieldDataType
+        /// </summary>
+        public static readonly CodegenGenericDataFieldDataType String = new CodegenGenericDataFieldDataType("String");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CodegenGenericDataFieldDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CodegenGenericDataFieldDataType FindValue(string value)
+        {
+            return FindValue<CodegenGenericDataFieldDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CodegenGenericDataFieldDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CodegenJobGenericDataSourceType.
+    /// </summary>
+    public class CodegenJobGenericDataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DataStore for CodegenJobGenericDataSourceType
+        /// </summary>
+        public static readonly CodegenJobGenericDataSourceType DataStore = new CodegenJobGenericDataSourceType("DataStore");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CodegenJobGenericDataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CodegenJobGenericDataSourceType FindValue(string value)
+        {
+            return FindValue<CodegenJobGenericDataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CodegenJobGenericDataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CodegenJobStatus.
+    /// </summary>
+    public class CodegenJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for CodegenJobStatus
+        /// </summary>
+        public static readonly CodegenJobStatus Failed = new CodegenJobStatus("failed");
+        /// <summary>
+        /// Constant In_progress for CodegenJobStatus
+        /// </summary>
+        public static readonly CodegenJobStatus In_progress = new CodegenJobStatus("in_progress");
+        /// <summary>
+        /// Constant Succeeded for CodegenJobStatus
+        /// </summary>
+        public static readonly CodegenJobStatus Succeeded = new CodegenJobStatus("succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CodegenJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CodegenJobStatus FindValue(string value)
+        {
+            return FindValue<CodegenJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CodegenJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FixedPosition.
     /// </summary>
     public class FixedPosition : ConstantClass
@@ -218,6 +428,214 @@ namespace Amazon.AmplifyUIBuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FormDataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GenericDataRelationshipType.
+    /// </summary>
+    public class GenericDataRelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BELONGS_TO for GenericDataRelationshipType
+        /// </summary>
+        public static readonly GenericDataRelationshipType BELONGS_TO = new GenericDataRelationshipType("BELONGS_TO");
+        /// <summary>
+        /// Constant HAS_MANY for GenericDataRelationshipType
+        /// </summary>
+        public static readonly GenericDataRelationshipType HAS_MANY = new GenericDataRelationshipType("HAS_MANY");
+        /// <summary>
+        /// Constant HAS_ONE for GenericDataRelationshipType
+        /// </summary>
+        public static readonly GenericDataRelationshipType HAS_ONE = new GenericDataRelationshipType("HAS_ONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GenericDataRelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GenericDataRelationshipType FindValue(string value)
+        {
+            return FindValue<GenericDataRelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GenericDataRelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JSModule.
+    /// </summary>
+    public class JSModule : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Es2020 for JSModule
+        /// </summary>
+        public static readonly JSModule Es2020 = new JSModule("es2020");
+        /// <summary>
+        /// Constant Esnext for JSModule
+        /// </summary>
+        public static readonly JSModule Esnext = new JSModule("esnext");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JSModule(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JSModule FindValue(string value)
+        {
+            return FindValue<JSModule>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JSModule(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JSScript.
+    /// </summary>
+    public class JSScript : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Js for JSScript
+        /// </summary>
+        public static readonly JSScript Js = new JSScript("js");
+        /// <summary>
+        /// Constant Jsx for JSScript
+        /// </summary>
+        public static readonly JSScript Jsx = new JSScript("jsx");
+        /// <summary>
+        /// Constant Tsx for JSScript
+        /// </summary>
+        public static readonly JSScript Tsx = new JSScript("tsx");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JSScript(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JSScript FindValue(string value)
+        {
+            return FindValue<JSScript>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JSScript(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JSTarget.
+    /// </summary>
+    public class JSTarget : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Es2015 for JSTarget
+        /// </summary>
+        public static readonly JSTarget Es2015 = new JSTarget("es2015");
+        /// <summary>
+        /// Constant Es2020 for JSTarget
+        /// </summary>
+        public static readonly JSTarget Es2020 = new JSTarget("es2020");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JSTarget(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JSTarget FindValue(string value)
+        {
+            return FindValue<JSTarget>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JSTarget(string value)
         {
             return FindValue(value);
         }

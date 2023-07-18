@@ -47,6 +47,18 @@
     <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DeleteEdgeConfigurationRequest.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DeleteEdgeConfigurationRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DeleteSignalingChannelRequest.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
@@ -200,6 +212,29 @@
     <min>1</min>
     <max>1024</max>
     <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsRequest.HubDeviceArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:iot:[a-z0-9-]+:[0-9]+:thing/[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9+/=]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsResponse.NextToken</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListSignalingChannelsRequest.MaxResults</property>
@@ -492,6 +527,18 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z_0-9]+:(//)?([^/]+)/?([^*]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsEdgeConfig.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsEdgeConfig.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.LocalSizeConfig.MaxLocalMediaSizeInMB</property>

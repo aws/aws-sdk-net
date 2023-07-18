@@ -60,10 +60,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("includeTrustContext", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IncludeTrustContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("kinesisDataFirehose", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessLogKinesisDataFirehoseDestinationUnmarshaller.Instance;
                         unmarshalledObject.KinesisDataFirehose = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("logVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LogVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("s3", targetDepth))

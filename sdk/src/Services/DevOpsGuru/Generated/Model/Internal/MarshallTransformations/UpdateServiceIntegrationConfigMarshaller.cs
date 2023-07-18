@@ -45,6 +45,17 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateServiceIntegrationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetKMSServerSideEncryption())
+            {
+                context.Writer.WritePropertyName("KMSServerSideEncryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KMSServerSideEncryptionIntegrationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.KMSServerSideEncryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLogsAnomalyDetection())
             {
                 context.Writer.WritePropertyName("LogsAnomalyDetection");

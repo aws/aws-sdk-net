@@ -100,7 +100,7 @@ namespace Amazon.AmplifyBackend
         /// </summary>
         /// <param name="config">The AmazonAmplifyBackendClient Configuration Object</param>
         public AmazonAmplifyBackendClient(AmazonAmplifyBackendConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

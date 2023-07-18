@@ -101,7 +101,7 @@ namespace Amazon.Mobile
         /// </summary>
         /// <param name="config">The AmazonMobileClient Configuration Object</param>
         public AmazonMobileClient(AmazonMobileConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMobileClient with AWS Credentials

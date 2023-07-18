@@ -108,7 +108,7 @@ namespace Amazon.SageMakerMetrics
         /// </summary>
         /// <param name="config">The AmazonSageMakerMetricsClient Configuration Object</param>
         public AmazonSageMakerMetricsClient(AmazonSageMakerMetricsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

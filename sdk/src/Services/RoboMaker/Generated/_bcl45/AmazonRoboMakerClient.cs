@@ -115,7 +115,7 @@ namespace Amazon.RoboMaker
         /// </summary>
         /// <param name="config">The AmazonRoboMakerClient Configuration Object</param>
         public AmazonRoboMakerClient(AmazonRoboMakerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonRoboMakerClient with AWS Credentials

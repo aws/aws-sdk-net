@@ -103,7 +103,7 @@ namespace Amazon.SavingsPlans
         /// </summary>
         /// <param name="config">The AmazonSavingsPlansClient Configuration Object</param>
         public AmazonSavingsPlansClient(AmazonSavingsPlansConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSavingsPlansClient with AWS Credentials

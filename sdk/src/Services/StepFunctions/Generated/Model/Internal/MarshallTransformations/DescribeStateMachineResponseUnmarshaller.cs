@@ -63,6 +63,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Definition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("label", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +85,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevisionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

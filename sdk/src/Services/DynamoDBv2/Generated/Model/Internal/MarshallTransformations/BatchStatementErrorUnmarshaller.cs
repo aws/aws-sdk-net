@@ -70,6 +70,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Item", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.Item = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

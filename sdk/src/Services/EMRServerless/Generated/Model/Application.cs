@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
-    /// Information about an application. EMR Serverless uses applications to run jobs.
+    /// Information about an application. Amazon EMR Serverless uses applications to run jobs.
     /// </summary>
     public partial class Application
     {
@@ -261,7 +261,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// The EMR release associated with the application.
+        /// The Amazon EMR release associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

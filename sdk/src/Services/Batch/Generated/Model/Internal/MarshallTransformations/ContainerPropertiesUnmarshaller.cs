@@ -160,6 +160,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runtimePlatform", targetDepth))
+                {
+                    var unmarshaller = RuntimePlatformUnmarshaller.Instance;
+                    unmarshalledObject.RuntimePlatform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("secrets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);

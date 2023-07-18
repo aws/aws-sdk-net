@@ -121,7 +121,7 @@ namespace Amazon.AppMesh
         /// </summary>
         /// <param name="config">The AmazonAppMeshClient Configuration Object</param>
         public AmazonAppMeshClient(AmazonAppMeshConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -45,6 +45,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateSvmActiveDirectoryConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetNetBiosName())
+            {
+                context.Writer.WritePropertyName("NetBiosName");
+                context.Writer.Write(requestObject.NetBiosName);
+            }
+
             if(requestObject.IsSetSelfManagedActiveDirectoryConfiguration())
             {
                 context.Writer.WritePropertyName("SelfManagedActiveDirectoryConfiguration");

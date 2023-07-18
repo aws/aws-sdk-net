@@ -120,8 +120,7 @@ namespace Amazon.VPCLattice
         /// </summary>
         /// <param name="config">The AmazonVPCLatticeClient Configuration Object</param>
         public AmazonVPCLatticeClient(AmazonVPCLatticeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonVPCLatticeClient with AWS Credentials
         /// </summary>

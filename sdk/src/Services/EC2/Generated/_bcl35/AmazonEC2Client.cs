@@ -151,8 +151,7 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="config">The AmazonEC2Client Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonEC2Client with AWS Credentials
         /// </summary>
@@ -808,17 +807,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
-        /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic.
-        /// To attempt to recover an Elastic IP address that you released, specify it in this
-        /// operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
-        /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5
-        /// Elastic IP addresses for EC2-VPC per Region.
+        /// If you release an Elastic IP address, you might be able to recover it. You cannot
+        /// recover an Elastic IP address that you released after it is allocated to another Amazon
+        /// Web Services account. To attempt to recover an Elastic IP address that you released,
+        /// specify it in this operation.
         /// </para>
         ///  
         /// <para>
@@ -829,15 +821,8 @@ namespace Amazon.EC2
         /// <para>
         /// You can allocate a carrier IP address which is a public IP address from a telecommunication
         /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
-        /// example an EC2 instance). 
+        /// example an EC2 instance).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
@@ -863,17 +848,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
-        /// cannot recover an Elastic IP address that you released after it is allocated to another
-        /// Amazon Web Services account. You cannot recover an Elastic IP address for EC2-Classic.
-        /// To attempt to recover an Elastic IP address that you released, specify it in this
-        /// operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
-        /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5
-        /// Elastic IP addresses for EC2-VPC per Region.
+        /// If you release an Elastic IP address, you might be able to recover it. You cannot
+        /// recover an Elastic IP address that you released after it is allocated to another Amazon
+        /// Web Services account. To attempt to recover an Elastic IP address that you released,
+        /// specify it in this operation.
         /// </para>
         ///  
         /// <para>
@@ -884,15 +862,8 @@ namespace Amazon.EC2
         /// <para>
         /// You can allocate a carrier IP address which is a public IP address from a telecommunication
         /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
-        /// example an EC2 instance). 
+        /// example an EC2 instance).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
         /// 
@@ -1002,10 +973,16 @@ namespace Amazon.EC2
         #region  AllocateIpamPoolCidr
 
         /// <summary>
-        /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
-        /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
-        /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// Allocate a CIDR from an IPAM pool. The Region you use should be the IPAM pool locale.
+        /// The locale is the Amazon Web Services Region where this IPAM pool is available for
+        /// allocations.
         /// 
+        ///  
+        /// <para>
+        /// In IPAM, an allocation is a CIDR assignment from an IPAM pool to another IPAM pool
+        /// or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This action creates an allocation with strong consistency. The returned CIDR will
@@ -1345,25 +1322,10 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already
-        /// associated with a different instance, it is disassociated from that instance and associated
-        /// with the specified instance. If you associate an Elastic IP address with an instance
-        /// that has an existing Elastic IP address, the existing address is disassociated from
-        /// the instance, but remains allocated to your account.
-        /// </para>
-        ///  
-        /// <para>
-        /// [VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic
-        /// IP address is associated with the primary IP address. If the Elastic IP address is
-        /// already associated with a different instance or a network interface, you get an error
-        /// unless you allow reassociation. You cannot associate an Elastic IP address with an
-        /// instance or network interface that has an existing Elastic IP address.
+        /// If the Elastic IP address is already associated with a different instance, it is disassociated
+        /// from that instance and associated with the specified instance. If you associate an
+        /// Elastic IP address with an instance that has an existing Elastic IP address, the existing
+        /// address is disassociated from the instance, but remains allocated to your account.
         /// </para>
         ///  
         /// <para>
@@ -1382,13 +1344,7 @@ namespace Amazon.EC2
         /// is remapped to the same instance. For more information, see the <i>Elastic IP Addresses</i>
         /// section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method.</param>
         /// 
@@ -4678,12 +4634,13 @@ namespace Amazon.EC2
         #region  CreateFleet
 
         /// <summary>
-        /// Launches an EC2 Fleet.
+        /// Creates an EC2 Fleet that contains the configuration information for On-Demand Instances
+        /// and Spot Instances. Instances are launched immediately if there is available capacity.
         /// 
         ///  
         /// <para>
-        /// You can create a single EC2 Fleet that includes multiple launch specifications that
-        /// vary by instance type, AMI, Availability Zone, or subnet.
+        /// A single EC2 Fleet can include multiple launch specifications that vary by instance
+        /// type, AMI, Availability Zone, or subnet.
         /// </para>
         ///  
         /// <para>
@@ -4960,6 +4917,68 @@ namespace Amazon.EC2
         public virtual CreateImageResponse EndCreateImage(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateInstanceConnectEndpoint
+
+        /// <summary>
+        /// Creates an EC2 Instance Connect Endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// An EC2 Instance Connect Endpoint allows you to connect to a resource, without requiring
+        /// the resource to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+        /// to your resources without requiring a public IPv4 address using EC2 Instance Connect
+        /// Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceConnectEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstanceConnectEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">REST API Reference for CreateInstanceConnectEndpoint Operation</seealso>
+        public virtual CreateInstanceConnectEndpointResponse CreateInstanceConnectEndpoint(CreateInstanceConnectEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceConnectEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceConnectEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceConnectEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstanceConnectEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceConnectEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceConnectEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">REST API Reference for CreateInstanceConnectEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateInstanceConnectEndpoint(CreateInstanceConnectEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceConnectEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceConnectEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstanceConnectEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceConnectEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceConnectEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">REST API Reference for CreateInstanceConnectEndpoint Operation</seealso>
+        public virtual CreateInstanceConnectEndpointResponse EndCreateInstanceConnectEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInstanceConnectEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -9952,6 +9971,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteInstanceConnectEndpoint
+
+        /// <summary>
+        /// Deletes the specified EC2 Instance Connect Endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceConnectEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstanceConnectEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint">REST API Reference for DeleteInstanceConnectEndpoint Operation</seealso>
+        public virtual DeleteInstanceConnectEndpointResponse DeleteInstanceConnectEndpoint(DeleteInstanceConnectEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceConnectEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceConnectEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstanceConnectEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceConnectEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstanceConnectEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint">REST API Reference for DeleteInstanceConnectEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInstanceConnectEndpoint(DeleteInstanceConnectEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceConnectEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstanceConnectEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceConnectEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceConnectEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint">REST API Reference for DeleteInstanceConnectEndpoint Operation</seealso>
+        public virtual DeleteInstanceConnectEndpointResponse EndDeleteInstanceConnectEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInstanceConnectEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteInstanceEventWindow
 
         /// <summary>
@@ -13893,11 +13966,6 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
@@ -13909,26 +13977,24 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate for use with EC2-Classic. 
+        ///  <code>supported-platforms</code>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate for use with EC2-VPC.
+        /// you can allocate.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
@@ -13944,11 +14010,6 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
@@ -13960,26 +14021,24 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate for use with EC2-Classic. 
+        ///  <code>supported-platforms</code>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate for use with EC2-VPC.
+        /// you can allocate.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
@@ -14034,20 +14093,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
-        /// 
-        ///  
-        /// <para>
-        /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
@@ -14059,20 +14104,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
-        /// 
-        ///  
-        /// <para>
-        /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
         /// 
@@ -14184,6 +14215,17 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
         /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When you transfer an Elastic IP address, there is a two-step handshake between the
+        /// source and transfer Amazon Web Services accounts. When the source account starts the
+        /// transfer, the transfer account has seven days to accept the Elastic IP address transfer.
+        /// During those seven days, the source account can view the pending transfer by using
+        /// this action. After seven days, the transfer expires and ownership of the Elastic IP
+        /// address returns to the source account. Accepted transfers are visible to the source
+        /// account for three days after the transfers have been accepted.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
         /// 
@@ -16784,6 +16826,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceConnectEndpoints
+
+        /// <summary>
+        /// Describes the specified EC2 Instance Connect Endpoints or all EC2 Instance Connect
+        /// Endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceConnectEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceConnectEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints">REST API Reference for DescribeInstanceConnectEndpoints Operation</seealso>
+        public virtual DescribeInstanceConnectEndpointsResponse DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceConnectEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceConnectEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceConnectEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceConnectEndpoints operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceConnectEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints">REST API Reference for DescribeInstanceConnectEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceConnectEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceConnectEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceConnectEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceConnectEndpointsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints">REST API Reference for DescribeInstanceConnectEndpoints Operation</seealso>
+        public virtual DescribeInstanceConnectEndpointsResponse EndDescribeInstanceConnectEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceConnectEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeInstanceCreditSpecifications
 
         /// <summary>
@@ -18319,9 +18416,16 @@ namespace Amazon.EC2
         #region  DescribeMovingAddresses
 
         /// <summary>
-        /// Describes your Elastic IP addresses that are being moved to the EC2-VPC platform,
-        /// or that are being restored to the EC2-Classic platform. This request does not return
-        /// information about any other Elastic IP addresses in your account.
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Describes your Elastic IP addresses that are being moved from or being restored to
+        /// the EC2-Classic platform. This request does not return information about any other
+        /// Elastic IP addresses in your account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses service method.</param>
         /// 
@@ -24435,18 +24539,6 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
         /// </para>
@@ -27478,7 +27570,9 @@ namespace Amazon.EC2
         #region  GetIpamPoolAllocations
 
         /// <summary>
-        /// Get a list of all the CIDR allocations in an IPAM pool.
+        /// Get a list of all the CIDR allocations in an IPAM pool. The Region you use should
+        /// be the IPAM pool locale. The locale is the Amazon Web Services Region where this IPAM
+        /// pool is available for allocations.
         /// 
         ///  <note> 
         /// <para>
@@ -33563,6 +33657,12 @@ namespace Amazon.EC2
         #region  MoveAddressToVpc
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
         /// The Elastic IP address must be allocated to your account for more than 24 hours, and
         /// it must not be associated with an instance. After the Elastic IP address is moved,
@@ -33570,14 +33670,7 @@ namespace Amazon.EC2
         /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
         /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
         /// platform.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
@@ -34764,17 +34857,11 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates
-        /// it from any instance that it's associated with. To disassociate an Elastic IP address
-        /// without releasing it, use <a>DisassociateAddress</a>.
+        /// [Default VPC] Releasing an Elastic IP address automatically disassociates it from
+        /// any instance that it's associated with. To disassociate an Elastic IP address without
+        /// releasing it, use <a>DisassociateAddress</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
         /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
@@ -34789,13 +34876,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able
-        /// to recover it. For more information, see <a>AllocateAddress</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// After you release an Elastic IP address, you might be able to recover it. For more
+        /// information, see <a>AllocateAddress</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress service method.</param>
@@ -34919,9 +35001,11 @@ namespace Amazon.EC2
         #region  ReleaseIpamPoolAllocation
 
         /// <summary>
-        /// Release an allocation within an IPAM pool. You can only use this action to release
-        /// manual allocations. To remove an allocation for a resource without deleting the resource,
-        /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+        /// Release an allocation within an IPAM pool. The Region you use should be the IPAM pool
+        /// locale. The locale is the Amazon Web Services Region where this IPAM pool is available
+        /// for allocations. You can only use this action to release manual allocations. To remove
+        /// an allocation for a resource without deleting the resource, set its monitored state
+        /// to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
         /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// 
@@ -36035,18 +36119,17 @@ namespace Amazon.EC2
         #region  RestoreAddressToClassic
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
         /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
         /// instance or network interface.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// 
@@ -37248,8 +37331,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can use the Stop action to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
-        /// for hibernation</a> and it meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+        /// You can use the Stop action to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
+        /// for hibernation</a> and it meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
         /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>

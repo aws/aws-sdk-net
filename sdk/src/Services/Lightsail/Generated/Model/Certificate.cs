@@ -34,9 +34,9 @@ namespace Amazon.Lightsail.Model
     ///  <note> 
     /// <para>
     /// To get a summary of a certificate, use the <code>GetCertificates</code> action and
-    /// ommit <code>includeCertificateDetails</code> from your request. The response will
-    /// include only the certificate Amazon Resource Name (ARN), certificate name, domain
-    /// name, and tags.
+    /// omit <code>includeCertificateDetails</code> from your request. The response will include
+    /// only the certificate Amazon Resource Name (ARN), certificate name, domain name, and
+    /// tags.
     /// </para>
     ///  </note>
     /// </summary>

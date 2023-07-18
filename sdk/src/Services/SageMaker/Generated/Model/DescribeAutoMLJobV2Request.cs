@@ -30,14 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoMLJobV2 operation.
-    /// Returns information about an Amazon SageMaker AutoML V2 job.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This API action is callable through SageMaker Canvas only. Calling it directly from
-    /// the CLI or an SDK results in an error.
-    /// </para>
-    ///  </note>
+    /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+    /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
     /// </summary>
     public partial class DescribeAutoMLJobV2Request : AmazonSageMakerRequest
     {
@@ -46,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// Requests information about an AutoML V2 job using its unique name.
+        /// Requests information about an AutoML job V2 using its unique name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

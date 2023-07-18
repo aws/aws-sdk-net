@@ -300,6 +300,70 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchDeleteAutomationRules
+
+
+        /// <summary>
+        /// Deletes one or more automation rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        BatchDeleteAutomationRulesResponse BatchDeleteAutomationRules(BatchDeleteAutomationRulesRequest request);
+
+
+
+        /// <summary>
+        /// Deletes one or more automation rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAutomationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        Task<BatchDeleteAutomationRulesResponse> BatchDeleteAutomationRulesAsync(BatchDeleteAutomationRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchDisableStandards
 
 
@@ -439,6 +503,78 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">REST API Reference for BatchEnableStandards Operation</seealso>
         Task<BatchEnableStandardsResponse> BatchEnableStandardsAsync(BatchEnableStandardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetAutomationRules
+
+
+        /// <summary>
+        /// Retrieves a list of details for automation rules based on rule Amazon Resource Names
+        /// (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        BatchGetAutomationRulesResponse BatchGetAutomationRules(BatchGetAutomationRulesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of details for automation rules based on rule Amazon Resource Names
+        /// (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAutomationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        Task<BatchGetAutomationRulesResponse> BatchGetAutomationRulesAsync(BatchGetAutomationRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -778,6 +914,72 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchUpdateAutomationRules
+
+
+        /// <summary>
+        /// Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and
+        /// input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        BatchUpdateAutomationRulesResponse BatchUpdateAutomationRules(BatchUpdateAutomationRulesRequest request);
+
+
+
+        /// <summary>
+        /// Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and
+        /// input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        Task<BatchUpdateAutomationRulesResponse> BatchUpdateAutomationRulesAsync(BatchUpdateAutomationRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchUpdateFindings
 
 
@@ -1083,6 +1285,70 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateActionTarget">REST API Reference for CreateActionTarget Operation</seealso>
         Task<CreateActionTargetResponse> CreateActionTargetAsync(CreateActionTargetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAutomationRule
+
+
+        /// <summary>
+        /// Creates an automation rule based on input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomationRule service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        CreateAutomationRuleResponse CreateAutomationRule(CreateAutomationRuleRequest request);
+
+
+
+        /// <summary>
+        /// Creates an automation rule based on input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutomationRule service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        Task<CreateAutomationRuleResponse> CreateAutomationRuleAsync(CreateAutomationRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3845,6 +4111,70 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         Task<InviteMembersResponse> InviteMembersAsync(InviteMembersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutomationRules
+
+
+        /// <summary>
+        /// A list of automation rules and their metadata for the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        ListAutomationRulesResponse ListAutomationRules(ListAutomationRulesRequest request);
+
+
+
+        /// <summary>
+        /// A list of automation rules and their metadata for the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        Task<ListAutomationRulesResponse> ListAutomationRulesAsync(ListAutomationRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

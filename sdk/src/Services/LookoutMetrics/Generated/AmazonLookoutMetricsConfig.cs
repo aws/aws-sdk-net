@@ -32,16 +32,26 @@ namespace Amazon.LookoutMetrics
     public partial class AmazonLookoutMetricsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "LookoutMetrics";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLookoutMetricsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutMetricsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "LookoutMetrics";
             this.AuthenticationServiceName = "lookoutmetrics";
             this.EndpointProvider = new AmazonLookoutMetricsEndpointProvider();
         }

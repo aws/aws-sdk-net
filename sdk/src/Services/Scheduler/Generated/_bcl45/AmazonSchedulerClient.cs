@@ -119,7 +119,7 @@ namespace Amazon.Scheduler
         /// </summary>
         /// <param name="config">The AmazonSchedulerClient Configuration Object</param>
         public AmazonSchedulerClient(AmazonSchedulerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSchedulerClient with AWS Credentials

@@ -88,6 +88,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HealthScoreThreshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.HealthScoreThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImpactedLocations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ImpactedLocation, ImpactedLocationUnmarshaller>(ImpactedLocationUnmarshaller.Instance);

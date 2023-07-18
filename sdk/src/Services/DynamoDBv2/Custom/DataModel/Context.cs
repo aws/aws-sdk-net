@@ -227,6 +227,42 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the `BatchWrite<T> CreateBatchWrite<T>()`
+        /// method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">Type of objects to write</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType)
+        {
+            return CreateBatchWrite(valuesType, null);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the 
+        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">Type of objects to write</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new BatchWrite<object>(this, valuesType, config);
+        }
+
+        /// <summary>
         /// Creates a MultiTableBatchWrite object, composed of multiple
         /// individual BatchWrite objects.
         /// </summary>
@@ -341,10 +377,15 @@ namespace Amazon.DynamoDBv2.DataModel
 #if AWS_ASYNC_API 
         private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
+            await SaveHelperAsync(typeof(T), value, operationConfig, cancellationToken).ConfigureAwait(false);
+        }
+
+        private async Task SaveHelperAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        {
             if (value == null) return;
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorage storage = ObjectToItemStorage(value, false, flatConfig);
+            ItemStorage storage = ObjectToItemStorage(value, valueType, false, flatConfig);
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);

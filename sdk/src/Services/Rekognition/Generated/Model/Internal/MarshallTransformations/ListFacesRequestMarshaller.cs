@@ -73,6 +73,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CollectionId);
                 }
 
+                if(publicRequest.IsSetFaceIds())
+                {
+                    context.Writer.WritePropertyName("FaceIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFaceIdsListValue in publicRequest.FaceIds)
+                    {
+                            context.Writer.Write(publicRequestFaceIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -83,6 +94,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetUserId())
+                {
+                    context.Writer.WritePropertyName("UserId");
+                    context.Writer.Write(publicRequest.UserId);
                 }
 
                 writer.WriteObjectEnd();

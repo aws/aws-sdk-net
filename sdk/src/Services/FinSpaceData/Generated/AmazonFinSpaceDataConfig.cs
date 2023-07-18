@@ -32,16 +32,26 @@ namespace Amazon.FinSpaceData
     public partial class AmazonFinSpaceDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "finspace data";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonFinSpaceDataConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFinSpaceDataDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "finspace data";
             this.AuthenticationServiceName = "finspace-api";
             this.EndpointProvider = new AmazonFinSpaceDataEndpointProvider();
         }

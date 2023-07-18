@@ -45,6 +45,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdBreak requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdBreakMetadata())
+            {
+                context.Writer.WritePropertyName("AdBreakMetadata");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdBreakMetadataListValue in requestObject.AdBreakMetadata)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KeyValuePairMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdBreakMetadataListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");

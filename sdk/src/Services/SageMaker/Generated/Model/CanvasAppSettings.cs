@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private ModelRegisterSettings _modelRegisterSettings;
         private TimeSeriesForecastingSettings _timeSeriesForecastingSettings;
+        private WorkspaceSettings _workspaceSettings;
 
         /// <summary>
         /// Gets and sets the property ModelRegisterSettings. 
@@ -70,6 +71,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTimeSeriesForecastingSettings()
         {
             return this._timeSeriesForecastingSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceSettings. 
+        /// <para>
+        /// The workspace settings for the SageMaker Canvas application.
+        /// </para>
+        /// </summary>
+        public WorkspaceSettings WorkspaceSettings
+        {
+            get { return this._workspaceSettings; }
+            set { this._workspaceSettings = value; }
+        }
+
+        // Check to see if WorkspaceSettings property is set
+        internal bool IsSetWorkspaceSettings()
+        {
+            return this._workspaceSettings != null;
         }
 
     }

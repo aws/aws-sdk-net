@@ -109,7 +109,7 @@ namespace Amazon.MigrationHub
         /// </summary>
         /// <param name="config">The AmazonMigrationHubClient Configuration Object</param>
         public AmazonMigrationHubClient(AmazonMigrationHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

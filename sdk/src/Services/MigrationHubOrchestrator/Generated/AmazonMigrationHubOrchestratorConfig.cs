@@ -32,16 +32,26 @@ namespace Amazon.MigrationHubOrchestrator
     public partial class AmazonMigrationHubOrchestratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MigrationHubOrchestrator";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubOrchestratorConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubOrchestratorDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MigrationHubOrchestrator";
             this.AuthenticationServiceName = "migrationhub-orchestrator";
             this.EndpointProvider = new AmazonMigrationHubOrchestratorEndpointProvider();
         }

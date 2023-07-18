@@ -111,7 +111,7 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         /// <param name="config">The AmazonIoTFleetWiseClient Configuration Object</param>
         public AmazonIoTFleetWiseClient(AmazonIoTFleetWiseConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.KinesisVideo.Model
     public partial class DescribeEdgeConfigurationResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
+        private EdgeAgentStatus _edgeAgentStatus;
         private EdgeConfig _edgeConfig;
         private string _failedStatusDetails;
         private DateTime? _lastUpdatedTime;
@@ -57,6 +58,25 @@ namespace Amazon.KinesisVideo.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EdgeAgentStatus. 
+        /// <para>
+        /// An object that contains the latest status details for an edge agent's recorder and
+        /// uploader jobs. Use this information to determine the current health of an edge agent.
+        /// </para>
+        /// </summary>
+        public EdgeAgentStatus EdgeAgentStatus
+        {
+            get { return this._edgeAgentStatus; }
+            set { this._edgeAgentStatus = value; }
+        }
+
+        // Check to see if EdgeAgentStatus property is set
+        internal bool IsSetEdgeAgentStatus()
+        {
+            return this._edgeAgentStatus != null;
         }
 
         /// <summary>

@@ -145,8 +145,7 @@ namespace Amazon.AppStream
         /// </summary>
         /// <param name="config">The AmazonAppStreamClient Configuration Object</param>
         public AmazonAppStreamClient(AmazonAppStreamConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAppStreamClient with AWS Credentials
         /// </summary>
@@ -294,6 +293,75 @@ namespace Amazon.AppStream
         #endregion
 
 
+        #region  AssociateAppBlockBuilderAppBlock
+
+        /// <summary>
+        /// Associates the specified app block builder with the specified app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAppBlockBuilderAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAppBlockBuilderAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock">REST API Reference for AssociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual AssociateAppBlockBuilderAppBlockResponse AssociateAppBlockBuilderAppBlock(AssociateAppBlockBuilderAppBlockRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateAppBlockBuilderAppBlockResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateAppBlockBuilderAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAppBlockBuilderAppBlock operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAppBlockBuilderAppBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock">REST API Reference for AssociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual IAsyncResult BeginAssociateAppBlockBuilderAppBlock(AssociateAppBlockBuilderAppBlockRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateAppBlockBuilderAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAppBlockBuilderAppBlock.</param>
+        /// 
+        /// <returns>Returns a  AssociateAppBlockBuilderAppBlockResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock">REST API Reference for AssociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual AssociateAppBlockBuilderAppBlockResponse EndAssociateAppBlockBuilderAppBlock(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateAppBlockBuilderAppBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateApplicationFleet
 
         /// <summary>
@@ -773,6 +841,152 @@ namespace Amazon.AppStream
         public virtual CreateAppBlockResponse EndCreateAppBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAppBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAppBlockBuilder
+
+        /// <summary>
+        /// Creates an app block builder.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder">REST API Reference for CreateAppBlockBuilder Operation</seealso>
+        public virtual CreateAppBlockBuilderResponse CreateAppBlockBuilder(CreateAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppBlockBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppBlockBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder">REST API Reference for CreateAppBlockBuilder Operation</seealso>
+        public virtual IAsyncResult BeginCreateAppBlockBuilder(CreateAppBlockBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppBlockBuilder.</param>
+        /// 
+        /// <returns>Returns a  CreateAppBlockBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder">REST API Reference for CreateAppBlockBuilder Operation</seealso>
+        public virtual CreateAppBlockBuilderResponse EndCreateAppBlockBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAppBlockBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAppBlockBuilderStreamingURL
+
+        /// <summary>
+        /// Creates a URL to start a create app block builder streaming session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilderStreamingURL service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppBlockBuilderStreamingURL service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL">REST API Reference for CreateAppBlockBuilderStreamingURL Operation</seealso>
+        public virtual CreateAppBlockBuilderStreamingURLResponse CreateAppBlockBuilderStreamingURL(CreateAppBlockBuilderStreamingURLRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderStreamingURLResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppBlockBuilderStreamingURLResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppBlockBuilderStreamingURL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlockBuilderStreamingURL operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppBlockBuilderStreamingURL
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL">REST API Reference for CreateAppBlockBuilderStreamingURL Operation</seealso>
+        public virtual IAsyncResult BeginCreateAppBlockBuilderStreamingURL(CreateAppBlockBuilderStreamingURLRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppBlockBuilderStreamingURLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppBlockBuilderStreamingURLResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppBlockBuilderStreamingURL operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppBlockBuilderStreamingURL.</param>
+        /// 
+        /// <returns>Returns a  CreateAppBlockBuilderStreamingURLResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL">REST API Reference for CreateAppBlockBuilderStreamingURL Operation</seealso>
+        public virtual CreateAppBlockBuilderStreamingURLResponse EndCreateAppBlockBuilderStreamingURL(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAppBlockBuilderStreamingURLResponse>(asyncResult);
         }
 
         #endregion
@@ -1675,6 +1889,77 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteAppBlockBuilder
+
+        /// <summary>
+        /// Deletes an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// An app block builder can only be deleted when it has no association with an app block.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder">REST API Reference for DeleteAppBlockBuilder Operation</seealso>
+        public virtual DeleteAppBlockBuilderResponse DeleteAppBlockBuilder(DeleteAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppBlockBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlockBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppBlockBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder">REST API Reference for DeleteAppBlockBuilder Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAppBlockBuilder(DeleteAppBlockBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppBlockBuilder.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppBlockBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder">REST API Reference for DeleteAppBlockBuilder Operation</seealso>
+        public virtual DeleteAppBlockBuilderResponse EndDeleteAppBlockBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAppBlockBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteApplication
 
         /// <summary>
@@ -2305,6 +2590,126 @@ namespace Amazon.AppStream
         public virtual DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAppBlockBuilderAppBlockAssociations
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app block builder associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilderAppBlockAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppBlockBuilderAppBlockAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">REST API Reference for DescribeAppBlockBuilderAppBlockAssociations Operation</seealso>
+        public virtual DescribeAppBlockBuilderAppBlockAssociationsResponse DescribeAppBlockBuilderAppBlockAssociations(DescribeAppBlockBuilderAppBlockAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuilderAppBlockAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuilderAppBlockAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppBlockBuilderAppBlockAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppBlockBuilderAppBlockAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilderAppBlockAssociations operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppBlockBuilderAppBlockAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">REST API Reference for DescribeAppBlockBuilderAppBlockAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAppBlockBuilderAppBlockAssociations(DescribeAppBlockBuilderAppBlockAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuilderAppBlockAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuilderAppBlockAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppBlockBuilderAppBlockAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppBlockBuilderAppBlockAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppBlockBuilderAppBlockAssociationsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">REST API Reference for DescribeAppBlockBuilderAppBlockAssociations Operation</seealso>
+        public virtual DescribeAppBlockBuilderAppBlockAssociationsResponse EndDescribeAppBlockBuilderAppBlockAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAppBlockBuilderAppBlockAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAppBlockBuilders
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app block builders.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppBlockBuilders service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">REST API Reference for DescribeAppBlockBuilders Operation</seealso>
+        public virtual DescribeAppBlockBuildersResponse DescribeAppBlockBuilders(DescribeAppBlockBuildersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuildersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuildersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppBlockBuildersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppBlockBuilders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlockBuilders operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppBlockBuilders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">REST API Reference for DescribeAppBlockBuilders Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAppBlockBuilders(DescribeAppBlockBuildersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppBlockBuildersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppBlockBuildersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppBlockBuilders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppBlockBuilders.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppBlockBuildersResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">REST API Reference for DescribeAppBlockBuilders Operation</seealso>
+        public virtual DescribeAppBlockBuildersResponse EndDescribeAppBlockBuilders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAppBlockBuildersResponse>(asyncResult);
         }
 
         #endregion
@@ -3227,6 +3632,72 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DisassociateAppBlockBuilderAppBlock
+
+        /// <summary>
+        /// Disassociates a specified app block builder from a specified app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAppBlockBuilderAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAppBlockBuilderAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock">REST API Reference for DisassociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual DisassociateAppBlockBuilderAppBlockResponse DisassociateAppBlockBuilderAppBlock(DisassociateAppBlockBuilderAppBlockRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateAppBlockBuilderAppBlockResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateAppBlockBuilderAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAppBlockBuilderAppBlock operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateAppBlockBuilderAppBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock">REST API Reference for DisassociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateAppBlockBuilderAppBlock(DisassociateAppBlockBuilderAppBlockRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAppBlockBuilderAppBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAppBlockBuilderAppBlockResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateAppBlockBuilderAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateAppBlockBuilderAppBlock.</param>
+        /// 
+        /// <returns>Returns a  DisassociateAppBlockBuilderAppBlockResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock">REST API Reference for DisassociateAppBlockBuilderAppBlock Operation</seealso>
+        public virtual DisassociateAppBlockBuilderAppBlockResponse EndDisassociateAppBlockBuilderAppBlock(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateAppBlockBuilderAppBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateApplicationFleet
 
         /// <summary>
@@ -3770,6 +4241,93 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  StartAppBlockBuilder
+
+        /// <summary>
+        /// Starts an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// An app block builder can only be started when it's associated with an app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// Starting an app block builder starts a new instance, which is equivalent to an elastic
+        /// fleet instance with application builder assistance functionality.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StartAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder">REST API Reference for StartAppBlockBuilder Operation</seealso>
+        public virtual StartAppBlockBuilderResponse StartAppBlockBuilder(StartAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StartAppBlockBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAppBlockBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAppBlockBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder">REST API Reference for StartAppBlockBuilder Operation</seealso>
+        public virtual IAsyncResult BeginStartAppBlockBuilder(StartAppBlockBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAppBlockBuilder.</param>
+        /// 
+        /// <returns>Returns a  StartAppBlockBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder">REST API Reference for StartAppBlockBuilder Operation</seealso>
+        public virtual StartAppBlockBuilderResponse EndStartAppBlockBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAppBlockBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartFleet
 
         /// <summary>
@@ -3916,6 +4474,75 @@ namespace Amazon.AppStream
         public virtual StartImageBuilderResponse EndStartImageBuilder(IAsyncResult asyncResult)
         {
             return EndInvoke<StartImageBuilderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopAppBlockBuilder
+
+        /// <summary>
+        /// Stops an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// Stopping an app block builder terminates the instance, and the instance state is not
+        /// persisted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the StopAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder">REST API Reference for StopAppBlockBuilder Operation</seealso>
+        public virtual StopAppBlockBuilderResponse StopAppBlockBuilder(StopAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<StopAppBlockBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAppBlockBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAppBlockBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder">REST API Reference for StopAppBlockBuilder Operation</seealso>
+        public virtual IAsyncResult BeginStopAppBlockBuilder(StopAppBlockBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAppBlockBuilder.</param>
+        /// 
+        /// <returns>Returns a  StopAppBlockBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder">REST API Reference for StopAppBlockBuilder Operation</seealso>
+        public virtual StopAppBlockBuilderResponse EndStopAppBlockBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopAppBlockBuilderResponse>(asyncResult);
         }
 
         #endregion
@@ -4187,6 +4814,100 @@ namespace Amazon.AppStream
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAppBlockBuilder
+
+        /// <summary>
+        /// Updates an app block builder.
+        /// 
+        ///  
+        /// <para>
+        /// If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code>
+        /// state, you can't update it. If the app block builder is in the <code>RUNNING</code>
+        /// state, you can only update the DisplayName and Description. If the app block builder
+        /// is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppBlockBuilder service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppBlockBuilder service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
+        /// The specified role is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.RequestLimitExceededException">
+        /// AppStream 2.0 can’t process the request right now because the Describe calls from
+        /// your AWS account are being throttled by Amazon EC2. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder">REST API Reference for UpdateAppBlockBuilder Operation</seealso>
+        public virtual UpdateAppBlockBuilderResponse UpdateAppBlockBuilder(UpdateAppBlockBuilderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppBlockBuilderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppBlockBuilder operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAppBlockBuilder
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder">REST API Reference for UpdateAppBlockBuilder Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAppBlockBuilder(UpdateAppBlockBuilderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppBlockBuilderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppBlockBuilderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAppBlockBuilder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAppBlockBuilder.</param>
+        /// 
+        /// <returns>Returns a  UpdateAppBlockBuilderResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder">REST API Reference for UpdateAppBlockBuilder Operation</seealso>
+        public virtual UpdateAppBlockBuilderResponse EndUpdateAppBlockBuilder(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAppBlockBuilderResponse>(asyncResult);
         }
 
         #endregion

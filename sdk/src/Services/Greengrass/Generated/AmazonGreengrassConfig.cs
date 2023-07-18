@@ -32,16 +32,26 @@ namespace Amazon.Greengrass
     public partial class AmazonGreengrassConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.81");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.91");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Greengrass";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGreengrassConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGreengrassDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Greengrass";
             this.AuthenticationServiceName = "greengrass";
             this.EndpointProvider = new AmazonGreengrassEndpointProvider();
         }

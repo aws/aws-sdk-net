@@ -10,7 +10,7 @@
     <property>Amazon.PrometheusService.Model.CreateAlertManagerDefinitionRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateLoggingConfigurationRequest.ClientToken</property>
@@ -25,7 +25,7 @@
     <property>Amazon.PrometheusService.Model.CreateLoggingConfigurationRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceRequest.ClientToken</property>
@@ -37,19 +37,19 @@
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateWorkspaceRequest.Alias</property>
@@ -66,7 +66,7 @@
     <property>Amazon.PrometheusService.Model.CreateWorkspaceResponse.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteAlertManagerDefinitionRequest.ClientToken</property>
@@ -78,7 +78,7 @@
     <property>Amazon.PrometheusService.Model.DeleteAlertManagerDefinitionRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteLoggingConfigurationRequest.ClientToken</property>
@@ -90,7 +90,7 @@
     <property>Amazon.PrometheusService.Model.DeleteLoggingConfigurationRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteRuleGroupsNamespaceRequest.ClientToken</property>
@@ -102,13 +102,13 @@
     <property>Amazon.PrometheusService.Model.DeleteRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteRuleGroupsNamespaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteWorkspaceRequest.ClientToken</property>
@@ -120,37 +120,37 @@
     <property>Amazon.PrometheusService.Model.DeleteWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeAlertManagerDefinitionRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeLoggingConfigurationRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeRuleGroupsNamespaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.MaxResults</property>
@@ -161,13 +161,13 @@
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListWorkspacesRequest.Alias</property>
@@ -189,7 +189,7 @@
     <property>Amazon.PrometheusService.Model.PutAlertManagerDefinitionRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.PutRuleGroupsNamespaceRequest.ClientToken</property>
@@ -201,19 +201,19 @@
     <property>Amazon.PrometheusService.Model.PutRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.PutRuleGroupsNamespaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.PutRuleGroupsNamespaceResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateLoggingConfigurationRequest.ClientToken</property>
@@ -228,7 +228,7 @@
     <property>Amazon.PrometheusService.Model.UpdateLoggingConfigurationRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateWorkspaceAliasRequest.Alias</property>
@@ -245,7 +245,7 @@
     <property>Amazon.PrometheusService.Model.UpdateWorkspaceAliasRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.LoggingConfigurationMetadata.LogGroupArn</property>
@@ -254,19 +254,19 @@
     <property>Amazon.PrometheusService.Model.LoggingConfigurationMetadata.Workspace</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.RuleGroupsNamespaceDescription.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.RuleGroupsNamespaceSummary.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.Alias</property>
@@ -282,7 +282,7 @@
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceSummary.Alias</property>
@@ -293,6 +293,6 @@
     <property>Amazon.PrometheusService.Model.WorkspaceSummary.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+    <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
 </property-value-rules>

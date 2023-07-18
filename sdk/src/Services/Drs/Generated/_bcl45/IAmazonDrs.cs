@@ -42,6 +42,82 @@ namespace Amazon.Drs
         IDrsPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateSourceNetworkStack
+
+
+        /// <summary>
+        /// Associate a Source Network to an existing CloudFormation Stack and modify launch templates
+        /// to use this network. Can be used for reverting to previously deployed CloudFormation
+        /// stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceNetworkStack service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceNetworkStack service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
+        AssociateSourceNetworkStackResponse AssociateSourceNetworkStack(AssociateSourceNetworkStackRequest request);
+
+
+
+        /// <summary>
+        /// Associate a Source Network to an existing CloudFormation Stack and modify launch templates
+        /// to use this network. Can be used for reverting to previously deployed CloudFormation
+        /// stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceNetworkStack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSourceNetworkStack service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
+        Task<AssociateSourceNetworkStackResponse> AssociateSourceNetworkStackAsync(AssociateSourceNetworkStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateExtendedSourceServer
 
 
@@ -239,6 +315,78 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateReplicationConfigurationTemplate">REST API Reference for CreateReplicationConfigurationTemplate Operation</seealso>
         Task<CreateReplicationConfigurationTemplateResponse> CreateReplicationConfigurationTemplateAsync(CreateReplicationConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSourceNetwork
+
+
+        /// <summary>
+        /// Create a new Source Network resource for a provided VPC ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceNetwork service method.</param>
+        /// 
+        /// <returns>The response from the CreateSourceNetwork service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
+        CreateSourceNetworkResponse CreateSourceNetwork(CreateSourceNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Create a new Source Network resource for a provided VPC ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSourceNetwork service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
+        Task<CreateSourceNetworkResponse> CreateSourceNetworkAsync(CreateSourceNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -483,6 +631,66 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteReplicationConfigurationTemplate">REST API Reference for DeleteReplicationConfigurationTemplate Operation</seealso>
         Task<DeleteReplicationConfigurationTemplateResponse> DeleteReplicationConfigurationTemplateAsync(DeleteReplicationConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSourceNetwork
+
+
+        /// <summary>
+        /// Delete Source Network resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSourceNetwork service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
+        DeleteSourceNetworkResponse DeleteSourceNetwork(DeleteSourceNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Delete Source Network resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSourceNetwork service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
+        Task<DeleteSourceNetworkResponse> DeleteSourceNetworkAsync(DeleteSourceNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -888,6 +1096,58 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  DescribeSourceNetworks
+
+
+        /// <summary>
+        /// Lists all Source Networks or multiple Source Networks filtered by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceNetworks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceNetworks service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
+        DescribeSourceNetworksResponse DescribeSourceNetworks(DescribeSourceNetworksRequest request);
+
+
+
+        /// <summary>
+        /// Lists all Source Networks or multiple Source Networks filtered by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceNetworks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSourceNetworks service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
+        Task<DescribeSourceNetworksResponse> DescribeSourceNetworksAsync(DescribeSourceNetworksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSourceServers
 
 
@@ -1101,6 +1361,72 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DisconnectSourceServer">REST API Reference for DisconnectSourceServer Operation</seealso>
         Task<DisconnectSourceServerResponse> DisconnectSourceServerAsync(DisconnectSourceServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExportSourceNetworkCfnTemplate
+
+
+        /// <summary>
+        /// Export the Source Network CloudFormation template to an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSourceNetworkCfnTemplate service method.</param>
+        /// 
+        /// <returns>The response from the ExportSourceNetworkCfnTemplate service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
+        ExportSourceNetworkCfnTemplateResponse ExportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Export the Source Network CloudFormation template to an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSourceNetworkCfnTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportSourceNetworkCfnTemplate service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
+        Task<ExportSourceNetworkCfnTemplateResponse> ExportSourceNetworkCfnTemplateAsync(ExportSourceNetworkCfnTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1834,6 +2160,136 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  StartSourceNetworkRecovery
+
+
+        /// <summary>
+        /// Deploy VPC for the specified Source Network and modify launch templates to use this
+        /// network. The VPC will be deployed using a dedicated CloudFormation stack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkRecovery service method.</param>
+        /// 
+        /// <returns>The response from the StartSourceNetworkRecovery service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
+        StartSourceNetworkRecoveryResponse StartSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request);
+
+
+
+        /// <summary>
+        /// Deploy VPC for the specified Source Network and modify launch templates to use this
+        /// network. The VPC will be deployed using a dedicated CloudFormation stack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkRecovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSourceNetworkRecovery service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
+        Task<StartSourceNetworkRecoveryResponse> StartSourceNetworkRecoveryAsync(StartSourceNetworkRecoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartSourceNetworkReplication
+
+
+        /// <summary>
+        /// Starts replication for a Source Network. This action would make the Source Network
+        /// protected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartSourceNetworkReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
+        StartSourceNetworkReplicationResponse StartSourceNetworkReplication(StartSourceNetworkReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Starts replication for a Source Network. This action would make the Source Network
+        /// protected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSourceNetworkReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSourceNetworkReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
+        Task<StartSourceNetworkReplicationResponse> StartSourceNetworkReplicationAsync(StartSourceNetworkReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopFailback
 
 
@@ -1947,6 +2403,74 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
         Task<StopReplicationResponse> StopReplicationAsync(StopReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopSourceNetworkReplication
+
+
+        /// <summary>
+        /// Stops replication for a Source Network. This action would make the Source Network
+        /// unprotected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSourceNetworkReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopSourceNetworkReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
+        StopSourceNetworkReplicationResponse StopSourceNetworkReplication(StopSourceNetworkReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Stops replication for a Source Network. This action would make the Source Network
+        /// unprotected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSourceNetworkReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSourceNetworkReplication service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
+        Task<StopSourceNetworkReplicationResponse> StopSourceNetworkReplicationAsync(StopSourceNetworkReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

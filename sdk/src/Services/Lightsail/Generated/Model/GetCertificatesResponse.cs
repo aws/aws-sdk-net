@@ -34,6 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetCertificatesResponse : AmazonWebServiceResponse
     {
         private List<CertificateSummary> _certificates = new List<CertificateSummary>();
+        private string _nextPageToken;
 
         /// <summary>
         /// Gets and sets the property Certificates. 
@@ -51,6 +52,27 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetCertificates()
         {
             return this._certificates != null && this._certificates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextPageToken. 
+        /// <para>
+        /// If <code>NextPageToken</code> is returned there are more results available. The value
+        /// of <code>NextPageToken</code> is a unique pagination token for each page. Make the
+        /// call again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged.
+        /// </para>
+        /// </summary>
+        public string NextPageToken
+        {
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
+        }
+
+        // Check to see if NextPageToken property is set
+        internal bool IsSetNextPageToken()
+        {
+            return this._nextPageToken != null;
         }
 
     }

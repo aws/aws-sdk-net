@@ -8707,6 +8707,106 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type SmallMultiplesAxisPlacement.
+    /// </summary>
+    public class SmallMultiplesAxisPlacement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSIDE for SmallMultiplesAxisPlacement
+        /// </summary>
+        public static readonly SmallMultiplesAxisPlacement INSIDE = new SmallMultiplesAxisPlacement("INSIDE");
+        /// <summary>
+        /// Constant OUTSIDE for SmallMultiplesAxisPlacement
+        /// </summary>
+        public static readonly SmallMultiplesAxisPlacement OUTSIDE = new SmallMultiplesAxisPlacement("OUTSIDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SmallMultiplesAxisPlacement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SmallMultiplesAxisPlacement FindValue(string value)
+        {
+            return FindValue<SmallMultiplesAxisPlacement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SmallMultiplesAxisPlacement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SmallMultiplesAxisScale.
+    /// </summary>
+    public class SmallMultiplesAxisScale : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INDEPENDENT for SmallMultiplesAxisScale
+        /// </summary>
+        public static readonly SmallMultiplesAxisScale INDEPENDENT = new SmallMultiplesAxisScale("INDEPENDENT");
+        /// <summary>
+        /// Constant SHARED for SmallMultiplesAxisScale
+        /// </summary>
+        public static readonly SmallMultiplesAxisScale SHARED = new SmallMultiplesAxisScale("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SmallMultiplesAxisScale(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SmallMultiplesAxisScale FindValue(string value)
+        {
+            return FindValue<SmallMultiplesAxisScale>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SmallMultiplesAxisScale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortDirection.
     /// </summary>
     public class SortDirection : ConstantClass
@@ -8750,6 +8850,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpecialValue.
+    /// </summary>
+    public class SpecialValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMPTY for SpecialValue
+        /// </summary>
+        public static readonly SpecialValue EMPTY = new SpecialValue("EMPTY");
+        /// <summary>
+        /// Constant NULL for SpecialValue
+        /// </summary>
+        public static readonly SpecialValue NULL = new SpecialValue("NULL");
+        /// <summary>
+        /// Constant OTHER for SpecialValue
+        /// </summary>
+        public static readonly SpecialValue OTHER = new SpecialValue("OTHER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpecialValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpecialValue FindValue(string value)
+        {
+            return FindValue<SpecialValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpecialValue(string value)
         {
             return FindValue(value);
         }

@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         /// The tunnel options to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ModifyVpnTunnelOptionsSpecification TunnelOptions
         {
             get { return this._tunnelOptions; }

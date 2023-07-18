@@ -117,7 +117,7 @@ namespace Amazon.Elasticsearch
         /// </summary>
         /// <param name="config">The AmazonElasticsearchClient Configuration Object</param>
         public AmazonElasticsearchClient(AmazonElasticsearchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

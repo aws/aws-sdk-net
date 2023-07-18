@@ -100,6 +100,17 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPreferences())
+                {
+                    context.Writer.WritePropertyName("preferences");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExportPreferencesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Preferences, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("startTime");

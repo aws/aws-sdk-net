@@ -232,6 +232,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
         /// </para>
         ///  </li> <li> 

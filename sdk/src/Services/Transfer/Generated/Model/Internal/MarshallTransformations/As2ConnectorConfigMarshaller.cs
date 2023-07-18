@@ -45,6 +45,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(As2ConnectorConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBasicAuthSecretId())
+            {
+                context.Writer.WritePropertyName("BasicAuthSecretId");
+                context.Writer.Write(requestObject.BasicAuthSecretId);
+            }
+
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");

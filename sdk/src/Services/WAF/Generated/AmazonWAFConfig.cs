@@ -32,16 +32,26 @@ namespace Amazon.WAF
     public partial class AmazonWAFConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WAF";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWAFConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WAF";
             this.AuthenticationServiceName = "waf";
             this.EndpointProvider = new AmazonWAFEndpointProvider();
         }

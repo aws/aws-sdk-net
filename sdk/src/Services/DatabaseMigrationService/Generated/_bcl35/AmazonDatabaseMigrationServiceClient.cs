@@ -129,8 +129,7 @@ namespace Amazon.DatabaseMigrationService
         /// </summary>
         /// <param name="config">The AmazonDatabaseMigrationServiceClient Configuration Object</param>
         public AmazonDatabaseMigrationServiceClient(AmazonDatabaseMigrationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDatabaseMigrationServiceClient with AWS Credentials
         /// </summary>
@@ -799,6 +798,87 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateReplicationConfig
+
+        /// <summary>
+        /// Creates a configuration that you can later provide to configure and start an DMS Serverless
+        /// replication. You can also provide options to validate the configuration inputs before
+        /// you start the replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
+        /// The subnet provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">REST API Reference for CreateReplicationConfig Operation</seealso>
+        public virtual CreateReplicationConfigResponse CreateReplicationConfig(CreateReplicationConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReplicationConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReplicationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfig operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">REST API Reference for CreateReplicationConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateReplicationConfig(CreateReplicationConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicationConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReplicationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateReplicationConfigResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">REST API Reference for CreateReplicationConfig Operation</seealso>
+        public virtual CreateReplicationConfigResponse EndCreateReplicationConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateReplicationConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateReplicationInstance
 
         /// <summary>
@@ -827,7 +907,7 @@ namespace Amazon.DatabaseMigrationService
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
         /// DMS cannot access the KMS key.
@@ -905,6 +985,14 @@ namespace Amazon.DatabaseMigrationService
         /// Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
         /// exception.
         /// </para>
+        ///  
+        /// <para>
+        /// If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup
+        /// action returns the following error message: The Replication Subnet Group already exists.
+        /// In this case, delete the existing replication subnet group. To do so, use the <a href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html">DeleteReplicationSubnetGroup</a>
+        /// action. Optionally, choose Subnet groups in the DMS console, then choose your subnet
+        /// group. Next, choose Delete from Actions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// 
@@ -913,7 +1001,7 @@ namespace Amazon.DatabaseMigrationService
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -1411,6 +1499,72 @@ namespace Amazon.DatabaseMigrationService
         public virtual DeleteFleetAdvisorDatabasesResponse EndDeleteFleetAdvisorDatabases(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFleetAdvisorDatabasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteReplicationConfig
+
+        /// <summary>
+        /// Deletes an DMS Serverless replication configuration. This effectively deprovisions
+        /// any and all replications that use this configuration. You can't delete the configuration
+        /// for an DMS Serverless replication that is ongoing. You can delete the configuration
+        /// when the replication is in a non-RUNNING and non-STARTING state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">REST API Reference for DeleteReplicationConfig Operation</seealso>
+        public virtual DeleteReplicationConfigResponse DeleteReplicationConfig(DeleteReplicationConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReplicationConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReplicationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfig operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">REST API Reference for DeleteReplicationConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteReplicationConfig(DeleteReplicationConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicationConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReplicationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteReplicationConfigResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">REST API Reference for DeleteReplicationConfig Operation</seealso>
+        public virtual DeleteReplicationConfigResponse EndDeleteReplicationConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteReplicationConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -2863,6 +3017,64 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeReplicationConfigs
+
+        /// <summary>
+        /// Returns one or more existing DMS Serverless replication configurations as a list of
+        /// structures.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationConfigs service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">REST API Reference for DescribeReplicationConfigs Operation</seealso>
+        public virtual DescribeReplicationConfigsResponse DescribeReplicationConfigs(DescribeReplicationConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigs operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">REST API Reference for DescribeReplicationConfigs Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplicationConfigs(DescribeReplicationConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicationConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationConfigs.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationConfigsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">REST API Reference for DescribeReplicationConfigs Operation</seealso>
+        public virtual DescribeReplicationConfigsResponse EndDescribeReplicationConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplicationConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeReplicationInstances
 
         /// <summary>
@@ -2980,6 +3192,64 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeReplications
+
+        /// <summary>
+        /// Provides details on replication progress by returning status information for one or
+        /// more provisioned DMS Serverless replications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplications service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">REST API Reference for DescribeReplications Operation</seealso>
+        public virtual DescribeReplicationsResponse DescribeReplications(DescribeReplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplications operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">REST API Reference for DescribeReplications Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplications(DescribeReplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplications.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">REST API Reference for DescribeReplications Operation</seealso>
+        public virtual DescribeReplicationsResponse EndDescribeReplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeReplicationSubnetGroups
 
         /// <summary>
@@ -3033,6 +3303,67 @@ namespace Amazon.DatabaseMigrationService
         public virtual DescribeReplicationSubnetGroupsResponse EndDescribeReplicationSubnetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReplicationSubnetGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReplicationTableStatistics
+
+        /// <summary>
+        /// Returns table and schema statistics for one or more provisioned replications that
+        /// use a given DMS Serverless replication configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTableStatistics service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationTableStatistics service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">REST API Reference for DescribeReplicationTableStatistics Operation</seealso>
+        public virtual DescribeReplicationTableStatisticsResponse DescribeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTableStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTableStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicationTableStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationTableStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTableStatistics operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationTableStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">REST API Reference for DescribeReplicationTableStatistics Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicationTableStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicationTableStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicationTableStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationTableStatistics.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationTableStatisticsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">REST API Reference for DescribeReplicationTableStatistics Operation</seealso>
+        public virtual DescribeReplicationTableStatisticsResponse EndDescribeReplicationTableStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplicationTableStatisticsResponse>(asyncResult);
         }
 
         #endregion
@@ -3701,6 +4032,90 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ModifyReplicationConfig
+
+        /// <summary>
+        /// Modifies an existing DMS Serverless replication configuration that you can use to
+        /// start a replication. This command includes input validation and logic to check the
+        /// state of any replication that uses this configuration. You can only modify a replication
+        /// configuration before any replication that uses it has started. As soon as you have
+        /// initially started a replication with a given configuiration, you can't modify that
+        /// configuration, even if you stop it.
+        /// 
+        ///  
+        /// <para>
+        /// Other run statuses that allow you to run this command include FAILED and CREATED.
+        /// A provisioning state that allows you to run this command is FAILED_PROVISION.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationConfig service method.</param>
+        /// 
+        /// <returns>The response from the ModifyReplicationConfig service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
+        /// The subnet provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">REST API Reference for ModifyReplicationConfig Operation</seealso>
+        public virtual ModifyReplicationConfigResponse ModifyReplicationConfig(ModifyReplicationConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationConfigResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReplicationConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationConfig operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">REST API Reference for ModifyReplicationConfig Operation</seealso>
+        public virtual IAsyncResult BeginModifyReplicationConfig(ModifyReplicationConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyReplicationConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyReplicationConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyReplicationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationConfig.</param>
+        /// 
+        /// <returns>Returns a  ModifyReplicationConfigResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">REST API Reference for ModifyReplicationConfig Operation</seealso>
+        public virtual ModifyReplicationConfigResponse EndModifyReplicationConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyReplicationConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyReplicationInstance
 
         /// <summary>
@@ -3794,7 +4209,7 @@ namespace Amazon.DatabaseMigrationService
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// The subnet provided is invalid.
+        /// The subnet provided isn't valid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
         /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
@@ -4132,6 +4547,73 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ReloadReplicationTables
+
+        /// <summary>
+        /// Reloads the target database table with the source data for a given DMS Serverless
+        /// replication configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can only use this operation with a task in the RUNNING state, otherwise the service
+        /// will throw an <code>InvalidResourceStateFault</code> exception.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReloadReplicationTables service method.</param>
+        /// 
+        /// <returns>The response from the ReloadReplicationTables service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">REST API Reference for ReloadReplicationTables Operation</seealso>
+        public virtual ReloadReplicationTablesResponse ReloadReplicationTables(ReloadReplicationTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReloadReplicationTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReloadReplicationTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ReloadReplicationTablesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReloadReplicationTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReloadReplicationTables operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReloadReplicationTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">REST API Reference for ReloadReplicationTables Operation</seealso>
+        public virtual IAsyncResult BeginReloadReplicationTables(ReloadReplicationTablesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReloadReplicationTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReloadReplicationTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReloadReplicationTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReloadReplicationTables.</param>
+        /// 
+        /// <returns>Returns a  ReloadReplicationTablesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">REST API Reference for ReloadReplicationTables Operation</seealso>
+        public virtual ReloadReplicationTablesResponse EndReloadReplicationTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ReloadReplicationTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ReloadTables
 
         /// <summary>
@@ -4386,6 +4868,73 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  StartReplication
+
+        /// <summary>
+        /// For a given DMS Serverless replication configuration, DMS connects to the source endpoint
+        /// and collects the metadata to analyze the replication workload. Using this metadata,
+        /// DMS then computes and provisions the required capacity and starts replicating to the
+        /// target endpoint using the server resources that DMS has provisioned for the DMS Serverless
+        /// replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartReplication service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual IAsyncResult BeginStartReplication(StartReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartReplication.</param>
+        /// 
+        /// <returns>Returns a  StartReplicationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual StartReplicationResponse EndStartReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartReplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartReplicationTask
 
         /// <summary>
@@ -4636,6 +5185,70 @@ namespace Amazon.DatabaseMigrationService
         public virtual StartReplicationTaskAssessmentRunResponse EndStartReplicationTaskAssessmentRun(IAsyncResult asyncResult)
         {
             return EndInvoke<StartReplicationTaskAssessmentRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopReplication
+
+        /// <summary>
+        /// For a given DMS Serverless replication configuration, DMS stops any and all ongoing
+        /// DMS Serverless replications. This command doesn't deprovision the stopped replications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopReplication service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopReplication operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual IAsyncResult BeginStopReplication(StopReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopReplication.</param>
+        /// 
+        /// <returns>Returns a  StopReplicationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">REST API Reference for StopReplication Operation</seealso>
+        public virtual StopReplicationResponse EndStopReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopReplicationResponse>(asyncResult);
         }
 
         #endregion

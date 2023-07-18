@@ -32,16 +32,26 @@ namespace Amazon.Lambda
     public partial class AmazonLambdaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.111.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.113.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Lambda";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLambdaConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLambdaDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Lambda";
             this.AuthenticationServiceName = "lambda";
             this.EndpointProvider = new AmazonLambdaEndpointProvider();
         }

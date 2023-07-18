@@ -259,8 +259,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="config">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(AmazonOpsWorksConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonOpsWorksClient with AWS Credentials
         /// </summary>

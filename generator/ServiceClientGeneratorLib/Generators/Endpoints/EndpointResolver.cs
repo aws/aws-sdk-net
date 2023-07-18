@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+    #line 1 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EndpointResolver : BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
         public override string TransformText()
         {
             
-            #line 7 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 7 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 
     AddLicenseHeader();
 
@@ -39,7 +39,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             #line hidden
             this.Write("\r\nusing System;\r\nusing Amazon.");
             
-            #line 12 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 12 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.ServiceNameRoot));
             
             #line default
@@ -47,21 +47,21 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Amazon.Runt" +
                     "ime.Endpoints;\r\nusing Amazon.Util;\r\nusing ");
             
-            #line 17 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 17 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Endpoints;\r\n\r\n#pragma warning disable 1591\r\n\r\nnamespace ");
             
-            #line 21 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 21 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Internal\r\n{\r\n    /// <summary>\r\n    /// Amazon ");
             
-            #line 24 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 24 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -69,14 +69,14 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write(" endpoint resolver.\r\n    /// Custom PipelineHandler responsible for resolving end" +
                     "point and setting authentication parameters for ");
             
-            #line 25 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 25 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" service requests.\r\n    /// Collects values for ");
             
-            #line 26 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 26 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -84,7 +84,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write("EndpointParameters and then tries to resolve endpoint by calling \r\n    /// Resolv" +
                     "eEndpoint method on GlobalEndpoints.Provider if present, otherwise uses ");
             
-            #line 27 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 27 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -92,7 +92,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write("EndpointProvider.\r\n    /// Responsible for setting authentication and http header" +
                     "s provided by resolved endpoint.\r\n    /// </summary>\r\n    public class Amazon");
             
-            #line 30 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 30 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.ClassName));
             
             #line default
@@ -101,7 +101,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
                     "erviceSpecificHandler(IExecutionContext executionContext, EndpointParameters par" +
                     "ameters)\r\n        {\r\n");
             
-            #line 34 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 34 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
  if (Config.ServiceId == "S3") {
             
             #line default
@@ -123,27 +123,27 @@ namespace ServiceClientGenerator.Generators.Endpoints
             // Current operations that may set this header: CopyObject, CopyPart, InitiateMultipart, PutObject
             string sseHeaderValue;
             if (executionContext.RequestContext.Request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
-                string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
+                (string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal) || string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMSDSSE.Value, StringComparison.Ordinal)))
             {
                 executionContext.RequestContext.Request.SignatureVersion = SignatureVersion.SigV4;
             }
 ");
             
-            #line 56 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 56 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 58 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 58 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
  if (!this.dontInjectHostPrefixForServices.Contains(Config.ServiceId)) {
             
             #line default
             #line hidden
             this.Write("            InjectHostPrefix(executionContext.RequestContext);\r\n");
             
-            #line 60 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 60 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
  } 
             
             #line default
@@ -151,35 +151,35 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write("        }\r\n\r\n        protected override EndpointParameters MapEndpointsParameters" +
                     "(IRequestContext requestContext)\r\n        {\r\n            var config = (Amazon");
             
-            #line 65 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 65 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Config)requestContext.ClientConfig;\r\n            var result = new ");
             
-            #line 66 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 66 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointParameters();\r\n");
             
-            #line 67 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 67 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.AssignBuiltins()));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 68 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 68 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.AssignClientContext()));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 69 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 69 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 if (Config.EndpointsRuleSet.parameters.ContainsKey("Region")) {
             
             #line default
@@ -206,13 +206,13 @@ if (Config.EndpointsRuleSet.parameters.ContainsKey("Region")) {
 
 ");
             
-            #line 90 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 90 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 }
             
             #line default
             #line hidden
             
-            #line 91 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 91 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 if (Config.ClassName == "S3") {
             
             #line default
@@ -226,14 +226,14 @@ if (Config.ClassName == "S3") {
             }
 ");
             
-            #line 99 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 99 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 }
             
             #line default
             #line hidden
             this.Write("\r\n            // Assign staticContextParams and contextParam per operation\r\n");
             
-            #line 102 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 102 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.AssignOperationContext()));
             
             #line default

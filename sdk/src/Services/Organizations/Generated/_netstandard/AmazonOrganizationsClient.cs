@@ -203,7 +203,7 @@ namespace Amazon.Organizations
         /// </summary>
         /// <param name="config">The AmazonOrganizationsClient Configuration Object</param>
         public AmazonOrganizationsClient(AmazonOrganizationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

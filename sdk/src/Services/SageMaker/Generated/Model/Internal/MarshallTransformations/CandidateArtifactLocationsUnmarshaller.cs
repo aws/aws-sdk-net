@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BacktestResults", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BacktestResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Explainability", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

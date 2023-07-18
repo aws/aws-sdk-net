@@ -33,7 +33,29 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class HlsPlaylistSettings
     {
+        private List<string> _adMarkupType = new List<string>();
         private int? _manifestWindowSeconds;
+
+        /// <summary>
+        /// Gets and sets the property AdMarkupType. 
+        /// <para>
+        /// Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code>
+        /// to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code>
+        /// to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content
+        /// only).
+        /// </para>
+        /// </summary>
+        public List<string> AdMarkupType
+        {
+            get { return this._adMarkupType; }
+            set { this._adMarkupType = value; }
+        }
+
+        // Check to see if AdMarkupType property is set
+        internal bool IsSetAdMarkupType()
+        {
+            return this._adMarkupType != null && this._adMarkupType.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ManifestWindowSeconds. 

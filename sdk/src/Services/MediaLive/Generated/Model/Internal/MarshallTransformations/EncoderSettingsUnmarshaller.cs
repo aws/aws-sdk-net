@@ -124,6 +124,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                {
+                    var unmarshaller = ThumbnailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timecodeConfig", targetDepth))
                 {
                     var unmarshaller = TimecodeConfigUnmarshaller.Instance;

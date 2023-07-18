@@ -94,6 +94,12 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                     unmarshalledObject.OrderArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("orderedResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OrderedResourceDefinition, OrderedResourceDefinitionUnmarshaller>(OrderedResourceDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.OrderedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shippingAddress", targetDepth))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;

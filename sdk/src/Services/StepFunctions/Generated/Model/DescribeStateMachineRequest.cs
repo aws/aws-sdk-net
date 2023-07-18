@@ -31,15 +31,59 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the DescribeStateMachine operation.
     /// Provides information about a state machine's definition, its IAM role Amazon Resource
-    /// Name (ARN), and configuration. If the state machine ARN is a qualified state machine
-    /// ARN, the response returned includes the <code>Map</code> state's label.
+    /// Name (ARN), and configuration.
     /// 
     ///  
     /// <para>
-    /// A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within
-    /// a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
-    /// refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in
-    /// the state machine named <code>stateMachineName</code>.
+    /// A qualified state machine ARN can either refer to a <i>Distributed Map state</i> defined
+    /// within a state machine, a version ARN, or an alias ARN.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following are some examples of qualified and unqualified state machine ARNs:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
+    /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+    /// 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
+    /// the request fails with <code>ValidationException</code>.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+    /// 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you provide a qualified state machine ARN that refers to a version ARN or an alias
+    /// ARN, the request starts execution for that version or alias.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// This API action returns the details for a state machine version if the <code>stateMachineArn</code>
+    /// you specify is a state machine version ARN.
     /// </para>
     ///  <note> 
     /// <para>
@@ -55,7 +99,13 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property StateMachineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the state machine to describe.
+        /// The Amazon Resource Name (ARN) of the state machine for which you want the information.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a state machine version ARN, this API returns details about that version.
+        /// The version ARN is a combination of state machine ARN and the version number separated
+        /// by a colon (:). For example, <code>stateMachineARN:1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

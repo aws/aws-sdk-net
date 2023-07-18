@@ -1985,6 +1985,292 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type UnsearchedFaceReason.
+    /// </summary>
+    public class UnsearchedFaceReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCEEDS_MAX_FACES for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason EXCEEDS_MAX_FACES = new UnsearchedFaceReason("EXCEEDS_MAX_FACES");
+        /// <summary>
+        /// Constant EXTREME_POSE for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason EXTREME_POSE = new UnsearchedFaceReason("EXTREME_POSE");
+        /// <summary>
+        /// Constant FACE_NOT_LARGEST for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason FACE_NOT_LARGEST = new UnsearchedFaceReason("FACE_NOT_LARGEST");
+        /// <summary>
+        /// Constant LOW_BRIGHTNESS for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_BRIGHTNESS = new UnsearchedFaceReason("LOW_BRIGHTNESS");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_CONFIDENCE = new UnsearchedFaceReason("LOW_CONFIDENCE");
+        /// <summary>
+        /// Constant LOW_FACE_QUALITY for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_FACE_QUALITY = new UnsearchedFaceReason("LOW_FACE_QUALITY");
+        /// <summary>
+        /// Constant LOW_SHARPNESS for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason LOW_SHARPNESS = new UnsearchedFaceReason("LOW_SHARPNESS");
+        /// <summary>
+        /// Constant SMALL_BOUNDING_BOX for UnsearchedFaceReason
+        /// </summary>
+        public static readonly UnsearchedFaceReason SMALL_BOUNDING_BOX = new UnsearchedFaceReason("SMALL_BOUNDING_BOX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsearchedFaceReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsearchedFaceReason FindValue(string value)
+        {
+            return FindValue<UnsearchedFaceReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsearchedFaceReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulFaceAssociationReason.
+    /// </summary>
+    public class UnsuccessfulFaceAssociationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_TO_A_DIFFERENT_USER for UnsuccessfulFaceAssociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceAssociationReason ASSOCIATED_TO_A_DIFFERENT_USER = new UnsuccessfulFaceAssociationReason("ASSOCIATED_TO_A_DIFFERENT_USER");
+        /// <summary>
+        /// Constant FACE_NOT_FOUND for UnsuccessfulFaceAssociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceAssociationReason FACE_NOT_FOUND = new UnsuccessfulFaceAssociationReason("FACE_NOT_FOUND");
+        /// <summary>
+        /// Constant LOW_MATCH_CONFIDENCE for UnsuccessfulFaceAssociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceAssociationReason LOW_MATCH_CONFIDENCE = new UnsuccessfulFaceAssociationReason("LOW_MATCH_CONFIDENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulFaceAssociationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulFaceAssociationReason FindValue(string value)
+        {
+            return FindValue<UnsuccessfulFaceAssociationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulFaceAssociationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulFaceDeletionReason.
+    /// </summary>
+    public class UnsuccessfulFaceDeletionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_TO_AN_EXISTING_USER for UnsuccessfulFaceDeletionReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDeletionReason ASSOCIATED_TO_AN_EXISTING_USER = new UnsuccessfulFaceDeletionReason("ASSOCIATED_TO_AN_EXISTING_USER");
+        /// <summary>
+        /// Constant FACE_NOT_FOUND for UnsuccessfulFaceDeletionReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDeletionReason FACE_NOT_FOUND = new UnsuccessfulFaceDeletionReason("FACE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulFaceDeletionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulFaceDeletionReason FindValue(string value)
+        {
+            return FindValue<UnsuccessfulFaceDeletionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulFaceDeletionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnsuccessfulFaceDisassociationReason.
+    /// </summary>
+    public class UnsuccessfulFaceDisassociationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_TO_A_DIFFERENT_USER for UnsuccessfulFaceDisassociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDisassociationReason ASSOCIATED_TO_A_DIFFERENT_USER = new UnsuccessfulFaceDisassociationReason("ASSOCIATED_TO_A_DIFFERENT_USER");
+        /// <summary>
+        /// Constant FACE_NOT_FOUND for UnsuccessfulFaceDisassociationReason
+        /// </summary>
+        public static readonly UnsuccessfulFaceDisassociationReason FACE_NOT_FOUND = new UnsuccessfulFaceDisassociationReason("FACE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnsuccessfulFaceDisassociationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnsuccessfulFaceDisassociationReason FindValue(string value)
+        {
+            return FindValue<UnsuccessfulFaceDisassociationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnsuccessfulFaceDisassociationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserStatus.
+    /// </summary>
+    public class UserStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for UserStatus
+        /// </summary>
+        public static readonly UserStatus ACTIVE = new UserStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for UserStatus
+        /// </summary>
+        public static readonly UserStatus CREATED = new UserStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for UserStatus
+        /// </summary>
+        public static readonly UserStatus CREATING = new UserStatus("CREATING");
+        /// <summary>
+        /// Constant UPDATING for UserStatus
+        /// </summary>
+        public static readonly UserStatus UPDATING = new UserStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserStatus FindValue(string value)
+        {
+            return FindValue<UserStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VideoColorRange.
     /// </summary>
     public class VideoColorRange : ConstantClass

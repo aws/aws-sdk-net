@@ -163,7 +163,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </summary>
         /// <param name="config">The AmazonAWSMarketplaceMeteringClient Configuration Object</param>
         public AmazonAWSMarketplaceMeteringClient(AmazonAWSMarketplaceMeteringConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

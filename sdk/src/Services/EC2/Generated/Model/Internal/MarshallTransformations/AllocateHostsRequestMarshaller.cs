@@ -58,6 +58,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAssetIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AssetIds)
+                    {
+                        request.Parameters.Add("AssetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetAutoPlacement())
                 {
                     request.Parameters.Add("AutoPlacement", StringUtils.FromString(publicRequest.AutoPlacement));

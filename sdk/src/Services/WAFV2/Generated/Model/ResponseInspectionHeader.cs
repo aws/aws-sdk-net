@@ -30,7 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Configures inspection of the response header. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code>. 
+    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
+    /// 
     /// 
     ///  <note> 
     /// <para>
@@ -48,12 +49,14 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property FailureValues. 
         /// <para>
         /// Values in the response header with the specified name that indicate a failed login
-        /// attempt. To be counted as a failed login, the value must be an exact match, including
-        /// case. Each value must be unique among the success and failure values. 
+        /// or account creation attempt. To be counted as a failure, the value must be an exact
+        /// match, including case. Each value must be unique among the success and failure values.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> 
+        /// JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
+        /// <code>"FailureValues": [ "AccountCreationFailed" ]</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
@@ -77,7 +80,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"Name": [ "LoginResult" ]</code> 
+        /// JSON example: <code>"Name": [ "RequestResult" ]</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -97,12 +100,14 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property SuccessValues. 
         /// <para>
         /// Values in the response header with the specified name that indicate a successful login
-        /// attempt. To be counted as a successful login, the value must be an exact match, including
-        /// case. Each value must be unique among the success and failure values. 
+        /// or account creation attempt. To be counted as a success, the value must be an exact
+        /// match, including case. Each value must be unique among the success and failure values.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+        /// JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
+        /// and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
         /// 
         /// </para>
         /// </summary>

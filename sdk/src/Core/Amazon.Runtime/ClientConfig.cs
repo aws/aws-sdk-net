@@ -26,6 +26,9 @@ using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using System.ComponentModel.Design;
+using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Internal.Settings;
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -47,7 +50,7 @@ namespace Amazon.Runtime
         public static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
 
         private IDefaultConfigurationProvider _defaultConfigurationProvider;
-
+        private string serviceId = null;
         private DefaultConfigurationMode? defaultConfigurationMode;
         private RegionEndpoint regionEndpoint = null;
         private bool probeForRegionEndpoint = true;
@@ -74,15 +77,48 @@ namespace Amazon.Runtime
         private TimeSpan? readWriteTimeout = null;
         private bool disableHostPrefixInjection = false;
         private bool? endpointDiscoveryEnabled = null;
+        private bool? ignoreConfiguredEndpointUrls;
         private int endpointDiscoveryCacheLimit = 1000;
         private RequestRetryMode? retryMode = null;
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
         private const int MaxRetriesLegacyDefault = 4;
+        private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
+
+        private CredentialProfileStoreChain credentialProfileStoreChain;
 #if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
 #endif
+        /// <summary>
+        /// Specifies the profile to be used. When this is set on the ClientConfig and that config is passed to 
+        /// the service client constructor the sdk will try to find the credentials associated with the Profile.Name property
+        /// If set, this will override AWS_PROFILE and AWSConfigs.ProfileName.
+        /// </summary>
+        public Profile Profile { get; set; }
+        private CredentialProfileStoreChain CredentialProfileStoreChain
+        {
+            get
+            {
+                if (credentialProfileStoreChain == null)
+                {
+                    if(Profile != null)
+                    {
+                        credentialProfileStoreChain = new CredentialProfileStoreChain(Profile.Location);
+                    }
+                    else
+                    {
+                        credentialProfileStoreChain = new CredentialProfileStoreChain();
+                    }
+
+                }
+                return credentialProfileStoreChain;
+            }
+            set
+            {
+                credentialProfileStoreChain = value;
+            }
+        }
 
         /// <inheritdoc />
         public IAWSTokenProvider AWSTokenProvider
@@ -174,7 +210,7 @@ namespace Amazon.Runtime
 
                 // legacy support for initial pseudo regions - convert to base Region 
                 // and set FIPSEndpoint to true
-                if (!string.IsNullOrEmpty(value?.SystemName) && 
+                if (!string.IsNullOrEmpty(value?.SystemName) &&
                     (value.SystemName.Contains("fips-") || value.SystemName.Contains("-fips")))
                 {
                     Logger.GetLogger(GetType()).InfoFormat($"FIPS Pseudo Region support is deprecated. Will attempt to convert {value.SystemName}.");
@@ -211,8 +247,67 @@ namespace Amazon.Runtime
         /// </summary>
         public string ServiceURL
         {
-            get { return this.serviceURL; }
-            set 
+            get 
+            {
+                if (!didProcessServiceURL && this.serviceURL == null && IgnoreConfiguredEndpointUrls == false && ServiceId != null)
+                {
+                    
+                    string serviceSpecificTransformedEnvironmentVariable = TransformServiceId.TransformServiceIdToEnvVariable(ServiceId);
+                    string transformedConfigServiceId = TransformServiceId.TransformServiceIdToConfigVariable(ServiceId);
+
+                    if (Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable) != null)
+                    {
+                        didProcessServiceURL = true;
+                        Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific environment variable: {serviceSpecificTransformedEnvironmentVariable}.");
+                        this.ServiceURL = Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable);                    
+                    }
+                    else if (Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE) != null)
+                    {
+                        didProcessServiceURL = true;
+                        this.ServiceURL = Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE);
+                        Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from global environment variable: {EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE}.");
+                    }
+                    else
+                    {
+                        Dictionary<string, string> innerDictionary;
+                        string endpointUrlValue;
+                        CredentialProfile profile;
+                        if (Profile != null)
+                        {
+                            CredentialProfileStoreChain.TryGetProfile(Profile.Name, out profile);
+                        }
+                        else
+                        {
+                            CredentialProfileStoreChain.TryGetProfile(FallbackCredentialsFactory.GetProfileName(), out profile);
+                        }
+                        if(profile != null)
+                        {
+                            if (profile.NestedProperties.TryGetValue(transformedConfigServiceId, out innerDictionary))
+                            {
+                                if (innerDictionary.TryGetValue(SettingsConstants.EndpointUrl, out endpointUrlValue))
+                                {
+                                    Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific endpoint url in " +
+                                    $"profile {profile.Name} from key {transformedConfigServiceId}.");
+                                    didProcessServiceURL = true;
+                                    this.ServiceURL = endpointUrlValue;
+                                }
+
+                            }
+                            else if (!String.IsNullOrEmpty(profile.EndpointUrl))
+                            {
+                                Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from global endpoint url" +
+                                    $"in profile {profile.Name} from key {SettingsConstants.EndpointUrl}.");
+                                didProcessServiceURL = true;
+                                this.ServiceURL = profile.EndpointUrl;
+                            }
+                        }
+
+                    }
+                }
+                return this.serviceURL;
+
+            }
+            set
             {
                 this.regionEndpoint = null;
                 this.probeForRegionEndpoint = false;
@@ -319,7 +414,20 @@ namespace Amazon.Runtime
             get { return this.authServiceName; }
             set { this.authServiceName = value; }
         }
-
+        /// <summary>
+        /// The serviceId for the service, which is specified in the metadata in the ServiceModel.
+        /// The transformed value of the service ID (replace any spaces in the service ID 
+        /// with underscores and uppercase all letters) is used to set service-specific endpoint urls.
+        /// I.e: AWS_ENDPOINT_URL_ELASTIC_BEANSTALK
+        /// For configuration files, replace any spaces with underscores and lowercase all letters
+        /// I.e. elastic_beanstalk = 
+        ///     endpoint_url = http://localhost:8000
+        /// </summary>
+        public string ServiceId
+        {
+            get { return this.serviceId; }
+            set { this.serviceId = value; }
+        }
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
         /// make for a single SDK operation invocation before giving up. This flag will 
@@ -694,7 +802,21 @@ namespace Amazon.Runtime
             }
             set { useFIPSEndpoint = value; }
         }
+        /// <summary>
+        /// If set to true the SDK will ignore the configured endpointUrls in the config file or in the environment variables.
+        /// By default it is set to false.
+        /// </summary>
+        public bool IgnoreConfiguredEndpointUrls
+        {
+            get
+            {
+                if (!this.ignoreConfiguredEndpointUrls.HasValue)
+                    return FallbackInternalConfigurationFactory.IgnoreConfiguredEndpointUrls ?? false;
 
+                return this.ignoreConfiguredEndpointUrls.Value;
+            }
+            set { ignoreConfiguredEndpointUrls = value; }
+        }
         /// <summary>
         /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False respectively.
         /// Retry Throttling is a feature that intelligently throttles retry attempts when a large percentage of requests 

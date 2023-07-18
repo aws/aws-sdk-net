@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecurityConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TtlDuration", targetDepth))
+                {
+                    var unmarshaller = TtlDurationUnmarshaller.Instance;
+                    unmarshalledObject.TtlDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

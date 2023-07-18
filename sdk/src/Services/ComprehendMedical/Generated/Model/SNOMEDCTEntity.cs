@@ -31,7 +31,7 @@ namespace Amazon.ComprehendMedical.Model
     /// <summary>
     /// The collection of medical entities extracted from the input text and their associated
     /// information. For each entity, the response provides the entity text, the entity category,
-    /// where the entity text begins and ends, and the level of confidence that Comprehend
+    /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
     /// Medical has in the detection and analysis. Attributes and traits of the entity are
     /// also returned.
     /// </summary>
@@ -146,8 +146,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        ///  The level of confidence that Comprehend Medical has in the accuracy of the detected
-        /// entity. 
+        ///  The level of confidence that Amazon Comprehend Medical has in the accuracy of the
+        /// detected entity. 
         /// </para>
         /// </summary>
         public float Score

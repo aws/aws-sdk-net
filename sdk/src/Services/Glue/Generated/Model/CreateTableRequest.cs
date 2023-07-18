@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private OpenTableFormatInput _openTableFormatInput;
         private List<PartitionIndex> _partitionIndexes = new List<PartitionIndex>();
         private TableInput _tableInput;
         private string _transactionId;
@@ -78,6 +79,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenTableFormatInput. 
+        /// <para>
+        /// Specifies an <code>OpenTableFormatInput</code> structure when creating an open format
+        /// table.
+        /// </para>
+        /// </summary>
+        public OpenTableFormatInput OpenTableFormatInput
+        {
+            get { return this._openTableFormatInput; }
+            set { this._openTableFormatInput = value; }
+        }
+
+        // Check to see if OpenTableFormatInput property is set
+        internal bool IsSetOpenTableFormatInput()
+        {
+            return this._openTableFormatInput != null;
         }
 
         /// <summary>

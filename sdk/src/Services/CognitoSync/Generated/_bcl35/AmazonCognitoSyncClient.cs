@@ -121,8 +121,7 @@ namespace Amazon.CognitoSync
         /// </summary>
         /// <param name="config">The AmazonCognitoSyncClient Configuration Object</param>
         public AmazonCognitoSyncClient(AmazonCognitoSyncConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with AWS Credentials
         /// </summary>

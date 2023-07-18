@@ -1899,6 +1899,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void DeleteEventSourceMapping_ResourceConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEventSourceMapping");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEventSourceMappingRequest>();
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteEventSourceMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteEventSourceMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void DeleteEventSourceMapping_ResourceInUseExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteEventSourceMapping");
@@ -6290,6 +6322,41 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
+        public void Invoke_RecursiveInvocationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("Invoke");
+
+            var request = InstantiateClassGenerator.Execute<InvokeRequest>();
+            var marshaller = new InvokeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("Invoke", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RecursiveInvocationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"X-Amz-Function-Error","X-Amz-Function-Error_Value"},
+                    {"X-Amz-Log-Result","X-Amz-Log-Result_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RecursiveInvocationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
         public void Invoke_RequestTooLargeExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("Invoke");
@@ -7494,6 +7561,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","KMSNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void InvokeWithResponseStream_RecursiveInvocationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeWithResponseStreamRequest>();
+            var marshaller = new InvokeWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RecursiveInvocationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amz-Executed-Version","X-Amz-Executed-Version_Value"},
+                    {"Content-Type","Content-Type_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RecursiveInvocationException"},
                 }
             };
 

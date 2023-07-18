@@ -34,6 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class BatchStatementError
     {
         private BatchStatementErrorCodeEnum _code;
+        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
         private string _message;
 
         /// <summary>
@@ -52,6 +53,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure
+        /// is specified as <code>ALL_OLD</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AttributeValue> Item
+        {
+            get { return this._item; }
+            set { this._item = value; }
+        }
+
+        // Check to see if Item property is set
+        internal bool IsSetItem()
+        {
+            return this._item != null && this._item.Count > 0; 
         }
 
         /// <summary>

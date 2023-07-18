@@ -51,10 +51,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AfterConnectScript);
             }
 
+            if(requestObject.IsSetBabelfishDatabaseName())
+            {
+                context.Writer.WritePropertyName("BabelfishDatabaseName");
+                context.Writer.Write(requestObject.BabelfishDatabaseName);
+            }
+
             if(requestObject.IsSetCaptureDdls())
             {
                 context.Writer.WritePropertyName("CaptureDdls");
                 context.Writer.Write(requestObject.CaptureDdls);
+            }
+
+            if(requestObject.IsSetDatabaseMode())
+            {
+                context.Writer.WritePropertyName("DatabaseMode");
+                context.Writer.Write(requestObject.DatabaseMode);
             }
 
             if(requestObject.IsSetDatabaseName())
@@ -103,6 +115,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("MapBooleanAsBoolean");
                 context.Writer.Write(requestObject.MapBooleanAsBoolean);
+            }
+
+            if(requestObject.IsSetMapJsonbAsClob())
+            {
+                context.Writer.WritePropertyName("MapJsonbAsClob");
+                context.Writer.Write(requestObject.MapJsonbAsClob);
+            }
+
+            if(requestObject.IsSetMapLongVarcharAs())
+            {
+                context.Writer.WritePropertyName("MapLongVarcharAs");
+                context.Writer.Write(requestObject.MapLongVarcharAs);
             }
 
             if(requestObject.IsSetMaxFileSize())

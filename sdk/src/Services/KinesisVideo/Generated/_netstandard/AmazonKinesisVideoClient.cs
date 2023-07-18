@@ -100,7 +100,7 @@ namespace Amazon.KinesisVideo
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoClient Configuration Object</param>
         public AmazonKinesisVideoClient(AmazonKinesisVideoConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -443,6 +443,72 @@ namespace Amazon.KinesisVideo
 
         #endregion
         
+        #region  DeleteEdgeConfiguration
+
+        internal virtual DeleteEdgeConfigurationResponse DeleteEdgeConfiguration(DeleteEdgeConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEdgeConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// An asynchronous API that deletes a stream’s existing edge configuration, as well as
+        /// the corresponding media from the Edge Agent.
+        /// 
+        ///  
+        /// <para>
+        /// When you invoke this API, the sync status is set to <code>DELETING</code>. A deletion
+        /// process starts, in which active edge jobs are stopped and all media is deleted from
+        /// the edge device. The time to delete varies, depending on the total amount of stored
+        /// media. If the deletion process fails, the sync status changes to <code>DELETE_FAILED</code>.
+        /// You will need to re-try the deletion.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the deletion process has completed successfully, the edge configuration is no
+        /// longer accessible.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEdgeConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.StreamEdgeConfigurationNotFoundException">
+        /// The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's
+        /// edge configuration that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteEdgeConfiguration">REST API Reference for DeleteEdgeConfiguration Operation</seealso>
+        public virtual Task<DeleteEdgeConfigurationResponse> DeleteEdgeConfigurationAsync(DeleteEdgeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEdgeConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSignalingChannel
 
         internal virtual DeleteSignalingChannelResponse DeleteSignalingChannel(DeleteSignalingChannelRequest request)
@@ -632,8 +698,9 @@ namespace Amazon.KinesisVideo
 
         /// <summary>
         /// Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code>
-        /// API. Use this API to get the status of the configuration if the configuration is in
-        /// sync with the Edge Agent.
+        /// API and the latest status of the edge agent's recorder and uploader jobs. Use this
+        /// API to get the status of the configuration to determine if the configuration is in
+        /// sync with the Edge Agent. Use this API to evaluate the health of the Edge Agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -731,14 +798,8 @@ namespace Amazon.KinesisVideo
 
 
         /// <summary>
-        /// Returns the most current information about the stream. Either streamName or streamARN
-        /// should be provided in the input.
-        /// 
-        ///  
-        /// <para>
         /// Returns the most current information about the stream. The <code>streamName</code>
         /// or <code>streamARN</code> should be provided in the input.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMappedResourceConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1107,6 +1168,55 @@ namespace Amazon.KinesisVideo
             options.ResponseUnmarshaller = GetSignalingChannelEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSignalingChannelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEdgeAgentConfigurations
+
+        internal virtual ListEdgeAgentConfigurationsResponse ListEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgeAgentConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgeAgentConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEdgeAgentConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns an array of edge configurations associated with the specified Edge Agent.
+        /// 
+        ///  
+        /// <para>
+        /// In the request, you must specify the Edge Agent <code>HubDeviceArn</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgeAgentConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEdgeAgentConfigurations service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NotAuthorizedException">
+        /// The caller is not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListEdgeAgentConfigurations">REST API Reference for ListEdgeAgentConfigurations Operation</seealso>
+        public virtual Task<ListEdgeAgentConfigurationsResponse> ListEdgeAgentConfigurationsAsync(ListEdgeAgentConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgeAgentConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgeAgentConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEdgeAgentConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

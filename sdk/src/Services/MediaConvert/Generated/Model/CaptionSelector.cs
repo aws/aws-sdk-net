@@ -30,7 +30,7 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Use captions selectors to specify the captions data from your input that you use in
-    /// your outputs. You can use up to 20 captions selectors per input.
+    /// your outputs. You can use up to 100 captions selectors per input.
     /// </summary>
     public partial class CaptionSelector
     {
@@ -42,10 +42,10 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CustomLanguageCode. The specific language to extract from
         /// source, using the ISO 639-2 or ISO 639-3 three-letter language code. If input is SCTE-27,
         /// complete this field and/or PID to select the caption language to extract. If input
-        /// is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select
-        /// the caption language to extract. If input is DVB-Sub that is being passed through,
-        /// omit this field (and PID field); there is no way to extract a specific language with
-        /// pass-through captions.
+        /// is DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption
+        /// language to extract. If input is DVB-Sub that is being passed through, omit this field
+        /// (and PID field); there is no way to extract a specific language with pass-through
+        /// captions.
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
@@ -63,10 +63,10 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. The specific language to extract from source.
         /// If input is SCTE-27, complete this field and/or PID to select the caption language
-        /// to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field
-        /// and/or PID to select the caption language to extract. If input is DVB-Sub that is
-        /// being passed through, omit this field (and PID field); there is no way to extract
-        /// a specific language with pass-through captions.
+        /// to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or
+        /// PID to select the caption language to extract. If input is DVB-Sub that is being passed
+        /// through, omit this field (and PID field); there is no way to extract a specific language
+        /// with pass-through captions.
         /// </summary>
         public LanguageCode LanguageCode
         {

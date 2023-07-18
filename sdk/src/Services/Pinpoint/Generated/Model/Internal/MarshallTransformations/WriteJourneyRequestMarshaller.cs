@@ -195,6 +195,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.State);
             }
 
+            if(requestObject.IsSetTimezoneEstimationMethods())
+            {
+                context.Writer.WritePropertyName("TimezoneEstimationMethods");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTimezoneEstimationMethodsListValue in requestObject.TimezoneEstimationMethods)
+                {
+                        context.Writer.Write(requestObjectTimezoneEstimationMethodsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetWaitForQuietTime())
             {
                 context.Writer.WritePropertyName("WaitForQuietTime");

@@ -35,6 +35,7 @@ namespace Amazon.Drs.Model
     {
         private ConversionProperties _conversionProperties;
         private string _conversionServerID;
+        private EventResourceData _eventResourceData;
         private string _rawError;
         private string _sourceServerID;
         private string _targetInstanceID;
@@ -74,6 +75,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetConversionServerID()
         {
             return this._conversionServerID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventResourceData. 
+        /// <para>
+        /// Properties of resource related to a job event.
+        /// </para>
+        /// </summary>
+        public EventResourceData EventResourceData
+        {
+            get { return this._eventResourceData; }
+            set { this._eventResourceData = value; }
+        }
+
+        // Check to see if EventResourceData property is set
+        internal bool IsSetEventResourceData()
+        {
+            return this._eventResourceData != null;
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A column within a schema relation, derived from the underlying AWS Glue table.
+    /// A column within a schema relation, derived from the underlying Glue table.
     /// </summary>
     public partial class Column
     {

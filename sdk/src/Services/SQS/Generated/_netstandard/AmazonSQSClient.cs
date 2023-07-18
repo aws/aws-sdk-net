@@ -172,7 +172,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="config">The AmazonSQSClient Configuration Object</param>
         public AmazonSQSClient(AmazonSQSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

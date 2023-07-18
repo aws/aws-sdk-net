@@ -19,6 +19,19 @@
 
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
   <ItemGroup>
     <Compile Include="../Services/*/UnitTests/**/*.cs"/>
   </ItemGroup>

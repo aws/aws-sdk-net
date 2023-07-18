@@ -32,16 +32,26 @@ namespace Amazon.IoTFleetWise
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoTFleetWise";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTFleetWiseConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTFleetWiseDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoTFleetWise";
             this.AuthenticationServiceName = "iotfleetwise";
             this.EndpointProvider = new AmazonIoTFleetWiseEndpointProvider();
         }

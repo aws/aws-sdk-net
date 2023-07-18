@@ -122,7 +122,7 @@ namespace Amazon.IoTFleetHub
         /// </summary>
         /// <param name="config">The AmazonIoTFleetHubClient Configuration Object</param>
         public AmazonIoTFleetHubClient(AmazonIoTFleetHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonIoTFleetHubClient with AWS Credentials

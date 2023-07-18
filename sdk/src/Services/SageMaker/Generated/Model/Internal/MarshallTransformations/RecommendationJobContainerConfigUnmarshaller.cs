@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.PayloadConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SupportedEndpointType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SupportedEndpointType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SupportedInstanceTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

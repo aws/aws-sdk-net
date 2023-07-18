@@ -143,7 +143,7 @@ namespace Amazon.EBS
         /// </summary>
         /// <param name="config">The AmazonEBSClient Configuration Object</param>
         public AmazonEBSClient(AmazonEBSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonEBSClient with AWS Credentials

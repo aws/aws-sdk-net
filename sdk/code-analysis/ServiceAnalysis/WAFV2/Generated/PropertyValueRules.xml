@@ -835,6 +835,12 @@
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.AddressField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.APIKeySummary.APIKey</property>
     <min>1</min>
     <max>2048</max>
@@ -843,6 +849,18 @@
   <property-value-rule>
     <property>Amazon.WAFV2.Model.APIKeySummary.Version</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.AWSManagedRulesACFPRuleSet.CreationPath</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.AWSManagedRulesACFPRuleSet.RegistrationPagePath</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.CustomHTTPHeader.Name</property>
@@ -872,6 +890,12 @@
     <min>1</min>
     <max>10240</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EmailField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ExcludedRule.Name</property>
@@ -1178,6 +1202,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.PasswordField.Identifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PhoneNumberField.Identifier</property>
     <min>1</min>
     <max>512</max>
     <pattern>.*\S.*</pattern>

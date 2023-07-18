@@ -94,6 +94,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("participatingResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ParticipatingResource, ParticipatingResourceUnmarshaller>(ParticipatingResourceUnmarshaller.Instance);
+                    unmarshalledObject.ParticipatingResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("participatingServers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ParticipatingServer, ParticipatingServerUnmarshaller>(ParticipatingServerUnmarshaller.Instance);

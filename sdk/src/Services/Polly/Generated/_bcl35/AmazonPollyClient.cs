@@ -122,8 +122,7 @@ namespace Amazon.Polly
         /// </summary>
         /// <param name="config">The AmazonPollyClient Configuration Object</param>
         public AmazonPollyClient(AmazonPollyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonPollyClient with AWS Credentials
         /// </summary>

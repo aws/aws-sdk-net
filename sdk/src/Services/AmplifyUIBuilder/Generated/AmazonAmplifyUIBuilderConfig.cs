@@ -32,16 +32,26 @@ namespace Amazon.AmplifyUIBuilder
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.38");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.9");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AmplifyUIBuilder";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAmplifyUIBuilderConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyUIBuilderDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AmplifyUIBuilder";
             this.AuthenticationServiceName = "amplifyuibuilder";
             this.EndpointProvider = new AmazonAmplifyUIBuilderEndpointProvider();
         }

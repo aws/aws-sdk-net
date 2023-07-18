@@ -162,5 +162,13 @@ namespace Amazon.Rekognition.Model
         {
             return new ListStreamProcessorsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListUsers operation
+        ///</summary>
+        public IListUsersPaginator ListUsers(ListUsersRequest request) 
+        {
+            return new ListUsersPaginator(this.client, request);
+        }
     }
 }

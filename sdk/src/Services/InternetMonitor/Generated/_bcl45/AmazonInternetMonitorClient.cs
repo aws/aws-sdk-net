@@ -148,7 +148,7 @@ namespace Amazon.InternetMonitor
         /// </summary>
         /// <param name="config">The AmazonInternetMonitorClient Configuration Object</param>
         public AmazonInternetMonitorClient(AmazonInternetMonitorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonInternetMonitorClient with AWS Credentials

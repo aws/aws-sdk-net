@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Information about agents or connectors associated with the user’s Amazon Web Services
-    /// account. Information includes agent or connector IDs, IP addresses, media access control
-    /// (MAC) addresses, agent or connector health, hostname where the agent or connector
-    /// resides, and agent version for each agent.
+    /// Information about agents associated with the user’s Amazon Web Services account. Information
+    /// includes agent IDs, IP addresses, media access control (MAC) addresses, agent or collector
+    /// status, hostname where the agent resides, and agent version for each agent.
     /// </summary>
     public partial class AgentInfo
     {
@@ -50,7 +49,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// The agent or connector ID.
+        /// The agent or collector ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=20)]
@@ -69,7 +68,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentNetworkInfoList. 
         /// <para>
-        /// Network details about the host where the agent or connector resides.
+        /// Network details about the host where the agent or collector resides.
         /// </para>
         /// </summary>
         public List<AgentNetworkInfo> AgentNetworkInfoList
@@ -106,7 +105,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property CollectionStatus. 
         /// <para>
-        /// Status of the collection process for an agent or connector.
+        /// Status of the collection process for an agent.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -144,7 +143,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        /// The health of the agent or connector.
+        /// The health of the agent.
         /// </para>
         /// </summary>
         public AgentStatus Health
@@ -162,7 +161,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property HostName. 
         /// <para>
-        /// The name of the host where the agent or connector resides. The host can be a server
+        /// The name of the host where the agent or collector resides. The host can be a server
         /// or virtual machine.
         /// </para>
         /// </summary>
@@ -182,7 +181,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property LastHealthPingTime. 
         /// <para>
-        /// Time since agent or connector health was reported.
+        /// Time since agent health was reported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -220,7 +219,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The agent or connector version.
+        /// The agent or collector version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

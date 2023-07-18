@@ -45,7 +45,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FacetResults. 
         /// <para>
         /// Contains the facet results. A <code>FacetResult</code> contains the counts for each
-        /// attribute key that was specified in the <code>Facets</code> input parameter.
+        /// field/attribute key that was specified in the <code>Facets</code> input parameter.
         /// </para>
         /// </summary>
         public List<FacetResult> FacetResults
@@ -83,8 +83,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The identifier for the search. You use <code>QueryId</code> to identify the search
-        /// when using the feedback API.
+        /// The identifier for the search. You also use <code>QueryId</code> to identify the search
+        /// when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -139,7 +140,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfResults. 
         /// <para>
-        /// The total number of items found by the search; however, you can only retrieve up to
+        /// The total number of items found by the search. However, you can only retrieve up to
         /// 100 items. For example, if the search found 192 items, you can only retrieve the first
         /// 100 of the items.
         /// </para>

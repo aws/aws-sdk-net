@@ -32,16 +32,26 @@ namespace Amazon.MWAA
     public partial class AmazonMWAAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.12");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MWAA";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMWAAConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMWAADefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MWAA";
             this.AuthenticationServiceName = "airflow";
             this.EndpointProvider = new AmazonMWAAEndpointProvider();
         }

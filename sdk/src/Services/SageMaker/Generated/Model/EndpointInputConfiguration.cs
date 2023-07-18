@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private EnvironmentParameterRanges _environmentParameterRanges;
         private string _inferenceSpecificationName;
         private ProductionVariantInstanceType _instanceType;
+        private ProductionVariantServerlessConfig _serverlessConfig;
 
         /// <summary>
         /// Gets and sets the property EnvironmentParameterRanges. 
@@ -80,7 +81,6 @@ namespace Amazon.SageMaker.Model
         /// The instance types to use for the load test.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProductionVariantInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -91,6 +91,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessConfig.
+        /// </summary>
+        public ProductionVariantServerlessConfig ServerlessConfig
+        {
+            get { return this._serverlessConfig; }
+            set { this._serverlessConfig = value; }
+        }
+
+        // Check to see if ServerlessConfig property is set
+        internal bool IsSetServerlessConfig()
+        {
+            return this._serverlessConfig != null;
         }
 
     }

@@ -35,13 +35,23 @@ namespace Amazon.DocumentTypesTest
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Document-Types-Test";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDocumentTypesTestConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDocumentTypesTestDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Document-Types-Test";
             this.AuthenticationServiceName = "Document-Types-Test";
         }
 

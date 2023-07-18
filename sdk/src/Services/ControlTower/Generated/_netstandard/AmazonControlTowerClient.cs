@@ -202,7 +202,7 @@ namespace Amazon.ControlTower
         /// </summary>
         /// <param name="config">The AmazonControlTowerClient Configuration Object</param>
         public AmazonControlTowerClient(AmazonControlTowerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -32,16 +32,26 @@ namespace Amazon.DocDBElastic
     public partial class AmazonDocDBElasticConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.117");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.127");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DocDB Elastic";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDocDBElasticConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDocDBElasticDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DocDB Elastic";
             this.AuthenticationServiceName = "docdb-elastic";
             this.EndpointProvider = new AmazonDocDBElasticEndpointProvider();
         }

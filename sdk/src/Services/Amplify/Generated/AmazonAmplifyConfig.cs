@@ -32,16 +32,26 @@ namespace Amazon.Amplify
     public partial class AmazonAmplifyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.123");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.133");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Amplify";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAmplifyConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Amplify";
             this.AuthenticationServiceName = "amplify";
             this.EndpointProvider = new AmazonAmplifyEndpointProvider();
         }

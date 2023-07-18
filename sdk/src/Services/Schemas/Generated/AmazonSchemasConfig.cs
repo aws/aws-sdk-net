@@ -32,16 +32,26 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "schemas";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSchemasConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSchemasDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "schemas";
             this.AuthenticationServiceName = "schemas";
             this.EndpointProvider = new AmazonSchemasEndpointProvider();
         }

@@ -32,16 +32,26 @@ namespace Amazon.LexRuntimeV2
     public partial class AmazonLexRuntimeV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.72");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.82");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Lex Runtime V2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLexRuntimeV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLexRuntimeV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Lex Runtime V2";
             this.AuthenticationServiceName = "lex";
             this.EndpointProvider = new AmazonLexRuntimeV2EndpointProvider();
         }

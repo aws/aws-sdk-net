@@ -40,6 +40,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -55,7 +56,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

@@ -137,7 +137,7 @@ namespace Amazon.AugmentedAIRuntime
         /// </summary>
         /// <param name="config">The AmazonAugmentedAIRuntimeClient Configuration Object</param>
         public AmazonAugmentedAIRuntimeClient(AmazonAugmentedAIRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

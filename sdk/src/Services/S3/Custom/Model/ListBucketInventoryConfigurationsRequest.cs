@@ -48,8 +48,9 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The marker used to continue an inventory configuration listing that has been truncated. 
-        /// Use the NextContinuationToken from a previously truncated list response to continue the listing. 
-        /// The continuation token is an opaque value that Amazon S3 understands.
+        /// Use the <code>NextContinuationToken</code> from a previously truncated list response
+        /// to continue the listing. The continuation token is an opaque value that Amazon S3
+        /// understands.
         /// </summary>
         public string ContinuationToken
         {

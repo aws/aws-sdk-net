@@ -125,7 +125,7 @@ namespace Amazon.ECRPublic
         /// </summary>
         /// <param name="config">The AmazonECRPublicClient Configuration Object</param>
         public AmazonECRPublicClient(AmazonECRPublicConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonECRPublicClient with AWS Credentials

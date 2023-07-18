@@ -36,6 +36,7 @@ namespace Amazon.LocationService.Model
     public partial class SearchPlaceIndexForPositionRequest : AmazonLocationServiceRequest
     {
         private string _indexName;
+        private string _key;
         private string _language;
         private int? _maxResults;
         private List<double> _position = new List<double>();
@@ -57,6 +58,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// key</a> to authorize the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
         /// <summary>

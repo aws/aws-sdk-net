@@ -35,6 +35,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     public partial class UpdateAppInstanceBotRequest : AmazonChimeSDKIdentityRequest
     {
         private string _appInstanceBotArn;
+        private Configuration _configuration;
         private string _metadata;
         private string _name;
 
@@ -55,6 +56,24 @@ namespace Amazon.ChimeSDKIdentity.Model
         internal bool IsSetAppInstanceBotArn()
         {
             return this._appInstanceBotArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The configuration for the bot update.
+        /// </para>
+        /// </summary>
+        public Configuration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
         }
 
         /// <summary>

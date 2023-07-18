@@ -44,7 +44,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The message content.
+        /// The message content. For Amazon Lex V2 bot responses, this field holds a list of messages
+        /// originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]
@@ -63,7 +66,11 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the call-back message.
+        /// The content type of the call-back message. For Amazon Lex V2 bot responses, the content
+        /// type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code>
+        /// for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=45)]
@@ -82,8 +89,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// The attributes for the message, used for message filtering along with a <code>FilterRule</code>
-        /// defined in the <code>PushNotificationPreferences</code>. 
+        /// The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes
+        /// are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes

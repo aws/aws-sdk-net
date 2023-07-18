@@ -49,8 +49,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>
         /// The marker that is used to continue a metrics configuration listing that has been truncated. 
-        /// Use the NextContinuationToken from a previously truncated list response to continue the listing. 
-        /// The continuation token is an opaque value that Amazon S3 understands.
+        /// Use the<code>NextContinuationToken</code> from a previously truncated
+        /// list response to continue the listing. The continuation token is an opaque value that
+        /// Amazon S3 understands.
         /// </para>
         /// </summary>
         public string ContinuationToken

@@ -115,8 +115,7 @@ namespace Amazon.Finspace
         /// </summary>
         /// <param name="config">The AmazonFinspaceClient Configuration Object</param>
         public AmazonFinspaceClient(AmazonFinspaceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonFinspaceClient with AWS Credentials
         /// </summary>

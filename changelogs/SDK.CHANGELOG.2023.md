@@ -1,3 +1,328 @@
+### 3.7.588.0 (2023-07-13 18:30 UTC)
+* CognitoIdentityProvider (3.7.103.0)
+	* API model updated in Amazon Cognito
+* Connect (3.7.130.0)
+	* Add support for deleting Queues and Routing Profiles.
+* DatabaseMigrationService (3.7.105.0)
+	* Enhanced PostgreSQL target endpoint settings for providing Babelfish support.
+* DataSync (3.7.106.0)
+	* Added LunCount to the response object of DescribeStorageSystemResourcesResponse, LunCount represents the number of LUNs on a storage system resource.
+* EC2 (3.7.141.0)
+	* This release adds support for the C7gn and Hpc7g instances. C7gn instances are powered by AWS Graviton3 processors and the fifth-generation AWS Nitro Cards. Hpc7g instances are powered by AWS Graviton 3E processors and provide up to 200 Gbps network bandwidth.
+* FSx (3.7.104.0)
+	* Amazon FSx for NetApp ONTAP now supports SnapLock, an ONTAP feature that enables you to protect your files in a volume by transitioning them to a write once, read many (WORM) state.
+* IdentityManagement (3.7.102.6)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* MediaTailor (3.7.107.0)
+	* Adds categories to MediaTailor channel assembly alerts
+* Personalize (3.7.103.0)
+	* This release provides ability to customers to change schema associated with their datasets in Amazon Personalize
+* Proton (3.7.106.0)
+	* This release adds support for deployment history for Proton provisioned resources
+* S3 (3.7.108.0)
+	* S3 Inventory now supports Object Access Control List and Object Owner as available object metadata fields in inventory reports.
+* SageMaker (3.7.143.0)
+	* Amazon SageMaker Canvas adds WorkspeceSettings support for CanvasAppSettings
+* SecretsManager (3.7.102.65)
+	* Documentation updates for Secrets Manager
+* Core 3.7.108.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.587.0 (2023-07-11 04:43 UTC)
+* CognitoIdentityProvider (3.7.102.0)
+	* API model updated in Amazon Cognito
+
+### 3.7.586.0 (2023-07-07 18:21 UTC)
+* CloudWatchLogs (3.7.106.0)
+	* Add CMK encryption support for CloudWatch Logs Insights query result data
+* DatabaseMigrationService (3.7.104.0)
+	* Releasing DMS Serverless. Adding support for PostgreSQL 15.x as source and target endpoint. Adding support for DocDB Elastic Clusters with sharded collections, PostgreSQL datatype mapping customization and disabling hostname validation of the certificate authority in Kafka endpoint settings
+* Glue (3.7.120.0)
+	* This release enables customers to create new Apache Iceberg tables and associated metadata in Amazon S3 by using native AWS Glue CreateTable operation.
+* MediaLive (3.7.107.0)
+	* This release enables the use of Thumbnails in AWS Elemental MediaLive.
+* MediaTailor (3.7.106.0)
+	* The AWS Elemental MediaTailor SDK for Channel Assembly has added support for EXT-X-CUE-OUT and EXT-X-CUE-IN tags to specify ad breaks in HLS outputs, including support for EXT-OATCLS, EXT-X-ASSET, and EXT-X-CUE-OUT-CONT accessory tags.
+* Core 3.7.108.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.585.0 (2023-07-07 14:09 UTC)
+* Core 3.7.108.0
+	* Feat: Add support for service specific and global custom endpoints, which can be set via the configuration file or environment variables. Add a Profile object which can reroute the SDK to use the correct Profile when set on the ClientConfig and passed in to a service client constructor. ServiceClients that accept a Config object now call the overloaded GetAWSCredentialsMethod which checks for the Profile object
+	* All services packages updated to require new Core
+
+### 3.7.584.0 (2023-07-06 18:25 UTC)
+* EC2 (3.7.140.0)
+	* Add Nitro Enclaves support on DescribeInstanceTypes
+* LocationService (3.7.105.0)
+	* This release adds support for authenticating with Amazon Location Service's Places & Routes APIs with an API Key. Also, with this release developers can publish tracked device position updates to Amazon EventBridge.
+* Outposts (3.7.105.0)
+	* Added paginator support to several APIs. Added the ISOLATED enum value to AssetState.
+* QuickSight (3.7.111.0)
+	* This release includes below three changes: small multiples axes improvement, field based coloring, removed required trait from Aggregation function for TopBottomFilter.
+* RDS (3.7.120.3)
+	* Updates Amazon RDS documentation for creating DB instances and creating Aurora global clusters.
+* Core 3.7.107.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.583.0 (2023-07-05 18:22 UTC)
+* ComprehendMedical (3.7.102.7)
+	* Update to Amazon Comprehend Medical documentation.
+* Connect (3.7.129.3)
+	* GetMetricDataV2 API: Channels filters do not count towards overall limitation of 100 filter values.
+* KeyManagementService (3.7.104.0)
+	* Added Dry Run Feature to cryptographic and cross-account mutating KMS APIs (14 in all). This feature allows users to test their permissions and parameters before making the actual API call.
+* Mgn (3.7.103.0)
+	* This release introduces the Global view feature and new Replication state APIs.
+* SecurityHub (3.7.109.5)
+	* Documentation updates for AWS Security Hub
+
+### 3.7.582.1 (2023-07-05 14:18 UTC)
+* Core 3.7.107.11
+	* fix: Revert update to analyzer projects (previous update unintentionally removed support for tooling such as VS2017)
+	* All services packages updated to require new Core
+
+### 3.7.582.0 (2023-07-03 18:28 UTC)
+* Batch (3.7.105.0)
+	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture and X86_64 CPU Architecture with Windows OS on Fargate Platform.
+* SageMaker (3.7.142.0)
+	* SageMaker Inference Recommender now accepts new fields SupportedEndpointType and ServerlessConfiguration to support serverless endpoints.
+* Core 3.7.107.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.581.0 (2023-06-30 18:26 UTC)
+* ECS (3.7.109.0)
+	* Added new field  "credentialspecs" to the ecs task definition to support gMSA of windows/linux in both domainless and domain-joined mode
+* IVS (3.7.105.0)
+	* Corrects the HTTP response code in the generated docs for PutMetadata and DeleteRecordingConfiguration APIs.
+* MediaConvert (3.7.112.1)
+	* This release includes improved color handling of overlays and general updates to user documentation.
+* PrometheusService (3.7.101.0)
+	* AWS SDK service model  generation tool version upgrade.
+* SageMaker (3.7.141.0)
+	* This release adds support for rolling deployment in SageMaker Inference.
+* Transfer (3.7.107.0)
+	* Add outbound Basic authentication support to AS2 connectors
+* VerifiedPermissions (3.7.100.5)
+	* This release corrects several broken links in the documentation.
+
+### 3.7.580.0 (2023-06-29 19:25 UTC)
+* AppStream (3.7.103.0)
+	* This release introduces app block builder, allowing customers to provision a resource to package applications into an app block
+* Chime (3.7.102.0)
+	* The Amazon Chime SDK APIs in the Chime namespace are no longer supported.  Customers should use APIs in the dedicated Amazon Chime SDK namespaces: ChimeSDKIdentity, ChimeSDKMediaPipelines, ChimeSDKMeetings, ChimeSDKMessaging, and ChimeSDKVoice.
+* CleanRooms (3.7.102.0)
+	* This release adds support for the OR operator in RSQL join match conditions and the ability to control which operators (AND, OR) are allowed in a join match condition.
+* DynamoDBv2 (3.7.105.0)
+	* This release adds ReturnValuesOnConditionCheckFailure parameter to PutItem, UpdateItem, DeleteItem, ExecuteStatement, BatchExecuteStatement and ExecuteTransaction APIs. When set to ALL_OLD,  API returns a copy of the item as it was when a conditional write failed
+* GameLift (3.7.105.0)
+	* Amazon GameLift now supports game builds that use the Amazon Linux 2023 (AL2023) operating system.
+* Glue (3.7.119.0)
+	* This release adds support for AWS Glue Crawler with Iceberg Tables, allowing Crawlers to discover Iceberg Tables in S3 and register them in Glue Data Catalog for query engines to query against.
+* SageMaker (3.7.140.0)
+	* Adding support for timeseries forecasting in the CreateAutoMLJobV2 API.
+
+### 3.7.579.0 (2023-06-28 18:25 UTC)
+* InternetMonitor (3.7.103.0)
+	* This release adds a new feature for Amazon CloudWatch Internet Monitor that enables customers to set custom thresholds, for performance and availability drops, for triggering when to create a health event.
+* KinesisAnalyticsV2 (3.7.102.0)
+	* Support for new runtime environment in Kinesis Data Analytics Studio: Zeppelin-0.10, Apache Flink-1.15
+* Lambda (3.7.113.0)
+	* Surface ResourceConflictException in DeleteEventSourceMapping
+* Omics (3.7.104.0)
+	* Add Common Workflow Language (CWL) as a supported language for Omics workflows
+* RDS (3.7.120.0)
+	* Amazon Relational Database Service (RDS) now supports joining a RDS for SQL Server instance to a self-managed Active Directory.
+* S3 (3.7.107.0)
+	* The S3 LISTObjects, ListObjectsV2 and ListObjectVersions API now supports a new optional header x-amz-optional-object-attributes. If header contains RestoreStatus as the value, then S3 will include Glacier restore status i.e. isRestoreInProgress and RestoreExpiryDate in List response.
+* SageMaker (3.7.139.0)
+	* This release adds support for Model Cards Model Registry integration.
+
+### 3.7.578.0 (2023-06-27 18:38 UTC)
+* AppFabric (3.7.100.0)
+	* Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.
+* Appflow (3.7.113.0)
+	* This release adds support to bypass SSO with the SAPOData connector when connecting to an SAP instance.
+* EMRServerless (3.7.105.0)
+	* This release adds support to update the release label of an EMR Serverless application to upgrade it to a different version of Amazon EMR via UpdateApplication API.
+* IVS (3.7.104.0)
+	* IVS customers can now revoke the viewer session associated with an auth token, to prevent and stop playback using that token.
+* KinesisVideo (3.7.103.0)
+	* General Availability (GA) release of Kinesis Video Streams at Edge, enabling customers to provide a configuration for the Kinesis Video Streams EdgeAgent running on an on-premise IoT device. Customers can now locally record from cameras and stream videos to the cloud on a configured schedule.
+* Macie2 (3.7.104.0)
+	* This release adds support for configuring new classification jobs to use the set of managed data identifiers that we recommend for jobs. For the managed data identifier selection type (managedDataIdentifierSelector), specify RECOMMENDED.
+* Private5G (3.7.103.0)
+	* This release allows Private5G customers to choose different commitment plans (60-days, 1-year, 3-years) when placing new orders, enables automatic renewal option for 1-year and 3-years commitments. It also allows customers to update the commitment plan of an existing radio unit.
+* SageMaker (3.7.138.0)
+	* Introducing TTL for online store records in feature groups.
+* SageMakerFeatureStoreRuntime (3.7.103.0)
+	* Introducing TTL for online store records for feature groups.
+* SimpleSystemsManagement (3.7.104.51)
+	* Systems Manager doc-only update for June 2023.
+* VerifiedPermissions (3.7.100.4)
+	* This update fixes several broken links to the Cedar documentation.
+
+### 3.7.577.0 (2023-06-26 18:23 UTC)
+* Connect (3.7.129.0)
+	* This release provides a way to search for existing tags within an instance. Before tagging a resource, ensure consistency by searching for pre-existing key:value pairs.
+* Glue (3.7.118.0)
+	* Timestamp Starting Position For Kinesis and Kafka Data Sources in a Glue Streaming Job
+* GuardDuty (3.7.107.0)
+	* Add support for user.extra.sessionName in Kubernetes Audit Logs Findings.
+* IdentityManagement (3.7.102.0)
+	* Support for a new API "GetMFADevice" to present MFA device metadata such as device certifications
+* Pinpoint (3.7.102.0)
+	* Added time zone estimation support for journeys
+
+### 3.7.576.0 (2023-06-23 18:21 UTC)
+* DevOpsGuru (3.7.103.0)
+	* This release adds support for encryption via customer managed keys.
+* FSx (3.7.103.4)
+	* Update to Amazon FSx documentation.
+* RDS (3.7.119.12)
+	* Documentation improvements for create, describe, and modify DB clusters and DB instances.
+* VerifiedPermissions (3.7.100.3)
+	* Added improved descriptions and new code samples to SDK documentation.
+
+### 3.7.575.0 (2023-06-22 18:21 UTC)
+* ChimeSDKIdentity (3.7.102.0)
+	* AppInstanceBots can be configured to be invoked or not using the Target or the CHIME.mentions attribute for ChannelMessages
+* ChimeSDKMessaging (3.7.104.0)
+	* ChannelMessages can be made visible to sender and intended recipient rather than all channel members with the target attribute. For example, a user can send messages to a bot and receive messages back in a group channel without other members seeing them.
+* Kendra (3.7.105.0)
+	* Introducing Amazon Kendra Retrieve API that can be used to retrieve relevant passages or text excerpts given an input query.
+* StepFunctions (3.7.103.0)
+	* Adds support for Versions and Aliases. Adds 8 operations: PublishStateMachineVersion, DeleteStateMachineVersion, ListStateMachineVersions, CreateStateMachineAlias, DescribeStateMachineAlias, UpdateStateMachineAlias, DeleteStateMachineAlias, ListStateMachineAliases
+
+### 3.7.574.0 (2023-06-21 18:23 UTC)
+* DynamoDBv2 (3.7.104.1)
+	* Documentation updates for DynamoDB
+* ElasticMapReduce (3.7.106.0)
+	* This release introduces a new Amazon EMR EPI called ListSupportedInstanceTypes that returns a list of all instance types supported by a given EMR release.
+* Inspector2 (3.7.106.0)
+	* This release adds support for Software Bill of Materials (SBOM) export and the general availability of code scanning for AWS Lambda functions.
+* MediaConvert (3.7.112.0)
+	* This release introduces the bandwidth reduction filter for the HEVC encoder, increases the limits of outputs per job, and updates support for the Nagra SDK to version 1.14.7.
+* MQ (3.7.101.0)
+	* The Cross Region Disaster Recovery feature allows to replicate a brokers state from one region to another in order to provide customers with multi-region resiliency in the event of a regional outage.
+* SageMaker (3.7.137.0)
+	* This release provides support in SageMaker for output files in training jobs to be uploaded without compression and enable customer to deploy uncompressed model from S3 to real-time inference Endpoints. In addition, ml.trn1n.32xlarge is added to supported instance type list in training job.
+* Transfer (3.7.106.0)
+	* This release adds a new parameter StructuredLogDestinations to CreateServer, UpdateServer APIs.
+
+### 3.7.573.0 (2023-06-20 23:51 UTC)
+* DynamoDBv2 (3.7.104.0)
+	* Updated documentation for DynamoDB Streams. Add non-generic batchwrite methods on DynamoDBContext.
+* RDS (3.7.119.11)
+	* Add async version of RDSAuthTokenGenerator GenerateAuthToken.
+* Core 3.7.107.9
+	* Reduce empty array allocations by using Array.Empty<T>.
+
+### 3.7.572.0 (2023-06-20 19:58 UTC)
+* Appflow (3.7.112.0)
+	* This release adds new API to reset connector metadata cache
+* ConfigService (3.7.106.0)
+	* Updated ResourceType enum with new resource types onboarded by AWS Config in May 2023.
+* EC2 (3.7.139.0)
+	* Adds support for targeting Dedicated Host allocations by assetIds in AWS Outposts
+* Lambda (3.7.112.0)
+	* This release adds RecursiveInvocationException to the Invoke API and InvokeWithResponseStream API.
+* Redshift (3.7.102.0)
+	* Added support for custom domain names for Redshift Provisioned clusters. This feature enables customers to create a custom domain name and use ACM to generate fully secure connections to it.
+* Core 3.7.107.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.571.0 (2023-06-19 18:23 UTC)
+* CloudFormation (3.7.108.0)
+	* Specify desired CloudFormation behavior in the event of ChangeSet execution failure using the CreateChangeSet OnStackFailure parameter
+* EC2 (3.7.138.0)
+	* API changes to AWS Verified Access to include data from trust providers in logs
+* ECS (3.7.108.22)
+	* Documentation only update to address various tickets.
+* Glue (3.7.117.0)
+	* This release adds support for creating cross region table/database resource links
+* Pricing (3.7.102.0)
+	* This release updates the PriceListArn regex pattern.
+* Route53Domains (3.7.102.0)
+	* Update MaxItems upper bound to 1000 for ListPricesRequest
+* SageMaker (3.7.136.0)
+	* Amazon Sagemaker Autopilot releases CreateAutoMLJobV2 and DescribeAutoMLJobV2 for Autopilot customers with ImageClassification, TextClassification and Tabular problem type config support.
+
+### 3.7.570.0 (2023-06-16 18:56 UTC)
+* Account (3.7.103.0)
+	* Improve pagination support for ListRegions
+* ApplicationDiscoveryService (3.7.102.0)
+	* Add Amazon EC2 instance recommendations export
+* Connect (3.7.128.0)
+	* Updates the *InstanceStorageConfig APIs to support a new ResourceType: SCREEN_RECORDINGS to enable screen recording and specify the storage configurations for publishing the recordings. Also updates DescribeInstance and ListInstances APIs to include InstanceAccessUrl attribute in the API response.
+* IdentityManagement (3.7.101.5)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* S3 (3.7.106.0)
+	* This release adds SDK support for request-payer request header and request-charged response header in the "GetBucketAccelerateConfiguration", "ListMultipartUploads", "ListObjects", "ListObjectsV2" and "ListObjectVersions" S3 APIs.
+
+### 3.7.569.0 (2023-06-15 18:25 UTC)
+* AuditManager (3.7.104.0)
+	* This release introduces 2 Audit Manager features: CSV exports and new manual evidence options. You can now export your evidence finder results in CSV format. In addition, you can now add manual evidence to a control by entering free-form text or uploading a file from your browser.
+* ElasticFileSystem (3.7.102.24)
+	* Documentation updates for EFS.
+* GuardDuty (3.7.106.20)
+	* Updated descriptions for some APIs.
+* LocationService (3.7.104.0)
+	* Amazon Location Service adds categories to places, including filtering on those categories in searches. Also, you can now add metadata properties to your geofences.
+* Core 3.7.107.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.568.0 (2023-06-13 20:44 UTC)
+* CloudTrail (3.7.107.0)
+	* This feature allows users to view dashboards for CloudTrail Lake event data stores.
+* CodeGuruSecurity (3.7.100.0)
+	* Initial release of Amazon CodeGuru Security APIs
+* Drs (3.7.105.0)
+	* Added APIs to support network replication and recovery using AWS Elastic Disaster Recovery.
+* EC2 (3.7.137.0)
+	* This release introduces a new feature, EC2 Instance Connect Endpoint, that enables you to connect to a resource over TCP, without requiring the resource to have a public IPv4 address.
+* Imagebuilder (3.7.103.43)
+	* Change the Image Builder ImagePipeline dateNextRun field to more accurately describe the data.
+* Lightsail (3.7.103.0)
+	* This release adds pagination for the Get Certificates API operation.
+* S3 (3.7.105.0)
+	* Integrate double encryption feature to SDKs.
+* SecurityHub (3.7.109.0)
+	* Add support for Security Hub Automation Rules
+* SimSpaceWeaver (3.7.102.0)
+	* This release fixes using aws-us-gov ARNs in API calls and adds documentation for snapshot APIs.
+* VerifiedPermissions (3.7.100.0)
+	* GA release of Amazon Verified Permissions.
+* WAFV2 (3.7.112.0)
+	* You can now detect and block fraudulent account creation attempts with the new AWS WAF Fraud Control account creation fraud prevention (ACFP) managed rule group AWSManagedRulesACFPRuleSet.
+* WellArchitected (3.7.104.0)
+	* AWS Well-Architected now supports Profiles that help customers prioritize which questions to focus on first by providing a list of prioritized questions that are better aligned with their business goals and outcomes.
+* Core 3.7.107.6
+	* All services packages updated to require new Core
+
+### 3.7.567.0 (2023-06-12 19:23 UTC)
+* AmplifyUIBuilder (3.7.102.0)
+	* AWS Amplify UIBuilder is launching Codegen UI, a new feature that enables you to generate your amplify uibuilder components and forms.
+* DynamoDBv2 (3.7.103.20)
+	* Documentation updates for DynamoDB
+* FSx (3.7.103.0)
+	* Amazon FSx for NetApp ONTAP now supports joining a storage virtual machine (SVM) to Active Directory after the SVM has been created.
+* OpenSearchService (3.7.108.0)
+	* This release adds support for SkipUnavailable connection property for cross cluster search
+* Rekognition (3.7.108.0)
+	* This release adds support for improved accuracy with user vector in Amazon Rekognition Face Search. Adds new APIs: AssociateFaces, CreateUser, DeleteUser, DisassociateFaces, ListUsers, SearchUsers, SearchUsersByImage. Also adds new face metadata that can be stored: user vector.
+* SageMaker (3.7.135.0)
+	* Sagemaker Neo now supports compilation for inferentia2 (ML_INF2) and Trainium1 (ML_TRN1) as available targets. With these devices, you can run your workloads at highest performance with lowest cost. inferentia2 (ML_INF2) is available in CMH and Trainium1 (ML_TRN1) is available in IAD currently
+* Core 3.7.107.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.566.0 (2023-06-09 18:22 UTC)
 * ACMPCA (3.7.102.94)
 	* Document-only update to refresh CLI  documentation for AWS Private CA. No change to the service.

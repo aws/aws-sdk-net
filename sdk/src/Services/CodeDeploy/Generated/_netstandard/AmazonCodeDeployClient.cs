@@ -200,7 +200,7 @@ namespace Amazon.CodeDeploy
         /// </summary>
         /// <param name="config">The AmazonCodeDeployClient Configuration Object</param>
         public AmazonCodeDeployClient(AmazonCodeDeployConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

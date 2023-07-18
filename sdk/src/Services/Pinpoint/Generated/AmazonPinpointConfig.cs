@@ -32,16 +32,26 @@ namespace Amazon.Pinpoint
     public partial class AmazonPinpointConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Pinpoint";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPinpointConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Pinpoint";
             this.AuthenticationServiceName = "mobiletargeting";
             this.EndpointProvider = new AmazonPinpointEndpointProvider();
         }

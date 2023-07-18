@@ -126,8 +126,7 @@ namespace Amazon.Panorama
         /// </summary>
         /// <param name="config">The AmazonPanoramaClient Configuration Object</param>
         public AmazonPanoramaClient(AmazonPanoramaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonPanoramaClient with AWS Credentials
         /// </summary>

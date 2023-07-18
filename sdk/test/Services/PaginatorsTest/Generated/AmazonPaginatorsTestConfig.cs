@@ -35,13 +35,23 @@ namespace Amazon.PaginatorsTest
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Paginators-Test";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPaginatorsTestConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPaginatorsTestDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Paginators-Test";
             this.AuthenticationServiceName = "Paginators-Test";
         }
 

@@ -30,7 +30,7 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateForm operation.
-    /// Creates a new form for an Amplify app.
+    /// Creates a new form for an Amplify.
     /// </summary>
     public partial class CreateFormRequest : AmazonAmplifyUIBuilderRequest
     {

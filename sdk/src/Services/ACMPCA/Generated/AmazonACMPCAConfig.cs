@@ -32,16 +32,26 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.94");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.104");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ACM PCA";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonACMPCAConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonACMPCADefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ACM PCA";
             this.AuthenticationServiceName = "acm-pca";
             this.EndpointProvider = new AmazonACMPCAEndpointProvider();
         }

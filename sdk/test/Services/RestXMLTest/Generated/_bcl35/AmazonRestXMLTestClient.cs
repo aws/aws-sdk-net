@@ -97,8 +97,7 @@ namespace Amazon.RestXMLTest
         /// </summary>
         /// <param name="config">The AmazonRestXMLTestClient Configuration Object</param>
         public AmazonRestXMLTestClient(AmazonRestXMLTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonRestXMLTestClient with AWS Credentials
         /// </summary>

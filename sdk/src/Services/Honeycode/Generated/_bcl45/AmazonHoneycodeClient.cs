@@ -118,7 +118,7 @@ namespace Amazon.Honeycode
         /// </summary>
         /// <param name="config">The AmazonHoneycodeClient Configuration Object</param>
         public AmazonHoneycodeClient(AmazonHoneycodeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonHoneycodeClient with AWS Credentials

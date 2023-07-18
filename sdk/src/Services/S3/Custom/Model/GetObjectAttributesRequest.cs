@@ -218,7 +218,7 @@ namespace Amazon.S3.Model
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -292,8 +292,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectAttributes. 
         /// <para>
-        /// An XML header that specifies the fields at the root level that you want returned in
-        /// the response. Fields that you do not specify will not be returned.
+        /// Specifies the fields at the root level that you want returned in the response. Fields
+        /// that you do not specify are not returned.
         /// </para>
         /// </summary>
         public List<ObjectAttributes> ObjectAttributes

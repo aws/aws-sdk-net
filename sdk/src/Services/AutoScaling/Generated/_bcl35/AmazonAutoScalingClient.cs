@@ -125,8 +125,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="config">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Credentials
         /// </summary>

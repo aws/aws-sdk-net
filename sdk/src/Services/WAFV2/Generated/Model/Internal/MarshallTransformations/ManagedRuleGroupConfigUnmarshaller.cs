@@ -64,6 +64,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AWSManagedRulesACFPRuleSet", targetDepth))
+                {
+                    var unmarshaller = AWSManagedRulesACFPRuleSetUnmarshaller.Instance;
+                    unmarshalledObject.AWSManagedRulesACFPRuleSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth))
                 {
                     var unmarshaller = AWSManagedRulesATPRuleSetUnmarshaller.Instance;

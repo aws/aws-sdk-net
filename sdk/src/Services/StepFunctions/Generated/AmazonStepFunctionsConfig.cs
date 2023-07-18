@@ -32,16 +32,26 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.116");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SFN";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonStepFunctionsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStepFunctionsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SFN";
             this.AuthenticationServiceName = "states";
             this.EndpointProvider = new AmazonStepFunctionsEndpointProvider();
         }

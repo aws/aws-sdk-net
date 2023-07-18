@@ -34,17 +34,11 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates
-    /// it from any instance that it's associated with. To disassociate an Elastic IP address
-    /// without releasing it, use <a>DisassociateAddress</a>.
+    /// [Default VPC] Releasing an Elastic IP address automatically disassociates it from
+    /// any instance that it's associated with. To disassociate an Elastic IP address without
+    /// releasing it, use <a>DisassociateAddress</a>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
     /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
@@ -59,13 +53,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able
-    /// to recover it. For more information, see <a>AllocateAddress</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// After you release an Elastic IP address, you might be able to recover it. For more
+    /// information, see <a>AllocateAddress</a>.
     /// </para>
     /// </summary>
     public partial class ReleaseAddressRequest : AmazonEC2Request
@@ -82,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates ReleaseAddressRequest with the parameterized properties
         /// </summary>
-        /// <param name="publicIp">[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</param>
+        /// <param name="publicIp">Deprecated.</param>
         public ReleaseAddressRequest(string publicIp)
         {
             _publicIp = publicIp;
@@ -91,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// [EC2-VPC] The allocation ID. Required for EC2-VPC.
+        /// The allocation ID. This parameter is required.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -138,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIp. 
         /// <para>
-        /// [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+        /// Deprecated.
         /// </para>
         /// </summary>
         public string PublicIp

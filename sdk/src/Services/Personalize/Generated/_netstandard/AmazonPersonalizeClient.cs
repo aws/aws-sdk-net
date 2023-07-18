@@ -101,7 +101,7 @@ namespace Amazon.Personalize
         /// </summary>
         /// <param name="config">The AmazonPersonalizeClient Configuration Object</param>
         public AmazonPersonalizeClient(AmazonPersonalizeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
@@ -3874,6 +3874,51 @@ namespace Amazon.Personalize
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCampaignResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataset
+
+        internal virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a dataset to replace its schema with a new or existing one. For more information,
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html">Replacing
+        /// a dataset's schema</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataset service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion

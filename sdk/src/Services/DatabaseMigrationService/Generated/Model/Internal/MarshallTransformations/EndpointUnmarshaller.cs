@@ -268,6 +268,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.SybaseSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimestreamSettings", targetDepth))
+                {
+                    var unmarshaller = TimestreamSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TimestreamSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Username", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

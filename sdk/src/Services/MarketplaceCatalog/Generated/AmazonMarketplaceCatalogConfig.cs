@@ -32,16 +32,26 @@ namespace Amazon.MarketplaceCatalog
     public partial class AmazonMarketplaceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.22");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.32");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Marketplace Catalog";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMarketplaceCatalogConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMarketplaceCatalogDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Marketplace Catalog";
             this.AuthenticationServiceName = "aws-marketplace";
             this.EndpointProvider = new AmazonMarketplaceCatalogEndpointProvider();
         }

@@ -32,16 +32,26 @@ namespace Amazon.IVS
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.5");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ivs";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIVSConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIVSDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ivs";
             this.AuthenticationServiceName = "ivs";
             this.EndpointProvider = new AmazonIVSEndpointProvider();
         }

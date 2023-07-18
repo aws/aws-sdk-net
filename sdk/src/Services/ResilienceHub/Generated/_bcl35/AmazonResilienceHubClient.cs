@@ -120,8 +120,7 @@ namespace Amazon.ResilienceHub
         /// </summary>
         /// <param name="config">The AmazonResilienceHubClient Configuration Object</param>
         public AmazonResilienceHubClient(AmazonResilienceHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonResilienceHubClient with AWS Credentials
         /// </summary>

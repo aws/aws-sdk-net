@@ -32,16 +32,26 @@ namespace Amazon.AppIntegrationsService
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.54");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.64");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AppIntegrations";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppIntegrationsServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppIntegrationsServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AppIntegrations";
             this.AuthenticationServiceName = "app-integrations";
             this.EndpointProvider = new AmazonAppIntegrationsServiceEndpointProvider();
         }

@@ -143,7 +143,7 @@ namespace Amazon.ACMPCA
         /// </summary>
         /// <param name="config">The AmazonACMPCAClient Configuration Object</param>
         public AmazonACMPCAClient(AmazonACMPCAConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonACMPCAClient with AWS Credentials

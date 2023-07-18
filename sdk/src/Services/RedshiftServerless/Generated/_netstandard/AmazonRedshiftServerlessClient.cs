@@ -117,7 +117,7 @@ namespace Amazon.RedshiftServerless
         /// </summary>
         /// <param name="config">The AmazonRedshiftServerlessClient Configuration Object</param>
         public AmazonRedshiftServerlessClient(AmazonRedshiftServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -115,8 +115,7 @@ namespace Amazon.LocationService
         /// </summary>
         /// <param name="config">The AmazonLocationServiceClient Configuration Object</param>
         public AmazonLocationServiceClient(AmazonLocationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonLocationServiceClient with AWS Credentials
         /// </summary>
@@ -754,9 +753,10 @@ namespace Amazon.LocationService
         #region  BatchUpdateDevicePosition
 
         /// <summary>
-        /// Uploads position update data for one or more devices to a tracker resource. Amazon
-        /// Location uses the data when it reports the last known device position and position
-        /// history. Amazon Location retains location data for 30 days.
+        /// Uploads position update data for one or more devices to a tracker resource (up to
+        /// 10 devices per batch). Amazon Location uses the data when it reports the last known
+        /// device position and position history. Amazon Location retains location data for 30
+        /// days.
         /// 
         ///  <note> 
         /// <para>
@@ -1157,16 +1157,14 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Creates an API key resource in your Amazon Web Services account, which lets you grant
-        /// <code>geo:GetMap*</code> actions for Amazon Location Map resources to the API key
-        /// bearer.
+        /// actions for Amazon Location resources to the API key bearer.
         /// 
-        ///  <important> 
+        ///  <note> 
         /// <para>
-        /// The API keys feature is in preview. We may add, change, or remove features before
-        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
         /// API keys</a>.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
         /// 
@@ -2113,14 +2111,6 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the API key resource details.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// The API keys feature is in preview. We may add, change, or remove features before
-        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
-        /// API keys</a>.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
         /// 
@@ -3380,14 +3370,6 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Lists API key resources in your Amazon Web Services account.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// The API keys feature is in preview. We may add, change, or remove features before
-        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
-        /// API keys</a>.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// 
@@ -4425,14 +4407,6 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Updates the specified properties of a given API key resource.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// The API keys feature is in preview. We may add, change, or remove features before
-        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
-        /// API keys</a>.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKey service method.</param>
         /// 

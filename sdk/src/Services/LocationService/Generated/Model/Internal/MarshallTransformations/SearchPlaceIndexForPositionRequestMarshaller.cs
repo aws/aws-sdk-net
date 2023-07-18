@@ -62,6 +62,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetIndexName())
                 throw new AmazonLocationServiceException("Request object does not have required field IndexName set");
             request.AddPathResource("{IndexName}", StringUtils.FromString(publicRequest.IndexName));
+            
+            if (publicRequest.IsSetKey())
+                request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/places/v0/indexes/{IndexName}/search/position";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -96,6 +99,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
             
             request.HostPrefix = $"places.";
 

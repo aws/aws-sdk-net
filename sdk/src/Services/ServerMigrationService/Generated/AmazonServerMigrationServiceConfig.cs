@@ -32,16 +32,26 @@ namespace Amazon.ServerMigrationService
     public partial class AmazonServerMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.40");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.50");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SMS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonServerMigrationServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerMigrationServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SMS";
             this.AuthenticationServiceName = "sms";
             this.EndpointProvider = new AmazonServerMigrationServiceEndpointProvider();
         }

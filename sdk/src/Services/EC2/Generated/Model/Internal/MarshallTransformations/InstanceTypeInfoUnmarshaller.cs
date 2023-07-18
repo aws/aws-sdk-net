@@ -156,6 +156,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("nitroEnclavesSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NitroEnclavesSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("placementGroupInfo", targetDepth))
                     {
                         var unmarshaller = PlacementGroupInfoUnmarshaller.Instance;

@@ -118,7 +118,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PreviousOrderId. 
         /// <para>
-        /// The ID of the previous order.
+        /// The ID of the previous order item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

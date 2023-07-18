@@ -1705,6 +1705,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateInstanceConnectEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateInstanceConnectEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateInstanceConnectEndpointRequest>();
+            var marshaller = new CreateInstanceConnectEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateInstanceConnectEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateInstanceConnectEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateInstanceEventWindowMarshallTest()
         {
             var operation = service_model.FindOperation("CreateInstanceEventWindow");
@@ -3495,6 +3519,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DeleteFpgaImageResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteFpgaImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteInstanceConnectEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteInstanceConnectEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceConnectEndpointRequest>();
+            var marshaller = new DeleteInstanceConnectEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteInstanceConnectEndpointResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -6136,6 +6184,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeInstanceAttributeResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeInstanceAttributeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeInstanceConnectEndpointsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstanceConnectEndpoints");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceConnectEndpointsRequest>();
+            var marshaller = new DescribeInstanceConnectEndpointsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstanceConnectEndpointsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

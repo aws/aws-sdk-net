@@ -116,8 +116,7 @@ namespace Amazon.VoiceID
         /// </summary>
         /// <param name="config">The AmazonVoiceIDClient Configuration Object</param>
         public AmazonVoiceIDClient(AmazonVoiceIDConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonVoiceIDClient with AWS Credentials
         /// </summary>

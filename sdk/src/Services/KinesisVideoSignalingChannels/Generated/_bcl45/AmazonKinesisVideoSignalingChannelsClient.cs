@@ -101,7 +101,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoSignalingChannelsClient Configuration Object</param>
         public AmazonKinesisVideoSignalingChannelsClient(AmazonKinesisVideoSignalingChannelsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonKinesisVideoSignalingChannelsClient with AWS Credentials

@@ -118,7 +118,7 @@ namespace Amazon.Synthetics
         /// </summary>
         /// <param name="config">The AmazonSyntheticsClient Configuration Object</param>
         public AmazonSyntheticsClient(AmazonSyntheticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

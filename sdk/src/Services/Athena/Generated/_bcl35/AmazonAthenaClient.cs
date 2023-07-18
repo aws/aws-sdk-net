@@ -134,8 +134,7 @@ namespace Amazon.Athena
         /// </summary>
         /// <param name="config">The AmazonAthenaClient Configuration Object</param>
         public AmazonAthenaClient(AmazonAthenaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAthenaClient with AWS Credentials
         /// </summary>

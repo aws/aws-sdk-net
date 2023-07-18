@@ -30,9 +30,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAgents operation.
-    /// Lists agents or connectors as specified by ID or other filters. All agents/connectors
-    /// associated with your user account can be listed if you call <code>DescribeAgents</code>
-    /// as is without passing any parameters.
+    /// Lists agents or collectors as specified by ID or other filters. All agents/collectors
+    /// associated with your user can be listed if you call <code>DescribeAgents</code> as
+    /// is without passing any parameters.
     /// </summary>
     public partial class DescribeAgentsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -44,9 +44,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The agent or the Connector IDs for which you want information. If you specify no IDs,
-        /// the system returns information about all agents/Connectors associated with your Amazon
-        /// Web Services user account.
+        /// The agent or the collector IDs for which you want information. If you specify no IDs,
+        /// the system returns information about all agents/collectors associated with your user.
         /// </para>
         /// </summary>
         public List<string> AgentIds
@@ -87,7 +86,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of agents/Connectors to return in a single page of output. The maximum
+        /// The total number of agents/collectors to return in a single page of output. The maximum
         /// value is 100.
         /// </para>
         /// </summary>

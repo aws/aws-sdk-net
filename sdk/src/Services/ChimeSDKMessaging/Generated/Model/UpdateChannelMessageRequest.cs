@@ -92,7 +92,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the message being updated.
+        /// The content of the channel message. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]

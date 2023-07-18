@@ -180,7 +180,7 @@ namespace Amazon.SupportApp
         /// </summary>
         /// <param name="config">The AmazonSupportAppClient Configuration Object</param>
         public AmazonSupportAppClient(AmazonSupportAppConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSupportAppClient with AWS Credentials

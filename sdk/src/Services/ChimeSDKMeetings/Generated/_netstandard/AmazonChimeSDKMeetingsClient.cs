@@ -104,7 +104,7 @@ namespace Amazon.ChimeSDKMeetings
         /// </summary>
         /// <param name="config">The AmazonChimeSDKMeetingsClient Configuration Object</param>
         public AmazonChimeSDKMeetingsClient(AmazonChimeSDKMeetingsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

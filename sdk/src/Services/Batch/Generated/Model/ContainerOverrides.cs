@@ -30,6 +30,12 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// The overrides that should be sent to a container.
+    /// 
+    ///  
+    /// <para>
+    /// For information about using Batch overrides when you connect event sources to targets,
+    /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_BatchContainerOverrides.html">BatchContainerOverrides</a>.
+    /// </para>
     /// </summary>
     public partial class ContainerOverrides
     {
@@ -46,6 +52,11 @@ namespace Amazon.Batch.Model
         /// The command to send to the container that overrides the default command from the Docker
         /// image or the job definition.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter can't contain an empty string.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Command
         {

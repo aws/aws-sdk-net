@@ -100,7 +100,7 @@ namespace Amazon.SageMakerGeospatial
         /// </summary>
         /// <param name="config">The AmazonSageMakerGeospatialClient Configuration Object</param>
         public AmazonSageMakerGeospatialClient(AmazonSageMakerGeospatialConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

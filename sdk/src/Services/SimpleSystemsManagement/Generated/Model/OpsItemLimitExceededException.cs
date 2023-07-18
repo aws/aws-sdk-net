@@ -29,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
-    /// are the resource limits for OpsCenter?</a>.
+    /// The request caused OpsItems to exceed one or more quotas.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

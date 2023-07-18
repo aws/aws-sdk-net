@@ -70,6 +70,24 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codeVulnerabilityDetectorName", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CodeVulnerabilityDetectorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("codeVulnerabilityDetectorTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CodeVulnerabilityDetectorTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("codeVulnerabilityFilePath", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CodeVulnerabilityFilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("componentId", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
@@ -134,6 +152,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("epssScore", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
+                    unmarshalledObject.EpssScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("exploitAvailable", targetDepth))

@@ -32,16 +32,26 @@ namespace Amazon.AlexaForBusiness
     public partial class AmazonAlexaForBusinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Alexa For Business";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAlexaForBusinessConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAlexaForBusinessDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Alexa For Business";
             this.AuthenticationServiceName = "a4b";
             this.EndpointProvider = new AmazonAlexaForBusinessEndpointProvider();
         }

@@ -2891,6 +2891,52 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type MetadataOperation.
+    /// </summary>
+    public class MetadataOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for MetadataOperation
+        /// </summary>
+        public static readonly MetadataOperation CREATE = new MetadataOperation("CREATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataOperation FindValue(string value)
+        {
+            return FindValue<MetadataOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MLUserDataEncryptionModeString.
     /// </summary>
     public class MLUserDataEncryptionModeString : ConstantClass
@@ -4302,6 +4348,10 @@ namespace Amazon.Glue
         /// Constant Latest for StartingPosition
         /// </summary>
         public static readonly StartingPosition Latest = new StartingPosition("latest");
+        /// <summary>
+        /// Constant Timestamp for StartingPosition
+        /// </summary>
+        public static readonly StartingPosition Timestamp = new StartingPosition("timestamp");
         /// <summary>
         /// Constant Trim_horizon for StartingPosition
         /// </summary>

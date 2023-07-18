@@ -116,7 +116,7 @@ namespace <#=this.Config.Namespace#>
         /// </summary>
         /// <param name="config">The Amazon<#=this.Config.ClassName#>Client Configuration Object</param>
         public Amazon<#=this.Config.ClassName#>Client(Amazon<#=this.Config.ClassName#>Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(<#= fallbackToAnonymousCredentials ? "fallbackToAnonymous: true" : ""#>), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config<#= fallbackToAnonymousCredentials ? ", fallbackToAnonymous: true" : ""#>), config){}
 
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with AWS Credentials

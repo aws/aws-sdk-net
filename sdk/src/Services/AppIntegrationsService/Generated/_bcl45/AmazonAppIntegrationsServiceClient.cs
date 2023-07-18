@@ -109,7 +109,7 @@ namespace Amazon.AppIntegrationsService
         /// </summary>
         /// <param name="config">The AmazonAppIntegrationsServiceClient Configuration Object</param>
         public AmazonAppIntegrationsServiceClient(AmazonAppIntegrationsServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAppIntegrationsServiceClient with AWS Credentials

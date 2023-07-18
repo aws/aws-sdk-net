@@ -34,6 +34,7 @@ namespace Amazon.Rekognition.Model
     public partial class DeleteFacesResponse : AmazonWebServiceResponse
     {
         private List<string> _deletedFaces = new List<string>();
+        private List<UnsuccessfulFaceDeletion> _unsuccessfulFaceDeletions = new List<UnsuccessfulFaceDeletion>();
 
         /// <summary>
         /// Gets and sets the property DeletedFaces. 
@@ -52,6 +53,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetDeletedFaces()
         {
             return this._deletedFaces != null && this._deletedFaces.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnsuccessfulFaceDeletions. 
+        /// <para>
+        /// An array of any faces that weren't deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public List<UnsuccessfulFaceDeletion> UnsuccessfulFaceDeletions
+        {
+            get { return this._unsuccessfulFaceDeletions; }
+            set { this._unsuccessfulFaceDeletions = value; }
+        }
+
+        // Check to see if UnsuccessfulFaceDeletions property is set
+        internal bool IsSetUnsuccessfulFaceDeletions()
+        {
+            return this._unsuccessfulFaceDeletions != null && this._unsuccessfulFaceDeletions.Count > 0; 
         }
 
     }

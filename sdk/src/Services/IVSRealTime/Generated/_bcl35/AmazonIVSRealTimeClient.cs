@@ -260,8 +260,7 @@ namespace Amazon.IVSRealTime
         /// </summary>
         /// <param name="config">The AmazonIVSRealTimeClient Configuration Object</param>
         public AmazonIVSRealTimeClient(AmazonIVSRealTimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIVSRealTimeClient with AWS Credentials
         /// </summary>

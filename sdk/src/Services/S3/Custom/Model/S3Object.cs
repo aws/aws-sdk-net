@@ -32,6 +32,7 @@ namespace Amazon.S3.Model
         private string key;
         private DateTime? lastModified;
         private Owner owner;
+        private RestoreStatus _restoreStatus;
         private long? size;
         private S3StorageClass storageClass;
         private string bucketName;
@@ -158,6 +159,26 @@ namespace Amazon.S3.Model
             return this.owner != null;
         }
 
+        /// <summary>
+        /// Gets and sets the property RestoreStatus. 
+        /// <para>
+        /// Specifies the restoration status of an object. Objects in certain storage classes
+        /// must be restored before they can be retrieved. For more information about these storage
+        /// classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+        /// Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public RestoreStatus RestoreStatus
+        {
+            get { return this._restoreStatus; }
+            set { this._restoreStatus = value; }
+        }
+
+        // Check to see if RestoreStatus property is set
+        internal bool IsSetRestoreStatus()
+        {
+            return this._restoreStatus != null;
+        }
         /// <summary>
         /// The size of the object.
         /// </summary>

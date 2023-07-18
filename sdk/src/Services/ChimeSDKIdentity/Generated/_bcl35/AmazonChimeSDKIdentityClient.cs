@@ -119,8 +119,7 @@ namespace Amazon.ChimeSDKIdentity
         /// </summary>
         /// <param name="config">The AmazonChimeSDKIdentityClient Configuration Object</param>
         public AmazonChimeSDKIdentityClient(AmazonChimeSDKIdentityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonChimeSDKIdentityClient with AWS Credentials
         /// </summary>

@@ -68,60 +68,12 @@ namespace Amazon.Account.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
                     {
-                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                            {
-                                return new Endpoint(Interpolate(@"https://account-fips.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                        }
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                            {
-                                return new Endpoint(Interpolate(@"https://account-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                        }
-                        if (Equals(refs["UseDualStack"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                            {
-                                return new Endpoint(Interpolate(@"https://account.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                        }
                         return new Endpoint("https://account.us-east-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""account"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                     }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
                     {
-                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                            {
-                                return new Endpoint(Interpolate(@"https://account-fips.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                        }
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                            {
-                                return new Endpoint(Interpolate(@"https://account-fips.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                        }
-                        if (Equals(refs["UseDualStack"], true))
-                        {
-                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                            {
-                                return new Endpoint(Interpolate(@"https://account.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                        }
                         return new Endpoint("https://account.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""account"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
@@ -147,14 +99,6 @@ namespace Amazon.Account.Internal
                             return new Endpoint(Interpolate(@"https://account.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    if (Equals(refs["Region"], "aws-global"))
-                    {
-                        return new Endpoint("https://account.us-east-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""account"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "aws-cn-global"))
-                    {
-                        return new Endpoint("https://account.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""account"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
                     }
                     return new Endpoint(Interpolate(@"https://account.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }

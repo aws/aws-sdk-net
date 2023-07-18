@@ -51,6 +51,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property AccountId.
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }

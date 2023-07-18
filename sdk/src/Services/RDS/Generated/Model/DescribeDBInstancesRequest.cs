@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBInstances operation.
-    /// Returns information about provisioned RDS instances. This API supports pagination.
+    /// Describes provisioned RDS instances. This API supports pagination.
     /// 
     ///  <note> 
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the identifier of an existing DBInstance.
+        /// If supplied, must match the identifier of an existing DB instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported filters:
+        /// Supported Filters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results
-        /// list will only include information about the DB instances identified by these DB instance
+        /// list only includes information about the DB instances identified by these DB instance
         /// resource identifiers.
         /// </para>
         ///  </li> <li> 

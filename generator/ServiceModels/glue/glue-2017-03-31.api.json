@@ -4815,7 +4815,8 @@
         "MongoDBTargets":{"shape":"MongoDBTargetList"},
         "DynamoDBTargets":{"shape":"DynamoDBTargetList"},
         "CatalogTargets":{"shape":"CatalogTargetList"},
-        "DeltaTargets":{"shape":"DeltaTargetList"}
+        "DeltaTargets":{"shape":"DeltaTargetList"},
+        "IcebergTargets":{"shape":"IcebergTargetList"}
       }
     },
     "CrawlsFilter":{
@@ -5287,7 +5288,8 @@
         "DatabaseName":{"shape":"NameString"},
         "TableInput":{"shape":"TableInput"},
         "PartitionIndexes":{"shape":"PartitionIndexList"},
-        "TransactionId":{"shape":"TransactionIdString"}
+        "TransactionId":{"shape":"TransactionIdString"},
+        "OpenTableFormatInput":{"shape":"OpenTableFormatInput"}
       }
     },
     "CreateTableResponse":{
@@ -5745,7 +5747,8 @@
       "type":"structure",
       "members":{
         "CatalogId":{"shape":"CatalogIdString"},
-        "DatabaseName":{"shape":"NameString"}
+        "DatabaseName":{"shape":"NameString"},
+        "Region":{"shape":"NameString"}
       }
     },
     "DatabaseInput":{
@@ -8188,6 +8191,27 @@
         "snappy"
       ]
     },
+    "IcebergInput":{
+      "type":"structure",
+      "required":["MetadataOperation"],
+      "members":{
+        "MetadataOperation":{"shape":"MetadataOperation"},
+        "Version":{"shape":"VersionString"}
+      }
+    },
+    "IcebergTarget":{
+      "type":"structure",
+      "members":{
+        "Paths":{"shape":"PathList"},
+        "ConnectionName":{"shape":"ConnectionName"},
+        "Exclusions":{"shape":"PathList"},
+        "MaximumTraversalDepth":{"shape":"NullableInteger"}
+      }
+    },
+    "IcebergTargetList":{
+      "type":"list",
+      "member":{"shape":"IcebergTarget"}
+    },
     "IdString":{
       "type":"string",
       "max":255,
@@ -8271,6 +8295,10 @@
       "exception":true
     },
     "IsVersionValid":{"type":"boolean"},
+    "Iso8601DateTime":{
+      "type":"timestamp",
+      "timestampFormat":"iso8601"
+    },
     "JDBCConnectionType":{
       "type":"string",
       "enum":[
@@ -8644,7 +8672,8 @@
         "MinPartitions":{"shape":"BoxedNonNegativeInt"},
         "IncludeHeaders":{"shape":"BoxedBoolean"},
         "AddRecordTimestamp":{"shape":"EnclosedInStringProperty"},
-        "EmitConsumerLagMetrics":{"shape":"EnclosedInStringProperty"}
+        "EmitConsumerLagMetrics":{"shape":"EnclosedInStringProperty"},
+        "StartingTimestamp":{"shape":"Iso8601DateTime"}
       }
     },
     "KeyList":{
@@ -8696,7 +8725,8 @@
         "RoleArn":{"shape":"EnclosedInStringProperty"},
         "RoleSessionName":{"shape":"EnclosedInStringProperty"},
         "AddRecordTimestamp":{"shape":"EnclosedInStringProperty"},
-        "EmitConsumerLagMetrics":{"shape":"EnclosedInStringProperty"}
+        "EmitConsumerLagMetrics":{"shape":"EnclosedInStringProperty"},
+        "StartingTimestamp":{"shape":"Iso8601DateTime"}
       }
     },
     "KmsKeyArn":{
@@ -9268,6 +9298,10 @@
       "type":"list",
       "member":{"shape":"MetadataKeyValuePair"}
     },
+    "MetadataOperation":{
+      "type":"string",
+      "enum":["CREATE"]
+    },
     "MetadataValueString":{
       "type":"string",
       "max":256,
@@ -9464,6 +9498,12 @@
       "member":{"shape":"NodeId"},
       "max":1,
       "min":1
+    },
+    "OpenTableFormatInput":{
+      "type":"structure",
+      "members":{
+        "IcebergInput":{"shape":"IcebergInput"}
+      }
     },
     "OperationTimeoutException":{
       "type":"structure",
@@ -11299,7 +11339,8 @@
       "enum":[
         "latest",
         "trim_horizon",
-        "earliest"
+        "earliest",
+        "timestamp"
       ]
     },
     "Statement":{
@@ -11501,7 +11542,8 @@
       "members":{
         "CatalogId":{"shape":"CatalogIdString"},
         "DatabaseName":{"shape":"NameString"},
-        "Name":{"shape":"NameString"}
+        "Name":{"shape":"NameString"},
+        "Region":{"shape":"NameString"}
       }
     },
     "TableInput":{

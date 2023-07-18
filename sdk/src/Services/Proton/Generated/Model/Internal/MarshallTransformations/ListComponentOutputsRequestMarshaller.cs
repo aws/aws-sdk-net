@@ -73,6 +73,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ComponentName);
                 }
 
+                if(publicRequest.IsSetDeploymentId())
+                {
+                    context.Writer.WritePropertyName("deploymentId");
+                    context.Writer.Write(publicRequest.DeploymentId);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");

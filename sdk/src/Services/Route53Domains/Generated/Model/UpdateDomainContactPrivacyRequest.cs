@@ -31,14 +31,14 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Container for the parameters to the UpdateDomainContactPrivacy operation.
     /// This operation updates the specified domain contact's privacy setting. When privacy
-    /// protection is enabled, contact information such as email address is replaced either
-    /// with contact information for Amazon Registrar (for .com, .net, and .org domains) or
-    /// with contact information for our registrar associate, Gandi.
+    /// protection is enabled, your contact information is replaced with contact information
+    /// for the registrar or with the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain
+    /// name&gt; owner."
     /// 
     ///  <note> 
     /// <para>
-    /// You must specify the same privacy setting for the administrative, registrant, and
-    /// technical contacts.
+    /// While some domains may allow different privacy settings per contact, we recommend
+    /// specifying the same privacy setting for all contacts.
     /// </para>
     ///  </note> 
     /// <para>

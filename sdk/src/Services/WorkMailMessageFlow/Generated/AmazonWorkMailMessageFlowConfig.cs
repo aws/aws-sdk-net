@@ -32,16 +32,26 @@ namespace Amazon.WorkMailMessageFlow
     public partial class AmazonWorkMailMessageFlowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WorkMailMessageFlow";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWorkMailMessageFlowConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkMailMessageFlowDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WorkMailMessageFlow";
             this.AuthenticationServiceName = "workmailmessageflow";
             this.EndpointProvider = new AmazonWorkMailMessageFlowEndpointProvider();
         }

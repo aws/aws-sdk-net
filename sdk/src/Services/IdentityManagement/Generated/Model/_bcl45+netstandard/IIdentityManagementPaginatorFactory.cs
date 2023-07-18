@@ -91,14 +91,34 @@ namespace Amazon.IdentityManagement.Model
         IListInstanceProfilesForRolePaginator ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request);
 
         /// <summary>
+        /// Paginator for ListInstanceProfileTags operation
+        ///</summary>
+        IListInstanceProfileTagsPaginator ListInstanceProfileTags(ListInstanceProfileTagsRequest request);
+
+        /// <summary>
         /// Paginator for ListMFADevices operation
         ///</summary>
         IListMFADevicesPaginator ListMFADevices(ListMFADevicesRequest request);
 
         /// <summary>
+        /// Paginator for ListMFADeviceTags operation
+        ///</summary>
+        IListMFADeviceTagsPaginator ListMFADeviceTags(ListMFADeviceTagsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOpenIDConnectProviderTags operation
+        ///</summary>
+        IListOpenIDConnectProviderTagsPaginator ListOpenIDConnectProviderTags(ListOpenIDConnectProviderTagsRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         IListPoliciesPaginator ListPolicies(ListPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPolicyTags operation
+        ///</summary>
+        IListPolicyTagsPaginator ListPolicyTags(ListPolicyTagsRequest request);
 
         /// <summary>
         /// Paginator for ListPolicyVersions operation
@@ -116,9 +136,24 @@ namespace Amazon.IdentityManagement.Model
         IListRolesPaginator ListRoles(ListRolesRequest request);
 
         /// <summary>
+        /// Paginator for ListRoleTags operation
+        ///</summary>
+        IListRoleTagsPaginator ListRoleTags(ListRoleTagsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSAMLProviderTags operation
+        ///</summary>
+        IListSAMLProviderTagsPaginator ListSAMLProviderTags(ListSAMLProviderTagsRequest request);
+
+        /// <summary>
         /// Paginator for ListServerCertificates operation
         ///</summary>
         IListServerCertificatesPaginator ListServerCertificates(ListServerCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListServerCertificateTags operation
+        ///</summary>
+        IListServerCertificateTagsPaginator ListServerCertificateTags(ListServerCertificateTagsRequest request);
 
         /// <summary>
         /// Paginator for ListSigningCertificates operation

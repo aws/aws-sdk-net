@@ -35,8 +35,12 @@ namespace Amazon.ComprehendMedical
     /// <summary>
     /// Implementation for accessing ComprehendMedical
     ///
-    /// Comprehend Medical; extracts structured information from unstructured clinical text.
-    /// Use these actions to gain insight in your documents.
+    /// Amazon Comprehend Medical extracts structured information from unstructured clinical
+    /// text. Use these actions to gain insight in your documents. Amazon Comprehend Medical
+    /// only detects entities in English language texts. Amazon Comprehend Medical places
+    /// limits on the sizes of files allowed for different API operations. To learn more,
+    /// see <a href="https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html">Guidelines
+    /// and quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.
     /// </summary>
     public partial class AmazonComprehendMedicalClient : AmazonServiceClient, IAmazonComprehendMedical
     {
@@ -98,8 +102,7 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         /// <param name="config">The AmazonComprehendMedicalClient Configuration Object</param>
         public AmazonComprehendMedicalClient(AmazonComprehendMedicalConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonComprehendMedicalClient with AWS Credentials
         /// </summary>
@@ -610,9 +613,9 @@ namespace Amazon.ComprehendMedical
         /// 
         ///  
         /// <para>
-        ///  Inspects the clinical text for a variety of medical entities and returns specific
+        /// Inspects the clinical text for a variety of medical entities and returns specific
         /// information about them such as entity category, location, and confidence score on
-        /// that information .
+        /// that information.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntities service method.</param>
@@ -630,8 +633,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-        /// retry your request.
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -727,8 +730,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-        /// retry your request.
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -807,8 +810,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-        /// retry your request.
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -888,8 +891,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-        /// retry your request.
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -969,8 +972,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-        /// retry your request.
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -1048,8 +1051,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
-        /// retry your request.
+        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
+        /// then retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -1249,7 +1252,7 @@ namespace Amazon.ComprehendMedical
         #region  ListPHIDetectionJobs
 
         /// <summary>
-        /// Gets a list of protected health information (PHI) detection jobs that you have submitted.
+        /// Gets a list of protected health information (PHI) detection jobs you have submitted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPHIDetectionJobs service method.</param>
         /// 

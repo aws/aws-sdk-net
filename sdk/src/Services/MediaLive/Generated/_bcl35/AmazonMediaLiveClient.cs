@@ -115,8 +115,7 @@ namespace Amazon.MediaLive
         /// </summary>
         /// <param name="config">The AmazonMediaLiveClient Configuration Object</param>
         public AmazonMediaLiveClient(AmazonMediaLiveConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMediaLiveClient with AWS Credentials
         /// </summary>
@@ -1940,6 +1939,78 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  DescribeAccountConfiguration
+
+        /// <summary>
+        /// Get account configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountConfiguration service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">REST API Reference for DescribeAccountConfiguration Operation</seealso>
+        public virtual DescribeAccountConfigurationResponse DescribeAccountConfiguration(DescribeAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountConfiguration operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">REST API Reference for DescribeAccountConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAccountConfiguration(DescribeAccountConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountConfigurationResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">REST API Reference for DescribeAccountConfiguration Operation</seealso>
+        public virtual DescribeAccountConfigurationResponse EndDescribeAccountConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAccountConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeChannel
 
         /// <summary>
@@ -2686,6 +2757,84 @@ namespace Amazon.MediaLive
         public virtual DescribeScheduleResponse EndDescribeSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeThumbnails
+
+        /// <summary>
+        /// Describe the latest thumbnails data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThumbnails service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThumbnails service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails">REST API Reference for DescribeThumbnails Operation</seealso>
+        public virtual DescribeThumbnailsResponse DescribeThumbnails(DescribeThumbnailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThumbnailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThumbnailsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThumbnailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThumbnails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThumbnails operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThumbnails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails">REST API Reference for DescribeThumbnails Operation</seealso>
+        public virtual IAsyncResult BeginDescribeThumbnails(DescribeThumbnailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThumbnailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThumbnailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeThumbnails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThumbnails.</param>
+        /// 
+        /// <returns>Returns a  DescribeThumbnailsResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails">REST API Reference for DescribeThumbnails Operation</seealso>
+        public virtual DescribeThumbnailsResponse EndDescribeThumbnails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeThumbnailsResponse>(asyncResult);
         }
 
         #endregion
@@ -4126,6 +4275,81 @@ namespace Amazon.MediaLive
         public virtual TransferInputDeviceResponse EndTransferInputDevice(IAsyncResult asyncResult)
         {
             return EndInvoke<TransferInputDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountConfiguration
+
+        /// <summary>
+        /// Update account configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountConfiguration service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
+        public virtual UpdateAccountConfigurationResponse UpdateAccountConfiguration(UpdateAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountConfiguration operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAccountConfiguration(UpdateAccountConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccountConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccountConfigurationResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
+        public virtual UpdateAccountConfigurationResponse EndUpdateAccountConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAccountConfigurationResponse>(asyncResult);
         }
 
         #endregion

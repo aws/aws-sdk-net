@@ -112,7 +112,7 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         /// <param name="config">The AmazonComputeOptimizerClient Configuration Object</param>
         public AmazonComputeOptimizerClient(AmazonComputeOptimizerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

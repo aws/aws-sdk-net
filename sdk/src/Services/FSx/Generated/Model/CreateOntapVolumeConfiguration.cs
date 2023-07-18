@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private InputOntapVolumeType _ontapVolumeType;
         private SecurityStyle _securityStyle;
         private int? _sizeInMegabytes;
+        private CreateSnaplockConfiguration _snaplockConfiguration;
         private string _snapshotPolicy;
         private bool? _storageEfficiencyEnabled;
         private string _storageVirtualMachineId;
@@ -163,11 +164,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SizeInMegabytes. 
         /// <para>
-        /// Specifies the size of the volume, in megabytes (MB), that you are creating. Provide
-        /// any whole number in the range of 20–104857600 to specify the size of the volume.
+        /// Specifies the size of the volume, in megabytes (MB), that you are creating.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2147483647)]
+        [AWSProperty(Required=true, Min=0, Max=314572800)]
         public int SizeInMegabytes
         {
             get { return this._sizeInMegabytes.GetValueOrDefault(); }
@@ -178,6 +178,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetSizeInMegabytes()
         {
             return this._sizeInMegabytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnaplockConfiguration. 
+        /// <para>
+        /// Specifies the SnapLock configuration for an FSx for ONTAP volume. 
+        /// </para>
+        /// </summary>
+        public CreateSnaplockConfiguration SnaplockConfiguration
+        {
+            get { return this._snaplockConfiguration; }
+            set { this._snaplockConfiguration = value; }
+        }
+
+        // Check to see if SnaplockConfiguration property is set
+        internal bool IsSetSnaplockConfiguration()
+        {
+            return this._snaplockConfiguration != null;
         }
 
         /// <summary>

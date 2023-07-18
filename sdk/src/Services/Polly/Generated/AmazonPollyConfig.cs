@@ -32,16 +32,26 @@ namespace Amazon.Polly
     public partial class AmazonPollyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.107.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.107.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Polly";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPollyConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPollyDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Polly";
             this.AuthenticationServiceName = "polly";
             this.EndpointProvider = new AmazonPollyEndpointProvider();
         }

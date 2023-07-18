@@ -29,16 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// A user associated with the broker. For RabbitMQ brokers, one and only one administrative
-    /// user is accepted and created when a broker is first provisioned. All subsequent broker
-    /// users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ
-    /// web console.
+    /// A user associated with the broker. For Amazon MQ for RabbitMQ brokers, one and only
+    /// one administrative user is accepted and created when a broker is first provisioned.
+    /// All subsequent broker users are created by making RabbitMQ API calls directly to brokers
+    /// or via the RabbitMQ web console.
     /// </summary>
     public partial class User
     {
         private bool? _consoleAccess;
         private List<string> _groups = new List<string>();
         private string _password;
+        private bool? _replicationUser;
         private string _username;
 
         /// <summary>
@@ -102,19 +103,49 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationUser. 
+        /// <para>
+        /// Defines if this user is intended for CRDR replication purposes.
+        /// </para>
+        /// </summary>
+        public bool ReplicationUser
+        {
+            get { return this._replicationUser.GetValueOrDefault(); }
+            set { this._replicationUser = value; }
+        }
+
+        // Check to see if ReplicationUser property is set
+        internal bool IsSetReplicationUser()
+        {
+            return this._replicationUser.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value
-        /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes
-        /// (- . _ ~). This value must be 2-100 characters long.
+        /// The username of the broker user. The following restrictions apply to broker usernames:
         /// </para>
-        /// /important> <important><title>Amazon MQ for RabbitMQ</title> 
+        ///  <ul><li>
         /// <para>
-        /// For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes,
-        /// periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon
-        /// MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.
+        /// For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters,
+        /// dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+        /// long.
         /// </para>
-        /// </important></para>
+        /// </li> <li>
+        /// <para>
+        /// para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric
+        /// characters, dashes, periods, underscores (- . _). This value must not contain a tilde
+        /// (~) character. Amazon MQ prohibts using guest as a valid usename. This value must
+        /// be 2-100 characters long.
+        /// </para>
+        /// </para></li></ul> <important>
+        /// <para>
+        /// Do not add personally identifiable information (PII) or other confidential or sensitive
+        /// information in broker usernames. Broker usernames are accessible to other Amazon Web
+        /// Services services, including CloudWatch Logs. Broker usernames are not intended to
+        /// be used for private or sensitive data.
+        /// </para>
+        /// </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Username

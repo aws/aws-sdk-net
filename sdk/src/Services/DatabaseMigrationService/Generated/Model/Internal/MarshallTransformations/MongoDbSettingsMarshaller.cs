@@ -105,6 +105,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetReplicateShardCollections())
+            {
+                context.Writer.WritePropertyName("ReplicateShardCollections");
+                context.Writer.Write(requestObject.ReplicateShardCollections);
+            }
+
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
@@ -127,6 +133,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Username");
                 context.Writer.Write(requestObject.Username);
+            }
+
+            if(requestObject.IsSetUseUpdateLookUp())
+            {
+                context.Writer.WritePropertyName("UseUpdateLookUp");
+                context.Writer.Write(requestObject.UseUpdateLookUp);
             }
 
         }

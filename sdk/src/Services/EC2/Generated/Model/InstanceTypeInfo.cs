@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         private InstanceType _instanceType;
         private MemoryInfo _memoryInfo;
         private NetworkInfo _networkInfo;
+        private NitroEnclavesSupport _nitroEnclavesSupport;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
         private List<string> _supportedBootModes = new List<string>();
@@ -363,6 +364,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInfo()
         {
             return this._networkInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NitroEnclavesSupport. 
+        /// <para>
+        /// Indicates whether Nitro Enclaves is supported.
+        /// </para>
+        /// </summary>
+        public NitroEnclavesSupport NitroEnclavesSupport
+        {
+            get { return this._nitroEnclavesSupport; }
+            set { this._nitroEnclavesSupport = value; }
+        }
+
+        // Check to see if NitroEnclavesSupport property is set
+        internal bool IsSetNitroEnclavesSupport()
+        {
+            return this._nitroEnclavesSupport != null;
         }
 
         /// <summary>

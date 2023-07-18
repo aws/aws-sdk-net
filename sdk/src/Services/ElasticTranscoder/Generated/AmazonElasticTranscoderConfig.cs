@@ -32,16 +32,26 @@ namespace Amazon.ElasticTranscoder
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Elastic Transcoder";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticTranscoderConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticTranscoderDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Elastic Transcoder";
             this.AuthenticationServiceName = "elastictranscoder";
             this.EndpointProvider = new AmazonElasticTranscoderEndpointProvider();
         }

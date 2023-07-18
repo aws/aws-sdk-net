@@ -179,8 +179,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// <param name="config">The AmazonAWSSupportClient Configuration Object</param>
         public AmazonAWSSupportClient(AmazonAWSSupportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAWSSupportClient with AWS Credentials
         /// </summary>

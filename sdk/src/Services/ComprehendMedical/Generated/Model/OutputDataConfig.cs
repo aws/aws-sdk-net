@@ -61,8 +61,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The path to the output data files in the S3 bucket. Comprehend Medical; creates an
-        /// output directory using the job ID so that the output from one job does not overwrite
+        /// The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates
+        /// an output directory using the job ID so that the output from one job does not overwrite
         /// the output of another.
         /// </para>
         /// </summary>

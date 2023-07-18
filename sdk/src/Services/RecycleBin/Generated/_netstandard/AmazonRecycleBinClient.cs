@@ -118,7 +118,7 @@ namespace Amazon.RecycleBin
         /// </summary>
         /// <param name="config">The AmazonRecycleBinClient Configuration Object</param>
         public AmazonRecycleBinClient(AmazonRecycleBinConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

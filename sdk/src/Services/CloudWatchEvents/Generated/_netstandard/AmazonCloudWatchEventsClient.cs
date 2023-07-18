@@ -124,7 +124,7 @@ namespace Amazon.CloudWatchEvents
         /// </summary>
         /// <param name="config">The AmazonCloudWatchEventsClient Configuration Object</param>
         public AmazonCloudWatchEventsClient(AmazonCloudWatchEventsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

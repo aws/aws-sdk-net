@@ -68,6 +68,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetProfileNamePrefix())
+                request.Parameters.Add("ProfileNamePrefix", StringUtils.FromString(publicRequest.ProfileNamePrefix));
+            
             if (publicRequest.IsSetShareResourceType())
                 request.Parameters.Add("ShareResourceType", StringUtils.FromString(publicRequest.ShareResourceType));
             

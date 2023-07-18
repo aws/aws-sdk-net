@@ -482,14 +482,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskQueueing. 
         /// <para>
-        /// Specifies whether tasks should be queued before executing the tasks. The default is
-        /// <code>ENABLED</code>, which means the tasks will be queued.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you use the same agent to run multiple tasks, you can enable the tasks to run in
-        /// series. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-        /// task executions</a>.
+        /// Specifies whether your transfer tasks should be put into a queue during certain scenarios
+        /// when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+        /// multiple tasks</a>. This is <code>ENABLED</code> by default.
         /// </para>
         /// </summary>
         public TaskQueueing TaskQueueing

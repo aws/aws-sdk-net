@@ -1124,14 +1124,27 @@ namespace Amazon.Private5G
 
 
         /// <summary>
-        /// Starts an update of the specified network resource.
+        /// Use this action to do the following tasks:
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Update the duration and renewal status of the commitment period for a radio unit.
+        /// The update goes into effect immediately.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Request a replacement for a network resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Request that you return a network resource.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// After you submit a request to replace or return a network resource, the status of
-        /// the network resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is
-        /// available when the status of the network resource is <code>PENDING_RETURN</code>.
-        /// After the network resource is successfully returned, its status is <code>DELETED</code>.
+        /// the network resource changes to <code>CREATING_SHIPPING_LABEL</code>. The shipping
+        /// label is available when the status of the network resource is <code>PENDING_RETURN</code>.
+        /// After the network resource is successfully returned, its status changes to <code>DELETED</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return
         /// a radio unit</a>.
         /// </para>

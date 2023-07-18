@@ -82,6 +82,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.PanelConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("XAxis", targetDepth))
+                {
+                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.XAxis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("YAxis", targetDepth))
+                {
+                    var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.YAxis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

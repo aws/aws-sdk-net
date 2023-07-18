@@ -32,16 +32,26 @@ namespace Amazon.CloudWatchRUM
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.65");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.75");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "RUM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchRUMConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchRUMDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "RUM";
             this.AuthenticationServiceName = "rum";
             this.EndpointProvider = new AmazonCloudWatchRUMEndpointProvider();
         }

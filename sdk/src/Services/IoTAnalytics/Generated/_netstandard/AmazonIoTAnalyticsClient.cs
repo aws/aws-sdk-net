@@ -125,7 +125,7 @@ namespace Amazon.IoTAnalytics
         /// </summary>
         /// <param name="config">The AmazonIoTAnalyticsClient Configuration Object</param>
         public AmazonIoTAnalyticsClient(AmazonIoTAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

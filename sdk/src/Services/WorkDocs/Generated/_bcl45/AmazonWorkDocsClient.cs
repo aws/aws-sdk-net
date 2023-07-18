@@ -178,7 +178,7 @@ namespace Amazon.WorkDocs
         /// </summary>
         /// <param name="config">The AmazonWorkDocsClient Configuration Object</param>
         public AmazonWorkDocsClient(AmazonWorkDocsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonWorkDocsClient with AWS Credentials

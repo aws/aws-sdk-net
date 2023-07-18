@@ -32,16 +32,26 @@ namespace Amazon.Macie2
     public partial class AmazonMacie2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.64");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Macie2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMacie2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMacie2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Macie2";
             this.AuthenticationServiceName = "macie2";
             this.EndpointProvider = new AmazonMacie2EndpointProvider();
         }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A reference to a table within an AWS Glue data catalog.
+    /// A reference to a table within an Glue data catalog.
     /// </summary>
     public partial class GlueTableReference
     {
@@ -39,7 +39,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the database the AWS Glue table belongs to.
+        /// The name of the database the Glue table belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]
@@ -58,7 +58,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the AWS Glue table.
+        /// The name of the Glue table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

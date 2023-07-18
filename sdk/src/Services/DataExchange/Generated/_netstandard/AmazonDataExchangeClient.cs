@@ -127,7 +127,7 @@ namespace Amazon.DataExchange
         /// </summary>
         /// <param name="config">The AmazonDataExchangeClient Configuration Object</param>
         public AmazonDataExchangeClient(AmazonDataExchangeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

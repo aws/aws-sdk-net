@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        public BucketRegionTestRunner(bool useSigV4, bool useSigV4SetExplicitly = false)
+        public BucketRegionTestRunner(bool useSigV4, bool useSigV4SetExplicitly = false, bool setupClientWithSessionCredentials = false)
         {
             originalUseSignatureVersion4 = AWSConfigsS3.UseSignatureVersion4;
             originalUseSigV4SetExplicitly = GetAWSConfigsS3InternalProperty();
@@ -60,8 +60,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
             USEast1Client = new AmazonS3Client(usEast1ClientConfig);
 
-            var sessionCredentials = new AmazonSecurityTokenServiceClient().GetSessionToken().Credentials;
-            USEast1ClientWithSessionCredentials = new AmazonS3Client(sessionCredentials, usEast1ClientConfig);
+            if (setupClientWithSessionCredentials)
+            {
+                var sessionCredentials = new AmazonSecurityTokenServiceClient().GetSessionToken().Credentials;
+                USEast1ClientWithSessionCredentials = new AmazonS3Client(sessionCredentials, usEast1ClientConfig);
+            }
 
             USWest1Client = new AmazonS3Client(new AmazonS3Config()
             {

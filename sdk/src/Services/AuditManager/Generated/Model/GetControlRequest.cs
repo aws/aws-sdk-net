@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetControl operation.
-    /// Returns a control from Audit Manager.
+    /// Gets information about a specified control.
     /// </summary>
     public partial class GetControlRequest : AmazonAuditManagerRequest
     {

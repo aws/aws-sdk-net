@@ -32,16 +32,26 @@ namespace Amazon.ServiceDiscovery
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.45");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.55");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ServiceDiscovery";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonServiceDiscoveryConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceDiscoveryDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ServiceDiscovery";
             this.AuthenticationServiceName = "servicediscovery";
             this.EndpointProvider = new AmazonServiceDiscoveryEndpointProvider();
         }

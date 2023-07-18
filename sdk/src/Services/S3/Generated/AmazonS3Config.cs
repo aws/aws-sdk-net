@@ -32,16 +32,26 @@ namespace Amazon.S3
     public partial class AmazonS3Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.30");
+            InternalSDKUtils.BuildUserAgentString("3.7.108.0");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "S3";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonS3Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonS3DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "S3";
             this.AuthenticationServiceName = "s3";
             this.EndpointProvider = new AmazonS3EndpointProvider();
         }

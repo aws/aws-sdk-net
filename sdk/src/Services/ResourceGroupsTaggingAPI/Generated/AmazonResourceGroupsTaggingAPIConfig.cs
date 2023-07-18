@@ -32,16 +32,26 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.143");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.153");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Resource Groups Tagging API";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonResourceGroupsTaggingAPIConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceGroupsTaggingAPIDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Resource Groups Tagging API";
             this.AuthenticationServiceName = "tagging";
             this.EndpointProvider = new AmazonResourceGroupsTaggingAPIEndpointProvider();
         }

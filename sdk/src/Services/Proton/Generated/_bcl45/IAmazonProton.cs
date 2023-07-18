@@ -1864,6 +1864,64 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  DeleteDeployment
+
+
+        /// <summary>
+        /// Delete the deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request);
+
+
+
+        /// <summary>
+        /// Delete the deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteEnvironment
 
 
@@ -2733,6 +2791,64 @@ namespace Amazon.Proton
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
         Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDeployment
+
+
+        /// <summary>
+        /// Get detailed data for a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        GetDeploymentResponse GetDeployment(GetDeploymentRequest request);
+
+
+
+        /// <summary>
+        /// Get detailed data for a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
+        Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3959,6 +4075,66 @@ namespace Amazon.Proton
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
         Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDeployments
+
+
+        /// <summary>
+        /// List deployments. You can filter the result list by environment, service, or a single
+        /// service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListDeployments service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request);
+
+
+
+        /// <summary>
+        /// List deployments. You can filter the result list by environment, service, or a single
+        /// service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeployments service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
+        Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

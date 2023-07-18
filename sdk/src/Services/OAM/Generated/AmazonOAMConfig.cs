@@ -32,16 +32,26 @@ namespace Amazon.OAM
     public partial class AmazonOAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.120");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.130");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "OAM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOAMConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOAMDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "OAM";
             this.AuthenticationServiceName = "oam";
             this.EndpointProvider = new AmazonOAMEndpointProvider();
         }

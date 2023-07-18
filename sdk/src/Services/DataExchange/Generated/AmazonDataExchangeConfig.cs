@@ -32,16 +32,26 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.103.38");
+            InternalSDKUtils.BuildUserAgentString("3.7.103.48");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DataExchange";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDataExchangeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataExchangeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DataExchange";
             this.AuthenticationServiceName = "dataexchange";
             this.EndpointProvider = new AmazonDataExchangeEndpointProvider();
         }

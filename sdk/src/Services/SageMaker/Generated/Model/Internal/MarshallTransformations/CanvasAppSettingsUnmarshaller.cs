@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimeSeriesForecastingSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkspaceSettings", targetDepth))
+                {
+                    var unmarshaller = WorkspaceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

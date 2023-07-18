@@ -103,7 +103,7 @@ namespace Amazon.AppRegistry
         /// </summary>
         /// <param name="config">The AmazonAppRegistryClient Configuration Object</param>
         public AmazonAppRegistryClient(AmazonAppRegistryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

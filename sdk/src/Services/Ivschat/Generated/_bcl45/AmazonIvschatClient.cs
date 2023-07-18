@@ -371,7 +371,7 @@ namespace Amazon.Ivschat
         /// </summary>
         /// <param name="config">The AmazonIvschatClient Configuration Object</param>
         public AmazonIvschatClient(AmazonIvschatConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonIvschatClient with AWS Credentials

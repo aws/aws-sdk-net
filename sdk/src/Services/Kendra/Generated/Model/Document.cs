@@ -139,6 +139,12 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The file type of the document in the <code>Blob</code> field.
         /// </para>
+        ///  
+        /// <para>
+        /// If you want to index snippets or subsets of HTML documents instead of the entirety
+        /// of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+        /// around the content.
+        /// </para>
         /// </summary>
         public ContentType ContentType
         {

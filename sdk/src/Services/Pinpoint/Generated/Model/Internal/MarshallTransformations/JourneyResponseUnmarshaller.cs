@@ -184,6 +184,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimezoneEstimationMethods", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TimezoneEstimationMethods = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WaitForQuietTime", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

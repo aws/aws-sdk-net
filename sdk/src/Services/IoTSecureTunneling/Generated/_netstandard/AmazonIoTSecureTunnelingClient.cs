@@ -108,7 +108,7 @@ namespace Amazon.IoTSecureTunneling
         /// </summary>
         /// <param name="config">The AmazonIoTSecureTunnelingClient Configuration Object</param>
         public AmazonIoTSecureTunnelingClient(AmazonIoTSecureTunnelingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

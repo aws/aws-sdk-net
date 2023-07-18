@@ -133,8 +133,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// <param name="config">The AmazonCloudWatchClient Configuration Object</param>
         public AmazonCloudWatchClient(AmazonCloudWatchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Credentials
         /// </summary>

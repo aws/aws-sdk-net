@@ -164,6 +164,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UseDedicatedReplicationServer);
                 }
 
+                if(publicRequest.IsSetUseFipsEndpoint())
+                {
+                    context.Writer.WritePropertyName("useFipsEndpoint");
+                    context.Writer.Write(publicRequest.UseFipsEndpoint);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

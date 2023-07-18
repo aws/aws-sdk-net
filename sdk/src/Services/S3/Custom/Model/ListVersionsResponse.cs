@@ -38,12 +38,17 @@ namespace Amazon.S3.Model
         private int? maxKeys;
         private List<string> commonPrefixes = new List<string>();
         private string delimiter;
+        private RequestCharged _requestCharged;
 
         /// <summary>
-        /// A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria. If your results were
-        /// truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting
-        /// place in another request to return the rest of the results.
-        ///  
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether Amazon S3 returned all of the results that satisfied
+        /// the search criteria. If your results were truncated, you can make a follow-up paginated
+        /// request by using the <code>NextKeyMarker</code> and <code>NextVersionIdMarker</code>
+        /// response parameters as a starting place in another request to return the rest of the
+        /// results.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
@@ -106,8 +111,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Use this value for the next version id marker parameter in a subsequent request.
-        ///  
+        /// Gets and sets the property NextVersionIdMarker. 
+        /// <para>
+        /// When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code>
+        /// specifies the first object version not returned that satisfies the search criteria.
+        /// Use this value for the <code>version-id-marker</code> request parameter in a subsequent
+        /// request.
+        /// </para>
         /// </summary>
         public string NextVersionIdMarker
         {
@@ -169,6 +179,21 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
+        }
+
+        /// <summary>
         /// Gets and sets the MaxKeys property.
         /// This is the maximum number of keys in the S3ObjectVersions collection.
         /// The value is derived from the MaxKeys parameter to ListVersionsRequest.
@@ -205,9 +230,13 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the Delimiter property.
-        /// Causes keys that contain the same string between the prefix and the 
-        /// first occurrence of the delimiter to be rolled up into a single result 
-        /// element in the CommonPrefixes collection.
+        /// <para>
+        /// The delimiter grouping the included keys. A delimiter is a character that you specify
+        /// to group keys. All keys that contain the same string between the prefix and the first
+        /// occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>.
+        /// These groups are counted as one result against the <code>max-keys</code> limitation.
+        /// These keys are not returned elsewhere in the response.
+        /// </para>
         /// </summary>
         /// <remarks>
         /// These rolled-up keys are not returned elsewhere in the response.

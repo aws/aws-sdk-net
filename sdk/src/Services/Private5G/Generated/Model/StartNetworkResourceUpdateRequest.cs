@@ -30,24 +30,89 @@ namespace Amazon.Private5G.Model
 {
     /// <summary>
     /// Container for the parameters to the StartNetworkResourceUpdate operation.
-    /// Starts an update of the specified network resource.
+    /// Use this action to do the following tasks:
     /// 
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// Update the duration and renewal status of the commitment period for a radio unit.
+    /// The update goes into effect immediately.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Request a replacement for a network resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Request that you return a network resource.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// After you submit a request to replace or return a network resource, the status of
-    /// the network resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is
-    /// available when the status of the network resource is <code>PENDING_RETURN</code>.
-    /// After the network resource is successfully returned, its status is <code>DELETED</code>.
+    /// the network resource changes to <code>CREATING_SHIPPING_LABEL</code>. The shipping
+    /// label is available when the status of the network resource is <code>PENDING_RETURN</code>.
+    /// After the network resource is successfully returned, its status changes to <code>DELETED</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return
     /// a radio unit</a>.
     /// </para>
     /// </summary>
     public partial class StartNetworkResourceUpdateRequest : AmazonPrivate5GRequest
     {
+        private CommitmentConfiguration _commitmentConfiguration;
         private string _networkResourceArn;
         private string _returnReason;
         private Address _shippingAddress;
         private UpdateType _updateType;
+
+        /// <summary>
+        /// Gets and sets the property CommitmentConfiguration. 
+        /// <para>
+        /// Use this action to extend and automatically renew the commitment period for the radio
+        /// unit. You can do the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Change a 60-day commitment to a 1-year or 3-year commitment. The change is immediate
+        /// and the hourly rate decreases to the rate for the new commitment period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change a 1-year commitment to a 3-year commitment. The change is immediate and the
+        /// hourly rate decreases to the rate for the 3-year commitment period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set a 1-year commitment to automatically renew for an additional 1 year. The hourly
+        /// rate for the additional year will continue to be the same as your existing 1-year
+        /// rate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set a 3-year commitment to automatically renew for an additional 1 year. The hourly
+        /// rate for the additional year will continue to be the same as your existing 3-year
+        /// rate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment.
+        /// You cannot use the automatic-renewal option for a 60-day commitment.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services
+        /// Private 5G Pricing</a>.
+        /// </para>
+        /// </summary>
+        public CommitmentConfiguration CommitmentConfiguration
+        {
+            get { return this._commitmentConfiguration; }
+            set { this._commitmentConfiguration = value; }
+        }
+
+        // Check to see if CommitmentConfiguration property is set
+        internal bool IsSetCommitmentConfiguration()
+        {
+            return this._commitmentConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NetworkResourceArn. 
@@ -119,8 +184,14 @@ namespace Amazon.Private5G.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RETURN</code> - Submits a request to replace a radio unit that you no longer
+        ///  <code>RETURN</code> - Submits a request to return a radio unit that you no longer
         /// need. We provide a shipping label that you can use for the return process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMMITMENT</code> - Submits a request to change or renew the commitment period.
+        /// If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration">
+        /// <code>commitmentConfiguration</code> </a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

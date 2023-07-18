@@ -62,6 +62,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetCalculatorName())
                 throw new AmazonLocationServiceException("Request object does not have required field CalculatorName set");
             request.AddPathResource("{CalculatorName}", StringUtils.FromString(publicRequest.CalculatorName));
+            
+            if (publicRequest.IsSetKey())
+                request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/routes/v0/calculators/{CalculatorName}/calculate/route";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -163,6 +166,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
             
             request.HostPrefix = $"routes.";
 

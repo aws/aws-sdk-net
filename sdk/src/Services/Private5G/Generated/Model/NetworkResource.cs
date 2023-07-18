@@ -34,6 +34,7 @@ namespace Amazon.Private5G.Model
     public partial class NetworkResource
     {
         private List<NameValuePair> _attributes = new List<NameValuePair>();
+        private CommitmentInformation _commitmentInformation;
         private DateTime? _createdAt;
         private string _description;
         private HealthStatus _health;
@@ -66,6 +67,26 @@ namespace Amazon.Private5G.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CommitmentInformation. 
+        /// <para>
+        /// Information about the commitment period for the radio unit. Shows the duration, the
+        /// date and time that the contract started and ends, and the renewal status of the commitment
+        /// period.
+        /// </para>
+        /// </summary>
+        public CommitmentInformation CommitmentInformation
+        {
+            get { return this._commitmentInformation; }
+            set { this._commitmentInformation = value; }
+        }
+
+        // Check to see if CommitmentInformation property is set
+        internal bool IsSetCommitmentInformation()
+        {
+            return this._commitmentInformation != null;
         }
 
         /// <summary>
