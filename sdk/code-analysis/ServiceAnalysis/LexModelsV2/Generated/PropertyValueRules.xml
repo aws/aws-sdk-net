@@ -1597,6 +1597,34 @@
     <pattern>^DRAFT$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentMetricsRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentMetricsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentMetricsResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentPathsRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentPathsRequest.IntentPath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ListIntentsRequest.BotId</property>
     <min>10</min>
     <max>10</max>
@@ -1624,6 +1652,23 @@
     <min>1</min>
     <max>5</max>
     <pattern>^(DRAFT|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentStageMetricsRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentStageMetricsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListIntentStageMetricsResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ListRecommendedIntentsRequest.BotId</property>
@@ -1665,6 +1710,40 @@
     <min>5</min>
     <max>5</max>
     <pattern>^DRAFT$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListSessionAnalyticsDataRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListSessionAnalyticsDataRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListSessionAnalyticsDataResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListSessionMetricsRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListSessionMetricsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListSessionMetricsResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ListSlotsRequest.BotId</property>
@@ -1772,6 +1851,40 @@
     <property>Amazon.LexModelsV2.Model.ListTestSetsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListUtteranceAnalyticsDataRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListUtteranceAnalyticsDataRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListUtteranceAnalyticsDataResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListUtteranceMetricsRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListUtteranceMetricsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListUtteranceMetricsResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SearchAssociatedTranscriptsRequest.BotId</property>
@@ -2489,6 +2602,28 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AnalyticsIntentNodeSummary.IntentLevel</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AnalyticsIntentNodeSummary.IntentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AnalyticsIntentNodeSummary.IntentPath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AnalyticsUtteranceAttributeResult.LastUsedIntent</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.AssociatedTranscript.Transcript</property>
     <min>1</min>
     <max>6000000</max>
@@ -3010,6 +3145,12 @@
     <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.InvokedIntentSample.IntentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.KendraConfiguration.KendraIndex</property>
     <min>32</min>
     <max>2048</max>
@@ -3150,6 +3291,22 @@
     <property>Amazon.LexModelsV2.Model.SampleValue.Value</property>
     <min>1</min>
     <max>140</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SessionSpecification.BotAliasId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SessionSpecification.BotVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SessionSpecification.SessionId</property>
+    <pattern>[0-9a-zA-Z._:-]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SlotDefaultValue.DefaultValue</property>
@@ -3439,5 +3596,39 @@
     <property>Amazon.LexModelsV2.Model.UtteranceLevelTestResultItem.RecordNumber</property>
     <min>1</min>
     <max>200000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.AssociatedIntentName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.AssociatedSlotName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.BotAliasId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.BotVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.SessionId</property>
+    <pattern>[0-9a-zA-Z._:-]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.UtteranceRequestId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
 </property-value-rules>

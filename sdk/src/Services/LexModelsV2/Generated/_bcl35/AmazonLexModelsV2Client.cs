@@ -4626,6 +4626,203 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListIntentMetrics
+
+        /// <summary>
+        /// Retrieves summary metrics for the intents in your bot. The following fields are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// You can specify only one <code>order</code> in a given request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListIntentMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics">REST API Reference for ListIntentMetrics Operation</seealso>
+        public virtual ListIntentMetricsResponse ListIntentMetrics(ListIntentMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntentMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntentMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntentMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIntentMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentMetrics operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIntentMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics">REST API Reference for ListIntentMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListIntentMetrics(ListIntentMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntentMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntentMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIntentMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIntentMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListIntentMetricsResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics">REST API Reference for ListIntentMetrics Operation</seealso>
+        public virtual ListIntentMetricsResponse EndListIntentMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIntentMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIntentPaths
+
+        /// <summary>
+        /// Retrieves summary statistics for a path of intents that users take over sessions with
+        /// your bot. The following fields are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>intentPath</code> – Define an order of intents for which you want to retrieve
+        /// metrics. Separate intents in the path with a forward slash. For example, populate
+        /// the <code>intentPath</code> field with <code>/BookCar/BookHotel</code> to see details
+        /// about how many times users invoked the <code>BookCar</code> and <code>BookHotel</code>
+        /// intents in that order.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Use the optional <code>filters</code> field to filter the results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentPaths service method.</param>
+        /// 
+        /// <returns>The response from the ListIntentPaths service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths">REST API Reference for ListIntentPaths Operation</seealso>
+        public virtual ListIntentPathsResponse ListIntentPaths(ListIntentPathsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntentPathsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntentPathsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntentPathsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIntentPaths operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentPaths operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIntentPaths
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths">REST API Reference for ListIntentPaths Operation</seealso>
+        public virtual IAsyncResult BeginListIntentPaths(ListIntentPathsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntentPathsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntentPathsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIntentPaths operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIntentPaths.</param>
+        /// 
+        /// <returns>Returns a  ListIntentPathsResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths">REST API Reference for ListIntentPaths Operation</seealso>
+        public virtual ListIntentPathsResponse EndListIntentPaths(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIntentPathsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListIntents
 
         /// <summary>
@@ -4689,6 +4886,114 @@ namespace Amazon.LexModelsV2
         public virtual ListIntentsResponse EndListIntents(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIntentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIntentStageMetrics
+
+        /// <summary>
+        /// Retrieves summary metrics for the intent stages in your bot. The following fields
+        /// are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// You can only specify one <code>order</code> in a given request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentStageMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListIntentStageMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics">REST API Reference for ListIntentStageMetrics Operation</seealso>
+        public virtual ListIntentStageMetricsResponse ListIntentStageMetrics(ListIntentStageMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntentStageMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntentStageMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntentStageMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIntentStageMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentStageMetrics operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIntentStageMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics">REST API Reference for ListIntentStageMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListIntentStageMetrics(ListIntentStageMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntentStageMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntentStageMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIntentStageMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIntentStageMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListIntentStageMetricsResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics">REST API Reference for ListIntentStageMetrics Operation</seealso>
+        public virtual ListIntentStageMetricsResponse EndListIntentStageMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIntentStageMetricsResponse>(asyncResult);
         }
 
         #endregion
@@ -4761,6 +5066,201 @@ namespace Amazon.LexModelsV2
         public virtual ListRecommendedIntentsResponse EndListRecommendedIntents(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRecommendedIntentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSessionAnalyticsData
+
+        /// <summary>
+        /// Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code>
+        /// and <code>endDateTime</code> fields are required. These fields define a time range
+        /// for which you want to retrieve results. Of the optional fields, you can organize the
+        /// results in the following ways:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
+        /// field to specify the values by which to sort the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionAnalyticsData service method.</param>
+        /// 
+        /// <returns>The response from the ListSessionAnalyticsData service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData">REST API Reference for ListSessionAnalyticsData Operation</seealso>
+        public virtual ListSessionAnalyticsDataResponse ListSessionAnalyticsData(ListSessionAnalyticsDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionAnalyticsDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionAnalyticsDataResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionAnalyticsDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSessionAnalyticsData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionAnalyticsData operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSessionAnalyticsData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData">REST API Reference for ListSessionAnalyticsData Operation</seealso>
+        public virtual IAsyncResult BeginListSessionAnalyticsData(ListSessionAnalyticsDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionAnalyticsDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionAnalyticsDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSessionAnalyticsData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSessionAnalyticsData.</param>
+        /// 
+        /// <returns>Returns a  ListSessionAnalyticsDataResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData">REST API Reference for ListSessionAnalyticsData Operation</seealso>
+        public virtual ListSessionAnalyticsDataResponse EndListSessionAnalyticsData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSessionAnalyticsDataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSessionMetrics
+
+        /// <summary>
+        /// Retrieves summary metrics for the user sessions with your bot. The following fields
+        /// are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// Currently, you can specify it in either field, but not in both.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListSessionMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics">REST API Reference for ListSessionMetrics Operation</seealso>
+        public virtual ListSessionMetricsResponse ListSessionMetrics(ListSessionMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSessionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionMetrics operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSessionMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics">REST API Reference for ListSessionMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListSessionMetrics(ListSessionMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSessionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSessionMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListSessionMetricsResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics">REST API Reference for ListSessionMetrics Operation</seealso>
+        public virtual ListSessionMetricsResponse EndListSessionMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSessionMetricsResponse>(asyncResult);
         }
 
         #endregion
@@ -5240,6 +5740,201 @@ namespace Amazon.LexModelsV2
         public virtual ListTestSetsResponse EndListTestSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTestSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListUtteranceAnalyticsData
+
+        /// <summary>
+        /// Retrieves a list of metadata for individual user utterances to your bot. The <code>startDateTime</code>
+        /// and <code>endDateTime</code> fields are required. These fields define a time range
+        /// for which you want to retrieve results. Of the optional fields, you can organize the
+        /// results in the following ways:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
+        /// field to specify the values by which to sort the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUtteranceAnalyticsData service method.</param>
+        /// 
+        /// <returns>The response from the ListUtteranceAnalyticsData service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">REST API Reference for ListUtteranceAnalyticsData Operation</seealso>
+        public virtual ListUtteranceAnalyticsDataResponse ListUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUtteranceAnalyticsDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUtteranceAnalyticsDataResponseUnmarshaller.Instance;
+
+            return Invoke<ListUtteranceAnalyticsDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUtteranceAnalyticsData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUtteranceAnalyticsData operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUtteranceAnalyticsData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">REST API Reference for ListUtteranceAnalyticsData Operation</seealso>
+        public virtual IAsyncResult BeginListUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUtteranceAnalyticsDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUtteranceAnalyticsDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUtteranceAnalyticsData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUtteranceAnalyticsData.</param>
+        /// 
+        /// <returns>Returns a  ListUtteranceAnalyticsDataResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">REST API Reference for ListUtteranceAnalyticsData Operation</seealso>
+        public virtual ListUtteranceAnalyticsDataResponse EndListUtteranceAnalyticsData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUtteranceAnalyticsDataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListUtteranceMetrics
+
+        /// <summary>
+        /// Retrieves summary metrics for the utterances in your bot. The following fields are
+        /// required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// Currently, you can specify it in either field, but not in both.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUtteranceMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListUtteranceMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics">REST API Reference for ListUtteranceMetrics Operation</seealso>
+        public virtual ListUtteranceMetricsResponse ListUtteranceMetrics(ListUtteranceMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUtteranceMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUtteranceMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUtteranceMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUtteranceMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUtteranceMetrics operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUtteranceMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics">REST API Reference for ListUtteranceMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListUtteranceMetrics(ListUtteranceMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUtteranceMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUtteranceMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUtteranceMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUtteranceMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListUtteranceMetricsResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics">REST API Reference for ListUtteranceMetrics Operation</seealso>
+        public virtual ListUtteranceMetricsResponse EndListUtteranceMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUtteranceMetricsResponse>(asyncResult);
         }
 
         #endregion

@@ -2317,6 +2317,131 @@ namespace Amazon.LexModelsV2
 
         #endregion
                 
+        #region  ListIntentMetrics
+
+
+
+        /// <summary>
+        /// Retrieves summary metrics for the intents in your bot. The following fields are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// You can specify only one <code>order</code> in a given request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntentMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics">REST API Reference for ListIntentMetrics Operation</seealso>
+        Task<ListIntentMetricsResponse> ListIntentMetricsAsync(ListIntentMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListIntentPaths
+
+
+
+        /// <summary>
+        /// Retrieves summary statistics for a path of intents that users take over sessions with
+        /// your bot. The following fields are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>intentPath</code> – Define an order of intents for which you want to retrieve
+        /// metrics. Separate intents in the path with a forward slash. For example, populate
+        /// the <code>intentPath</code> field with <code>/BookCar/BookHotel</code> to see details
+        /// about how many times users invoked the <code>BookCar</code> and <code>BookHotel</code>
+        /// intents in that order.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Use the optional <code>filters</code> field to filter the results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentPaths service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntentPaths service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths">REST API Reference for ListIntentPaths Operation</seealso>
+        Task<ListIntentPathsResponse> ListIntentPathsAsync(ListIntentPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListIntents
 
 
@@ -2345,6 +2470,78 @@ namespace Amazon.LexModelsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntents">REST API Reference for ListIntents Operation</seealso>
         Task<ListIntentsResponse> ListIntentsAsync(ListIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListIntentStageMetrics
+
+
+
+        /// <summary>
+        /// Retrieves summary metrics for the intent stages in your bot. The following fields
+        /// are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// You can only specify one <code>order</code> in a given request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntentStageMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntentStageMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics">REST API Reference for ListIntentStageMetrics Operation</seealso>
+        Task<ListIntentStageMetricsResponse> ListIntentStageMetricsAsync(ListIntentStageMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2381,6 +2578,129 @@ namespace Amazon.LexModelsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListRecommendedIntents">REST API Reference for ListRecommendedIntents Operation</seealso>
         Task<ListRecommendedIntentsResponse> ListRecommendedIntentsAsync(ListRecommendedIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSessionAnalyticsData
+
+
+
+        /// <summary>
+        /// Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code>
+        /// and <code>endDateTime</code> fields are required. These fields define a time range
+        /// for which you want to retrieve results. Of the optional fields, you can organize the
+        /// results in the following ways:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
+        /// field to specify the values by which to sort the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionAnalyticsData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessionAnalyticsData service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData">REST API Reference for ListSessionAnalyticsData Operation</seealso>
+        Task<ListSessionAnalyticsDataResponse> ListSessionAnalyticsDataAsync(ListSessionAnalyticsDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSessionMetrics
+
+
+
+        /// <summary>
+        /// Retrieves summary metrics for the user sessions with your bot. The following fields
+        /// are required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// Currently, you can specify it in either field, but not in both.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessionMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics">REST API Reference for ListSessionMetrics Operation</seealso>
+        Task<ListSessionMetricsResponse> ListSessionMetricsAsync(ListSessionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2608,6 +2928,129 @@ namespace Amazon.LexModelsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSets">REST API Reference for ListTestSets Operation</seealso>
         Task<ListTestSetsResponse> ListTestSetsAsync(ListTestSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListUtteranceAnalyticsData
+
+
+
+        /// <summary>
+        /// Retrieves a list of metadata for individual user utterances to your bot. The <code>startDateTime</code>
+        /// and <code>endDateTime</code> fields are required. These fields define a time range
+        /// for which you want to retrieve results. Of the optional fields, you can organize the
+        /// results in the following ways:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
+        /// field to specify the values by which to sort the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUtteranceAnalyticsData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUtteranceAnalyticsData service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">REST API Reference for ListUtteranceAnalyticsData Operation</seealso>
+        Task<ListUtteranceAnalyticsDataResponse> ListUtteranceAnalyticsDataAsync(ListUtteranceAnalyticsDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListUtteranceMetrics
+
+
+
+        /// <summary>
+        /// Retrieves summary metrics for the utterances in your bot. The following fields are
+        /// required:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
+        /// objects. In each object, use the <code>name</code> field to specify the metric to
+        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
+        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
+        /// order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+        /// which you want to retrieve results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Of the optional fields, you can organize the results in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
+        /// field to specify categories by which to group the results, and the <code>binBy</code>
+        /// field to specify time intervals by which to group the results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <code>maxResults</code> field to limit the number of results to return in
+        /// a single response and the <code>nextToken</code> field to return the next batch of
+        /// results if the response does not return the full set of results.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
+        /// Currently, you can specify it in either field, but not in both.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUtteranceMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUtteranceMetrics service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics">REST API Reference for ListUtteranceMetrics Operation</seealso>
+        Task<ListUtteranceMetricsResponse> ListUtteranceMetricsAsync(ListUtteranceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
