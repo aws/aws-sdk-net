@@ -30,7 +30,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateElasticsearchDomainRequest.ElasticsearchVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateOutboundCrossClusterSearchConnectionRequest.ConnectionAlias</property>
@@ -112,7 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchInstanceTypeLimitsRequest.ElasticsearchVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeInboundCrossClusterSearchConnectionsRequest.MaxResults</property>
@@ -184,7 +184,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListElasticsearchInstanceTypesRequest.ElasticsearchVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListElasticsearchInstanceTypesRequest.MaxResults</property>
@@ -280,7 +280,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainRequest.TargetVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainResponse.DomainName</property>
@@ -290,7 +290,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainResponse.TargetVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.AutoTuneStatus.UpdateVersion</property>
@@ -336,7 +336,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CompatibleVersionsMap.SourceVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DomainEndpointOptions.CustomEndpoint</property>
@@ -401,11 +401,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ElasticsearchDomainStatus.ElasticsearchVersion</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ElasticsearchVersionStatus.Options</property>
-    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+    <pattern>^[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$|^OS_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.EncryptionAtRestOptions.KmsKeyId</property>
