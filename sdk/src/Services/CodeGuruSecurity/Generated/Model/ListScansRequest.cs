@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
     /// Container for the parameters to the ListScans operation.
-    /// Returns a list of all the scans in an account.
+    /// Returns a list of all the standard scans in an account. Does not return express scans.
     /// </summary>
     public partial class ListScansRequest : AmazonCodeGuruSecurityRequest
     {
