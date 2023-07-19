@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
     /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
     /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
     /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-    /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// options sets</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateDhcpOptionsRequest : AmazonEC2Request

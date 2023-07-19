@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// After you perform this action, the subnet no longer uses the routes in the route table.
     /// Instead, it uses the routes in the VPC's main route table. For more information about
     /// route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-    /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// tables</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DisassociateRouteTableRequest : AmazonEC2Request

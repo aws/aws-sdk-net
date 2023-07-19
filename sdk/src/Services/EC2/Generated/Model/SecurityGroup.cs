@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissionsEgress. 
         /// <para>
-        /// [VPC only] The outbound rules associated with the security group.
+        /// The outbound rules associated with the security group.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissionsEgress
@@ -171,7 +171,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// [VPC only] The ID of the VPC for the security group.
+        /// The ID of the VPC for the security group.
         /// </para>
         /// </summary>
         public string VpcId

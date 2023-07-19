@@ -100,7 +100,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BurstablePerformanceSupported. 
         /// <para>
-        /// Indicates whether the instance type is a burstable performance instance type.
+        /// Indicates whether the instance type is a burstable performance T instance type. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// performance instances</a>.
         /// </para>
         /// </summary>
         public bool BurstablePerformanceSupported

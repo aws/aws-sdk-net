@@ -30,11 +30,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpcEndpoint operation.
-    /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
-    /// a private connection between your VPC and the service. The service may be provided
-    /// by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
+    /// Creates a VPC endpoint. A VPC endpoint provides a private connection between the specified
+    /// VPC and the specified endpoint service. You can use an endpoint service provided by
+    /// Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
     /// Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
-    /// Web Services PrivateLink Guide</a>.
+    /// Web Services PrivateLink User Guide</a>.
     /// </summary>
     public partial class CreateVpcEndpointRequest : AmazonEC2Request
     {
@@ -202,7 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// The name of the endpoint service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -281,7 +281,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC for the endpoint.
+        /// The ID of the VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// One or more entries (rules) in the network ACL.
+        /// The entries (rules) in the network ACL.
         /// </para>
         /// </summary>
         public List<NetworkAclEntry> Entries

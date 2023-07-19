@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Vpcs. 
         /// <para>
-        /// The ClassicLink status of one or more VPCs.
+        /// The ClassicLink status of the VPCs.
         /// </para>
         /// </summary>
         public List<VpcClassicLink> Vpcs

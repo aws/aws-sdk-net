@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
-        /// The NAT gateway ID.
+        /// The ID of the NAT gateway.
         /// </para>
         /// </summary>
         public string NatGatewayId

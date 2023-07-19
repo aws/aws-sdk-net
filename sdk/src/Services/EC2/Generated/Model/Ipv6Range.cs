@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// [EC2-VPC only] Describes an IPv6 range.
+    /// Describes an IPv6 range.
     /// </summary>
     public partial class Ipv6Range
     {

@@ -30,16 +30,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableVpcClassicLink operation.
+    /// <note> 
+    /// <para>
+    /// This action is deprecated.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
     /// EC2-Classic instances linked to it.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class DisableVpcClassicLinkRequest : AmazonEC2Request
     {

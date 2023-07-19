@@ -40,7 +40,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AmdSevSnp. 
         /// <para>
-        /// Indicates whether the instance is enabled for AMD SEV-SNP.
+        /// Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
         /// </para>
         /// </summary>
         public AmdSevSnpSpecification AmdSevSnp

@@ -30,17 +30,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClassicLinkInstances operation.
+    /// <note> 
+    /// <para>
+    /// This action is deprecated.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes one or more of your linked EC2-Classic instances. This request only returns
     /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
     /// use this request to return information about other instances.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeClassicLinkInstancesRequest : AmazonEC2Request
     {
@@ -52,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -80,10 +79,6 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
         /// </para>
-        ///  
-        /// <para>
-        ///  <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
@@ -101,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+        /// The instance IDs. Must be instances linked to a VPC through ClassicLink.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

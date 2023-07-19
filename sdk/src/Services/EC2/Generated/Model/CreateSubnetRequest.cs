@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
-    /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateSubnetRequest : AmazonEC2Request
@@ -111,8 +111,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
         /// <code>us-west-2-lax-1a</code>. For information about the Regions that support Local
-        /// Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-        /// Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Zones, see <a href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
+        /// Zones locations</a>.
         /// </para>
         ///  
         /// <para>

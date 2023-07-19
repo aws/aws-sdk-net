@@ -32,8 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DisassociateNatGatewayAddress operation.
     /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
     /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
-    /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
-    /// Guide</i>.
+    /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -43,11 +42,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
-    /// associated and support the existing connections but do not support any new connections
-    /// (new connections are distributed across the remaining associated EIPs). As the existing
-    /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
-    /// get released.
+    /// An EIP is released only at the end of MaxDrainDurationSeconds. It stays associated
+    /// and supports the existing connections but does not support any new connections (new
+    /// connections are distributed across the remaining associated EIPs). As the existing
+    /// connections drain out, the EIPs (and the corresponding private IP addresses mapped
+    /// to them) are released.
     /// </para>
     /// </summary>
     public partial class DisassociateNatGatewayAddressRequest : AmazonEC2Request
@@ -98,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
-        /// The NAT gateway ID.
+        /// The ID of the NAT gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

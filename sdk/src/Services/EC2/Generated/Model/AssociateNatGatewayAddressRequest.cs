@@ -32,14 +32,14 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the AssociateNatGatewayAddress operation.
     /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
     /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
-    /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
     /// 
     ///  
     /// <para>
     /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
     /// You can increase the limit by requesting a quota adjustment. For more information,
     /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
-    /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// IP address quotas</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AssociateNatGatewayAddressRequest : AmazonEC2Request
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
-        /// The NAT gateway ID.
+        /// The ID of the NAT gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

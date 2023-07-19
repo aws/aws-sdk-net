@@ -414,7 +414,49 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
+        /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+        /// are optional. Any unspecified optional attribute is set to its default.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify multiple attributes, you get instance types that satisfy all of the
+        /// specified attributes. If you specify multiple values for an attribute, you get instance
+        /// types that satisfy any of the specified values.
+        /// </para>
+        ///  
+        /// <para>
+        /// To limit the list of instance types from which Amazon EC2 can identify matching instance
+        /// types, you can use one of the following parameters, but not both in the same request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AllowedInstanceTypes</code> - The instance types to include in the list. All
+        /// other instance types are ignored, even if they match your specified attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list,
+        /// even if they match your specified attributes.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
         /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute-based instance type selection is only supported when using Auto Scaling
+        /// groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch
+        /// template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+        /// instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+        /// API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+        /// Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+        /// instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+        /// instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// placement score</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceRequirementsRequest InstanceRequirements

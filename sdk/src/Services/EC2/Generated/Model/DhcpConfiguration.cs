@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more values for the DHCP option.
+        /// The values for the DHCP option.
         /// </para>
         /// </summary>
         public List<string> Values

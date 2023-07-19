@@ -30,10 +30,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSecurityGroupRuleDescriptionsEgress operation.
-    /// [VPC only] Updates the description of an egress (outbound) security group rule. You
-    /// can replace an existing description, or add a description to a rule that did not have
-    /// one previously. You can remove a description for a security group rule by omitting
-    /// the description parameter in the request.
+    /// Updates the description of an egress (outbound) security group rule. You can replace
+    /// an existing description, or add a description to a rule that did not have one previously.
+    /// You can remove a description for a security group rule by omitting the description
+    /// parameter in the request.
     /// </summary>
     public partial class UpdateSecurityGroupRuleDescriptionsEgressRequest : AmazonEC2Request
     {
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// [Default VPC] The name of the security group. You must specify either the security
-        /// group ID or the security group name in the request.
+        /// group ID or the security group name.
         /// </para>
         /// </summary>
         public string GroupName

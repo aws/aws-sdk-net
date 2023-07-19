@@ -70,13 +70,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// [VPC only] Use <code>-1</code> to specify all protocols. When authorizing security
-        /// group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>,
-        /// <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all
-        /// ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>,
-        /// and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the
-        /// port range is optional; if you omit the port range, traffic for all types and codes
-        /// is allowed.
+        /// Use <code>-1</code> to specify all protocols. When authorizing security group rules,
+        /// specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>,
+        /// <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless
+        /// of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>,
+        /// you must specify a port range. For <code>icmpv6</code>, the port range is optional;
+        /// if you omit the port range, traffic for all types and codes is allowed.
         /// </para>
         /// </summary>
         public string IpProtocol
@@ -112,7 +111,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Ranges. 
         /// <para>
-        /// [VPC only] The IPv6 ranges.
+        /// The IPv6 ranges.
         /// </para>
         /// </summary>
         public List<Ipv6Range> Ipv6Ranges
@@ -130,7 +129,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// [VPC only] The prefix list IDs.
+        /// The prefix list IDs.
         /// </para>
         /// </summary>
         public List<PrefixListId> PrefixListIds
