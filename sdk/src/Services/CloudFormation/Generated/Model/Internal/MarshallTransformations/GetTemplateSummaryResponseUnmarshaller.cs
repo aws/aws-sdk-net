@@ -140,6 +140,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Version = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Warnings", targetDepth))
+                    {
+                        var unmarshaller = WarningsUnmarshaller.Instance;
+                        response.Warnings = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 
