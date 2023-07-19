@@ -79,7 +79,7 @@ namespace Amazon.Runtime
 
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
-            PreemptExpiryTime = TimeSpan.FromMinutes(5);
+            PreemptExpiryTime = TimeSpan.FromMinutes(15);
         }
 
         #endregion

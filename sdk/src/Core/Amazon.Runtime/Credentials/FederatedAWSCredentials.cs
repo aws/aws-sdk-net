@@ -39,7 +39,7 @@ namespace Amazon.Runtime
         private const int MaxAuthenticationRetries = 3;
         private static readonly RegionEndpoint DefaultSTSClientRegion = RegionEndpoint.USEast1;
         private static readonly TimeSpan MaximumCredentialTimespan = TimeSpan.FromHours(1);
-        private static readonly TimeSpan DefaultPreemptExpiryTime = TimeSpan.FromMinutes(5);
+        private static readonly TimeSpan DefaultPreemptExpiryTime = TimeSpan.FromMinutes(15);
 
         private readonly SAMLRoleSessionManager sessionManager = new SAMLRoleSessionManager();
 
