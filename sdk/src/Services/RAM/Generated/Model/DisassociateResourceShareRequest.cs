@@ -39,6 +39,7 @@ namespace Amazon.RAM.Model
         private List<string> _principals = new List<string>();
         private List<string> _resourceArns = new List<string>();
         private string _resourceShareArn;
+        private List<string> _sources = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -166,6 +167,25 @@ namespace Amazon.RAM.Model
         internal bool IsSetResourceShareArn()
         {
             return this._resourceShareArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// Specifies from which source accounts the service principal no longer has access to
+        /// the resources in this resource share.
+        /// </para>
+        /// </summary>
+        public List<string> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

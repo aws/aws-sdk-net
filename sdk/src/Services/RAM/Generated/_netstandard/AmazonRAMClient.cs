@@ -719,6 +719,10 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The operation failed because the service isn't available. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.TagLimitExceededException">
+        /// The operation failed because it would exceed the limit for tags for your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
         /// The operation failed because the specified tag key is a reserved word and can't be
         /// used.

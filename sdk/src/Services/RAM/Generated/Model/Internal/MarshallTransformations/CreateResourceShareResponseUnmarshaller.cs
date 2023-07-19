@@ -122,6 +122,10 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TagLimitExceededException"))
+                {
+                    return TagLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TagPolicyViolationException"))
                 {
                     return TagPolicyViolationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
