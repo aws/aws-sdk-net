@@ -48,6 +48,7 @@ namespace Amazon.WAFV2.Model
         private RateLimitLabelNamespace _labelNamespace;
         private RateLimitQueryArgument _queryArgument;
         private RateLimitQueryString _queryString;
+        private RateLimitUriPath _uriPath;
 
         /// <summary>
         /// Gets and sets the property Cookie. 
@@ -235,6 +236,26 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetQueryString()
         {
             return this._queryString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriPath. 
+        /// <para>
+        /// Use the request's URI path as an aggregate key. Each distinct URI path contributes
+        /// to the aggregation instance. If you use just the URI path as your custom key, then
+        /// each URI path fully defines an aggregation instance. 
+        /// </para>
+        /// </summary>
+        public RateLimitUriPath UriPath
+        {
+            get { return this._uriPath; }
+            set { this._uriPath = value; }
+        }
+
+        // Check to see if UriPath property is set
+        internal bool IsSetUriPath()
+        {
+            return this._uriPath != null;
         }
 
     }

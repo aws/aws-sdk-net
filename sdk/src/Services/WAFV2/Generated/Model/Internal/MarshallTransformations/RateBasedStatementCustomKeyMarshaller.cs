@@ -133,6 +133,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUriPath())
+            {
+                context.Writer.WritePropertyName("UriPath");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RateLimitUriPathMarshaller.Instance;
+                marshaller.Marshall(requestObject.UriPath, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -38,8 +38,8 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2",
-    /// "KeyToInclude3"} }</code> 
+    /// Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id"
+    /// ] }</code> 
     /// </para>
     /// </summary>
     public partial class CookieMatchPattern

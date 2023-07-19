@@ -38,8 +38,8 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"}
-    /// }</code> 
+    /// Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2"
+    /// ] }</code> 
     /// </para>
     /// </summary>
     public partial class HeaderMatchPattern
