@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentSummary Object
+    /// Response Unmarshaller for AssociatedHost Object
     /// </summary>  
-    public class ComponentSummaryUnmarshaller : IUnmarshaller<ComponentSummary, XmlUnmarshallerContext>, IUnmarshaller<ComponentSummary, JsonUnmarshallerContext>
+    public class AssociatedHostUnmarshaller : IUnmarshaller<AssociatedHost, XmlUnmarshallerContext>, IUnmarshaller<AssociatedHost, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentSummary IUnmarshaller<ComponentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssociatedHost IUnmarshaller<AssociatedHost, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ComponentSummary Unmarshall(JsonUnmarshallerContext context)
+        public AssociatedHost Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComponentSummary unmarshalledObject = new ComponentSummary();
+            AssociatedHost unmarshalledObject = new AssociatedHost();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationId", targetDepth))
+                if (context.TestExpression("Ec2InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Hostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ComponentId", targetDepth))
+                if (context.TestExpression("OsVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ComponentType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OsVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComponentSummaryUnmarshaller _instance = new ComponentSummaryUnmarshaller();        
+        private static AssociatedHostUnmarshaller _instance = new AssociatedHostUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentSummaryUnmarshaller Instance
+        public static AssociatedHostUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateApplicationSettings Request Marshaller
+    /// StartApplicationRefresh Request Marshaller
     /// </summary>       
-    public class UpdateApplicationSettingsRequestMarshaller : IMarshaller<IRequest, UpdateApplicationSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartApplicationRefreshRequestMarshaller : IMarshaller<IRequest, StartApplicationRefreshRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateApplicationSettingsRequest)input);
+            return this.Marshall((StartApplicationRefreshRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateApplicationSettingsRequest publicRequest)
+        public IRequest Marshall(StartApplicationRefreshRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SsmSap");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/update-application-settings";
+            request.ResourcePath = "/start-application-refresh";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -71,49 +71,6 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationId);
                 }
 
-                if(publicRequest.IsSetBackint())
-                {
-                    context.Writer.WritePropertyName("Backint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BackintConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Backint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCredentialsToAddOrUpdate())
-                {
-                    context.Writer.WritePropertyName("CredentialsToAddOrUpdate");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsToAddOrUpdateListValue in publicRequest.CredentialsToAddOrUpdate)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ApplicationCredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCredentialsToAddOrUpdateListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetCredentialsToRemove())
-                {
-                    context.Writer.WritePropertyName("CredentialsToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsToRemoveListValue in publicRequest.CredentialsToRemove)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ApplicationCredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCredentialsToRemoveListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -122,9 +79,9 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateApplicationSettingsRequestMarshaller _instance = new UpdateApplicationSettingsRequestMarshaller();        
+        private static StartApplicationRefreshRequestMarshaller _instance = new StartApplicationRefreshRequestMarshaller();        
 
-        internal static UpdateApplicationSettingsRequestMarshaller GetInstance()
+        internal static StartApplicationRefreshRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +89,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateApplicationSettingsRequestMarshaller Instance
+        public static StartApplicationRefreshRequestMarshaller Instance
         {
             get
             {

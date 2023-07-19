@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentSummary Object
+    /// Response Unmarshaller for Resilience Object
     /// </summary>  
-    public class ComponentSummaryUnmarshaller : IUnmarshaller<ComponentSummary, XmlUnmarshallerContext>, IUnmarshaller<ComponentSummary, JsonUnmarshallerContext>
+    public class ResilienceUnmarshaller : IUnmarshaller<Resilience, XmlUnmarshallerContext>, IUnmarshaller<Resilience, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentSummary IUnmarshaller<ComponentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Resilience IUnmarshaller<Resilience, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ComponentSummary Unmarshall(JsonUnmarshallerContext context)
+        public Resilience Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComponentSummary unmarshalledObject = new ComponentSummary();
+            Resilience unmarshalledObject = new Resilience();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationId", targetDepth))
+                if (context.TestExpression("ClusterStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("HsrOperationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HsrOperationMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ComponentId", targetDepth))
+                if (context.TestExpression("HsrReplicationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HsrReplicationMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ComponentType", targetDepth))
+                if (context.TestExpression("HsrTier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HsrTier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComponentSummaryUnmarshaller _instance = new ComponentSummaryUnmarshaller();        
+        private static ResilienceUnmarshaller _instance = new ResilienceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentSummaryUnmarshaller Instance
+        public static ResilienceUnmarshaller Instance
         {
             get
             {

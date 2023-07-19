@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// This is the response object from the GetComponent operation.
+    /// Configuration parameters for AWS Backint Agent for SAP HANA. You can backup your SAP
+    /// HANA database with AWS Backup or Amazon S3.
     /// </summary>
-    public partial class GetComponentResponse : AmazonWebServiceResponse
+    public partial class BackintConfig
     {
-        private Component _component;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private BackintMode _backintMode;
+        private bool? _ensureNoBackupInProcess;
 
         /// <summary>
-        /// Gets and sets the property Component. 
+        /// Gets and sets the property BackintMode. 
         /// <para>
-        /// The component of an application registered with AWS Systems Manager for SAP.
+        /// AWS service for your database backup.
         /// </para>
         /// </summary>
-        public Component Component
+        [AWSProperty(Required=true)]
+        public BackintMode BackintMode
         {
-            get { return this._component; }
-            set { this._component = value; }
+            get { return this._backintMode; }
+            set { this._backintMode = value; }
         }
 
-        // Check to see if Component property is set
-        internal bool IsSetComponent()
+        // Check to see if BackintMode property is set
+        internal bool IsSetBackintMode()
         {
-            return this._component != null;
+            return this._backintMode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags of a component.
-        /// </para>
+        /// Gets and sets the property EnsureNoBackupInProcess.
         /// </summary>
-        public Dictionary<string, string> Tags
+        [AWSProperty(Required=true)]
+        public bool EnsureNoBackupInProcess
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._ensureNoBackupInProcess.GetValueOrDefault(); }
+            set { this._ensureNoBackupInProcess = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if EnsureNoBackupInProcess property is set
+        internal bool IsSetEnsureNoBackupInProcess()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._ensureNoBackupInProcess.HasValue; 
         }
 
     }

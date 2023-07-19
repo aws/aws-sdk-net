@@ -36,6 +36,7 @@ namespace Amazon.SsmSap.Model
         private string _appRegistryArn;
         private string _arn;
         private List<string> _components = new List<string>();
+        private ApplicationDiscoveryStatus _discoveryStatus;
         private string _id;
         private DateTime? _lastUpdated;
         private ApplicationStatus _status;
@@ -94,6 +95,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetComponents()
         {
             return this._components != null && this._components.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryStatus. 
+        /// <para>
+        /// The latest discovery result for the application.
+        /// </para>
+        /// </summary>
+        public ApplicationDiscoveryStatus DiscoveryStatus
+        {
+            get { return this._discoveryStatus; }
+            set { this._discoveryStatus = value; }
+        }
+
+        // Check to see if DiscoveryStatus property is set
+        internal bool IsSetDiscoveryStatus()
+        {
+            return this._discoveryStatus != null;
         }
 
         /// <summary>

@@ -70,6 +70,24 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociatedHost", targetDepth))
+                {
+                    var unmarshaller = AssociatedHostUnmarshaller.Instance;
+                    unmarshalledObject.AssociatedHost = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ChildComponents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ChildComponents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComponentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +106,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.Databases = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HdbVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HdbVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Hosts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Host, HostUnmarshaller>(HostUnmarshaller.Instance);
@@ -100,10 +124,34 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParentComponent", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentComponent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PrimaryHost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryHost = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Resilience", targetDepth))
+                {
+                    var unmarshaller = ResilienceUnmarshaller.Instance;
+                    unmarshalledObject.Resilience = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SapHostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SapHostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SapKernelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SapKernelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

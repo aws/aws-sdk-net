@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateApplicationSettings operation
+    /// Response Unmarshaller for StartApplicationRefresh operation
     /// </summary>  
-    public class UpdateApplicationSettingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartApplicationRefreshResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateApplicationSettingsResponse response = new UpdateApplicationSettingsResponse();
+            StartApplicationRefreshResponse response = new StartApplicationRefreshResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Message", targetDepth))
+                if (context.TestExpression("OperationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Message = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OperationIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.OperationIds = unmarshaller.Unmarshall(context);
+                    response.OperationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,9 +100,9 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             return new AmazonSsmSapException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateApplicationSettingsResponseUnmarshaller _instance = new UpdateApplicationSettingsResponseUnmarshaller();        
+        private static StartApplicationRefreshResponseUnmarshaller _instance = new StartApplicationRefreshResponseUnmarshaller();        
 
-        internal static UpdateApplicationSettingsResponseUnmarshaller GetInstance()
+        internal static StartApplicationRefreshResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +110,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateApplicationSettingsResponseUnmarshaller Instance
+        public static StartApplicationRefreshResponseUnmarshaller Instance
         {
             get
             {

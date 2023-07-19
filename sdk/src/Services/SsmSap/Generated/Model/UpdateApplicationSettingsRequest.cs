@@ -35,6 +35,7 @@ namespace Amazon.SsmSap.Model
     public partial class UpdateApplicationSettingsRequest : AmazonSsmSapRequest
     {
         private string _applicationId;
+        private BackintConfig _backint;
         private List<ApplicationCredential> _credentialsToAddOrUpdate = new List<ApplicationCredential>();
         private List<ApplicationCredential> _credentialsToRemove = new List<ApplicationCredential>();
 
@@ -55,6 +56,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Backint. 
+        /// <para>
+        /// Installation of AWS Backint Agent for SAP HANA.
+        /// </para>
+        /// </summary>
+        public BackintConfig Backint
+        {
+            get { return this._backint; }
+            set { this._backint = value; }
+        }
+
+        // Check to see if Backint property is set
+        internal bool IsSetBackint()
+        {
+            return this._backint != null;
         }
 
         /// <summary>

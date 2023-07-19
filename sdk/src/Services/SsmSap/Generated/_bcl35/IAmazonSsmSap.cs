@@ -736,6 +736,58 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  StartApplicationRefresh
+
+
+        /// <summary>
+        /// Refreshes a registered application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartApplicationRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartApplicationRefresh service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
+        StartApplicationRefreshResponse StartApplicationRefresh(StartApplicationRefreshRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartApplicationRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartApplicationRefresh operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartApplicationRefresh
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
+        IAsyncResult BeginStartApplicationRefresh(StartApplicationRefreshRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartApplicationRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartApplicationRefresh.</param>
+        /// 
+        /// <returns>Returns a  StartApplicationRefreshResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
+        StartApplicationRefreshResponse EndStartApplicationRefresh(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -843,6 +895,9 @@ namespace Amazon.SsmSap
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationSettings service method.</param>
         /// 
         /// <returns>The response from the UpdateApplicationSettings service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
