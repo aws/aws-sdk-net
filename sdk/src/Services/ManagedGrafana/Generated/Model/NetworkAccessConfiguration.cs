@@ -34,14 +34,31 @@ namespace Amazon.ManagedGrafana.Model
     ///  
     /// <para>
     /// When this is configured, only listed IP addresses and VPC endpoints will be able to
-    /// access your workspace. Standard Grafana authentication and authorization will still
-    /// be required.
+    /// access your workspace. Standard Grafana authentication and authorization are still
+    /// required.
+    /// </para>
+    ///  
+    /// <para>
+    /// Access is granted to a caller that is in either the IP address list or the VPC endpoint
+    /// list - they do not need to be in both.
     /// </para>
     ///  
     /// <para>
     /// If this is not configured, or is removed, then all IP addresses and VPC endpoints
-    /// will be allowed. Standard Grafana authentication and authorization will still be required.
+    /// are allowed. Standard Grafana authentication and authorization are still required.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// While both <code>prefixListIds</code> and <code>vpceIds</code> are required, you can
+    /// pass in an empty array of strings for either parameter if you do not want to allow
+    /// any of that type.
+    /// </para>
+    ///  
+    /// <para>
+    /// If both are passed as empty arrays, no traffic is allowed to the workspace, because
+    /// only <i>explicitly</i> allowed connections are accepted.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class NetworkAccessConfiguration
     {
@@ -53,8 +70,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses.
         /// The IP addresses specified are allowed to access your workspace. If the list is not
-        /// included in the configuration then no IP addresses will be allowed to access the workspace.
-        /// You create a prefix list using the Amazon VPC console.
+        /// included in the configuration (passed an empty array) then no IP addresses are allowed
+        /// to access the workspace. You create a prefix list using the Amazon VPC console.
         /// </para>
         ///  
         /// <para>
@@ -85,8 +102,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints
         /// to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code>
-        /// is specified then only VPC endpoints specified here will be allowed to access the
-        /// workspace.
+        /// is specified then only VPC endpoints specified here are allowed to access the workspace.
+        /// If you pass in an empty array of strings, then no VPCs are allowed to access the workspace.
         /// </para>
         ///  
         /// <para>
@@ -101,7 +118,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// The only VPC endpoints that can be specified here are interface VPC endpoints for
         /// Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code>
-        /// service endpoint). Other VPC endpoints will be ignored.
+        /// service endpoint). Other VPC endpoints are ignored.
         /// </para>
         ///  </note>
         /// </summary>

@@ -660,6 +660,14 @@ namespace Amazon.ManagedGrafana
         /// Constant UPGRADING for WorkspaceStatus
         /// </summary>
         public static readonly WorkspaceStatus UPGRADING = new WorkspaceStatus("UPGRADING");
+        /// <summary>
+        /// Constant VERSION_UPDATE_FAILED for WorkspaceStatus
+        /// </summary>
+        public static readonly WorkspaceStatus VERSION_UPDATE_FAILED = new WorkspaceStatus("VERSION_UPDATE_FAILED");
+        /// <summary>
+        /// Constant VERSION_UPDATING for WorkspaceStatus
+        /// </summary>
+        public static readonly WorkspaceStatus VERSION_UPDATING = new WorkspaceStatus("VERSION_UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeWorkspaceConfiguration operation
+    /// Response Unmarshaller for ListVersions operation
     /// </summary>  
-    public class DescribeWorkspaceConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListVersionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeWorkspaceConfigurationResponse response = new DescribeWorkspaceConfigurationResponse();
+            ListVersionsResponse response = new ListVersionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("grafanaVersions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Configuration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.GrafanaVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("grafanaVersion", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GrafanaVersion = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -102,13 +102,17 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonManagedGrafanaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeWorkspaceConfigurationResponseUnmarshaller _instance = new DescribeWorkspaceConfigurationResponseUnmarshaller();        
+        private static ListVersionsResponseUnmarshaller _instance = new ListVersionsResponseUnmarshaller();        
 
-        internal static DescribeWorkspaceConfigurationResponseUnmarshaller GetInstance()
+        internal static ListVersionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +120,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeWorkspaceConfigurationResponseUnmarshaller Instance
+        public static ListVersionsResponseUnmarshaller Instance
         {
             get
             {

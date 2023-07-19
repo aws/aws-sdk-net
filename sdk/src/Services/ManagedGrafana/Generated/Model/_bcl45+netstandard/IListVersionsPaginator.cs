@@ -16,28 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the grafana-2020-08-18.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// Paginators for the ManagedGrafana service
+    /// Paginator for the ListVersions operation
     ///</summary>
-    public interface IManagedGrafanaPaginatorFactory
+    public interface IListVersionsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListVersionsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListPermissions operation
-        ///</summary>
-        IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
-
-        /// <summary>
-        /// Paginator for ListVersions operation
-        ///</summary>
-        IListVersionsPaginator ListVersions(ListVersionsRequest request);
-
-        /// <summary>
-        /// Paginator for ListWorkspaces operation
-        ///</summary>
-        IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
+        /// Enumerable containing all of the GrafanaVersions
+        /// </summary>
+        IPaginatedEnumerable<string> GrafanaVersions { get; }
     }
 }

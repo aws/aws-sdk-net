@@ -100,6 +100,11 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DescribeWorkspaceConfigurationResponse.GrafanaVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.DisassociateLicenseRequest.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -120,6 +125,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.ListPermissionsRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListVersionsRequest.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -162,6 +176,11 @@
     <property>Amazon.ManagedGrafana.Model.UpdateWorkspaceConfigurationRequest.Configuration</property>
     <min>2</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.UpdateWorkspaceConfigurationRequest.GrafanaVersion</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.UpdateWorkspaceConfigurationRequest.WorkspaceId</property>
