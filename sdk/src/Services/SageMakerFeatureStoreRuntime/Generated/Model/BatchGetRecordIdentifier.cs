@@ -40,10 +40,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+        /// The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing
+        /// the records you are retrieving in a batch.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FeatureGroupName
         {
             get { return this._featureGroupName; }

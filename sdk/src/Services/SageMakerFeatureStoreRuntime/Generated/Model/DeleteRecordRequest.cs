@@ -109,10 +109,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the feature group to delete the record from. 
+        /// The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string FeatureGroupName
         {
             get { return this._featureGroupName; }

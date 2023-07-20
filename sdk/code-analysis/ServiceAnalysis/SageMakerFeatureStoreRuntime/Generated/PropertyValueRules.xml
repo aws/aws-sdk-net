@@ -8,8 +8,8 @@
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>150</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.RecordIdentifierValueAsString</property>
@@ -19,8 +19,8 @@
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>150</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.RecordIdentifierValueAsString</property>
@@ -30,8 +30,8 @@
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.PutRecordRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>150</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.ErrorCode</property>
@@ -55,8 +55,8 @@
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordIdentifier.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>150</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.FeatureGroupName</property>
