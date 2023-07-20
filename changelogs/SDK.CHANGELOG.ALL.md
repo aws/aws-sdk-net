@@ -1,3 +1,23 @@
+### 3.7.603.0 (2023-07-20 19:07 UTC)
+* CodeCatalyst (3.7.201.0)
+	* This release adds support for updating and deleting spaces and projects in Amazon CodeCatalyst. It also adds support for creating, getting, and deleting source repositories in CodeCatalyst projects.
+* ConnectCases (3.7.201.0)
+	* This release adds the ability to assign a case to a queue or user.
+* LexModelsV2 (3.7.202.0)
+	* This release updates type for Channel field in SessionSpecification and UtteranceSpecification
+* Route53Resolver (3.7.201.0)
+	* This release adds support for Route 53 On Outposts, a new feature that allows customers to run Route 53 Resolver and Resolver endpoints locally on their Outposts.
+* S3 (3.7.201.0)
+	* Improve performance of S3 clients by simplifying and optimizing endpoint resolution.
+* SageMaker (3.7.201.0)
+	* Cross account support for SageMaker Feature Store
+* SageMakerFeatureStoreRuntime (3.7.201.0)
+	* Cross account support for SageMaker Feature Store
+* SecurityLake (3.7.201.0)
+	* Adding support for Tags on Create and Resource Tagging API.
+* TranscribeService (3.7.201.0)
+	* Added API argument --toxicity-detection to startTranscriptionJob API, which allows users to view toxicity scores of submitted audio.
+
 ### 3.7.602.1 (2023-07-20 03:53 UTC)
 * SavingsPlans (3.7.200.2)
 	* Savings Plans endpoints update
