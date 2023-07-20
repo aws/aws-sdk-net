@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDataLake Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateDataLakeRequestMarshaller : IMarshaller<IRequest, CreateDataLakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDataLakeRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,41 +52,22 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDataLakeRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityLake");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/datalake";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonSecurityLakeException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/v1/tags/{resourceArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurations())
-                {
-                    context.Writer.WritePropertyName("configurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataLakeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMetaStoreManagerRoleArn())
-                {
-                    context.Writer.WritePropertyName("metaStoreManagerRoleArn");
-                    context.Writer.Write(publicRequest.MetaStoreManagerRoleArn);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -111,9 +92,9 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDataLakeRequestMarshaller _instance = new CreateDataLakeRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateDataLakeRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +102,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDataLakeRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDataLakes operation.
-    /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-    /// Services Regions. You can use this operation to determine whether Security Lake is
-    /// enabled for a Region.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class ListDataLakesRequest : AmazonSecurityLakeRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<string> _regions = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Regions. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of regions where Security Lake is enabled.
+        /// An array of objects, one for each tag (key and value) that’s associated with the Amazon
+        /// Security Lake resource.
         /// </para>
         /// </summary>
-        public List<string> Regions
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
         {
-            get { return this._regions; }
-            set { this._regions = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Regions property is set
-        internal bool IsSetRegions()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

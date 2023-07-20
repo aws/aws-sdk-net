@@ -328,7 +328,7 @@ namespace Amazon.SecurityLake
         /// the parameters you specify. You can choose any source type in any Region for either
         /// accounts that are part of a trusted organization or standalone accounts. Once you
         /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
-        /// from it, 
+        /// from it.
         /// 
         ///  
         /// <para>
@@ -464,13 +464,12 @@ namespace Amazon.SecurityLake
         /// <summary>
         /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
         /// You can enable Security Lake in Amazon Web Services Regions with customized settings
-        /// before enabling log collection in Regions. By default, the <code>CreateDataLake</code>
-        /// Security Lake in all Regions. To specify particular Regions, configure these Regions
-        /// using the <code>configurations</code> parameter. If you have already enabled Security
-        /// Lake in a Region when you call this command, the command will update the Region if
-        /// you provide new configuration parameters. If you have not already enabled Security
-        /// Lake in the Region when you call this API, it will set up the data lake in the Region
-        /// with the specified configurations.
+        /// before enabling log collection in Regions. To specify particular Regions, configure
+        /// these Regions using the <code>configurations</code> parameter. If you have already
+        /// enabled Security Lake in a Region when you call this command, the command will update
+        /// the Region if you provide new configuration parameters. If you have not already enabled
+        /// Security Lake in the Region when you call this API, it will set up the data lake in
+        /// the Region with the specified configurations.
         /// 
         ///  
         /// <para>
@@ -1062,11 +1061,11 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Removes automatic the enablement of configuration settings for new member accounts
-        /// (but retains the settings for the delegated administrator) from Amazon Security Lake.
-        /// You must run this API using the credentials of the delegated administrator. When you
-        /// run this API, new member accounts that are added after the organization enables Security
-        /// Lake won't contribute to the data lake.
+        /// Turns off automatic enablement of Amazon Security Lake for member accounts that are
+        /// added to an organization in Organizations. Only the delegated Security Lake administrator
+        /// for an organization can perform this operation. If the delegated Security Lake administrator
+        /// performs this operation, new member accounts won't automatically contribute data to
+        /// the data lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1629,8 +1628,8 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-        /// Services account ID. You can use the <code>ListDataLakes</code> API to know whether
-        /// Security Lake is enabled for any region.
+        /// Services Regions. You can use this operation to determine whether Security Lake is
+        /// enabled for a Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataLakes service method.</param>
         /// <param name="cancellationToken">
@@ -1801,6 +1800,69 @@ namespace Amazon.SecurityLake
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the tags (keys and values) that are associated with an Amazon Security Lake
+        /// resource: a subscriber, or the data lake configuration for your Amazon Web Services
+        /// account in a particular Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterDataLakeDelegatedAdministrator
 
         internal virtual RegisterDataLakeDelegatedAdministratorResponse RegisterDataLakeDelegatedAdministrator(RegisterDataLakeDelegatedAdministratorRequest request)
@@ -1860,6 +1922,139 @@ namespace Amazon.SecurityLake
             options.ResponseUnmarshaller = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterDataLakeDelegatedAdministratorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds or updates one or more tags that are associated with an Amazon Security Lake
+        /// resource: a subscriber, or the data lake configuration for your Amazon Web Services
+        /// account in a particular Amazon Web Services Region. A <i>tag</i> is a label that you
+        /// can define and associate with Amazon Web Services resources. Each tag consists of
+        /// a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is
+        /// a general label that acts as a category for a more specific tag value. A <i>tag value</i>
+        /// acts as a descriptor for a tag key. Tags can help you identify, categorize, and manage
+        /// resources in different ways, such as by owner, environment, or other criteria. For
+        /// more information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging
+        /// Amazon Security Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more tags (keys and values) from an Amazon Security Lake resource:
+        /// a subscriber, or the data lake configuration for your Amazon Web Services account
+        /// in a particular Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

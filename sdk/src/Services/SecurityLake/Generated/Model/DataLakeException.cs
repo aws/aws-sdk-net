@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The details for a Security Lake exception
+    /// The details for an Amazon Security Lake exception.
     /// </summary>
     public partial class DataLakeException
     {

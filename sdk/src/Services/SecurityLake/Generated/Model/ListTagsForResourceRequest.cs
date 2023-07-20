@@ -29,31 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDataLakes operation.
-    /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-    /// Services Regions. You can use this operation to determine whether Security Lake is
-    /// enabled for a Region.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Retrieves the tags (keys and values) that are associated with an Amazon Security Lake
+    /// resource: a subscriber, or the data lake configuration for your Amazon Web Services
+    /// account in a particular Amazon Web Services Region.
     /// </summary>
-    public partial class ListDataLakesRequest : AmazonSecurityLakeRequest
+    public partial class ListTagsForResourceRequest : AmazonSecurityLakeRequest
     {
-        private List<string> _regions = new List<string>();
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Regions. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The list of regions where Security Lake is enabled.
+        /// The Amazon Resource Name (ARN) of the Amazon Security Lake resource to retrieve the
+        /// tags for.
         /// </para>
         /// </summary>
-        public List<string> Regions
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string ResourceArn
         {
-            get { return this._regions; }
-            set { this._regions = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Regions property is set
-        internal bool IsSetRegions()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._resourceArn != null;
         }
 
     }
