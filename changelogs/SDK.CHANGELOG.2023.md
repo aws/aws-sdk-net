@@ -1,3 +1,10 @@
+### 3.7.602.1 (2023-07-20 03:53 UTC)
+* SavingsPlans (3.7.200.2)
+	* Savings Plans endpoints update
+* Core 3.7.200.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.602.0 (2023-07-19 18:25 UTC)
 * CloudFormation (3.7.201.0)
 	* SDK and documentation updates for GetTemplateSummary API (unrecognized resources)
