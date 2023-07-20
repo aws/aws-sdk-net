@@ -76,10 +76,6 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route53resolver:ListResolverQueryLogConfigAssociations</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>route53resolver:ListResolverQueryLogConfigs</code> 
         /// </para>
         ///  </li> </ul> 

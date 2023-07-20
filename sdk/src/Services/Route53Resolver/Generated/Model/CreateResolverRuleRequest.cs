@@ -186,8 +186,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property TargetIps. 
         /// <para>
-        /// The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4
-        /// addresses. Separate IP addresses with a space.
+        /// The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4
+        /// or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.
         /// </para>
         ///  
         /// <para>

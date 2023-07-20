@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResolverEndpoint Object
+    /// Response Unmarshaller for OutpostResolver Object
     /// </summary>  
-    public class ResolverEndpointUnmarshaller : IUnmarshaller<ResolverEndpoint, XmlUnmarshallerContext>, IUnmarshaller<ResolverEndpoint, JsonUnmarshallerContext>
+    public class OutpostResolverUnmarshaller : IUnmarshaller<OutpostResolver, XmlUnmarshallerContext>, IUnmarshaller<OutpostResolver, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResolverEndpoint IUnmarshaller<ResolverEndpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OutpostResolver IUnmarshaller<OutpostResolver, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResolverEndpoint Unmarshall(JsonUnmarshallerContext context)
+        public OutpostResolver Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResolverEndpoint unmarshalledObject = new ResolverEndpoint();
+            OutpostResolver unmarshalledObject = new OutpostResolver();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -82,28 +82,16 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Direction", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Direction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HostVPCId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostVPCId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IpAddressCount", targetDepth))
+                if (context.TestExpression("InstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.IpAddressCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModificationTime", targetDepth))
@@ -130,18 +118,6 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreferredInstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResolverEndpointType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolverEndpointType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -160,12 +136,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResolverEndpointUnmarshaller _instance = new ResolverEndpointUnmarshaller();        
+        private static OutpostResolverUnmarshaller _instance = new OutpostResolverUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResolverEndpointUnmarshaller Instance
+        public static OutpostResolverUnmarshaller Instance
         {
             get
             {

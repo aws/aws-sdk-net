@@ -51,6 +51,8 @@ namespace Amazon.Route53Resolver.Model
         private ResolverEndpointDirection _direction;
         private List<IpAddressRequest> _ipAddresses = new List<IpAddressRequest>();
         private string _name;
+        private string _outpostArn;
+        private string _preferredInstanceType;
         private ResolverEndpointType _resolverEndpointType;
         private List<string> _securityGroupIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -148,9 +150,48 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also
+        /// specify a value for the <code>PreferredInstanceType</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredInstanceType. 
+        /// <para>
+        /// The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string PreferredInstanceType
+        {
+            get { return this._preferredInstanceType; }
+            set { this._preferredInstanceType = value; }
+        }
+
+        // Check to see if PreferredInstanceType property is set
+        internal bool IsSetPreferredInstanceType()
+        {
+            return this._preferredInstanceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResolverEndpointType. 
         /// <para>
-        ///  For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack
+        ///  For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack
         /// endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is
         /// applied to all IP addresses. 
         /// </para>

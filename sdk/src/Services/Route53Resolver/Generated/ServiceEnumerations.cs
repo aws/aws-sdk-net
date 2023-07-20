@@ -603,6 +603,10 @@ namespace Amazon.Route53Resolver
         /// </summary>
         public static readonly IpAddressStatus REMAP_DETACHING = new IpAddressStatus("REMAP_DETACHING");
         /// <summary>
+        /// Constant UPDATE_FAILED for IpAddressStatus
+        /// </summary>
+        public static readonly IpAddressStatus UPDATE_FAILED = new IpAddressStatus("UPDATE_FAILED");
+        /// <summary>
         /// Constant UPDATING for IpAddressStatus
         /// </summary>
         public static readonly IpAddressStatus UPDATING = new IpAddressStatus("UPDATING");
@@ -686,6 +690,76 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MutationProtectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutpostResolverStatus.
+    /// </summary>
+    public class OutpostResolverStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_NEEDED for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus ACTION_NEEDED = new OutpostResolverStatus("ACTION_NEEDED");
+        /// <summary>
+        /// Constant CREATING for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus CREATING = new OutpostResolverStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus DELETING = new OutpostResolverStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED_CREATION for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus FAILED_CREATION = new OutpostResolverStatus("FAILED_CREATION");
+        /// <summary>
+        /// Constant FAILED_DELETION for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus FAILED_DELETION = new OutpostResolverStatus("FAILED_DELETION");
+        /// <summary>
+        /// Constant OPERATIONAL for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus OPERATIONAL = new OutpostResolverStatus("OPERATIONAL");
+        /// <summary>
+        /// Constant UPDATING for OutpostResolverStatus
+        /// </summary>
+        public static readonly OutpostResolverStatus UPDATING = new OutpostResolverStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutpostResolverStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutpostResolverStatus FindValue(string value)
+        {
+            return FindValue<OutpostResolverStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutpostResolverStatus(string value)
         {
             return FindValue(value);
         }

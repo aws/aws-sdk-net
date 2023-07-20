@@ -84,6 +84,14 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Paginator for ListOutpostResolvers operation
+        ///</summary>
+        public IListOutpostResolversPaginator ListOutpostResolvers(ListOutpostResolversRequest request) 
+        {
+            return new ListOutpostResolversPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResolverConfigs operation
         ///</summary>
         public IListResolverConfigsPaginator ListResolverConfigs(ListResolverConfigsRequest request) 

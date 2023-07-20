@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateResolverEndpoint Request Marshaller
+    /// CreateOutpostResolver Request Marshaller
     /// </summary>       
-    public class CreateResolverEndpointRequestMarshaller : IMarshaller<IRequest, CreateResolverEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateOutpostResolverRequestMarshaller : IMarshaller<IRequest, CreateOutpostResolverRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateResolverEndpointRequest)input);
+            return this.Marshall((CreateOutpostResolverRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateResolverEndpointRequest publicRequest)
+        public IRequest Marshall(CreateOutpostResolverRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Resolver");
-            string target = "Route53Resolver.CreateResolverEndpoint";
+            string target = "Route53Resolver.CreateOutpostResolver";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
@@ -73,26 +73,10 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreatorRequestId);
                 }
 
-                if(publicRequest.IsSetDirection())
+                if(publicRequest.IsSetInstanceCount())
                 {
-                    context.Writer.WritePropertyName("Direction");
-                    context.Writer.Write(publicRequest.Direction);
-                }
-
-                if(publicRequest.IsSetIpAddresses())
-                {
-                    context.Writer.WritePropertyName("IpAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IpAddressRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIpAddressesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("InstanceCount");
+                    context.Writer.Write(publicRequest.InstanceCount);
                 }
 
                 if(publicRequest.IsSetName())
@@ -111,23 +95,6 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("PreferredInstanceType");
                     context.Writer.Write(publicRequest.PreferredInstanceType);
-                }
-
-                if(publicRequest.IsSetResolverEndpointType())
-                {
-                    context.Writer.WritePropertyName("ResolverEndpointType");
-                    context.Writer.Write(publicRequest.ResolverEndpointType);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                    {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -154,9 +121,9 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateResolverEndpointRequestMarshaller _instance = new CreateResolverEndpointRequestMarshaller();        
+        private static CreateOutpostResolverRequestMarshaller _instance = new CreateOutpostResolverRequestMarshaller();        
 
-        internal static CreateResolverEndpointRequestMarshaller GetInstance()
+        internal static CreateOutpostResolverRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -164,7 +131,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateResolverEndpointRequestMarshaller Instance
+        public static CreateOutpostResolverRequestMarshaller Instance
         {
             get
             {
