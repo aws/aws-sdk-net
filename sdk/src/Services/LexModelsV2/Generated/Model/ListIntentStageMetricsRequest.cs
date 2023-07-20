@@ -30,8 +30,8 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIntentStageMetrics operation.
-    /// Retrieves summary metrics for the intent stages in your bot. The following fields
-    /// are required:
+    /// Retrieves summary metrics for the stages within intents in your bot. The following
+    /// fields are required:
     /// 
     ///  <ul> <li> 
     /// <para>

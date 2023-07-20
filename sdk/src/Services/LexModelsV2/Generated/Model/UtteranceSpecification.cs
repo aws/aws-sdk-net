@@ -40,7 +40,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botResponseAudioVoiceId;
         private List<UtteranceBotResponse> _botResponses = new List<UtteranceBotResponse>();
         private string _botVersion;
-        private BotChannelType _channel;
+        private string _channel;
         private DateTime? _conversationEndTime;
         private DateTime? _conversationStartTime;
         private string _dialogActionType;
@@ -192,7 +192,8 @@ namespace Amazon.LexModelsV2.Model
         /// The channel that is integrated with the bot that the utterance was made to.
         /// </para>
         /// </summary>
-        public BotChannelType Channel
+        [AWSProperty(Min=1, Max=50)]
+        public string Channel
         {
             get { return this._channel; }
             set { this._channel = value; }

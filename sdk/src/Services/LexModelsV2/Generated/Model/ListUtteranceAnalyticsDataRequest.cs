@@ -30,11 +30,26 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUtteranceAnalyticsData operation.
-    /// Retrieves a list of metadata for individual user utterances to your bot. The <code>startDateTime</code>
-    /// and <code>endDateTime</code> fields are required. These fields define a time range
-    /// for which you want to retrieve results. Of the optional fields, you can organize the
-    /// results in the following ways:
-    /// 
+    /// <note> 
+    /// <para>
+    /// To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+    /// operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+    /// utterance statistics</a> for the IAM policy to apply to the IAM role.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Retrieves a list of metadata for individual user utterances to your bot. The following
+    /// fields are required:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
+    /// which you want to retrieve results.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Of the optional fields, you can organize the results in the following ways:
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>

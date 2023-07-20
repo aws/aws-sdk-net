@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botAliasId;
         private string _botVersion;
-        private BotChannelType _channel;
+        private string _channel;
         private long? _conversationDurationSeconds;
         private ConversationEndState _conversationEndState;
         private DateTime? _conversationEndTime;
@@ -91,7 +91,8 @@ namespace Amazon.LexModelsV2.Model
         /// The channel that is integrated with the bot that the session was held with.
         /// </para>
         /// </summary>
-        public BotChannelType Channel
+        [AWSProperty(Min=1, Max=50)]
+        public string Channel
         {
             get { return this._channel; }
             set { this._channel = value; }

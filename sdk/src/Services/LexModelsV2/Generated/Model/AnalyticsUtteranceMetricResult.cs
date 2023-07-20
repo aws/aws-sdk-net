@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UtteranceTimeStamp</code> – The date and time of the utterance.
+        ///  <code>UtteranceTimestamp</code> – The date and time of the utterance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

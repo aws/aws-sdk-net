@@ -1671,60 +1671,6 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
-    /// Constants used for properties of type BotChannelType.
-    /// </summary>
-    public class BotChannelType : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant Facebook for BotChannelType
-        /// </summary>
-        public static readonly BotChannelType Facebook = new BotChannelType("Facebook");
-        /// <summary>
-        /// Constant Slack for BotChannelType
-        /// </summary>
-        public static readonly BotChannelType Slack = new BotChannelType("Slack");
-        /// <summary>
-        /// Constant TwilioSms for BotChannelType
-        /// </summary>
-        public static readonly BotChannelType TwilioSms = new BotChannelType("TwilioSms");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public BotChannelType(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static BotChannelType FindValue(string value)
-        {
-            return FindValue<BotChannelType>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator BotChannelType(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type BotFilterName.
     /// </summary>
     public class BotFilterName : ConstantClass

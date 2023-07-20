@@ -3305,6 +3305,11 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SessionSpecification.Channel</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SessionSpecification.SessionId</property>
     <pattern>[0-9a-zA-Z._:-]</pattern>
   </property-value-rule>
@@ -3620,6 +3625,11 @@
     <min>1</min>
     <max>5</max>
     <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.UtteranceSpecification.Channel</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UtteranceSpecification.SessionId</property>

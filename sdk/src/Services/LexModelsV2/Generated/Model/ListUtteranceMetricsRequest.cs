@@ -30,9 +30,17 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUtteranceMetrics operation.
+    /// <note> 
+    /// <para>
+    /// To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+    /// operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+    /// utterance statistics</a> for the IAM policy to apply to the IAM role.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Retrieves summary metrics for the utterances in your bot. The following fields are
     /// required:
-    /// 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
