@@ -222,7 +222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + access point + Dualstack is an error")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack cannot be combined with a Host override (PrivateLink)")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_access_point_Dualstack_is_an_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1407,8 +1407,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("non-bucket endpoint with FIPS: TODO(descriptive)")]
-        public void Nonbucket_endpoint_with_FIPS_TODOdescriptive_Test()
+        [Description("non-bucket endpoint override with FIPS = error")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
+        public void Nonbucket_endpoint_override_with_FIPS_error_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -1416,15 +1417,15 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("FIPS + dualstack + custom endpoint TODO(descriptive)")]
-        public void FIPS_dualstack_custom_endpoint_TODOdescriptive_Test()
+        [Description("FIPS + dualstack + custom endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
+        public void FIPS_dualstack_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -1432,15 +1433,15 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("dualstack + custom endpoint TODO(descriptive)")]
-        public void Dualstack_custom_endpoint_TODOdescriptive_Test()
+        [Description("dualstack + custom endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
+        public void Dualstack_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -1448,7 +1449,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
         }
 
         [TestMethod]
@@ -1633,6 +1633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + FIPS + dualstack (BUG)")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_FIPS_dualstack_BUG_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1643,7 +1644,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
         }
 
         [TestMethod]
@@ -1651,6 +1651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + non-dns bucket + FIPS (BUG)")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_nondns_bucket_FIPS_BUG_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1660,7 +1661,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
         }
 
         [TestMethod]
@@ -1721,6 +1721,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("URI encoded bucket + use global endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void URI_encoded_bucket_use_global_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1731,7 +1732,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "https://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://foo.com/bucket%21", endpoint.URL);
         }
 
         [TestMethod]
@@ -1812,6 +1812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + non-uri safe endpoint + force path style")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_nonuri_safe_endpoint_force_path_style_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1824,7 +1825,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Endpoint"] = "http://foo.com";
             parameters["UseGlobalEndpoint"] = true;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
         }
 
         [TestMethod]
@@ -1849,8 +1849,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("endpoint override + FIPS + dualstack (this is wrong—it's a bug in the UseGlobalEndpoint branch)")]
-        public void Endpoint_override_FIPS_dualstack_this_is_wrongits_a_bug_in_the_UseGlobalEndpoint_branch_Test()
+        [Description("endpoint override + FIPS + dualstack")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
+        public void Endpoint_override_FIPS_dualstack_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1859,7 +1860,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1867,6 +1867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("non-bucket endpoint override + dualstack + global endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Nonbucket_endpoint_override_dualstack_global_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1876,7 +1877,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1884,6 +1884,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Endpoint override + UseGlobalEndpoint + us-east-1")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_UseGlobalEndpoint_useast1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1893,7 +1894,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -1909,7 +1909,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseGlobalEndpoint"] = true;
-            parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1983,8 +1982,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("aws-global + fips + custom endpoint (TODO: should be an error)")]
-        public void Awsglobal_fips_custom_endpoint_TODO_should_be_an_error_Test()
+        [Description("aws-global + fips + custom endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
+        public void Awsglobal_fips_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "aws-global";
@@ -1994,7 +1994,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
         }
 
         [TestMethod]
@@ -2019,8 +2018,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("aws-global + dualstack + custom endpoint (TODO: should be an error)")]
-        public void Awsglobal_dualstack_custom_endpoint_TODO_should_be_an_error_Test()
+        [Description("aws-global + dualstack + custom endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
+        public void Awsglobal_dualstack_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "aws-global";
@@ -2029,7 +2029,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -2053,8 +2052,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("FIPS + aws-global + path only bucket. TODO: this should be an error")]
-        public void FIPS_awsglobal_path_only_bucket_TODO_this_should_be_an_error_Test()
+        [Description("FIPS + aws-global + path only bucket. This is not supported by S3 but we allow garbage in garbage out")]
+        public void FIPS_awsglobal_path_only_bucket_This_is_not_supported_by_S3_but_we_allow_garbage_in_garbage_out_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "aws-global";
@@ -2071,23 +2070,24 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("aws-global + FIPS + endpoint override. TODO: should this be an error?")]
-        public void Awsglobal_FIPS_endpoint_override_TODO_should_this_be_an_error_Test()
+        [Description("aws-global + FIPS + endpoint override.")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
+        public void Awsglobal_FIPS_endpoint_override_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "aws-global";
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("force path style, aws-global & endpoint override")]
-        public void Force_path_style_awsglobal_endpoint_override_Test()
+        [Description("force path style, FIPS, aws-global & endpoint override")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
+        public void Force_path_style_FIPS_awsglobal_endpoint_override_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "aws-global";
@@ -2096,7 +2096,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
         }
 
         [TestMethod]
@@ -2119,6 +2118,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override with aws-global region")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Endpoint_override_with_awsglobal_region_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2127,7 +2127,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "http://foo.com";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("http://foo.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -2938,6 +2937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + fips@cn-north-1")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Path_style_fipscnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2948,7 +2948,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name", endpoint.URL);
         }
 
         [TestMethod]
@@ -3223,7 +3222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + FIPS@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void SDKHost_FIPSuswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3243,7 +3242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + DualStack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_DualStackuswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3263,7 +3262,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::HOST + accelerate@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with S3 Accelerate")]
         public void SDKHOST_accelerateuswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3343,15 +3342,14 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("SDK::Host + FIPS@cn-north-1")]
+        [Description("FIPS@cn-north-1")]
         [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
-        public void SDKHost_FIPScnnorth1_Test()
+        public void FIPScnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "bucket-name";
             parameters["ForcePathStyle"] = false;
-            parameters["Endpoint"] = "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com";
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
@@ -3363,7 +3361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + DualStack@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_DualStackcnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3383,7 +3381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::HOST + accelerate@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Accelerate cannot be used in this region")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with S3 Accelerate")]
         public void SDKHOST_acceleratecnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3463,7 +3461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + FIPS@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void SDKHost_FIPSafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3483,7 +3481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + DualStack@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_DualStackafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3503,7 +3501,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::HOST + accelerate@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with S3 Accelerate")]
         public void SDKHOST_accelerateafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4615,8 +4613,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Real Outpost Prod us-west-1")]
-        public void S3_Outposts_Abba_Real_Outpost_Prod_uswest1_Test()
+        [Description("S3 Outposts bucketAlias Real Outpost Prod us-west-1")]
+        public void S3_Outposts_bucketAlias_Real_Outpost_Prod_uswest1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -4632,8 +4630,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Real Outpost Prod ap-east-1")]
-        public void S3_Outposts_Abba_Real_Outpost_Prod_apeast1_Test()
+        [Description("S3 Outposts bucketAlias Real Outpost Prod ap-east-1")]
+        public void S3_Outposts_bucketAlias_Real_Outpost_Prod_apeast1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -4649,8 +4647,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Ec2 Outpost Prod us-east-1")]
-        public void S3_Outposts_Abba_Ec2_Outpost_Prod_useast1_Test()
+        [Description("S3 Outposts bucketAlias Ec2 Outpost Prod us-east-1")]
+        public void S3_Outposts_bucketAlias_Ec2_Outpost_Prod_useast1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -4666,8 +4664,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Ec2 Outpost Prod me-south-1")]
-        public void S3_Outposts_Abba_Ec2_Outpost_Prod_mesouth1_Test()
+        [Description("S3 Outposts bucketAlias Ec2 Outpost Prod me-south-1")]
+        public void S3_Outposts_bucketAlias_Ec2_Outpost_Prod_mesouth1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -4683,8 +4681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Real Outpost Beta")]
-        public void S3_Outposts_Abba_Real_Outpost_Beta_Test()
+        [Description("S3 Outposts bucketAlias Real Outpost Beta")]
+        public void S3_Outposts_bucketAlias_Real_Outpost_Beta_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -4701,8 +4699,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Ec2 Outpost Beta")]
-        public void S3_Outposts_Abba_Ec2_Outpost_Beta_Test()
+        [Description("S3 Outposts bucketAlias Ec2 Outpost Beta")]
+        public void S3_Outposts_bucketAlias_Ec2_Outpost_Beta_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -4719,9 +4717,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba - No endpoint set for beta")]
+        [Description("S3 Outposts bucketAlias - No endpoint set for beta")]
         [ExpectedException(typeof(AmazonClientException), @"Expected a endpoint to be specified but no endpoint was found")]
-        public void S3_Outposts_Abba_No_endpoint_set_for_beta_Test()
+        public void S3_Outposts_bucketAlias_No_endpoint_set_for_beta_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -4736,9 +4734,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Invalid hardware type")]
+        [Description("S3 Outposts bucketAlias Invalid hardware type")]
         [ExpectedException(typeof(AmazonClientException), @"Unrecognized hardware type: ""Expected hardware type o or e but got h""")]
-        public void S3_Outposts_Abba_Invalid_hardware_type_Test()
+        public void S3_Outposts_bucketAlias_Invalid_hardware_type_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -4753,9 +4751,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba Special character in Outpost Arn")]
+        [Description("S3 Outposts bucketAlias Special character in Outpost Arn")]
         [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`.")]
-        public void S3_Outposts_Abba_Special_character_in_Outpost_Arn_Test()
+        public void S3_Outposts_bucketAlias_Special_character_in_Outpost_Arn_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -4770,9 +4768,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
-        [Description("S3 Outposts Abba - No endpoint set for beta")]
+        [Description("S3 Outposts bucketAlias - No endpoint set for beta")]
         [ExpectedException(typeof(AmazonClientException), @"Expected a endpoint to be specified but no endpoint was found")]
-        public void S3_Outposts_Abba_No_endpoint_set_for_beta_1_Test()
+        public void S3_Outposts_bucketAlias_No_endpoint_set_for_beta_1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-1";
