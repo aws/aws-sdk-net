@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FieldValueUnion Marshaller
+    /// EmptyFieldValue Marshaller
     /// </summary>
-    public class FieldValueUnionMarshaller : IRequestMarshaller<FieldValueUnion, JsonMarshallerContext> 
+    public class EmptyFieldValueMarshaller : IRequestMarshaller<EmptyFieldValue, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,43 +43,14 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FieldValueUnion requestObject, JsonMarshallerContext context)
+        public void Marshall(EmptyFieldValue requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBooleanValue())
-            {
-                context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
-            }
-
-            if(requestObject.IsSetDoubleValue())
-            {
-                context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
-            }
-
-            if(requestObject.IsSetEmptyValue())
-            {
-                context.Writer.WritePropertyName("emptyValue");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EmptyFieldValueMarshaller.Instance;
-                marshaller.Marshall(requestObject.EmptyValue, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetStringValue())
-            {
-                context.Writer.WritePropertyName("stringValue");
-                context.Writer.Write(requestObject.StringValue);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FieldValueUnionMarshaller Instance = new FieldValueUnionMarshaller();
+        public readonly static EmptyFieldValueMarshaller Instance = new EmptyFieldValueMarshaller();
 
     }
 }

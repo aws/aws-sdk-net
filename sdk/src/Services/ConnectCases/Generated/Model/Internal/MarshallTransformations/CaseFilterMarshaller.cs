@@ -83,6 +83,22 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOrAll())
+            {
+                context.Writer.WritePropertyName("orAll");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOrAllListValue in requestObject.OrAll)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CaseFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOrAllListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

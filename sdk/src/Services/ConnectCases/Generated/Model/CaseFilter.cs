@@ -36,6 +36,7 @@ namespace Amazon.ConnectCases.Model
         private List<CaseFilter> _andAll = new List<CaseFilter>();
         private FieldFilter _field;
         private CaseFilter _not;
+        private List<CaseFilter> _orAll = new List<CaseFilter>();
 
         /// <summary>
         /// Gets and sets the property AndAll. 
@@ -87,6 +88,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetNot()
         {
             return this._not != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrAll. 
+        /// <para>
+        /// Provides "or all" filtering.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<CaseFilter> OrAll
+        {
+            get { return this._orAll; }
+            set { this._orAll = value; }
+        }
+
+        // Check to see if OrAll property is set
+        internal bool IsSetOrAll()
+        {
+            return this._orAll != null && this._orAll.Count > 0; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FieldValueUnion Object
+    /// Response Unmarshaller for EmptyFieldValue Object
     /// </summary>  
-    public class FieldValueUnionUnmarshaller : IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>, IUnmarshaller<FieldValueUnion, JsonUnmarshallerContext>
+    public class EmptyFieldValueUnmarshaller : IUnmarshaller<EmptyFieldValue, XmlUnmarshallerContext>, IUnmarshaller<EmptyFieldValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FieldValueUnion IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EmptyFieldValue IUnmarshaller<EmptyFieldValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,53 +53,29 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FieldValueUnion Unmarshall(JsonUnmarshallerContext context)
+        public EmptyFieldValue Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FieldValueUnion unmarshalledObject = new FieldValueUnion();
+            EmptyFieldValue unmarshalledObject = new EmptyFieldValue();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("booleanValue", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("doubleValue", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("emptyValue", targetDepth))
-                {
-                    var unmarshaller = EmptyFieldValueUnmarshaller.Instance;
-                    unmarshalledObject.EmptyValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stringValue", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static FieldValueUnionUnmarshaller _instance = new FieldValueUnionUnmarshaller();        
+        private static EmptyFieldValueUnmarshaller _instance = new EmptyFieldValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FieldValueUnionUnmarshaller Instance
+        public static EmptyFieldValueUnmarshaller Instance
         {
             get
             {
