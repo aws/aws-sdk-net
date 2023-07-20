@@ -104,7 +104,7 @@ namespace Amazon.CodeCatalyst.Model
         ///  <note> 
         /// <para>
         /// An IDE is required to create a Dev Environment. For Dev Environment creation, this
-        /// field contains configuration information and must be provided.
+        /// field contains configuration information and must be provided. 
         /// </para>
         ///  </note>
         /// </summary>

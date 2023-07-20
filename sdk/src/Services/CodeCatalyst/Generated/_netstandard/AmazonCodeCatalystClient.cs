@@ -44,43 +44,11 @@ namespace Amazon.CodeCatalyst
     /// 
     ///  
     /// <para>
-    /// Dev Environments and the Amazon Web Services Toolkits, by calling the following:
+    /// Spaces, by calling the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateAccessToken</a>, which creates a personal access token (PAT) for the current
-    /// user.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateDevEnvironment</a>, which creates a Dev Environment, where you can quickly
-    /// work on the code stored in the source repositories of your project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateProject</a> which creates a project in a specified space.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateSourceRepositoryBranch</a>, which creates a branch in a specified repository
-    /// where you can work on code.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDevEnvironment</a>, which deletes a Dev Environment.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetDevEnvironment</a>, which returns information about a Dev Environment.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetProject</a>, which returns information about a project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetSourceRepositoryCloneUrls</a>, which returns information about the URLs that
-    /// can be used with a Git client to clone a source repository.
+    ///  <a>DeleteSpace</a>, which deletes a space.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,20 +61,62 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetUserDetails</a>, which returns information about a user in Amazon CodeCatalyst.
+    ///  <a>ListSpaces</a>, which retrieves a list of spaces.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListDevEnvironments</a>, which retrieves a list of Dev Environments in a project.
+    ///  <a>UpdateSpace</a>, which hanges one or more values for a space.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Projects, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateProject</a> which creates a project in a specified space.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListDevEnvironmentSessions</a>, which retrieves a list of active Dev Environment
-    /// sessions in a project.
+    ///  <a>GetProject</a>, which returns information about a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>ListProjects</a>, which retrieves a list of projects in a space.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Users, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetUserDetails</a>, which returns information about a user in Amazon CodeCatalyst.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Source repositories, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateSourceRepository</a>, which creates an empty Git-based source repository
+    /// in a specified project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateSourceRepositoryBranch</a>, which creates a branch in a specified repository
+    /// where you can work on code.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteSourceRepository</a>, which deletes a source repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetSourceRepository</a>, which returns information about a source repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetSourceRepositoryCloneUrls</a>, which returns information about the URLs that
+    /// can be used with a Git client to clone a source repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -118,9 +128,31 @@ namespace Amazon.CodeCatalyst
     ///  <a>ListSourceRepositoryBranches</a>, which retrieves a list of branches in a source
     /// repository.
     /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Dev Environments and the Amazon Web Services Toolkits, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDevEnvironment</a>, which creates a Dev Environment, where you can quickly
+    /// work on the code stored in the source repositories of your project.
+    /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListSpaces</a>, which retrieves a list of spaces.
+    ///  <a>DeleteDevEnvironment</a>, which deletes a Dev Environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetDevEnvironment</a>, which returns information about a Dev Environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListDevEnvironments</a>, which retrieves a list of Dev Environments in a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListDevEnvironmentSessions</a>, which retrieves a list of active Dev Environment
+    /// sessions in a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -144,17 +176,17 @@ namespace Amazon.CodeCatalyst
     /// <para>
     ///  <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev Environment.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>VerifySession</a>, which verifies whether the calling user has a valid Amazon
-    /// CodeCatalyst login and session.
-    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Security, activity, and resource management in Amazon CodeCatalyst, by calling the
     /// following:
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateAccessToken</a>, which creates a personal access token (PAT) for the current
+    /// user.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <a>DeleteAccessToken</a>, which deletes a specified personal access token (PAT).
     /// </para>
@@ -167,6 +199,11 @@ namespace Amazon.CodeCatalyst
     /// <para>
     ///  <a>ListEventLogs</a>, which retrieves a list of events that occurred during a specified
     /// time period in a space.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>VerifySession</a>, which verifies whether the calling user has a valid Amazon
+    /// CodeCatalyst login and session.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -601,6 +638,67 @@ namespace Amazon.CodeCatalyst
 
         #endregion
         
+        #region  CreateSourceRepository
+
+        internal virtual CreateSourceRepositoryResponse CreateSourceRepository(CreateSourceRepositoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSourceRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSourceRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSourceRepositoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an empty Git-based source repository in a specified project. The repository
+        /// is created with an initial empty commit with a default branch named <code>main</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSourceRepository service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSourceRepository service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateSourceRepository">REST API Reference for CreateSourceRepository Operation</seealso>
+        public virtual Task<CreateSourceRepositoryResponse> CreateSourceRepositoryAsync(CreateSourceRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSourceRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSourceRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSourceRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSourceRepositoryBranch
 
         internal virtual CreateSourceRepositoryBranchResponse CreateSourceRepositoryBranch(CreateSourceRepositoryBranchRequest request)
@@ -789,6 +887,194 @@ namespace Amazon.CodeCatalyst
 
         #endregion
         
+        #region  DeleteProject
+
+        internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a project in a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSourceRepository
+
+        internal virtual DeleteSourceRepositoryResponse DeleteSourceRepository(DeleteSourceRepositoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSourceRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSourceRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSourceRepositoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a source repository in Amazon CodeCatalyst. You cannot use this API to delete
+        /// a linked repository. It can only be used to delete a Amazon CodeCatalyst source repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceRepository service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSourceRepository service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteSourceRepository">REST API Reference for DeleteSourceRepository Operation</seealso>
+        public virtual Task<DeleteSourceRepositoryResponse> DeleteSourceRepositoryAsync(DeleteSourceRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSourceRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSourceRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSourceRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSpace
+
+        internal virtual DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSpaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a space.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a space cannot be undone. Additionally, since space names must be unique
+        /// across Amazon CodeCatalyst, you cannot reuse names of deleted spaces.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSpace service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
+        public virtual Task<DeleteSpaceResponse> DeleteSpaceAsync(DeleteSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSpaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDevEnvironment
 
         internal virtual GetDevEnvironmentResponse GetDevEnvironment(GetDevEnvironmentRequest request)
@@ -906,6 +1192,66 @@ namespace Amazon.CodeCatalyst
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSourceRepository
+
+        internal virtual GetSourceRepositoryResponse GetSourceRepository(GetSourceRepositoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSourceRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSourceRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetSourceRepositoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a source repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceRepository service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSourceRepository service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetSourceRepository">REST API Reference for GetSourceRepository Operation</seealso>
+        public virtual Task<GetSourceRepositoryResponse> GetSourceRepositoryAsync(GetSourceRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSourceRepositoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSourceRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSourceRepositoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1932,6 +2278,126 @@ namespace Amazon.CodeCatalyst
             options.ResponseUnmarshaller = UpdateDevEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDevEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProject
+
+        internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Changes one or more values for a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSpace
+
+        internal virtual UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSpaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Changes one or more values for a space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSpace service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
+        public virtual Task<UpdateSpaceResponse> UpdateSpaceAsync(UpdateSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSpaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

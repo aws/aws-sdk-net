@@ -292,7 +292,10 @@ namespace Amazon.CodeCatalyst.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserAgent.
+        /// Gets and sets the property UserAgent. 
+        /// <para>
+        /// The user agent whose actions are recorded in the event.
+        /// </para>
         /// </summary>
         public string UserAgent
         {
