@@ -45,6 +45,7 @@ namespace Amazon.TranscribeService.Model
         private ModelSettings _modelSettings;
         private OutputLocationType _outputLocationType;
         private DateTime? _startTime;
+        private List<ToxicityDetectionSettings> _toxicityDetection = new List<ToxicityDetectionSettings>();
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
 
@@ -302,6 +303,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToxicityDetection. 
+        /// <para>
+        /// Indicates whether toxicity detection was enabled for the specified transcription job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<ToxicityDetectionSettings> ToxicityDetection
+        {
+            get { return this._toxicityDetection; }
+            set { this._toxicityDetection = value; }
+        }
+
+        // Check to see if ToxicityDetection property is set
+        internal bool IsSetToxicityDetection()
+        {
+            return this._toxicityDetection != null && this._toxicityDetection.Count > 0; 
         }
 
         /// <summary>

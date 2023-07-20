@@ -241,6 +241,22 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetToxicityDetection())
+                {
+                    context.Writer.WritePropertyName("ToxicityDetection");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestToxicityDetectionListValue in publicRequest.ToxicityDetection)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ToxicityDetectionSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestToxicityDetectionListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTranscriptionJobName())
                 {
                     context.Writer.WritePropertyName("TranscriptionJobName");

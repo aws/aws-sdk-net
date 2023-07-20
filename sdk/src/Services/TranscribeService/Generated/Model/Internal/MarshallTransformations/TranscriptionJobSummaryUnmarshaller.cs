@@ -136,6 +136,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ToxicityDetection", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ToxicityDetectionSettings, ToxicityDetectionSettingsUnmarshaller>(ToxicityDetectionSettingsUnmarshaller.Instance);
+                    unmarshalledObject.ToxicityDetection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TranscriptionJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
