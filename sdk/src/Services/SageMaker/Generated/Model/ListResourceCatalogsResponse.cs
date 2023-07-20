@@ -29,50 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeFeatureMetadata operation.
-    /// Shows the metadata for a feature within a feature group.
+    /// This is the response object from the ListResourceCatalogs operation.
     /// </summary>
-    public partial class DescribeFeatureMetadataRequest : AmazonSageMakerRequest
+    public partial class ListResourceCatalogsResponse : AmazonWebServiceResponse
     {
-        private string _featureGroupName;
-        private string _featureName;
+        private string _nextToken;
+        private List<ResourceCatalog> _resourceCatalogs = new List<ResourceCatalog>();
 
         /// <summary>
-        /// Gets and sets the property FeatureGroupName. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The name or Amazon Resource Name (ARN) of the feature group containing the feature.
+        ///  A token to resume pagination of <code>ListResourceCatalogs</code> results. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string FeatureGroupName
+        [AWSProperty(Max=8192)]
+        public string NextToken
         {
-            get { return this._featureGroupName; }
-            set { this._featureGroupName = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if FeatureGroupName property is set
-        internal bool IsSetFeatureGroupName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._featureGroupName != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property FeatureName. 
+        /// Gets and sets the property ResourceCatalogs. 
         /// <para>
-        /// The name of the feature.
+        ///  A list of the requested <code>ResourceCatalog</code>s. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string FeatureName
+        public List<ResourceCatalog> ResourceCatalogs
         {
-            get { return this._featureName; }
-            set { this._featureName = value; }
+            get { return this._resourceCatalogs; }
+            set { this._resourceCatalogs = value; }
         }
 
-        // Check to see if FeatureName property is set
-        internal bool IsSetFeatureName()
+        // Check to see if ResourceCatalogs property is set
+        internal bool IsSetResourceCatalogs()
         {
-            return this._featureName != null;
+            return this._resourceCatalogs != null && this._resourceCatalogs.Count > 0; 
         }
 
     }

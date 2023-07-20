@@ -30,7 +30,24 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFeatureGroup operation.
-    /// Updates the feature group.
+    /// Updates the feature group by either adding features or updating the online store configuration.
+    /// Use one of the following request parameters at a time while using the <code>UpdateFeatureGroup</code>
+    /// API.
+    /// 
+    ///  
+    /// <para>
+    /// You can add features for your feature group using the <code>FeatureAdditions</code>
+    /// request parameter. Features cannot be removed from a feature group.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can update the online store configuration by using the <code>OnlineStoreConfig</code>
+    /// request parameter. If a <code>TtlDuration</code> is specified, the default <code>TtlDuration</code>
+    /// applies for all records added to the feature group <i>after the feature group is updated</i>.
+    /// If a record level <code>TtlDuration</code> exists from using the <code>PutRecord</code>
+    /// API, the record level <code>TtlDuration</code> applies to that record instead of the
+    /// default <code>TtlDuration</code>.
+    /// </para>
     /// </summary>
     public partial class UpdateFeatureGroupRequest : AmazonSageMakerRequest
     {
@@ -62,10 +79,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the feature group that you're updating.
+        /// The name or Amazon Resource Name (ARN) of the feature group that you're updating.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FeatureGroupName
         {
             get { return this._featureGroupName; }

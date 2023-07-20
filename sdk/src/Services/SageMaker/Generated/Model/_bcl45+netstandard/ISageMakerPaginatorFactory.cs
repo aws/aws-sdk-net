@@ -301,6 +301,11 @@ namespace Amazon.SageMaker.Model
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
+        /// Paginator for ListResourceCatalogs operation
+        ///</summary>
+        IListResourceCatalogsPaginator ListResourceCatalogs(ListResourceCatalogsRequest request);
+
+        /// <summary>
         /// Paginator for ListSpaces operation
         ///</summary>
         IListSpacesPaginator ListSpaces(ListSpacesRequest request);

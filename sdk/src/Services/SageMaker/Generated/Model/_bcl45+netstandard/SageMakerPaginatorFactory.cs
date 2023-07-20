@@ -476,6 +476,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListResourceCatalogs operation
+        ///</summary>
+        public IListResourceCatalogsPaginator ListResourceCatalogs(ListResourceCatalogsRequest request) 
+        {
+            return new ListResourceCatalogsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSpaces operation
         ///</summary>
         public IListSpacesPaginator ListSpaces(ListSpacesRequest request) 

@@ -3485,6 +3485,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type CrossAccountFilterOption.
+    /// </summary>
+    public class CrossAccountFilterOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CrossAccount for CrossAccountFilterOption
+        /// </summary>
+        public static readonly CrossAccountFilterOption CrossAccount = new CrossAccountFilterOption("CrossAccount");
+        /// <summary>
+        /// Constant SameAccount for CrossAccountFilterOption
+        /// </summary>
+        public static readonly CrossAccountFilterOption SameAccount = new CrossAccountFilterOption("SameAccount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CrossAccountFilterOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CrossAccountFilterOption FindValue(string value)
+        {
+            return FindValue<CrossAccountFilterOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CrossAccountFilterOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataDistributionType.
     /// </summary>
     public class DataDistributionType : ConstantClass
@@ -11872,6 +11922,102 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RepositoryAccessMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceCatalogSortBy.
+    /// </summary>
+    public class ResourceCatalogSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for ResourceCatalogSortBy
+        /// </summary>
+        public static readonly ResourceCatalogSortBy CreationTime = new ResourceCatalogSortBy("CreationTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceCatalogSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCatalogSortBy FindValue(string value)
+        {
+            return FindValue<ResourceCatalogSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCatalogSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceCatalogSortOrder.
+    /// </summary>
+    public class ResourceCatalogSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ascending for ResourceCatalogSortOrder
+        /// </summary>
+        public static readonly ResourceCatalogSortOrder Ascending = new ResourceCatalogSortOrder("Ascending");
+        /// <summary>
+        /// Constant Descending for ResourceCatalogSortOrder
+        /// </summary>
+        public static readonly ResourceCatalogSortOrder Descending = new ResourceCatalogSortOrder("Descending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceCatalogSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCatalogSortOrder FindValue(string value)
+        {
+            return FindValue<ResourceCatalogSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCatalogSortOrder(string value)
         {
             return FindValue(value);
         }

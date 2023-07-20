@@ -48,12 +48,37 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SearchRequest : AmazonSageMakerRequest
     {
+        private CrossAccountFilterOption _crossAccountFilterOption;
         private int? _maxResults;
         private string _nextToken;
         private ResourceType _resource;
         private SearchExpression _searchExpression;
         private string _sortBy;
         private SearchSortOrder _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountFilterOption. 
+        /// <para>
+        ///  A cross account filter option. When the value is <code>"CrossAccount"</code> the
+        /// search results will only include resources made discoverable to you from other accounts.
+        /// When the value is <code>"SameAccount"</code> or <code>null</code> the search results
+        /// will only include resources from your account. Default is <code>null</code>. For more
+        /// information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+        /// Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number
+        /// of <code>ResourceCatalog</code>s viewable is 1000. 
+        /// </para>
+        /// </summary>
+        public CrossAccountFilterOption CrossAccountFilterOption
+        {
+            get { return this._crossAccountFilterOption; }
+            set { this._crossAccountFilterOption = value; }
+        }
+
+        // Check to see if CrossAccountFilterOption property is set
+        internal bool IsSetCrossAccountFilterOption()
+        {
+            return this._crossAccountFilterOption != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

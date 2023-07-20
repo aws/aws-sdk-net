@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Search Request Marshaller
+    /// ListResourceCatalogs Request Marshaller
     /// </summary>       
-    public class SearchRequestMarshaller : IMarshaller<IRequest, SearchRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListResourceCatalogsRequestMarshaller : IMarshaller<IRequest, ListResourceCatalogsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SearchRequest)input);
+            return this.Marshall((ListResourceCatalogsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SearchRequest publicRequest)
+        public IRequest Marshall(ListResourceCatalogsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.Search";
+            string target = "SageMaker.ListResourceCatalogs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -67,10 +67,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCrossAccountFilterOption())
+                if(publicRequest.IsSetCreationTimeAfter())
                 {
-                    context.Writer.WritePropertyName("CrossAccountFilterOption");
-                    context.Writer.Write(publicRequest.CrossAccountFilterOption);
+                    context.Writer.WritePropertyName("CreationTimeAfter");
+                    context.Writer.Write(publicRequest.CreationTimeAfter);
+                }
+
+                if(publicRequest.IsSetCreationTimeBefore())
+                {
+                    context.Writer.WritePropertyName("CreationTimeBefore");
+                    context.Writer.Write(publicRequest.CreationTimeBefore);
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -79,27 +85,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetNameContains())
+                {
+                    context.Writer.WritePropertyName("NameContains");
+                    context.Writer.Write(publicRequest.NameContains);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResource())
-                {
-                    context.Writer.WritePropertyName("Resource");
-                    context.Writer.Write(publicRequest.Resource);
-                }
-
-                if(publicRequest.IsSetSearchExpression())
-                {
-                    context.Writer.WritePropertyName("SearchExpression");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchExpressionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SearchExpression, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSortBy())
@@ -122,9 +117,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SearchRequestMarshaller _instance = new SearchRequestMarshaller();        
+        private static ListResourceCatalogsRequestMarshaller _instance = new ListResourceCatalogsRequestMarshaller();        
 
-        internal static SearchRequestMarshaller GetInstance()
+        internal static ListResourceCatalogsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +127,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchRequestMarshaller Instance
+        public static ListResourceCatalogsRequestMarshaller Instance
         {
             get
             {
