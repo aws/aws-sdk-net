@@ -1,3 +1,16 @@
+### 3.7.604.0 (2023-07-21 18:47 UTC)
+* Glue (3.7.201.0)
+	* This release adds support for AWS Glue Crawler with Apache Hudi Tables, allowing Crawlers to discover Hudi Tables in S3 and register them in Glue Data Catalog for query engines to query against.
+* MediaConvert (3.7.201.0)
+	* This release includes improvements to Preserve 444 handling, compatibility of HEVC sources without frame rates, and general improvements to MP4 outputs.
+* RDS (3.7.201.0)
+	* Adds support for the DBSystemID parameter of CreateDBInstance to RDS Custom for Oracle.
+* WorkSpaces (3.7.200.3)
+	* Fixed VolumeEncryptionKey descriptions
+* Core 3.7.200.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.603.0 (2023-07-20 19:07 UTC)
 * CodeCatalyst (3.7.201.0)
 	* This release adds support for updating and deleting spaces and projects in Amazon CodeCatalyst. It also adds support for creating, getting, and deleting source repositories in CodeCatalyst projects.
