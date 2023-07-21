@@ -2130,8 +2130,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeFeatureGroupRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group\/)?([a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeFeatureGroupRequest.NextToken</property>
@@ -2183,8 +2183,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeFeatureMetadataRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group\/)?([a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeFeatureMetadataRequest.FeatureName</property>
@@ -4789,6 +4789,26 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListResourceCatalogsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListResourceCatalogsRequest.NameContains</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListResourceCatalogsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListResourceCatalogsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListSpacesRequest.DomainIdEquals</property>
     <max>63</max>
   </property-value-rule>
@@ -5531,8 +5551,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateFeatureGroupRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group\/)?([a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateFeatureGroupResponse.FeatureGroupArn</property>
@@ -5548,8 +5568,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateFeatureMetadataRequest.FeatureGroupName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63}</pattern>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group\/)?([a-zA-Z0-9]([_-]*[a-zA-Z0-9]){0,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateFeatureMetadataRequest.FeatureName</property>
@@ -9715,6 +9735,20 @@
     <min>1</min>
     <max>2048</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceCatalog.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceCatalog.ResourceCatalogArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:sagemaker-catalog/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceCatalog.ResourceCatalogName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.InstanceCount</property>

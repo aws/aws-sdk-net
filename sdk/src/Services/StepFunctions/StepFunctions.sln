@@ -4,11 +4,11 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net35", "..\..\Core\AWSSDK.Core.Net35.csproj", "{1FACE5D0-97BF-4069-B4F7-0FE28BB160F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net35", "../../Core/AWSSDK.Core.Net35.csproj", "{1FACE5D0-97BF-4069-B4F7-0FE28BB160F8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net45", "..\..\Core\AWSSDK.Core.Net45.csproj", "{7DE3AFA0-1B2D-41B1-82BD-120B8B210B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net45", "../../Core/AWSSDK.Core.Net45.csproj", "{7DE3AFA0-1B2D-41B1-82BD-120B8B210B43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetStandard", "..\..\Core\AWSSDK.Core.NetStandard.csproj", "{A855B58E-ED32-40AE-AE8F-054F448B9F2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetStandard", "../../Core/AWSSDK.Core.NetStandard.csproj", "{A855B58E-ED32-40AE-AE8F-054F448B9F2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}"
 EndProject
@@ -22,43 +22,43 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StepFunctions.NetSta
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.StepFunctions.Net35", "..\..\..\test\Services\StepFunctions\UnitTests\AWSSDK.UnitTests.StepFunctions.Net35.csproj", "{23ECD403-6B66-456F-A830-74636A9D7C80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.StepFunctions.Net35", "../../../test/Services/StepFunctions/UnitTests/AWSSDK.UnitTests.StepFunctions.Net35.csproj", "{23ECD403-6B66-456F-A830-74636A9D7C80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.StepFunctions.Net45", "..\..\..\test\Services\StepFunctions\UnitTests\AWSSDK.UnitTests.StepFunctions.Net45.csproj", "{AB9C29B6-1248-4399-9A5E-C786E0CCFE27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.StepFunctions.Net45", "../../../test/Services/StepFunctions/UnitTests/AWSSDK.UnitTests.StepFunctions.Net45.csproj", "{AB9C29B6-1248-4399-9A5E-C786E0CCFE27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGeneratorLib", "..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj", "{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGeneratorLib", "../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj", "{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities.Net35", "..\..\..\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.Net35.csproj", "{A23CE153-A4A3-4D3A-A6DC-0DD1B207118E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities.Net35", "../../../test/UnitTests/Custom/AWSSDK.UnitTestUtilities.Net35.csproj", "{A23CE153-A4A3-4D3A-A6DC-0DD1B207118E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities.Net45", "..\..\..\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.Net45.csproj", "{002B183F-E568-49CD-9D06-CBCFF2C2921F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities.Net45", "../../../test/UnitTests/Custom/AWSSDK.UnitTestUtilities.Net45.csproj", "{002B183F-E568-49CD-9D06-CBCFF2C2921F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "../../../test/IntegrationTests/AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "../../../test/IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "../../../test/Common/AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CrtIntegration.Net35", "..\..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net35.csproj", "{FA6EB220-B163-4F7F-8E97-0434AF4CB852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CrtIntegration.Net35", "../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net35.csproj", "{FA6EB220-B163-4F7F-8E97-0434AF4CB852}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CrtIntegration.Net45", "..\..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj", "{6543B9BC-40AB-48E5-B8FC-A312D2361FE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CrtIntegration.Net45", "../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net45.csproj", "{6543B9BC-40AB-48E5-B8FC-A312D2361FE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.Net35", "..\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj", "{6B9AFF9E-2A65-4C83-82ED-001BEC8DEBB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.Net35", "../IdentityManagement/AWSSDK.IdentityManagement.Net35.csproj", "{6B9AFF9E-2A65-4C83-82ED-001BEC8DEBB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.Net35", "..\SecurityToken\AWSSDK.SecurityToken.Net35.csproj", "{1E679532-F50E-4B15-9A00-E7BAC09E2C28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.Net35", "../SecurityToken/AWSSDK.SecurityToken.Net35.csproj", "{1E679532-F50E-4B15-9A00-E7BAC09E2C28}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.Net35", "..\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj", "{3A0BD78F-9A75-4CD6-9148-059830849757}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.Net35", "../SimpleNotificationService/AWSSDK.SimpleNotificationService.Net35.csproj", "{3A0BD78F-9A75-4CD6-9148-059830849757}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Net35", "..\S3\AWSSDK.S3.Net35.csproj", "{4333330F-0713-4744-92F3-ECF596C02416}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Net35", "../S3/AWSSDK.S3.Net35.csproj", "{4333330F-0713-4744-92F3-ECF596C02416}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.Net45", "..\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj", "{4FB44A71-1556-4BEC-917B-BDAD67D8C610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.Net45", "../IdentityManagement/AWSSDK.IdentityManagement.Net45.csproj", "{4FB44A71-1556-4BEC-917B-BDAD67D8C610}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Net45", "..\S3\AWSSDK.S3.Net45.csproj", "{6A97161C-1D24-46EF-B443-98D59F59F8D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Net45", "../S3/AWSSDK.S3.Net45.csproj", "{6A97161C-1D24-46EF-B443-98D59F59F8D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.Net45", "..\SecurityToken\AWSSDK.SecurityToken.Net45.csproj", "{CA26F079-AED7-4DCB-977F-B3CEEB59492B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.Net45", "../SecurityToken/AWSSDK.SecurityToken.Net45.csproj", "{CA26F079-AED7-4DCB-977F-B3CEEB59492B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.Net45", "..\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj", "{FD7D4C8E-3962-414C-8655-E4CC2B3988D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.Net45", "../SimpleNotificationService/AWSSDK.SimpleNotificationService.Net45.csproj", "{FD7D4C8E-3962-414C-8655-E4CC2B3988D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

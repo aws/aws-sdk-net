@@ -38,11 +38,17 @@ namespace Amazon.CodeGuruSecurity
     /// <summary>
     /// Implementation for accessing CodeGuruSecurity
     ///
-    /// This section provides documentation for the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html">Amazon
-    /// CodeGuru Security</a> API operations. CodeGuru Security is a service that uses program
-    /// analysis and machine learning to detect security policy violations and vulnerabilities,
-    /// and recommends ways to address these security risks.
-    /// 
+    /// <note> 
+    /// <para>
+    /// Amazon CodeGuru Security is in preview release and is subject to change.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// This section provides documentation for the Amazon CodeGuru Security API operations.
+    /// CodeGuru Security is a service that uses program analysis and machine learning to
+    /// detect security policy violations and vulnerabilities, and recommends ways to address
+    /// these security risks.
+    /// </para>
     ///  
     /// <para>
     /// By proactively detecting and providing recommendations for addressing security risks,
@@ -682,7 +688,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Returns a list of all the scans in an account.
+        /// Returns a list of all the standard scans in an account. Does not return express scans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScans service method.</param>
         /// <param name="cancellationToken">

@@ -41,7 +41,7 @@ namespace Amazon.SavingsPlans.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.
+        /// are no more results to return. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

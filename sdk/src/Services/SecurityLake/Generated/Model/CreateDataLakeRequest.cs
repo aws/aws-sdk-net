@@ -32,13 +32,12 @@ namespace Amazon.SecurityLake.Model
     /// Container for the parameters to the CreateDataLake operation.
     /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
     /// You can enable Security Lake in Amazon Web Services Regions with customized settings
-    /// before enabling log collection in Regions. By default, the <code>CreateDataLake</code>
-    /// Security Lake in all Regions. To specify particular Regions, configure these Regions
-    /// using the <code>configurations</code> parameter. If you have already enabled Security
-    /// Lake in a Region when you call this command, the command will update the Region if
-    /// you provide new configuration parameters. If you have not already enabled Security
-    /// Lake in the Region when you call this API, it will set up the data lake in the Region
-    /// with the specified configurations.
+    /// before enabling log collection in Regions. To specify particular Regions, configure
+    /// these Regions using the <code>configurations</code> parameter. If you have already
+    /// enabled Security Lake in a Region when you call this command, the command will update
+    /// the Region if you provide new configuration parameters. If you have not already enabled
+    /// Security Lake in the Region when you call this API, it will set up the data lake in
+    /// the Region with the specified configurations.
     /// 
     ///  
     /// <para>
@@ -55,6 +54,7 @@ namespace Amazon.SecurityLake.Model
     {
         private List<DataLakeConfiguration> _configurations = new List<DataLakeConfiguration>();
         private string _metaStoreManagerRoleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Configurations. 
@@ -94,6 +94,27 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetMetaStoreManagerRoleArn()
         {
             return this._metaStoreManagerRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of objects, one for each tag to associate with the data lake configuration.
+        /// For each tag, you must specify both a tag key and a tag value. A tag value cannot
+        /// be null, but it can be an empty string.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

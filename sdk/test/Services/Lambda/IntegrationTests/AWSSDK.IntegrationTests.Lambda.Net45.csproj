@@ -37,9 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\Lambda\AWSSDK.Lambda.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/Lambda/AWSSDK.Lambda.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>

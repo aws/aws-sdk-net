@@ -23,9 +23,11 @@
         <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
 
         <CodeSigning Condition="'$(CodeSigning)'==''">false</CodeSigning>
+        <SignedArtifactsPath Condition="'$(SignedArtifactsPath)'==''">../Deployment/</SignedArtifactsPath>
     </PropertyGroup>
     <PropertyGroup>
-        <SignSdkArtifacts-DependsOnTargets>build-tools;build-buildtools;build-extensions</SignSdkArtifacts-DependsOnTargets>
+        <SignSdkArtifacts-DependsOnTargets Condition="'$(SignSdkArtifacts-DependsOnTargets)'==''">build-tools;build-buildtools;build-extensions</SignSdkArtifacts-DependsOnTargets>
+        <VerifySignedSdkArtifacts-DependsOnTargets Condition="'$(VerifySignedSdkArtifacts-DependsOnTargets)'==''">sign-sdk-artifacts</VerifySignedSdkArtifacts-DependsOnTargets>
     </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -135,14 +137,13 @@
     </Target>
 
     <Target Name="run-generator">
-        <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+        <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)/references.targets')" />
 
         <Message Text="Build and run code generator"/>
-        <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
-        <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
-        <Exec Command="ServiceClientGenerator.exe $(GeneratorPartialBuildArgument)"
-            WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+        <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="../generator" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="../generator"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild) AWSSDKGenerator.sln" WorkingDirectory="../generator"/>
+        <Exec Command="dotnet run -c $(Configuration) --project ../../ServiceClientGenerator.csproj -- $(GeneratorPartialBuildArgument)" WorkingDirectory="../generator/ServiceClientGenerator/bin/$(Configuration)"/>
     </Target>
     <Target Name="build-custom-roslyn-analyzer" Condition="$(RunAnalyzersDuringBuild)">
         <Message Text="Build Custom Roslyn Analyzer"/>
@@ -186,11 +187,9 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental %(ServiceName.FileName).sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
     </Target>
 
-
     <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator;build-custom-roslyn-analyzer;override-endpoints-file">
-        <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.CodeAnalysis.sln" WorkingDirectory="..\sdk"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.CodeAnalysis.sln /p:AWSKeyFile=$(CustomSnkFileLocation)" WorkingDirectory="..\sdk"/>
     </Target>
 
     <Target Name="build-sdk-netstandard" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file">
@@ -204,13 +203,13 @@
 
     <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;run-integ-tests-service;test-backward-compatibility" />
 
-    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="sign-sdk-artifacts">
+    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="$(VerifySignedSdkArtifacts-DependsOnTargets)">
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\sdk\code-analysis\NuGetInstallScripts\ -pattern *.ps1"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/code-analysis/NuGetInstallScripts/ -pattern *.ps1"/>
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\sdk\nuget-content\ -pattern *.ps1"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/nuget-content/ -pattern *.ps1"/>
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\Deployment\ -pattern AWSSDK*.dll"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder $(SignedArtifactsPath) -pattern AWSSDK*.dll"/>
     </Target>
 
     <Target Name="sign-sdk-artifacts" Condition="Exists('$(InternalBuildTools)\references.targets') And $(CodeSigning)" DependsOnTargets="$(SignSdkArtifacts-DependsOnTargets)">
@@ -660,5 +659,11 @@
             Categories="$(IncludeTestCategories)"
             CategoriesToIgnore="$(ExcludeTestCategories)"
             KeepTestResults="true" />
+    </Target>
+
+    <Target Name="build-code-analysis-solution">
+        <Exec Command="dotnet restore -f AWSSDK.CodeAnalysis.sln" WorkingDirectory="../sdk" />
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.CodeAnalysis.sln" WorkingDirectory="../sdk"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.CodeAnalysis.sln /p:AWSKeyFile=$(CustomSnkFileLocation)" WorkingDirectory="../sdk"/>
     </Target>
 </Project>

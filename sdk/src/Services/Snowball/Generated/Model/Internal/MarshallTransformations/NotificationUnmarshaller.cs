@@ -64,6 +64,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DevicePickupSnsTopicARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DevicePickupSnsTopicARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobStatesToNotify", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

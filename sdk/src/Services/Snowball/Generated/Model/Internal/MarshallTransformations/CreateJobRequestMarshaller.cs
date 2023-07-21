@@ -102,6 +102,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ForwardingAddressId);
                 }
 
+                if(publicRequest.IsSetImpactLevel())
+                {
+                    context.Writer.WritePropertyName("ImpactLevel");
+                    context.Writer.Write(publicRequest.ImpactLevel);
+                }
+
                 if(publicRequest.IsSetJobType())
                 {
                     context.Writer.WritePropertyName("JobType");
@@ -138,6 +144,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
                     var marshaller = OnDeviceServiceConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.OnDeviceServiceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPickupDetails())
+                {
+                    context.Writer.WritePropertyName("PickupDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PickupDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PickupDetails, context);
 
                     context.Writer.WriteObjectEnd();
                 }

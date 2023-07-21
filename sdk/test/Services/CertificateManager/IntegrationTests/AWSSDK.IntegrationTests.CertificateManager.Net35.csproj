@@ -18,7 +18,7 @@
 
     <NoWarn>CS1591</NoWarn>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>bin\$(Configuration)\net35</OutputPath>
+    <OutputPath>bin/$(Configuration)/net35</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,9 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/CertificateManager/AWSSDK.CertificateManager.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>

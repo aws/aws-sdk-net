@@ -34,6 +34,7 @@ namespace Amazon.ManagedGrafana.Model
     public partial class DescribeWorkspaceConfigurationResponse : AmazonWebServiceResponse
     {
         private string _configuration;
+        private string _grafanaVersion;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -54,6 +55,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrafanaVersion. 
+        /// <para>
+        /// The supported Grafana version for the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GrafanaVersion
+        {
+            get { return this._grafanaVersion; }
+            set { this._grafanaVersion = value; }
+        }
+
+        // Check to see if GrafanaVersion property is set
+        internal bool IsSetGrafanaVersion()
+        {
+            return this._grafanaVersion != null;
         }
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
-    /// 
+    /// Information about a filter used to limit results of a query.
     /// </summary>
     public partial class Filter
     {
@@ -38,7 +38,10 @@ namespace Amazon.CodeCatalyst.Model
         private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ComparisonOperator.
+        /// Gets and sets the property ComparisonOperator. 
+        /// <para>
+        /// The operator used to compare the fields.
+        /// </para>
         /// </summary>
         public string ComparisonOperator
         {
@@ -53,7 +56,10 @@ namespace Amazon.CodeCatalyst.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// A key that can be used to sort results.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Key
@@ -69,7 +75,10 @@ namespace Amazon.CodeCatalyst.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The values of the key.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Values

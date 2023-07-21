@@ -74,6 +74,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
                 }
+                if(publicRequest.IsSetTemplateSummaryConfig())
+                {
+                    if(publicRequest.TemplateSummaryConfig.IsSetTreatUnrecognizedResourceTypesAsWarnings())
+                    {
+                        request.Parameters.Add("TemplateSummaryConfig" + "." + "TreatUnrecognizedResourceTypesAsWarnings", StringUtils.FromBool(publicRequest.TemplateSummaryConfig.TreatUnrecognizedResourceTypesAsWarnings));
+                    }
+                }
                 if(publicRequest.IsSetTemplateURL())
                 {
                     request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));

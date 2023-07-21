@@ -77,7 +77,7 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value of the key.
+        /// The values of the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

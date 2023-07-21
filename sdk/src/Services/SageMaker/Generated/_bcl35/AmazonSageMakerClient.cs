@@ -14549,6 +14549,61 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListResourceCatalogs
+
+        /// <summary>
+        /// Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number
+        /// of <code>ResourceCatalog</code>s viewable is 1000.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceCatalogs service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceCatalogs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">REST API Reference for ListResourceCatalogs Operation</seealso>
+        public virtual ListResourceCatalogsResponse ListResourceCatalogs(ListResourceCatalogsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceCatalogsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceCatalogsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceCatalogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceCatalogs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceCatalogs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">REST API Reference for ListResourceCatalogs Operation</seealso>
+        public virtual IAsyncResult BeginListResourceCatalogs(ListResourceCatalogsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceCatalogsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceCatalogs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceCatalogs.</param>
+        /// 
+        /// <returns>Returns a  ListResourceCatalogsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">REST API Reference for ListResourceCatalogs Operation</seealso>
+        public virtual ListResourceCatalogsResponse EndListResourceCatalogs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceCatalogsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSpaces
 
         /// <summary>
@@ -17673,7 +17728,24 @@ namespace Amazon.SageMaker
         #region  UpdateFeatureGroup
 
         /// <summary>
-        /// Updates the feature group.
+        /// Updates the feature group by either adding features or updating the online store configuration.
+        /// Use one of the following request parameters at a time while using the <code>UpdateFeatureGroup</code>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// You can add features for your feature group using the <code>FeatureAdditions</code>
+        /// request parameter. Features cannot be removed from a feature group.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the online store configuration by using the <code>OnlineStoreConfig</code>
+        /// request parameter. If a <code>TtlDuration</code> is specified, the default <code>TtlDuration</code>
+        /// applies for all records added to the feature group <i>after the feature group is updated</i>.
+        /// If a record level <code>TtlDuration</code> exists from using the <code>PutRecord</code>
+        /// API, the record level <code>TtlDuration</code> applies to that record instead of the
+        /// default <code>TtlDuration</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
         /// 

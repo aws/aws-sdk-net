@@ -52,6 +52,7 @@ namespace Amazon.CloudFormation.Model
         private string _stackName;
         private string _stackSetName;
         private string _templateBody;
+        private TemplateSummaryConfig _templateSummaryConfig;
         private string _templateURL;
 
         /// <summary>
@@ -167,6 +168,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetTemplateBody()
         {
             return this._templateBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateSummaryConfig. 
+        /// <para>
+        /// Specifies options for the <code>GetTemplateSummary</code> API action.
+        /// </para>
+        /// </summary>
+        public TemplateSummaryConfig TemplateSummaryConfig
+        {
+            get { return this._templateSummaryConfig; }
+            set { this._templateSummaryConfig = value; }
+        }
+
+        // Check to see if TemplateSummaryConfig property is set
+        internal bool IsSetTemplateSummaryConfig()
+        {
+            return this._templateSummaryConfig != null;
         }
 
         /// <summary>

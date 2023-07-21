@@ -37,11 +37,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/Kinesis/AWSSDK.Kinesis.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/KinesisFirehose/AWSSDK.KinesisFirehose.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>

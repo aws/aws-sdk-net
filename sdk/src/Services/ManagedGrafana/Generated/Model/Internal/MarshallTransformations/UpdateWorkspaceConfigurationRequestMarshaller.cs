@@ -74,6 +74,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Configuration);
                 }
 
+                if(publicRequest.IsSetGrafanaVersion())
+                {
+                    context.Writer.WritePropertyName("grafanaVersion");
+                    context.Writer.Write(publicRequest.GrafanaVersion);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

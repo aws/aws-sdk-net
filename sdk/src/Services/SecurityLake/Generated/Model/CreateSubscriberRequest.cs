@@ -41,6 +41,7 @@ namespace Amazon.SecurityLake.Model
         private string _subscriberDescription;
         private AwsIdentity _subscriberIdentity;
         private string _subscriberName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AccessTypes. 
@@ -134,6 +135,27 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetSubscriberName()
         {
             return this._subscriberName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of objects, one for each tag to associate with the subscriber. For each tag,
+        /// you must specify both a tag key and a tag value. A tag value cannot be null, but it
+        /// can be an empty string.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

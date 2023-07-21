@@ -1,8 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using TestHelper;
 
 using MockAnalyzer;
@@ -12,7 +10,6 @@ namespace Analyzer1.Test
     [TestClass]
     public class PropertyValueTests : DiagnosticVerifier
     {
-
         //Diagnostic and CodeFix both triggered and checked for
         [TestMethod]
         public void TestStringRules()
@@ -46,14 +43,13 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1000",
                 Message = "Value \"aa\" is too short for Name, it must be at least 3 characters",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
+                Locations = new[] 
+                {
+                    new DiagnosticResultLocation("Test0.cs", 16, 29)
+                }
             };
 
             VerifyCSharpDiagnostic(test, expected);
-
 
             test = test.Replace("\"aa\"", "\"aaa\"");
             VerifyCSharpDiagnostic(test);
@@ -68,14 +64,13 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1001",
                 Message = "Value \"aaaaaa\" is too long for Name, it must be at most 5 characters",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
+                Locations = new[] 
+                {
+                    new DiagnosticResultLocation("Test0.cs", 16, 29)
+                }
             };
 
             VerifyCSharpDiagnostic(test, expected);
-
 
             test = test.Replace("\"aaaaaa\"", "\"#aaa\"");
 
@@ -84,10 +79,10 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1002",
                 Message = "Value \"#aaa\" does not match required pattern \"[0-9a-z\\-_]+\" for property Name",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
+                Locations = new[]
+                {
+                    new DiagnosticResultLocation("Test0.cs", 16, 29)
+                }
             };
 
             VerifyCSharpDiagnostic(test, expected);
@@ -125,10 +120,10 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1003",
                 Message = "Value \"9\" is less than minimum of 10 for property Size",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
+                Locations = new[] 
+                {
+                    new DiagnosticResultLocation("Test0.cs", 16, 29)
+                }
             };
 
             VerifyCSharpDiagnostic(test, expected);
@@ -147,10 +142,10 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1004",
                 Message = "Value \"21\" is greater than maximum of 20 for property Size",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
+                Locations = new[] 
+                {
+                    new DiagnosticResultLocation("Test0.cs", 16, 29)
+                }
             };
 
             VerifyCSharpDiagnostic(test, expected);
@@ -188,10 +183,10 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1003",
                 Message = "Value \"-1\" is less than minimum of 10 for property Size",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
+                Locations = new[] 
+                {
+                    new DiagnosticResultLocation("Test0.cs", 16, 29)
+                }
             };
 
             string testCode = test.Replace("expression", "(-1)");
@@ -236,10 +231,10 @@ namespace Analyzer1.Test
                 Id = "MockAnalyzer1000",
                 Message = "Value \"aa\" is too short for Name, it must be at least 3 characters",
                 Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 30)
-                        }
+                Locations = new[] 
+                {
+                   new DiagnosticResultLocation("Test0.cs", 16, 30)
+                }
             };
 
             testCode = test.Replace("expression", @" ""a"" + ""a"" ");

@@ -171,6 +171,1352 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type AnalyticsBinByName.
+    /// </summary>
+    public class AnalyticsBinByName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConversationStartTime for AnalyticsBinByName
+        /// </summary>
+        public static readonly AnalyticsBinByName ConversationStartTime = new AnalyticsBinByName("ConversationStartTime");
+        /// <summary>
+        /// Constant UtteranceTimestamp for AnalyticsBinByName
+        /// </summary>
+        public static readonly AnalyticsBinByName UtteranceTimestamp = new AnalyticsBinByName("UtteranceTimestamp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsBinByName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsBinByName FindValue(string value)
+        {
+            return FindValue<AnalyticsBinByName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsBinByName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsCommonFilterName.
+    /// </summary>
+    public class AnalyticsCommonFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotAliasId for AnalyticsCommonFilterName
+        /// </summary>
+        public static readonly AnalyticsCommonFilterName BotAliasId = new AnalyticsCommonFilterName("BotAliasId");
+        /// <summary>
+        /// Constant BotVersion for AnalyticsCommonFilterName
+        /// </summary>
+        public static readonly AnalyticsCommonFilterName BotVersion = new AnalyticsCommonFilterName("BotVersion");
+        /// <summary>
+        /// Constant Channel for AnalyticsCommonFilterName
+        /// </summary>
+        public static readonly AnalyticsCommonFilterName Channel = new AnalyticsCommonFilterName("Channel");
+        /// <summary>
+        /// Constant LocaleId for AnalyticsCommonFilterName
+        /// </summary>
+        public static readonly AnalyticsCommonFilterName LocaleId = new AnalyticsCommonFilterName("LocaleId");
+        /// <summary>
+        /// Constant Modality for AnalyticsCommonFilterName
+        /// </summary>
+        public static readonly AnalyticsCommonFilterName Modality = new AnalyticsCommonFilterName("Modality");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsCommonFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsCommonFilterName FindValue(string value)
+        {
+            return FindValue<AnalyticsCommonFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsCommonFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsFilterOperator.
+    /// </summary>
+    public class AnalyticsFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQ for AnalyticsFilterOperator
+        /// </summary>
+        public static readonly AnalyticsFilterOperator EQ = new AnalyticsFilterOperator("EQ");
+        /// <summary>
+        /// Constant GT for AnalyticsFilterOperator
+        /// </summary>
+        public static readonly AnalyticsFilterOperator GT = new AnalyticsFilterOperator("GT");
+        /// <summary>
+        /// Constant LT for AnalyticsFilterOperator
+        /// </summary>
+        public static readonly AnalyticsFilterOperator LT = new AnalyticsFilterOperator("LT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsFilterOperator FindValue(string value)
+        {
+            return FindValue<AnalyticsFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsIntentField.
+    /// </summary>
+    public class AnalyticsIntentField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IntentEndState for AnalyticsIntentField
+        /// </summary>
+        public static readonly AnalyticsIntentField IntentEndState = new AnalyticsIntentField("IntentEndState");
+        /// <summary>
+        /// Constant IntentLevel for AnalyticsIntentField
+        /// </summary>
+        public static readonly AnalyticsIntentField IntentLevel = new AnalyticsIntentField("IntentLevel");
+        /// <summary>
+        /// Constant IntentName for AnalyticsIntentField
+        /// </summary>
+        public static readonly AnalyticsIntentField IntentName = new AnalyticsIntentField("IntentName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsIntentField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsIntentField FindValue(string value)
+        {
+            return FindValue<AnalyticsIntentField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsIntentField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsIntentFilterName.
+    /// </summary>
+    public class AnalyticsIntentFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotAliasId for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName BotAliasId = new AnalyticsIntentFilterName("BotAliasId");
+        /// <summary>
+        /// Constant BotVersion for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName BotVersion = new AnalyticsIntentFilterName("BotVersion");
+        /// <summary>
+        /// Constant Channel for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName Channel = new AnalyticsIntentFilterName("Channel");
+        /// <summary>
+        /// Constant IntentEndState for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName IntentEndState = new AnalyticsIntentFilterName("IntentEndState");
+        /// <summary>
+        /// Constant IntentName for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName IntentName = new AnalyticsIntentFilterName("IntentName");
+        /// <summary>
+        /// Constant LocaleId for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName LocaleId = new AnalyticsIntentFilterName("LocaleId");
+        /// <summary>
+        /// Constant Modality for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName Modality = new AnalyticsIntentFilterName("Modality");
+        /// <summary>
+        /// Constant OriginatingRequestId for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName OriginatingRequestId = new AnalyticsIntentFilterName("OriginatingRequestId");
+        /// <summary>
+        /// Constant SessionId for AnalyticsIntentFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentFilterName SessionId = new AnalyticsIntentFilterName("SessionId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsIntentFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsIntentFilterName FindValue(string value)
+        {
+            return FindValue<AnalyticsIntentFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsIntentFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsIntentMetricName.
+    /// </summary>
+    public class AnalyticsIntentMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Count for AnalyticsIntentMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentMetricName Count = new AnalyticsIntentMetricName("Count");
+        /// <summary>
+        /// Constant Dropped for AnalyticsIntentMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentMetricName Dropped = new AnalyticsIntentMetricName("Dropped");
+        /// <summary>
+        /// Constant Failure for AnalyticsIntentMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentMetricName Failure = new AnalyticsIntentMetricName("Failure");
+        /// <summary>
+        /// Constant Success for AnalyticsIntentMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentMetricName Success = new AnalyticsIntentMetricName("Success");
+        /// <summary>
+        /// Constant Switched for AnalyticsIntentMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentMetricName Switched = new AnalyticsIntentMetricName("Switched");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsIntentMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsIntentMetricName FindValue(string value)
+        {
+            return FindValue<AnalyticsIntentMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsIntentMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsIntentStageField.
+    /// </summary>
+    public class AnalyticsIntentStageField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IntentStageName for AnalyticsIntentStageField
+        /// </summary>
+        public static readonly AnalyticsIntentStageField IntentStageName = new AnalyticsIntentStageField("IntentStageName");
+        /// <summary>
+        /// Constant SwitchedToIntent for AnalyticsIntentStageField
+        /// </summary>
+        public static readonly AnalyticsIntentStageField SwitchedToIntent = new AnalyticsIntentStageField("SwitchedToIntent");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsIntentStageField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsIntentStageField FindValue(string value)
+        {
+            return FindValue<AnalyticsIntentStageField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsIntentStageField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsIntentStageFilterName.
+    /// </summary>
+    public class AnalyticsIntentStageFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotAliasId for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName BotAliasId = new AnalyticsIntentStageFilterName("BotAliasId");
+        /// <summary>
+        /// Constant BotVersion for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName BotVersion = new AnalyticsIntentStageFilterName("BotVersion");
+        /// <summary>
+        /// Constant Channel for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName Channel = new AnalyticsIntentStageFilterName("Channel");
+        /// <summary>
+        /// Constant IntentName for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName IntentName = new AnalyticsIntentStageFilterName("IntentName");
+        /// <summary>
+        /// Constant IntentStageName for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName IntentStageName = new AnalyticsIntentStageFilterName("IntentStageName");
+        /// <summary>
+        /// Constant LocaleId for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName LocaleId = new AnalyticsIntentStageFilterName("LocaleId");
+        /// <summary>
+        /// Constant Modality for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName Modality = new AnalyticsIntentStageFilterName("Modality");
+        /// <summary>
+        /// Constant OriginatingRequestId for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName OriginatingRequestId = new AnalyticsIntentStageFilterName("OriginatingRequestId");
+        /// <summary>
+        /// Constant SessionId for AnalyticsIntentStageFilterName
+        /// </summary>
+        public static readonly AnalyticsIntentStageFilterName SessionId = new AnalyticsIntentStageFilterName("SessionId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsIntentStageFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsIntentStageFilterName FindValue(string value)
+        {
+            return FindValue<AnalyticsIntentStageFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsIntentStageFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsIntentStageMetricName.
+    /// </summary>
+    public class AnalyticsIntentStageMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Count for AnalyticsIntentStageMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentStageMetricName Count = new AnalyticsIntentStageMetricName("Count");
+        /// <summary>
+        /// Constant Dropped for AnalyticsIntentStageMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentStageMetricName Dropped = new AnalyticsIntentStageMetricName("Dropped");
+        /// <summary>
+        /// Constant Failed for AnalyticsIntentStageMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentStageMetricName Failed = new AnalyticsIntentStageMetricName("Failed");
+        /// <summary>
+        /// Constant Retry for AnalyticsIntentStageMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentStageMetricName Retry = new AnalyticsIntentStageMetricName("Retry");
+        /// <summary>
+        /// Constant Success for AnalyticsIntentStageMetricName
+        /// </summary>
+        public static readonly AnalyticsIntentStageMetricName Success = new AnalyticsIntentStageMetricName("Success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsIntentStageMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsIntentStageMetricName FindValue(string value)
+        {
+            return FindValue<AnalyticsIntentStageMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsIntentStageMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsInterval.
+    /// </summary>
+    public class AnalyticsInterval : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OneDay for AnalyticsInterval
+        /// </summary>
+        public static readonly AnalyticsInterval OneDay = new AnalyticsInterval("OneDay");
+        /// <summary>
+        /// Constant OneHour for AnalyticsInterval
+        /// </summary>
+        public static readonly AnalyticsInterval OneHour = new AnalyticsInterval("OneHour");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsInterval(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsInterval FindValue(string value)
+        {
+            return FindValue<AnalyticsInterval>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsInterval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsMetricStatistic.
+    /// </summary>
+    public class AnalyticsMetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Avg for AnalyticsMetricStatistic
+        /// </summary>
+        public static readonly AnalyticsMetricStatistic Avg = new AnalyticsMetricStatistic("Avg");
+        /// <summary>
+        /// Constant Max for AnalyticsMetricStatistic
+        /// </summary>
+        public static readonly AnalyticsMetricStatistic Max = new AnalyticsMetricStatistic("Max");
+        /// <summary>
+        /// Constant Sum for AnalyticsMetricStatistic
+        /// </summary>
+        public static readonly AnalyticsMetricStatistic Sum = new AnalyticsMetricStatistic("Sum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsMetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsMetricStatistic FindValue(string value)
+        {
+            return FindValue<AnalyticsMetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsMetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsModality.
+    /// </summary>
+    public class AnalyticsModality : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DTMF for AnalyticsModality
+        /// </summary>
+        public static readonly AnalyticsModality DTMF = new AnalyticsModality("DTMF");
+        /// <summary>
+        /// Constant MultiMode for AnalyticsModality
+        /// </summary>
+        public static readonly AnalyticsModality MultiMode = new AnalyticsModality("MultiMode");
+        /// <summary>
+        /// Constant Speech for AnalyticsModality
+        /// </summary>
+        public static readonly AnalyticsModality Speech = new AnalyticsModality("Speech");
+        /// <summary>
+        /// Constant Text for AnalyticsModality
+        /// </summary>
+        public static readonly AnalyticsModality Text = new AnalyticsModality("Text");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsModality(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsModality FindValue(string value)
+        {
+            return FindValue<AnalyticsModality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsModality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsNodeType.
+    /// </summary>
+    public class AnalyticsNodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Exit for AnalyticsNodeType
+        /// </summary>
+        public static readonly AnalyticsNodeType Exit = new AnalyticsNodeType("Exit");
+        /// <summary>
+        /// Constant Inner for AnalyticsNodeType
+        /// </summary>
+        public static readonly AnalyticsNodeType Inner = new AnalyticsNodeType("Inner");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsNodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsNodeType FindValue(string value)
+        {
+            return FindValue<AnalyticsNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsNodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsSessionField.
+    /// </summary>
+    public class AnalyticsSessionField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConversationEndState for AnalyticsSessionField
+        /// </summary>
+        public static readonly AnalyticsSessionField ConversationEndState = new AnalyticsSessionField("ConversationEndState");
+        /// <summary>
+        /// Constant LocaleId for AnalyticsSessionField
+        /// </summary>
+        public static readonly AnalyticsSessionField LocaleId = new AnalyticsSessionField("LocaleId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsSessionField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsSessionField FindValue(string value)
+        {
+            return FindValue<AnalyticsSessionField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsSessionField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsSessionFilterName.
+    /// </summary>
+    public class AnalyticsSessionFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotAliasId for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName BotAliasId = new AnalyticsSessionFilterName("BotAliasId");
+        /// <summary>
+        /// Constant BotVersion for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName BotVersion = new AnalyticsSessionFilterName("BotVersion");
+        /// <summary>
+        /// Constant Channel for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName Channel = new AnalyticsSessionFilterName("Channel");
+        /// <summary>
+        /// Constant ConversationEndState for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName ConversationEndState = new AnalyticsSessionFilterName("ConversationEndState");
+        /// <summary>
+        /// Constant Duration for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName Duration = new AnalyticsSessionFilterName("Duration");
+        /// <summary>
+        /// Constant IntentPath for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName IntentPath = new AnalyticsSessionFilterName("IntentPath");
+        /// <summary>
+        /// Constant LocaleId for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName LocaleId = new AnalyticsSessionFilterName("LocaleId");
+        /// <summary>
+        /// Constant Modality for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName Modality = new AnalyticsSessionFilterName("Modality");
+        /// <summary>
+        /// Constant OriginatingRequestId for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName OriginatingRequestId = new AnalyticsSessionFilterName("OriginatingRequestId");
+        /// <summary>
+        /// Constant SessionId for AnalyticsSessionFilterName
+        /// </summary>
+        public static readonly AnalyticsSessionFilterName SessionId = new AnalyticsSessionFilterName("SessionId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsSessionFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsSessionFilterName FindValue(string value)
+        {
+            return FindValue<AnalyticsSessionFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsSessionFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsSessionMetricName.
+    /// </summary>
+    public class AnalyticsSessionMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Concurrency for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName Concurrency = new AnalyticsSessionMetricName("Concurrency");
+        /// <summary>
+        /// Constant Count for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName Count = new AnalyticsSessionMetricName("Count");
+        /// <summary>
+        /// Constant Dropped for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName Dropped = new AnalyticsSessionMetricName("Dropped");
+        /// <summary>
+        /// Constant Duration for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName Duration = new AnalyticsSessionMetricName("Duration");
+        /// <summary>
+        /// Constant Failure for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName Failure = new AnalyticsSessionMetricName("Failure");
+        /// <summary>
+        /// Constant Success for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName Success = new AnalyticsSessionMetricName("Success");
+        /// <summary>
+        /// Constant TurnsPerConversation for AnalyticsSessionMetricName
+        /// </summary>
+        public static readonly AnalyticsSessionMetricName TurnsPerConversation = new AnalyticsSessionMetricName("TurnsPerConversation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsSessionMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsSessionMetricName FindValue(string value)
+        {
+            return FindValue<AnalyticsSessionMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsSessionMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsSessionSortByName.
+    /// </summary>
+    public class AnalyticsSessionSortByName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConversationStartTime for AnalyticsSessionSortByName
+        /// </summary>
+        public static readonly AnalyticsSessionSortByName ConversationStartTime = new AnalyticsSessionSortByName("ConversationStartTime");
+        /// <summary>
+        /// Constant Duration for AnalyticsSessionSortByName
+        /// </summary>
+        public static readonly AnalyticsSessionSortByName Duration = new AnalyticsSessionSortByName("Duration");
+        /// <summary>
+        /// Constant NumberOfTurns for AnalyticsSessionSortByName
+        /// </summary>
+        public static readonly AnalyticsSessionSortByName NumberOfTurns = new AnalyticsSessionSortByName("NumberOfTurns");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsSessionSortByName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsSessionSortByName FindValue(string value)
+        {
+            return FindValue<AnalyticsSessionSortByName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsSessionSortByName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsSortOrder.
+    /// </summary>
+    public class AnalyticsSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ascending for AnalyticsSortOrder
+        /// </summary>
+        public static readonly AnalyticsSortOrder Ascending = new AnalyticsSortOrder("Ascending");
+        /// <summary>
+        /// Constant Descending for AnalyticsSortOrder
+        /// </summary>
+        public static readonly AnalyticsSortOrder Descending = new AnalyticsSortOrder("Descending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsSortOrder FindValue(string value)
+        {
+            return FindValue<AnalyticsSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsUtteranceAttributeName.
+    /// </summary>
+    public class AnalyticsUtteranceAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LastUsedIntent for AnalyticsUtteranceAttributeName
+        /// </summary>
+        public static readonly AnalyticsUtteranceAttributeName LastUsedIntent = new AnalyticsUtteranceAttributeName("LastUsedIntent");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsUtteranceAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsUtteranceAttributeName FindValue(string value)
+        {
+            return FindValue<AnalyticsUtteranceAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsUtteranceAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsUtteranceField.
+    /// </summary>
+    public class AnalyticsUtteranceField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UtteranceState for AnalyticsUtteranceField
+        /// </summary>
+        public static readonly AnalyticsUtteranceField UtteranceState = new AnalyticsUtteranceField("UtteranceState");
+        /// <summary>
+        /// Constant UtteranceText for AnalyticsUtteranceField
+        /// </summary>
+        public static readonly AnalyticsUtteranceField UtteranceText = new AnalyticsUtteranceField("UtteranceText");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsUtteranceField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsUtteranceField FindValue(string value)
+        {
+            return FindValue<AnalyticsUtteranceField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsUtteranceField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsUtteranceFilterName.
+    /// </summary>
+    public class AnalyticsUtteranceFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotAliasId for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName BotAliasId = new AnalyticsUtteranceFilterName("BotAliasId");
+        /// <summary>
+        /// Constant BotVersion for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName BotVersion = new AnalyticsUtteranceFilterName("BotVersion");
+        /// <summary>
+        /// Constant Channel for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName Channel = new AnalyticsUtteranceFilterName("Channel");
+        /// <summary>
+        /// Constant LocaleId for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName LocaleId = new AnalyticsUtteranceFilterName("LocaleId");
+        /// <summary>
+        /// Constant Modality for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName Modality = new AnalyticsUtteranceFilterName("Modality");
+        /// <summary>
+        /// Constant OriginatingRequestId for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName OriginatingRequestId = new AnalyticsUtteranceFilterName("OriginatingRequestId");
+        /// <summary>
+        /// Constant SessionId for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName SessionId = new AnalyticsUtteranceFilterName("SessionId");
+        /// <summary>
+        /// Constant UtteranceState for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName UtteranceState = new AnalyticsUtteranceFilterName("UtteranceState");
+        /// <summary>
+        /// Constant UtteranceText for AnalyticsUtteranceFilterName
+        /// </summary>
+        public static readonly AnalyticsUtteranceFilterName UtteranceText = new AnalyticsUtteranceFilterName("UtteranceText");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsUtteranceFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsUtteranceFilterName FindValue(string value)
+        {
+            return FindValue<AnalyticsUtteranceFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsUtteranceFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsUtteranceMetricName.
+    /// </summary>
+    public class AnalyticsUtteranceMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Count for AnalyticsUtteranceMetricName
+        /// </summary>
+        public static readonly AnalyticsUtteranceMetricName Count = new AnalyticsUtteranceMetricName("Count");
+        /// <summary>
+        /// Constant Detected for AnalyticsUtteranceMetricName
+        /// </summary>
+        public static readonly AnalyticsUtteranceMetricName Detected = new AnalyticsUtteranceMetricName("Detected");
+        /// <summary>
+        /// Constant Missed for AnalyticsUtteranceMetricName
+        /// </summary>
+        public static readonly AnalyticsUtteranceMetricName Missed = new AnalyticsUtteranceMetricName("Missed");
+        /// <summary>
+        /// Constant UtteranceTimestamp for AnalyticsUtteranceMetricName
+        /// </summary>
+        public static readonly AnalyticsUtteranceMetricName UtteranceTimestamp = new AnalyticsUtteranceMetricName("UtteranceTimestamp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsUtteranceMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsUtteranceMetricName FindValue(string value)
+        {
+            return FindValue<AnalyticsUtteranceMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsUtteranceMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalyticsUtteranceSortByName.
+    /// </summary>
+    public class AnalyticsUtteranceSortByName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UtteranceTimestamp for AnalyticsUtteranceSortByName
+        /// </summary>
+        public static readonly AnalyticsUtteranceSortByName UtteranceTimestamp = new AnalyticsUtteranceSortByName("UtteranceTimestamp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsUtteranceSortByName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsUtteranceSortByName FindValue(string value)
+        {
+            return FindValue<AnalyticsUtteranceSortByName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsUtteranceSortByName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssociatedTranscriptFilterName.
     /// </summary>
     public class AssociatedTranscriptFilterName : ConstantClass
@@ -1028,6 +2374,60 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BuiltInSlotTypeSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConversationEndState.
+    /// </summary>
+    public class ConversationEndState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dropped for ConversationEndState
+        /// </summary>
+        public static readonly ConversationEndState Dropped = new ConversationEndState("Dropped");
+        /// <summary>
+        /// Constant Failure for ConversationEndState
+        /// </summary>
+        public static readonly ConversationEndState Failure = new ConversationEndState("Failure");
+        /// <summary>
+        /// Constant Success for ConversationEndState
+        /// </summary>
+        public static readonly ConversationEndState Success = new ConversationEndState("Success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversationEndState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversationEndState FindValue(string value)
+        {
+            return FindValue<ConversationEndState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversationEndState(string value)
         {
             return FindValue(value);
         }
@@ -1984,6 +3384,72 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IntentSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntentState.
+    /// </summary>
+    public class IntentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for IntentState
+        /// </summary>
+        public static readonly IntentState Failed = new IntentState("Failed");
+        /// <summary>
+        /// Constant Fulfilled for IntentState
+        /// </summary>
+        public static readonly IntentState Fulfilled = new IntentState("Fulfilled");
+        /// <summary>
+        /// Constant FulfillmentInProgress for IntentState
+        /// </summary>
+        public static readonly IntentState FulfillmentInProgress = new IntentState("FulfillmentInProgress");
+        /// <summary>
+        /// Constant InProgress for IntentState
+        /// </summary>
+        public static readonly IntentState InProgress = new IntentState("InProgress");
+        /// <summary>
+        /// Constant ReadyForFulfillment for IntentState
+        /// </summary>
+        public static readonly IntentState ReadyForFulfillment = new IntentState("ReadyForFulfillment");
+        /// <summary>
+        /// Constant Waiting for IntentState
+        /// </summary>
+        public static readonly IntentState Waiting = new IntentState("Waiting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntentState FindValue(string value)
+        {
+            return FindValue<IntentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntentState(string value)
         {
             return FindValue(value);
         }
@@ -3522,6 +4988,64 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TranscriptFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UtteranceContentType.
+    /// </summary>
+    public class UtteranceContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CustomPayload for UtteranceContentType
+        /// </summary>
+        public static readonly UtteranceContentType CustomPayload = new UtteranceContentType("CustomPayload");
+        /// <summary>
+        /// Constant ImageResponseCard for UtteranceContentType
+        /// </summary>
+        public static readonly UtteranceContentType ImageResponseCard = new UtteranceContentType("ImageResponseCard");
+        /// <summary>
+        /// Constant PlainText for UtteranceContentType
+        /// </summary>
+        public static readonly UtteranceContentType PlainText = new UtteranceContentType("PlainText");
+        /// <summary>
+        /// Constant SSML for UtteranceContentType
+        /// </summary>
+        public static readonly UtteranceContentType SSML = new UtteranceContentType("SSML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UtteranceContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UtteranceContentType FindValue(string value)
+        {
+            return FindValue<UtteranceContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UtteranceContentType(string value)
         {
             return FindValue(value);
         }

@@ -34,6 +34,11 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+    /// are optional. Any unspecified optional attribute is set to its default.
+    /// </para>
+    ///  
+    /// <para>
     /// When you specify multiple attributes, you get instance types that satisfy all of the
     /// specified attributes. If you specify multiple values for an attribute, you get instance
     /// types that satisfy any of the specified values.
@@ -55,8 +60,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
-    /// are optional. Any unspecified optional attribute is set to its default.
+    /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Attribute-based instance type selection is only supported when using Auto Scaling
+    /// groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch
+    /// template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+    /// instance wizard</a> or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances
+    /// API</a>, you can't specify <code>InstanceRequirements</code>.
     /// </para>
     ///  </note> 
     /// <para>

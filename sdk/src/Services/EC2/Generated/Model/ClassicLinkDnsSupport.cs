@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Deprecated.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes the ClassicLink DNS support status of a VPC.
+    /// </para>
     /// </summary>
     public partial class ClassicLinkDnsSupport
     {

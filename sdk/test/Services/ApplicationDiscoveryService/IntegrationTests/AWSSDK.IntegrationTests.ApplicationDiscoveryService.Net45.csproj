@@ -37,10 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/ApplicationDiscoveryService/AWSSDK.ApplicationDiscoveryService.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/APIGateway/AWSSDK.APIGateway.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -76,6 +76,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("emptyValue", targetDepth))
+                {
+                    var unmarshaller = EmptyFieldValueUnmarshaller.Instance;
+                    unmarshalledObject.EmptyValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stringValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

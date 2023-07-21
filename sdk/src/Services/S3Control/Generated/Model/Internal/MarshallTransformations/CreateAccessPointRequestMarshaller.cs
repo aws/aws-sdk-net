@@ -82,16 +82,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
                         xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls));                 
-    
+
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicPolicy())
                         xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy));                 
-    
+
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetIgnorePublicAcls())
                         xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls));                 
-    
+
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
                         xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
                 
@@ -100,7 +100,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("VpcConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                     if(publicRequest.VpcConfiguration.IsSetVpcId())
                         xmlWriter.WriteElementString("VpcId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.VpcConfiguration.VpcId));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
 

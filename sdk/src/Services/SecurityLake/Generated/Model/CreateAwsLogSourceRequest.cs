@@ -35,7 +35,7 @@ namespace Amazon.SecurityLake.Model
     /// the parameters you specify. You can choose any source type in any Region for either
     /// accounts that are part of a trusted organization or standalone accounts. Once you
     /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
-    /// from it, 
+    /// from it.
     /// 
     ///  
     /// <para>

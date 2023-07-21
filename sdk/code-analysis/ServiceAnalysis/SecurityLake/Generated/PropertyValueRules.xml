@@ -134,8 +134,26 @@
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityLake.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityLake.Model.RegisterDataLakeDelegatedAdministratorRequest.AccountId</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateDataLakeExceptionSubscriptionRequest.ExceptionTimeToLive</property>
@@ -321,5 +339,15 @@
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberName</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

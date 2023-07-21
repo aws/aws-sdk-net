@@ -20,9 +20,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**\_bcl\**" />
-    <Compile Remove="obj\**" />
-    <None Remove="obj\**" />
+    <Compile Remove="**/_bcl/**" />
+    <Compile Remove="obj/**" />
+    <None Remove="obj/**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,8 +34,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -164,7 +164,9 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role associated with the application.
+        /// The Amazon Resource Name (ARN) that identifies a role that the application uses to
+        /// access Amazon Web Services resources that are not part of the application or are in
+        /// a different Amazon Web Services account.
         /// </para>
         /// </summary>
         public string RoleArn

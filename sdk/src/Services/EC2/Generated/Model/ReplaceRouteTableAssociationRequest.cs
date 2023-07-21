@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// private gateway in a VPC. After the operation completes, the subnet or gateway uses
     /// the routes in the new route table. For more information about route tables, see <a
     /// href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-    /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// tables</a> in the <i>Amazon VPC User Guide</i>.
     /// 
     ///  
     /// <para>

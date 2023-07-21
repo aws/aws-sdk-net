@@ -73,8 +73,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpProtocolIpv6. 
         /// <para>
-        /// Enables or disables the IPv6 endpoint for the instance metadata service. This setting
-        /// applies only if you have enabled the HTTP metadata endpoint.
+        /// Enables or disables the IPv6 endpoint for the instance metadata service. Applies only
+        /// if you enabled the HTTP metadata endpoint.
         /// </para>
         /// </summary>
         public InstanceMetadataProtocolState HttpProtocolIpv6

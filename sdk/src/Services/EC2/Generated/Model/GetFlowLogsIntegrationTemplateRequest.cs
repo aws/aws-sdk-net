@@ -52,7 +52,12 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Create a set of named queries in Athena that you can use to get started quickly
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    ///  <code>GetFlowLogsIntegrationTemplate</code> does not support integration between
+    /// Amazon Web Services Transit Gateway Flow Logs and Amazon Athena.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetFlowLogsIntegrationTemplateRequest : AmazonEC2Request
     {

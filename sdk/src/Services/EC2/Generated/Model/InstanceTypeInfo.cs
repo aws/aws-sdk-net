@@ -51,6 +51,8 @@ namespace Amazon.EC2.Model
         private MemoryInfo _memoryInfo;
         private NetworkInfo _networkInfo;
         private NitroEnclavesSupport _nitroEnclavesSupport;
+        private NitroTpmInfo _nitroTpmInfo;
+        private NitroTpmSupport _nitroTpmSupport;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
         private List<string> _supportedBootModes = new List<string>();
@@ -98,7 +100,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BurstablePerformanceSupported. 
         /// <para>
-        /// Indicates whether the instance type is a burstable performance instance type.
+        /// Indicates whether the instance type is a burstable performance T instance type. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// performance instances</a>.
         /// </para>
         /// </summary>
         public bool BurstablePerformanceSupported
@@ -382,6 +386,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetNitroEnclavesSupport()
         {
             return this._nitroEnclavesSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NitroTpmInfo. 
+        /// <para>
+        /// Describes the supported NitroTPM versions for the instance type.
+        /// </para>
+        /// </summary>
+        public NitroTpmInfo NitroTpmInfo
+        {
+            get { return this._nitroTpmInfo; }
+            set { this._nitroTpmInfo = value; }
+        }
+
+        // Check to see if NitroTpmInfo property is set
+        internal bool IsSetNitroTpmInfo()
+        {
+            return this._nitroTpmInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NitroTpmSupport. 
+        /// <para>
+        /// Indicates whether NitroTPM is supported.
+        /// </para>
+        /// </summary>
+        public NitroTpmSupport NitroTpmSupport
+        {
+            get { return this._nitroTpmSupport; }
+            set { this._nitroTpmSupport = value; }
+        }
+
+        // Check to see if NitroTpmSupport property is set
+        internal bool IsSetNitroTpmSupport()
+        {
+            return this._nitroTpmSupport != null;
         }
 
         /// <summary>

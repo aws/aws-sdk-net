@@ -3322,6 +3322,14 @@ namespace Amazon.Glue
         /// Constant COLUMN_PERMISSION for PermissionType
         /// </summary>
         public static readonly PermissionType COLUMN_PERMISSION = new PermissionType("COLUMN_PERMISSION");
+        /// <summary>
+        /// Constant NESTED_CELL_PERMISSION for PermissionType
+        /// </summary>
+        public static readonly PermissionType NESTED_CELL_PERMISSION = new PermissionType("NESTED_CELL_PERMISSION");
+        /// <summary>
+        /// Constant NESTED_PERMISSION for PermissionType
+        /// </summary>
+        public static readonly PermissionType NESTED_PERMISSION = new PermissionType("NESTED_PERMISSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

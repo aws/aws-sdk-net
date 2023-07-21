@@ -57,6 +57,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DoubleValue);
             }
 
+            if(requestObject.IsSetEmptyValue())
+            {
+                context.Writer.WritePropertyName("emptyValue");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmptyFieldValueMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmptyValue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");

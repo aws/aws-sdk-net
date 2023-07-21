@@ -92,6 +92,7 @@ namespace Amazon.TranscribeService.Model
         private Settings _settings;
         private Subtitles _subtitles;
         private List<Tag> _tags = new List<Tag>();
+        private List<ToxicityDetectionSettings> _toxicityDetection = new List<ToxicityDetectionSettings>();
         private string _transcriptionJobName;
 
         /// <summary>
@@ -704,6 +705,32 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToxicityDetection. 
+        /// <para>
+        /// Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code>
+        /// in your request, you must also include <code>ToxicityCategories</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on the types of toxic speech Amazon Transcribe can detect, see <a
+        /// href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+        /// toxic speech</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<ToxicityDetectionSettings> ToxicityDetection
+        {
+            get { return this._toxicityDetection; }
+            set { this._toxicityDetection = value; }
+        }
+
+        // Check to see if ToxicityDetection property is set
+        internal bool IsSetToxicityDetection()
+        {
+            return this._toxicityDetection != null && this._toxicityDetection.Count > 0; 
         }
 
         /// <summary>

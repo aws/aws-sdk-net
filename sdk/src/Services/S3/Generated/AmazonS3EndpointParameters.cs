@@ -37,6 +37,7 @@ namespace Amazon.S3.Endpoints
         {
             UseFIPS = false;
             UseDualStack = false;
+            ForcePathStyle = false;
             Accelerate = false;
             UseGlobalEndpoint = false;
             DisableMultiRegionAccessPoints = false;

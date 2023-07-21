@@ -66,8 +66,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("ContinuousDeploymentPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.ContinuousDeploymentPolicyConfig.IsSetEnabled())
                         xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ContinuousDeploymentPolicyConfig.Enabled));                    
-    
-                    
+
+                
                     if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames != null) 
                     {
                         xmlWriter.WriteStartElement("StagingDistributionDnsNames", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -85,52 +85,52 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.Quantity));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
-                    
+                
                     if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig != null) 
                     {
                         xmlWriter.WriteStartElement("TrafficConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                        
+                
                         if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig != null) 
                         {
                             xmlWriter.WriteStartElement("SingleHeaderConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.IsSetHeader())
                                 xmlWriter.WriteElementString("Header", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.Header));                 
-            
+
                             if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.IsSetValue())
                                 xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.Value));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig != null) 
                         {
                             xmlWriter.WriteStartElement("SingleWeightConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                            
+                
                             if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig != null) 
                             {
                                 xmlWriter.WriteStartElement("SessionStickinessConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IsSetIdleTTL())
                                     xmlWriter.WriteElementString("IdleTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IdleTTL));                 
-                
+
                                 if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IsSetMaximumTTL())
                                     xmlWriter.WriteElementString("MaximumTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.MaximumTTL));                 
-                
+
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.IsSetWeight())
                                 xmlWriter.WriteElementString("Weight", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromFloat(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.Weight));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.IsSetType())
                             xmlWriter.WriteElementString("Type", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.Type));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

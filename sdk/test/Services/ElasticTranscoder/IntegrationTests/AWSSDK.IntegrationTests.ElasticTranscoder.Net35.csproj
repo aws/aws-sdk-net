@@ -18,7 +18,7 @@
 
     <NoWarn>CS1591</NoWarn>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>bin\$(Configuration)\net35</OutputPath>
+    <OutputPath>bin/$(Configuration)/net35</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,7 +26,7 @@
     <None Remove="**/45/**" />
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
-    <Compile Include="..\..\S3\IntegrationTests\S3TestUtils.cs" />
+    <Compile Include="../../S3/IntegrationTests/S3TestUtils.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,10 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/ElasticTranscoder/AWSSDK.ElasticTranscoder.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>

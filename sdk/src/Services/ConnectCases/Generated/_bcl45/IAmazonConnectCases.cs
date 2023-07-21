@@ -287,7 +287,7 @@ namespace Amazon.ConnectCases
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
         /// </para>
-        ///  </important>
+        ///  <pre><code> &lt;/important&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -330,7 +330,7 @@ namespace Amazon.ConnectCases
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
         /// </para>
-        ///  </important>
+        ///  <pre><code> &lt;/important&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">
@@ -738,7 +738,12 @@ namespace Amazon.ConnectCases
 
 
         /// <summary>
-        /// Deletes a domain.
+        /// Deletes a Cases domain.
+        /// 
+        ///  <pre><code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate
+        /// the deleted domain from your Amazon Connect instance with another API call before
+        /// being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
+        /// &lt;/note&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
@@ -771,7 +776,12 @@ namespace Amazon.ConnectCases
 
 
         /// <summary>
-        /// Deletes a domain.
+        /// Deletes a Cases domain.
+        /// 
+        ///  <pre><code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate
+        /// the deleted domain from your Amazon Connect instance with another API call before
+        /// being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
+        /// &lt;/note&gt; </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// <param name="cancellationToken">

@@ -74,15 +74,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("ResponseHeadersPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.ResponseHeadersPolicyConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.Comment));                    
-    
-                    
+
+                
                     if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig != null) 
                     {
                         xmlWriter.WriteStartElement("CorsConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetAccessControlAllowCredentials())
                             xmlWriter.WriteElementString("AccessControlAllowCredentials", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowCredentials));                 
-        
-                        
+
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders != null) 
                         {
                             xmlWriter.WriteStartElement("AccessControlAllowHeaders", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -100,10 +100,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders.Quantity));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods != null) 
                         {
                             xmlWriter.WriteStartElement("AccessControlAllowMethods", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -121,10 +121,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods.Quantity));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins != null) 
                         {
                             xmlWriter.WriteStartElement("AccessControlAllowOrigins", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -142,10 +142,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins.Quantity));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders != null) 
                         {
                             xmlWriter.WriteStartElement("AccessControlExposeHeaders", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -163,18 +163,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders.Quantity));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetAccessControlMaxAgeSec())
                             xmlWriter.WriteElementString("AccessControlMaxAgeSec", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlMaxAgeSec));                 
-        
+
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetOriginOverride())
                             xmlWriter.WriteElementString("OriginOverride", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.OriginOverride));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
-                    
+                
                     if (publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig != null) 
                     {
                         xmlWriter.WriteStartElement("CustomHeadersConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -184,19 +184,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                             foreach (var publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue in publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItems) 
                             {
-                            
+                
                             if (publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue != null) 
                             {
                                 xmlWriter.WriteStartElement("ResponseHeadersPolicyCustomHeader", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetHeader())
                                     xmlWriter.WriteElementString("Header", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Header));                 
-                
+
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetOverride())
                                     xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Override));                 
-                
+
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetValue())
                                     xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Value));                 
-                
+
                                 xmlWriter.WriteEndElement();
                             }
                             }            
@@ -204,13 +204,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig.Quantity));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.ResponseHeadersPolicyConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.Name));                    
-    
-                    
+
+                
                     if (publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig != null) 
                     {
                         xmlWriter.WriteStartElement("RemoveHeadersConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -220,13 +220,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                             foreach (var publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue in publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItems) 
                             {
-                            
+                
                             if (publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue != null) 
                             {
                                 xmlWriter.WriteStartElement("ResponseHeadersPolicyRemoveHeader", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 if(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.IsSetHeader())
                                     xmlWriter.WriteElementString("Header", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.Header));                 
-                
+
                                 xmlWriter.WriteEndElement();
                             }
                             }            
@@ -234,109 +234,109 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig.Quantity));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
-                    
+                
                     if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig != null) 
                     {
                         xmlWriter.WriteStartElement("SecurityHeadersConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy != null) 
                         {
                             xmlWriter.WriteStartElement("ContentSecurityPolicy", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.IsSetContentSecurityPolicy())
                                 xmlWriter.WriteElementString("ContentSecurityPolicy", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.Override));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions != null) 
                         {
                             xmlWriter.WriteStartElement("ContentTypeOptions", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions.Override));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions != null) 
                         {
                             xmlWriter.WriteStartElement("FrameOptions", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.IsSetFrameOption())
                                 xmlWriter.WriteElementString("FrameOption", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.FrameOption));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.Override));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy != null) 
                         {
                             xmlWriter.WriteStartElement("ReferrerPolicy", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.Override));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.IsSetReferrerPolicy())
                                 xmlWriter.WriteElementString("ReferrerPolicy", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.ReferrerPolicy));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity != null) 
                         {
                             xmlWriter.WriteStartElement("StrictTransportSecurity", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetAccessControlMaxAgeSec())
                                 xmlWriter.WriteElementString("AccessControlMaxAgeSec", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.AccessControlMaxAgeSec));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetIncludeSubdomains())
                                 xmlWriter.WriteElementString("IncludeSubdomains", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IncludeSubdomains));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.Override));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetPreload())
                                 xmlWriter.WriteElementString("Preload", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.Preload));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
-                        
+                
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection != null) 
                         {
                             xmlWriter.WriteStartElement("XSSProtection", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetModeBlock())
                                 xmlWriter.WriteElementString("ModeBlock", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.ModeBlock));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.Override));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetProtection())
                                 xmlWriter.WriteElementString("Protection", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.Protection));                 
-            
+
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetReportUri())
                                 xmlWriter.WriteElementString("ReportUri", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.ReportUri));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
                     }
-                    
+                
                     if (publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig != null) 
                     {
                         xmlWriter.WriteStartElement("ServerTimingHeadersConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                         if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetEnabled())
                             xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.Enabled));                 
-        
+
                         if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetSamplingRate())
                             xmlWriter.WriteElementString("SamplingRate", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromDouble(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.SamplingRate));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

@@ -99,6 +99,17 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceShareArn);
                 }
 
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    {
+                            context.Writer.Write(publicRequestSourcesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

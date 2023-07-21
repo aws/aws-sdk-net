@@ -1,3 +1,86 @@
+### 3.7.603.0 (2023-07-20 19:07 UTC)
+* CodeCatalyst (3.7.201.0)
+	* This release adds support for updating and deleting spaces and projects in Amazon CodeCatalyst. It also adds support for creating, getting, and deleting source repositories in CodeCatalyst projects.
+* ConnectCases (3.7.201.0)
+	* This release adds the ability to assign a case to a queue or user.
+* LexModelsV2 (3.7.202.0)
+	* This release updates type for Channel field in SessionSpecification and UtteranceSpecification
+* Route53Resolver (3.7.201.0)
+	* This release adds support for Route 53 On Outposts, a new feature that allows customers to run Route 53 Resolver and Resolver endpoints locally on their Outposts.
+* S3 (3.7.201.0)
+	* Improve performance of S3 clients by simplifying and optimizing endpoint resolution.
+* SageMaker (3.7.201.0)
+	* Cross account support for SageMaker Feature Store
+* SageMakerFeatureStoreRuntime (3.7.201.0)
+	* Cross account support for SageMaker Feature Store
+* SecurityLake (3.7.201.0)
+	* Adding support for Tags on Create and Resource Tagging API.
+* TranscribeService (3.7.201.0)
+	* Added API argument --toxicity-detection to startTranscriptionJob API, which allows users to view toxicity scores of submitted audio.
+
+### 3.7.602.1 (2023-07-20 03:53 UTC)
+* SavingsPlans (3.7.200.2)
+	* Savings Plans endpoints update
+* Core 3.7.200.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.602.0 (2023-07-19 18:25 UTC)
+* CloudFormation (3.7.201.0)
+	* SDK and documentation updates for GetTemplateSummary API (unrecognized resources)
+* EC2 (3.7.200.2)
+	* Amazon EC2 documentation updates.
+* ManagedGrafana (3.7.201.0)
+	* Amazon Managed Grafana now supports grafanaVersion update for existing workspaces with UpdateWorkspaceConfiguration API. DescribeWorkspaceConfiguration API additionally returns grafanaVersion. A new ListVersions API lists available versions or, if given a workspaceId, the versions it can upgrade to.
+* MedicalImaging (3.7.200.0)
+	* General Availability (GA) release of AWS Health Imaging, enabling customers to store, transform, and analyze medical imaging data at petabyte-scale.
+* RAM (3.7.201.0)
+	* This release adds support for securely sharing with AWS service principals.
+* SsmSap (3.7.201.0)
+	* Added support for SAP Hana High Availability discovery (primary and secondary nodes) and Backint agent installation with SSM for SAP.
+* WAFV2 (3.7.201.0)
+	* Added the URI path to the custom aggregation keys that you can specify for a rate-based rule.
+
+### 3.7.601.0 (2023-07-18 18:24 UTC)
+* CodeGuruSecurity (3.7.200.1)
+	* Documentation updates for CodeGuru Security.
+* Connect (3.7.200.1)
+	* GetMetricDataV2 API: Update to include Contact Lens Conversational Analytics Metrics
+* Elasticsearch (3.7.201.0)
+	* Regex Validation on the ElasticSearch Engine Version attribute
+* LexModelsV2 (3.7.201.0)
+	* This release adds support for Lex Developers to view analytics for their bots.
+* MainframeModernization (3.7.201.0)
+	* Allows UpdateEnvironment to update the environment to 0 host capacity. New GetSignedBluinsightsUrl API
+* Snowball (3.7.201.0)
+	* Adds support for RACK_5U_C. This is the first AWS Snow Family device designed to meet U.S. Military Ruggedization Standards (MIL-STD-810H) with 208 vCPU device in a portable, compact 5U, half-rack width form-factor.
+* Translate (3.7.200.1)
+	* Added DOCX word document support to TranslateDocument API
+* Core 3.7.200.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.600.0 (2023-18-07 00:00 UTC)
+* All (Core and Services) updated to version 3.7.200.0
+	* Updated code analyzers to target `netstandard2.0` (from `net45`). With this update, there'll be impact if you're using Visual Studio 2017 (or earlier) _and_ configured your project to treat warnings as errors (the `Microsoft.CodeAnalysis` dependency was upgraded to `3.0.0` - which only supports Visual Studio 2019 and later). If using a newer version of compiler tooling is not an option, see https://github.com/aws/aws-sdk-net/issues/2998 for alternatives.
+
+### 3.7.589.0 (2023-07-17 18:36 UTC)
+* CodeArtifact (3.7.104.56)
+	* Doc only update for AWS CodeArtifact
+* DocDB (3.7.102.0)
+	* Added major version upgrade option in ModifyDBCluster API
+* EC2 (3.7.142.0)
+	* Add Nitro TPM support on DescribeInstanceTypes
+* Glue (3.7.121.0)
+	* Adding new supported permission type flags to get-unfiltered endpoints that callers may pass to indicate support for enforcing Lake Formation fine-grained access control on nested column attributes.
+* IVS (3.7.106.0)
+	* This release provides the flexibility to configure what renditions or thumbnail qualities to record when creating recording configuration.
+* LakeFormation (3.7.105.0)
+	* Adds supports for ReadOnlyAdmins and AllowFullTableExternalDataAccess. Adds NESTED_PERMISSION and NESTED_CELL_PERMISSION to SUPPORTED_PERMISSION_TYPES enum. Adds CREATE_LF_TAG on catalog resource and ALTER, DROP, and GRANT_WITH_LF_TAG_EXPRESSION on LF Tag resource.
+* Core 3.7.108.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.588.0 (2023-07-13 18:30 UTC)
 * CognitoIdentityProvider (3.7.103.0)
 	* API model updated in Amazon Cognito

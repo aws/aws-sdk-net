@@ -549,6 +549,66 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  CreateOutpostResolver
+
+
+        /// <summary>
+        /// Creates an Route 53 Resolver on an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOutpostResolver service method.</param>
+        /// 
+        /// <returns>The response from the CreateOutpostResolver service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ServiceQuotaExceededException">
+        /// Fulfilling the request would cause one or more quotas to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>,
+        /// or <code>REPLACE</code> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">REST API Reference for CreateOutpostResolver Operation</seealso>
+        CreateOutpostResolverResponse CreateOutpostResolver(CreateOutpostResolverRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOutpostResolver operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOutpostResolver
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">REST API Reference for CreateOutpostResolver Operation</seealso>
+        IAsyncResult BeginCreateOutpostResolver(CreateOutpostResolverRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOutpostResolver.</param>
+        /// 
+        /// <returns>Returns a  CreateOutpostResolverResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">REST API Reference for CreateOutpostResolver Operation</seealso>
+        CreateOutpostResolverResponse EndCreateOutpostResolver(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateResolverEndpoint
 
 
@@ -940,6 +1000,68 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  DeleteFirewallRuleGroupResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup">REST API Reference for DeleteFirewallRuleGroup Operation</seealso>
         DeleteFirewallRuleGroupResponse EndDeleteFirewallRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteOutpostResolver
+
+
+        /// <summary>
+        /// Deletes a Resolver on the Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutpostResolver service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOutpostResolver service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// The requested state transition isn't valid. For example, you can't delete a firewall
+        /// domain list if it is in the process of being deleted, or you can't import domains
+        /// into a domain list that is in the process of being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>,
+        /// or <code>REPLACE</code> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver">REST API Reference for DeleteOutpostResolver Operation</seealso>
+        DeleteOutpostResolverResponse DeleteOutpostResolver(DeleteOutpostResolverRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutpostResolver operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOutpostResolver
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver">REST API Reference for DeleteOutpostResolver Operation</seealso>
+        IAsyncResult BeginDeleteOutpostResolver(DeleteOutpostResolverRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOutpostResolver.</param>
+        /// 
+        /// <returns>Returns a  DeleteOutpostResolverResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver">REST API Reference for DeleteOutpostResolver Operation</seealso>
+        DeleteOutpostResolverResponse EndDeleteOutpostResolver(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1683,6 +1805,64 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  GetFirewallRuleGroupPolicyResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">REST API Reference for GetFirewallRuleGroupPolicy Operation</seealso>
         GetFirewallRuleGroupPolicyResponse EndGetFirewallRuleGroupPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetOutpostResolver
+
+
+        /// <summary>
+        /// Gets information about a specified Resolver on the Outpost, such as its instance count
+        /// and type, name, and the current status of the Resolver.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostResolver service method.</param>
+        /// 
+        /// <returns>The response from the GetOutpostResolver service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>,
+        /// or <code>REPLACE</code> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver">REST API Reference for GetOutpostResolver Operation</seealso>
+        GetOutpostResolverResponse GetOutpostResolver(GetOutpostResolverRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostResolver operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOutpostResolver
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver">REST API Reference for GetOutpostResolver Operation</seealso>
+        IAsyncResult BeginGetOutpostResolver(GetOutpostResolverRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOutpostResolver.</param>
+        /// 
+        /// <returns>Returns a  GetOutpostResolverResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver">REST API Reference for GetOutpostResolver Operation</seealso>
+        GetOutpostResolverResponse EndGetOutpostResolver(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2659,6 +2839,64 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  ListFirewallRulesResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
         ListFirewallRulesResponse EndListFirewallRules(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListOutpostResolvers
+
+
+        /// <summary>
+        /// Lists all the Resolvers on Outposts that were created using the current Amazon Web
+        /// Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostResolvers service method.</param>
+        /// 
+        /// <returns>The response from the ListOutpostResolvers service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>,
+        /// or <code>REPLACE</code> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers">REST API Reference for ListOutpostResolvers Operation</seealso>
+        ListOutpostResolversResponse ListOutpostResolvers(ListOutpostResolversRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutpostResolvers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutpostResolvers operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutpostResolvers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers">REST API Reference for ListOutpostResolvers Operation</seealso>
+        IAsyncResult BeginListOutpostResolvers(ListOutpostResolversRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOutpostResolvers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutpostResolvers.</param>
+        /// 
+        /// <returns>Returns a  ListOutpostResolversResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers">REST API Reference for ListOutpostResolvers Operation</seealso>
+        ListOutpostResolversResponse EndListOutpostResolvers(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3733,6 +3971,72 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  UpdateFirewallRuleGroupAssociationResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation">REST API Reference for UpdateFirewallRuleGroupAssociation Operation</seealso>
         UpdateFirewallRuleGroupAssociationResponse EndUpdateFirewallRuleGroupAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateOutpostResolver
+
+
+        /// <summary>
+        /// You can use <code>UpdateOutpostResolver</code> to update the instance count, type,
+        /// or name of a Resolver on an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOutpostResolver service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOutpostResolver service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
+        /// The requested state transition isn't valid. For example, you can't delete a firewall
+        /// domain list if it is in the process of being deleted, or you can't import domains
+        /// into a domain list that is in the process of being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ServiceQuotaExceededException">
+        /// Fulfilling the request would cause one or more quotas to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>,
+        /// or <code>REPLACE</code> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver">REST API Reference for UpdateOutpostResolver Operation</seealso>
+        UpdateOutpostResolverResponse UpdateOutpostResolver(UpdateOutpostResolverRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOutpostResolver operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOutpostResolver
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver">REST API Reference for UpdateOutpostResolver Operation</seealso>
+        IAsyncResult BeginUpdateOutpostResolver(UpdateOutpostResolverRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateOutpostResolver operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOutpostResolver.</param>
+        /// 
+        /// <returns>Returns a  UpdateOutpostResolverResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver">REST API Reference for UpdateOutpostResolver Operation</seealso>
+        UpdateOutpostResolverResponse EndUpdateOutpostResolver(IAsyncResult asyncResult);
 
         #endregion
         

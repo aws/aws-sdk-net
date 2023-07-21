@@ -56,6 +56,11 @@ namespace Amazon.Route53Resolver.Model
         IListFirewallRulesPaginator ListFirewallRules(ListFirewallRulesRequest request);
 
         /// <summary>
+        /// Paginator for ListOutpostResolvers operation
+        ///</summary>
+        IListOutpostResolversPaginator ListOutpostResolvers(ListOutpostResolversRequest request);
+
+        /// <summary>
         /// Paginator for ListResolverConfigs operation
         ///</summary>
         IListResolverConfigsPaginator ListResolverConfigs(ListResolverConfigsRequest request);

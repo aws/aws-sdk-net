@@ -1,16 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Reflection;
-using System.Linq;
-using System.Xml.Linq;
-using System.Threading;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using Amazon.CodeAnalysis.Shared;
 using Microsoft.CodeAnalysis.Diagnostics;
-
-using Amazon.CodeAnalysis.Shared;
+using Microsoft.CodeAnalysis;
 
 namespace MockAnalyzer
 {

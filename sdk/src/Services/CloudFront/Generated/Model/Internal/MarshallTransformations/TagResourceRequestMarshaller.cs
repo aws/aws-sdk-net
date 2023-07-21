@@ -74,22 +74,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
                         {
-                        
+                
                         if (publicRequestTagsItemsValue != null) 
                         {
                             xmlWriter.WriteStartElement("Tag", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequestTagsItemsValue.IsSetKey())
                                 xmlWriter.WriteElementString("Key", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
-            
+
                             if(publicRequestTagsItemsValue.IsSetValue())
                                 xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

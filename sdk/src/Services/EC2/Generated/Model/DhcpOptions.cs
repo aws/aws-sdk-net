@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a set of DHCP options.
+    /// The set of DHCP options.
     /// </summary>
     public partial class DhcpOptions
     {
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DhcpConfigurations. 
         /// <para>
-        /// One or more DHCP options in the set.
+        /// The DHCP options in the set.
         /// </para>
         /// </summary>
         public List<DhcpConfiguration> DhcpConfigurations

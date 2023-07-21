@@ -143,7 +143,7 @@ namespace Amazon.RAM.Model
         /// Specifies the ID of the principal whose resource shares you want to retrieve. This
         /// can be an Amazon Web Services account ID, an organization ID, an organizational unit
         /// ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of an individual IAM user or role.
+        /// Resource Name (ARN)</a> of an individual IAM role or user.
         /// </para>
         ///  
         /// <para>

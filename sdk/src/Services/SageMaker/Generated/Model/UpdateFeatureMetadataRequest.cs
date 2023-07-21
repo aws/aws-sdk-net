@@ -62,10 +62,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the feature group containing the feature that you're updating.
+        /// The name or Amazon Resource Name (ARN) of the feature group containing the feature
+        /// that you're updating.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FeatureGroupName
         {
             get { return this._featureGroupName; }

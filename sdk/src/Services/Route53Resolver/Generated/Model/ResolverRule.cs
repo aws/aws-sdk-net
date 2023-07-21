@@ -333,7 +333,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// An array that contains the IP addresses and ports that an outbound endpoint forwards
         /// DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.
-        /// Specify IPv4 addresses. IPv6 is not supported.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

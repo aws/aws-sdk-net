@@ -26,7 +26,7 @@
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
     <Compile Remove="**/obj/**" />
-    <Compile Include="..\..\Lambda\IntegrationTests\LambdaTests.cs" />
+    <Compile Include="../../Lambda/IntegrationTests/LambdaTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,10 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\Lambda\AWSSDK.Lambda.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/CognitoSync/AWSSDK.CognitoSync.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/Lambda/AWSSDK.Lambda.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,7 +54,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="obj\net35\Debug\" />
+    <Folder Include="obj/net35/Debug/" />
   </ItemGroup>
 
 </Project>

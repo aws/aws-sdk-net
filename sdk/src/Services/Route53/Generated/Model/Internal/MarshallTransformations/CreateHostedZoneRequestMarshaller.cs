@@ -71,10 +71,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("VPC", "https://route53.amazonaws.com/doc/2013-04-01/");            
                     if(publicRequest.VPC.IsSetVPCRegion())
                         xmlWriter.WriteElementString("VPCRegion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
-    
+
                     if(publicRequest.VPC.IsSetVPCId())
                         xmlWriter.WriteElementString("VPCId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCId));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetCallerReference())
@@ -86,10 +86,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2013-04-01/");            
                     if(publicRequest.HostedZoneConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
-    
+
                     if(publicRequest.HostedZoneConfig.IsSetPrivateZone())
                         xmlWriter.WriteElementString("PrivateZone", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone));                 
-    
+
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetDelegationSetId())

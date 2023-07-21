@@ -44,6 +44,14 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Paginator for ListVersions operation
+        ///</summary>
+        public IListVersionsPaginator ListVersions(ListVersionsRequest request) 
+        {
+            return new ListVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
         public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 

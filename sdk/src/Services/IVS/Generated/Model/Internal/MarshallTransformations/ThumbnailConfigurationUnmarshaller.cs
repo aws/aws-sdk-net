@@ -70,6 +70,18 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resolution", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storage", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Storage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("targetIntervalSeconds", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

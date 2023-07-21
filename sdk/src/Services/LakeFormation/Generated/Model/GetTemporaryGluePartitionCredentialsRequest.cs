@@ -127,7 +127,7 @@ namespace Amazon.LakeFormation.Model
         /// and <code>CELL_FILTER_PERMISSION</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public List<string> SupportedPermissionTypes
         {
             get { return this._supportedPermissionTypes; }

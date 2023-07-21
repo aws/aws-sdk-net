@@ -66,10 +66,10 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The desired capacity for the runtime environment to update.
+        /// The desired capacity for the runtime environment to update. The minimum possible value
+        /// is 0 and the maximum is 100.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
         public int DesiredCapacity
         {
             get { return this._desiredCapacity.GetValueOrDefault(); }

@@ -25,6 +25,68 @@ namespace Amazon.SsmSap
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationDiscoveryStatus.
+    /// </summary>
+    public class ApplicationDiscoveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ApplicationDiscoveryStatus
+        /// </summary>
+        public static readonly ApplicationDiscoveryStatus DELETING = new ApplicationDiscoveryStatus("DELETING");
+        /// <summary>
+        /// Constant REFRESH_FAILED for ApplicationDiscoveryStatus
+        /// </summary>
+        public static readonly ApplicationDiscoveryStatus REFRESH_FAILED = new ApplicationDiscoveryStatus("REFRESH_FAILED");
+        /// <summary>
+        /// Constant REGISTERING for ApplicationDiscoveryStatus
+        /// </summary>
+        public static readonly ApplicationDiscoveryStatus REGISTERING = new ApplicationDiscoveryStatus("REGISTERING");
+        /// <summary>
+        /// Constant REGISTRATION_FAILED for ApplicationDiscoveryStatus
+        /// </summary>
+        public static readonly ApplicationDiscoveryStatus REGISTRATION_FAILED = new ApplicationDiscoveryStatus("REGISTRATION_FAILED");
+        /// <summary>
+        /// Constant SUCCESS for ApplicationDiscoveryStatus
+        /// </summary>
+        public static readonly ApplicationDiscoveryStatus SUCCESS = new ApplicationDiscoveryStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationDiscoveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationDiscoveryStatus FindValue(string value)
+        {
+            return FindValue<ApplicationDiscoveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationDiscoveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationStatus.
     /// </summary>
     public class ApplicationStatus : ConstantClass
@@ -145,6 +207,114 @@ namespace Amazon.SsmSap
 
 
     /// <summary>
+    /// Constants used for properties of type BackintMode.
+    /// </summary>
+    public class BackintMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSBackup for BackintMode
+        /// </summary>
+        public static readonly BackintMode AWSBackup = new BackintMode("AWSBackup");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BackintMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BackintMode FindValue(string value)
+        {
+            return FindValue<BackintMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BackintMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterStatus.
+    /// </summary>
+    public class ClusterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAINTENANCE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus MAINTENANCE = new ClusterStatus("MAINTENANCE");
+        /// <summary>
+        /// Constant NONE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus NONE = new ClusterStatus("NONE");
+        /// <summary>
+        /// Constant OFFLINE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus OFFLINE = new ClusterStatus("OFFLINE");
+        /// <summary>
+        /// Constant ONLINE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus ONLINE = new ClusterStatus("ONLINE");
+        /// <summary>
+        /// Constant STANDBY for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus STANDBY = new ClusterStatus("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterStatus FindValue(string value)
+        {
+            return FindValue<ClusterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComponentStatus.
     /// </summary>
     public class ComponentStatus : ConstantClass
@@ -154,6 +324,30 @@ namespace Amazon.SsmSap
         /// Constant ACTIVATED for ComponentStatus
         /// </summary>
         public static readonly ComponentStatus ACTIVATED = new ComponentStatus("ACTIVATED");
+        /// <summary>
+        /// Constant RUNNING for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus RUNNING = new ComponentStatus("RUNNING");
+        /// <summary>
+        /// Constant RUNNING_WITH_ERROR for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus RUNNING_WITH_ERROR = new ComponentStatus("RUNNING_WITH_ERROR");
+        /// <summary>
+        /// Constant STARTING for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus STARTING = new ComponentStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus STOPPED = new ComponentStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus STOPPING = new ComponentStatus("STOPPING");
+        /// <summary>
+        /// Constant UNDEFINED for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus UNDEFINED = new ComponentStatus("UNDEFINED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -200,6 +394,10 @@ namespace Amazon.SsmSap
         /// Constant HANA for ComponentType
         /// </summary>
         public static readonly ComponentType HANA = new ComponentType("HANA");
+        /// <summary>
+        /// Constant HANA_NODE for ComponentType
+        /// </summary>
+        public static readonly ComponentType HANA_NODE = new ComponentType("HANA_NODE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -288,6 +486,10 @@ namespace Amazon.SsmSap
     public class DatabaseStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ERROR for DatabaseStatus
+        /// </summary>
+        public static readonly DatabaseStatus ERROR = new DatabaseStatus("ERROR");
         /// <summary>
         /// Constant RUNNING for DatabaseStatus
         /// </summary>
@@ -507,6 +709,68 @@ namespace Amazon.SsmSap
 
 
     /// <summary>
+    /// Constants used for properties of type OperationMode.
+    /// </summary>
+    public class OperationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELTA_DATASHIPPING for OperationMode
+        /// </summary>
+        public static readonly OperationMode DELTA_DATASHIPPING = new OperationMode("DELTA_DATASHIPPING");
+        /// <summary>
+        /// Constant LOGREPLAY for OperationMode
+        /// </summary>
+        public static readonly OperationMode LOGREPLAY = new OperationMode("LOGREPLAY");
+        /// <summary>
+        /// Constant LOGREPLAY_READACCESS for OperationMode
+        /// </summary>
+        public static readonly OperationMode LOGREPLAY_READACCESS = new OperationMode("LOGREPLAY_READACCESS");
+        /// <summary>
+        /// Constant NONE for OperationMode
+        /// </summary>
+        public static readonly OperationMode NONE = new OperationMode("NONE");
+        /// <summary>
+        /// Constant PRIMARY for OperationMode
+        /// </summary>
+        public static readonly OperationMode PRIMARY = new OperationMode("PRIMARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationMode FindValue(string value)
+        {
+            return FindValue<OperationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OperationStatus.
     /// </summary>
     public class OperationStatus : ConstantClass
@@ -600,6 +864,68 @@ namespace Amazon.SsmSap
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PermissionActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationMode.
+    /// </summary>
+    public class ReplicationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASYNC for ReplicationMode
+        /// </summary>
+        public static readonly ReplicationMode ASYNC = new ReplicationMode("ASYNC");
+        /// <summary>
+        /// Constant NONE for ReplicationMode
+        /// </summary>
+        public static readonly ReplicationMode NONE = new ReplicationMode("NONE");
+        /// <summary>
+        /// Constant PRIMARY for ReplicationMode
+        /// </summary>
+        public static readonly ReplicationMode PRIMARY = new ReplicationMode("PRIMARY");
+        /// <summary>
+        /// Constant SYNC for ReplicationMode
+        /// </summary>
+        public static readonly ReplicationMode SYNC = new ReplicationMode("SYNC");
+        /// <summary>
+        /// Constant SYNCMEM for ReplicationMode
+        /// </summary>
+        public static readonly ReplicationMode SYNCMEM = new ReplicationMode("SYNCMEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationMode FindValue(string value)
+        {
+            return FindValue<ReplicationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationMode(string value)
         {
             return FindValue(value);
         }

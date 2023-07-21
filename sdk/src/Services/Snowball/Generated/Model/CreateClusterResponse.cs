@@ -58,7 +58,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobListEntries. 
         /// <para>
-        /// List of jobs created for this cluster. For syntax, see <a href="https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
+        /// List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
         /// in this guide.
         /// </para>
         /// </summary>

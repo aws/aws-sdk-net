@@ -45,6 +45,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Notification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDevicePickupSnsTopicARN())
+            {
+                context.Writer.WritePropertyName("DevicePickupSnsTopicARN");
+                context.Writer.Write(requestObject.DevicePickupSnsTopicARN);
+            }
+
             if(requestObject.IsSetJobStatesToNotify())
             {
                 context.Writer.WritePropertyName("JobStatesToNotify");

@@ -31,6 +31,11 @@ namespace Amazon.ManagedGrafana.Model
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
 
         /// <summary>
+        /// Paginator for ListVersions operation
+        ///</summary>
+        IListVersionsPaginator ListVersions(ListVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);

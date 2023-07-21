@@ -61,8 +61,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property Identifiers. 
         /// <para>
-        /// A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code>
-        /// value, and Feature name that have been requested to be retrieved in batch.
+        /// A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>,
+        /// the list of names of <code>Feature</code>s to be retrieved, and the corresponding
+        /// <code>RecordIdentifier</code> values as strings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

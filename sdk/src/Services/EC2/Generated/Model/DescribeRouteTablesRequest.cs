@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-    /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// tables</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeRouteTablesRequest : AmazonEC2Request
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -216,7 +216,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// One or more route table IDs.
+        /// The IDs of the route tables.
         /// </para>
         ///  
         /// <para>

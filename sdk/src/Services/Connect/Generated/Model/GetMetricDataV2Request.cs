@@ -108,6 +108,10 @@ namespace Amazon.Connect.Model
         /// <para>
         /// User hierarchy groups
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Feature
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// At least one filter must be passed from queues, routing profiles, agents, or user
@@ -128,7 +132,7 @@ namespace Amazon.Connect.Model
         /// Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code>
         /// | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code>
         /// | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> 
+        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -136,7 +140,13 @@ namespace Amazon.Connect.Model
         /// VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key.
         /// They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2
         /// request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of
-        /// 100 filter values, along with 3 channel filters.
+        /// 100 filter values, along with 3 channel filters. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>contact_lens_conversational_analytics</code> is a valid filterValue for the
+        /// <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact
+        /// Lens conversational analytics.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -283,6 +293,25 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only
+        /// supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code>
+        /// | <code>CALLBACK</code> | <code>API</code> 
+        /// </para>
+        ///  
+        /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
         ///  </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd> 
@@ -299,23 +328,80 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
+        ///  </dd> <dt>AVG_CONTACT_DURATION</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_CONVERSATION_DURATION</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_GREETING_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
         ///  </dd> <dt>AVG_HANDLE_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
         /// </para>
-        ///  </dd> <dt>AVG_HOLD_TIME</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_HOLD_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
         /// </para>
-        ///  </dd> <dt>AVG_INTERACTION_AND_HOLD_TIME</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_HOLDS</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_INTERACTION_AND_HOLD_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
@@ -329,7 +415,50 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_INTERRUPTIONS_AGENT</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_INTERRUPTION_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_NON_TALK_TIME</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
         ///  </dd> <dt>AVG_QUEUE_ANSWER_TIME</dt> <dd> 
         /// <para>
@@ -337,7 +466,50 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>AVG_TALK_TIME</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_TALK_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_TALK_TIME_CUSTOMER</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
         ///  </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
         /// <para>
@@ -357,9 +529,13 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature
         /// </para>
-        ///  </dd> <dt>CONTACTS_HANDLED</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>CONTACTS_HANDLED</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -370,9 +546,14 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
         /// </para>
-        ///  </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -394,9 +575,14 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Feature
         /// </para>
-        ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_BY_AGENT</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Feature is a valid filter but not a valid grouping.
+        /// </para>
+        ///  </note> </dd> <dt>CONTACTS_TRANSFERRED_OUT_BY_AGENT</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>

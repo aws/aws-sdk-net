@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-    /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+    /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeNetworkAclsRequest : AmazonEC2Request
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkAclIds. 
         /// <para>
-        /// One or more network ACL IDs.
+        /// The IDs of the network ACLs.
         /// </para>
         ///  
         /// <para>

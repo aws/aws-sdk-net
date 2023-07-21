@@ -69,8 +69,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.InvalidationBatch.IsSetCallerReference())
                         xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
-    
-                    
+
+                
                     if (publicRequest.InvalidationBatch.Paths != null) 
                     {
                         xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
@@ -88,10 +88,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
-    
+
                     xmlWriter.WriteEndElement();
                 }
             }

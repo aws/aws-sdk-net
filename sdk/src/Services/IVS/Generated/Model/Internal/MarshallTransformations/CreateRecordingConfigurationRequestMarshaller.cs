@@ -88,6 +88,17 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RecordingReconnectWindowSeconds);
                 }
 
+                if(publicRequest.IsSetRenditionConfiguration())
+                {
+                    context.Writer.WritePropertyName("renditionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RenditionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RenditionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

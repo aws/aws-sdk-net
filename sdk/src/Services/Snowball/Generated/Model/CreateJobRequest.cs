@@ -124,7 +124,11 @@ namespace Amazon.Snowball.Model
     /// <para>
     /// Description: Snowball Edge Storage Optimized with EC2 Compute
     /// </para>
-    ///  </li> </ul>  </li> <li> 
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// This device is replaced with T98.
+    /// </para>
+    ///  </note>  </li> <li> 
     /// <para>
     /// Device type: <b>STANDARD</b> 
     /// </para>
@@ -160,17 +164,17 @@ namespace Amazon.Snowball.Model
     /// </para>
     ///  </note> </li> </ul>  </li> <li> 
     /// <para>
-    /// Device type: <b>V3_5C</b> 
+    /// Snow Family device type: <b>RACK_5U_C</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Capacity: T32
+    /// Capacity: T13 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Description: Snowball Edge Compute Optimized without GPU
+    /// Description: Snowblade.
     /// </para>
-    ///  </li> </ul>  </li> <li> 
+    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Device type: <b>V3_5S</b> 
     /// </para>
@@ -182,7 +186,7 @@ namespace Amazon.Snowball.Model
     /// <para>
     /// Description: Snowball Edge Storage Optimized 210TB
     /// </para>
-    ///  </li> </ul>  </li> </ul>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreateJobRequest : AmazonSnowballRequest
     {
@@ -191,11 +195,13 @@ namespace Amazon.Snowball.Model
         private string _description;
         private DeviceConfiguration _deviceConfiguration;
         private string _forwardingAddressId;
+        private ImpactLevel _impactLevel;
         private JobType _jobType;
         private string _kmsKeyARN;
         private string _longTermPricingId;
         private Notification _notification;
         private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
+        private PickupDetails _pickupDetails;
         private RemoteManagement _remoteManagement;
         private JobResource _resources;
         private string _roleARN;
@@ -308,6 +314,25 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImpactLevel. 
+        /// <para>
+        /// The highest impact level of data that will be stored or processed on the device, provided
+        /// at job creation.
+        /// </para>
+        /// </summary>
+        public ImpactLevel ImpactLevel
+        {
+            get { return this._impactLevel; }
+            set { this._impactLevel = value; }
+        }
+
+        // Check to see if ImpactLevel property is set
+        internal bool IsSetImpactLevel()
+        {
+            return this._impactLevel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
         /// Defines the type of job that you're creating. 
@@ -406,12 +431,31 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PickupDetails. 
+        /// <para>
+        /// Information identifying the person picking up the device.
+        /// </para>
+        /// </summary>
+        public PickupDetails PickupDetails
+        {
+            get { return this._pickupDetails; }
+            set { this._pickupDetails = value; }
+        }
+
+        // Check to see if PickupDetails property is set
+        internal bool IsSetPickupDetails()
+        {
+            return this._pickupDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoteManagement. 
         /// <para>
         /// Allows you to securely operate and manage Snowcone devices remotely from outside of
         /// your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management
         /// will automatically be available when the device arrives at your location. Otherwise,
-        /// you need to use the Snowball Client to manage the device.
+        /// you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>,
+        /// remote management will not be available on the device. 
         /// </para>
         /// </summary>
         public RemoteManagement RemoteManagement

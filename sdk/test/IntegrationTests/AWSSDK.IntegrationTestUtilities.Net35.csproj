@@ -21,18 +21,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**\**" />
+    <Compile Remove="**/**" />
     <Compile Include="Tests/General.CommonUtilities.cs" />
     <Compile Include="Utils/**" />
     <Compile Include="Tests/TestBase.cs" />
-    <None Remove="Tests\CloudTrailBucketPolicy.json" />
-    <None Remove="Tests\ListObjectsResponse.xml" />
-    <None Remove="Config\**" />
+    <None Remove="Tests/CloudTrailBucketPolicy.json" />
+    <None Remove="Tests/ListObjectsResponse.xml" />
+    <None Remove="Config/**" />
     <None Remove="obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Tests\ListObjectsResponse.xml" />
+    <EmbeddedResource Include="Tests/ListObjectsResponse.xml" />
   </ItemGroup>
   
   <ItemGroup>
@@ -46,12 +46,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj" />
-    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj" />
-    <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj" />
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
-    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj" />
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../../src/Services/IdentityManagement/AWSSDK.IdentityManagement.Net35.csproj" />
+    <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.Net35.csproj" />
+    <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.Net35.csproj" />
+    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
+    <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>

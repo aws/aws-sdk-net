@@ -30,14 +30,6 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes a security group and Amazon Web Services account ID pair.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class UserIdGroupPair
     {
@@ -93,9 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the security group. In a request, use this parameter for a security group
-        /// in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use
-        /// the security group ID. 
+        /// [Default VPC] The name of the security group. For a security group in a nondefault
+        /// VPC, use the security group ID. 
         /// </para>
         ///  
         /// <para>
@@ -143,11 +134,6 @@ namespace Amazon.EC2.Model
         /// For a referenced security group in another VPC, the account ID of the referenced security
         /// group is returned in the response. If the referenced security group is deleted, this
         /// value is not returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// [EC2-Classic] Required when adding or removing rules that reference a security group
-        /// in another Amazon Web Services account.
         /// </para>
         /// </summary>
         public string UserId

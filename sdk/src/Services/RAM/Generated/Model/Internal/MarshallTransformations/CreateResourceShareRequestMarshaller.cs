@@ -116,6 +116,17 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    {
+                            context.Writer.Write(publicRequestSourcesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

@@ -112,6 +112,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UriPath", targetDepth))
+                {
+                    var unmarshaller = RateLimitUriPathUnmarshaller.Instance;
+                    unmarshalledObject.UriPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

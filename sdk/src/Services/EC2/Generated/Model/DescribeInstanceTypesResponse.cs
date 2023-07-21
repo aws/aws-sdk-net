@@ -42,14 +42,6 @@ namespace Amazon.EC2.Model
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// When you change your EBS-backed instance type, instance restart or replacement behavior
-        /// depends on the instance type compatibility between the old and new types. An instance
-        /// that's backed by an instance store volume is always replaced. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-        /// the instance type</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
         /// </summary>
         public List<InstanceTypeInfo> InstanceTypes
         {

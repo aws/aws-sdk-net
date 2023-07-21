@@ -78,23 +78,23 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Details", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Details.Name));                 
-    
-                    
+
+                
                     if (publicRequest.Details.PublicAccessBlock != null) 
                     {
                         xmlWriter.WriteStartElement("PublicAccessBlock", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())
                             xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls));                 
-        
+
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicPolicy())
                             xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicPolicy));                 
-        
+
                         if(publicRequest.Details.PublicAccessBlock.IsSetIgnorePublicAcls())
                             xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.IgnorePublicAcls));                 
-        
+
                         if(publicRequest.Details.PublicAccessBlock.IsSetRestrictPublicBuckets())
                             xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.RestrictPublicBuckets));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestDetailsRegions = publicRequest.Details.Regions;
@@ -103,16 +103,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("Regions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestDetailsRegionsValue in publicRequestDetailsRegions) 
                         {
-                        
+                
                         if (publicRequestDetailsRegionsValue != null) 
                         {
                             xmlWriter.WriteStartElement("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             if(publicRequestDetailsRegionsValue.IsSetBucket())
                                 xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));                 
-            
+
                             if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
                                 xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));                 
-            
+
                             xmlWriter.WriteEndElement();
                         }
                         }            

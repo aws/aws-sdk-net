@@ -13476,6 +13476,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListResourceCatalogs
+
+
+        /// <summary>
+        /// Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number
+        /// of <code>ResourceCatalog</code>s viewable is 1000.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceCatalogs service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceCatalogs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">REST API Reference for ListResourceCatalogs Operation</seealso>
+        public virtual ListResourceCatalogsResponse ListResourceCatalogs(ListResourceCatalogsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceCatalogsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceCatalogsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number
+        /// of <code>ResourceCatalog</code>s viewable is 1000.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceCatalogs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceCatalogs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">REST API Reference for ListResourceCatalogs Operation</seealso>
+        public virtual Task<ListResourceCatalogsResponse> ListResourceCatalogsAsync(ListResourceCatalogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceCatalogsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceCatalogsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceCatalogsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSpaces
 
 
@@ -16305,7 +16348,24 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Updates the feature group.
+        /// Updates the feature group by either adding features or updating the online store configuration.
+        /// Use one of the following request parameters at a time while using the <code>UpdateFeatureGroup</code>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// You can add features for your feature group using the <code>FeatureAdditions</code>
+        /// request parameter. Features cannot be removed from a feature group.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the online store configuration by using the <code>OnlineStoreConfig</code>
+        /// request parameter. If a <code>TtlDuration</code> is specified, the default <code>TtlDuration</code>
+        /// applies for all records added to the feature group <i>after the feature group is updated</i>.
+        /// If a record level <code>TtlDuration</code> exists from using the <code>PutRecord</code>
+        /// API, the record level <code>TtlDuration</code> applies to that record instead of the
+        /// default <code>TtlDuration</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
         /// 
@@ -16325,7 +16385,24 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Updates the feature group.
+        /// Updates the feature group by either adding features or updating the online store configuration.
+        /// Use one of the following request parameters at a time while using the <code>UpdateFeatureGroup</code>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// You can add features for your feature group using the <code>FeatureAdditions</code>
+        /// request parameter. Features cannot be removed from a feature group.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the online store configuration by using the <code>OnlineStoreConfig</code>
+        /// request parameter. If a <code>TtlDuration</code> is specified, the default <code>TtlDuration</code>
+        /// applies for all records added to the feature group <i>after the feature group is updated</i>.
+        /// If a record level <code>TtlDuration</code> exists from using the <code>PutRecord</code>
+        /// API, the record level <code>TtlDuration</code> applies to that record instead of the
+        /// default <code>TtlDuration</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
         /// <param name="cancellationToken">

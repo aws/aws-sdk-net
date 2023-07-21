@@ -34,12 +34,6 @@ For information about maintenance and support for SDK major versions and their u
 * [AWS SDKs and Tools Maintenance Policy](https://docs.aws.amazon.com/credref/latest/refdocs/maint-policy.html)
 * [AWS SDKs and Tools Version Support Matrix](https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html)
 
-## Looking for Version 2?
-
-In anticipation of the GA release for version 3 we have merged it to master. We did this before GA to signify that version 3 is ready for production use and to help us with some of the final release and build automation tasks we are working on.
-
-To find the current version 2 source checkout the [version 2 branch][github-aws-sdk-net-v2].
-
 ## Modularization
 
 With version 3 of the AWS SDK for .NET the SDK has been modularized. This means a separate NuGet package is created for each service as well as a core project. To use this branch compile the solution in the **sdk** folder that matches the desired platform and then include the assemblies for the services needed as well as the core assembly.
@@ -59,19 +53,19 @@ The SDK assemblies are strongly named which requires consumers of the SDK to rec
 
 Classes and interfaces with `Internal` in the namespace name are logically internal to the SDK but are often marked with a `public` access modifier, generally to allow the service-specific packages to use shared functionality in the Core package. Classes and interfaces in these namespaces are subject to modification or removal outside of versioning scheme described above. If you find yourself relying on `Internal` functionality directly, consider [opening a Feature Request](https://github.com/aws/aws-sdk-net/issues/new/choose) for your use case if one does not already exist.
 
-## Portable Class Library
+## Code Analyzers
 
-This release of the AWS SDK for .NET adds support for Portable Class Library projects, which allow you to target multiple platforms including Windows Store, Windows Phone, and Xamarin on iOS and Android. More information on this can be found [here](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/index.html).
+Each service package includes a code analyzer that's automatically included when installing from NuGet. These analyzers are created based on the rules from the service model, and will generate a warning if you use a property value that's not valid (for example, shorter than the minimum length expected by the service).
+
+Starting with the 3.7.200 versions of the AWS SDK for .NET NuGet packages, the analyzers target [.NET Standard 2.0](https://learn.microsoft.com/en-us/dotnet/standard/net-standard) and support Visual Studio 2019 RTM and later (announcement: https://github.com/aws/aws-sdk-net/issues/2998).
+
+Users on Visual Studio 2017 (or earlier) can still use new versions of the SDK, but there'll be a new warning (`CS8032`) about analyzers failing to run. If the build system is configured to treat warnings as errors, this new warning will need to be suppressed or ignored (using [WarningsNotAsErrors](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors)).
 
 ## Unity Support
 
 Starting with version 3.5 of the AWS SDK for .NET, projects using Unity 2018.1 or later should target the .NET Standard 2.0 release of the SDK. You can find additional information in the developer guide: [Unity support](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/unity-special.html) and [Migrating your Unity application](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-v35.html#net-dg-v35-changes-unity).
 
 You can find the archive for _**legacy**_ Unity support at https://github.com/aws/aws-sdk-unity-net.
-
-### Silverlight support
-
-Due to Silverlight HTTP Caching, AWS SDK for .NET is not fully supported on Silverlight-based platforms such as Windows Phone 8.0. Some HTTP GET calls (such as S3's ListBuckets or ListObjects) will return the same results when called multiple times.
 
 ## Functionality requiring AWS Common Runtime (CRT)
 
@@ -548,6 +542,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Elemental MediaStore Data is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore Data acts as the origin store in your video workflow.
 * [AWSSDK.MediaTailor](https://www.nuget.org/packages/AWSSDK.MediaTailor/)
 	* AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
+* [AWSSDK.MedicalImaging](https://www.nuget.org/packages/AWSSDK.MedicalImaging/)
+	* General Availability (GA) release of AWS Health Imaging, enabling customers to store, transform, and analyze medical imaging data at petabyte-scale.
 * [AWSSDK.MemoryDB](https://www.nuget.org/packages/AWSSDK.MemoryDB/)
 	* AWS MemoryDB  SDK now supports all APIs for newly launched MemoryDB service.
 * [AWSSDK.Mgn](https://www.nuget.org/packages/AWSSDK.Mgn/)

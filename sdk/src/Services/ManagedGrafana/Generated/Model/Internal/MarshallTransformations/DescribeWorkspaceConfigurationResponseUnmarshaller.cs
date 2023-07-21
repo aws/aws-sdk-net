@@ -57,6 +57,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     response.Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("grafanaVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GrafanaVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -32,9 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeVpcClassicLinkDnsSupport operation.
     /// <note> 
     /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// This action is deprecated.
     /// </para>
     ///  </note> 
     /// <para>
@@ -42,8 +40,7 @@ namespace Amazon.EC2.Model
     /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
     /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
     /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-    /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-    /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EC2-Classic instance.
     /// </para>
     /// </summary>
     public partial class DescribeVpcClassicLinkDnsSupportRequest : AmazonEC2Request
@@ -96,7 +93,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcIds. 
         /// <para>
-        /// One or more VPC IDs.
+        /// The IDs of the VPCs.
         /// </para>
         /// </summary>
         public List<string> VpcIds

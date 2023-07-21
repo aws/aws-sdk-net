@@ -756,6 +756,66 @@ namespace Amazon.ManagedGrafana
 
         #endregion
         
+        #region  ListVersions
+
+
+        /// <summary>
+        /// Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>.
+        /// Optionally, include a workspace to list the versions to which it can be upgraded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListVersions service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions">REST API Reference for ListVersions Operation</seealso>
+        ListVersionsResponse ListVersions(ListVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>.
+        /// Optionally, include a workspace to list the versions to which it can be upgraded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVersions service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions">REST API Reference for ListVersions Operation</seealso>
+        Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListWorkspaces
 
 

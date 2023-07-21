@@ -849,7 +849,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
-        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
         /// 
@@ -862,7 +862,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
-        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
         /// <param name="cancellationToken">
@@ -1027,7 +1027,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method.</param>
@@ -1053,7 +1053,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method.</param>
@@ -1247,14 +1247,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
         /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
-        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
         /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
         /// You can increase the limit by requesting a quota adjustment. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
-        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// IP address quotas</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
@@ -1268,14 +1268,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
         /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
-        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
         /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
         /// You can increase the limit by requesting a quota adjustment. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
-        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// IP address quotas</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
@@ -1302,7 +1302,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable service method.</param>
@@ -1323,7 +1323,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable service method.</param>
@@ -1546,8 +1546,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-        /// and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
@@ -1572,8 +1572,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about associating CIDR blocks with your VPC and applicable restrictions,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-        /// and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
@@ -1593,14 +1593,12 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
-        /// the VPC's security groups. You cannot link an EC2-Classic instance to more than one
+        /// the VPC security groups. You cannot link an EC2-Classic instance to more than one
         /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
         /// An instance is automatically unlinked from a VPC when it's stopped - you can link
         /// it to the VPC again when you restart it.
@@ -1627,14 +1625,12 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
-        /// the VPC's security groups. You cannot link an EC2-Classic instance to more than one
+        /// the VPC security groups. You cannot link an EC2-Classic instance to more than one
         /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
         /// An instance is automatically unlinked from a VPC when it's stopped - you can link
         /// it to the VPC again when you restart it.
@@ -1666,9 +1662,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity
-        /// between the internet and the VPC. For more information about your VPC and internet
-        /// gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-        /// Virtual Private Cloud User Guide</a>.
+        /// between the internet and the VPC. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// 
@@ -1680,9 +1675,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity
-        /// between the internet and the VPC. For more information about your VPC and internet
-        /// gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-        /// Virtual Private Cloud User Guide</a>.
+        /// between the internet and the VPC. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1947,8 +1941,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Adds the specified outbound (egress) rules to a security group for use
-        /// with a VPC.
+        /// Adds the specified outbound (egress) rules to a security group for use with a VPC.
         /// 
         ///  
         /// <para>
@@ -1984,8 +1977,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Adds the specified outbound (egress) rules to a security group for use
-        /// with a VPC.
+        /// Adds the specified outbound (egress) rules to a security group for use with a VPC.
         /// 
         ///  
         /// <para>
@@ -2052,13 +2044,6 @@ namespace Amazon.EC2
         /// For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC quotas</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
         /// 
@@ -2094,13 +2079,6 @@ namespace Amazon.EC2
         /// For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC quotas</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
         /// <param name="cancellationToken">
@@ -3161,8 +3139,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
         /// Availability Zone in your default VPC. You can have only one default subnet per Availability
-        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-        /// a default subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
+        /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
         /// 
@@ -3175,8 +3153,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
         /// Availability Zone in your default VPC. You can have only one default subnet per Availability
-        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-        /// a default subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
+        /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
         /// <param name="cancellationToken">
@@ -3196,29 +3174,14 @@ namespace Amazon.EC2
         /// Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
         /// in each Availability Zone. For more information about the components of a default
         /// VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-        /// VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// You cannot specify the components of the default VPC yourself.
+        /// VPCs</a> in the <i>Amazon VPC User Guide</i>. You cannot specify the components of
+        /// the default VPC yourself.
         /// 
         ///  
         /// <para>
         /// If you deleted your previous default VPC, you can create a default VPC. You cannot
         /// have more than one default VPC per Region.
         /// </para>
-        ///  
-        /// <para>
-        /// If your account supports EC2-Classic, you cannot use this action to create a default
-        /// VPC in a Region that supports EC2-Classic. If you want a default VPC in a Region that
-        /// supports EC2-Classic, see "I really want a default VPC for my existing EC2 account.
-        /// Is that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default
-        /// VPCs FAQ</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc service method.</param>
         /// 
@@ -3232,29 +3195,14 @@ namespace Amazon.EC2
         /// Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
         /// in each Availability Zone. For more information about the components of a default
         /// VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-        /// VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// You cannot specify the components of the default VPC yourself.
+        /// VPCs</a> in the <i>Amazon VPC User Guide</i>. You cannot specify the components of
+        /// the default VPC yourself.
         /// 
         ///  
         /// <para>
         /// If you deleted your previous default VPC, you can create a default VPC. You cannot
         /// have more than one default VPC per Region.
         /// </para>
-        ///  
-        /// <para>
-        /// If your account supports EC2-Classic, you cannot use this action to create a default
-        /// VPC in a Region that supports EC2-Classic. If you want a default VPC in a Region that
-        /// supports EC2-Classic, see "I really want a default VPC for my existing EC2 account.
-        /// Is that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default
-        /// VPCs FAQ</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc service method.</param>
         /// <param name="cancellationToken">
@@ -3321,7 +3269,7 @@ namespace Amazon.EC2
         /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
         /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
         /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method.</param>
@@ -3383,7 +3331,7 @@ namespace Amazon.EC2
         /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
         /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
         /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method.</param>
@@ -3616,20 +3564,6 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it
-        /// can take snapshots of the attached volumes while data is at rest, in order to ensure
-        /// a consistent state. You can set the <code>NoReboot</code> parameter to <code>true</code>
-        /// in the API request, or use the <code>--no-reboot</code> option in the CLI to prevent
-        /// Amazon EC2 from shutting down and rebooting the instance.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code>
-        /// parameter to <code>true</code> in the API request, or by using the <code>--no-reboot</code>
-        /// option in the CLI, we can't guarantee the file system integrity of the created image.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// If you customized your instance with instance store volumes or Amazon EBS volumes
         /// in addition to the root device volume, the new AMI contains block device mapping information
         /// for those volumes. When you launch an instance from this new AMI, the instance automatically
@@ -3654,20 +3588,6 @@ namespace Amazon.EC2
         /// running or stopped.
         /// 
         ///  
-        /// <para>
-        /// By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it
-        /// can take snapshots of the attached volumes while data is at rest, in order to ensure
-        /// a consistent state. You can set the <code>NoReboot</code> parameter to <code>true</code>
-        /// in the API request, or use the <code>--no-reboot</code> option in the CLI to prevent
-        /// Amazon EC2 from shutting down and rebooting the instance.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code>
-        /// parameter to <code>true</code> in the API request, or by using the <code>--no-reboot</code>
-        /// option in the CLI, we can't guarantee the file system integrity of the created image.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// If you customized your instance with instance store volumes or Amazon EBS volumes
         /// in addition to the root device volume, the new AMI contains block device mapping information
@@ -3699,9 +3619,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// An EC2 Instance Connect Endpoint allows you to connect to a resource, without requiring
-        /// the resource to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
-        /// to your resources without requiring a public IPv4 address using EC2 Instance Connect
+        /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
+        /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+        /// to your instances without requiring a public IPv4 address using EC2 Instance Connect
         /// Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -3718,9 +3638,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// An EC2 Instance Connect Endpoint allows you to connect to a resource, without requiring
-        /// the resource to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
-        /// to your resources without requiring a public IPv4 address using EC2 Instance Connect
+        /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
+        /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+        /// to your instances without requiring a public IPv4 address using EC2 Instance Connect
         /// Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -3851,8 +3771,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For information about the supported operating systems, image formats, and known limitations
-        /// for the types of instances you can export, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+        /// For information about the prerequisites for your Amazon S3 bucket, supported operating
+        /// systems, image formats, and known limitations for the types of instances you can export,
+        /// see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
         /// an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </para>
         /// </summary>
@@ -3869,8 +3790,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For information about the supported operating systems, image formats, and known limitations
-        /// for the types of instances you can export, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+        /// For information about the prerequisites for your Amazon S3 bucket, supported operating
+        /// systems, image formats, and known limitations for the types of instances you can export,
+        /// see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
         /// an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </para>
         /// </summary>
@@ -3894,8 +3816,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-        /// Virtual Private Cloud User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -3910,8 +3832,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-        /// Virtual Private Cloud User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInternetGateway service method.</param>
@@ -3927,8 +3849,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-        /// Virtual Private Cloud User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -3947,8 +3869,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-        /// Virtual Private Cloud User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInternetGateway service method.</param>
@@ -4517,7 +4439,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-        /// gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
@@ -4548,7 +4470,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-        /// gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
@@ -4571,8 +4493,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAcl service method.</param>
@@ -4589,8 +4511,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAcl service method.</param>
@@ -4629,8 +4551,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAclEntry service method.</param>
@@ -4663,8 +4585,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAclEntry service method.</param>
@@ -5178,7 +5100,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -5220,7 +5142,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -5244,7 +5166,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable service method.</param>
@@ -5262,7 +5184,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable service method.</param>
@@ -5293,17 +5215,14 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// When you create a security group, you specify a friendly name of your choice. You
-        /// can have a security group for use in EC2-Classic with the same name as a security
-        /// group for use in a VPC. However, you can't have two security groups for use in EC2-Classic
-        /// with the same name or two security groups for use in a VPC with the same name.
+        /// can't have two security groups for the same VPC with the same name.
         /// </para>
         ///  
         /// <para>
-        /// You have a default security group for use in EC2-Classic and a default security group
-        /// for use in your VPC. If you don't specify a security group when you launch an instance,
-        /// the instance is launched into the appropriate default security group. A default security
-        /// group includes a default rule that grants instances unrestricted network access to
-        /// each other.
+        /// You have a default security group for use in your VPC. If you don't specify a security
+        /// group when you launch an instance, the instance is launched into the appropriate default
+        /// security group. A default security group includes a default rule that grants instances
+        /// unrestricted network access to each other.
         /// </para>
         ///  
         /// <para>
@@ -5315,13 +5234,6 @@ namespace Amazon.EC2
         /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC Limits</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup service method.</param>
         /// 
@@ -5345,17 +5257,14 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// When you create a security group, you specify a friendly name of your choice. You
-        /// can have a security group for use in EC2-Classic with the same name as a security
-        /// group for use in a VPC. However, you can't have two security groups for use in EC2-Classic
-        /// with the same name or two security groups for use in a VPC with the same name.
+        /// can't have two security groups for the same VPC with the same name.
         /// </para>
         ///  
         /// <para>
-        /// You have a default security group for use in EC2-Classic and a default security group
-        /// for use in your VPC. If you don't specify a security group when you launch an instance,
-        /// the instance is launched into the appropriate default security group. A default security
-        /// group includes a default rule that grants instances unrestricted network access to
-        /// each other.
+        /// You have a default security group for use in your VPC. If you don't specify a security
+        /// group when you launch an instance, the instance is launched into the appropriate default
+        /// security group. A default security group includes a default rule that grants instances
+        /// unrestricted network access to each other.
         /// </para>
         ///  
         /// <para>
@@ -5367,13 +5276,6 @@ namespace Amazon.EC2
         /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC Limits</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup service method.</param>
         /// <param name="cancellationToken">
@@ -5701,7 +5603,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
-        /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
@@ -5750,7 +5652,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
-        /// in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
@@ -6742,8 +6644,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-cidr-blocks">VPC
-        /// CIDR blocks</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6756,13 +6658,13 @@ namespace Amazon.EC2
         /// By default, each instance that you launch in the VPC has the default DHCP options,
         /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
         /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// option sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// option sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can specify the instance tenancy value for the VPC when you create it. You can't
         /// change this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
@@ -6774,8 +6676,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-cidr-blocks">VPC
-        /// CIDR blocks</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+        /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6788,13 +6690,13 @@ namespace Amazon.EC2
         /// By default, each instance that you launch in the VPC has the default DHCP options,
         /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
         /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// option sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// option sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can specify the instance tenancy value for the VPC when you create it. You can't
         /// change this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
@@ -6812,11 +6714,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
-        /// a private connection between your VPC and the service. The service may be provided
-        /// by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
+        /// Creates a VPC endpoint. A VPC endpoint provides a private connection between the specified
+        /// VPC and the specified endpoint service. You can use an endpoint service provided by
+        /// Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
         /// Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
-        /// Web Services PrivateLink Guide</a>.
+        /// Web Services PrivateLink User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
         /// 
@@ -6827,11 +6729,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
-        /// a private connection between your VPC and the service. The service may be provided
-        /// by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
+        /// Creates a VPC endpoint. A VPC endpoint provides a private connection between the specified
+        /// VPC and the specified endpoint service. You can use an endpoint service provided by
+        /// Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
         /// Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
-        /// Web Services PrivateLink Guide</a>.
+        /// Web Services PrivateLink User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -8546,17 +8448,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you attempt to delete a security group that is associated with an instance, or
-        /// is referenced by another security group, the operation fails with <code>InvalidGroup.InUse</code>
-        /// in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
+        /// If you attempt to delete a security group that is associated with an instance or network
+        /// interface or is referenced by another security group, the operation fails with <code>DependencyViolation</code>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
         /// 
@@ -8571,17 +8465,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If you attempt to delete a security group that is associated with an instance, or
-        /// is referenced by another security group, the operation fails with <code>InvalidGroup.InUse</code>
-        /// in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
+        /// If you attempt to delete a security group that is associated with an instance or network
+        /// interface or is referenced by another security group, the operation fails with <code>DependencyViolation</code>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
         /// <param name="cancellationToken">
@@ -10715,17 +10601,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
         /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
         /// use this request to return information about other instances.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
         /// 
@@ -10736,17 +10621,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
         /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
         /// use this request to return information about other instances.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
         /// <param name="cancellationToken">
@@ -11098,7 +10982,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -11113,7 +10997,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method.</param>
@@ -11129,7 +11013,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -11148,7 +11032,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method.</param>
@@ -13382,8 +13266,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -13397,8 +13281,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkAcls service method.</param>
@@ -13413,8 +13297,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -13432,8 +13316,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkAcls service method.</param>
@@ -14425,7 +14309,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -14446,7 +14330,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables service method.</param>
@@ -14468,7 +14352,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -14493,7 +14377,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables service method.</param>
@@ -14593,8 +14477,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Describes the VPCs on the other side of a VPC peering connection that are
-        /// referencing the security groups you've specified in this request.
+        /// Describes the VPCs on the other side of a VPC peering connection that are referencing
+        /// the security groups you've specified in this request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// 
@@ -14605,8 +14489,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Describes the VPCs on the other side of a VPC peering connection that are
-        /// referencing the security groups you've specified in this request.
+        /// Describes the VPCs on the other side of a VPC peering connection that are referencing
+        /// the security groups you've specified in this request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// <param name="cancellationToken">
@@ -14652,22 +14536,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified security groups or all of your security groups.
-        /// 
-        ///  
-        /// <para>
-        /// A security group is for use with instances either in the EC2-Classic platform or in
-        /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
@@ -14677,22 +14545,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified security groups or all of your security groups.
-        /// 
-        ///  
-        /// <para>
-        /// A security group is for use with instances either in the EC2-Classic platform or in
-        /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
         /// 
@@ -14703,22 +14555,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified security groups or all of your security groups.
-        /// 
-        ///  
-        /// <para>
-        /// A security group is for use with instances either in the EC2-Classic platform or in
-        /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14732,22 +14568,6 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified security groups or all of your security groups.
-        /// 
-        ///  
-        /// <para>
-        /// A security group is for use with instances either in the EC2-Classic platform or in
-        /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-        /// EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
         /// <param name="cancellationToken">
@@ -15558,10 +15378,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Describes the stale security group rules for security groups in a specified
-        /// VPC. Rules are stale when they reference a deleted security group in the same VPC
-        /// or in a peer VPC, or if they reference a security group in a peer VPC for which the
-        /// VPC peering connection has been deleted.
+        /// Describes the stale security group rules for security groups in a specified VPC. Rules
+        /// are stale when they reference a deleted security group in the same VPC or in a peer
+        /// VPC, or if they reference a security group in a peer VPC for which the VPC peering
+        /// connection has been deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// 
@@ -15572,10 +15392,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Describes the stale security group rules for security groups in a specified
-        /// VPC. Rules are stale when they reference a deleted security group in the same VPC
-        /// or in a peer VPC, or if they reference a security group in a peer VPC for which the
-        /// VPC peering connection has been deleted.
+        /// Describes the stale security group rules for security groups in a specified VPC. Rules
+        /// are stale when they reference a deleted security group in the same VPC or in a peer
+        /// VPC, or if they reference a security group in a peer VPC for which the VPC peering
+        /// connection has been deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// <param name="cancellationToken">
@@ -15674,8 +15494,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -15689,8 +15509,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets service method.</param>
@@ -15705,8 +15525,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -15724,8 +15544,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-        /// VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
+        /// in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets service method.</param>
@@ -16824,15 +16644,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the ClassicLink status of one or more VPCs.
-        /// 
-        ///  <note> 
+        /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Describes the ClassicLink status of the specified VPCs.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
         /// 
@@ -16843,15 +16662,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the ClassicLink status of one or more VPCs.
-        /// 
-        ///  <note> 
+        /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Describes the ClassicLink status of the specified VPCs.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
         /// <param name="cancellationToken">
@@ -16870,9 +16688,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16880,8 +16696,7 @@ namespace Amazon.EC2
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-        /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2-Classic instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
@@ -16895,9 +16710,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16905,8 +16718,7 @@ namespace Amazon.EC2
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-        /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2-Classic instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
@@ -17370,9 +17182,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17392,9 +17202,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17974,16 +17782,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
         /// EC2-Classic instances linked to it.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
         /// 
@@ -17994,16 +17801,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
         /// EC2-Classic instances linked to it.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
         /// <param name="cancellationToken">
@@ -18020,22 +17826,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
-        /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// 
+        /// in the VPC to which it's linked.
+        /// </para>
         ///  
         /// <para>
         /// You must specify a VPC ID in the request.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -18046,22 +17850,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This action is deprecated.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
-        /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// 
+        /// in the VPC to which it's linked.
+        /// </para>
         ///  
         /// <para>
         /// You must specify a VPC ID in the request.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
@@ -18334,8 +18136,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
         /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
-        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -18345,11 +18146,11 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
-        /// associated and support the existing connections but do not support any new connections
-        /// (new connections are distributed across the remaining associated EIPs). As the existing
-        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
-        /// get released.
+        /// An EIP is released only at the end of MaxDrainDurationSeconds. It stays associated
+        /// and supports the existing connections but does not support any new connections (new
+        /// connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IP addresses mapped
+        /// to them) are released.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
@@ -18363,8 +18164,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
         /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
-        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -18374,11 +18174,11 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
-        /// associated and support the existing connections but do not support any new connections
-        /// (new connections are distributed across the remaining associated EIPs). As the existing
-        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
-        /// get released.
+        /// An EIP is released only at the end of MaxDrainDurationSeconds. It stays associated
+        /// and supports the existing connections but does not support any new connections (new
+        /// connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IP addresses mapped
+        /// to them) are released.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
@@ -18403,7 +18203,7 @@ namespace Amazon.EC2
         /// After you perform this action, the subnet no longer uses the routes in the route table.
         /// Instead, it uses the routes in the VPC's main route table. For more information about
         /// route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable service method.</param>
@@ -18422,7 +18222,7 @@ namespace Amazon.EC2
         /// After you perform this action, the subnet no longer uses the routes in the route table.
         /// Instead, it uses the routes in the VPC's main route table. For more information about
         /// route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable service method.</param>
@@ -19128,9 +18928,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19138,9 +18936,7 @@ namespace Amazon.EC2
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
         /// ClassicLink if any of your VPC route tables have existing routes for address ranges
         /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
-        /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
@@ -19154,9 +18950,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19164,9 +18958,7 @@ namespace Amazon.EC2
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
         /// ClassicLink if any of your VPC route tables have existing routes for address ranges
         /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
-        /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
@@ -19186,9 +18978,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19196,8 +18986,7 @@ namespace Amazon.EC2
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-        /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2-Classic instance.
         /// </para>
         ///  
         /// <para>
@@ -19215,9 +19004,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// This action is deprecated.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19225,8 +19012,7 @@ namespace Amazon.EC2
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-        /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2-Classic instance.
         /// </para>
         ///  
         /// <para>
@@ -19802,7 +19588,12 @@ namespace Amazon.EC2
         /// <para>
         /// Create a set of named queries in Athena that you can use to get started quickly
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <code>GetFlowLogsIntegrationTemplate</code> does not support integration between
+        /// Amazon Web Services Transit Gateway Flow Logs and Amazon Athena.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFlowLogsIntegrationTemplate service method.</param>
         /// 
@@ -19835,7 +19626,12 @@ namespace Amazon.EC2
         /// <para>
         /// Create a set of named queries in Athena that you can use to get started quickly
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <code>GetFlowLogsIntegrationTemplate</code> does not support integration between
+        /// Amazon Web Services Transit Gateway Flow Logs and Amazon Athena.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFlowLogsIntegrationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -21120,18 +20916,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an import instance task using metadata from the specified disk image.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>
-        /// instead.
+        /// We recommend that you use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">
+        /// <code>ImportImage</code> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+        /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates an import instance task using metadata from the specified disk image.
         /// </para>
         ///  
         /// <para>
         /// This API action is not supported by the Command Line Interface (CLI). For information
         /// about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
         /// a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -21148,18 +20952,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an import instance task using metadata from the specified disk image.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>
-        /// instead.
+        /// We recommend that you use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">
+        /// <code>ImportImage</code> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+        /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates an import instance task using metadata from the specified disk image.
         /// </para>
         ///  
         /// <para>
         /// This API action is not supported by the Command Line Interface (CLI). For information
         /// about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
         /// a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -24018,33 +23830,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Modifies the VPC peering connection options on one side of a VPC peering connection.
-        /// You can do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Enable/disable communication over the peering connection between an EC2-Classic instance
-        /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Enable/disable communication over the peering connection between instances in your
-        /// VPC and an EC2-Classic instance that's linked to the peer VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Enable/disable the ability to resolve public DNS hostnames to private IP addresses
-        /// when queried from instances in the peer VPC.
-        /// </para>
-        ///  </li> </ul> 
+        /// 
+        ///  
         /// <para>
         /// If the peered VPCs are in the same Amazon Web Services account, you can enable DNS
         /// resolution for queries from the local VPC. This ensures that queries from the local
@@ -24068,33 +23856,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Modifies the VPC peering connection options on one side of a VPC peering connection.
-        /// You can do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Enable/disable communication over the peering connection between an EC2-Classic instance
-        /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Enable/disable communication over the peering connection between instances in your
-        /// VPC and an EC2-Classic instance that's linked to the peer VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Enable/disable the ability to resolve public DNS hostnames to private IP addresses
-        /// when queried from instances in the peer VPC.
-        /// </para>
-        ///  </li> </ul> 
+        /// 
+        ///  
         /// <para>
         /// If the peered VPCs are in the same Amazon Web Services account, you can enable DNS
         /// resolution for queries from the local VPC. This ensures that queries from the local
@@ -24137,7 +23901,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcTenancy service method.</param>
@@ -24162,7 +23926,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcTenancy service method.</param>
@@ -25577,7 +25341,7 @@ namespace Amazon.EC2
         /// for allocations. You can only use this action to release manual allocations. To remove
         /// an allocation for a resource without deleting the resource, set its monitored state
         /// to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-alloc-ipam.html">Release
         /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// 
         ///  <note> 
@@ -25601,7 +25365,7 @@ namespace Amazon.EC2
         /// for allocations. You can only use this action to release manual allocations. To remove
         /// an allocation for a resource without deleting the resource, set its monitored state
         /// to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-alloc-ipam.html">Release
         /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// 
         ///  <note> 
@@ -25670,8 +25434,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Changes which network ACL a subnet is associated with. By default when you create
         /// a subnet, it's automatically associated with the default network ACL. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -25689,8 +25453,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Changes which network ACL a subnet is associated with. By default when you create
         /// a subnet, it's automatically associated with the default network ACL. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -25712,8 +25476,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method.</param>
         /// 
@@ -25724,8 +25488,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network
+        /// ACLs</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method.</param>
         /// <param name="cancellationToken">
@@ -25753,7 +25517,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute service method.</param>
@@ -25776,7 +25540,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute service method.</param>
@@ -25798,7 +25562,7 @@ namespace Amazon.EC2
         /// private gateway in a VPC. After the operation completes, the subnet or gateway uses
         /// the routes in the new route table. For more information about route tables, see <a
         /// href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -25820,7 +25584,7 @@ namespace Amazon.EC2
         /// private gateway in a VPC. After the operation completes, the subnet or gateway uses
         /// the routes in the new route table. For more information about route tables, see <a
         /// href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-        /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// tables</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -26582,8 +26346,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Removes the specified outbound (egress) rules from a security group for
-        /// EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
+        /// Removes the specified outbound (egress) rules from the specified security group.
         /// 
         ///  
         /// <para>
@@ -26597,9 +26360,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [Default VPC] If the values you specify do not match the existing rule's values, no
-        /// error is returned, and the output describes the security group rules that were not
-        /// revoked.
+        /// For a default VPC, if the values you specify do not match the existing rule's values,
+        /// no error is returned, and the output describes the security group rules that were
+        /// not revoked.
         /// </para>
         ///  
         /// <para>
@@ -26621,8 +26384,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Removes the specified outbound (egress) rules from a security group for
-        /// EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
+        /// Removes the specified outbound (egress) rules from the specified security group.
         /// 
         ///  
         /// <para>
@@ -26636,9 +26398,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [Default VPC] If the values you specify do not match the existing rule's values, no
-        /// error is returned, and the output describes the security group rules that were not
-        /// revoked.
+        /// For a default VPC, if the values you specify do not match the existing rule's values,
+        /// no error is returned, and the output describes the security group rules that were
+        /// not revoked.
         /// </para>
         ///  
         /// <para>
@@ -26680,9 +26442,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [EC2-Classic, default VPC] If the values you specify do not match the existing rule's
-        /// values, no error is returned, and the output describes the security group rules that
-        /// were not revoked.
+        /// For a default VPC, if the values you specify do not match the existing rule's values,
+        /// no error is returned, and the output describes the security group rules that were
+        /// not revoked.
         /// </para>
         ///  
         /// <para>
@@ -26694,13 +26456,6 @@ namespace Amazon.EC2
         /// Rule changes are propagated to instances within the security group as quickly as possible.
         /// However, a small delay might occur.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service method.</param>
         /// 
@@ -26725,9 +26480,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// [EC2-Classic, default VPC] If the values you specify do not match the existing rule's
-        /// values, no error is returned, and the output describes the security group rules that
-        /// were not revoked.
+        /// For a default VPC, if the values you specify do not match the existing rule's values,
+        /// no error is returned, and the output describes the security group rules that were
+        /// not revoked.
         /// </para>
         ///  
         /// <para>
@@ -26739,13 +26494,6 @@ namespace Amazon.EC2
         /// Rule changes are propagated to instances within the security group as quickly as possible.
         /// However, a small delay might occur.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service method.</param>
         /// <param name="cancellationToken">
@@ -27756,8 +27504,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
         /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
-        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -27768,10 +27515,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
-        /// The private IP addresses stay associated and support the existing connections but
+        /// The private IP addresses stay associated and support the existing connections, but
         /// do not support any new connections (new connections are distributed across the remaining
         /// assigned private IP address). After the existing connections drain out, the private
-        /// IP addresses get released. 
+        /// IP addresses are released.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
@@ -27785,8 +27532,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
         /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
-        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -27797,10 +27543,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
-        /// The private IP addresses stay associated and support the existing connections but
+        /// The private IP addresses stay associated and support the existing connections, but
         /// do not support any new connections (new connections are distributed across the remaining
         /// assigned private IP address). After the existing connections drain out, the private
-        /// IP addresses get released. 
+        /// IP addresses are released.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
@@ -27850,10 +27596,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Updates the description of an egress (outbound) security group rule. You
-        /// can replace an existing description, or add a description to a rule that did not have
-        /// one previously. You can remove a description for a security group rule by omitting
-        /// the description parameter in the request.
+        /// Updates the description of an egress (outbound) security group rule. You can replace
+        /// an existing description, or add a description to a rule that did not have one previously.
+        /// You can remove a description for a security group rule by omitting the description
+        /// parameter in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsEgress service method.</param>
         /// 
@@ -27864,10 +27610,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [VPC only] Updates the description of an egress (outbound) security group rule. You
-        /// can replace an existing description, or add a description to a rule that did not have
-        /// one previously. You can remove a description for a security group rule by omitting
-        /// the description parameter in the request.
+        /// Updates the description of an egress (outbound) security group rule. You can replace
+        /// an existing description, or add a description to a rule that did not have one previously.
+        /// You can remove a description for a security group rule by omitting the description
+        /// parameter in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityGroupRuleDescriptionsEgress service method.</param>
         /// <param name="cancellationToken">

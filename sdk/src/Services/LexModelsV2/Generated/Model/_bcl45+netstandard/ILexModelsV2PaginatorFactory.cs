@@ -81,14 +81,34 @@ namespace Amazon.LexModelsV2.Model
         IListImportsPaginator ListImports(ListImportsRequest request);
 
         /// <summary>
+        /// Paginator for ListIntentMetrics operation
+        ///</summary>
+        IListIntentMetricsPaginator ListIntentMetrics(ListIntentMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListIntents operation
         ///</summary>
         IListIntentsPaginator ListIntents(ListIntentsRequest request);
 
         /// <summary>
+        /// Paginator for ListIntentStageMetrics operation
+        ///</summary>
+        IListIntentStageMetricsPaginator ListIntentStageMetrics(ListIntentStageMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommendedIntents operation
         ///</summary>
         IListRecommendedIntentsPaginator ListRecommendedIntents(ListRecommendedIntentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessionAnalyticsData operation
+        ///</summary>
+        IListSessionAnalyticsDataPaginator ListSessionAnalyticsData(ListSessionAnalyticsDataRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessionMetrics operation
+        ///</summary>
+        IListSessionMetricsPaginator ListSessionMetrics(ListSessionMetricsRequest request);
 
         /// <summary>
         /// Paginator for ListSlots operation
@@ -119,5 +139,15 @@ namespace Amazon.LexModelsV2.Model
         /// Paginator for ListTestSets operation
         ///</summary>
         IListTestSetsPaginator ListTestSets(ListTestSetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListUtteranceAnalyticsData operation
+        ///</summary>
+        IListUtteranceAnalyticsDataPaginator ListUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest request);
+
+        /// <summary>
+        /// Paginator for ListUtteranceMetrics operation
+        ///</summary>
+        IListUtteranceMetricsPaginator ListUtteranceMetrics(ListUtteranceMetricsRequest request);
     }
 }

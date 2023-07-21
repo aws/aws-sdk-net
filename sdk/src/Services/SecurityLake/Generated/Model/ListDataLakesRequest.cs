@@ -31,8 +31,8 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Container for the parameters to the ListDataLakes operation.
     /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-    /// Services account ID. You can use the <code>ListDataLakes</code> API to know whether
-    /// Security Lake is enabled for any region.
+    /// Services Regions. You can use this operation to determine whether Security Lake is
+    /// enabled for a Region.
     /// </summary>
     public partial class ListDataLakesRequest : AmazonSecurityLakeRequest
     {

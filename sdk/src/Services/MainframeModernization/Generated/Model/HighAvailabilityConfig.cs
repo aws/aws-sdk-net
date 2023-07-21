@@ -38,10 +38,11 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of instances in a high availability configuration.
+        /// The number of instances in a high availability configuration. The minimum possible
+        /// value is 1 and the maximum is 100.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public int DesiredCapacity
         {
             get { return this._desiredCapacity.GetValueOrDefault(); }

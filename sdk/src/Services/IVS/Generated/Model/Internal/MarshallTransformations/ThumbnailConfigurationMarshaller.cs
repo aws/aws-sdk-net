@@ -51,6 +51,23 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RecordingMode);
             }
 
+            if(requestObject.IsSetResolution())
+            {
+                context.Writer.WritePropertyName("resolution");
+                context.Writer.Write(requestObject.Resolution);
+            }
+
+            if(requestObject.IsSetStorage())
+            {
+                context.Writer.WritePropertyName("storage");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStorageListValue in requestObject.Storage)
+                {
+                        context.Writer.Write(requestObjectStorageListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTargetIntervalSeconds())
             {
                 context.Writer.WritePropertyName("targetIntervalSeconds");

@@ -74,16 +74,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Changes", "https://route53.amazonaws.com/doc/2013-04-01/");
                     foreach (var publicRequestChangesValue in publicRequestChanges) 
                     {
-                    
+                
                     if (publicRequestChangesValue != null) 
                     {
                         xmlWriter.WriteStartElement("member", "https://route53.amazonaws.com/doc/2013-04-01/");            
                         if(publicRequestChangesValue.IsSetLocationName())
                             xmlWriter.WriteElementString("LocationName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangesValue.LocationName));                 
-        
+
                         if(publicRequestChangesValue.IsSetAction())
                             xmlWriter.WriteElementString("Action", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangesValue.Action));                 
-        
+
                         var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
                         if (publicRequestChangesValueCidrList != null && publicRequestChangesValueCidrList.Count > 0) 
                         {                        

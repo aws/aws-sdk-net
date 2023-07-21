@@ -19,7 +19,7 @@
 
     <NoWarn>CS1591</NoWarn>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>bin\$(Configuration)\net35</OutputPath>
+    <OutputPath>bin/$(Configuration)/net35</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +28,7 @@
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
     <Compile Remove="**/obj/**" />
-    <Compile Include="..\..\Lambda\IntegrationTests\LambdaTests.cs" />
+    <Compile Include="../../Lambda/IntegrationTests/LambdaTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,11 +42,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\Lambda\AWSSDK.Lambda.Net35.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net35.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/CognitoSync/AWSSDK.CognitoSync.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/Lambda/AWSSDK.Lambda.Net35.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,7 +61,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="obj\net45\Debug\net45\" />
+    <Folder Include="obj/net45/Debug/net45/" />
   </ItemGroup>
   
 </Project>

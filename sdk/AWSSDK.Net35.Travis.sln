@@ -4,1449 +4,1453 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net35", "src\Core\AWSSDK.Core.Net35.csproj", "{008B5619-D651-4F7A-8440-F2EBF5EFAAF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net35", "src/Core/AWSSDK.Core.Net35.csproj", "{008B5619-D651-4F7A-8440-F2EBF5EFAAF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccessAnalyzer", "AccessAnalyzer", "{CDEDFA0E-9192-5F7F-200A-5329D35913C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AccessAnalyzer.Net35", "src\Services\AccessAnalyzer\AWSSDK.AccessAnalyzer.Net35.csproj", "{50298AD4-533B-4B36-9A9B-57654F5208B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AccessAnalyzer.Net35", "src/Services/AccessAnalyzer/AWSSDK.AccessAnalyzer.Net35.csproj", "{50298AD4-533B-4B36-9A9B-57654F5208B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Account", "Account", "{AEF6C919-A19B-DF6C-2AEC-8537B2BEE229}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Account.Net35", "src\Services\Account\AWSSDK.Account.Net35.csproj", "{F2769C3A-39B8-432A-8BCC-6B0938924AE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Account.Net35", "src/Services/Account/AWSSDK.Account.Net35.csproj", "{F2769C3A-39B8-432A-8BCC-6B0938924AE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ACMPCA", "ACMPCA", "{8A1E2E1A-6AE3-1344-2FE9-B935F5907948}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ACMPCA.Net35", "src\Services\ACMPCA\AWSSDK.ACMPCA.Net35.csproj", "{B19AB973-FE97-4905-9380-6F93720CC7B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ACMPCA.Net35", "src/Services/ACMPCA/AWSSDK.ACMPCA.Net35.csproj", "{B19AB973-FE97-4905-9380-6F93720CC7B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlexaForBusiness", "AlexaForBusiness", "{625FD02B-4A1E-0C6E-2235-67785682B09E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AlexaForBusiness.Net35", "src\Services\AlexaForBusiness\AWSSDK.AlexaForBusiness.Net35.csproj", "{AAD3C852-6BAB-4D3D-B529-CFBD91C92F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AlexaForBusiness.Net35", "src/Services/AlexaForBusiness/AWSSDK.AlexaForBusiness.Net35.csproj", "{AAD3C852-6BAB-4D3D-B529-CFBD91C92F0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Amplify", "Amplify", "{360AAE66-DF79-279B-D365-F61DAA46AF88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Amplify.Net35", "src\Services\Amplify\AWSSDK.Amplify.Net35.csproj", "{0B1066C4-91C6-4E95-BB1B-042D3661C739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Amplify.Net35", "src/Services/Amplify/AWSSDK.Amplify.Net35.csproj", "{0B1066C4-91C6-4E95-BB1B-042D3661C739}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmplifyBackend", "AmplifyBackend", "{8EC71B9F-B5F0-0A07-5834-5EB2FE710949}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyBackend.Net35", "src\Services\AmplifyBackend\AWSSDK.AmplifyBackend.Net35.csproj", "{2E9B8FFA-9742-4FF3-BEAC-AF95A3346524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyBackend.Net35", "src/Services/AmplifyBackend/AWSSDK.AmplifyBackend.Net35.csproj", "{2E9B8FFA-9742-4FF3-BEAC-AF95A3346524}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmplifyUIBuilder", "AmplifyUIBuilder", "{185ADDFB-8F81-2AFB-0312-2C0F36BF60A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyUIBuilder.Net35", "src\Services\AmplifyUIBuilder\AWSSDK.AmplifyUIBuilder.Net35.csproj", "{18174E88-E8F1-4915-B3E6-B49ADA9290EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AmplifyUIBuilder.Net35", "src/Services/AmplifyUIBuilder/AWSSDK.AmplifyUIBuilder.Net35.csproj", "{18174E88-E8F1-4915-B3E6-B49ADA9290EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", "{2305F8EB-CF6C-32BD-44CA-9E5DB9DC581B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.APIGateway.Net35", "src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj", "{12C33490-E73A-42DD-809C-66056E7140FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.APIGateway.Net35", "src/Services/APIGateway/AWSSDK.APIGateway.Net35.csproj", "{12C33490-E73A-42DD-809C-66056E7140FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGatewayManagementApi", "ApiGatewayManagementApi", "{1ABC55A4-2EF0-3BC5-6C40-618C6DA07D9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayManagementApi.Net35", "src\Services\ApiGatewayManagementApi\AWSSDK.ApiGatewayManagementApi.Net35.csproj", "{C806630B-FBA6-4472-AA0A-5929E194CCD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayManagementApi.Net35", "src/Services/ApiGatewayManagementApi/AWSSDK.ApiGatewayManagementApi.Net35.csproj", "{C806630B-FBA6-4472-AA0A-5929E194CCD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGatewayV2", "ApiGatewayV2", "{26F0259B-0FBF-D805-6CCB-04C85A1705A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayV2.Net35", "src\Services\ApiGatewayV2\AWSSDK.ApiGatewayV2.Net35.csproj", "{89DD7839-A0CB-42AA-A369-3C298845E849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApiGatewayV2.Net35", "src/Services/ApiGatewayV2/AWSSDK.ApiGatewayV2.Net35.csproj", "{89DD7839-A0CB-42AA-A369-3C298845E849}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppConfig", "AppConfig", "{9A86D8BD-0981-6BF6-25B8-ABA91728A99D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfig.Net35", "src\Services\AppConfig\AWSSDK.AppConfig.Net35.csproj", "{CE6934A8-CF54-482A-9C43-E2CFB5BFED5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfig.Net35", "src/Services/AppConfig/AWSSDK.AppConfig.Net35.csproj", "{CE6934A8-CF54-482A-9C43-E2CFB5BFED5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppConfigData", "AppConfigData", "{14CF29A3-117A-EFB2-3B24-D83866A54363}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfigData.Net35", "src\Services\AppConfigData\AWSSDK.AppConfigData.Net35.csproj", "{68B5F74A-0579-4B6A-A0F7-45851FB60B16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppConfigData.Net35", "src/Services/AppConfigData/AWSSDK.AppConfigData.Net35.csproj", "{68B5F74A-0579-4B6A-A0F7-45851FB60B16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFabric", "AppFabric", "{122C756F-619E-4C6F-989B-3B66CE192BFA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppFabric.Net35", "src\Services\AppFabric\AWSSDK.AppFabric.Net35.csproj", "{C2DEDABB-B12B-4A27-AD52-779B2E8FE34D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppFabric.Net35", "src/Services/AppFabric/AWSSDK.AppFabric.Net35.csproj", "{C2DEDABB-B12B-4A27-AD52-779B2E8FE34D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Appflow", "Appflow", "{80B70EF1-D98E-A39C-2852-EFE1A1F38E5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Appflow.Net35", "src\Services\Appflow\AWSSDK.Appflow.Net35.csproj", "{79A302C3-9E80-4E99-859F-C544EE014A15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Appflow.Net35", "src/Services/Appflow/AWSSDK.Appflow.Net35.csproj", "{79A302C3-9E80-4E99-859F-C544EE014A15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppIntegrationsService", "AppIntegrationsService", "{88C13AE9-906E-0CF3-C004-6FEDECF28034}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppIntegrationsService.Net35", "src\Services\AppIntegrationsService\AWSSDK.AppIntegrationsService.Net35.csproj", "{D04B5FCC-0C00-4D83-A25E-6843CFE6CC82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppIntegrationsService.Net35", "src/Services/AppIntegrationsService/AWSSDK.AppIntegrationsService.Net35.csproj", "{D04B5FCC-0C00-4D83-A25E-6843CFE6CC82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationAutoScaling", "ApplicationAutoScaling", "{46EE5ECE-B372-EE7A-F232-044FE01E8C59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationAutoScaling.Net35", "src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj", "{10C92D18-789B-43BD-B57F-C2B637574FC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationAutoScaling.Net35", "src/Services/ApplicationAutoScaling/AWSSDK.ApplicationAutoScaling.Net35.csproj", "{10C92D18-789B-43BD-B57F-C2B637574FC5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationCostProfiler", "ApplicationCostProfiler", "{6334A02B-EA37-9C32-BFE9-DA6B82F850EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationCostProfiler.Net35", "src\Services\ApplicationCostProfiler\AWSSDK.ApplicationCostProfiler.Net35.csproj", "{A1303E06-B6D9-497B-88B6-031626C1A179}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationCostProfiler.Net35", "src/Services/ApplicationCostProfiler/AWSSDK.ApplicationCostProfiler.Net35.csproj", "{A1303E06-B6D9-497B-88B6-031626C1A179}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationDiscoveryService", "ApplicationDiscoveryService", "{5EA5E49B-6251-D7A9-C913-88DCC677F88D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationDiscoveryService.Net35", "src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj", "{890BD601-68B9-439C-B15F-50D902B33098}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationDiscoveryService.Net35", "src/Services/ApplicationDiscoveryService/AWSSDK.ApplicationDiscoveryService.Net35.csproj", "{890BD601-68B9-439C-B15F-50D902B33098}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationInsights", "ApplicationInsights", "{0B1EFD3C-FF9E-9835-4859-FA6550641E51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationInsights.Net35", "src\Services\ApplicationInsights\AWSSDK.ApplicationInsights.Net35.csproj", "{9EA662DE-F6DD-404B-BCAB-3950D3196BCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ApplicationInsights.Net35", "src/Services/ApplicationInsights/AWSSDK.ApplicationInsights.Net35.csproj", "{9EA662DE-F6DD-404B-BCAB-3950D3196BCD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppMesh", "AppMesh", "{64009C2E-E415-6516-D759-1810429F7992}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppMesh.Net35", "src\Services\AppMesh\AWSSDK.AppMesh.Net35.csproj", "{1E62D29E-C359-4110-A7C0-5F52044B8F7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppMesh.Net35", "src/Services/AppMesh/AWSSDK.AppMesh.Net35.csproj", "{1E62D29E-C359-4110-A7C0-5F52044B8F7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppRegistry", "AppRegistry", "{D7C9294E-1DB5-4AFB-063E-2522F61B8F6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRegistry.Net35", "src\Services\AppRegistry\AWSSDK.AppRegistry.Net35.csproj", "{D2C0E347-B100-42BC-87F4-D66D4F2A3650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRegistry.Net35", "src/Services/AppRegistry/AWSSDK.AppRegistry.Net35.csproj", "{D2C0E347-B100-42BC-87F4-D66D4F2A3650}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppRunner", "AppRunner", "{DFF25773-6015-14CF-B8A3-0CA7D7CAA052}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRunner.Net35", "src\Services\AppRunner\AWSSDK.AppRunner.Net35.csproj", "{E47091C1-A768-4BE0-8AD2-5FA374DFF38C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppRunner.Net35", "src/Services/AppRunner/AWSSDK.AppRunner.Net35.csproj", "{E47091C1-A768-4BE0-8AD2-5FA374DFF38C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppStream", "AppStream", "{85367B5D-CD97-A90E-DCC6-02AEE2B5A745}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppStream.Net35", "src\Services\AppStream\AWSSDK.AppStream.Net35.csproj", "{3E700303-4D7B-4320-80E6-6D9AE3F4BC1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppStream.Net35", "src/Services/AppStream/AWSSDK.AppStream.Net35.csproj", "{3E700303-4D7B-4320-80E6-6D9AE3F4BC1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppSync", "AppSync", "{5C0F0878-DADA-CE9F-6C66-692075502E59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppSync.Net35", "src\Services\AppSync\AWSSDK.AppSync.Net35.csproj", "{CDCB7E86-A8C7-423D-B7ED-728F24A4E6C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AppSync.Net35", "src/Services/AppSync/AWSSDK.AppSync.Net35.csproj", "{CDCB7E86-A8C7-423D-B7ED-728F24A4E6C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ARCZonalShift", "ARCZonalShift", "{2BBFD094-50F5-0851-5DB4-96E3F6D6C343}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ARCZonalShift.Net35", "src\Services\ARCZonalShift\AWSSDK.ARCZonalShift.Net35.csproj", "{80A86619-AFC5-4C13-87CB-FD4750147E81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ARCZonalShift.Net35", "src/Services/ARCZonalShift/AWSSDK.ARCZonalShift.Net35.csproj", "{80A86619-AFC5-4C13-87CB-FD4750147E81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Athena", "Athena", "{536525AB-070E-80C2-B04E-89DB1D071B04}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Athena.Net35", "src\Services\Athena\AWSSDK.Athena.Net35.csproj", "{B47DEA30-84B7-4D5C-A775-E03DAC6B67EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Athena.Net35", "src/Services/Athena/AWSSDK.Athena.Net35.csproj", "{B47DEA30-84B7-4D5C-A775-E03DAC6B67EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuditManager", "AuditManager", "{F2E6A8B6-E59A-4C53-141E-08B642AE25A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AuditManager.Net35", "src\Services\AuditManager\AWSSDK.AuditManager.Net35.csproj", "{6418BB0A-C320-48B7-92D3-B67AE7B6B137}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AuditManager.Net35", "src/Services/AuditManager/AWSSDK.AuditManager.Net35.csproj", "{6418BB0A-C320-48B7-92D3-B67AE7B6B137}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AugmentedAIRuntime", "AugmentedAIRuntime", "{83872208-002D-E7D1-BE52-0F7EB2233A8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AugmentedAIRuntime.Net35", "src\Services\AugmentedAIRuntime\AWSSDK.AugmentedAIRuntime.Net35.csproj", "{74097888-630C-49B5-B342-BD5FEA9B1568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AugmentedAIRuntime.Net35", "src/Services/AugmentedAIRuntime/AWSSDK.AugmentedAIRuntime.Net35.csproj", "{74097888-630C-49B5-B342-BD5FEA9B1568}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoScaling", "AutoScaling", "{6535AA4C-E2CF-5A06-4659-8860EBDA1C64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScaling.Net35", "src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj", "{7EFC7906-10B6-4E27-B0A5-03746CE39ADF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScaling.Net35", "src/Services/AutoScaling/AWSSDK.AutoScaling.Net35.csproj", "{7EFC7906-10B6-4E27-B0A5-03746CE39ADF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoScalingPlans", "AutoScalingPlans", "{7E9DE433-7D62-41FA-1AE7-C94EDC97FAF6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScalingPlans.Net35", "src\Services\AutoScalingPlans\AWSSDK.AutoScalingPlans.Net35.csproj", "{65363E09-A627-41FC-9F49-4DE1F697354D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AutoScalingPlans.Net35", "src/Services/AutoScalingPlans/AWSSDK.AutoScalingPlans.Net35.csproj", "{65363E09-A627-41FC-9F49-4DE1F697354D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSHealth", "AWSHealth", "{3644EFD3-CAA4-C394-6AE7-011F1E8DD490}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSHealth.Net35", "src\Services\AWSHealth\AWSSDK.AWSHealth.Net35.csproj", "{6AC1E405-4788-48A7-AA49-C9E9BD3C86E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSHealth.Net35", "src/Services/AWSHealth/AWSSDK.AWSHealth.Net35.csproj", "{6AC1E405-4788-48A7-AA49-C9E9BD3C86E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSMarketplaceCommerceAnalytics", "AWSMarketplaceCommerceAnalytics", "{B035A505-DD46-743F-35C8-A43546C3E0BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceCommerceAnalytics.Net35", "src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj", "{3EE6D3AF-7B64-462E-85E7-7D22F1CFD4E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceCommerceAnalytics.Net35", "src/Services/AWSMarketplaceCommerceAnalytics/AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj", "{3EE6D3AF-7B64-462E-85E7-7D22F1CFD4E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSMarketplaceMetering", "AWSMarketplaceMetering", "{46EABFEB-7F27-80DF-D874-540F82C8B2E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceMetering.Net35", "src\Services\AWSMarketplaceMetering\AWSSDK.AWSMarketplaceMetering.Net35.csproj", "{42558DBC-5AFE-4C3D-A287-6CDD24E334D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSMarketplaceMetering.Net35", "src/Services/AWSMarketplaceMetering/AWSSDK.AWSMarketplaceMetering.Net35.csproj", "{42558DBC-5AFE-4C3D-A287-6CDD24E334D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSSupport", "AWSSupport", "{9D1AB1AB-86E5-717F-0D09-76C8A985BADE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSSupport.Net35", "src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj", "{F9DCD637-8F7B-4312-9469-F008B5B494C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.AWSSupport.Net35", "src/Services/AWSSupport/AWSSDK.AWSSupport.Net35.csproj", "{F9DCD637-8F7B-4312-9469-F008B5B494C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backup", "Backup", "{74A77CB9-6D06-D131-6B29-4484F2B180A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Backup.Net35", "src\Services\Backup\AWSSDK.Backup.Net35.csproj", "{3696F767-B26A-49D7-8EBA-E762250C8393}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Backup.Net35", "src/Services/Backup/AWSSDK.Backup.Net35.csproj", "{3696F767-B26A-49D7-8EBA-E762250C8393}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackupGateway", "BackupGateway", "{E90AA8ED-2178-4599-D95D-9312CF0E76B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BackupGateway.Net35", "src\Services\BackupGateway\AWSSDK.BackupGateway.Net35.csproj", "{BEA649D3-B968-4405-836D-17D2E8C82D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BackupGateway.Net35", "src/Services/BackupGateway/AWSSDK.BackupGateway.Net35.csproj", "{BEA649D3-B968-4405-836D-17D2E8C82D70}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackupStorage", "BackupStorage", "{06923C4E-84F0-CA74-0D51-BE56B546519B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BackupStorage.Net35", "src\Services\BackupStorage\AWSSDK.BackupStorage.Net35.csproj", "{FA938333-88F0-455A-8107-8273361F1232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BackupStorage.Net35", "src/Services/BackupStorage/AWSSDK.BackupStorage.Net35.csproj", "{FA938333-88F0-455A-8107-8273361F1232}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Batch", "Batch", "{E5A8B92E-7EA1-F6C8-7FCD-F6B324574842}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Batch.Net35", "src\Services\Batch\AWSSDK.Batch.Net35.csproj", "{4AA4185C-D643-4DBB-BED5-23088B051EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Batch.Net35", "src/Services/Batch/AWSSDK.Batch.Net35.csproj", "{4AA4185C-D643-4DBB-BED5-23088B051EAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BillingConductor", "BillingConductor", "{D1A2C6E6-D363-5B28-3AC4-5063972F31AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BillingConductor.Net35", "src\Services\BillingConductor\AWSSDK.BillingConductor.Net35.csproj", "{11905D66-6909-4279-A28D-340FE983AFCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BillingConductor.Net35", "src/Services/BillingConductor/AWSSDK.BillingConductor.Net35.csproj", "{11905D66-6909-4279-A28D-340FE983AFCC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Braket", "Braket", "{22C5E221-8704-DF1B-B0F9-0F6783F5E4BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Braket.Net35", "src\Services\Braket\AWSSDK.Braket.Net35.csproj", "{46FDC654-FDD6-4FD4-B4F0-B38F7438F570}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Braket.Net35", "src/Services/Braket/AWSSDK.Braket.Net35.csproj", "{46FDC654-FDD6-4FD4-B4F0-B38F7438F570}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Budgets", "Budgets", "{DB24AA63-EC30-5958-E072-C3D25603E05F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Budgets.Net35", "src\Services\Budgets\AWSSDK.Budgets.Net35.csproj", "{6C57E800-F0B9-422B-828B-4CD68CF023EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Budgets.Net35", "src/Services/Budgets/AWSSDK.Budgets.Net35.csproj", "{6C57E800-F0B9-422B-828B-4CD68CF023EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CertificateManager", "CertificateManager", "{46E43E15-B22E-E5F8-F63F-BD66B2890C99}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CertificateManager.Net35", "src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj", "{D72ECC96-88F9-4158-AF71-38D37401224E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CertificateManager.Net35", "src/Services/CertificateManager/AWSSDK.CertificateManager.Net35.csproj", "{D72ECC96-88F9-4158-AF71-38D37401224E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chime", "Chime", "{F72DA89C-0C32-D7CC-8557-AF1AF8B6C30F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Chime.Net35", "src\Services\Chime\AWSSDK.Chime.Net35.csproj", "{40806E58-65A1-4AF2-B719-663DBF57B1FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Chime.Net35", "src/Services/Chime/AWSSDK.Chime.Net35.csproj", "{40806E58-65A1-4AF2-B719-663DBF57B1FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChimeSDKIdentity", "ChimeSDKIdentity", "{87D0C479-CC6B-5B1B-E5D4-0F7735EA82FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKIdentity.Net35", "src\Services\ChimeSDKIdentity\AWSSDK.ChimeSDKIdentity.Net35.csproj", "{C6431135-B303-4CD2-82AB-9E2EE6D028DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKIdentity.Net35", "src/Services/ChimeSDKIdentity/AWSSDK.ChimeSDKIdentity.Net35.csproj", "{C6431135-B303-4CD2-82AB-9E2EE6D028DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChimeSDKMediaPipelines", "ChimeSDKMediaPipelines", "{44DC836E-E224-9A79-FCEC-3E0353ABF7ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMediaPipelines.Net35", "src\Services\ChimeSDKMediaPipelines\AWSSDK.ChimeSDKMediaPipelines.Net35.csproj", "{7EE43E3A-9305-462F-AE70-B5D5C1815DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMediaPipelines.Net35", "src/Services/ChimeSDKMediaPipelines/AWSSDK.ChimeSDKMediaPipelines.Net35.csproj", "{7EE43E3A-9305-462F-AE70-B5D5C1815DF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChimeSDKMeetings", "ChimeSDKMeetings", "{AA96C611-8287-F305-3CC8-C723B73612A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMeetings.Net35", "src\Services\ChimeSDKMeetings\AWSSDK.ChimeSDKMeetings.Net35.csproj", "{23078D73-13E0-4ACE-B0ED-A9E0A40CB15F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMeetings.Net35", "src/Services/ChimeSDKMeetings/AWSSDK.ChimeSDKMeetings.Net35.csproj", "{23078D73-13E0-4ACE-B0ED-A9E0A40CB15F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChimeSDKMessaging", "ChimeSDKMessaging", "{83621FC7-55D6-5934-5571-31F381B97BA1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMessaging.Net35", "src\Services\ChimeSDKMessaging\AWSSDK.ChimeSDKMessaging.Net35.csproj", "{2A8BEAB1-E3B6-4B65-BBD7-EF9D6008F074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKMessaging.Net35", "src/Services/ChimeSDKMessaging/AWSSDK.ChimeSDKMessaging.Net35.csproj", "{2A8BEAB1-E3B6-4B65-BBD7-EF9D6008F074}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChimeSDKVoice", "ChimeSDKVoice", "{0E5ABF4B-F85F-216E-3439-9FBA784A8E4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKVoice.Net35", "src\Services\ChimeSDKVoice\AWSSDK.ChimeSDKVoice.Net35.csproj", "{A0F4F9A3-92FF-4C0C-9064-AC3A99E2B5AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ChimeSDKVoice.Net35", "src/Services/ChimeSDKVoice/AWSSDK.ChimeSDKVoice.Net35.csproj", "{A0F4F9A3-92FF-4C0C-9064-AC3A99E2B5AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanRooms", "CleanRooms", "{0C1CAE4A-DDDB-E1C0-A43E-1E792179BDE4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CleanRooms.Net35", "src\Services\CleanRooms\AWSSDK.CleanRooms.Net35.csproj", "{B3BE8FC1-4C39-4A76-A0C0-09E30530E44B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CleanRooms.Net35", "src/Services/CleanRooms/AWSSDK.CleanRooms.Net35.csproj", "{B3BE8FC1-4C39-4A76-A0C0-09E30530E44B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cloud9", "Cloud9", "{D26C8DAE-D728-08B7-5C79-67DCE595C0CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Cloud9.Net35", "src\Services\Cloud9\AWSSDK.Cloud9.Net35.csproj", "{8F17525F-1FAC-4243-B130-FD97B4FBCFAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Cloud9.Net35", "src/Services/Cloud9/AWSSDK.Cloud9.Net35.csproj", "{8F17525F-1FAC-4243-B130-FD97B4FBCFAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudControlApi", "CloudControlApi", "{ED43FFE5-FD4E-28E2-7D97-8A372A31833F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudControlApi.Net35", "src\Services\CloudControlApi\AWSSDK.CloudControlApi.Net35.csproj", "{5B3C920F-74EB-4D5C-BDB5-20B5C75BD1EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudControlApi.Net35", "src/Services/CloudControlApi/AWSSDK.CloudControlApi.Net35.csproj", "{5B3C920F-74EB-4D5C-BDB5-20B5C75BD1EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudDirectory", "CloudDirectory", "{31EF077E-1B9F-4295-FBD4-072600CEC8BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudDirectory.Net35", "src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net35.csproj", "{73A56637-52E6-48C1-844D-3BB9A35E2624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudDirectory.Net35", "src/Services/CloudDirectory/AWSSDK.CloudDirectory.Net35.csproj", "{73A56637-52E6-48C1-844D-3BB9A35E2624}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFormation", "CloudFormation", "{4CD3CAC2-89DE-E90A-D09B-E5DD17F98B10}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFormation.Net35", "src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj", "{0FF89A20-810B-4349-BC3B-394A134409DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFormation.Net35", "src/Services/CloudFormation/AWSSDK.CloudFormation.Net35.csproj", "{0FF89A20-810B-4349-BC3B-394A134409DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudFront", "CloudFront", "{4891EF52-D985-71EA-5229-1156F9D7835D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFront.Net35", "src\Services\CloudFront\AWSSDK.CloudFront.Net35.csproj", "{F2E7C3E2-C0C1-41DF-8750-6BB6D533DD0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFront.Net35", "src/Services/CloudFront/AWSSDK.CloudFront.Net35.csproj", "{F2E7C3E2-C0C1-41DF-8750-6BB6D533DD0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudHSM", "CloudHSM", "{BD32448A-1E18-40EC-14BF-7E9F52C5BBC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSM.Net35", "src\Services\CloudHSM\AWSSDK.CloudHSM.Net35.csproj", "{D900B84D-59BA-4BC7-AB2D-DB58BDDF897F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSM.Net35", "src/Services/CloudHSM/AWSSDK.CloudHSM.Net35.csproj", "{D900B84D-59BA-4BC7-AB2D-DB58BDDF897F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudHSMV2", "CloudHSMV2", "{7A153A64-3784-2057-9DC4-84AC1FB367E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSMV2.Net35", "src\Services\CloudHSMV2\AWSSDK.CloudHSMV2.Net35.csproj", "{14587909-FF9E-451C-A83A-795FEA868A27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudHSMV2.Net35", "src/Services/CloudHSMV2/AWSSDK.CloudHSMV2.Net35.csproj", "{14587909-FF9E-451C-A83A-795FEA868A27}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearch", "CloudSearch", "{7123757C-143C-5C2D-984D-D7EB4919511C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearch.Net35", "src\Services\CloudSearch\AWSSDK.CloudSearch.Net35.csproj", "{34925A3A-EDA5-42E9-9BAA-ABEB1745C4DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearch.Net35", "src/Services/CloudSearch/AWSSDK.CloudSearch.Net35.csproj", "{34925A3A-EDA5-42E9-9BAA-ABEB1745C4DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudSearchDomain", "CloudSearchDomain", "{7D3A9E1F-AF34-6DCF-6EE5-FCBD9FAE1D01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearchDomain.Net35", "src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.Net35.csproj", "{A3807EC8-DA87-4FA2-96CB-0DAEE3D9D3C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudSearchDomain.Net35", "src/Services/CloudSearchDomain/AWSSDK.CloudSearchDomain.Net35.csproj", "{A3807EC8-DA87-4FA2-96CB-0DAEE3D9D3C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudTrail", "CloudTrail", "{077DAACB-6033-F60A-AD7E-51DA4A191B98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrail.Net35", "src\Services\CloudTrail\AWSSDK.CloudTrail.Net35.csproj", "{9587AED6-8B09-4225-8ACC-FA99C0FBC648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrail.Net35", "src/Services/CloudTrail/AWSSDK.CloudTrail.Net35.csproj", "{9587AED6-8B09-4225-8ACC-FA99C0FBC648}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudTrailData", "CloudTrailData", "{6BDE0BA9-2DC9-D565-5E89-D46E287044ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrailData.Net35", "src\Services\CloudTrailData\AWSSDK.CloudTrailData.Net35.csproj", "{A423CB7A-862F-4F7E-BC25-1FB956AC51CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudTrailData.Net35", "src/Services/CloudTrailData/AWSSDK.CloudTrailData.Net35.csproj", "{A423CB7A-862F-4F7E-BC25-1FB956AC51CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatch", "CloudWatch", "{4A5408C4-6E9B-2089-624F-98402298A58E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.Net35", "src\Services\CloudWatch\AWSSDK.CloudWatch.Net35.csproj", "{DCDC06B7-A654-4750-9D70-D5A66AA691E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.Net35", "src/Services/CloudWatch/AWSSDK.CloudWatch.Net35.csproj", "{DCDC06B7-A654-4750-9D70-D5A66AA691E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatchEvents", "CloudWatchEvents", "{811EE688-2C8D-947D-DE7D-40E1E7E670EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvents.Net35", "src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net35.csproj", "{9049A732-AC6A-4839-875B-A38EB59CDF22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvents.Net35", "src/Services/CloudWatchEvents/AWSSDK.CloudWatchEvents.Net35.csproj", "{9049A732-AC6A-4839-875B-A38EB59CDF22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatchEvidently", "CloudWatchEvidently", "{0C2E1525-D5D6-0E23-F2E3-AAFFAAA2D558}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvidently.Net35", "src\Services\CloudWatchEvidently\AWSSDK.CloudWatchEvidently.Net35.csproj", "{ECDFAABA-7C89-415A-8452-12EB541AA224}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchEvidently.Net35", "src/Services/CloudWatchEvidently/AWSSDK.CloudWatchEvidently.Net35.csproj", "{ECDFAABA-7C89-415A-8452-12EB541AA224}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatchLogs", "CloudWatchLogs", "{0810B0A1-10E6-FF46-EE4E-A184162081C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchLogs.Net35", "src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net35.csproj", "{51518CBB-11F6-4D56-85F0-DCD68CEE98F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchLogs.Net35", "src/Services/CloudWatchLogs/AWSSDK.CloudWatchLogs.Net35.csproj", "{51518CBB-11F6-4D56-85F0-DCD68CEE98F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudWatchRUM", "CloudWatchRUM", "{4FFFAF18-FFA4-35F5-9820-8D4FC2216237}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchRUM.Net35", "src\Services\CloudWatchRUM\AWSSDK.CloudWatchRUM.Net35.csproj", "{F3C0FFCF-89C8-4B1B-B562-EFF1B98552EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchRUM.Net35", "src/Services/CloudWatchRUM/AWSSDK.CloudWatchRUM.Net35.csproj", "{F3C0FFCF-89C8-4B1B-B562-EFF1B98552EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeArtifact", "CodeArtifact", "{AFD750D3-1E4F-EFE2-581E-B17945864241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeArtifact.Net35", "src\Services\CodeArtifact\AWSSDK.CodeArtifact.Net35.csproj", "{F41273ED-55AA-4260-8C1D-F96A4F58F2E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeArtifact.Net35", "src/Services/CodeArtifact/AWSSDK.CodeArtifact.Net35.csproj", "{F41273ED-55AA-4260-8C1D-F96A4F58F2E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeBuild", "CodeBuild", "{45E4F0CB-0AE8-037D-8015-9052E6A7DCB5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeBuild.Net35", "src\Services\CodeBuild\AWSSDK.CodeBuild.Net35.csproj", "{BF08E5BF-D70C-4C5A-8D60-6BAC65EA7F94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeBuild.Net35", "src/Services/CodeBuild/AWSSDK.CodeBuild.Net35.csproj", "{BF08E5BF-D70C-4C5A-8D60-6BAC65EA7F94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCatalyst", "CodeCatalyst", "{C640DE67-1312-5C85-FA8C-95CDA192BF0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCatalyst.Net35", "src\Services\CodeCatalyst\AWSSDK.CodeCatalyst.Net35.csproj", "{4E9E49A0-9361-424C-A214-E26C980CBB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCatalyst.Net35", "src/Services/CodeCatalyst/AWSSDK.CodeCatalyst.Net35.csproj", "{4E9E49A0-9361-424C-A214-E26C980CBB3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCommit", "CodeCommit", "{17328A20-4955-A13B-AF1B-6D817F55777A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCommit.Net35", "src\Services\CodeCommit\AWSSDK.CodeCommit.Net35.csproj", "{2DAC6F5F-D29E-439E-9882-E17C26C491DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeCommit.Net35", "src/Services/CodeCommit/AWSSDK.CodeCommit.Net35.csproj", "{2DAC6F5F-D29E-439E-9882-E17C26C491DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeDeploy", "CodeDeploy", "{A3F2006F-3A07-5036-6739-D99F81DC69C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeDeploy.Net35", "src\Services\CodeDeploy\AWSSDK.CodeDeploy.Net35.csproj", "{FFB657F2-3FD6-44E3-AE69-489A5CA10814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeDeploy.Net35", "src/Services/CodeDeploy/AWSSDK.CodeDeploy.Net35.csproj", "{FFB657F2-3FD6-44E3-AE69-489A5CA10814}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGuruProfiler", "CodeGuruProfiler", "{5C4DC4D6-4068-52A8-61FA-D7C80993F1BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruProfiler.Net35", "src\Services\CodeGuruProfiler\AWSSDK.CodeGuruProfiler.Net35.csproj", "{353E532B-65C1-4A13-A811-D09F48421754}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruProfiler.Net35", "src/Services/CodeGuruProfiler/AWSSDK.CodeGuruProfiler.Net35.csproj", "{353E532B-65C1-4A13-A811-D09F48421754}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGuruReviewer", "CodeGuruReviewer", "{43158F25-3F77-F5A8-BFF5-6009FDBB913C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruReviewer.Net35", "src\Services\CodeGuruReviewer\AWSSDK.CodeGuruReviewer.Net35.csproj", "{B3C7FED8-7F62-44E9-98D5-DF5ED5D23774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruReviewer.Net35", "src/Services/CodeGuruReviewer/AWSSDK.CodeGuruReviewer.Net35.csproj", "{B3C7FED8-7F62-44E9-98D5-DF5ED5D23774}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGuruSecurity", "CodeGuruSecurity", "{BB50C406-3613-4324-91D4-774460B73E82}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruSecurity.Net35", "src\Services\CodeGuruSecurity\AWSSDK.CodeGuruSecurity.Net35.csproj", "{0C6591CE-88B1-4091-B902-B14E8BDB187D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeGuruSecurity.Net35", "src/Services/CodeGuruSecurity/AWSSDK.CodeGuruSecurity.Net35.csproj", "{0C6591CE-88B1-4091-B902-B14E8BDB187D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodePipeline", "CodePipeline", "{BA1A1C4B-DB0B-BABC-8F9D-FA31E07F7A9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodePipeline.Net35", "src\Services\CodePipeline\AWSSDK.CodePipeline.Net35.csproj", "{C59914AA-07C7-478E-A866-5A45147E811B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodePipeline.Net35", "src/Services/CodePipeline/AWSSDK.CodePipeline.Net35.csproj", "{C59914AA-07C7-478E-A866-5A45147E811B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeStar", "CodeStar", "{9747E1F0-D9F8-2F8A-820C-89C4216A06E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStar.Net35", "src\Services\CodeStar\AWSSDK.CodeStar.Net35.csproj", "{1713A00B-377C-468F-AD26-BF6B9D116829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStar.Net35", "src/Services/CodeStar/AWSSDK.CodeStar.Net35.csproj", "{1713A00B-377C-468F-AD26-BF6B9D116829}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeStarconnections", "CodeStarconnections", "{6F52F05D-880A-A080-8274-EAB1DE26FBE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarconnections.Net35", "src\Services\CodeStarconnections\AWSSDK.CodeStarconnections.Net35.csproj", "{E845331C-F7BD-4AE4-92E6-E03CD4E8327A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarconnections.Net35", "src/Services/CodeStarconnections/AWSSDK.CodeStarconnections.Net35.csproj", "{E845331C-F7BD-4AE4-92E6-E03CD4E8327A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeStarNotifications", "CodeStarNotifications", "{B48930BF-1697-5E14-E5BD-01A81F47CE43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarNotifications.Net35", "src\Services\CodeStarNotifications\AWSSDK.CodeStarNotifications.Net35.csproj", "{E7A7020F-8CE3-463A-B3D8-3B6984AAA5C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CodeStarNotifications.Net35", "src/Services/CodeStarNotifications/AWSSDK.CodeStarNotifications.Net35.csproj", "{E7A7020F-8CE3-463A-B3D8-3B6984AAA5C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoIdentity", "CognitoIdentity", "{56926164-E2A6-63AD-4540-34EB2160CDEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentity.Net35", "src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net35.csproj", "{74612716-A51B-49BA-A89B-8D159B15B6CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentity.Net35", "src/Services/CognitoIdentity/AWSSDK.CognitoIdentity.Net35.csproj", "{74612716-A51B-49BA-A89B-8D159B15B6CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoIdentityProvider", "CognitoIdentityProvider", "{B2509F22-22E9-3BD2-6152-3DA9E63C062C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentityProvider.Net35", "src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net35.csproj", "{D8536C8A-ED33-45CE-9FA5-E554AEBF16C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoIdentityProvider.Net35", "src/Services/CognitoIdentityProvider/AWSSDK.CognitoIdentityProvider.Net35.csproj", "{D8536C8A-ED33-45CE-9FA5-E554AEBF16C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CognitoSync", "CognitoSync", "{BFD52C21-25C3-EA8F-2C70-81D8FF2130F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoSync.Net35", "src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj", "{12443A1C-2142-4E63-95B4-044D84B7E1DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CognitoSync.Net35", "src/Services/CognitoSync/AWSSDK.CognitoSync.Net35.csproj", "{12443A1C-2142-4E63-95B4-044D84B7E1DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comprehend", "Comprehend", "{D428613C-BB6D-AACC-4C00-829B1CC92D1D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Comprehend.Net35", "src\Services\Comprehend\AWSSDK.Comprehend.Net35.csproj", "{D5CFE861-AD69-4F66-8D57-21F31EA0B923}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Comprehend.Net35", "src/Services/Comprehend/AWSSDK.Comprehend.Net35.csproj", "{D5CFE861-AD69-4F66-8D57-21F31EA0B923}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComprehendMedical", "ComprehendMedical", "{25B24598-EC6D-53B0-A87E-9CA569CEFC3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComprehendMedical.Net35", "src\Services\ComprehendMedical\AWSSDK.ComprehendMedical.Net35.csproj", "{4655B8F0-78E7-45E1-BE16-FB3599815167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComprehendMedical.Net35", "src/Services/ComprehendMedical/AWSSDK.ComprehendMedical.Net35.csproj", "{4655B8F0-78E7-45E1-BE16-FB3599815167}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComputeOptimizer", "ComputeOptimizer", "{C04AEC8C-763D-D74D-CE90-54D14556ABBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComputeOptimizer.Net35", "src\Services\ComputeOptimizer\AWSSDK.ComputeOptimizer.Net35.csproj", "{B7B56D59-AED1-43B8-A84F-BF067AF880B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ComputeOptimizer.Net35", "src/Services/ComputeOptimizer/AWSSDK.ComputeOptimizer.Net35.csproj", "{B7B56D59-AED1-43B8-A84F-BF067AF880B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigService", "ConfigService", "{DFE2B09D-735C-F02A-F891-64272C346AAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConfigService.Net35", "src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj", "{3273A790-478B-428D-AC8B-D3EE5793E3EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConfigService.Net35", "src/Services/ConfigService/AWSSDK.ConfigService.Net35.csproj", "{3273A790-478B-428D-AC8B-D3EE5793E3EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Connect", "Connect", "{B3329D8A-61D3-1DB4-4DC0-02C9568A976C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Connect.Net35", "src\Services\Connect\AWSSDK.Connect.Net35.csproj", "{C0EB625C-E29E-4E1E-9CB7-4E2724B85DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Connect.Net35", "src/Services/Connect/AWSSDK.Connect.Net35.csproj", "{C0EB625C-E29E-4E1E-9CB7-4E2724B85DA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConnectCampaignService", "ConnectCampaignService", "{DED4E4F9-1E16-DEBD-FD1E-CD7912632015}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCampaignService.Net35", "src\Services\ConnectCampaignService\AWSSDK.ConnectCampaignService.Net35.csproj", "{88646F19-5159-402B-9676-F0FBE5B182B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCampaignService.Net35", "src/Services/ConnectCampaignService/AWSSDK.ConnectCampaignService.Net35.csproj", "{88646F19-5159-402B-9676-F0FBE5B182B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConnectCases", "ConnectCases", "{843DA583-EAF6-5D47-3496-E9A143C683C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCases.Net35", "src\Services\ConnectCases\AWSSDK.ConnectCases.Net35.csproj", "{C8173739-FC37-4571-B159-A498220201F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectCases.Net35", "src/Services/ConnectCases/AWSSDK.ConnectCases.Net35.csproj", "{C8173739-FC37-4571-B159-A498220201F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConnectContactLens", "ConnectContactLens", "{D73019F5-5C24-78EB-B0AB-5F189505DF92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectContactLens.Net35", "src\Services\ConnectContactLens\AWSSDK.ConnectContactLens.Net35.csproj", "{123C2CC2-AEA9-4426-905F-30F827372A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectContactLens.Net35", "src/Services/ConnectContactLens/AWSSDK.ConnectContactLens.Net35.csproj", "{123C2CC2-AEA9-4426-905F-30F827372A1B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConnectParticipant", "ConnectParticipant", "{1F57F6F6-1AE2-A557-6D8A-20FA7AF8181E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectParticipant.Net35", "src\Services\ConnectParticipant\AWSSDK.ConnectParticipant.Net35.csproj", "{9B633166-9D53-4200-9555-2066C368AD68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectParticipant.Net35", "src/Services/ConnectParticipant/AWSSDK.ConnectParticipant.Net35.csproj", "{9B633166-9D53-4200-9555-2066C368AD68}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConnectWisdomService", "ConnectWisdomService", "{FFAB79DB-B6C7-1FEF-4856-42F9954F2667}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectWisdomService.Net35", "src\Services\ConnectWisdomService\AWSSDK.ConnectWisdomService.Net35.csproj", "{C996C558-9329-4FAA-A00C-8C97780E1EE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ConnectWisdomService.Net35", "src/Services/ConnectWisdomService/AWSSDK.ConnectWisdomService.Net35.csproj", "{C996C558-9329-4FAA-A00C-8C97780E1EE5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlTower", "ControlTower", "{E5B8D987-537E-AE1E-54F7-2A313D6FB2EE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ControlTower.Net35", "src\Services\ControlTower\AWSSDK.ControlTower.Net35.csproj", "{8FB5DC4F-4B18-49E0-AF8E-CAACCA150DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ControlTower.Net35", "src/Services/ControlTower/AWSSDK.ControlTower.Net35.csproj", "{8FB5DC4F-4B18-49E0-AF8E-CAACCA150DD7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CostAndUsageReport", "CostAndUsageReport", "{2B9F4C88-5B7F-4234-5FA7-1289C0A8551A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostAndUsageReport.Net35", "src\Services\CostAndUsageReport\AWSSDK.CostAndUsageReport.Net35.csproj", "{89C28A07-EEE2-4E9F-B509-44A1CE04F08E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostAndUsageReport.Net35", "src/Services/CostAndUsageReport/AWSSDK.CostAndUsageReport.Net35.csproj", "{89C28A07-EEE2-4E9F-B509-44A1CE04F08E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CostExplorer", "CostExplorer", "{BAA431BC-609F-1526-8557-D0345DA5A1D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostExplorer.Net35", "src\Services\CostExplorer\AWSSDK.CostExplorer.Net35.csproj", "{68E80727-FAF3-4D5A-8E22-52FD5CB193D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CostExplorer.Net35", "src/Services/CostExplorer/AWSSDK.CostExplorer.Net35.csproj", "{68E80727-FAF3-4D5A-8E22-52FD5CB193D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerProfiles", "CustomerProfiles", "{CD174409-5A7C-9887-1DFD-995AAAD691EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CustomerProfiles.Net35", "src\Services\CustomerProfiles\AWSSDK.CustomerProfiles.Net35.csproj", "{5BC8D222-BBE6-4ED7-A2CC-1C07F786B3CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CustomerProfiles.Net35", "src/Services/CustomerProfiles/AWSSDK.CustomerProfiles.Net35.csproj", "{5BC8D222-BBE6-4ED7-A2CC-1C07F786B3CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseMigrationService", "DatabaseMigrationService", "{F9C64E3C-5049-4B65-62CB-8867884B19A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DatabaseMigrationService.Net35", "src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj", "{6E621D20-361D-4A06-8D0B-E7439FEC8514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DatabaseMigrationService.Net35", "src/Services/DatabaseMigrationService/AWSSDK.DatabaseMigrationService.Net35.csproj", "{6E621D20-361D-4A06-8D0B-E7439FEC8514}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataExchange", "DataExchange", "{9E887689-7F54-0AB1-C230-9FC19FBAC759}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataExchange.Net35", "src\Services\DataExchange\AWSSDK.DataExchange.Net35.csproj", "{62CBC2BC-4EFA-46DE-AA50-451E26340B51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataExchange.Net35", "src/Services/DataExchange/AWSSDK.DataExchange.Net35.csproj", "{62CBC2BC-4EFA-46DE-AA50-451E26340B51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataPipeline", "DataPipeline", "{347F2054-E610-10E5-80D5-997084335FC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataPipeline.Net35", "src\Services\DataPipeline\AWSSDK.DataPipeline.Net35.csproj", "{50EDD9F1-E2FE-4908-8133-1B4D91E97669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataPipeline.Net35", "src/Services/DataPipeline/AWSSDK.DataPipeline.Net35.csproj", "{50EDD9F1-E2FE-4908-8133-1B4D91E97669}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataSync", "DataSync", "{5EF852BC-D1A2-2713-F50C-DEE58EE8AF4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataSync.Net35", "src\Services\DataSync\AWSSDK.DataSync.Net35.csproj", "{F8FF7807-688F-40C1-A81D-35D1ED5A0FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DataSync.Net35", "src/Services/DataSync/AWSSDK.DataSync.Net35.csproj", "{F8FF7807-688F-40C1-A81D-35D1ED5A0FB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAX", "DAX", "{C04824C2-4A51-F091-0F32-6380EC8D1F6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DAX.Net35", "src\Services\DAX\AWSSDK.DAX.Net35.csproj", "{BEDA965F-9F69-4BA2-A700-706C612DC268}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DAX.Net35", "src/Services/DAX/AWSSDK.DAX.Net35.csproj", "{BEDA965F-9F69-4BA2-A700-706C612DC268}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Detective", "Detective", "{B6E6E065-5A86-35A0-9289-5AA9B8A8D646}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Detective.Net35", "src\Services\Detective\AWSSDK.Detective.Net35.csproj", "{4CA73AC1-0C8A-4E5E-A492-0B0B9A867641}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Detective.Net35", "src/Services/Detective/AWSSDK.Detective.Net35.csproj", "{4CA73AC1-0C8A-4E5E-A492-0B0B9A867641}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeviceFarm", "DeviceFarm", "{F0ADF1C9-6CC4-3EE6-9A4E-DEE64F2D975A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DeviceFarm.Net35", "src\Services\DeviceFarm\AWSSDK.DeviceFarm.Net35.csproj", "{71B3F579-185F-4302-894A-A94889E75C1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DeviceFarm.Net35", "src/Services/DeviceFarm/AWSSDK.DeviceFarm.Net35.csproj", "{71B3F579-185F-4302-894A-A94889E75C1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevOpsGuru", "DevOpsGuru", "{2772593F-4E6F-D139-0B1B-FA64019EDFB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DevOpsGuru.Net35", "src\Services\DevOpsGuru\AWSSDK.DevOpsGuru.Net35.csproj", "{7877F6B8-D63A-47A7-B02D-0B9037599166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DevOpsGuru.Net35", "src/Services/DevOpsGuru/AWSSDK.DevOpsGuru.Net35.csproj", "{7877F6B8-D63A-47A7-B02D-0B9037599166}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectConnect", "DirectConnect", "{57064336-B660-48B1-11FD-12282A636DBA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectConnect.Net35", "src\Services\DirectConnect\AWSSDK.DirectConnect.Net35.csproj", "{CCE0E026-CC88-4B85-BF79-607A3B2B686B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectConnect.Net35", "src/Services/DirectConnect/AWSSDK.DirectConnect.Net35.csproj", "{CCE0E026-CC88-4B85-BF79-607A3B2B686B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectoryService", "DirectoryService", "{80A278FB-D099-00A8-08C5-8E89E5491458}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectoryService.Net35", "src\Services\DirectoryService\AWSSDK.DirectoryService.Net35.csproj", "{20F6C275-628B-42B0-BBE7-0DE15CABAFDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DirectoryService.Net35", "src/Services/DirectoryService/AWSSDK.DirectoryService.Net35.csproj", "{20F6C275-628B-42B0-BBE7-0DE15CABAFDC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLM", "DLM", "{7333148A-FF29-2873-5637-AA74BEC1AF3F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DLM.Net35", "src\Services\DLM\AWSSDK.DLM.Net35.csproj", "{ACC147AE-5755-47DF-BF77-0C843611806A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DLM.Net35", "src/Services/DLM/AWSSDK.DLM.Net35.csproj", "{ACC147AE-5755-47DF-BF77-0C843611806A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocDB", "DocDB", "{F7D7A0AA-F0BF-79D9-2C40-293564966611}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDB.Net35", "src\Services\DocDB\AWSSDK.DocDB.Net35.csproj", "{EC89362F-C388-424C-B3E3-94ED45576639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDB.Net35", "src/Services/DocDB/AWSSDK.DocDB.Net35.csproj", "{EC89362F-C388-424C-B3E3-94ED45576639}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocDBElastic", "DocDBElastic", "{0C87989F-702D-E04E-C4E6-658F05F89F42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDBElastic.Net35", "src\Services\DocDBElastic\AWSSDK.DocDBElastic.Net35.csproj", "{F3941F7A-5630-43B2-96FA-5FA177BDF465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocDBElastic.Net35", "src/Services/DocDBElastic/AWSSDK.DocDBElastic.Net35.csproj", "{F3941F7A-5630-43B2-96FA-5FA177BDF465}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drs", "Drs", "{602CF831-6332-2AA7-B28C-EF88FB44B162}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Drs.Net35", "src\Services\Drs\AWSSDK.Drs.Net35.csproj", "{B9E4C661-2F92-40AC-9963-D4C90C925BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Drs.Net35", "src/Services/Drs/AWSSDK.Drs.Net35.csproj", "{B9E4C661-2F92-40AC-9963-D4C90C925BC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamoDBv2", "DynamoDBv2", "{7BFAB877-B6A7-1001-16C8-E51FBF1AAD5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.Net35", "src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj", "{8CC3CD9F-B931-4F4F-BD0B-873CD7712D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.Net35", "src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.Net35.csproj", "{8CC3CD9F-B931-4F4F-BD0B-873CD7712D86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EBS", "EBS", "{E09B32D9-726B-6D24-EECE-975AAB77CA34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EBS.Net35", "src\Services\EBS\AWSSDK.EBS.Net35.csproj", "{EC80CEBD-0151-4219-BDD1-DC03A310623B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EBS.Net35", "src/Services/EBS/AWSSDK.EBS.Net35.csproj", "{EC80CEBD-0151-4219-BDD1-DC03A310623B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EC2", "EC2", "{B1AC110A-E465-334D-3AB6-91B7A66A29D2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2.Net35", "src\Services\EC2\AWSSDK.EC2.Net35.csproj", "{BFF2F124-B2B2-4AEE-8169-0EF31C9A0D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2.Net35", "src/Services/EC2/AWSSDK.EC2.Net35.csproj", "{BFF2F124-B2B2-4AEE-8169-0EF31C9A0D4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EC2InstanceConnect", "EC2InstanceConnect", "{22FF68E2-776F-A249-F947-9BA46A1A71C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2InstanceConnect.Net35", "src\Services\EC2InstanceConnect\AWSSDK.EC2InstanceConnect.Net35.csproj", "{10956983-DA02-47CC-A576-E5EDE3784294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2InstanceConnect.Net35", "src/Services/EC2InstanceConnect/AWSSDK.EC2InstanceConnect.Net35.csproj", "{10956983-DA02-47CC-A576-E5EDE3784294}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ECR", "ECR", "{9BE678B8-DB7A-B57E-A5A9-7C63D959BE76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECR.Net35", "src\Services\ECR\AWSSDK.ECR.Net35.csproj", "{F25F1481-5006-4AD8-8708-0004080CC091}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECR.Net35", "src/Services/ECR/AWSSDK.ECR.Net35.csproj", "{F25F1481-5006-4AD8-8708-0004080CC091}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ECRPublic", "ECRPublic", "{B76858D0-172B-A984-BA56-F1FFA501DF6F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECRPublic.Net35", "src\Services\ECRPublic\AWSSDK.ECRPublic.Net35.csproj", "{9692B0BE-2330-4086-A9CA-A95D94AC5FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECRPublic.Net35", "src/Services/ECRPublic/AWSSDK.ECRPublic.Net35.csproj", "{9692B0BE-2330-4086-A9CA-A95D94AC5FF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ECS", "ECS", "{84925096-2900-DBD8-9A33-3237A5A7FB14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECS.Net35", "src\Services\ECS\AWSSDK.ECS.Net35.csproj", "{B29B81B6-61F0-44B4-9585-040C433DD0F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ECS.Net35", "src/Services/ECS/AWSSDK.ECS.Net35.csproj", "{B29B81B6-61F0-44B4-9585-040C433DD0F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EKS", "EKS", "{620B64A9-6B5B-6839-3AFF-5F4FBF2B700F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EKS.Net35", "src\Services\EKS\AWSSDK.EKS.Net35.csproj", "{BF7D6597-2E7E-4D1D-BE32-1DDFF95E546C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EKS.Net35", "src/Services/EKS/AWSSDK.EKS.Net35.csproj", "{BF7D6597-2E7E-4D1D-BE32-1DDFF95E546C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElastiCache", "ElastiCache", "{47AA83CC-062A-536A-D63D-1457EEA0BF4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElastiCache.Net35", "src\Services\ElastiCache\AWSSDK.ElastiCache.Net35.csproj", "{7654FF22-A70F-4F54-812C-7983B6FB1A88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElastiCache.Net35", "src/Services/ElastiCache/AWSSDK.ElastiCache.Net35.csproj", "{7654FF22-A70F-4F54-812C-7983B6FB1A88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticBeanstalk", "ElasticBeanstalk", "{27DCAD7F-33DF-06EA-97CA-DEDEAD896A2A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticBeanstalk.Net35", "src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net35.csproj", "{03DC3EF9-A738-40F0-A380-B46DB6886000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticBeanstalk.Net35", "src/Services/ElasticBeanstalk/AWSSDK.ElasticBeanstalk.Net35.csproj", "{03DC3EF9-A738-40F0-A380-B46DB6886000}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticFileSystem", "ElasticFileSystem", "{48CEF3D2-58A7-8D4E-2587-0F024C285C2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticFileSystem.Net35", "src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Net35.csproj", "{6E5B7F1E-89DB-4F9A-9413-1C72CF2205BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticFileSystem.Net35", "src/Services/ElasticFileSystem/AWSSDK.ElasticFileSystem.Net35.csproj", "{6E5B7F1E-89DB-4F9A-9413-1C72CF2205BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticInference", "ElasticInference", "{77E09A7A-EFA1-8255-27E8-299E9583FC09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticInference.Net35", "src\Services\ElasticInference\AWSSDK.ElasticInference.Net35.csproj", "{EEEBC904-FAC6-42BC-8EFE-36D7D3DB5371}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticInference.Net35", "src/Services/ElasticInference/AWSSDK.ElasticInference.Net35.csproj", "{EEEBC904-FAC6-42BC-8EFE-36D7D3DB5371}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticLoadBalancing", "ElasticLoadBalancing", "{5CB15EF6-CFE9-8892-4B3B-A5A52CC62C0B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancing.Net35", "src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net35.csproj", "{EBFDFAE1-6DD4-42EA-BB58-69E17BCB23F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancing.Net35", "src/Services/ElasticLoadBalancing/AWSSDK.ElasticLoadBalancing.Net35.csproj", "{EBFDFAE1-6DD4-42EA-BB58-69E17BCB23F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticLoadBalancingV2", "ElasticLoadBalancingV2", "{63CC0651-EF4D-6DE6-B808-E65CE3281A48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancingV2.Net35", "src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net35.csproj", "{C8D8523E-1548-481B-A136-1DBAAD3CEB0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticLoadBalancingV2.Net35", "src/Services/ElasticLoadBalancingV2/AWSSDK.ElasticLoadBalancingV2.Net35.csproj", "{C8D8523E-1548-481B-A136-1DBAAD3CEB0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticMapReduce", "ElasticMapReduce", "{4D232F71-DA02-FFA4-FC75-A3877D387BF6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticMapReduce.Net35", "src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.Net35.csproj", "{9B828772-536F-4B54-96C4-7C42AD2996FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticMapReduce.Net35", "src/Services/ElasticMapReduce/AWSSDK.ElasticMapReduce.Net35.csproj", "{9B828772-536F-4B54-96C4-7C42AD2996FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elasticsearch", "Elasticsearch", "{9EA1C1C1-72CA-43D0-FF81-41D25ADD8179}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Elasticsearch.Net35", "src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj", "{379A9046-6D1B-461D-9680-C17504A57307}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Elasticsearch.Net35", "src/Services/Elasticsearch/AWSSDK.Elasticsearch.Net35.csproj", "{379A9046-6D1B-461D-9680-C17504A57307}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticTranscoder", "ElasticTranscoder", "{17474B1D-11D4-C377-01EF-16C2B68DE75F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticTranscoder.Net35", "src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj", "{D021FC12-12D3-4953-86CB-7E9021E32476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticTranscoder.Net35", "src/Services/ElasticTranscoder/AWSSDK.ElasticTranscoder.Net35.csproj", "{D021FC12-12D3-4953-86CB-7E9021E32476}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EMRContainers", "EMRContainers", "{02C886E1-AA02-4C41-73DB-CF50A65F6645}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRContainers.Net35", "src\Services\EMRContainers\AWSSDK.EMRContainers.Net35.csproj", "{EB2CFAC8-4C27-4E52-8093-DBA6BBCD5FDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRContainers.Net35", "src/Services/EMRContainers/AWSSDK.EMRContainers.Net35.csproj", "{EB2CFAC8-4C27-4E52-8093-DBA6BBCD5FDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EMRServerless", "EMRServerless", "{EE04F783-FD5E-F0E0-FE74-B04A0AD88D8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRServerless.Net35", "src\Services\EMRServerless\AWSSDK.EMRServerless.Net35.csproj", "{B59A9CC2-F024-4499-99AD-6BFC377DA90C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EMRServerless.Net35", "src/Services/EMRServerless/AWSSDK.EMRServerless.Net35.csproj", "{B59A9CC2-F024-4499-99AD-6BFC377DA90C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBridge", "EventBridge", "{806E6471-4A99-AC4B-BC76-253F2B106AC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EventBridge.Net35", "src\Services\EventBridge\AWSSDK.EventBridge.Net35.csproj", "{DC552FD1-13E1-43FB-B1E5-6BED2B574DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EventBridge.Net35", "src/Services/EventBridge/AWSSDK.EventBridge.Net35.csproj", "{DC552FD1-13E1-43FB-B1E5-6BED2B574DBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Finspace", "Finspace", "{E3FB0797-5AD5-3D58-2919-2A13F58786B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Finspace.Net35", "src\Services\Finspace\AWSSDK.Finspace.Net35.csproj", "{9A85EA62-7A0E-4FEA-B4FC-7637F1C193E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Finspace.Net35", "src/Services/Finspace/AWSSDK.Finspace.Net35.csproj", "{9A85EA62-7A0E-4FEA-B4FC-7637F1C193E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinSpaceData", "FinSpaceData", "{184EB4F3-49E8-8358-D255-730E86A409F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FinSpaceData.Net35", "src\Services\FinSpaceData\AWSSDK.FinSpaceData.Net35.csproj", "{2F47FA00-9E24-499A-B6DB-1D8AEC821D02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FinSpaceData.Net35", "src/Services/FinSpaceData/AWSSDK.FinSpaceData.Net35.csproj", "{2F47FA00-9E24-499A-B6DB-1D8AEC821D02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FIS", "FIS", "{2D69EC59-1E15-57D1-CA9A-C4063950A54B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FIS.Net35", "src\Services\FIS\AWSSDK.FIS.Net35.csproj", "{23387D83-D2E8-4864-9420-F603C653C576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FIS.Net35", "src/Services/FIS/AWSSDK.FIS.Net35.csproj", "{23387D83-D2E8-4864-9420-F603C653C576}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FMS", "FMS", "{BE276250-FD68-10A0-7936-2D7A2E0E6BCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FMS.Net35", "src\Services\FMS\AWSSDK.FMS.Net35.csproj", "{41DC9DAD-0A39-435F-99D0-54E98A962FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FMS.Net35", "src/Services/FMS/AWSSDK.FMS.Net35.csproj", "{41DC9DAD-0A39-435F-99D0-54E98A962FCB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ForecastQueryService", "ForecastQueryService", "{622D17C1-812E-B722-3A1F-BFBC0A807D5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastQueryService.Net35", "src\Services\ForecastQueryService\AWSSDK.ForecastQueryService.Net35.csproj", "{6571AF72-4B2F-4CD8-B843-0E3851E4E1ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastQueryService.Net35", "src/Services/ForecastQueryService/AWSSDK.ForecastQueryService.Net35.csproj", "{6571AF72-4B2F-4CD8-B843-0E3851E4E1ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ForecastService", "ForecastService", "{C17ADE7D-C258-FC25-F748-B87BAAD8E41C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastService.Net35", "src\Services\ForecastService\AWSSDK.ForecastService.Net35.csproj", "{9F4290EC-1D87-415C-8C8F-DECEE2F68986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ForecastService.Net35", "src/Services/ForecastService/AWSSDK.ForecastService.Net35.csproj", "{9F4290EC-1D87-415C-8C8F-DECEE2F68986}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FraudDetector", "FraudDetector", "{A5A8C6C7-4D94-B129-D64B-A312952CC030}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FraudDetector.Net35", "src\Services\FraudDetector\AWSSDK.FraudDetector.Net35.csproj", "{9B709075-B92B-4BB7-AA13-78A3D2464BA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FraudDetector.Net35", "src/Services/FraudDetector/AWSSDK.FraudDetector.Net35.csproj", "{9B709075-B92B-4BB7-AA13-78A3D2464BA4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSx", "FSx", "{3C5DBF63-1A59-20FF-6431-701E0454043E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FSx.Net35", "src\Services\FSx\AWSSDK.FSx.Net35.csproj", "{31F5687F-9F88-48C2-B04B-D7A05019FB52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.FSx.Net35", "src/Services/FSx/AWSSDK.FSx.Net35.csproj", "{31F5687F-9F88-48C2-B04B-D7A05019FB52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameLift", "GameLift", "{C1F733B1-A8D2-8CBB-DE65-CCECF4034947}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GameLift.Net35", "src\Services\GameLift\AWSSDK.GameLift.Net35.csproj", "{A301F25E-32D0-4252-9CEF-43D0AC2F4776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GameLift.Net35", "src/Services/GameLift/AWSSDK.GameLift.Net35.csproj", "{A301F25E-32D0-4252-9CEF-43D0AC2F4776}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameSparks", "GameSparks", "{A79F3E9C-FC97-42FC-9F04-BFD590328867}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GameSparks.Net35", "src\Services\GameSparks\AWSSDK.GameSparks.Net35.csproj", "{EE3D13BB-7FA8-46CB-8978-8F3C90DEB5DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GameSparks.Net35", "src/Services/GameSparks/AWSSDK.GameSparks.Net35.csproj", "{EE3D13BB-7FA8-46CB-8978-8F3C90DEB5DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Glacier", "Glacier", "{292D05A7-9ADA-715C-12B8-809692084772}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glacier.Net35", "src\Services\Glacier\AWSSDK.Glacier.Net35.csproj", "{E2BE64FF-243B-4759-9D61-C6107E3D5E4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glacier.Net35", "src/Services/Glacier/AWSSDK.Glacier.Net35.csproj", "{E2BE64FF-243B-4759-9D61-C6107E3D5E4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalAccelerator", "GlobalAccelerator", "{62FBB6F3-00D7-9FE2-92DD-77BF2E2E25F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlobalAccelerator.Net35", "src\Services\GlobalAccelerator\AWSSDK.GlobalAccelerator.Net35.csproj", "{40AB7F9A-5C6E-4CE8-81DE-22E0AE336176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlobalAccelerator.Net35", "src/Services/GlobalAccelerator/AWSSDK.GlobalAccelerator.Net35.csproj", "{40AB7F9A-5C6E-4CE8-81DE-22E0AE336176}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Glue", "Glue", "{A7847E03-76DC-8206-368C-EA970BE1EB2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glue.Net35", "src\Services\Glue\AWSSDK.Glue.Net35.csproj", "{0A9AA38B-72CA-482A-94EA-8E820423EE88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Glue.Net35", "src/Services/Glue/AWSSDK.Glue.Net35.csproj", "{0A9AA38B-72CA-482A-94EA-8E820423EE88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlueDataBrew", "GlueDataBrew", "{49BAE480-BB07-F3C6-46DE-F65272AAEDA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlueDataBrew.Net35", "src\Services\GlueDataBrew\AWSSDK.GlueDataBrew.Net35.csproj", "{95225D4F-ED1E-4098-B154-EB07B0D54170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GlueDataBrew.Net35", "src/Services/GlueDataBrew/AWSSDK.GlueDataBrew.Net35.csproj", "{95225D4F-ED1E-4098-B154-EB07B0D54170}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Greengrass", "Greengrass", "{DA3B3C75-5C35-6DB0-956A-634AA83DC583}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Greengrass.Net35", "src\Services\Greengrass\AWSSDK.Greengrass.Net35.csproj", "{39ABCDCD-ED34-4548-BF43-71D60EB67E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Greengrass.Net35", "src/Services/Greengrass/AWSSDK.Greengrass.Net35.csproj", "{39ABCDCD-ED34-4548-BF43-71D60EB67E6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GreengrassV2", "GreengrassV2", "{478566AD-BCA2-E9CE-93C9-599DE0B88A35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GreengrassV2.Net35", "src\Services\GreengrassV2\AWSSDK.GreengrassV2.Net35.csproj", "{C8E95F79-FDB1-4AF3-B079-3E0510CF74C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GreengrassV2.Net35", "src/Services/GreengrassV2/AWSSDK.GreengrassV2.Net35.csproj", "{C8E95F79-FDB1-4AF3-B079-3E0510CF74C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GroundStation", "GroundStation", "{67046A3B-DAFC-5B8E-B963-94CFF8C9E953}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GroundStation.Net35", "src\Services\GroundStation\AWSSDK.GroundStation.Net35.csproj", "{27F3E5A8-99D2-4E8B-848E-B21B10A2D6BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GroundStation.Net35", "src/Services/GroundStation/AWSSDK.GroundStation.Net35.csproj", "{27F3E5A8-99D2-4E8B-848E-B21B10A2D6BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GuardDuty", "GuardDuty", "{793109F4-A9C2-730D-CB74-5315BEFF0F46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GuardDuty.Net35", "src\Services\GuardDuty\AWSSDK.GuardDuty.Net35.csproj", "{B4495C71-BF74-4421-8587-CA0958B72739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.GuardDuty.Net35", "src/Services/GuardDuty/AWSSDK.GuardDuty.Net35.csproj", "{B4495C71-BF74-4421-8587-CA0958B72739}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealthLake", "HealthLake", "{1D67314B-E4E3-305A-13BA-E2069A4756A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.HealthLake.Net35", "src\Services\HealthLake\AWSSDK.HealthLake.Net35.csproj", "{56F2B8AE-D677-48FD-8602-54E6154AE931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.HealthLake.Net35", "src/Services/HealthLake/AWSSDK.HealthLake.Net35.csproj", "{56F2B8AE-D677-48FD-8602-54E6154AE931}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Honeycode", "Honeycode", "{8E4C072F-6993-3957-E025-50A94325089E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Honeycode.Net35", "src\Services\Honeycode\AWSSDK.Honeycode.Net35.csproj", "{9BB2BD34-2DE9-4055-A116-346DA2A16B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Honeycode.Net35", "src/Services/Honeycode/AWSSDK.Honeycode.Net35.csproj", "{9BB2BD34-2DE9-4055-A116-346DA2A16B30}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IAMRolesAnywhere", "IAMRolesAnywhere", "{A171D599-DAD8-D6D5-88DE-115A5AB23A22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IAMRolesAnywhere.Net35", "src\Services\IAMRolesAnywhere\AWSSDK.IAMRolesAnywhere.Net35.csproj", "{2FF2E160-D35B-482F-B87E-D36CAFD5EBB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IAMRolesAnywhere.Net35", "src/Services/IAMRolesAnywhere/AWSSDK.IAMRolesAnywhere.Net35.csproj", "{2FF2E160-D35B-482F-B87E-D36CAFD5EBB6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityManagement", "IdentityManagement", "{BE57C4FC-4AF7-D9CA-0232-FED658B20FA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.Net35", "src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj", "{61379ED2-39D4-43C4-B55D-2F3FBAC3A5B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.Net35", "src/Services/IdentityManagement/AWSSDK.IdentityManagement.Net35.csproj", "{61379ED2-39D4-43C4-B55D-2F3FBAC3A5B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityStore", "IdentityStore", "{04125C5C-DFD5-3572-0CF7-4A637B24EA1E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityStore.Net35", "src\Services\IdentityStore\AWSSDK.IdentityStore.Net35.csproj", "{52147541-EEFF-42B6-8792-AD62AB523B2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityStore.Net35", "src/Services/IdentityStore/AWSSDK.IdentityStore.Net35.csproj", "{52147541-EEFF-42B6-8792-AD62AB523B2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imagebuilder", "Imagebuilder", "{0282FC03-DFDB-4990-FB09-D637BEF32699}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Imagebuilder.Net35", "src\Services\Imagebuilder\AWSSDK.Imagebuilder.Net35.csproj", "{BC901609-4BC8-4F31-A5A8-09664C07EBCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Imagebuilder.Net35", "src/Services/Imagebuilder/AWSSDK.Imagebuilder.Net35.csproj", "{BC901609-4BC8-4F31-A5A8-09664C07EBCF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImportExport", "ImportExport", "{A815E11A-9F67-D89E-3E67-45E989F9FCFD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ImportExport.Net35", "src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj", "{A0DD65E7-D68A-4AFE-95FB-27F9D1430B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ImportExport.Net35", "src/Services/ImportExport/AWSSDK.ImportExport.Net35.csproj", "{A0DD65E7-D68A-4AFE-95FB-27F9D1430B29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inspector", "Inspector", "{52329DB5-C44F-FEF5-B080-3C45F7409DFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector.Net35", "src\Services\Inspector\AWSSDK.Inspector.Net35.csproj", "{9FB464A3-1B2E-4137-B809-F4E34D8D59C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector.Net35", "src/Services/Inspector/AWSSDK.Inspector.Net35.csproj", "{9FB464A3-1B2E-4137-B809-F4E34D8D59C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inspector2", "Inspector2", "{C6428A5F-D8DC-3B4F-9A4B-61BD31E92530}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector2.Net35", "src\Services\Inspector2\AWSSDK.Inspector2.Net35.csproj", "{642123B7-C7D3-41A0-AD88-0AFB5D454C45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Inspector2.Net35", "src/Services/Inspector2/AWSSDK.Inspector2.Net35.csproj", "{642123B7-C7D3-41A0-AD88-0AFB5D454C45}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InternetMonitor", "InternetMonitor", "{745371BB-2CF2-1BE0-6C3D-1A5B293AD76E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.InternetMonitor.Net35", "src\Services\InternetMonitor\AWSSDK.InternetMonitor.Net35.csproj", "{C8171FBE-70C9-4945-971D-B8F5A60E06B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.InternetMonitor.Net35", "src/Services/InternetMonitor/AWSSDK.InternetMonitor.Net35.csproj", "{C8171FBE-70C9-4945-971D-B8F5A60E06B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoT", "IoT", "{897E6563-3365-BDE4-A38C-68A2223E651C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT.Net35", "src\Services\IoT\AWSSDK.IoT.Net35.csproj", "{B25C9AF9-2D1F-488F-9B45-DBAEA27AB458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT.Net35", "src/Services/IoT/AWSSDK.IoT.Net35.csproj", "{B25C9AF9-2D1F-488F-9B45-DBAEA27AB458}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoT1ClickDevicesService", "IoT1ClickDevicesService", "{BE94A1EF-D568-F57A-FF68-B53275F7283B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickDevicesService.Net35", "src\Services\IoT1ClickDevicesService\AWSSDK.IoT1ClickDevicesService.Net35.csproj", "{60CB9597-BE58-4052-AA26-00EC88C7025D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickDevicesService.Net35", "src/Services/IoT1ClickDevicesService/AWSSDK.IoT1ClickDevicesService.Net35.csproj", "{60CB9597-BE58-4052-AA26-00EC88C7025D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoT1ClickProjects", "IoT1ClickProjects", "{49413387-31DB-0E22-40C6-2B0B29DADC32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickProjects.Net35", "src\Services\IoT1ClickProjects\AWSSDK.IoT1ClickProjects.Net35.csproj", "{6708B08C-1B06-42F0-AF07-A2E25365EA02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoT1ClickProjects.Net35", "src/Services/IoT1ClickProjects/AWSSDK.IoT1ClickProjects.Net35.csproj", "{6708B08C-1B06-42F0-AF07-A2E25365EA02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTAnalytics", "IoTAnalytics", "{6AEAD711-19F7-A6F7-1C7C-8DCA55B79014}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTAnalytics.Net35", "src\Services\IoTAnalytics\AWSSDK.IoTAnalytics.Net35.csproj", "{73052C42-F185-465B-917B-EF1C08177A6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTAnalytics.Net35", "src/Services/IoTAnalytics/AWSSDK.IoTAnalytics.Net35.csproj", "{73052C42-F185-465B-917B-EF1C08177A6D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IotData", "IotData", "{8DB6C8A7-625F-5690-21D8-E0E5F749D9AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IotData.Net35", "src\Services\IotData\AWSSDK.IotData.Net35.csproj", "{7FFD8D56-13F2-4FC4-93DE-24A627482F4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IotData.Net35", "src/Services/IotData/AWSSDK.IotData.Net35.csproj", "{7FFD8D56-13F2-4FC4-93DE-24A627482F4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTDeviceAdvisor", "IoTDeviceAdvisor", "{BC68188C-EE6E-FF5E-ABEC-09B5FB7D966E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTDeviceAdvisor.Net35", "src\Services\IoTDeviceAdvisor\AWSSDK.IoTDeviceAdvisor.Net35.csproj", "{487D4D30-D812-4A19-B2A9-BBDAF04BAC1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTDeviceAdvisor.Net35", "src/Services/IoTDeviceAdvisor/AWSSDK.IoTDeviceAdvisor.Net35.csproj", "{487D4D30-D812-4A19-B2A9-BBDAF04BAC1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTEvents", "IoTEvents", "{EF3ECF90-E3C0-D83D-05D8-D6F46F3B54D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEvents.Net35", "src\Services\IoTEvents\AWSSDK.IoTEvents.Net35.csproj", "{4ECFAECA-4617-4A02-9A6B-268A9160AE80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEvents.Net35", "src/Services/IoTEvents/AWSSDK.IoTEvents.Net35.csproj", "{4ECFAECA-4617-4A02-9A6B-268A9160AE80}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTEventsData", "IoTEventsData", "{0EA883B2-A8D0-69F5-AD54-D213CABEB9DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEventsData.Net35", "src\Services\IoTEventsData\AWSSDK.IoTEventsData.Net35.csproj", "{952CD29E-1A11-4C86-8757-025F3481175F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTEventsData.Net35", "src/Services/IoTEventsData/AWSSDK.IoTEventsData.Net35.csproj", "{952CD29E-1A11-4C86-8757-025F3481175F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTFleetHub", "IoTFleetHub", "{39D1A522-AD98-46CB-4A80-E7EBC9596045}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetHub.Net35", "src\Services\IoTFleetHub\AWSSDK.IoTFleetHub.Net35.csproj", "{DBD4659E-D857-4F6C-AF05-AAC03C74FF61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetHub.Net35", "src/Services/IoTFleetHub/AWSSDK.IoTFleetHub.Net35.csproj", "{DBD4659E-D857-4F6C-AF05-AAC03C74FF61}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTFleetWise", "IoTFleetWise", "{8AC320BB-7FC8-8D18-C39C-CCA66C81A5CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetWise.Net35", "src\Services\IoTFleetWise\AWSSDK.IoTFleetWise.Net35.csproj", "{1AFE79A9-49A9-4FAD-BAF0-CE119AD378DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTFleetWise.Net35", "src/Services/IoTFleetWise/AWSSDK.IoTFleetWise.Net35.csproj", "{1AFE79A9-49A9-4FAD-BAF0-CE119AD378DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTJobsDataPlane", "IoTJobsDataPlane", "{4000F2D5-F34D-E001-02F3-6A362E68E940}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTJobsDataPlane.Net35", "src\Services\IoTJobsDataPlane\AWSSDK.IoTJobsDataPlane.Net35.csproj", "{F0FDD79C-790D-4C6D-80C1-21563B79BD96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTJobsDataPlane.Net35", "src/Services/IoTJobsDataPlane/AWSSDK.IoTJobsDataPlane.Net35.csproj", "{F0FDD79C-790D-4C6D-80C1-21563B79BD96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTRoboRunner", "IoTRoboRunner", "{2C267769-ACA4-7D8D-AEAB-D8650FADFBE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTRoboRunner.Net35", "src\Services\IoTRoboRunner\AWSSDK.IoTRoboRunner.Net35.csproj", "{32C05338-C2BB-4BD5-81B2-F2AA37D28D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTRoboRunner.Net35", "src/Services/IoTRoboRunner/AWSSDK.IoTRoboRunner.Net35.csproj", "{32C05338-C2BB-4BD5-81B2-F2AA37D28D81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTSecureTunneling", "IoTSecureTunneling", "{54C84B4E-2B3F-988B-4919-8432CFEF097E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSecureTunneling.Net35", "src\Services\IoTSecureTunneling\AWSSDK.IoTSecureTunneling.Net35.csproj", "{16944056-9F67-4BB5-8C62-D84BD73B8BA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSecureTunneling.Net35", "src/Services/IoTSecureTunneling/AWSSDK.IoTSecureTunneling.Net35.csproj", "{16944056-9F67-4BB5-8C62-D84BD73B8BA4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTSiteWise", "IoTSiteWise", "{D0225FB7-1A04-05C6-2143-DE52814F98F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSiteWise.Net35", "src\Services\IoTSiteWise\AWSSDK.IoTSiteWise.Net35.csproj", "{08AE37FB-1AB5-4EC2-816F-B85F124A94C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTSiteWise.Net35", "src/Services/IoTSiteWise/AWSSDK.IoTSiteWise.Net35.csproj", "{08AE37FB-1AB5-4EC2-816F-B85F124A94C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTThingsGraph", "IoTThingsGraph", "{D2EC3861-5ABD-4ABA-646C-B17B3152F1A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTThingsGraph.Net35", "src\Services\IoTThingsGraph\AWSSDK.IoTThingsGraph.Net35.csproj", "{686FDB6C-4D88-4665-A1A7-08B58481736A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTThingsGraph.Net35", "src/Services/IoTThingsGraph/AWSSDK.IoTThingsGraph.Net35.csproj", "{686FDB6C-4D88-4665-A1A7-08B58481736A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTTwinMaker", "IoTTwinMaker", "{7C5C7226-AACE-7EE7-4B18-52E9B8F90425}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTTwinMaker.Net35", "src\Services\IoTTwinMaker\AWSSDK.IoTTwinMaker.Net35.csproj", "{6A71CC73-A599-44BE-B4C1-4E7A00978E0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTTwinMaker.Net35", "src/Services/IoTTwinMaker/AWSSDK.IoTTwinMaker.Net35.csproj", "{6A71CC73-A599-44BE-B4C1-4E7A00978E0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoTWireless", "IoTWireless", "{11B27A2D-1B58-80B3-DB77-33B4F6C541CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTWireless.Net35", "src\Services\IoTWireless\AWSSDK.IoTWireless.Net35.csproj", "{9AADEABB-70D4-418B-9B66-D447EDF45C47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IoTWireless.Net35", "src/Services/IoTWireless/AWSSDK.IoTWireless.Net35.csproj", "{9AADEABB-70D4-418B-9B66-D447EDF45C47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IVS", "IVS", "{4754A9EA-3ECB-B6BC-091C-26B565145DD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVS.Net35", "src\Services\IVS\AWSSDK.IVS.Net35.csproj", "{4C75BFCB-A8FF-4C04-873E-4AA2A684BBB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVS.Net35", "src/Services/IVS/AWSSDK.IVS.Net35.csproj", "{4C75BFCB-A8FF-4C04-873E-4AA2A684BBB0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ivschat", "Ivschat", "{5D502FBD-17B2-1F13-D558-B36707E94CC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ivschat.Net35", "src\Services\Ivschat\AWSSDK.Ivschat.Net35.csproj", "{50CF46B7-84D5-409E-8330-09B72308F5E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ivschat.Net35", "src/Services/Ivschat/AWSSDK.Ivschat.Net35.csproj", "{50CF46B7-84D5-409E-8330-09B72308F5E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IVSRealTime", "IVSRealTime", "{23DEE982-DD82-4C0D-84A6-5FE67E8FC145}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVSRealTime.Net35", "src\Services\IVSRealTime\AWSSDK.IVSRealTime.Net35.csproj", "{C08661A1-00D0-40A9-8733-E4532A9CCDFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IVSRealTime.Net35", "src/Services/IVSRealTime/AWSSDK.IVSRealTime.Net35.csproj", "{C08661A1-00D0-40A9-8733-E4532A9CCDFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{F469CD9A-1690-68FA-0221-4D34BE8845F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kafka.Net35", "src\Services\Kafka\AWSSDK.Kafka.Net35.csproj", "{E514D535-F724-41EC-AED7-F2AAB90EECD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kafka.Net35", "src/Services/Kafka/AWSSDK.Kafka.Net35.csproj", "{E514D535-F724-41EC-AED7-F2AAB90EECD2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KafkaConnect", "KafkaConnect", "{3743FABE-40BC-9B9A-9BFA-CA8FFE80353F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KafkaConnect.Net35", "src\Services\KafkaConnect\AWSSDK.KafkaConnect.Net35.csproj", "{4E7352BD-E80A-415A-9F8E-DDAB21B11F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KafkaConnect.Net35", "src/Services/KafkaConnect/AWSSDK.KafkaConnect.Net35.csproj", "{4E7352BD-E80A-415A-9F8E-DDAB21B11F23}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kendra", "Kendra", "{392CAA0D-8DAA-4E4C-39D5-17AC3ED3469C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kendra.Net35", "src\Services\Kendra\AWSSDK.Kendra.Net35.csproj", "{FA33776D-EEFB-41F1-8B4D-27B10FB38EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kendra.Net35", "src/Services/Kendra/AWSSDK.Kendra.Net35.csproj", "{FA33776D-EEFB-41F1-8B4D-27B10FB38EE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KendraRanking", "KendraRanking", "{987ED0C6-558A-0802-8318-F27370C3E08C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KendraRanking.Net35", "src\Services\KendraRanking\AWSSDK.KendraRanking.Net35.csproj", "{9A95300E-1455-47C0-9442-5597DF8B6B47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KendraRanking.Net35", "src/Services/KendraRanking/AWSSDK.KendraRanking.Net35.csproj", "{9A95300E-1455-47C0-9442-5597DF8B6B47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KeyManagementService", "KeyManagementService", "{36C87B9A-4800-FD61-261D-3A49FAFE37E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KeyManagementService.Net35", "src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj", "{8E9B8433-D945-42AD-B370-322A0C594820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KeyManagementService.Net35", "src/Services/KeyManagementService/AWSSDK.KeyManagementService.Net35.csproj", "{8E9B8433-D945-42AD-B370-322A0C594820}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keyspaces", "Keyspaces", "{29A241C1-C594-55EF-0E99-F9BAA4C50600}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Keyspaces.Net35", "src\Services\Keyspaces\AWSSDK.Keyspaces.Net35.csproj", "{E8FEC629-1D91-4321-AAC0-BB42B30199AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Keyspaces.Net35", "src/Services/Keyspaces/AWSSDK.Keyspaces.Net35.csproj", "{E8FEC629-1D91-4321-AAC0-BB42B30199AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinesis", "Kinesis", "{D163D816-B170-A4B9-0481-573BB2F0719A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kinesis.Net35", "src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj", "{DF17D421-543E-4C43-9610-40AD43B0EC0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Kinesis.Net35", "src/Services/Kinesis/AWSSDK.Kinesis.Net35.csproj", "{DF17D421-543E-4C43-9610-40AD43B0EC0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisAnalytics", "KinesisAnalytics", "{E1F29809-FFE8-75B8-FBE3-DDDC1F120BB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalytics.Net35", "src\Services\KinesisAnalytics\AWSSDK.KinesisAnalytics.Net35.csproj", "{CB99E9B9-B919-4C94-8207-AE9BD7368807}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalytics.Net35", "src/Services/KinesisAnalytics/AWSSDK.KinesisAnalytics.Net35.csproj", "{CB99E9B9-B919-4C94-8207-AE9BD7368807}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisAnalyticsV2", "KinesisAnalyticsV2", "{D01DADB9-9553-1E43-A7DC-6AD8170BE34D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalyticsV2.Net35", "src\Services\KinesisAnalyticsV2\AWSSDK.KinesisAnalyticsV2.Net35.csproj", "{2199C369-7271-430C-8CFA-ABDF120A6F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisAnalyticsV2.Net35", "src/Services/KinesisAnalyticsV2/AWSSDK.KinesisAnalyticsV2.Net35.csproj", "{2199C369-7271-430C-8CFA-ABDF120A6F0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisFirehose", "KinesisFirehose", "{F861A310-488A-E862-10D2-D81686840E60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisFirehose.Net35", "src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj", "{68054AF3-9105-4AB8-879C-C48E157AF273}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisFirehose.Net35", "src/Services/KinesisFirehose/AWSSDK.KinesisFirehose.Net35.csproj", "{68054AF3-9105-4AB8-879C-C48E157AF273}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisVideo", "KinesisVideo", "{4F2C0FA0-BACA-C1A6-DDA5-7055385B46FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideo.Net35", "src\Services\KinesisVideo\AWSSDK.KinesisVideo.Net35.csproj", "{0A2BED96-07E9-4196-8B48-36A9D796D018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideo.Net35", "src/Services/KinesisVideo/AWSSDK.KinesisVideo.Net35.csproj", "{0A2BED96-07E9-4196-8B48-36A9D796D018}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisVideoArchivedMedia", "KinesisVideoArchivedMedia", "{36956933-A588-C2E9-C30E-80B89301151C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoArchivedMedia.Net35", "src\Services\KinesisVideoArchivedMedia\AWSSDK.KinesisVideoArchivedMedia.Net35.csproj", "{810945FA-3F4D-4569-8149-60A97AD8987D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoArchivedMedia.Net35", "src/Services/KinesisVideoArchivedMedia/AWSSDK.KinesisVideoArchivedMedia.Net35.csproj", "{810945FA-3F4D-4569-8149-60A97AD8987D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisVideoMedia", "KinesisVideoMedia", "{6750F08D-9CF6-8537-F175-58563D2E799C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoMedia.Net35", "src\Services\KinesisVideoMedia\AWSSDK.KinesisVideoMedia.Net35.csproj", "{4ADE70F4-F59E-46F4-992C-7857D0E2944D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoMedia.Net35", "src/Services/KinesisVideoMedia/AWSSDK.KinesisVideoMedia.Net35.csproj", "{4ADE70F4-F59E-46F4-992C-7857D0E2944D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisVideoSignalingChannels", "KinesisVideoSignalingChannels", "{50102699-B66E-E06A-2709-B5362E2C9195}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoSignalingChannels.Net35", "src\Services\KinesisVideoSignalingChannels\AWSSDK.KinesisVideoSignalingChannels.Net35.csproj", "{E131157F-319E-4EAF-A57D-569EDC8BB523}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoSignalingChannels.Net35", "src/Services/KinesisVideoSignalingChannels/AWSSDK.KinesisVideoSignalingChannels.Net35.csproj", "{E131157F-319E-4EAF-A57D-569EDC8BB523}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KinesisVideoWebRTCStorage", "KinesisVideoWebRTCStorage", "{645B9C35-A8A7-8CA0-9584-2008B2716BD1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoWebRTCStorage.Net35", "src\Services\KinesisVideoWebRTCStorage\AWSSDK.KinesisVideoWebRTCStorage.Net35.csproj", "{3F86B095-3C39-4D6C-B954-525DDDCCC45E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.KinesisVideoWebRTCStorage.Net35", "src/Services/KinesisVideoWebRTCStorage/AWSSDK.KinesisVideoWebRTCStorage.Net35.csproj", "{3F86B095-3C39-4D6C-B954-525DDDCCC45E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LakeFormation", "LakeFormation", "{603936FD-A1C5-5B20-CEA9-0B04FB67405F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LakeFormation.Net35", "src\Services\LakeFormation\AWSSDK.LakeFormation.Net35.csproj", "{D2366FBD-C3FC-41E8-9C6F-551E36EE2F27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LakeFormation.Net35", "src/Services/LakeFormation/AWSSDK.LakeFormation.Net35.csproj", "{D2366FBD-C3FC-41E8-9C6F-551E36EE2F27}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lambda", "Lambda", "{AAD060AF-109B-CEFF-121E-9B1F2D405B8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lambda.Net35", "src\Services\Lambda\AWSSDK.Lambda.Net35.csproj", "{9474B0C9-1623-4784-85C4-89DBED29CB3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lambda.Net35", "src/Services/Lambda/AWSSDK.Lambda.Net35.csproj", "{9474B0C9-1623-4784-85C4-89DBED29CB3E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lex", "Lex", "{8DECE0BB-AB7B-BC25-F021-96DBDF76BB3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lex.Net35", "src\Services\Lex\AWSSDK.Lex.Net35.csproj", "{6F8519EB-E5B5-4733-B4D5-2A97A3D151DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lex.Net35", "src/Services/Lex/AWSSDK.Lex.Net35.csproj", "{6F8519EB-E5B5-4733-B4D5-2A97A3D151DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LexModelBuildingService", "LexModelBuildingService", "{0A883E5D-3846-1E28-4AC7-89A9D6D323E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelBuildingService.Net35", "src\Services\LexModelBuildingService\AWSSDK.LexModelBuildingService.Net35.csproj", "{51BC4B40-CE67-45D9-B39F-0F644DF72D0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelBuildingService.Net35", "src/Services/LexModelBuildingService/AWSSDK.LexModelBuildingService.Net35.csproj", "{51BC4B40-CE67-45D9-B39F-0F644DF72D0B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LexModelsV2", "LexModelsV2", "{2BA3F23E-D0F9-0932-51B9-81E9E5929739}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelsV2.Net35", "src\Services\LexModelsV2\AWSSDK.LexModelsV2.Net35.csproj", "{5D905548-9BB3-4CC3-B572-F0A77EC5F062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexModelsV2.Net35", "src/Services/LexModelsV2/AWSSDK.LexModelsV2.Net35.csproj", "{5D905548-9BB3-4CC3-B572-F0A77EC5F062}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LexRuntimeV2", "LexRuntimeV2", "{908E6DFB-FD50-0361-6E08-958BB0FE6685}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexRuntimeV2.Net35", "src\Services\LexRuntimeV2\AWSSDK.LexRuntimeV2.Net35.csproj", "{AE8BC5B6-1D4F-4511-A2E2-FAFF961F0674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LexRuntimeV2.Net35", "src/Services/LexRuntimeV2/AWSSDK.LexRuntimeV2.Net35.csproj", "{AE8BC5B6-1D4F-4511-A2E2-FAFF961F0674}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicenseManager", "LicenseManager", "{B31AA6EB-11F5-E15F-B9D2-7644FC0B4652}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManager.Net35", "src\Services\LicenseManager\AWSSDK.LicenseManager.Net35.csproj", "{35E28AC8-4189-4EEA-AB02-B49E6C8904E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManager.Net35", "src/Services/LicenseManager/AWSSDK.LicenseManager.Net35.csproj", "{35E28AC8-4189-4EEA-AB02-B49E6C8904E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicenseManagerLinuxSubscriptions", "LicenseManagerLinuxSubscriptions", "{E0D32029-6362-6EB0-A51F-73D5B9833D18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerLinuxSubscriptions.Net35", "src\Services\LicenseManagerLinuxSubscriptions\AWSSDK.LicenseManagerLinuxSubscriptions.Net35.csproj", "{73878D64-75C3-4E1A-9BE6-9286EB2845FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerLinuxSubscriptions.Net35", "src/Services/LicenseManagerLinuxSubscriptions/AWSSDK.LicenseManagerLinuxSubscriptions.Net35.csproj", "{73878D64-75C3-4E1A-9BE6-9286EB2845FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicenseManagerUserSubscriptions", "LicenseManagerUserSubscriptions", "{C23CEDE2-9C1A-8EDF-1726-A4280C2113F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerUserSubscriptions.Net35", "src\Services\LicenseManagerUserSubscriptions\AWSSDK.LicenseManagerUserSubscriptions.Net35.csproj", "{EFE2103E-AB2C-4D38-9CE4-897033B53E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LicenseManagerUserSubscriptions.Net35", "src/Services/LicenseManagerUserSubscriptions/AWSSDK.LicenseManagerUserSubscriptions.Net35.csproj", "{EFE2103E-AB2C-4D38-9CE4-897033B53E52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lightsail", "Lightsail", "{BC683DF3-E3A8-D074-C60B-71A18C4F90BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lightsail.Net35", "src\Services\Lightsail\AWSSDK.Lightsail.Net35.csproj", "{2E2C1F58-CB3E-4C8F-B327-97DDFC5C18FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lightsail.Net35", "src/Services/Lightsail/AWSSDK.Lightsail.Net35.csproj", "{2E2C1F58-CB3E-4C8F-B327-97DDFC5C18FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocationService", "LocationService", "{168A8710-B732-E71D-3D45-3B44A514570F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LocationService.Net35", "src\Services\LocationService\AWSSDK.LocationService.Net35.csproj", "{50A210CD-2EF8-4BA1-982E-BC003041317E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LocationService.Net35", "src/Services/LocationService/AWSSDK.LocationService.Net35.csproj", "{50A210CD-2EF8-4BA1-982E-BC003041317E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LookoutEquipment", "LookoutEquipment", "{0C352339-FC25-086A-CD3F-248A6875B050}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutEquipment.Net35", "src\Services\LookoutEquipment\AWSSDK.LookoutEquipment.Net35.csproj", "{74A8A9C1-8985-4DF2-B405-DD9CA1564F44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutEquipment.Net35", "src/Services/LookoutEquipment/AWSSDK.LookoutEquipment.Net35.csproj", "{74A8A9C1-8985-4DF2-B405-DD9CA1564F44}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LookoutforVision", "LookoutforVision", "{E9663A57-058D-5612-47DB-02EFC4090973}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutforVision.Net35", "src\Services\LookoutforVision\AWSSDK.LookoutforVision.Net35.csproj", "{91BF026A-46A9-447E-8922-0228A7D0F745}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutforVision.Net35", "src/Services/LookoutforVision/AWSSDK.LookoutforVision.Net35.csproj", "{91BF026A-46A9-447E-8922-0228A7D0F745}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LookoutMetrics", "LookoutMetrics", "{1374DA9A-7D83-FE67-E386-FCA9AF96BCFA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutMetrics.Net35", "src\Services\LookoutMetrics\AWSSDK.LookoutMetrics.Net35.csproj", "{F020B8CF-7D87-4699-A66B-0A67F27E49D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.LookoutMetrics.Net35", "src/Services/LookoutMetrics/AWSSDK.LookoutMetrics.Net35.csproj", "{F020B8CF-7D87-4699-A66B-0A67F27E49D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MachineLearning", "MachineLearning", "{F022BCC9-DB05-C405-628B-9686C55524CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MachineLearning.Net35", "src\Services\MachineLearning\AWSSDK.MachineLearning.Net35.csproj", "{212C6929-A815-4D2D-B1D7-9759A4BC7D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MachineLearning.Net35", "src/Services/MachineLearning/AWSSDK.MachineLearning.Net35.csproj", "{212C6929-A815-4D2D-B1D7-9759A4BC7D7E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Macie", "Macie", "{515D8762-155A-4331-62A6-0A476CC7DE16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Macie.Net35", "src\Services\Macie\AWSSDK.Macie.Net35.csproj", "{EB7E6082-8F92-40E5-8032-553665E7F14C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Macie.Net35", "src/Services/Macie/AWSSDK.Macie.Net35.csproj", "{EB7E6082-8F92-40E5-8032-553665E7F14C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Macie2", "Macie2", "{DD4D9AB8-FFCC-06D6-78D1-E5CF261D56E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Macie2.Net35", "src\Services\Macie2\AWSSDK.Macie2.Net35.csproj", "{D86374F2-3074-4A33-8E8A-B9D1D0BC34C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Macie2.Net35", "src/Services/Macie2/AWSSDK.Macie2.Net35.csproj", "{D86374F2-3074-4A33-8E8A-B9D1D0BC34C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MainframeModernization", "MainframeModernization", "{91930F2D-830F-8AD2-5C6D-46A6DBB32457}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MainframeModernization.Net35", "src\Services\MainframeModernization\AWSSDK.MainframeModernization.Net35.csproj", "{56698185-CDFE-42BD-B184-B52595678201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MainframeModernization.Net35", "src/Services/MainframeModernization/AWSSDK.MainframeModernization.Net35.csproj", "{56698185-CDFE-42BD-B184-B52595678201}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManagedBlockchain", "ManagedBlockchain", "{EEB2A3F7-60A6-6689-5895-95FD1F89727F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedBlockchain.Net35", "src\Services\ManagedBlockchain\AWSSDK.ManagedBlockchain.Net35.csproj", "{69BEB7CC-80EB-4EC5-A1EE-24F4CAE57BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedBlockchain.Net35", "src/Services/ManagedBlockchain/AWSSDK.ManagedBlockchain.Net35.csproj", "{69BEB7CC-80EB-4EC5-A1EE-24F4CAE57BC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManagedGrafana", "ManagedGrafana", "{F71777C8-2383-FA1B-239B-F5F5F555D77F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedGrafana.Net35", "src\Services\ManagedGrafana\AWSSDK.ManagedGrafana.Net35.csproj", "{C5A248F1-0C11-4B35-BDD0-95249F4A081D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ManagedGrafana.Net35", "src/Services/ManagedGrafana/AWSSDK.ManagedGrafana.Net35.csproj", "{C5A248F1-0C11-4B35-BDD0-95249F4A081D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MarketplaceCatalog", "MarketplaceCatalog", "{57C5CD6E-8737-AE50-7341-081A2EE0A1CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceCatalog.Net35", "src\Services\MarketplaceCatalog\AWSSDK.MarketplaceCatalog.Net35.csproj", "{8C3DB6CF-3436-430A-B188-2ACF3DB701F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceCatalog.Net35", "src/Services/MarketplaceCatalog/AWSSDK.MarketplaceCatalog.Net35.csproj", "{8C3DB6CF-3436-430A-B188-2ACF3DB701F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MarketplaceEntitlementService", "MarketplaceEntitlementService", "{D923400E-6461-41CE-3107-7AD64C6EF92E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceEntitlementService.Net35", "src\Services\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.Net35.csproj", "{B1B78EB8-DAA8-42D9-9F9C-6F05171BA711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MarketplaceEntitlementService.Net35", "src/Services/MarketplaceEntitlementService/AWSSDK.MarketplaceEntitlementService.Net35.csproj", "{B1B78EB8-DAA8-42D9-9F9C-6F05171BA711}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaConnect", "MediaConnect", "{CABD18FF-6A6C-BAD3-EB35-CC13F8AD8EF6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConnect.Net35", "src\Services\MediaConnect\AWSSDK.MediaConnect.Net35.csproj", "{89D1D160-6574-4FD8-B303-6CB99AFCDD5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConnect.Net35", "src/Services/MediaConnect/AWSSDK.MediaConnect.Net35.csproj", "{89D1D160-6574-4FD8-B303-6CB99AFCDD5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaConvert", "MediaConvert", "{DC4F08C5-FA8B-8206-2821-EC2B9F3D2E34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConvert.Net35", "src\Services\MediaConvert\AWSSDK.MediaConvert.Net35.csproj", "{19D2E532-8E38-401C-8B6D-4727042F6478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaConvert.Net35", "src/Services/MediaConvert/AWSSDK.MediaConvert.Net35.csproj", "{19D2E532-8E38-401C-8B6D-4727042F6478}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaLive", "MediaLive", "{B0D7D379-5B40-9A60-92AD-035008DF4807}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaLive.Net35", "src\Services\MediaLive\AWSSDK.MediaLive.Net35.csproj", "{E04B8F65-1D43-43EC-965D-191E751E35D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaLive.Net35", "src/Services/MediaLive/AWSSDK.MediaLive.Net35.csproj", "{E04B8F65-1D43-43EC-965D-191E751E35D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaPackage", "MediaPackage", "{12BA3483-46DE-188A-E613-75E9B1EE448C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackage.Net35", "src\Services\MediaPackage\AWSSDK.MediaPackage.Net35.csproj", "{76D6ABAE-39AB-4C48-B97A-53E380933D35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackage.Net35", "src/Services/MediaPackage/AWSSDK.MediaPackage.Net35.csproj", "{76D6ABAE-39AB-4C48-B97A-53E380933D35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaPackageV2", "MediaPackageV2", "{681D0209-D102-4341-BD40-3191FB49C7F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageV2.Net35", "src\Services\MediaPackageV2\AWSSDK.MediaPackageV2.Net35.csproj", "{2272F080-EA17-40D0-ABD8-4A152D1FD648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageV2.Net35", "src/Services/MediaPackageV2/AWSSDK.MediaPackageV2.Net35.csproj", "{2272F080-EA17-40D0-ABD8-4A152D1FD648}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaPackageVod", "MediaPackageVod", "{ADF28B60-E90E-B113-A303-3A2CFC215279}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageVod.Net35", "src\Services\MediaPackageVod\AWSSDK.MediaPackageVod.Net35.csproj", "{F1E73323-1042-4318-B83D-8DB36630FA7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaPackageVod.Net35", "src/Services/MediaPackageVod/AWSSDK.MediaPackageVod.Net35.csproj", "{F1E73323-1042-4318-B83D-8DB36630FA7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaStore", "MediaStore", "{6072BA1E-1D03-9AA5-8D9D-14B735072C12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStore.Net35", "src\Services\MediaStore\AWSSDK.MediaStore.Net35.csproj", "{DB2C48BA-16A0-4BCB-8FCA-3F03D0E6E770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStore.Net35", "src/Services/MediaStore/AWSSDK.MediaStore.Net35.csproj", "{DB2C48BA-16A0-4BCB-8FCA-3F03D0E6E770}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaStoreData", "MediaStoreData", "{01A71D90-1490-88B1-3E44-7408E1BE54E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStoreData.Net35", "src\Services\MediaStoreData\AWSSDK.MediaStoreData.Net35.csproj", "{80149377-3E11-4299-8C0C-8C8EA1031874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaStoreData.Net35", "src/Services/MediaStoreData/AWSSDK.MediaStoreData.Net35.csproj", "{80149377-3E11-4299-8C0C-8C8EA1031874}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaTailor", "MediaTailor", "{0C25AF27-F559-A7EC-AF7C-E580680389A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaTailor.Net35", "src\Services\MediaTailor\AWSSDK.MediaTailor.Net35.csproj", "{A28218D6-D3AD-4096-9F88-622099DAC604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MediaTailor.Net35", "src/Services/MediaTailor/AWSSDK.MediaTailor.Net35.csproj", "{A28218D6-D3AD-4096-9F88-622099DAC604}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedicalImaging", "MedicalImaging", "{BF4271AD-7066-4BF2-A4A1-DF31D92EDE16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MedicalImaging.Net35", "src/Services/MedicalImaging/AWSSDK.MedicalImaging.Net35.csproj", "{7A34BD37-69CF-4FF4-A914-7DF6460BEEDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MemoryDB", "MemoryDB", "{322EEB7F-8590-CF55-2AEF-277FD8959748}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MemoryDB.Net35", "src\Services\MemoryDB\AWSSDK.MemoryDB.Net35.csproj", "{E16F0BF5-CE7C-427D-BDB4-27BD4218A167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MemoryDB.Net35", "src/Services/MemoryDB/AWSSDK.MemoryDB.Net35.csproj", "{E16F0BF5-CE7C-427D-BDB4-27BD4218A167}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mgn", "Mgn", "{BA533ABC-D5CC-EA4B-C5DE-651DD0C779D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Mgn.Net35", "src\Services\Mgn\AWSSDK.Mgn.Net35.csproj", "{56E2A6F2-4C74-420A-927E-99F734B2913B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Mgn.Net35", "src/Services/Mgn/AWSSDK.Mgn.Net35.csproj", "{56E2A6F2-4C74-420A-927E-99F734B2913B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationHub", "MigrationHub", "{097C4BCB-7A34-C418-035A-F63629F1531D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHub.Net35", "src\Services\MigrationHub\AWSSDK.MigrationHub.Net35.csproj", "{CC0A49BB-8625-4D6A-B4AA-479CCCF8B7AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHub.Net35", "src/Services/MigrationHub/AWSSDK.MigrationHub.Net35.csproj", "{CC0A49BB-8625-4D6A-B4AA-479CCCF8B7AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationHubConfig", "MigrationHubConfig", "{9B1B4106-7BD7-710F-BF1D-DAC187419AC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubConfig.Net35", "src\Services\MigrationHubConfig\AWSSDK.MigrationHubConfig.Net35.csproj", "{14D69580-C588-45E2-8959-D5F4D4A0F3BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubConfig.Net35", "src/Services/MigrationHubConfig/AWSSDK.MigrationHubConfig.Net35.csproj", "{14D69580-C588-45E2-8959-D5F4D4A0F3BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationHubOrchestrator", "MigrationHubOrchestrator", "{8D11CE6D-B3A1-0648-CF76-082015B3D509}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubOrchestrator.Net35", "src\Services\MigrationHubOrchestrator\AWSSDK.MigrationHubOrchestrator.Net35.csproj", "{A1402B46-BE90-4B63-8E14-6F0E1C44C0F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubOrchestrator.Net35", "src/Services/MigrationHubOrchestrator/AWSSDK.MigrationHubOrchestrator.Net35.csproj", "{A1402B46-BE90-4B63-8E14-6F0E1C44C0F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationHubRefactorSpaces", "MigrationHubRefactorSpaces", "{694F14F9-169D-A6A5-E324-747BA6C261AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubRefactorSpaces.Net35", "src\Services\MigrationHubRefactorSpaces\AWSSDK.MigrationHubRefactorSpaces.Net35.csproj", "{BEDB09F9-6793-4B9B-B0A2-065116F1864F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubRefactorSpaces.Net35", "src/Services/MigrationHubRefactorSpaces/AWSSDK.MigrationHubRefactorSpaces.Net35.csproj", "{BEDB09F9-6793-4B9B-B0A2-065116F1864F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MigrationHubStrategyRecommendations", "MigrationHubStrategyRecommendations", "{AD22AC90-2963-D97D-C285-078A7CB8BD64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubStrategyRecommendations.Net35", "src\Services\MigrationHubStrategyRecommendations\AWSSDK.MigrationHubStrategyRecommendations.Net35.csproj", "{46C06E64-5968-4F2B-9656-F01127E7FA7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MigrationHubStrategyRecommendations.Net35", "src/Services/MigrationHubStrategyRecommendations/AWSSDK.MigrationHubStrategyRecommendations.Net35.csproj", "{46C06E64-5968-4F2B-9656-F01127E7FA7D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{5A110DEC-20EC-7AE7-229D-7035F90DD80F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Mobile.Net35", "src\Services\Mobile\AWSSDK.Mobile.Net35.csproj", "{2C9BB30F-8C85-411F-A5CF-DF45F398C6C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Mobile.Net35", "src/Services/Mobile/AWSSDK.Mobile.Net35.csproj", "{2C9BB30F-8C85-411F-A5CF-DF45F398C6C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MQ", "MQ", "{19396EA7-E205-4203-31F5-C57A821A3DA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MQ.Net35", "src\Services\MQ\AWSSDK.MQ.Net35.csproj", "{2B3B2987-0EC6-4689-A753-0CD3EA66B8DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MQ.Net35", "src/Services/MQ/AWSSDK.MQ.Net35.csproj", "{2B3B2987-0EC6-4689-A753-0CD3EA66B8DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MTurk", "MTurk", "{B13920EA-3A30-82FE-4009-6A8905534849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MTurk.Net35", "src\Services\MTurk\AWSSDK.MTurk.Net35.csproj", "{B66CCC11-61AD-4900-A694-D984F36BF98D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MTurk.Net35", "src/Services/MTurk/AWSSDK.MTurk.Net35.csproj", "{B66CCC11-61AD-4900-A694-D984F36BF98D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MWAA", "MWAA", "{A848A349-3368-0B8B-81BA-630EAB39B101}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MWAA.Net35", "src\Services\MWAA\AWSSDK.MWAA.Net35.csproj", "{7B7A2235-A8FB-43EC-AD4F-C2BCC4665A51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.MWAA.Net35", "src/Services/MWAA/AWSSDK.MWAA.Net35.csproj", "{7B7A2235-A8FB-43EC-AD4F-C2BCC4665A51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Neptune", "Neptune", "{4C244B17-786B-5731-A5CA-E7BF494FBF0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Neptune.Net35", "src\Services\Neptune\AWSSDK.Neptune.Net35.csproj", "{02B7DB7F-D5CB-4679-9F1A-C45951C4DF1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Neptune.Net35", "src/Services/Neptune/AWSSDK.Neptune.Net35.csproj", "{02B7DB7F-D5CB-4679-9F1A-C45951C4DF1D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetworkFirewall", "NetworkFirewall", "{C6B1FBDF-B0EC-1F7C-986A-51EBE5F22950}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkFirewall.Net35", "src\Services\NetworkFirewall\AWSSDK.NetworkFirewall.Net35.csproj", "{D3070DB2-015A-4A17-BE7E-E192AE330385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkFirewall.Net35", "src/Services/NetworkFirewall/AWSSDK.NetworkFirewall.Net35.csproj", "{D3070DB2-015A-4A17-BE7E-E192AE330385}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetworkManager", "NetworkManager", "{D503A07C-34DE-1829-5AA5-31AF96724B4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkManager.Net35", "src\Services\NetworkManager\AWSSDK.NetworkManager.Net35.csproj", "{500674EE-7C61-432A-8417-085A8C2E3EBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NetworkManager.Net35", "src/Services/NetworkManager/AWSSDK.NetworkManager.Net35.csproj", "{500674EE-7C61-432A-8417-085A8C2E3EBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NimbleStudio", "NimbleStudio", "{689CD2B0-9D0F-EC24-3906-43D925B0BEF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NimbleStudio.Net35", "src\Services\NimbleStudio\AWSSDK.NimbleStudio.Net35.csproj", "{940C211D-3E78-4750-A726-60DDD0867BFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.NimbleStudio.Net35", "src/Services/NimbleStudio/AWSSDK.NimbleStudio.Net35.csproj", "{940C211D-3E78-4750-A726-60DDD0867BFD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAM", "OAM", "{48A9D765-ED9E-56F9-2E2D-AD916B1DAFB3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OAM.Net35", "src\Services\OAM\AWSSDK.OAM.Net35.csproj", "{759A424D-55B1-493D-92F1-90FBCEA2DE79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OAM.Net35", "src/Services/OAM/AWSSDK.OAM.Net35.csproj", "{759A424D-55B1-493D-92F1-90FBCEA2DE79}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Omics", "Omics", "{DEF53D81-A201-BE6C-FF58-E516E5772AE4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Omics.Net35", "src\Services\Omics\AWSSDK.Omics.Net35.csproj", "{73A62F3D-A696-46DB-9C96-A2C2A12EF4F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Omics.Net35", "src/Services/Omics/AWSSDK.Omics.Net35.csproj", "{73A62F3D-A696-46DB-9C96-A2C2A12EF4F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenSearchServerless", "OpenSearchServerless", "{6B54CF2C-0338-FB98-A6D0-6BAA1141C818}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchServerless.Net35", "src\Services\OpenSearchServerless\AWSSDK.OpenSearchServerless.Net35.csproj", "{EE0D520E-CC05-4697-9833-A10A0551B454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchServerless.Net35", "src/Services/OpenSearchServerless/AWSSDK.OpenSearchServerless.Net35.csproj", "{EE0D520E-CC05-4697-9833-A10A0551B454}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenSearchService", "OpenSearchService", "{2A66A962-0CCE-7FD4-0762-3F4320D6FEB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchService.Net35", "src\Services\OpenSearchService\AWSSDK.OpenSearchService.Net35.csproj", "{49C6EEE4-0434-4B29-846E-20A09342B5D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpenSearchService.Net35", "src/Services/OpenSearchService/AWSSDK.OpenSearchService.Net35.csproj", "{49C6EEE4-0434-4B29-846E-20A09342B5D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpsWorks", "OpsWorks", "{57507430-0E01-939C-E7F9-DB46EE145066}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorks.Net35", "src\Services\OpsWorks\AWSSDK.OpsWorks.Net35.csproj", "{DA6FC2F5-7B93-4E6A-B3BB-A97D7A874207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorks.Net35", "src/Services/OpsWorks/AWSSDK.OpsWorks.Net35.csproj", "{DA6FC2F5-7B93-4E6A-B3BB-A97D7A874207}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpsWorksCM", "OpsWorksCM", "{BBF0676B-E7CC-5048-97FF-62A0DA44B805}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorksCM.Net35", "src\Services\OpsWorksCM\AWSSDK.OpsWorksCM.Net35.csproj", "{66D11D7B-411F-4C03-9B70-817F8995D698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OpsWorksCM.Net35", "src/Services/OpsWorksCM/AWSSDK.OpsWorksCM.Net35.csproj", "{66D11D7B-411F-4C03-9B70-817F8995D698}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organizations", "Organizations", "{9981D2A8-58CA-F260-67E1-BDCA305E80B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Organizations.Net35", "src\Services\Organizations\AWSSDK.Organizations.Net35.csproj", "{2FB14565-9F60-4E19-AFB5-6CBBDBC9CF5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Organizations.Net35", "src/Services/Organizations/AWSSDK.Organizations.Net35.csproj", "{2FB14565-9F60-4E19-AFB5-6CBBDBC9CF5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OSIS", "OSIS", "{E5ED7E8E-84CF-43BA-A7F0-E1D719EC6782}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OSIS.Net35", "src\Services\OSIS\AWSSDK.OSIS.Net35.csproj", "{29FCD890-195D-4246-AA21-B1C81108946A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.OSIS.Net35", "src/Services/OSIS/AWSSDK.OSIS.Net35.csproj", "{29FCD890-195D-4246-AA21-B1C81108946A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Outposts", "Outposts", "{AE9E959C-51D1-4D30-FD07-867A2FC47FDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Outposts.Net35", "src\Services\Outposts\AWSSDK.Outposts.Net35.csproj", "{3285866B-2A87-49E0-9C1D-81C11ABCF160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Outposts.Net35", "src/Services/Outposts/AWSSDK.Outposts.Net35.csproj", "{3285866B-2A87-49E0-9C1D-81C11ABCF160}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Panorama", "Panorama", "{0AFB8284-DC15-B19A-9259-33DEA4B8C816}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Panorama.Net35", "src\Services\Panorama\AWSSDK.Panorama.Net35.csproj", "{DAA52419-EC9C-4B9D-9FDC-3B5A80CC5922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Panorama.Net35", "src/Services/Panorama/AWSSDK.Panorama.Net35.csproj", "{DAA52419-EC9C-4B9D-9FDC-3B5A80CC5922}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentCryptography", "PaymentCryptography", "{967800ED-E5CF-4C10-BF1B-3F42A3A9717B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptography.Net35", "src\Services\PaymentCryptography\AWSSDK.PaymentCryptography.Net35.csproj", "{9236E477-776F-4FC2-BD65-40E5B90090BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptography.Net35", "src/Services/PaymentCryptography/AWSSDK.PaymentCryptography.Net35.csproj", "{9236E477-776F-4FC2-BD65-40E5B90090BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentCryptographyData", "PaymentCryptographyData", "{742B6BE9-8F72-4C74-BF03-CAEFB062DCD0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptographyData.Net35", "src\Services\PaymentCryptographyData\AWSSDK.PaymentCryptographyData.Net35.csproj", "{22208E4B-2C6B-456B-997D-9B247C8A118B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaymentCryptographyData.Net35", "src/Services/PaymentCryptographyData/AWSSDK.PaymentCryptographyData.Net35.csproj", "{22208E4B-2C6B-456B-997D-9B247C8A118B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Personalize", "Personalize", "{A22561F9-DFA2-5942-F572-0A185FA973DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Personalize.Net35", "src\Services\Personalize\AWSSDK.Personalize.Net35.csproj", "{4CB5D7BF-C487-4A24-B946-6D87A43B4FFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Personalize.Net35", "src/Services/Personalize/AWSSDK.Personalize.Net35.csproj", "{4CB5D7BF-C487-4A24-B946-6D87A43B4FFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersonalizeEvents", "PersonalizeEvents", "{B2D62389-48EE-4E42-9BBF-A574AA97EFDF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeEvents.Net35", "src\Services\PersonalizeEvents\AWSSDK.PersonalizeEvents.Net35.csproj", "{CE5F1FD7-BCCA-4370-AD68-413D62083A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeEvents.Net35", "src/Services/PersonalizeEvents/AWSSDK.PersonalizeEvents.Net35.csproj", "{CE5F1FD7-BCCA-4370-AD68-413D62083A8F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersonalizeRuntime", "PersonalizeRuntime", "{72BB49DE-02B2-4105-F7ED-81B99371931C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeRuntime.Net35", "src\Services\PersonalizeRuntime\AWSSDK.PersonalizeRuntime.Net35.csproj", "{F91A0B90-D440-4C64-A9FD-E897531A7AF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PersonalizeRuntime.Net35", "src/Services/PersonalizeRuntime/AWSSDK.PersonalizeRuntime.Net35.csproj", "{F91A0B90-D440-4C64-A9FD-E897531A7AF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PI", "PI", "{41846F5F-E81C-60A9-D4DC-C9A788E813D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PI.Net35", "src\Services\PI\AWSSDK.PI.Net35.csproj", "{218A625E-2548-448C-AD7F-67F031FE9C3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PI.Net35", "src/Services/PI/AWSSDK.PI.Net35.csproj", "{218A625E-2548-448C-AD7F-67F031FE9C3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pinpoint", "Pinpoint", "{314735A3-2504-70EE-A80A-A3A25C2ED9EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pinpoint.Net35", "src\Services\Pinpoint\AWSSDK.Pinpoint.Net35.csproj", "{872222C0-BC0A-4587-8359-8BAA3C67314E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pinpoint.Net35", "src/Services/Pinpoint/AWSSDK.Pinpoint.Net35.csproj", "{872222C0-BC0A-4587-8359-8BAA3C67314E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PinpointEmail", "PinpointEmail", "{DB60768E-A4E1-5528-E1E6-68608685A784}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointEmail.Net35", "src\Services\PinpointEmail\AWSSDK.PinpointEmail.Net35.csproj", "{04066574-C0C1-45AD-942D-CBC755077C10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointEmail.Net35", "src/Services/PinpointEmail/AWSSDK.PinpointEmail.Net35.csproj", "{04066574-C0C1-45AD-942D-CBC755077C10}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PinpointSMSVoice", "PinpointSMSVoice", "{A0E38109-615D-D174-769D-3EA3CB51CA64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoice.Net35", "src\Services\PinpointSMSVoice\AWSSDK.PinpointSMSVoice.Net35.csproj", "{45F40BA3-2653-476D-BD97-5F29BC88F0CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoice.Net35", "src/Services/PinpointSMSVoice/AWSSDK.PinpointSMSVoice.Net35.csproj", "{45F40BA3-2653-476D-BD97-5F29BC88F0CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PinpointSMSVoiceV2", "PinpointSMSVoiceV2", "{742F7A34-043A-DD57-DEBF-53633A09B25C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoiceV2.Net35", "src\Services\PinpointSMSVoiceV2\AWSSDK.PinpointSMSVoiceV2.Net35.csproj", "{063D5915-96AD-43DC-9390-CE45B0871936}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PinpointSMSVoiceV2.Net35", "src/Services/PinpointSMSVoiceV2/AWSSDK.PinpointSMSVoiceV2.Net35.csproj", "{063D5915-96AD-43DC-9390-CE45B0871936}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipes", "Pipes", "{1AC423B8-763A-12B6-070E-F8ABE505E6EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pipes.Net35", "src\Services\Pipes\AWSSDK.Pipes.Net35.csproj", "{723F23C2-3B0B-4558-9836-30223ED87B67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pipes.Net35", "src/Services/Pipes/AWSSDK.Pipes.Net35.csproj", "{723F23C2-3B0B-4558-9836-30223ED87B67}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Polly", "Polly", "{61096072-B14D-0687-23A1-3642791E9ADE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Polly.Net35", "src\Services\Polly\AWSSDK.Polly.Net35.csproj", "{593CBEFF-B26D-4ED9-A743-B5D3E9A276C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Polly.Net35", "src/Services/Polly/AWSSDK.Polly.Net35.csproj", "{593CBEFF-B26D-4ED9-A743-B5D3E9A276C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pricing", "Pricing", "{623EE709-B26D-2D94-FDD5-F5CC8E1F91A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pricing.Net35", "src\Services\Pricing\AWSSDK.Pricing.Net35.csproj", "{DBE243C8-3A95-43A7-902E-C9BB19DD21A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Pricing.Net35", "src/Services/Pricing/AWSSDK.Pricing.Net35.csproj", "{DBE243C8-3A95-43A7-902E-C9BB19DD21A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Private5G", "Private5G", "{BBFB351C-7D14-E19E-F1B1-67E8AC0124AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Private5G.Net35", "src\Services\Private5G\AWSSDK.Private5G.Net35.csproj", "{73A2AC6D-E3F7-47C1-9CB5-956AB3B57951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Private5G.Net35", "src/Services/Private5G/AWSSDK.Private5G.Net35.csproj", "{73A2AC6D-E3F7-47C1-9CB5-956AB3B57951}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PrometheusService", "PrometheusService", "{EB6A12B4-6B95-BABB-2A6C-43F72409A5B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PrometheusService.Net35", "src\Services\PrometheusService\AWSSDK.PrometheusService.Net35.csproj", "{B76314CF-FCED-4851-A0B7-CC718A2EC4D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PrometheusService.Net35", "src/Services/PrometheusService/AWSSDK.PrometheusService.Net35.csproj", "{B76314CF-FCED-4851-A0B7-CC718A2EC4D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proton", "Proton", "{402677DD-D16F-952F-2E84-FDB7F0BFD2E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Proton.Net35", "src\Services\Proton\AWSSDK.Proton.Net35.csproj", "{AD5FBD98-C393-4015-89BF-AC01A50F1B8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Proton.Net35", "src/Services/Proton/AWSSDK.Proton.Net35.csproj", "{AD5FBD98-C393-4015-89BF-AC01A50F1B8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QLDB", "QLDB", "{77B8DB04-434C-2369-7AEA-455B332ED8E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDB.Net35", "src\Services\QLDB\AWSSDK.QLDB.Net35.csproj", "{2E52A3DC-DCF4-4E18-9F17-B183BB2501F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDB.Net35", "src/Services/QLDB/AWSSDK.QLDB.Net35.csproj", "{2E52A3DC-DCF4-4E18-9F17-B183BB2501F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QLDBSession", "QLDBSession", "{52EBF1A8-8A6B-5DEC-6BCE-8B1570C2293C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDBSession.Net35", "src\Services\QLDBSession\AWSSDK.QLDBSession.Net35.csproj", "{0AC2C97D-9D93-4B90-A292-B2E3EC34B195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QLDBSession.Net35", "src/Services/QLDBSession/AWSSDK.QLDBSession.Net35.csproj", "{0AC2C97D-9D93-4B90-A292-B2E3EC34B195}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuickSight", "QuickSight", "{DE83752E-5DCF-5AD2-1088-E4D15296898A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QuickSight.Net35", "src\Services\QuickSight\AWSSDK.QuickSight.Net35.csproj", "{4DDE64BA-921E-482D-A938-6CAAAB39D9AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QuickSight.Net35", "src/Services/QuickSight/AWSSDK.QuickSight.Net35.csproj", "{4DDE64BA-921E-482D-A938-6CAAAB39D9AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RAM", "RAM", "{4E6DEC2F-3512-0100-71E0-DED78B6FFBDF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RAM.Net35", "src\Services\RAM\AWSSDK.RAM.Net35.csproj", "{BEF943E3-A07A-4642-BD34-CC98CFC6BD37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RAM.Net35", "src/Services/RAM/AWSSDK.RAM.Net35.csproj", "{BEF943E3-A07A-4642-BD34-CC98CFC6BD37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RDS", "RDS", "{BBC9EF19-5EB3-2F96-1EDA-63B50C13EA35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDS.Net35", "src\Services\RDS\AWSSDK.RDS.Net35.csproj", "{C0C33DF8-B552-451F-8F3A-D232628CB28D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDS.Net35", "src/Services/RDS/AWSSDK.RDS.Net35.csproj", "{C0C33DF8-B552-451F-8F3A-D232628CB28D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RDSDataService", "RDSDataService", "{C58B07C1-8034-82CA-B52D-AEBFB233301E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDSDataService.Net35", "src\Services\RDSDataService\AWSSDK.RDSDataService.Net35.csproj", "{915B23E2-AAB4-4731-A480-E491404A1D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RDSDataService.Net35", "src/Services/RDSDataService/AWSSDK.RDSDataService.Net35.csproj", "{915B23E2-AAB4-4731-A480-E491404A1D6C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RecycleBin", "RecycleBin", "{A681C77C-A57F-8BC3-3CA7-06BA2548C740}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RecycleBin.Net35", "src\Services\RecycleBin\AWSSDK.RecycleBin.Net35.csproj", "{B39DAAC3-D6F9-4D9D-9C9B-F54050228AC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RecycleBin.Net35", "src/Services/RecycleBin/AWSSDK.RecycleBin.Net35.csproj", "{B39DAAC3-D6F9-4D9D-9C9B-F54050228AC6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redshift", "Redshift", "{C924D055-A9C0-E189-BEFA-46B32FCEE3D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Redshift.Net35", "src\Services\Redshift\AWSSDK.Redshift.Net35.csproj", "{74CD46FD-9ABF-4A38-A2DE-AF79CA492AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Redshift.Net35", "src/Services/Redshift/AWSSDK.Redshift.Net35.csproj", "{74CD46FD-9ABF-4A38-A2DE-AF79CA492AC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedshiftDataAPIService", "RedshiftDataAPIService", "{436BB8A0-4DD9-45D1-6509-0205DD20D78A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftDataAPIService.Net35", "src\Services\RedshiftDataAPIService\AWSSDK.RedshiftDataAPIService.Net35.csproj", "{DED78B6C-3E21-485A-BD82-18BC8CD8693A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftDataAPIService.Net35", "src/Services/RedshiftDataAPIService/AWSSDK.RedshiftDataAPIService.Net35.csproj", "{DED78B6C-3E21-485A-BD82-18BC8CD8693A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedshiftServerless", "RedshiftServerless", "{CD319E95-E3AB-FC9D-48DB-2E22BA64C67B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftServerless.Net35", "src\Services\RedshiftServerless\AWSSDK.RedshiftServerless.Net35.csproj", "{9125720C-0BC5-4F5B-B8D3-9B0EDAE43506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RedshiftServerless.Net35", "src/Services/RedshiftServerless/AWSSDK.RedshiftServerless.Net35.csproj", "{9125720C-0BC5-4F5B-B8D3-9B0EDAE43506}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rekognition", "Rekognition", "{A5F559E1-6288-D4F9-CDAB-15E7838E2F76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Rekognition.Net35", "src\Services\Rekognition\AWSSDK.Rekognition.Net35.csproj", "{48517A6F-D3CF-4594-8A50-727180176314}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Rekognition.Net35", "src/Services/Rekognition/AWSSDK.Rekognition.Net35.csproj", "{48517A6F-D3CF-4594-8A50-727180176314}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResilienceHub", "ResilienceHub", "{2B8C9306-7E58-F7E0-E9CE-69D9A057A7BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResilienceHub.Net35", "src\Services\ResilienceHub\AWSSDK.ResilienceHub.Net35.csproj", "{92CED46A-398B-455C-90BA-2EFF982367E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResilienceHub.Net35", "src/Services/ResilienceHub/AWSSDK.ResilienceHub.Net35.csproj", "{92CED46A-398B-455C-90BA-2EFF982367E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResourceExplorer2", "ResourceExplorer2", "{2C3D311D-616C-5573-7812-2F2BEF60CEBD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceExplorer2.Net35", "src\Services\ResourceExplorer2\AWSSDK.ResourceExplorer2.Net35.csproj", "{9F096599-A2AB-4063-ADA4-8CD6A413336C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceExplorer2.Net35", "src/Services/ResourceExplorer2/AWSSDK.ResourceExplorer2.Net35.csproj", "{9F096599-A2AB-4063-ADA4-8CD6A413336C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResourceGroups", "ResourceGroups", "{50815196-BF01-780F-1328-5C90FF6D8F93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroups.Net35", "src\Services\ResourceGroups\AWSSDK.ResourceGroups.Net35.csproj", "{4062DCE2-CE56-426E-ADAE-03B8F4862522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroups.Net35", "src/Services/ResourceGroups/AWSSDK.ResourceGroups.Net35.csproj", "{4062DCE2-CE56-426E-ADAE-03B8F4862522}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResourceGroupsTaggingAPI", "ResourceGroupsTaggingAPI", "{C5AF7D66-B4CC-CDE5-F2B8-B94AFC29E236}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroupsTaggingAPI.Net35", "src\Services\ResourceGroupsTaggingAPI\AWSSDK.ResourceGroupsTaggingAPI.Net35.csproj", "{76C93569-F950-4FF6-8BCA-962583F0F5DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ResourceGroupsTaggingAPI.Net35", "src/Services/ResourceGroupsTaggingAPI/AWSSDK.ResourceGroupsTaggingAPI.Net35.csproj", "{76C93569-F950-4FF6-8BCA-962583F0F5DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RoboMaker", "RoboMaker", "{4131B1E1-E1FF-D0DB-7836-A42C2BD06656}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RoboMaker.Net35", "src\Services\RoboMaker\AWSSDK.RoboMaker.Net35.csproj", "{C2180F86-B6B5-45AE-AF43-1A5369D16C36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RoboMaker.Net35", "src/Services/RoboMaker/AWSSDK.RoboMaker.Net35.csproj", "{C2180F86-B6B5-45AE-AF43-1A5369D16C36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53", "Route53", "{C9754ACF-B698-5767-8DB4-2A50046ACCAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53.Net35", "src\Services\Route53\AWSSDK.Route53.Net35.csproj", "{F6EBF31E-C8BF-467D-894C-3F3ABEC9C4B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53.Net35", "src/Services/Route53/AWSSDK.Route53.Net35.csproj", "{F6EBF31E-C8BF-467D-894C-3F3ABEC9C4B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53Domains", "Route53Domains", "{3D3D019E-5E95-2B10-E7F1-16A190659B87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Domains.Net35", "src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj", "{AC343737-281F-4F92-B88A-06B0B2BC5776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Domains.Net35", "src/Services/Route53Domains/AWSSDK.Route53Domains.Net35.csproj", "{AC343737-281F-4F92-B88A-06B0B2BC5776}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53RecoveryCluster", "Route53RecoveryCluster", "{4AC342CA-BD2A-358B-D69C-9CBCF938B84C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryCluster.Net35", "src\Services\Route53RecoveryCluster\AWSSDK.Route53RecoveryCluster.Net35.csproj", "{281BBEF3-5B72-4AD1-B0ED-51CB38982ED3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryCluster.Net35", "src/Services/Route53RecoveryCluster/AWSSDK.Route53RecoveryCluster.Net35.csproj", "{281BBEF3-5B72-4AD1-B0ED-51CB38982ED3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53RecoveryControlConfig", "Route53RecoveryControlConfig", "{CED18439-9ECB-DAB0-C967-AEEF6A78CA0B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryControlConfig.Net35", "src\Services\Route53RecoveryControlConfig\AWSSDK.Route53RecoveryControlConfig.Net35.csproj", "{D2F01794-E939-4673-8A1F-63EE70C2CD9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryControlConfig.Net35", "src/Services/Route53RecoveryControlConfig/AWSSDK.Route53RecoveryControlConfig.Net35.csproj", "{D2F01794-E939-4673-8A1F-63EE70C2CD9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53RecoveryReadiness", "Route53RecoveryReadiness", "{9E560CFA-E565-4FBC-C554-FE9B2A0F0999}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryReadiness.Net35", "src\Services\Route53RecoveryReadiness\AWSSDK.Route53RecoveryReadiness.Net35.csproj", "{81F7A1AB-AF46-4001-9AAD-7187C6CA4ECC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53RecoveryReadiness.Net35", "src/Services/Route53RecoveryReadiness/AWSSDK.Route53RecoveryReadiness.Net35.csproj", "{81F7A1AB-AF46-4001-9AAD-7187C6CA4ECC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Route53Resolver", "Route53Resolver", "{1C7851DE-40ED-8E5F-83A8-DCC20EE697A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Resolver.Net35", "src\Services\Route53Resolver\AWSSDK.Route53Resolver.Net35.csproj", "{8168C250-3773-45B5-BE83-FDCBE063873D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Route53Resolver.Net35", "src/Services/Route53Resolver/AWSSDK.Route53Resolver.Net35.csproj", "{8168C250-3773-45B5-BE83-FDCBE063873D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "S3", "S3", "{34EC168F-E902-91E1-F81D-DCA3C52135BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Net35", "src\Services\S3\AWSSDK.S3.Net35.csproj", "{BD5C9470-FDAD-4E04-A635-0291AC5EFF0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.Net35", "src/Services/S3/AWSSDK.S3.Net35.csproj", "{BD5C9470-FDAD-4E04-A635-0291AC5EFF0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "S3Control", "S3Control", "{6A5F66C7-34AB-4F1F-F6D4-8A28E1082663}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Control.Net35", "src\Services\S3Control\AWSSDK.S3Control.Net35.csproj", "{27DA2270-6F6B-4AB2-B6FB-28ECE7DAC63B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Control.Net35", "src/Services/S3Control/AWSSDK.S3Control.Net35.csproj", "{27DA2270-6F6B-4AB2-B6FB-28ECE7DAC63B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "S3Outposts", "S3Outposts", "{64F89AA8-B7B9-5D64-5B1C-20A4481EC353}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Outposts.Net35", "src\Services\S3Outposts\AWSSDK.S3Outposts.Net35.csproj", "{D53E09D3-C389-421C-B045-329C26BF9DE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3Outposts.Net35", "src/Services/S3Outposts/AWSSDK.S3Outposts.Net35.csproj", "{D53E09D3-C389-421C-B045-329C26BF9DE3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SageMaker", "SageMaker", "{0524B252-811C-AA05-EAC7-6F666678BB91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMaker.Net35", "src\Services\SageMaker\AWSSDK.SageMaker.Net35.csproj", "{B7C1248B-7033-4B8A-B9C3-6273E4DFBA8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMaker.Net35", "src/Services/SageMaker/AWSSDK.SageMaker.Net35.csproj", "{B7C1248B-7033-4B8A-B9C3-6273E4DFBA8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SagemakerEdgeManager", "SagemakerEdgeManager", "{520D369C-21E3-132E-7D10-331030B779C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SagemakerEdgeManager.Net35", "src\Services\SagemakerEdgeManager\AWSSDK.SagemakerEdgeManager.Net35.csproj", "{2702AFC6-DF02-4957-9AD3-C8BC32B82D95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SagemakerEdgeManager.Net35", "src/Services/SagemakerEdgeManager/AWSSDK.SagemakerEdgeManager.Net35.csproj", "{2702AFC6-DF02-4957-9AD3-C8BC32B82D95}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SageMakerFeatureStoreRuntime", "SageMakerFeatureStoreRuntime", "{3BC9DD1C-FB2B-6193-B113-65623D57DF5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerFeatureStoreRuntime.Net35", "src\Services\SageMakerFeatureStoreRuntime\AWSSDK.SageMakerFeatureStoreRuntime.Net35.csproj", "{31B20893-05A1-4BFF-A934-28B095D953D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerFeatureStoreRuntime.Net35", "src/Services/SageMakerFeatureStoreRuntime/AWSSDK.SageMakerFeatureStoreRuntime.Net35.csproj", "{31B20893-05A1-4BFF-A934-28B095D953D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SageMakerGeospatial", "SageMakerGeospatial", "{63C34471-CF46-1018-5CE1-1F785D63B3E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerGeospatial.Net35", "src\Services\SageMakerGeospatial\AWSSDK.SageMakerGeospatial.Net35.csproj", "{C942B837-8628-4452-9099-0C21CB0F8190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerGeospatial.Net35", "src/Services/SageMakerGeospatial/AWSSDK.SageMakerGeospatial.Net35.csproj", "{C942B837-8628-4452-9099-0C21CB0F8190}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SageMakerMetrics", "SageMakerMetrics", "{D5F7A687-899B-17BE-1E3F-154DFDDD044C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerMetrics.Net35", "src\Services\SageMakerMetrics\AWSSDK.SageMakerMetrics.Net35.csproj", "{11BF9927-D76A-43CE-A13D-4E4C0E51696D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerMetrics.Net35", "src/Services/SageMakerMetrics/AWSSDK.SageMakerMetrics.Net35.csproj", "{11BF9927-D76A-43CE-A13D-4E4C0E51696D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SageMakerRuntime", "SageMakerRuntime", "{DE195420-A61F-A757-EFB5-F9D95A25E1B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerRuntime.Net35", "src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net35.csproj", "{09BB7D92-470D-4D0B-B443-7FE0C24CA600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SageMakerRuntime.Net35", "src/Services/SageMakerRuntime/AWSSDK.SageMakerRuntime.Net35.csproj", "{09BB7D92-470D-4D0B-B443-7FE0C24CA600}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SavingsPlans", "SavingsPlans", "{3D78DA69-278D-A5AA-0BBC-235DA6A7206A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SavingsPlans.Net35", "src\Services\SavingsPlans\AWSSDK.SavingsPlans.Net35.csproj", "{FECDE653-A33B-4F69-BC1F-2F1EAACD0A96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SavingsPlans.Net35", "src/Services/SavingsPlans/AWSSDK.SavingsPlans.Net35.csproj", "{FECDE653-A33B-4F69-BC1F-2F1EAACD0A96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduler", "Scheduler", "{4203A4E1-3CD8-E364-707A-52FEA24942D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Scheduler.Net35", "src\Services\Scheduler\AWSSDK.Scheduler.Net35.csproj", "{3E359AF5-3C61-4ED7-A1B8-44D064C2DE29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Scheduler.Net35", "src/Services/Scheduler/AWSSDK.Scheduler.Net35.csproj", "{3E359AF5-3C61-4ED7-A1B8-44D064C2DE29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{AB6DC1DC-2726-400E-1689-973F27471B83}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Schemas.Net35", "src\Services\Schemas\AWSSDK.Schemas.Net35.csproj", "{058AAA48-FFBD-419D-AC26-8CBF14674DFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Schemas.Net35", "src/Services/Schemas/AWSSDK.Schemas.Net35.csproj", "{058AAA48-FFBD-419D-AC26-8CBF14674DFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecretsManager", "SecretsManager", "{18CA7A8F-1B21-60DD-59F6-7C41BFF637E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecretsManager.Net35", "src\Services\SecretsManager\AWSSDK.SecretsManager.Net35.csproj", "{5455AE26-E9D9-4E39-9CBA-8A9DC5CF2611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecretsManager.Net35", "src/Services/SecretsManager/AWSSDK.SecretsManager.Net35.csproj", "{5455AE26-E9D9-4E39-9CBA-8A9DC5CF2611}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecurityHub", "SecurityHub", "{D0CE1395-E5D0-6D5A-6DC7-0E9BFB3EDDE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityHub.Net35", "src\Services\SecurityHub\AWSSDK.SecurityHub.Net35.csproj", "{03DA2961-CA68-41BD-A141-4755DFAE0BAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityHub.Net35", "src/Services/SecurityHub/AWSSDK.SecurityHub.Net35.csproj", "{03DA2961-CA68-41BD-A141-4755DFAE0BAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecurityLake", "SecurityLake", "{27805A09-2E89-BDCB-E989-002E6FEA54D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityLake.Net35", "src\Services\SecurityLake\AWSSDK.SecurityLake.Net35.csproj", "{70E5D327-959D-4900-BF9E-40158868F2ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityLake.Net35", "src/Services/SecurityLake/AWSSDK.SecurityLake.Net35.csproj", "{70E5D327-959D-4900-BF9E-40158868F2ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecurityToken", "SecurityToken", "{3AF59E23-3C5A-C83F-9443-AFC69CBDDE9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.Net35", "src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj", "{F57ECA77-0D0E-416D-AEC6-466DBC7F04A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SecurityToken.Net35", "src/Services/SecurityToken/AWSSDK.SecurityToken.Net35.csproj", "{F57ECA77-0D0E-416D-AEC6-466DBC7F04A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServerlessApplicationRepository", "ServerlessApplicationRepository", "{0ADD2B0C-DFA0-E7DD-0BFE-875F5CC35754}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerlessApplicationRepository.Net35", "src\Services\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.Net35.csproj", "{973D1FCD-D6E6-4DD2-BB9F-F067291C3A37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerlessApplicationRepository.Net35", "src/Services/ServerlessApplicationRepository/AWSSDK.ServerlessApplicationRepository.Net35.csproj", "{973D1FCD-D6E6-4DD2-BB9F-F067291C3A37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServerMigrationService", "ServerMigrationService", "{A2A03602-D696-5D61-6321-38C615BF9075}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerMigrationService.Net35", "src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj", "{624C7B99-6C1A-4D15-8840-0CFCAB239BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServerMigrationService.Net35", "src/Services/ServerMigrationService/AWSSDK.ServerMigrationService.Net35.csproj", "{624C7B99-6C1A-4D15-8840-0CFCAB239BF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceCatalog", "ServiceCatalog", "{9F58918F-4B61-C2E3-ABCB-3EE2B24ADCA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceCatalog.Net35", "src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net35.csproj", "{F2399098-5A8A-4993-B1CD-34E1E8E8E936}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceCatalog.Net35", "src/Services/ServiceCatalog/AWSSDK.ServiceCatalog.Net35.csproj", "{F2399098-5A8A-4993-B1CD-34E1E8E8E936}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceDiscovery", "ServiceDiscovery", "{A19816FF-AAC5-718B-CD43-72A9EA4B45FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceDiscovery.Net35", "src\Services\ServiceDiscovery\AWSSDK.ServiceDiscovery.Net35.csproj", "{A4219426-4D0D-4230-BCAC-03740F4EB9D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceDiscovery.Net35", "src/Services/ServiceDiscovery/AWSSDK.ServiceDiscovery.Net35.csproj", "{A4219426-4D0D-4230-BCAC-03740F4EB9D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceQuotas", "ServiceQuotas", "{C51C1832-BBA5-88AE-7D63-7EBC5565B344}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceQuotas.Net35", "src\Services\ServiceQuotas\AWSSDK.ServiceQuotas.Net35.csproj", "{19C02A7A-BF4E-4DF0-AE95-9FFB50E4BFBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ServiceQuotas.Net35", "src/Services/ServiceQuotas/AWSSDK.ServiceQuotas.Net35.csproj", "{19C02A7A-BF4E-4DF0-AE95-9FFB50E4BFBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shield", "Shield", "{A1CC686F-02A3-F5D5-B55D-E13E3D4BB210}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Shield.Net35", "src\Services\Shield\AWSSDK.Shield.Net35.csproj", "{6647801B-D6D3-4D0C-9012-AB660736B52E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Shield.Net35", "src/Services/Shield/AWSSDK.Shield.Net35.csproj", "{6647801B-D6D3-4D0C-9012-AB660736B52E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Signer", "Signer", "{15B7178B-337D-D006-572E-1BCA476DBD4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Signer.Net35", "src\Services\Signer\AWSSDK.Signer.Net35.csproj", "{6051A3B7-780A-4820-A092-BBE1F83E9C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Signer.Net35", "src/Services/Signer/AWSSDK.Signer.Net35.csproj", "{6051A3B7-780A-4820-A092-BBE1F83E9C8B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleDB", "SimpleDB", "{B3394B29-FC58-FFC9-814F-CB95CD578E55}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleDB.Net35", "src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj", "{7AF95AE8-2D1A-4BDD-91D0-36FA8AEC82AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleDB.Net35", "src/Services/SimpleDB/AWSSDK.SimpleDB.Net35.csproj", "{7AF95AE8-2D1A-4BDD-91D0-36FA8AEC82AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleEmail", "SimpleEmail", "{A6367DC9-E012-687B-DB14-5353D06CC5F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmail.Net35", "src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net35.csproj", "{D712BE9B-AC6D-49DB-8EC2-AA2648EC14F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmail.Net35", "src/Services/SimpleEmail/AWSSDK.SimpleEmail.Net35.csproj", "{D712BE9B-AC6D-49DB-8EC2-AA2648EC14F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleEmailV2", "SimpleEmailV2", "{A25A2474-AD1D-6422-A8B4-801B12FB4E36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmailV2.Net35", "src\Services\SimpleEmailV2\AWSSDK.SimpleEmailV2.Net35.csproj", "{23B8267F-5EEA-4125-9C7D-E21CA313D053}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleEmailV2.Net35", "src/Services/SimpleEmailV2/AWSSDK.SimpleEmailV2.Net35.csproj", "{23B8267F-5EEA-4125-9C7D-E21CA313D053}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleNotificationService", "SimpleNotificationService", "{3296926E-D71B-C821-A1DB-6BCB0A2E80EE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.Net35", "src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj", "{63C8732A-E122-4D39-9BEC-78A20A89B2C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.Net35", "src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.Net35.csproj", "{63C8732A-E122-4D39-9BEC-78A20A89B2C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleSystemsManagement", "SimpleSystemsManagement", "{ECF633D0-5FB0-4468-6D7F-3B44DEF5CAE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleSystemsManagement.Net35", "src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.Net35.csproj", "{A76C4010-6961-45F8-BF6A-C6F7A44A05D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleSystemsManagement.Net35", "src/Services/SimpleSystemsManagement/AWSSDK.SimpleSystemsManagement.Net35.csproj", "{A76C4010-6961-45F8-BF6A-C6F7A44A05D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleWorkflow", "SimpleWorkflow", "{D2C85970-84B6-25CA-EB66-11A9372249F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleWorkflow.Net35", "src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net35.csproj", "{3F6F2946-D71D-41CD-97F0-CCBAFAE6795B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleWorkflow.Net35", "src/Services/SimpleWorkflow/AWSSDK.SimpleWorkflow.Net35.csproj", "{3F6F2946-D71D-41CD-97F0-CCBAFAE6795B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimSpaceWeaver", "SimSpaceWeaver", "{6A99A153-2F37-C888-0B2F-A767E604969E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimSpaceWeaver.Net35", "src\Services\SimSpaceWeaver\AWSSDK.SimSpaceWeaver.Net35.csproj", "{C5783D17-31D2-4C36-A482-49F76CA4AF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimSpaceWeaver.Net35", "src/Services/SimSpaceWeaver/AWSSDK.SimSpaceWeaver.Net35.csproj", "{C5783D17-31D2-4C36-A482-49F76CA4AF40}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snowball", "Snowball", "{29B1C328-06E6-FF58-408F-AFC8EB4FA942}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Snowball.Net35", "src\Services\Snowball\AWSSDK.Snowball.Net35.csproj", "{BC40D0C7-10FA-48FA-B6A5-A7224E231F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Snowball.Net35", "src/Services/Snowball/AWSSDK.Snowball.Net35.csproj", "{BC40D0C7-10FA-48FA-B6A5-A7224E231F22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SnowDeviceManagement", "SnowDeviceManagement", "{91444114-5D0B-AF17-84AC-750111150F98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SnowDeviceManagement.Net35", "src\Services\SnowDeviceManagement\AWSSDK.SnowDeviceManagement.Net35.csproj", "{12B80EAA-9F4D-43E3-B0E6-E230BF8A1F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SnowDeviceManagement.Net35", "src/Services/SnowDeviceManagement/AWSSDK.SnowDeviceManagement.Net35.csproj", "{12B80EAA-9F4D-43E3-B0E6-E230BF8A1F92}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQS", "SQS", "{9F288231-DC8F-C93C-43A8-88C0BD11D886}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SQS.Net35", "src\Services\SQS\AWSSDK.SQS.Net35.csproj", "{9AF228F8-00D3-43F3-9DB2-C03D683C34FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SQS.Net35", "src/Services/SQS/AWSSDK.SQS.Net35.csproj", "{9AF228F8-00D3-43F3-9DB2-C03D683C34FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSMContacts", "SSMContacts", "{3B1CAD7D-1EBB-7D62-A726-12E4867926F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMContacts.Net35", "src\Services\SSMContacts\AWSSDK.SSMContacts.Net35.csproj", "{16E24291-366C-4E6E-8102-4C88E8CB6C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMContacts.Net35", "src/Services/SSMContacts/AWSSDK.SSMContacts.Net35.csproj", "{16E24291-366C-4E6E-8102-4C88E8CB6C9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSMIncidents", "SSMIncidents", "{77074FD2-9E6A-1D71-0B6B-6FB2C992A182}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMIncidents.Net35", "src\Services\SSMIncidents\AWSSDK.SSMIncidents.Net35.csproj", "{434A61A8-7A86-4784-9C69-FAE44459F698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSMIncidents.Net35", "src/Services/SSMIncidents/AWSSDK.SSMIncidents.Net35.csproj", "{434A61A8-7A86-4784-9C69-FAE44459F698}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SsmSap", "SsmSap", "{47C0DEAC-1E54-339B-D8F3-38525C005670}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SsmSap.Net35", "src\Services\SsmSap\AWSSDK.SsmSap.Net35.csproj", "{F5A48A92-04A0-4755-91F5-FB31738FDAB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SsmSap.Net35", "src/Services/SsmSap/AWSSDK.SsmSap.Net35.csproj", "{F5A48A92-04A0-4755-91F5-FB31738FDAB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSO", "SSO", "{CC46DDD4-48A0-39EA-4ED6-8BB207448DB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSO.Net35", "src\Services\SSO\AWSSDK.SSO.Net35.csproj", "{F11FB90A-E592-4C3D-8B4F-BE9F2B1D5939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSO.Net35", "src/Services/SSO/AWSSDK.SSO.Net35.csproj", "{F11FB90A-E592-4C3D-8B4F-BE9F2B1D5939}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSOAdmin", "SSOAdmin", "{20D2C3B8-B557-D1C7-C3BF-C4232C1CEF94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOAdmin.Net35", "src\Services\SSOAdmin\AWSSDK.SSOAdmin.Net35.csproj", "{E030FBEC-7165-419D-A28D-42E52AD03F36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOAdmin.Net35", "src/Services/SSOAdmin/AWSSDK.SSOAdmin.Net35.csproj", "{E030FBEC-7165-419D-A28D-42E52AD03F36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSOOIDC", "SSOOIDC", "{5E9EE298-E087-3904-C9ED-882B9E117CAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOOIDC.Net35", "src\Services\SSOOIDC\AWSSDK.SSOOIDC.Net35.csproj", "{EE941051-D042-4689-8927-BC5BE782786F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOOIDC.Net35", "src/Services/SSOOIDC/AWSSDK.SSOOIDC.Net35.csproj", "{EE941051-D042-4689-8927-BC5BE782786F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StepFunctions", "StepFunctions", "{306CF0C6-D314-4CF6-72AE-68B05613870D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StepFunctions.Net35", "src\Services\StepFunctions\AWSSDK.StepFunctions.Net35.csproj", "{F218A208-D81A-498B-AEAC-65D462684A07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StepFunctions.Net35", "src/Services/StepFunctions/AWSSDK.StepFunctions.Net35.csproj", "{F218A208-D81A-498B-AEAC-65D462684A07}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StorageGateway", "StorageGateway", "{9F7CC07A-A998-E23F-3DB4-876DD48256AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StorageGateway.Net35", "src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj", "{910432F5-F9C2-4CAE-B66A-A9FD50C08552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.StorageGateway.Net35", "src/Services/StorageGateway/AWSSDK.StorageGateway.Net35.csproj", "{910432F5-F9C2-4CAE-B66A-A9FD50C08552}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SupportApp", "SupportApp", "{33AE8257-63C8-BC44-FFE0-0CCA86050930}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SupportApp.Net35", "src\Services\SupportApp\AWSSDK.SupportApp.Net35.csproj", "{1DFE7A75-77EB-4DF1-B09C-E40E6F522820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SupportApp.Net35", "src/Services/SupportApp/AWSSDK.SupportApp.Net35.csproj", "{1DFE7A75-77EB-4DF1-B09C-E40E6F522820}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Synthetics", "Synthetics", "{A33C82E6-4E95-84BC-38FA-937E92CBB7CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Synthetics.Net35", "src\Services\Synthetics\AWSSDK.Synthetics.Net35.csproj", "{359AA0B6-86E4-4633-B8B8-F7229FE69398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Synthetics.Net35", "src/Services/Synthetics/AWSSDK.Synthetics.Net35.csproj", "{359AA0B6-86E4-4633-B8B8-F7229FE69398}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Textract", "Textract", "{9392C7C4-F4A1-8D9E-F94B-A9D6ED8C80AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Textract.Net35", "src\Services\Textract\AWSSDK.Textract.Net35.csproj", "{A1F8D84B-3D6D-47F0-85E5-96010BD21C82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Textract.Net35", "src/Services/Textract/AWSSDK.Textract.Net35.csproj", "{A1F8D84B-3D6D-47F0-85E5-96010BD21C82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimestreamQuery", "TimestreamQuery", "{B7B0A5BA-714C-331C-0BC3-7C6F9DA560F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamQuery.Net35", "src\Services\TimestreamQuery\AWSSDK.TimestreamQuery.Net35.csproj", "{02A734CE-BA27-48D3-9C9B-F9F681F2A5D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamQuery.Net35", "src/Services/TimestreamQuery/AWSSDK.TimestreamQuery.Net35.csproj", "{02A734CE-BA27-48D3-9C9B-F9F681F2A5D7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimestreamWrite", "TimestreamWrite", "{E070E561-2000-6F33-7E95-866DB9DAC0E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamWrite.Net35", "src\Services\TimestreamWrite\AWSSDK.TimestreamWrite.Net35.csproj", "{2DAC91D7-8CD2-44D1-A9B0-545D7E063E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TimestreamWrite.Net35", "src/Services/TimestreamWrite/AWSSDK.TimestreamWrite.Net35.csproj", "{2DAC91D7-8CD2-44D1-A9B0-545D7E063E39}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tnb", "Tnb", "{405673E1-099C-6662-8A9C-CABF988EBAFE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Tnb.Net35", "src\Services\Tnb\AWSSDK.Tnb.Net35.csproj", "{BC3F325A-A0EF-4E54-BE9A-C04CFDB6A9F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Tnb.Net35", "src/Services/Tnb/AWSSDK.Tnb.Net35.csproj", "{BC3F325A-A0EF-4E54-BE9A-C04CFDB6A9F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TranscribeService", "TranscribeService", "{2D6F23B1-5CDF-942E-C088-5EDA514F5D2A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TranscribeService.Net35", "src\Services\TranscribeService\AWSSDK.TranscribeService.Net35.csproj", "{8AA17240-33E0-48B4-938B-FC5272313F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.TranscribeService.Net35", "src/Services/TranscribeService/AWSSDK.TranscribeService.Net35.csproj", "{8AA17240-33E0-48B4-938B-FC5272313F04}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transfer", "Transfer", "{43E03244-2A47-6063-6CAD-70E0D351ED5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Transfer.Net35", "src\Services\Transfer\AWSSDK.Transfer.Net35.csproj", "{9998A225-E724-41B9-B44F-1FFBF61B023F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Transfer.Net35", "src/Services/Transfer/AWSSDK.Transfer.Net35.csproj", "{9998A225-E724-41B9-B44F-1FFBF61B023F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Translate", "Translate", "{C50889E7-BCD3-15CE-2619-A5850B519BA4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Translate.Net35", "src\Services\Translate\AWSSDK.Translate.Net35.csproj", "{56A847B8-633F-41AE-A7A1-DEB9DBF2EFD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Translate.Net35", "src/Services/Translate/AWSSDK.Translate.Net35.csproj", "{56A847B8-633F-41AE-A7A1-DEB9DBF2EFD3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VerifiedPermissions", "VerifiedPermissions", "{99641376-6EA1-4E94-806F-CC7B871463D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VerifiedPermissions.Net35", "src\Services\VerifiedPermissions\AWSSDK.VerifiedPermissions.Net35.csproj", "{4335F90A-6CBE-4FE1-9B67-B70AA74EDAB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VerifiedPermissions.Net35", "src/Services/VerifiedPermissions/AWSSDK.VerifiedPermissions.Net35.csproj", "{4335F90A-6CBE-4FE1-9B67-B70AA74EDAB0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VoiceID", "VoiceID", "{5D22AAD1-C27B-ADD8-64AE-63AA7F3EFBAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VoiceID.Net35", "src\Services\VoiceID\AWSSDK.VoiceID.Net35.csproj", "{9525F3C5-4769-405C-AA8A-1616B85B579F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VoiceID.Net35", "src/Services/VoiceID/AWSSDK.VoiceID.Net35.csproj", "{9525F3C5-4769-405C-AA8A-1616B85B579F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VPCLattice", "VPCLattice", "{9999D98D-6882-41F7-8EC7-3397A4A19001}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VPCLattice.Net35", "src\Services\VPCLattice\AWSSDK.VPCLattice.Net35.csproj", "{08BB420D-305B-4B27-AADA-5A052EEA4DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.VPCLattice.Net35", "src/Services/VPCLattice/AWSSDK.VPCLattice.Net35.csproj", "{08BB420D-305B-4B27-AADA-5A052EEA4DF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WAF", "WAF", "{6B08C1D1-D2E1-8829-2564-A8D258A48975}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAF.Net35", "src\Services\WAF\AWSSDK.WAF.Net35.csproj", "{50541066-FB67-47BD-B722-64BBF379EC99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAF.Net35", "src/Services/WAF/AWSSDK.WAF.Net35.csproj", "{50541066-FB67-47BD-B722-64BBF379EC99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WAFRegional", "WAFRegional", "{E6984EE4-95F6-A7C5-6E9A-38467ED559B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFRegional.Net35", "src\Services\WAFRegional\AWSSDK.WAFRegional.Net35.csproj", "{13BF0970-108D-4FDC-B8AA-F54FE1C06E0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFRegional.Net35", "src/Services/WAFRegional/AWSSDK.WAFRegional.Net35.csproj", "{13BF0970-108D-4FDC-B8AA-F54FE1C06E0B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WAFV2", "WAFV2", "{44A09511-9AC6-E999-5DBC-B1B31A1ABD99}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFV2.Net35", "src\Services\WAFV2\AWSSDK.WAFV2.Net35.csproj", "{7ADDCC35-5F1A-4153-AECA-614E03A244BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WAFV2.Net35", "src/Services/WAFV2/AWSSDK.WAFV2.Net35.csproj", "{7ADDCC35-5F1A-4153-AECA-614E03A244BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WellArchitected", "WellArchitected", "{B4858E9B-FF63-F9F6-9D09-E500BB7F4EDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WellArchitected.Net35", "src\Services\WellArchitected\AWSSDK.WellArchitected.Net35.csproj", "{8E02FCD6-2F12-49E6-A827-8F7A3464AC93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WellArchitected.Net35", "src/Services/WellArchitected/AWSSDK.WellArchitected.Net35.csproj", "{8E02FCD6-2F12-49E6-A827-8F7A3464AC93}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkDocs", "WorkDocs", "{7BEAF9AE-6D93-E53B-370A-3A8FA2C4BF84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkDocs.Net35", "src\Services\WorkDocs\AWSSDK.WorkDocs.Net35.csproj", "{2DD45E4D-899A-4556-9D71-2521F9FDE616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkDocs.Net35", "src/Services/WorkDocs/AWSSDK.WorkDocs.Net35.csproj", "{2DD45E4D-899A-4556-9D71-2521F9FDE616}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkLink", "WorkLink", "{ECE8EC39-FBB2-D4D0-9669-4C82887F6577}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkLink.Net35", "src\Services\WorkLink\AWSSDK.WorkLink.Net35.csproj", "{F0220CC2-7B15-405C-8DA6-BAE5237CBC0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkLink.Net35", "src/Services/WorkLink/AWSSDK.WorkLink.Net35.csproj", "{F0220CC2-7B15-405C-8DA6-BAE5237CBC0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkMail", "WorkMail", "{D8D3AF47-4C06-72C4-9BAC-A155D275935D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMail.Net35", "src\Services\WorkMail\AWSSDK.WorkMail.Net35.csproj", "{EF3CABD0-0043-44D9-89AB-0A45E23E67E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMail.Net35", "src/Services/WorkMail/AWSSDK.WorkMail.Net35.csproj", "{EF3CABD0-0043-44D9-89AB-0A45E23E67E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkMailMessageFlow", "WorkMailMessageFlow", "{6AEF2DBC-B75C-618F-A10D-B4F950092FED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMailMessageFlow.Net35", "src\Services\WorkMailMessageFlow\AWSSDK.WorkMailMessageFlow.Net35.csproj", "{FDC64EE7-0AED-41F8-A88E-D112C50953CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkMailMessageFlow.Net35", "src/Services/WorkMailMessageFlow/AWSSDK.WorkMailMessageFlow.Net35.csproj", "{FDC64EE7-0AED-41F8-A88E-D112C50953CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkSpaces", "WorkSpaces", "{B2B7DA08-2EFB-4243-7A5A-9EB3235BD219}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpaces.Net35", "src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net35.csproj", "{EC2563BD-47E7-4BCE-9915-390C2CF3E6F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpaces.Net35", "src/Services/WorkSpaces/AWSSDK.WorkSpaces.Net35.csproj", "{EC2563BD-47E7-4BCE-9915-390C2CF3E6F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkSpacesWeb", "WorkSpacesWeb", "{472FC4F8-4A0B-F02D-D5B0-EF2316510BA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpacesWeb.Net35", "src\Services\WorkSpacesWeb\AWSSDK.WorkSpacesWeb.Net35.csproj", "{99101D6A-B2C6-4281-B4E8-E59E4BFF3D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.WorkSpacesWeb.Net35", "src/Services/WorkSpacesWeb/AWSSDK.WorkSpacesWeb.Net35.csproj", "{99101D6A-B2C6-4281-B4E8-E59E4BFF3D3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XRay", "XRay", "{AB873FDB-E443-7A3A-A9D6-04E4CB28D1DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.XRay.Net35", "src\Services\XRay\AWSSDK.XRay.Net35.csproj", "{55B24E4E-E288-45DB-8FA1-D4BD445111EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.XRay.Net35", "src/Services/XRay/AWSSDK.XRay.Net35.csproj", "{55B24E4E-E288-45DB-8FA1-D4BD445111EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BearerTokenAuthTest", "BearerTokenAuthTest", "{73AFB732-1E1E-AF60-B17C-1E2E9B2ED891}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BearerTokenAuthTest.Net35", "test\Services\BearerTokenAuthTest\AWSSDK.BearerTokenAuthTest.Net35.csproj", "{3A59C244-88D9-4FD9-977E-0A5C58B2DA07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BearerTokenAuthTest.Net35", "test/Services/BearerTokenAuthTest/AWSSDK.BearerTokenAuthTest.Net35.csproj", "{3A59C244-88D9-4FD9-977E-0A5C58B2DA07}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocumentTypesTest", "DocumentTypesTest", "{8F7A85CD-E3DC-2DB9-9CB3-1F75A14600D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocumentTypesTest.Net35", "test\Services\DocumentTypesTest\AWSSDK.DocumentTypesTest.Net35.csproj", "{69572196-1C3F-4271-89BE-A2B42F9C3431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DocumentTypesTest.Net35", "test/Services/DocumentTypesTest/AWSSDK.DocumentTypesTest.Net35.csproj", "{69572196-1C3F-4271-89BE-A2B42F9C3431}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ep2hostlabel", "Ep2hostlabel", "{2B2A7139-4167-EEFB-172A-1A06C6FAA01E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2hostlabel.Net35", "test\Services\Ep2hostlabel\AWSSDK.Ep2hostlabel.Net35.csproj", "{0F63AD38-6B3B-45A2-90D8-FF013F5E8F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2hostlabel.Net35", "test/Services/Ep2hostlabel/AWSSDK.Ep2hostlabel.Net35.csproj", "{0F63AD38-6B3B-45A2-90D8-FF013F5E8F64}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ep2parsearn", "Ep2parsearn", "{C54DAC2E-83BA-E36E-55BE-A515534E41C9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2parsearn.Net35", "test\Services\Ep2parsearn\AWSSDK.Ep2parsearn.Net35.csproj", "{868BCC52-7DE7-4D8B-801F-12D590EF9A60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2parsearn.Net35", "test/Services/Ep2parsearn/AWSSDK.Ep2parsearn.Net35.csproj", "{868BCC52-7DE7-4D8B-801F-12D590EF9A60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ep2s3hostlabel", "Ep2s3hostlabel", "{D25DD725-FD80-E5D1-B525-3357FB99FD80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2s3hostlabel.Net35", "test\Services\Ep2s3hostlabel\AWSSDK.Ep2s3hostlabel.Net35.csproj", "{5D057A0C-6462-4314-8FAE-4C169D55C46B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2s3hostlabel.Net35", "test/Services/Ep2s3hostlabel/AWSSDK.Ep2s3hostlabel.Net35.csproj", "{5D057A0C-6462-4314-8FAE-4C169D55C46B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ep2substring", "Ep2substring", "{8300AC55-E91F-A10D-7A97-53627AD9F448}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2substring.Net35", "test\Services\Ep2substring\AWSSDK.Ep2substring.Net35.csproj", "{6FF899F5-37B5-457A-973D-3CC8596E258B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Ep2substring.Net35", "test/Services/Ep2substring/AWSSDK.Ep2substring.Net35.csproj", "{6FF899F5-37B5-457A-973D-3CC8596E258B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaginatorsTest", "PaginatorsTest", "{61C50CBB-3079-0458-E879-29B1577F7393}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaginatorsTest.Net35", "test\Services\PaginatorsTest\AWSSDK.PaginatorsTest.Net35.csproj", "{7EC072C7-FF52-44C6-BC41-3900EC5D61D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.PaginatorsTest.Net35", "test/Services/PaginatorsTest/AWSSDK.PaginatorsTest.Net35.csproj", "{7EC072C7-FF52-44C6-BC41-3900EC5D61D7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueryCompatible", "QueryCompatible", "{F02D9857-E651-99C4-7662-DDA181A7AB14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QueryCompatible.Net35", "test\Services\QueryCompatible\AWSSDK.QueryCompatible.Net35.csproj", "{A1207E11-3FBF-4CE7-95FF-AD8835242A4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QueryCompatible.Net35", "test/Services/QueryCompatible/AWSSDK.QueryCompatible.Net35.csproj", "{A1207E11-3FBF-4CE7-95FF-AD8835242A4D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestJsonTest", "RestJsonTest", "{C5C74EFD-669F-E147-D23B-FDDEAC80CA4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestJsonTest.Net35", "test\Services\RestJsonTest\AWSSDK.RestJsonTest.Net35.csproj", "{2597DF69-68E4-42A0-991A-1A01704D4D0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestJsonTest.Net35", "test/Services/RestJsonTest/AWSSDK.RestJsonTest.Net35.csproj", "{2597DF69-68E4-42A0-991A-1A01704D4D0B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestXMLTest", "RestXMLTest", "{DAB1DE25-8227-ED20-53FC-3757627C61C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestXMLTest.Net35", "test\Services\RestXMLTest\AWSSDK.RestXMLTest.Net35.csproj", "{435BBB3E-7C3B-4869-B6B9-8DCB4CDD2DDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestXMLTest.Net35", "test/Services/RestXMLTest/AWSSDK.RestXMLTest.Net35.csproj", "{435BBB3E-7C3B-4869-B6B9-8DCB4CDD2DDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UseServiceIdTestserviceId", "UseServiceIdTestserviceId", "{D2C3BBC4-139C-74A6-7A6D-8EF91479A7B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UseServiceIdTestserviceId.Net35", "test\Services\UseServiceIdTestserviceId\AWSSDK.UseServiceIdTestserviceId.Net35.csproj", "{5ABF970F-1282-4A70-9C79-3D4C14BA59DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UseServiceIdTestserviceId.Net35", "test/Services/UseServiceIdTestserviceId/AWSSDK.UseServiceIdTestserviceId.Net35.csproj", "{5ABF970F-1282-4A70-9C79-3D4C14BA59DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
 EndProject
@@ -2350,6 +2354,10 @@ Global
 		{A28218D6-D3AD-4096-9F88-622099DAC604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A28218D6-D3AD-4096-9F88-622099DAC604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A28218D6-D3AD-4096-9F88-622099DAC604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A34BD37-69CF-4FF4-A914-7DF6460BEEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A34BD37-69CF-4FF4-A914-7DF6460BEEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A34BD37-69CF-4FF4-A914-7DF6460BEEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A34BD37-69CF-4FF4-A914-7DF6460BEEDA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E16F0BF5-CE7C-427D-BDB4-27BD4218A167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E16F0BF5-CE7C-427D-BDB4-27BD4218A167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E16F0BF5-CE7C-427D-BDB4-27BD4218A167}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -3352,6 +3360,8 @@ Global
 		{80149377-3E11-4299-8C0C-8C8EA1031874} = {01A71D90-1490-88B1-3E44-7408E1BE54E2}
 		{0C25AF27-F559-A7EC-AF7C-E580680389A7} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}
 		{A28218D6-D3AD-4096-9F88-622099DAC604} = {0C25AF27-F559-A7EC-AF7C-E580680389A7}
+		{BF4271AD-7066-4BF2-A4A1-DF31D92EDE16} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}
+		{7A34BD37-69CF-4FF4-A914-7DF6460BEEDA} = {BF4271AD-7066-4BF2-A4A1-DF31D92EDE16}
 		{322EEB7F-8590-CF55-2AEF-277FD8959748} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}
 		{E16F0BF5-CE7C-427D-BDB4-27BD4218A167} = {322EEB7F-8590-CF55-2AEF-277FD8959748}
 		{BA533ABC-D5CC-EA4B-C5DE-651DD0C779D1} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}

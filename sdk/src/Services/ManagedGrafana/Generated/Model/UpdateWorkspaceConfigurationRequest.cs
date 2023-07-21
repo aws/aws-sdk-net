@@ -35,6 +35,7 @@ namespace Amazon.ManagedGrafana.Model
     public partial class UpdateWorkspaceConfigurationRequest : AmazonManagedGrafanaRequest
     {
         private string _configuration;
+        private string _grafanaVersion;
         private string _workspaceId;
 
         /// <summary>
@@ -56,6 +57,35 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrafanaVersion. 
+        /// <para>
+        /// Specifies the version of Grafana to support in the new workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example,
+        /// from 9.4 to 8.4).
+        /// </para>
+        ///  
+        /// <para>
+        /// To know what versions are available to upgrade to for a specific workspace, see the
+        /// <code>ListVersions</code> operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GrafanaVersion
+        {
+            get { return this._grafanaVersion; }
+            set { this._grafanaVersion = value; }
+        }
+
+        // Check to see if GrafanaVersion property is set
+        internal bool IsSetGrafanaVersion()
+        {
+            return this._grafanaVersion != null;
         }
 
         /// <summary>

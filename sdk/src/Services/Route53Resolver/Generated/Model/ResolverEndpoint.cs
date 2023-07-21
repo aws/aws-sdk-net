@@ -47,6 +47,8 @@ namespace Amazon.Route53Resolver.Model
         private int? _ipAddressCount;
         private string _modificationTime;
         private string _name;
+        private string _outpostArn;
+        private string _preferredInstanceType;
         private ResolverEndpointType _resolverEndpointType;
         private List<string> _securityGroupIds = new List<string>();
         private ResolverEndpointStatus _status;
@@ -233,6 +235,44 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) for the Outpost.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredInstanceType. 
+        /// <para>
+        ///  The Amazon EC2 instance type. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string PreferredInstanceType
+        {
+            get { return this._preferredInstanceType; }
+            set { this._preferredInstanceType = value; }
+        }
+
+        // Check to see if PreferredInstanceType property is set
+        internal bool IsSetPreferredInstanceType()
+        {
+            return this._preferredInstanceType != null;
         }
 
         /// <summary>

@@ -70,6 +70,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComponentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

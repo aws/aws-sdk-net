@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-    /// gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// gateways</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateNatGatewayRequest : AmazonEC2Request
@@ -150,9 +150,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryAllocationIds. 
         /// <para>
-        /// Secondary EIP allocation IDs. For more information about secondary addresses, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-        /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> SecondaryAllocationIds
@@ -173,7 +172,7 @@ namespace Amazon.EC2.Model
         /// [Private NAT gateway only] The number of secondary private IPv4 addresses you want
         /// to assign to the NAT gateway. For more information about secondary addresses, see
         /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-        /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
@@ -194,7 +193,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Secondary private IPv4 addresses. For more information about secondary addresses,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-        /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> SecondaryPrivateIpAddresses

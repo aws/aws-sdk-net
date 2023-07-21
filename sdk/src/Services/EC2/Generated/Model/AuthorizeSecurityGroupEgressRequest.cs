@@ -30,8 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
-    /// [VPC only] Adds the specified outbound (egress) rules to a security group for use
-    /// with a VPC.
+    /// Adds the specified outbound (egress) rules to a security group for use with a VPC.
     /// 
     ///  
     /// <para>

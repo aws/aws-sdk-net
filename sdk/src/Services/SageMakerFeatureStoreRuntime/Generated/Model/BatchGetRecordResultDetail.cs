@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
-    /// The output of Records that have been retrieved in a batch.
+    /// The output of records that have been retrieved in a batch.
     /// </summary>
     public partial class BatchGetRecordResultDetail
     {

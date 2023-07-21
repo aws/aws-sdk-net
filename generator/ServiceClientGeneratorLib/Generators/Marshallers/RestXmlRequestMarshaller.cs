@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+    #line 1 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class RestXmlRequestMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override string TransformText()
         {
             
-            #line 6 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 6 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	AddLicenseHeader();
 	
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("using System.Xml;\r\n\r\nnamespace ");
             
-            #line 13 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 13 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n\t/// <summary>\r\n\t/// ");
             
-            #line 16 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 16 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" Request Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
             
-            #line 18 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 18 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller : IMarshaller<IRequest, ");
             
-            #line 18 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 18 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -77,7 +77,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         {
             return this.Marshall((");
             
-            #line 27 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 27 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -87,7 +87,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     " name=\"publicRequest\"></param>\r\n        /// <returns></returns>\r\n\t\tpublic IReque" +
                     "st Marshall(");
             
-            #line 35 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 35 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -95,14 +95,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Request publicRequest)\r\n\t\t{\r\n\t\t\tvar request = new DefaultRequest(publicRequest, \"" +
                     "");
             
-            #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 37 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 38 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 38 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	// Assign HttpMethod if present or default to POST
 	if(!string.IsNullOrWhiteSpace(this.Operation.HttpMethod)){		
@@ -112,14 +112,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.HttpMethod = \"");
             
-            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 42 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.HttpMethod));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 43 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	}
 	var requestStructure = this.Operation.RequestStructure;
@@ -137,14 +137,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.ResourcePath = \"");
             
-            #line 55 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 55 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.RequestUri));
             
             #line default
             #line hidden
             this.Write("\";\r\n\r\n");
             
-            #line 57 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 57 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
    
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
@@ -157,7 +157,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n");
             
-            #line 65 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 65 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if(this.Operation.UseQueryString)
@@ -168,7 +168,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.UseQueryString = true;\r\n");
             
-            #line 71 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 71 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 	}	
 
 	// We skip endpoint host prefix handling for S3 and S3 Control as it's implemented by endpoint rules.
@@ -182,7 +182,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\treturn request;\r\n\t\t}\r\n");
             
-            #line 81 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+            #line 81 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 	this.AddRequestSingletonMethod();
 
@@ -193,17 +193,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 87 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 87 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 
 	void ProcessRequestBodyMembers(string variableName, Operation operation)
 	{
+		var level = 0;
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 92 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(@"			var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
 			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
 			{   
@@ -213,7 +214,7 @@ this.Write(@"			var stringWriter = new XMLEncodedStringWriter(CultureInfo.Invari
         #line default
         #line hidden
         
-        #line 95 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 96 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 		if(operation.RequestPayloadMember==null)
 		{
@@ -222,42 +223,42 @@ this.Write(@"			var stringWriter = new XMLEncodedStringWriter(CultureInfo.Invari
         #line default
         #line hidden
         
-        #line 98 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 99 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 100 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Input.LocationName));
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 100 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 100 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 100 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 100 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 101 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 		}
 		else
@@ -267,58 +268,58 @@ this.Write("\");\t\r\n");
         #line default
         #line hidden
         
-        #line 104 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 105 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 106 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 106 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("())\r\n\t\t\t\t{\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 108 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RequestPayloadMember.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 108 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 108 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 108 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 109 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
-			PushIndent("	");
+			level++;
 		}
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
 		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
@@ -326,15 +327,15 @@ this.Write("\");\r\n");
 		{			
 			if(member.IsStructure)
 			{
-				ProcessStructure(variableName, member, operation.XmlNamespace);				
+				ProcessStructure(level, variableName, member, operation.XmlNamespace);				
 			}
 			else if(member.IsList)
 			{
-				ProcessList(variableName, member, operation.XmlNamespace);
+				ProcessList(level, variableName, member, operation.XmlNamespace);
 			}
 			else if(member.IsMap)
 			{				
-				ProcessMap(variableName, member, operation.XmlNamespace);
+				ProcessMap(level, variableName, member, operation.XmlNamespace);
 			}
 			else
 			{
@@ -343,119 +344,140 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 129 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 131 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 131 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("())\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
+        #line 131 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteElementString(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture((member.UseNullable ? ".Value" : string.Empty)));
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 132 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("));\t\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 133 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 				if(member.IsIdempotent)
 				{
@@ -464,42 +486,56 @@ this.Write("));\t\t\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 135 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\telse\t\t\t\t\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
+        #line 136 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\telse\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 137 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 138 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 138 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteElementString(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 138 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 137 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 138 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 137 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 138 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.XmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 137 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 138 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", Guid.NewGuid().ToString());\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 139 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 					
 				}
 
@@ -507,21 +543,21 @@ this.Write("\", Guid.NewGuid().ToString());\t\t\t\t\r\n");
         #line default
         #line hidden
         
-        #line 141 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 142 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(""));
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 142 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 143 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			}
 			
@@ -531,14 +567,28 @@ this.Write("\r\n");
         #line default
         #line hidden
         
-        #line 146 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\r\n\t\t\t\txmlWriter.WriteEndElement();\r\n");
+        #line 147 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 149 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 149 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 149 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\txmlWriter.WriteEndElement();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 150 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 		if(operation.RequestPayloadMember!=null)
 		{
@@ -547,23 +597,30 @@ this.Write("\r\n\t\t\t\txmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 152 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 154 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 154 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 155 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
-			PopIndent();
+			level--;
 		}
 
         
         #line default
         #line hidden
         
-        #line 157 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 158 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t}\r\n\t\t\ttry \r\n\t\t\t{\r\n\t\t\t\tstring content = stringWriter.ToString();\r\n\t\t\t\trequest.C" +
         "ontent = System.Text.Encoding.UTF8.GetBytes(content);\r\n\t\t\t\trequest.Headers[\"Cont" +
         "ent-Type\"] = \"application/xml\";\r\n");
@@ -572,7 +629,7 @@ this.Write("\t\t\t}\r\n\t\t\ttry \r\n\t\t\t{\r\n\t\t\t\tstring content = stringW
         #line default
         #line hidden
         
-        #line 164 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 165 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 					GenerateRequestChecksumHandling(operation, "content");
 
@@ -580,21 +637,21 @@ this.Write("\t\t\t}\r\n\t\t\ttry \r\n\t\t\t{\r\n\t\t\t\tstring content = stringW
         #line default
         #line hidden
         
-        #line 166 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 167 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = \"");
 
         
         #line default
         #line hidden
         
-        #line 167 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 168 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
 
         
         #line default
         #line hidden
         
-        #line 167 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 168 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\";            \r\n\t\t\t} \r\n\t\t\tcatch (EncoderFallbackException e) \r\n\t\t\t{\r\n\t\t\t\tthrow ne" +
         "w AmazonServiceException(\"Unable to marshall request to XML\", e);\r\n\t\t\t}\r\n");
 
@@ -602,25 +659,25 @@ this.Write("\";            \r\n\t\t\t} \r\n\t\t\tcatch (EncoderFallbackException
         #line default
         #line hidden
         
-        #line 173 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 174 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				       
 	}
 
-	void ProcessMembers(string variableName, IEnumerable<Member> members, string xmlNamespace)
+	void ProcessMembers(int level, string variableName, IEnumerable<Member> members, string xmlNamespace)
 	{
 		foreach(var member in members)
 		{
 			if(member.IsStructure)
 			{
-				ProcessStructure(variableName, member, xmlNamespace);				
+				ProcessStructure(level, variableName, member, xmlNamespace);				
 			}
 			else if(member.IsList)
 			{
-				ProcessList(variableName, member, xmlNamespace);	
+				ProcessList(level, variableName, member, xmlNamespace);	
 			}
 			else if(member.IsMap)
 			{				
-				ProcessMap(variableName, member, xmlNamespace);
+				ProcessMap(level, variableName, member, xmlNamespace);
 			}
 			else
 			{
@@ -629,125 +686,146 @@ this.Write("\";            \r\n\t\t\t} \r\n\t\t\tcatch (EncoderFallbackException
         #line default
         #line hidden
         
-        #line 194 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 196 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 196 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 196 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 196 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 196 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("())\r\n\t\t\t\t\txmlWriter.WriteElementString(\"");
+        #line 196 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteElementString(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture((member.UseNullable ? ".Value" : string.Empty)));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 197 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("));\t\t\t\t \r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 198 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 199 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
 			}
 		}
 	}
 
-	void ProcessStructure(string variableName, Member member, string xmlNamespace)
+	void ProcessStructure(int level, string variableName, Member member, string xmlNamespace)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
 			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
@@ -759,77 +837,138 @@ this.Write("));\t\t\t\t \r\n\r\n");
         #line default
         #line hidden
         
-        #line 210 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\r\n\t\t\t\tif (");
+        #line 211 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 212 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 212 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\tif (");
+
+        
+        #line default
+        #line hidden
+        
+        #line 212 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(" != null) \r\n\t\t\t\t{\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
+        #line 212 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(" != null) \r\n");
 
         
         #line default
         #line hidden
         
-        #line 213 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 213 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 213 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t{\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 214 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 214 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 214 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallName));
 
         
         #line default
         #line hidden
         
-        #line 213 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 214 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 213 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 214 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 213 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 214 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\");\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 214 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-
-			PushIndent("	");
-			ProcessMembers(variableName, shape.Members, xmlNamespace);
-			PopIndent();
+        #line 215 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+			
+			ProcessMembers(level + 1, variableName, shape.Members, xmlNamespace);			
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n\t\t\t\t}\r\n");
+        #line 218 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 218 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 219 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 219 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 220 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 		
 	}
 
-	void ProcessList(string variableName, Member member, string xmlNamespace)
+	void ProcessList(int level, string variableName, Member member, string xmlNamespace)
 	{
 				var listVariable = (variableName + member.PropertyName).Replace(".",string.Empty);
 				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
@@ -838,145 +977,221 @@ this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\r\n\t\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 228 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\tvar ");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 229 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(";\r\n\t\t\t\tif (");
+        #line 228 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 229 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\tif (");
+
+        
+        #line default
+        #line hidden
+        
+        #line 229 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" != null && ");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 229 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(".Count > 0) \r\n\t\t\t\t{\t\t\t\t\t\t\r\n\t\t\t\t\txmlWriter.WriteStartElement(\"");
+        #line 229 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(".Count > 0) \r\n");
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 230 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 230 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t{\t\t\t\t\t\t\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 231 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 231 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 231 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 231 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 231 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\");\r\n\t\t\t\t\tforeach (var ");
+        #line 231 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 233 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 232 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 232 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\tforeach (var ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 232 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 233 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 232 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(" in ");
 
         
         #line default
         #line hidden
         
-        #line 233 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 232 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
 
         
         #line default
         #line hidden
         
-        #line 233 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(") \r\n\t\t\t\t\t{\r\n");
+        #line 232 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(") \r\n");
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 233 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
-			PushIndent("	");			
+        
+        #line default
+        #line hidden
+        
+        #line 233 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t{\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 234 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+			
 			if(member.Shape.ListShape.IsStructure)
 			{
-					ProcessStructure(listItemVariable, member, xmlNamespace);	
+					ProcessStructure(level + 1, listItemVariable, member, xmlNamespace);	
 			}
 			else
 			{
@@ -989,70 +1204,105 @@ this.Write(") \r\n\t\t\t\t\t{\r\n");
         #line default
         #line hidden
         
-        #line 247 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
+        #line 246 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteStartElement(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 246 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 246 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\");\r\n                    xmlWriter.WriteValue(");
+        #line 246 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 247 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 247 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 247 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 247 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 247 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("));\r\n                    xmlWriter.WriteEndElement();\r\n");
+        #line 247 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 248 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 248 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 249 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 
 				}
@@ -1064,219 +1314,377 @@ this.Write("));\r\n                    xmlWriter.WriteEndElement();\r\n");
         #line default
         #line hidden
         
-        #line 257 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
+        #line 256 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 258 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 256 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteStartElement(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 256 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
 
         
         #line default
         #line hidden
         
-        #line 258 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 256 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 258 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 256 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 258 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\");\r\n                    xmlWriter.WriteValue(");
+        #line 256 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 259 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 257 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 257 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 257 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemVariable));
 
         
         #line default
         #line hidden
         
-        #line 259 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(");\r\n                    xmlWriter.WriteEndElement();\r\n");
+        #line 257 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 258 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 258 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 259 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 				}
-			}
-			PopIndent();			
+			}			
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\t}\t\t\t\r\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\r\n\t\t\t\t}\r\n");
+        #line 263 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 269 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 263 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t}\t\t\t\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 264 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 264 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 265 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 265 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 266 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 	}
 
-	void ProcessMap(string variableName, Member member, string xmlNamespace)
+	void ProcessMap(int level, string variableName, Member member, string xmlNamespace)
 	{				
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 272 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"");
 
         
         #line default
         #line hidden
         
-        #line 275 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 275 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 275 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 272 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 275 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\");\r\n\t\t\t\t\tforeach (var kvp in ");
+        #line 272 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 276 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 273 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\tforeach (var kvp in ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 273 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 276 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 276 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 273 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 276 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(") \r\n\t\t\t\t\t{\r\n");
+        #line 273 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(") \r\n");
 
         
         #line default
         #line hidden
         
-        #line 278 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-
-			PushIndent("	");						
-
-        
-        #line default
-        #line hidden
-        
-        #line 280 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\txmlWriter.WriteStartElement(\"entry\", \"");
+        #line 274 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 281 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 274 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t{\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 275 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 275 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteStartElement(\"entry\", \"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 275 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 281 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\");\r\n\t\t\t\t\txmlWriter.WriteElementString(\"key\", \"");
+        #line 275 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 282 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 276 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 276 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteElementString(\"key\", \"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 276 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 282 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\", kvp.Key);\r\n\t\t\t\t\txmlWriter.WriteElementString(\"value\", \"");
+        #line 276 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\", kvp.Key);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 277 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 277 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteElementString(\"value\", \"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 277 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\", kvp.Value);\r\n\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
+        #line 277 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\", kvp.Value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 285 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-				
-			PopIndent();			
+        #line 278 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 287 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\t\t\t\t\t}\t\t\t\r\n\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\t\r\n");
+        #line 278 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t\txmlWriter.WriteEndElement();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 290 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+        #line 279 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 279 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\t}\t\t\t\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 280 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 280 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
+this.Write("\t\t\t\t\txmlWriter.WriteEndElement();\t\t\t\t\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 281 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
 	}
 

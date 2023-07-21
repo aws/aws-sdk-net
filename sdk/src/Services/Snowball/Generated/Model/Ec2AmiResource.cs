@@ -30,8 +30,9 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including
-    /// the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify
-    /// identifying the AMI in both the Amazon Web Services Cloud and on the device.
+    /// the Amazon EC2-compatible AMI ID and the Snow device AMI ID. Each AMI has these two
+    /// IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the
+    /// device.
     /// </summary>
     public partial class Ec2AmiResource
     {

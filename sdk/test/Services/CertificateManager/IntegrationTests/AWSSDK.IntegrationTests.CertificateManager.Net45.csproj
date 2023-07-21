@@ -37,9 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net45.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Services/CertificateManager/AWSSDK.CertificateManager.Net45.csproj" />
   </ItemGroup>
 
   <ItemGroup>

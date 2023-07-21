@@ -44,11 +44,11 @@ namespace ServiceClientGenerator
                     {
                         new ProjectFileCreator.ProjectReference
                         {
-                            IncludePath = $@"..\..\src\Services\*\*.{configuration.Name}.csproj"
+                            IncludePath = Utils.PathCombineAlt("..", "..", "src", "Services", "*", $"*.{configuration.Name}.csproj")
                         },
                         new ProjectFileCreator.ProjectReference
                         {
-                            IncludePath = $@"..\..\test\Services\*\*.{configuration.Name}.csproj"
+                            IncludePath = Utils.PathCombineAlt("..", "..", "test", "Services", "*", $"*.{configuration.Name}.csproj")
                         }
                     };
                 }
@@ -58,7 +58,7 @@ namespace ServiceClientGenerator
                     serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
                 }
                     
-                string projectGuid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName));
+                string projectGuid = Utils.GetProjectGuid(Utils.PathCombineAlt(unitTestRoot, projectName));
 
                 projectReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
 
@@ -78,24 +78,24 @@ namespace ServiceClientGenerator
                 if (_isLegacyProj)
                 {
                     projectProperties.AssemblyName = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
-                    projectProperties.IndividualFileIncludes = new List<string> { "../Services/*/UnitTests/**/*.cs" };
+                    projectProperties.IndividualFileIncludes = new List<string> { Utils.PathCombineAlt("..", "Services", "*", "UnitTests", "**", "*.cs") };
                     projectProperties.EmbeddedResources = configuration.EmbeddedResources;
-                    projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\AWSDotNetSDK.ruleset";
-                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\AWSDotNetSDKForBuild.ruleset";
+                    projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "AWSDotNetSDK.ruleset");
+                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "AWSDotNetSDKForBuild.ruleset");
                     projectProperties.SignBinaries = true;
 
                 }
                 else
                 {
-                    projectProperties.AssemblyName = string.Format("AWSSDK.UnitTests.{0}.{1}", _serviceName, configuration.Name);
+                    projectProperties.AssemblyName = $"AWSSDK.UnitTests.{_serviceName}.{configuration.Name}";
                     //Check for embedded resources
-                    var embeddedResourcePath = Path.Combine(unitTestRoot, "Custom", "EmbeddedResource");
+                    var embeddedResourcePath = Utils.PathCombineAlt(unitTestRoot, "Custom", "EmbeddedResource");
                     if (Directory.Exists(embeddedResourcePath))
                     {
-                        projectProperties.EmbeddedResources = new List<string> { Path.Combine("Custom", "EmbeddedResource", "*") };
+                        projectProperties.EmbeddedResources = new List<string> { Utils.PathCombineAlt("Custom", "EmbeddedResource", "*") };
                     }
-                    projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\..\AWSDotNetSDK.ruleset";
-                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\..\..\AWSDotNetSDKForBuild.ruleset";
+                    projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDK.ruleset");
+                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDKForBuild.ruleset");
                 }
 
                 if (serviceProjectReferences != null)
@@ -117,13 +117,12 @@ namespace ServiceClientGenerator
             //
             if (!useDllReference)
             {
-                string coreProjectName = string.Format("AWSSDK.Core.{0}", projectType);
-                string coreIncludePath = Path.Combine("..", "..", "src", "Core", coreProjectName + ".csproj");
+                string coreProjectName = $"AWSSDK.Core.{projectType}";
+                string coreIncludePath = Utils.PathCombineAlt("..", "..", "src", "Core", coreProjectName + ".csproj");
                 if (!_isLegacyProj)
                 {
-                    coreIncludePath = Path.Combine("..", "..", coreIncludePath);
+                    coreIncludePath = Utils.PathCombineAlt("..", "..", coreIncludePath);
                 }
-                string coreProjectPath = Path.Combine(unitTestRoot, coreIncludePath);
 
                 references.Add(new ProjectFileCreator.ProjectReference
                 {
@@ -136,10 +135,10 @@ namespace ServiceClientGenerator
             // CommonTest project reference
             //
             string commonTestProjectName = "AWSSDK.CommonTest";
-            string commonTestIncludePath = Path.Combine("..", "Common", commonTestProjectName + ".csproj");
+            string commonTestIncludePath = Utils.PathCombineAlt("..", "Common", commonTestProjectName + ".csproj");
             if (!_isLegacyProj)
             {
-                commonTestIncludePath = Path.Combine("..", "..", commonTestIncludePath);
+                commonTestIncludePath = Utils.PathCombineAlt("..", "..", commonTestIncludePath);
             }
 
             references.Add(new ProjectFileCreator.ProjectReference
@@ -153,12 +152,12 @@ namespace ServiceClientGenerator
             if (_isLegacyProj)
             {
                 projectName = "ServiceClientGeneratorLib";
-                projectPath = string.Format("..\\..\\..\\generator\\ServiceClientGeneratorLib\\{0}.csproj", projectName);
+                projectPath = Utils.PathCombineAlt("..", "..", "..",  "generator", "ServiceClientGeneratorLib", $"{projectName}.csproj");
             }
             else
             {
                 projectName = $"AWSSDK.UnitTestUtilities.{projectType}";
-                projectPath = Path.Combine("..", "..", "..", "UnitTests", "Custom", projectName + ".csproj");
+                projectPath = Utils.PathCombineAlt("..", "..", "..", "UnitTests", "Custom", $"{projectName}.csproj");
             }
 
             references.Add(new ProjectFileCreator.ProjectReference
@@ -175,12 +174,12 @@ namespace ServiceClientGenerator
             };
             if (_isLegacyProj) // unit test projects with all services, which need CRT also but have a different relative path
             {
-                crtExtension.IncludePath = Path.Combine(new string[] { "..", "..", "..", "extensions", "src",
+                crtExtension.IncludePath = Utils.PathCombineAlt(new string[] { "..", "..", "..", "extensions", "src",
                     "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{projectType}.csproj" });
             }
             else // service-specific project
             {
-                crtExtension.IncludePath = Path.Combine(new string[] {"..", "..", "..", "..", "..", "extensions", "src",
+                crtExtension.IncludePath = Utils.PathCombineAlt(new string[] {"..", "..", "..", "..", "..", "extensions", "src",
                     "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{projectType}.csproj"});
             }
             references.Add(crtExtension);
@@ -197,21 +196,21 @@ namespace ServiceClientGenerator
 
             foreach (var configuration in serviceConfigurations)
             {
-                string projectName = string.Format("{0}.{1}", configuration.AssemblyTitle, projectType);
-                string includePath = Path.Combine("..", "..", "src", "Services", configuration.ServiceFolderName, projectName + ".csproj");
+                string projectName = $"{configuration.AssemblyTitle}.{projectType}";
+                string includePath = Utils.PathCombineAlt("..", "..", "src", "Services", configuration.ServiceFolderName, $"{projectName}.csproj");
 
                 if (!_isLegacyProj)
                 {
-                    includePath = Path.Combine("..", "..", includePath);
+                    includePath = Utils.PathCombineAlt("..", "..", includePath);
                 }
 
                 // for test service unit tests project the actual service is generated one level up the tree
                 if (configuration.IsTestService)
                 {
-                    includePath = Path.Combine("..", projectName + ".csproj");
+                    includePath = Utils.PathCombineAlt("..", $"{projectName}.csproj");
                 }
 
-                string guid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, includePath));
+                string guid = Utils.GetProjectGuid(Utils.PathCombineAlt(unitTestRoot, includePath));
 
                 if (guidSet.Contains(guid))
                 {

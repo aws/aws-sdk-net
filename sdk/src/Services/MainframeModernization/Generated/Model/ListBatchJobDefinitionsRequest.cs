@@ -66,7 +66,7 @@ namespace Amazon.MainframeModernization.Model
         /// The maximum number of batch job definitions to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=2000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

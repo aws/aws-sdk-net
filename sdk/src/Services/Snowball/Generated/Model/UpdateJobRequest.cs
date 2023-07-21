@@ -43,6 +43,7 @@ namespace Amazon.Snowball.Model
         private string _jobId;
         private Notification _notification;
         private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
+        private PickupDetails _pickupDetails;
         private JobResource _resources;
         private string _roleARN;
         private ShippingOption _shippingOption;
@@ -162,6 +163,21 @@ namespace Amazon.Snowball.Model
         internal bool IsSetOnDeviceServiceConfiguration()
         {
             return this._onDeviceServiceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PickupDetails.
+        /// </summary>
+        public PickupDetails PickupDetails
+        {
+            get { return this._pickupDetails; }
+            set { this._pickupDetails = value; }
+        }
+
+        // Check to see if PickupDetails property is set
+        internal bool IsSetPickupDetails()
+        {
+            return this._pickupDetails != null;
         }
 
         /// <summary>

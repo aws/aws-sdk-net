@@ -35,6 +35,7 @@ namespace Amazon.ConnectCases.Model
     {
         private bool? _booleanValue;
         private double? _doubleValue;
+        private EmptyFieldValue _emptyValue;
         private string _stringValue;
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetDoubleValue()
         {
             return this._doubleValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmptyValue. 
+        /// <para>
+        /// An empty value.
+        /// </para>
+        /// </summary>
+        public EmptyFieldValue EmptyValue
+        {
+            get { return this._emptyValue; }
+            set { this._emptyValue = value; }
+        }
+
+        // Check to see if EmptyValue property is set
+        internal bool IsSetEmptyValue()
+        {
+            return this._emptyValue != null;
         }
 
         /// <summary>

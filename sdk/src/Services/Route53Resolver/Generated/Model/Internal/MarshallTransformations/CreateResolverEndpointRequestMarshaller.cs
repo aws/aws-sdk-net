@@ -101,6 +101,18 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOutpostArn())
+                {
+                    context.Writer.WritePropertyName("OutpostArn");
+                    context.Writer.Write(publicRequest.OutpostArn);
+                }
+
+                if(publicRequest.IsSetPreferredInstanceType())
+                {
+                    context.Writer.WritePropertyName("PreferredInstanceType");
+                    context.Writer.Write(publicRequest.PreferredInstanceType);
+                }
+
                 if(publicRequest.IsSetResolverEndpointType())
                 {
                     context.Writer.WritePropertyName("ResolverEndpointType");

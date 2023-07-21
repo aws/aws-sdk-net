@@ -32,7 +32,7 @@ namespace Amazon.CodeGuruSecurity
     public partial class AmazonCodeGuruSecurityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.200.2");
 
         private string _userAgent = UserAgentString;
         ///<summary>

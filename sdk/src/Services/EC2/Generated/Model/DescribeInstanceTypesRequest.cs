@@ -57,8 +57,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>burstable-performance-supported</code> - Indicates whether it is a burstable
-        /// performance instance type (<code>true</code> | <code>false</code>).
+        ///  <code>burstable-performance-supported</code> - Indicates whether the instance type
+        /// is a burstable performance T instance type (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -219,6 +219,20 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>network-info.network-performance</code> - The network performance (for example,
         /// "25 Gigabit").
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported
+        /// (<code>supported</code> | <code>unsupported</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code>
+        /// | <code>unsupported</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

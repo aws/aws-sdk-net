@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// [EC2-Classic, default VPC] The name of the security group. You must specify either
-        /// the security group ID or the security group name in the request. For security groups
-        /// in a nondefault VPC, you must specify the security group ID.
+        /// [Default VPC] The name of the security group. You must specify either the security
+        /// group ID or the security group name. For security groups in a nondefault VPC, you
+        /// must specify the security group ID.
         /// </para>
         /// </summary>
         public string GroupName
@@ -104,8 +104,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupRuleDescriptions. 
         /// <para>
-        /// [VPC only] The description for the ingress security group rules. You must specify
-        /// either a description or IP permissions.
+        /// The description for the ingress security group rules. You must specify either a description
+        /// or IP permissions.
         /// </para>
         /// </summary>
         public List<SecurityGroupRuleDescription> SecurityGroupRuleDescriptions

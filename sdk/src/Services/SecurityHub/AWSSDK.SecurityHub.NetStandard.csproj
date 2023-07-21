@@ -5,6 +5,7 @@
     <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'net6.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.SecurityHub</AssemblyName>
@@ -25,17 +26,20 @@
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
-    <CodeAnalysisRuleSet>..\..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>../../../AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
-    <CodeAnalysisRuleSet>..\..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>../../../AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
       </PropertyGroup>
     </When>
     <Otherwise>
@@ -46,7 +50,7 @@
   </Choose>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
-    <Analyzer Include= "..\..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
+    <Analyzer Include= "../../../../buildtools/CustomRoslynAnalyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="**/_bcl35/**"/>
@@ -57,7 +61,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj"/>
+    <ProjectReference Include="../../Core/AWSSDK.Core.NetStandard.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">

@@ -86,9 +86,12 @@ namespace <#=this.Config.Namespace#>.Model
 <#
         foreach(var member in this.Structure.Members)
         {
+        if(member.ModelShape.IsEvent)
+            {
 #>
             {"<#=member.PropertyName#>", payload => new <#=member.DetermineType()#>(payload)},
 <#
+            }
         }
 #>
         };
@@ -116,12 +119,15 @@ namespace <#=this.Config.Namespace#>.Model
 <#
         foreach(var member in this.Structure.Members)
         {
+        if(member.ModelShape.IsEvent)
+            {
 #>
         ///<summary>
         ///Raised when an <#=member.PropertyName#> event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<<#=member.DetermineType()#>>> <#=member.PropertyName#>Received;
 <#
+            }
         }
 #>
         public <#=this.Structure.Name#>(Stream stream) : this (stream, null)
@@ -150,14 +156,26 @@ namespace <#=this.Config.Namespace#>.Model
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
 <#
-                for(int i = 0; i < this.Structure.Members.Count() - 1; i++)
+                var eventMembers = this.Structure.Members.Where(m => m.ModelShape.IsEvent).ToArray();
+                if(eventMembers.Length == 1)
                 {
 #>
-                    RaiseEvent(<#=this.Structure.Members[i].PropertyName#>Received,ev) ||
+                    RaiseEvent(<#=eventMembers[0].PropertyName#>Received,ev);
+<#
+                }
+                else if (eventMembers.Length > 1)
+                {
+                    for(int i = 0; i < eventMembers.Length - 1; i++)
+                    {
+#>
+                    RaiseEvent(<#=eventMembers[i].PropertyName#>Received,ev) ||
+<#
+                    }
+#>
+                    RaiseEvent(<#=eventMembers.Last().PropertyName#>Received,ev);
 <#
                 }
 #>
-                    RaiseEvent(<#=this.Structure.Members.Last()#>Received,ev);
             };       
         }
         private bool RaiseEvent<T>(EventHandler<EventStreamEventReceivedArgs<T>> eventHandler, IEventStreamEvent ev) where T : class, IEventStreamEvent

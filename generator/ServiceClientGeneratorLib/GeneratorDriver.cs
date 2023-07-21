@@ -84,13 +84,11 @@ namespace ServiceClientGenerator
 
         private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
-        private const string NetStandardSubFolder = "_netstandard";
-        private const string MobileSubFolder = "_mobile";
-        private const string UnitySubFolder = "_unity";
-        private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.DirectorySeparatorChar);
-        private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.DirectorySeparatorChar);
-        private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
-        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.DirectorySeparatorChar);
+        private const string NetStandardSubFolder = "_netstandard";        
+        private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.AltDirectorySeparatorChar);
+        private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.AltDirectorySeparatorChar);
+        private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.AltDirectorySeparatorChar);
+        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.AltDirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -120,19 +118,19 @@ namespace ServiceClientGenerator
             ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
             Options = options;
 
-            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
-            ServiceUnitTestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
+            ServiceFilesRoot = Utils.PathCombineAlt(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
+            ServiceUnitTestFilesRoot = Utils.PathCombineAlt(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
 
             if (config.IsTestService)
             {
                 ServiceFilesRoot = ServiceUnitTestFilesRoot;
             }
 
-            GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
+            GeneratedFilesRoot = Utils.PathCombineAlt(ServiceFilesRoot, GeneratedCodeFoldername);
 
-            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName, Configuration.ServiceFolderName);
+            CodeAnalysisRoot = Utils.PathCombineAlt(Options.SdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName, Configuration.ServiceFolderName);
 
-            TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
+            TestFilesRoot = Utils.PathCombineAlt(Options.SdkRootFolder, TestsSubFoldername);
 
             codeGeneratedServiceNames.Add(Configuration.ServiceFolderName);
         }
@@ -638,7 +636,7 @@ namespace ServiceClientGenerator
                     {
                         //If the file was already generated incorrectly delete it
                         var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
-                        var unmarshallerPath = Path.Combine(GeneratedFilesRoot, "Model","Internal", "MarshallTransformations", unmarshallerName);
+                        var unmarshallerPath = Utils.PathCombineAlt(GeneratedFilesRoot, "Model","Internal", "MarshallTransformations", unmarshallerName);
                         if (File.Exists(unmarshallerPath))
                         {
                             File.Delete(unmarshallerPath);
@@ -724,7 +722,7 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Generating DefaultConfigurationMode Enum...");
 
-            var defaultConfigurationModeFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core", "Amazon.Runtime");
+            var defaultConfigurationModeFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src", "Core", "Amazon.Runtime");
             const string fileName = "DefaultConfigurationMode.generated.cs";
 
             var generator = new DefaultConfigurationModeGenerator
@@ -797,7 +795,7 @@ namespace ServiceClientGenerator
             GeneratorOptions options)
         {
             Console.WriteLine("Updating Core project files.");
-            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
+            string coreFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src", "Core");
             var creator = new ProjectFileCreator(options);
             creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
@@ -812,9 +810,9 @@ namespace ServiceClientGenerator
         public static void GeneratePartitions(GeneratorOptions options)
         {
             Console.WriteLine("Generate Partition class.");
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
-            var writeToFolder = Path.Combine(coreFilesRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary");
-            var partitionsFile = Path.Combine(coreFilesRoot, "partitions.json");
+            var coreFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src", "Core");
+            var writeToFolder = Utils.PathCombineAlt(coreFilesRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary");
+            var partitionsFile = Utils.PathCombineAlt(coreFilesRoot, "partitions.json");
 
             var json = File.ReadAllText(partitionsFile);
             var partitions = JsonMapper.ToObject<Partitions>(json);
@@ -833,7 +831,7 @@ namespace ServiceClientGenerator
         /// </summary>
         public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options)
         {
-            string unitTestRoot = Path.Combine(options.SdkRootFolder, "test", "UnitTests");
+            string unitTestRoot = Utils.PathCombineAlt(options.SdkRootFolder, "test", "UnitTests");
             var creator = new UnitTestProjectFileCreator(options, generationManifest.UnitTestProjectFileConfigurations);
             UpdateUnitTestProjects(generationManifest.ServiceConfigurations, options, unitTestRoot, creator);
         }
@@ -844,7 +842,7 @@ namespace ServiceClientGenerator
         public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options, string serviceTestFilesRoot, ServiceConfiguration serviceConfiguration)
         {
             Console.WriteLine("Updating unit test project files.");
-            string unitTestRoot = Path.Combine(serviceTestFilesRoot, "UnitTests");
+            string unitTestRoot = Utils.PathCombineAlt(serviceTestFilesRoot, "UnitTests");
             var creator = new UnitTestProjectFileCreator(options, generationManifest.UnitTestProjectFileConfigurations, serviceConfiguration.ServiceFolderName);
 
             UpdateUnitTestProjects(new[] { serviceConfiguration }, options, unitTestRoot, creator);
@@ -904,7 +902,7 @@ namespace ServiceClientGenerator
             generator.Session = session;
             var nugetPackagesText = generator.TransformText();
 
-            var readmePath = Path.Combine(options.SdkRootFolder, "..", "README.md");
+            var readmePath = Utils.PathCombineAlt(options.SdkRootFolder, "..", "README.md");
             var originalContent = File.ReadAllText(readmePath);
 
             int startPos = originalContent.IndexOf('\n', originalContent.IndexOf("### NuGet Packages")) + 1;
@@ -1185,7 +1183,7 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = subNamespace == null ? GeneratedTestsSubFolder : Path.Combine(GeneratedTestsSubFolder, subNamespace);
+            var outputSubFolder = subNamespace == null ? GeneratedTestsSubFolder : Utils.PathCombineAlt(GeneratedTestsSubFolder, subNamespace);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
@@ -1200,12 +1198,13 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = Path.Combine("docgenerator", "AWSSDKDocSamples");
+            var outputSubFolder = Utils.PathCombineAlt("docgenerator", "AWSSDKDocSamples");
             if (subNamespace != null)
-                outputSubFolder = Path.Combine(outputSubFolder, subNamespace);
-            
-            WriteFile(Path.GetFullPath(TestFilesRoot + string.Format("{0}..{0}..{0}",
-                Path.DirectorySeparatorChar)), outputSubFolder, fileName, text);
+                outputSubFolder = Utils.PathCombineAlt(outputSubFolder, subNamespace);
+
+            var baseOutputDir = Utils.ConvertPathAlt(Path.GetFullPath(TestFilesRoot + string.Format("{0}..{0}..{0}",
+                Path.AltDirectorySeparatorChar)));
+            WriteFile(baseOutputDir, outputSubFolder, fileName, text);
         }
 
         /// <summary>
@@ -1218,7 +1217,7 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = subNamespace == null ? CustomizationTestsSubFolder : Path.Combine(CustomizationTestsSubFolder, subNamespace);
+            var outputSubFolder = subNamespace == null ? CustomizationTestsSubFolder : Utils.PathCombineAlt(CustomizationTestsSubFolder, subNamespace);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
@@ -1271,7 +1270,7 @@ namespace ServiceClientGenerator
                                        out string outputFilePath)
         {
             var outputDir = !string.IsNullOrEmpty(subNamespace)
-                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', Path.DirectorySeparatorChar))
+                ? Utils.PathCombineAlt(baseOutputDir, subNamespace.Replace('.', Path.AltDirectorySeparatorChar))
                 : baseOutputDir;
 
             if (!Directory.Exists(outputDir))
@@ -1281,7 +1280,7 @@ namespace ServiceClientGenerator
             if (replaceTabs)
                 cleanContent = cleanContent.Replace("\t", "    ");
 
-            outputFilePath = Path.GetFullPath(Path.Combine(outputDir, filename));
+            outputFilePath = Utils.ConvertPathAlt(Path.GetFullPath(Utils.PathCombineAlt(outputDir, filename)));
             if (File.Exists(outputFilePath))
             {
                 var existingContent = File.ReadAllText(outputFilePath);
@@ -1422,22 +1421,22 @@ namespace ServiceClientGenerator
         public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, string sdkRootFolder)
         {
             var codeGeneratedServiceList = codeGeneratedServiceNames.Distinct();
-            var srcFolder = Path.Combine(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
+            var srcFolder = Utils.PathCombineAlt(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
             RemoveOrphanedShapes(generatedFiles, srcFolder);
             // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(srcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service test artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(Path.Combine(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername), codeGeneratedServiceList);
+            RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername), codeGeneratedServiceList);
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(Path.Combine(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
+            RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
         }
         public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
         {
             // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
-            foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories))
+            foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
             {
-                var fullPath = Path.GetFullPath(file);
-                if (fullPath.IndexOf(string.Format(@"\{0}\", GeneratedCodeFoldername), StringComparison.OrdinalIgnoreCase) < 0)
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
+                if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
                     continue;
 
                 if (!generatedFiles.Contains(fullPath))
@@ -1450,7 +1449,7 @@ namespace ServiceClientGenerator
 
         private static void RemoveOrphanedServices(string path, IEnumerable<string> codeGeneratedServiceList)
         {
-            foreach (var directoryName in Directory.GetDirectories(path))
+            foreach (var directoryName in Directory.GetDirectories(path).OrderBy(d => d))
             {
                 if (!codeGeneratedServiceList.Contains(new DirectoryInfo(directoryName).Name))
                 {
@@ -1482,8 +1481,8 @@ namespace ServiceClientGenerator
 
         public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options, Func<string, string> nameConverter, Func<string, string> codeConverter = null)
         {
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
-            var endpointsJsonFile = Path.Combine(coreFilesRoot, "endpoints.json");
+            var coreFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src", "Core");
+            var endpointsJsonFile = Utils.PathCombineAlt(coreFilesRoot, "endpoints.json");
 
             var endpointsJson = JsonMapper.ToObject(File.ReadAllText(endpointsJsonFile));
             var endpoints = new List<EndpointConstant>();
@@ -1511,8 +1510,8 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Generating endpoints constants...");
 
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
-            var endpointsFilesRoot = Path.Combine(coreFilesRoot, "RegionEndpoint");
+            var coreFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src", "Core");
+            var endpointsFilesRoot = Utils.PathCombineAlt(coreFilesRoot, "RegionEndpoint");
             const string fileName = "RegionEndpoint.generated.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName);
@@ -1545,9 +1544,9 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Generating S3 enumerations constants...");
 
-            var srcFilesRoot = Path.Combine(options.SdkRootFolder, "src");
-            var coreFilesRoot = Path.Combine(srcFilesRoot, "Core");
-            var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Generated");
+            var srcFilesRoot = Utils.PathCombineAlt(options.SdkRootFolder, "src");
+            var coreFilesRoot = Utils.PathCombineAlt(srcFilesRoot, "Core");
+            var generatedFileRoot = Utils.PathCombineAlt(srcFilesRoot, "Services", "S3", "Generated");
             const string fileName = "S3Enumerations.cs";
 
             var endpoints = ExtractEndpoints(options, ConstructEndpointName, ConvertS3RegionCode);

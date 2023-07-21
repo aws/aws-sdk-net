@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCrossAccountFilterOption())
+                {
+                    context.Writer.WritePropertyName("CrossAccountFilterOption");
+                    context.Writer.Write(publicRequest.CrossAccountFilterOption);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

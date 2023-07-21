@@ -152,7 +152,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported values are <code>8.4</code> and <code>9.4</code>.
+        /// To get a list of supported version, use the <code>ListVersions</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -304,6 +304,12 @@ namespace Amazon.ManagedGrafana.Model
         /// The configuration settings for an Amazon VPC that contains data sources for your Grafana
         /// workspace to connect to.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region
+        /// (ap-northeast-2).
+        /// </para>
+        ///  </note>
         /// </summary>
         public VpcConfiguration VpcConfiguration
         {

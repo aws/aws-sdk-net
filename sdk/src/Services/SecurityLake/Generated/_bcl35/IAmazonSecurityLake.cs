@@ -95,7 +95,7 @@ namespace Amazon.SecurityLake
         /// the parameters you specify. You can choose any source type in any Region for either
         /// accounts that are part of a trusted organization or standalone accounts. Once you
         /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
-        /// from it, 
+        /// from it.
         /// 
         ///  
         /// <para>
@@ -243,13 +243,12 @@ namespace Amazon.SecurityLake
         /// <summary>
         /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
         /// You can enable Security Lake in Amazon Web Services Regions with customized settings
-        /// before enabling log collection in Regions. By default, the <code>CreateDataLake</code>
-        /// Security Lake in all Regions. To specify particular Regions, configure these Regions
-        /// using the <code>configurations</code> parameter. If you have already enabled Security
-        /// Lake in a Region when you call this command, the command will update the Region if
-        /// you provide new configuration parameters. If you have not already enabled Security
-        /// Lake in the Region when you call this API, it will set up the data lake in the Region
-        /// with the specified configurations.
+        /// before enabling log collection in Regions. To specify particular Regions, configure
+        /// these Regions using the <code>configurations</code> parameter. If you have already
+        /// enabled Security Lake in a Region when you call this command, the command will update
+        /// the Region if you provide new configuration parameters. If you have not already enabled
+        /// Security Lake in the Region when you call this API, it will set up the data lake in
+        /// the Region with the specified configurations.
         /// 
         ///  
         /// <para>
@@ -895,11 +894,11 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Removes automatic the enablement of configuration settings for new member accounts
-        /// (but retains the settings for the delegated administrator) from Amazon Security Lake.
-        /// You must run this API using the credentials of the delegated administrator. When you
-        /// run this API, new member accounts that are added after the organization enables Security
-        /// Lake won't contribute to the data lake.
+        /// Turns off automatic enablement of Amazon Security Lake for member accounts that are
+        /// added to an organization in Organizations. Only the delegated Security Lake administrator
+        /// for an organization can perform this operation. If the delegated Security Lake administrator
+        /// performs this operation, new member accounts won't automatically contribute data to
+        /// the data lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeOrganizationConfiguration service method.</param>
         /// 
@@ -1516,8 +1515,8 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-        /// Services account ID. You can use the <code>ListDataLakes</code> API to know whether
-        /// Security Lake is enabled for any region.
+        /// Services Regions. You can use this operation to determine whether Security Lake is
+        /// enabled for a Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataLakes service method.</param>
         /// 
@@ -1716,6 +1715,75 @@ namespace Amazon.SecurityLake
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Retrieves the tags (keys and values) that are associated with an Amazon Security Lake
+        /// resource: a subscriber, or the data lake configuration for your Amazon Web Services
+        /// account in a particular Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterDataLakeDelegatedAdministrator
 
 
@@ -1782,6 +1850,151 @@ namespace Amazon.SecurityLake
         /// <returns>Returns a  RegisterDataLakeDelegatedAdministratorResult from SecurityLake.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator">REST API Reference for RegisterDataLakeDelegatedAdministrator Operation</seealso>
         RegisterDataLakeDelegatedAdministratorResponse EndRegisterDataLakeDelegatedAdministrator(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds or updates one or more tags that are associated with an Amazon Security Lake
+        /// resource: a subscriber, or the data lake configuration for your Amazon Web Services
+        /// account in a particular Amazon Web Services Region. A <i>tag</i> is a label that you
+        /// can define and associate with Amazon Web Services resources. Each tag consists of
+        /// a required <i>tag key</i> and an associated <i>tag value</i>. A <i>tag key</i> is
+        /// a general label that acts as a category for a more specific tag value. A <i>tag value</i>
+        /// acts as a descriptor for a tag key. Tags can help you identify, categorize, and manage
+        /// resources in different ways, such as by owner, environment, or other criteria. For
+        /// more information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging
+        /// Amazon Security Lake resources</a> in the <i>Amazon Security Lake User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags (keys and values) from an Amazon Security Lake resource:
+        /// a subscriber, or the data lake configuration for your Amazon Web Services account
+        /// in a particular Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

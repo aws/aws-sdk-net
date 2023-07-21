@@ -29,16 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Describes the VPC peering connection options.
-    /// </para>
     /// </summary>
     public partial class PeeringConnectionOptions
     {
@@ -68,8 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllowEgressFromLocalClassicLinkToRemoteVpc. 
         /// <para>
-        /// If true, enables outbound communication from an EC2-Classic instance that's linked
-        /// to a local VPC using ClassicLink to instances in a peer VPC.
+        /// Deprecated.
         /// </para>
         /// </summary>
         public bool AllowEgressFromLocalClassicLinkToRemoteVpc
@@ -87,8 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllowEgressFromLocalVpcToRemoteClassicLink. 
         /// <para>
-        /// If true, enables outbound communication from instances in a local VPC to an EC2-Classic
-        /// instance that's linked to a peer VPC using ClassicLink.
+        /// Deprecated.
         /// </para>
         /// </summary>
         public bool AllowEgressFromLocalVpcToRemoteClassicLink

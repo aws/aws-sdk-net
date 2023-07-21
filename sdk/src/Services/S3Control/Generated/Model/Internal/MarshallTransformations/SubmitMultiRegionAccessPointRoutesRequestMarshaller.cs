@@ -76,19 +76,19 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("RouteUpdates", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
-                    
+                
                     if (publicRequestRouteUpdatesValue != null) 
                     {
                         xmlWriter.WriteStartElement("Route", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequestRouteUpdatesValue.IsSetBucket())
                             xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));                 
-        
+
                         if(publicRequestRouteUpdatesValue.IsSetRegion())
                             xmlWriter.WriteElementString("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));                 
-        
+
                         if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
                             xmlWriter.WriteElementString("TrafficDialPercentage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage));                 
-        
+
                         xmlWriter.WriteEndElement();
                     }
                     }            

@@ -875,6 +875,52 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  StartApplicationRefresh
+
+        internal virtual StartApplicationRefreshResponse StartApplicationRefresh(StartApplicationRefreshRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartApplicationRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApplicationRefreshResponseUnmarshaller.Instance;
+
+            return Invoke<StartApplicationRefreshResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Refreshes a registered application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartApplicationRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartApplicationRefresh service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
+        public virtual Task<StartApplicationRefreshResponse> StartApplicationRefreshAsync(StartApplicationRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartApplicationRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApplicationRefreshResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartApplicationRefreshResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -983,6 +1029,9 @@ namespace Amazon.SsmSap
         /// </param>
         /// 
         /// <returns>The response from the UpdateApplicationSettings service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>

@@ -18,9 +18,13 @@ namespace ServiceClientGenerator
         {
             var codeAnalysisProjects = GetListOfCodeAnalysisProjects();
 
+            if (Options.CreateCodeAnalysisVsixAssets)
+            {
+                GenerateVsixProject(codeAnalysisProjects);
+                GenerateVsixManifest(codeAnalysisProjects);
+            }
+
             GenerateSolutionFile(codeAnalysisProjects);
-            GenerateVsixProject(codeAnalysisProjects);
-            GenerateVsixManifest(codeAnalysisProjects);
         }
 
         public void GenerateSolutionFile(List<Project> codeAnalysisProjects)
@@ -46,7 +50,7 @@ namespace ServiceClientGenerator
             generator.Session = templateSession;
             var generatedContent = generator.TransformText();
 
-            GeneratorDriver.WriteFile(Path.Combine(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername), "AWSCodeAnalysisTestExtension", "AWSCodeAnalysisTestExtension.Vsix.csproj", generatedContent, false, false);
+            GeneratorDriver.WriteFile(Utils.PathCombineAlt(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername), "AWSCodeAnalysisTestExtension", "AWSCodeAnalysisTestExtension.Vsix.csproj", generatedContent, false, false);
         }
 
         public void GenerateVsixManifest(List<Project> codeAnalysisProjects)
@@ -59,17 +63,17 @@ namespace ServiceClientGenerator
             generator.Session = templateSession;
             var generatedContent = generator.TransformText();
 
-            GeneratorDriver.WriteFile(Path.Combine(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername), "AWSCodeAnalysisTestExtension", "source.extension.vsixmanifest", generatedContent, false, false);
+            GeneratorDriver.WriteFile(Utils.PathCombineAlt(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername), "AWSCodeAnalysisTestExtension", "source.extension.vsixmanifest", generatedContent, false, false);
         }
 
 
         public List<Project> GetListOfCodeAnalysisProjects()
         {
             List<Project> projects = new List<Project>();
-            var codeAnalysisProjectsRoot = Path.Combine(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername);
-            foreach (var projectFile in Directory.GetFiles(codeAnalysisProjectsRoot, projectTypeWildCard, SearchOption.AllDirectories).OrderBy(x => x))
+            var codeAnalysisProjectsRoot = Utils.PathCombineAlt(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername);
+            foreach (var projectFile in Directory.GetFiles(codeAnalysisProjectsRoot, projectTypeWildCard, SearchOption.AllDirectories).OrderBy(f => f))
             {
-                var fullPath = Path.GetFullPath(projectFile);
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(projectFile));
                 var relativePath = fullPath.Substring(fullPath.IndexOf("code-analysis"));
 
                 var projectNameInSolution = 

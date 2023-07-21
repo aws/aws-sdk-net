@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -175,7 +175,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcIds. 
         /// <para>
-        /// One or more VPC IDs.
+        /// The IDs of the VPCs.
         /// </para>
         ///  
         /// <para>

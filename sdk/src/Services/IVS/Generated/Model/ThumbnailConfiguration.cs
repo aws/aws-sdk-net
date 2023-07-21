@@ -34,6 +34,8 @@ namespace Amazon.IVS.Model
     public partial class ThumbnailConfiguration
     {
         private RecordingMode _recordingMode;
+        private ThumbnailConfigurationResolution _resolution;
+        private List<string> _storage = new List<string>();
         private long? _targetIntervalSeconds;
 
         /// <summary>
@@ -55,6 +57,50 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Resolution. 
+        /// <para>
+        /// Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at
+        /// the selected resolution if the corresponding rendition is available during the stream;
+        /// otherwise, they are recorded at source resolution. For more information about resolution
+        /// values and their corresponding height and width dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
+        /// to Amazon S3</a>. Default: Null (source resolution is returned).
+        /// </para>
+        /// </summary>
+        public ThumbnailConfigurationResolution Resolution
+        {
+            get { return this._resolution; }
+            set { this._resolution = value; }
+        }
+
+        // Check to see if Resolution property is set
+        internal bool IsSetResolution()
+        {
+            return this._resolution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Storage. 
+        /// <para>
+        /// Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records
+        /// all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code>
+        /// saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at
+        /// the interval specified by <code>targetIntervalSeconds</code>. You can enable both
+        /// <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.
+        /// </para>
+        /// </summary>
+        public List<string> Storage
+        {
+            get { return this._storage; }
+            set { this._storage = value; }
+        }
+
+        // Check to see if Storage property is set
+        internal bool IsSetStorage()
+        {
+            return this._storage != null && this._storage.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetIntervalSeconds. 
         /// <para>
         /// The targeted thumbnail-generation interval in seconds. This is configurable (and required)
@@ -62,8 +108,8 @@ namespace Amazon.IVS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not
-        /// guarantee that thumbnails are generated at the specified interval. For thumbnails
+        ///  <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code>
+        /// does not guarantee that thumbnails are generated at the specified interval. For thumbnails
         /// to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code>
         /// value for the input video must be less than the <code>targetIntervalSeconds</code>
         /// value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html">

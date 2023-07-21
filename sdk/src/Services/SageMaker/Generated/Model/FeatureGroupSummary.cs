@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The name, Arn, <code>CreationTime</code>, <code>FeatureGroup</code> values, <code>LastUpdatedTime</code>
+    /// The name, ARN, <code>CreationTime</code>, <code>FeatureGroup</code> values, <code>LastUpdatedTime</code>
     /// and <code>EnableOnlineStorage</code> status of a <code>FeatureGroup</code>.
     /// </summary>
     public partial class FeatureGroupSummary

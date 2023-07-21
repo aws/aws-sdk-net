@@ -130,7 +130,7 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         public bool IsValidPlatformPathForProject(string sourceFolder)
         {
-            var tokens = sourceFolder.Split(new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar });
+            var tokens = sourceFolder.Split(new[] { Path.AltDirectorySeparatorChar });
 
             if (PlatformCodeFolders.Any())
             {

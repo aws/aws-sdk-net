@@ -57,7 +57,10 @@ namespace Amazon.CodeCatalyst.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrincipalId.
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The ID of the Amazon CodeCatalyst service principal.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PrincipalId

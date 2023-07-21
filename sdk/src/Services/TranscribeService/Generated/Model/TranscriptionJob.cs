@@ -67,6 +67,7 @@ namespace Amazon.TranscribeService.Model
         private DateTime? _startTime;
         private SubtitlesOutput _subtitles;
         private List<Tag> _tags = new List<Tag>();
+        private List<ToxicityDetectionSettings> _toxicityDetection = new List<ToxicityDetectionSettings>();
         private Transcript _transcript;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
@@ -531,6 +532,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToxicityDetection. 
+        /// <para>
+        /// Provides information about the toxicity detection settings applied to your transcription.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<ToxicityDetectionSettings> ToxicityDetection
+        {
+            get { return this._toxicityDetection; }
+            set { this._toxicityDetection = value; }
+        }
+
+        // Check to see if ToxicityDetection property is set
+        internal bool IsSetToxicityDetection()
+        {
+            return this._toxicityDetection != null && this._toxicityDetection.Count > 0; 
         }
 
         /// <summary>

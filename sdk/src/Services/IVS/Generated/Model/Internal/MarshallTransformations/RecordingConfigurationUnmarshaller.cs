@@ -88,6 +88,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("renditionConfiguration", targetDepth))
+                {
+                    var unmarshaller = RenditionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RenditionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

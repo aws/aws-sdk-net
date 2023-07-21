@@ -71,6 +71,17 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationId);
                 }
 
+                if(publicRequest.IsSetBackint())
+                {
+                    context.Writer.WritePropertyName("Backint");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BackintConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Backint, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCredentialsToAddOrUpdate())
                 {
                     context.Writer.WritePropertyName("CredentialsToAddOrUpdate");

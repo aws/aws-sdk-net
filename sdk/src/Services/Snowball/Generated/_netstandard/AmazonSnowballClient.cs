@@ -577,7 +577,11 @@ namespace Amazon.Snowball
         /// <para>
         /// Description: Snowball Edge Storage Optimized with EC2 Compute
         /// </para>
-        ///  </li> </ul>  </li> <li> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This device is replaced with T98.
+        /// </para>
+        ///  </note>  </li> <li> 
         /// <para>
         /// Device type: <b>STANDARD</b> 
         /// </para>
@@ -613,17 +617,17 @@ namespace Amazon.Snowball
         /// </para>
         ///  </note> </li> </ul>  </li> <li> 
         /// <para>
-        /// Device type: <b>V3_5C</b> 
+        /// Snow Family device type: <b>RACK_5U_C</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Capacity: T32
+        /// Capacity: T13 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Description: Snowball Edge Compute Optimized without GPU
+        /// Description: Snowblade.
         /// </para>
-        ///  </li> </ul>  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// Device type: <b>V3_5S</b> 
         /// </para>
@@ -635,7 +639,7 @@ namespace Amazon.Snowball
         /// <para>
         /// Description: Snowball Edge Storage Optimized 210TB
         /// </para>
-        ///  </li> </ul>  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -1297,9 +1301,9 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-        /// that are owned by your Amazon Web Services accountthat would be supported for use
-        /// on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu
+        /// This action returns a list of the different Amazon EC2-compatible Amazon Machine Images
+        /// (AMIs) that are owned by your Amazon Web Services accountthat would be supported for
+        /// use on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu
         /// 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
         /// Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported
         /// in the Market, but still supported for use on devices through Amazon EC2 VM Import/Export
@@ -1413,6 +1417,44 @@ namespace Amazon.Snowball
             options.ResponseUnmarshaller = ListLongTermPricingResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLongTermPricingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPickupLocations
+
+        internal virtual ListPickupLocationsResponse ListPickupLocations(ListPickupLocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPickupLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPickupLocationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPickupLocationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A list of locations from which the customer can choose to pickup a device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPickupLocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPickupLocations service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations">REST API Reference for ListPickupLocations Operation</seealso>
+        public virtual Task<ListPickupLocationsResponse> ListPickupLocationsAsync(ListPickupLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPickupLocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPickupLocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPickupLocationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

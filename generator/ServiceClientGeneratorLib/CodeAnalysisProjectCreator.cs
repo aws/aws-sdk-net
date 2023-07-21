@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 using ServiceClientGenerator.Generators.CodeAnalysis;
@@ -15,10 +14,9 @@ namespace ServiceClientGenerator
         public void Execute(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             SetupProjectFile(codeAnalysisRoot, serviceConfiguration);
-            SetupPackageConfigFile(codeAnalysisRoot, serviceConfiguration);
             GenerateAssemblyInfo(codeAnalysisRoot, serviceConfiguration);
-            GenerateProperyValueRules(codeAnalysisRoot, serviceConfiguration);
-            GenerateProperyValueAnalyzer(codeAnalysisRoot, serviceConfiguration);
+            GeneratePropertyValueRules(codeAnalysisRoot, serviceConfiguration);
+            GeneratePropertyValueAnalyzer(codeAnalysisRoot, serviceConfiguration);
         }
 
         void SetupProjectFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
@@ -29,10 +27,10 @@ namespace ServiceClientGenerator
             var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1] + ".CodeAnalysis";
             var projectFilename = string.Concat(assemblyName, ".csproj");
             string projectGuid;
-            if (File.Exists(Path.Combine(codeAnalysisRoot, projectFilename)))
+            if (File.Exists(Utils.PathCombineAlt(codeAnalysisRoot, projectFilename)))
             {
                 Console.WriteLine("...updating existing project file {0}", projectFilename);
-                var projectPath = Path.Combine(codeAnalysisRoot, projectFilename);
+                var projectPath = Utils.PathCombineAlt(codeAnalysisRoot, projectFilename);
                 projectGuid = Utils.GetProjectGuid(projectPath);
             }
             else
@@ -56,13 +54,6 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(codeAnalysisRoot, string.Empty, projectFilename, generatedContent);
         }
 
-        private void SetupPackageConfigFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
-        {
-            CodeAnalysisPackages generator = new CodeAnalysisPackages();
-            var generatedContent = generator.TransformText();
-            GeneratorDriver.WriteFile(codeAnalysisRoot, string.Empty, "packages.config", generatedContent);
-        }
-
         private void GenerateAssemblyInfo(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             var generator = new CodeAnalysisAssemblyInfo { Config = serviceConfiguration };
@@ -70,7 +61,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(codeAnalysisRoot, "Properties", "AssemblyInfo.cs", text);
         }
 
-        private void GenerateProperyValueRules(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
+        private void GeneratePropertyValueRules(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             StringBuilder sb = new StringBuilder();
             using (var writer = XmlWriter.Create(sb, new XmlWriterSettings {Indent = true }))
@@ -85,12 +76,12 @@ namespace ServiceClientGenerator
                     {
                         if (operation.RequestStructure != null)
                         {
-                            GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
+                            GeneratePropertyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
                             requestAndResponseShapes.Add(operation.RequestStructure.Name);
                         }
                         if (operation.ResponseStructure != null)
                         {
-                            GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
+                            GeneratePropertyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
                             requestAndResponseShapes.Add(operation.ResponseStructure.Name);
                         }
                     }
@@ -102,17 +93,17 @@ namespace ServiceClientGenerator
 
                         if (shape.IsStructure)
                         {
-                            GenerateProperyValueRules(serviceConfiguration, writer, shape.Name, shape);
+                            GeneratePropertyValueRules(serviceConfiguration, writer, shape.Name, shape);
                         }
                     }
                 }
                 writer.WriteEndElement();
             }
             var content = sb.ToString();
-            GeneratorDriver.WriteFile(Path.Combine(codeAnalysisRoot, "Generated"), string.Empty, "PropertyValueRules.xml", content);
+            GeneratorDriver.WriteFile(Utils.PathCombineAlt(codeAnalysisRoot, "Generated"), string.Empty, "PropertyValueRules.xml", content);
         }
 
-        private void GenerateProperyValueRules(ServiceConfiguration serviceConfiguration, XmlWriter writer, string shapeName, Shape shape)
+        private void GeneratePropertyValueRules(ServiceConfiguration serviceConfiguration, XmlWriter writer, string shapeName, Shape shape)
         {
             foreach (var member in shape.Members)
             {
@@ -151,7 +142,7 @@ namespace ServiceClientGenerator
             }
         }
 
-        private void GenerateProperyValueAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
+        private void GeneratePropertyValueAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
             var generator = new PropertyValueAssignmentAnalyzer { Config = serviceConfiguration };
             var text = generator.TransformText();
@@ -163,13 +154,13 @@ namespace ServiceClientGenerator
         {
             var embeddedResources = new List<string>();
 
-            foreach(var file in Directory.GetFiles(codeAnalysisRoot, "*.xml", SearchOption.AllDirectories))
+            foreach(var file in Directory.GetFiles(codeAnalysisRoot, "*.xml", SearchOption.AllDirectories).OrderBy(f => f))
             {
-                var relativePath = file.Substring(codeAnalysisRoot.Length);
-                if (!relativePath.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                var relativePath = Utils.ConvertPathAlt(file.Substring(codeAnalysisRoot.Length));
+                if (!relativePath.StartsWith("/Custom", StringComparison.OrdinalIgnoreCase))
                     continue;
 
-                embeddedResources.Add(relativePath.TrimStart('\\'));
+                embeddedResources.Add(relativePath.TrimStart('/'));
             }
 
             return embeddedResources;
@@ -185,22 +176,22 @@ namespace ServiceClientGenerator
 
             if (Directory.Exists(codeAnalysisRoot))
             {
-                var subFolders = Directory.GetDirectories(codeAnalysisRoot, "*", SearchOption.AllDirectories);
+                var subFolders = Directory.GetDirectories(codeAnalysisRoot, "*", SearchOption.AllDirectories).OrderBy(d => d);
                 foreach (var folder in subFolders)
                 {
-                    var serviceRelativeFolder = folder.Substring(codeAnalysisRoot.Length);
+                    var serviceRelativeFolder = Utils.ConvertPathAlt(folder.Substring(codeAnalysisRoot.Length));
 
-                    if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                    if (!serviceRelativeFolder.StartsWith("/Custom", StringComparison.OrdinalIgnoreCase))
                         continue;
 
-                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
+                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('/'));
                 }
             }
 
             var foldersThatExist = new List<string>();
             foreach (var folder in sourceCodeFolders)
             {
-                if (Directory.Exists(Path.Combine(codeAnalysisRoot, folder)))
+                if (Directory.Exists(Utils.PathCombineAlt(codeAnalysisRoot, folder)))
                     foldersThatExist.Add(folder);
             }
 

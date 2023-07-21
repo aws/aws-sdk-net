@@ -10,15 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
+    <ProjectReference Include="../ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\ServiceModels\**\*.json">
-      <Link>ServiceModels\%(RecursiveDir)\%(FileName)%(Extension)</Link>
+    <None Include="../ServiceModels/**/*.json">
+      <Link>ServiceModels/%(RecursiveDir)/%(FileName)%(Extension)</Link>
     </None>
-    <None Include="..\ServiceModels\*.json">
-      <Link>ServiceManifest\%(Filename)%(Extension)</Link>
+    <None Include="../ServiceModels/*.json">
+      <Link>ServiceManifest/%(Filename)%(Extension)</Link>
     </None>
   </ItemGroup>
 

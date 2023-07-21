@@ -42,6 +42,7 @@ namespace Amazon.CloudFormation.Model
         private List<ResourceIdentifierSummary> _resourceIdentifierSummaries = new List<ResourceIdentifierSummary>();
         private List<string> _resourceTypes = new List<string>();
         private string _version;
+        private Warnings _warnings;
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
@@ -219,6 +220,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// An object containing any warnings returned.
+        /// </para>
+        /// </summary>
+        public Warnings Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null;
         }
 
     }
