@@ -255,7 +255,7 @@ namespace <#=this.Config.Namespace#>.Model
         if(structureContainsEventPayload)
         {
 #>
-        <#=payloadMember.PropertyName#> = new <#=payloadMember.DetermineType()#>(message.<#=payloadMember.PropertyName#>);
+        <#=payloadMember.PropertyName#> = new <#=payloadMember.DetermineType()#>(message.Payload);
 <#
         }
 #>

@@ -601,14 +601,7 @@ if(this.Structure != null && (this.Structure.IsEvent || this.Structure.IsEventSt
             
             #line default
             #line hidden
-            this.Write("(message.");
-            
-            #line 258 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(payloadMember.PropertyName));
-            
-            #line default
-            #line hidden
-            this.Write(");\r\n");
+            this.Write("(message.Payload);\r\n");
             
             #line 259 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
