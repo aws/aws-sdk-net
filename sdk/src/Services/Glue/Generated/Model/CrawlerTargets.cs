@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private List<CatalogTarget> _catalogTargets = new List<CatalogTarget>();
         private List<DeltaTarget> _deltaTargets = new List<DeltaTarget>();
         private List<DynamoDBTarget> _dynamoDBTargets = new List<DynamoDBTarget>();
+        private List<HudiTarget> _hudiTargets = new List<HudiTarget>();
         private List<IcebergTarget> _icebergTargets = new List<IcebergTarget>();
         private List<JdbcTarget> _jdbcTargets = new List<JdbcTarget>();
         private List<MongoDBTarget> _mongoDBTargets = new List<MongoDBTarget>();
@@ -93,6 +94,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDynamoDBTargets()
         {
             return this._dynamoDBTargets != null && this._dynamoDBTargets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HudiTargets. 
+        /// <para>
+        /// Specifies Apache Hudi data store targets.
+        /// </para>
+        /// </summary>
+        public List<HudiTarget> HudiTargets
+        {
+            get { return this._hudiTargets; }
+            set { this._hudiTargets = value; }
+        }
+
+        // Check to see if HudiTargets property is set
+        internal bool IsSetHudiTargets()
+        {
+            return this._hudiTargets != null && this._hudiTargets.Count > 0; 
         }
 
         /// <summary>
