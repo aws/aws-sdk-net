@@ -127,6 +127,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
                 }
+                if(publicRequest.IsSetDBSystemId())
+                {
+                    request.Parameters.Add("DBSystemId", StringUtils.FromString(publicRequest.DBSystemId));
+                }
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));

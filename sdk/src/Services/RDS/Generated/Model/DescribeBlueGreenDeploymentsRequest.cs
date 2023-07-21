@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBlueGreenDeployments operation.
-    /// Returns information about blue/green deployments.
+    /// Describes one or more blue/green deployments.
     /// 
     ///  
     /// <para>
@@ -51,8 +51,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentIdentifier. 
         /// <para>
-        /// The blue/green deployment identifier. If this parameter is specified, information
-        /// from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.
+        /// The blue/green deployment identifier. If you specify this parameter, the response
+        /// only includes information about the specific blue/green deployment. This parameter
+        /// isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -60,7 +61,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match an existing blue/green deployment identifier.
+        /// Must match an existing blue/green deployment identifier.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -84,7 +85,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported filters:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -128,7 +129,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code>
-        /// request. If this parameter is specified, the response includes only records beyond
+        /// request. If you specify this parameter, the response only includes records beyond
         /// the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
@@ -157,8 +158,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Minimum 20, maximum 100.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a minimum of 20.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't exceed 100.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=20, Max=100)]
         public int MaxRecords

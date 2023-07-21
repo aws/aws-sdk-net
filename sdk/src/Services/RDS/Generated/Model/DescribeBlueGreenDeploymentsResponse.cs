@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BlueGreenDeployments. 
         /// <para>
-        /// Contains a list of blue/green deployments for the user.
+        /// A list of blue/green deployments in the current account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         public List<BlueGreenDeployment> BlueGreenDeployments
@@ -57,7 +57,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a later DescribeBlueGreenDeployments request.
+        /// A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code>
+        /// request.
         /// </para>
         /// </summary>
         public string Marker

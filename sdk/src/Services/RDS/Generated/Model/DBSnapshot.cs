@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private string _dbiResourceId;
         private string _dbSnapshotArn;
         private string _dbSnapshotIdentifier;
+        private string _dbSystemId;
         private bool? _encrypted;
         private string _engine;
         private string _engineVersion;
@@ -182,6 +183,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSnapshotIdentifier()
         {
             return this._dbSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// The Oracle system identifier (SID), which is the name of the Oracle database instance
+        /// that manages your database files. The Oracle SID is also the name of your CDB.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>

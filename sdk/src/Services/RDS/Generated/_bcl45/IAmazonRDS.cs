@@ -2873,9 +2873,9 @@ namespace Amazon.RDS
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
         /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBlueGreenDeployment service method.</param>
@@ -2901,9 +2901,9 @@ namespace Amazon.RDS
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
         /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBlueGreenDeployment service method.</param>
@@ -4106,7 +4106,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about blue/green deployments.
+        /// Describes one or more blue/green deployments.
         /// 
         ///  
         /// <para>
@@ -4130,7 +4130,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about blue/green deployments.
+        /// Describes one or more blue/green deployments.
         /// 
         ///  
         /// <para>
@@ -11270,9 +11270,9 @@ namespace Amazon.RDS
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
         /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SwitchoverBlueGreenDeployment service method.</param>
@@ -11304,9 +11304,9 @@ namespace Amazon.RDS
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
         /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-        /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+        /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SwitchoverBlueGreenDeployment service method.</param>

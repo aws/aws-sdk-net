@@ -42,9 +42,9 @@ namespace Amazon.RDS.Model
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
     /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-    /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+    /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SwitchoverBlueGreenDeploymentRequest : AmazonRDSRequest
@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentIdentifier. 
         /// <para>
-        /// The blue/green deployment identifier.
+        /// The unique identifier of the blue/green deployment.
         /// </para>
         ///  
         /// <para>
@@ -83,7 +83,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SwitchoverTimeout. 
         /// <para>
-        /// The amount of time, in seconds, for the switchover to complete. The default is 300.
+        /// The amount of time, in seconds, for the switchover to complete.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 300
         /// </para>
         ///  
         /// <para>

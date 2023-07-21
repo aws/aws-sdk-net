@@ -29,15 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details about a blue/green deployment.
+    /// Details about a blue/green deployment.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
     /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-    /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+    /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class BlueGreenDeployment
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentIdentifier. 
         /// <para>
-        /// The system-generated identifier of the blue/green deployment.
+        /// The unique identifier of the blue/green deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -95,8 +95,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// Specifies the time when the blue/green deployment was created, in Universal Coordinated
-        /// Time (UTC).
+        /// The time when the blue/green deployment was created, in Universal Coordinated Time
+        /// (UTC).
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -114,8 +114,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeleteTime. 
         /// <para>
-        /// Specifies the time when the blue/green deployment was deleted, in Universal Coordinated
-        /// Time (UTC).
+        /// The time when the blue/green deployment was deleted, in Universal Coordinated Time
+        /// (UTC).
         /// </para>
         /// </summary>
         public DateTime DeleteTime
@@ -160,7 +160,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
