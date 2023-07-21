@@ -544,7 +544,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SegmentsPerSubdirectory. Specify the number of segments
-        /// to write to a subdirectory before starting a new one. You must also set Directory
+        /// to write to a subdirectory before starting a new one. You  must also set Directory
         /// structure to Subdirectory per stream for this setting to have an effect.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
