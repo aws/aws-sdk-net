@@ -88,6 +88,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterPartialResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentifyLanguage", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LanguageOptions", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LanguageOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PartialResultsStability", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +122,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PiiEntityTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredLanguage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShowSpeakerLabel", targetDepth))
@@ -130,10 +148,22 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VocabularyFilterNames", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VocabularyFilterNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VocabularyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VocabularyNames", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VocabularyNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -141,7 +141,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property S3RecordingSinkRuntimeConfiguration. 
         /// <para>
-        /// The runtime configuration for the S3 recording sink.
+        /// The runtime configuration for the S3 recording sink. If specified, the settings in
+        /// this structure override any settings in <code>S3RecordingSinkConfiguration</code>.
         /// </para>
         /// </summary>
         public S3RecordingSinkRuntimeConfiguration S3RecordingSinkRuntimeConfiguration

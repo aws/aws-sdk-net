@@ -33,8 +33,49 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class GridViewConfiguration
     {
+        private ActiveSpeakerOnlyConfiguration _activeSpeakerOnlyConfiguration;
+        private CanvasOrientation _canvasOrientation;
         private ContentShareLayoutOption _contentShareLayout;
+        private HorizontalLayoutConfiguration _horizontalLayoutConfiguration;
         private PresenterOnlyConfiguration _presenterOnlyConfiguration;
+        private VerticalLayoutConfiguration _verticalLayoutConfiguration;
+        private VideoAttribute _videoAttribute;
+
+        /// <summary>
+        /// Gets and sets the property ActiveSpeakerOnlyConfiguration. 
+        /// <para>
+        /// The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.
+        /// </para>
+        /// </summary>
+        public ActiveSpeakerOnlyConfiguration ActiveSpeakerOnlyConfiguration
+        {
+            get { return this._activeSpeakerOnlyConfiguration; }
+            set { this._activeSpeakerOnlyConfiguration = value; }
+        }
+
+        // Check to see if ActiveSpeakerOnlyConfiguration property is set
+        internal bool IsSetActiveSpeakerOnlyConfiguration()
+        {
+            return this._activeSpeakerOnlyConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CanvasOrientation. 
+        /// <para>
+        /// The orientation setting, horizontal or vertical.
+        /// </para>
+        /// </summary>
+        public CanvasOrientation CanvasOrientation
+        {
+            get { return this._canvasOrientation; }
+            set { this._canvasOrientation = value; }
+        }
+
+        // Check to see if CanvasOrientation property is set
+        internal bool IsSetCanvasOrientation()
+        {
+            return this._canvasOrientation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContentShareLayout. 
@@ -56,6 +97,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HorizontalLayoutConfiguration. 
+        /// <para>
+        /// The configuration settings for a horizontal layout.
+        /// </para>
+        /// </summary>
+        public HorizontalLayoutConfiguration HorizontalLayoutConfiguration
+        {
+            get { return this._horizontalLayoutConfiguration; }
+            set { this._horizontalLayoutConfiguration = value; }
+        }
+
+        // Check to see if HorizontalLayoutConfiguration property is set
+        internal bool IsSetHorizontalLayoutConfiguration()
+        {
+            return this._horizontalLayoutConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PresenterOnlyConfiguration. 
         /// <para>
         /// Defines the configuration options for a presenter only video tile.
@@ -71,6 +130,42 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetPresenterOnlyConfiguration()
         {
             return this._presenterOnlyConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerticalLayoutConfiguration. 
+        /// <para>
+        /// The configuration settings for a vertical layout.
+        /// </para>
+        /// </summary>
+        public VerticalLayoutConfiguration VerticalLayoutConfiguration
+        {
+            get { return this._verticalLayoutConfiguration; }
+            set { this._verticalLayoutConfiguration = value; }
+        }
+
+        // Check to see if VerticalLayoutConfiguration property is set
+        internal bool IsSetVerticalLayoutConfiguration()
+        {
+            return this._verticalLayoutConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoAttribute. 
+        /// <para>
+        /// The attribute settings for the video tiles.
+        /// </para>
+        /// </summary>
+        public VideoAttribute VideoAttribute
+        {
+            get { return this._videoAttribute; }
+            set { this._videoAttribute = value; }
+        }
+
+        // Check to see if VideoAttribute property is set
+        internal bool IsSetVideoAttribute()
+        {
+            return this._videoAttribute != null;
         }
 
     }

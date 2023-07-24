@@ -196,6 +196,12 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.LanguageOptions</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[a-zA-Z-,]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.PiiEntityTypes</property>
     <min>1</min>
     <max>300</max>
@@ -208,10 +214,22 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.VocabularyFilterNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.VocabularyName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.AmazonTranscribeProcessorConfiguration.VocabularyNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.BadRequestException.RequestId</property>
@@ -237,6 +255,15 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.HorizontalLayoutConfiguration.TileAspectRatio</property>
+    <pattern>^\d{1,2}\/\d{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.HorizontalLayoutConfiguration.TileCount</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.IssueDetectionConfiguration.RuleName</property>
@@ -512,5 +539,24 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException.RequestId</property>
     <max>4096</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.VerticalLayoutConfiguration.TileAspectRatio</property>
+    <pattern>^\d{1,2}\/\d{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.VerticalLayoutConfiguration.TileCount</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.VideoAttribute.BorderThickness</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.VideoAttribute.CornerRadius</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
 </property-value-rules>
