@@ -73,6 +73,7 @@ namespace Amazon.Glue.Model
         private PIIDetection _piiDetection;
         private PostgreSQLCatalogSource _postgreSQLCatalogSource;
         private PostgreSQLCatalogTarget _postgreSQLCatalogTarget;
+        private Recipe _recipe;
         private RedshiftSource _redshiftSource;
         private RedshiftTarget _redshiftTarget;
         private RelationalCatalogSource _relationalCatalogSource;
@@ -813,6 +814,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetPostgreSQLCatalogTarget()
         {
             return this._postgreSQLCatalogTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recipe. 
+        /// <para>
+        /// Specifies a Glue DataBrew recipe node.
+        /// </para>
+        /// </summary>
+        public Recipe Recipe
+        {
+            get { return this._recipe; }
+            set { this._recipe = value; }
+        }
+
+        // Check to see if Recipe property is set
+        internal bool IsSetRecipe()
+        {
+            return this._recipe != null;
         }
 
         /// <summary>

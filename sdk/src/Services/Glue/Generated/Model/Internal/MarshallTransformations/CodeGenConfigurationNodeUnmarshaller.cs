@@ -298,6 +298,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.PostgreSQLCatalogTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Recipe", targetDepth))
+                {
+                    var unmarshaller = RecipeUnmarshaller.Instance;
+                    unmarshalledObject.Recipe = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftSource", targetDepth))
                 {
                     var unmarshaller = RedshiftSourceUnmarshaller.Instance;

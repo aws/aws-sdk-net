@@ -474,6 +474,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRecipe())
+            {
+                context.Writer.WritePropertyName("Recipe");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecipeMarshaller.Instance;
+                marshaller.Marshall(requestObject.Recipe, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedshiftSource())
             {
                 context.Writer.WritePropertyName("RedshiftSource");

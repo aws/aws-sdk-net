@@ -4232,6 +4232,17 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Recipe.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RecipeReference.RecipeArn</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RecipeReference.RecipeVersion</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.RedshiftSource.Database</property>
   </property-value-rule>
   <property-value-rule>
