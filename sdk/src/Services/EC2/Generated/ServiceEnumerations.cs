@@ -16183,6 +16183,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly SpotInstanceState Closed = new SpotInstanceState("closed");
         /// <summary>
+        /// Constant Disabled for SpotInstanceState
+        /// </summary>
+        public static readonly SpotInstanceState Disabled = new SpotInstanceState("disabled");
+        /// <summary>
         /// Constant Failed for SpotInstanceState
         /// </summary>
         public static readonly SpotInstanceState Failed = new SpotInstanceState("failed");
