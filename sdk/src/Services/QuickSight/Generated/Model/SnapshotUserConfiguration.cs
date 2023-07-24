@@ -1,0 +1,60 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the quicksight-2018-04-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.QuickSight.Model
+{
+    /// <summary>
+    /// A structure that contains information about the users that the dashboard snapshot
+    /// is generated for.
+    /// </summary>
+    public partial class SnapshotUserConfiguration
+    {
+        private List<SnapshotAnonymousUser> _anonymousUsers = new List<SnapshotAnonymousUser>();
+
+        /// <summary>
+        /// Gets and sets the property AnonymousUsers. 
+        /// <para>
+        /// An array of records that describe the anonymous users that the dashboard snapshot
+        /// is generated for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<SnapshotAnonymousUser> AnonymousUsers
+        {
+            get { return this._anonymousUsers; }
+            set { this._anonymousUsers = value; }
+        }
+
+        // Check to see if AnonymousUsers property is set
+        internal bool IsSetAnonymousUsers()
+        {
+            return this._anonymousUsers != null && this._anonymousUsers.Count > 0; 
+        }
+
+    }
+}

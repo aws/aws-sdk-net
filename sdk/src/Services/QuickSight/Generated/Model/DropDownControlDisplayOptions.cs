@@ -33,8 +33,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DropDownControlDisplayOptions
     {
+        private SheetControlInfoIconLabelOptions _infoIconLabelOptions;
         private ListControlSelectAllOptions _selectAllOptions;
         private LabelOptions _titleOptions;
+
+        /// <summary>
+        /// Gets and sets the property InfoIconLabelOptions. 
+        /// <para>
+        /// The configuration of info icon label options.
+        /// </para>
+        /// </summary>
+        public SheetControlInfoIconLabelOptions InfoIconLabelOptions
+        {
+            get { return this._infoIconLabelOptions; }
+            set { this._infoIconLabelOptions = value; }
+        }
+
+        // Check to see if InfoIconLabelOptions property is set
+        internal bool IsSetInfoIconLabelOptions()
+        {
+            return this._infoIconLabelOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SelectAllOptions. 

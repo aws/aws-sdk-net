@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AggregationFunction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAttributeAggregationFunction())
+            {
+                context.Writer.WritePropertyName("AttributeAggregationFunction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AttributeAggregationFunctionMarshaller.Instance;
+                marshaller.Marshall(requestObject.AttributeAggregationFunction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCategoricalAggregationFunction())
             {
                 context.Writer.WritePropertyName("CategoricalAggregationFunction");

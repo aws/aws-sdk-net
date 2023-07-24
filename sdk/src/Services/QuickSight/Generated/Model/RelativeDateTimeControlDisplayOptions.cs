@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class RelativeDateTimeControlDisplayOptions
     {
         private string _dateTimeFormat;
+        private SheetControlInfoIconLabelOptions _infoIconLabelOptions;
         private LabelOptions _titleOptions;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDateTimeFormat()
         {
             return this._dateTimeFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfoIconLabelOptions. 
+        /// <para>
+        /// The configuration of info icon label options.
+        /// </para>
+        /// </summary>
+        public SheetControlInfoIconLabelOptions InfoIconLabelOptions
+        {
+            get { return this._infoIconLabelOptions; }
+            set { this._infoIconLabelOptions = value; }
+        }
+
+        // Check to see if InfoIconLabelOptions property is set
+        internal bool IsSetInfoIconLabelOptions()
+        {
+            return this._infoIconLabelOptions != null;
         }
 
         /// <summary>

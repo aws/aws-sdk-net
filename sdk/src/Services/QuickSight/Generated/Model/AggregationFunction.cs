@@ -39,9 +39,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AggregationFunction
     {
+        private AttributeAggregationFunction _attributeAggregationFunction;
         private CategoricalAggregationFunction _categoricalAggregationFunction;
         private DateAggregationFunction _dateAggregationFunction;
         private NumericalAggregationFunction _numericalAggregationFunction;
+
+        /// <summary>
+        /// Gets and sets the property AttributeAggregationFunction. 
+        /// <para>
+        /// Aggregation for attributes.
+        /// </para>
+        /// </summary>
+        public AttributeAggregationFunction AttributeAggregationFunction
+        {
+            get { return this._attributeAggregationFunction; }
+            set { this._attributeAggregationFunction = value; }
+        }
+
+        // Check to see if AttributeAggregationFunction property is set
+        internal bool IsSetAttributeAggregationFunction()
+        {
+            return this._attributeAggregationFunction != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CategoricalAggregationFunction. 

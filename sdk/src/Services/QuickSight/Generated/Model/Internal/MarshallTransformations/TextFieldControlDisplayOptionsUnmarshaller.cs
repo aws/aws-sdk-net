@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("InfoIconLabelOptions", targetDepth))
+                {
+                    var unmarshaller = SheetControlInfoIconLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.InfoIconLabelOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlaceholderOptions", targetDepth))
                 {
                     var unmarshaller = TextControlPlaceholderOptionsUnmarshaller.Instance;
