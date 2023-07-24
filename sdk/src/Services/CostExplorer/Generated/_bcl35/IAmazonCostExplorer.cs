@@ -1140,6 +1140,53 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetSavingsPlanPurchaseRecommendationDetails
+
+
+        /// <summary>
+        /// Retrieves the details for a Savings Plan recommendation. These details include the
+        /// hourly data-points that construct the new cost, coverage, and utilization charts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlanPurchaseRecommendationDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetSavingsPlanPurchaseRecommendationDetails service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails">REST API Reference for GetSavingsPlanPurchaseRecommendationDetails Operation</seealso>
+        GetSavingsPlanPurchaseRecommendationDetailsResponse GetSavingsPlanPurchaseRecommendationDetails(GetSavingsPlanPurchaseRecommendationDetailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSavingsPlanPurchaseRecommendationDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlanPurchaseRecommendationDetails operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSavingsPlanPurchaseRecommendationDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails">REST API Reference for GetSavingsPlanPurchaseRecommendationDetails Operation</seealso>
+        IAsyncResult BeginGetSavingsPlanPurchaseRecommendationDetails(GetSavingsPlanPurchaseRecommendationDetailsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSavingsPlanPurchaseRecommendationDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSavingsPlanPurchaseRecommendationDetails.</param>
+        /// 
+        /// <returns>Returns a  GetSavingsPlanPurchaseRecommendationDetailsResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails">REST API Reference for GetSavingsPlanPurchaseRecommendationDetails Operation</seealso>
+        GetSavingsPlanPurchaseRecommendationDetailsResponse EndGetSavingsPlanPurchaseRecommendationDetails(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSavingsPlansCoverage
 
 
@@ -1592,6 +1639,9 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the ListSavingsPlansPurchaseRecommendationGeneration service method.</param>
         /// 
         /// <returns>The response from the ListSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
         /// The pagination token is invalid. Try again without a pagination token.
         /// </exception>
@@ -1738,6 +1788,9 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the StartSavingsPlansPurchaseRecommendationGeneration service method.</param>
         /// 
         /// <returns>The response from the StartSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
         /// A request to generate a recommendation is already in progress.
         /// </exception>
@@ -1941,7 +1994,15 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Updates an existing cost anomaly monitor subscription.
+        /// Updates an existing cost anomaly subscription. Specify the fields that you want to
+        /// update. Omitted fields are unchanged.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The JSON below describes the generic construct for each type. See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters">Request
+        /// Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalySubscription service method.</param>
         /// 

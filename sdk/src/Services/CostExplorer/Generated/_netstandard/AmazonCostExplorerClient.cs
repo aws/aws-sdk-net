@@ -1249,6 +1249,47 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetSavingsPlanPurchaseRecommendationDetails
+
+        internal virtual GetSavingsPlanPurchaseRecommendationDetailsResponse GetSavingsPlanPurchaseRecommendationDetails(GetSavingsPlanPurchaseRecommendationDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlanPurchaseRecommendationDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSavingsPlanPurchaseRecommendationDetailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details for a Savings Plan recommendation. These details include the
+        /// hourly data-points that construct the new cost, coverage, and utilization charts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlanPurchaseRecommendationDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSavingsPlanPurchaseRecommendationDetails service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails">REST API Reference for GetSavingsPlanPurchaseRecommendationDetails Operation</seealso>
+        public virtual Task<GetSavingsPlanPurchaseRecommendationDetailsResponse> GetSavingsPlanPurchaseRecommendationDetailsAsync(GetSavingsPlanPurchaseRecommendationDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSavingsPlanPurchaseRecommendationDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSavingsPlanPurchaseRecommendationDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSavingsPlansCoverage
 
         internal virtual GetSavingsPlansCoverageResponse GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request)
@@ -1666,6 +1707,9 @@ namespace Amazon.CostExplorer
         /// </param>
         /// 
         /// <returns>The response from the ListSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
         /// The pagination token is invalid. Try again without a pagination token.
         /// </exception>
@@ -1794,6 +1838,9 @@ namespace Amazon.CostExplorer
         /// </param>
         /// 
         /// <returns>The response from the StartSavingsPlansPurchaseRecommendationGeneration service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
         /// A request to generate a recommendation is already in progress.
         /// </exception>
@@ -1970,7 +2017,15 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Updates an existing cost anomaly monitor subscription.
+        /// Updates an existing cost anomaly subscription. Specify the fields that you want to
+        /// update. Omitted fields are unchanged.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The JSON below describes the generic construct for each type. See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters">Request
+        /// Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalySubscription service method.</param>
         /// <param name="cancellationToken">

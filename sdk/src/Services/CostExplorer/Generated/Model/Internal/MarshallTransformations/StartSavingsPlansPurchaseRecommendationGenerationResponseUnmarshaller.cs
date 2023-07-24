@@ -92,6 +92,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DataUnavailableException"))
+                {
+                    return DataUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("GenerationExistsException"))
                 {
                     return GenerationExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

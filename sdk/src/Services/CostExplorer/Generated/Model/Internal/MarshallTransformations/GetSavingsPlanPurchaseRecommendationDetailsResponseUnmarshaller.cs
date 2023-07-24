@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListSavingsPlansPurchaseRecommendationGeneration operation
+    /// Response Unmarshaller for GetSavingsPlanPurchaseRecommendationDetails operation
     /// </summary>  
-    public class ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListSavingsPlansPurchaseRecommendationGenerationResponse response = new ListSavingsPlansPurchaseRecommendationGenerationResponse();
+            GetSavingsPlanPurchaseRecommendationDetailsResponse response = new GetSavingsPlanPurchaseRecommendationDetailsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GenerationSummaryList", targetDepth))
+                if (context.TestExpression("RecommendationDetailData", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GenerationSummary, GenerationSummaryUnmarshaller>(GenerationSummaryUnmarshaller.Instance);
-                    response.GenerationSummaryList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RecommendationDetailDataUnmarshaller.Instance;
+                    response.RecommendationDetailData = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("RecommendationDetailId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextPageToken = unmarshaller.Unmarshall(context);
+                    response.RecommendationDetailId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,10 +90,6 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     return DataUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
-                {
-                    return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -102,9 +98,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             return new AmazonCostExplorerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller _instance = new ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller();        
+        private static GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller _instance = new GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller();        
 
-        internal static ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller GetInstance()
+        internal static GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +108,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListSavingsPlansPurchaseRecommendationGenerationResponseUnmarshaller Instance
+        public static GetSavingsPlanPurchaseRecommendationDetailsResponseUnmarshaller Instance
         {
             get
             {

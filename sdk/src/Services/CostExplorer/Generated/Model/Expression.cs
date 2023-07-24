@@ -78,7 +78,7 @@ namespace Amazon.CostExplorer.Model
     ///  </li> <li> 
     /// <para>
     /// The corresponding <code>Expression</code> for this example is as follows: <code>{
-    /// "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
+    /// "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -94,7 +94,7 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For example, you can filter for linked account names that start with “a”.
+    /// For example, you can filter for linked account names that start with "a".
     /// </para>
     ///  </li> <li> 
     /// <para>

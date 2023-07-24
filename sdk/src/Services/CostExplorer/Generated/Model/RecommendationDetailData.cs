@@ -29,15 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details for your recommended Savings Plans.
+    /// The details and metrics for the given recommendation.
     /// </summary>
-    public partial class SavingsPlansPurchaseRecommendationDetail
+    public partial class RecommendationDetailData
     {
         private string _accountId;
+        private AccountScope _accountScope;
         private string _currencyCode;
+        private string _currentAverageCoverage;
         private string _currentAverageHourlyOnDemandSpend;
         private string _currentMaximumHourlyOnDemandSpend;
         private string _currentMinimumHourlyOnDemandSpend;
+        private string _estimatedAverageCoverage;
         private string _estimatedAverageUtilization;
         private string _estimatedMonthlySavingsAmount;
         private string _estimatedOnDemandCost;
@@ -46,15 +49,24 @@ namespace Amazon.CostExplorer.Model
         private string _estimatedSavingsAmount;
         private string _estimatedSavingsPercentage;
         private string _estimatedSPCost;
+        private string _existingHourlyCommitment;
+        private string _generationTimestamp;
         private string _hourlyCommitmentToPurchase;
-        private string _recommendationDetailId;
-        private SavingsPlansDetails _savingsPlansDetails;
+        private string _instanceFamily;
+        private string _latestUsageTimestamp;
+        private LookbackPeriodInDays _lookbackPeriodInDays;
+        private List<RecommendationDetailHourlyMetrics> _metricsOverLookbackPeriod = new List<RecommendationDetailHourlyMetrics>();
+        private string _offeringId;
+        private PaymentOption _paymentOption;
+        private string _region;
+        private SupportedSavingsPlansType _savingsPlansType;
+        private TermInYears _termInYears;
         private string _upfrontCost;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountID</code> the recommendation is generated for.
+        /// The AccountID that the recommendation is generated for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -71,9 +83,30 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AccountScope. 
+        /// <para>
+        /// The account scope that you want your recommendations for. Amazon Web Services calculates
+        /// recommendations including the management account and member accounts if the value
+        /// is set to PAYER. If the value is LINKED, recommendations are calculated for individual
+        /// member accounts only.
+        /// </para>
+        /// </summary>
+        public AccountScope AccountScope
+        {
+            get { return this._accountScope; }
+            set { this._accountScope = value; }
+        }
+
+        // Check to see if AccountScope property is set
+        internal bool IsSetAccountScope()
+        {
+            return this._accountScope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code that Amazon Web Services used to generate the recommendations and
+        /// The currency code that Amazon Web Services used to generate the recommendation and
         /// present potential savings.
         /// </para>
         /// </summary>
@@ -88,6 +121,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCurrencyCode()
         {
             return this._currencyCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentAverageCoverage. 
+        /// <para>
+        /// The average value of hourly coverage over the lookback period.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string CurrentAverageCoverage
+        {
+            get { return this._currentAverageCoverage; }
+            set { this._currentAverageCoverage = value; }
+        }
+
+        // Check to see if CurrentAverageCoverage property is set
+        internal bool IsSetCurrentAverageCoverage()
+        {
+            return this._currentAverageCoverage != null;
         }
 
         /// <summary>
@@ -151,9 +203,28 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EstimatedAverageCoverage. 
+        /// <para>
+        /// The estimated coverage of the recommended Savings Plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string EstimatedAverageCoverage
+        {
+            get { return this._estimatedAverageCoverage; }
+            set { this._estimatedAverageCoverage = value; }
+        }
+
+        // Check to see if EstimatedAverageCoverage property is set
+        internal bool IsSetEstimatedAverageCoverage()
+        {
+            return this._estimatedAverageCoverage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EstimatedAverageUtilization. 
         /// <para>
-        /// The estimated utilization of the recommended Savings Plans.
+        /// The estimated utilization of the recommended Savings Plan.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -172,7 +243,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsAmount. 
         /// <para>
-        /// The estimated monthly savings amount based on the recommended Savings Plans.
+        /// The estimated monthly savings amount based on the recommended Savings Plan.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -192,7 +263,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property EstimatedOnDemandCost. 
         /// <para>
         /// The remaining On-Demand cost estimated to not be covered by the recommended Savings
-        /// Plans, over the length of the lookback period.
+        /// Plan, over the length of the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -211,8 +282,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedOnDemandCostWithCurrentCommitment. 
         /// <para>
-        ///  The estimated On-Demand costs you expect with no additional commitment, based on
-        /// your usage of the selected time period and the Savings Plans you own. 
+        /// The estimated On-Demand costs you expect with no additional commitment, based on your
+        /// usage of the selected time period and the Savings Plan you own.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -231,8 +302,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedROI. 
         /// <para>
-        /// The estimated return on investment that's based on the recommended Savings Plans that
-        /// you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+        /// The estimated return on investment that's based on the recommended Savings Plan that
+        /// you purchased. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -251,7 +322,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedSavingsAmount. 
         /// <para>
-        /// The estimated savings amount that's based on the recommended Savings Plans over the
+        /// The estimated savings amount that's based on the recommended Savings Plan over the
         /// length of the lookback period.
         /// </para>
         /// </summary>
@@ -291,7 +362,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedSPCost. 
         /// <para>
-        /// The cost of the recommended Savings Plans over the length of the lookback period.
+        /// The cost of the recommended Savings Plan over the length of the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -308,9 +379,44 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExistingHourlyCommitment. 
+        /// <para>
+        /// The existing hourly commitment for the Savings Plan type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ExistingHourlyCommitment
+        {
+            get { return this._existingHourlyCommitment; }
+            set { this._existingHourlyCommitment = value; }
+        }
+
+        // Check to see if ExistingHourlyCommitment property is set
+        internal bool IsSetExistingHourlyCommitment()
+        {
+            return this._existingHourlyCommitment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerationTimestamp.
+        /// </summary>
+        [AWSProperty(Min=20, Max=25)]
+        public string GenerationTimestamp
+        {
+            get { return this._generationTimestamp; }
+            set { this._generationTimestamp = value; }
+        }
+
+        // Check to see if GenerationTimestamp property is set
+        internal bool IsSetGenerationTimestamp()
+        {
+            return this._generationTimestamp != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HourlyCommitmentToPurchase. 
         /// <para>
-        /// The recommended hourly commitment level for the Savings Plans type and the configuration
+        /// The recommended hourly commitment level for the Savings Plan type and the configuration
         /// that's based on the usage during the lookback period.
         /// </para>
         /// </summary>
@@ -328,46 +434,173 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecommendationDetailId. 
+        /// Gets and sets the property InstanceFamily. 
         /// <para>
-        /// Contains detailed information about a specific Savings Plan recommendation.
+        /// The instance family of the recommended Savings Plan.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string RecommendationDetailId
+        [AWSProperty(Min=0, Max=1024)]
+        public string InstanceFamily
         {
-            get { return this._recommendationDetailId; }
-            set { this._recommendationDetailId = value; }
+            get { return this._instanceFamily; }
+            set { this._instanceFamily = value; }
         }
 
-        // Check to see if RecommendationDetailId property is set
-        internal bool IsSetRecommendationDetailId()
+        // Check to see if InstanceFamily property is set
+        internal bool IsSetInstanceFamily()
         {
-            return this._recommendationDetailId != null;
+            return this._instanceFamily != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SavingsPlansDetails. 
-        /// <para>
-        /// Details for your recommended Savings Plans.
-        /// </para>
+        /// Gets and sets the property LatestUsageTimestamp.
         /// </summary>
-        public SavingsPlansDetails SavingsPlansDetails
+        [AWSProperty(Min=20, Max=25)]
+        public string LatestUsageTimestamp
         {
-            get { return this._savingsPlansDetails; }
-            set { this._savingsPlansDetails = value; }
+            get { return this._latestUsageTimestamp; }
+            set { this._latestUsageTimestamp = value; }
         }
 
-        // Check to see if SavingsPlansDetails property is set
-        internal bool IsSetSavingsPlansDetails()
+        // Check to see if LatestUsageTimestamp property is set
+        internal bool IsSetLatestUsageTimestamp()
         {
-            return this._savingsPlansDetails != null;
+            return this._latestUsageTimestamp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LookbackPeriodInDays. 
+        /// <para>
+        /// How many days of previous usage that Amazon Web Services considers when making this
+        /// recommendation.
+        /// </para>
+        /// </summary>
+        public LookbackPeriodInDays LookbackPeriodInDays
+        {
+            get { return this._lookbackPeriodInDays; }
+            set { this._lookbackPeriodInDays = value; }
+        }
+
+        // Check to see if LookbackPeriodInDays property is set
+        internal bool IsSetLookbackPeriodInDays()
+        {
+            return this._lookbackPeriodInDays != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsOverLookbackPeriod. 
+        /// <para>
+        /// The related hourly cost, coverage, and utilization metrics over the lookback period.
+        /// </para>
+        /// </summary>
+        public List<RecommendationDetailHourlyMetrics> MetricsOverLookbackPeriod
+        {
+            get { return this._metricsOverLookbackPeriod; }
+            set { this._metricsOverLookbackPeriod = value; }
+        }
+
+        // Check to see if MetricsOverLookbackPeriod property is set
+        internal bool IsSetMetricsOverLookbackPeriod()
+        {
+            return this._metricsOverLookbackPeriod != null && this._metricsOverLookbackPeriod.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferingId. 
+        /// <para>
+        /// The unique ID that's used to distinguish Savings Plans from one another.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string OfferingId
+        {
+            get { return this._offeringId; }
+            set { this._offeringId = value; }
+        }
+
+        // Check to see if OfferingId property is set
+        internal bool IsSetOfferingId()
+        {
+            return this._offeringId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaymentOption. 
+        /// <para>
+        /// The payment option for the commitment (for example, All Upfront or No Upfront).
+        /// </para>
+        /// </summary>
+        public PaymentOption PaymentOption
+        {
+            get { return this._paymentOption; }
+            set { this._paymentOption = value; }
+        }
+
+        // Check to see if PaymentOption property is set
+        internal bool IsSetPaymentOption()
+        {
+            return this._paymentOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The region the recommendation is generated for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsPlansType. 
+        /// <para>
+        /// The requested Savings Plan recommendation type.
+        /// </para>
+        /// </summary>
+        public SupportedSavingsPlansType SavingsPlansType
+        {
+            get { return this._savingsPlansType; }
+            set { this._savingsPlansType = value; }
+        }
+
+        // Check to see if SavingsPlansType property is set
+        internal bool IsSetSavingsPlansType()
+        {
+            return this._savingsPlansType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TermInYears. 
+        /// <para>
+        /// The term of the commitment in years.
+        /// </para>
+        /// </summary>
+        public TermInYears TermInYears
+        {
+            get { return this._termInYears; }
+            set { this._termInYears = value; }
+        }
+
+        // Check to see if TermInYears property is set
+        internal bool IsSetTermInYears()
+        {
+            return this._termInYears != null;
         }
 
         /// <summary>
         /// Gets and sets the property UpfrontCost. 
         /// <para>
-        /// The upfront cost of the recommended Savings Plans, based on the selected payment option.
+        /// The upfront cost of the recommended Savings Plan, based on the selected payment option.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
