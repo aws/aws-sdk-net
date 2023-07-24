@@ -80,6 +80,18 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public bool? IgnoreConfiguredEndpointUrls { get; set; }
 
+
+        /// <summary>
+        /// Controls whether request payloads are automatically compressed for supported operations.
+        /// This setting only applies to operations that support compression.
+        /// The default value is "false". Set to "true" to disable compression.
+        /// </summary>
+        public bool? DisableRequestCompression { get; set; }
+
+        /// <summary>
+        /// Minimum size in bytes that a request body should be to trigger compression.
+        /// </summary>
+        public long? RequestMinCompressionSizeBytes { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -100,6 +112,9 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT = "AWS_USE_DUALSTACK_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT = "AWS_USE_FIPS_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS = "AWS_IGNORE_CONFIGURED_ENDPOINT_URLS";
+        public const string ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION = "AWS_DISABLE_REQUEST_COMPRESSION";
+        public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
+
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
         /// variables. If an environment variable value isn't found then the individual value 
@@ -117,6 +132,8 @@ namespace Amazon.Runtime.Internal
             UseDualstackEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT);
             UseFIPSEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT);
             IgnoreConfiguredEndpointUrls = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS, false);
+            DisableRequestCompression = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION);
+            RequestMinCompressionSizeBytes = GetEnvironmentVariable<long>(ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES);
         }
 
         private bool GetEnvironmentVariable(string name, bool defaultValue)
@@ -244,6 +261,8 @@ namespace Amazon.Runtime.Internal
                 UseDualstackEndpoint = profile.UseDualstackEndpoint;
                 UseFIPSEndpoint = profile.UseFIPSEndpoint;
                 IgnoreConfiguredEndpointUrls = profile.IgnoreConfiguredEndpointUrls;
+                DisableRequestCompression = profile.DisableRequestCompression;
+                RequestMinCompressionSizeBytes = profile.RequestMinCompressionSizeBytes;
             }
             else
             {
@@ -262,7 +281,9 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint),
                 new KeyValuePair<string, object>("use_fips_endpoint", profile.UseFIPSEndpoint),
                 new KeyValuePair<string,object>( "ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
-                new KeyValuePair<string, object>("endpoint_url", profile.EndpointUrl)
+                new KeyValuePair<string, object>("endpoint_url", profile.EndpointUrl),
+                new KeyValuePair<string, object>("disable_request_compression", profile.DisableRequestCompression),
+                new KeyValuePair<string, object>("request_min_compression_size_bytes", profile.RequestMinCompressionSizeBytes)
             };
 
             foreach(var item in items)
@@ -328,6 +349,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.UseFIPSEndpoint = SeekValue(standardGenerators, (c) => c.UseFIPSEndpoint);
             _cachedConfiguration.IgnoreConfiguredEndpointUrls = SeekValue(standardGenerators, (c) => c.IgnoreConfiguredEndpointUrls);
 
+            _cachedConfiguration.DisableRequestCompression = SeekValue(standardGenerators, (c) => c.DisableRequestCompression);
+            _cachedConfiguration.RequestMinCompressionSizeBytes = SeekValue(standardGenerators, (c) => c.RequestMinCompressionSizeBytes);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -461,6 +484,28 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.IgnoreConfiguredEndpointUrls;
+            }
+        }
+
+        /// <summary>
+        /// Controls whether request payloads are automatically compressed for supported operations.
+        /// This setting only applies to operations that support compression.
+        /// The default value is "false". Set to "true" to disable compression.
+        /// </summary>
+        public static bool? DisableRequestCompression {
+            get
+            {
+                return _cachedConfiguration.DisableRequestCompression;
+            }
+        }
+
+        /// <summary>
+        /// Minimum size in bytes that a request body should be to trigger compression.
+        /// </summary>
+        public static long? RequestMinCompressionSizeBytes {
+            get
+            {
+                return _cachedConfiguration.RequestMinCompressionSizeBytes;
             }
         }
     }

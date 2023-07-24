@@ -471,12 +471,18 @@ namespace Amazon.Runtime
                     new ErrorHandler(_logger),
                     postUnmarshallHandler,
                     new Signer(),
-                    //EndpointDiscoveryResolver must come after CredentialsRetriever, RetryHander, and EndpointResolver as it depends on
-                    //credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
-                    new EndpointDiscoveryHandler(), 
+                    // EndpointDiscoveryResolver must come after CredentialsRetriever, RetryHander, and EndpointResolver as it depends on
+                    // credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
+                    new EndpointDiscoveryHandler(),
+                    // ChecksumHandler must come after CompressionHandler because we must calculate the checksum of a payload after compression.
+                    // ChecksumHandler must come after EndpointsResolver because of an upcoming project.
+                    new ChecksumHandler(),
+                    // CredentialsRetriever must come after RetryHandler because of any credential related changes.
                     new CredentialsRetriever(this.Credentials),
                     new RetryHandler(retryPolicy),
+                    new CompressionHandler(),
                     postMarshallHandler,
+                    // EndpointResolver must come after CredentialsRetriever in an upcoming endpoint project.
                     new EndpointResolver(),
                     new Marshaller(),
                     preMarshallHandler,

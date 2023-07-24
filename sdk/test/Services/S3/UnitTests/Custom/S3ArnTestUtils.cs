@@ -48,6 +48,8 @@ namespace AWSSDK.UnitTests
             {
                 new NoopPipelineHandler(),
                 new Signer(),
+                new ChecksumHandler(),
+                new CompressionHandler(),
                 new AmazonS3EndpointResolver(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler(),

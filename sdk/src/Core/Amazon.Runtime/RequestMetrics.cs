@@ -108,7 +108,7 @@ namespace Amazon.Runtime
         RequestSigningTime,
         RetryPauseTime,
         StringToSign,
-        CanonicalRequest,
+        CanonicalRequest,       
         // CSM metric added to measure the latency of each http 
         // request
         CSMAttemptLatency,
@@ -121,6 +121,8 @@ namespace Amazon.Runtime
         ServiceName,
         RequestSize,
         AmzCfId,
-        
+
+        RequestCompressionTime,
+        UncompressedRequestSize,
     }
 }

@@ -514,6 +514,16 @@ namespace Amazon.Runtime.Internal
         public IDictionary<string, string> TrailingHeaders => this.trailingHeaders;
 
         /// <summary>
+        /// The selected compression algorithm to be used to compress the payload of the request.
+        /// </summary>
+        public CompressionEncodingAlgorithm CompressionAlgorithm { get; set; }
+
+        /// <summary>
+        /// Checksum data to calculate checksum after optionally compressing the request payload
+        /// </summary>
+        public ChecksumData ChecksumData { get; set; }
+
+        /// <summary>
         /// Checks if the request stream can be rewinded.
         /// </summary>
         /// <returns>Returns true if the request stream can be rewinded ,

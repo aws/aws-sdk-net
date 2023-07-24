@@ -44,6 +44,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	}
 	var requestStructure = this.Operation.RequestStructure;
     var payload = this.Operation.RequestPayloadMember;
+
+	SetCompressionAlgorithmEncoding(this.Operation);
+
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
 
     // This block adds members of the request object to the actual request

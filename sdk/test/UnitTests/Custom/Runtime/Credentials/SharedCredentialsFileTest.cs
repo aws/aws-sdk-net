@@ -263,6 +263,36 @@ namespace AWSSDK.UnitTests
             .AppendLine("endpoint_discovery_enabled=notvalid")
             .ToString();
 
+        private static readonly string MinCompressionSizeBytesOnlyProfileText = new StringBuilder()
+           .AppendLine("[valid_min_compression_size_bytes]")
+           .Append("request_min_compression_size_bytes=128")
+           .ToString();
+
+        private static readonly string ZeroCompressionSizeBytesOnlyProfileText_Invalid = new StringBuilder()
+            .AppendLine("[invalid_zero_compression_size_bytes]")
+            .AppendLine("request_min_compression_size_bytes=zero")
+            .ToString();
+
+        private static readonly string NegativeCompressionSizeBytesOnlyProfileText_Invalid = new StringBuilder()
+            .AppendLine("[invalid_negative_compression_size_bytes]")
+            .AppendLine("request_min_compression_size_bytes=-1")
+            .ToString();
+
+        private static readonly string UpperBoundCompressionSizeBytesOnlyProfileText_Invalid = new StringBuilder()
+            .AppendLine("[upper_bound_compression_size_bytes]")
+            .AppendLine("request_min_compression_size_bytes=99999999")
+            .ToString();
+
+        private static readonly string DisableRequestCompressionOnlyProfileText = new StringBuilder()
+           .AppendLine("[valid_disable_request_compression]")
+           .Append("disable_request_compression=true")
+           .ToString();
+
+        private static readonly string AlwaysDisableRequestCompressionOnlyProfileText_Invalid = new StringBuilder()
+            .AppendLine("[any_disable_request_compression]")
+            .AppendLine("disable_request_compression=always")
+            .ToString();
+
         private static readonly string RetriesLegacyModeProfileText = new StringBuilder()
             .AppendLine("[retries_legacymode_profile_text]")
             .Append("retry_mode=legacy")
@@ -393,6 +423,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("; other comment")
             .AppendLine("property=value")
             .ToString();
+
         private static readonly string ProfileWithSubproperties = new StringBuilder()
             .AppendLine("[profile foo]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
@@ -400,6 +431,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("s3 = ")
             .AppendLine("\tname = value")
             .ToString();
+
         private static readonly string ProfileWithEmptySubpropertyDefinitions = new StringBuilder()
             .AppendLine("[profile foo]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
@@ -407,6 +439,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("s3 =")
             .AppendLine("\tname = ")
             .ToString();
+
         private static readonly string ProfileWithInvalidSubpropertyDefinitionName = new StringBuilder()
             .AppendLine("[profile foo]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
@@ -424,6 +457,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("\t  ")
             .AppendLine(" name2 = value2")
             .ToString();
+
         /// in reality a services section would not have aws_access_key and aws_secret_access_key
         /// but for the purposes of testing we include it since the testFixture expects ProfileOptions
         ///
@@ -451,6 +485,7 @@ namespace AWSSDK.UnitTests
                 tester.ReadAndAssertProfile("foo", BasicProfileOptions,  expectedNestedProperties);
             }
         }
+
         [TestMethod]
         public void ProfileSubpropertyDefinitionsCanHaveEmptyValues()
         {
@@ -479,6 +514,7 @@ namespace AWSSDK.UnitTests
                 tester.ReadAndAssertProfile("foo", BasicProfileOptions, expectedNestedProperties);
             }
         }
+
         [TestMethod]
         public void ProfileSubpropertyCanHaveBlankLinesThatAreIgnored()
         {
@@ -494,6 +530,7 @@ namespace AWSSDK.UnitTests
                 tester.ReadAndAssertProfile("foo", BasicProfileOptions, expectedNestedProperties);
             }
         }
+
         [TestMethod]
         public void ServicesConfigurationCanContainMultipleProperties()
         {
@@ -507,6 +544,7 @@ namespace AWSSDK.UnitTests
                 tester.ReadAndAssertProfile("bar", BasicProfileOptionsWithServices, expectedProperties);
             }
         }
+
         [TestMethod]
         public void ReadDefaultConfigProfile()
         {
@@ -731,6 +769,64 @@ namespace AWSSDK.UnitTests
             {
                 CredentialProfile profile1;
                 Assert.IsFalse(tester.CredentialsFile.TryGetProfile("endpoint_discovery_enabled_only_profile", out profile1));
+            }
+        }
+
+        [TestMethod]
+        public void ReadMinCompressionSizeBytesProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(MinCompressionSizeBytesOnlyProfileText))
+            {
+                tester.TestTryGetProfile("valid_min_compression_size_bytes", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void ReadDisableRequestCompressionProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(DisableRequestCompressionOnlyProfileText))
+            {
+                tester.TestTryGetProfile("valid_disable_request_compression", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void ReadInvalidNegativeCompressionSizeBytesOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(NegativeCompressionSizeBytesOnlyProfileText_Invalid))
+            {
+                CredentialProfile profile1;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("invalid_negative_compression_size_bytes", out profile1));
+            }
+        }
+
+        [TestMethod]
+        public void ReadInvalidZeroCompressionSizeBytesOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(ZeroCompressionSizeBytesOnlyProfileText_Invalid))
+            {
+                CredentialProfile profile1;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("invalid_zero_compression_size_bytes", out profile1));
+            }
+        }
+
+        [TestMethod]
+        public void ReadInvalidUpperBoundCompressionSizeBytesOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(UpperBoundCompressionSizeBytesOnlyProfileText_Invalid))
+            {
+                CredentialProfile profile1;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("upper_bound_compression_size_bytes", out profile1));
+            }
+        }
+
+        [TestMethod]
+        public void ReadInvalidAlwaysDisableRequestCompressionOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(AlwaysDisableRequestCompressionOnlyProfileText_Invalid))
+            {
+                CredentialProfile profile1;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("any_disable_request_compression", out profile1));
             }
         }
 
@@ -1365,7 +1461,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void CopyProfile()
+        public void CopyProfileTest()
         {
             CopyProfile(false, false, false);
         }

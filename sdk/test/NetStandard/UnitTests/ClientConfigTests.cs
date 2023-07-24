@@ -61,7 +61,8 @@ namespace UnitTests
             "IgnoreConfiguredEndpointUrls",
             "ServiceId",
             "CredentialProfileStoreChain",
-
+            "DisableRequestCompression",
+            "RequestMinCompressionSizeBytes"
         };
 
         [Fact]

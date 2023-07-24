@@ -153,6 +153,16 @@ namespace Amazon.Runtime
     }
 
     /// <summary>
+    /// Supported algorithms for compressing request payloads.
+    /// A given request payload will be compressed by one of the algorithms below.
+    /// </summary>
+    public enum CompressionEncodingAlgorithm
+    {
+        NONE,
+        gzip
+    }
+
+    /// <summary>
     /// Behavior to be used for verifying the checksum of response content
     /// that may be returned by supported service operations.
     /// </summary>

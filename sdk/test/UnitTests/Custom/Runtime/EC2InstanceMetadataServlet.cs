@@ -4,11 +4,12 @@ using System.Net;
 using System.Reflection;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
+using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet35.UnitTests.TestTools;
 using Json.LitJson;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet.CommonTest.Utils
+namespace AWSSDK.UnitTests
 {
     /// <summary>
     /// <see cref="MultipleResponseServlet"/> emulating the EC2 Instance Metadata Service.

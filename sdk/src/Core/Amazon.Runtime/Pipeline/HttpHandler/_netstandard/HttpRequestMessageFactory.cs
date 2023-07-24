@@ -581,14 +581,20 @@ namespace Amazon.Runtime
 
             var chunkedUploadWrapperStream = (contentStream as ChunkedUploadWrapperStream);
             var trailingHeadersWrapperStream = (contentStream as TrailingHeadersWrapperStream);
+            var compressionWrapperStream = (contentStream as CompressionWrapperStream);
 
-            if ((chunkedUploadWrapperStream == null && trailingHeadersWrapperStream == null) ||
-                (chunkedUploadWrapperStream != null && chunkedUploadWrapperStream.HasLength) ||
-                (trailingHeadersWrapperStream != null && trailingHeadersWrapperStream.HasLength))
+            var isChunkedUploadWrapperStreamWithLength = chunkedUploadWrapperStream != null && chunkedUploadWrapperStream.HasLength;
+            var isTrailingHeadersWrapperStreamWithLength = trailingHeadersWrapperStream != null && trailingHeadersWrapperStream.HasLength;
+            var isCompressionWrapperStreamWithLength = compressionWrapperStream != null && compressionWrapperStream.HasLength;
+
+            // We only want to set content length if it's one of the wrapper streams that knows it's length
+            // or that the stream is not wrapped by any of the wrapper streams
+            if ((isChunkedUploadWrapperStreamWithLength || isTrailingHeadersWrapperStreamWithLength || isCompressionWrapperStreamWithLength)
+                || (chunkedUploadWrapperStream == null && trailingHeadersWrapperStream == null && compressionWrapperStream == null))
             {
                 _request.Content.Headers.ContentLength = contentStream.Length;
             }
-            
+
             WriteContentHeaders(contentHeaders);
         }
 

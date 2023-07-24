@@ -63,6 +63,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string EndpointUrlField = "endpoint_url";
         private const string ServicesField = "services";
         private const string IgnoreConfiguredEndpointUrlsField = "ignore_configured_endpoint_urls";
+        private const string DisableRequestCompressionField = "disable_request_compression";
+        private const string RequestMinCompressionSizeBytesField = "request_min_compression_size_bytes";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -89,7 +91,9 @@ namespace Amazon.Runtime.CredentialManagement
             DefaultConfigurationModeField,
             EndpointUrlField,
             ServicesField,
-            IgnoreConfiguredEndpointUrlsField
+            IgnoreConfiguredEndpointUrlsField,
+            DisableRequestCompressionField,
+            RequestMinCompressionSizeBytesField,
         };
 
         /// <summary>
@@ -413,6 +417,11 @@ namespace Amazon.Runtime.CredentialManagement
             if(profile.EndpointUrl != null)
                 reservedProperties[EndpointUrlField] = profile.EndpointUrl.ToString().ToLowerInvariant();
 
+            if (profile.DisableRequestCompression != null)
+                reservedProperties[DisableRequestCompressionField] = profile.DisableRequestCompression.ToString().ToLowerInvariant();
+
+            if (profile.RequestMinCompressionSizeBytes != null)
+                reservedProperties[RequestMinCompressionSizeBytesField] = profile.RequestMinCompressionSizeBytes.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -841,6 +850,36 @@ namespace Amazon.Runtime.CredentialManagement
                     useFIPSEndpoint = useFIPSEndpointOut;
                 }
 
+                string disableRequestCompressionString;
+                bool? disableRequestCompression = null;
+                if (reservedProperties.TryGetValue(DisableRequestCompressionField, out disableRequestCompressionString))
+                {
+                    bool disableRequestCompressionOut;
+                    if (!bool.TryParse(disableRequestCompressionString, out disableRequestCompressionOut))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", disableRequestCompressionString, DisableRequestCompressionField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    disableRequestCompression = disableRequestCompressionOut;
+                }
+
+                string requestMinCompressionSizeBytesString;
+                long? requestMinCompressionSizeBytes = null;
+                if (reservedProperties.TryGetValue(RequestMinCompressionSizeBytesField, out requestMinCompressionSizeBytesString))
+                {
+                    long requestMinCompressionSizeBytesOut;
+                    if (!long.TryParse(requestMinCompressionSizeBytesString, out requestMinCompressionSizeBytesOut)
+                        || requestMinCompressionSizeBytesOut < 0 || requestMinCompressionSizeBytesOut > ClientConfig.UpperLimitCompressionSizeBytes)
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A long value between 0 and {3} bytes inclusive is expected.",
+                            requestMinCompressionSizeBytesString, RequestMinCompressionSizeBytesField, profileName, ClientConfig.UpperLimitCompressionSizeBytes);
+                        profile = null;
+                        return false;
+                    }
+                    requestMinCompressionSizeBytes = requestMinCompressionSizeBytesOut;
+                }
+
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -861,7 +900,9 @@ namespace Amazon.Runtime.CredentialManagement
                     UseFIPSEndpoint = useFIPSEndpoint,
                     NestedProperties = nestedProperties,
                     IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls,
-                    EndpointUrl = endpointUrlString
+                    EndpointUrl = endpointUrlString,
+                    DisableRequestCompression = disableRequestCompression,
+                    RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

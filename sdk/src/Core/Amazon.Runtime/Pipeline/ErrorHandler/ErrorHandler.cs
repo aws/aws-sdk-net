@@ -64,7 +64,7 @@ namespace Amazon.Runtime.Internal
         /// Handles and processes any exception thrown from underlying handlers.
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
+        /// request and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
             try

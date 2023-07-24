@@ -300,13 +300,32 @@ using Amazon.Runtime.Internal.Util;
             if (!string.IsNullOrEmpty(operation.ChecksumConfiguration?.RequestAlgorithmMember))
             {
 #>
-                ChecksumUtils.SetRequestChecksum(request, request.<#=operation.ChecksumConfiguration.RequestAlgorithmMember#>, fallbackToMD5: <#=operation.HttpChecksumRequired.ToString().ToLower()#>);
+                ChecksumUtils.SetChecksumData(request, publicRequest.<#=operation.ChecksumConfiguration.RequestAlgorithmMember#>, fallbackToMD5: <#=operation.HttpChecksumRequired.ToString().ToLower()#>);
 <#+            
             }
             else if (operation.HttpChecksumRequired) // no flexible checksum, just MD5
             {
 #>
-                ChecksumUtils.SetRequestChecksumMD5(request);
+                ChecksumUtils.SetChecksumData(request);
+<#+
+            }
+        }
+    }
+
+    /// <summary>
+    /// Retrieves compression algorithm trait and sets the first supported algorithm in the list based off the request object.
+    /// </summary>
+    /// <param name="operation">The operation of a service</param>
+    protected void SetCompressionAlgorithmEncoding(Operation operation) 
+    {
+        var compressionEncodings = operation.CompressionAlgorithmEncodings;
+        if (compressionEncodings != null) 
+        {
+            if(compressionEncodings.Encodings != null && compressionEncodings.Encodings.Count > 0)
+            {  
+                var encoding = compressionEncodings.Encodings.First();
+#>
+            CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.<#=encoding.ToString()#>);
 <#+
             }
         }

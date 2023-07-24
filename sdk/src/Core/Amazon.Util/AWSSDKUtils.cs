@@ -258,6 +258,31 @@ namespace Amazon.Util
             return GetParametersAsString(request.ParameterCollection);
         }
 
+        /// <summary>
+        /// Returns the request parameters in the form of a query string.
+        /// </summary>
+        /// <param name="request">The request instance</param>
+        /// <param name="usesQueryString">Optional parameter: if true, we will return an empty string</param>
+        /// <returns>Request parameters in query string byte array format</returns>
+        public static byte[] GetRequestPayloadBytes(IRequest request, bool? usesQueryString = null)
+        {
+            if (request.Content != null)
+                return request.Content;
+
+            string content;
+
+            if(usesQueryString.HasValue && usesQueryString.Value)
+            {
+                content = string.Empty;
+            }
+            else
+            {
+                content = GetParametersAsString(request);
+            }
+
+            return Encoding.UTF8.GetBytes(content);
+        }
+
         /**
          * Convert Dictionary of parameters to Url encoded query string
          */
@@ -1163,6 +1188,11 @@ namespace Amazon.Util
             return hash;
         }
 
+        /// <remarks> 
+        /// Note, this was called directly from service packages prior to compression support
+        /// being added shortly after 3.7.200. It's important to preserve the signature and functionality
+        /// until the next minor version for those older 3.7.* service packages.
+        /// </remarks>
         /// <summary>
         /// Generates an MD5 Digest for the string-based content
         /// </summary>

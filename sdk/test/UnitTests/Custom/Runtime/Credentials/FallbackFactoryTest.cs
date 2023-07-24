@@ -40,7 +40,10 @@ namespace AWSSDK.UnitTests
         private const string AWS_RETRY_MODE_ENVIRONMENT_VARIABLE = "AWS_RETRY_MODE";
         private const string AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE = "AWS_MAX_ATTEMPTS";
         private const string AWS_USE_DUALSTACK_ENDPOINT_ENVIRONMENT_VARIABLE = "AWS_USE_DUALSTACK_ENDPOINT";
+        private const string AWS_DISABLE_REQUEST_COMPRESSION = "AWS_DISABLE_REQUEST_COMPRESSION";
+        private const string AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
         private const string AWS_USE_FIPS_ENDPOINT_ENVIRONMENT_VARIABLE = EnvironmentVariableInternalConfiguration.ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT;
+        private const long DefaultMinCompressionSizeBytes = 10240;
 
         private static readonly string ProfileText = new StringBuilder()
             .AppendLine("[default]")
@@ -75,6 +78,12 @@ namespace AWSSDK.UnitTests
             .AppendLine("use_fips_endpoint=true")
             .AppendLine("[fips-disabled]")
             .AppendLine("use_fips_endpoint=false")
+            .AppendLine("[request-compression-enabled]")
+            .AppendLine("disable_request_compression=false")
+            .AppendLine("[request-compression-disabled]")
+            .AppendLine("disable_request_compression=true")
+            .AppendLine("[min_compression_size_bytes]")
+            .AppendLine("request_min_compression_size_bytes=128")
             .ToString();
 
         [DataTestMethod]
@@ -268,6 +277,59 @@ namespace AWSSDK.UnitTests
             using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
             {
                 Assert.AreEqual(expectedUseDualstackEndpointValue, config.UseDualstackEndpoint);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(true, false, "request-compression-disabled", true)]  // service client should supersede conflicting env var and profile values
+        [DataRow(false, true, "request-compression-enabled", false)]
+        [DataRow(null, true, "request-compression-disabled", true)]   // env var should supersede conflicting profile value
+        [DataRow(null, false, "request-compression-enabled", false)]
+        [DataRow(null, null, "request-compression-enabled", false)]    // profile should drive value
+        [DataRow(null, null, "request-compression-disabled", true)]
+        [DataRow(null, null, "default", false)]             // should default to false when no config values specified
+        public void TestDisableCompressionConfigurationHierarchy(bool? clientConfigValue, bool? envVarValue, string profileName, bool expectedRequestCompressionValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue.HasValue)
+            {
+                config.DisableRequestCompression = clientConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_DISABLE_REQUEST_COMPRESSION, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedRequestCompressionValue, config.DisableRequestCompression);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(3L, 2L, "min_compression_size_bytes", 3)]  // service client should supersede conflicting env var and profile values
+        [DataRow(null, 2L, "min_compression_size_bytes", 2)]
+        [DataRow(null, null, "min_compression_size_bytes", 128)]   // env var should supersede conflicting profile value
+        [DataRow(null, null, "default", DefaultMinCompressionSizeBytes)]  // should default to DefaultMinCompressionSizeBytes when no config values specified
+        public void TestMinCompressionSizeBytesConfigurationHierarchy(long? clientConfigValue, long? envVarValue, string profileName, long expectedMinCompressionSizeValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue.HasValue)
+            {
+                config.RequestMinCompressionSizeBytes = clientConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedMinCompressionSizeValue, config.RequestMinCompressionSizeBytes);
             }
         }
 

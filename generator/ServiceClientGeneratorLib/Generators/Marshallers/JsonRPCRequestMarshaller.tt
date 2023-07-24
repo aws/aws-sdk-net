@@ -35,7 +35,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
 		{
 			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace #>");
-<# if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
+<#
+   SetCompressionAlgorithmEncoding(this.Operation);
+
+   if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
 	{
 #>
 			string target = "<#=this.Config.ServiceModel.TargetPrefix #>.<#=this.Operation.Name #>";

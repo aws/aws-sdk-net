@@ -7,6 +7,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon;
 using Amazon.CloudWatch;
 using Amazon.CloudWatch.Model;
+using System.Web.Profile;
+using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime;
+using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -33,6 +37,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Client.DeleteAlarms(delete);
             }
             BaseClean();
+        }
+
+        [TestMethod]
+        public void PutMetricDataWithNonStreamingPayload()
+        {
+            var random = new Random();
+
+            var request = new PutMetricDataRequest()
+            {
+                Namespace = "compression-test",
+                MetricData = new List<MetricDatum>()
+                {
+                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow, Unit = StandardUnit.Count, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(2), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(4), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(6), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(8), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(10), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                }
+            };
+
+
+            var config = Client.Config as ClientConfig;
+            config.RequestMinCompressionSizeBytes = 0;
+
+            var response = Client.PutMetricData(request);
+
+            Assert.IsFalse(Client.Config.DisableRequestCompression);
+            Assert.AreEqual(response.HttpStatusCode, HttpStatusCode.OK);
         }
 
         [TestMethod]
@@ -219,7 +252,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             bool seenDimensions = false;
             Assert.IsTrue(result.Metrics.Count > 0);
-            foreach (Metric metric in result.Metrics)
+            foreach (Amazon.CloudWatch.Model.Metric metric in result.Metrics)
             {
                 AssertNotEmpty(metric.MetricName);
                 AssertNotEmpty(metric.Namespace);

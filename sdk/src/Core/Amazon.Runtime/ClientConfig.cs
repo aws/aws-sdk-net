@@ -45,6 +45,10 @@ namespace Amazon.Runtime
     {
         // Represents infinite timeout. http://msdn.microsoft.com/en-us/library/system.threading.timeout.infinite.aspx
         internal static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
+        /// <summary>
+        /// Represents upper limit value for <see cref="RequestMinCompressionSizeBytes"/>
+        /// </summary>
+        internal const long UpperLimitCompressionSizeBytes = 10485760;
 
         // Represents max timeout.
         public static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
@@ -74,6 +78,8 @@ namespace Amazon.Runtime
         private bool allowAutoRedirect = true;
         private bool? useDualstackEndpoint;
         private bool? useFIPSEndpoint;
+        private bool? disableRequestCompression;
+        private long? requestMinCompressionSizeBytes;
         private TimeSpan? readWriteTimeout = null;
         private bool disableHostPrefixInjection = false;
         private bool? endpointDiscoveryEnabled = null;
@@ -83,6 +89,7 @@ namespace Amazon.Runtime
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
         private const int MaxRetriesLegacyDefault = 4;
+        private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
 
@@ -817,6 +824,56 @@ namespace Amazon.Runtime
             }
             set { ignoreConfiguredEndpointUrls = value; }
         }
+        /// <summary>
+        /// Controls whether request payloads are automatically compressed for supported operations.
+        /// This setting only applies to operations that support compression.
+        /// The default value is "false". Set to "true" to disable compression.
+        /// </summary>
+        public bool DisableRequestCompression
+        {
+            get
+            {
+                if (!this.disableRequestCompression.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.DisableRequestCompression ?? false;
+                }
+
+                return this.disableRequestCompression.Value;
+            }
+            set { disableRequestCompression = value; }
+        }
+
+        /// <summary>
+        /// Minimum size in bytes that a request body should be to trigger compression.
+        /// </summary>
+        public long RequestMinCompressionSizeBytes
+        {
+            get
+            {
+                if (!this.requestMinCompressionSizeBytes.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.RequestMinCompressionSizeBytes ?? DefaultMinCompressionSizeBytes;
+                }
+
+                return this.requestMinCompressionSizeBytes.Value;
+            }
+            set 
+            {
+                ValidateMinCompression(value);
+                requestMinCompressionSizeBytes = value; 
+            }
+        }
+
+        private static void ValidateMinCompression(long minCompressionSize)
+        {
+            if (minCompressionSize < 0 || minCompressionSize > UpperLimitCompressionSizeBytes)
+            {
+                throw new ArgumentException(string.Format("Invalid value {0} for {1}." +
+                    " A long value between 0 and {2} bytes inclusive is expected.", minCompressionSize,
+                    nameof(requestMinCompressionSizeBytes), UpperLimitCompressionSizeBytes));
+            }
+        }
+
         /// <summary>
         /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False respectively.
         /// Retry Throttling is a feature that intelligently throttles retry attempts when a large percentage of requests 

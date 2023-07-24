@@ -33,6 +33,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
+<#
+    SetCompressionAlgorithmEncoding(this.Operation);
+#>
             request.Parameters.Add("Action", "<#=this.Operation.Name #>");
             request.Parameters.Add("Version", "<#=this.Config.ServiceModel.APIVersion#>");
 

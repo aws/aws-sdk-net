@@ -123,7 +123,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             request.ContentStream = uploadPartRequest.InputStream;
-            ChecksumUtils.SetRequestChecksum(request, uploadPartRequest.ChecksumAlgorithm, fallbackToMD5: false);
+            ChecksumUtils.SetChecksumData(request, uploadPartRequest.ChecksumAlgorithm, fallbackToMD5: false);
 
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");

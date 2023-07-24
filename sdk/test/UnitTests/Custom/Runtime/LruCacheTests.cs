@@ -2,7 +2,7 @@
 using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests.Custom.Runtime
+namespace AWSSDK.UnitTests
 {
     [TestClass()]
     public class LruCacheTests

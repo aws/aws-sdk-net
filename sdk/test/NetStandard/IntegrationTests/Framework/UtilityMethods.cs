@@ -326,6 +326,37 @@ namespace Amazon.DNXCore.IntegrationTests
                 throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
         }
 
+        /// <summary>
+        /// Runs an async function until the function either succeeds, throws an exception, or times out.
+        /// If the async function doesn't succeed, an exception is thrown.
+        /// </summary>
+        /// <param name="asyncFunc"> Async function  </param>
+        /// <param name="timeout"> Timeout </param>
+        /// <exception cref="TimeoutException"> Thrown when the <paramref name="asyncFunc"/> runs out of <paramref name="timeout"/></exception>
+        public static async Task WaitUntilAsync(Func<Task> asyncFunc, TimeSpan timeout)
+        {
+            // Create a CancellationTokenSource with the specified timeout duration
+            using (var cts = new CancellationTokenSource(timeout))
+            {
+                // Get the token from CancellationTokenSource
+                var cancellationToken = cts.Token;
+
+                // Start the async operation and wait for either the task to complete or the timeout
+                var task = asyncFunc();
+                var completedTask = await Task.WhenAny(task, Task.Delay(-1, cancellationToken));
+
+                // If the operation completed, await the task to observe any exceptions thrown
+                if (completedTask == task)
+                {
+                    await task;
+                    return;
+                }
+
+                // If the operation was canceled due to timeout, throw an exception
+                throw new TimeoutException("The operation has timed out.");
+            }
+        }
+
         public static void Sleep(TimeSpan ts)
         {
             Task.Delay(ts).Wait();

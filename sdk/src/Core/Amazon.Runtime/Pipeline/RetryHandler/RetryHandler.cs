@@ -226,16 +226,25 @@ namespace Amazon.Runtime.Internal
             if (requestContext.Request.ContentStream != null &&
                 requestContext.Request.OriginalStreamPosition >= 0)
             {
-                var stream = requestContext.Request.ContentStream;
+                var originalStream = requestContext.Request.ContentStream;
+                var seekableStream = originalStream;
+
+                // If the stream is wrapped in a CompressionWrapperStream, reset the CompressionWrapperStream
+                var compressionWrapperStream = originalStream as CompressionWrapperStream;
+                if (compressionWrapperStream != null)
+                {
+                    compressionWrapperStream.Reset();
+                    seekableStream = compressionWrapperStream.GetSeekableBaseStream();
+                }
 
                 // If the stream is wrapped in a HashStream, reset the HashStream
-                var hashStream = stream as HashStream;
+                var hashStream = originalStream as HashStream;
                 if (hashStream != null)
                 {
                     hashStream.Reset();
-                    stream = hashStream.GetSeekableBaseStream();
+                    seekableStream = hashStream.GetSeekableBaseStream();
                 }
-                stream.Position = requestContext.Request.OriginalStreamPosition;
+                seekableStream.Position = requestContext.Request.OriginalStreamPosition;
             }
         }
         

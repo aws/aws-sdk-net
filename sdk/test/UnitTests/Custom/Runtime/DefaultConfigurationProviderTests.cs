@@ -20,7 +20,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
-using AWSSDK.UnitTests.Custom.Net45.Custom.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
