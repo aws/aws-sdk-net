@@ -401,7 +401,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;
         /// where action can be append, overwrite or remove. For values, you can provide static
         /// values, or map request data, stage variables, or context variables that are evaluated
-        /// at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming
+        /// at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
         /// API requests and responses</a>.
         /// </para>
         /// </summary>
