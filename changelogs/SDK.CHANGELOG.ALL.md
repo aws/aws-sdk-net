@@ -1,3 +1,22 @@
+### 3.7.605.0 (2023-07-24 18:35 UTC)
+* ApiGatewayV2 (3.7.200.4)
+	* Documentation updates for Amazon API Gateway.
+* ChimeSDKMediaPipelines (3.7.201.0)
+	* AWS Media Pipeline compositing enhancement and Media Insights Pipeline auto language identification.
+* CloudFormation (3.7.202.0)
+	* This release supports filtering by DRIFT_STATUS for existing API ListStackInstances and adds support for a new API ListStackInstanceResourceDrifts. Customers can now view resource drift information from their StackSet management accounts.
+* CostExplorer (3.7.201.0)
+	* This release introduces the new API 'GetSavingsPlanPurchaseRecommendationDetails', which retrieves the details for a Savings Plan recommendation. It also updates the existing API 'GetSavingsPlansPurchaseRecommendation' to include the recommendation detail ID.
+* EC2 (3.7.201.0)
+	* Add "disabled" enum value to SpotInstanceState.
+* Glue (3.7.202.0)
+	* Added support for Data Preparation Recipe node in Glue Studio jobs
+* QuickSight (3.7.201.0)
+	* This release launches new Snapshot APIs for CSV and PDF exports, adds support for info icon for filters and parameters in Exploration APIs, adds modeled exception to the DeleteAccountCustomization API, and introduces AttributeAggregationFunction's ability to add UNIQUE_VALUE aggregation in tooltips.
+* Core 3.7.200.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.604.0 (2023-07-21 18:47 UTC)
 * Glue (3.7.201.0)
 	* This release adds support for AWS Glue Crawler with Apache Hudi Tables, allowing Crawlers to discover Hudi Tables in S3 and register them in Glue Data Catalog for query engines to query against.
