@@ -29,61 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The StackResource data type.
+    /// The structure containing summary information about resource drifts for a stack instance.
     /// </summary>
-    public partial class StackResource
+    public partial class StackInstanceResourceDriftsSummary
     {
-        private string _description;
-        private StackResourceDriftInformation _driftInformation;
         private string _logicalResourceId;
-        private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
-        private ResourceStatus _resourceStatus;
-        private string _resourceStatusReason;
+        private List<PhysicalResourceIdContextKeyValuePair> _physicalResourceIdContext = new List<PhysicalResourceIdContextKeyValuePair>();
+        private List<PropertyDifference> _propertyDifferences = new List<PropertyDifference>();
         private string _resourceType;
         private string _stackId;
-        private string _stackName;
+        private StackResourceDriftStatus _stackResourceDriftStatus;
         private DateTime? _timestamp;
-
-        /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// User defined description associated with the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DriftInformation. 
-        /// <para>
-        /// Information about whether the resource's actual configuration differs, or has <i>drifted</i>,
-        /// from its expected configuration, as defined in the stack template and any values specified
-        /// as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-        /// Unregulated Configuration Changes to Stacks and Resources</a>.
-        /// </para>
-        /// </summary>
-        public StackResourceDriftInformation DriftInformation
-        {
-            get { return this._driftInformation; }
-            set { this._driftInformation = value; }
-        }
-
-        // Check to see if DriftInformation property is set
-        internal bool IsSetDriftInformation()
-        {
-            return this._driftInformation != null;
-        }
 
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
@@ -102,25 +59,6 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLogicalResourceId()
         {
             return this._logicalResourceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ModuleInfo. 
-        /// <para>
-        /// Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.
-        /// </para>
-        /// </summary>
-        public ModuleInfo ModuleInfo
-        {
-            get { return this._moduleInfo; }
-            set { this._moduleInfo = value; }
-        }
-
-        // Check to see if ModuleInfo property is set
-        internal bool IsSetModuleInfo()
-        {
-            return this._moduleInfo != null;
         }
 
         /// <summary>
@@ -143,40 +81,45 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceStatus. 
+        /// Gets and sets the property PhysicalResourceIdContext. 
         /// <para>
-        /// Current status of the resource.
+        /// Context information that enables CloudFormation to uniquely identify a resource. CloudFormation
+        /// uses context key-value pairs in cases where a resource's logical and physical IDs
+        /// aren't enough to uniquely identify that resource. Each context key-value pair specifies
+        /// a unique resource that contains the targeted resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ResourceStatus ResourceStatus
+        [AWSProperty(Max=5)]
+        public List<PhysicalResourceIdContextKeyValuePair> PhysicalResourceIdContext
         {
-            get { return this._resourceStatus; }
-            set { this._resourceStatus = value; }
+            get { return this._physicalResourceIdContext; }
+            set { this._physicalResourceIdContext = value; }
         }
 
-        // Check to see if ResourceStatus property is set
-        internal bool IsSetResourceStatus()
+        // Check to see if PhysicalResourceIdContext property is set
+        internal bool IsSetPhysicalResourceIdContext()
         {
-            return this._resourceStatus != null;
+            return this._physicalResourceIdContext != null && this._physicalResourceIdContext.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceStatusReason. 
+        /// Gets and sets the property PropertyDifferences. 
         /// <para>
-        /// Success/failure message associated with the resource.
+        /// Status of the actual configuration of the resource compared to its expected configuration.
+        /// These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code>
+        /// is <code>MODIFIED</code>. 
         /// </para>
         /// </summary>
-        public string ResourceStatusReason
+        public List<PropertyDifference> PropertyDifferences
         {
-            get { return this._resourceStatusReason; }
-            set { this._resourceStatusReason = value; }
+            get { return this._propertyDifferences; }
+            set { this._propertyDifferences = value; }
         }
 
-        // Check to see if ResourceStatusReason property is set
-        internal bool IsSetResourceStatusReason()
+        // Check to see if PropertyDifferences property is set
+        internal bool IsSetPropertyDifferences()
         {
-            return this._resourceStatusReason != null;
+            return this._propertyDifferences != null && this._propertyDifferences.Count > 0; 
         }
 
         /// <summary>
@@ -202,9 +145,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// Unique identifier of the stack.
+        /// The ID of the stack instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }
@@ -218,27 +162,48 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackName. 
+        /// Gets and sets the property StackResourceDriftStatus. 
         /// <para>
-        /// The name associated with the stack.
+        /// The drift status of the resource in a stack instance.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DELETED</code>: The resource differs from its expected template configuration
+        /// in that the resource has been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODIFIED</code>: One or more resource properties differ from their expected
+        /// template values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
+        /// configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public string StackName
+        [AWSProperty(Required=true)]
+        public StackResourceDriftStatus StackResourceDriftStatus
         {
-            get { return this._stackName; }
-            set { this._stackName = value; }
+            get { return this._stackResourceDriftStatus; }
+            set { this._stackResourceDriftStatus = value; }
         }
 
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
+        // Check to see if StackResourceDriftStatus property is set
+        internal bool IsSetStackResourceDriftStatus()
         {
-            return this._stackName != null;
+            return this._stackResourceDriftStatus != null;
         }
 
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// Time the status was updated.
+        /// Time at which the stack instance drift detection operation was initiated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

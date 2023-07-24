@@ -29,19 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStackInstances operation.
-    /// Returns summary information about stack instances that are associated with the specified
-    /// stack set. You can filter for stack instances that are associated with a specific
-    /// Amazon Web Services account name or Region, or that have a specific status.
+    /// Container for the parameters to the ListStackInstanceResourceDrifts operation.
+    /// Returns drift information for resources in a stack instance.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>ListStackInstanceResourceDrifts</code> returns drift information for the most
+    /// recent drift detection operation. If an operation is in progress, it may only return
+    /// partial results.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class ListStackInstancesRequest : AmazonCloudFormationRequest
+    public partial class ListStackInstanceResourceDriftsRequest : AmazonCloudFormationRequest
     {
         private CallAs _callAs;
-        private List<StackInstanceFilter> _filters = new List<StackInstanceFilter>();
         private int? _maxResults;
         private string _nextToken;
+        private string _operationId;
         private string _stackInstanceAccount;
         private string _stackInstanceRegion;
+        private List<string> _stackInstanceResourceDriftStatuses = new List<string>();
         private string _stackSetName;
 
         /// <summary>
@@ -85,25 +92,6 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// The filter to apply to stack instances
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=3)]
-        public List<StackInstanceFilter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && this._filters.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned with a single call. If the number of
@@ -128,11 +116,11 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous request didn't return all the remaining results, the response's <code>NextToken</code>
-        /// parameter value is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response object's <code>NextToken</code>
-        /// parameter is set to <code>null</code>.
+        /// If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve
+        /// the next set of results, call this action again and assign that token to the request
+        /// object's <code>NextToken</code> parameter. If there are no remaining results, the
+        /// previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -149,12 +137,32 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The unique ID of the drift operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StackInstanceAccount. 
         /// <para>
-        /// The name of the Amazon Web Services account that you want to list stack instances
+        /// The name of the Amazon Web Services account that you want to list resource drifts
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackInstanceAccount
         {
             get { return this._stackInstanceAccount; }
@@ -170,9 +178,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackInstanceRegion. 
         /// <para>
-        /// The name of the Region where you want to list stack instances.
+        /// The name of the Region where you want to list resource drifts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackInstanceRegion
         {
             get { return this._stackInstanceRegion; }
@@ -186,9 +195,48 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StackInstanceResourceDriftStatuses. 
+        /// <para>
+        /// The resource drift status of the stack instance. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DELETED</code>: The resource differs from its expected template configuration
+        /// in that the resource has been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODIFIED</code>: One or more resource properties differ from their expected
+        /// template values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
+        /// configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<string> StackInstanceResourceDriftStatuses
+        {
+            get { return this._stackInstanceResourceDriftStatuses; }
+            set { this._stackInstanceResourceDriftStatuses = value; }
+        }
+
+        // Check to see if StackInstanceResourceDriftStatuses property is set
+        internal bool IsSetStackInstanceResourceDriftStatuses()
+        {
+            return this._stackInstanceResourceDriftStatuses != null && this._stackInstanceResourceDriftStatuses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to list stack instances for.
+        /// The name or unique ID of the stack set that you want to list drifted resources for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
