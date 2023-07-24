@@ -343,6 +343,30 @@ this.FormatOperationDocumentationSync(operation, true);
             
             #line default
             #line hidden
+            
+            #line 117 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+ if (this.Config.EndpointsRuleSet != null) { 
+            
+            #line default
+            #line hidden
+            this.Write(@"        
+		#region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name=""request"">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+        
+        #endregion
+");
+            
+            #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+ } 
+            
+            #line default
+            #line hidden
             this.Write("\r\n\t}\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }

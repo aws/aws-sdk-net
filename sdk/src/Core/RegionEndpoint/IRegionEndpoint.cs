@@ -44,11 +44,11 @@ namespace Amazon.Internal
         /// <param name="options">
         /// Specify additional requirements on the <see cref="RegionEndpoint.Endpoint"/> to be returned.
         /// </param>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         Amazon.RegionEndpoint.Endpoint GetEndpointForService(string serviceName, GetEndpointForServiceOptions options);
     }
 
-    [Obsolete("This interface is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+    [Obsolete("This interface is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
     public interface IRegionEndpointProvider
     {
         IEnumerable<IRegionEndpoint> AllRegionEndpoints { get; }

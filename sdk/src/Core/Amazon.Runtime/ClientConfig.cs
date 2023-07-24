@@ -355,7 +355,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Given this client configuration, return a string form ofthe service endpoint url.
         /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public virtual string DetermineServiceURL()
         {
             string url;
@@ -374,7 +374,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Given this client configuration, return a DNS suffix for service endpoint url.
         /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public virtual string DetermineDnsSuffix()
         {
             var endpoint = regionEndpoint.GetEndpointForService(this);

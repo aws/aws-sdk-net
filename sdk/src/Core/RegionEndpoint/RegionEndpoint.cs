@@ -76,7 +76,7 @@ namespace Amazon
         /// </summary>
         /// <param name="regionEndpoint">The region endpoint to find the possible override for</param>
         /// <returns></returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public static RegionEndpoint GetRegionEndpointOverride(RegionEndpoint regionEndpoint)
         {
             try
@@ -117,7 +117,7 @@ namespace Amazon
         /// </summary>
         /// <param name="stream">Stream containing an Endpoints manifest to reload in the SDK.
         /// Pass null in to reset the SDK, so that it uses its built-in manifest instead.</param>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public static void Reload(Stream stream)
         {
             if (stream == null)
@@ -179,7 +179,7 @@ namespace Amazon
         /// </summary>
         /// <param name="partition">partition</param>
         /// <returns>DNS suffix for the given partition, empty string if a matching partition was not found</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public static string GetDnsSuffixForPartition(string partition)
         {
             return RegionEndpointProvider.GetDnsSuffixForPartition(partition);
@@ -326,7 +326,7 @@ namespace Amazon
         /// endpoint will point to a valid service endpoint.
         /// </param>
         /// <returns></returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public Endpoint GetEndpointForService(string serviceName)
         {
             return GetEndpointForService(serviceName, new GetEndpointForServiceOptions());
@@ -368,7 +368,7 @@ namespace Amazon
         /// <param name="options">
         /// Specify additional requirements on the <see cref="Endpoint"/> to be returned.
         /// </param>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public Endpoint GetEndpointForService(string serviceName, GetEndpointForServiceOptions options)
         {
             return InternedRegionEndpoint.GetEndpointForService(serviceName, options);
@@ -382,7 +382,7 @@ namespace Amazon
         /// <summary>
         /// This class defines an endpoints hostname and which protocols it supports.
         /// </summary>
-        [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public class Endpoint
         {
             internal Endpoint(string hostname, string authregion, string signatureVersionOverride, string dnsSuffix, bool deprecated)
