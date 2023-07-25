@@ -42,7 +42,7 @@ namespace Amazon.BillingConductor.Model
     ///  
     /// <para>
     ///  <code>Billing Group Arn</code>: linked accounts that are associated to the provided
-    /// Billing Group Arn. 
+    /// Billing Group Arn.
     /// </para>
     /// </summary>
     public partial class ListAccountAssociationsFilter
@@ -54,7 +54,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  The Amazon Web Services account ID to filter on. 
+        /// The Amazon Web Services account ID to filter on.
         /// </para>
         /// </summary>
         public string AccountId
@@ -101,7 +101,7 @@ namespace Amazon.BillingConductor.Model
         ///  
         /// <para>
         ///  <code>Billing Group Arn</code>: linked accounts that are associated to the provided
-        /// Billing Group Arn. 
+        /// Billing Group Arn.
         /// </para>
         /// </summary>
         public string Association

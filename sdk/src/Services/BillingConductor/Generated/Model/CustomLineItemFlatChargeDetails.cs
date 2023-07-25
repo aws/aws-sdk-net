@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ChargeValue. 
         /// <para>
-        ///  The custom line item's fixed charge value in USD. 
+        /// The custom line item's fixed charge value in USD.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]

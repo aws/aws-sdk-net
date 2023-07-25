@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AccountGrouping Marshaller
+    /// UpdateBillingGroupAccountGrouping Marshaller
     /// </summary>
-    public class AccountGroupingMarshaller : IRequestMarshaller<AccountGrouping, JsonMarshallerContext> 
+    public class UpdateBillingGroupAccountGroupingMarshaller : IRequestMarshaller<UpdateBillingGroupAccountGrouping, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccountGrouping requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateBillingGroupAccountGrouping requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAutoAssociate())
             {
@@ -51,23 +51,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AutoAssociate);
             }
 
-            if(requestObject.IsSetLinkedAccountIds())
-            {
-                context.Writer.WritePropertyName("LinkedAccountIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectLinkedAccountIdsListValue in requestObject.LinkedAccountIds)
-                {
-                        context.Writer.Write(requestObjectLinkedAccountIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AccountGroupingMarshaller Instance = new AccountGroupingMarshaller();
+        public readonly static UpdateBillingGroupAccountGroupingMarshaller Instance = new UpdateBillingGroupAccountGroupingMarshaller();
 
     }
 }

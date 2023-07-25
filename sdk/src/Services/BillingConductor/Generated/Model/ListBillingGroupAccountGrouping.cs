@@ -29,13 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The set of accounts that will be under the billing group. The set of accounts resemble
-    /// the linked accounts in a consolidated billing family.
+    /// Specifies if the billing group has the following features enabled.
     /// </summary>
-    public partial class AccountGrouping
+    public partial class ListBillingGroupAccountGrouping
     {
         private bool? _autoAssociate;
-        private List<string> _linkedAccountIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AutoAssociate. 
@@ -54,26 +52,6 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetAutoAssociate()
         {
             return this._autoAssociate.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LinkedAccountIds. 
-        /// <para>
-        /// The account IDs that make up the billing group. Account IDs must be a part of the
-        /// consolidated billing family, and not associated with another billing group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=30)]
-        public List<string> LinkedAccountIds
-        {
-            get { return this._linkedAccountIds; }
-            set { this._linkedAccountIds = value; }
-        }
-
-        // Check to see if LinkedAccountIds property is set
-        internal bool IsSetLinkedAccountIds()
-        {
-            return this._linkedAccountIds != null && this._linkedAccountIds.Count > 0; 
         }
 
     }

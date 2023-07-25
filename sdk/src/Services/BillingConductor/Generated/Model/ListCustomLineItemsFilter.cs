@@ -41,7 +41,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arns. 
         /// <para>
-        ///  A list of custom line item ARNs to retrieve information. 
+        /// A list of custom line item ARNs to retrieve information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property BillingGroups. 
         /// <para>
-        ///  The billing group Amazon Resource Names (ARNs) to retrieve information. 
+        /// The billing group Amazon Resource Names (ARNs) to retrieve information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        ///  A list of custom line items to retrieve information. 
+        /// A list of custom line items to retrieve information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

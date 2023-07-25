@@ -44,7 +44,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a billing group. 
+        /// The Amazon Resource Name (ARN) of a billing group.
         /// </para>
         /// </summary>
         public string Arn
@@ -62,7 +62,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AWSCost. 
         /// <para>
-        /// The actual Amazon Web Services charges for the billing group. 
+        /// The actual Amazon Web Services charges for the billing group.
         /// </para>
         /// </summary>
         public string AWSCost
@@ -80,7 +80,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Currency. 
         /// <para>
-        /// The displayed currency. 
+        /// The displayed currency.
         /// </para>
         /// </summary>
         public string Currency
@@ -98,7 +98,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Margin. 
         /// <para>
-        ///  The billing group margin. 
+        /// The billing group margin.
         /// </para>
         /// </summary>
         public string Margin
@@ -116,7 +116,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property MarginPercentage. 
         /// <para>
-        ///  The percentage of billing group margin. 
+        /// The percentage of billing group margin.
         /// </para>
         /// </summary>
         public string MarginPercentage
@@ -135,7 +135,7 @@ namespace Amazon.BillingConductor.Model
         /// Gets and sets the property ProformaCost. 
         /// <para>
         /// The hypothetical Amazon Web Services charges based on the associated pricing plan
-        /// of a billing group. 
+        /// of a billing group.
         /// </para>
         /// </summary>
         public string ProformaCost

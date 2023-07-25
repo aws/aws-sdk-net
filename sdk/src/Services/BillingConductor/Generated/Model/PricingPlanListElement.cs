@@ -44,7 +44,7 @@ namespace Amazon.BillingConductor.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify
-        /// a pricing plan. 
+        /// a pricing plan.
         /// </para>
         /// </summary>
         public string Arn
@@ -62,7 +62,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time when the pricing plan was created. 
+        /// The time when the pricing plan was created.
         /// </para>
         /// </summary>
         public long CreationTime
@@ -80,7 +80,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The pricing plan description. 
+        /// The pricing plan description.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1024)]
@@ -99,7 +99,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time when the pricing plan was modified. 
+        /// The most recent time when the pricing plan was modified.
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -117,7 +117,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a pricing plan. 
+        /// The name of a pricing plan.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -136,8 +136,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        ///  The pricing rules count that's currently associated with this pricing plan list element.
-        /// 
+        /// The pricing rules count that's currently associated with this pricing plan list element.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

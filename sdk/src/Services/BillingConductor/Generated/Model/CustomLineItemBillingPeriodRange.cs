@@ -39,8 +39,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ExclusiveEndBillingPeriod. 
         /// <para>
-        ///  The inclusive end billing period that defines a billing period range where a custom
-        /// line is applied. 
+        /// The inclusive end billing period that defines a billing period range where a custom
+        /// line is applied.
         /// </para>
         /// </summary>
         public string ExclusiveEndBillingPeriod
@@ -58,8 +58,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property InclusiveStartBillingPeriod. 
         /// <para>
-        ///  The inclusive start billing period that defines a billing period range where a custom
-        /// line is applied. 
+        /// The inclusive start billing period that defines a billing period range where a custom
+        /// line is applied.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

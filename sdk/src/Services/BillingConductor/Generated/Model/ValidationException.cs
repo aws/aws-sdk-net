@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The input doesn't match with the constraints specified by Amazon Web Services services.
+    /// The input doesn't match with the constraints specified by Amazon Web Services.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

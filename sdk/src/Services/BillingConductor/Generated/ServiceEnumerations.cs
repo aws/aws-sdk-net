@@ -475,6 +475,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ACCOUNTS_NOT_ASSOCIATED = new ValidationExceptionReason("ACCOUNTS_NOT_ASSOCIATED");
         /// <summary>
+        /// Constant CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP = new ValidationExceptionReason("CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP");
+        /// <summary>
         /// Constant CANNOT_PARSE for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason CANNOT_PARSE = new ValidationExceptionReason("CANNOT_PARSE");
@@ -686,6 +690,10 @@ namespace Amazon.BillingConductor
         /// Constant TOO_MANY_ACCOUNTS_IN_REQUEST for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason TOO_MANY_ACCOUNTS_IN_REQUEST = new ValidationExceptionReason("TOO_MANY_ACCOUNTS_IN_REQUEST");
+        /// <summary>
+        /// Constant TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS = new ValidationExceptionReason("TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS");
         /// <summary>
         /// Constant TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST for ValidationExceptionReason
         /// </summary>

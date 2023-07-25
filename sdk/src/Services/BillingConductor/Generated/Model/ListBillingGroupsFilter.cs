@@ -35,13 +35,14 @@ namespace Amazon.BillingConductor.Model
     public partial class ListBillingGroupsFilter
     {
         private List<string> _arns = new List<string>();
+        private bool? _autoAssociate;
         private string _pricingPlan;
         private List<string> _statuses = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Arns. 
         /// <para>
-        /// The list of billing group Amazon Resource Names (ARNs) to retrieve information. 
+        /// The list of billing group Amazon Resource Names (ARNs) to retrieve information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -58,9 +59,28 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoAssociate. 
+        /// <para>
+        /// Specifies if this billing group will automatically associate newly added Amazon Web
+        /// Services accounts that join your consolidated billing family.
+        /// </para>
+        /// </summary>
+        public bool AutoAssociate
+        {
+            get { return this._autoAssociate.GetValueOrDefault(); }
+            set { this._autoAssociate = value; }
+        }
+
+        // Check to see if AutoAssociate property is set
+        internal bool IsSetAutoAssociate()
+        {
+            return this._autoAssociate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan Amazon Resource Names (ARNs) to retrieve information. 
+        /// The pricing plan Amazon Resource Names (ARNs) to retrieve information.
         /// </para>
         /// </summary>
         public string PricingPlan

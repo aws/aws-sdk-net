@@ -34,11 +34,31 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class UpdateBillingGroupRequest : AmazonBillingConductorRequest
     {
+        private UpdateBillingGroupAccountGrouping _accountGrouping;
         private string _arn;
         private ComputationPreference _computationPreference;
         private string _description;
         private string _name;
         private BillingGroupStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AccountGrouping. 
+        /// <para>
+        /// Specifies if the billing group has automatic account association (<code>AutoAssociate</code>)
+        /// enabled.
+        /// </para>
+        /// </summary>
+        public UpdateBillingGroupAccountGrouping AccountGrouping
+        {
+            get { return this._accountGrouping; }
+            set { this._accountGrouping = value; }
+        }
+
+        // Check to see if AccountGrouping property is set
+        internal bool IsSetAccountGrouping()
+        {
+            return this._accountGrouping != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

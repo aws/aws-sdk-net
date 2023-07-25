@@ -94,7 +94,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateAccounts">REST API Reference for AssociateAccounts Operation</seealso>
         AssociateAccountsResponse AssociateAccounts(AssociateAccountsRequest request);
@@ -157,7 +157,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociatePricingRules">REST API Reference for AssociatePricingRules Operation</seealso>
         AssociatePricingRulesResponse AssociatePricingRules(AssociatePricingRulesRequest request);
@@ -218,7 +218,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchAssociateResourcesToCustomLineItem">REST API Reference for BatchAssociateResourcesToCustomLineItem Operation</seealso>
         BatchAssociateResourcesToCustomLineItemResponse BatchAssociateResourcesToCustomLineItem(BatchAssociateResourcesToCustomLineItemRequest request);
@@ -276,7 +276,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchDisassociateResourcesFromCustomLineItem">REST API Reference for BatchDisassociateResourcesFromCustomLineItem Operation</seealso>
         BatchDisassociateResourcesFromCustomLineItemResponse BatchDisassociateResourcesFromCustomLineItem(BatchDisassociateResourcesFromCustomLineItemRequest request);
@@ -335,7 +335,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
         CreateBillingGroupResponse CreateBillingGroup(CreateBillingGroupRequest request);
@@ -395,7 +395,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateCustomLineItem">REST API Reference for CreateCustomLineItem Operation</seealso>
         CreateCustomLineItemResponse CreateCustomLineItem(CreateCustomLineItemRequest request);
@@ -457,7 +457,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingPlan">REST API Reference for CreatePricingPlan Operation</seealso>
         CreatePricingPlanResponse CreatePricingPlan(CreatePricingPlanRequest request);
@@ -515,7 +515,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingRule">REST API Reference for CreatePricingRule Operation</seealso>
         CreatePricingRuleResponse CreatePricingRule(CreatePricingRuleRequest request);
@@ -567,7 +567,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
         DeleteBillingGroupResponse DeleteBillingGroup(DeleteBillingGroupRequest request);
@@ -623,7 +623,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteCustomLineItem">REST API Reference for DeleteCustomLineItem Operation</seealso>
         DeleteCustomLineItemResponse DeleteCustomLineItem(DeleteCustomLineItemRequest request);
@@ -679,7 +679,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingPlan">REST API Reference for DeletePricingPlan Operation</seealso>
         DeletePricingPlanResponse DeletePricingPlan(DeletePricingPlanRequest request);
@@ -734,7 +734,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingRule">REST API Reference for DeletePricingRule Operation</seealso>
         DeletePricingRuleResponse DeletePricingRule(DeletePricingRuleRequest request);
@@ -792,7 +792,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociateAccounts">REST API Reference for DisassociateAccounts Operation</seealso>
         DisassociateAccountsResponse DisassociateAccounts(DisassociateAccountsRequest request);
@@ -850,7 +850,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociatePricingRules">REST API Reference for DisassociatePricingRules Operation</seealso>
         DisassociatePricingRulesResponse DisassociatePricingRules(DisassociatePricingRulesRequest request);
@@ -908,7 +908,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
         ListAccountAssociationsResponse ListAccountAssociations(ListAccountAssociationsRequest request);
@@ -965,7 +965,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReports">REST API Reference for ListBillingGroupCostReports Operation</seealso>
         ListBillingGroupCostReportsResponse ListBillingGroupCostReports(ListBillingGroupCostReportsRequest request);
@@ -1021,7 +1021,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
         ListBillingGroupsResponse ListBillingGroups(ListBillingGroupsRequest request);
@@ -1077,7 +1077,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItems">REST API Reference for ListCustomLineItems Operation</seealso>
         ListCustomLineItemsResponse ListCustomLineItems(ListCustomLineItemsRequest request);
@@ -1129,7 +1129,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">REST API Reference for ListCustomLineItemVersions Operation</seealso>
         ListCustomLineItemVersionsResponse ListCustomLineItemVersions(ListCustomLineItemVersionsRequest request);
@@ -1182,7 +1182,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlans">REST API Reference for ListPricingPlans Operation</seealso>
         ListPricingPlansResponse ListPricingPlans(ListPricingPlansRequest request);
@@ -1237,7 +1237,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlansAssociatedWithPricingRule">REST API Reference for ListPricingPlansAssociatedWithPricingRule Operation</seealso>
         ListPricingPlansAssociatedWithPricingRuleResponse ListPricingPlansAssociatedWithPricingRule(ListPricingPlansAssociatedWithPricingRuleRequest request);
@@ -1290,7 +1290,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRules">REST API Reference for ListPricingRules Operation</seealso>
         ListPricingRulesResponse ListPricingRules(ListPricingRulesRequest request);
@@ -1345,7 +1345,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesAssociatedToPricingPlan">REST API Reference for ListPricingRulesAssociatedToPricingPlan Operation</seealso>
         ListPricingRulesAssociatedToPricingPlanResponse ListPricingRulesAssociatedToPricingPlan(ListPricingRulesAssociatedToPricingPlanRequest request);
@@ -1400,7 +1400,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItem">REST API Reference for ListResourcesAssociatedToCustomLineItem Operation</seealso>
         ListResourcesAssociatedToCustomLineItemResponse ListResourcesAssociatedToCustomLineItem(ListResourcesAssociatedToCustomLineItemRequest request);
@@ -1455,7 +1455,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1512,7 +1512,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1567,7 +1567,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1625,7 +1625,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
         UpdateBillingGroupResponse UpdateBillingGroup(UpdateBillingGroupRequest request);
@@ -1680,7 +1680,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItem">REST API Reference for UpdateCustomLineItem Operation</seealso>
         UpdateCustomLineItemResponse UpdateCustomLineItem(UpdateCustomLineItemRequest request);
@@ -1738,7 +1738,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
         UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request);
@@ -1796,7 +1796,7 @@ namespace Amazon.BillingConductor
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
-        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// The input doesn't match with the constraints specified by Amazon Web Services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingRule">REST API Reference for UpdatePricingRule Operation</seealso>
         UpdatePricingRuleResponse UpdatePricingRule(UpdatePricingRuleRequest request);

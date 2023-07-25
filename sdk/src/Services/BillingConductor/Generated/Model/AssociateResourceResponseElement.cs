@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The resource ARN that was associated to the custom line item. 
+        /// The resource ARN that was associated to the custom line item.
         /// </para>
         /// </summary>
         public string Arn
@@ -57,8 +57,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        ///  An <code>AssociateResourceError</code> that will populate if the resource association
-        /// fails. 
+        /// An <code>AssociateResourceError</code> that will populate if the resource association
+        /// fails.
         /// </para>
         /// </summary>
         public AssociateResourceError Error

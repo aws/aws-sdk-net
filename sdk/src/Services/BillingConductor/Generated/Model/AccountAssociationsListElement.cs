@@ -41,7 +41,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AccountEmail. 
         /// <para>
-        ///  The Amazon Web Services account email. 
+        /// The Amazon Web Services account email.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  The associating array of account IDs. 
+        /// The associating array of account IDs.
         /// </para>
         /// </summary>
         public string AccountId
@@ -78,7 +78,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        ///  The Amazon Web Services account name. 
+        /// The Amazon Web Services account name.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -97,7 +97,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property BillingGroupArn. 
         /// <para>
-        ///  The Billing Group Arn that the linked account is associated to. 
+        /// The Billing Group Arn that the linked account is associated to.
         /// </para>
         /// </summary>
         public string BillingGroupArn

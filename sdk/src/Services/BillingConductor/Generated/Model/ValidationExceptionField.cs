@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message describing why the field failed validation. 
+        /// The message describing why the field failed validation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The field name. 
+        /// The field name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
