@@ -17,7 +17,7 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-
+    <SignAssembly>true</SignAssembly>
     <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
   </PropertyGroup> 
     <Choose>

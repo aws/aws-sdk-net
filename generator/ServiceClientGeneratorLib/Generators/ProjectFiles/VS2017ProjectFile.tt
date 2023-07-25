@@ -48,6 +48,7 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <SignAssembly>true</SignAssembly>
 
 <#
     if (!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
