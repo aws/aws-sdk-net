@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkCardInfo Object
+    /// Response Unmarshaller for InferenceDeviceMemoryInfo Object
     /// </summary>  
-    public class NetworkCardInfoUnmarshaller : IUnmarshaller<NetworkCardInfo, XmlUnmarshallerContext>, IUnmarshaller<NetworkCardInfo, JsonUnmarshallerContext>
+    public class InferenceDeviceMemoryInfoUnmarshaller : IUnmarshaller<InferenceDeviceMemoryInfo, XmlUnmarshallerContext>, IUnmarshaller<InferenceDeviceMemoryInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkCardInfo Unmarshall(XmlUnmarshallerContext context)
+        public InferenceDeviceMemoryInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            NetworkCardInfo unmarshalledObject = new NetworkCardInfo();
+            InferenceDeviceMemoryInfo unmarshalledObject = new InferenceDeviceMemoryInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("baselineBandwidthInGbps", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.BaselineBandwidthInGbps = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("maximumNetworkInterfaces", targetDepth))
+                    if (context.TestExpression("sizeInMiB", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.MaximumNetworkInterfaces = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkCardIndex", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.NetworkCardIndex = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkPerformance", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NetworkPerformance = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("peakBandwidthInGbps", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.PeakBandwidthInGbps = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SizeInMiB = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkCardInfo Unmarshall(JsonUnmarshallerContext context)
+        public InferenceDeviceMemoryInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static NetworkCardInfoUnmarshaller _instance = new NetworkCardInfoUnmarshaller();        
+        private static InferenceDeviceMemoryInfoUnmarshaller _instance = new InferenceDeviceMemoryInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkCardInfoUnmarshaller Instance
+        public static InferenceDeviceMemoryInfoUnmarshaller Instance
         {
             get
             {

@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Manufacturer = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("memoryInfo", targetDepth))
+                    {
+                        var unmarshaller = InferenceDeviceMemoryInfoUnmarshaller.Instance;
+                        unmarshalledObject.MemoryInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
