@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDomain Request Marshaller
+    /// GetSimilarProfiles Request Marshaller
     /// </summary>       
-    public class CreateDomainRequestMarshaller : IMarshaller<IRequest, CreateDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetSimilarProfilesRequestMarshaller : IMarshaller<IRequest, GetSimilarProfilesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDomainRequest)input);
+            return this.Marshall((GetSimilarProfilesRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDomainRequest publicRequest)
+        public IRequest Marshall(GetSimilarProfilesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
@@ -62,64 +62,34 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
-            request.ResourcePath = "/domains/{DomainName}";
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/domains/{DomainName}/matches";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeadLetterQueueUrl())
+                if(publicRequest.IsSetMatchType())
                 {
-                    context.Writer.WritePropertyName("DeadLetterQueueUrl");
-                    context.Writer.Write(publicRequest.DeadLetterQueueUrl);
+                    context.Writer.WritePropertyName("MatchType");
+                    context.Writer.Write(publicRequest.MatchType);
                 }
 
-                if(publicRequest.IsSetDefaultEncryptionKey())
+                if(publicRequest.IsSetSearchKey())
                 {
-                    context.Writer.WritePropertyName("DefaultEncryptionKey");
-                    context.Writer.Write(publicRequest.DefaultEncryptionKey);
+                    context.Writer.WritePropertyName("SearchKey");
+                    context.Writer.Write(publicRequest.SearchKey);
                 }
 
-                if(publicRequest.IsSetDefaultExpirationDays())
+                if(publicRequest.IsSetSearchValue())
                 {
-                    context.Writer.WritePropertyName("DefaultExpirationDays");
-                    context.Writer.Write(publicRequest.DefaultExpirationDays);
-                }
-
-                if(publicRequest.IsSetMatching())
-                {
-                    context.Writer.WritePropertyName("Matching");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MatchingRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Matching, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRuleBasedMatching())
-                {
-                    context.Writer.WritePropertyName("RuleBasedMatching");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RuleBasedMatchingRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RuleBasedMatching, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("SearchValue");
+                    context.Writer.Write(publicRequest.SearchValue);
                 }
 
                 writer.WriteObjectEnd();
@@ -127,12 +97,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }
-        private static CreateDomainRequestMarshaller _instance = new CreateDomainRequestMarshaller();        
+        private static GetSimilarProfilesRequestMarshaller _instance = new GetSimilarProfilesRequestMarshaller();        
 
-        internal static CreateDomainRequestMarshaller GetInstance()
+        internal static GetSimilarProfilesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -140,7 +111,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDomainRequestMarshaller Instance
+        public static GetSimilarProfilesRequestMarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDomain operation
+    /// Response Unmarshaller for GetSimilarProfiles operation
     /// </summary>  
-    public class GetDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetSimilarProfilesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,46 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDomainResponse response = new GetDomainResponse();
+            GetSimilarProfilesResponse response = new GetSimilarProfilesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("ConfidenceScore", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    response.ConfidenceScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeadLetterQueueUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeadLetterQueueUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultEncryptionKey", targetDepth))
+                if (context.TestExpression("MatchId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultEncryptionKey = unmarshaller.Unmarshall(context);
+                    response.MatchId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultExpirationDays", targetDepth))
+                if (context.TestExpression("MatchType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MatchType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ProfileIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleLevel", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    response.DefaultExpirationDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Matching", targetDepth))
-                {
-                    var unmarshaller = MatchingResponseUnmarshaller.Instance;
-                    response.Matching = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleBasedMatching", targetDepth))
-                {
-                    var unmarshaller = RuleBasedMatchingResponseUnmarshaller.Instance;
-                    response.RuleBasedMatching = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Stats", targetDepth))
-                {
-                    var unmarshaller = DomainStatsUnmarshaller.Instance;
-                    response.Stats = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    response.RuleLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -158,9 +134,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetDomainResponseUnmarshaller _instance = new GetDomainResponseUnmarshaller();        
+        private static GetSimilarProfilesResponseUnmarshaller _instance = new GetSimilarProfilesResponseUnmarshaller();        
 
-        internal static GetDomainResponseUnmarshaller GetInstance()
+        internal static GetSimilarProfilesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -168,7 +144,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDomainResponseUnmarshaller Instance
+        public static GetSimilarProfilesResponseUnmarshaller Instance
         {
             get
             {

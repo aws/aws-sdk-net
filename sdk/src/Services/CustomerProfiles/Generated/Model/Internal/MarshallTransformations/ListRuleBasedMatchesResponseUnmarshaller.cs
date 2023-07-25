@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDomain operation
+    /// Response Unmarshaller for ListRuleBasedMatches operation
     /// </summary>  
-    public class GetDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRuleBasedMatchesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,22 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDomainResponse response = new GetDomainResponse();
+            ListRuleBasedMatchesResponse response = new ListRuleBasedMatchesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("MatchIds", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.MatchIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeadLetterQueueUrl", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeadLetterQueueUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultEncryptionKey", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultEncryptionKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultExpirationDays", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.DefaultExpirationDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Matching", targetDepth))
-                {
-                    var unmarshaller = MatchingResponseUnmarshaller.Instance;
-                    response.Matching = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleBasedMatching", targetDepth))
-                {
-                    var unmarshaller = RuleBasedMatchingResponseUnmarshaller.Instance;
-                    response.RuleBasedMatching = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Stats", targetDepth))
-                {
-                    var unmarshaller = DomainStatsUnmarshaller.Instance;
-                    response.Stats = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -158,9 +110,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetDomainResponseUnmarshaller _instance = new GetDomainResponseUnmarshaller();        
+        private static ListRuleBasedMatchesResponseUnmarshaller _instance = new ListRuleBasedMatchesResponseUnmarshaller();        
 
-        internal static GetDomainResponseUnmarshaller GetInstance()
+        internal static ListRuleBasedMatchesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -168,7 +120,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDomainResponseUnmarshaller Instance
+        public static ListRuleBasedMatchesResponseUnmarshaller Instance
         {
             get
             {

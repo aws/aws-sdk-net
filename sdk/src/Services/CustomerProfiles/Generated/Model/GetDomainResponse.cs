@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _domainName;
         private DateTime? _lastUpdatedAt;
         private MatchingResponse _matching;
+        private RuleBasedMatchingResponse _ruleBasedMatching;
         private DomainStats _stats;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -186,6 +187,29 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetMatching()
         {
             return this._matching != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleBasedMatching. 
+        /// <para>
+        /// The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code>
+        /// = true, Amazon Connect Customer Profiles will start to match and merge your profiles
+        /// according to your configuration in the <code>RuleBasedMatchingRequest</code>. You
+        /// can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code>
+        /// API to return and review the results. Also, if you have configured <code>ExportingConfig</code>
+        /// in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+        /// </para>
+        /// </summary>
+        public RuleBasedMatchingResponse RuleBasedMatching
+        {
+            get { return this._ruleBasedMatching; }
+            set { this._ruleBasedMatching = value; }
+        }
+
+        // Check to see if RuleBasedMatching property is set
+        internal bool IsSetRuleBasedMatching()
+        {
+            return this._ruleBasedMatching != null;
         }
 
         /// <summary>
