@@ -226,6 +226,62 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationAzureBlob
+
+
+        /// <summary>
+        /// Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can
+        /// use as a transfer source or destination.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure you know <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+        /// DataSync accesses Azure Blob Storage</a> and works with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
+        /// tiers</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+        /// types</a>. You also need a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+        /// agent</a> that can connect to your container.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationAzureBlob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">REST API Reference for CreateLocationAzureBlob Operation</seealso>
+        CreateLocationAzureBlobResponse CreateLocationAzureBlob(CreateLocationAzureBlobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocationAzureBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocationAzureBlob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">REST API Reference for CreateLocationAzureBlob Operation</seealso>
+        IAsyncResult BeginCreateLocationAzureBlob(CreateLocationAzureBlobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocationAzureBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocationAzureBlob.</param>
+        /// 
+        /// <returns>Returns a  CreateLocationAzureBlobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">REST API Reference for CreateLocationAzureBlob Operation</seealso>
+        CreateLocationAzureBlobResponse EndCreateLocationAzureBlob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateLocationEfs
 
 
@@ -519,8 +575,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Defines a file system on a Network File System (NFS) server that can be read from
-        /// or written to.
+        /// Creates an endpoint for an Network File System (NFS) file server that DataSync can
+        /// use for a data transfer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// 
@@ -682,8 +738,13 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
-        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-        /// an SMB location</a>.
+        /// use for a data transfer.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
+        /// an SMB file server</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
         /// 
@@ -1015,6 +1076,53 @@ namespace Amazon.DataSync
         /// <returns>Returns a  DescribeDiscoveryJobResult from DataSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
         DescribeDiscoveryJobResponse EndDescribeDiscoveryJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocationAzureBlob
+
+
+        /// <summary>
+        /// Provides details about how an DataSync transfer location for Microsoft Azure Blob
+        /// Storage is configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationAzureBlob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationAzureBlob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">REST API Reference for DescribeLocationAzureBlob Operation</seealso>
+        DescribeLocationAzureBlobResponse DescribeLocationAzureBlob(DescribeLocationAzureBlobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocationAzureBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationAzureBlob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocationAzureBlob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">REST API Reference for DescribeLocationAzureBlob Operation</seealso>
+        IAsyncResult BeginDescribeLocationAzureBlob(DescribeLocationAzureBlobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocationAzureBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocationAzureBlob.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocationAzureBlobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">REST API Reference for DescribeLocationAzureBlob Operation</seealso>
+        DescribeLocationAzureBlobResponse EndDescribeLocationAzureBlob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1642,7 +1750,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about a task.
+        /// Provides information about an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTask service method.</param>
         /// 
@@ -1688,7 +1796,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns detailed metadata about a task that is being executed.
+        /// Provides information about an DataSync transfer task that's running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskExecution service method.</param>
         /// 
@@ -2534,6 +2642,53 @@ namespace Amazon.DataSync
         /// <returns>Returns a  UpdateDiscoveryJobResult from DataSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
         UpdateDiscoveryJobResponse EndUpdateDiscoveryJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLocationAzureBlob
+
+
+        /// <summary>
+        /// Modifies some configurations of the Microsoft Azure Blob Storage transfer location
+        /// that you're using with DataSync.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationAzureBlob service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationAzureBlob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">REST API Reference for UpdateLocationAzureBlob Operation</seealso>
+        UpdateLocationAzureBlobResponse UpdateLocationAzureBlob(UpdateLocationAzureBlobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationAzureBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationAzureBlob operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationAzureBlob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">REST API Reference for UpdateLocationAzureBlob Operation</seealso>
+        IAsyncResult BeginUpdateLocationAzureBlob(UpdateLocationAzureBlobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationAzureBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationAzureBlob.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationAzureBlobResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">REST API Reference for UpdateLocationAzureBlob Operation</seealso>
+        UpdateLocationAzureBlobResponse EndUpdateLocationAzureBlob(IAsyncResult asyncResult);
 
         #endregion
         

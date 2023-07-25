@@ -30,8 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationNfs operation.
-    /// Defines a file system on a Network File System (NFS) server that can be read from
-    /// or written to.
+    /// Creates an endpoint for an Network File System (NFS) file server that DataSync can
+    /// use for a data transfer.
     /// </summary>
     public partial class CreateLocationNfsRequest : AmazonDataSyncRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The NFS mount options that DataSync can use to mount your NFS share.
+        /// Specifies the mount options that DataSync can use to mount your NFS share.
         /// </para>
         /// </summary>
         public NfsMountOptions MountOptions
@@ -62,8 +62,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property OnPremConfig. 
         /// <para>
-        /// Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect
-        /// to an NFS server. 
+        /// Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect
+        /// to your NFS file server. 
         /// </para>
         ///  
         /// <para>
@@ -87,9 +87,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
-        /// name of the NFS server. An agent that is installed on-premises uses this hostname
-        /// to mount the NFS server in a network. 
+        /// Specifies the IP address or domain name of your NFS file server. An agent that is
+        /// installed on-premises uses this hostname to mount the NFS server in a network. 
         /// </para>
         ///  
         /// <para>
@@ -98,7 +97,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+        /// You must specify be an IP version 4 address or Domain Name System (DNS)-compliant
+        /// name.
         /// </para>
         ///  </note>
         /// </summary>
@@ -118,10 +118,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// The subdirectory in the NFS file system that is used to read data from the NFS source
-        /// location or write data to the NFS destination. The NFS path should be a path that's
-        /// exported by the NFS server, or a subdirectory of that path. The path should be such
-        /// that it can be mounted by other NFS clients in your network. 
+        /// Specifies the subdirectory in the NFS file server that DataSync transfers to or from.
+        /// The NFS path should be a path that's exported by the NFS server, or a subdirectory
+        /// of that path. The path should be such that it can be mounted by other NFS clients
+        /// in your network. 
         /// </para>
         ///  
         /// <para>
@@ -143,11 +143,6 @@ namespace Amazon.DataSync.Model
         /// If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
         /// Server on Snowcone</a> for more information.
         /// </para>
-        ///  
-        /// <para>
-        /// For information about NFS export configuration, see 18.7. The /etc/exports Configuration
-        /// File in the Red Hat Enterprise Linux documentation.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=4096)]
         public string Subdirectory
@@ -165,8 +160,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.
+        /// Specifies labels that help you categorize, filter, and search for your Amazon Web
+        /// Services resources. We recommend creating at least a name tag for your location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

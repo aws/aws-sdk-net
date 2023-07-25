@@ -44,7 +44,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NFS location to update.
+        /// Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -93,10 +93,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// The subdirectory in the NFS file system that is used to read data from the NFS source
-        /// location or write data to the NFS destination. The NFS path should be a path that's
-        /// exported by the NFS server, or a subdirectory of that path. The path should be such
-        /// that it can be mounted by other NFS clients in your network.
+        /// Specifies the subdirectory in your NFS file system that DataSync uses to read from
+        /// or write to during a transfer. The NFS path should be exported by the NFS server,
+        /// or a subdirectory of that path. The path should be such that it can be mounted by
+        /// other NFS clients in your network.
         /// </para>
         ///  
         /// <para>
@@ -117,11 +117,6 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
         /// Server on Snowcone</a> for more information.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about NFS export configuration, see 18.7. The /etc/exports Configuration
-        /// File in the Red Hat Enterprise Linux documentation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

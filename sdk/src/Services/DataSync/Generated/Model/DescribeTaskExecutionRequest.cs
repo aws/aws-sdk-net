@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTaskExecution operation.
-    /// Returns detailed metadata about a task that is being executed.
+    /// Provides information about an DataSync transfer task that's running.
     /// </summary>
     public partial class DescribeTaskExecutionRequest : AmazonDataSyncRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task that is being executed.
+        /// Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

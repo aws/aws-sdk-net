@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTask operation.
-    /// Provides information about an DataSync transfer task.
+    /// This is the response object from the UpdateLocationAzureBlob operation.
     /// </summary>
-    public partial class DescribeTaskRequest : AmazonDataSyncRequest
+    public partial class UpdateLocationAzureBlobResponse : AmazonWebServiceResponse
     {
-        private string _taskArn;
-
-        /// <summary>
-        /// Gets and sets the property TaskArn. 
-        /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the transfer task.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string TaskArn
-        {
-            get { return this._taskArn; }
-            set { this._taskArn = value; }
-        }
-
-        // Check to see if TaskArn property is set
-        internal bool IsSetTaskArn()
-        {
-            return this._taskArn != null;
-        }
 
     }
 }
