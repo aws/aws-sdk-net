@@ -33,8 +33,28 @@ namespace Amazon.EMRServerless.Model
     /// </summary>
     public partial class MonitoringConfiguration
     {
+        private CloudWatchLoggingConfiguration _cloudWatchLoggingConfiguration;
         private ManagedPersistenceMonitoringConfiguration _managedPersistenceMonitoringConfiguration;
         private S3MonitoringConfiguration _s3MonitoringConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingConfiguration. 
+        /// <para>
+        /// The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs
+        /// to send log information to CloudWatch.
+        /// </para>
+        /// </summary>
+        public CloudWatchLoggingConfiguration CloudWatchLoggingConfiguration
+        {
+            get { return this._cloudWatchLoggingConfiguration; }
+            set { this._cloudWatchLoggingConfiguration = value; }
+        }
+
+        // Check to see if CloudWatchLoggingConfiguration property is set
+        internal bool IsSetCloudWatchLoggingConfiguration()
+        {
+            return this._cloudWatchLoggingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ManagedPersistenceMonitoringConfiguration. 

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfiguration Object
+    /// Response Unmarshaller for CloudWatchLoggingConfiguration Object
     /// </summary>  
-    public class MonitoringConfigurationUnmarshaller : IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfiguration, JsonUnmarshallerContext>
+    public class CloudWatchLoggingConfigurationUnmarshaller : IUnmarshaller<CloudWatchLoggingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchLoggingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MonitoringConfiguration IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudWatchLoggingConfiguration IUnmarshaller<CloudWatchLoggingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,45 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public CloudWatchLoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MonitoringConfiguration unmarshalledObject = new MonitoringConfiguration();
+            CloudWatchLoggingConfiguration unmarshalledObject = new CloudWatchLoggingConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cloudWatchLoggingConfiguration", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = CloudWatchLoggingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLoggingConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("managedPersistenceMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("encryptionKeyArn", targetDepth))
                 {
-                    var unmarshaller = ManagedPersistenceMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ManagedPersistenceMonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("logGroupName", targetDepth))
                 {
-                    var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logStreamNamePrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogStreamNamePrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logTypes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.LogTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigurationUnmarshaller _instance = new MonitoringConfigurationUnmarshaller();        
+        private static CloudWatchLoggingConfigurationUnmarshaller _instance = new CloudWatchLoggingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigurationUnmarshaller Instance
+        public static CloudWatchLoggingConfigurationUnmarshaller Instance
         {
             get
             {
