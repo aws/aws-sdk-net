@@ -439,7 +439,7 @@ namespace Amazon.SecurityToken.Model
         /// The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity
         /// provider. Your application must get this token by authenticating the user who is using
         /// your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code>
-        /// call. 
+        /// call. Only tokens with RSA algorithms (RS256) are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=4, Max=20000)]

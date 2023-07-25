@@ -82,6 +82,22 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetProvidedContexts())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ProvidedContexts)
+                    {
+                        if(publicRequestlistValue.IsSetContextAssertion())
+                        {
+                            request.Parameters.Add("ProvidedContexts" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextAssertion", StringUtils.FromString(publicRequestlistValue.ContextAssertion));
+                        }
+                        if(publicRequestlistValue.IsSetProviderArn())
+                        {
+                            request.Parameters.Add("ProvidedContexts" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ProviderArn", StringUtils.FromString(publicRequestlistValue.ProviderArn));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
