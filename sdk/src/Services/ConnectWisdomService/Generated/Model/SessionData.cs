@@ -34,6 +34,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class SessionData
     {
         private string _description;
+        private SessionIntegrationConfiguration _integrationConfiguration;
         private string _name;
         private string _sessionArn;
         private string _sessionId;
@@ -56,6 +57,24 @@ namespace Amazon.ConnectWisdomService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationConfiguration. 
+        /// <para>
+        /// The configuration information for the session integration.
+        /// </para>
+        /// </summary>
+        public SessionIntegrationConfiguration IntegrationConfiguration
+        {
+            get { return this._integrationConfiguration; }
+            set { this._integrationConfiguration = value; }
+        }
+
+        // Check to see if IntegrationConfiguration property is set
+        internal bool IsSetIntegrationConfiguration()
+        {
+            return this._integrationConfiguration != null;
         }
 
         /// <summary>
