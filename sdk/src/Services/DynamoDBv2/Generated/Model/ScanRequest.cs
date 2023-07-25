@@ -36,20 +36,29 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// If the total number of scanned items exceeds the maximum dataset size limit of 1 MB,
-    /// the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
-    /// value to continue the scan in a subsequent operation. The results also include the
-    /// number of items exceeding the limit. A scan can result in no table data meeting the
-    /// filter criteria. 
+    /// If the total size of scanned items exceeds the maximum dataset size limit of 1 MB,
+    /// the scan completes and results are returned to the user. The <code>LastEvaluatedKey</code>
+    /// value is also returned and the requestor can use the <code>LastEvaluatedKey</code>
+    /// to continue the scan in a subsequent operation. Each scan response also includes number
+    /// of items that were scanned (ScannedCount) as part of the request. If using a <code>FilterExpression</code>,
+    /// a scan result can result in no items meeting the criteria and the <code>Count</code>
+    /// will result in zero. If you did not use a <code>FilterExpression</code> in the scan
+    /// request, then <code>Count</code> is the same as <code>ScannedCount</code>.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// A single <code>Scan</code> operation reads up to the maximum number of items set (if
-    /// using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then apply
-    /// any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
-    /// is present in the response, you need to paginate the result set. For more information,
-    /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
-    /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+    ///  <code>Count</code> and <code>ScannedCount</code> only return the count of items specific
+    /// to a single scan request and, unless the table is less than 1MB, do not represent
+    /// the total number of items in the table. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// A single <code>Scan</code> operation first reads up to the maximum number of items
+    /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
+    /// applies any filtering to the results if a <code>FilterExpression</code> is provided.
+    /// If <code>LastEvaluatedKey</code> is present in the response, pagination is required
+    /// to complete the full table scan. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+    /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -61,12 +70,22 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>Scan</code> uses eventually consistent reads when accessing the data in a table;
-    /// therefore, the result set might not include the changes to data in the table immediately
-    /// before the operation began. If you need a consistent copy of the data, as of the time
-    /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
-    /// to <code>true</code>.
+    /// By default, a <code>Scan</code> uses eventually consistent reads when accessing the
+    /// items in a table. Therefore, the results from an eventually consistent <code>Scan</code>
+    /// may not include the latest item changes at the time the scan iterates through each
+    /// item in the table. If you require a strongly consistent read of each item as the scan
+    /// iterates through the items in the table, you can set the <code>ConsistentRead</code>
+    /// parameter to true. Strong consistency only relates to the consistency of the read
+    /// at the item level.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  DynamoDB does not provide snapshot isolation for a scan operation when the <code>ConsistentRead</code>
+    /// parameter is set to true. Thus, a DynamoDB scan operation does not guarantee that
+    /// all reads in a scan see a consistent snapshot of the table when the scan operation
+    /// was requested. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ScanRequest : AmazonDynamoDBRequest
     {

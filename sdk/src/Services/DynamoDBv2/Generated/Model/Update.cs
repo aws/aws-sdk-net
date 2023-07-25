@@ -120,7 +120,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if
         /// the <code>Update</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>,
-        /// the valid values are: NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.
+        /// the valid values are: NONE and ALL_OLD.
         /// </para>
         /// </summary>
         public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure
