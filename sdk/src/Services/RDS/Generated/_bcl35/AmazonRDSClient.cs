@@ -2770,9 +2770,10 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// You can create a global database that is initially empty, and then add a primary cluster
-        /// and a secondary cluster to it. Or you can specify an existing Aurora cluster during
-        /// the create operation, and this cluster becomes the primary cluster of the global database.
+        /// You can create a global database that is initially empty, and then create the primary
+        /// and secondary DB clusters in the global database. Or you can specify an existing Aurora
+        /// cluster during the create operation, and this cluster becomes the primary cluster
+        /// of the global database.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8685,14 +8686,14 @@ namespace Amazon.RDS
         #region  ModifyGlobalCluster
 
         /// <summary>
-        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more database
-        /// configuration parameters by specifying these parameters and the new values in the
-        /// request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// Modifies a setting for an Amazon Aurora global cluster. You can change one or more
+        /// database configuration parameters by specifying these parameters and the new values
+        /// in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation only applies to Aurora global database clusters.
         /// </para>
         ///  </note>
         /// </summary>

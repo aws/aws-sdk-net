@@ -346,7 +346,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CACertificateIdentifier. 
         /// <para>
-        /// The CA certificate identifier to use for the DB instance6's server certificate.
+        /// The CA certificate identifier to use for the DB instance's server certificate.
         /// </para>
         ///  
         /// <para>

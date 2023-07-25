@@ -100,6 +100,7 @@ namespace Amazon.RDS.Model
         private string _networkType;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
         private PendingModifiedValues _pendingModifiedValues;
+        private string _percentProgress;
         private bool? _performanceInsightsEnabled;
         private string _performanceInsightsKMSKeyId;
         private int? _performanceInsightsRetentionPeriod;
@@ -1302,6 +1303,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetPendingModifiedValues()
         {
             return this._pendingModifiedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PercentProgress. 
+        /// <para>
+        /// The progress of the storage optimization operation as a percentage.
+        /// </para>
+        /// </summary>
+        public string PercentProgress
+        {
+            get { return this._percentProgress; }
+            set { this._percentProgress = value; }
+        }
+
+        // Check to see if PercentProgress property is set
+        internal bool IsSetPercentProgress()
+        {
+            return this._percentProgress != null;
         }
 
         /// <summary>
