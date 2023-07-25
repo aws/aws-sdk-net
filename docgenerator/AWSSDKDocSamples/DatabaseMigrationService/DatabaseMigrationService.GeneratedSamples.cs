@@ -130,7 +130,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateReplicationTask(new CreateReplicationTaskRequest 
             {
-                CdcStartTime = new DateTime(2016, 12, 14, 10, 25, 43, DateTimeKind.Utc),
+                CdcStartTime = new DateTime(2016, 12, 14, 6, 25, 43, DateTimeKind.Utc),
                 MigrationType = "full-load",
                 ReplicationInstanceArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ",
                 ReplicationTaskIdentifier = "task1",
@@ -649,7 +649,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartReplicationTask(new StartReplicationTaskRequest 
             {
-                CdcStartTime = new DateTime(2016, 12, 14, 5, 33, 20, DateTimeKind.Utc),
+                CdcStartTime = new DateTime(2016, 12, 14, 1, 33, 20, DateTimeKind.Utc),
                 ReplicationTaskArn = "arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ",
                 StartReplicationTaskType = "start-replication"
             });
