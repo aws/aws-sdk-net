@@ -74,6 +74,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DbClusterIdentifier);
             }
 
+            if(requestObject.IsSetDbClusterSnapshotAttributes())
+            {
+                context.Writer.WritePropertyName("DbClusterSnapshotAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDbClusterSnapshotAttributesListValue in requestObject.DbClusterSnapshotAttributes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDbClusterSnapshotAttributesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDbClusterSnapshotIdentifier())
             {
                 context.Writer.WritePropertyName("DbClusterSnapshotIdentifier");

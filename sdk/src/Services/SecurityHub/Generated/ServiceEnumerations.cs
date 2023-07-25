@@ -791,9 +791,17 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
+        /// Constant CONTAINS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison CONTAINS = new MapFilterComparison("CONTAINS");
+        /// <summary>
         /// Constant EQUALS for MapFilterComparison
         /// </summary>
         public static readonly MapFilterComparison EQUALS = new MapFilterComparison("EQUALS");
+        /// <summary>
+        /// Constant NOT_CONTAINS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison NOT_CONTAINS = new MapFilterComparison("NOT_CONTAINS");
         /// <summary>
         /// Constant NOT_EQUALS for MapFilterComparison
         /// </summary>
@@ -1377,9 +1385,17 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
+        /// Constant CONTAINS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison CONTAINS = new StringFilterComparison("CONTAINS");
+        /// <summary>
         /// Constant EQUALS for StringFilterComparison
         /// </summary>
         public static readonly StringFilterComparison EQUALS = new StringFilterComparison("EQUALS");
+        /// <summary>
+        /// Constant NOT_CONTAINS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison NOT_CONTAINS = new StringFilterComparison("NOT_CONTAINS");
         /// <summary>
         /// Constant NOT_EQUALS for StringFilterComparison
         /// </summary>

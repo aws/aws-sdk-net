@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private List<string> _availabilityZones = new List<string>();
         private string _clusterCreateTime;
         private string _dbClusterIdentifier;
+        private List<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> _dbClusterSnapshotAttributes = new List<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>();
         private string _dbClusterSnapshotIdentifier;
         private string _engine;
         private string _engineVersion;
@@ -128,6 +129,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDbClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbClusterSnapshotAttributes. 
+        /// <para>
+        ///  Contains the name and values of a manual DB cluster snapshot attribute. 
+        /// </para>
+        /// </summary>
+        public List<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute> DbClusterSnapshotAttributes
+        {
+            get { return this._dbClusterSnapshotAttributes; }
+            set { this._dbClusterSnapshotAttributes = value; }
+        }
+
+        // Check to see if DbClusterSnapshotAttributes property is set
+        internal bool IsSetDbClusterSnapshotAttributes()
+        {
+            return this._dbClusterSnapshotAttributes != null && this._dbClusterSnapshotAttributes.Count > 0; 
         }
 
         /// <summary>

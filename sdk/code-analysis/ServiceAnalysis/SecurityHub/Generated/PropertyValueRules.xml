@@ -816,6 +816,26 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails.EncryptionOption</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails.KmsKey</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAthenaWorkGroupDetails.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAthenaWorkGroupDetails.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAthenaWorkGroupDetails.State</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails.Value</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -3849,6 +3869,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsRdsDbClusterOptionGroupMembership.Status</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute.AttributeName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

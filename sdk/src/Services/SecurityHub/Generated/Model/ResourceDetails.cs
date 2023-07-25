@@ -56,6 +56,7 @@ namespace Amazon.SecurityHub.Model
         private AwsApiGatewayV2ApiDetails _awsApiGatewayV2Api;
         private AwsApiGatewayV2StageDetails _awsApiGatewayV2Stage;
         private AwsAppSyncGraphQlApiDetails _awsAppSyncGraphQlApi;
+        private AwsAthenaWorkGroupDetails _awsAthenaWorkGroup;
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
         private AwsAutoScalingLaunchConfigurationDetails _awsAutoScalingLaunchConfiguration;
         private AwsBackupBackupPlanDetails _awsBackupBackupPlan;
@@ -249,6 +250,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsAppSyncGraphQlApi()
         {
             return this._awsAppSyncGraphQlApi != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsAthenaWorkGroup. 
+        /// <para>
+        ///  Provides information about an Amazon Athena workgroup. A workgroup helps you separate
+        /// users, teams, applications, or workloads. It also helps you set limits on data processing
+        /// and track costs. 
+        /// </para>
+        /// </summary>
+        public AwsAthenaWorkGroupDetails AwsAthenaWorkGroup
+        {
+            get { return this._awsAthenaWorkGroup; }
+            set { this._awsAthenaWorkGroup = value; }
+        }
+
+        // Check to see if AwsAthenaWorkGroup property is set
+        internal bool IsSetAwsAthenaWorkGroup()
+        {
+            return this._awsAthenaWorkGroup != null;
         }
 
         /// <summary>
