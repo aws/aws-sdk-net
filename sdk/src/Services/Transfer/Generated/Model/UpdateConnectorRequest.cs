@@ -40,6 +40,7 @@ namespace Amazon.Transfer.Model
         private As2ConnectorConfig _as2Config;
         private string _connectorId;
         private string _loggingRole;
+        private SftpConnectorConfig _sftpConfig;
         private string _url;
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property As2Config. 
         /// <para>
-        /// A structure that contains the parameters for a connector object.
+        /// A structure that contains the parameters for an AS2 connector object.
         /// </para>
         /// </summary>
         public As2ConnectorConfig As2Config
@@ -137,9 +138,27 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SftpConfig. 
+        /// <para>
+        /// A structure that contains the parameters for an SFTP connector object.
+        /// </para>
+        /// </summary>
+        public SftpConnectorConfig SftpConfig
+        {
+            get { return this._sftpConfig; }
+            set { this._sftpConfig = value; }
+        }
+
+        // Check to see if SftpConfig property is set
+        internal bool IsSetSftpConfig()
+        {
+            return this._sftpConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of the partner's AS2 endpoint.
+        /// The URL of the partner's AS2 or SFTP endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

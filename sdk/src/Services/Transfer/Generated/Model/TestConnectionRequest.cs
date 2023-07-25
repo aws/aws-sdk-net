@@ -29,32 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Returns details of the connector that is specified.
+    /// Container for the parameters to the TestConnection operation.
+    /// Tests whether your SFTP connector is set up successfully. We highly recommend that
+    /// you call this operation to test your ability to transfer files between a Transfer
+    /// Family server and a trading partner's SFTP server.
     /// </summary>
-    public partial class ListedConnector
+    public partial class TestConnectionRequest : AmazonTransferRequest
     {
-        private string _arn;
         private string _connectorId;
-        private string _url;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the specified connector.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=1600)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ConnectorId. 
@@ -62,7 +44,7 @@ namespace Amazon.Transfer.Model
         /// The unique identifier for the connector.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=19, Max=19)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string ConnectorId
         {
             get { return this._connectorId; }
@@ -73,25 +55,6 @@ namespace Amazon.Transfer.Model
         internal bool IsSetConnectorId()
         {
             return this._connectorId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Url. 
-        /// <para>
-        /// The URL of the partner's AS2 or SFTP endpoint.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=255)]
-        public string Url
-        {
-            get { return this._url; }
-            set { this._url = value; }
-        }
-
-        // Check to see if Url property is set
-        internal bool IsSetUrl()
-        {
-            return this._url != null;
         }
 
     }

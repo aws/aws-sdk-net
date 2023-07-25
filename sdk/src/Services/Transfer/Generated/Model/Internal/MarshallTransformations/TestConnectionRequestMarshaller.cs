@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartFileTransfer Request Marshaller
+    /// TestConnection Request Marshaller
     /// </summary>       
-    public class StartFileTransferRequestMarshaller : IMarshaller<IRequest, StartFileTransferRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TestConnectionRequestMarshaller : IMarshaller<IRequest, TestConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartFileTransferRequest)input);
+            return this.Marshall((TestConnectionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartFileTransferRequest publicRequest)
+        public IRequest Marshall(TestConnectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Transfer");
-            string target = "TransferService.StartFileTransfer";
+            string target = "TransferService.TestConnection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-05";
@@ -73,40 +73,6 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectorId);
                 }
 
-                if(publicRequest.IsSetLocalDirectoryPath())
-                {
-                    context.Writer.WritePropertyName("LocalDirectoryPath");
-                    context.Writer.Write(publicRequest.LocalDirectoryPath);
-                }
-
-                if(publicRequest.IsSetRemoteDirectoryPath())
-                {
-                    context.Writer.WritePropertyName("RemoteDirectoryPath");
-                    context.Writer.Write(publicRequest.RemoteDirectoryPath);
-                }
-
-                if(publicRequest.IsSetRetrieveFilePaths())
-                {
-                    context.Writer.WritePropertyName("RetrieveFilePaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRetrieveFilePathsListValue in publicRequest.RetrieveFilePaths)
-                    {
-                            context.Writer.Write(publicRequestRetrieveFilePathsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSendFilePaths())
-                {
-                    context.Writer.WritePropertyName("SendFilePaths");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSendFilePathsListValue in publicRequest.SendFilePaths)
-                    {
-                            context.Writer.Write(publicRequestSendFilePathsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -115,9 +81,9 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartFileTransferRequestMarshaller _instance = new StartFileTransferRequestMarshaller();        
+        private static TestConnectionRequestMarshaller _instance = new TestConnectionRequestMarshaller();        
 
-        internal static StartFileTransferRequestMarshaller GetInstance()
+        internal static TestConnectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +91,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartFileTransferRequestMarshaller Instance
+        public static TestConnectionRequestMarshaller Instance
         {
             get
             {

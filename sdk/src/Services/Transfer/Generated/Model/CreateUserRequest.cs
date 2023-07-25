@@ -99,8 +99,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// In most cases, you can use this value instead of the session policy to lock your user
         /// down to the designated home directory ("<code>chroot</code>"). To do this, you can
-        /// set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
-        /// parameter value.
+        /// set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+        /// the user should see for their home directory when they log in.
         /// </para>
         ///  
         /// <para>

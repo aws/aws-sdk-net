@@ -94,6 +94,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SftpConfig", targetDepth))
+                {
+                    var unmarshaller = SftpConnectorConfigUnmarshaller.Instance;
+                    unmarshalledObject.SftpConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

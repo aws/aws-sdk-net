@@ -31,15 +31,23 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the CreateConnector operation.
     /// Creates the connector, which captures the parameters for an outbound connection for
-    /// the AS2 protocol. The connector is required for sending files to an externally hosted
-    /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+    /// the AS2 or SFTP protocol. The connector is required for sending files to an externally
+    /// hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
     /// AS2 connectors</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You must specify exactly one configuration object: either for AS2 (<code>As2Config</code>)
+    /// or SFTP (<code>SftpConfig</code>).
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateConnectorRequest : AmazonTransferRequest
     {
         private string _accessRole;
         private As2ConnectorConfig _as2Config;
         private string _loggingRole;
+        private SftpConnectorConfig _sftpConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _url;
 
@@ -82,10 +90,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property As2Config. 
         /// <para>
-        /// A structure that contains the parameters for a connector object.
+        /// A structure that contains the parameters for an AS2 connector object.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public As2ConnectorConfig As2Config
         {
             get { return this._as2Config; }
@@ -120,6 +127,24 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SftpConfig. 
+        /// <para>
+        /// A structure that contains the parameters for an SFTP connector object.
+        /// </para>
+        /// </summary>
+        public SftpConnectorConfig SftpConfig
+        {
+            get { return this._sftpConfig; }
+            set { this._sftpConfig = value; }
+        }
+
+        // Check to see if SftpConfig property is set
+        internal bool IsSetSftpConfig()
+        {
+            return this._sftpConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pairs that can be used to group and search for connectors. Tags are metadata
@@ -142,7 +167,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of the partner's AS2 endpoint.
+        /// The URL of the partner's AS2 or SFTP endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
