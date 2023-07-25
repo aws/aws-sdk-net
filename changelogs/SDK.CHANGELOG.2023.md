@@ -1,3 +1,31 @@
+### 3.7.606.0 (2023-07-25 19:02 UTC)
+* BillingConductor (3.7.201.0)
+	* Added support for Auto-Assocate Billing Groups for CreateBillingGroup, UpdateBillingGroup, and ListBillingGroups.
+* ConnectWisdomService (3.7.201.0)
+	* This release added two new data types: AssistantIntegrationConfiguration, and SessionIntegrationConfiguration to support Wisdom integration with Amazon Connect Chat
+* CustomerProfiles (3.7.201.0)
+	* Amazon Connect Customer Profiles now supports rule-based resolution to match and merge similar profiles into unified profiles, helping companies deliver faster and more personalized customer service by providing access to relevant customer information for agents and automated experiences.
+* DataSync (3.7.201.0)
+	* AWS DataSync now supports Microsoft Azure Blob Storage locations.
+* DynamoDBv2 (3.7.200.5)
+	* Documentation updates for DynamoDB
+* EC2 (3.7.202.0)
+	* This release adds an instance's peak and baseline network bandwidth as well as the memory sizes of an instance's inference accelerators to DescribeInstanceTypes.
+* EMRServerless (3.7.201.0)
+	* This release adds support for publishing application logs to CloudWatch.
+* Lambda (3.7.201.0)
+	* Add Python 3.11 (python3.11) support to AWS Lambda
+* RDS (3.7.202.0)
+	* This release adds support for monitoring storage optimization progress on the DescribeDBInstances API.
+* SageMaker (3.7.202.0)
+	* Mark ContentColumn and TargetLabelColumn as required Targets in TextClassificationJobConfig in CreateAutoMLJobV2API
+* SecurityHub (3.7.201.0)
+	* Add support for CONTAINS and NOT_CONTAINS comparison operators for Automation Rules string filters and map filters
+* SecurityToken (3.7.201.0)
+	* API updates for the AWS Security Token Service
+* Transfer (3.7.201.0)
+	* This release adds support for SFTP Connectors.
+
 ### 3.7.605.0 (2023-07-24 18:35 UTC)
 * ApiGatewayV2 (3.7.200.4)
 	* Documentation updates for Amazon API Gateway.
