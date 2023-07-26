@@ -13,7 +13,7 @@
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
-    <icon>images/AWSLogo.png</icon>
+    <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net35">
       </group>
@@ -27,23 +27,23 @@
     </dependencies>
   </metadata> 
   <files>
-    <file src="../../nuget-content/AWSLogo.png" target="images/" />
-    <file src="../../nuget-content/account-management.ps1" target="tools" />
+    <file src="..\..\nuget-content\AWSLogo.png" target="images\" />
+    <file src="..\..\nuget-content\account-management.ps1" target="tools" />
 
-    <file src="./bin/Release/net35/AWSSDK.Core.dll" target="lib/net35" />
-    <file src="./bin/Release/net35/AWSSDK.Core.xml" target="lib/net35" />
-    <file src="./bin/Release/net35/AWSSDK.Core.pdb" target="lib/net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Core.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Core.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Core.pdb" target="lib\net35" />
 
-    <file src="./bin/Release/net45/AWSSDK.Core.dll" target="lib/net45" />
-    <file src="./bin/Release/net45/AWSSDK.Core.xml" target="lib/net45" />
-    <file src="./bin/Release/net45/AWSSDK.Core.pdb" target="lib/net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Core.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Core.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Core.pdb" target="lib\net45" />
 
-    <file src="./bin/Release/netstandard2.0/AWSSDK.Core.dll" target="lib/netstandard2.0"/>
-    <file src="./bin/Release/netstandard2.0/AWSSDK.Core.xml" target="lib/netstandard2.0"/>
-    <file src="./bin/Release/netstandard2.0/AWSSDK.Core.pdb" target="lib/netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.dll" target="lib\netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.xml" target="lib\netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.pdb" target="lib\netstandard2.0"/>
 
-    <file src="./bin/Release/netcoreapp3.1/AWSSDK.Core.dll" target="lib/netcoreapp3.1"/>
-    <file src="./bin/Release/netcoreapp3.1/AWSSDK.Core.xml" target="lib/netcoreapp3.1"/>
-    <file src="./bin/Release/netcoreapp3.1/AWSSDK.Core.pdb" target="lib/netcoreapp3.1"/>
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.dll" target="lib\netcoreapp3.1"/>
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.xml" target="lib\netcoreapp3.1"/>
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.pdb" target="lib\netcoreapp3.1"/>
   </files>
 </package>
