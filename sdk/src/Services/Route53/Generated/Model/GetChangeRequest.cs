@@ -36,13 +36,13 @@ namespace Amazon.Route53.Model
     ///  <ul> <li> 
     /// <para>
     ///  <code>PENDING</code> indicates that the changes in this request have not propagated
-    /// to all Amazon Route 53 DNS servers. This is the initial status of all change batch
-    /// requests.
+    /// to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status
+    /// of all change batch requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS
-    /// servers. 
+    /// servers managing the hosted zone. 
     /// </para>
     ///  </li> </ul>
     /// </summary>

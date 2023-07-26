@@ -38,6 +38,14 @@ namespace Amazon.Route53.Model
     /// <para>
     /// This call only supports querying public hosted zones.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>TestDnsAnswer </code> returns information similar to what you would expect
+    /// from the answer section of the <code>dig</code> command. Therefore, if you query for
+    /// the name servers of a subdomain that point to the parent name servers, those will
+    /// not be returned.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TestDNSAnswerRequest : AmazonRoute53Request
     {
