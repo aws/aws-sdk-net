@@ -29,21 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies an Amazon Redshift target.
+    /// Specifies a Snowflake target.
     /// </summary>
-    public partial class AmazonRedshiftTarget
+    public partial class SnowflakeTarget
     {
-        private AmazonRedshiftNodeData _data;
+        private SnowflakeNodeData _data;
         private List<string> _inputs = new List<string>();
         private string _name;
 
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// Specifies the data of the Amazon Redshift target node.
+        /// Specifies the data of the Snowflake target node.
         /// </para>
         /// </summary>
-        public AmazonRedshiftNodeData Data
+        [AWSProperty(Required=true)]
+        public SnowflakeNodeData Data
         {
             get { return this._data; }
             set { this._data = value; }
@@ -77,9 +78,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon Redshift target.
+        /// The name of the Snowflake target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

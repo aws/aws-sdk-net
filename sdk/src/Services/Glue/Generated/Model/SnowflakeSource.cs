@@ -29,21 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies an Amazon Redshift target.
+    /// Specifies a Snowflake data source.
     /// </summary>
-    public partial class AmazonRedshiftTarget
+    public partial class SnowflakeSource
     {
-        private AmazonRedshiftNodeData _data;
-        private List<string> _inputs = new List<string>();
+        private SnowflakeNodeData _data;
         private string _name;
+        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
 
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// Specifies the data of the Amazon Redshift target node.
+        /// Configuration for the Snowflake data source.
         /// </para>
         /// </summary>
-        public AmazonRedshiftNodeData Data
+        [AWSProperty(Required=true)]
+        public SnowflakeNodeData Data
         {
             get { return this._data; }
             set { this._data = value; }
@@ -56,30 +57,12 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Inputs. 
-        /// <para>
-        /// The nodes that are inputs to the data target.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1)]
-        public List<string> Inputs
-        {
-            get { return this._inputs; }
-            set { this._inputs = value; }
-        }
-
-        // Check to see if Inputs property is set
-        internal bool IsSetInputs()
-        {
-            return this._inputs != null && this._inputs.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon Redshift target.
+        /// The name of the Snowflake data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -90,6 +73,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies user-defined schemas for your output data.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
         }
 
     }

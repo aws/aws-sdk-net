@@ -430,6 +430,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.SelectFromCollection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnowflakeSource", targetDepth))
+                {
+                    var unmarshaller = SnowflakeSourceUnmarshaller.Instance;
+                    unmarshalledObject.SnowflakeSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnowflakeTarget", targetDepth))
+                {
+                    var unmarshaller = SnowflakeTargetUnmarshaller.Instance;
+                    unmarshalledObject.SnowflakeTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SparkConnectorSource", targetDepth))
                 {
                     var unmarshaller = SparkConnectorSourceUnmarshaller.Instance;

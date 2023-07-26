@@ -716,6 +716,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSnowflakeSource())
+            {
+                context.Writer.WritePropertyName("SnowflakeSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnowflakeSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnowflakeSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSnowflakeTarget())
+            {
+                context.Writer.WritePropertyName("SnowflakeTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnowflakeTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnowflakeTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSparkConnectorSource())
             {
                 context.Writer.WritePropertyName("SparkConnectorSource");
