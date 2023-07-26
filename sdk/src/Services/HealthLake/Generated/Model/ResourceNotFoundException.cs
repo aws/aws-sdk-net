@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The requested Data Store was not found.
+    /// The requested data store was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

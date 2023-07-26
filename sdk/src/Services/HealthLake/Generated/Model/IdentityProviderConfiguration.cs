@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The identity provider configuration that you gave when the Data Store was created.
+    /// The identity provider configuration that you gave when the data store was created.
     /// </summary>
     public partial class IdentityProviderConfiguration
     {
@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property AuthorizationStrategy. 
         /// <para>
-        /// The authorization strategy that you selected when you created the Data Store.
+        /// The authorization strategy that you selected when you created the data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property FineGrainedAuthorizationEnabled. 
         /// <para>
-        /// If you enabled fine-grained authorization when you created the Data Store.
+        /// If you enabled fine-grained authorization when you created the data store.
         /// </para>
         /// </summary>
         public bool FineGrainedAuthorizationEnabled

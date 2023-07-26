@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Displays the properties of the import job, including the ID, Arn, Name, and the status
-    /// of the Data Store.
+    /// of the data store.
     /// </summary>
     public partial class ImportJobProperties
     {
@@ -48,7 +48,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
+        /// The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

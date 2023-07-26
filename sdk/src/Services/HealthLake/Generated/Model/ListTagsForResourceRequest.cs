@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of all existing tags associated with a Data Store.
+    /// Returns a list of all existing tags associated with a data store.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonHealthLakeRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        ///  The Amazon Resource Name(ARN) of the Data Store for which tags are being added. 
+        ///  The Amazon Resource Name(ARN) of the data store for which tags are being added. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

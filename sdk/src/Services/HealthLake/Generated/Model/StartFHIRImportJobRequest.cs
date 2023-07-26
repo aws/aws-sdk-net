@@ -63,7 +63,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+        /// The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -82,7 +82,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated Data Store ID.
+        /// The AWS-generated data store ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

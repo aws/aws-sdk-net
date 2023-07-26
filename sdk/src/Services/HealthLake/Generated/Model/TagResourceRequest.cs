@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds a user specified key and value tag to a Data Store.
+    /// Adds a user specified key and value tag to a data store.
     /// </summary>
     public partial class TagResourceRequest : AmazonHealthLakeRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        ///  The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store
-        /// which tags are being added to. 
+        ///  The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which
+        /// tags are being added to. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -60,7 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The user specified key and value pair tags being added to a Data Store. 
+        ///  The user specified key and value pair tags being added to a data store. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

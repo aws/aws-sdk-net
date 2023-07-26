@@ -38,7 +38,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Returns a list of tags associated with a Data Store. 
+        ///  Returns a list of tags associated with a data store. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

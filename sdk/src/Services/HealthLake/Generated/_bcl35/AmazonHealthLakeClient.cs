@@ -35,7 +35,7 @@ namespace Amazon.HealthLake
     /// <summary>
     /// Implementation for accessing HealthLake
     ///
-    /// Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform,
+    /// AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform,
     /// query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.
     /// </summary>
     public partial class AmazonHealthLakeClient : AmazonServiceClient, IAmazonHealthLake
@@ -267,7 +267,7 @@ namespace Amazon.HealthLake
         #region  CreateFHIRDatastore
 
         /// <summary>
-        /// Creates a Data Store that can ingest and export FHIR formatted data.
+        /// Creates a data store that can ingest and export FHIR formatted data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFHIRDatastore service method.</param>
         /// 
@@ -333,7 +333,7 @@ namespace Amazon.HealthLake
         #region  DeleteFHIRDatastore
 
         /// <summary>
-        /// Deletes a Data Store.
+        /// Deletes a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFHIRDatastore service method.</param>
         /// 
@@ -342,13 +342,13 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ConflictException">
-        /// The Data Store is in a transition state and the user requested action can not be performed.
+        /// The data store is in a transition state and the user requested action can not be performed.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -405,9 +405,9 @@ namespace Amazon.HealthLake
         #region  DescribeFHIRDatastore
 
         /// <summary>
-        /// Gets the properties associated with the FHIR Data Store, including the Data Store
-        /// ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type
-        /// version, and Data Store endpoint.
+        /// Gets the properties associated with the FHIR data store, including the data store
+        /// ID, data store ARN, data store name, data store status, when the data store was created,
+        /// data store type version, and the data store's endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRDatastore service method.</param>
         /// 
@@ -416,7 +416,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -483,7 +483,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -550,7 +550,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -607,7 +607,7 @@ namespace Amazon.HealthLake
         #region  ListFHIRDatastores
 
         /// <summary>
-        /// Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store
+        /// Lists all FHIR data stores that are in the user’s account, regardless of data store
         /// status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRDatastores service method.</param>
@@ -683,7 +683,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -752,7 +752,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -809,13 +809,13 @@ namespace Amazon.HealthLake
         #region  ListTagsForResource
 
         /// <summary>
-        /// Returns a list of all existing tags associated with a Data Store.
+        /// Returns a list of all existing tags associated with a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ValidationException">
         /// The user input parameter was invalid.
@@ -881,7 +881,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -950,7 +950,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -1007,13 +1007,13 @@ namespace Amazon.HealthLake
         #region  TagResource
 
         /// <summary>
-        /// Adds a user specified key and value tag to a Data Store.
+        /// Adds a user specified key and value tag to a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ValidationException">
         /// The user input parameter was invalid.
@@ -1067,13 +1067,13 @@ namespace Amazon.HealthLake
         #region  UntagResource
 
         /// <summary>
-        /// Removes tags from a Data Store.
+        /// Removes tags from a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested Data Store was not found.
+        /// The requested data store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ValidationException">
         /// The user input parameter was invalid.
