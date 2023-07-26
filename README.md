@@ -520,6 +520,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Mainframe Modernization service is a managed mainframe service and set of tools for planning, migrating, modernizing, and running mainframe workloads on AWS
 * [AWSSDK.ManagedBlockchain](https://www.nuget.org/packages/AWSSDK.ManagedBlockchain/)
 	* (New Service) Amazon Managed Blockchain is a fully managed service that makes it easy to create and manage scalable blockchain networks using popular open source frameworks.
+* [AWSSDK.ManagedBlockchainQuery](https://www.nuget.org/packages/AWSSDK.ManagedBlockchainQuery/)
+	* Amazon Managed Blockchain (AMB) Query provides serverless access to standardized, multi-blockchain datasets with developer-friendly APIs.
 * [AWSSDK.ManagedGrafana](https://www.nuget.org/packages/AWSSDK.ManagedGrafana/)
 	* Initial release of the SDK for Amazon Managed Grafana API.
 * [AWSSDK.MarketplaceCatalog](https://www.nuget.org/packages/AWSSDK.MarketplaceCatalog/)
