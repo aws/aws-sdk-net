@@ -352,6 +352,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
 * [AWSSDK.EMRServerless](https://www.nuget.org/packages/AWSSDK.EMRServerless/)
 	* This release adds support for Amazon EMR Serverless, a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive.
+* [AWSSDK.EntityResolution](https://www.nuget.org/packages/AWSSDK.EntityResolution/)
+	* AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system with a source record from a marketing system containing campaign information.
 * [AWSSDK.EventBridge](https://www.nuget.org/packages/AWSSDK.EventBridge/)
 	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
 * [AWSSDK.Finspace](https://www.nuget.org/packages/AWSSDK.Finspace/)

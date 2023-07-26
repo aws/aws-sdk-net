@@ -1,0 +1,348 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the entityresolution-2018-05-10.normal.json service model.
+ */
+
+using System;
+
+using Amazon.Runtime;
+
+namespace Amazon.EntityResolution
+{
+
+    /// <summary>
+    /// Constants used for properties of type AttributeMatchingModel.
+    /// </summary>
+    public class AttributeMatchingModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANY_TO_MANY for AttributeMatchingModel
+        /// </summary>
+        public static readonly AttributeMatchingModel MANY_TO_MANY = new AttributeMatchingModel("MANY_TO_MANY");
+        /// <summary>
+        /// Constant ONE_TO_ONE for AttributeMatchingModel
+        /// </summary>
+        public static readonly AttributeMatchingModel ONE_TO_ONE = new AttributeMatchingModel("ONE_TO_ONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeMatchingModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeMatchingModel FindValue(string value)
+        {
+            return FindValue<AttributeMatchingModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeMatchingModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IncrementalRunType.
+    /// </summary>
+    public class IncrementalRunType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMMEDIATE for IncrementalRunType
+        /// </summary>
+        public static readonly IncrementalRunType IMMEDIATE = new IncrementalRunType("IMMEDIATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncrementalRunType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncrementalRunType FindValue(string value)
+        {
+            return FindValue<IncrementalRunType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncrementalRunType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobStatus.
+    /// </summary>
+    public class JobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for JobStatus
+        /// </summary>
+        public static readonly JobStatus FAILED = new JobStatus("FAILED");
+        /// <summary>
+        /// Constant QUEUED for JobStatus
+        /// </summary>
+        public static readonly JobStatus QUEUED = new JobStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for JobStatus
+        /// </summary>
+        public static readonly JobStatus RUNNING = new JobStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for JobStatus
+        /// </summary>
+        public static readonly JobStatus SUCCEEDED = new JobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatus FindValue(string value)
+        {
+            return FindValue<JobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolutionType.
+    /// </summary>
+    public class ResolutionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ML_MATCHING for ResolutionType
+        /// </summary>
+        public static readonly ResolutionType ML_MATCHING = new ResolutionType("ML_MATCHING");
+        /// <summary>
+        /// Constant RULE_MATCHING for ResolutionType
+        /// </summary>
+        public static readonly ResolutionType RULE_MATCHING = new ResolutionType("RULE_MATCHING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolutionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolutionType FindValue(string value)
+        {
+            return FindValue<ResolutionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolutionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaAttributeType.
+    /// </summary>
+    public class SchemaAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS = new SchemaAttributeType("ADDRESS");
+        /// <summary>
+        /// Constant ADDRESS_CITY for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_CITY = new SchemaAttributeType("ADDRESS_CITY");
+        /// <summary>
+        /// Constant ADDRESS_COUNTRY for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_COUNTRY = new SchemaAttributeType("ADDRESS_COUNTRY");
+        /// <summary>
+        /// Constant ADDRESS_POSTALCODE for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_POSTALCODE = new SchemaAttributeType("ADDRESS_POSTALCODE");
+        /// <summary>
+        /// Constant ADDRESS_STATE for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_STATE = new SchemaAttributeType("ADDRESS_STATE");
+        /// <summary>
+        /// Constant ADDRESS_STREET1 for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_STREET1 = new SchemaAttributeType("ADDRESS_STREET1");
+        /// <summary>
+        /// Constant ADDRESS_STREET2 for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_STREET2 = new SchemaAttributeType("ADDRESS_STREET2");
+        /// <summary>
+        /// Constant ADDRESS_STREET3 for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType ADDRESS_STREET3 = new SchemaAttributeType("ADDRESS_STREET3");
+        /// <summary>
+        /// Constant DATE for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType DATE = new SchemaAttributeType("DATE");
+        /// <summary>
+        /// Constant EMAIL_ADDRESS for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType EMAIL_ADDRESS = new SchemaAttributeType("EMAIL_ADDRESS");
+        /// <summary>
+        /// Constant NAME for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType NAME = new SchemaAttributeType("NAME");
+        /// <summary>
+        /// Constant NAME_FIRST for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType NAME_FIRST = new SchemaAttributeType("NAME_FIRST");
+        /// <summary>
+        /// Constant NAME_LAST for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType NAME_LAST = new SchemaAttributeType("NAME_LAST");
+        /// <summary>
+        /// Constant NAME_MIDDLE for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType NAME_MIDDLE = new SchemaAttributeType("NAME_MIDDLE");
+        /// <summary>
+        /// Constant PHONE for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType PHONE = new SchemaAttributeType("PHONE");
+        /// <summary>
+        /// Constant PHONE_COUNTRYCODE for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType PHONE_COUNTRYCODE = new SchemaAttributeType("PHONE_COUNTRYCODE");
+        /// <summary>
+        /// Constant PHONE_NUMBER for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType PHONE_NUMBER = new SchemaAttributeType("PHONE_NUMBER");
+        /// <summary>
+        /// Constant STRING for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType STRING = new SchemaAttributeType("STRING");
+        /// <summary>
+        /// Constant UNIQUE_ID for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType UNIQUE_ID = new SchemaAttributeType("UNIQUE_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaAttributeType FindValue(string value)
+        {
+            return FindValue<SchemaAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+}
