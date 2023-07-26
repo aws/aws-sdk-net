@@ -30,11 +30,8 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics,
-    /// ignore these settings. When you enable Nielsen configuration (nielsenConfiguration),
-    /// MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen
-    /// configuration programmatically, include an instance of nielsenConfiguration in your
-    /// JSON job specification. Even if you don't include any children of nielsenConfiguration,
-    /// you still enable the setting.
+    /// ignore these settings. When you enable Nielsen configuration, MediaConvert enables
+    /// PCM to ID3 tagging for all outputs in the job.
     /// </summary>
     public partial class NielsenConfiguration
     {
@@ -59,8 +56,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DistributorId. Use Distributor ID (DistributorID) to specify
-        /// the distributor ID that is assigned to your organization by Neilsen.
+        /// Gets and sets the property DistributorId. Use Distributor ID to specify the distributor
+        /// ID that is assigned to your organization by Nielsen.
         /// </summary>
         public string DistributorId
         {

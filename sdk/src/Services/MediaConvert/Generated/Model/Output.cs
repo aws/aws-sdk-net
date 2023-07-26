@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         private VideoDescription _videoDescription;
 
         /// <summary>
-        /// Gets and sets the property AudioDescriptions. (AudioDescriptions) contains groups
-        /// of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions)
-        /// per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+        /// Gets and sets the property AudioDescriptions. Contains groups of audio encoding settings
+        /// organized by audio codec. Include one instance of per output. Can contain multiple
+        /// groups of encoding settings.
         /// </summary>
         public List<AudioDescription> AudioDescriptions
         {
@@ -61,9 +61,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CaptionDescriptions. (CaptionDescriptions) contains groups
-        /// of captions settings. For each output that has captions, include one instance of (CaptionDescriptions).
-        /// (CaptionDescriptions) can contain multiple groups of captions settings.
+        /// Gets and sets the property CaptionDescriptions. Contains groups of captions settings.
+        /// For each output that has captions, include one instance of CaptionDescriptions. Can
+        /// contain multiple groups of captions settings.
         /// </summary>
         public List<CaptionDescription> CaptionDescriptions
         {
@@ -93,12 +93,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Extension. Use Extension (Extension) to specify the file
-        /// extension for outputs in File output groups. If you do not specify a value, the service
-        /// will use default extensions by container type as follows * MPEG-2 transport stream,
-        /// m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-        /// webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265,
-        /// AC3)
+        /// Gets and sets the property Extension. Use Extension to specify the file extension
+        /// for outputs in File output groups. If you do not specify a value, the service will
+        /// use default extensions by container type as follows * MPEG-2 transport stream, m2ts
+        /// * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm
+        /// * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
         /// </summary>
         public string Extension
         {
@@ -113,13 +112,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NameModifier. Use Name modifier (NameModifier) to have
-        /// the service add a string to the end of each output filename. You specify the base
-        /// filename as part of your destination URI. When you create multiple outputs in the
-        /// same output group, Name modifier (NameModifier) is required. Name modifier also accepts
-        /// format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$
-        /// or $Time$ in one output, you must use them in the same way in all outputs of the output
-        /// group.
+        /// Gets and sets the property NameModifier. Use Name modifier to have the service add
+        /// a string to the end of each output filename. You specify the base filename as part
+        /// of your destination URI. When you create multiple outputs in the same output group,
+        /// Name modifier is required. Name modifier also accepts format identifiers. For DASH
+        /// ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you
+        /// must use them in the same way in all outputs of the output group.
         /// </summary>
         [AWSProperty(Min=1)]
         public string NameModifier
@@ -150,9 +148,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Preset. Use Preset (Preset) to specify a preset for your
-        /// transcoding settings. Provide the system or custom preset name. You can specify either
-        /// Preset (Preset) or Container settings (ContainerSettings), but not both.
+        /// Gets and sets the property Preset. Use Preset to specify a preset for your transcoding
+        /// settings. Provide the system or custom preset name. You can specify either Preset
+        /// or Container settings, but not both.
         /// </summary>
         [AWSProperty(Min=0)]
         public string Preset

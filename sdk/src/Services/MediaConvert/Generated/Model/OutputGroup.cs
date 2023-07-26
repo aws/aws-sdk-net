@@ -57,10 +57,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomName. Use Custom Group Name (CustomName) to specify
-        /// a name for the output group. This value is displayed on the console and can make your
-        /// job settings JSON more human-readable. It does not affect your outputs. Use up to
-        /// twelve characters that are either letters, numbers, spaces, or underscores.
+        /// Gets and sets the property CustomName. Use Custom Group Name to specify a name for
+        /// the output group. This value is displayed on the console and can make your job settings
+        /// JSON more human-readable. It does not affect your outputs. Use up to twelve characters
+        /// that are either letters, numbers, spaces, or underscores.
         /// </summary>
         public string CustomName
         {

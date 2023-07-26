@@ -194,9 +194,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Opacity. Use Opacity (Opacity) to specify how much of the
-        /// underlying video shows through the inserted image. 0 is transparent and 100 is fully
-        /// opaque. Default is 50.
+        /// Gets and sets the property Opacity. Use Opacity to specify how much of the underlying
+        /// video shows through the inserted image. 0 is transparent and 100 is fully opaque.
+        /// Default is 50.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public int Opacity

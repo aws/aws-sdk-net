@@ -30,8 +30,6 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    /// When you work directly in your JSON job specification, include this object and any
-    /// required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
     /// </summary>
     public partial class DashIsoGroupSettings
     {
@@ -81,10 +79,9 @@ namespace Amazon.MediaConvert.Model
         /// requires that your DASH manifest use the Dolby channel configuration tag, rather than
         /// the MPEG one. For example, you might need to use this to make dynamic ad insertion
         /// work. Specify which audio channel configuration scheme ID URI MediaConvert writes
-        /// in your DASH manifest. Keep the default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION),
-        /// to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
-        /// Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write
-        /// this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+        /// in your DASH manifest. Keep the default value, MPEG channel configuration, to have
+        /// MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel
+        /// configuration to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
         /// </summary>
         public DashIsoGroupAudioChannelConfigSchemeIdUri AudioChannelConfigSchemeIdUri
         {
@@ -136,11 +133,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destination. Use Destination (Destination) to specify the
-        /// S3 output location and the output filename base. Destination accepts format identifiers.
-        /// If you do not specify the base filename in the URI, the service will use the filename
-        /// of the input file. If your job has multiple inputs, the service uses the filename
-        /// of the first input file.
+        /// Gets and sets the property Destination. Use Destination to specify the S3 output location
+        /// and the output filename base. Destination accepts format identifiers. If you do not
+        /// specify the base filename in the URI, the service will use the filename of the input
+        /// file. If your job has multiple inputs, the service uses the filename of the first
+        /// input file.
         /// </summary>
         public string Destination
         {
@@ -223,13 +220,12 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ImageBasedTrickPlay. Specify whether MediaConvert generates
-        /// images for trick play. Keep the default value, None (NONE), to not generate any images.
-        /// Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-        /// frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images
-        /// of single frames. MediaConvert adds an entry in the .mpd manifest for each set of
-        /// images that you generate. A common application for these images is Roku trick mode.
-        /// The thumbnails and full-frame images that MediaConvert creates with this feature are
-        /// compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+        /// images for trick play. Keep the default value, None, to not generate any images. Choose
+        /// Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate
+        /// tiled thumbnails and full-resolution images of single frames. MediaConvert adds an
+        /// entry in the .mpd manifest for each set of images that you generate. A common application
+        /// for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
+        /// creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
         /// </summary>
         public DashIsoImageBasedTrickPlay ImageBasedTrickPlay
         {
@@ -323,11 +319,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property MpdProfile. Specify whether your DASH profile is on-demand
-        /// or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011
-        /// in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service
-        /// signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand,
-        /// you must also set the output group setting Segment control (SegmentControl) to Single
-        /// file (SINGLE_FILE).
+        /// or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011
+        /// in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011
+        /// in your .mpd. When you choose On-demand, you must also set the output group setting
+        /// Segment control to Single file.
         /// </summary>
         public DashIsoMpdProfile MpdProfile
         {
@@ -346,11 +341,11 @@ namespace Amazon.MediaConvert.Model
         /// your output video stream has B-frames, which causes the initial presentation time
         /// stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert
         /// handles PTS when writing time stamps in output DASH manifests. Choose Match initial
-        /// PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first
-        /// time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore
-        /// the initial PTS in the video stream and instead write the initial time stamp as zero
-        /// in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
-        /// manifests start at zero regardless of your choice here.
+        /// PTS when you want MediaConvert to use the initial PTS as the first time stamp in the
+        /// manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video
+        /// stream and instead write the initial time stamp as zero in the manifest. For outputs
+        /// that don't have B-frames, the time stamps in your DASH manifests start at zero regardless
+        /// of your choice here.
         /// </summary>
         public DashIsoPtsOffsetHandlingForBFrames PtsOffsetHandlingForBFrames
         {
@@ -384,10 +379,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SegmentLength. Specify the length, in whole seconds, of
         /// each segment. When you don't specify a value, MediaConvert defaults to 30. Related
-        /// settings: Use Segment length control (SegmentLengthControl) to specify whether the
-        /// encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl)
-        /// to specify whether MediaConvert creates separate segment files or one content file
-        /// that has metadata to mark the segment boundaries.
+        /// settings: Use Segment length control to specify whether the encoder enforces this
+        /// value strictly. Use Segment control to specify whether MediaConvert creates separate
+        /// segment files or one content file that has metadata to mark the segment boundaries.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentLength
@@ -404,10 +398,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SegmentLengthControl. Specify how you want MediaConvert
-        /// to determine the segment length. Choose Exact (EXACT) to have the encoder use the
-        /// exact length that you specify with the setting Segment length (SegmentLength). This
-        /// might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the
-        /// encoder round up the segment lengths to match the next GOP boundary.
+        /// to determine the segment length. Choose Exact to have the encoder use the exact length
+        /// that you specify with the setting Segment length. This might result in extra I-frames.
+        /// Choose Multiple of GOP to have the encoder round up the segment lengths to match the
+        /// next GOP boundary.
         /// </summary>
         public DashIsoSegmentLengthControl SegmentLengthControl
         {

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings)
-    /// to the value XAVC_4K_INTRA_VBR.
+    /// Required when you set Profile to the value XAVC_4K_INTRA_VBR.
     /// </summary>
     public partial class Xavc4kIntraVbrProfileSettings
     {

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value
-    /// VP9.
+    /// Required when you set Codec to the value VP9.
     /// </summary>
     public partial class Vp9Settings
     {
@@ -71,12 +70,7 @@ namespace Amazon.MediaConvert.Model
         /// same frame rate as the input video, choose Follow source. If you want to do frame
         /// rate conversion, choose a frame rate from the dropdown list or choose Custom. The
         /// framerates shown in the dropdown list are decimal approximations of fractions. If
-        /// you choose Custom, specify your frame rate as a fraction. If you are creating your
-        /// transcoding job specification as a JSON file without the console, use FramerateControl
-        /// to specify which value the service uses for the frame rate for this output. Choose
-        /// INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input.
-        /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
-        /// settings FramerateNumerator and FramerateDenominator.
+        /// you choose Custom, specify your frame rate as a fraction.
         /// </summary>
         public Vp9FramerateControl FramerateControl
         {
@@ -227,11 +221,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ParDenominator. Required when you set Pixel aspect ratio
-        /// (parControl) to SPECIFIED. On the console, this corresponds to any value other than
-        /// Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-        /// from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV
-        /// NTSC widescreen, you would specify the ratio 40:33. In this example, the value for
-        /// parDenominator is 33.
+        /// to SPECIFIED. On the console, this corresponds to any value other than Follow source.
+        /// When you specify an output pixel aspect ratio (PAR) that is different from your input
+        /// video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
+        /// you would specify the ratio 40:33. In this example, the value for parDenominator is
+        /// 33.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int ParDenominator
@@ -248,11 +242,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ParNumerator. Required when you set Pixel aspect ratio
-        /// (parControl) to SPECIFIED. On the console, this corresponds to any value other than
-        /// Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-        /// from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV
-        /// NTSC widescreen, you would specify the ratio 40:33. In this example, the value for
-        /// parNumerator is 40.
+        /// to SPECIFIED. On the console, this corresponds to any value other than Follow source.
+        /// When you specify an output pixel aspect ratio (PAR) that is different from your input
+        /// video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
+        /// you would specify the ratio 40:33. In this example, the value for parNumerator is
+        /// 40.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int ParNumerator
@@ -269,8 +263,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property QualityTuningLevel. Optional. Use Quality tuning level
-        /// (qualityTuningLevel) to choose how you want to trade off encoding speed for output
-        /// video quality. The default behavior is faster, lower quality, multi-pass encoding.
+        /// to choose how you want to trade off encoding speed for output video quality. The default
+        /// behavior is faster, lower quality, multi-pass encoding.
         /// </summary>
         public Vp9QualityTuningLevel QualityTuningLevel
         {

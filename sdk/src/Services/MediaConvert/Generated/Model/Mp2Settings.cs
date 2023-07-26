@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value
-    /// MP2.
+    /// Required when you set Codec to the value MP2.
     /// </summary>
     public partial class Mp2Settings
     {
@@ -56,8 +55,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Channels. Set Channels to specify the number of channels
-        /// in this output audio track. Choosing Mono in the console will give you 1 output channel;
-        /// choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+        /// in this output audio track. Choosing Mono in will give you 1 output channel; choosing
+        /// Stereo will give you 2. In the API, valid values are 1 and 2.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public int Channels

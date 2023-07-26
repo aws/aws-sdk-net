@@ -80,10 +80,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mode. Use Deinterlacer (DeinterlaceMode) to choose how
-        /// the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
-        /// interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-        /// 23.976p. - Adaptive auto-detects and converts to progressive.
+        /// Gets and sets the property Mode. Use Deinterlacer to choose how the service will do
+        /// deinterlacing. Default is Deinterlace.- Deinterlace converts interlaced to progressive.-
+        /// Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p.- Adaptive auto-detects
+        /// and converts to progressive.
         /// </summary>
         public DeinterlacerMode Mode
         {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable
-    /// the features at each output individually. These features are disabled by default.
+    /// Find additional transcoding features under Preprocessors. Enable the features at each
+    /// output individually. These features are disabled by default.
     /// </summary>
     public partial class VideoPreprocessor
     {
@@ -109,9 +109,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageInserter. Enable the Image inserter (ImageInserter)
-        /// feature to include a graphic overlay on your video. Enable or disable this feature
-        /// for each output individually. This setting is disabled by default.
+        /// Gets and sets the property ImageInserter. Enable the Image inserter feature to include
+        /// a graphic overlay on your video. Enable or disable this feature for each output individually.
+        /// This setting is disabled by default.
         /// </summary>
         public ImageInserter ImageInserter
         {

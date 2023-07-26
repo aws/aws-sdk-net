@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings)
-    /// to the value XAVC_HD_INTRA_CBG.
+    /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
     /// </summary>
     public partial class XavcHdIntraCbgProfileSettings
     {

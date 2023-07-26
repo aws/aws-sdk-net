@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel
-    /// in each output of your job. With audio remixing, you can output more or fewer audio
-    /// channels than your input audio source provides.
+    /// Use Manual audio remixing to adjust audio levels for each audio channel in each output
+    /// of your job. With audio remixing, you can output more or fewer audio channels than
+    /// your input audio source provides.
     /// </summary>
     public partial class RemixSettings
     {
@@ -40,17 +40,17 @@ namespace Amazon.MediaConvert.Model
         private int? _channelsOut;
 
         /// <summary>
-        /// Gets and sets the property ChannelMapping. Channel mapping (ChannelMapping) contains
-        /// the group of fields that hold the remixing value for each channel, in dB. Specify
-        /// remix values to indicate how much of the content from your input audio channel you
-        /// want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune
-        /// array specifies these values for one output channel. Use one instance of this array
-        /// for each output channel. In the console, each array corresponds to a column in the
-        /// graphical depiction of the mapping matrix. The rows of the graphical matrix correspond
-        /// to input channels. Valid values are within the range from -60 (mute) through 6. A
-        /// setting of 0 passes the input channel unchanged to the output channel (no attenuation
-        /// or amplification). Use InputChannels or InputChannelsFineTune to specify your remix
-        /// values. Don't use both.
+        /// Gets and sets the property ChannelMapping. Channel mapping contains the group of fields
+        /// that hold the remixing value for each channel, in dB. Specify remix values to indicate
+        /// how much of the content from your input audio channel you want in your output audio
+        /// channels. Each instance of the InputChannels or InputChannelsFineTune array specifies
+        /// these values for one output channel. Use one instance of this array for each output
+        /// channel. In the console, each array corresponds to a column in the graphical depiction
+        /// of the mapping matrix. The rows of the graphical matrix correspond to input channels.
+        /// Valid values are within the range from -60 (mute) through 6. A setting of 0 passes
+        /// the input channel unchanged to the output channel (no attenuation or amplification).
+        /// Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use
+        /// both.
         /// </summary>
         public ChannelMapping ChannelMapping
         {

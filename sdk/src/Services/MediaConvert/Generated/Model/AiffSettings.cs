@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value
-    /// AIFF.
+    /// Required when you set Codec to the value AIFF.
     /// </summary>
     public partial class AiffSettings
     {
@@ -39,8 +38,8 @@ namespace Amazon.MediaConvert.Model
         private int? _sampleRate;
 
         /// <summary>
-        /// Gets and sets the property BitDepth. Specify Bit depth (BitDepth), in bits per sample,
-        /// to choose the encoding quality for this audio track.
+        /// Gets and sets the property BitDepth. Specify Bit depth, in bits per sample, to choose
+        /// the encoding quality for this audio track.
         /// </summary>
         [AWSProperty(Min=16, Max=24)]
         public int BitDepth

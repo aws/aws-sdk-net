@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value
-    /// SpekeKeyProvider.
+    /// If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
     /// </summary>
     public partial class MsSmoothEncryptionSettings
     {
