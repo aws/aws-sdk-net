@@ -64,7 +64,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The XML IdP metadata file generated from your identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20480)]
+        [AWSProperty(Required=true, Min=1, Max=51200)]
         public string Metadata
         {
             get { return this._metadata; }

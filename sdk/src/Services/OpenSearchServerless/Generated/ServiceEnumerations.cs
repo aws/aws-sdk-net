@@ -142,6 +142,10 @@ namespace Amazon.OpenSearchServerless
         /// Constant TIMESERIES for CollectionType
         /// </summary>
         public static readonly CollectionType TIMESERIES = new CollectionType("TIMESERIES");
+        /// <summary>
+        /// Constant VECTORSEARCH for CollectionType
+        /// </summary>
+        public static readonly CollectionType VECTORSEARCH = new CollectionType("VECTORSEARCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// OCU Limit Exceeded for service limits
+    /// Thrown when the collection you're attempting to create results in a number of search
+    /// or indexing OCUs that exceeds the account limit.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
