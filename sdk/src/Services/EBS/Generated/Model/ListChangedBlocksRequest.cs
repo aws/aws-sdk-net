@@ -32,6 +32,15 @@ namespace Amazon.EBS.Model
     /// Container for the parameters to the ListChangedBlocks operation.
     /// Returns information about the blocks that are different between two Amazon Elastic
     /// Block Store snapshots of the same volume/snapshot lineage.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+    /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+    /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+    /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListChangedBlocksRequest : AmazonEBSRequest
     {

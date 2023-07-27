@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EBS.Model
 {
     /// <summary>
-    /// The number of API requests has exceed the maximum allowed API request throttling limit.
+    /// The number of API requests has exceeded the maximum allowed API request throttling
+    /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+    /// retries</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

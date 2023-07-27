@@ -231,6 +231,14 @@ namespace Amazon.EBS
         /// </summary>
         public static readonly ResourceNotFoundExceptionReason DEPENDENCY_RESOURCE_NOT_FOUND = new ResourceNotFoundExceptionReason("DEPENDENCY_RESOURCE_NOT_FOUND");
         /// <summary>
+        /// Constant GRANT_NOT_FOUND for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason GRANT_NOT_FOUND = new ResourceNotFoundExceptionReason("GRANT_NOT_FOUND");
+        /// <summary>
+        /// Constant IMAGE_NOT_FOUND for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason IMAGE_NOT_FOUND = new ResourceNotFoundExceptionReason("IMAGE_NOT_FOUND");
+        /// <summary>
         /// Constant SNAPSHOT_NOT_FOUND for ResourceNotFoundExceptionReason
         /// </summary>
         public static readonly ResourceNotFoundExceptionReason SNAPSHOT_NOT_FOUND = new ResourceNotFoundExceptionReason("SNAPSHOT_NOT_FOUND");
@@ -310,6 +318,60 @@ namespace Amazon.EBS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceQuotaExceededExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SSEType.
+    /// </summary>
+    public class SSEType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for SSEType
+        /// </summary>
+        public static readonly SSEType None = new SSEType("none");
+        /// <summary>
+        /// Constant SseEbs for SSEType
+        /// </summary>
+        public static readonly SSEType SseEbs = new SSEType("sse-ebs");
+        /// <summary>
+        /// Constant SseKms for SSEType
+        /// </summary>
+        public static readonly SSEType SseKms = new SSEType("sse-kms");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SSEType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SSEType FindValue(string value)
+        {
+            return FindValue<SSEType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SSEType(string value)
         {
             return FindValue(value);
         }
@@ -401,6 +463,14 @@ namespace Amazon.EBS
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_DEPENDENCY_REQUEST = new ValidationExceptionReason("INVALID_DEPENDENCY_REQUEST");
         /// <summary>
+        /// Constant INVALID_GRANT_TOKEN for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_GRANT_TOKEN = new ValidationExceptionReason("INVALID_GRANT_TOKEN");
+        /// <summary>
+        /// Constant INVALID_IMAGE_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_IMAGE_ID = new ValidationExceptionReason("INVALID_IMAGE_ID");
+        /// <summary>
         /// Constant INVALID_PAGE_TOKEN for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_PAGE_TOKEN = new ValidationExceptionReason("INVALID_PAGE_TOKEN");
@@ -424,6 +494,10 @@ namespace Amazon.EBS
         /// Constant UNRELATED_SNAPSHOTS for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UNRELATED_SNAPSHOTS = new ValidationExceptionReason("UNRELATED_SNAPSHOTS");
+        /// <summary>
+        /// Constant WRITE_REQUEST_TIMEOUT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason WRITE_REQUEST_TIMEOUT = new ValidationExceptionReason("WRITE_REQUEST_TIMEOUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

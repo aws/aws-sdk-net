@@ -79,6 +79,15 @@ namespace Amazon.EBS
         /// Seals and completes the snapshot after all of the required blocks of data have been
         /// written to it. Completing the snapshot changes the status to <code>completed</code>.
         /// You cannot write new blocks to a snapshot after it has been completed.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteSnapshot service method.</param>
         /// 
@@ -87,10 +96,13 @@ namespace Amazon.EBS
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.InternalServerException">
-        /// An internal error has occurred.
+        /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
-        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -137,6 +149,15 @@ namespace Amazon.EBS
 
         /// <summary>
         /// Returns the data in a block in an Amazon Elastic Block Store snapshot.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSnapshotBlock service method.</param>
         /// 
@@ -145,10 +166,13 @@ namespace Amazon.EBS
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.InternalServerException">
-        /// An internal error has occurred.
+        /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
-        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -196,6 +220,15 @@ namespace Amazon.EBS
         /// <summary>
         /// Returns information about the blocks that are different between two Amazon Elastic
         /// Block Store snapshots of the same volume/snapshot lineage.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChangedBlocks service method.</param>
         /// 
@@ -204,10 +237,13 @@ namespace Amazon.EBS
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.InternalServerException">
-        /// An internal error has occurred.
+        /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
-        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -254,6 +290,15 @@ namespace Amazon.EBS
 
         /// <summary>
         /// Returns information about the blocks in an Amazon Elastic Block Store snapshot.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSnapshotBlocks service method.</param>
         /// 
@@ -262,10 +307,13 @@ namespace Amazon.EBS
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.InternalServerException">
-        /// An internal error has occurred.
+        /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
-        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -318,6 +366,14 @@ namespace Amazon.EBS
         /// <para>
         /// Data written to a snapshot must be aligned with 512-KiB sectors.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSnapshotBlock service method.</param>
         /// 
@@ -326,10 +382,13 @@ namespace Amazon.EBS
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.InternalServerException">
-        /// An internal error has occurred.
+        /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
-        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -383,6 +442,14 @@ namespace Amazon.EBS
         /// After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html">
         /// PutSnapshotBlock</a> to write blocks of data to the snapshot.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSnapshot service method.</param>
         /// 
@@ -400,10 +467,13 @@ namespace Amazon.EBS
         /// The request uses the same client token as a previous, but non-identical request.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.InternalServerException">
-        /// An internal error has occurred.
+        /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.RequestThrottledException">
-        /// The number of API requests has exceed the maximum allowed API request throttling limit.
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// retries</a>.
         /// </exception>
         /// <exception cref="Amazon.EBS.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

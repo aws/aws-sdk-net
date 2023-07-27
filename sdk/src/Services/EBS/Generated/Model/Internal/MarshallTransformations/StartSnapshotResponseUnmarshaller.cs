@@ -87,6 +87,12 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                     response.SnapshotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SseType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SseType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
