@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 #if NET6_0_OR_GREATER
 using System.Text.Json;
@@ -15,10 +17,27 @@ namespace Amazon.Util.Internal
         {
             return JsonSerializer.Deserialize<T>(json, context.GetTypeInfo(typeof(T)) as JsonTypeInfo<T>);
         }
+
+        public static string Serialize<T>(object obj, JsonSerializerContext context)
+        {
+            return JsonSerializer.Serialize(obj, typeof(T), context);
+        }
 #else
-        public static T Deserialize<T>(string json, object typeInfo)
+        public static T Deserialize<T>(string json, JsonSerializerContext typeInfo)
         {
             return ThirdParty.Json.LitJson.JsonMapper.ToObject<T>(json);
+        }
+
+        public static string Serialize<T>(object obj, JsonSerializerContext typeInfo)
+        {
+            var json = new StringBuilder();
+            var writer = new ThirdParty.Json.LitJson.JsonWriter(json)
+            {
+                PrettyPrint = (typeInfo.Options?.WriteIndented).GetValueOrDefault()
+            };
+
+            ThirdParty.Json.LitJson.JsonMapper.ToJson(obj, writer);
+            return json.ToString();
         }
 #endif
     }
@@ -29,6 +48,42 @@ namespace Amazon.Util.Internal
     {
     }
 
+    [JsonSerializable(typeof(Dictionary<string, string>))]
+    public partial class DictionaryStringStringJsonSerializerContexts : JsonSerializerContext
+    {
+#if !NET6_0_OR_GREATER
+        public DictionaryStringStringJsonSerializerContexts(JsonSerializerOptions defaultOptions)
+            : base(defaultOptions)
+        {
+        }
+#endif
+    }
+
+    [JsonSerializable(typeof(List<string>))]
+    public partial class ListStringJsonSerializerContexts : JsonSerializerContext
+    {
+
+    }
+
+    [JsonSerializable(typeof(Amazon.Runtime.URIBasedRefreshingCredentialHelper.SecurityCredentials))]
+    public partial class SecurityCredentialsJsonSerializerContexts : JsonSerializerContext
+    {
+    }
+
+    [JsonSerializable(typeof(Amazon.Runtime.URIBasedRefreshingCredentialHelper.SecurityInfo))]
+    public partial class SecurityInfoJsonSerializerContexts : JsonSerializerContext
+    {
+    }
+
+    [JsonSerializable(typeof(Amazon.Runtime.Internal.ProcessCredentialVersion1))]
+    public partial class ProcessCredentialVersion1JsonSerializerContexts : JsonSerializerContext
+    {
+    }
+
+    [JsonSerializable(typeof(Amazon.Runtime.Internal.Endpoints.StandardLibrary.PartitionFunctionShape))]
+    public partial class PartitionFunctionShapeJsonSerializerContexts : JsonSerializerContext
+    {
+    }
 
     // For targets below .NET 6 create stub versions of the System.Text.Json types so that the context objects can still compile.
     // None of these type are actually used because the JSON parsing ends up using JsonMapper from LitJson for targets below .NET 6.
@@ -38,7 +93,12 @@ namespace Amazon.Util.Internal
     {
         public JsonSerializerContext() { }
 
-        public JsonSerializerContext(JsonSerializerOptions DefaultOptions) { }
+        public JsonSerializerContext(JsonSerializerOptions defaultOptions) 
+        {
+            Options = defaultOptions;
+        }
+
+        public JsonSerializerOptions Options { get; private set; }
 
         public static JsonSerializerContext Default { get; set; }
     }
@@ -46,6 +106,8 @@ namespace Amazon.Util.Internal
     public class JsonSerializerOptions
     {
         public bool PropertyNameCaseInsensitive { get; set; }
+
+        public bool WriteIndented {get;set;}
     }
 
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]

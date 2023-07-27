@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -48,21 +49,46 @@ namespace Amazon.Runtime
             }
         }
 
+        [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
+#endif
         protected static T GetObjectFromResponse<T>(Uri uri)
         {
             return GetObjectFromResponse<T>(uri, null, null);
         }
 
+        [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
+#endif
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy)
         {
             return GetObjectFromResponse<T>(uri, proxy, null);
         }
 
+        [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
+#endif
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
         {
             string json = GetContents(uri, proxy, headers);
             return JsonMapper.ToObject<T>(json);
-        }                
+        }
+
+        protected static T GetObjectFromResponse<T, TC>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
+            where TC :
+#if NET6_0_OR_GREATER
+                System.Text.Json.Serialization.JsonSerializerContext,
+#else
+                Amazon.Util.Internal.JsonSerializerContext,
+#endif
+                new()
+        {
+            string json = GetContents(uri, proxy, headers);
+            return JsonSerializerHelper.Deserialize<T>(json, new TC());
+        }
 
         protected static void ValidateResponse(SecurityBase response)
         {
@@ -75,20 +101,21 @@ namespace Amazon.Runtime
         }
 
         #region Private serialization classes
-        protected class SecurityBase
+#pragma warning disable CA1034
+        public class SecurityBase
         {
             public string Code { get; set; }
             public string Message { get; set; }
             public DateTime LastUpdated { get; set; }
         }
 
-        protected class SecurityInfo : SecurityBase
+        public class SecurityInfo : SecurityBase
         {
             public string InstanceProfileArn { get; set; }
             public string InstanceProfileId { get; set; }
         }
 
-        protected class SecurityCredentials : SecurityBase
+        public class SecurityCredentials : SecurityBase
         {
             public string Type { get; set; }
             public string AccessKeyId { get; set; }
@@ -97,6 +124,8 @@ namespace Amazon.Runtime
             public DateTime Expiration { get; set; }
             public string RoleArn { get; set; }
         }
+#pragma warning restore CA1034
+
         #endregion
 
     }

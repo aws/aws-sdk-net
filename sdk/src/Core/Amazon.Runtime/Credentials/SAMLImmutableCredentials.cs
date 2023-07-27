@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -137,7 +138,7 @@ namespace Amazon.Runtime
 
             props.Add(SubjectProperty, Subject);
 
-            return JsonMapper.ToJson(props);
+            return JsonSerializerHelper.Serialize<Dictionary<string, string>>(props, DictionaryStringStringJsonSerializerContexts.Default);
         }
 
         /// <summary>

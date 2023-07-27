@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Endpoints;
+using Amazon.Util.Internal;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -105,7 +106,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             try
             {
                 var json = File.ReadAllText(partitionsFile);
-                var partitions = JsonMapper.ToObject<PartitionFunctionShape>(json);
+                var partitions = JsonSerializerHelper.Deserialize<PartitionFunctionShape>(json, PartitionFunctionShapeJsonSerializerContexts.Default);
                 _partitionsByRegionName.Clear();
                 _partitionsByRegex.Clear();
                 _defaultPartition = null;
