@@ -901,8 +901,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
-        /// EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/completing-lifecycle-hooks.html">Complete
+        /// a lifecycle action</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteLifecycleAction service method.</param>
@@ -3855,10 +3855,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you detach a taffic, it enters the <code>Removing</code> state while deregistering
-        /// the instances in the group. When all instances are deregistered, then you can no longer
-        /// describe the traffic source using the <a>DescribeTrafficSources</a> API call. The
-        /// instances continue to run.
+        /// When you detach a traffic source, it enters the <code>Removing</code> state while
+        /// deregistering the instances in the group. When all instances are deregistered, then
+        /// you can no longer describe the traffic source using the <a>DescribeTrafficSources</a>
+        /// API call. The instances continue to run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources service method.</param>

@@ -430,7 +430,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest 
             {
                 InstanceIds = new List<string> {
-                    "i-4ba0837f"
+                    "i-05b4f7d5be44822a6"
                 }
             });
 
