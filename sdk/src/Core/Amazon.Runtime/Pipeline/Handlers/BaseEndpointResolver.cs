@@ -48,7 +48,7 @@ namespace Amazon.Runtime.Internal
 #endif
 
         protected virtual void PreInvoke(IExecutionContext executionContext)
-        { 
+        {
             ProcessRequestHandlers(executionContext);
         }
 
@@ -57,7 +57,7 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             var parameters = MapEndpointsParameters(requestContext);
             var config = requestContext.ClientConfig;
-            
+
             Endpoint endpoint = null;
             if (GlobalEndpoints.Provider != null)
             {
@@ -67,13 +67,14 @@ namespace Amazon.Runtime.Internal
             {
                 endpoint = config.EndpointProvider.ResolveEndpoint(parameters);
             }
-            
+
             // Ensure url ends with "/" to avoid signature mismatch issues.
             if (!endpoint.URL.EndsWith("/") && (string.IsNullOrEmpty(requestContext.Request.ResourcePath) || requestContext.Request.ResourcePath == "/"))
             {
                 endpoint.URL += "/";
             }
             requestContext.Request.Endpoint = new Uri(endpoint.URL);
+            requestContext.Request.EndpointAttributes = endpoint.Attributes;
 
             // If an explicit ServiceURL was provided, do not manipulate it based on UseHttp
             // This preserves existing behavior prior to 3.7.100
@@ -89,7 +90,7 @@ namespace Amazon.Runtime.Internal
 
             // set authentication parameters and headers
             SetAuthenticationAndHeaders(requestContext.Request, endpoint);
-            
+
             // service-specific handling, code-generated
             ServiceSpecificHandler(executionContext, parameters);
 
@@ -191,7 +192,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         protected static void InjectHostPrefix(IRequestContext requestContext)
         {
-            if (requestContext.ClientConfig.DisableHostPrefixInjection || 
+            if (requestContext.ClientConfig.DisableHostPrefixInjection ||
                 string.IsNullOrEmpty(requestContext.Request.HostPrefix))
             {
                 return;

@@ -22,6 +22,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
+using Amazon.Runtime.Endpoints;
 
 namespace Amazon.Runtime.Internal
 {
@@ -35,7 +36,7 @@ namespace Amazon.Runtime.Internal
     public class DefaultRequest : IRequest
     {
         readonly ParameterCollection parametersCollection;
-        readonly IDictionary<string,string> parametersFacade;
+        readonly IDictionary<string, string> parametersFacade;
         readonly IDictionary<string, string> headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> trailingHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -52,7 +53,7 @@ namespace Amazon.Runtime.Internal
         bool useQueryString = false;
         string requestName;
         string canonicalResource;
-        RegionEndpoint alternateRegion;        
+        RegionEndpoint alternateRegion;
         long originalStreamLength;
         int marshallerVersion = 2; //2 is the default version and must be used whenever a version is not specified in the marshaller.
 
@@ -472,8 +473,8 @@ namespace Amazon.Runtime.Internal
         /// Setting it to false will use SigV2.
         /// </summary>
         [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
-        public bool UseSigV4 
-        {   
+        public bool UseSigV4
+        {
             get { return SignatureVersion == SignatureVersion.SigV4; }
             set { this.SignatureVersion = value ? SignatureVersion.SigV4 : SignatureVersion.SigV2; }
         }
@@ -492,7 +493,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// The region in which the service request was signed.
         /// </summary>
-        public string DeterminedSigningRegion { get ; set; }
+        public string DeterminedSigningRegion { get; set; }
 
         /// <summary>
         /// If the request needs to be signed with a different service name 
@@ -563,5 +564,10 @@ namespace Amazon.Runtime.Internal
 
             return string.Empty;
         }
+
+        /// <summary>
+        /// Custom endpoint attributes
+        /// </summary>
+        public IPropertyBag EndpointAttributes { get; set; }
     }
 }

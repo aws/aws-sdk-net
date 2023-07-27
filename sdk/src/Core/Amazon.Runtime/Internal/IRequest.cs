@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime.Internal
@@ -259,7 +260,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         AWS4SigningResult AWS4SignerResult
         {
-            get; 
+            get;
             set;
         }
 
@@ -305,7 +306,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         bool UseChunkEncoding
         {
-            get; 
+            get;
             set;
         }
 
@@ -318,7 +319,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         string CanonicalResourcePrefix
         {
-            get; 
+            get;
             set;
         }
 
@@ -378,5 +379,10 @@ namespace Amazon.Runtime.Internal
         /// Determine whether to use double encoding for request's signer.
         /// </summary>
         bool UseDoubleEncoding { get; set; }
+
+        /// <summary>
+        /// Custom endpoint attributes
+        /// </summary>
+        IPropertyBag EndpointAttributes { get; set; }
     }
 }
