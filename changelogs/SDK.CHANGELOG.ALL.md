@@ -1,3 +1,15 @@
+### 3.7.608.0 (2023-07-27 18:26 UTC)
+* AutoScaling (3.7.201.0)
+	* This release updates validation for instance types used in the AllowedInstanceTypes and ExcludedInstanceTypes parameters of the InstanceRequirements property of a MixedInstancesPolicy.
+* EBS (3.7.201.0)
+	* SDK and documentation updates for Amazon Elastic Block Store API
+* EC2 (3.7.203.0)
+	* SDK and documentation updates for Amazon Elastic Block Store APIs
+* EKS (3.7.201.0)
+	* Add multiple customer error code to handle customer caused failure when managing EKS node groups
+* SageMaker (3.7.203.0)
+	* Expose ProfilerConfig attribute in SageMaker Search API response.
+
 ### 3.7.607.0 (2023-07-26 18:45 UTC)
 * CloudControlApi (3.7.200.5)
 	* Updates the documentation for CreateResource.
