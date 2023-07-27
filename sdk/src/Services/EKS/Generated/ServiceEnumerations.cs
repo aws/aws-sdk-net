@@ -871,9 +871,17 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode AccessDenied = new NodegroupIssueCode("AccessDenied");
         /// <summary>
+        /// Constant AmiIdNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AmiIdNotFound = new NodegroupIssueCode("AmiIdNotFound");
+        /// <summary>
         /// Constant AsgInstanceLaunchFailures for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode AsgInstanceLaunchFailures = new NodegroupIssueCode("AsgInstanceLaunchFailures");
+        /// <summary>
+        /// Constant AutoScalingGroupInstanceRefreshActive for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AutoScalingGroupInstanceRefreshActive = new NodegroupIssueCode("AutoScalingGroupInstanceRefreshActive");
         /// <summary>
         /// Constant AutoScalingGroupInvalidConfiguration for NodegroupIssueCode
         /// </summary>
@@ -883,9 +891,29 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode AutoScalingGroupNotFound = new NodegroupIssueCode("AutoScalingGroupNotFound");
         /// <summary>
+        /// Constant AutoScalingGroupOptInRequired for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AutoScalingGroupOptInRequired = new NodegroupIssueCode("AutoScalingGroupOptInRequired");
+        /// <summary>
+        /// Constant AutoScalingGroupRateLimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode AutoScalingGroupRateLimitExceeded = new NodegroupIssueCode("AutoScalingGroupRateLimitExceeded");
+        /// <summary>
         /// Constant ClusterUnreachable for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode ClusterUnreachable = new NodegroupIssueCode("ClusterUnreachable");
+        /// <summary>
+        /// Constant Ec2LaunchTemplateDeletionFailure for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2LaunchTemplateDeletionFailure = new NodegroupIssueCode("Ec2LaunchTemplateDeletionFailure");
+        /// <summary>
+        /// Constant Ec2LaunchTemplateInvalidConfiguration for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2LaunchTemplateInvalidConfiguration = new NodegroupIssueCode("Ec2LaunchTemplateInvalidConfiguration");
+        /// <summary>
+        /// Constant Ec2LaunchTemplateMaxLimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2LaunchTemplateMaxLimitExceeded = new NodegroupIssueCode("Ec2LaunchTemplateMaxLimitExceeded");
         /// <summary>
         /// Constant Ec2LaunchTemplateNotFound for NodegroupIssueCode
         /// </summary>
@@ -907,6 +935,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SubnetInvalidConfiguration = new NodegroupIssueCode("Ec2SubnetInvalidConfiguration");
         /// <summary>
+        /// Constant Ec2SubnetListTooLong for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SubnetListTooLong = new NodegroupIssueCode("Ec2SubnetListTooLong");
+        /// <summary>
         /// Constant Ec2SubnetMissingIpv6Assignment for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SubnetMissingIpv6Assignment = new NodegroupIssueCode("Ec2SubnetMissingIpv6Assignment");
@@ -927,6 +959,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode IamNodeRoleNotFound = new NodegroupIssueCode("IamNodeRoleNotFound");
         /// <summary>
+        /// Constant IamThrottling for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode IamThrottling = new NodegroupIssueCode("IamThrottling");
+        /// <summary>
         /// Constant InstanceLimitExceeded for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode InstanceLimitExceeded = new NodegroupIssueCode("InstanceLimitExceeded");
@@ -939,9 +975,29 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode InternalFailure = new NodegroupIssueCode("InternalFailure");
         /// <summary>
+        /// Constant LimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode LimitExceeded = new NodegroupIssueCode("LimitExceeded");
+        /// <summary>
         /// Constant NodeCreationFailure for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode NodeCreationFailure = new NodegroupIssueCode("NodeCreationFailure");
+        /// <summary>
+        /// Constant NodeTerminationFailure for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode NodeTerminationFailure = new NodegroupIssueCode("NodeTerminationFailure");
+        /// <summary>
+        /// Constant PodEvictionFailure for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode PodEvictionFailure = new NodegroupIssueCode("PodEvictionFailure");
+        /// <summary>
+        /// Constant SourceEc2LaunchTemplateNotFound for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode SourceEc2LaunchTemplateNotFound = new NodegroupIssueCode("SourceEc2LaunchTemplateNotFound");
+        /// <summary>
+        /// Constant Unknown for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Unknown = new NodegroupIssueCode("Unknown");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
