@@ -90,6 +90,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sseType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SseType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("startTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
