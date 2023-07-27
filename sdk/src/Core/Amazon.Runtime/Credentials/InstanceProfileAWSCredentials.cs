@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using AWSSDK.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -314,13 +315,13 @@ namespace Amazon.Runtime
         private static SecurityInfo GetServiceInfo(IWebProxy proxy, string token)
         {
             CheckIsIMDSEnabled();
-            return GetObjectFromResponse<SecurityInfo>(InfoUri, proxy, CreateMetadataTokenHeaders(token));
+            return GetObjectFromResponse<SecurityInfo, SecurityInfoJsonSerializerContexts>(InfoUri, proxy, CreateMetadataTokenHeaders(token));
         }
 
         private SecurityCredentials GetRoleCredentials(string token)
         {
             CheckIsIMDSEnabled();
-            return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri, _proxy, CreateMetadataTokenHeaders(token));
+            return GetObjectFromResponse<SecurityCredentials, SecurityCredentialsJsonSerializerContexts>(CurrentRoleUri, _proxy, CreateMetadataTokenHeaders(token));
         }
 
         private static void CheckIsIMDSEnabled()

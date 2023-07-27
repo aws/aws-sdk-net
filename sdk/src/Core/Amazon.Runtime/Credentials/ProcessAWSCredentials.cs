@@ -30,6 +30,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 #if NETSTANDARD
 using System.Runtime.InteropServices;
+using Amazon.Util.Internal;
 #endif
 
 namespace Amazon.Runtime
@@ -174,7 +175,7 @@ namespace Amazon.Runtime
                         ProcessCredentialVersion1 processCredentialDataV1 = null;            
                         try
                         {
-                            processCredentialDataV1 = JsonMapper.ToObject<ProcessCredentialVersion1>(processInfo.StandardOutput);
+                            processCredentialDataV1 = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(processInfo.StandardOutput, ProcessCredentialVersion1JsonSerializerContexts.Default);
                         }
                         catch (Exception e)
                         {
