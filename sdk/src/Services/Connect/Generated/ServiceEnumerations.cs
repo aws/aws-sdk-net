@@ -3309,9 +3309,25 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly PhoneNumberType DID = new PhoneNumberType("DID");
         /// <summary>
+        /// Constant SHARED for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType SHARED = new PhoneNumberType("SHARED");
+        /// <summary>
+        /// Constant THIRD_PARTY_DID for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType THIRD_PARTY_DID = new PhoneNumberType("THIRD_PARTY_DID");
+        /// <summary>
+        /// Constant THIRD_PARTY_TF for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType THIRD_PARTY_TF = new PhoneNumberType("THIRD_PARTY_TF");
+        /// <summary>
         /// Constant TOLL_FREE for PhoneNumberType
         /// </summary>
         public static readonly PhoneNumberType TOLL_FREE = new PhoneNumberType("TOLL_FREE");
+        /// <summary>
+        /// Constant UIFN for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType UIFN = new PhoneNumberType("UIFN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
