@@ -58,6 +58,36 @@ namespace Amazon.ApplicationInsights
         IApplicationInsightsPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AddWorkload
+
+
+
+        /// <summary>
+        /// Adds a workload to a component. Each component can have at most five workloads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddWorkload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload">REST API Reference for AddWorkload Operation</seealso>
+        Task<AddWorkloadResponse> AddWorkloadAsync(AddWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateApplication
 
 
@@ -459,6 +489,33 @@ namespace Amazon.ApplicationInsights
 
         #endregion
                 
+        #region  DescribeWorkload
+
+
+
+        /// <summary>
+        /// Describes a workload and its configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload">REST API Reference for DescribeWorkload Operation</seealso>
+        Task<DescribeWorkloadResponse> DescribeWorkloadAsync(DescribeWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListApplications
 
 
@@ -661,6 +718,60 @@ namespace Amazon.ApplicationInsights
 
         #endregion
                 
+        #region  ListWorkloads
+
+
+
+        /// <summary>
+        /// Lists the workloads that are configured on a given component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkloads service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkloads service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
+        Task<ListWorkloadsResponse> ListWorkloadsAsync(ListWorkloadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveWorkload
+
+
+
+        /// <summary>
+        /// Remove workload from a component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveWorkload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload">REST API Reference for RemoveWorkload Operation</seealso>
+        Task<RemoveWorkloadResponse> RemoveWorkloadAsync(RemoveWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 
@@ -836,6 +947,60 @@ namespace Amazon.ApplicationInsights
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
         Task<UpdateLogPatternResponse> UpdateLogPatternAsync(UpdateLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateProblem
+
+
+
+        /// <summary>
+        /// Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProblem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProblem service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem">REST API Reference for UpdateProblem Operation</seealso>
+        Task<UpdateProblemResponse> UpdateProblemAsync(UpdateProblemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateWorkload
+
+
+
+        /// <summary>
+        /// Adds a workload to a component. Each component can have at most five workloads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
+        Task<UpdateWorkloadResponse> UpdateWorkloadAsync(UpdateWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

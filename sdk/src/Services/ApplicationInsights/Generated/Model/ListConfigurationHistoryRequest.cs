@@ -49,12 +49,32 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ListConfigurationHistoryRequest : AmazonApplicationInsightsRequest
     {
+        private string _accountId;
         private DateTime? _endTime;
         private ConfigurationEventStatus _eventStatus;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceGroupName;
         private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID for the resource group owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 

@@ -51,6 +51,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogPatterns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LogPattern, LogPatternUnmarshaller>(LogPatternUnmarshaller.Instance);

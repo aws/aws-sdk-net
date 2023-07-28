@@ -33,6 +33,7 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class Problem
     {
+        private string _accountId;
         private string _affectedResource;
         private DateTime? _endTime;
         private Dictionary<string, string> _feedback = new Dictionary<string, string>();
@@ -40,11 +41,32 @@ namespace Amazon.ApplicationInsights.Model
         private string _insights;
         private DateTime? _lastRecurrenceTime;
         private long? _recurringCount;
+        private ResolutionMethod _resolutionMethod;
         private string _resourceGroupName;
         private SeverityLevel _severityLevel;
         private DateTime? _startTime;
         private Status _status;
         private string _title;
+        private Visibility _visibility;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID for the owner of the resource group affected by the problem.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AffectedResource. 
@@ -176,6 +198,26 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResolutionMethod. 
+        /// <para>
+        /// Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the
+        /// system resolved the problem. If the value is <code>MANUAL</code>, the user resolved
+        /// the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.
+        /// </para>
+        /// </summary>
+        public ResolutionMethod ResolutionMethod
+        {
+            get { return this._resolutionMethod; }
+            set { this._resolutionMethod = value; }
+        }
+
+        // Check to see if ResolutionMethod property is set
+        internal bool IsSetResolutionMethod()
+        {
+            return this._resolutionMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceGroupName. 
         /// <para>
         /// The name of the resource group affected by the problem.
@@ -264,6 +306,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Visibility. 
+        /// <para>
+        /// Specifies whether or not you can view the problem. Updates to ignored problems do
+        /// not generate notifications.
+        /// </para>
+        /// </summary>
+        public Visibility Visibility
+        {
+            get { return this._visibility; }
+            set { this._visibility = value; }
+        }
+
+        // Check to see if Visibility property is set
+        internal bool IsSetVisibility()
+        {
+            return this._visibility != null;
         }
 
     }

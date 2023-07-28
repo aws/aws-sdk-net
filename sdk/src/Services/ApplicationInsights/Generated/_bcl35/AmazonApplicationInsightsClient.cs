@@ -279,6 +279,72 @@ namespace Amazon.ApplicationInsights
         #endregion
 
 
+        #region  AddWorkload
+
+        /// <summary>
+        /// Adds a workload to a component. Each component can have at most five workloads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddWorkload service method.</param>
+        /// 
+        /// <returns>The response from the AddWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload">REST API Reference for AddWorkload Operation</seealso>
+        public virtual AddWorkloadResponse AddWorkload(AddWorkloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddWorkloadResponseUnmarshaller.Instance;
+
+            return Invoke<AddWorkloadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddWorkload operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddWorkload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload">REST API Reference for AddWorkload Operation</seealso>
+        public virtual IAsyncResult BeginAddWorkload(AddWorkloadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddWorkloadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddWorkload.</param>
+        /// 
+        /// <returns>Returns a  AddWorkloadResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload">REST API Reference for AddWorkload Operation</seealso>
+        public virtual AddWorkloadResponse EndAddWorkload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddWorkloadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
         /// <summary>
@@ -1184,6 +1250,69 @@ namespace Amazon.ApplicationInsights
 
         #endregion
         
+        #region  DescribeWorkload
+
+        /// <summary>
+        /// Describes a workload and its configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkload service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload">REST API Reference for DescribeWorkload Operation</seealso>
+        public virtual DescribeWorkloadResponse DescribeWorkload(DescribeWorkloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkloadResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkloadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkload operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload">REST API Reference for DescribeWorkload Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWorkload(DescribeWorkloadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkloadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkload.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkloadResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload">REST API Reference for DescribeWorkload Operation</seealso>
+        public virtual DescribeWorkloadResponse EndDescribeWorkload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWorkloadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListApplications
 
         /// <summary>
@@ -1638,6 +1767,132 @@ namespace Amazon.ApplicationInsights
 
         #endregion
         
+        #region  ListWorkloads
+
+        /// <summary>
+        /// Lists the workloads that are configured on a given component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkloads service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkloads service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
+        public virtual ListWorkloadsResponse ListWorkloads(ListWorkloadsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkloadsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkloads operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkloads operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkloads
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
+        public virtual IAsyncResult BeginListWorkloads(ListWorkloadsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkloads operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkloads.</param>
+        /// 
+        /// <returns>Returns a  ListWorkloadsResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
+        public virtual ListWorkloadsResponse EndListWorkloads(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkloadsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveWorkload
+
+        /// <summary>
+        /// Remove workload from a component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveWorkload service method.</param>
+        /// 
+        /// <returns>The response from the RemoveWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload">REST API Reference for RemoveWorkload Operation</seealso>
+        public virtual RemoveWorkloadResponse RemoveWorkload(RemoveWorkloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveWorkloadResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveWorkloadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveWorkload operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveWorkload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload">REST API Reference for RemoveWorkload Operation</seealso>
+        public virtual IAsyncResult BeginRemoveWorkload(RemoveWorkloadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveWorkloadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveWorkload.</param>
+        /// 
+        /// <returns>Returns a  RemoveWorkloadResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload">REST API Reference for RemoveWorkload Operation</seealso>
+        public virtual RemoveWorkloadResponse EndRemoveWorkload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveWorkloadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -2028,6 +2283,132 @@ namespace Amazon.ApplicationInsights
         public virtual UpdateLogPatternResponse EndUpdateLogPattern(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLogPatternResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateProblem
+
+        /// <summary>
+        /// Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProblem service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProblem service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem">REST API Reference for UpdateProblem Operation</seealso>
+        public virtual UpdateProblemResponse UpdateProblem(UpdateProblemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProblemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProblemResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProblemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProblem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProblem operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProblem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem">REST API Reference for UpdateProblem Operation</seealso>
+        public virtual IAsyncResult BeginUpdateProblem(UpdateProblemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProblemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProblemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProblem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProblem.</param>
+        /// 
+        /// <returns>Returns a  UpdateProblemResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem">REST API Reference for UpdateProblem Operation</seealso>
+        public virtual UpdateProblemResponse EndUpdateProblem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateProblemResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkload
+
+        /// <summary>
+        /// Adds a workload to a component. Each component can have at most five workloads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkload service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkload service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
+        /// The resource does not exist in the customer account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ValidationException">
+        /// The parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
+        public virtual UpdateWorkloadResponse UpdateWorkload(UpdateWorkloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkloadResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkloadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkload operation on AmazonApplicationInsightsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkload(UpdateWorkloadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkloadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkload.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkloadResult from ApplicationInsights.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
+        public virtual UpdateWorkloadResponse EndUpdateWorkload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkloadResponse>(asyncResult);
         }
 
         #endregion

@@ -33,6 +33,7 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ApplicationInfo
     {
+        private string _accountId;
         private bool? _autoConfigEnabled;
         private bool? _cweMonitorEnabled;
         private DiscoveryType _discoveryType;
@@ -41,6 +42,25 @@ namespace Amazon.ApplicationInsights.Model
         private string _opsItemSNSTopicArn;
         private string _remarks;
         private string _resourceGroupName;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID for the owner of the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoConfigEnabled. 

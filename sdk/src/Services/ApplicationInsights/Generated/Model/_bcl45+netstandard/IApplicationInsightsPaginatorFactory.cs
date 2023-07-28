@@ -54,5 +54,10 @@ namespace Amazon.ApplicationInsights.Model
         /// Paginator for ListProblems operation
         ///</summary>
         IListProblemsPaginator ListProblems(ListProblemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkloads operation
+        ///</summary>
+        IListWorkloadsPaginator ListWorkloads(ListWorkloadsRequest request);
     }
 }

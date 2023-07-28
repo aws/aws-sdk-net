@@ -35,6 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class DescribeComponentConfigurationRecommendationRequest : AmazonApplicationInsightsRequest
     {
         private string _componentName;
+        private RecommendationType _recommendationType;
         private string _resourceGroupName;
         private Tier _tier;
 
@@ -55,6 +56,24 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetComponentName()
         {
             return this._componentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationType. 
+        /// <para>
+        /// The recommended configuration type.
+        /// </para>
+        /// </summary>
+        public RecommendationType RecommendationType
+        {
+            get { return this._recommendationType; }
+            set { this._recommendationType = value; }
+        }
+
+        // Check to see if RecommendationType property is set
+        internal bool IsSetRecommendationType()
+        {
+            return this._recommendationType != null;
         }
 
         /// <summary>
