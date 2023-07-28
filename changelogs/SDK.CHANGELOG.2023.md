@@ -1,3 +1,20 @@
+### 3.7.609.0 (2023-07-28 18:28 UTC)
+* ApplicationInsights (3.7.201.0)
+	* This release enable customer to add/remove/update more than one workload for a component
+* CloudFormation (3.7.203.0)
+	* This SDK release is for the feature launch of AWS CloudFormation RetainExceptOnCreate. It adds a new parameter retainExceptOnCreate in the following APIs: CreateStack, UpdateStack, RollbackStack, ExecuteChangeSet.
+* CloudFront (3.7.201.0)
+	* Add a new JavaScript runtime version for CloudFront Functions.
+* Connect (3.7.201.0)
+	* This release adds support for new number types.
+* Kafka (3.7.201.0)
+	* Amazon MSK has introduced new versions of ListClusterOperations and DescribeClusterOperation APIs. These v2 APIs provide information and insights into the ongoing operations of both MSK Provisioned and MSK Serverless clusters.
+* Pinpoint (3.7.201.0)
+	* Added support for sending push notifications using the FCM v1 API with json credentials. Amazon Pinpoint customers can now deliver messages to Android devices using both FCM v1 API and the legacy FCM/GCM API
+* Core 3.7.200.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.608.1 (2023-07-28 00:33 UTC)
 * SQS (3.7.200.6)
 	* Documentation changes related to SQS APIs.
