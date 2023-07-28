@@ -136,6 +136,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ParentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RetainExceptOnCreate", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.RetainExceptOnCreate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RoleARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -62,6 +62,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
+                if(publicRequest.IsSetRetainExceptOnCreate())
+                {
+                    request.Parameters.Add("RetainExceptOnCreate", StringUtils.FromBool(publicRequest.RetainExceptOnCreate));
+                }
                 if(publicRequest.IsSetRoleARN())
                 {
                     request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
