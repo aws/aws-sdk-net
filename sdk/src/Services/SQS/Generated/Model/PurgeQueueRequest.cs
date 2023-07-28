@@ -30,7 +30,8 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the PurgeQueue operation.
-    /// Deletes the messages in a queue specified by the <code>QueueURL</code> parameter.
+    /// Deletes available messages in a queue (including in-flight messages) specified by
+    /// the <code>QueueURL</code> parameter.
     /// 
     ///  <important> 
     /// <para>
