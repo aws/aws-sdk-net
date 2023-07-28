@@ -40,10 +40,31 @@ namespace Amazon.CloudFront.Model
     /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
     /// to incrementally move traffic to the staging distribution.
     /// </para>
+    ///  
+    /// <para>
+    /// This API operation requires the following IAM permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CopyDistributionRequest : AmazonCloudFrontRequest
     {
         private string _callerReference;
+        private bool? _enabled;
         private string _ifMatch;
         private string _primaryDistributionId;
         private bool? _staging;
@@ -67,6 +88,30 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetCallerReference()
         {
             return this._callerReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// A Boolean flag to specify the state of the staging distribution when it's created.
+        /// When you set this value to <code>True</code>, the staging distribution is enabled.
+        /// When you set this value to <code>False</code>, the staging distribution is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this field, the default value is <code>True</code>.
+        /// </para>
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
         }
 
         /// <summary>

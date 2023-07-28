@@ -45,6 +45,21 @@ namespace Amazon.CloudFront.Model
     /// the continuous deployment policy and move your domain's traffic back to the primary
     /// distribution.
     /// </para>
+    ///  
+    /// <para>
+    /// This API operation requires the following IAM permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateDistributionWithStagingConfigRequest : AmazonCloudFrontRequest
     {

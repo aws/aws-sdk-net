@@ -30,7 +30,20 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDistributionWithTags operation.
-    /// Create a new distribution with tags.
+    /// Create a new distribution with tags. This API operation requires the following IAM
+    /// permissions:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateDistributionWithTagsRequest : AmazonCloudFrontRequest
     {

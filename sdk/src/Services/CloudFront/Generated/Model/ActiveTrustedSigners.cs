@@ -57,8 +57,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// This field is <code>true</code> if any of the Amazon Web Services accounts in the
-        /// list have active CloudFront key pairs that CloudFront can use to verify the signatures
-        /// of signed URLs and signed cookies. If not, this field is <code>false</code>.
+        /// list are configured as trusted signers. If not, this field is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

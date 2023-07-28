@@ -78,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCallerReference())
                     xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CallerReference));                    
 
+                if(publicRequest.IsSetEnabled())
+                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.Enabled));                    
+
 
                 xmlWriter.WriteEndElement();
             }

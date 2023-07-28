@@ -508,6 +508,10 @@ namespace Amazon.CloudFront
         /// Constant CloudfrontJs10 for FunctionRuntime
         /// </summary>
         public static readonly FunctionRuntime CloudfrontJs10 = new FunctionRuntime("cloudfront-js-1.0");
+        /// <summary>
+        /// Constant CloudfrontJs20 for FunctionRuntime
+        /// </summary>
+        public static readonly FunctionRuntime CloudfrontJs20 = new FunctionRuntime("cloudfront-js-2.0");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

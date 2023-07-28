@@ -1766,6 +1766,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void CopyDistribution_TooManyDistributionsAssociatedToOriginAccessControlExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyDistribution");
+
+            var request = InstantiateClassGenerator.Execute<CopyDistributionRequest>();
+            var marshaller = new CopyDistributionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyDistribution", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyDistributionsAssociatedToOriginAccessControlException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyDistributionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void CopyDistribution_TooManyDistributionsAssociatedToOriginRequestPolicyExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CopyDistribution");
@@ -5424,6 +5457,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void CreateDistributionWithTags_IllegalOriginAccessConfigurationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDistributionWithTags");
+
+            var request = InstantiateClassGenerator.Execute<CreateDistributionWithTagsRequest>();
+            var marshaller = new CreateDistributionWithTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateDistributionWithTags", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("IllegalOriginAccessConfigurationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateDistributionWithTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void CreateDistributionWithTags_InconsistentQuantitiesExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDistributionWithTags");
@@ -6788,6 +6854,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             TestTools.RequestValidator.Validate("CreateDistributionWithTags", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyDistributionsAssociatedToKeyGroupException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateDistributionWithTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void CreateDistributionWithTags_TooManyDistributionsAssociatedToOriginAccessControlExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDistributionWithTags");
+
+            var request = InstantiateClassGenerator.Execute<CreateDistributionWithTagsRequest>();
+            var marshaller = new CreateDistributionWithTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateDistributionWithTags", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyDistributionsAssociatedToOriginAccessControlException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
@@ -21467,6 +21566,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void UpdateDistribution_TooManyDistributionsAssociatedToOriginAccessControlExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDistribution");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDistributionRequest>();
+            var marshaller = new UpdateDistributionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateDistribution", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyDistributionsAssociatedToOriginAccessControlException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateDistributionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void UpdateDistribution_TooManyDistributionsAssociatedToOriginRequestPolicyExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateDistribution");
@@ -23397,6 +23528,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             TestTools.RequestValidator.Validate("UpdateDistributionWithStagingConfig", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyDistributionsAssociatedToKeyGroupException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateDistributionWithStagingConfigResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void UpdateDistributionWithStagingConfig_TooManyDistributionsAssociatedToOriginAccessControlExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDistributionWithStagingConfig");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDistributionWithStagingConfigRequest>();
+            var marshaller = new UpdateDistributionWithStagingConfigRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateDistributionWithStagingConfig", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyDistributionsAssociatedToOriginAccessControlException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
