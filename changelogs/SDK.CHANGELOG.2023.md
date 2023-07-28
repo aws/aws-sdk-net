@@ -1,3 +1,7 @@
+### 3.7.608.1 (2023-07-28 00:33 UTC)
+* SQS (3.7.200.6)
+	* Documentation changes related to SQS APIs.
+
 ### 3.7.608.0 (2023-07-27 18:26 UTC)
 * AutoScaling (3.7.201.0)
 	* This release updates validation for instance types used in the AllowedInstanceTypes and ExcludedInstanceTypes parameters of the InstanceRequirements property of a MixedInstancesPolicy.
