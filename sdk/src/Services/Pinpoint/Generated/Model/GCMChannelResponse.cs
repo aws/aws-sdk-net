@@ -38,8 +38,10 @@ namespace Amazon.Pinpoint.Model
         private string _applicationId;
         private string _creationDate;
         private string _credential;
+        private string _defaultAuthenticationMethod;
         private bool? _enabled;
         private bool? _hasCredential;
+        private bool? _hasFcmServiceCredentials;
         private string _id;
         private bool? _isArchived;
         private string _lastModifiedBy;
@@ -90,7 +92,6 @@ namespace Amazon.Pinpoint.Model
         /// you received from Google to communicate with Google services.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Credential
         {
             get { return this._credential; }
@@ -101,6 +102,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCredential()
         {
             return this._credential != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthenticationMethod. 
+        /// <para>
+        /// The default authentication method used for GCM. Values are either "TOKEN" or "KEY".
+        /// Defaults to "KEY".
+        /// </para>
+        /// </summary>
+        public string DefaultAuthenticationMethod
+        {
+            get { return this._defaultAuthenticationMethod; }
+            set { this._defaultAuthenticationMethod = value; }
+        }
+
+        // Check to see if DefaultAuthenticationMethod property is set
+        internal bool IsSetDefaultAuthenticationMethod()
+        {
+            return this._defaultAuthenticationMethod != null;
         }
 
         /// <summary>
@@ -137,6 +157,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetHasCredential()
         {
             return this._hasCredential.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasFcmServiceCredentials. 
+        /// <para>
+        /// Returns true if the JSON file provided by Google during registration process was used
+        /// in the <b>ServiceJson</b> field of the request.
+        /// </para>
+        /// </summary>
+        public bool HasFcmServiceCredentials
+        {
+            get { return this._hasFcmServiceCredentials.GetValueOrDefault(); }
+            set { this._hasFcmServiceCredentials = value; }
+        }
+
+        // Check to see if HasFcmServiceCredentials property is set
+        internal bool IsSetHasFcmServiceCredentials()
+        {
+            return this._hasFcmServiceCredentials.HasValue; 
         }
 
         /// <summary>

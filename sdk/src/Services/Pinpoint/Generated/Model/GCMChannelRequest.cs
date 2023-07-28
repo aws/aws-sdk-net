@@ -36,7 +36,9 @@ namespace Amazon.Pinpoint.Model
     public partial class GCMChannelRequest
     {
         private string _apiKey;
+        private string _defaultAuthenticationMethod;
         private bool? _enabled;
+        private string _serviceJson;
 
         /// <summary>
         /// Gets and sets the property ApiKey. 
@@ -45,7 +47,6 @@ namespace Amazon.Pinpoint.Model
         /// you received from Google to communicate with Google services.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ApiKey
         {
             get { return this._apiKey; }
@@ -56,6 +57,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApiKey()
         {
             return this._apiKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthenticationMethod. 
+        /// <para>
+        /// The default authentication method used for GCM. Values are either "TOKEN" or "KEY".
+        /// Defaults to "KEY".
+        /// </para>
+        /// </summary>
+        public string DefaultAuthenticationMethod
+        {
+            get { return this._defaultAuthenticationMethod; }
+            set { this._defaultAuthenticationMethod = value; }
+        }
+
+        // Check to see if DefaultAuthenticationMethod property is set
+        internal bool IsSetDefaultAuthenticationMethod()
+        {
+            return this._defaultAuthenticationMethod != null;
         }
 
         /// <summary>
@@ -74,6 +94,26 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceJson. 
+        /// <para>
+        /// The contents of the JSON file provided by Google during registration in order to generate
+        /// an access token for authentication. For more information see <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate
+        /// from legacy FCM APIs to HTTP v1</a>.
+        /// </para>
+        /// </summary>
+        public string ServiceJson
+        {
+            get { return this._serviceJson; }
+            set { this._serviceJson = value; }
+        }
+
+        // Check to see if ServiceJson property is set
+        internal bool IsSetServiceJson()
+        {
+            return this._serviceJson != null;
         }
 
     }

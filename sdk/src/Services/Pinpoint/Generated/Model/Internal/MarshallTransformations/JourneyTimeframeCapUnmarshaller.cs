@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JourneyLimits Object
+    /// Response Unmarshaller for JourneyTimeframeCap Object
     /// </summary>  
-    public class JourneyLimitsUnmarshaller : IUnmarshaller<JourneyLimits, XmlUnmarshallerContext>, IUnmarshaller<JourneyLimits, JsonUnmarshallerContext>
+    public class JourneyTimeframeCapUnmarshaller : IUnmarshaller<JourneyTimeframeCap, XmlUnmarshallerContext>, IUnmarshaller<JourneyTimeframeCap, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JourneyLimits IUnmarshaller<JourneyLimits, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        JourneyTimeframeCap IUnmarshaller<JourneyTimeframeCap, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JourneyLimits Unmarshall(JsonUnmarshallerContext context)
+        public JourneyTimeframeCap Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JourneyLimits unmarshalledObject = new JourneyLimits();
+            JourneyTimeframeCap unmarshalledObject = new JourneyTimeframeCap();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DailyCap", targetDepth))
+                if (context.TestExpression("Cap", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DailyCap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cap = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointReentryCap", targetDepth))
+                if (context.TestExpression("Days", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.EndpointReentryCap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndpointReentryInterval", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointReentryInterval = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MessagesPerSecond", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeframeCap", targetDepth))
-                {
-                    var unmarshaller = JourneyTimeframeCapUnmarshaller.Instance;
-                    unmarshalledObject.TimeframeCap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TotalCap", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalCap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static JourneyLimitsUnmarshaller _instance = new JourneyLimitsUnmarshaller();        
+        private static JourneyTimeframeCapUnmarshaller _instance = new JourneyTimeframeCapUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JourneyLimitsUnmarshaller Instance
+        public static JourneyTimeframeCapUnmarshaller Instance
         {
             get
             {

@@ -95,6 +95,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageUrl);
             }
 
+            if(requestObject.IsSetPreferredAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("PreferredAuthenticationMethod");
+                context.Writer.Write(requestObject.PreferredAuthenticationMethod);
+            }
+
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");

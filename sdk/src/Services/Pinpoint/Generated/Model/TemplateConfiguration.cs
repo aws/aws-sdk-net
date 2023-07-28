@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     public partial class TemplateConfiguration
     {
         private Template _emailTemplate;
+        private Template _inAppTemplate;
         private Template _pushTemplate;
         private Template _smsTemplate;
         private Template _voiceTemplate;
@@ -54,6 +55,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetEmailTemplate()
         {
             return this._emailTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InAppTemplate. 
+        /// <para>
+        /// The InApp template to use for the message. The InApp template object is not supported
+        /// for SendMessages.
+        /// </para>
+        /// </summary>
+        public Template InAppTemplate
+        {
+            get { return this._inAppTemplate; }
+            set { this._inAppTemplate = value; }
+        }
+
+        // Check to see if InAppTemplate property is set
+        internal bool IsSetInAppTemplate()
+        {
+            return this._inAppTemplate != null;
         }
 
         /// <summary>

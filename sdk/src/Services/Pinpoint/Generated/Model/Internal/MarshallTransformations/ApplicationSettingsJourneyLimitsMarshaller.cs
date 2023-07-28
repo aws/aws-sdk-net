@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GCMChannelRequest Marshaller
+    /// ApplicationSettingsJourneyLimits Marshaller
     /// </summary>
-    public class GCMChannelRequestMarshaller : IRequestMarshaller<GCMChannelRequest, JsonMarshallerContext> 
+    public class ApplicationSettingsJourneyLimitsMarshaller : IRequestMarshaller<ApplicationSettingsJourneyLimits, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,29 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GCMChannelRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ApplicationSettingsJourneyLimits requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApiKey())
+            if(requestObject.IsSetDailyCap())
             {
-                context.Writer.WritePropertyName("ApiKey");
-                context.Writer.Write(requestObject.ApiKey);
+                context.Writer.WritePropertyName("DailyCap");
+                context.Writer.Write(requestObject.DailyCap);
             }
 
-            if(requestObject.IsSetDefaultAuthenticationMethod())
+            if(requestObject.IsSetTimeframeCap())
             {
-                context.Writer.WritePropertyName("DefaultAuthenticationMethod");
-                context.Writer.Write(requestObject.DefaultAuthenticationMethod);
+                context.Writer.WritePropertyName("TimeframeCap");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JourneyTimeframeCapMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeframeCap, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetTotalCap())
             {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
-            }
-
-            if(requestObject.IsSetServiceJson())
-            {
-                context.Writer.WritePropertyName("ServiceJson");
-                context.Writer.Write(requestObject.ServiceJson);
+                context.Writer.WritePropertyName("TotalCap");
+                context.Writer.Write(requestObject.TotalCap);
             }
 
         }
@@ -74,7 +73,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GCMChannelRequestMarshaller Instance = new GCMChannelRequestMarshaller();
+        public readonly static ApplicationSettingsJourneyLimitsMarshaller Instance = new ApplicationSettingsJourneyLimitsMarshaller();
 
     }
 }

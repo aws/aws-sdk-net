@@ -68,6 +68,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventTaggingEnabled);
             }
 
+            if(requestObject.IsSetJourneyLimits())
+            {
+                context.Writer.WritePropertyName("JourneyLimits");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ApplicationSettingsJourneyLimitsMarshaller.Instance;
+                marshaller.Marshall(requestObject.JourneyLimits, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLimits())
             {
                 context.Writer.WritePropertyName("Limits");

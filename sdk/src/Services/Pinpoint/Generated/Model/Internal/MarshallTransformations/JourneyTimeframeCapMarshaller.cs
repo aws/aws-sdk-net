@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GCMChannelRequest Marshaller
+    /// JourneyTimeframeCap Marshaller
     /// </summary>
-    public class GCMChannelRequestMarshaller : IRequestMarshaller<GCMChannelRequest, JsonMarshallerContext> 
+    public class JourneyTimeframeCapMarshaller : IRequestMarshaller<JourneyTimeframeCap, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,18 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GCMChannelRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(JourneyTimeframeCap requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApiKey())
+            if(requestObject.IsSetCap())
             {
-                context.Writer.WritePropertyName("ApiKey");
-                context.Writer.Write(requestObject.ApiKey);
+                context.Writer.WritePropertyName("Cap");
+                context.Writer.Write(requestObject.Cap);
             }
 
-            if(requestObject.IsSetDefaultAuthenticationMethod())
+            if(requestObject.IsSetDays())
             {
-                context.Writer.WritePropertyName("DefaultAuthenticationMethod");
-                context.Writer.Write(requestObject.DefaultAuthenticationMethod);
-            }
-
-            if(requestObject.IsSetEnabled())
-            {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
-            }
-
-            if(requestObject.IsSetServiceJson())
-            {
-                context.Writer.WritePropertyName("ServiceJson");
-                context.Writer.Write(requestObject.ServiceJson);
+                context.Writer.WritePropertyName("Days");
+                context.Writer.Write(requestObject.Days);
             }
 
         }
@@ -74,7 +62,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GCMChannelRequestMarshaller Instance = new GCMChannelRequestMarshaller();
+        public readonly static JourneyTimeframeCapMarshaller Instance = new JourneyTimeframeCapMarshaller();
 
     }
 }

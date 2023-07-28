@@ -76,6 +76,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.CampaignHook = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JourneyLimits", targetDepth))
+                {
+                    var unmarshaller = ApplicationSettingsJourneyLimitsUnmarshaller.Instance;
+                    unmarshalledObject.JourneyLimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

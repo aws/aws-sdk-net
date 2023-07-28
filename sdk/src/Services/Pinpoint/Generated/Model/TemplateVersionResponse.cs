@@ -141,7 +141,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property TemplateType. 
         /// <para>
         /// The type of channel that the message template is designed for. Possible values are:
-        /// EMAIL, PUSH, SMS, and VOICE.
+        /// EMAIL, PUSH, SMS, INAPP, and VOICE.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

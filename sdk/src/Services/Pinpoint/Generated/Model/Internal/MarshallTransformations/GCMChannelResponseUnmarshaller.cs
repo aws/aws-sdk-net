@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Credential = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultAuthenticationMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultAuthenticationMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.HasCredential = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HasFcmServiceCredentials", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasFcmServiceCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))

@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.EmailTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InAppTemplate", targetDepth))
+                {
+                    var unmarshaller = TemplateUnmarshaller.Instance;
+                    unmarshalledObject.InAppTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PushTemplate", targetDepth))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
