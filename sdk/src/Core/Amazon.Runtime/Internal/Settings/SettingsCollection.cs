@@ -26,14 +26,14 @@ namespace Amazon.Runtime.Internal.Settings
 {
     public class SettingsCollection : IEnumerable<SettingsCollection.ObjectSettings>
     {
-        Dictionary<string, Dictionary<string, object>> _values;
+        Dictionary<string, Dictionary<string, string>> _values;
         public SettingsCollection()
         {
-            this._values = new Dictionary<string, Dictionary<string, object>>();
+            this._values = new Dictionary<string, Dictionary<string, string>>();
             this.InitializedEmpty = true;
         }
 
-        public SettingsCollection(Dictionary<string, Dictionary<string, object>> values)
+        public SettingsCollection(Dictionary<string, Dictionary<string, string>> values)
         {
             this._values = values;
             this.InitializedEmpty = false;
@@ -82,7 +82,7 @@ namespace Amazon.Runtime.Internal.Settings
         {
             get 
             {
-                Dictionary<string, object> values;
+                Dictionary<string, string> values;
                 if (!this._values.TryGetValue(key, out values))
                 {
                     return NewObjectSettings(key);
@@ -100,7 +100,7 @@ namespace Amazon.Runtime.Internal.Settings
 
         public ObjectSettings NewObjectSettings(string uniqueKey)
         {
-            Dictionary<string, object> backStore = new Dictionary<string, object>();
+            Dictionary<string, string> backStore = new Dictionary<string, string>();
             ObjectSettings settings = new ObjectSettings(uniqueKey, backStore);
             this._values[uniqueKey] = backStore;
             return settings;
@@ -119,9 +119,9 @@ namespace Amazon.Runtime.Internal.Settings
         public class ObjectSettings
         {
             string _uniqueKey;
-            Dictionary<string, object> _values;
+            Dictionary<string, string> _values;
 
-            internal ObjectSettings(string uniqueKey, Dictionary<string, object> values)
+            internal ObjectSettings(string uniqueKey, Dictionary<string, string> values)
             {
                 this._uniqueKey = uniqueKey;
                 this._values = values;
@@ -136,9 +136,9 @@ namespace Amazon.Runtime.Internal.Settings
             {
                 get 
                 {
-                    object o;
-                    this._values.TryGetValue(key, out o);
-                    return o as string; 
+                    string s;
+                    this._values.TryGetValue(key, out s);
+                    return s; 
                 }
                 set { this._values[key] = value; }
             }
@@ -171,7 +171,7 @@ namespace Amazon.Runtime.Internal.Settings
             {
                 get
                 {
-                    Dictionary<string, object>.KeyCollection keys = this._values.Keys;
+                    Dictionary<string, string>.KeyCollection keys = this._values.Keys;
                     string[] k = new string[keys.Count];
                     this._values.Keys.CopyTo(k,0);
                     return k;

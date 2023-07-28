@@ -18,6 +18,7 @@
  *  AWS SDK for .NET
  */
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -253,10 +254,18 @@ namespace Amazon.Runtime.Internal.Settings
                         content = reader.ReadToEnd();
                     }
 
-                    var settings = JsonMapper.ToObject<Dictionary<string, Dictionary<string, object>>>(content);
+                    Dictionary<string, Dictionary<string, string>> settings;
+                    if(!string.IsNullOrEmpty(content))
+                    {
+                        settings = JsonSerializerHelper.Deserialize<Dictionary<string, Dictionary<string, string>>>(content, DictionaryStringDictionaryStringJsonSerializerContexts.Default);
 
-                    if (settings == null)
-                        settings = new Dictionary<string, Dictionary<string, object>>();
+                        if (settings == null)
+                            settings = new Dictionary<string, Dictionary<string, string>>();
+                    }
+                    else
+                    {
+                        settings = new Dictionary<string, Dictionary<string, string>>();
+                    }
 
                     DecryptAnyEncryptedValues(settings);
 
@@ -275,7 +284,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        static void DecryptAnyEncryptedValues(Dictionary<string, Dictionary<string, object>> settings)
+        static void DecryptAnyEncryptedValues(Dictionary<string, Dictionary<string, string>> settings)
         {
             foreach (var kvp in settings)
             {
@@ -285,9 +294,12 @@ namespace Amazon.Runtime.Internal.Settings
                 {
                     if (IsEncrypted(key) || IsEncrypted(settingsKey))
                     {
-                        string value = objectCollection[key] as string;
+                        string value = objectCollection[key];
                         if (value != null)
                         {
+// Turn off warning for catching specific exception because we want to remove sensitive data, at least in memory,
+// if there are any errors doing the PInvoke to decrypt the data.
+#pragma warning disable CA1031
                             try
                             {
                                 objectCollection[key] = UserCrypto.Decrypt(value);
@@ -298,6 +310,7 @@ namespace Amazon.Runtime.Internal.Settings
                                 var logger = Logger.GetLogger(typeof(PersistenceManager));
                                 logger.Error(e, "Exception decrypting value for key {0}/{1}", settingsKey, key);
                             }
+#pragma warning restore CA1031
                         }
                     }
                 }

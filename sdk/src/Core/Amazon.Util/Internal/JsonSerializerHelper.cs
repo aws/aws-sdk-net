@@ -33,7 +33,7 @@ namespace Amazon.Util.Internal
             var json = new StringBuilder();
             var writer = new ThirdParty.Json.LitJson.JsonWriter(json)
             {
-                PrettyPrint = (typeInfo.Options?.WriteIndented).GetValueOrDefault()
+                PrettyPrint = (typeInfo?.Options?.WriteIndented).GetValueOrDefault()
             };
 
             ThirdParty.Json.LitJson.JsonMapper.ToJson(obj, writer);
@@ -53,6 +53,17 @@ namespace Amazon.Util.Internal
     {
 #if !NET6_0_OR_GREATER
         public DictionaryStringStringJsonSerializerContexts(JsonSerializerOptions defaultOptions)
+            : base(defaultOptions)
+        {
+        }
+#endif
+    }
+
+    [JsonSerializable(typeof(Dictionary<string, Dictionary<string, string>>))]
+    public partial class DictionaryStringDictionaryStringJsonSerializerContexts : JsonSerializerContext
+    {
+#if !NET6_0_OR_GREATER
+        public DictionaryStringDictionaryStringJsonSerializerContexts(JsonSerializerOptions defaultOptions)
             : base(defaultOptions)
         {
         }
