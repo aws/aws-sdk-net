@@ -59,7 +59,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// The prefix of the Amazon S3 bucket used to export findings.
+        /// The prefix that the findings will be written under.
         /// </para>
         /// </summary>
         public string KeyPrefix

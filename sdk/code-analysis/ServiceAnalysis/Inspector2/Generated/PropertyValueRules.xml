@@ -586,6 +586,18 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.Evidence.EvidenceDetail</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Evidence.EvidenceRule</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Evidence.Severity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.FailedAccount.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -652,6 +664,22 @@
     <property>Amazon.Inspector2.Model.Finding.Title</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FindingDetail.FindingArn</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FindingDetailsError.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FindingDetailsError.FindingArn</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.FindingTypeAggregationResponse.AccountId</property>
