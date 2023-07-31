@@ -1,3 +1,30 @@
+### 3.7.610.0 (2023-07-31 18:31 UTC)
+* AmplifyUIBuilder (3.7.201.0)
+	* Amplify Studio releases GraphQL support for codegen job action.
+* AutoScaling (3.7.202.0)
+	* You can now configure an instance refresh to set its status to 'failed' when it detects that a specified CloudWatch alarm has gone into the ALARM state. You can also choose to roll back the instance refresh automatically when the alarm threshold is met.
+* CleanRooms (3.7.201.0)
+	* This release introduces custom SQL queries - an expanded set of SQL you can run. This release adds analysis templates, a new resource for storing pre-defined custom SQL queries ahead of time. This release also adds the Custom analysis rule, which lets you approve analysis templates for querying.
+* CodeStarconnections (3.7.201.0)
+	* New integration with the Gitlab provider type.
+* Drs (3.7.201.0)
+	* Add support for in-aws right sizing
+* Inspector2 (3.7.201.0)
+	* This release adds 1 new API: BatchGetFindingDetails to retrieve enhanced vulnerability intelligence details for findings.
+* LookoutEquipment (3.7.201.0)
+	* This release includes new import resource, model versioning and resource policy features.
+* Omics (3.7.201.0)
+	* Add CreationType filter for ListReadSets
+* RDS (3.7.203.0)
+	* This release adds support for Aurora MySQL local write forwarding, which allows for forwarding of write operations from reader DB instances to the writer DB instance.
+* Route53 (3.7.201.0)
+	* Amazon Route 53 now supports the Israel (Tel Aviv) Region (il-central-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Scheduler (3.7.201.0)
+	* This release introduces automatic deletion of schedules in EventBridge Scheduler. If configured, EventBridge Scheduler automatically deletes a schedule after the schedule has completed its last invocation.
+* Core 3.7.200.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.609.0 (2023-07-28 18:28 UTC)
 * ApplicationInsights (3.7.201.0)
 	* This release enable customer to add/remove/update more than one workload for a component
