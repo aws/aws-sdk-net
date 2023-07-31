@@ -173,6 +173,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an Auto Scaling group using attribute-based instance type selection. It requires the instance types to have a minimum of four vCPUs and a maximum of eight vCPUs, a minimum of 16,384 MiB of memory, and an Intel manufactured CPU.
+                </para>
+                <code
+                    title="To create an Auto Scaling group using attribute-based instance type selection"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateLaunchConfiguration(Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest)" />
             <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateLaunchConfiguration(Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest)" />
             <member name="T:Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest" />

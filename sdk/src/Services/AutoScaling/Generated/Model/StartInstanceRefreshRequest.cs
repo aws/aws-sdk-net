@@ -147,6 +147,10 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CloudWatch alarms
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Skip matching
         /// </para>
         ///  </li> </ul>
