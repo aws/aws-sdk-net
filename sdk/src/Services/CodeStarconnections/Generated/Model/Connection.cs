@@ -30,7 +30,7 @@ namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
     /// A resource that is used to connect third-party source providers with services like
-    /// AWS CodePipeline.
+    /// CodePipeline.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.CodeStarconnections.Model
         /// Gets and sets the property ConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
-        /// reference when the connection is shared between AWS services.
+        /// reference when the connection is shared between Amazon Web Services.
         /// </para>
         ///  <note> 
         /// <para>
@@ -76,7 +76,8 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// The name of the connection. Connection names must be unique in an AWS user account.
+        /// The name of the connection. Connection names must be unique in an Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

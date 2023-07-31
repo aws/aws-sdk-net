@@ -30,7 +30,7 @@ namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from an AWS resource.
+    /// Removes tags from an Amazon Web Services resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCodeStarconnectionsRequest
     {
