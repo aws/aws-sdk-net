@@ -148,6 +148,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
                 }
+                if(publicRequest.IsSetEnableLocalWriteForwarding())
+                {
+                    request.Parameters.Add("EnableLocalWriteForwarding", StringUtils.FromBool(publicRequest.EnableLocalWriteForwarding));
+                }
                 if(publicRequest.IsSetEnablePerformanceInsights())
                 {
                     request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights));

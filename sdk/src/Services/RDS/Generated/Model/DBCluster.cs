@@ -107,6 +107,7 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
+        private LocalWriteForwardingStatus _localWriteForwardingStatus;
         private string _masterUsername;
         private MasterUserSecret _masterUserSecret;
         private int? _monitoringInterval;
@@ -1054,6 +1055,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetLatestRestorableTime()
         {
             return this._latestRestorableTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalWriteForwardingStatus. 
+        /// <para>
+        /// Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not
+        /// enabled, requested, or is in the process of enabling it.
+        /// </para>
+        /// </summary>
+        public LocalWriteForwardingStatus LocalWriteForwardingStatus
+        {
+            get { return this._localWriteForwardingStatus; }
+            set { this._localWriteForwardingStatus = value; }
+        }
+
+        // Check to see if LocalWriteForwardingStatus property is set
+        internal bool IsSetLocalWriteForwardingStatus()
+        {
+            return this._localWriteForwardingStatus != null;
         }
 
         /// <summary>
