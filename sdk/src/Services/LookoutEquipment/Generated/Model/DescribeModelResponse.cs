@@ -33,6 +33,8 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class DescribeModelResponse : AmazonWebServiceResponse
     {
+        private long? _activeModelVersion;
+        private string _activeModelVersionArn;
         private DateTime? _createdAt;
         private DataPreProcessingConfiguration _dataPreProcessingConfiguration;
         private string _datasetArn;
@@ -40,20 +42,67 @@ namespace Amazon.LookoutEquipment.Model
         private DateTime? _evaluationDataEndTime;
         private DateTime? _evaluationDataStartTime;
         private string _failedReason;
+        private DateTime? _importJobEndTime;
+        private DateTime? _importJobStartTime;
         private LabelsInputConfiguration _labelsInputConfiguration;
         private DateTime? _lastUpdatedTime;
         private string _modelArn;
         private string _modelMetrics;
         private string _modelName;
+        private DateTime? _modelVersionActivatedAt;
         private string _offCondition;
+        private long? _previousActiveModelVersion;
+        private string _previousActiveModelVersionArn;
+        private DateTime? _previousModelVersionActivatedAt;
         private string _roleArn;
         private string _schema;
         private string _serverSideKmsKeyId;
+        private string _sourceModelVersionArn;
         private ModelStatus _status;
         private DateTime? _trainingDataEndTime;
         private DateTime? _trainingDataStartTime;
         private DateTime? _trainingExecutionEndTime;
         private DateTime? _trainingExecutionStartTime;
+
+        /// <summary>
+        /// Gets and sets the property ActiveModelVersion. 
+        /// <para>
+        /// The name of the model version used by the inference schedular when running a scheduled
+        /// inference execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long ActiveModelVersion
+        {
+            get { return this._activeModelVersion.GetValueOrDefault(); }
+            set { this._activeModelVersion = value; }
+        }
+
+        // Check to see if ActiveModelVersion property is set
+        internal bool IsSetActiveModelVersion()
+        {
+            return this._activeModelVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveModelVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the model version used by the inference scheduler
+        /// when running a scheduled inference execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ActiveModelVersionArn
+        {
+            get { return this._activeModelVersionArn; }
+            set { this._activeModelVersionArn = value; }
+        }
+
+        // Check to see if ActiveModelVersionArn property is set
+        internal bool IsSetActiveModelVersionArn()
+        {
+            return this._activeModelVersionArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -200,6 +249,44 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportJobEndTime. 
+        /// <para>
+        /// The date and time when the import job was completed. This field appears if the active
+        /// model version was imported.
+        /// </para>
+        /// </summary>
+        public DateTime ImportJobEndTime
+        {
+            get { return this._importJobEndTime.GetValueOrDefault(); }
+            set { this._importJobEndTime = value; }
+        }
+
+        // Check to see if ImportJobEndTime property is set
+        internal bool IsSetImportJobEndTime()
+        {
+            return this._importJobEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportJobStartTime. 
+        /// <para>
+        /// The date and time when the import job was started. This field appears if the active
+        /// model version was imported.
+        /// </para>
+        /// </summary>
+        public DateTime ImportJobStartTime
+        {
+            get { return this._importJobStartTime.GetValueOrDefault(); }
+            set { this._importJobStartTime = value; }
+        }
+
+        // Check to see if ImportJobStartTime property is set
+        internal bool IsSetImportJobStartTime()
+        {
+            return this._importJobStartTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LabelsInputConfiguration. 
         /// <para>
         /// Specifies configuration information about the labels input, including its S3 location.
@@ -297,6 +384,24 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelVersionActivatedAt. 
+        /// <para>
+        /// The date the active model version was activated.
+        /// </para>
+        /// </summary>
+        public DateTime ModelVersionActivatedAt
+        {
+            get { return this._modelVersionActivatedAt.GetValueOrDefault(); }
+            set { this._modelVersionActivatedAt = value; }
+        }
+
+        // Check to see if ModelVersionActivatedAt property is set
+        internal bool IsSetModelVersionActivatedAt()
+        {
+            return this._modelVersionActivatedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OffCondition. 
         /// <para>
         /// Indicates that the asset associated with this sensor has been shut off. As long as
@@ -315,6 +420,64 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetOffCondition()
         {
             return this._offCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousActiveModelVersion. 
+        /// <para>
+        /// The model version that was set as the active model version prior to the current active
+        /// model version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long PreviousActiveModelVersion
+        {
+            get { return this._previousActiveModelVersion.GetValueOrDefault(); }
+            set { this._previousActiveModelVersion = value; }
+        }
+
+        // Check to see if PreviousActiveModelVersion property is set
+        internal bool IsSetPreviousActiveModelVersion()
+        {
+            return this._previousActiveModelVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousActiveModelVersionArn. 
+        /// <para>
+        /// The ARN of the model version that was set as the active model version prior to the
+        /// current active model version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string PreviousActiveModelVersionArn
+        {
+            get { return this._previousActiveModelVersionArn; }
+            set { this._previousActiveModelVersionArn = value; }
+        }
+
+        // Check to see if PreviousActiveModelVersionArn property is set
+        internal bool IsSetPreviousActiveModelVersionArn()
+        {
+            return this._previousActiveModelVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreviousModelVersionActivatedAt. 
+        /// <para>
+        /// The date and time when the previous active model version was activated.
+        /// </para>
+        /// </summary>
+        public DateTime PreviousModelVersionActivatedAt
+        {
+            get { return this._previousModelVersionActivatedAt.GetValueOrDefault(); }
+            set { this._previousModelVersionActivatedAt = value; }
+        }
+
+        // Check to see if PreviousModelVersionActivatedAt property is set
+        internal bool IsSetPreviousModelVersionActivatedAt()
+        {
+            return this._previousModelVersionActivatedAt.HasValue; 
         }
 
         /// <summary>
@@ -375,6 +538,26 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetServerSideKmsKeyId()
         {
             return this._serverSideKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceModelVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source model version. This field appears if
+        /// the active model version was imported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string SourceModelVersionArn
+        {
+            get { return this._sourceModelVersionArn; }
+            set { this._sourceModelVersionArn = value; }
+        }
+
+        // Check to see if SourceModelVersionArn property is set
+        internal bool IsSetSourceModelVersionArn()
+        {
+            return this._sourceModelVersionArn != null;
         }
 
         /// <summary>

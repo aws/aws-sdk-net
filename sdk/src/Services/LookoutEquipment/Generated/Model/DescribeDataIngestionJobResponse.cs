@@ -44,6 +44,7 @@ namespace Amazon.LookoutEquipment.Model
         private IngestionInputConfiguration _ingestionInputConfiguration;
         private string _jobId;
         private string _roleArn;
+        private string _sourceDatasetArn;
         private IngestionJobStatus _status;
         private string _statusDetail;
 
@@ -252,6 +253,26 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDatasetArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source dataset from which the data used for
+        /// the data ingestion job was imported from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string SourceDatasetArn
+        {
+            get { return this._sourceDatasetArn; }
+            set { this._sourceDatasetArn = value; }
+        }
+
+        // Check to see if SourceDatasetArn property is set
+        internal bool IsSetSourceDatasetArn()
+        {
+            return this._sourceDatasetArn != null;
         }
 
         /// <summary>

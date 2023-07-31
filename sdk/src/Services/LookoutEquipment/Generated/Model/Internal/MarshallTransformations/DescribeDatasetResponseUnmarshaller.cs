@@ -123,6 +123,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.ServerSideKmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceDatasetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceDatasetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -270,9 +270,8 @@ namespace Amazon.LookoutEquipment
         /// <summary>
         /// Creates a container for a collection of data being ingested for analysis. The dataset
         /// contains the metadata describing where the data is and what the data actually looks
-        /// like. In other words, it contains the location of the data source, the data schema,
-        /// and other information. A dataset also contains any tags associated with the ingested
-        /// data.
+        /// like. For example, it contains the location of the data source, the data schema, and
+        /// other information. A dataset also contains any tags associated with the ingested data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -295,7 +294,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
@@ -311,9 +310,8 @@ namespace Amazon.LookoutEquipment
         /// <summary>
         /// Creates a container for a collection of data being ingested for analysis. The dataset
         /// contains the metadata describing where the data is and what the data actually looks
-        /// like. In other words, it contains the location of the data source, the data schema,
-        /// and other information. A dataset also contains any tags associated with the ingested
-        /// data.
+        /// like. For example, it contains the location of the data source, the data schema, and
+        /// other information. A dataset also contains any tags associated with the ingested data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -339,7 +337,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -388,7 +386,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
         public virtual CreateInferenceSchedulerResponse CreateInferenceScheduler(CreateInferenceSchedulerRequest request)
@@ -436,7 +434,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
         public virtual Task<CreateInferenceSchedulerResponse> CreateInferenceSchedulerAsync(CreateInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -481,7 +479,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
         public virtual CreateLabelResponse CreateLabel(CreateLabelRequest request)
@@ -525,7 +523,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
         public virtual Task<CreateLabelResponse> CreateLabelAsync(CreateLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -566,7 +564,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
         public virtual CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request)
@@ -606,7 +604,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
         public virtual Task<CreateLabelGroupResponse> CreateLabelGroupAsync(CreateLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -666,7 +664,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
@@ -725,7 +723,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -771,7 +769,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
@@ -816,7 +814,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -859,7 +857,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
         public virtual DeleteInferenceSchedulerResponse DeleteInferenceScheduler(DeleteInferenceSchedulerRequest request)
@@ -901,7 +899,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
         public virtual Task<DeleteInferenceSchedulerResponse> DeleteInferenceSchedulerAsync(DeleteInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -943,7 +941,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         public virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
@@ -984,7 +982,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         public virtual Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1026,7 +1024,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
         public virtual DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request)
@@ -1067,7 +1065,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
         public virtual Task<DeleteLabelGroupResponse> DeleteLabelGroupAsync(DeleteLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1111,7 +1109,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
@@ -1154,7 +1152,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1164,6 +1162,89 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes the resource policy attached to the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the resource policy attached to the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1193,7 +1274,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
         public virtual DescribeDataIngestionJobResponse DescribeDataIngestionJob(DescribeDataIngestionJobRequest request)
@@ -1231,7 +1312,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
         public virtual Task<DescribeDataIngestionJobResponse> DescribeDataIngestionJobAsync(DescribeDataIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1270,7 +1351,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
@@ -1308,7 +1389,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1347,7 +1428,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
         public virtual DescribeInferenceSchedulerResponse DescribeInferenceScheduler(DescribeInferenceSchedulerRequest request)
@@ -1385,7 +1466,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
         public virtual Task<DescribeInferenceSchedulerResponse> DescribeInferenceSchedulerAsync(DescribeInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1423,7 +1504,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
         public virtual DescribeLabelResponse DescribeLabel(DescribeLabelRequest request)
@@ -1460,7 +1541,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
         public virtual Task<DescribeLabelResponse> DescribeLabelAsync(DescribeLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1498,7 +1579,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
         public virtual DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request)
@@ -1535,7 +1616,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
         public virtual Task<DescribeLabelGroupResponse> DescribeLabelGroupAsync(DescribeLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1574,7 +1655,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
@@ -1612,7 +1693,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual Task<DescribeModelResponse> DescribeModelAsync(DescribeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1622,6 +1703,334 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = DescribeModelResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeModelVersion
+
+
+        /// <summary>
+        /// Retrieves information about a specific machine learning model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        public virtual DescribeModelVersionResponse DescribeModelVersion(DescribeModelVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific machine learning model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        public virtual Task<DescribeModelVersionResponse> DescribeModelVersionAsync(DescribeModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeModelVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeResourcePolicy
+
+
+        /// <summary>
+        /// Provides the details of a resource policy attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides the details of a resource policy attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportDataset
+
+
+        /// <summary>
+        /// Imports a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDataset service method.</param>
+        /// 
+        /// <returns>The response from the ImportDataset service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        public virtual ImportDatasetResponse ImportDataset(ImportDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<ImportDatasetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportDataset service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        public virtual Task<ImportDatasetResponse> ImportDatasetAsync(ImportDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportDatasetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportModelVersion
+
+
+        /// <summary>
+        /// Imports a model that has been trained successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the ImportModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        public virtual ImportModelVersionResponse ImportModelVersion(ImportModelVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportModelVersionResponseUnmarshaller.Instance;
+
+            return Invoke<ImportModelVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports a model that has been trained successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportModelVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        public virtual Task<ImportModelVersionResponse> ImportModelVersionAsync(ImportModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportModelVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportModelVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1647,7 +2056,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
         public virtual ListDataIngestionJobsResponse ListDataIngestionJobs(ListDataIngestionJobsRequest request)
@@ -1681,7 +2090,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
         public virtual Task<ListDataIngestionJobsResponse> ListDataIngestionJobsAsync(ListDataIngestionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1715,7 +2124,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
@@ -1748,7 +2157,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1786,7 +2195,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
         public virtual ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request)
@@ -1823,7 +2232,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
         public virtual Task<ListInferenceEventsResponse> ListInferenceEventsAsync(ListInferenceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1862,7 +2271,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
         public virtual ListInferenceExecutionsResponse ListInferenceExecutions(ListInferenceExecutionsRequest request)
@@ -1900,7 +2309,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
         public virtual Task<ListInferenceExecutionsResponse> ListInferenceExecutionsAsync(ListInferenceExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1934,7 +2343,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
         public virtual ListInferenceSchedulersResponse ListInferenceSchedulers(ListInferenceSchedulersRequest request)
@@ -1967,7 +2376,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
         public virtual Task<ListInferenceSchedulersResponse> ListInferenceSchedulersAsync(ListInferenceSchedulersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2001,7 +2410,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
         public virtual ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request)
@@ -2034,7 +2443,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
         public virtual Task<ListLabelGroupsResponse> ListLabelGroupsAsync(ListLabelGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2068,7 +2477,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
         public virtual ListLabelsResponse ListLabels(ListLabelsRequest request)
@@ -2101,7 +2510,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
         public virtual Task<ListLabelsResponse> ListLabelsAsync(ListLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2136,7 +2545,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual ListModelsResponse ListModels(ListModelsRequest request)
@@ -2170,7 +2579,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual Task<ListModelsResponse> ListModelsAsync(ListModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2180,6 +2589,85 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListModelVersions
+
+
+        /// <summary>
+        /// Generates a list of all model versions for a given model, including the model version,
+        /// model version ARN, and status. To list a subset of versions, use the <code>MaxModelVersion</code>
+        /// and <code>MinModelVersion</code> fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListModelVersions service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        public virtual ListModelVersionsResponse ListModelVersions(ListModelVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates a list of all model versions for a given model, including the model version,
+        /// model version ARN, and status. To list a subset of versions, use the <code>MaxModelVersion</code>
+        /// and <code>MinModelVersion</code> fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelVersions service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        public virtual Task<ListModelVersionsResponse> ListModelVersionsAsync(ListModelVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListModelVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2210,7 +2698,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
         public virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
@@ -2249,7 +2737,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
         public virtual Task<ListSensorStatisticsResponse> ListSensorStatisticsAsync(ListSensorStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2287,7 +2775,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2324,7 +2812,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2334,6 +2822,95 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates a resource control policy for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a resource control policy for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2369,7 +2946,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
         public virtual StartDataIngestionJobResponse StartDataIngestionJob(StartDataIngestionJobRequest request)
@@ -2413,7 +2990,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
         public virtual Task<StartDataIngestionJobResponse> StartDataIngestionJobAsync(StartDataIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2455,7 +3032,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
         public virtual StartInferenceSchedulerResponse StartInferenceScheduler(StartInferenceSchedulerRequest request)
@@ -2496,7 +3073,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
         public virtual Task<StartInferenceSchedulerResponse> StartInferenceSchedulerAsync(StartInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2538,7 +3115,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
         public virtual StopInferenceSchedulerResponse StopInferenceScheduler(StopInferenceSchedulerRequest request)
@@ -2579,7 +3156,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
         public virtual Task<StopInferenceSchedulerResponse> StopInferenceSchedulerAsync(StopInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2624,7 +3201,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2668,7 +3245,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2706,7 +3283,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2743,7 +3320,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2753,6 +3330,89 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateActiveModelVersion
+
+
+        /// <summary>
+        /// Sets the active model version for a given machine learning model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActiveModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateActiveModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        public virtual UpdateActiveModelVersionResponse UpdateActiveModelVersion(UpdateActiveModelVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateActiveModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActiveModelVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateActiveModelVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets the active model version for a given machine learning model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActiveModelVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateActiveModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        public virtual Task<UpdateActiveModelVersionResponse> UpdateActiveModelVersionAsync(UpdateActiveModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateActiveModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActiveModelVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateActiveModelVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2785,7 +3445,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
         public virtual UpdateInferenceSchedulerResponse UpdateInferenceScheduler(UpdateInferenceSchedulerRequest request)
@@ -2826,7 +3486,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
         public virtual Task<UpdateInferenceSchedulerResponse> UpdateInferenceSchedulerAsync(UpdateInferenceSchedulerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2868,7 +3528,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
         public virtual UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request)
@@ -2909,7 +3569,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
         public virtual Task<UpdateLabelGroupResponse> UpdateLabelGroupAsync(UpdateLabelGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -120,7 +120,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the current status of the inference schedulers to list.
+        /// Specifies the current status of the inference schedulers.
         /// </para>
         /// </summary>
         public InferenceSchedulerStatus Status

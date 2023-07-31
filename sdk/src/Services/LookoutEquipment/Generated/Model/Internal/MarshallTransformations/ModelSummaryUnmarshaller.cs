@@ -64,6 +64,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveModelVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ActiveModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ActiveModelVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActiveModelVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
