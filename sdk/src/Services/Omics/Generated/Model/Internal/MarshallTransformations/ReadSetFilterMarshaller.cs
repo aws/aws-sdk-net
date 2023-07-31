@@ -57,6 +57,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CreatedBefore));
             }
 
+            if(requestObject.IsSetCreationType())
+            {
+                context.Writer.WritePropertyName("creationType");
+                context.Writer.Write(requestObject.CreationType);
+            }
+
             if(requestObject.IsSetGeneratedFrom())
             {
                 context.Writer.WritePropertyName("generatedFrom");

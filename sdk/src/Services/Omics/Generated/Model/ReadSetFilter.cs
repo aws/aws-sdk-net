@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     {
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
+        private CreationType _creationType;
         private string _generatedFrom;
         private string _name;
         private string _referenceArn;
@@ -76,6 +77,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetCreatedBefore()
         {
             return this._createdBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationType. 
+        /// <para>
+        ///  The creation type of the read set. 
+        /// </para>
+        /// </summary>
+        public CreationType CreationType
+        {
+            get { return this._creationType; }
+            set { this._creationType = value; }
+        }
+
+        // Check to see if CreationType property is set
+        internal bool IsSetCreationType()
+        {
+            return this._creationType != null;
         }
 
         /// <summary>

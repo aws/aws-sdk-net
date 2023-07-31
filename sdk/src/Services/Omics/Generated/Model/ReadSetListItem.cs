@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     {
         private string _arn;
         private DateTime? _creationTime;
+        private CreationType _creationType;
         private string _description;
         private FileType _fileType;
         private string _id;
@@ -83,6 +84,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationType. 
+        /// <para>
+        ///  The creation type of the read set. 
+        /// </para>
+        /// </summary>
+        public CreationType CreationType
+        {
+            get { return this._creationType; }
+            set { this._creationType = value; }
+        }
+
+        // Check to see if CreationType property is set
+        internal bool IsSetCreationType()
+        {
+            return this._creationType != null;
         }
 
         /// <summary>
