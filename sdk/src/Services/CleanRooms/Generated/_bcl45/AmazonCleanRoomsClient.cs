@@ -277,6 +277,79 @@ namespace Amazon.CleanRooms
         #endregion
 
 
+        #region  BatchGetCollaborationAnalysisTemplate
+
+
+        /// <summary>
+        /// Retrieves multiple analysis templates within a collaboration by their Amazon Resource
+        /// Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCollaborationAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCollaborationAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual BatchGetCollaborationAnalysisTemplateResponse BatchGetCollaborationAnalysisTemplate(BatchGetCollaborationAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCollaborationAnalysisTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves multiple analysis templates within a collaboration by their Amazon Resource
+        /// Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCollaborationAnalysisTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCollaborationAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual Task<BatchGetCollaborationAnalysisTemplateResponse> BatchGetCollaborationAnalysisTemplateAsync(BatchGetCollaborationAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetCollaborationAnalysisTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetSchema
 
 
@@ -344,6 +417,89 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = BatchGetSchemaResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchGetSchemaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAnalysisTemplate
+
+
+        /// <summary>
+        /// Creates a new analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
+        public virtual CreateAnalysisTemplateResponse CreateAnalysisTemplate(CreateAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnalysisTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnalysisTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
+        public virtual Task<CreateAnalysisTemplateResponse> CreateAnalysisTemplateAsync(CreateAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnalysisTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAnalysisTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -745,6 +901,77 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateMembershipResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAnalysisTemplate
+
+
+        /// <summary>
+        /// Deletes an analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
+        public virtual DeleteAnalysisTemplateResponse DeleteAnalysisTemplate(DeleteAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAnalysisTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
+        public virtual Task<DeleteAnalysisTemplateResponse> DeleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnalysisTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAnalysisTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1203,6 +1430,77 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  GetAnalysisTemplate
+
+
+        /// <summary>
+        /// Retrieves an analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
+        public virtual GetAnalysisTemplateResponse GetAnalysisTemplate(GetAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetAnalysisTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves an analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
+        public virtual Task<GetAnalysisTemplateResponse> GetAnalysisTemplateAsync(GetAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAnalysisTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCollaboration
 
 
@@ -1264,6 +1562,77 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = GetCollaborationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetCollaborationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCollaborationAnalysisTemplate
+
+
+        /// <summary>
+        /// Retrieves an analysis template within a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual GetCollaborationAnalysisTemplateResponse GetCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCollaborationAnalysisTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves an analysis template within a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationAnalysisTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual Task<GetCollaborationAnalysisTemplateResponse> GetCollaborationAnalysisTemplateAsync(GetCollaborationAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCollaborationAnalysisTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1761,6 +2130,148 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = GetSchemaAnalysisRuleResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetSchemaAnalysisRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAnalysisTemplates
+
+
+        /// <summary>
+        /// Lists analysis templates that the caller owns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalysisTemplates service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
+        public virtual ListAnalysisTemplatesResponse ListAnalysisTemplates(ListAnalysisTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalysisTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists analysis templates that the caller owns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnalysisTemplates service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
+        public virtual Task<ListAnalysisTemplatesResponse> ListAnalysisTemplatesAsync(ListAnalysisTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAnalysisTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCollaborationAnalysisTemplates
+
+
+        /// <summary>
+        /// Lists analysis templates within a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationAnalysisTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationAnalysisTemplates service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
+        public virtual ListCollaborationAnalysisTemplatesResponse ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationAnalysisTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCollaborationAnalysisTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists analysis templates within a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationAnalysisTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationAnalysisTemplates service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
+        public virtual Task<ListCollaborationAnalysisTemplatesResponse> ListCollaborationAnalysisTemplatesAsync(ListCollaborationAnalysisTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationAnalysisTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCollaborationAnalysisTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2476,6 +2987,77 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAnalysisTemplate
+
+
+        /// <summary>
+        /// Updates the analysis template metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
+        public virtual UpdateAnalysisTemplateResponse UpdateAnalysisTemplate(UpdateAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAnalysisTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the analysis template metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalysisTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
+        public virtual Task<UpdateAnalysisTemplateResponse> UpdateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnalysisTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAnalysisTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

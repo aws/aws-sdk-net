@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Controls on the query specifications that can be run on configured table..
+    /// Controls on the query specifications that can be run on configured table.
     /// </summary>
     public partial class AnalysisRulePolicy
     {
@@ -38,7 +38,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property V1. 
         /// <para>
-        /// Controls on the query specifications that can be run on configured table..
+        /// Controls on the query specifications that can be run on configured table.
         /// </para>
         /// </summary>
         public AnalysisRulePolicyV1 V1

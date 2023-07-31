@@ -70,6 +70,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("custom", targetDepth))
+                {
+                    var unmarshaller = AnalysisRuleCustomUnmarshaller.Instance;
+                    unmarshalledObject.Custom = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("list", targetDepth))
                 {
                     var unmarshaller = AnalysisRuleListUnmarshaller.Instance;

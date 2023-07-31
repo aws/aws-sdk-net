@@ -56,6 +56,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCustom())
+            {
+                context.Writer.WritePropertyName("custom");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnalysisRuleCustomMarshaller.Instance;
+                marshaller.Marshall(requestObject.Custom, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetList())
             {
                 context.Writer.WritePropertyName("list");
