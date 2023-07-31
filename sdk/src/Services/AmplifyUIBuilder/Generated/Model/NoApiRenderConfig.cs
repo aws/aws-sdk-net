@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Describes the configuration information for rendering the UI component associated
-    /// with the code generation job.
+    /// Describes the configuration for an application with no API being used.
     /// </summary>
-    public partial class CodegenJobRenderConfig
+    public partial class NoApiRenderConfig
     {
-        private ReactStartCodegenJobData _react;
-
-        /// <summary>
-        /// Gets and sets the property React. 
-        /// <para>
-        /// The name of the <code>ReactStartCodegenJobData</code> object.
-        /// </para>
-        /// </summary>
-        public ReactStartCodegenJobData React
-        {
-            get { return this._react; }
-            set { this._react = value; }
-        }
-
-        // Check to see if React property is set
-        internal bool IsSetReact()
-        {
-            return this._react != null;
-        }
 
     }
 }

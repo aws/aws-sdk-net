@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReactStartCodegenJobData Object
+    /// Response Unmarshaller for GraphQLRenderConfig Object
     /// </summary>  
-    public class ReactStartCodegenJobDataUnmarshaller : IUnmarshaller<ReactStartCodegenJobData, XmlUnmarshallerContext>, IUnmarshaller<ReactStartCodegenJobData, JsonUnmarshallerContext>
+    public class GraphQLRenderConfigUnmarshaller : IUnmarshaller<GraphQLRenderConfig, XmlUnmarshallerContext>, IUnmarshaller<GraphQLRenderConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReactStartCodegenJobData IUnmarshaller<ReactStartCodegenJobData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GraphQLRenderConfig IUnmarshaller<GraphQLRenderConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,45 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReactStartCodegenJobData Unmarshall(JsonUnmarshallerContext context)
+        public GraphQLRenderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReactStartCodegenJobData unmarshalledObject = new ReactStartCodegenJobData();
+            GraphQLRenderConfig unmarshalledObject = new GraphQLRenderConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("apiConfiguration", targetDepth))
-                {
-                    var unmarshaller = ApiConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ApiConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inlineSourceMap", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.InlineSourceMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("module", targetDepth))
+                if (context.TestExpression("fragmentsFilePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Module = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FragmentsFilePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("renderTypeDeclarations", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RenderTypeDeclarations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("script", targetDepth))
+                if (context.TestExpression("mutationsFilePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Script = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MutationsFilePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("queriesFilePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueriesFilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subscriptionsFilePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriptionsFilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("typesFilePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TypesFilePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +100,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReactStartCodegenJobDataUnmarshaller _instance = new ReactStartCodegenJobDataUnmarshaller();        
+        private static GraphQLRenderConfigUnmarshaller _instance = new GraphQLRenderConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReactStartCodegenJobDataUnmarshaller Instance
+        public static GraphQLRenderConfigUnmarshaller Instance
         {
             get
             {

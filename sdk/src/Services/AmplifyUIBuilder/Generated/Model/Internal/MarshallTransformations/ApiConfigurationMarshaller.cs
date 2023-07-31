@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ReactStartCodegenJobData Marshaller
+    /// ApiConfiguration Marshaller
     /// </summary>
-    public class ReactStartCodegenJobDataMarshaller : IRequestMarshaller<ReactStartCodegenJobData, JsonMarshallerContext> 
+    public class ApiConfigurationMarshaller : IRequestMarshaller<ApiConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,47 +43,39 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ReactStartCodegenJobData requestObject, JsonMarshallerContext context)
+        public void Marshall(ApiConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApiConfiguration())
+            if(requestObject.IsSetDataStoreConfig())
             {
-                context.Writer.WritePropertyName("apiConfiguration");
+                context.Writer.WritePropertyName("dataStoreConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ApiConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ApiConfiguration, context);
+                var marshaller = DataStoreRenderConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataStoreConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetInlineSourceMap())
+            if(requestObject.IsSetGraphQLConfig())
             {
-                context.Writer.WritePropertyName("inlineSourceMap");
-                context.Writer.Write(requestObject.InlineSourceMap);
+                context.Writer.WritePropertyName("graphQLConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GraphQLRenderConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.GraphQLConfig, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetModule())
+            if(requestObject.IsSetNoApiConfig())
             {
-                context.Writer.WritePropertyName("module");
-                context.Writer.Write(requestObject.Module);
-            }
+                context.Writer.WritePropertyName("noApiConfig");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetRenderTypeDeclarations())
-            {
-                context.Writer.WritePropertyName("renderTypeDeclarations");
-                context.Writer.Write(requestObject.RenderTypeDeclarations);
-            }
+                var marshaller = NoApiRenderConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.NoApiConfig, context);
 
-            if(requestObject.IsSetScript())
-            {
-                context.Writer.WritePropertyName("script");
-                context.Writer.Write(requestObject.Script);
-            }
-
-            if(requestObject.IsSetTarget())
-            {
-                context.Writer.WritePropertyName("target");
-                context.Writer.Write(requestObject.Target);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -91,7 +83,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ReactStartCodegenJobDataMarshaller Instance = new ReactStartCodegenJobDataMarshaller();
+        public readonly static ApiConfigurationMarshaller Instance = new ApiConfigurationMarshaller();
 
     }
 }

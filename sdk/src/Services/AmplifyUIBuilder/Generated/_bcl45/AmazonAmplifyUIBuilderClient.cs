@@ -352,7 +352,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Creates a new form for an Amplify.
+        /// Creates a new form for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
         /// 
@@ -382,7 +382,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Creates a new form for an Amplify.
+        /// Creates a new form for an Amplify app.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
         /// <param name="cancellationToken">
@@ -1484,7 +1484,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Starts a code generation job for for a specified Amplify app and backend environment.
+        /// Starts a code generation job for a specified Amplify app and backend environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob service method.</param>
         /// 
@@ -1510,7 +1510,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Starts a code generation job for for a specified Amplify app and backend environment.
+        /// Starts a code generation job for a specified Amplify app and backend environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob service method.</param>
         /// <param name="cancellationToken">
