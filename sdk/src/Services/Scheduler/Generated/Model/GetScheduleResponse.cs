@@ -33,6 +33,7 @@ namespace Amazon.Scheduler.Model
     /// </summary>
     public partial class GetScheduleResponse : AmazonWebServiceResponse
     {
+        private ActionAfterCompletion _actionAfterCompletion;
         private string _arn;
         private DateTime? _creationDate;
         private string _description;
@@ -47,6 +48,25 @@ namespace Amazon.Scheduler.Model
         private DateTime? _startDate;
         private ScheduleState _state;
         private Target _target;
+
+        /// <summary>
+        /// Gets and sets the property ActionAfterCompletion. 
+        /// <para>
+        /// Indicates the action that EventBridge Scheduler applies to the schedule after the
+        /// schedule completes invoking the target.
+        /// </para>
+        /// </summary>
+        public ActionAfterCompletion ActionAfterCompletion
+        {
+            get { return this._actionAfterCompletion; }
+            set { this._actionAfterCompletion = value; }
+        }
+
+        // Check to see if ActionAfterCompletion property is set
+        internal bool IsSetActionAfterCompletion()
+        {
+            return this._actionAfterCompletion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -231,7 +251,7 @@ namespace Amazon.Scheduler.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rate</code> expression - <code>rate(unit value)</code> 
+        ///  <code>rate</code> expression - <code>rate(value unit)</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

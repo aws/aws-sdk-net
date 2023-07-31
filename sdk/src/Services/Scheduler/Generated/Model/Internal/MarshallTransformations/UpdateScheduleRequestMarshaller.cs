@@ -68,6 +68,12 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActionAfterCompletion())
+                {
+                    context.Writer.WritePropertyName("ActionAfterCompletion");
+                    context.Writer.Write(publicRequest.ActionAfterCompletion);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("ClientToken");
