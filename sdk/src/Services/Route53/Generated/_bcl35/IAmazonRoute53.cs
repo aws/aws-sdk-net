@@ -1551,17 +1551,6 @@ namespace Amazon.Route53
         /// or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries
         /// for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code>
         /// created.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// After you submit an <code>CreateTrafficPolicyInstance</code> request, there's a brief
-        /// delay while Amazon Route 53 creates the resource record sets that are specified in
-        /// the traffic policy definition. Use <code>GetTrafficPolicyInstance</code> with the
-        /// <code>id</code> of new traffic policy instance to confirm that the <code>CreateTrafficPolicyInstance</code>
-        /// request completed successfully. For more information, see the <code>State</code> response
-        /// element.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyInstance service method.</param>
         /// 
@@ -3596,10 +3585,10 @@ namespace Amazon.Route53
         /// 
         ///  <note> 
         /// <para>
-        ///  Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic
-        /// policy instance to confirm that the <code>CreateTrafficPolicyInstance</code> or an
-        /// <code>UpdateTrafficPolicyInstance</code> request completed successfully. For more
-        /// information, see the <code>State</code> response element.
+        /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
+        /// that are specified in the traffic policy definition. For more information, see the
+        /// <code>State</code> response element.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -5233,20 +5222,9 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// After you submit a <code>UpdateTrafficPolicyInstance</code> request, there's a brief
-        /// delay while Route 53 creates the resource record sets that are specified in the traffic
-        /// policy definition. Use <code>GetTrafficPolicyInstance</code> with the <code>id</code>
-        /// of updated traffic policy instance confirm that the <code>UpdateTrafficPolicyInstance</code>
-        /// request completed successfully. For more information, see the <code>State</code> response
-        /// element.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Updates the resource record sets in a specified hosted zone that were created based
         /// on the settings in a specified traffic policy version.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// When you update a traffic policy instance, Amazon Route 53 continues to respond to
