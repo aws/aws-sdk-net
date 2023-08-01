@@ -1684,6 +1684,40 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeEngineVersions
+
+        internal virtual DescribeEngineVersionsResponse DescribeEngineVersions(DescribeEngineVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEngineVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEngineVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEngineVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the replication instance versions used in the project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEngineVersions service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
+        public virtual Task<DescribeEngineVersionsResponse> DescribeEngineVersionsAsync(DescribeEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEngineVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEngineVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEngineVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEventCategories
 
         internal virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)

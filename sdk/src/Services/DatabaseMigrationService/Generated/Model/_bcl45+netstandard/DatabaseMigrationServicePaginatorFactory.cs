@@ -84,6 +84,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeEngineVersions operation
+        ///</summary>
+        public IDescribeEngineVersionsPaginator DescribeEngineVersions(DescribeEngineVersionsRequest request) 
+        {
+            return new DescribeEngineVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         public IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request) 

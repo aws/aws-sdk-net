@@ -56,6 +56,11 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribeEndpointTypesPaginator DescribeEndpointTypes(DescribeEndpointTypesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeEngineVersions operation
+        ///</summary>
+        IDescribeEngineVersionsPaginator DescribeEngineVersions(DescribeEngineVersionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);

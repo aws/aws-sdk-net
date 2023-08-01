@@ -1635,6 +1635,46 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeEngineVersions
+
+
+        /// <summary>
+        /// Returns information about the replication instance versions used in the project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEngineVersions service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
+        DescribeEngineVersionsResponse DescribeEngineVersions(DescribeEngineVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEngineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineVersions operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEngineVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
+        IAsyncResult BeginDescribeEngineVersions(DescribeEngineVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEngineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEngineVersions.</param>
+        /// 
+        /// <returns>Returns a  DescribeEngineVersionsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
+        DescribeEngineVersionsResponse EndDescribeEngineVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeEventCategories
 
 
