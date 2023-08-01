@@ -226,8 +226,8 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
-        /// or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
+        /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -358,8 +358,8 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
-        /// or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
+        /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

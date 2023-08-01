@@ -308,6 +308,10 @@ namespace Amazon.Batch
         /// Constant SPOT_CAPACITY_OPTIMIZED for CRAllocationStrategy
         /// </summary>
         public static readonly CRAllocationStrategy SPOT_CAPACITY_OPTIMIZED = new CRAllocationStrategy("SPOT_CAPACITY_OPTIMIZED");
+        /// <summary>
+        /// Constant SPOT_PRICE_CAPACITY_OPTIMIZED for CRAllocationStrategy
+        /// </summary>
+        public static readonly CRAllocationStrategy SPOT_PRICE_CAPACITY_OPTIMIZED = new CRAllocationStrategy("SPOT_PRICE_CAPACITY_OPTIMIZED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -416,6 +420,10 @@ namespace Amazon.Batch
         /// Constant SPOT_CAPACITY_OPTIMIZED for CRUpdateAllocationStrategy
         /// </summary>
         public static readonly CRUpdateAllocationStrategy SPOT_CAPACITY_OPTIMIZED = new CRUpdateAllocationStrategy("SPOT_CAPACITY_OPTIMIZED");
+        /// <summary>
+        /// Constant SPOT_PRICE_CAPACITY_OPTIMIZED for CRUpdateAllocationStrategy
+        /// </summary>
+        public static readonly CRUpdateAllocationStrategy SPOT_PRICE_CAPACITY_OPTIMIZED = new CRUpdateAllocationStrategy("SPOT_PRICE_CAPACITY_OPTIMIZED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
