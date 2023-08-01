@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HealthEventsConfig Object
+    /// Response Unmarshaller for LocalHealthEventsConfig Object
     /// </summary>  
-    public class HealthEventsConfigUnmarshaller : IUnmarshaller<HealthEventsConfig, XmlUnmarshallerContext>, IUnmarshaller<HealthEventsConfig, JsonUnmarshallerContext>
+    public class LocalHealthEventsConfigUnmarshaller : IUnmarshaller<LocalHealthEventsConfig, XmlUnmarshallerContext>, IUnmarshaller<LocalHealthEventsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HealthEventsConfig IUnmarshaller<HealthEventsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LocalHealthEventsConfig IUnmarshaller<LocalHealthEventsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HealthEventsConfig Unmarshall(JsonUnmarshallerContext context)
+        public LocalHealthEventsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HealthEventsConfig unmarshalledObject = new HealthEventsConfig();
+            LocalHealthEventsConfig unmarshalledObject = new LocalHealthEventsConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AvailabilityLocalHealthEventsConfig", targetDepth))
-                {
-                    var unmarshaller = LocalHealthEventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityLocalHealthEventsConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AvailabilityScoreThreshold", targetDepth))
+                if (context.TestExpression("HealthScoreThreshold", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityScoreThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthScoreThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PerformanceLocalHealthEventsConfig", targetDepth))
-                {
-                    var unmarshaller = LocalHealthEventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceLocalHealthEventsConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PerformanceScoreThreshold", targetDepth))
+                if (context.TestExpression("MinTrafficImpact", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceScoreThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinTrafficImpact = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         }
 
 
-        private static HealthEventsConfigUnmarshaller _instance = new HealthEventsConfigUnmarshaller();        
+        private static LocalHealthEventsConfigUnmarshaller _instance = new LocalHealthEventsConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HealthEventsConfigUnmarshaller Instance
+        public static LocalHealthEventsConfigUnmarshaller Instance
         {
             get
             {

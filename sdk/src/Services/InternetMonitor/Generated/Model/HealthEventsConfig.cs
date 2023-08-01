@@ -29,16 +29,65 @@ using Amazon.Runtime.Internal;
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// A complex type for the configuration. Defines the health event threshold percentages,
-    /// for performance score and availability score. Amazon CloudWatch Internet Monitor creates
-    /// a health event when there's an internet issue that affects your application end users
-    /// where a health score percentage is at or below a set threshold. If you don't set a
-    /// health event threshold, the default value is 95%.
+    /// A complex type with the configuration information that determines the threshold and
+    /// other conditions for when Internet Monitor creates a health event for an overall performance
+    /// or availability issue, across an application's geographies.
+    /// 
+    ///  
+    /// <para>
+    /// Defines the percentages, for overall performance scores and availability scores for
+    /// an application, that are the thresholds for when Amazon CloudWatch Internet Monitor
+    /// creates a health event. You can override the defaults to set a custom threshold for
+    /// overall performance or availability scores, or both.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also set thresholds for local health scores,, where Internet Monitor creates
+    /// a health event when scores cross a threshold for one or more city-networks, in addition
+    /// to creating an event when an overall score crosses a threshold.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you don't set a health event threshold, the default value is 95%.
+    /// </para>
+    ///  
+    /// <para>
+    /// For local thresholds, you also set a minimum percentage of overall traffic that is
+    /// impacted by an issue before Internet Monitor creates an event. In addition, you can
+    /// disable local thresholds, for performance scores, availability scores, or both.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+    /// Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch
+    /// User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class HealthEventsConfig
     {
+        private LocalHealthEventsConfig _availabilityLocalHealthEventsConfig;
         private double? _availabilityScoreThreshold;
+        private LocalHealthEventsConfig _performanceLocalHealthEventsConfig;
         private double? _performanceScoreThreshold;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityLocalHealthEventsConfig. 
+        /// <para>
+        /// The configuration that determines the threshold and other conditions for when Internet
+        /// Monitor creates a health event for a local availability issue.
+        /// </para>
+        /// </summary>
+        public LocalHealthEventsConfig AvailabilityLocalHealthEventsConfig
+        {
+            get { return this._availabilityLocalHealthEventsConfig; }
+            set { this._availabilityLocalHealthEventsConfig = value; }
+        }
+
+        // Check to see if AvailabilityLocalHealthEventsConfig property is set
+        internal bool IsSetAvailabilityLocalHealthEventsConfig()
+        {
+            return this._availabilityLocalHealthEventsConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityScoreThreshold. 
@@ -57,6 +106,25 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetAvailabilityScoreThreshold()
         {
             return this._availabilityScoreThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceLocalHealthEventsConfig. 
+        /// <para>
+        /// The configuration that determines the threshold and other conditions for when Internet
+        /// Monitor creates a health event for a local performance issue.
+        /// </para>
+        /// </summary>
+        public LocalHealthEventsConfig PerformanceLocalHealthEventsConfig
+        {
+            get { return this._performanceLocalHealthEventsConfig; }
+            set { this._performanceLocalHealthEventsConfig = value; }
+        }
+
+        // Check to see if PerformanceLocalHealthEventsConfig property is set
+        internal bool IsSetPerformanceLocalHealthEventsConfig()
+        {
+            return this._performanceLocalHealthEventsConfig != null;
         }
 
         /// <summary>

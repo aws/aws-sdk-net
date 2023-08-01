@@ -202,7 +202,10 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property PercentOfTotalTrafficImpacted. 
         /// <para>
-        /// The impact on global traffic monitored by this monitor for this health event.
+        /// The impact on total traffic that a health event has, in increased latency or reduced
+        /// availability. This is the percentage of how much latency has increased or availability
+        /// has decreased during the event, compared to what is typical for traffic from this
+        /// client location to the Amazon Web Services location using this client network.
         /// </para>
         /// </summary>
         public double PercentOfTotalTrafficImpacted

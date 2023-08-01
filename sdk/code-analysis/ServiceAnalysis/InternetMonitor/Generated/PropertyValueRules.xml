@@ -169,6 +169,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.LocalHealthEventsConfig.HealthScoreThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.LocalHealthEventsConfig.MinTrafficImpact</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.InternetMonitor.Model.Monitor.MonitorArn</property>
     <min>20</min>
     <max>512</max>

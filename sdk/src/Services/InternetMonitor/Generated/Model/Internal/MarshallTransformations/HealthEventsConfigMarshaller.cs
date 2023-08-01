@@ -45,10 +45,32 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HealthEventsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAvailabilityLocalHealthEventsConfig())
+            {
+                context.Writer.WritePropertyName("AvailabilityLocalHealthEventsConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LocalHealthEventsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AvailabilityLocalHealthEventsConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAvailabilityScoreThreshold())
             {
                 context.Writer.WritePropertyName("AvailabilityScoreThreshold");
                 context.Writer.Write(requestObject.AvailabilityScoreThreshold);
+            }
+
+            if(requestObject.IsSetPerformanceLocalHealthEventsConfig())
+            {
+                context.Writer.WritePropertyName("PerformanceLocalHealthEventsConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LocalHealthEventsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerformanceLocalHealthEventsConfig, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetPerformanceScoreThreshold())
