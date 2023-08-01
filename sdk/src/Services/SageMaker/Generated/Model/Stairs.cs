@@ -29,19 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines the traffic pattern.
+    /// Defines the stairs traffic pattern for an Inference Recommender load test. This pattern
+    /// type consists of multiple steps where the number of users increases at each step.
+    /// 
+    ///  
+    /// <para>
+    /// Specify either the stairs or phases traffic pattern.
+    /// </para>
     /// </summary>
-    public partial class Phase
+    public partial class Stairs
     {
         private int? _durationInSeconds;
-        private int? _initialNumberOfUsers;
-        private int? _spawnRate;
+        private int? _numberOfSteps;
+        private int? _usersPerStep;
 
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// Specifies how long a traffic phase should be. For custom load tests, the value should
-        /// be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.
+        /// Defines how long each traffic step should be.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -58,42 +63,41 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialNumberOfUsers. 
+        /// Gets and sets the property NumberOfSteps. 
         /// <para>
-        /// Specifies how many concurrent users to start with. The value should be between 1 and
-        /// 3.
+        /// Specifies how many steps to perform during traffic.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InitialNumberOfUsers
+        public int NumberOfSteps
         {
-            get { return this._initialNumberOfUsers.GetValueOrDefault(); }
-            set { this._initialNumberOfUsers = value; }
+            get { return this._numberOfSteps.GetValueOrDefault(); }
+            set { this._numberOfSteps = value; }
         }
 
-        // Check to see if InitialNumberOfUsers property is set
-        internal bool IsSetInitialNumberOfUsers()
+        // Check to see if NumberOfSteps property is set
+        internal bool IsSetNumberOfSteps()
         {
-            return this._initialNumberOfUsers.HasValue; 
+            return this._numberOfSteps.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property SpawnRate. 
+        /// Gets and sets the property UsersPerStep. 
         /// <para>
-        /// Specified how many new users to spawn in a minute.
+        /// Specifies how many new users to spawn in each step.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
-        public int SpawnRate
+        [AWSProperty(Min=1, Max=3)]
+        public int UsersPerStep
         {
-            get { return this._spawnRate.GetValueOrDefault(); }
-            set { this._spawnRate = value; }
+            get { return this._usersPerStep.GetValueOrDefault(); }
+            set { this._usersPerStep = value; }
         }
 
-        // Check to see if SpawnRate property is set
-        internal bool IsSetSpawnRate()
+        // Check to see if UsersPerStep property is set
+        internal bool IsSetUsersPerStep()
         {
-            return this._spawnRate.HasValue; 
+            return this._usersPerStep.HasValue; 
         }
 
     }

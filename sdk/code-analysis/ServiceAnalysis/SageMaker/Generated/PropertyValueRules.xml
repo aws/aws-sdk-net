@@ -9951,6 +9951,19 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.Stairs.DurationInSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Stairs.NumberOfSteps</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Stairs.UsersPerStep</property>
+    <min>1</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.StoppingCondition.MaxRuntimeInSeconds</property>
     <min>1</min>
   </property-value-rule>

@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndTimeOffset. 
         /// <para>
-        /// If specified, monitoring jobs substract this time from the end time. For information
+        /// If specified, monitoring jobs subtract this time from the end time. For information
         /// about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
         /// Model Quality Monitoring Jobs</a>.
         /// </para>

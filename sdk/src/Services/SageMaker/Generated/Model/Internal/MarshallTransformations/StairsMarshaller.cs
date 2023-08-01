@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecommendationJobStoppingConditions Marshaller
+    /// Stairs Marshaller
     /// </summary>
-    public class RecommendationJobStoppingConditionsMarshaller : IRequestMarshaller<RecommendationJobStoppingConditions, JsonMarshallerContext> 
+    public class StairsMarshaller : IRequestMarshaller<Stairs, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecommendationJobStoppingConditions requestObject, JsonMarshallerContext context)
+        public void Marshall(Stairs requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFlatInvocations())
+            if(requestObject.IsSetDurationInSeconds())
             {
-                context.Writer.WritePropertyName("FlatInvocations");
-                context.Writer.Write(requestObject.FlatInvocations);
+                context.Writer.WritePropertyName("DurationInSeconds");
+                context.Writer.Write(requestObject.DurationInSeconds);
             }
 
-            if(requestObject.IsSetMaxInvocations())
+            if(requestObject.IsSetNumberOfSteps())
             {
-                context.Writer.WritePropertyName("MaxInvocations");
-                context.Writer.Write(requestObject.MaxInvocations);
+                context.Writer.WritePropertyName("NumberOfSteps");
+                context.Writer.Write(requestObject.NumberOfSteps);
             }
 
-            if(requestObject.IsSetModelLatencyThresholds())
+            if(requestObject.IsSetUsersPerStep())
             {
-                context.Writer.WritePropertyName("ModelLatencyThresholds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectModelLatencyThresholdsListValue in requestObject.ModelLatencyThresholds)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelLatencyThresholdMarshaller.Instance;
-                    marshaller.Marshall(requestObjectModelLatencyThresholdsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("UsersPerStep");
+                context.Writer.Write(requestObject.UsersPerStep);
             }
 
         }
@@ -78,7 +68,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecommendationJobStoppingConditionsMarshaller Instance = new RecommendationJobStoppingConditionsMarshaller();
+        public readonly static StairsMarshaller Instance = new StairsMarshaller();
 
     }
 }

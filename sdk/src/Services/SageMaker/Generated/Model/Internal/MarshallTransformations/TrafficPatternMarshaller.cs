@@ -61,6 +61,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStairs())
+            {
+                context.Writer.WritePropertyName("Stairs");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StairsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Stairs, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrafficType())
             {
                 context.Writer.WritePropertyName("TrafficType");

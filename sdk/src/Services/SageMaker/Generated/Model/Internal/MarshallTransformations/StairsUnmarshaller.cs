@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationJobStoppingConditions Object
+    /// Response Unmarshaller for Stairs Object
     /// </summary>  
-    public class RecommendationJobStoppingConditionsUnmarshaller : IUnmarshaller<RecommendationJobStoppingConditions, XmlUnmarshallerContext>, IUnmarshaller<RecommendationJobStoppingConditions, JsonUnmarshallerContext>
+    public class StairsUnmarshaller : IUnmarshaller<Stairs, XmlUnmarshallerContext>, IUnmarshaller<Stairs, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationJobStoppingConditions IUnmarshaller<RecommendationJobStoppingConditions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Stairs IUnmarshaller<Stairs, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationJobStoppingConditions Unmarshall(JsonUnmarshallerContext context)
+        public Stairs Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationJobStoppingConditions unmarshalledObject = new RecommendationJobStoppingConditions();
+            Stairs unmarshalledObject = new Stairs();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FlatInvocations", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlatInvocations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxInvocations", targetDepth))
+                if (context.TestExpression("DurationInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxInvocations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ModelLatencyThresholds", targetDepth))
+                if (context.TestExpression("NumberOfSteps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ModelLatencyThreshold, ModelLatencyThresholdUnmarshaller>(ModelLatencyThresholdUnmarshaller.Instance);
-                    unmarshalledObject.ModelLatencyThresholds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfSteps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsersPerStep", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.UsersPerStep = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationJobStoppingConditionsUnmarshaller _instance = new RecommendationJobStoppingConditionsUnmarshaller();        
+        private static StairsUnmarshaller _instance = new StairsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationJobStoppingConditionsUnmarshaller Instance
+        public static StairsUnmarshaller Instance
         {
             get
             {
