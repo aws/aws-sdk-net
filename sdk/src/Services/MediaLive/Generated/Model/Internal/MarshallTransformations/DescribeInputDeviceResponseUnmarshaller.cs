@@ -57,6 +57,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("availabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("connectionState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

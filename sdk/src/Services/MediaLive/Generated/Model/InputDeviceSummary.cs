@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class InputDeviceSummary
     {
         private string _arn;
+        private string _availabilityZone;
         private InputDeviceConnectionState _connectionState;
         private DeviceSettingsSyncState _deviceSettingsSyncState;
         private DeviceUpdateStatus _deviceUpdateStatus;
@@ -60,6 +61,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. The Availability Zone associated with
+        /// this input device.
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
         }
 
         /// <summary>

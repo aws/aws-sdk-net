@@ -34,10 +34,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class UpdateInputDeviceRequest : AmazonMediaLiveRequest
     {
+        private string _availabilityZone;
         private InputDeviceConfigurableSettings _hdDeviceSettings;
         private string _inputDeviceId;
         private string _name;
         private InputDeviceConfigurableSettings _uhdDeviceSettings;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. The Availability Zone you want associated
+        /// with this input device.
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HdDeviceSettings. The settings that you want to apply to
