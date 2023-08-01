@@ -160,7 +160,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
         /// IAM resources in CloudFormation templates</a>.
         /// </para>
         ///  </li> <li> 
@@ -176,8 +176,8 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually creating the stack. If your stack template contains one
         /// or more macros, and you choose to create a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-        /// and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.
         /// </para>
         ///  <note> 
@@ -193,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
         /// CloudFormation macros to perform custom processing on templates</a>.
         /// </para>
         ///  </li> </ul>

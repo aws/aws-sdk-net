@@ -117,6 +117,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceDatasetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceDatasetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

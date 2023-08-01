@@ -92,14 +92,14 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property M2tsSettings. MPEG-2 TS container settings. These apply
-        /// to outputs in a File output group when the output's container (ContainerType) is MPEG-2
-        /// Transport Stream (M2TS). In these assets, data is organized by the program map table
-        /// (PMT). Each transport stream program contains subsets of data, including audio, video,
-        /// and metadata. Each of these subsets of data has a numerical label called a packet
-        /// identifier (PID). Each transport stream program corresponds to one MediaConvert output.
-        /// The PMT lists the types of data in a program along with their PID. Downstream systems
-        /// and players use the program map table to look up the PID for each type of data it
-        /// accesses and then uses the PIDs to locate specific data within the asset.
+        /// to outputs in a File output group when the output's container is MPEG-2 Transport
+        /// Stream (M2TS). In these assets, data is organized by the program map table (PMT).
+        /// Each transport stream program contains subsets of data, including audio, video, and
+        /// metadata. Each of these subsets of data has a numerical label called a packet identifier
+        /// (PID). Each transport stream program corresponds to one MediaConvert output. The PMT
+        /// lists the types of data in a program along with their PID. Downstream systems and
+        /// players use the program map table to look up the PID for each type of data it accesses
+        /// and then uses the PIDs to locate specific data within the asset.
         /// </summary>
         public M2tsSettings M2tsSettings
         {

@@ -119,9 +119,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
+                DefaultInstanceWarmup = 120,
                 LaunchTemplate = new LaunchTemplateSpecification {
                     LaunchTemplateName = "my-template-for-auto-scaling",
-                    Version = "$Latest"
+                    Version = "$Default"
                 },
                 MaxInstanceLifetime = 2592000,
                 MaxSize = 3,
@@ -145,7 +146,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 HealthCheckType = "ELB",
                 LaunchTemplate = new LaunchTemplateSpecification {
                     LaunchTemplateName = "my-template-for-auto-scaling",
-                    Version = "$Latest"
+                    Version = "$Default"
                 },
                 MaxSize = 3,
                 MinSize = 1,
@@ -174,23 +175,65 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                     InstancesDistribution = new InstancesDistribution {
                         OnDemandBaseCapacity = 1,
                         OnDemandPercentageAboveBaseCapacity = 50,
-                        SpotAllocationStrategy = "capacity-optimized"
+                        SpotAllocationStrategy = "price-capacity-optimized"
                     },
                     LaunchTemplate = new LaunchTemplate {
                         LaunchTemplateSpecification = new LaunchTemplateSpecification {
                             LaunchTemplateName = "my-launch-template-for-x86",
-                            Version = "$Latest"
+                            Version = "$Default"
                         },
                         Overrides = new List<LaunchTemplateOverrides> {
                             new LaunchTemplateOverrides {
                                 InstanceType = "c6g.large",
                                 LaunchTemplateSpecification = new LaunchTemplateSpecification {
                                     LaunchTemplateName = "my-launch-template-for-arm",
-                                    Version = "$Latest"
+                                    Version = "$Default"
                                 }
                             },
                             new LaunchTemplateOverrides { InstanceType = "c5.large" },
                             new LaunchTemplateOverrides { InstanceType = "c5a.large" }
+                        }
+                    }
+                },
+                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE, subnet-610acd08EXAMPLE"
+            });
+
+
+            #endregion
+        }
+
+        public void AutoScalingCreateAutoScalingGroup()
+        {
+            #region to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            {
+                AutoScalingGroupName = "my-asg",
+                DesiredCapacity = 4,
+                MaxSize = 100,
+                MinSize = 0,
+                MixedInstancesPolicy = new MixedInstancesPolicy {
+                    InstancesDistribution = new InstancesDistribution {
+                        OnDemandPercentageAboveBaseCapacity = 50,
+                        SpotAllocationStrategy = "price-capacity-optimized"
+                    },
+                    LaunchTemplate = new LaunchTemplate {
+                        LaunchTemplateSpecification = new LaunchTemplateSpecification {
+                            LaunchTemplateName = "my-template-for-auto-scaling",
+                            Version = "$Default"
+                        },
+                        Overrides = new List<LaunchTemplateOverrides> {
+                            new LaunchTemplateOverrides { InstanceRequirements = new InstanceRequirements {
+                                CpuManufacturers = new List<string> {
+                                    "intel"
+                                },
+                                MemoryMiB = new MemoryMiBRequest { Min = 16384 },
+                                VCpuCount = new VCpuCountRequest {
+                                    Max = 8,
+                                    Min = 4
+                                }
+                            } }
                         }
                     }
                 },
@@ -430,7 +473,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest 
             {
                 InstanceIds = new List<string> {
-                    "i-4ba0837f"
+                    "i-05b4f7d5be44822a6"
                 }
             });
 
@@ -913,11 +956,11 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DesiredCapacity = 4,
-                EndTimeUtc = new DateTime(2014, 5, 12, 1, 0, 0, DateTimeKind.Utc),
+                EndTimeUtc = new DateTime(2014, 5, 12, 8, 0, 0, DateTimeKind.Utc),
                 MaxSize = 6,
                 MinSize = 2,
                 ScheduledActionName = "my-scheduled-action",
-                StartTimeUtc = new DateTime(2014, 5, 12, 1, 0, 0, DateTimeKind.Utc)
+                StartTimeUtc = new DateTime(2014, 5, 12, 8, 0, 0, DateTimeKind.Utc)
             });
 
 
@@ -1054,9 +1097,12 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                     Version = "$Latest"
                 } },
                 Preferences = new RefreshPreferences {
-                    InstanceWarmup = 400,
-                    MinHealthyPercentage = 90,
-                    SkipMatching = true
+                    AlarmSpecification = new AlarmSpecification { Alarms = new List<string> {
+                        "my-alarm"
+                    } },
+                    AutoRollback = true,
+                    InstanceWarmup = 200,
+                    MinHealthyPercentage = 90
                 }
             });
 

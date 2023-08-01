@@ -45,7 +45,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        ///  This parameter limits the response to the import job with the specified Data Store
+        ///  This parameter limits the response to the import job with the specified data store
         /// ID. 
         /// </para>
         /// </summary>

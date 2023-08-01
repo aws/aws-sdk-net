@@ -1461,16 +1461,20 @@
           "ap-northeast-2" : { },
           "ap-northeast-3" : { },
           "ap-south-1" : { },
+          "ap-south-2" : { },
           "ap-southeast-1" : { },
           "ap-southeast-2" : { },
           "ap-southeast-3" : { },
           "ca-central-1" : { },
           "eu-central-1" : { },
+          "eu-central-2" : { },
           "eu-north-1" : { },
           "eu-south-1" : { },
+          "eu-south-2" : { },
           "eu-west-1" : { },
           "eu-west-2" : { },
           "eu-west-3" : { },
+          "me-central-1" : { },
           "me-south-1" : { },
           "sa-east-1" : { },
           "us-east-1" : { },
@@ -4791,16 +4795,21 @@
           "ap-northeast-2" : { },
           "ap-northeast-3" : { },
           "ap-south-1" : { },
+          "ap-south-2" : { },
           "ap-southeast-1" : { },
           "ap-southeast-2" : { },
           "ap-southeast-3" : { },
+          "ap-southeast-4" : { },
           "ca-central-1" : { },
           "eu-central-1" : { },
+          "eu-central-2" : { },
           "eu-north-1" : { },
           "eu-south-1" : { },
+          "eu-south-2" : { },
           "eu-west-1" : { },
           "eu-west-2" : { },
           "eu-west-3" : { },
+          "me-central-1" : { },
           "me-south-1" : { },
           "sa-east-1" : { },
           "us-east-1" : { },
@@ -6143,6 +6152,7 @@
       },
       "emr-containers" : {
         "endpoints" : {
+          "af-south-1" : { },
           "ap-east-1" : { },
           "ap-northeast-1" : { },
           "ap-northeast-2" : { },
@@ -7301,9 +7311,11 @@
           "ap-northeast-2" : { },
           "ap-northeast-3" : { },
           "ap-south-1" : { },
+          "ap-south-2" : { },
           "ap-southeast-1" : { },
           "ap-southeast-2" : { },
           "ap-southeast-3" : { },
+          "ap-southeast-4" : { },
           "ca-central-1" : { },
           "eu-central-1" : { },
           "eu-central-2" : { },
@@ -7974,7 +7986,11 @@
             "hostname" : "internetmonitor.ap-southeast-4.api.aws"
           },
           "ca-central-1" : {
-            "hostname" : "internetmonitor.ca-central-1.api.aws"
+            "hostname" : "internetmonitor.ca-central-1.api.aws",
+            "variants" : [ {
+              "hostname" : "internetmonitor-fips.ca-central-1.api.aws",
+              "tags" : [ "fips" ]
+            } ]
           },
           "eu-central-1" : {
             "hostname" : "internetmonitor.eu-central-1.api.aws"
@@ -8010,16 +8026,32 @@
             "hostname" : "internetmonitor.sa-east-1.api.aws"
           },
           "us-east-1" : {
-            "hostname" : "internetmonitor.us-east-1.api.aws"
+            "hostname" : "internetmonitor.us-east-1.api.aws",
+            "variants" : [ {
+              "hostname" : "internetmonitor-fips.us-east-1.api.aws",
+              "tags" : [ "fips" ]
+            } ]
           },
           "us-east-2" : {
-            "hostname" : "internetmonitor.us-east-2.api.aws"
+            "hostname" : "internetmonitor.us-east-2.api.aws",
+            "variants" : [ {
+              "hostname" : "internetmonitor-fips.us-east-2.api.aws",
+              "tags" : [ "fips" ]
+            } ]
           },
           "us-west-1" : {
-            "hostname" : "internetmonitor.us-west-1.api.aws"
+            "hostname" : "internetmonitor.us-west-1.api.aws",
+            "variants" : [ {
+              "hostname" : "internetmonitor-fips.us-west-1.api.aws",
+              "tags" : [ "fips" ]
+            } ]
           },
           "us-west-2" : {
-            "hostname" : "internetmonitor.us-west-2.api.aws"
+            "hostname" : "internetmonitor.us-west-2.api.aws",
+            "variants" : [ {
+              "hostname" : "internetmonitor-fips.us-west-2.api.aws",
+              "tags" : [ "fips" ]
+            } ]
           }
         }
       },
@@ -14426,67 +14458,67 @@
         "endpoints" : {
           "af-south-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.af-south-1.amazonaws.com",
+              "hostname" : "servicediscovery.af-south-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-east-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-east-1.amazonaws.com",
+              "hostname" : "servicediscovery.ap-east-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-northeast-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-northeast-1.amazonaws.com",
+              "hostname" : "servicediscovery.ap-northeast-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-northeast-2" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-northeast-2.amazonaws.com",
+              "hostname" : "servicediscovery.ap-northeast-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-northeast-3" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-northeast-3.amazonaws.com",
+              "hostname" : "servicediscovery.ap-northeast-3.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-south-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-south-1.amazonaws.com",
+              "hostname" : "servicediscovery.ap-south-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-south-2" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-south-2.amazonaws.com",
+              "hostname" : "servicediscovery.ap-south-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-southeast-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-southeast-1.amazonaws.com",
+              "hostname" : "servicediscovery.ap-southeast-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-southeast-2" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-southeast-2.amazonaws.com",
+              "hostname" : "servicediscovery.ap-southeast-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-southeast-3" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-southeast-3.amazonaws.com",
+              "hostname" : "servicediscovery.ap-southeast-3.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "ap-southeast-4" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.ap-southeast-4.amazonaws.com",
+              "hostname" : "servicediscovery.ap-southeast-4.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14495,7 +14527,10 @@
               "hostname" : "servicediscovery-fips.ca-central-1.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
-              "hostname" : "servicediscovery.ca-central-1.amazonaws.com",
+              "hostname" : "servicediscovery-fips.ca-central-1.api.aws",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
+              "hostname" : "servicediscovery.ca-central-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14508,67 +14543,67 @@
           },
           "eu-central-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-central-1.amazonaws.com",
+              "hostname" : "servicediscovery.eu-central-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-central-2" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-central-2.amazonaws.com",
+              "hostname" : "servicediscovery.eu-central-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-north-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-north-1.amazonaws.com",
+              "hostname" : "servicediscovery.eu-north-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-south-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-south-1.amazonaws.com",
+              "hostname" : "servicediscovery.eu-south-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-south-2" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-south-2.amazonaws.com",
+              "hostname" : "servicediscovery.eu-south-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-west-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-west-1.amazonaws.com",
+              "hostname" : "servicediscovery.eu-west-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-west-2" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-west-2.amazonaws.com",
+              "hostname" : "servicediscovery.eu-west-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "eu-west-3" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.eu-west-3.amazonaws.com",
+              "hostname" : "servicediscovery.eu-west-3.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "me-central-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.me-central-1.amazonaws.com",
+              "hostname" : "servicediscovery.me-central-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "me-south-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.me-south-1.amazonaws.com",
+              "hostname" : "servicediscovery.me-south-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
           "sa-east-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.sa-east-1.amazonaws.com",
+              "hostname" : "servicediscovery.sa-east-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14577,7 +14612,10 @@
               "hostname" : "servicediscovery-fips.us-east-1.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
-              "hostname" : "servicediscovery.us-east-1.amazonaws.com",
+              "hostname" : "servicediscovery-fips.us-east-1.api.aws",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
+              "hostname" : "servicediscovery.us-east-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14593,7 +14631,10 @@
               "hostname" : "servicediscovery-fips.us-east-2.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
-              "hostname" : "servicediscovery.us-east-2.amazonaws.com",
+              "hostname" : "servicediscovery-fips.us-east-2.api.aws",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
+              "hostname" : "servicediscovery.us-east-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14609,7 +14650,10 @@
               "hostname" : "servicediscovery-fips.us-west-1.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
-              "hostname" : "servicediscovery.us-west-1.amazonaws.com",
+              "hostname" : "servicediscovery-fips.us-west-1.api.aws",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
+              "hostname" : "servicediscovery.us-west-1.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14625,7 +14669,10 @@
               "hostname" : "servicediscovery-fips.us-west-2.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
-              "hostname" : "servicediscovery.us-west-2.amazonaws.com",
+              "hostname" : "servicediscovery-fips.us-west-2.api.aws",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
+              "hostname" : "servicediscovery.us-west-2.api.aws",
               "tags" : [ "dualstack" ]
             } ]
           },
@@ -14836,67 +14883,12 @@
       },
       "sms" : {
         "endpoints" : {
-          "af-south-1" : { },
-          "ap-east-1" : { },
-          "ap-northeast-1" : { },
-          "ap-northeast-2" : { },
-          "ap-south-1" : { },
-          "ap-southeast-1" : { },
-          "ap-southeast-2" : { },
-          "ca-central-1" : { },
-          "eu-central-1" : { },
-          "eu-north-1" : { },
-          "eu-south-1" : { },
-          "eu-west-1" : { },
-          "eu-west-2" : { },
-          "eu-west-3" : { },
-          "fips-us-east-1" : {
-            "credentialScope" : {
-              "region" : "us-east-1"
-            },
-            "deprecated" : true,
-            "hostname" : "sms-fips.us-east-1.amazonaws.com"
-          },
-          "fips-us-east-2" : {
-            "credentialScope" : {
-              "region" : "us-east-2"
-            },
-            "deprecated" : true,
-            "hostname" : "sms-fips.us-east-2.amazonaws.com"
-          },
-          "fips-us-west-1" : {
-            "credentialScope" : {
-              "region" : "us-west-1"
-            },
-            "deprecated" : true,
-            "hostname" : "sms-fips.us-west-1.amazonaws.com"
-          },
           "fips-us-west-2" : {
             "credentialScope" : {
               "region" : "us-west-2"
             },
             "deprecated" : true,
             "hostname" : "sms-fips.us-west-2.amazonaws.com"
-          },
-          "me-south-1" : { },
-          "sa-east-1" : { },
-          "us-east-1" : {
-            "variants" : [ {
-              "hostname" : "sms-fips.us-east-1.amazonaws.com",
-              "tags" : [ "fips" ]
-            } ]
-          },
-          "us-east-2" : {
-            "variants" : [ {
-              "hostname" : "sms-fips.us-east-2.amazonaws.com",
-              "tags" : [ "fips" ]
-            } ]
-          },
-          "us-west-1" : {
-            "variants" : [ {
-              "hostname" : "sms-fips.us-west-1.amazonaws.com",
-              "tags" : [ "fips" ]
-            } ]
           },
           "us-west-2" : {
             "variants" : [ {
@@ -18942,15 +18934,20 @@
       },
       "savingsplans" : {
         "endpoints" : {
-          "aws-cn" : {
+          "cn-north-1" : {
+            "credentialScope" : {
+              "region" : "cn-north-1"
+            },
+            "hostname" : "savingsplans.cn-north-1.amazonaws.com.cn"
+          },
+          "cn-northwest-1" : {
             "credentialScope" : {
               "region" : "cn-northwest-1"
             },
             "hostname" : "savingsplans.cn-northwest-1.amazonaws.com.cn"
           }
         },
-        "isRegionalized" : false,
-        "partitionEndpoint" : "aws-cn"
+        "isRegionalized" : true
       },
       "secretsmanager" : {
         "endpoints" : {
@@ -18987,13 +18984,13 @@
         "endpoints" : {
           "cn-north-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.cn-north-1.amazonaws.com.cn",
+              "hostname" : "servicediscovery.cn-north-1.api.amazonwebservices.com.cn",
               "tags" : [ "dualstack" ]
             } ]
           },
           "cn-northwest-1" : {
             "variants" : [ {
-              "hostname" : "servicediscovery.cn-northwest-1.amazonaws.com.cn",
+              "hostname" : "servicediscovery.cn-northwest-1.api.amazonwebservices.com.cn",
               "tags" : [ "dualstack" ]
             } ]
           }
@@ -19016,8 +19013,7 @@
       },
       "sms" : {
         "endpoints" : {
-          "cn-north-1" : { },
-          "cn-northwest-1" : { }
+          "cn-north-1" : { }
         }
       },
       "snowball" : {
@@ -22871,6 +22867,9 @@
           "us-gov-east-1" : {
             "variants" : [ {
               "hostname" : "servicediscovery-fips.us-gov-east-1.amazonaws.com",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
+              "hostname" : "servicediscovery-fips.us-gov-east-1.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
               "hostname" : "servicediscovery.us-gov-east-1.amazonaws.com",
@@ -22886,6 +22885,9 @@
           },
           "us-gov-west-1" : {
             "variants" : [ {
+              "hostname" : "servicediscovery-fips.us-gov-west-1.amazonaws.com",
+              "tags" : [ "dualstack", "fips" ]
+            }, {
               "hostname" : "servicediscovery-fips.us-gov-west-1.amazonaws.com",
               "tags" : [ "fips" ]
             }, {
@@ -22947,25 +22949,12 @@
       },
       "sms" : {
         "endpoints" : {
-          "fips-us-gov-east-1" : {
-            "credentialScope" : {
-              "region" : "us-gov-east-1"
-            },
-            "deprecated" : true,
-            "hostname" : "sms-fips.us-gov-east-1.amazonaws.com"
-          },
           "fips-us-gov-west-1" : {
             "credentialScope" : {
               "region" : "us-gov-west-1"
             },
             "deprecated" : true,
             "hostname" : "sms-fips.us-gov-west-1.amazonaws.com"
-          },
-          "us-gov-east-1" : {
-            "variants" : [ {
-              "hostname" : "sms-fips.us-gov-east-1.amazonaws.com",
-              "tags" : [ "fips" ]
-            } ]
           },
           "us-gov-west-1" : {
             "variants" : [ {
@@ -24072,9 +24061,22 @@
             "deprecated" : true,
             "hostname" : "rbin-fips.us-iso-east-1.c2s.ic.gov"
           },
+          "fips-us-iso-west-1" : {
+            "credentialScope" : {
+              "region" : "us-iso-west-1"
+            },
+            "deprecated" : true,
+            "hostname" : "rbin-fips.us-iso-west-1.c2s.ic.gov"
+          },
           "us-iso-east-1" : {
             "variants" : [ {
               "hostname" : "rbin-fips.us-iso-east-1.c2s.ic.gov",
+              "tags" : [ "fips" ]
+            } ]
+          },
+          "us-iso-west-1" : {
+            "variants" : [ {
+              "hostname" : "rbin-fips.us-iso-west-1.c2s.ic.gov",
               "tags" : [ "fips" ]
             } ]
           }

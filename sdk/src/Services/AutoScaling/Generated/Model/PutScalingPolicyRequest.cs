@@ -371,7 +371,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount by which to scale, based on the specified adjustment type. A positive value
         /// adds to the current capacity while a negative number removes from the current capacity.
-        /// For exact capacity, you must specify a positive value.
+        /// For exact capacity, you must specify a non-negative value.
         /// </para>
         ///  
         /// <para>

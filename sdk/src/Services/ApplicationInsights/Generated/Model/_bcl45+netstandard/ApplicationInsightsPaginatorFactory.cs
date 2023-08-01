@@ -82,5 +82,13 @@ namespace Amazon.ApplicationInsights.Model
         {
             return new ListProblemsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWorkloads operation
+        ///</summary>
+        public IListWorkloadsPaginator ListWorkloads(ListWorkloadsRequest request) 
+        {
+            return new ListWorkloadsPaginator(this.client, request);
+        }
     }
 }

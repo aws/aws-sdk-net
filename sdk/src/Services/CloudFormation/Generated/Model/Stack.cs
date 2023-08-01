@@ -46,6 +46,7 @@ namespace Amazon.CloudFormation.Model
         private List<Output> _outputs = new List<Output>();
         private List<Parameter> _parameters = new List<Parameter>();
         private string _parentId;
+        private bool? _retainExceptOnCreate;
         private string _roleARN;
         private RollbackConfiguration _rollbackConfiguration;
         private string _rootId;
@@ -181,7 +182,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Information about whether a stack's actual configuration differs, or has <i>drifted</i>,
         /// from its expected configuration, as defined in the stack template and any values specified
-        /// as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// </para>
         /// </summary>
@@ -204,9 +205,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        /// For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and can't be changed directly
-        /// on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -305,7 +306,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
         /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -319,6 +320,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParentId()
         {
             return this._parentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainExceptOnCreate. 
+        /// <para>
+        /// This deletion policy deletes newly created resources, but retains existing resources,
+        /// when a stack operation is rolled back. This ensures new, empty, and unused resources
+        /// are deleted, while critical resources and their data are retained. <code>RetainExceptOnCreate</code>
+        /// can be specified for any resource that supports the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+        /// DeletionPolicy</a> attribute.
+        /// </para>
+        /// </summary>
+        public bool RetainExceptOnCreate
+        {
+            get { return this._retainExceptOnCreate.GetValueOrDefault(); }
+            set { this._retainExceptOnCreate = value; }
+        }
+
+        // Check to see if RetainExceptOnCreate property is set
+        internal bool IsSetRetainExceptOnCreate()
+        {
+            return this._retainExceptOnCreate.HasValue; 
         }
 
         /// <summary>
@@ -369,7 +392,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
         /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>

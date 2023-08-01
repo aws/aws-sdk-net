@@ -45,6 +45,7 @@ namespace Amazon.LookoutEquipment.Model
         private string _roleArn;
         private string _schema;
         private string _serverSideKmsKeyId;
+        private string _sourceDatasetArn;
         private DatasetStatus _status;
 
         /// <summary>
@@ -276,6 +277,26 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetServerSideKmsKeyId()
         {
             return this._serverSideKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDatasetArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source dataset from which the current data being
+        /// described was imported from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string SourceDatasetArn
+        {
+            get { return this._sourceDatasetArn; }
+            set { this._sourceDatasetArn = value; }
+        }
+
+        // Check to see if SourceDatasetArn property is set
+        internal bool IsSetSourceDatasetArn()
+        {
+            return this._sourceDatasetArn != null;
         }
 
         /// <summary>

@@ -30,14 +30,14 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyGlobalCluster operation.
-    /// Modify a setting for an Amazon Aurora global cluster. You can change one or more database
-    /// configuration parameters by specifying these parameters and the new values in the
-    /// request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// Modifies a setting for an Amazon Aurora global cluster. You can change one or more
+    /// database configuration parameters by specifying these parameters and the new values
+    /// in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
     /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// This operation only applies to Aurora global database clusters.
     /// </para>
     ///  </note>
     /// </summary>
@@ -52,13 +52,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowMajorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether major version upgrades are allowed.
+        /// Specifies whether to allow major version upgrades.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: You must allow major version upgrades when specifying a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the DB
-        /// cluster's current version.
+        /// Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code>
+        /// parameter that's a different major version than the global cluster's current version.
         /// </para>
         ///  
         /// <para>
@@ -82,8 +81,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the global database cluster has deletion protection enabled. The global
-        /// database cluster can't be deleted when deletion protection is enabled.
+        /// Specifies whether to enable deletion protection for the global database cluster. The
+        /// global database cluster can't be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -101,9 +100,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to which you want to upgrade. Changing this
-        /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// The version number of the database engine to which you want to upgrade. 
         /// </para>
         ///  
         /// <para>
@@ -141,8 +138,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier for the global cluster being modified. This parameter isn't
-        /// case-sensitive.
+        /// The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -169,8 +165,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NewGlobalClusterIdentifier. 
         /// <para>
-        /// The new cluster identifier for the global database cluster when modifying a global
-        /// database cluster. This value is stored as a lowercase string.
+        /// The new cluster identifier for the global database cluster. This value is stored as
+        /// a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -178,15 +174,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 letters, numbers, or hyphens
+        /// Must contain from 1 to 63 letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The first character must be a letter
+        /// The first character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul> 
         /// <para>

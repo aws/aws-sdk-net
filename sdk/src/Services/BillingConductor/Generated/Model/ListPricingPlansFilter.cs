@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arns. 
         /// <para>
-        /// A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. 
+        /// A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

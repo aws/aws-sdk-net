@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InferenceAcceleratorInfo
     {
         private List<InferenceDeviceInfo> _accelerators = new List<InferenceDeviceInfo>();
+        private int? _totalInferenceMemoryInMiB;
 
         /// <summary>
         /// Gets and sets the property Accelerators. 
@@ -51,6 +52,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAccelerators()
         {
             return this._accelerators != null && this._accelerators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalInferenceMemoryInMiB. 
+        /// <para>
+        /// The total size of the memory for the inference accelerators for the instance type,
+        /// in MiB.
+        /// </para>
+        /// </summary>
+        public int TotalInferenceMemoryInMiB
+        {
+            get { return this._totalInferenceMemoryInMiB.GetValueOrDefault(); }
+            set { this._totalInferenceMemoryInMiB = value; }
+        }
+
+        // Check to see if TotalInferenceMemoryInMiB property is set
+        internal bool IsSetTotalInferenceMemoryInMiB()
+        {
+            return this._totalInferenceMemoryInMiB.HasValue; 
         }
 
     }

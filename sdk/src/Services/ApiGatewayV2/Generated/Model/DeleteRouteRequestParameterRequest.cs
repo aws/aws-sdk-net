@@ -30,7 +30,7 @@ namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRouteRequestParameter operation.
-    /// Deletes a route request parameter.
+    /// Deletes a route request parameter. Supported only for WebSocket APIs.
     /// </summary>
     public partial class DeleteRouteRequestParameterRequest : AmazonApiGatewayV2Request
     {

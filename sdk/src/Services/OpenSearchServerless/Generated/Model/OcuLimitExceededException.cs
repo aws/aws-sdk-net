@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// OCU Limit Exceeded for service limits
+    /// Thrown when the collection you're attempting to create results in a number of search
+    /// or indexing OCUs that exceeds the account limit.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -71,7 +72,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public OcuLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public OcuLimitExceededException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public OcuLimitExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public OcuLimitExceededException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 

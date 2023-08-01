@@ -36,6 +36,7 @@ namespace Amazon.ConnectWisdomService.Model
         private string _assistantArn;
         private string _assistantId;
         private string _description;
+        private AssistantIntegrationConfiguration _integrationConfiguration;
         private string _name;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private AssistantStatus _status;
@@ -97,6 +98,24 @@ namespace Amazon.ConnectWisdomService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationConfiguration. 
+        /// <para>
+        /// The configuration information for the Wisdom assistant integration.
+        /// </para>
+        /// </summary>
+        public AssistantIntegrationConfiguration IntegrationConfiguration
+        {
+            get { return this._integrationConfiguration; }
+            set { this._integrationConfiguration = value; }
+        }
+
+        // Check to see if IntegrationConfiguration property is set
+        internal bool IsSetIntegrationConfiguration()
+        {
+            return this._integrationConfiguration != null;
         }
 
         /// <summary>

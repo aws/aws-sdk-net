@@ -1,3 +1,148 @@
+### 3.7.610.0 (2023-07-31 18:31 UTC)
+* AmplifyUIBuilder (3.7.201.0)
+	* Amplify Studio releases GraphQL support for codegen job action.
+* AutoScaling (3.7.202.0)
+	* You can now configure an instance refresh to set its status to 'failed' when it detects that a specified CloudWatch alarm has gone into the ALARM state. You can also choose to roll back the instance refresh automatically when the alarm threshold is met.
+* CleanRooms (3.7.201.0)
+	* This release introduces custom SQL queries - an expanded set of SQL you can run. This release adds analysis templates, a new resource for storing pre-defined custom SQL queries ahead of time. This release also adds the Custom analysis rule, which lets you approve analysis templates for querying.
+* CodeStarconnections (3.7.201.0)
+	* New integration with the Gitlab provider type.
+* Drs (3.7.201.0)
+	* Add support for in-aws right sizing
+* Inspector2 (3.7.201.0)
+	* This release adds 1 new API: BatchGetFindingDetails to retrieve enhanced vulnerability intelligence details for findings.
+* LookoutEquipment (3.7.201.0)
+	* This release includes new import resource, model versioning and resource policy features.
+* Omics (3.7.201.0)
+	* Add CreationType filter for ListReadSets
+* RDS (3.7.203.0)
+	* This release adds support for Aurora MySQL local write forwarding, which allows for forwarding of write operations from reader DB instances to the writer DB instance.
+* Route53 (3.7.201.0)
+	* Amazon Route 53 now supports the Israel (Tel Aviv) Region (il-central-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Scheduler (3.7.201.0)
+	* This release introduces automatic deletion of schedules in EventBridge Scheduler. If configured, EventBridge Scheduler automatically deletes a schedule after the schedule has completed its last invocation.
+* Core 3.7.200.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.609.0 (2023-07-28 18:28 UTC)
+* ApplicationInsights (3.7.201.0)
+	* This release enable customer to add/remove/update more than one workload for a component
+* CloudFormation (3.7.203.0)
+	* This SDK release is for the feature launch of AWS CloudFormation RetainExceptOnCreate. It adds a new parameter retainExceptOnCreate in the following APIs: CreateStack, UpdateStack, RollbackStack, ExecuteChangeSet.
+* CloudFront (3.7.201.0)
+	* Add a new JavaScript runtime version for CloudFront Functions.
+* Connect (3.7.201.0)
+	* This release adds support for new number types.
+* Kafka (3.7.201.0)
+	* Amazon MSK has introduced new versions of ListClusterOperations and DescribeClusterOperation APIs. These v2 APIs provide information and insights into the ongoing operations of both MSK Provisioned and MSK Serverless clusters.
+* Pinpoint (3.7.201.0)
+	* Added support for sending push notifications using the FCM v1 API with json credentials. Amazon Pinpoint customers can now deliver messages to Android devices using both FCM v1 API and the legacy FCM/GCM API
+* Core 3.7.200.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.608.1 (2023-07-28 00:33 UTC)
+* SQS (3.7.200.6)
+	* Documentation changes related to SQS APIs.
+
+### 3.7.608.0 (2023-07-27 18:26 UTC)
+* AutoScaling (3.7.201.0)
+	* This release updates validation for instance types used in the AllowedInstanceTypes and ExcludedInstanceTypes parameters of the InstanceRequirements property of a MixedInstancesPolicy.
+* EBS (3.7.201.0)
+	* SDK and documentation updates for Amazon Elastic Block Store API
+* EC2 (3.7.203.0)
+	* SDK and documentation updates for Amazon Elastic Block Store APIs
+* EKS (3.7.201.0)
+	* Add multiple customer error code to handle customer caused failure when managing EKS node groups
+* SageMaker (3.7.203.0)
+	* Expose ProfilerConfig attribute in SageMaker Search API response.
+
+### 3.7.607.0 (2023-07-26 18:45 UTC)
+* CloudControlApi (3.7.200.5)
+	* Updates the documentation for CreateResource.
+* EntityResolution (3.7.200.0)
+	* AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system with a source record from a marketing system containing campaign information.
+* Glue (3.7.203.0)
+	* Release Glue Studio Snowflake Connector Node for SDK/CLI
+* HealthLake (3.7.200.5)
+	* Updating the HealthLake service documentation.
+* ManagedBlockchainQuery (3.7.200.0)
+	* Amazon Managed Blockchain (AMB) Query provides serverless access to standardized, multi-blockchain datasets with developer-friendly APIs.
+* MediaConvert (3.7.201.2)
+	* This release includes general updates to user documentation.
+* Omics (3.7.200.5)
+	* The service is renaming as a part of AWS Health.
+* OpenSearchServerless (3.7.201.0)
+	* This release adds new collection type VectorSearch.
+* Polly (3.7.201.0)
+	* Amazon Polly adds 1 new voice - Lisa (nl-BE)
+* Route53 (3.7.200.5)
+	* Update that corrects the documents for received feedback.
+* Core 3.7.200.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.606.0 (2023-07-25 19:02 UTC)
+* BillingConductor (3.7.201.0)
+	* Added support for Auto-Assocate Billing Groups for CreateBillingGroup, UpdateBillingGroup, and ListBillingGroups.
+* ConnectWisdomService (3.7.201.0)
+	* This release added two new data types: AssistantIntegrationConfiguration, and SessionIntegrationConfiguration to support Wisdom integration with Amazon Connect Chat
+* CustomerProfiles (3.7.201.0)
+	* Amazon Connect Customer Profiles now supports rule-based resolution to match and merge similar profiles into unified profiles, helping companies deliver faster and more personalized customer service by providing access to relevant customer information for agents and automated experiences.
+* DataSync (3.7.201.0)
+	* AWS DataSync now supports Microsoft Azure Blob Storage locations.
+* DynamoDBv2 (3.7.200.5)
+	* Documentation updates for DynamoDB
+* EC2 (3.7.202.0)
+	* This release adds an instance's peak and baseline network bandwidth as well as the memory sizes of an instance's inference accelerators to DescribeInstanceTypes.
+* EMRServerless (3.7.201.0)
+	* This release adds support for publishing application logs to CloudWatch.
+* Lambda (3.7.201.0)
+	* Add Python 3.11 (python3.11) support to AWS Lambda
+* RDS (3.7.202.0)
+	* This release adds support for monitoring storage optimization progress on the DescribeDBInstances API.
+* SageMaker (3.7.202.0)
+	* Mark ContentColumn and TargetLabelColumn as required Targets in TextClassificationJobConfig in CreateAutoMLJobV2API
+* SecurityHub (3.7.201.0)
+	* Add support for CONTAINS and NOT_CONTAINS comparison operators for Automation Rules string filters and map filters
+* SecurityToken (3.7.201.0)
+	* API updates for the AWS Security Token Service
+* Transfer (3.7.201.0)
+	* This release adds support for SFTP Connectors.
+
+### 3.7.605.0 (2023-07-24 18:35 UTC)
+* ApiGatewayV2 (3.7.200.4)
+	* Documentation updates for Amazon API Gateway.
+* ChimeSDKMediaPipelines (3.7.201.0)
+	* AWS Media Pipeline compositing enhancement and Media Insights Pipeline auto language identification.
+* CloudFormation (3.7.202.0)
+	* This release supports filtering by DRIFT_STATUS for existing API ListStackInstances and adds support for a new API ListStackInstanceResourceDrifts. Customers can now view resource drift information from their StackSet management accounts.
+* CostExplorer (3.7.201.0)
+	* This release introduces the new API 'GetSavingsPlanPurchaseRecommendationDetails', which retrieves the details for a Savings Plan recommendation. It also updates the existing API 'GetSavingsPlansPurchaseRecommendation' to include the recommendation detail ID.
+* EC2 (3.7.201.0)
+	* Add "disabled" enum value to SpotInstanceState.
+* Glue (3.7.202.0)
+	* Added support for Data Preparation Recipe node in Glue Studio jobs
+* QuickSight (3.7.201.0)
+	* This release launches new Snapshot APIs for CSV and PDF exports, adds support for info icon for filters and parameters in Exploration APIs, adds modeled exception to the DeleteAccountCustomization API, and introduces AttributeAggregationFunction's ability to add UNIQUE_VALUE aggregation in tooltips.
+* Core 3.7.200.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.604.0 (2023-07-21 18:47 UTC)
+* Glue (3.7.201.0)
+	* This release adds support for AWS Glue Crawler with Apache Hudi Tables, allowing Crawlers to discover Hudi Tables in S3 and register them in Glue Data Catalog for query engines to query against.
+* MediaConvert (3.7.201.0)
+	* This release includes improvements to Preserve 444 handling, compatibility of HEVC sources without frame rates, and general improvements to MP4 outputs.
+* RDS (3.7.201.0)
+	* Adds support for the DBSystemID parameter of CreateDBInstance to RDS Custom for Oracle.
+* WorkSpaces (3.7.200.3)
+	* Fixed VolumeEncryptionKey descriptions
+* Core 3.7.200.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.603.0 (2023-07-20 19:07 UTC)
 * CodeCatalyst (3.7.201.0)
 	* This release adds support for updating and deleting spaces and projects in Amazon CodeCatalyst. It also adds support for creating, getting, and deleting source repositories in CodeCatalyst projects.

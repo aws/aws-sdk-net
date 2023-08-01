@@ -8621,6 +8621,52 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type SimpleAttributeAggregationFunction.
+    /// </summary>
+    public class SimpleAttributeAggregationFunction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UNIQUE_VALUE for SimpleAttributeAggregationFunction
+        /// </summary>
+        public static readonly SimpleAttributeAggregationFunction UNIQUE_VALUE = new SimpleAttributeAggregationFunction("UNIQUE_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SimpleAttributeAggregationFunction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SimpleAttributeAggregationFunction FindValue(string value)
+        {
+            return FindValue<SimpleAttributeAggregationFunction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SimpleAttributeAggregationFunction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SimpleNumericalAggregationFunction.
     /// </summary>
     public class SimpleNumericalAggregationFunction : ConstantClass
@@ -8800,6 +8846,164 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SmallMultiplesAxisScale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotFileFormatType.
+    /// </summary>
+    public class SnapshotFileFormatType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for SnapshotFileFormatType
+        /// </summary>
+        public static readonly SnapshotFileFormatType CSV = new SnapshotFileFormatType("CSV");
+        /// <summary>
+        /// Constant PDF for SnapshotFileFormatType
+        /// </summary>
+        public static readonly SnapshotFileFormatType PDF = new SnapshotFileFormatType("PDF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotFileFormatType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotFileFormatType FindValue(string value)
+        {
+            return FindValue<SnapshotFileFormatType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotFileFormatType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotFileSheetSelectionScope.
+    /// </summary>
+    public class SnapshotFileSheetSelectionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_VISUALS for SnapshotFileSheetSelectionScope
+        /// </summary>
+        public static readonly SnapshotFileSheetSelectionScope ALL_VISUALS = new SnapshotFileSheetSelectionScope("ALL_VISUALS");
+        /// <summary>
+        /// Constant SELECTED_VISUALS for SnapshotFileSheetSelectionScope
+        /// </summary>
+        public static readonly SnapshotFileSheetSelectionScope SELECTED_VISUALS = new SnapshotFileSheetSelectionScope("SELECTED_VISUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotFileSheetSelectionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotFileSheetSelectionScope FindValue(string value)
+        {
+            return FindValue<SnapshotFileSheetSelectionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotFileSheetSelectionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotJobStatus.
+    /// </summary>
+    public class SnapshotJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for SnapshotJobStatus
+        /// </summary>
+        public static readonly SnapshotJobStatus COMPLETED = new SnapshotJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for SnapshotJobStatus
+        /// </summary>
+        public static readonly SnapshotJobStatus FAILED = new SnapshotJobStatus("FAILED");
+        /// <summary>
+        /// Constant QUEUED for SnapshotJobStatus
+        /// </summary>
+        public static readonly SnapshotJobStatus QUEUED = new SnapshotJobStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for SnapshotJobStatus
+        /// </summary>
+        public static readonly SnapshotJobStatus RUNNING = new SnapshotJobStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotJobStatus FindValue(string value)
+        {
+            return FindValue<SnapshotJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotJobStatus(string value)
         {
             return FindValue(value);
         }

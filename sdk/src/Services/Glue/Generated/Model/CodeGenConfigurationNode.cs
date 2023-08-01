@@ -73,6 +73,7 @@ namespace Amazon.Glue.Model
         private PIIDetection _piiDetection;
         private PostgreSQLCatalogSource _postgreSQLCatalogSource;
         private PostgreSQLCatalogTarget _postgreSQLCatalogTarget;
+        private Recipe _recipe;
         private RedshiftSource _redshiftSource;
         private RedshiftTarget _redshiftTarget;
         private RelationalCatalogSource _relationalCatalogSource;
@@ -94,6 +95,8 @@ namespace Amazon.Glue.Model
         private S3ParquetSource _s3ParquetSource;
         private SelectFields _selectFields;
         private SelectFromCollection _selectFromCollection;
+        private SnowflakeSource _snowflakeSource;
+        private SnowflakeTarget _snowflakeTarget;
         private SparkConnectorSource _sparkConnectorSource;
         private SparkConnectorTarget _sparkConnectorTarget;
         private SparkSQL _sparkSQL;
@@ -816,6 +819,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Recipe. 
+        /// <para>
+        /// Specifies a Glue DataBrew recipe node.
+        /// </para>
+        /// </summary>
+        public Recipe Recipe
+        {
+            get { return this._recipe; }
+            set { this._recipe = value; }
+        }
+
+        // Check to see if Recipe property is set
+        internal bool IsSetRecipe()
+        {
+            return this._recipe != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RedshiftSource. 
         /// <para>
         /// Specifies an Amazon Redshift data store.
@@ -1195,6 +1216,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetSelectFromCollection()
         {
             return this._selectFromCollection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowflakeSource. 
+        /// <para>
+        /// Specifies a Snowflake data source.
+        /// </para>
+        /// </summary>
+        public SnowflakeSource SnowflakeSource
+        {
+            get { return this._snowflakeSource; }
+            set { this._snowflakeSource = value; }
+        }
+
+        // Check to see if SnowflakeSource property is set
+        internal bool IsSetSnowflakeSource()
+        {
+            return this._snowflakeSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowflakeTarget. 
+        /// <para>
+        /// Specifies a target that writes to a Snowflake data source.
+        /// </para>
+        /// </summary>
+        public SnowflakeTarget SnowflakeTarget
+        {
+            get { return this._snowflakeTarget; }
+            set { this._snowflakeTarget = value; }
+        }
+
+        // Check to see if SnowflakeTarget property is set
+        internal bool IsSetSnowflakeTarget()
+        {
+            return this._snowflakeTarget != null;
         }
 
         /// <summary>

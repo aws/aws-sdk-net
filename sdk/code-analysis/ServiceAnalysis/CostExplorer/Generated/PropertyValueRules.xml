@@ -294,6 +294,18 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetSavingsPlanPurchaseRecommendationDetailsRequest.RecommendationDetailId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[\S\s]{8}-[\S\s]{4}-[\S\s]{4}-[\S\s]{4}-[\S\s]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetSavingsPlanPurchaseRecommendationDetailsResponse.RecommendationDetailId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[\S\s]{8}-[\S\s]{4}-[\S\s]{4}-[\S\s]{4}-[\S\s]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetSavingsPlansCoverageRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>
@@ -1137,6 +1149,174 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.AccountId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.CurrencyCode</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.CurrentAverageCoverage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.CurrentAverageHourlyOnDemandSpend</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.CurrentMaximumHourlyOnDemandSpend</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.CurrentMinimumHourlyOnDemandSpend</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedAverageCoverage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedAverageUtilization</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedMonthlySavingsAmount</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedOnDemandCost</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedOnDemandCostWithCurrentCommitment</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedROI</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedSavingsAmount</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedSavingsPercentage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.EstimatedSPCost</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.ExistingHourlyCommitment</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.GenerationTimestamp</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.HourlyCommitmentToPurchase</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.InstanceFamily</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.LatestUsageTimestamp</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.OfferingId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.Region</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailData.UpfrontCost</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailHourlyMetrics.CurrentCoverage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailHourlyMetrics.EstimatedCoverage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailHourlyMetrics.EstimatedNewCommitmentUtilization</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailHourlyMetrics.EstimatedOnDemandCost</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RecommendationDetailHourlyMetrics.StartTime</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.RedshiftInstanceDetails.Family</property>
     <min>0</min>
     <max>1024</max>
@@ -1531,6 +1711,12 @@
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.SavingsPlansPurchaseRecommendationDetail.RecommendationDetailId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[\S\s]{8}-[\S\s]{4}-[\S\s]{4}-[\S\s]{4}-[\S\s]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.SavingsPlansPurchaseRecommendationDetail.UpfrontCost</property>

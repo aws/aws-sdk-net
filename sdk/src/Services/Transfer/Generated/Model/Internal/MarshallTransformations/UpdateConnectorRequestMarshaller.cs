@@ -96,6 +96,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LoggingRole);
                 }
 
+                if(publicRequest.IsSetSftpConfig())
+                {
+                    context.Writer.WritePropertyName("SftpConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SftpConnectorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SftpConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUrl())
                 {
                     context.Writer.WritePropertyName("Url");

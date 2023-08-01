@@ -495,6 +495,114 @@ namespace Amazon.ApplicationInsights
 
 
     /// <summary>
+    /// Constants used for properties of type RecommendationType.
+    /// </summary>
+    public class RecommendationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType ALL = new RecommendationType("ALL");
+        /// <summary>
+        /// Constant INFRA_ONLY for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType INFRA_ONLY = new RecommendationType("INFRA_ONLY");
+        /// <summary>
+        /// Constant WORKLOAD_ONLY for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType WORKLOAD_ONLY = new RecommendationType("WORKLOAD_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationType FindValue(string value)
+        {
+            return FindValue<RecommendationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolutionMethod.
+    /// </summary>
+    public class ResolutionMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for ResolutionMethod
+        /// </summary>
+        public static readonly ResolutionMethod AUTOMATIC = new ResolutionMethod("AUTOMATIC");
+        /// <summary>
+        /// Constant MANUAL for ResolutionMethod
+        /// </summary>
+        public static readonly ResolutionMethod MANUAL = new ResolutionMethod("MANUAL");
+        /// <summary>
+        /// Constant UNRESOLVED for ResolutionMethod
+        /// </summary>
+        public static readonly ResolutionMethod UNRESOLVED = new ResolutionMethod("UNRESOLVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolutionMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolutionMethod FindValue(string value)
+        {
+            return FindValue<ResolutionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolutionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SeverityLevel.
     /// </summary>
     public class SeverityLevel : ConstantClass
@@ -566,6 +674,10 @@ namespace Amazon.ApplicationInsights
         /// Constant PENDING for Status
         /// </summary>
         public static readonly Status PENDING = new Status("PENDING");
+        /// <summary>
+        /// Constant RECOVERING for Status
+        /// </summary>
+        public static readonly Status RECOVERING = new Status("RECOVERING");
         /// <summary>
         /// Constant RECURRING for Status
         /// </summary>
@@ -673,6 +785,18 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         public static readonly Tier SAP_HANA_SINGLE_NODE = new Tier("SAP_HANA_SINGLE_NODE");
         /// <summary>
+        /// Constant SAP_NETWEAVER_DISTRIBUTED for Tier
+        /// </summary>
+        public static readonly Tier SAP_NETWEAVER_DISTRIBUTED = new Tier("SAP_NETWEAVER_DISTRIBUTED");
+        /// <summary>
+        /// Constant SAP_NETWEAVER_HIGH_AVAILABILITY for Tier
+        /// </summary>
+        public static readonly Tier SAP_NETWEAVER_HIGH_AVAILABILITY = new Tier("SAP_NETWEAVER_HIGH_AVAILABILITY");
+        /// <summary>
+        /// Constant SAP_NETWEAVER_STANDARD for Tier
+        /// </summary>
+        public static readonly Tier SAP_NETWEAVER_STANDARD = new Tier("SAP_NETWEAVER_STANDARD");
+        /// <summary>
         /// Constant SHAREPOINT for Tier
         /// </summary>
         public static readonly Tier SHAREPOINT = new Tier("SHAREPOINT");
@@ -718,6 +842,102 @@ namespace Amazon.ApplicationInsights
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Tier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateStatus.
+    /// </summary>
+    public class UpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOLVED for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus RESOLVED = new UpdateStatus("RESOLVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateStatus FindValue(string value)
+        {
+            return FindValue<UpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Visibility.
+    /// </summary>
+    public class Visibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IGNORED for Visibility
+        /// </summary>
+        public static readonly Visibility IGNORED = new Visibility("IGNORED");
+        /// <summary>
+        /// Constant VISIBLE for Visibility
+        /// </summary>
+        public static readonly Visibility VISIBLE = new Visibility("VISIBLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Visibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Visibility FindValue(string value)
+        {
+            return FindValue<Visibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Visibility(string value)
         {
             return FindValue(value);
         }

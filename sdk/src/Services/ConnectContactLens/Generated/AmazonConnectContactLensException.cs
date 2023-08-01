@@ -69,7 +69,7 @@ namespace Amazon.ConnectContactLens
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AmazonConnectContactLensException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonConnectContactLensException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
@@ -83,7 +83,7 @@ namespace Amazon.ConnectContactLens
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AmazonConnectContactLensException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonConnectContactLensException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

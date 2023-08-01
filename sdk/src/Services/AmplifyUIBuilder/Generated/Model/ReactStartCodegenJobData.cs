@@ -33,11 +33,30 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ReactStartCodegenJobData
     {
+        private ApiConfiguration _apiConfiguration;
         private bool? _inlineSourceMap;
         private JSModule _module;
         private bool? _renderTypeDeclarations;
         private JSScript _script;
         private JSTarget _target;
+
+        /// <summary>
+        /// Gets and sets the property ApiConfiguration. 
+        /// <para>
+        /// The API configuration for the code generation job.
+        /// </para>
+        /// </summary>
+        public ApiConfiguration ApiConfiguration
+        {
+            get { return this._apiConfiguration; }
+            set { this._apiConfiguration = value; }
+        }
+
+        // Check to see if ApiConfiguration property is set
+        internal bool IsSetApiConfiguration()
+        {
+            return this._apiConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InlineSourceMap. 

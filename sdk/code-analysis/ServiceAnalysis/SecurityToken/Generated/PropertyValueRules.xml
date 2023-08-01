@@ -235,6 +235,17 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityToken.Model.ProvidedContext.ContextAssertion</property>
+    <min>4</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.ProvidedContext.ProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityToken.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>

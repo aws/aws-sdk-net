@@ -215,6 +215,59 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  BatchGetFindingDetails
+
+
+        /// <summary>
+        /// Gets vulnerability details for findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFindingDetails service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetFindingDetails service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails">REST API Reference for BatchGetFindingDetails Operation</seealso>
+        BatchGetFindingDetailsResponse BatchGetFindingDetails(BatchGetFindingDetailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetFindingDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFindingDetails operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetFindingDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails">REST API Reference for BatchGetFindingDetails Operation</seealso>
+        IAsyncResult BeginBatchGetFindingDetails(BatchGetFindingDetailsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetFindingDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetFindingDetails.</param>
+        /// 
+        /// <returns>Returns a  BatchGetFindingDetailsResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails">REST API Reference for BatchGetFindingDetails Operation</seealso>
+        BatchGetFindingDetailsResponse EndBatchGetFindingDetails(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchGetFreeTrialInfo
 
 

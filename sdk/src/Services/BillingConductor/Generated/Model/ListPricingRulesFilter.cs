@@ -39,8 +39,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arns. 
         /// <para>
-        ///  A list containing the pricing rule Amazon Resource Names (ARNs) to include in the
-        /// API response. 
+        /// A list containing the pricing rule Amazon Resource Names (ARNs) to include in the
+        /// API response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

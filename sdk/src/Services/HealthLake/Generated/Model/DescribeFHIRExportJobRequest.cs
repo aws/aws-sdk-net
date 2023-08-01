@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS generated ID for the Data Store from which files are being exported from for
+        /// The AWS generated ID for the data store from which files are being exported from for
         /// an export job.
         /// </para>
         /// </summary>

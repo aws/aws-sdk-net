@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The input doesn't match with the constraints specified by Amazon Web Services services.
+    /// The input doesn't match with the constraints specified by Amazon Web Services.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -73,7 +73,7 @@ namespace Amazon.BillingConductor.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ValidationException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.BillingConductor.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ValidationException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 

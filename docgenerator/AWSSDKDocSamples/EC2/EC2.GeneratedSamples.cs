@@ -1827,7 +1827,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DescribeSpotFleetRequestHistory(new DescribeSpotFleetRequestHistoryRequest 
             {
                 SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE",
-                StartTimeUtc = new DateTime(2015, 5, 25, 5, 0, 0, DateTimeKind.Utc)
+                StartTimeUtc = new DateTime(2015, 5, 26, 12, 0, 0, DateTimeKind.Utc)
             });
 
             List<HistoryRecord> historyRecords = response.HistoryRecords;
@@ -1879,14 +1879,14 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var client = new AmazonEC2Client();
             var response = client.DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest 
             {
-                EndTimeUtc = new DateTime(2014, 1, 6, 12, 9, 10, DateTimeKind.Utc),
+                EndTimeUtc = new DateTime(2014, 1, 6, 8, 9, 10, DateTimeKind.Utc),
                 InstanceTypes = new List<string> {
                     "m1.xlarge"
                 },
                 ProductDescriptions = new List<string> {
                     "Linux/UNIX (Amazon VPC)"
                 },
-                StartTimeUtc = new DateTime(2014, 1, 5, 11, 8, 9, DateTimeKind.Utc)
+                StartTimeUtc = new DateTime(2014, 1, 6, 7, 8, 9, DateTimeKind.Utc)
             });
 
             List<SpotPrice> spotPriceHistory = response.SpotPriceHistory;

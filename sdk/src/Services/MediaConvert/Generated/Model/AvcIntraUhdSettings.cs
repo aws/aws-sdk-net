@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K).
-    /// When you set AVC-Intra class to a different value, this object isn't allowed.
+    /// Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra class
+    /// to a different value, this object isn't allowed.
     /// </summary>
     public partial class AvcIntraUhdSettings
     {
@@ -38,11 +38,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property QualityTuningLevel. Optional. Use Quality tuning level
-        /// (qualityTuningLevel) to choose how many transcoding passes MediaConvert does with
-        /// your video. When you choose Multi-pass (MULTI_PASS), your video quality is better
-        /// and your output bitrate is more accurate. That is, the actual bitrate of your output
-        /// is closer to the target bitrate defined in the specification. When you choose Single-pass
-        /// (SINGLE_PASS), your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+        /// to choose how many transcoding passes MediaConvert does with your video. When you
+        /// choose Multi-pass, your video quality is better and your output bitrate is more accurate.
+        /// That is, the actual bitrate of your output is closer to the target bitrate defined
+        /// in the specification. When you choose Single-pass, your encoding time is faster. The
+        /// default behavior is Single-pass.
         /// </summary>
         public AvcIntraUhdQualityTuningLevel QualityTuningLevel
         {

@@ -47,7 +47,7 @@ namespace Amazon.BillingConductor.Model
         /// Gets and sets the property AccountGrouping. 
         /// <para>
         ///  The set of accounts that will be under the billing group. The set of accounts resemble
-        /// the linked accounts in a consolidated family. 
+        /// the linked accounts in a consolidated billing family. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

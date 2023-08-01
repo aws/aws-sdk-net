@@ -41,8 +41,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ManifestConfirmConditionNotification. Specifies an ESAM
         /// ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder
-        /// uses the manifest conditioning instructions that you provide in the setting MCC XML
-        /// (mccXml).
+        /// uses the manifest conditioning instructions that you provide in the setting MCC XML.
         /// </summary>
         public EsamManifestConfirmConditionNotification ManifestConfirmConditionNotification
         {
@@ -79,7 +78,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SignalProcessingNotification. Specifies an ESAM SignalProcessingNotification
         /// XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions
-        /// that you provide in the setting SCC XML (sccXml).
+        /// that you provide in the setting SCC XML.
         /// </summary>
         public EsamSignalProcessingNotification SignalProcessingNotification
         {

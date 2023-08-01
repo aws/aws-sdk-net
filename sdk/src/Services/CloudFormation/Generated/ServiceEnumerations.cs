@@ -2367,6 +2367,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly StackInstanceFilterName DETAILED_STATUS = new StackInstanceFilterName("DETAILED_STATUS");
         /// <summary>
+        /// Constant DRIFT_STATUS for StackInstanceFilterName
+        /// </summary>
+        public static readonly StackInstanceFilterName DRIFT_STATUS = new StackInstanceFilterName("DRIFT_STATUS");
+        /// <summary>
         /// Constant LAST_OPERATION_ID for StackInstanceFilterName
         /// </summary>
         public static readonly StackInstanceFilterName LAST_OPERATION_ID = new StackInstanceFilterName("LAST_OPERATION_ID");

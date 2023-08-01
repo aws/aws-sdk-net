@@ -1331,6 +1331,64 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type FindingDetailsErrorCode.
+    /// </summary>
+    public class FindingDetailsErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for FindingDetailsErrorCode
+        /// </summary>
+        public static readonly FindingDetailsErrorCode ACCESS_DENIED = new FindingDetailsErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant FINDING_DETAILS_NOT_FOUND for FindingDetailsErrorCode
+        /// </summary>
+        public static readonly FindingDetailsErrorCode FINDING_DETAILS_NOT_FOUND = new FindingDetailsErrorCode("FINDING_DETAILS_NOT_FOUND");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for FindingDetailsErrorCode
+        /// </summary>
+        public static readonly FindingDetailsErrorCode INTERNAL_ERROR = new FindingDetailsErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_INPUT for FindingDetailsErrorCode
+        /// </summary>
+        public static readonly FindingDetailsErrorCode INVALID_INPUT = new FindingDetailsErrorCode("INVALID_INPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingDetailsErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingDetailsErrorCode FindValue(string value)
+        {
+            return FindValue<FindingDetailsErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingDetailsErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingStatus.
     /// </summary>
     public class FindingStatus : ConstantClass

@@ -158,6 +158,40 @@ namespace Amazon.DataSync
 
         #endregion
                 
+        #region  CreateLocationAzureBlob
+
+
+
+        /// <summary>
+        /// Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can
+        /// use as a transfer source or destination.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure you know <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+        /// DataSync accesses Azure Blob Storage</a> and works with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
+        /// tiers</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+        /// types</a>. You also need a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+        /// agent</a> that can connect to your container.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationAzureBlob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">REST API Reference for CreateLocationAzureBlob Operation</seealso>
+        Task<CreateLocationAzureBlobResponse> CreateLocationAzureBlobAsync(CreateLocationAzureBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateLocationEfs
 
 
@@ -320,8 +354,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Defines a file system on a Network File System (NFS) server that can be read from
-        /// or written to.
+        /// Creates an endpoint for an Network File System (NFS) file server that DataSync can
+        /// use for a data transfer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// <param name="cancellationToken">
@@ -417,8 +451,13 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
-        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-        /// an SMB location</a>.
+        /// use for a data transfer.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
+        /// an SMB file server</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
         /// <param name="cancellationToken">
@@ -595,6 +634,31 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
         Task<DescribeDiscoveryJobResponse> DescribeDiscoveryJobAsync(DescribeDiscoveryJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeLocationAzureBlob
+
+
+
+        /// <summary>
+        /// Provides details about how an DataSync transfer location for Microsoft Azure Blob
+        /// Storage is configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationAzureBlob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationAzureBlob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">REST API Reference for DescribeLocationAzureBlob Operation</seealso>
+        Task<DescribeLocationAzureBlobResponse> DescribeLocationAzureBlobAsync(DescribeLocationAzureBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -937,7 +1001,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about a task.
+        /// Provides information about an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTask service method.</param>
         /// <param name="cancellationToken">
@@ -961,7 +1025,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns detailed metadata about a task that is being executed.
+        /// Provides information about an DataSync transfer task that's running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1432,6 +1496,31 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
         Task<UpdateDiscoveryJobResponse> UpdateDiscoveryJobAsync(UpdateDiscoveryJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateLocationAzureBlob
+
+
+
+        /// <summary>
+        /// Modifies some configurations of the Microsoft Azure Blob Storage transfer location
+        /// that you're using with DataSync.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationAzureBlob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLocationAzureBlob service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">REST API Reference for UpdateLocationAzureBlob Operation</seealso>
+        Task<UpdateLocationAzureBlobResponse> UpdateLocationAzureBlobAsync(UpdateLocationAzureBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

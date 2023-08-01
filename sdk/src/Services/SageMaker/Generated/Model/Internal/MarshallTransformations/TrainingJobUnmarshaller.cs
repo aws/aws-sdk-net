@@ -190,6 +190,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfilerConfig", targetDepth))
+                {
+                    var unmarshaller = ProfilerConfigUnmarshaller.Instance;
+                    unmarshalledObject.ProfilerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceConfig", targetDepth))
                 {
                     var unmarshaller = ResourceConfigUnmarshaller.Instance;

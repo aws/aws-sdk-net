@@ -64,16 +64,46 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveSpeakerOnlyConfiguration", targetDepth))
+                {
+                    var unmarshaller = ActiveSpeakerOnlyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ActiveSpeakerOnlyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CanvasOrientation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CanvasOrientation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContentShareLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentShareLayout = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HorizontalLayoutConfiguration", targetDepth))
+                {
+                    var unmarshaller = HorizontalLayoutConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HorizontalLayoutConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PresenterOnlyConfiguration", targetDepth))
                 {
                     var unmarshaller = PresenterOnlyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PresenterOnlyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VerticalLayoutConfiguration", targetDepth))
+                {
+                    var unmarshaller = VerticalLayoutConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VerticalLayoutConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VideoAttribute", targetDepth))
+                {
+                    var unmarshaller = VideoAttributeUnmarshaller.Instance;
+                    unmarshalledObject.VideoAttribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

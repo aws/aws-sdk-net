@@ -33,6 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class BillingGroupListElement
     {
+        private ListBillingGroupAccountGrouping _accountGrouping;
         private string _arn;
         private ComputationPreference _computationPreference;
         private long? _creationTime;
@@ -45,10 +46,29 @@ namespace Amazon.BillingConductor.Model
         private string _statusReason;
 
         /// <summary>
+        /// Gets and sets the property AccountGrouping. 
+        /// <para>
+        /// Specifies if the billing group has automatic account association (<code>AutoAssociate</code>)
+        /// enabled.
+        /// </para>
+        /// </summary>
+        public ListBillingGroupAccountGrouping AccountGrouping
+        {
+            get { return this._accountGrouping; }
+            set { this._accountGrouping = value; }
+        }
+
+        // Check to see if AccountGrouping property is set
+        internal bool IsSetAccountGrouping()
+        {
+            return this._accountGrouping != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Number (ARN) that can be used to uniquely identify the billing
-        /// group. 
+        /// group.
         /// </para>
         /// </summary>
         public string Arn
@@ -81,7 +101,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time when the billing group was created. 
+        /// The time when the billing group was created.
         /// </para>
         /// </summary>
         public long CreationTime
@@ -99,7 +119,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the billing group. 
+        /// The description of the billing group.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1024)]
@@ -118,7 +138,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time when the billing group was modified. 
+        /// The most recent time when the billing group was modified.
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -136,7 +156,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the billing group. 
+        /// The name of the billing group.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -155,7 +175,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PrimaryAccountId. 
         /// <para>
-        /// The account ID that serves as the main account in a billing group. 
+        /// The account ID that serves as the main account in a billing group.
         /// </para>
         /// </summary>
         public string PrimaryAccountId
@@ -173,7 +193,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The number of accounts in the particular billing group. 
+        /// The number of accounts in the particular billing group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -192,7 +212,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The billing group status. Only one of the valid values can be used. 
+        /// The billing group status. Only one of the valid values can be used.
         /// </para>
         /// </summary>
         public BillingGroupStatus Status
@@ -210,7 +230,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason why the billing group is in its current status. 
+        /// The reason why the billing group is in its current status.
         /// </para>
         /// </summary>
         public string StatusReason

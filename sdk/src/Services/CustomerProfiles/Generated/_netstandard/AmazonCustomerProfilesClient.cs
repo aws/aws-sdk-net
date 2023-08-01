@@ -412,7 +412,7 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-        /// resolution</a>: set <code>Matching</code> to true. 
+        /// resolution</a>: set <code>Matching</code> to true.
         /// </para>
         ///  
         /// <para>
@@ -1653,6 +1653,57 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetSimilarProfiles
+
+        internal virtual GetSimilarProfilesResponse GetSimilarProfiles(GetSimilarProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSimilarProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a set of profiles that belong to the same matching group using the <code>matchId</code>
+        /// or <code>profileId</code>. You can also specify the type of matching that you want
+        /// for finding similar profiles using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSimilarProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSimilarProfiles service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
+        public virtual Task<GetSimilarProfilesResponse> GetSimilarProfilesAsync(GetSimilarProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSimilarProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWorkflow
 
         internal virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
@@ -2238,6 +2289,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProfileObjectTypeTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRuleBasedMatches
+
+        internal virtual ListRuleBasedMatchesResponse ListRuleBasedMatches(ListRuleBasedMatchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleBasedMatchesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a set of <code>MatchIds</code> that belong to the given domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleBasedMatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRuleBasedMatches service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
+        public virtual Task<ListRuleBasedMatchesResponse> ListRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRuleBasedMatchesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2855,7 +2955,7 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-        /// resolution</a>: set <code>Matching</code> to true. 
+        /// resolution</a>: set <code>Matching</code> to true.
         /// </para>
         ///  
         /// <para>

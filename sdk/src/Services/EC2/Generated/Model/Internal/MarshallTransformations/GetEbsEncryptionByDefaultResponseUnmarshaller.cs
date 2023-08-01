@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.EbsEncryptionByDefault = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sseType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SseType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

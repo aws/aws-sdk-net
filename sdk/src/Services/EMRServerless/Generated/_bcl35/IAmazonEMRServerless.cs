@@ -276,8 +276,21 @@ namespace Amazon.EMRServerless
 
 
         /// <summary>
-        /// Returns a URL to access the job run dashboard. The generated URL is valid for one
-        /// hour, after which you must invoke the API again to generate a new URL.
+        /// Creates and returns a URL that you can use to access the application UIs for a job
+        /// run.
+        /// 
+        ///  
+        /// <para>
+        /// For jobs in a running state, the application UI is a live user interface such as the
+        /// Spark or Tez web UI. For completed jobs, the application UI is a persistent application
+        /// user interface such as the Spark History Server or persistent Tez UI.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The URL is valid for one hour after you generate it. To access the application UI
+        /// after that hour elapses, you must invoke the API again to generate a new URL.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardForJobRun service method.</param>
         /// 

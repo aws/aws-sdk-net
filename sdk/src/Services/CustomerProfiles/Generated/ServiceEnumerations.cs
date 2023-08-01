@@ -25,6 +25,56 @@ namespace Amazon.CustomerProfiles
 {
 
     /// <summary>
+    /// Constants used for properties of type AttributeMatchingModel.
+    /// </summary>
+    public class AttributeMatchingModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANY_TO_MANY for AttributeMatchingModel
+        /// </summary>
+        public static readonly AttributeMatchingModel MANY_TO_MANY = new AttributeMatchingModel("MANY_TO_MANY");
+        /// <summary>
+        /// Constant ONE_TO_ONE for AttributeMatchingModel
+        /// </summary>
+        public static readonly AttributeMatchingModel ONE_TO_ONE = new AttributeMatchingModel("ONE_TO_ONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeMatchingModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeMatchingModel FindValue(string value)
+        {
+            return FindValue<AttributeMatchingModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeMatchingModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictResolvingModel.
     /// </summary>
     public class ConflictResolvingModel : ConstantClass
@@ -637,6 +687,56 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type MatchType.
+    /// </summary>
+    public class MatchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ML_BASED_MATCHING for MatchType
+        /// </summary>
+        public static readonly MatchType ML_BASED_MATCHING = new MatchType("ML_BASED_MATCHING");
+        /// <summary>
+        /// Constant RULE_BASED_MATCHING for MatchType
+        /// </summary>
+        public static readonly MatchType RULE_BASED_MATCHING = new MatchType("RULE_BASED_MATCHING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatchType FindValue(string value)
+        {
+            return FindValue<MatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass
@@ -840,6 +940,60 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PartyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleBasedMatchingStatus.
+    /// </summary>
+    public class RuleBasedMatchingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RuleBasedMatchingStatus
+        /// </summary>
+        public static readonly RuleBasedMatchingStatus ACTIVE = new RuleBasedMatchingStatus("ACTIVE");
+        /// <summary>
+        /// Constant IN_PROGRESS for RuleBasedMatchingStatus
+        /// </summary>
+        public static readonly RuleBasedMatchingStatus IN_PROGRESS = new RuleBasedMatchingStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for RuleBasedMatchingStatus
+        /// </summary>
+        public static readonly RuleBasedMatchingStatus PENDING = new RuleBasedMatchingStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleBasedMatchingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleBasedMatchingStatus FindValue(string value)
+        {
+            return FindValue<RuleBasedMatchingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleBasedMatchingStatus(string value)
         {
             return FindValue(value);
         }

@@ -69,7 +69,7 @@ namespace Amazon.Braket
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AmazonBraketException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonBraketException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
@@ -83,7 +83,7 @@ namespace Amazon.Braket
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AmazonBraketException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonBraketException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

@@ -36,6 +36,22 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Paginator for ListAnalysisTemplates operation
+        ///</summary>
+        public IListAnalysisTemplatesPaginator ListAnalysisTemplates(ListAnalysisTemplatesRequest request) 
+        {
+            return new ListAnalysisTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationAnalysisTemplates operation
+        ///</summary>
+        public IListCollaborationAnalysisTemplatesPaginator ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request) 
+        {
+            return new ListCollaborationAnalysisTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCollaborations operation
         ///</summary>
         public IListCollaborationsPaginator ListCollaborations(ListCollaborationsRequest request) 

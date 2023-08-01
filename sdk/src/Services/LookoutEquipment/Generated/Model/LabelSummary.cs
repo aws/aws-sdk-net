@@ -125,7 +125,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property LabelGroupArn. 
         /// <para>
-        ///  The ARN of the label group. 
+        ///  The Amazon Resource Name (ARN) of the label group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

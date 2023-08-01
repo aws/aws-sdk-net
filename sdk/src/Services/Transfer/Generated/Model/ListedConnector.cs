@@ -78,7 +78,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of the partner's AS2 endpoint.
+        /// The URL of the partner's AS2 or SFTP endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

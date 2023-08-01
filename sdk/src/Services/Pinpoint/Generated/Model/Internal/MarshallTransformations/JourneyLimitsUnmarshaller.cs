@@ -88,6 +88,18 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimeframeCap", targetDepth))
+                {
+                    var unmarshaller = JourneyTimeframeCapUnmarshaller.Instance;
+                    unmarshalledObject.TimeframeCap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalCap", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalCap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

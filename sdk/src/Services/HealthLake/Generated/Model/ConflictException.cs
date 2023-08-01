@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The Data Store is in a transition state and the user requested action can not be performed.
+    /// The data store is in a transition state and the user requested action can not be performed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -71,7 +71,7 @@ namespace Amazon.HealthLake.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ConflictException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.HealthLake.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ConflictException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 

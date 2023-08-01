@@ -33,7 +33,7 @@ namespace Amazon.CodeStarconnections.Model
     /// 
     ///  
     /// <para>
-    /// This tag is available for use by AWS services that support tags.
+    /// This tag is available for use by Amazon Web Services services that support tags.
     /// </para>
     /// </summary>
     public partial class Tag

@@ -36,6 +36,11 @@ namespace Amazon.Kafka.Model
         IListClusterOperationsPaginator ListClusterOperations(ListClusterOperationsRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterOperationsV2 operation
+        ///</summary>
+        IListClusterOperationsV2Paginator ListClusterOperationsV2(ListClusterOperationsV2Request request);
+
+        /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
         IListClustersPaginator ListClusters(ListClustersRequest request);

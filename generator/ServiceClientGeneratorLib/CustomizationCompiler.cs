@@ -57,8 +57,9 @@ namespace ServiceClientGenerator
                 }
 
                 // Load examples into the customizations as well
-
-                var examples = Directory.GetFiles(serviceDirectory, "*.examples.json").FirstOrDefault();
+                // We're sorting by name of the file since some services contain multiple examples files,
+                // and Directory.GetFiles may return a different order when running on Linux.
+                var examples = Directory.GetFiles(serviceDirectory, "*.examples.json").OrderBy(f => f).FirstOrDefault();
                 if (null != examples)
                 {
                     var exampleData = JsonMapper.ToObject(new StreamReader(examples));

@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SliderControlDisplayOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetInfoIconLabelOptions())
+            {
+                context.Writer.WritePropertyName("InfoIconLabelOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SheetControlInfoIconLabelOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfoIconLabelOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTitleOptions())
             {
                 context.Writer.WritePropertyName("TitleOptions");

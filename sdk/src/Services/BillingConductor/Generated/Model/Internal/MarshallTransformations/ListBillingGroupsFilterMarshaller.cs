@@ -56,6 +56,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAutoAssociate())
+            {
+                context.Writer.WritePropertyName("AutoAssociate");
+                context.Writer.Write(requestObject.AutoAssociate);
+            }
+
             if(requestObject.IsSetPricingPlan())
             {
                 context.Writer.WritePropertyName("PricingPlan");

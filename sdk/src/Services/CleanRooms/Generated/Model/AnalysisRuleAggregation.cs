@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Enables query structure and specified queries that produce aggregate statistics.
+    /// A type of analysis rule that enables query structure and specified queries that produce
+    /// aggregate statistics.
     /// </summary>
     public partial class AnalysisRuleAggregation
     {

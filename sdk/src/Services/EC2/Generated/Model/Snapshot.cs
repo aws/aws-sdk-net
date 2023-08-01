@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _progress;
         private DateTime? _restoreExpiryTime;
         private string _snapshotId;
+        private SSEType _sseType;
         private DateTime? _startTime;
         private SnapshotState _state;
         private string _stateMessage;
@@ -240,6 +241,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseType. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public SSEType SseType
+        {
+            get { return this._sseType; }
+            set { this._sseType = value; }
+        }
+
+        // Check to see if SseType property is set
+        internal bool IsSetSseType()
+        {
+            return this._sseType != null;
         }
 
         /// <summary>

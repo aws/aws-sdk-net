@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Controls on the query specifications that can be run on configured table..
+    /// Controls on the query specifications that can be run on configured table.
     /// </summary>
     public partial class AnalysisRulePolicyV1
     {
         private AnalysisRuleAggregation _aggregation;
+        private AnalysisRuleCustom _custom;
         private AnalysisRuleList _list;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAggregation()
         {
             return this._aggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Custom. 
+        /// <para>
+        /// Analysis rule type that enables custom SQL queries on a configured table.
+        /// </para>
+        /// </summary>
+        public AnalysisRuleCustom Custom
+        {
+            get { return this._custom; }
+            set { this._custom = value; }
+        }
+
+        // Check to see if Custom property is set
+        internal bool IsSetCustom()
+        {
+            return this._custom != null;
         }
 
         /// <summary>

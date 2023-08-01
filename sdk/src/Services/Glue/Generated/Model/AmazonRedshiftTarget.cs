@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// Specifies the data of the Amazon Reshift target node.
+        /// Specifies the data of the Amazon Redshift target node.
         /// </para>
         /// </summary>
         public AmazonRedshiftNodeData Data

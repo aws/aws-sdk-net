@@ -60,10 +60,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ContentColumn. 
         /// <para>
         /// The name of the column used to provide the sentences to be classified. It should not
-        /// be the same as the target column (Required).
+        /// be the same as the target column.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ContentColumn
         {
             get { return this._contentColumn; }
@@ -80,10 +80,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TargetLabelColumn. 
         /// <para>
         /// The name of the column used to provide the class labels. It should not be same as
-        /// the content column (Required).
+        /// the content column.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TargetLabelColumn
         {
             get { return this._targetLabelColumn; }

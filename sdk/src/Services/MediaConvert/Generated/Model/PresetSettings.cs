@@ -39,9 +39,9 @@ namespace Amazon.MediaConvert.Model
         private VideoDescription _videoDescription;
 
         /// <summary>
-        /// Gets and sets the property AudioDescriptions. (AudioDescriptions) contains groups
-        /// of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions)
-        /// per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+        /// Gets and sets the property AudioDescriptions. Contains groups of audio encoding settings
+        /// organized by audio codec. Include one instance of per output. Can contain multiple
+        /// groups of encoding settings.
         /// </summary>
         public List<AudioDescription> AudioDescriptions
         {

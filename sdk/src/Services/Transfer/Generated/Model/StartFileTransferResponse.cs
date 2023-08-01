@@ -38,7 +38,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property TransferId. 
         /// <para>
-        /// Returns the unique identifier for this file transfer. 
+        /// Returns the unique identifier for the file transfer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class GetEbsEncryptionByDefaultResponse : AmazonWebServiceResponse
     {
         private bool? _ebsEncryptionByDefault;
+        private SSEType _sseType;
 
         /// <summary>
         /// Gets and sets the property EbsEncryptionByDefault. 
@@ -51,6 +52,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsEncryptionByDefault()
         {
             return this._ebsEncryptionByDefault.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseType. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public SSEType SseType
+        {
+            get { return this._sseType; }
+            set { this._sseType = value; }
+        }
+
+        // Check to see if SseType property is set
+        internal bool IsSetSseType()
+        {
+            return this._sseType != null;
         }
 
     }

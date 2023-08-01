@@ -83,10 +83,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DestinationSettings. Settings related to one captions tab
-        /// on the MediaConvert console. In your job JSON, an instance of captions DestinationSettings
-        /// is equivalent to one captions tab in the console. Usually, one captions tab corresponds
-        /// to one output captions track. Depending on your output captions format, one tab might
-        /// correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
+        /// on the MediaConvert console. Usually, one captions tab corresponds to one output captions
+        /// track. Depending on your output captions format, one tab might correspond to a set
+        /// of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
         /// </summary>
         public CaptionDestinationSettings DestinationSettings
         {

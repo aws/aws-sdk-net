@@ -31,8 +31,13 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the CreateLocationSmb operation.
     /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
-    /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-    /// an SMB location</a>.
+    /// use for a data transfer.
+    /// 
+    ///  
+    /// <para>
+    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
+    /// an SMB file server</a>.
+    /// </para>
     /// </summary>
     public partial class CreateLocationSmbRequest : AmazonDataSyncRequest
     {

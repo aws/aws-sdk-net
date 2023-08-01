@@ -88,6 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DbClusterIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DbClusterSnapshotAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute, AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeUnmarshaller>(AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeUnmarshaller.Instance);
+                    unmarshalledObject.DbClusterSnapshotAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DbClusterSnapshotIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

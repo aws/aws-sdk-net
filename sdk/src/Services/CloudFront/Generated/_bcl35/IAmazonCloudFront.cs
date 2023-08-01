@@ -137,6 +137,26 @@ namespace Amazon.CloudFront
         /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
         /// to incrementally move traffic to the staging distribution.
         /// </para>
+        ///  
+        /// <para>
+        /// This API operation requires the following IAM permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDistribution service method.</param>
         /// 
@@ -295,6 +315,16 @@ namespace Amazon.CloudFront
         /// The number of distributions that reference this key group is more than the maximum
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
@@ -924,7 +954,20 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Create a new distribution with tags.
+        /// Create a new distribution with tags. This API operation requires the following IAM
+        /// permissions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistributionWithTags service method.</param>
         /// 
@@ -946,6 +989,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
@@ -1087,6 +1134,16 @@ namespace Amazon.CloudFront
         /// The number of distributions that reference this key group is more than the maximum
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
@@ -6805,6 +6862,16 @@ namespace Amazon.CloudFront
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -6922,6 +6989,21 @@ namespace Amazon.CloudFront
         /// the continuous deployment policy and move your domain's traffic back to the primary
         /// distribution.
         /// </para>
+        ///  
+        /// <para>
+        /// This API operation requires the following IAM permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionWithStagingConfig service method.</param>
         /// 
@@ -7072,6 +7154,16 @@ namespace Amazon.CloudFront
         /// The number of distributions that reference this key group is more than the maximum
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin

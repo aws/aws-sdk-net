@@ -45,6 +45,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MonitoringConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCloudWatchLoggingConfiguration())
+            {
+                context.Writer.WritePropertyName("cloudWatchLoggingConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudWatchLoggingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchLoggingConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetManagedPersistenceMonitoringConfiguration())
             {
                 context.Writer.WritePropertyName("managedPersistenceMonitoringConfiguration");

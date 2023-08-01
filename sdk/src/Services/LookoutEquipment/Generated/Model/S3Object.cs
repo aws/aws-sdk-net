@@ -58,8 +58,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object.
-        /// Without this key, data in the bucket is not accessible. 
+        /// The Amazon Web Services Key Management Service (KMS key) key being used to encrypt
+        /// the S3 object. Without this key, data in the bucket is not accessible. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -43,7 +43,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <para>
     /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
     /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-    /// resolution</a>: set <code>Matching</code> to true. 
+    /// resolution</a>: set <code>Matching</code> to true.
     /// </para>
     ///  
     /// <para>
@@ -58,6 +58,7 @@ namespace Amazon.CustomerProfiles.Model
         private int? _defaultExpirationDays;
         private string _domainName;
         private MatchingRequest _matching;
+        private RuleBasedMatchingRequest _ruleBasedMatching;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -167,6 +168,29 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetMatching()
         {
             return this._matching != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleBasedMatching. 
+        /// <para>
+        /// The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code>
+        /// = true, Amazon Connect Customer Profiles will start to match and merge your profiles
+        /// according to your configuration in the <code>RuleBasedMatchingRequest</code>. You
+        /// can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code>
+        /// API to return and review the results. Also, if you have configured <code>ExportingConfig</code>
+        /// in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+        /// </para>
+        /// </summary>
+        public RuleBasedMatchingRequest RuleBasedMatching
+        {
+            get { return this._ruleBasedMatching; }
+            set { this._ruleBasedMatching = value; }
+        }
+
+        // Check to see if RuleBasedMatching property is set
+        internal bool IsSetRuleBasedMatching()
+        {
+            return this._ruleBasedMatching != null;
         }
 
         /// <summary>

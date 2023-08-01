@@ -64,6 +64,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cloudWatchLoggingConfiguration", targetDepth))
+                {
+                    var unmarshaller = CloudWatchLoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchLoggingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("managedPersistenceMonitoringConfiguration", targetDepth))
                 {
                     var unmarshaller = ManagedPersistenceMonitoringConfigurationUnmarshaller.Instance;

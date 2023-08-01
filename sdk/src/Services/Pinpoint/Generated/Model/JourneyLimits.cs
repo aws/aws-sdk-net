@@ -38,6 +38,8 @@ namespace Amazon.Pinpoint.Model
         private int? _endpointReentryCap;
         private string _endpointReentryInterval;
         private int? _messagesPerSecond;
+        private JourneyTimeframeCap _timeframeCap;
+        private int? _totalCap;
 
         /// <summary>
         /// Gets and sets the property DailyCap. 
@@ -113,6 +115,43 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessagesPerSecond()
         {
             return this._messagesPerSecond.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeframeCap. 
+        /// <para>
+        /// The number of messages that an endpoint can receive during the specified timeframe.
+        /// </para>
+        /// </summary>
+        public JourneyTimeframeCap TimeframeCap
+        {
+            get { return this._timeframeCap; }
+            set { this._timeframeCap = value; }
+        }
+
+        // Check to see if TimeframeCap property is set
+        internal bool IsSetTimeframeCap()
+        {
+            return this._timeframeCap != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalCap. 
+        /// <para>
+        /// The maximum number of messages a journey can sent to a single endpoint. The maximum
+        /// value is 100. If set to 0, this limit will not apply.
+        /// </para>
+        /// </summary>
+        public int TotalCap
+        {
+            get { return this._totalCap.GetValueOrDefault(); }
+            set { this._totalCap = value; }
+        }
+
+        // Check to see if TotalCap property is set
+        internal bool IsSetTotalCap()
+        {
+            return this._totalCap.HasValue; 
         }
 
     }

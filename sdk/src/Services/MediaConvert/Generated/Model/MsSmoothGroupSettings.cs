@@ -30,9 +30,7 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings related to your Microsoft Smooth Streaming output package. For more information,
-    /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
-    /// you work directly in your JSON job specification, include this object and any required
-    /// children when you set Type, under OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
+    /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     /// </summary>
     public partial class MsSmoothGroupSettings
     {
@@ -82,11 +80,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destination. Use Destination (Destination) to specify the
-        /// S3 output location and the output filename base. Destination accepts format identifiers.
-        /// If you do not specify the base filename in the URI, the service will use the filename
-        /// of the input file. If your job has multiple inputs, the service uses the filename
-        /// of the first input file.
+        /// Gets and sets the property Destination. Use Destination to specify the S3 output location
+        /// and the output filename base. Destination accepts format identifiers. If you do not
+        /// specify the base filename in the URI, the service will use the filename of the input
+        /// file. If your job has multiple inputs, the service uses the filename of the first
+        /// input file.
         /// </summary>
         public string Destination
         {
@@ -117,8 +115,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encryption. If you are using DRM, set DRM System (MsSmoothEncryptionSettings)
-        /// to specify the value SpekeKeyProvider.
+        /// Gets and sets the property Encryption. If you are using DRM, set DRM System to specify
+        /// the value SpekeKeyProvider.
         /// </summary>
         public MsSmoothEncryptionSettings Encryption
         {
@@ -134,10 +132,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FragmentLength. Specify how you want MediaConvert to determine
-        /// the fragment length. Choose Exact (EXACT) to have the encoder use the exact length
-        /// that you specify with the setting Fragment length (FragmentLength). This might result
-        /// in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round
-        /// up the segment lengths to match the next GOP boundary.
+        /// the fragment length. Choose Exact to have the encoder use the exact length that you
+        /// specify with the setting Fragment length. This might result in extra I-frames. Choose
+        /// Multiple of GOP to have the encoder round up the segment lengths to match the next
+        /// GOP boundary.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int FragmentLength
@@ -154,10 +152,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FragmentLengthControl. Specify how you want MediaConvert
-        /// to determine the fragment length. Choose Exact (EXACT) to have the encoder use the
-        /// exact length that you specify with the setting Fragment length (FragmentLength). This
-        /// might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the
-        /// encoder round up the segment lengths to match the next GOP boundary.
+        /// to determine the fragment length. Choose Exact to have the encoder use the exact length
+        /// that you specify with the setting Fragment length. This might result in extra I-frames.
+        /// Choose Multiple of GOP to have the encoder round up the segment lengths to match the
+        /// next GOP boundary.
         /// </summary>
         public MsSmoothFragmentLengthControl FragmentLengthControl
         {
@@ -172,9 +170,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ManifestEncoding. Use Manifest encoding (MsSmoothManifestEncoding)
-        /// to specify the encoding format for the server and client manifest. Valid options are
-        /// utf8 and utf16.
+        /// Gets and sets the property ManifestEncoding. Use Manifest encoding to specify the
+        /// encoding format for the server and client manifest. Valid options are utf8 and utf16.
         /// </summary>
         public MsSmoothManifestEncoding ManifestEncoding
         {

@@ -40,7 +40,8 @@ namespace Amazon.CodeStarconnections.Model
         /// Gets and sets the property ConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as
-        /// the connection reference when the connection is shared between AWS services.
+        /// the connection reference when the connection is shared between Amazon Web Services
+        /// services.
         /// </para>
         ///  <note> 
         /// <para>

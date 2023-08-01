@@ -111,6 +111,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsAthenaWorkGroup())
+            {
+                context.Writer.WritePropertyName("AwsAthenaWorkGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAthenaWorkGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsAthenaWorkGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsAutoScalingAutoScalingGroup())
             {
                 context.Writer.WritePropertyName("AwsAutoScalingAutoScalingGroup");

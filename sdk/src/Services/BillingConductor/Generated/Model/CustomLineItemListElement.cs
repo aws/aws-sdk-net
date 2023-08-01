@@ -47,7 +47,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Names (ARNs) for custom line items. 
+        /// The Amazon Resource Names (ARNs) for custom line items.
         /// </para>
         /// </summary>
         public string Arn
@@ -65,7 +65,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AssociationSize. 
         /// <para>
-        ///  The number of resources that are associated to the custom line item. 
+        /// The number of resources that are associated to the custom line item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -84,8 +84,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property BillingGroupArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that references the billing group where the custom
-        /// line item applies to. 
+        /// The Amazon Resource Name (ARN) that references the billing group where the custom
+        /// line item applies to.
         /// </para>
         /// </summary>
         public string BillingGroupArn
@@ -103,8 +103,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ChargeDetails. 
         /// <para>
-        ///  A <code>ListCustomLineItemChargeDetails</code> that describes the charge details
-        /// of a custom line item. 
+        /// A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of
+        /// a custom line item.
         /// </para>
         /// </summary>
         public ListCustomLineItemChargeDetails ChargeDetails
@@ -122,7 +122,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time created. 
+        /// The time created.
         /// </para>
         /// </summary>
         public long CreationTime
@@ -140,8 +140,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The custom line item's charge value currency. Only one of the valid values can be
-        /// used. 
+        /// The custom line item's charge value currency. Only one of the valid values can be
+        /// used.
         /// </para>
         /// </summary>
         public CurrencyCode CurrencyCode
@@ -159,8 +159,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The custom line item's description. This is shown on the Bills page in association
-        /// with the charge value. 
+        /// The custom line item's description. This is shown on the Bills page in association
+        /// with the charge value.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]
@@ -179,7 +179,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time when the custom line item was modified. 
+        /// The most recent time when the custom line item was modified.
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -197,7 +197,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The custom line item's name. 
+        /// The custom line item's name.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -216,7 +216,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ProductCode. 
         /// <para>
-        ///  The product code that's associated with the custom line item. 
+        /// The product code that's associated with the custom line item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=29)]

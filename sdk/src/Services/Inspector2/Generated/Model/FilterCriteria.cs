@@ -643,7 +643,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property NetworkProtocol. 
         /// <para>
-        /// Details on the ingress source addresses used to filter findings.
+        /// Details on network protocol used to filter findings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

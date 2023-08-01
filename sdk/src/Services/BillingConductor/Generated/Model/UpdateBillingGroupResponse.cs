@@ -33,6 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class UpdateBillingGroupResponse : AmazonWebServiceResponse
     {
+        private UpdateBillingGroupAccountGrouping _accountGrouping;
         private string _arn;
         private string _description;
         private long? _lastModifiedTime;
@@ -42,6 +43,25 @@ namespace Amazon.BillingConductor.Model
         private long? _size;
         private BillingGroupStatus _status;
         private string _statusReason;
+
+        /// <summary>
+        /// Gets and sets the property AccountGrouping. 
+        /// <para>
+        /// Specifies if the billing group has automatic account association (<code>AutoAssociate</code>)
+        /// enabled.
+        /// </para>
+        /// </summary>
+        public UpdateBillingGroupAccountGrouping AccountGrouping
+        {
+            get { return this._accountGrouping; }
+            set { this._accountGrouping = value; }
+        }
+
+        // Check to see if AccountGrouping property is set
+        internal bool IsSetAccountGrouping()
+        {
+            return this._accountGrouping != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

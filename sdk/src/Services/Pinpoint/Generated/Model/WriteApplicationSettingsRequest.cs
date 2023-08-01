@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
         private CampaignHook _campaignHook;
         private bool? _cloudWatchMetricsEnabled;
         private bool? _eventTaggingEnabled;
+        private ApplicationSettingsJourneyLimits _journeyLimits;
         private CampaignLimits _limits;
         private QuietTime _quietTime;
 
@@ -96,6 +97,26 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetEventTaggingEnabled()
         {
             return this._eventTaggingEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JourneyLimits. 
+        /// <para>
+        /// The default sending limits for journeys in the application. These limits apply to
+        /// each journey for the application but can be overridden, on a per journey basis, with
+        /// the JourneyLimits resource.
+        /// </para>
+        /// </summary>
+        public ApplicationSettingsJourneyLimits JourneyLimits
+        {
+            get { return this._journeyLimits; }
+            set { this._journeyLimits = value; }
+        }
+
+        // Check to see if JourneyLimits property is set
+        internal bool IsSetJourneyLimits()
+        {
+            return this._journeyLimits != null;
         }
 
         /// <summary>

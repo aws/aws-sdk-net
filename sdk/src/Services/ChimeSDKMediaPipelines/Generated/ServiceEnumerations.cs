@@ -25,6 +25,64 @@ namespace Amazon.ChimeSDKMediaPipelines
 {
 
     /// <summary>
+    /// Constants used for properties of type ActiveSpeakerPosition.
+    /// </summary>
+    public class ActiveSpeakerPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BottomLeft for ActiveSpeakerPosition
+        /// </summary>
+        public static readonly ActiveSpeakerPosition BottomLeft = new ActiveSpeakerPosition("BottomLeft");
+        /// <summary>
+        /// Constant BottomRight for ActiveSpeakerPosition
+        /// </summary>
+        public static readonly ActiveSpeakerPosition BottomRight = new ActiveSpeakerPosition("BottomRight");
+        /// <summary>
+        /// Constant TopLeft for ActiveSpeakerPosition
+        /// </summary>
+        public static readonly ActiveSpeakerPosition TopLeft = new ActiveSpeakerPosition("TopLeft");
+        /// <summary>
+        /// Constant TopRight for ActiveSpeakerPosition
+        /// </summary>
+        public static readonly ActiveSpeakerPosition TopRight = new ActiveSpeakerPosition("TopRight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActiveSpeakerPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActiveSpeakerPosition FindValue(string value)
+        {
+            return FindValue<ActiveSpeakerPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActiveSpeakerPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArtifactsConcatenationState.
     /// </summary>
     public class ArtifactsConcatenationState : ConstantClass
@@ -275,6 +333,72 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type BorderColor.
+    /// </summary>
+    public class BorderColor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Black for BorderColor
+        /// </summary>
+        public static readonly BorderColor Black = new BorderColor("Black");
+        /// <summary>
+        /// Constant Blue for BorderColor
+        /// </summary>
+        public static readonly BorderColor Blue = new BorderColor("Blue");
+        /// <summary>
+        /// Constant Green for BorderColor
+        /// </summary>
+        public static readonly BorderColor Green = new BorderColor("Green");
+        /// <summary>
+        /// Constant Red for BorderColor
+        /// </summary>
+        public static readonly BorderColor Red = new BorderColor("Red");
+        /// <summary>
+        /// Constant White for BorderColor
+        /// </summary>
+        public static readonly BorderColor White = new BorderColor("White");
+        /// <summary>
+        /// Constant Yellow for BorderColor
+        /// </summary>
+        public static readonly BorderColor Yellow = new BorderColor("Yellow");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BorderColor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BorderColor FindValue(string value)
+        {
+            return FindValue<BorderColor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BorderColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CallAnalyticsLanguageCode.
     /// </summary>
     public class CallAnalyticsLanguageCode : ConstantClass
@@ -346,6 +470,56 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CallAnalyticsLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CanvasOrientation.
+    /// </summary>
+    public class CanvasOrientation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Landscape for CanvasOrientation
+        /// </summary>
+        public static readonly CanvasOrientation Landscape = new CanvasOrientation("Landscape");
+        /// <summary>
+        /// Constant Portrait for CanvasOrientation
+        /// </summary>
+        public static readonly CanvasOrientation Portrait = new CanvasOrientation("Portrait");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CanvasOrientation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CanvasOrientation FindValue(string value)
+        {
+            return FindValue<CanvasOrientation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CanvasOrientation(string value)
         {
             return FindValue(value);
         }
@@ -546,6 +720,10 @@ namespace Amazon.ChimeSDKMediaPipelines
     public class ContentShareLayoutOption : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ActiveSpeakerOnly for ContentShareLayoutOption
+        /// </summary>
+        public static readonly ContentShareLayoutOption ActiveSpeakerOnly = new ContentShareLayoutOption("ActiveSpeakerOnly");
         /// <summary>
         /// Constant Horizontal for ContentShareLayoutOption
         /// </summary>
@@ -754,6 +932,122 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FragmentSelectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HighlightColor.
+    /// </summary>
+    public class HighlightColor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Black for HighlightColor
+        /// </summary>
+        public static readonly HighlightColor Black = new HighlightColor("Black");
+        /// <summary>
+        /// Constant Blue for HighlightColor
+        /// </summary>
+        public static readonly HighlightColor Blue = new HighlightColor("Blue");
+        /// <summary>
+        /// Constant Green for HighlightColor
+        /// </summary>
+        public static readonly HighlightColor Green = new HighlightColor("Green");
+        /// <summary>
+        /// Constant Red for HighlightColor
+        /// </summary>
+        public static readonly HighlightColor Red = new HighlightColor("Red");
+        /// <summary>
+        /// Constant White for HighlightColor
+        /// </summary>
+        public static readonly HighlightColor White = new HighlightColor("White");
+        /// <summary>
+        /// Constant Yellow for HighlightColor
+        /// </summary>
+        public static readonly HighlightColor Yellow = new HighlightColor("Yellow");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HighlightColor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HighlightColor FindValue(string value)
+        {
+            return FindValue<HighlightColor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HighlightColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HorizontalTilePosition.
+    /// </summary>
+    public class HorizontalTilePosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bottom for HorizontalTilePosition
+        /// </summary>
+        public static readonly HorizontalTilePosition Bottom = new HorizontalTilePosition("Bottom");
+        /// <summary>
+        /// Constant Top for HorizontalTilePosition
+        /// </summary>
+        public static readonly HorizontalTilePosition Top = new HorizontalTilePosition("Top");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HorizontalTilePosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HorizontalTilePosition FindValue(string value)
+        {
+            return FindValue<HorizontalTilePosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HorizontalTilePosition(string value)
         {
             return FindValue(value);
         }
@@ -1632,6 +1926,106 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SentimentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TileOrder.
+    /// </summary>
+    public class TileOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JoinSequence for TileOrder
+        /// </summary>
+        public static readonly TileOrder JoinSequence = new TileOrder("JoinSequence");
+        /// <summary>
+        /// Constant SpeakerSequence for TileOrder
+        /// </summary>
+        public static readonly TileOrder SpeakerSequence = new TileOrder("SpeakerSequence");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TileOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TileOrder FindValue(string value)
+        {
+            return FindValue<TileOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TileOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerticalTilePosition.
+    /// </summary>
+    public class VerticalTilePosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Left for VerticalTilePosition
+        /// </summary>
+        public static readonly VerticalTilePosition Left = new VerticalTilePosition("Left");
+        /// <summary>
+        /// Constant Right for VerticalTilePosition
+        /// </summary>
+        public static readonly VerticalTilePosition Right = new VerticalTilePosition("Right");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerticalTilePosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerticalTilePosition FindValue(string value)
+        {
+            return FindValue<VerticalTilePosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerticalTilePosition(string value)
         {
             return FindValue(value);
         }

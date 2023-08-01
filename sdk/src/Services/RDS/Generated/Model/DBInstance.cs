@@ -100,6 +100,7 @@ namespace Amazon.RDS.Model
         private string _networkType;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
         private PendingModifiedValues _pendingModifiedValues;
+        private string _percentProgress;
         private bool? _performanceInsightsEnabled;
         private string _performanceInsightsKMSKeyId;
         private int? _performanceInsightsRetentionPeriod;
@@ -720,20 +721,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The meaning of this parameter differs depending on the database engine.
+        /// Contains the initial database name that you provided (if required) when you created
+        /// the DB instance. This name is returned for the life of your DB instance. For an RDS
+        /// for Oracle CDB instance, the name identifies the PDB rather than the CDB.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL - The name of the
-        /// initial database specified for this DB instance when it was created, if one was provided.
-        /// This same name is returned for the life of the DB instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For RDS for Oracle - The Oracle System ID (SID) of the created DB instance. This value
-        /// is only returned when the object returned is an Oracle DB instance.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string DBName
         {
@@ -1312,6 +1303,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetPendingModifiedValues()
         {
             return this._pendingModifiedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PercentProgress. 
+        /// <para>
+        /// The progress of the storage optimization operation as a percentage.
+        /// </para>
+        /// </summary>
+        public string PercentProgress
+        {
+            get { return this._percentProgress; }
+            set { this._percentProgress = value; }
+        }
+
+        // Check to see if PercentProgress property is set
+        internal bool IsSetPercentProgress()
+        {
+            return this._percentProgress != null;
         }
 
         /// <summary>

@@ -79,7 +79,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("</tags>\r\n    <icon>images/AWSLogo.png</icon>\r\n");
+            this.Write("</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n");
             
             #line 20 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
  
@@ -235,60 +235,60 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             this.Write("      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\".." +
-                    "/../../nuget-content/AWSLogo.png\" target=\"images/\" />\r\n    <file src=\"../../../c" +
-                    "ode-analysis/ServiceAnalysis/");
+                    "\\..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file src=\"..\\..\\..\\c" +
+                    "ode-analysis\\ServiceAnalysis\\");
             
             #line 73 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["CodeAnalysisServiceFolder"]));
             
             #line default
             #line hidden
-            this.Write(@"/bin/Release/*.dll"" target=""analyzers/dotnet/cs"" exclude=""**/Microsoft.CodeAnalysis.*;**/System.Collections.Immutable.*;**/System.Reflection.Metadata.*;**/System.Composition.*"" />
-    <file src=""../../../code-analysis/NuGetInstallScripts/*.ps1"" target=""tools/"" />
+            this.Write(@"\bin\Release\*.dll"" target=""analyzers\dotnet\cs"" exclude=""**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*"" />
+    <file src=""..\..\..\code-analysis\NuGetInstallScripts\*.ps1"" target=""tools\"" />
 
-    <file src=""./bin/Release/net35/");
+    <file src="".\bin\Release\net35\");
             
             #line 76 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".dll\" target=\"lib/net35\" />\r\n    <file src=\"./bin/Release/net35/");
+            this.Write(".dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
             #line 77 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib/net35\" />\r\n    <file src=\"./bin/Release/net35/");
+            this.Write(".xml\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
             #line 78 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".pdb\" target=\"lib/net35\" />\r\n\r\n    <file src=\"./bin/Release/net45/");
+            this.Write(".pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
             
             #line 80 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".dll\" target=\"lib/net45\" />\r\n    <file src=\"./bin/Release/net45/");
+            this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
             #line 81 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib/net45\" />\r\n    <file src=\"./bin/Release/net45/");
+            this.Write(".xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
             #line 82 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".pdb\" target=\"lib/net45\" />\r\n\r\n");
+            this.Write(".pdb\" target=\"lib\\net45\" />\r\n\r\n");
             
             #line 84 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 	
@@ -298,52 +298,52 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("    <file src=\"./bin/Release/netstandard2.0/");
+            this.Write("    <file src=\".\\bin\\Release\\netstandard2.0\\");
             
             #line 88 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".dll\" target=\"lib/netstandard2.0\" />\r\n    <file src=\"./bin/Release/netstandard2.0" +
-                    "/");
+            this.Write(".dll\" target=\"lib\\netstandard2.0\" />\r\n    <file src=\".\\bin\\Release\\netstandard2.0" +
+                    "\\");
             
             #line 89 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib/netstandard2.0\" />\r\n    <file src=\"./bin/Release/netstandard2.0" +
-                    "/");
+            this.Write(".xml\" target=\"lib\\netstandard2.0\" />\r\n    <file src=\".\\bin\\Release\\netstandard2.0" +
+                    "\\");
             
             #line 90 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".pdb\" target=\"lib/netstandard2.0\" />\r\n\r\n    <file src=\"./bin/Release/netcoreapp3." +
-                    "1/");
+            this.Write(".pdb\" target=\"lib\\netstandard2.0\" />\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3." +
+                    "1\\");
             
             #line 92 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".dll\" target=\"lib/netcoreapp3.1\" />\r\n    <file src=\"./bin/Release/netcoreapp3.1/");
+            this.Write(".dll\" target=\"lib\\netcoreapp3.1\" />\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\");
             
             #line 93 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib/netcoreapp3.1\" />\r\n    <file src=\"./bin/Release/netcoreapp3.1/");
+            this.Write(".xml\" target=\"lib\\netcoreapp3.1\" />\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\");
             
             #line 94 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".pdb\" target=\"lib/netcoreapp3.1\" />\r\n\r\n    <file src=\"");
+            this.Write(".pdb\" target=\"lib\\netcoreapp3.1\" />\r\n\r\n    <file src=\"");
             
             #line 96 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine(".", "bin", "Release", "net6.0", (string)this.Session["AssemblyName"] + ".dll")));

@@ -64,6 +64,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("apiConfiguration", targetDepth))
+                {
+                    var unmarshaller = ApiConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ApiConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inlineSourceMap", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -46,7 +46,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AgentArns. 
         /// <para>
         /// Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and
-        /// reads your on-premises storage system.
+        /// reads your on-premises storage system. You can only specify one ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

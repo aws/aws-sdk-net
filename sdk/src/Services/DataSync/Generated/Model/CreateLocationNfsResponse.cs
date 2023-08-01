@@ -38,7 +38,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+        /// The ARN of the transfer location that you created for your NFS file server.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

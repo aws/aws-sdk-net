@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
         private OutputDataConfig _outputDataConfig;
+        private ProfilerConfig _profilerConfig;
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
@@ -462,6 +463,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerConfig.
+        /// </summary>
+        public ProfilerConfig ProfilerConfig
+        {
+            get { return this._profilerConfig; }
+            set { this._profilerConfig = value; }
+        }
+
+        // Check to see if ProfilerConfig property is set
+        internal bool IsSetProfilerConfig()
+        {
+            return this._profilerConfig != null;
         }
 
         /// <summary>

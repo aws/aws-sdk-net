@@ -40,7 +40,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AssociatedValues. 
         /// <para>
-        ///  A list of resource ARNs to associate to the percentage custom line item. 
+        /// A list of resource ARNs to associate to the percentage custom line item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -59,7 +59,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PercentageValue. 
         /// <para>
-        ///  The custom line item's percentage value. This will be multiplied against the combined
+        /// The custom line item's percentage value. This will be multiplied against the combined
         /// value of its associated resources to determine its charge value. 
         /// </para>
         /// </summary>

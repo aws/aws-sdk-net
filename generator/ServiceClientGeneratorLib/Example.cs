@@ -1,9 +1,9 @@
 ﻿using Json.LitJson;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ServiceClientGenerator
 {
@@ -315,8 +315,10 @@ namespace ServiceClientGenerator
                 if (data.IsString)
                 {
                     var textValue = data.ToString();
-                    DateTime parsedDateTime;
-                    if (DateTime.TryParse(textValue, out parsedDateTime))
+
+                    // Even though the date in the service example is in UTC format (i.e. ending with 'Z'), we need to tell TryParse about it.
+                    // If not, the parsed result will have DateTimeKind = Local, and the output can change depending on where the generator runs.
+                    if (DateTime.TryParse(textValue, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal, out DateTime parsedDateTime))
                     {
                         exampleValue = string.Format("new DateTime({0}, DateTimeKind.Utc)",
                             parsedDateTime.ToString("yyyy, M, d, h, m, s"));

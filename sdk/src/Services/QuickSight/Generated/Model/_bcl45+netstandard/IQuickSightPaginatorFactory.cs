@@ -61,6 +61,26 @@ namespace Amazon.QuickSight.Model
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListGroupMemberships operation
+        ///</summary>
+        IListGroupMembershipsPaginator ListGroupMemberships(ListGroupMembershipsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGroups operation
+        ///</summary>
+        IListGroupsPaginator ListGroups(ListGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIAMPolicyAssignments operation
+        ///</summary>
+        IListIAMPolicyAssignmentsPaginator ListIAMPolicyAssignments(ListIAMPolicyAssignmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIAMPolicyAssignmentsForUser operation
+        ///</summary>
+        IListIAMPolicyAssignmentsForUserPaginator ListIAMPolicyAssignmentsForUser(ListIAMPolicyAssignmentsForUserRequest request);
+
+        /// <summary>
         /// Paginator for ListIngestions operation
         ///</summary>
         IListIngestionsPaginator ListIngestions(ListIngestionsRequest request);
@@ -101,6 +121,16 @@ namespace Amazon.QuickSight.Model
         IListTopicsPaginator ListTopics(ListTopicsRequest request);
 
         /// <summary>
+        /// Paginator for ListUserGroups operation
+        ///</summary>
+        IListUserGroupsPaginator ListUserGroups(ListUserGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListUsers operation
+        ///</summary>
+        IListUsersPaginator ListUsers(ListUsersRequest request);
+
+        /// <summary>
         /// Paginator for ListVPCConnections operation
         ///</summary>
         IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request);
@@ -124,5 +154,10 @@ namespace Amazon.QuickSight.Model
         /// Paginator for SearchDataSources operation
         ///</summary>
         ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchGroups operation
+        ///</summary>
+        ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request);
     }
 }

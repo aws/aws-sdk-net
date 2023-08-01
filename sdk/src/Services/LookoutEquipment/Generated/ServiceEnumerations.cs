@@ -39,6 +39,10 @@ namespace Amazon.LookoutEquipment
         /// </summary>
         public static readonly DatasetStatus CREATED = new DatasetStatus("CREATED");
         /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus IMPORT_IN_PROGRESS = new DatasetStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
         /// Constant INGESTION_IN_PROGRESS for DatasetStatus
         /// </summary>
         public static readonly DatasetStatus INGESTION_IN_PROGRESS = new DatasetStatus("INGESTION_IN_PROGRESS");
@@ -263,6 +267,10 @@ namespace Amazon.LookoutEquipment
         /// </summary>
         public static readonly IngestionJobStatus FAILED = new IngestionJobStatus("FAILED");
         /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus IMPORT_IN_PROGRESS = new IngestionJobStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
         /// Constant IN_PROGRESS for IngestionJobStatus
         /// </summary>
         public static readonly IngestionJobStatus IN_PROGRESS = new IngestionJobStatus("IN_PROGRESS");
@@ -421,6 +429,10 @@ namespace Amazon.LookoutEquipment
         /// </summary>
         public static readonly ModelStatus FAILED = new ModelStatus("FAILED");
         /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus IMPORT_IN_PROGRESS = new ModelStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
         /// Constant IN_PROGRESS for ModelStatus
         /// </summary>
         public static readonly ModelStatus IN_PROGRESS = new ModelStatus("IN_PROGRESS");
@@ -458,6 +470,122 @@ namespace Amazon.LookoutEquipment
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelVersionSourceType.
+    /// </summary>
+    public class ModelVersionSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORT for ModelVersionSourceType
+        /// </summary>
+        public static readonly ModelVersionSourceType IMPORT = new ModelVersionSourceType("IMPORT");
+        /// <summary>
+        /// Constant RETRAINING for ModelVersionSourceType
+        /// </summary>
+        public static readonly ModelVersionSourceType RETRAINING = new ModelVersionSourceType("RETRAINING");
+        /// <summary>
+        /// Constant TRAINING for ModelVersionSourceType
+        /// </summary>
+        public static readonly ModelVersionSourceType TRAINING = new ModelVersionSourceType("TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelVersionSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelVersionSourceType FindValue(string value)
+        {
+            return FindValue<ModelVersionSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelVersionSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelVersionStatus.
+    /// </summary>
+    public class ModelVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for ModelVersionStatus
+        /// </summary>
+        public static readonly ModelVersionStatus CANCELED = new ModelVersionStatus("CANCELED");
+        /// <summary>
+        /// Constant FAILED for ModelVersionStatus
+        /// </summary>
+        public static readonly ModelVersionStatus FAILED = new ModelVersionStatus("FAILED");
+        /// <summary>
+        /// Constant IMPORT_IN_PROGRESS for ModelVersionStatus
+        /// </summary>
+        public static readonly ModelVersionStatus IMPORT_IN_PROGRESS = new ModelVersionStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
+        /// Constant IN_PROGRESS for ModelVersionStatus
+        /// </summary>
+        public static readonly ModelVersionStatus IN_PROGRESS = new ModelVersionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESS for ModelVersionStatus
+        /// </summary>
+        public static readonly ModelVersionStatus SUCCESS = new ModelVersionStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelVersionStatus FindValue(string value)
+        {
+            return FindValue<ModelVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelVersionStatus(string value)
         {
             return FindValue(value);
         }

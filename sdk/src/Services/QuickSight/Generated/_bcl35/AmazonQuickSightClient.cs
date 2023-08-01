@@ -2232,6 +2232,12 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -4947,6 +4953,180 @@ namespace Amazon.QuickSight
         public virtual DescribeDashboardPermissionsResponse EndDescribeDashboardPermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDashboardPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDashboardSnapshotJob
+
+        /// <summary>
+        /// Describes an existing snapshot job.
+        /// 
+        ///  
+        /// <para>
+        /// Poll job descriptions after a job starts to know the status of the job. For information
+        /// on available status codes, see <code>JobStatus</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDashboardSnapshotJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob">REST API Reference for DescribeDashboardSnapshotJob Operation</seealso>
+        public virtual DescribeDashboardSnapshotJobResponse DescribeDashboardSnapshotJob(DescribeDashboardSnapshotJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDashboardSnapshotJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDashboardSnapshotJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDashboardSnapshotJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJob operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDashboardSnapshotJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob">REST API Reference for DescribeDashboardSnapshotJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDashboardSnapshotJob(DescribeDashboardSnapshotJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDashboardSnapshotJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDashboardSnapshotJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDashboardSnapshotJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeDashboardSnapshotJobResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob">REST API Reference for DescribeDashboardSnapshotJob Operation</seealso>
+        public virtual DescribeDashboardSnapshotJobResponse EndDescribeDashboardSnapshotJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDashboardSnapshotJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDashboardSnapshotJobResult
+
+        /// <summary>
+        /// Describes the result of an existing snapshot job that has finished running.
+        /// 
+        ///  
+        /// <para>
+        /// A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code>
+        /// status when you poll the job with a <code>DescribeDashboardSnapshotJob</code> API
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job has not finished running, this operation returns a message that says <code>Dashboard
+        /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJobResult service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDashboardSnapshotJobResult service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult">REST API Reference for DescribeDashboardSnapshotJobResult Operation</seealso>
+        public virtual DescribeDashboardSnapshotJobResultResponse DescribeDashboardSnapshotJobResult(DescribeDashboardSnapshotJobResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDashboardSnapshotJobResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResultResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDashboardSnapshotJobResultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDashboardSnapshotJobResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJobResult operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDashboardSnapshotJobResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult">REST API Reference for DescribeDashboardSnapshotJobResult Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDashboardSnapshotJobResult(DescribeDashboardSnapshotJobResultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDashboardSnapshotJobResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDashboardSnapshotJobResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDashboardSnapshotJobResult.</param>
+        /// 
+        /// <returns>Returns a  DescribeDashboardSnapshotJobResultResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult">REST API Reference for DescribeDashboardSnapshotJobResult Operation</seealso>
+        public virtual DescribeDashboardSnapshotJobResultResponse EndDescribeDashboardSnapshotJobResult(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDashboardSnapshotJobResultResponse>(asyncResult);
         }
 
         #endregion
@@ -10709,6 +10889,111 @@ namespace Amazon.QuickSight
         public virtual StartAssetBundleImportJobResponse EndStartAssetBundleImportJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StartAssetBundleImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartDashboardSnapshotJob
+
+        /// <summary>
+        /// Starts an asynchronous job that generates a dashboard snapshot. You can request up
+        /// to one paginated PDF and up to five CSVs per API call.
+        /// 
+        ///  
+        /// <para>
+        /// Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
+        /// the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain
+        /// the download URIs that the job generates.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDashboardSnapshotJob service method.</param>
+        /// 
+        /// <returns>The response from the StartDashboardSnapshotJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
+        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
+        /// pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b>
+        /// page. 
+        /// 
+        ///  
+        /// <para>
+        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">REST API Reference for StartDashboardSnapshotJob Operation</seealso>
+        public virtual StartDashboardSnapshotJobResponse StartDashboardSnapshotJob(StartDashboardSnapshotJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDashboardSnapshotJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDashboardSnapshotJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartDashboardSnapshotJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDashboardSnapshotJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDashboardSnapshotJob operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDashboardSnapshotJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">REST API Reference for StartDashboardSnapshotJob Operation</seealso>
+        public virtual IAsyncResult BeginStartDashboardSnapshotJob(StartDashboardSnapshotJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDashboardSnapshotJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDashboardSnapshotJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDashboardSnapshotJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDashboardSnapshotJob.</param>
+        /// 
+        /// <returns>Returns a  StartDashboardSnapshotJobResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">REST API Reference for StartDashboardSnapshotJob Operation</seealso>
+        public virtual StartDashboardSnapshotJobResponse EndStartDashboardSnapshotJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartDashboardSnapshotJobResponse>(asyncResult);
         }
 
         #endregion

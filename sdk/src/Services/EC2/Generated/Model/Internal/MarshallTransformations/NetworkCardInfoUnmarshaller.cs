@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("baselineBandwidthInGbps", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.BaselineBandwidthInGbps = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("maximumNetworkInterfaces", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -70,6 +76,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NetworkPerformance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("peakBandwidthInGbps", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.PeakBandwidthInGbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

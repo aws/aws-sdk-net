@@ -343,6 +343,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.LatestRestorableTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LocalWriteForwardingStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LocalWriteForwardingStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MasterUsername", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

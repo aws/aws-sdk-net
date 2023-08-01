@@ -125,6 +125,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetRetainExceptOnCreate())
+                {
+                    request.Parameters.Add("RetainExceptOnCreate", StringUtils.FromBool(publicRequest.RetainExceptOnCreate));
+                }
                 if(publicRequest.IsSetRoleARN())
                 {
                     request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));

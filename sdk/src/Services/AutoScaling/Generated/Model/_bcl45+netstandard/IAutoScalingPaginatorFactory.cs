@@ -69,5 +69,10 @@ namespace Amazon.AutoScaling.Model
         /// Paginator for DescribeTrafficSources operation
         ///</summary>
         IDescribeTrafficSourcesPaginator DescribeTrafficSources(DescribeTrafficSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeWarmPool operation
+        ///</summary>
+        IDescribeWarmPoolPaginator DescribeWarmPool(DescribeWarmPoolRequest request);
     }
 }

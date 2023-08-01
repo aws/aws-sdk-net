@@ -100,6 +100,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAppSyncGraphQlApi = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsAthenaWorkGroup", targetDepth))
+                {
+                    var unmarshaller = AwsAthenaWorkGroupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsAthenaWorkGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsAutoScalingAutoScalingGroup", targetDepth))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupDetailsUnmarshaller.Instance;

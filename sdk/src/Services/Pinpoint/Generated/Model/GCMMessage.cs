@@ -42,6 +42,7 @@ namespace Amazon.Pinpoint.Model
         private string _iconReference;
         private string _imageIconUrl;
         private string _imageUrl;
+        private string _preferredAuthenticationMethod;
         private string _priority;
         private string _rawContent;
         private string _restrictedPackageName;
@@ -206,14 +207,33 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreferredAuthenticationMethod. 
+        /// <para>
+        /// The preferred authentication method, with valid values "KEY" or "TOKEN". If a value
+        /// isn't provided then the <b>DefaultAuthenticationMethod</b> is used.
+        /// </para>
+        /// </summary>
+        public string PreferredAuthenticationMethod
+        {
+            get { return this._preferredAuthenticationMethod; }
+            set { this._preferredAuthenticationMethod = value; }
+        }
+
+        // Check to see if PreferredAuthenticationMethod property is set
+        internal bool IsSetPreferredAuthenticationMethod()
+        {
+            return this._preferredAuthenticationMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// para>normal - The notification might be delayed. Delivery is optimized for battery
+        /// para>normal – The notification might be delayed. Delivery is optimized for battery
         /// usage on the recipient's device. Use this value unless immediate delivery is required.
         /// </para>
         /// /listitem> <li>
         /// <para>
-        /// high - The notification is sent immediately and might wake a sleeping device.
+        /// high – The notification is sent immediately and might wake a sleeping device.
         /// </para>
         /// </li>/para> 
         /// <para>

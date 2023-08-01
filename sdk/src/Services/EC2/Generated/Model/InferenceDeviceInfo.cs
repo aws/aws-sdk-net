@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private int? _count;
         private string _manufacturer;
+        private InferenceDeviceMemoryInfo _memoryInfo;
         private string _name;
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetManufacturer()
         {
             return this._manufacturer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryInfo. 
+        /// <para>
+        /// Describes the memory available to the inference accelerator.
+        /// </para>
+        /// </summary>
+        public InferenceDeviceMemoryInfo MemoryInfo
+        {
+            get { return this._memoryInfo; }
+            set { this._memoryInfo = value; }
+        }
+
+        // Check to see if MemoryInfo property is set
+        internal bool IsSetMemoryInfo()
+        {
+            return this._memoryInfo != null;
         }
 
         /// <summary>

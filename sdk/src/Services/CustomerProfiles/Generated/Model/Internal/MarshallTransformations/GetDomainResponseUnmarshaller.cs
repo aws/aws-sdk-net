@@ -93,6 +93,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.Matching = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuleBasedMatching", targetDepth))
+                {
+                    var unmarshaller = RuleBasedMatchingResponseUnmarshaller.Instance;
+                    response.RuleBasedMatching = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Stats", targetDepth))
                 {
                     var unmarshaller = DomainStatsUnmarshaller.Instance;

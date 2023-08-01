@@ -449,7 +449,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SamlConfigOptions.Metadata</property>
     <min>1</min>
-    <max>20480</max>
+    <max>51200</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -30,7 +30,7 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Describes the configuration information for rendering the UI component associated
-    /// the code generation job.
+    /// with the code generation job.
     /// </summary>
     public partial class CodegenJobRenderConfig
     {

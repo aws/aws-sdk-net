@@ -69,7 +69,7 @@ namespace Amazon.Kendra
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AmazonKendraException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonKendraException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
@@ -83,7 +83,7 @@ namespace Amazon.Kendra
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AmazonKendraException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonKendraException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

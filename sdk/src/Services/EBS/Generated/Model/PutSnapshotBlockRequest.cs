@@ -38,6 +38,14 @@ namespace Amazon.EBS.Model
     /// <para>
     /// Data written to a snapshot must be aligned with 512-KiB sectors.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You should always retry requests that receive server (<code>5xx</code>) error responses,
+    /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
+    /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+    /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutSnapshotBlockRequest : AmazonEBSRequest
     {

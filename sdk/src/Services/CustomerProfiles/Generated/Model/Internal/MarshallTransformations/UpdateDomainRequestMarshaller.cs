@@ -97,6 +97,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRuleBasedMatching())
+                {
+                    context.Writer.WritePropertyName("RuleBasedMatching");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuleBasedMatchingRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RuleBasedMatching, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

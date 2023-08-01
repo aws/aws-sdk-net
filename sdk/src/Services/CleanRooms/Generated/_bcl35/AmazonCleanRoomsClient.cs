@@ -277,6 +277,76 @@ namespace Amazon.CleanRooms
         #endregion
 
 
+        #region  BatchGetCollaborationAnalysisTemplate
+
+        /// <summary>
+        /// Retrieves multiple analysis templates within a collaboration by their Amazon Resource
+        /// Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCollaborationAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCollaborationAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual BatchGetCollaborationAnalysisTemplateResponse BatchGetCollaborationAnalysisTemplate(BatchGetCollaborationAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCollaborationAnalysisTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCollaborationAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCollaborationAnalysisTemplate operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetCollaborationAnalysisTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetCollaborationAnalysisTemplate(BatchGetCollaborationAnalysisTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetCollaborationAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetCollaborationAnalysisTemplate.</param>
+        /// 
+        /// <returns>Returns a  BatchGetCollaborationAnalysisTemplateResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual BatchGetCollaborationAnalysisTemplateResponse EndBatchGetCollaborationAnalysisTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetCollaborationAnalysisTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetSchema
 
         /// <summary>
@@ -342,6 +412,81 @@ namespace Amazon.CleanRooms
         public virtual BatchGetSchemaResponse EndBatchGetSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetSchemaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAnalysisTemplate
+
+        /// <summary>
+        /// Creates a new analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
+        public virtual CreateAnalysisTemplateResponse CreateAnalysisTemplate(CreateAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnalysisTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnalysisTemplate operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAnalysisTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateAnalysisTemplate(CreateAnalysisTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAnalysisTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateAnalysisTemplateResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
+        public virtual CreateAnalysisTemplateResponse EndCreateAnalysisTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAnalysisTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -710,6 +855,75 @@ namespace Amazon.CleanRooms
         public virtual CreateMembershipResponse EndCreateMembership(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMembershipResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAnalysisTemplate
+
+        /// <summary>
+        /// Deletes an analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
+        public virtual DeleteAnalysisTemplateResponse DeleteAnalysisTemplate(DeleteAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAnalysisTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisTemplate operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAnalysisTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAnalysisTemplate(DeleteAnalysisTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAnalysisTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteAnalysisTemplateResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
+        public virtual DeleteAnalysisTemplateResponse EndDeleteAnalysisTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAnalysisTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -1142,6 +1356,75 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  GetAnalysisTemplate
+
+        /// <summary>
+        /// Retrieves an analysis template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
+        public virtual GetAnalysisTemplateResponse GetAnalysisTemplate(GetAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetAnalysisTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisTemplate operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAnalysisTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
+        public virtual IAsyncResult BeginGetAnalysisTemplate(GetAnalysisTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAnalysisTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetAnalysisTemplateResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
+        public virtual GetAnalysisTemplateResponse EndGetAnalysisTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAnalysisTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCollaboration
 
         /// <summary>
@@ -1204,6 +1487,75 @@ namespace Amazon.CleanRooms
         public virtual GetCollaborationResponse EndGetCollaboration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCollaborationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCollaborationAnalysisTemplate
+
+        /// <summary>
+        /// Retrieves an analysis template within a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual GetCollaborationAnalysisTemplateResponse GetCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCollaborationAnalysisTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCollaborationAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationAnalysisTemplate operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCollaborationAnalysisTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual IAsyncResult BeginGetCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCollaborationAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCollaborationAnalysisTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetCollaborationAnalysisTemplateResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
+        public virtual GetCollaborationAnalysisTemplateResponse EndGetCollaborationAnalysisTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCollaborationAnalysisTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -1687,6 +2039,144 @@ namespace Amazon.CleanRooms
         public virtual GetSchemaAnalysisRuleResponse EndGetSchemaAnalysisRule(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSchemaAnalysisRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAnalysisTemplates
+
+        /// <summary>
+        /// Lists analysis templates that the caller owns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalysisTemplates service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
+        public virtual ListAnalysisTemplatesResponse ListAnalysisTemplates(ListAnalysisTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalysisTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnalysisTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisTemplates operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnalysisTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListAnalysisTemplates(ListAnalysisTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnalysisTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnalysisTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListAnalysisTemplatesResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
+        public virtual ListAnalysisTemplatesResponse EndListAnalysisTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAnalysisTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCollaborationAnalysisTemplates
+
+        /// <summary>
+        /// Lists analysis templates within a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationAnalysisTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationAnalysisTemplates service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
+        public virtual ListCollaborationAnalysisTemplatesResponse ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationAnalysisTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCollaborationAnalysisTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationAnalysisTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationAnalysisTemplates operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationAnalysisTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationAnalysisTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationAnalysisTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationAnalysisTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationAnalysisTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationAnalysisTemplatesResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
+        public virtual ListCollaborationAnalysisTemplatesResponse EndListCollaborationAnalysisTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCollaborationAnalysisTemplatesResponse>(asyncResult);
         }
 
         #endregion
@@ -2413,6 +2903,75 @@ namespace Amazon.CleanRooms
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAnalysisTemplate
+
+        /// <summary>
+        /// Updates the analysis template metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalysisTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnalysisTemplate service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
+        public virtual UpdateAnalysisTemplateResponse UpdateAnalysisTemplate(UpdateAnalysisTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAnalysisTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalysisTemplate operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAnalysisTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAnalysisTemplate(UpdateAnalysisTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnalysisTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnalysisTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAnalysisTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAnalysisTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateAnalysisTemplateResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
+        public virtual UpdateAnalysisTemplateResponse EndUpdateAnalysisTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAnalysisTemplateResponse>(asyncResult);
         }
 
         #endregion

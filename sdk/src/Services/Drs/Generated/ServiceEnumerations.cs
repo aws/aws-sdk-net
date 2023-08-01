@@ -2119,6 +2119,10 @@ namespace Amazon.Drs
         /// </summary>
         public static readonly TargetInstanceTypeRightSizingMethod BASIC = new TargetInstanceTypeRightSizingMethod("BASIC");
         /// <summary>
+        /// Constant IN_AWS for TargetInstanceTypeRightSizingMethod
+        /// </summary>
+        public static readonly TargetInstanceTypeRightSizingMethod IN_AWS = new TargetInstanceTypeRightSizingMethod("IN_AWS");
+        /// <summary>
         /// Constant NONE for TargetInstanceTypeRightSizingMethod
         /// </summary>
         public static readonly TargetInstanceTypeRightSizingMethod NONE = new TargetInstanceTypeRightSizingMethod("NONE");

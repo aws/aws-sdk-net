@@ -45,10 +45,38 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GridViewConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActiveSpeakerOnlyConfiguration())
+            {
+                context.Writer.WritePropertyName("ActiveSpeakerOnlyConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ActiveSpeakerOnlyConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ActiveSpeakerOnlyConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCanvasOrientation())
+            {
+                context.Writer.WritePropertyName("CanvasOrientation");
+                context.Writer.Write(requestObject.CanvasOrientation);
+            }
+
             if(requestObject.IsSetContentShareLayout())
             {
                 context.Writer.WritePropertyName("ContentShareLayout");
                 context.Writer.Write(requestObject.ContentShareLayout);
+            }
+
+            if(requestObject.IsSetHorizontalLayoutConfiguration())
+            {
+                context.Writer.WritePropertyName("HorizontalLayoutConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HorizontalLayoutConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.HorizontalLayoutConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetPresenterOnlyConfiguration())
@@ -58,6 +86,28 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 
                 var marshaller = PresenterOnlyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PresenterOnlyConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVerticalLayoutConfiguration())
+            {
+                context.Writer.WritePropertyName("VerticalLayoutConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VerticalLayoutConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VerticalLayoutConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVideoAttribute())
+            {
+                context.Writer.WritePropertyName("VideoAttribute");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoAttributeMarshaller.Instance;
+                marshaller.Marshall(requestObject.VideoAttribute, context);
 
                 context.Writer.WriteObjectEnd();
             }

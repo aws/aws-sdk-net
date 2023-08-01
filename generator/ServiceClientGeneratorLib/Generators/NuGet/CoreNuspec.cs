@@ -43,27 +43,27 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "zon Web Services SDK for .NET - Core Runtime</description>\r\n    <language>en-US<" +
                     "/language>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <projectUrl" +
                     ">https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <tags>AWS Amazon cloud aw" +
-                    "s-sdk-v3</tags>\r\n    <icon>images/AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
+                    "s-sdk-v3</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
                     "<group targetFramework=\"net35\">\r\n      </group>\r\n      <group targetFramework=\"n" +
                     "et45\">\r\n      </group>\r\n\t    <group targetFramework=\"netstandard2.0\">\r\n        <" +
                     "dependency id=\"Microsoft.Bcl.AsyncInterfaces\" version=\"1.1.0\" />\r\n      </group>" +
                     "\r\n      <group targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group ta" +
                     "rgetFramework=\"net6.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n" +
-                    "  <files>\r\n    <file src=\"../../nuget-content/AWSLogo.png\" target=\"images/\" />\r\n" +
-                    "    <file src=\"../../nuget-content/account-management.ps1\" target=\"tools\" />\r\n\r\n" +
-                    "    <file src=\"./bin/Release/net35/AWSSDK.Core.dll\" target=\"lib/net35\" />\r\n    <" +
-                    "file src=\"./bin/Release/net35/AWSSDK.Core.xml\" target=\"lib/net35\" />\r\n    <file " +
-                    "src=\"./bin/Release/net35/AWSSDK.Core.pdb\" target=\"lib/net35\" />\r\n\r\n    <file src" +
-                    "=\"./bin/Release/net45/AWSSDK.Core.dll\" target=\"lib/net45\" />\r\n    <file src=\"./b" +
-                    "in/Release/net45/AWSSDK.Core.xml\" target=\"lib/net45\" />\r\n    <file src=\"./bin/Re" +
-                    "lease/net45/AWSSDK.Core.pdb\" target=\"lib/net45\" />\r\n\r\n    <file src=\"./bin/Relea" +
-                    "se/netstandard2.0/AWSSDK.Core.dll\" target=\"lib/netstandard2.0\"/>\r\n    <file src=" +
-                    "\"./bin/Release/netstandard2.0/AWSSDK.Core.xml\" target=\"lib/netstandard2.0\"/>\r\n  " +
-                    "  <file src=\"./bin/Release/netstandard2.0/AWSSDK.Core.pdb\" target=\"lib/netstanda" +
-                    "rd2.0\"/>\r\n\r\n    <file src=\"./bin/Release/netcoreapp3.1/AWSSDK.Core.dll\" target=\"" +
-                    "lib/netcoreapp3.1\"/>\r\n    <file src=\"./bin/Release/netcoreapp3.1/AWSSDK.Core.xml" +
-                    "\" target=\"lib/netcoreapp3.1\"/>\r\n    <file src=\"./bin/Release/netcoreapp3.1/AWSSD" +
-                    "K.Core.pdb\" target=\"lib/netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release\\net6.0\\" +
+                    "  <files>\r\n    <file src=\"..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n" +
+                    "    <file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n" +
+                    "    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <" +
+                    "file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n    <file " +
+                    "src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src" +
+                    "=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\b" +
+                    "in\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Re" +
+                    "lease\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Relea" +
+                    "se\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=" +
+                    "\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n  " +
+                    "  <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstanda" +
+                    "rd2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" target=\"" +
+                    "lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.xml" +
+                    "\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSD" +
+                    "K.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release\\net6.0\\" +
                     "AWSSDK.Core.dll\" target=\"lib\\net6.0\"/>\r\n    <file src=\".\\bin\\Release\\net6.0\\AWSS" +
                     "DK.Core.xml\" target=\"lib\\net6.0\"/>\r\n    <file src=\".\\bin\\Release\\net6.0\\AWSSDK.C" +
                     "ore.pdb\" target=\"lib\\net6.0\"/>\r\n  </files>\r\n</package>");

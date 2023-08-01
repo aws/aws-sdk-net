@@ -51,10 +51,22 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ApiKey);
             }
 
+            if(requestObject.IsSetDefaultAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("DefaultAuthenticationMethod");
+                context.Writer.Write(requestObject.DefaultAuthenticationMethod);
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
                 context.Writer.Write(requestObject.Enabled);
+            }
+
+            if(requestObject.IsSetServiceJson())
+            {
+                context.Writer.WritePropertyName("ServiceJson");
+                context.Writer.Write(requestObject.ServiceJson);
             }
 
         }

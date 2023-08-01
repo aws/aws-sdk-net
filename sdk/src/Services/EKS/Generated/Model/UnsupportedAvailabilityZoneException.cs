@@ -76,7 +76,7 @@ namespace Amazon.EKS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public UnsupportedAvailabilityZoneException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public UnsupportedAvailabilityZoneException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.EKS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public UnsupportedAvailabilityZoneException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public UnsupportedAvailabilityZoneException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 

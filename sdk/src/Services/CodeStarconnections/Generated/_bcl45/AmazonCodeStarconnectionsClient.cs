@@ -40,18 +40,19 @@ namespace Amazon.CodeStarconnections
     ///
     /// AWS CodeStar Connections 
     /// <para>
-    /// This AWS CodeStar Connections API Reference provides descriptions and usage examples
-    /// of the operations and data types for the AWS CodeStar Connections API. You can use
-    /// the connections API to work with connections and installations.
+    /// This Amazon Web Services CodeStar Connections API Reference provides descriptions
+    /// and usage examples of the operations and data types for the Amazon Web Services CodeStar
+    /// Connections API. You can use the connections API to work with connections and installations.
     /// </para>
     ///  
     /// <para>
-    ///  <i>Connections</i> are configurations that you use to connect AWS resources to external
-    /// code repositories. Each connection is a resource that can be given to services such
-    /// as CodePipeline to connect to a third-party repository such as Bitbucket. For example,
-    /// you can add the connection in CodePipeline so that it triggers your pipeline when
-    /// a code change is made to your third-party code repository. Each connection is named
-    /// and associated with a unique ARN that is used to reference the connection.
+    ///  <i>Connections</i> are configurations that you use to connect Amazon Web Services
+    /// resources to external code repositories. Each connection is a resource that can be
+    /// given to services such as CodePipeline to connect to a third-party repository such
+    /// as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers
+    /// your pipeline when a code change is made to your third-party code repository. Each
+    /// connection is named and associated with a unique ARN that is used to reference the
+    /// connection.
     /// </para>
     ///  
     /// <para>
@@ -110,24 +111,28 @@ namespace Amazon.CodeStarconnections
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can work with tags in AWS CodeStar Connections by calling the following:
+    /// You can work with tags in Amazon Web Services CodeStar Connections by calling the
+    /// following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListTagsForResource</a>, which gets information about AWS tags for a specified
-    /// Amazon Resource Name (ARN) in AWS CodeStar Connections.
+    ///  <a>ListTagsForResource</a>, which gets information about Amazon Web Services tags
+    /// for a specified Amazon Resource Name (ARN) in Amazon Web Services CodeStar Connections.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+    ///  <a>TagResource</a>, which adds or updates tags for a resource in Amazon Web Services
+    /// CodeStar Connections.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+    ///  <a>UntagResource</a>, which removes tags for a resource in Amazon Web Services CodeStar
+    /// Connections.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about how to use AWS CodeStar Connections, see the <a href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
+    /// For information about how to use Amazon Web Services CodeStar Connections, see the
+    /// <a href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
     /// Tools User Guide</a>.
     /// </para>
     /// </summary>
@@ -358,9 +363,10 @@ namespace Amazon.CodeStarconnections
 
 
         /// <summary>
-        /// Creates a connection that can then be given to other AWS services like CodePipeline
-        /// so that it can access third-party code repositories. The connection is in pending
-        /// status until the third-party connection handshake is completed from the console.
+        /// Creates a connection that can then be given to other Amazon Web Services services
+        /// like CodePipeline so that it can access third-party code repositories. The connection
+        /// is in pending status until the third-party connection handshake is completed from
+        /// the console.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// 
@@ -386,9 +392,10 @@ namespace Amazon.CodeStarconnections
 
 
         /// <summary>
-        /// Creates a connection that can then be given to other AWS services like CodePipeline
-        /// so that it can access third-party code repositories. The connection is in pending
-        /// status until the third-party connection handshake is completed from the console.
+        /// Creates a connection that can then be given to other Amazon Web Services services
+        /// like CodePipeline so that it can access third-party code repositories. The connection
+        /// is in pending status until the third-party connection handshake is completed from
+        /// the console.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// <param name="cancellationToken">
@@ -717,6 +724,9 @@ namespace Amazon.CodeStarconnections
         /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
         /// 
         /// <returns>The response from the ListConnections service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
         {
@@ -737,6 +747,9 @@ namespace Amazon.CodeStarconnections
         /// </param>
         /// 
         /// <returns>The response from the ListConnections service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -896,7 +909,7 @@ namespace Amazon.CodeStarconnections
 
 
         /// <summary>
-        /// Removes tags from an AWS resource.
+        /// Removes tags from an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -916,7 +929,7 @@ namespace Amazon.CodeStarconnections
 
 
         /// <summary>
-        /// Removes tags from an AWS resource.
+        /// Removes tags from an Amazon Web Services resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

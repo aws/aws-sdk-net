@@ -37,14 +37,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private ContentType _contentRedactionType;
         private bool? _enablePartialResultsStabilization;
         private bool? _filterPartialResults;
+        private bool? _identifyLanguage;
         private CallAnalyticsLanguageCode _languageCode;
         private string _languageModelName;
+        private string _languageOptions;
         private PartialResultsStability _partialResultsStability;
         private string _piiEntityTypes;
+        private CallAnalyticsLanguageCode _preferredLanguage;
         private bool? _showSpeakerLabel;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
+        private string _vocabularyFilterNames;
         private string _vocabularyName;
+        private string _vocabularyNames;
 
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
@@ -158,6 +163,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// Turns language identification on or off.
+        /// </para>
+        /// </summary>
+        public bool IdentifyLanguage
+        {
+            get { return this._identifyLanguage.GetValueOrDefault(); }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code that represents the language spoken in your audio.
@@ -173,7 +196,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// languages table</a> in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CallAnalyticsLanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -215,6 +237,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetLanguageModelName()
         {
             return this._languageModelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageOptions. 
+        /// <para>
+        /// The language options for the transcription, such as automatic language detection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string LanguageOptions
+        {
+            get { return this._languageOptions; }
+            set { this._languageOptions = value; }
+        }
+
+        // Check to see if LanguageOptions property is set
+        internal bool IsSetLanguageOptions()
+        {
+            return this._languageOptions != null;
         }
 
         /// <summary>
@@ -280,6 +321,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetPiiEntityTypes()
         {
             return this._piiEntityTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredLanguage. 
+        /// <para>
+        /// The preferred language for the transcription.
+        /// </para>
+        /// </summary>
+        public CallAnalyticsLanguageCode PreferredLanguage
+        {
+            get { return this._preferredLanguage; }
+            set { this._preferredLanguage = value; }
+        }
+
+        // Check to see if PreferredLanguage property is set
+        internal bool IsSetPreferredLanguage()
+        {
+            return this._preferredLanguage != null;
         }
 
         /// <summary>
@@ -349,6 +408,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VocabularyFilterNames. 
+        /// <para>
+        /// The names of the custom vocabulary filter or filters using during transcription.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3000)]
+        public string VocabularyFilterNames
+        {
+            get { return this._vocabularyFilterNames; }
+            set { this._vocabularyFilterNames = value; }
+        }
+
+        // Check to see if VocabularyFilterNames property is set
+        internal bool IsSetVocabularyFilterNames()
+        {
+            return this._vocabularyFilterNames != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
         /// The name of the custom vocabulary that you specified in your Call Analytics request.
@@ -369,6 +447,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetVocabularyName()
         {
             return this._vocabularyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VocabularyNames. 
+        /// <para>
+        /// The names of the custom vocabulary or vocabularies used during transcription.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3000)]
+        public string VocabularyNames
+        {
+            get { return this._vocabularyNames; }
+            set { this._vocabularyNames = value; }
+        }
+
+        // Check to see if VocabularyNames property is set
+        internal bool IsSetVocabularyNames()
+        {
+            return this._vocabularyNames != null;
         }
 
     }

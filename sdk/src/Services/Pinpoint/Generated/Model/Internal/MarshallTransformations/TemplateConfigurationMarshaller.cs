@@ -56,6 +56,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInAppTemplate())
+            {
+                context.Writer.WritePropertyName("InAppTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TemplateMarshaller.Instance;
+                marshaller.Marshall(requestObject.InAppTemplate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPushTemplate())
             {
                 context.Writer.WritePropertyName("PushTemplate");

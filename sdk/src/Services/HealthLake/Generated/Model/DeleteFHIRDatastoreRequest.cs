@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFHIRDatastore operation.
-    /// Deletes a Data Store.
+    /// Deletes a data store.
     /// </summary>
     public partial class DeleteFHIRDatastoreRequest : AmazonHealthLakeRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        ///  The AWS-generated ID for the Data Store to be deleted.
+        ///  The AWS-generated ID for the data store to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

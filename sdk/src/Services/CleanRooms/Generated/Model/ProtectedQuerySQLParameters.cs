@@ -33,7 +33,46 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQuerySQLParameters
     {
+        private string _analysisTemplateArn;
+        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private string _queryString;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisTemplateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string AnalysisTemplateArn
+        {
+            get { return this._analysisTemplateArn; }
+            set { this._analysisTemplateArn = value; }
+        }
+
+        // Check to see if AnalysisTemplateArn property is set
+        internal bool IsSetAnalysisTemplateArn()
+        {
+            return this._analysisTemplateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The protected query SQL parameters.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property QueryString. 

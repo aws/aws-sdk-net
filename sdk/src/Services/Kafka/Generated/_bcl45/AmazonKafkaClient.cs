@@ -1161,6 +1161,89 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeClusterOperationV2
+
+
+        /// <summary>
+        /// Returns a description of the cluster operation specified by the ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperationV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterOperationV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
+        public virtual DescribeClusterOperationV2Response DescribeClusterOperationV2(DescribeClusterOperationV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterOperationV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a description of the cluster operation specified by the ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperationV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterOperationV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
+        public virtual Task<DescribeClusterOperationV2Response> DescribeClusterOperationV2Async(DescribeClusterOperationV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterOperationV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeClusterV2
 
 
@@ -1818,6 +1901,91 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListClusterOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClusterOperationsV2
+
+
+        /// <summary>
+        /// Returns a list of all the operations that have been performed on the specified MSK
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperationsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterOperationsV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
+        public virtual ListClusterOperationsV2Response ListClusterOperationsV2(ListClusterOperationsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterOperationsV2Response>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of all the operations that have been performed on the specified MSK
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperationsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusterOperationsV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
+        public virtual Task<ListClusterOperationsV2Response> ListClusterOperationsV2Async(ListClusterOperationsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsV2ResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListClusterOperationsV2Response>(request, options, cancellationToken);
         }
 
         #endregion

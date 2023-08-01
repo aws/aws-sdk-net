@@ -146,8 +146,6 @@ namespace Amazon.MediaConvert.Model
         /// at 0. If you need to set up your job to follow timecodes embedded in your source that
         /// don't start at zero, make sure that you specify a start time that is after the first
         /// embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
-        /// Find job-wide and input timecode configuration settings in your JSON job settings
-        /// specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
         /// </summary>
         [AWSProperty(Min=11, Max=11)]
         public string StartTime

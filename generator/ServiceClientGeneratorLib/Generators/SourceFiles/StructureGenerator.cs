@@ -601,14 +601,7 @@ if(this.Structure != null && (this.Structure.IsEvent || this.Structure.IsEventSt
             
             #line default
             #line hidden
-            this.Write("(message.");
-            
-            #line 258 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(payloadMember.PropertyName));
-            
-            #line default
-            #line hidden
-            this.Write(");\r\n");
+            this.Write("(message.Payload);\r\n");
             
             #line 259 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
@@ -826,7 +819,7 @@ if(this.Structure != null && (this.Structure.IsEvent || this.Structure.IsEventSt
             
             #line default
             #line hidden
-            this.Write(@"(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            this.Write(@"(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
@@ -851,9 +844,9 @@ if(this.Structure != null && (this.Structure.IsEvent || this.Structure.IsEventSt
             
             #line default
             #line hidden
-            this.Write("(string message, ErrorType errorType, string errorCode, string requestId, HttpSta" +
-                    "tusCode statusCode) \r\n            : base(message, errorType, errorCode, requestI" +
-                    "d, statusCode) {}\r\n\r\n");
+            this.Write("(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string req" +
+                    "uestId, HttpStatusCode statusCode) \r\n            : base(message, errorType, erro" +
+                    "rCode, requestId, statusCode) {}\r\n\r\n");
             this.Write("\r\n");
             this.Write("#if !NETSTANDARD\r\n        /// <summary>\r\n        /// Constructs a new instance of" +
                     " the ");

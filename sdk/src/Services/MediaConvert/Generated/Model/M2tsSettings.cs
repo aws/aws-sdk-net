@@ -30,14 +30,14 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// MPEG-2 TS container settings. These apply to outputs in a File output group when the
-    /// output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets,
-    /// data is organized by the program map table (PMT). Each transport stream program contains
-    /// subsets of data, including audio, video, and metadata. Each of these subsets of data
-    /// has a numerical label called a packet identifier (PID). Each transport stream program
-    /// corresponds to one MediaConvert output. The PMT lists the types of data in a program
-    /// along with their PID. Downstream systems and players use the program map table to
-    /// look up the PID for each type of data it accesses and then uses the PIDs to locate
-    /// specific data within the asset.
+    /// output's container is MPEG-2 Transport Stream (M2TS). In these assets, data is organized
+    /// by the program map table (PMT). Each transport stream program contains subsets of
+    /// data, including audio, video, and metadata. Each of these subsets of data has a numerical
+    /// label called a packet identifier (PID). Each transport stream program corresponds
+    /// to one MediaConvert output. The PMT lists the types of data in a program along with
+    /// their PID. Downstream systems and players use the program map table to look up the
+    /// PID for each type of data it accesses and then uses the PIDs to locate specific data
+    /// within the asset.
     /// </summary>
     public partial class M2tsSettings
     {
@@ -101,15 +101,15 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AudioDuration. Specify this setting only when your output
         /// will be consumed by a downstream repackaging workflow that is sensitive to very small
         /// duration differences between video and audio. For this situation, choose Match video
-        /// duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-        /// codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert
-        /// pads the output audio streams with silence or trims them to ensure that the total
-        /// duration of each audio stream is at least as long as the total duration of the video
-        /// stream. After padding or trimming, the audio stream duration is no more than one frame
-        /// longer than the video stream. MediaConvert applies audio padding or trimming only
-        /// to the end of the last segment of the output. For unsegmented outputs, MediaConvert
-        /// adds padding only to the end of the file. When you keep the default value, any minor
-        /// discrepancies between audio and video duration will depend on your output audio codec.
+        /// duration. In all other cases, keep the default value, Default codec duration. When
+        /// you choose Match video duration, MediaConvert pads the output audio streams with silence
+        /// or trims them to ensure that the total duration of each audio stream is at least as
+        /// long as the total duration of the video stream. After padding or trimming, the audio
+        /// stream duration is no more than one frame longer than the video stream. MediaConvert
+        /// applies audio padding or trimming only to the end of the last segment of the output.
+        /// For unsegmented outputs, MediaConvert adds padding only to the end of the file. When
+        /// you keep the default value, any minor discrepancies between audio and video duration
+        /// will depend on your output audio codec.
         /// </summary>
         public M2tsAudioDuration AudioDuration
         {
@@ -197,7 +197,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property DataPTSControl. If you select ALIGN_TO_VIDEO, MediaConvert
         /// writes captions and data packets with Presentation Timestamp (PTS) values greater
         /// than or equal to the first video packet PTS (MediaConvert drops captions and data
-        /// packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+        /// packets with lesser PTS values). Keep the default value to allow all PTS values.
         /// </summary>
         public M2tsDataPtsControl DataPTSControl
         {
@@ -213,9 +213,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DvbNitSettings. Use these settings to insert a DVB Network
-        /// Information Table (NIT) in the transport stream of this output. When you work directly
-        /// in your JSON job specification, include this object only when your job has a transport
-        /// stream output and the container settings contain the object M2tsSettings.
+        /// Information Table (NIT) in the transport stream of this output.
         /// </summary>
         public DvbNitSettings DvbNitSettings
         {
@@ -231,9 +229,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DvbSdtSettings. Use these settings to insert a DVB Service
-        /// Description Table (SDT) in the transport stream of this output. When you work directly
-        /// in your JSON job specification, include this object only when your job has a transport
-        /// stream output and the container settings contain the object M2tsSettings.
+        /// Description Table (SDT) in the transport stream of this output.
         /// </summary>
         public DvbSdtSettings DvbSdtSettings
         {
@@ -266,9 +262,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DvbTdtSettings. Use these settings to insert a DVB Time
-        /// and Date Table (TDT) in the transport stream of this output. When you work directly
-        /// in your JSON job specification, include this object only when your job has a transport
-        /// stream output and the container settings contain the object M2tsSettings.
+        /// and Date Table (TDT) in the transport stream of this output.
         /// </summary>
         public DvbTdtSettings DvbTdtSettings
         {
@@ -354,9 +348,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ForceTsVideoEbpOrder. Keep the default value (DEFAULT)
-        /// unless you know that your audio EBP markers are incorrectly appearing before your
-        /// video EBP markers. To correct this problem, set this value to Force (FORCE).
+        /// Gets and sets the property ForceTsVideoEbpOrder. Keep the default value unless you
+        /// know that your audio EBP markers are incorrectly appearing before your video EBP markers.
+        /// To correct this problem, set this value to Force.
         /// </summary>
         public M2tsForceTsVideoEbpOrder ForceTsVideoEbpOrder
         {
@@ -514,7 +508,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property PcrPid. Specify the packet identifier (PID) for the program
         /// clock reference (PCR) in this output. If you do not specify a value, the service will
-        /// use the value for Video PID (VideoPid).
+        /// use the value for Video PID.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
         public int PcrPid
@@ -581,10 +575,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramNumber. Use Program number (programNumber) to specify
-        /// the program number used in the program map table (PMT) for this output. Default is
-        /// 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
-        /// used for organizing data.
+        /// Gets and sets the property ProgramNumber. Use Program number to specify the program
+        /// number used in the program map table (PMT) for this output. Default is 1. Program
+        /// numbers and program map tables are parts of MPEG-2 transport stream containers, used
+        /// for organizing data.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
         public int ProgramNumber
@@ -619,7 +613,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Scte35Esam. Include this in your job settings to put SCTE-35
         /// markers in your HLS and transport stream outputs at the insertion points that you
-        /// specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+        /// specify in an ESAM XML document. Provide the document in the setting SCC XML.
         /// </summary>
         public M2tsScte35Esam Scte35Esam
         {
@@ -652,11 +646,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Scte35Source. For SCTE-35 markers from your input-- Choose
-        /// Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to
-        /// also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in
-        /// this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also
-        /// provide the ESAM XML as a string in the setting Signal processing notification XML
-        /// (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+        /// Passthrough if you want SCTE-35 markers that appear in your input to also appear in
+        /// this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35
+        /// markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string
+        /// in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include
+        /// the property scte35Esam).
         /// </summary>
         public M2tsScte35Source Scte35Source
         {

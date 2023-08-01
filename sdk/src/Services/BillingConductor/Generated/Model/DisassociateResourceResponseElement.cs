@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The resource ARN that was disassociated from the custom line item. 
+        /// The resource ARN that was disassociated from the custom line item. 
         /// </para>
         /// </summary>
         public string Arn

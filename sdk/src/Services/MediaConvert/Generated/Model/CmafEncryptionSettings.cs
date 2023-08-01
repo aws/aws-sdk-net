@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property EncryptionMethod. Specify the encryption scheme that you
         /// want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample
-        /// (SAMPLE-AES) or AES_CTR (AES-CTR).
+        /// or AES_CTR.
         /// </summary>
         public CmafEncryptionType EncryptionMethod
         {

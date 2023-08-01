@@ -56,6 +56,7 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetName;
         private string _clientRequestToken;
         private bool? _disableRollback;
+        private bool? _retainExceptOnCreate;
         private string _stackName;
 
         /// <summary>
@@ -137,6 +138,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDisableRollback()
         {
             return this._disableRollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainExceptOnCreate. 
+        /// <para>
+        /// This deletion policy deletes newly created resources, but retains existing resources,
+        /// when a stack operation is rolled back. This ensures new, empty, and unused resources
+        /// are deleted, while critical resources and their data are retained. <code>RetainExceptOnCreate</code>
+        /// can be specified for any resource that supports the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+        /// DeletionPolicy</a> attribute.
+        /// </para>
+        /// </summary>
+        public bool RetainExceptOnCreate
+        {
+            get { return this._retainExceptOnCreate.GetValueOrDefault(); }
+            set { this._retainExceptOnCreate = value; }
+        }
+
+        // Check to see if RetainExceptOnCreate property is set
+        internal bool IsSetRetainExceptOnCreate()
+        {
+            return this._retainExceptOnCreate.HasValue; 
         }
 
         /// <summary>

@@ -166,6 +166,7 @@ namespace Amazon.SecurityToken.Model
         private string _externalId;
         private string _policy;
         private List<PolicyDescriptorType> _policyArns = new List<PolicyDescriptorType>();
+        private List<ProvidedContext> _providedContexts = new List<ProvidedContext>();
         private string _roleArn;
         private string _roleSessionName;
         private string _serialNumber;
@@ -349,6 +350,25 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetPolicyArns()
         {
             return this._policyArns != null && this._policyArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvidedContexts. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<ProvidedContext> ProvidedContexts
+        {
+            get { return this._providedContexts; }
+            set { this._providedContexts = value; }
+        }
+
+        // Check to see if ProvidedContexts property is set
+        internal bool IsSetProvidedContexts()
+        {
+            return this._providedContexts != null && this._providedContexts.Count > 0; 
         }
 
         /// <summary>

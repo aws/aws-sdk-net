@@ -54,6 +54,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private List<string> _resourceTypes = new List<string>();
+        private bool? _retainExceptOnCreate;
         private string _roleARN;
         private RollbackConfiguration _rollbackConfiguration;
         private string _stackName;
@@ -143,7 +144,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
         /// IAM Resources in CloudFormation Templates</a>.
         /// </para>
         ///  </li> <li> 
@@ -159,8 +160,8 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually updating the stack. If your stack template contains one
         /// or more macros, and you choose to update a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-        /// and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.
         /// </para>
         ///  
@@ -181,7 +182,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
         /// CloudFormation Macros to Perform Custom Processing on Templates</a>.
         /// </para>
         ///  </li> </ul>
@@ -323,6 +324,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetResourceTypes()
         {
             return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainExceptOnCreate. 
+        /// <para>
+        /// This deletion policy deletes newly created resources, but retains existing resources,
+        /// when a stack operation is rolled back. This ensures new, empty, and unused resources
+        /// are deleted, while critical resources and their data are retained. <code>RetainExceptOnCreate</code>
+        /// can be specified for any resource that supports the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+        /// DeletionPolicy</a> attribute.
+        /// </para>
+        /// </summary>
+        public bool RetainExceptOnCreate
+        {
+            get { return this._retainExceptOnCreate.GetValueOrDefault(); }
+            set { this._retainExceptOnCreate = value; }
+        }
+
+        // Check to see if RetainExceptOnCreate property is set
+        internal bool IsSetRetainExceptOnCreate()
+        {
+            return this._retainExceptOnCreate.HasValue; 
         }
 
         /// <summary>

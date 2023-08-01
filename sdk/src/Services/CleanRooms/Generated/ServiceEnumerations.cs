@@ -179,6 +179,52 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisFormat.
+    /// </summary>
+    public class AnalysisFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SQL for AnalysisFormat
+        /// </summary>
+        public static readonly AnalysisFormat SQL = new AnalysisFormat("SQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisFormat FindValue(string value)
+        {
+            return FindValue<AnalysisFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalysisMethod.
     /// </summary>
     public class AnalysisMethod : ConstantClass
@@ -234,6 +280,10 @@ namespace Amazon.CleanRooms
         /// Constant AGGREGATION for AnalysisRuleType
         /// </summary>
         public static readonly AnalysisRuleType AGGREGATION = new AnalysisRuleType("AGGREGATION");
+        /// <summary>
+        /// Constant CUSTOM for AnalysisRuleType
+        /// </summary>
+        public static readonly AnalysisRuleType CUSTOM = new AnalysisRuleType("CUSTOM");
         /// <summary>
         /// Constant LIST for AnalysisRuleType
         /// </summary>
@@ -334,6 +384,10 @@ namespace Amazon.CleanRooms
         /// Constant AGGREGATION for ConfiguredTableAnalysisRuleType
         /// </summary>
         public static readonly ConfiguredTableAnalysisRuleType AGGREGATION = new ConfiguredTableAnalysisRuleType("AGGREGATION");
+        /// <summary>
+        /// Constant CUSTOM for ConfiguredTableAnalysisRuleType
+        /// </summary>
+        public static readonly ConfiguredTableAnalysisRuleType CUSTOM = new ConfiguredTableAnalysisRuleType("CUSTOM");
         /// <summary>
         /// Constant LIST for ConfiguredTableAnalysisRuleType
         /// </summary>
@@ -787,6 +841,108 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type ParameterType.
+    /// </summary>
+    public class ParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BIGINT for ParameterType
+        /// </summary>
+        public static readonly ParameterType BIGINT = new ParameterType("BIGINT");
+        /// <summary>
+        /// Constant BOOLEAN for ParameterType
+        /// </summary>
+        public static readonly ParameterType BOOLEAN = new ParameterType("BOOLEAN");
+        /// <summary>
+        /// Constant CHAR for ParameterType
+        /// </summary>
+        public static readonly ParameterType CHAR = new ParameterType("CHAR");
+        /// <summary>
+        /// Constant DATE for ParameterType
+        /// </summary>
+        public static readonly ParameterType DATE = new ParameterType("DATE");
+        /// <summary>
+        /// Constant DECIMAL for ParameterType
+        /// </summary>
+        public static readonly ParameterType DECIMAL = new ParameterType("DECIMAL");
+        /// <summary>
+        /// Constant DOUBLE_PRECISION for ParameterType
+        /// </summary>
+        public static readonly ParameterType DOUBLE_PRECISION = new ParameterType("DOUBLE_PRECISION");
+        /// <summary>
+        /// Constant INTEGER for ParameterType
+        /// </summary>
+        public static readonly ParameterType INTEGER = new ParameterType("INTEGER");
+        /// <summary>
+        /// Constant REAL for ParameterType
+        /// </summary>
+        public static readonly ParameterType REAL = new ParameterType("REAL");
+        /// <summary>
+        /// Constant SMALLINT for ParameterType
+        /// </summary>
+        public static readonly ParameterType SMALLINT = new ParameterType("SMALLINT");
+        /// <summary>
+        /// Constant TIME for ParameterType
+        /// </summary>
+        public static readonly ParameterType TIME = new ParameterType("TIME");
+        /// <summary>
+        /// Constant TIMESTAMP for ParameterType
+        /// </summary>
+        public static readonly ParameterType TIMESTAMP = new ParameterType("TIMESTAMP");
+        /// <summary>
+        /// Constant TIMESTAMPTZ for ParameterType
+        /// </summary>
+        public static readonly ParameterType TIMESTAMPTZ = new ParameterType("TIMESTAMPTZ");
+        /// <summary>
+        /// Constant TIMETZ for ParameterType
+        /// </summary>
+        public static readonly ParameterType TIMETZ = new ParameterType("TIMETZ");
+        /// <summary>
+        /// Constant VARBYTE for ParameterType
+        /// </summary>
+        public static readonly ParameterType VARBYTE = new ParameterType("VARBYTE");
+        /// <summary>
+        /// Constant VARCHAR for ParameterType
+        /// </summary>
+        public static readonly ParameterType VARCHAR = new ParameterType("VARCHAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterType FindValue(string value)
+        {
+            return FindValue<ParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProtectedQueryStatus.
     /// </summary>
     public class ProtectedQueryStatus : ConstantClass
@@ -1206,6 +1362,10 @@ namespace Amazon.CleanRooms
         /// Constant FIELD_VALIDATION_FAILED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FIELD_VALIDATION_FAILED = new ValidationExceptionReason("FIELD_VALIDATION_FAILED");
+        /// <summary>
+        /// Constant IAM_SYNCHRONIZATION_DELAY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason IAM_SYNCHRONIZATION_DELAY = new ValidationExceptionReason("IAM_SYNCHRONIZATION_DELAY");
         /// <summary>
         /// Constant INVALID_CONFIGURATION for ValidationExceptionReason
         /// </summary>

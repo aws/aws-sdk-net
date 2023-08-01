@@ -45,6 +45,26 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtectedQuerySQLParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAnalysisTemplateArn())
+            {
+                context.Writer.WritePropertyName("analysisTemplateArn");
+                context.Writer.Write(requestObject.AnalysisTemplateArn);
+            }
+
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                        context.Writer.Write(requestObjectParametersValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQueryString())
             {
                 context.Writer.WritePropertyName("queryString");

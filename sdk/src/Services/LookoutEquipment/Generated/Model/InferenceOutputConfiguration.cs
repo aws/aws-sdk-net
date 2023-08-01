@@ -40,7 +40,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID number for the AWS KMS key used to encrypt the inference output. 
+        /// The ID number for the KMS key key used to encrypt the inference output. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

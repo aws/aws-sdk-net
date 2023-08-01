@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
 {
     class CodePipelineSamples : ISample
     {
-        static IAmazonCodePipeline client = new AmazonCodePipelineClient();
         public void CodePipelineAcknowledgeJob()
         {
             #region acknowledge-a-job-for-a-custom-action-1449100979484
 
+            var client = new AmazonCodePipelineClient();
             var response = client.AcknowledgeJob(new AcknowledgeJobRequest 
             {
                 JobId = "11111111-abcd-1111-abcd-111111abcdef", // Use the PollforJobs API to determine the ID of the job.
@@ -31,6 +31,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region create-a-custom-action-1449103500903
 
+            var client = new AmazonCodePipelineClient();
             var response = client.CreateCustomActionType(new CreateCustomActionTypeRequest 
             {
                 Version = "1", // A new custom action always has a version of 1. This is required.
@@ -71,6 +72,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region create-a-pipeline-1449162214392
 
+            var client = new AmazonCodePipelineClient();
             var response = client.CreatePipeline(new CreatePipelineRequest 
             {
                 Pipeline = new PipelineDeclaration {
@@ -145,6 +147,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region delete-a-custom-action-1449163239567
 
+            var client = new AmazonCodePipelineClient();
             var response = client.DeleteCustomActionType(new DeleteCustomActionTypeRequest 
             {
                 Version = "1", // This is the current version number of the custom action.
@@ -160,6 +163,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region delete-a-pipeline-1449163893541
 
+            var client = new AmazonCodePipelineClient();
             var response = client.DeletePipeline(new DeletePipelineRequest 
             {
                 Name = "MySecondPipeline" // The name of the pipeline to delete.
@@ -173,6 +177,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region disable-transitions-into-or-out-of-a-stage-1449164517291
 
+            var client = new AmazonCodePipelineClient();
             var response = client.DisableStageTransition(new DisableStageTransitionRequest 
             {
                 PipelineName = "MyFirstPipeline",
@@ -189,6 +194,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region enable-transitions-into-or-out-of-a-stage-1449164924423
 
+            var client = new AmazonCodePipelineClient();
             var response = client.EnableStageTransition(new EnableStageTransitionRequest 
             {
                 PipelineName = "MyFirstPipeline",
@@ -204,6 +210,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region get-the-details-of-a-job-1449183680273
 
+            var client = new AmazonCodePipelineClient();
             var response = client.GetJobDetails(new GetJobDetailsRequest 
             {
                 JobId = "11111111-abcd-1111-abcd-111111abcdef"
@@ -218,6 +225,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region view-the-structure-of-a-pipeline-1449184156329
 
+            var client = new AmazonCodePipelineClient();
             var response = client.GetPipeline(new GetPipelineRequest 
             {
                 Version = 123, // This is an optional parameter. If you do not specify a version, the most current version of the pipeline structure is returned.
@@ -233,6 +241,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region view-information-about-the-state-of-a-pipeline-1449184486550
 
+            var client = new AmazonCodePipelineClient();
             var response = client.GetPipelineState(new GetPipelineStateRequest 
             {
                 Name = "MyFirstPipeline"
@@ -240,7 +249,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
 
             DateTime created = response.Created; // The value for created and all other time- and date-related information such as lastStatusChange, is returned in timestamp format.
             string pipelineName = response.PipelineName;
-            integer pipelineVersion = response.PipelineVersion;
+            int pipelineVersion = response.PipelineVersion;
             List<StageState> stageStates = response.StageStates;
             DateTime updated = response.Updated;
 
@@ -251,6 +260,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region view-a-summary-of-all-action-types-associated-with-your-account-1455218918202
 
+            var client = new AmazonCodePipelineClient();
             var response = client.ListActionTypes(new ListActionTypesRequest 
             {
                 ActionOwnerFilter = "Custom",
@@ -267,6 +277,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region view-a-summary-of-all-pipelines-associated-with-your-account-1449185747807
 
+            var client = new AmazonCodePipelineClient();
             var response = client.ListPipelines(new ListPipelinesRequest 
             {
             });
@@ -281,6 +292,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region view-any-available-jobs-1449186054484
 
+            var client = new AmazonCodePipelineClient();
             var response = client.PollForJobs(new PollForJobsRequest 
             {
                 ActionTypeId = new ActionTypeId {
@@ -304,6 +316,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region run-the-latest-revision-through-a-pipeline-1449186732433
 
+            var client = new AmazonCodePipelineClient();
             var response = client.StartPipelineExecution(new StartPipelineExecutionRequest 
             {
                 Name = "MyFirstPipeline"
@@ -318,6 +331,7 @@ namespace AWSSDKDocSamples.Amazon.CodePipeline.Generated
         {
             #region update-the-structure-of-a-pipeline-1449186881322
 
+            var client = new AmazonCodePipelineClient();
             var response = client.UpdatePipeline(new UpdatePipelineRequest 
             {
                 Pipeline = new PipelineDeclaration {

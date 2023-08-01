@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Video codec settings, (CodecSettings) under (VideoDescription), contains the group
-    /// of settings related to video encoding. The settings in this group vary depending on
-    /// the value that you choose for Video codec (Codec). For each codec enum that you choose,
-    /// define the corresponding settings object. The following lists the codec enum, settings
-    /// object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
-    /// * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
-    /// * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// Video codec settings contains the group of settings related to video encoding. The
+    /// settings in this group vary depending on the value that you choose for Video codec.
+    /// For each codec enum that you choose, define the corresponding settings object. The
+    /// following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
+    /// AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265,
+    /// H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
+    /// VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     /// </summary>
     public partial class VideoCodecSettings
     {
@@ -108,8 +108,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameCaptureSettings. Required when you set (Codec) under
-        /// (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+        /// Gets and sets the property FrameCaptureSettings. Required when you set Codec to the
+        /// value FRAME_CAPTURE.
         /// </summary>
         public FrameCaptureSettings FrameCaptureSettings
         {
@@ -124,8 +124,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property H264Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value H_264.
+        /// Gets and sets the property H264Settings. Required when you set Codec to the value
+        /// H_264.
         /// </summary>
         public H264Settings H264Settings
         {
@@ -155,8 +155,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mpeg2Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value MPEG2.
+        /// Gets and sets the property Mpeg2Settings. Required when you set Codec to the value
+        /// MPEG2.
         /// </summary>
         public Mpeg2Settings Mpeg2Settings
         {
@@ -171,8 +171,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProresSettings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value PRORES.
+        /// Gets and sets the property ProresSettings. Required when you set Codec to the value
+        /// PRORES.
         /// </summary>
         public ProresSettings ProresSettings
         {
@@ -187,8 +187,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Vc3Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value VC3
+        /// Gets and sets the property Vc3Settings. Required when you set Codec to the value VC3
         /// </summary>
         public Vc3Settings Vc3Settings
         {
@@ -203,8 +202,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Vp8Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value VP8.
+        /// Gets and sets the property Vp8Settings. Required when you set Codec to the value VP8.
         /// </summary>
         public Vp8Settings Vp8Settings
         {
@@ -219,8 +217,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Vp9Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value VP9.
+        /// Gets and sets the property Vp9Settings. Required when you set Codec to the value VP9.
         /// </summary>
         public Vp9Settings Vp9Settings
         {
@@ -235,8 +232,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property XavcSettings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
-        /// to the value XAVC.
+        /// Gets and sets the property XavcSettings. Required when you set Codec to the value
+        /// XAVC.
         /// </summary>
         public XavcSettings XavcSettings
         {

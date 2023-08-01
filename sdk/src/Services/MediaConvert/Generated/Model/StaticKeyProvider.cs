@@ -74,7 +74,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property StaticKeyValue. Relates to DRM implementation. Use a 32-character
-        /// hexidecimal string to specify Key Value (StaticKeyValue).
+        /// hexidecimal string to specify Key Value.
         /// </summary>
         public string StaticKeyValue
         {

@@ -169,7 +169,8 @@ namespace Amazon.OpenSearchServerless
         /// Thrown when an error internal to the service occurs while processing a request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.OcuLimitExceededException">
-        /// OCU Limit Exceeded for service limits
+        /// Thrown when the collection you're attempting to create results in a number of search
+        /// or indexing OCUs that exceeds the account limit.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
         /// Thrown when you attempt to create more resources than the service allows based on

@@ -125,6 +125,152 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type AzureAccessTier.
+    /// </summary>
+    public class AzureAccessTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE for AzureAccessTier
+        /// </summary>
+        public static readonly AzureAccessTier ARCHIVE = new AzureAccessTier("ARCHIVE");
+        /// <summary>
+        /// Constant COOL for AzureAccessTier
+        /// </summary>
+        public static readonly AzureAccessTier COOL = new AzureAccessTier("COOL");
+        /// <summary>
+        /// Constant HOT for AzureAccessTier
+        /// </summary>
+        public static readonly AzureAccessTier HOT = new AzureAccessTier("HOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AzureAccessTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AzureAccessTier FindValue(string value)
+        {
+            return FindValue<AzureAccessTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AzureAccessTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AzureBlobAuthenticationType.
+    /// </summary>
+    public class AzureBlobAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAS for AzureBlobAuthenticationType
+        /// </summary>
+        public static readonly AzureBlobAuthenticationType SAS = new AzureBlobAuthenticationType("SAS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AzureBlobAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AzureBlobAuthenticationType FindValue(string value)
+        {
+            return FindValue<AzureBlobAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AzureBlobAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AzureBlobType.
+    /// </summary>
+    public class AzureBlobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK for AzureBlobType
+        /// </summary>
+        public static readonly AzureBlobType BLOCK = new AzureBlobType("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AzureBlobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AzureBlobType FindValue(string value)
+        {
+            return FindValue<AzureBlobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AzureBlobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiscoveryJobStatus.
     /// </summary>
     public class DiscoveryJobStatus : ConstantClass

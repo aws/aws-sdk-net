@@ -73,6 +73,29 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectorId);
                 }
 
+                if(publicRequest.IsSetLocalDirectoryPath())
+                {
+                    context.Writer.WritePropertyName("LocalDirectoryPath");
+                    context.Writer.Write(publicRequest.LocalDirectoryPath);
+                }
+
+                if(publicRequest.IsSetRemoteDirectoryPath())
+                {
+                    context.Writer.WritePropertyName("RemoteDirectoryPath");
+                    context.Writer.Write(publicRequest.RemoteDirectoryPath);
+                }
+
+                if(publicRequest.IsSetRetrieveFilePaths())
+                {
+                    context.Writer.WritePropertyName("RetrieveFilePaths");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRetrieveFilePathsListValue in publicRequest.RetrieveFilePaths)
+                    {
+                            context.Writer.Write(publicRequestRetrieveFilePathsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSendFilePaths())
                 {
                     context.Writer.WritePropertyName("SendFilePaths");

@@ -2566,6 +2566,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void ListStackInstanceResourceDriftsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStackInstanceResourceDrifts");
+
+            var request = InstantiateClassGenerator.Execute<ListStackInstanceResourceDriftsRequest>();
+            var marshaller = new ListStackInstanceResourceDriftsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListStackInstanceResourceDriftsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListStackInstanceResourceDriftsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListStackInstanceResourceDrifts_OperationNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStackInstanceResourceDrifts");
+
+            var request = InstantiateClassGenerator.Execute<ListStackInstanceResourceDriftsRequest>();
+            var marshaller = new ListStackInstanceResourceDriftsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListStackInstanceResourceDriftsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListStackInstanceResourceDrifts_StackInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStackInstanceResourceDrifts");
+
+            var request = InstantiateClassGenerator.Execute<ListStackInstanceResourceDriftsRequest>();
+            var marshaller = new ListStackInstanceResourceDriftsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StackInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListStackInstanceResourceDriftsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListStackInstanceResourceDrifts_StackSetNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStackInstanceResourceDrifts");
+
+            var request = InstantiateClassGenerator.Execute<ListStackInstanceResourceDriftsRequest>();
+            var marshaller = new ListStackInstanceResourceDriftsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StackSetNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListStackInstanceResourceDriftsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void ListStackInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("ListStackInstances");

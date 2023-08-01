@@ -54,6 +54,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AlarmSpecification", targetDepth))
+                    {
+                        var unmarshaller = AlarmSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.AlarmSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AutoRollback", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

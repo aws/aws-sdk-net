@@ -474,6 +474,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRecipe())
+            {
+                context.Writer.WritePropertyName("Recipe");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecipeMarshaller.Instance;
+                marshaller.Marshall(requestObject.Recipe, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedshiftSource())
             {
                 context.Writer.WritePropertyName("RedshiftSource");
@@ -701,6 +712,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = SelectFromCollectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelectFromCollection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSnowflakeSource())
+            {
+                context.Writer.WritePropertyName("SnowflakeSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnowflakeSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnowflakeSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSnowflakeTarget())
+            {
+                context.Writer.WritePropertyName("SnowflakeTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnowflakeTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnowflakeTarget, context);
 
                 context.Writer.WriteObjectEnd();
             }

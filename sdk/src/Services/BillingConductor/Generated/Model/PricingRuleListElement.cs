@@ -51,7 +51,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) used to uniquely identify a pricing rule. 
+        /// The Amazon Resource Name (ARN) used to uniquely identify a pricing rule.
         /// </para>
         /// </summary>
         public string Arn
@@ -69,7 +69,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AssociatedPricingPlanCount. 
         /// <para>
-        ///  The pricing plans count that this pricing rule is associated with. 
+        /// The pricing plans count that this pricing rule is associated with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -107,7 +107,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time when the pricing rule was created. 
+        /// The time when the pricing rule was created.
         /// </para>
         /// </summary>
         public long CreationTime
@@ -125,7 +125,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The pricing rule description. 
+        /// The pricing rule description.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1024)]
@@ -144,7 +144,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time when the pricing rule was modified. 
+        ///  The most recent time when the pricing rule was modified.
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -162,7 +162,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ModifierPercentage. 
         /// <para>
-        ///  A percentage modifier applied on the public pricing rates. 
+        /// A percentage modifier applied on the public pricing rates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -181,7 +181,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of a pricing rule. 
+        /// The name of a pricing rule.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -226,8 +226,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        ///  The scope of pricing rule that indicates if it is globally applicable, or if it is
-        /// service-specific. 
+        /// The scope of pricing rule that indicates if it is globally applicable, or if it is
+        /// service-specific.
         /// </para>
         /// </summary>
         public PricingRuleScope Scope
@@ -245,8 +245,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        ///  If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates
-        /// which service the <code>PricingRule</code> is applicable for. 
+        /// If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates
+        /// which service the <code>PricingRule</code> is applicable for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -283,7 +283,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of pricing rule. 
+        /// The type of pricing rule.
         /// </para>
         /// </summary>
         public PricingRuleType Type

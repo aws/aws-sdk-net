@@ -140,7 +140,7 @@ namespace Amazon.Connect.Model
         /// The type of phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=6)]
         public List<string> PhoneNumberTypes
         {
             get { return this._phoneNumberTypes; }

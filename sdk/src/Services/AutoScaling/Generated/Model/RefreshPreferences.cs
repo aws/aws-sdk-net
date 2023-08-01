@@ -33,6 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class RefreshPreferences
     {
+        private AlarmSpecification _alarmSpecification;
         private bool? _autoRollback;
         private int? _checkpointDelay;
         private List<int> _checkpointPercentages = new List<int>();
@@ -43,10 +44,30 @@ namespace Amazon.AutoScaling.Model
         private StandbyInstances _standbyInstances;
 
         /// <summary>
+        /// Gets and sets the property AlarmSpecification. 
+        /// <para>
+        /// (Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify
+        /// any issues and fail the operation if an alarm threshold is met.
+        /// </para>
+        /// </summary>
+        public AlarmSpecification AlarmSpecification
+        {
+            get { return this._alarmSpecification; }
+            set { this._alarmSpecification = value; }
+        }
+
+        // Check to see if AlarmSpecification property is set
+        internal bool IsSetAlarmSpecification()
+        {
+            return this._alarmSpecification != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AutoRollback. 
         /// <para>
         /// (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration
-        /// if the instance refresh fails. The default is <code>false</code>.
+        /// if the instance refresh fails or a CloudWatch alarm threshold is met. The default
+        /// is <code>false</code>.
         /// </para>
         ///  
         /// <para>
@@ -66,7 +87,11 @@ namespace Amazon.AutoScaling.Model
         /// The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code>
         /// version.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+        /// changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         public bool AutoRollback
         {

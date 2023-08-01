@@ -67,8 +67,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AnalysisRuleTypes. 
         /// <para>
-        /// The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION.
-        /// Currently, only one entry is present.
+        /// The analysis rule types associated with the schema. Currently, only one entry is present.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

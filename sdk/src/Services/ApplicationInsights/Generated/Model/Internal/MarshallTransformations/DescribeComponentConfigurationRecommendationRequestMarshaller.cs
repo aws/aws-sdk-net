@@ -73,6 +73,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ComponentName);
                 }
 
+                if(publicRequest.IsSetRecommendationType())
+                {
+                    context.Writer.WritePropertyName("RecommendationType");
+                    context.Writer.Write(publicRequest.RecommendationType);
+                }
+
                 if(publicRequest.IsSetResourceGroupName())
                 {
                     context.Writer.WritePropertyName("ResourceGroupName");

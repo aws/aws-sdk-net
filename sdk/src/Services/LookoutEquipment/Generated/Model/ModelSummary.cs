@@ -34,12 +34,54 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ModelSummary
     {
+        private long? _activeModelVersion;
+        private string _activeModelVersionArn;
         private DateTime? _createdAt;
         private string _datasetArn;
         private string _datasetName;
         private string _modelArn;
         private string _modelName;
         private ModelStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ActiveModelVersion. 
+        /// <para>
+        /// The model version that the inference scheduler uses to run an inference execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long ActiveModelVersion
+        {
+            get { return this._activeModelVersion.GetValueOrDefault(); }
+            set { this._activeModelVersion = value; }
+        }
+
+        // Check to see if ActiveModelVersion property is set
+        internal bool IsSetActiveModelVersion()
+        {
+            return this._activeModelVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveModelVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the model version that is set as active. The active
+        /// model version is the model version that the inference scheduler uses to run an inference
+        /// execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ActiveModelVersionArn
+        {
+            get { return this._activeModelVersionArn; }
+            set { this._activeModelVersionArn = value; }
+        }
+
+        // Check to see if ActiveModelVersionArn property is set
+        internal bool IsSetActiveModelVersionArn()
+        {
+            return this._activeModelVersionArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

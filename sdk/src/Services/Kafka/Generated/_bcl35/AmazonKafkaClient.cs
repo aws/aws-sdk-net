@@ -1114,6 +1114,81 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeClusterOperationV2
+
+        /// <summary>
+        /// Returns a description of the cluster operation specified by the ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperationV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterOperationV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
+        public virtual DescribeClusterOperationV2Response DescribeClusterOperationV2(DescribeClusterOperationV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterOperationV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterOperationV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterOperationV2 operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterOperationV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClusterOperationV2(DescribeClusterOperationV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterOperationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterOperationV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterOperationV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterOperationV2.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterOperationV2Result from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
+        public virtual DescribeClusterOperationV2Response EndDescribeClusterOperationV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClusterOperationV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeClusterV2
 
         /// <summary>
@@ -1742,6 +1817,82 @@ namespace Amazon.Kafka
         public virtual ListClusterOperationsResponse EndListClusterOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClusterOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListClusterOperationsV2
+
+        /// <summary>
+        /// Returns a list of all the operations that have been performed on the specified MSK
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperationsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterOperationsV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
+        public virtual ListClusterOperationsV2Response ListClusterOperationsV2(ListClusterOperationsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterOperationsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterOperationsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterOperationsV2 operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterOperationsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
+        public virtual IAsyncResult BeginListClusterOperationsV2(ListClusterOperationsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterOperationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterOperationsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterOperationsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterOperationsV2.</param>
+        /// 
+        /// <returns>Returns a  ListClusterOperationsV2Result from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
+        public virtual ListClusterOperationsV2Response EndListClusterOperationsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClusterOperationsV2Response>(asyncResult);
         }
 
         #endregion

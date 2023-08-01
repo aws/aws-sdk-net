@@ -415,7 +415,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For HTTP API itegrations, without a specified integrationSubtype request parameters
+        /// For HTTP API integrations, without a specified integrationSubtype request parameters
         /// are a key-value map specifying how to transform HTTP requests before sending them
         /// to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;.
         /// The action can be append, overwrite or remove. For values, you can provide static

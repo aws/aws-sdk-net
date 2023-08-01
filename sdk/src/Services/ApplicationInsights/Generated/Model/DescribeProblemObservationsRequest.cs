@@ -34,7 +34,27 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class DescribeProblemObservationsRequest : AmazonApplicationInsightsRequest
     {
+        private string _accountId;
         private string _problemId;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID for the resource group owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ProblemId. 

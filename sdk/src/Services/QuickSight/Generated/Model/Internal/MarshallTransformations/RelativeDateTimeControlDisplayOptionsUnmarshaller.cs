@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DateTimeFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InfoIconLabelOptions", targetDepth))
+                {
+                    var unmarshaller = SheetControlInfoIconLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.InfoIconLabelOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TitleOptions", targetDepth))
                 {
                     var unmarshaller = LabelOptionsUnmarshaller.Instance;

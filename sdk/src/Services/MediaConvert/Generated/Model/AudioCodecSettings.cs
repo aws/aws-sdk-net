@@ -47,12 +47,12 @@ namespace Amazon.MediaConvert.Model
         private WavSettings _wavSettings;
 
         /// <summary>
-        /// Gets and sets the property AacSettings. Required when you set (Codec) under (AudioDescriptions)>(CodecSettings)
-        /// to the value AAC. The service accepts one of two mutually exclusive groups of AAC
-        /// settings--VBR and CBR. To select one of these modes, set the value of Bitrate control
-        /// mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality
-        /// with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate
-        /// (bitrate). Defaults and valid values depend on the rate control mode.
+        /// Gets and sets the property AacSettings. Required when you set Codec to the value AAC.
+        /// The service accepts one of two mutually exclusive groups of AAC settings--VBR and
+        /// CBR. To select one of these modes, set the value of Bitrate control mode to "VBR"
+        /// or "CBR". In VBR mode, you control the audio quality with the setting VBR quality.
+        /// In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the
+        /// rate control mode.
         /// </summary>
         public AacSettings AacSettings
         {
@@ -67,8 +67,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ac3Settings. Required when you set (Codec) under (AudioDescriptions)>(CodecSettings)
-        /// to the value AC3.
+        /// Gets and sets the property Ac3Settings. Required when you set Codec to the value AC3.
         /// </summary>
         public Ac3Settings Ac3Settings
         {
@@ -83,8 +82,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AiffSettings. Required when you set (Codec) under (AudioDescriptions)>(CodecSettings)
-        /// to the value AIFF.
+        /// Gets and sets the property AiffSettings. Required when you set Codec to the value
+        /// AIFF.
         /// </summary>
         public AiffSettings AiffSettings
         {
@@ -100,9 +99,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Codec. Choose the audio codec for this output. Note that
-        /// the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and
-        /// Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported
-        /// with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+        /// the option Dolby Digital passthrough applies only to Dolby Digital and Dolby Digital
+        /// Plus audio inputs. Make sure that you choose a codec that's supported with your output
+        /// container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
         /// For audio-only outputs, make sure that both your input audio codec and your output
         /// audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
         /// and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
@@ -120,8 +119,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Eac3AtmosSettings. Required when you set (Codec) under
-        /// (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+        /// Gets and sets the property Eac3AtmosSettings. Required when you set Codec to the value
+        /// EAC3_ATMOS.
         /// </summary>
         public Eac3AtmosSettings Eac3AtmosSettings
         {
@@ -136,8 +135,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Eac3Settings. Required when you set (Codec) under (AudioDescriptions)>(CodecSettings)
-        /// to the value EAC3.
+        /// Gets and sets the property Eac3Settings. Required when you set Codec to the value
+        /// EAC3.
         /// </summary>
         public Eac3Settings Eac3Settings
         {
@@ -152,8 +151,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mp2Settings. Required when you set (Codec) under (AudioDescriptions)>(CodecSettings)
-        /// to the value MP2.
+        /// Gets and sets the property Mp2Settings. Required when you set Codec to the value MP2.
         /// </summary>
         public Mp2Settings Mp2Settings
         {
@@ -216,8 +214,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WavSettings. Required when you set (Codec) under (AudioDescriptions)>(CodecSettings)
-        /// to the value WAV.
+        /// Gets and sets the property WavSettings. Required when you set Codec to the value WAV.
         /// </summary>
         public WavSettings WavSettings
         {

@@ -30,7 +30,7 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these
-    /// settings only when you set QVBR for Rate control mode (RateControlMode).
+    /// settings only when you set QVBR for Rate control mode.
     /// </summary>
     public partial class H265QvbrSettings
     {
@@ -61,13 +61,13 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property QvbrQualityLevel. Use this setting only when you set Rate
-        /// control mode (RateControlMode) to QVBR. Specify the target quality level for this
-        /// output. MediaConvert determines the right number of bits to use for each part of the
-        /// video to maintain the video quality that you specify. When you keep the default value,
-        /// AUTO, MediaConvert picks a quality level for you, based on characteristics of your
-        /// input video. If you prefer to specify a quality level, specify a number from 1 through
-        /// 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression.
-        /// The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally,
+        /// control mode to QVBR. Specify the target quality level for this output. MediaConvert
+        /// determines the right number of bits to use for each part of the video to maintain
+        /// the video quality that you specify. When you keep the default value, AUTO, MediaConvert
+        /// picks a quality level for you, based on characteristics of your input video. If you
+        /// prefer to specify a quality level, specify a number from 1 through 10. Use higher
+        /// numbers for greater quality. Level 10 results in nearly lossless compression. The
+        /// quality level for most broadcast-quality transcodes is between 6 and 9. Optionally,
         /// to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune.
         /// For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel
         /// to 7 and set qvbrQualityLevelFineTune to .33.

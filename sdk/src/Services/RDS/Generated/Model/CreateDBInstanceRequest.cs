@@ -68,6 +68,7 @@ namespace Amazon.RDS.Model
         private string _dbParameterGroupName;
         private List<string> _dbSecurityGroups = new List<string>();
         private string _dbSubnetGroupName;
+        private string _dbSystemId;
         private bool? _deletionProtection;
         private string _domain;
         private string _domainAuthSecretArn;
@@ -659,84 +660,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The meaning of this parameter differs depending on the database engine.
-        /// </para>
-        ///  <dl> <dt>Amazon Aurora MySQL</dt> <dd> 
-        /// <para>
-        /// The name of the database to create when the primary DB instance of the Aurora MySQL
-        /// DB cluster is created. If you don't specify a value, Amazon RDS doesn't create a database
-        /// in the DB cluster.
+        /// The meaning of this parameter differs according to the database engine you use.
         /// </para>
         ///  
         /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 64 alphanumeric characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be a word reserved by the database engine.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> 
-        /// <para>
-        /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
-        /// DB cluster is created.
+        ///  <b>MySQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>postgres</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 63 alphanumeric characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
-        /// (0 to 9).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be a word reserved by the database engine.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Amazon RDS Custom for Oracle</dt> <dd> 
-        /// <para>
-        /// The Oracle System ID (SID) of the created RDS Custom DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>ORCL</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 8 alphanumeric characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must contain a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be a word reserved by the database engine.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> 
-        /// <para>
-        /// Not applicable. Must be null.
-        /// </para>
-        ///  </dd> <dt>RDS for MariaDB</dt> <dd> 
-        /// <para>
-        /// The name of the database to create when the DB instance is created. If you don't specify
-        /// a value, Amazon RDS doesn't create a database in the DB instance.
+        /// The name of the database to create when the DB instance is created. If this parameter
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -753,12 +686,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the database engine.
+        /// Can't be a word reserved by the specified database engine
         /// </para>
-        ///  </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> 
+        ///  </li> </ul> 
         /// <para>
-        /// The name of the database to create when the DB instance is created. If you don't specify
-        /// a value, Amazon RDS doesn't create a database in the DB instance.
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the database to create when the DB instance is created. If this parameter
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -775,35 +712,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the database engine.
+        /// Can't be a word reserved by the specified database engine
         /// </para>
-        ///  </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> 
+        ///  </li> </ul> 
         /// <para>
-        /// The Oracle System ID (SID) of the created DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>ORCL</code> 
+        ///  <b>PostgreSQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Can't be longer than 8 characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be a word reserved by the database engine, such as the string <code>NULL</code>.
-        /// </para>
-        ///  </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> 
-        /// <para>
-        /// The name of the database to create when the DB instance is created.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>postgres</code> 
+        /// The name of the database to create when the DB instance is created. If this parameter
+        /// isn't specified, a database named <code>postgres</code> is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -820,13 +738,126 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the database engine.
+        /// Can't be a word reserved by the specified database engine
         /// </para>
-        ///  </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> 
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The Oracle System ID (SID) of the created DB instance. If you don't specify a value,
+        /// the default value is <code>ORCL</code>. You can't specify the string <code>null</code>,
+        /// or any other reserved word, for <code>DBName</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ORCL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be longer than 8 characters
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Amazon RDS Custom for Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify
+        /// a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code>
+        /// for CDBs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ORCL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must contain 1 to 8 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must contain a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Amazon RDS Custom for SQL Server</b> 
+        /// </para>
+        ///  
         /// <para>
         /// Not applicable. Must be null.
         /// </para>
-        ///  </dd> </dl>
+        ///  
+        /// <para>
+        ///  <b>SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. Must be null.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the database to create when the primary DB instance of the Aurora MySQL
+        /// DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster,
+        /// no database is created in the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must contain 1 to 64 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Amazon Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
+        /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
+        /// DB cluster, a database named <code>postgres</code> is created in the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must contain 1 to 63 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must begin with a letter. Subsequent characters can be letters, underscores, or
+        /// digits (0 to 9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBName
         {
@@ -936,6 +967,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// The Oracle system identifier (SID), which is the name of the Oracle database instance
+        /// that manages your database files. In this context, the term "Oracle database instance"
+        /// refers exclusively to the system global area (SGA) and Oracle background processes.
+        /// If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle
+        /// SID is also the name of your CDB.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>

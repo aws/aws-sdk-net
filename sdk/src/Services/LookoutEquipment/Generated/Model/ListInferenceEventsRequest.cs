@@ -63,7 +63,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property IntervalEndTime. 
         /// <para>
         /// Returns all the inference events with an end start time equal to or greater than less
-        /// than the end time given
+        /// than the end time given.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

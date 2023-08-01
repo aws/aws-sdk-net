@@ -30,9 +30,10 @@ namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConnection operation.
-    /// Creates a connection that can then be given to other AWS services like CodePipeline
-    /// so that it can access third-party code repositories. The connection is in pending
-    /// status until the third-party connection handshake is completed from the console.
+    /// Creates a connection that can then be given to other Amazon Web Services services
+    /// like CodePipeline so that it can access third-party code repositories. The connection
+    /// is in pending status until the third-party connection handshake is completed from
+    /// the console.
     /// </summary>
     public partial class CreateConnectionRequest : AmazonCodeStarconnectionsRequest
     {
@@ -44,8 +45,7 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.
+        /// The name of the connection to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

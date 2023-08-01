@@ -814,7 +814,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                     ProductArn = "arn:aws:securityhub:us-west-2:123456789012:product/123456789012/default"
                 },
                 MaxResults = 2,
-                StartTime = new DateTime(2021, 9, 30, 8, 53, 35, DateTimeKind.Utc)
+                StartTime = new DateTime(2021, 9, 30, 3, 53, 35, DateTimeKind.Utc)
             });
 
             List<FindingHistoryRecord> records = response.Records;

@@ -723,7 +723,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Deletes a route request parameter.
+        /// Deletes a route request parameter. Supported only for WebSocket APIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteRequestParameter service method.</param>
         /// <param name="cancellationToken">

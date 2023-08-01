@@ -1566,6 +1566,41 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  ListStackInstanceResourceDrifts
+
+
+
+        /// <summary>
+        /// Returns drift information for resources in a stack instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>ListStackInstanceResourceDrifts</code> returns drift information for the most
+        /// recent drift detection operation. If an operation is in progress, it may only return
+        /// partial results.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackInstanceResourceDrifts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStackInstanceResourceDrifts service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackInstanceNotFoundException">
+        /// The specified stack instance doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstanceResourceDrifts">REST API Reference for ListStackInstanceResourceDrifts Operation</seealso>
+        Task<ListStackInstanceResourceDriftsResponse> ListStackInstanceResourceDriftsAsync(ListStackInstanceResourceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListStackInstances
 
 

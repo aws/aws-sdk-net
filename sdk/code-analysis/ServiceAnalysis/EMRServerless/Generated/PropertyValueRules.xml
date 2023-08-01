@@ -317,6 +317,24 @@
     <max>10080</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.CloudWatchLoggingConfiguration.EncryptionKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:(\d{12})?:key\/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.CloudWatchLoggingConfiguration.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.CloudWatchLoggingConfiguration.LogStreamNamePrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[^:*]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.Configuration.Classification</property>
     <min>1</min>
     <max>1024</max>

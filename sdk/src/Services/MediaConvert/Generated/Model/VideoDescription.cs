@@ -30,8 +30,7 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings related to video encoding of your output. The specific video settings depend
-    /// on the video codec that you choose. When you work directly in your JSON job specification,
-    /// include one instance of Video description (VideoDescription) per output.
+    /// on the video codec that you choose.
     /// </summary>
     public partial class VideoDescription
     {
@@ -53,11 +52,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property AfdSignaling. This setting only applies to H.264, H.265,
-        /// and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the
-        /// service includes AFD values in the output video data and what those values are. *
-        /// Choose None to remove all AFD values from this output. * Choose Fixed to ignore input
-        /// AFD values and instead encode the value specified in the job. * Choose Auto to calculate
-        /// output AFD values based on the input AFD scaler data.
+        /// and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes
+        /// AFD values in the output video data and what those values are. * Choose None to remove
+        /// all AFD values from this output. * Choose Fixed to ignore input AFD values and instead
+        /// encode the value specified in the job. * Choose Auto to calculate output AFD values
+        /// based on the input AFD scaler data.
         /// </summary>
         public AfdSignaling AfdSignaling
         {
@@ -89,14 +88,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecSettings. Video codec settings, (CodecSettings) under
-        /// (VideoDescription), contains the group of settings related to video encoding. The
-        /// settings in this group vary depending on the value that you choose for Video codec
-        /// (Codec). For each codec enum that you choose, define the corresponding settings object.
-        /// The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
-        /// AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265,
-        /// H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
-        /// VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+        /// Gets and sets the property CodecSettings. Video codec settings contains the group
+        /// of settings related to video encoding. The settings in this group vary depending on
+        /// the value that you choose for Video codec. For each codec enum that you choose, define
+        /// the corresponding settings object. The following lists the codec enum, settings object
+        /// pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
+        /// * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+        /// * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
         /// </summary>
         public VideoCodecSettings CodecSettings
         {
@@ -111,10 +109,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorMetadata. Choose Insert (INSERT) for this setting
-        /// to include color metadata in this output. Choose Ignore (IGNORE) to exclude color
-        /// metadata from this output. If you don't specify a value, the service sets this to
-        /// Insert by default.
+        /// Gets and sets the property ColorMetadata. Choose Insert for this setting to include
+        /// color metadata in this output. Choose Ignore to exclude color metadata from this output.
+        /// If you don't specify a value, the service sets this to Insert by default.
         /// </summary>
         public ColorMetadata ColorMetadata
         {
@@ -129,8 +126,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Crop. Use Cropping selection (crop) to specify the video
-        /// area that the service will include in the output video frame.
+        /// Gets and sets the property Crop. Use Cropping selection to specify the video area
+        /// that the service will include in the output video frame.
         /// </summary>
         public Rectangle Crop
         {
@@ -148,8 +145,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property DropFrameTimecode. Applies only to 29.97 fps outputs. When
         /// this feature is enabled, the service will use drop-frame timecode on outputs. If it
         /// is not possible to use drop-frame timecode, the system will fall back to non-drop-frame.
-        /// This setting is enabled by default when Timecode insertion (TimecodeInsertion) is
-        /// enabled.
+        /// This setting is enabled by default when Timecode insertion is enabled.
         /// </summary>
         public DropFrameTimecode DropFrameTimecode
         {
@@ -164,9 +160,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FixedAfd. Applies only if you set AFD Signaling(AfdSignaling)
-        /// to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service
-        /// will write on all frames of this video output.
+        /// Gets and sets the property FixedAfd. Applies only if you set AFD Signaling to Fixed.
+        /// Use Fixed to specify a four-bit AFD value which the service will write on all frames
+        /// of this video output.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
         public int FixedAfd
@@ -202,9 +198,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Position. Use Selection placement (position) to define
-        /// the video area in your output frame. The area outside of the rectangle that you specify
-        /// here is black.
+        /// Gets and sets the property Position. Use Selection placement to define the video area
+        /// in your output frame. The area outside of the rectangle that you specify here is black.
         /// </summary>
         public Rectangle Position
         {
@@ -219,13 +214,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RespondToAfd. Use Respond to AFD (RespondToAfd) to specify
-        /// how the service changes the video itself in response to AFD values in the input. *
-        /// Choose Respond to clip the input video frame according to the AFD value, input display
-        /// aspect ratio, and output display aspect ratio. * Choose Passthrough to include the
-        /// input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred
-        /// implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling
-        /// to (AUTO). * Choose None to remove all input AFD values from this output.
+        /// Gets and sets the property RespondToAfd. Use Respond to AFD to specify how the service
+        /// changes the video itself in response to AFD values in the input. * Choose Respond
+        /// to clip the input video frame according to the AFD value, input display aspect ratio,
+        /// and output display aspect ratio. * Choose Passthrough to include the input AFD values.
+        /// Do not choose this when AfdSignaling is set to NONE. A preferred implementation of
+        /// this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None
+        /// to remove all input AFD values from this output.
         /// </summary>
         public RespondToAfd RespondToAfd
         {
@@ -242,10 +237,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ScalingBehavior. Specify how the service handles outputs
         /// that have a different aspect ratio from the input aspect ratio. Choose Stretch to
-        /// output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep
-        /// the setting Default (DEFAULT) to have the service letterbox your video instead. This
-        /// setting overrides any value that you specify for the setting Selection placement (position)
-        /// in this output.
+        /// output to have the service stretch your video image to fit. Keep the setting Default
+        /// to have the service letterbox your video instead. This setting overrides any value
+        /// that you specify for the setting Selection placement in this output.
         /// </summary>
         public ScalingBehavior ScalingBehavior
         {
@@ -260,11 +254,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sharpness. Use Sharpness (Sharpness) setting to specify
-        /// the strength of anti-aliasing. This setting changes the width of the anti-alias filter
-        /// kernel used for scaling. Sharpness only applies if your output resolution is different
-        /// from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended
-        /// for most content.
+        /// Gets and sets the property Sharpness. Use Sharpness setting to specify the strength
+        /// of anti-aliasing. This setting changes the width of the anti-alias filter kernel used
+        /// for scaling. Sharpness only applies if your output resolution is different from your
+        /// input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+        /// most content.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public int Sharpness
@@ -283,15 +277,14 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TimecodeInsertion. Applies only to H.264, H.265, MPEG2,
         /// and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical
         /// to the output frame rate. To include timecodes in this output, set Timecode insertion
-        /// (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED.
-        /// Default is DISABLED. When the service inserts timecodes in an output, by default,
-        /// it uses any embedded timecodes from the input. If none are present, the service will
-        /// set the timecode for the first output frame to zero. To change this default behavior,
-        /// adjust the settings under Timecode configuration (TimecodeConfig). In the console,
-        /// these settings are located under Job > Job settings > Timecode configuration. Note
-        /// - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes
-        /// that are inserted in the output. Source under Job settings > Timecode configuration
-        /// (TimecodeSource) does.
+        /// to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When
+        /// the service inserts timecodes in an output, by default, it uses any embedded timecodes
+        /// from the input. If none are present, the service will set the timecode for the first
+        /// output frame to zero. To change this default behavior, adjust the settings under Timecode
+        /// configuration. In the console, these settings are located under Job > Job settings
+        /// > Timecode configuration. Note - Timecode source under input settings does not affect
+        /// the timecodes that are inserted in the output. Source under Job settings > Timecode
+        /// configuration does.
         /// </summary>
         public VideoTimecodeInsertion TimecodeInsertion
         {
@@ -307,8 +300,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property VideoPreprocessors. Find additional transcoding features
-        /// under Preprocessors (VideoPreprocessors). Enable the features at each output individually.
-        /// These features are disabled by default.
+        /// under Preprocessors. Enable the features at each output individually. These features
+        /// are disabled by default.
         /// </summary>
         public VideoPreprocessor VideoPreprocessors
         {

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value
-    /// FRAME_CAPTURE.
+    /// Required when you set Codec to the value FRAME_CAPTURE.
     /// </summary>
     public partial class FrameCaptureSettings
     {

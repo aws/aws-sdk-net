@@ -30,7 +30,7 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCodegenJob operation.
-    /// Starts a code generation job for for a specified Amplify app and backend environment.
+    /// Starts a code generation job for a specified Amplify app and backend environment.
     /// </summary>
     public partial class StartCodegenJobRequest : AmazonAmplifyUIBuilderRequest
     {

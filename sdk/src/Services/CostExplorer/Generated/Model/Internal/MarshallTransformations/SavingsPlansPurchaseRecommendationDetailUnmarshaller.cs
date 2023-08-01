@@ -148,6 +148,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.HourlyCommitmentToPurchase = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecommendationDetailId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecommendationDetailId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SavingsPlansDetails", targetDepth))
                 {
                     var unmarshaller = SavingsPlansDetailsUnmarshaller.Instance;

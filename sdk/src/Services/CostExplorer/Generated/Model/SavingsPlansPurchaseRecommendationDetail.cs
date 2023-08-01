@@ -47,6 +47,7 @@ namespace Amazon.CostExplorer.Model
         private string _estimatedSavingsPercentage;
         private string _estimatedSPCost;
         private string _hourlyCommitmentToPurchase;
+        private string _recommendationDetailId;
         private SavingsPlansDetails _savingsPlansDetails;
         private string _upfrontCost;
 
@@ -324,6 +325,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetHourlyCommitmentToPurchase()
         {
             return this._hourlyCommitmentToPurchase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationDetailId. 
+        /// <para>
+        /// Contains detailed information about a specific Savings Plan recommendation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string RecommendationDetailId
+        {
+            get { return this._recommendationDetailId; }
+            set { this._recommendationDetailId = value; }
+        }
+
+        // Check to see if RecommendationDetailId property is set
+        internal bool IsSetRecommendationDetailId()
+        {
+            return this._recommendationDetailId != null;
         }
 
         /// <summary>

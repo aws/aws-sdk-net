@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EBS.Model
 {
     /// <summary>
-    /// An internal error has occurred.
+    /// An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+    /// retries</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -71,7 +72,7 @@ namespace Amazon.EBS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InternalServerException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InternalServerException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.EBS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InternalServerException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InternalServerException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 

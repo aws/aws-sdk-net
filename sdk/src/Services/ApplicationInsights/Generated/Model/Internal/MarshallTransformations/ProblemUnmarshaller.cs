@@ -64,6 +64,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AffectedResource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +112,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecurringCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResolutionMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResolutionMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +146,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Visibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

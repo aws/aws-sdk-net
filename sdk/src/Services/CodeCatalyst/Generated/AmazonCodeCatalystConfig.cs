@@ -32,7 +32,7 @@ namespace Amazon.CodeCatalyst
     public partial class AmazonCodeCatalystConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.201.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>

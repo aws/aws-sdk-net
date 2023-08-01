@@ -26,6 +26,16 @@ namespace Amazon.CleanRooms.Model
     {
 
         /// <summary>
+        /// Paginator for ListAnalysisTemplates operation
+        ///</summary>
+        IListAnalysisTemplatesPaginator ListAnalysisTemplates(ListAnalysisTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationAnalysisTemplates operation
+        ///</summary>
+        IListCollaborationAnalysisTemplatesPaginator ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListCollaborations operation
         ///</summary>
         IListCollaborationsPaginator ListCollaborations(ListCollaborationsRequest request);

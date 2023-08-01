@@ -741,11 +741,11 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// When you submit a <code>ChangeResourceRecordSets</code> request, Route 53 propagates
-        /// your changes to all of the Route 53 authoritative DNS servers. While your changes
-        /// are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
-        /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
-        /// Changes generally propagate to all Route 53 name servers within 60 seconds. For more
-        /// information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
+        /// your changes to all of the Route 53 authoritative DNS servers managing the hosted
+        /// zone. While your changes are propagating, <code>GetChange</code> returns a status
+        /// of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns
+        /// a status of <code>INSYNC</code>. Changes generally propagate to all Route 53 name
+        /// servers managing the hosted zone within 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
         /// </para>
         ///  
         /// <para>
@@ -3410,13 +3410,13 @@ namespace Amazon.Route53
         ///  <ul> <li> 
         /// <para>
         ///  <code>PENDING</code> indicates that the changes in this request have not propagated
-        /// to all Amazon Route 53 DNS servers. This is the initial status of all change batch
-        /// requests.
+        /// to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status
+        /// of all change batch requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS
-        /// servers. 
+        /// servers managing the hosted zone. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6155,6 +6155,14 @@ namespace Amazon.Route53
         /// <para>
         /// This call only supports querying public hosted zones.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>TestDnsAnswer </code> returns information similar to what you would expect
+        /// from the answer section of the <code>dig</code> command. Therefore, if you query for
+        /// the name servers of a subdomain that point to the parent name servers, those will
+        /// not be returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer service method.</param>
         /// 

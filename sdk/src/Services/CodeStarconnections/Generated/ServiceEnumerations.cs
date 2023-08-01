@@ -96,6 +96,10 @@ namespace Amazon.CodeStarconnections
         /// Constant GitHubEnterpriseServer for ProviderType
         /// </summary>
         public static readonly ProviderType GitHubEnterpriseServer = new ProviderType("GitHubEnterpriseServer");
+        /// <summary>
+        /// Constant GitLab for ProviderType
+        /// </summary>
+        public static readonly ProviderType GitLab = new ProviderType("GitLab");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -98,9 +98,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property AudioSelectorGroups. Use audio selector groups to combine
         /// multiple sidecar audio inputs so that you can assign them to a single output audio
-        /// tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler
-        /// to assign multiple input tracks into a single audio selector rather than use an audio
-        /// selector group.
+        /// tab. Note that, if you're working with embedded audio, it's simpler to assign multiple
+        /// input tracks into a single audio selector rather than use an audio selector group.
         /// </summary>
         public Dictionary<string, AudioSelectorGroup> AudioSelectorGroups
         {
@@ -115,9 +114,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AudioSelectors. Use Audio selectors (AudioSelectors) to
-        /// specify a track or set of tracks from the input that you will use in your outputs.
-        /// You can use multiple Audio selectors per input.
+        /// Gets and sets the property AudioSelectors. Use Audio selectors to specify a track
+        /// or set of tracks from the input that you will use in your outputs. You can use multiple
+        /// Audio selectors per input.
         /// </summary>
         public Dictionary<string, AudioSelector> AudioSelectors
         {
@@ -149,10 +148,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Crop. Use Cropping selection (crop) to specify the video
-        /// area that the service will include in the output video frame. If you specify a value
-        /// here, it will override any value that you specify in the output setting Cropping selection
-        /// (crop).
+        /// Gets and sets the property Crop. Use Cropping selection to specify the video area
+        /// that the service will include in the output video frame. If you specify a value here,
+        /// it will override any value that you specify in the output setting Cropping selection.
         /// </summary>
         public Rectangle Crop
         {
@@ -167,9 +165,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeblockFilter. Enable Deblock (InputDeblockFilter) to produce
-        /// smoother motion in the output. Default is disabled. Only manually controllable for
-        /// MPEG2 and uncompressed video inputs.
+        /// Gets and sets the property DeblockFilter. Enable Deblock to produce smoother motion
+        /// in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed
+        /// video inputs.
         /// </summary>
         public InputDeblockFilter DeblockFilter
         {
@@ -184,9 +182,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DenoiseFilter. Enable Denoise (InputDenoiseFilter) to filter
-        /// noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265,
-        /// and uncompressed video inputs.
+        /// Gets and sets the property DenoiseFilter. Enable Denoise to filter noise from the
+        /// input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed
+        /// video inputs.
         /// </summary>
         public InputDenoiseFilter DenoiseFilter
         {
@@ -281,12 +279,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputClippings. (InputClippings) contains sets of start
-        /// and end times that together specify a portion of the input to be used in the outputs.
-        /// If you provide only a start time, the clip will be the entire input from that point
-        /// to the end. If you provide only an end time, it will be the entire input up to that
-        /// point. When you specify more than one input clip, the transcoding service creates
-        /// the job outputs by stringing the clips together in the order you specify them.
+        /// Gets and sets the property InputClippings. Contains sets of start and end times that
+        /// together specify a portion of the input to be used in the outputs. If you provide
+        /// only a start time, the clip will be the entire input from that point to the end. If
+        /// you provide only an end time, it will be the entire input up to that point. When you
+        /// specify more than one input clip, the transcoding service creates the job outputs
+        /// by stringing the clips together in the order you specify them.
         /// </summary>
         public List<InputClipping> InputClippings
         {
@@ -305,9 +303,9 @@ namespace Amazon.MediaConvert.Model
         /// (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically
         /// detect PsF. Therefore, flagging your input as PsF results in better preservation of
         /// video quality when you do deinterlacing and frame rate conversion. If you don't specify,
-        /// the default value is Auto (AUTO). Auto is the correct setting for all inputs that
-        /// are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
-        /// horizontal interlacing artifacts.
+        /// the default value is Auto. Auto is the correct setting for all inputs that are not
+        /// PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal
+        /// interlacing artifacts.
         /// </summary>
         public InputScanType InputScanType
         {
@@ -322,13 +320,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Position. Use Selection placement (position) to define
-        /// the video area in your output frame. The area outside of the rectangle that you specify
-        /// here is black. If you specify a value here, it will override any value that you specify
-        /// in the output setting Selection placement (position). If you specify a value here,
-        /// this will override any AFD values in your input, even if you set Respond to AFD (RespondToAfd)
-        /// to Respond (RESPOND). If you specify a value here, this will ignore anything that
-        /// you specify for the setting Scaling Behavior (scalingBehavior).
+        /// Gets and sets the property Position. Use Selection placement to define the video area
+        /// in your output frame. The area outside of the rectangle that you specify here is black.
+        /// If you specify a value here, it will override any value that you specify in the output
+        /// setting Selection placement. If you specify a value here, this will override any AFD
+        /// values in your input, even if you set Respond to AFD to Respond. If you specify a
+        /// value here, this will ignore anything that you specify for the setting Scaling Behavior.
         /// </summary>
         public Rectangle Position
         {
@@ -343,10 +340,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramNumber. Use Program (programNumber) to select a
-        /// specific program from within a multi-program transport stream. Note that Quad 4K is
-        /// not currently supported. Default is the first program within the transport stream.
-        /// If the program you specify doesn't exist, the transcoding service will use this default.
+        /// Gets and sets the property ProgramNumber. Use Program to select a specific program
+        /// from within a multi-program transport stream. Note that Quad 4K is not currently supported.
+        /// Default is the first program within the transport stream. If the program you specify
+        /// doesn't exist, the transcoding service will use this default.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int ProgramNumber
@@ -362,9 +359,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PsiControl. Set PSI control (InputPsiControl) for transport
-        /// stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan
-        /// all PIDs for audio and video. * Use PSI - Scan only PSI data.
+        /// Gets and sets the property PsiControl. Set PSI control for transport stream inputs
+        /// to specify which data the demux process to scans.* Ignore PSI - Scan all PIDs for
+        /// audio and video.* Use PSI - Scan only PSI data.
         /// </summary>
         public InputPsiControl PsiControl
         {
@@ -380,13 +377,12 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TimecodeSource. Use this Timecode source setting, located
-        /// under the input settings (InputTimecodeSource), to specify how the service counts
-        /// input video frames. This input frame count affects only the behavior of features that
-        /// apply to a single input at a time, such as input clipping and synchronizing some captions
-        /// formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose
-        /// Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start
-        /// (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the
-        /// setting Start timecode (timecodeStart). If you don't specify a value for Timecode
+        /// under the input settings, to specify how the service counts input video frames. This
+        /// input frame count affects only the behavior of features that apply to a single input
+        /// at a time, such as input clipping and synchronizing some captions formats. Choose
+        /// Embedded to use the timecodes in your input video. Choose Start at zero to start the
+        /// first frame at zero. Choose Specified start to start the first frame at the timecode
+        /// that you specify in the setting Start timecode. If you don't specify a value for Timecode
         /// source, the service will use Embedded by default. For more information about timecodes,
         /// see https://docs.aws.amazon.com/console/mediaconvert/timecode.
         /// </summary>
@@ -405,8 +401,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property TimecodeStart. Specify the timecode that you want the service
         /// to use for this input's initial frame. To use this setting, you must set the Timecode
-        /// source setting, located under the input settings (InputTimecodeSource), to Specified
-        /// start (SPECIFIEDSTART). For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+        /// source setting, located under the input settings, to Specified start. For more information
+        /// about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
         /// </summary>
         [AWSProperty(Min=11, Max=11)]
         public string TimecodeStart

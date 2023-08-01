@@ -70,6 +70,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DisableRollback", StringUtils.FromBool(publicRequest.DisableRollback));
                 }
+                if(publicRequest.IsSetRetainExceptOnCreate())
+                {
+                    request.Parameters.Add("RetainExceptOnCreate", StringUtils.FromBool(publicRequest.RetainExceptOnCreate));
+                }
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));

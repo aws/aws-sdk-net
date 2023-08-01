@@ -437,7 +437,7 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-        /// resolution</a>: set <code>Matching</code> to true. 
+        /// resolution</a>: set <code>Matching</code> to true.
         /// </para>
         ///  
         /// <para>
@@ -2149,6 +2149,77 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetSimilarProfiles
+
+        /// <summary>
+        /// Returns a set of profiles that belong to the same matching group using the <code>matchId</code>
+        /// or <code>profileId</code>. You can also specify the type of matching that you want
+        /// for finding similar profiles using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSimilarProfiles service method.</param>
+        /// 
+        /// <returns>The response from the GetSimilarProfiles service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
+        public virtual GetSimilarProfilesResponse GetSimilarProfiles(GetSimilarProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSimilarProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSimilarProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSimilarProfiles operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSimilarProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
+        public virtual IAsyncResult BeginGetSimilarProfiles(GetSimilarProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSimilarProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSimilarProfiles.</param>
+        /// 
+        /// <returns>Returns a  GetSimilarProfilesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
+        public virtual GetSimilarProfilesResponse EndGetSimilarProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSimilarProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetWorkflow
 
         /// <summary>
@@ -2978,6 +3049,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListRuleBasedMatches
+
+        /// <summary>
+        /// Returns a set of <code>MatchIds</code> that belong to the given domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleBasedMatches service method.</param>
+        /// 
+        /// <returns>The response from the ListRuleBasedMatches service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
+        public virtual ListRuleBasedMatchesResponse ListRuleBasedMatches(ListRuleBasedMatchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleBasedMatchesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRuleBasedMatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleBasedMatches operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRuleBasedMatches
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
+        public virtual IAsyncResult BeginListRuleBasedMatches(ListRuleBasedMatchesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRuleBasedMatches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRuleBasedMatches.</param>
+        /// 
+        /// <returns>Returns a  ListRuleBasedMatchesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
+        public virtual ListRuleBasedMatchesResponse EndListRuleBasedMatches(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRuleBasedMatchesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -3780,7 +3920,7 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-        /// resolution</a>: set <code>Matching</code> to true. 
+        /// resolution</a>: set <code>Matching</code> to true.
         /// </para>
         ///  
         /// <para>

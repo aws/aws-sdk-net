@@ -33,9 +33,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkCardInfo
     {
+        private double? _baselineBandwidthInGbps;
         private int? _maximumNetworkInterfaces;
         private int? _networkCardIndex;
         private string _networkPerformance;
+        private double? _peakBandwidthInGbps;
+
+        /// <summary>
+        /// Gets and sets the property BaselineBandwidthInGbps. 
+        /// <para>
+        /// The baseline network performance of the network card, in Gbps.
+        /// </para>
+        /// </summary>
+        public double BaselineBandwidthInGbps
+        {
+            get { return this._baselineBandwidthInGbps.GetValueOrDefault(); }
+            set { this._baselineBandwidthInGbps = value; }
+        }
+
+        // Check to see if BaselineBandwidthInGbps property is set
+        internal bool IsSetBaselineBandwidthInGbps()
+        {
+            return this._baselineBandwidthInGbps.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaximumNetworkInterfaces. 
@@ -89,6 +109,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkPerformance()
         {
             return this._networkPerformance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeakBandwidthInGbps. 
+        /// <para>
+        /// The peak (burst) network performance of the network card, in Gbps.
+        /// </para>
+        /// </summary>
+        public double PeakBandwidthInGbps
+        {
+            get { return this._peakBandwidthInGbps.GetValueOrDefault(); }
+            set { this._peakBandwidthInGbps = value; }
+        }
+
+        // Check to see if PeakBandwidthInGbps property is set
+        internal bool IsSetPeakBandwidthInGbps()
+        {
+            return this._peakBandwidthInGbps.HasValue; 
         }
 
     }

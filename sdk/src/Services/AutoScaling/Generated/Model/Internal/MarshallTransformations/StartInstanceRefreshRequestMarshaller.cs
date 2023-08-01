@@ -359,6 +359,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPreferences())
                 {
+                    if(publicRequest.Preferences.IsSetAlarmSpecification())
+                    {
+                        if(publicRequest.Preferences.AlarmSpecification.IsSetAlarms())
+                        {
+                            int publicRequestPreferencesAlarmSpecificationlistValueIndex = 1;
+                            foreach(var publicRequestPreferencesAlarmSpecificationlistValue in publicRequest.Preferences.AlarmSpecification.Alarms)
+                            {
+                                request.Parameters.Add("Preferences" + "." + "AlarmSpecification" + "." + "Alarms" + "." + "member" + "." + publicRequestPreferencesAlarmSpecificationlistValueIndex, StringUtils.FromString(publicRequestPreferencesAlarmSpecificationlistValue));
+                                publicRequestPreferencesAlarmSpecificationlistValueIndex++;
+                            }
+                        }
+                    }
                     if(publicRequest.Preferences.IsSetAutoRollback())
                     {
                         request.Parameters.Add("Preferences" + "." + "AutoRollback", StringUtils.FromBool(publicRequest.Preferences.AutoRollback));

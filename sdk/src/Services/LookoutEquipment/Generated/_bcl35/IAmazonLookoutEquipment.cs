@@ -51,9 +51,8 @@ namespace Amazon.LookoutEquipment
         /// <summary>
         /// Creates a container for a collection of data being ingested for analysis. The dataset
         /// contains the metadata describing where the data is and what the data actually looks
-        /// like. In other words, it contains the location of the data source, the data schema,
-        /// and other information. A dataset also contains any tags associated with the ingested
-        /// data.
+        /// like. For example, it contains the location of the data source, the data schema, and
+        /// other information. A dataset also contains any tags associated with the ingested data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -76,7 +75,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         CreateDatasetResponse CreateDataset(CreateDatasetRequest request);
@@ -144,7 +143,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
         CreateInferenceSchedulerResponse CreateInferenceScheduler(CreateInferenceSchedulerRequest request);
@@ -208,7 +207,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
         CreateLabelResponse CreateLabel(CreateLabelRequest request);
@@ -268,7 +267,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
         CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request);
@@ -347,7 +346,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
         CreateModelResponse CreateModel(CreateModelRequest request);
@@ -412,7 +411,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
@@ -474,7 +473,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
         DeleteInferenceSchedulerResponse DeleteInferenceScheduler(DeleteInferenceSchedulerRequest request);
@@ -535,7 +534,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         DeleteLabelResponse DeleteLabel(DeleteLabelRequest request);
@@ -596,7 +595,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
         DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request);
@@ -659,7 +658,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         DeleteModelResponse DeleteModel(DeleteModelRequest request);
@@ -692,6 +691,67 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes the resource policy attached to the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDataIngestionJob
 
 
@@ -717,7 +777,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
         DescribeDataIngestionJobResponse DescribeDataIngestionJob(DescribeDataIngestionJobRequest request);
@@ -775,7 +835,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request);
@@ -833,7 +893,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
         DescribeInferenceSchedulerResponse DescribeInferenceScheduler(DescribeInferenceSchedulerRequest request);
@@ -890,7 +950,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
         DescribeLabelResponse DescribeLabel(DescribeLabelRequest request);
@@ -947,7 +1007,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
         DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request);
@@ -1005,7 +1065,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         DescribeModelResponse DescribeModel(DescribeModelRequest request);
@@ -1038,6 +1098,248 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  DescribeModelVersion
+
+
+        /// <summary>
+        /// Retrieves information about a specific machine learning model version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        DescribeModelVersionResponse DescribeModelVersion(DescribeModelVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelVersion operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeModelVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        IAsyncResult BeginDescribeModelVersion(DescribeModelVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeModelVersion.</param>
+        /// 
+        /// <returns>Returns a  DescribeModelVersionResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
+        DescribeModelVersionResponse EndDescribeModelVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeResourcePolicy
+
+
+        /// <summary>
+        /// Provides the details of a resource policy attached to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        IAsyncResult BeginDescribeResourcePolicy(DescribeResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DescribeResourcePolicyResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        DescribeResourcePolicyResponse EndDescribeResourcePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportDataset
+
+
+        /// <summary>
+        /// Imports a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDataset service method.</param>
+        /// 
+        /// <returns>The response from the ImportDataset service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        ImportDatasetResponse ImportDataset(ImportDatasetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDataset operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        IAsyncResult BeginImportDataset(ImportDatasetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportDataset.</param>
+        /// 
+        /// <returns>Returns a  ImportDatasetResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
+        ImportDatasetResponse EndImportDataset(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportModelVersion
+
+
+        /// <summary>
+        /// Imports a model that has been trained successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the ImportModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        ImportModelVersionResponse ImportModelVersion(ImportModelVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportModelVersion operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportModelVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        IAsyncResult BeginImportModelVersion(ImportModelVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportModelVersion.</param>
+        /// 
+        /// <returns>Returns a  ImportModelVersionResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
+        ImportModelVersionResponse EndImportModelVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDataIngestionJobs
 
 
@@ -1059,7 +1361,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
         ListDataIngestionJobsResponse ListDataIngestionJobs(ListDataIngestionJobsRequest request);
@@ -1112,7 +1414,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
@@ -1169,7 +1471,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
         ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request);
@@ -1227,7 +1529,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
         ListInferenceExecutionsResponse ListInferenceExecutions(ListInferenceExecutionsRequest request);
@@ -1280,7 +1582,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
         ListInferenceSchedulersResponse ListInferenceSchedulers(ListInferenceSchedulersRequest request);
@@ -1333,7 +1635,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
         ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request);
@@ -1386,7 +1688,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
         ListLabelsResponse ListLabels(ListLabelsRequest request);
@@ -1440,7 +1742,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
         ListModelsResponse ListModels(ListModelsRequest request);
@@ -1473,6 +1775,65 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  ListModelVersions
+
+
+        /// <summary>
+        /// Generates a list of all model versions for a given model, including the model version,
+        /// model version ARN, and status. To list a subset of versions, use the <code>MaxModelVersion</code>
+        /// and <code>MinModelVersion</code> fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListModelVersions service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        ListModelVersionsResponse ListModelVersions(ListModelVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelVersions operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListModelVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        IAsyncResult BeginListModelVersions(ListModelVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListModelVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListModelVersions.</param>
+        /// 
+        /// <returns>Returns a  ListModelVersionsResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
+        ListModelVersionsResponse EndListModelVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListSensorStatistics
 
 
@@ -1499,7 +1860,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
         ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request);
@@ -1556,7 +1917,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1586,6 +1947,70 @@ namespace Amazon.LookoutEquipment
         /// <returns>Returns a  ListTagsForResourceResult from LookoutEquipment.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates a resource control policy for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1620,7 +2045,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
         StartDataIngestionJobResponse StartDataIngestionJob(StartDataIngestionJobRequest request);
@@ -1681,7 +2106,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
         StartInferenceSchedulerResponse StartInferenceScheduler(StartInferenceSchedulerRequest request);
@@ -1742,7 +2167,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
         StopInferenceSchedulerResponse StopInferenceScheduler(StopInferenceSchedulerRequest request);
@@ -1806,7 +2231,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1863,7 +2288,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1896,6 +2321,67 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  UpdateActiveModelVersion
+
+
+        /// <summary>
+        /// Sets the active model version for a given machine learning model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActiveModelVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateActiveModelVersion service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        UpdateActiveModelVersionResponse UpdateActiveModelVersion(UpdateActiveModelVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateActiveModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateActiveModelVersion operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateActiveModelVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        IAsyncResult BeginUpdateActiveModelVersion(UpdateActiveModelVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateActiveModelVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateActiveModelVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateActiveModelVersionResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
+        UpdateActiveModelVersionResponse EndUpdateActiveModelVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateInferenceScheduler
 
 
@@ -1924,7 +2410,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
         UpdateInferenceSchedulerResponse UpdateInferenceScheduler(UpdateInferenceSchedulerRequest request);
@@ -1985,7 +2471,7 @@ namespace Amazon.LookoutEquipment
         /// </exception>
         /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
         /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
-        /// or a related AWS service that's being utilized.
+        /// or a related Amazon Web Services service that's being utilized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
         UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request);

@@ -4232,6 +4232,17 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Recipe.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RecipeReference.RecipeArn</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RecipeReference.RecipeVersion</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.RedshiftSource.Database</property>
   </property-value-rule>
   <property-value-rule>
@@ -4624,6 +4635,31 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.SessionCommand.PythonVersion</property>
     <pattern>^([2-3]|3[.]9)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeNodeData.MergeAction</property>
+    <pattern>[A-Za-z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeNodeData.MergeWhenMatched</property>
+    <pattern>[A-Za-z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeNodeData.MergeWhenNotMatched</property>
+    <pattern>[A-Za-z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeNodeData.SourceType</property>
+    <pattern>[A-Za-z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeNodeData.TempDir</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeSource.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SnowflakeTarget.Name</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SortCriterion.FieldName</property>

@@ -503,16 +503,25 @@ namespace Amazon.SQS
         #region  CancelMessageMoveTask
 
         /// <summary>
-        /// Cancels a specified message movement task.
+        /// Cancels a specified message movement task. A message movement can only be cancelled
+        /// when the current status is RUNNING. Cancelling a message movement task does not revert
+        /// the messages that have already been moved. It can only stop the messages that have
+        /// not been moved yet.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// A message movement can only be cancelled when the current status is RUNNING.
+        /// This action is currently limited to supporting message redrive from <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+        /// queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue
+        /// (DLQ), while the destination queue can be the original source queue (from which the
+        /// messages were driven to the dead-letter-queue), or a custom destination queue. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cancelling a message movement task does not revert the messages that have already
-        /// been moved. It can only stop the messages that have not been moved yet.
+        /// Currently, only standard queues are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only one active message movement task is supported per queue at any given time.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -1773,6 +1782,23 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Gets the most recent message movement tasks (up to 10) under a specific source queue.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// This action is currently limited to supporting message redrive from <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+        /// queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue
+        /// (DLQ), while the destination queue can be the original source queue (from which the
+        /// messages were driven to the dead-letter-queue), or a custom destination queue. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Currently, only standard queues are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only one active message movement task is supported per queue at any given time.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMessageMoveTasks service method.</param>
         /// 
@@ -2008,7 +2034,8 @@ namespace Amazon.SQS
         #region  PurgeQueue
 
         /// <summary>
-        /// Deletes the messages in a queue specified by the <code>QueueURL</code> parameter.
+        /// Deletes available messages in a queue (including in-flight messages) specified by
+        /// the <code>QueueURL</code> parameter.
         /// 
         ///  <important> 
         /// <para>
@@ -2051,7 +2078,8 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Deletes the messages in a queue specified by the <code>QueueURL</code> parameter.
+        /// Deletes available messages in a queue (including in-flight messages) specified by
+        /// the <code>QueueURL</code> parameter.
         /// 
         ///  <important> 
         /// <para>
@@ -2893,14 +2921,21 @@ namespace Amazon.SQS
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// This action is currently limited to supporting message redrive from dead-letter queues
-        /// (DLQs) only. In this context, the source queue is the dead-letter queue (DLQ), while
-        /// the destination queue can be the original source queue (from which the messages were
-        /// driven to the dead-letter-queue), or a custom destination queue. 
+        /// This action is currently limited to supporting message redrive from queues that are
+        /// configured as <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+        /// queues (DLQs)</a> of other Amazon SQS queues only. Non-SQS queue sources of dead-letter
+        /// queues, such as Lambda or Amazon SNS topics, are currently not supported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, only standard queues are supported.
+        /// In dead-letter queues redrive context, the <code>StartMessageMoveTask</code> the source
+        /// queue is the DLQ, while the destination queue can be the original source queue (from
+        /// which the messages were driven to the dead-letter-queue), or a custom destination
+        /// queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Currently, only standard queues support redrive. FIFO queues don't support redrive.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFHIRDatastore operation.
-    /// Creates a Data Store that can ingest and export FHIR formatted data.
+    /// Creates a data store that can ingest and export FHIR formatted data.
     /// </summary>
     public partial class CreateFHIRDatastoreRequest : AmazonHealthLakeRequest
     {
@@ -64,7 +64,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreName. 
         /// <para>
-        /// The user generated name for the Data Store.
+        /// The user generated name for the data store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -83,7 +83,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreTypeVersion. 
         /// <para>
-        /// The FHIR version of the Data Store. The only supported version is R4.
+        /// The FHIR version of the data store. The only supported version is R4.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderConfiguration. 
         /// <para>
-        /// The configuration of the identity provider that you want to use for your Data Store.
+        /// The configuration of the identity provider that you want to use for your data store.
         /// </para>
         /// </summary>
         public IdentityProviderConfiguration IdentityProviderConfiguration
@@ -120,7 +120,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property PreloadDataConfig. 
         /// <para>
-        /// Optional parameter to preload data upon creation of the Data Store. Currently, the
+        /// Optional parameter to preload data upon creation of the data store. Currently, the
         /// only supported preloaded data is synthetic data generated from Synthea.
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.HealthLake.Model
         /// Gets and sets the property SseConfiguration. 
         /// <para>
         ///  The server-side encryption key configuration for a customer provided encryption key
-        /// specified for creating a Data Store. 
+        /// specified for creating a data store. 
         /// </para>
         /// </summary>
         public SseConfiguration SseConfiguration
@@ -158,7 +158,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Resource tags that are applied to a Data Store when it is created. 
+        ///  Resource tags that are applied to a data store when it is created. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

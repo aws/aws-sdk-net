@@ -82,6 +82,12 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("integrationConfiguration", targetDepth))
+                {
+                    var unmarshaller = AssistantIntegrationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IntegrationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

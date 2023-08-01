@@ -69,6 +69,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MessagesPerSecond);
             }
 
+            if(requestObject.IsSetTimeframeCap())
+            {
+                context.Writer.WritePropertyName("TimeframeCap");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JourneyTimeframeCapMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeframeCap, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTotalCap())
+            {
+                context.Writer.WritePropertyName("TotalCap");
+                context.Writer.Write(requestObject.TotalCap);
+            }
+
         }
 
         /// <summary>

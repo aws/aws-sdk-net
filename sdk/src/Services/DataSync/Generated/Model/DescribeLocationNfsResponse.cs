@@ -98,7 +98,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The NFS mount options that DataSync used to mount your NFS share.
+        /// The mount options that DataSync uses to mount your NFS share.
         /// </para>
         /// </summary>
         public NfsMountOptions MountOptions

@@ -59,6 +59,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsBabelfish;
         private bool? _supportsCertificateRotationWithoutRestart;
         private bool? _supportsGlobalDatabases;
+        private bool? _supportsLocalWriteForwarding;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
         private bool? _supportsReadReplica;
@@ -584,6 +585,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsGlobalDatabases()
         {
             return this._supportsGlobalDatabases.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsLocalWriteForwarding. 
+        /// <para>
+        /// A value that indicates whether the DB engine version supports forwarding write operations
+        /// from reader DB instances to the writer DB instance in the DB cluster. By default,
+        /// write operations aren't allowed on reader DB instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public bool SupportsLocalWriteForwarding
+        {
+            get { return this._supportsLocalWriteForwarding.GetValueOrDefault(); }
+            set { this._supportsLocalWriteForwarding = value; }
+        }
+
+        // Check to see if SupportsLocalWriteForwarding property is set
+        internal bool IsSetSupportsLocalWriteForwarding()
+        {
+            return this._supportsLocalWriteForwarding.HasValue; 
         }
 
         /// <summary>

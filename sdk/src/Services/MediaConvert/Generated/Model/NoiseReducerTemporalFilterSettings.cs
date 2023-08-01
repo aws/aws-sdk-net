@@ -58,15 +58,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostTemporalSharpening. When you set Noise reducer (noiseReducer)
-        /// to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You
-        /// can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening
-        /// to the edges of your output. Note that Post temporal sharpening will also make the
-        /// bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
-        /// allows the transcoder to determine whether to apply sharpening, depending on your
-        /// input type and quality. When you set Post temporal sharpening to Enabled (ENABLED),
-        /// specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength).
-        /// Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+        /// Gets and sets the property PostTemporalSharpening. When you set Noise reducer to Temporal,
+        /// the bandwidth and sharpness of your output is reduced. You can optionally use Post
+        /// temporal sharpening to apply sharpening to the edges of your output. Note that Post
+        /// temporal sharpening will also make the bandwidth reduction from the Noise reducer
+        /// smaller. The default behavior, Auto, allows the transcoder to determine whether to
+        /// apply sharpening, depending on your input type and quality. When you set Post temporal
+        /// sharpening to Enabled, specify how much sharpening is applied using Post temporal
+        /// sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
         /// </summary>
         public NoiseFilterPostTemporalSharpening PostTemporalSharpening
         {
@@ -82,9 +81,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PostTemporalSharpeningStrength. Use Post temporal sharpening
-        /// strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder
-        /// applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium
-        /// (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
+        /// strength to define the amount of sharpening the transcoder applies to your output.
+        /// Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount
+        /// of sharpening.
         /// </summary>
         public NoiseFilterPostTemporalSharpeningStrength PostTemporalSharpeningStrength
         {

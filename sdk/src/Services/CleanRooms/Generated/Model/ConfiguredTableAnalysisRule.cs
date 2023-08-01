@@ -119,7 +119,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.
+        /// The type of configured table analysis rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

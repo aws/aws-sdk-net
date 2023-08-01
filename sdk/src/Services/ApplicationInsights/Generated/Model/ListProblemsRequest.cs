@@ -34,12 +34,33 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ListProblemsRequest : AmazonApplicationInsightsRequest
     {
+        private string _accountId;
         private string _componentName;
         private DateTime? _endTime;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceGroupName;
         private DateTime? _startTime;
+        private Visibility _visibility;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The AWS account ID for the resource group owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -154,6 +175,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Visibility. 
+        /// <para>
+        /// Specifies whether or not you can view the problem. If not specified, visible and ignored
+        /// problems are returned.
+        /// </para>
+        /// </summary>
+        public Visibility Visibility
+        {
+            get { return this._visibility; }
+            set { this._visibility = value; }
+        }
+
+        // Check to see if Visibility property is set
+        internal bool IsSetVisibility()
+        {
+            return this._visibility != null;
         }
 
     }

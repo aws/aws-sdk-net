@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ConfiguredTableAnalysisRulePolicyV1
     {
         private AnalysisRuleAggregation _aggregation;
+        private AnalysisRuleCustom _custom;
         private AnalysisRuleList _list;
 
         /// <summary>
@@ -52,6 +53,21 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAggregation()
         {
             return this._aggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Custom.
+        /// </summary>
+        public AnalysisRuleCustom Custom
+        {
+            get { return this._custom; }
+            set { this._custom = value; }
+        }
+
+        // Check to see if Custom property is set
+        internal bool IsSetCustom()
+        {
+            return this._custom != null;
         }
 
         /// <summary>

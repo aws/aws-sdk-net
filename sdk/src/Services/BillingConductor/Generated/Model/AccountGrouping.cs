@@ -30,17 +30,37 @@ namespace Amazon.BillingConductor.Model
 {
     /// <summary>
     /// The set of accounts that will be under the billing group. The set of accounts resemble
-    /// the linked accounts in a consolidated family.
+    /// the linked accounts in a consolidated billing family.
     /// </summary>
     public partial class AccountGrouping
     {
+        private bool? _autoAssociate;
         private List<string> _linkedAccountIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AutoAssociate. 
+        /// <para>
+        /// Specifies if this billing group will automatically associate newly added Amazon Web
+        /// Services accounts that join your consolidated billing family.
+        /// </para>
+        /// </summary>
+        public bool AutoAssociate
+        {
+            get { return this._autoAssociate.GetValueOrDefault(); }
+            set { this._autoAssociate = value; }
+        }
+
+        // Check to see if AutoAssociate property is set
+        internal bool IsSetAutoAssociate()
+        {
+            return this._autoAssociate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LinkedAccountIds. 
         /// <para>
-        ///  The account IDs that make up the billing group. Account IDs must be a part of the
-        /// consolidated billing family, and not associated with another billing group. 
+        /// The account IDs that make up the billing group. Account IDs must be a part of the
+        /// consolidated billing family, and not associated with another billing group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]

@@ -957,7 +957,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 ExpirationModel = "KEY_MATERIAL_EXPIRES", // A value that specifies whether the key material expires.
                 ImportToken = new MemoryStream(<binary data>), // The import token that you received in the response to a previous GetParametersForImport request.
                 KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
-                ValidTo = new DateTime(2023, 9, 29, 5, 0, 0, DateTimeKind.Utc) // Specifies the date and time when the imported key material expires.
+                ValidTo = new DateTime(2023, 9, 30, 12, 0, 0, DateTimeKind.Utc) // Specifies the date and time when the imported key material expires.
             });
 
 

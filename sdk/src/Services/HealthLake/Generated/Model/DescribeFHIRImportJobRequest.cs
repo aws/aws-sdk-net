@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated ID of the Data Store.
+        /// The AWS-generated ID of the data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

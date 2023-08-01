@@ -292,6 +292,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return TooManyDistributionsAssociatedToKeyGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginAccessControl"))
+                {
+                    return TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginRequestPolicy"))
                 {
                     return TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

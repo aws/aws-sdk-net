@@ -30,8 +30,6 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    /// When you work directly in your JSON job specification, include this object and any
-    /// required children when you set Type, under OutputGroupSettings, to HLS_GROUP_SETTINGS.
     /// </summary>
     public partial class HlsGroupSettings
     {
@@ -107,8 +105,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property AudioOnlyHeader. Ignore this setting unless you are using
         /// FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value,
-        /// Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove
-        /// the audio-only headers from your audio segments.
+        /// Include, to output audio-only headers. Choose Exclude to remove the audio-only headers
+        /// from your audio segments.
         /// </summary>
         public HlsAudioOnlyHeader AudioOnlyHeader
         {
@@ -180,11 +178,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property CaptionSegmentLengthControl. Set Caption segment length
-        /// control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
-        /// segments that align with the video segments from the first video output in this output
-        /// group. For example, if the video segments are 2 seconds long, your WebVTT segments
-        /// will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS)
-        /// to create caption segments that are 300 seconds long.
+        /// control to Match video to create caption segments that align with the video segments
+        /// from the first video output in this output group. For example, if the video segments
+        /// are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default
+        /// setting, Large segments to create caption segments that are 300 seconds long.
         /// </summary>
         public HlsCaptionSegmentLengthControl CaptionSegmentLengthControl
         {
@@ -201,8 +198,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ClientCache. Disable this setting only when your workflow
         /// requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled
-        /// (ENABLED) and control caching in your video distribution set up. For example, use
-        /// the Cache-Control http header.
+        /// and control caching in your video distribution set up. For example, use the Cache-Control
+        /// http header.
         /// </summary>
         public HlsClientCache ClientCache
         {
@@ -233,11 +230,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destination. Use Destination (Destination) to specify the
-        /// S3 output location and the output filename base. Destination accepts format identifiers.
-        /// If you do not specify the base filename in the URI, the service will use the filename
-        /// of the input file. If your job has multiple inputs, the service uses the filename
-        /// of the first input file.
+        /// Gets and sets the property Destination. Use Destination to specify the S3 output location
+        /// and the output filename base. Destination accepts format identifiers. If you do not
+        /// specify the base filename in the URI, the service will use the filename of the input
+        /// file. If your job has multiple inputs, the service uses the filename of the first
+        /// input file.
         /// </summary>
         public string Destination
         {
@@ -300,13 +297,13 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ImageBasedTrickPlay. Specify whether MediaConvert generates
-        /// images for trick play. Keep the default value, None (NONE), to not generate any images.
-        /// Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-        /// frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images
-        /// of single frames. MediaConvert creates a child manifest for each set of images that
-        /// you generate and adds corresponding entries to the parent manifest. A common application
-        /// for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
-        /// creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+        /// images for trick play. Keep the default value, None, to not generate any images. Choose
+        /// Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate
+        /// tiled thumbnails and full-resolution images of single frames. MediaConvert creates
+        /// a child manifest for each set of images that you generate and adds corresponding entries
+        /// to the parent manifest. A common application for these images is Roku trick mode.
+        /// The thumbnails and full-frame images that MediaConvert creates with this feature are
+        /// compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
         /// </summary>
         public HlsImageBasedTrickPlay ImageBasedTrickPlay
         {
@@ -505,10 +502,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SegmentLength. Specify the length, in whole seconds, of
         /// each segment. When you don't specify a value, MediaConvert defaults to 10. Related
-        /// settings: Use Segment length control (SegmentLengthControl) to specify whether the
-        /// encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify
-        /// whether MediaConvert creates separate segment files or one content file that has metadata
-        /// to mark the segment boundaries.
+        /// settings: Use Segment length control to specify whether the encoder enforces this
+        /// value strictly. Use Segment control to specify whether MediaConvert creates separate
+        /// segment files or one content file that has metadata to mark the segment boundaries.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentLength
@@ -525,10 +521,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SegmentLengthControl. Specify how you want MediaConvert
-        /// to determine the segment length. Choose Exact (EXACT) to have the encoder use the
-        /// exact length that you specify with the setting Segment length (SegmentLength). This
-        /// might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the
-        /// encoder round up the segment lengths to match the next GOP boundary.
+        /// to determine the segment length. Choose Exact to have the encoder use the exact length
+        /// that you specify with the setting Segment length. This might result in extra I-frames.
+        /// Choose Multiple of GOP to have the encoder round up the segment lengths to match the
+        /// next GOP boundary.
         /// </summary>
         public HlsSegmentLengthControl SegmentLengthControl
         {
@@ -601,10 +597,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TimedMetadataId3Frame. Specify the type of the ID3 frame
-        /// (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your
-        /// output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3
-        /// metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps:
-        /// Set ID3 timestamp frame type to None (NONE).
+        /// to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV
+        /// or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp
+        /// frame type to None.
         /// </summary>
         public HlsTimedMetadataId3Frame TimedMetadataId3Frame
         {
@@ -623,8 +618,7 @@ namespace Amazon.MediaConvert.Model
         /// to write ID3 timestamps in your output. The first timestamp starts at the output timecode
         /// and date, and increases incrementally with each ID3 timestamp. To use the default
         /// interval of 10 seconds: Leave blank. To include this metadata in your output: Set
-        /// ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and
-        /// set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+        /// ID3 timestamp frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimedMetadataId3Period

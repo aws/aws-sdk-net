@@ -30,8 +30,6 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    /// When you work directly in your JSON job specification, include this object and any
-    /// required children when you set Type, under OutputGroupSettings, to CMAF_GROUP_SETTINGS.
     /// </summary>
     public partial class CmafGroupSettings
     {
@@ -103,8 +101,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ClientCache. Disable this setting only when your workflow
         /// requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled
-        /// (ENABLED) and control caching in your video distribution set up. For example, use
-        /// the Cache-Control http header.
+        /// and control caching in your video distribution set up. For example, use the Cache-Control
+        /// http header.
         /// </summary>
         public CmafClientCache ClientCache
         {
@@ -155,11 +153,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destination. Use Destination (Destination) to specify the
-        /// S3 output location and the output filename base. Destination accepts format identifiers.
-        /// If you do not specify the base filename in the URI, the service will use the filename
-        /// of the input file. If your job has multiple inputs, the service uses the filename
-        /// of the first input file.
+        /// Gets and sets the property Destination. Use Destination to specify the S3 output location
+        /// and the output filename base. Destination accepts format identifiers. If you do not
+        /// specify the base filename in the URI, the service will use the filename of the input
+        /// file. If your job has multiple inputs, the service uses the filename of the first
+        /// input file.
         /// </summary>
         public string Destination
         {
@@ -207,8 +205,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FragmentLength. Specify the length, in whole seconds, of
         /// the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related
-        /// setting: Use Fragment length control (FragmentLengthControl) to specify whether the
-        /// encoder enforces this value strictly.
+        /// setting: Use Fragment length control to specify whether the encoder enforces this
+        /// value strictly.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int FragmentLength
@@ -225,16 +223,15 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ImageBasedTrickPlay. Specify whether MediaConvert generates
-        /// images for trick play. Keep the default value, None (NONE), to not generate any images.
-        /// Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-        /// frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images
-        /// of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert
-        /// creates a child manifest for each set of images that you generate and adds corresponding
-        /// entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest),
-        /// MediaConvert adds an entry in the .mpd manifest for each set of images that you generate.
-        /// A common application for these images is Roku trick mode. The thumbnails and full-frame
-        /// images that MediaConvert creates with this feature are compatible with this Roku specification:
-        /// https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+        /// images for trick play. Keep the default value, None, to not generate any images. Choose
+        /// Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate
+        /// tiled thumbnails and full-resolution images of single frames. When you enable Write
+        /// HLS manifest, MediaConvert creates a child manifest for each set of images that you
+        /// generate and adds corresponding entries to the parent manifest. When you enable Write
+        /// DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images
+        /// that you generate. A common application for these images is Roku trick mode. The thumbnails
+        /// and full-frame images that MediaConvert creates with this feature are compatible with
+        /// this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
         /// </summary>
         public CmafImageBasedTrickPlay ImageBasedTrickPlay
         {
@@ -359,11 +356,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property MpdProfile. Specify whether your DASH profile is on-demand
-        /// or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011
-        /// in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service
-        /// signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand,
-        /// you must also set the output group setting Segment control (SegmentControl) to Single
-        /// file (SINGLE_FILE).
+        /// or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011
+        /// in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011
+        /// in your .mpd. When you choose On-demand, you must also set the output group setting
+        /// Segment control to Single file.
         /// </summary>
         public CmafMpdProfile MpdProfile
         {
@@ -382,11 +378,11 @@ namespace Amazon.MediaConvert.Model
         /// your output video stream has B-frames, which causes the initial presentation time
         /// stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert
         /// handles PTS when writing time stamps in output DASH manifests. Choose Match initial
-        /// PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first
-        /// time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore
-        /// the initial PTS in the video stream and instead write the initial time stamp as zero
-        /// in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
-        /// manifests start at zero regardless of your choice here.
+        /// PTS when you want MediaConvert to use the initial PTS as the first time stamp in the
+        /// manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video
+        /// stream and instead write the initial time stamp as zero in the manifest. For outputs
+        /// that don't have B-frames, the time stamps in your DASH manifests start at zero regardless
+        /// of your choice here.
         /// </summary>
         public CmafPtsOffsetHandlingForBFrames PtsOffsetHandlingForBFrames
         {
@@ -420,10 +416,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SegmentLength. Specify the length, in whole seconds, of
         /// each segment. When you don't specify a value, MediaConvert defaults to 10. Related
-        /// settings: Use Segment length control (SegmentLengthControl) to specify whether the
-        /// encoder enforces this value strictly. Use Segment control (CmafSegmentControl) to
-        /// specify whether MediaConvert creates separate segment files or one content file that
-        /// has metadata to mark the segment boundaries.
+        /// settings: Use Segment length control to specify whether the encoder enforces this
+        /// value strictly. Use Segment control to specify whether MediaConvert creates separate
+        /// segment files or one content file that has metadata to mark the segment boundaries.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentLength
@@ -440,10 +435,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SegmentLengthControl. Specify how you want MediaConvert
-        /// to determine the segment length. Choose Exact (EXACT) to have the encoder use the
-        /// exact length that you specify with the setting Segment length (SegmentLength). This
-        /// might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the
-        /// encoder round up the segment lengths to match the next GOP boundary.
+        /// to determine the segment length. Choose Exact to have the encoder use the exact length
+        /// that you specify with the setting Segment length. This might result in extra I-frames.
+        /// Choose Multiple of GOP to have the encoder round up the segment lengths to match the
+        /// next GOP boundary.
         /// </summary>
         public CmafSegmentLengthControl SegmentLengthControl
         {
@@ -551,12 +546,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property WriteSegmentTimelineInRepresentation. When you enable Precise
-        /// segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
-        /// manifest shows precise segment durations. The segment duration information appears
-        /// inside the SegmentTimeline element, inside SegmentTemplate at the Representation level.
-        /// When this feature isn't enabled, the segment durations in your DASH manifest are approximate.
-        /// The segment duration information appears in the duration attribute of the SegmentTemplate
-        /// element.
+        /// segment duration in DASH manifests, your DASH manifest shows precise segment durations.
+        /// The segment duration information appears inside the SegmentTimeline element, inside
+        /// SegmentTemplate at the Representation level. When this feature isn't enabled, the
+        /// segment durations in your DASH manifest are approximate. The segment duration information
+        /// appears in the duration attribute of the SegmentTemplate element.
         /// </summary>
         public CmafWriteSegmentTimelineInRepresentation WriteSegmentTimelineInRepresentation
         {

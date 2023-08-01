@@ -468,9 +468,16 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates the connector, which captures the parameters for an outbound connection for
-        /// the AS2 protocol. The connector is required for sending files to an externally hosted
-        /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// the AS2 or SFTP protocol. The connector is required for sending files to an externally
+        /// hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
         /// AS2 connectors</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify exactly one configuration object: either for AS2 (<code>As2Config</code>)
+        /// or SFTP (<code>SftpConfig</code>).
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
         /// 
@@ -509,9 +516,16 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates the connector, which captures the parameters for an outbound connection for
-        /// the AS2 protocol. The connector is required for sending files to an externally hosted
-        /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// the AS2 or SFTP protocol. The connector is required for sending files to an externally
+        /// hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
         /// AS2 connectors</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify exactly one configuration object: either for AS2 (<code>As2Config</code>)
+        /// or SFTP (<code>SftpConfig</code>).
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
         /// <param name="cancellationToken">
@@ -1119,7 +1133,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+        /// Deletes the connector that's specified in the provided <code>ConnectorId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
         /// 
@@ -1151,7 +1165,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+        /// Deletes the connector that's specified in the provided <code>ConnectorId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
         /// <param name="cancellationToken">
@@ -3819,8 +3833,33 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code>
-        /// and the file paths for where to send the files.
+        /// Begins a file transfer between local Amazon Web Services storage and a remote AS2
+        /// or SFTP server.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For an AS2 connector, you specify the <code>ConnectorId</code> and one or more <code>SendFilePaths</code>
+        /// to identify the files you want to transfer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an SFTP connector, the file transfer can be either outbound or inbound. In both
+        /// cases, you specify the <code>ConnectorId</code>. Depending on the direction of the
+        /// transfer, you also specify the following items:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are transferring file from a partner's SFTP server to a Transfer Family server,
+        /// you specify one or more <code>RetreiveFilePaths</code> to identify the files you want
+        /// to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are transferring file to a partner's SFTP server from Amazon Web Services storage,
+        /// you specify one or more <code>SendFilePaths</code> to identify the files you want
+        /// to transfer, and a <code>RemoteDirectoryPath</code> to specify the destination folder.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
         /// 
@@ -3855,8 +3894,33 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code>
-        /// and the file paths for where to send the files.
+        /// Begins a file transfer between local Amazon Web Services storage and a remote AS2
+        /// or SFTP server.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For an AS2 connector, you specify the <code>ConnectorId</code> and one or more <code>SendFilePaths</code>
+        /// to identify the files you want to transfer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an SFTP connector, the file transfer can be either outbound or inbound. In both
+        /// cases, you specify the <code>ConnectorId</code>. Depending on the direction of the
+        /// transfer, you also specify the following items:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are transferring file from a partner's SFTP server to a Transfer Family server,
+        /// you specify one or more <code>RetreiveFilePaths</code> to identify the files you want
+        /// to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are transferring file to a partner's SFTP server from Amazon Web Services storage,
+        /// you specify one or more <code>SendFilePaths</code> to identify the files you want
+        /// to transfer, and a <code>RemoteDirectoryPath</code> to specify the destination folder.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -4191,6 +4255,81 @@ namespace Amazon.Transfer
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestConnection
+
+
+        /// <summary>
+        /// Tests whether your SFTP connector is set up successfully. We highly recommend that
+        /// you call this operation to test your ability to transfer files between a Transfer
+        /// Family server and a trading partner's SFTP server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
+        /// 
+        /// <returns>The response from the TestConnection service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection">REST API Reference for TestConnection Operation</seealso>
+        public virtual TestConnectionResponse TestConnection(TestConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<TestConnectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Tests whether your SFTP connector is set up successfully. We highly recommend that
+        /// you call this operation to test your ability to transfer files between a Transfer
+        /// Family server and a trading partner's SFTP server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestConnection service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection">REST API Reference for TestConnection Operation</seealso>
+        public virtual Task<TestConnectionResponse> TestConnectionAsync(TestConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

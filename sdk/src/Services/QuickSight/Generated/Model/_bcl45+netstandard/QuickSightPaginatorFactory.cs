@@ -92,6 +92,38 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListGroupMemberships operation
+        ///</summary>
+        public IListGroupMembershipsPaginator ListGroupMemberships(ListGroupMembershipsRequest request) 
+        {
+            return new ListGroupMembershipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGroups operation
+        ///</summary>
+        public IListGroupsPaginator ListGroups(ListGroupsRequest request) 
+        {
+            return new ListGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIAMPolicyAssignments operation
+        ///</summary>
+        public IListIAMPolicyAssignmentsPaginator ListIAMPolicyAssignments(ListIAMPolicyAssignmentsRequest request) 
+        {
+            return new ListIAMPolicyAssignmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIAMPolicyAssignmentsForUser operation
+        ///</summary>
+        public IListIAMPolicyAssignmentsForUserPaginator ListIAMPolicyAssignmentsForUser(ListIAMPolicyAssignmentsForUserRequest request) 
+        {
+            return new ListIAMPolicyAssignmentsForUserPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIngestions operation
         ///</summary>
         public IListIngestionsPaginator ListIngestions(ListIngestionsRequest request) 
@@ -156,6 +188,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListUserGroups operation
+        ///</summary>
+        public IListUserGroupsPaginator ListUserGroups(ListUserGroupsRequest request) 
+        {
+            return new ListUserGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListUsers operation
+        ///</summary>
+        public IListUsersPaginator ListUsers(ListUsersRequest request) 
+        {
+            return new ListUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListVPCConnections operation
         ///</summary>
         public IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request) 
@@ -193,6 +241,14 @@ namespace Amazon.QuickSight.Model
         public ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request) 
         {
             return new SearchDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchGroups operation
+        ///</summary>
+        public ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request) 
+        {
+            return new SearchGroupsPaginator(this.client, request);
         }
     }
 }

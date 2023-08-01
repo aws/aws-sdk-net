@@ -36,9 +36,9 @@ namespace Amazon.RDS.Model
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
     /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-    /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+    /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteBlueGreenDeploymentRequest : AmazonRDSRequest
@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentIdentifier. 
         /// <para>
-        /// The blue/green deployment identifier of the deployment to be deleted. This parameter
-        /// isn't case-sensitive.
+        /// The unique identifier of the blue/green deployment to delete. This parameter isn't
+        /// case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -78,8 +78,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeleteTarget. 
         /// <para>
-        /// A value that indicates whether to delete the resources in the green environment. You
-        /// can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
+        /// Specifies whether to delete the resources in the green environment. You can't specify
+        /// this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
         /// is <code>SWITCHOVER_COMPLETED</code>.
         /// </para>
         /// </summary>
