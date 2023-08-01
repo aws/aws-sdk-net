@@ -29,45 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// An automated backup of a DB instance. It consists of system backups, transaction logs,
-    /// and the database instance properties that existed at the time you deleted the source
-    /// instance.
+    /// An automated backup of a DB cluster. It consists of system backups, transaction logs,
+    /// and the database cluster properties that existed at the time you deleted the source
+    /// cluster.
     /// </summary>
-    public partial class DBInstanceAutomatedBackup
+    public partial class DBClusterAutomatedBackup
     {
         private int? _allocatedStorage;
-        private string _availabilityZone;
+        private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
-        private string _backupTarget;
-        private string _dbInstanceArn;
-        private string _dbInstanceAutomatedBackupsArn;
-        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
-        private string _dbInstanceIdentifier;
-        private string _dbiResourceId;
-        private bool? _encrypted;
+        private DateTime? _clusterCreateTime;
+        private string _dbClusterArn;
+        private string _dbClusterAutomatedBackupsArn;
+        private string _dbClusterIdentifier;
+        private string _dbClusterResourceId;
         private string _engine;
+        private string _engineMode;
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
-        private DateTime? _instanceCreateTime;
         private int? _iops;
         private string _kmsKeyId;
         private string _licenseModel;
         private string _masterUsername;
-        private string _optionGroupName;
         private int? _port;
         private string _region;
         private RestoreWindow _restoreWindow;
         private string _status;
-        private int? _storageThroughput;
+        private bool? _storageEncrypted;
         private string _storageType;
-        private string _tdeCredentialArn;
-        private string _timezone;
         private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size in gibibytes (GiB).
+        /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
+        /// the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code>
+        /// always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+        /// automatically adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -83,23 +81,23 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZone. 
+        /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// The Availability Zone that the automated backup was created in. For information on
-        /// Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+        /// The Availability Zones where instances in the DB cluster can be created. For information
+        /// on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>.
         /// </para>
         /// </summary>
-        public string AvailabilityZone
+        public List<string> AvailabilityZones
         {
-            get { return this._availabilityZone; }
-            set { this._availabilityZone = value; }
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
         }
 
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZone != null;
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
         /// <summary>
@@ -121,133 +119,95 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BackupTarget. 
+        /// Gets and sets the property ClusterCreateTime. 
         /// <para>
-        /// Specifies where automated backups are stored: Amazon Web Services Outposts or the
-        /// Amazon Web Services Region.
+        /// The time when the DB cluster was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public string BackupTarget
+        public DateTime ClusterCreateTime
         {
-            get { return this._backupTarget; }
-            set { this._backupTarget = value; }
+            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            set { this._clusterCreateTime = value; }
         }
 
-        // Check to see if BackupTarget property is set
-        internal bool IsSetBackupTarget()
+        // Check to see if ClusterCreateTime property is set
+        internal bool IsSetClusterCreateTime()
         {
-            return this._backupTarget != null;
+            return this._clusterCreateTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property DBInstanceArn. 
+        /// Gets and sets the property DBClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the source DB cluster.
+        /// </para>
+        /// </summary>
+        public string DBClusterArn
+        {
+            get { return this._dbClusterArn; }
+            set { this._dbClusterArn = value; }
+        }
+
+        // Check to see if DBClusterArn property is set
+        internal bool IsSetDBClusterArn()
+        {
+            return this._dbClusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterAutomatedBackupsArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the automated backups.
         /// </para>
         /// </summary>
-        public string DBInstanceArn
+        public string DBClusterAutomatedBackupsArn
         {
-            get { return this._dbInstanceArn; }
-            set { this._dbInstanceArn = value; }
+            get { return this._dbClusterAutomatedBackupsArn; }
+            set { this._dbClusterAutomatedBackupsArn = value; }
         }
 
-        // Check to see if DBInstanceArn property is set
-        internal bool IsSetDBInstanceArn()
+        // Check to see if DBClusterAutomatedBackupsArn property is set
+        internal bool IsSetDBClusterAutomatedBackupsArn()
         {
-            return this._dbInstanceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) for the replicated automated backups.
-        /// </para>
-        /// </summary>
-        public string DBInstanceAutomatedBackupsArn
-        {
-            get { return this._dbInstanceAutomatedBackupsArn; }
-            set { this._dbInstanceAutomatedBackupsArn = value; }
-        }
-
-        // Check to see if DBInstanceAutomatedBackupsArn property is set
-        internal bool IsSetDBInstanceAutomatedBackupsArn()
-        {
-            return this._dbInstanceAutomatedBackupsArn != null;
+            return this._dbClusterAutomatedBackupsArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DBInstanceAutomatedBackupsReplications. 
+        /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The list of replications to different Amazon Web Services Regions associated with
-        /// the automated backup.
-        /// </para>
-        /// </summary>
-        public List<DBInstanceAutomatedBackupsReplication> DBInstanceAutomatedBackupsReplications
-        {
-            get { return this._dbInstanceAutomatedBackupsReplications; }
-            set { this._dbInstanceAutomatedBackupsReplications = value; }
-        }
-
-        // Check to see if DBInstanceAutomatedBackupsReplications property is set
-        internal bool IsSetDBInstanceAutomatedBackupsReplications()
-        {
-            return this._dbInstanceAutomatedBackupsReplications != null && this._dbInstanceAutomatedBackupsReplications.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DBInstanceIdentifier. 
-        /// <para>
-        /// The identifier for the source DB instance, which can't be changed and which is unique
+        /// The identifier for the source DB cluster, which can't be changed and which is unique
         /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
-        public string DBInstanceIdentifier
+        public string DBClusterIdentifier
         {
-            get { return this._dbInstanceIdentifier; }
-            set { this._dbInstanceIdentifier = value; }
+            get { return this._dbClusterIdentifier; }
+            set { this._dbClusterIdentifier = value; }
         }
 
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
+        // Check to see if DBClusterIdentifier property is set
+        internal bool IsSetDBClusterIdentifier()
         {
-            return this._dbInstanceIdentifier != null;
+            return this._dbClusterIdentifier != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DbiResourceId. 
+        /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The resource ID for the source DB instance, which can't be changed and which is unique
+        /// The resource ID for the source DB cluster, which can't be changed and which is unique
         /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
-        public string DbiResourceId
+        public string DbClusterResourceId
         {
-            get { return this._dbiResourceId; }
-            set { this._dbiResourceId = value; }
+            get { return this._dbClusterResourceId; }
+            set { this._dbClusterResourceId = value; }
         }
 
-        // Check to see if DbiResourceId property is set
-        internal bool IsSetDbiResourceId()
+        // Check to see if DbClusterResourceId property is set
+        internal bool IsSetDbClusterResourceId()
         {
-            return this._dbiResourceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Encrypted. 
-        /// <para>
-        /// Specifies whether the automated backup is encrypted.
-        /// </para>
-        /// </summary>
-        public bool Encrypted
-        {
-            get { return this._encrypted.GetValueOrDefault(); }
-            set { this._encrypted = value; }
-        }
-
-        // Check to see if Encrypted property is set
-        internal bool IsSetEncrypted()
-        {
-            return this._encrypted.HasValue; 
+            return this._dbClusterResourceId != null;
         }
 
         /// <summary>
@@ -266,6 +226,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode of the database engine for the automated backup.
+        /// </para>
+        /// </summary>
+        public string EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
         }
 
         /// <summary>
@@ -306,27 +284,13 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceCreateTime. 
-        /// <para>
-        /// Provides the date and time that the DB instance was created.
-        /// </para>
-        /// </summary>
-        public DateTime InstanceCreateTime
-        {
-            get { return this._instanceCreateTime.GetValueOrDefault(); }
-            set { this._instanceCreateTime = value; }
-        }
-
-        // Check to see if InstanceCreateTime property is set
-        internal bool IsSetInstanceCreateTime()
-        {
-            return this._instanceCreateTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
         /// The IOPS (I/O operations per second) value for the automated backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public int Iops
@@ -367,7 +331,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// License model information for the automated backup.
+        /// The license model information for this DB cluster automated backup.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -385,7 +349,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The master user name of an automated backup.
+        /// The master user name of the automated backup.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -401,32 +365,13 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OptionGroupName. 
-        /// <para>
-        /// The option group the automated backup is associated with. If omitted, the default
-        /// option group for the engine specified is used.
-        /// </para>
-        /// </summary>
-        public string OptionGroupName
-        {
-            get { return this._optionGroupName; }
-            set { this._optionGroupName = value; }
-        }
-
-        // Check to see if OptionGroupName property is set
-        internal bool IsSetOptionGroupName()
-        {
-            return this._optionGroupName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port number that the automated backup used for connections.
         /// </para>
         ///  
         /// <para>
-        /// Default: Inherits from the source DB instance
+        /// Default: Inherits from the source DB cluster
         /// </para>
         ///  
         /// <para>
@@ -464,10 +409,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestoreWindow. 
-        /// <para>
-        /// Earliest and latest time an instance can be restored to.
-        /// </para>
+        /// Gets and sets the property RestoreWindow.
         /// </summary>
         public RestoreWindow RestoreWindow
         {
@@ -484,20 +426,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Provides a list of status information for an automated backup:
+        /// A list of status information for an automated backup:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - Automated backups for current instances.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>retained</code> - Automated backups for deleted instances.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>creating</code> - Automated backups that are waiting for the first automated
-        /// snapshot to be available.
+        ///  <code>retained</code> - Automated backups for deleted clusters.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -514,27 +447,31 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageThroughput. 
+        /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies the storage throughput for the automated backup.
+        /// Specifies whether the source DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public bool StorageEncrypted
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
-            set { this._storageThroughput = value; }
+            get { return this._storageEncrypted.GetValueOrDefault(); }
+            set { this._storageEncrypted = value; }
         }
 
-        // Check to see if StorageThroughput property is set
-        internal bool IsSetStorageThroughput()
+        // Check to see if StorageEncrypted property is set
+        internal bool IsSetStorageEncrypted()
         {
-            return this._storageThroughput.HasValue; 
+            return this._storageEncrypted.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type associated with the automated backup.
+        /// The storage type associated with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public string StorageType
@@ -550,47 +487,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TdeCredentialArn. 
-        /// <para>
-        /// The ARN from the key store with which the automated backup is associated for TDE encryption.
-        /// </para>
-        /// </summary>
-        public string TdeCredentialArn
-        {
-            get { return this._tdeCredentialArn; }
-            set { this._tdeCredentialArn = value; }
-        }
-
-        // Check to see if TdeCredentialArn property is set
-        internal bool IsSetTdeCredentialArn()
-        {
-            return this._tdeCredentialArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Timezone. 
-        /// <para>
-        /// The time zone of the automated backup. In most cases, the <code>Timezone</code> element
-        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
-        /// that were created with a time zone specified.
-        /// </para>
-        /// </summary>
-        public string Timezone
-        {
-            get { return this._timezone; }
-            set { this._timezone = value; }
-        }
-
-        // Check to see if Timezone property is set
-        internal bool IsSetTimezone()
-        {
-            return this._timezone != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the VPC ID associated with the DB instance.
+        /// The VPC ID associated with the DB cluster.
         /// </para>
         /// </summary>
         public string VpcId

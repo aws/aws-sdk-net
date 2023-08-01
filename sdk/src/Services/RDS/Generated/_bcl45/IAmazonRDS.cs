@@ -3054,6 +3054,11 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
         /// <returns>The response from the DeleteDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupQuotaExceededException">
+        /// The quota for retained automated backups was exceeded. This prevents you from retaining
+        /// any additional automated backups. The retained automated backups quota is the same
+        /// as your DB cluster quota.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -3101,6 +3106,11 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the DeleteDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupQuotaExceededException">
+        /// The quota for retained automated backups was exceeded. This prevents you from retaining
+        /// any additional automated backups. The retained automated backups quota is the same
+        /// as your DB cluster quota.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -3118,6 +3128,50 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         Task<DeleteDBClusterResponse> DeleteDBClusterAsync(DeleteDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDBClusterAutomatedBackup
+
+
+        /// <summary>
+        /// Deletes automated backups using the <code>DbClusterResourceId</code> value of the
+        /// source DB cluster or the Amazon Resource Name (ARN) of the automated backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterAutomatedBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterAutomatedBackup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">REST API Reference for DeleteDBClusterAutomatedBackup Operation</seealso>
+        DeleteDBClusterAutomatedBackupResponse DeleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request);
+
+
+
+        /// <summary>
+        /// Deletes automated backups using the <code>DbClusterResourceId</code> value of the
+        /// source DB cluster or the Amazon Resource Name (ARN) of the automated backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterAutomatedBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterAutomatedBackup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">REST API Reference for DeleteDBClusterAutomatedBackup Operation</seealso>
+        Task<DeleteDBClusterAutomatedBackupResponse> DeleteDBClusterAutomatedBackupAsync(DeleteDBClusterAutomatedBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3373,7 +3427,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
         /// The quota for retained automated backups was exceeded. This prevents you from retaining
         /// any additional automated backups. The retained automated backups quota is the same
-        /// as your DB Instance quota.
+        /// as your DB instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
@@ -3445,7 +3499,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
         /// The quota for retained automated backups was exceeded. This prevents you from retaining
         /// any additional automated backups. The retained automated backups quota is the same
-        /// as your DB Instance quota.
+        /// as your DB instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
@@ -4209,6 +4263,56 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDBClusterAutomatedBackups
+
+
+        /// <summary>
+        /// Displays backups for both current and deleted DB clusters. For example, use this operation
+        /// to find details about automated backups for previously deleted clusters. Current clusters
+        /// are returned for both the <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code>
+        /// operations.
+        /// 
+        ///  
+        /// <para>
+        /// All parameters are optional.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterAutomatedBackups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterAutomatedBackups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">REST API Reference for DescribeDBClusterAutomatedBackups Operation</seealso>
+        DescribeDBClusterAutomatedBackupsResponse DescribeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request);
+
+
+
+        /// <summary>
+        /// Displays backups for both current and deleted DB clusters. For example, use this operation
+        /// to find details about automated backups for previously deleted clusters. Current clusters
+        /// are returned for both the <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code>
+        /// operations.
+        /// 
+        ///  
+        /// <para>
+        /// All parameters are optional.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterAutomatedBackups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterAutomatedBackups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">REST API Reference for DescribeDBClusterAutomatedBackups Operation</seealso>
+        Task<DescribeDBClusterAutomatedBackupsResponse> DescribeDBClusterAutomatedBackupsAsync(DescribeDBClusterAutomatedBackupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9554,6 +9658,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -9653,6 +9760,9 @@ namespace Amazon.RDS
         /// <returns>The response from the RestoreDBClusterToPointInTime service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// The user already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
@@ -10755,7 +10865,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
         /// The quota for retained automated backups was exceeded. This prevents you from retaining
         /// any additional automated backups. The retained automated backups quota is the same
-        /// as your DB Instance quota.
+        /// as your DB instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
@@ -10797,7 +10907,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
         /// The quota for retained automated backups was exceeded. This prevents you from retaining
         /// any additional automated backups. The retained automated backups quota is the same
-        /// as your DB Instance quota.
+        /// as your DB instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.

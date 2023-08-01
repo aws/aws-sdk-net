@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         private List<string> _availabilityZones = new List<string>();
         private DateTime? _clusterCreateTime;
         private string _dbClusterIdentifier;
+        private string _dbClusterResourceId;
         private string _dbClusterSnapshotArn;
         private string _dbClusterSnapshotIdentifier;
         private string _dbSystemId;
@@ -140,9 +141,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DbClusterResourceId. 
+        /// <para>
+        /// Specifies the resource ID of the DB cluster that this DB cluster snapshot was created
+        /// from.
+        /// </para>
+        /// </summary>
+        public string DbClusterResourceId
+        {
+            get { return this._dbClusterResourceId; }
+            set { this._dbClusterResourceId = value; }
+        }
+
+        // Check to see if DbClusterResourceId property is set
+        internal bool IsSetDbClusterResourceId()
+        {
+            return this._dbClusterResourceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterSnapshotArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the DB cluster snapshot.
+        /// Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
         /// </para>
         /// </summary>
         public string DBClusterSnapshotArn

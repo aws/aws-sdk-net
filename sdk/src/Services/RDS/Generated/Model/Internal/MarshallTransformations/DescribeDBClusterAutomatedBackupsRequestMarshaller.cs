@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeDBClusterSnapshots Request Marshaller
+    /// DescribeDBClusterAutomatedBackups Request Marshaller
     /// </summary>       
-    public class DescribeDBClusterSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeDBClusterSnapshotsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeDBClusterAutomatedBackupsRequestMarshaller : IMarshaller<IRequest, DescribeDBClusterAutomatedBackupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeDBClusterSnapshotsRequest)input);
+            return this.Marshall((DescribeDBClusterAutomatedBackupsRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeDBClusterSnapshotsRequest publicRequest)
+        public IRequest Marshall(DescribeDBClusterAutomatedBackupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
-            request.Parameters.Add("Action", "DescribeDBClusterSnapshots");
+            request.Parameters.Add("Action", "DescribeDBClusterAutomatedBackups");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
@@ -65,10 +65,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDbClusterResourceId())
                 {
                     request.Parameters.Add("DbClusterResourceId", StringUtils.FromString(publicRequest.DbClusterResourceId));
-                }
-                if(publicRequest.IsSetDBClusterSnapshotIdentifier())
-                {
-                    request.Parameters.Add("DBClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.DBClusterSnapshotIdentifier));
                 }
                 if(publicRequest.IsSetFilters())
                 {
@@ -91,14 +87,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-                if(publicRequest.IsSetIncludePublic())
-                {
-                    request.Parameters.Add("IncludePublic", StringUtils.FromBool(publicRequest.IncludePublic));
-                }
-                if(publicRequest.IsSetIncludeShared())
-                {
-                    request.Parameters.Add("IncludeShared", StringUtils.FromBool(publicRequest.IncludeShared));
-                }
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
@@ -107,16 +95,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-                if(publicRequest.IsSetSnapshotType())
-                {
-                    request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
-                }
             }
             return request;
         }
-                    private static DescribeDBClusterSnapshotsRequestMarshaller _instance = new DescribeDBClusterSnapshotsRequestMarshaller();        
+                    private static DescribeDBClusterAutomatedBackupsRequestMarshaller _instance = new DescribeDBClusterAutomatedBackupsRequestMarshaller();        
 
-        internal static DescribeDBClusterSnapshotsRequestMarshaller GetInstance()
+        internal static DescribeDBClusterAutomatedBackupsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +108,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeDBClusterSnapshotsRequestMarshaller Instance
+        public static DescribeDBClusterAutomatedBackupsRequestMarshaller Instance
         {
             get
             {

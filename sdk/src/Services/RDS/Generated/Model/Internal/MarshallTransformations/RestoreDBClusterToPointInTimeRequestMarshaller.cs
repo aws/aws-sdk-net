@@ -185,6 +185,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));
                 }
+                if(publicRequest.IsSetSourceDbClusterResourceId())
+                {
+                    request.Parameters.Add("SourceDbClusterResourceId", StringUtils.FromString(publicRequest.SourceDbClusterResourceId));
+                }
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));

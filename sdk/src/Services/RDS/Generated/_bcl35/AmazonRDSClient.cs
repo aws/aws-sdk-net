@@ -3096,6 +3096,11 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
         /// <returns>The response from the DeleteDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupQuotaExceededException">
+        /// The quota for retained automated backups was exceeded. This prevents you from retaining
+        /// any additional automated backups. The retained automated backups quota is the same
+        /// as your DB cluster quota.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -3153,6 +3158,68 @@ namespace Amazon.RDS
         public virtual DeleteDBClusterResponse EndDeleteDBCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDBClusterAutomatedBackup
+
+        /// <summary>
+        /// Deletes automated backups using the <code>DbClusterResourceId</code> value of the
+        /// source DB cluster or the Amazon Resource Name (ARN) of the automated backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterAutomatedBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterAutomatedBackup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">REST API Reference for DeleteDBClusterAutomatedBackup Operation</seealso>
+        public virtual DeleteDBClusterAutomatedBackupResponse DeleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBClusterAutomatedBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBClusterAutomatedBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBClusterAutomatedBackupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBClusterAutomatedBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterAutomatedBackup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBClusterAutomatedBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">REST API Reference for DeleteDBClusterAutomatedBackup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBClusterAutomatedBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBClusterAutomatedBackupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDBClusterAutomatedBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBClusterAutomatedBackup.</param>
+        /// 
+        /// <returns>Returns a  DeleteDBClusterAutomatedBackupResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">REST API Reference for DeleteDBClusterAutomatedBackup Operation</seealso>
+        public virtual DeleteDBClusterAutomatedBackupResponse EndDeleteDBClusterAutomatedBackup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDBClusterAutomatedBackupResponse>(asyncResult);
         }
 
         #endregion
@@ -3427,7 +3494,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
         /// The quota for retained automated backups was exceeded. This prevents you from retaining
         /// any additional automated backups. The retained automated backups quota is the same
-        /// as your DB Instance quota.
+        /// as your DB instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
@@ -4419,6 +4486,71 @@ namespace Amazon.RDS
         public virtual DescribeCertificatesResponse EndDescribeCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCertificatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDBClusterAutomatedBackups
+
+        /// <summary>
+        /// Displays backups for both current and deleted DB clusters. For example, use this operation
+        /// to find details about automated backups for previously deleted clusters. Current clusters
+        /// are returned for both the <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code>
+        /// operations.
+        /// 
+        ///  
+        /// <para>
+        /// All parameters are optional.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterAutomatedBackups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterAutomatedBackups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">REST API Reference for DescribeDBClusterAutomatedBackups Operation</seealso>
+        public virtual DescribeDBClusterAutomatedBackupsResponse DescribeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBClusterAutomatedBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBClusterAutomatedBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBClusterAutomatedBackupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterAutomatedBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterAutomatedBackups operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBClusterAutomatedBackups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">REST API Reference for DescribeDBClusterAutomatedBackups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBClusterAutomatedBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBClusterAutomatedBackupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBClusterAutomatedBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBClusterAutomatedBackups.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBClusterAutomatedBackupsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">REST API Reference for DescribeDBClusterAutomatedBackups Operation</seealso>
+        public virtual DescribeDBClusterAutomatedBackupsResponse EndDescribeDBClusterAutomatedBackups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBClusterAutomatedBackupsResponse>(asyncResult);
         }
 
         #endregion
@@ -10077,6 +10209,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAutomatedBackupNotFoundException">
+        /// No automated backup for this DB cluster was found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -10991,7 +11126,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
         /// The quota for retained automated backups was exceeded. This prevents you from retaining
         /// any additional automated backups. The retained automated backups quota is the same
-        /// as your DB Instance quota.
+        /// as your DB instance quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.

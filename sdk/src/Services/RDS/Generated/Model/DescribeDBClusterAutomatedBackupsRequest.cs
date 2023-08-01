@@ -29,85 +29,62 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDBInstanceAutomatedBackups operation.
-    /// Displays backups for both current and deleted instances. For example, use this operation
-    /// to find details about automated backups for previously deleted instances. Current
-    /// instances with retention periods greater than zero (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code>
-    /// and <code>DescribeDBInstances</code> operations.
+    /// Container for the parameters to the DescribeDBClusterAutomatedBackups operation.
+    /// Displays backups for both current and deleted DB clusters. For example, use this operation
+    /// to find details about automated backups for previously deleted clusters. Current clusters
+    /// are returned for both the <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code>
+    /// operations.
     /// 
     ///  
     /// <para>
     /// All parameters are optional.
     /// </para>
     /// </summary>
-    public partial class DescribeDBInstanceAutomatedBackupsRequest : AmazonRDSRequest
+    public partial class DescribeDBClusterAutomatedBackupsRequest : AmazonRDSRequest
     {
-        private string _dbInstanceAutomatedBackupsArn;
-        private string _dbInstanceIdentifier;
-        private string _dbiResourceId;
+        private string _dbClusterIdentifier;
+        private string _dbClusterResourceId;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
 
         /// <summary>
-        /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
+        /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// (Optional) The user-supplied DB cluster identifier. If this parameter is specified,
+        /// it must match the identifier of an existing DB cluster. It returns information from
+        /// the specific DB cluster's automated backup. This parameter isn't case-sensitive.
         /// </para>
         /// </summary>
-        public string DBInstanceAutomatedBackupsArn
+        public string DBClusterIdentifier
         {
-            get { return this._dbInstanceAutomatedBackupsArn; }
-            set { this._dbInstanceAutomatedBackupsArn = value; }
+            get { return this._dbClusterIdentifier; }
+            set { this._dbClusterIdentifier = value; }
         }
 
-        // Check to see if DBInstanceAutomatedBackupsArn property is set
-        internal bool IsSetDBInstanceAutomatedBackupsArn()
+        // Check to see if DBClusterIdentifier property is set
+        internal bool IsSetDBClusterIdentifier()
         {
-            return this._dbInstanceAutomatedBackupsArn != null;
+            return this._dbClusterIdentifier != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DBInstanceIdentifier. 
+        /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// (Optional) The user-supplied instance identifier. If this parameter is specified,
-        /// it must match the identifier of an existing DB instance. It returns information from
-        /// the specific DB instance's automated backup. This parameter isn't case-sensitive.
-        /// </para>
-        /// </summary>
-        public string DBInstanceIdentifier
-        {
-            get { return this._dbInstanceIdentifier; }
-            set { this._dbInstanceIdentifier = value; }
-        }
-
-        // Check to see if DBInstanceIdentifier property is set
-        internal bool IsSetDBInstanceIdentifier()
-        {
-            return this._dbInstanceIdentifier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DbiResourceId. 
-        /// <para>
-        /// The resource ID of the DB instance that is the source of the automated backup. This
+        /// The resource ID of the DB cluster that is the source of the automated backup. This
         /// parameter isn't case-sensitive.
         /// </para>
         /// </summary>
-        public string DbiResourceId
+        public string DbClusterResourceId
         {
-            get { return this._dbiResourceId; }
-            set { this._dbiResourceId = value; }
+            get { return this._dbClusterResourceId; }
+            set { this._dbClusterResourceId = value; }
         }
 
-        // Check to see if DbiResourceId property is set
-        internal bool IsSetDbiResourceId()
+        // Check to see if DbClusterResourceId property is set
+        internal bool IsSetDbClusterResourceId()
         {
-            return this._dbiResourceId != null;
+            return this._dbClusterResourceId != null;
         }
 
         /// <summary>
@@ -125,29 +102,20 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - Automated backups for current instances.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>creating</code> - Automated backups that are waiting for the first automated
-        /// snapshot to be available.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>retained</code> - Automated backups for deleted instances and after backup
-        /// replication is stopped.
+        ///  <code>retained</code> - Automated backups for deleted clusters and after backup replication
+        /// is stopped.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource
-        /// Names (ARNs). The results list includes only information about the DB instance automated
+        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and Amazon Resource Names
+        /// (ARNs). The results list includes only information about the DB cluster automated
         /// backups identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource
-        /// Names (ARNs). The results list includes only information about the DB instance resources
-        /// identified by these ARNs.
+        ///  <code>db-cluster-resource-id</code> - Accepts DB resource identifiers and Amazon
+        /// Resource Names (ARNs). The results list includes only information about the DB cluster
+        /// resources identified by these ARNs.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DBClusterSnapshot Object
+    /// Response Unmarshaller for DBClusterAutomatedBackup Object
     /// </summary>  
-    public class DBClusterSnapshotUnmarshaller : IUnmarshaller<DBClusterSnapshot, XmlUnmarshallerContext>, IUnmarshaller<DBClusterSnapshot, JsonUnmarshallerContext>
+    public class DBClusterAutomatedBackupUnmarshaller : IUnmarshaller<DBClusterAutomatedBackup, XmlUnmarshallerContext>, IUnmarshaller<DBClusterAutomatedBackup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBClusterSnapshot Unmarshall(XmlUnmarshallerContext context)
+        public DBClusterAutomatedBackup Unmarshall(XmlUnmarshallerContext context)
         {
-            DBClusterSnapshot unmarshalledObject = new DBClusterSnapshot();
+            DBClusterAutomatedBackup unmarshalledObject = new DBClusterAutomatedBackup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -67,10 +67,28 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("BackupRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ClusterCreateTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBClusterArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBClusterArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBClusterAutomatedBackupsArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBClusterAutomatedBackupsArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))
@@ -83,24 +101,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DbClusterResourceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DBClusterSnapshotArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBClusterSnapshotArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DBClusterSnapshotIdentifier", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBClusterSnapshotIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DBSystemId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Engine", targetDepth))
@@ -127,6 +127,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -145,34 +151,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PercentProgress", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.PercentProgress = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SnapshotCreateTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotType", targetDepth))
+                    if (context.TestExpression("Region", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SourceDBClusterSnapshotArn", targetDepth))
+                    if (context.TestExpression("RestoreWindow", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SourceDBClusterSnapshotArn = unmarshaller.Unmarshall(context);
+                        var unmarshaller = RestoreWindowUnmarshaller.Instance;
+                        unmarshalledObject.RestoreWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
@@ -191,13 +185,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TagList/Tag", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.TagList.Add(item);
                         continue;
                     }
                     if (context.TestExpression("VpcId", targetDepth))
@@ -221,18 +208,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBClusterSnapshot Unmarshall(JsonUnmarshallerContext context)
+        public DBClusterAutomatedBackup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static DBClusterSnapshotUnmarshaller _instance = new DBClusterSnapshotUnmarshaller();        
+        private static DBClusterAutomatedBackupUnmarshaller _instance = new DBClusterAutomatedBackupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DBClusterSnapshotUnmarshaller Instance
+        public static DBClusterAutomatedBackupUnmarshaller Instance
         {
             get
             {

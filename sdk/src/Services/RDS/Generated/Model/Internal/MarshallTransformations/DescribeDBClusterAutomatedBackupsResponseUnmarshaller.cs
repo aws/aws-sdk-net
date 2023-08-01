@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDBCluster operation
+    /// Response Unmarshaller for DescribeDBClusterAutomatedBackups operation
     /// </summary>  
-    public class DeleteDBClusterResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeDBClusterAutomatedBackupsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DeleteDBClusterResponse response = new DeleteDBClusterResponse();
+            DescribeDBClusterAutomatedBackupsResponse response = new DescribeDBClusterAutomatedBackupsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DeleteDBClusterResult", 2))
+                    if(context.TestExpression("DescribeDBClusterAutomatedBackupsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteDBClusterResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeDBClusterAutomatedBackupsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("DBCluster", targetDepth))
+                    if (context.TestExpression("DBClusterAutomatedBackups/DBClusterAutomatedBackup", targetDepth))
                     {
-                        var unmarshaller = DBClusterUnmarshaller.Instance;
-                        response.DBCluster = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DBClusterAutomatedBackupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.DBClusterAutomatedBackups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -112,36 +119,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterAutomatedBackupQuotaExceededFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterAutomatedBackupNotFoundFault"))
                 {
-                    return DBClusterAutomatedBackupQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
-                {
-                    return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterSnapshotAlreadyExistsFault"))
-                {
-                    return DBClusterSnapshotAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterSnapshotStateFault"))
-                {
-                    return InvalidDBClusterSnapshotStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
-                {
-                    return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotQuotaExceeded"))
-                {
-                    return SnapshotQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DBClusterAutomatedBackupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DeleteDBClusterResponseUnmarshaller _instance = new DeleteDBClusterResponseUnmarshaller();        
+        private static DescribeDBClusterAutomatedBackupsResponseUnmarshaller _instance = new DescribeDBClusterAutomatedBackupsResponseUnmarshaller();        
 
-        internal static DeleteDBClusterResponseUnmarshaller GetInstance()
+        internal static DescribeDBClusterAutomatedBackupsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +136,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDBClusterResponseUnmarshaller Instance
+        public static DescribeDBClusterAutomatedBackupsResponseUnmarshaller Instance
         {
             get
             {
