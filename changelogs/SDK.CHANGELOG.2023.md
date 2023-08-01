@@ -1,3 +1,22 @@
+### 3.7.611.0 (2023-08-01 18:27 UTC)
+* Batch (3.7.201.0)
+	* This release adds support for price capacity optimized allocation strategy for Spot Instances.
+* DatabaseMigrationService (3.7.201.0)
+	* Adding new API describe-engine-versions which provides information about the lifecycle of a replication instance's version.
+* InternetMonitor (3.7.201.0)
+	* This release adds a new feature for Amazon CloudWatch Internet Monitor that enables customers to set custom thresholds, for performance and availability drops, for impact limited to a single city-network to trigger creation of a health event.
+* MediaLive (3.7.201.0)
+	* AWS Elemental Link devices now report their Availability Zone. Link devices now support the ability to change their Availability Zone.
+* Polly (3.7.202.0)
+	* Amazon Polly adds new French Belgian voice - Isabelle. Isabelle is available as Neural voice only.
+* RDS (3.7.204.0)
+	* Added support for deleted clusters PiTR.
+* SageMaker (3.7.204.0)
+	* Add Stairs TrafficPattern and FlatInvocations to RecommendationJobStoppingConditions
+* Core 3.7.200.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.610.0 (2023-07-31 18:31 UTC)
 * AmplifyUIBuilder (3.7.201.0)
 	* Amplify Studio releases GraphQL support for codegen job action.
