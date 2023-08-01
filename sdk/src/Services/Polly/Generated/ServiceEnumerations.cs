@@ -211,6 +211,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode FiFI = new LanguageCode("fi-FI");
         /// <summary>
+        /// Constant FrBE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrBE = new LanguageCode("fr-BE");
+        /// <summary>
         /// Constant FrCA for LanguageCode
         /// </summary>
         public static readonly LanguageCode FrCA = new LanguageCode("fr-CA");
@@ -688,6 +692,10 @@ namespace Amazon.Polly
         /// Constant Ines for VoiceId
         /// </summary>
         public static readonly VoiceId Ines = new VoiceId("Ines");
+        /// <summary>
+        /// Constant Isabelle for VoiceId
+        /// </summary>
+        public static readonly VoiceId Isabelle = new VoiceId("Isabelle");
         /// <summary>
         /// Constant Ivy for VoiceId
         /// </summary>
