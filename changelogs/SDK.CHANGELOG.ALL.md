@@ -1,3 +1,18 @@
+### 3.7.612.0 (2023-08-02 18:23 UTC)
+* Budgets (3.7.201.0)
+	* As part of CAE tagging integration we need to update our budget names regex filter to prevent customers from using "/action/" in their budget names.
+* CognitoIdentityProvider (3.7.201.0)
+	* New feature that logs Cognito user pool error messages to CloudWatch logs.
+* Glue (3.7.204.0)
+	* This release includes additional Glue Streaming KAKFA SASL property types.
+* ResilienceHub (3.7.201.0)
+	* Drift Detection capability added when applications policy has moved from a meet to breach state. Customers will be able to exclude operational recommendations and receive credit in their resilience score. Customers can now add ARH permissions to an existing or new role.
+* SageMaker (3.7.205.0)
+	* SageMaker Inference Recommender introduces a new API GetScalingConfigurationRecommendation to recommend auto scaling policies based on completed Inference Recommender jobs.
+* Core 3.7.200.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.611.0 (2023-08-01 18:27 UTC)
 * Batch (3.7.201.0)
 	* This release adds support for price capacity optimized allocation strategy for Spot Instances.
