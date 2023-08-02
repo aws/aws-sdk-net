@@ -8611,6 +8611,50 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  GetScalingConfigurationRecommendation
+
+
+        /// <summary>
+        /// Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns
+        /// recommendations for autoscaling policies that you can apply to your SageMaker endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingConfigurationRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetScalingConfigurationRecommendation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation">REST API Reference for GetScalingConfigurationRecommendation Operation</seealso>
+        GetScalingConfigurationRecommendationResponse GetScalingConfigurationRecommendation(GetScalingConfigurationRecommendationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetScalingConfigurationRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingConfigurationRecommendation operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetScalingConfigurationRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation">REST API Reference for GetScalingConfigurationRecommendation Operation</seealso>
+        IAsyncResult BeginGetScalingConfigurationRecommendation(GetScalingConfigurationRecommendationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetScalingConfigurationRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetScalingConfigurationRecommendation.</param>
+        /// 
+        /// <returns>Returns a  GetScalingConfigurationRecommendationResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation">REST API Reference for GetScalingConfigurationRecommendation Operation</seealso>
+        GetScalingConfigurationRecommendationResponse EndGetScalingConfigurationRecommendation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSearchSuggestions
 
 

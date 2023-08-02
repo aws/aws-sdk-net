@@ -7820,6 +7820,44 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  GetScalingConfigurationRecommendation
+
+        internal virtual GetScalingConfigurationRecommendationResponse GetScalingConfigurationRecommendation(GetScalingConfigurationRecommendationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScalingConfigurationRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScalingConfigurationRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<GetScalingConfigurationRecommendationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns
+        /// recommendations for autoscaling policies that you can apply to your SageMaker endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingConfigurationRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScalingConfigurationRecommendation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation">REST API Reference for GetScalingConfigurationRecommendation Operation</seealso>
+        public virtual Task<GetScalingConfigurationRecommendationResponse> GetScalingConfigurationRecommendationAsync(GetScalingConfigurationRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetScalingConfigurationRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScalingConfigurationRecommendationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetScalingConfigurationRecommendationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSearchSuggestions
 
         internal virtual GetSearchSuggestionsResponse GetSearchSuggestions(GetSearchSuggestionsRequest request)
