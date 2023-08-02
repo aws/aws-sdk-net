@@ -749,6 +749,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
         /// <summary>
+        /// Constant ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD");
+        /// <summary>
         /// Constant ENCRYPTED_PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_PASSWORD");
@@ -804,6 +808,38 @@ namespace Amazon.Glue
         /// Constant KAFKA_CUSTOM_CERT for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey KAFKA_CUSTOM_CERT = new ConnectionPropertyKey("KAFKA_CUSTOM_CERT");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_KEYTAB for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_KEYTAB = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_KEYTAB");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_KRB5_CONF for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_KRB5_CONF = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_KRB5_CONF");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_PRINCIPAL for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_PRINCIPAL = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_PRINCIPAL");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_SERVICE for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_SERVICE = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_SERVICE");
+        /// <summary>
+        /// Constant KAFKA_SASL_MECHANISM for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_MECHANISM = new ConnectionPropertyKey("KAFKA_SASL_MECHANISM");
+        /// <summary>
+        /// Constant KAFKA_SASL_SCRAM_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_SCRAM_PASSWORD = new ConnectionPropertyKey("KAFKA_SASL_SCRAM_PASSWORD");
+        /// <summary>
+        /// Constant KAFKA_SASL_SCRAM_SECRETS_ARN for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_SCRAM_SECRETS_ARN = new ConnectionPropertyKey("KAFKA_SASL_SCRAM_SECRETS_ARN");
+        /// <summary>
+        /// Constant KAFKA_SASL_SCRAM_USERNAME for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_SCRAM_USERNAME = new ConnectionPropertyKey("KAFKA_SASL_SCRAM_USERNAME");
         /// <summary>
         /// Constant KAFKA_SKIP_CUSTOM_CERT_VALIDATION for ConnectionPropertyKey
         /// </summary>
