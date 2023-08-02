@@ -52,110 +52,58 @@ namespace Amazon.Budgets.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            if (IsSet(refs["Endpoint"]))
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                    }
-                    return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                        {
-                            return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://budgets.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint("https://budgets.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                        {
-                            return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://budgets.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint("https://budgets.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                }
                 if (Equals(refs["UseFIPS"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                    {
-                        return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
                 }
                 if (Equals(refs["UseDualStack"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://budgets.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
                 }
-                if (Equals(refs["Region"], "aws-global"))
-                {
-                    return new Endpoint("https://budgets.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["Region"], "aws-cn-global"))
-                {
-                    return new Endpoint("https://budgets.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://budgets.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
+            if (IsSet(refs["Region"]))
+            {
+                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+                {
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint("https://budgets.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint("https://budgets.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""budgets"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            return new Endpoint(Interpolate(@"https://budgets-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://budgets.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    return new Endpoint(Interpolate(@"https://budgets.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+            }
+            throw new AmazonClientException("Invalid Configuration: Missing Region");
 
             throw new AmazonClientException("Cannot resolve endpoint");
         }

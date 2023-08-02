@@ -106,7 +106,7 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property BudgetName. 
         /// <para>
         /// The name of a budget. The name must be unique within an account. The <code>:</code>
-        /// and <code>\</code> characters aren't allowed in <code>BudgetName</code>.
+        /// and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
