@@ -32,6 +32,16 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the ConfirmForgotPassword operation.
     /// Allows a user to enter a confirmation code to reset a forgotten password.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you can't use IAM credentials to authorize
+    /// requests, and you can't grant IAM permissions in policies. For more information about
+    /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito native and OIDC APIs</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ConfirmForgotPasswordRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -181,7 +191,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property SecretHash. 
         /// <para>
         /// A keyed-hash message authentication code (HMAC) calculated using the secret key of
-        /// a user pool client and username plus the client ID in the message.
+        /// a user pool client and username plus the client ID in the message. For more information
+        /// about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+        /// secret hash values</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -206,7 +218,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// it makes API requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
         public UserContextDataType UserContextData
         {
             get { return this._userContextData; }

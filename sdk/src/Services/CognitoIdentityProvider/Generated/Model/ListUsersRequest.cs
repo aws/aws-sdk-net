@@ -30,7 +30,27 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Lists the users in the Amazon Cognito user pool.
+    /// Lists users and their basic details in a user pool.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class ListUsersRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -43,8 +63,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// An array of strings, where each string is the name of a user attribute to be returned
-        /// for each user in the search results. If the array is null, all attributes are returned.
+        /// A JSON array of user attribute names, for example <code>given_name</code>, that you
+        /// want Amazon Cognito to include in the response for each user. When you don't provide
+        /// an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for
+        /// each user.
         /// </para>
         /// </summary>
         public List<string> AttributesToGet

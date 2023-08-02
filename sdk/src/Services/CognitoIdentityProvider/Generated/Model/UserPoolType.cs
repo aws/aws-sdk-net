@@ -166,7 +166,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date the user pool was created.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -282,7 +283,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property EmailConfiguration. 
         /// <para>
         /// The email configuration of your user pool. The email configuration type sets your
-        /// preferred sending method, Amazon Web Services Region, and sender for messages tfrom
+        /// preferred sending method, Amazon Web Services Region, and sender for messages from
         /// your user pool.
         /// </para>
         /// </summary>
@@ -305,6 +306,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in CloudTrail for information about problems with user pool email configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string EmailConfigurationFailure
         {
             get { return this._emailConfigurationFailure; }
@@ -413,7 +415,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date the user pool was last modified.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate
@@ -501,7 +504,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SchemaAttributes. 
         /// <para>
-        /// A container with the schema attributes of a user pool.
+        /// A list of the user attributes and their properties in your user pool. The attribute
+        /// schema contains standard attributes, custom attributes with a <code>custom:</code>
+        /// prefix, and developer attributes with a <code>dev:</code> prefix. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+        /// pool attributes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Developer-only attributes are a legacy feature of user pools, are read-only to all
+        /// app clients. You can create and update developer-only attributes only with IAM-authenticated
+        /// API operations. Use app client read/write permissions instead.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -576,13 +589,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </dd> <dt>SNSSandbox</dt> <dd> 
         /// <para>
         /// The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach
-        /// verified end users. This parameter won’t get populated with SNSSandbox if the IAM
-        /// user creating the user pool doesn’t have SNS permissions. To learn how to move your
-        /// Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+        /// verified end users. This parameter won’t get populated with SNSSandbox if the user
+        /// creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon
+        /// Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
         /// out of the SMS sandbox</a>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string SmsConfigurationFailure
         {
             get { return this._smsConfigurationFailure; }
@@ -697,7 +711,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
-        /// The user pool add-ons.
+        /// User pool add-ons. Contains settings for activation of advanced security features.
+        /// To log user security information but take no action, set to <code>AUDIT</code>. To
+        /// configure automatic security responses to risky traffic to your user pool, set to
+        /// <code>ENFORCED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+        /// advanced security to a user pool</a>.
         /// </para>
         /// </summary>
         public UserPoolAddOnsType UserPoolAddOns

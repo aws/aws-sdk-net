@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The password verifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string PasswordVerifier
         {
             get { return this._passwordVerifier; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string Salt
         {
             get { return this._salt; }

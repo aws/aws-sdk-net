@@ -81,6 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The email address or phone number destination where Amazon Cognito sent the code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string Destination
         {
             get { return this._destination; }

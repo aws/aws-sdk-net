@@ -29,7 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Contains information about the schema attribute.
+    /// A list of the user attributes and their properties in your user pool. The attribute
+    /// schema contains standard attributes, custom attributes with a <code>custom:</code>
+    /// prefix, and developer attributes with a <code>dev:</code> prefix. For more information,
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+    /// pool attributes</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Developer-only attributes are a legacy feature of user pools, are read-only to all
+    /// app clients. You can create and update developer-only attributes only with IAM-authenticated
+    /// API operations. Use app client read/write permissions instead.
+    /// </para>
     /// </summary>
     public partial class SchemaAttributeType
     {
@@ -44,7 +55,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeDataType. 
         /// <para>
-        /// The attribute data type.
+        /// The data format of the values for your attribute.
         /// </para>
         /// </summary>
         public AttributeDataType AttributeDataType
@@ -93,11 +104,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For any user pool attribute that is mapped to an IdP attribute, you must set this
-        /// parameter to <code>true</code>. Amazon Cognito updates mapped attributes when users
-        /// sign in to your application through an IdP. If an attribute is immutable, Amazon Cognito
-        /// throws an error when it attempts to update the attribute. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+        /// Any user pool attribute whose value you map from an IdP attribute must be mutable,
+        /// with a parameter value of <code>true</code>. Amazon Cognito updates mapped attributes
+        /// when users sign in to your application through an IdP. If an attribute is immutable,
+        /// Amazon Cognito throws an error when it attempts to update the attribute. For more
+        /// information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
         /// Identity Provider Attribute Mappings for Your User Pool</a>.
         /// </para>
         /// </summary>
@@ -116,7 +127,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A schema attribute of the name type.
+        /// The name of your user pool attribute, for example <code>username</code> or <code>custom:costcenter</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

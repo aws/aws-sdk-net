@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The name of the provider attribute to link to, such as <code>NameID</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string ProviderAttributeName
         {
             get { return this._providerAttributeName; }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The value of the provider attribute to link to, such as <code>xxxxx_account</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string ProviderAttributeValue
         {
             get { return this._providerAttributeValue; }

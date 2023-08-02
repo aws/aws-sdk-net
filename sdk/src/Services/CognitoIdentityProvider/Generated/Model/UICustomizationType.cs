@@ -63,7 +63,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The creation date for the UI customization.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -84,6 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The CSS values in the UI customization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string CSS
         {
             get { return this._css; }
@@ -135,7 +137,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The last-modified date for the UI customization.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate

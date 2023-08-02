@@ -102,7 +102,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

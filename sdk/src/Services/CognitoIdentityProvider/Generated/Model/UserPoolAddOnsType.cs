@@ -29,7 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The user pool add-ons type.
+    /// User pool add-ons. Contains settings for activation of advanced security features.
+    /// To log user security information but take no action, set to <code>AUDIT</code>. To
+    /// configure automatic security responses to risky traffic to your user pool, set to
+    /// <code>ENFORCED</code>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+    /// advanced security to a user pool</a>.
+    /// </para>
     /// </summary>
     public partial class UserPoolAddOnsType
     {
@@ -38,7 +47,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdvancedSecurityMode. 
         /// <para>
-        /// The advanced security mode.
+        /// The operating mode of advanced security features in your user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

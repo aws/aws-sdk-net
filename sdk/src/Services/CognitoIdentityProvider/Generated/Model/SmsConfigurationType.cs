@@ -60,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a third party</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string ExternalId
         {
             get { return this._externalId; }

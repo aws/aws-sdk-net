@@ -139,6 +139,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The token type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string TokenType
         {
             get { return this._tokenType; }

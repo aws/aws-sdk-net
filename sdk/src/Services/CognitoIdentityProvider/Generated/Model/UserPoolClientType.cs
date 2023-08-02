@@ -135,8 +135,36 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthFlowsUserPoolClient. 
         /// <para>
-        /// Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Amazon Cognito user pools.
+        /// Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you
+        /// can configure the following features in your app client.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CallBackURLs</code>: Callback URLs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LogoutURLs</code>: Sign-out redirect URLs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client
+        /// credentials OAuth 2.0 grants.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console
+        /// or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+        /// or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code>
+        /// in a request with the CLI or SDKs, it defaults to <code>false</code>.
         /// </para>
         /// </summary>
         public bool AllowedOAuthFlowsUserPoolClient
@@ -329,7 +357,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date the user pool client was created.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -532,7 +561,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
+        /// The default time unit for <code>IdTokenValidity</code> in an API request is hours.
         /// <i>Valid range</i> is displayed below in seconds.
         /// </para>
         ///  
@@ -557,7 +586,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date the user pool client was last modified.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate

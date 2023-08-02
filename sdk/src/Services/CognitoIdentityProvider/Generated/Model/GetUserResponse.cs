@@ -67,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user's preferred MFA setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string PreferredMfaSetting
         {
             get { return this._preferredMfaSetting; }
@@ -125,7 +126,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you want to retrieve from the get user request.
+        /// The username of the user that you requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

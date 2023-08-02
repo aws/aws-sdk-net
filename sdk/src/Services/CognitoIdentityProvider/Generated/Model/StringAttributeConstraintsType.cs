@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The maximum length.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string MaxLength
         {
             get { return this._maxLength; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The minimum length.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string MinLength
         {
             get { return this._minLength; }

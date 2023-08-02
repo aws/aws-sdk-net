@@ -156,6 +156,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// This address appears before the body of the email.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string From
         {
             get { return this._from; }
@@ -189,9 +190,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email
-        /// address in one of the following ways, depending on the value that you specify for
-        /// the <code>EmailSendingAccount</code> parameter:
+        /// The ARN of a verified email address or an address from a verified domain in Amazon
+        /// SES. You can set a <code>SourceArn</code> email from a verified domain only with an
+        /// API request. You can set a verified email address, but not an address in a verified
+        /// domain, in the Amazon Cognito console. Amazon Cognito uses the email address that
+        /// you provide in one of the following ways, depending on the value that you specify
+        /// for the <code>EmailSendingAccount</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>

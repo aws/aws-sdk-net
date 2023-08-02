@@ -116,7 +116,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserLastModifiedDate. 
         /// <para>
-        /// The last modified date of the user.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
         public DateTime UserLastModifiedDate
@@ -166,10 +167,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         /// EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ARCHIVED - User is no longer active.
         /// </para>
         ///  </li> <li> 
         /// <para>

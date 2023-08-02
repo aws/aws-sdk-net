@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The device group key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string DeviceGroupKey
         {
             get { return this._deviceGroupKey; }

@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The signing certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string Certificate
         {
             get { return this._certificate; }
