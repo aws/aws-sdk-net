@@ -38,8 +38,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
-        /// Services resource. Each tag consists of a key/value pair.
+        /// Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]

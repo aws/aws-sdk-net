@@ -34,6 +34,8 @@ namespace Amazon.ResilienceHub.Model
     public partial class RecommendationItem
     {
         private bool? _alreadyImplemented;
+        private bool? _excluded;
+        private ExcludeRecommendationReason _excludeReason;
         private string _resourceId;
         private string _targetAccountId;
         private string _targetRegion;
@@ -57,9 +59,45 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Excluded. 
+        /// <para>
+        /// Indicates if an operational recommendation item is excluded.
+        /// </para>
+        /// </summary>
+        public bool Excluded
+        {
+            get { return this._excluded.GetValueOrDefault(); }
+            set { this._excluded = value; }
+        }
+
+        // Check to see if Excluded property is set
+        internal bool IsSetExcluded()
+        {
+            return this._excluded.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeReason. 
+        /// <para>
+        /// Indicates the reason for excluding an operational recommendation.
+        /// </para>
+        /// </summary>
+        public ExcludeRecommendationReason ExcludeReason
+        {
+            get { return this._excludeReason; }
+            set { this._excludeReason = value; }
+        }
+
+        // Check to see if ExcludeReason property is set
+        internal bool IsSetExcludeReason()
+        {
+            return this._excludeReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource identifier.
+        /// Identifier of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -78,7 +116,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TargetAccountId. 
         /// <para>
-        /// The target account identifier.
+        /// Identifier of the target account.
         /// </para>
         /// </summary>
         public string TargetAccountId

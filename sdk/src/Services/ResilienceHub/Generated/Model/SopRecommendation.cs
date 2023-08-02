@@ -45,7 +45,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         /// </summary>
         public string AppComponentName
@@ -63,7 +63,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the SOP recommendation.
+        /// Description of the SOP recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -100,7 +100,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SOP recommendation.
+        /// Name of the SOP recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -119,7 +119,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Prerequisite. 
         /// <para>
-        /// The prerequisite for the SOP recommendation.
+        /// Prerequisite for the SOP recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -157,7 +157,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// The reference identifier for the SOP recommendation.
+        /// Reference identifier for the SOP recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

@@ -41,7 +41,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
-        /// The logical resource identifier for the unsupported resource.
+        /// Logical resource identifier for the unsupported resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
-        /// The physical resource identifier for the unsupported resource.
+        /// Physical resource identifier for the unsupported resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

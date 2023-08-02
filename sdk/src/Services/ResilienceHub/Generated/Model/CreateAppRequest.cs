@@ -32,12 +32,13 @@ namespace Amazon.ResilienceHub.Model
     /// Container for the parameters to the CreateApp operation.
     /// Creates an Resilience Hub application. An Resilience Hub application is a collection
     /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
-    /// application disruptions. To describe an Resilience Hub application, you provide an
+    /// application disruptions. To describe a Resilience Hub application, you provide an
     /// application name, resources from one or more CloudFormation stacks, Resource Groups,
     /// Terraform state files, AppRegistry applications, and an appropriate resiliency policy.
-    /// For more information about the number of resources supported per application, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
-    /// Quotas</a>.
+    /// In addition, you can also add resources that are located on Amazon Elastic Kubernetes
+    /// Service (Amazon EKS) clusters as optional resources. For more information about the
+    /// number of resources supported per application, see <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
+    /// quotas</a>.
     /// 
     ///  
     /// <para>
@@ -53,7 +54,9 @@ namespace Amazon.ResilienceHub.Model
         private AppAssessmentScheduleType _assessmentSchedule;
         private string _clientToken;
         private string _description;
+        private List<EventSubscription> _eventSubscriptions = new List<EventSubscription>();
         private string _name;
+        private PermissionModel _permissionModel;
         private string _policyArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -116,9 +119,30 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventSubscriptions. 
+        /// <para>
+        /// The list of events you would like to subscribe and get notification for. Currently,
+        /// Resilience Hub supports only <b>Drift detected</b> and <b>Scheduled assessment failure</b>
+        /// events notification.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EventSubscription> EventSubscriptions
+        {
+            get { return this._eventSubscriptions; }
+            set { this._eventSubscriptions = value; }
+        }
+
+        // Check to see if EventSubscriptions property is set
+        internal bool IsSetEventSubscriptions()
+        {
+            return this._eventSubscriptions != null && this._eventSubscriptions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the application.
+        /// Name of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -135,10 +159,28 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionModel. 
+        /// <para>
+        /// Defines the roles and credentials that Resilience Hub would use while creating the
+        /// application, importing its resources, and running an assessment.
+        /// </para>
+        /// </summary>
+        public PermissionModel PermissionModel
+        {
+            get { return this._permissionModel; }
+            set { this._permissionModel = value; }
+        }
+
+        // Check to see if PermissionModel property is set
+        internal bool IsSetPermissionModel()
+        {
+            return this._permissionModel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+        /// Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -158,8 +200,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
-        /// Services resource. Each tag consists of a key/value pair.
+        /// Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]

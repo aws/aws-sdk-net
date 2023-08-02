@@ -180,7 +180,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RpoReferenceId. 
         /// <para>
-        /// The RPO reference identifier.
+        /// Reference identifier of the RPO .
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -218,7 +218,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RtoReferenceId. 
         /// <para>
-        /// The RTO reference identifier.
+        /// Reference identifier of the RTO.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

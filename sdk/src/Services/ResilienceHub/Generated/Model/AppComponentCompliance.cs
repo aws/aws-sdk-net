@@ -43,7 +43,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         /// </summary>
         public string AppComponentName
@@ -134,7 +134,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the action.
+        /// Status of the action.
         /// </para>
         /// </summary>
         public ComplianceStatus Status

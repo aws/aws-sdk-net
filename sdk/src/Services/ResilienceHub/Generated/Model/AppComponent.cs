@@ -77,7 +77,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier of the Application Component.
+        /// Identifier of the Application Component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -96,7 +96,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

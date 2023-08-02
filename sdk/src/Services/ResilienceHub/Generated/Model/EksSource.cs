@@ -39,8 +39,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property EksClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The
-        /// format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>.
+        /// Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The format
+        /// for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>

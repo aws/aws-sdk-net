@@ -106,6 +106,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cost = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("driftStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

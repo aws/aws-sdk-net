@@ -29,16 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// The version of the application.
+    /// Version of an application.
     /// </summary>
     public partial class AppVersionSummary
     {
         private string _appVersion;
+        private DateTime? _creationTime;
+        private long? _identifier;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property AppVersion. 
         /// <para>
-        /// The version of the application.
+        /// Version of an application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -52,6 +55,60 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppVersion()
         {
             return this._appVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// Creation time of the application version.
+        /// </para>
+        /// </summary>
+        public DateTime CreationTime
+        {
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
+        }
+
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
+        {
+            return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// Identifier of the application version.
+        /// </para>
+        /// </summary>
+        public long Identifier
+        {
+            get { return this._identifier.GetValueOrDefault(); }
+            set { this._identifier = value; }
+        }
+
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
+        {
+            return this._identifier.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// Name of the application version.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

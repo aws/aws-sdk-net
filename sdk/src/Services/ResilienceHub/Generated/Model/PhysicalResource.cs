@@ -120,7 +120,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
-        /// The logical identifier of the resource.
+        /// Logical identifier of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +139,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ParentResourceName. 
         /// <para>
-        /// The name of the parent resource.
+        /// Name of the parent resource.
         /// </para>
         /// </summary>
         public string ParentResourceName
@@ -157,7 +157,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
-        /// The physical identifier of the resource.
+        /// Identifier of the physical resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -213,7 +213,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of input source.
+        /// Type of input source.
         /// </para>
         /// </summary>
         public ResourceSourceType SourceType

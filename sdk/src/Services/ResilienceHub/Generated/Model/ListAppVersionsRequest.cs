@@ -35,13 +35,15 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListAppVersionsRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
+        private DateTime? _endTime;
         private int? _maxResults;
         private string _nextToken;
+        private DateTime? _startTime;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -61,11 +63,29 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// Upper limit of the time range to filter the application versions.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.
+        /// Maximum number of results to include in the response. If more results exist than the
+        /// specified <code>MaxResults</code> value, a token is included in the response so that
+        /// the remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -97,6 +117,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// Lower limit of the time range to filter the application versions.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }

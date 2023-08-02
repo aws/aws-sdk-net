@@ -70,6 +70,24 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("creationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("identifier", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -40,7 +40,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
-        ///  This is the identifier of the resource. 
+        /// Identifier of the logical resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
-        ///  This is the identifier of the physical resource. 
+        /// Identifier of the physical resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

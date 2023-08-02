@@ -48,7 +48,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         /// </summary>
         public string AppComponentName
@@ -86,7 +86,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the test recommendation.
+        /// Description for the test recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -105,7 +105,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Intent. 
         /// <para>
-        /// The intent of the test recommendation.
+        /// Intent of the test recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -142,7 +142,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the test recommendation.
+        /// Name of the test recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -161,7 +161,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Prerequisite. 
         /// <para>
-        /// The prerequisite of the test recommendation.
+        /// Prerequisite of the test recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -198,7 +198,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// The reference identifier for the test recommendation.
+        /// Reference identifier for the test recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -217,7 +217,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Risk. 
         /// <para>
-        /// The level of risk for this test recommendation.
+        /// Level of risk for this test recommendation.
         /// </para>
         /// </summary>
         public TestRisk Risk
@@ -235,7 +235,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of test recommendation.
+        /// Type of test recommendation.
         /// </para>
         /// </summary>
         public TestType Type

@@ -41,6 +41,7 @@ namespace Amazon.ResilienceHub.Model
         private Dictionary<string, DisruptionCompliance> _compliance = new Dictionary<string, DisruptionCompliance>();
         private ComplianceStatus _complianceStatus;
         private Cost _cost;
+        private DriftStatus _driftStatus;
         private DateTime? _endTime;
         private AssessmentInvoker _invoker;
         private string _message;
@@ -49,11 +50,12 @@ namespace Amazon.ResilienceHub.Model
         private ResourceErrorsDetails _resourceErrorsDetails;
         private DateTime? _startTime;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -74,7 +76,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppVersion. 
         /// <para>
-        /// The version of the application.
+        /// Version of an application.
         /// </para>
         /// </summary>
         public string AppVersion
@@ -92,7 +94,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+        /// Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -113,7 +115,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentName. 
         /// <para>
-        /// The name of the assessment.
+        /// Name of the assessment.
         /// </para>
         /// </summary>
         public string AssessmentName
@@ -131,7 +133,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentStatus. 
         /// <para>
-        /// The current status of the assessment for the resiliency policy.
+        /// Current status of the assessment for the resiliency policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,7 +152,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Compliance. 
         /// <para>
-        /// The application compliance against the resiliency policy.
+        /// Application compliance against the resiliency policy.
         /// </para>
         /// </summary>
         public Dictionary<string, DisruptionCompliance> Compliance
@@ -168,7 +170,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
-        /// The current status of the compliance for the resiliency policy.
+        /// Current status of the compliance for the resiliency policy.
         /// </para>
         /// </summary>
         public ComplianceStatus ComplianceStatus
@@ -186,7 +188,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Cost. 
         /// <para>
-        /// The cost for the application.
+        /// Cost for the application.
         /// </para>
         /// </summary>
         public Cost Cost
@@ -202,9 +204,28 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriftStatus. 
+        /// <para>
+        /// Indicates if compliance drifts (deviations) were detected while running an assessment
+        /// for your application.
+        /// </para>
+        /// </summary>
+        public DriftStatus DriftStatus
+        {
+            get { return this._driftStatus; }
+            set { this._driftStatus = value; }
+        }
+
+        // Check to see if DriftStatus property is set
+        internal bool IsSetDriftStatus()
+        {
+            return this._driftStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time for the action.
+        /// End time for the action.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -260,7 +281,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The resiliency policy.
+        /// Resiliency policy of an application.
         /// </para>
         /// </summary>
         public ResiliencyPolicy Policy
@@ -278,7 +299,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResiliencyScore. 
         /// <para>
-        /// The current resiliency score for the application.
+        /// Current resiliency score for an application.
         /// </para>
         /// </summary>
         public ResiliencyScore ResiliencyScore
@@ -315,7 +336,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The starting time for the action.
+        /// Starting time for the action.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -333,8 +354,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
-        /// Services resource. Each tag consists of a key/value pair.
+        /// Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
@@ -348,6 +369,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// Version name of the published application.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

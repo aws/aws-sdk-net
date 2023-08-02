@@ -63,6 +63,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     response.AppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("identifier", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.Identifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -88,10 +88,37 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEventSubscriptions())
+                {
+                    context.Writer.WritePropertyName("eventSubscriptions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventSubscriptionsListValue in publicRequest.EventSubscriptions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventSubscriptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEventSubscriptionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPermissionModel())
+                {
+                    context.Writer.WritePropertyName("permissionModel");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PermissionModelMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PermissionModel, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPolicyArn())

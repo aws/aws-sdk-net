@@ -40,7 +40,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -96,7 +96,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The logical identifier of the resource.
+        /// Logical identifier of the resource.
         /// </para>
         ///  
         /// <para>
@@ -112,7 +112,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The identifier of the resource.
+        /// Identifier of the resource.
         /// </para>
         ///  
         /// <para>
@@ -160,7 +160,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
         /// belongs to.
         /// </para>
         ///  <note> 
@@ -226,8 +226,8 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The list of Application Components that this resource belongs to. If an Application
-        /// Component is not part of the Resilience Hub application, it will be added.
+        /// List of Application Components that this resource belongs to. If an Application Component
+        /// is not part of the Resilience Hub application, it will be added.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +243,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         ///  
         /// <para>
@@ -255,7 +255,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The type of Application Component. For more information about the types of Application
+        /// Type of Application Component. For more information about the types of Application
         /// Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
         /// resources in an AppComponent</a>.
         /// </para>
@@ -326,7 +326,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The logical identifier of the resource.
+        /// Logical identifier of the resource.
         /// </para>
         ///  
         /// <para>
@@ -362,7 +362,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The identifier of the resource.
+        /// Identifier of the resource.
         /// </para>
         ///  
         /// <para>
@@ -410,7 +410,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
         /// belongs to.
         /// </para>
         ///  <note> 
@@ -427,7 +427,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The Resilience Hub application version.
+        /// Resilience Hub application version.
         /// </para>
         ///  </li> <li> 
         /// <para>
