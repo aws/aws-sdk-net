@@ -14761,6 +14761,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingInstanceType MlP4d24xlarge = new TrainingInstanceType("ml.p4d.24xlarge");
         /// <summary>
+        /// Constant MlP548xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP548xlarge = new TrainingInstanceType("ml.p5.48xlarge");
+        /// <summary>
         /// Constant MlTrn12xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlTrn12xlarge = new TrainingInstanceType("ml.trn1.2xlarge");
