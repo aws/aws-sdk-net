@@ -1,3 +1,15 @@
+### 3.7.613.0 (2023-08-03 18:26 UTC)
+* AutoScaling (3.7.202.3)
+	* Documentation changes related to Amazon EC2 Auto Scaling APIs.
+* Cloud9 (3.7.200.10)
+	* Updated the deprecation date for Amazon Linux. Doc only update.
+* DatabaseMigrationService (3.7.202.0)
+	* The release makes public API for DMS Schema Conversion feature.
+* EC2 (3.7.204.0)
+	* This release adds new parameter isPrimaryIPv6 to  allow assigning an IPv6 address as a primary IPv6 address to a network interface which cannot be changed to give equivalent functionality available for network interfaces with primary IPv4 address.
+* SageMaker (3.7.206.0)
+	* Amazon SageMaker now supports running training jobs on p5.48xlarge instance types.
+
 ### 3.7.612.0 (2023-08-02 18:23 UTC)
 * Budgets (3.7.201.0)
 	* As part of CAE tagging integration we need to update our budget names regex filter to prevent customers from using "/action/" in their budget names.
