@@ -60,6 +60,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDataProviders operation
+        ///</summary>
+        public IDescribeDataProvidersPaginator DescribeDataProviders(DescribeDataProvidersRequest request) 
+        {
+            return new DescribeDataProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeEndpoints operation
         ///</summary>
         public IDescribeEndpointsPaginator DescribeEndpoints(DescribeEndpointsRequest request) 
@@ -108,6 +116,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeExtensionPackAssociations operation
+        ///</summary>
+        public IDescribeExtensionPackAssociationsPaginator DescribeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request) 
+        {
+            return new DescribeExtensionPackAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeFleetAdvisorCollectors operation
         ///</summary>
         public IDescribeFleetAdvisorCollectorsPaginator DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request) 
@@ -145,6 +161,62 @@ namespace Amazon.DatabaseMigrationService.Model
         public IDescribeFleetAdvisorSchemasPaginator DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request) 
         {
             return new DescribeFleetAdvisorSchemasPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInstanceProfiles operation
+        ///</summary>
+        public IDescribeInstanceProfilesPaginator DescribeInstanceProfiles(DescribeInstanceProfilesRequest request) 
+        {
+            return new DescribeInstanceProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelAssessments operation
+        ///</summary>
+        public IDescribeMetadataModelAssessmentsPaginator DescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request) 
+        {
+            return new DescribeMetadataModelAssessmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelConversions operation
+        ///</summary>
+        public IDescribeMetadataModelConversionsPaginator DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request) 
+        {
+            return new DescribeMetadataModelConversionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelExportsAsScript operation
+        ///</summary>
+        public IDescribeMetadataModelExportsAsScriptPaginator DescribeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request) 
+        {
+            return new DescribeMetadataModelExportsAsScriptPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelExportsToTarget operation
+        ///</summary>
+        public IDescribeMetadataModelExportsToTargetPaginator DescribeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request) 
+        {
+            return new DescribeMetadataModelExportsToTargetPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelImports operation
+        ///</summary>
+        public IDescribeMetadataModelImportsPaginator DescribeMetadataModelImports(DescribeMetadataModelImportsRequest request) 
+        {
+            return new DescribeMetadataModelImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMigrationProjects operation
+        ///</summary>
+        public IDescribeMigrationProjectsPaginator DescribeMigrationProjects(DescribeMigrationProjectsRequest request) 
+        {
+            return new DescribeMigrationProjectsPaginator(this.client, request);
         }
 
         /// <summary>

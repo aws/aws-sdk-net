@@ -538,6 +538,70 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateDataProvider
+
+        /// <summary>
+        /// Creates a data provider using the provided settings. A data provider stores a data
+        /// store type and location information about your database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataProvider service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider">REST API Reference for CreateDataProvider Operation</seealso>
+        public virtual CreateDataProviderResponse CreateDataProvider(CreateDataProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataProvider operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider">REST API Reference for CreateDataProvider Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataProvider(CreateDataProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateDataProviderResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider">REST API Reference for CreateDataProvider Operation</seealso>
+        public virtual CreateDataProviderResponse EndCreateDataProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEndpoint
 
         /// <summary>
@@ -794,6 +858,163 @@ namespace Amazon.DatabaseMigrationService
         public virtual CreateFleetAdvisorCollectorResponse EndCreateFleetAdvisorCollector(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFleetAdvisorCollectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateInstanceProfile
+
+        /// <summary>
+        /// Creates the instance profile using the specified parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstanceProfile service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateInstanceProfile(CreateInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceProfileResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual CreateInstanceProfileResponse EndCreateInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInstanceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMigrationProject
+
+        /// <summary>
+        /// Creates the migration project using the specified parameters.
+        /// 
+        ///  
+        /// <para>
+        /// You can run this action only after you create an instance profile and data providers
+        /// using <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateInstanceProfile.html">CreateInstanceProfile</a>
+        /// and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html">CreateDataProvider</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMigrationProject service method.</param>
+        /// 
+        /// <returns>The response from the CreateMigrationProject service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject">REST API Reference for CreateMigrationProject Operation</seealso>
+        public virtual CreateMigrationProjectResponse CreateMigrationProject(CreateMigrationProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMigrationProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMigrationProjectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMigrationProjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMigrationProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMigrationProject operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMigrationProject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject">REST API Reference for CreateMigrationProject Operation</seealso>
+        public virtual IAsyncResult BeginCreateMigrationProject(CreateMigrationProjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMigrationProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMigrationProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMigrationProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMigrationProject.</param>
+        /// 
+        /// <returns>Returns a  CreateMigrationProjectResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject">REST API Reference for CreateMigrationProject Operation</seealso>
+        public virtual CreateMigrationProjectResponse EndCreateMigrationProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMigrationProjectResponse>(asyncResult);
         }
 
         #endregion
@@ -1257,6 +1478,76 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DeleteDataProvider
+
+        /// <summary>
+        /// Deletes the specified data provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All migration projects associated with the data provider must be deleted or modified
+        /// before you can delete the data provider.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataProvider service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider">REST API Reference for DeleteDataProvider Operation</seealso>
+        public virtual DeleteDataProviderResponse DeleteDataProvider(DeleteDataProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataProvider operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider">REST API Reference for DeleteDataProvider Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataProvider(DeleteDataProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataProviderResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider">REST API Reference for DeleteDataProvider Operation</seealso>
+        public virtual DeleteDataProviderResponse EndDeleteDataProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         /// <summary>
@@ -1499,6 +1790,145 @@ namespace Amazon.DatabaseMigrationService
         public virtual DeleteFleetAdvisorDatabasesResponse EndDeleteFleetAdvisorDatabases(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFleetAdvisorDatabasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteInstanceProfile
+
+        /// <summary>
+        /// Deletes the specified instance profile.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All migration projects associated with the instance profile must be deleted or modified
+        /// before you can delete the instance profile.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstanceProfile service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInstanceProfile(DeleteInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceProfileResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual DeleteInstanceProfileResponse EndDeleteInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInstanceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMigrationProject
+
+        /// <summary>
+        /// Deletes the specified migration project.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The migration project must be closed before you can delete it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMigrationProject service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMigrationProject service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject">REST API Reference for DeleteMigrationProject Operation</seealso>
+        public virtual DeleteMigrationProjectResponse DeleteMigrationProject(DeleteMigrationProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMigrationProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMigrationProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMigrationProjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMigrationProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMigrationProject operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMigrationProject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject">REST API Reference for DeleteMigrationProject Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMigrationProject(DeleteMigrationProjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMigrationProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMigrationProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMigrationProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMigrationProject.</param>
+        /// 
+        /// <returns>Returns a  DeleteMigrationProjectResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject">REST API Reference for DeleteMigrationProject Operation</seealso>
+        public virtual DeleteMigrationProjectResponse EndDeleteMigrationProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMigrationProjectResponse>(asyncResult);
         }
 
         #endregion
@@ -2094,6 +2524,123 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeConversionConfiguration
+
+        /// <summary>
+        /// Returns configuration parameters for a schema conversion project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConversionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConversionConfiguration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration">REST API Reference for DescribeConversionConfiguration Operation</seealso>
+        public virtual DescribeConversionConfigurationResponse DescribeConversionConfiguration(DescribeConversionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConversionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConversionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConversionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConversionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConversionConfiguration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConversionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration">REST API Reference for DescribeConversionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConversionConfiguration(DescribeConversionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConversionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConversionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConversionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConversionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeConversionConfigurationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration">REST API Reference for DescribeConversionConfiguration Operation</seealso>
+        public virtual DescribeConversionConfigurationResponse EndDescribeConversionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConversionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDataProviders
+
+        /// <summary>
+        /// Returns a paginated list of data providers for your account in the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataProviders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataProviders service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders">REST API Reference for DescribeDataProviders Operation</seealso>
+        public virtual DescribeDataProvidersResponse DescribeDataProviders(DescribeDataProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataProvidersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDataProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataProviders operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders">REST API Reference for DescribeDataProviders Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDataProviders(DescribeDataProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDataProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataProviders.</param>
+        /// 
+        /// <returns>Returns a  DescribeDataProvidersResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders">REST API Reference for DescribeDataProviders Operation</seealso>
+        public virtual DescribeDataProvidersResponse EndDescribeDataProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDataProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeEndpoints
 
         /// <summary>
@@ -2492,6 +3039,62 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeExtensionPackAssociations
+
+        /// <summary>
+        /// Returns a paginated list of extension pack associations for the specified migration
+        /// project. An extension pack is an add-on module that emulates functions present in
+        /// a source database that are required when converting objects to the target database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExtensionPackAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExtensionPackAssociations service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations">REST API Reference for DescribeExtensionPackAssociations Operation</seealso>
+        public virtual DescribeExtensionPackAssociationsResponse DescribeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExtensionPackAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExtensionPackAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExtensionPackAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExtensionPackAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExtensionPackAssociations operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExtensionPackAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations">REST API Reference for DescribeExtensionPackAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExtensionPackAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExtensionPackAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExtensionPackAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExtensionPackAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeExtensionPackAssociationsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations">REST API Reference for DescribeExtensionPackAssociations Operation</seealso>
+        public virtual DescribeExtensionPackAssociationsResponse EndDescribeExtensionPackAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeExtensionPackAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeFleetAdvisorCollectors
 
         /// <summary>
@@ -2774,6 +3377,412 @@ namespace Amazon.DatabaseMigrationService
         public virtual DescribeFleetAdvisorSchemasResponse EndDescribeFleetAdvisorSchemas(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetAdvisorSchemasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceProfiles
+
+        /// <summary>
+        /// Returns a paginated list of instance profiles for your account in the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceProfiles service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceProfiles service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles">REST API Reference for DescribeInstanceProfiles Operation</seealso>
+        public virtual DescribeInstanceProfilesResponse DescribeInstanceProfiles(DescribeInstanceProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceProfiles operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles">REST API Reference for DescribeInstanceProfiles Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstanceProfiles(DescribeInstanceProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceProfiles.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceProfilesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles">REST API Reference for DescribeInstanceProfiles Operation</seealso>
+        public virtual DescribeInstanceProfilesResponse EndDescribeInstanceProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMetadataModelAssessments
+
+        /// <summary>
+        /// Returns a paginated list of metadata model assessments for your account in the current
+        /// region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelAssessments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelAssessments service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">REST API Reference for DescribeMetadataModelAssessments Operation</seealso>
+        public virtual DescribeMetadataModelAssessmentsResponse DescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelAssessmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelAssessmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelAssessments operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelAssessments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">REST API Reference for DescribeMetadataModelAssessments Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelAssessmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelAssessments.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelAssessmentsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">REST API Reference for DescribeMetadataModelAssessments Operation</seealso>
+        public virtual DescribeMetadataModelAssessmentsResponse EndDescribeMetadataModelAssessments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetadataModelAssessmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMetadataModelConversions
+
+        /// <summary>
+        /// Returns a paginated list of metadata model conversions for a migration project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelConversions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelConversions service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">REST API Reference for DescribeMetadataModelConversions Operation</seealso>
+        public virtual DescribeMetadataModelConversionsResponse DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelConversionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelConversionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelConversionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelConversions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelConversions operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelConversions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">REST API Reference for DescribeMetadataModelConversions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelConversionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelConversionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelConversions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelConversions.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelConversionsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">REST API Reference for DescribeMetadataModelConversions Operation</seealso>
+        public virtual DescribeMetadataModelConversionsResponse EndDescribeMetadataModelConversions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetadataModelConversionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMetadataModelExportsAsScript
+
+        /// <summary>
+        /// Returns a paginated list of metadata model exports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelExportsAsScript service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelExportsAsScript service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript">REST API Reference for DescribeMetadataModelExportsAsScript Operation</seealso>
+        public virtual DescribeMetadataModelExportsAsScriptResponse DescribeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelExportsAsScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelExportsAsScriptResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelExportsAsScriptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelExportsAsScript operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelExportsAsScript operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelExportsAsScript
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript">REST API Reference for DescribeMetadataModelExportsAsScript Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelExportsAsScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelExportsAsScriptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelExportsAsScript operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelExportsAsScript.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelExportsAsScriptResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript">REST API Reference for DescribeMetadataModelExportsAsScript Operation</seealso>
+        public virtual DescribeMetadataModelExportsAsScriptResponse EndDescribeMetadataModelExportsAsScript(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetadataModelExportsAsScriptResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMetadataModelExportsToTarget
+
+        /// <summary>
+        /// Returns a paginated list of metadata model exports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelExportsToTarget service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelExportsToTarget service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget">REST API Reference for DescribeMetadataModelExportsToTarget Operation</seealso>
+        public virtual DescribeMetadataModelExportsToTargetResponse DescribeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelExportsToTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelExportsToTargetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelExportsToTargetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelExportsToTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelExportsToTarget operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelExportsToTarget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget">REST API Reference for DescribeMetadataModelExportsToTarget Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelExportsToTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelExportsToTargetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelExportsToTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelExportsToTarget.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelExportsToTargetResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget">REST API Reference for DescribeMetadataModelExportsToTarget Operation</seealso>
+        public virtual DescribeMetadataModelExportsToTargetResponse EndDescribeMetadataModelExportsToTarget(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetadataModelExportsToTargetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMetadataModelImports
+
+        /// <summary>
+        /// Returns a paginated list of metadata model imports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelImports service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetadataModelImports service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports">REST API Reference for DescribeMetadataModelImports Operation</seealso>
+        public virtual DescribeMetadataModelImportsResponse DescribeMetadataModelImports(DescribeMetadataModelImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelImportsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetadataModelImportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetadataModelImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetadataModelImports operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetadataModelImports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports">REST API Reference for DescribeMetadataModelImports Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetadataModelImports(DescribeMetadataModelImportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetadataModelImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetadataModelImportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetadataModelImports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetadataModelImports.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetadataModelImportsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports">REST API Reference for DescribeMetadataModelImports Operation</seealso>
+        public virtual DescribeMetadataModelImportsResponse EndDescribeMetadataModelImports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetadataModelImportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMigrationProjects
+
+        /// <summary>
+        /// Returns a paginated list of migration projects for your account in the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMigrationProjects service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMigrationProjects service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects">REST API Reference for DescribeMigrationProjects Operation</seealso>
+        public virtual DescribeMigrationProjectsResponse DescribeMigrationProjects(DescribeMigrationProjectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMigrationProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMigrationProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMigrationProjectsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMigrationProjects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMigrationProjects operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMigrationProjects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects">REST API Reference for DescribeMigrationProjects Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMigrationProjects(DescribeMigrationProjectsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMigrationProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMigrationProjectsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMigrationProjects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMigrationProjects.</param>
+        /// 
+        /// <returns>Returns a  DescribeMigrationProjectsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects">REST API Reference for DescribeMigrationProjects Operation</seealso>
+        public virtual DescribeMigrationProjectsResponse EndDescribeMigrationProjects(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMigrationProjectsResponse>(asyncResult);
         }
 
         #endregion
@@ -3803,6 +4812,64 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ExportMetadataModelAssessment
+
+        /// <summary>
+        /// Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS
+        /// can save your assessment report as a comma-separated value (CSV) or a PDF file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportMetadataModelAssessment service method.</param>
+        /// 
+        /// <returns>The response from the ExportMetadataModelAssessment service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">REST API Reference for ExportMetadataModelAssessment Operation</seealso>
+        public virtual ExportMetadataModelAssessmentResponse ExportMetadataModelAssessment(ExportMetadataModelAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportMetadataModelAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportMetadataModelAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<ExportMetadataModelAssessmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportMetadataModelAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportMetadataModelAssessment operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportMetadataModelAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">REST API Reference for ExportMetadataModelAssessment Operation</seealso>
+        public virtual IAsyncResult BeginExportMetadataModelAssessment(ExportMetadataModelAssessmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportMetadataModelAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportMetadataModelAssessmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportMetadataModelAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportMetadataModelAssessment.</param>
+        /// 
+        /// <returns>Returns a  ExportMetadataModelAssessmentResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">REST API Reference for ExportMetadataModelAssessment Operation</seealso>
+        public virtual ExportMetadataModelAssessmentResponse EndExportMetadataModelAssessment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportMetadataModelAssessmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportCertificate
 
         /// <summary>
@@ -3921,6 +4988,136 @@ namespace Amazon.DatabaseMigrationService
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyConversionConfiguration
+
+        /// <summary>
+        /// Modifies the specified schema conversion configuration using the provided parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyConversionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyConversionConfiguration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration">REST API Reference for ModifyConversionConfiguration Operation</seealso>
+        public virtual ModifyConversionConfigurationResponse ModifyConversionConfiguration(ModifyConversionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyConversionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyConversionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyConversionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyConversionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyConversionConfiguration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyConversionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration">REST API Reference for ModifyConversionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginModifyConversionConfiguration(ModifyConversionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyConversionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyConversionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyConversionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyConversionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ModifyConversionConfigurationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration">REST API Reference for ModifyConversionConfiguration Operation</seealso>
+        public virtual ModifyConversionConfigurationResponse EndModifyConversionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyConversionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyDataProvider
+
+        /// <summary>
+        /// Modifies the specified data provider using the provided settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must remove the data provider from all migration projects before you can modify
+        /// it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDataProvider service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDataProvider service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider">REST API Reference for ModifyDataProvider Operation</seealso>
+        public virtual ModifyDataProviderResponse ModifyDataProvider(ModifyDataProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDataProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDataProviderResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDataProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDataProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDataProvider operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDataProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider">REST API Reference for ModifyDataProvider Operation</seealso>
+        public virtual IAsyncResult BeginModifyDataProvider(ModifyDataProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDataProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDataProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDataProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDataProvider.</param>
+        /// 
+        /// <returns>Returns a  ModifyDataProviderResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider">REST API Reference for ModifyDataProvider Operation</seealso>
+        public virtual ModifyDataProviderResponse EndModifyDataProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyDataProviderResponse>(asyncResult);
         }
 
         #endregion
@@ -4082,6 +5279,160 @@ namespace Amazon.DatabaseMigrationService
         public virtual ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyEventSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceProfile
+
+        /// <summary>
+        /// Modifies the specified instance profile using the provided parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All migration projects associated with the instance profile must be deleted or modified
+        /// before you can modify the instance profile.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceProfile service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile">REST API Reference for ModifyInstanceProfile Operation</seealso>
+        public virtual ModifyInstanceProfileResponse ModifyInstanceProfile(ModifyInstanceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceProfile operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile">REST API Reference for ModifyInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginModifyInstanceProfile(ModifyInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceProfileResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile">REST API Reference for ModifyInstanceProfile Operation</seealso>
+        public virtual ModifyInstanceProfileResponse EndModifyInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyMigrationProject
+
+        /// <summary>
+        /// Modifies the specified migration project using the provided parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The migration project must be closed before you can modify it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyMigrationProject service method.</param>
+        /// 
+        /// <returns>The response from the ModifyMigrationProject service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject">REST API Reference for ModifyMigrationProject Operation</seealso>
+        public virtual ModifyMigrationProjectResponse ModifyMigrationProject(ModifyMigrationProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyMigrationProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyMigrationProjectResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyMigrationProjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyMigrationProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyMigrationProject operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyMigrationProject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject">REST API Reference for ModifyMigrationProject Operation</seealso>
+        public virtual IAsyncResult BeginModifyMigrationProject(ModifyMigrationProjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyMigrationProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyMigrationProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyMigrationProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyMigrationProject.</param>
+        /// 
+        /// <returns>Returns a  ModifyMigrationProjectResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject">REST API Reference for ModifyMigrationProject Operation</seealso>
+        public virtual ModifyMigrationProjectResponse EndModifyMigrationProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyMigrationProjectResponse>(asyncResult);
         }
 
         #endregion
@@ -4850,6 +6201,486 @@ namespace Amazon.DatabaseMigrationService
         public virtual RunFleetAdvisorLsaAnalysisResponse EndRunFleetAdvisorLsaAnalysis(IAsyncResult asyncResult)
         {
             return EndInvoke<RunFleetAdvisorLsaAnalysisResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartExtensionPackAssociation
+
+        /// <summary>
+        /// Applies the extension pack to your target database. An extension pack is an add-on
+        /// module that emulates functions present in a source database that are required when
+        /// converting objects to the target database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExtensionPackAssociation service method.</param>
+        /// 
+        /// <returns>The response from the StartExtensionPackAssociation service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation">REST API Reference for StartExtensionPackAssociation Operation</seealso>
+        public virtual StartExtensionPackAssociationResponse StartExtensionPackAssociation(StartExtensionPackAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExtensionPackAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExtensionPackAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<StartExtensionPackAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExtensionPackAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExtensionPackAssociation operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExtensionPackAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation">REST API Reference for StartExtensionPackAssociation Operation</seealso>
+        public virtual IAsyncResult BeginStartExtensionPackAssociation(StartExtensionPackAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExtensionPackAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExtensionPackAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartExtensionPackAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExtensionPackAssociation.</param>
+        /// 
+        /// <returns>Returns a  StartExtensionPackAssociationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation">REST API Reference for StartExtensionPackAssociation Operation</seealso>
+        public virtual StartExtensionPackAssociationResponse EndStartExtensionPackAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartExtensionPackAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetadataModelAssessment
+
+        /// <summary>
+        /// Creates a database migration assessment report by assessing the migration complexity
+        /// for your source database. A database migration assessment report summarizes all of
+        /// the schema conversion tasks. It also details the action items for database objects
+        /// that can't be converted to the database engine of your target database instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelAssessment service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelAssessment service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment">REST API Reference for StartMetadataModelAssessment Operation</seealso>
+        public virtual StartMetadataModelAssessmentResponse StartMetadataModelAssessment(StartMetadataModelAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetadataModelAssessmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetadataModelAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelAssessment operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetadataModelAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment">REST API Reference for StartMetadataModelAssessment Operation</seealso>
+        public virtual IAsyncResult BeginStartMetadataModelAssessment(StartMetadataModelAssessmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelAssessmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetadataModelAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetadataModelAssessment.</param>
+        /// 
+        /// <returns>Returns a  StartMetadataModelAssessmentResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment">REST API Reference for StartMetadataModelAssessment Operation</seealso>
+        public virtual StartMetadataModelAssessmentResponse EndStartMetadataModelAssessment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetadataModelAssessmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetadataModelConversion
+
+        /// <summary>
+        /// Converts your source database objects to a format compatible with the target database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelConversion service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelConversion service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">REST API Reference for StartMetadataModelConversion Operation</seealso>
+        public virtual StartMetadataModelConversionResponse StartMetadataModelConversion(StartMetadataModelConversionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelConversionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelConversionResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetadataModelConversionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetadataModelConversion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelConversion operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetadataModelConversion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">REST API Reference for StartMetadataModelConversion Operation</seealso>
+        public virtual IAsyncResult BeginStartMetadataModelConversion(StartMetadataModelConversionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelConversionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelConversionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetadataModelConversion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetadataModelConversion.</param>
+        /// 
+        /// <returns>Returns a  StartMetadataModelConversionResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">REST API Reference for StartMetadataModelConversion Operation</seealso>
+        public virtual StartMetadataModelConversionResponse EndStartMetadataModelConversion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetadataModelConversionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetadataModelExportAsScript
+
+        /// <summary>
+        /// Saves your converted code to a file as a SQL script, and stores this file on your
+        /// Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelExportAsScript service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelExportAsScript service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript">REST API Reference for StartMetadataModelExportAsScript Operation</seealso>
+        public virtual StartMetadataModelExportAsScriptResponse StartMetadataModelExportAsScript(StartMetadataModelExportAsScriptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelExportAsScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelExportAsScriptResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetadataModelExportAsScriptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetadataModelExportAsScript operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelExportAsScript operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetadataModelExportAsScript
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript">REST API Reference for StartMetadataModelExportAsScript Operation</seealso>
+        public virtual IAsyncResult BeginStartMetadataModelExportAsScript(StartMetadataModelExportAsScriptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelExportAsScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelExportAsScriptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetadataModelExportAsScript operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetadataModelExportAsScript.</param>
+        /// 
+        /// <returns>Returns a  StartMetadataModelExportAsScriptResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript">REST API Reference for StartMetadataModelExportAsScript Operation</seealso>
+        public virtual StartMetadataModelExportAsScriptResponse EndStartMetadataModelExportAsScript(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetadataModelExportAsScriptResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetadataModelExportToTarget
+
+        /// <summary>
+        /// Applies converted database objects to your target database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelExportToTarget service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelExportToTarget service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget">REST API Reference for StartMetadataModelExportToTarget Operation</seealso>
+        public virtual StartMetadataModelExportToTargetResponse StartMetadataModelExportToTarget(StartMetadataModelExportToTargetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelExportToTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelExportToTargetResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetadataModelExportToTargetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetadataModelExportToTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelExportToTarget operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetadataModelExportToTarget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget">REST API Reference for StartMetadataModelExportToTarget Operation</seealso>
+        public virtual IAsyncResult BeginStartMetadataModelExportToTarget(StartMetadataModelExportToTargetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelExportToTargetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelExportToTargetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetadataModelExportToTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetadataModelExportToTarget.</param>
+        /// 
+        /// <returns>Returns a  StartMetadataModelExportToTargetResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget">REST API Reference for StartMetadataModelExportToTarget Operation</seealso>
+        public virtual StartMetadataModelExportToTargetResponse EndStartMetadataModelExportToTarget(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetadataModelExportToTargetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetadataModelImport
+
+        /// <summary>
+        /// Loads the metadata for all the dependent database objects of the parent object.
+        /// 
+        ///  
+        /// <para>
+        /// This operation uses your project's Amazon S3 bucket as a metadata cache to improve
+        /// performance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelImport service method.</param>
+        /// 
+        /// <returns>The response from the StartMetadataModelImport service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport">REST API Reference for StartMetadataModelImport Operation</seealso>
+        public virtual StartMetadataModelImportResponse StartMetadataModelImport(StartMetadataModelImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetadataModelImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetadataModelImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetadataModelImport operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetadataModelImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport">REST API Reference for StartMetadataModelImport Operation</seealso>
+        public virtual IAsyncResult BeginStartMetadataModelImport(StartMetadataModelImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetadataModelImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetadataModelImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetadataModelImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetadataModelImport.</param>
+        /// 
+        /// <returns>Returns a  StartMetadataModelImportResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport">REST API Reference for StartMetadataModelImport Operation</seealso>
+        public virtual StartMetadataModelImportResponse EndStartMetadataModelImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetadataModelImportResponse>(asyncResult);
         }
 
         #endregion
