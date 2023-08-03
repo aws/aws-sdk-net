@@ -111,6 +111,7 @@ namespace Amazon.EC2.Model
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecification = new List<ElasticGpuSpecification>();
         private List<ElasticInferenceAccelerator> _elasticInferenceAccelerators = new List<ElasticInferenceAccelerator>();
+        private bool? _enablePrimaryIpv6;
         private EnclaveOptionsRequest _enclaveOptions;
         private HibernationOptionsRequest _hibernationOptions;
         private IamInstanceProfileSpecification _iamInstanceProfile;
@@ -421,6 +422,35 @@ namespace Amazon.EC2.Model
         internal bool IsSetElasticInferenceAccelerators()
         {
             return this._elasticInferenceAccelerators != null && this._elasticInferenceAccelerators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePrimaryIpv6. 
+        /// <para>
+        /// If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable
+        /// assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated
+        /// with an ENI that you have enabled to use a primary IPv6 address. Use this option if
+        /// an instance relies on its IPv6 address not changing. When you launch the instance,
+        /// Amazon Web Services will automatically assign an IPv6 address associated with the
+        /// ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6
+        /// GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA
+        /// address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+        /// until the instance is terminated or the network interface is detached. If you have
+        /// multiple IPv6 addresses associated with an ENI attached to your instance and you enable
+        /// a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+        /// the primary IPv6 address.
+        /// </para>
+        /// </summary>
+        public bool EnablePrimaryIpv6
+        {
+            get { return this._enablePrimaryIpv6.GetValueOrDefault(); }
+            set { this._enablePrimaryIpv6 = value; }
+        }
+
+        // Check to see if EnablePrimaryIpv6 property is set
+        internal bool IsSetEnablePrimaryIpv6()
+        {
+            return this._enablePrimaryIpv6.HasValue; 
         }
 
         /// <summary>

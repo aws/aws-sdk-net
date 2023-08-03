@@ -209,6 +209,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetEnablePrimaryIpv6())
+                {
+                    request.Parameters.Add("EnablePrimaryIpv6", StringUtils.FromBool(publicRequest.EnablePrimaryIpv6));
+                }
                 if(publicRequest.IsSetEnclaveOptions())
                 {
                     if(publicRequest.EnclaveOptions.IsSetEnabled())
@@ -288,6 +292,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetIpv6Address())
                         {
                             request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
+                        }
+                        if(publicRequestlistValue.IsSetIsPrimaryIpv6())
+                        {
+                            request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
                         }
                         publicRequestlistValueIndex++;
                     }
@@ -436,6 +444,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Address));
                                 }
+                                if(publicRequestlistValuelistValue.IsSetIsPrimaryIpv6())
+                                {
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValuelistValue.IsPrimaryIpv6));
+                                }
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
@@ -462,6 +474,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetNetworkInterfaceId())
                         {
                             request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestlistValue.NetworkInterfaceId));
+                        }
+                        if(publicRequestlistValue.IsSetPrimaryIpv6())
+                        {
+                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.PrimaryIpv6));
                         }
                         if(publicRequestlistValue.IsSetPrivateIpAddress())
                         {

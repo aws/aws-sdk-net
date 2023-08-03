@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceIpv6Address
     {
         private string _ipv6Address;
+        private bool? _isPrimaryIpv6;
 
         /// <summary>
         /// Gets and sets the property Ipv6Address. 
@@ -51,6 +52,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Address()
         {
             return this._ipv6Address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrimaryIpv6. 
+        /// <para>
+        /// Determines if an IPv6 address associated with a network interface is the primary IPv6
+        /// address. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6
+        /// GUA will be made the primary IPv6 address until the instance is terminated or the
+        /// network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+        /// </para>
+        /// </summary>
+        public bool IsPrimaryIpv6
+        {
+            get { return this._isPrimaryIpv6.GetValueOrDefault(); }
+            set { this._isPrimaryIpv6 = value; }
+        }
+
+        // Check to see if IsPrimaryIpv6 property is set
+        internal bool IsSetIsPrimaryIpv6()
+        {
+            return this._isPrimaryIpv6.HasValue; 
         }
 
     }

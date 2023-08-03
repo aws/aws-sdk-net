@@ -148,6 +148,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("primaryIpv6", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PrimaryIpv6 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("privateIpAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

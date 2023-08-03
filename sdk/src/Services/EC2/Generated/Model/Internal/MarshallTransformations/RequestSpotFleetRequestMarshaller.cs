@@ -463,6 +463,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             {
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv6Address));
                                             }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetIsPrimaryIpv6())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsPrimaryIpv6));
+                                            }
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }
                                     }
@@ -489,6 +493,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetNetworkInterfaceId())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.NetworkInterfaceId));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetPrimaryIpv6())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.PrimaryIpv6));
                                     }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetPrivateIpAddress())
                                     {
