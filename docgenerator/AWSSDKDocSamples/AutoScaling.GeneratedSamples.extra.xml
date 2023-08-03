@@ -167,7 +167,7 @@
                 <code
                     title="To create an Auto Scaling group with a mixed instances policy"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039" />
+                    region="autoscaling-create-auto-scaling-group-3" />
             </example>
         </value>
     </doc>
@@ -186,7 +186,7 @@
                 <code
                     title="To create an Auto Scaling group using attribute-based instance type selection"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039" />
+                    region="autoscaling-create-auto-scaling-group-4" />
             </example>
         </value>
     </doc>
