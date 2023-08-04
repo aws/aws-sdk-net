@@ -88,6 +88,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterBlockStorageUsed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterCloudStorageUsed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ClusterCloudStorageUsed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

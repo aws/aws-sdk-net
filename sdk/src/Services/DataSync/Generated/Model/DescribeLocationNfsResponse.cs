@@ -42,7 +42,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the NFS location was created.
+        /// The time when the NFS location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -60,7 +60,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NFS location that was described.
+        /// The ARN of the NFS location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -79,7 +79,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the source NFS location that was described.
+        /// The URL of the NFS location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4360)]
@@ -98,7 +98,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The mount options that DataSync uses to mount your NFS share.
+        /// The mount options that DataSync uses to mount your NFS file server.
         /// </para>
         /// </summary>
         public NfsMountOptions MountOptions

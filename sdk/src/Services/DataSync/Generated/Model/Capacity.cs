@@ -33,9 +33,30 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class Capacity
     {
+        private long? _clusterCloudStorageUsed;
         private long? _logicalUsed;
         private long? _provisioned;
         private long? _used;
+
+        /// <summary>
+        /// Gets and sets the property ClusterCloudStorageUsed. 
+        /// <para>
+        /// The amount of space in the cluster that's in cloud storage (for example, if you're
+        /// using data tiering).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long ClusterCloudStorageUsed
+        {
+            get { return this._clusterCloudStorageUsed.GetValueOrDefault(); }
+            set { this._clusterCloudStorageUsed = value; }
+        }
+
+        // Check to see if ClusterCloudStorageUsed property is set
+        internal bool IsSetClusterCloudStorageUsed()
+        {
+            return this._clusterCloudStorageUsed.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LogicalUsed. 

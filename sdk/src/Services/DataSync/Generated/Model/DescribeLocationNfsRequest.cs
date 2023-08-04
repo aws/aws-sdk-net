@@ -30,7 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationNfs operation.
-    /// Returns metadata, such as the path information, about an NFS location.
+    /// Provides details about how an DataSync transfer location for a Network File System
+    /// (NFS) file server is configured.
     /// </summary>
     public partial class DescribeLocationNfsRequest : AmazonDataSyncRequest
     {
@@ -39,7 +40,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NFS location to describe.
+        /// Specifies the Amazon Resource Name (ARN) of the NFS location that you want information
+        /// about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
