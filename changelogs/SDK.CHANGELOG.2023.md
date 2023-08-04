@@ -1,3 +1,18 @@
+### 3.7.614.0 (2023-08-04 18:34 UTC)
+* ACMPCA (3.7.200.10)
+	* Documentation correction for AWS Private CA
+* Connect (3.7.202.0)
+	* Added a new API UpdateRoutingProfileAgentAvailabilityTimer to update agent availability timer of a routing profile.
+* DataSync (3.7.202.0)
+	* Display cloud storage used capacity at a cluster level.
+* ECS (3.7.200.10)
+	* This is a documentation update to address various tickets.
+* SageMaker (3.7.207.0)
+	* Including DataCaptureConfig key in the Amazon Sagemaker Search's transform job object
+* Core 3.7.200.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.613.0 (2023-08-03 18:26 UTC)
 * AutoScaling (3.7.202.3)
 	* Documentation changes related to Amazon EC2 Auto Scaling APIs.

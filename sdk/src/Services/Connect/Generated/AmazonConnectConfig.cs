@@ -32,7 +32,7 @@ namespace Amazon.Connect
     public partial class AmazonConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.202.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
