@@ -68,6 +68,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAgentAvailabilityTimer())
+                {
+                    context.Writer.WritePropertyName("AgentAvailabilityTimer");
+                    context.Writer.Write(publicRequest.AgentAvailabilityTimer);
+                }
+
                 if(publicRequest.IsSetDefaultOutboundQueueId())
                 {
                     context.Writer.WritePropertyName("DefaultOutboundQueueId");

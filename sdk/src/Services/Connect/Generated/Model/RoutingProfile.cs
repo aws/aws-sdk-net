@@ -33,6 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RoutingProfile
     {
+        private AgentAvailabilityTimer _agentAvailabilityTimer;
         private string _defaultOutboundQueueId;
         private string _description;
         private string _instanceId;
@@ -43,6 +44,26 @@ namespace Amazon.Connect.Model
         private string _routingProfileArn;
         private string _routingProfileId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AgentAvailabilityTimer. 
+        /// <para>
+        /// Whether agents with this routing profile will have their routing order calculated
+        /// based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        public AgentAvailabilityTimer AgentAvailabilityTimer
+        {
+            get { return this._agentAvailabilityTimer; }
+            set { this._agentAvailabilityTimer = value; }
+        }
+
+        // Check to see if AgentAvailabilityTimer property is set
+        internal bool IsSetAgentAvailabilityTimer()
+        {
+            return this._agentAvailabilityTimer != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultOutboundQueueId. 
