@@ -152,12 +152,12 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b>
-        /// action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute.
+        /// action. Idempotency tokens for <b>IssueCertificate</b> time out after five minutes.
         /// Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency
-        /// token within one minute, Amazon Web Services Private CA recognizes that you are requesting
-        /// only one certificate and will issue only one. If you change the idempotency token
-        /// for each call, Amazon Web Services Private CA recognizes that you are requesting multiple
-        /// certificates.
+        /// token within five minutes, Amazon Web Services Private CA recognizes that you are
+        /// requesting only one certificate and will issue only one. If you change the idempotency
+        /// token for each call, Amazon Web Services Private CA recognizes that you are requesting
+        /// multiple certificates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
