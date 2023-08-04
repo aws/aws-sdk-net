@@ -1809,6 +1809,12 @@ namespace Amazon.ECS
         /// <para>
         /// Currently, stopped tasks appear in the returned results for at least one hour.
         /// </para>
+        ///  
+        /// <para>
+        /// If you have tasks with tags, and then delete the cluster, the tagged tasks are returned
+        /// in the response. If you create a new cluster with the same name as the deleted cluster,
+        /// the tagged tasks are not included in the response.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTasks service method.</param>
         /// 
@@ -1839,6 +1845,12 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// Currently, stopped tasks appear in the returned results for at least one hour.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have tasks with tags, and then delete the cluster, the tagged tasks are returned
+        /// in the response. If you create a new cluster with the same name as the deleted cluster,
+        /// the tagged tasks are not included in the response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTasks service method.</param>
@@ -2705,8 +2717,7 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-        /// appear in the returned results for at least one hour.
+        /// Recently stopped tasks might appear in the returned results. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
@@ -2743,8 +2754,7 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-        /// appear in the returned results for at least one hour.
+        /// Recently stopped tasks might appear in the returned results. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
@@ -4492,22 +4502,23 @@ namespace Amazon.ECS
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// You must have a service-linked role when you update any of the following service properties.
-        /// If you specified a custom role when you created the service, Amazon ECS automatically
-        /// replaces the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
-        /// associated with the service with the ARN of your service-linked role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
-        /// roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// You must have a service-linked role when you update any of the following service properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>loadBalancers,</code> 
+        ///  <code>loadBalancers</code>,
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>serviceRegistries</code> 
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about the role see the <code>CreateService</code> request parameter
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
+        /// <code>role</code> </a>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// 
@@ -4685,22 +4696,23 @@ namespace Amazon.ECS
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// You must have a service-linked role when you update any of the following service properties.
-        /// If you specified a custom role when you created the service, Amazon ECS automatically
-        /// replaces the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
-        /// associated with the service with the ARN of your service-linked role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
-        /// roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// You must have a service-linked role when you update any of the following service properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>loadBalancers,</code> 
+        ///  <code>loadBalancers</code>,
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>serviceRegistries</code> 
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about the role see the <code>CreateService</code> request parameter
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
+        /// <code>role</code> </a>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// <param name="cancellationToken">

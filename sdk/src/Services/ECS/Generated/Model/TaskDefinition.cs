@@ -619,7 +619,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The task launch types the task definition was validated against. For more information,
+        /// The task launch types the task definition was validated against. The valid values
+        /// are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>

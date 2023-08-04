@@ -50,8 +50,19 @@ namespace Amazon.ECS.Model
     ///  <ul> <li> 
     /// <para>
     /// Amazon ECS currently supports a subset of the logging drivers available to the Docker
-    /// daemon (shown in the valid values below). Additional log drivers may be available
-    /// in future releases of the Amazon ECS container agent.
+    /// daemon. Additional log drivers may be available in future releases of the Amazon ECS
+    /// container agent.
+    /// </para>
+    ///  
+    /// <para>
+    /// For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
+    /// and <code>awsfirelens</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+    /// <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+    /// <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>

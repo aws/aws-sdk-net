@@ -729,7 +729,12 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StopCode. 
         /// <para>
         /// The stop code indicating why a task was stopped. The <code>stoppedReason</code> might
-        /// contain additional details.
+        /// contain additional details. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
+        /// tasks error codes</a> in the <i>Amazon ECS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -815,7 +820,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StoppingAt. 
         /// <para>
         /// The Unix timestamp for the time when the task stops. More specifically, it's for the
-        /// time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
+        /// time when the task transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.
         /// </para>
         /// </summary>
         public DateTime StoppingAt

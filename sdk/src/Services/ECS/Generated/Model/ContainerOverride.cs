@@ -33,6 +33,13 @@ namespace Amazon.ECS.Model
     /// in. An example of an empty container override is <code>{"containerOverrides": [ ]
     /// }</code>. If a non-empty container override is specified, the <code>name</code> parameter
     /// must be included.
+    /// 
+    ///  
+    /// <para>
+    /// You can use Secrets Manager or Amazon Web Services Systems Manager Parameter Store
+    /// to store the sensitive data. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/secrets-envvar.html">Retrieve
+    /// secrets through environment variables</a> in the Amazon ECS Developer Guide.
+    /// </para>
     /// </summary>
     public partial class ContainerOverride
     {

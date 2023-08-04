@@ -368,7 +368,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinition. 
         /// <para>
-        /// The task definition for the tasks in the task set to use.
+        /// The task definition for the tasks in the task set to use. If a revision isn't specified,
+        /// the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

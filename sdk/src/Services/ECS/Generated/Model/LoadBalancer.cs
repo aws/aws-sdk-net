@@ -103,9 +103,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A load balancer name is only specified when using a Classic Load Balancer. If you
-        /// are using an Application Load Balancer or a Network Load Balancer the load balancer
-        /// name parameter should be omitted.
+        /// If you are using an Application Load Balancer or a Network Load Balancer the load
+        /// balancer name parameter should be omitted.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -129,7 +128,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// A target group ARN is only specified when using an Application Load Balancer or Network
-        /// Load Balancer. If you're using a Classic Load Balancer, omit the target group ARN.
+        /// Load Balancer. 
         /// </para>
         ///  
         /// <para>
