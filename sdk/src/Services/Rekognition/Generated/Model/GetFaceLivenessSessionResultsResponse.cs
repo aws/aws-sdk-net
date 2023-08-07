@@ -45,7 +45,8 @@ namespace Amazon.Rekognition.Model
         /// A set of images from the Face Liveness video that can be used for audit purposes.
         /// It includes a bounding box of the face and the Base64-encoded bytes that return an
         /// image. If the CreateFaceLivenessSession request included an OutputConfig argument,
-        /// the image will be uploaded to an S3Object specified in the output configuration.
+        /// the image will be uploaded to an S3Object specified in the output configuration. If
+        /// no Amazon S3 bucket is defined, raw bytes are sent instead.
         /// </para>
         /// </summary>
         public List<AuditImage> AuditImages

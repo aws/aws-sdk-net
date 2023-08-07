@@ -71,7 +71,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceIds. 
         /// <para>
-        /// An array of face IDs to match when listing faces in a collection.
+        /// An array of face IDs to filter results with when listing faces in a collection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -130,7 +130,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// An array of user IDs to match when listing faces in a collection.
+        /// An array of user IDs to filter results with when listing faces in a collection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

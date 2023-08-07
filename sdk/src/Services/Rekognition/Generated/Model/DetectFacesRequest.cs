@@ -84,6 +84,12 @@ namespace Amazon.Rekognition.Model
         /// If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND"
         /// operator to determine which attributes to return (in this case, all attributes). 
         /// </para>
+        ///  
+        /// <para>
+        /// Note that while the FaceOccluded and EyeDirection attributes are supported when using
+        /// <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code>
+        /// and <code>GetFaceDetection</code>.
+        /// </para>
         /// </summary>
         public List<string> Attributes
         {

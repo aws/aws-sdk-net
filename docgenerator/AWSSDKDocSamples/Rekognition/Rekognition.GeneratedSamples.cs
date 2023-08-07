@@ -102,6 +102,61 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionCreateDataset()
+        {
+            #region to-create-an-amazon-rekognition-custom-labels-dataset-1690476237145
+
+            var client = new AmazonRekognitionClient();
+            var response = client.CreateDataset(new CreateDatasetRequest 
+            {
+                DatasetSource = new DatasetSource { GroundTruthManifest = new GroundTruthManifest { S3Object = new S3Object {
+                    Bucket = "my-bucket",
+                    Name = "datasets/flowers_training/manifests/output/output.manifest"
+                } } },
+                DatasetType = "TRAIN",
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/1690474772815"
+            });
+
+            string datasetArn = response.DatasetArn;
+
+            #endregion
+        }
+
+        public void RekognitionCreateProject()
+        {
+            #region to-create-an-amazon-rekognition-custom-labels-project-1690405898597
+
+            var client = new AmazonRekognitionClient();
+            var response = client.CreateProject(new CreateProjectRequest 
+            {
+                ProjectName = "my-project"
+            });
+
+            string projectArn = response.ProjectArn;
+
+            #endregion
+        }
+
+        public void RekognitionCreateProjectVersion()
+        {
+            #region to-train-an-amazon-rekognition-custom-labels-model-1690555832843
+
+            var client = new AmazonRekognitionClient();
+            var response = client.CreateProjectVersion(new CreateProjectVersionRequest 
+            {
+                OutputConfig = new OutputConfig {
+                    S3Bucket = "output_bucket",
+                    S3KeyPrefix = "output_folder"
+                },
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/1690474772815",
+                VersionName = "1"
+            });
+
+            string projectVersionArn = response.ProjectVersionArn;
+
+            #endregion
+        }
+
         public void RekognitionCreateUser()
         {
             #region createuser-1686181562299
@@ -132,6 +187,20 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionDeleteDataset()
+        {
+            #region to-delete-an-amazon-rekognition-custom-labels-dataset-1690826556349
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DeleteDataset(new DeleteDatasetRequest 
+            {
+                DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/dataset/test/1690556733321"
+            });
+
+
+            #endregion
+        }
+
         public void RekognitionDeleteFaces()
         {
             #region to-delete-a-face-1482182799377
@@ -146,6 +215,21 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<string> deletedFaces = response.DeletedFaces;
+
+            #endregion
+        }
+
+        public void RekognitionDeleteProject()
+        {
+            #region to-delete-an-amazon-rekognition-custom-labels-project-1690409093478
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DeleteProject(new DeleteProjectRequest 
+            {
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/1690405809285"
+            });
+
+            string status = response.Status;
 
             #endregion
         }
@@ -166,6 +250,21 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionDeleteProjectVersion()
+        {
+            #region to-delete-an-amazon-rekognition-custom-labels-model-1690827562055
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DeleteProjectVersion(new DeleteProjectVersionRequest 
+            {
+                ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
+            });
+
+            string status = response.Status;
+
+            #endregion
+        }
+
         public void RekognitionDeleteUser()
         {
             #region deleteuser-1686181913475
@@ -178,6 +277,78 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
                 UserId = "DemoUser"
             });
 
+
+            #endregion
+        }
+
+        public void RekognitionDescribeDataset()
+        {
+            #region to-describe-an-amazon-rekognition-custom-labels-dataset-1690827075604
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DescribeDataset(new DescribeDatasetRequest 
+            {
+                DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/dataset/train/1690476084535"
+            });
+
+            DatasetDescription datasetDescription = response.DatasetDescription;
+
+            #endregion
+        }
+
+        public void RekognitionDescribeProjects()
+        {
+            #region to-describe-an-amazon-rekognition-custom-labels-project-1690400952376
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DescribeProjects(new DescribeProjectsRequest 
+            {
+                ProjectNames = new List<string> {
+                    "my-project"
+                }
+            });
+
+            List<ProjectDescription> projectDescriptions = response.ProjectDescriptions;
+
+            #endregion
+        }
+
+        public void RekognitionDescribeProjectVersions()
+        {
+            #region to-describes-an-amazon-rekognition-custom-labels-model-1690558265950
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DescribeProjectVersions(new DescribeProjectVersionsRequest 
+            {
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/1690474772815",
+                VersionNames = new List<string> {
+                    "1"
+                }
+            });
+
+            string nextToken = response.NextToken;
+            List<ProjectVersionDescription> projectVersionDescriptions = response.ProjectVersionDescriptions;
+
+            #endregion
+        }
+
+        public void RekognitionDetectCustomLabels()
+        {
+            #region to-detect-custom-labels-in-images-with-an-amazon-rekognition-custom-labels-model-1690832037913
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DetectCustomLabels(new DetectCustomLabelsRequest 
+            {
+                Image = new Image { S3Object = new S3Object {
+                    Bucket = "custom-labels-console-us-east-1-1111111111",
+                    Name = "assets/flowers_1_test_dataset/camellia4.jpg"
+                } },
+                MaxResults = 100,
+                MinConfidence = 50,
+                ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/my-project.2023-07-31T11.49.37/1690829378219"
+            });
+
+            List<CustomLabel> customLabels = response.CustomLabels;
 
             #endregion
         }
@@ -244,6 +415,23 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionDistributeDatasetEntries()
+        {
+            #region to-distribute-to-an-amazon-rekognition-custom-labels-dataset-1690816977073
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DistributeDatasetEntries(new DistributeDatasetEntriesRequest 
+            {
+                Datasets = new List<DistributeDataset> {
+                    new DistributeDataset { Arn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106" },
+                    new DistributeDataset { Arn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/test/1690564858106" }
+                }
+            });
+
+
+            #endregion
+        }
+
         public void RekognitionIndexFaces()
         {
             #region to-add-a-face-to-a-collection-1482179542923
@@ -278,6 +466,47 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<string> collectionIds = response.CollectionIds;
+
+            #endregion
+        }
+
+        public void RekognitionListDatasetEntries()
+        {
+            #region to-list-the-entries-in-an-amazon-rekognition-custom-labels-dataset-1690823292345
+
+            var client = new AmazonRekognitionClient();
+            var response = client.ListDatasetEntries(new ListDatasetEntriesRequest 
+            {
+                ContainsLabels = new List<string> {
+                    "camellia"
+                },
+                DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106",
+                HasErrors = true,
+                Labeled = true,
+                MaxResults = 100,
+                NextToken = "",
+                SourceRefContains = "camellia4.jpg"
+            });
+
+            List<string> datasetEntries = response.DatasetEntries;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void RekognitionListDatasetLabels()
+        {
+            #region to-list-the-entries-in-an-amazon-rekognition-custom-labels-dataset-1690823292345
+
+            var client = new AmazonRekognitionClient();
+            var response = client.ListDatasetLabels(new ListDatasetLabelsRequest 
+            {
+                DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106",
+                MaxResults = 100,
+                NextToken = ""
+            });
+
+            List<DatasetLabelDescription> datasetLabelDescriptions = response.DatasetLabelDescriptions;
 
             #endregion
         }
@@ -434,6 +663,53 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             SearchedFaceDetails searchedFace = response.SearchedFace;
             List<UnsearchedFace> unsearchedFaces = response.UnsearchedFaces;
             List<UserMatch> userMatches = response.UserMatches;
+
+            #endregion
+        }
+
+        public void RekognitionStartProjectVersion()
+        {
+            #region to-start-an-amazon-rekognition-custom-labels-model-1690559168398
+
+            var client = new AmazonRekognitionClient();
+            var response = client.StartProjectVersion(new StartProjectVersionRequest 
+            {
+                MaxInferenceUnits = 1,
+                MinInferenceUnits = 1,
+                ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
+            });
+
+            string status = response.Status;
+
+            #endregion
+        }
+
+        public void RekognitionStopProjectVersion()
+        {
+            #region to-stop-an-amazon-rekognition-custom-labels-model-1690561110698
+
+            var client = new AmazonRekognitionClient();
+            var response = client.StopProjectVersion(new StopProjectVersionRequest 
+            {
+                ProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
+            });
+
+            string status = response.Status;
+
+            #endregion
+        }
+
+        public void RekognitionUpdateDatasetEntries()
+        {
+            #region to-add-dataset-entries-to-an-amazon-rekognition-custom-labels-dataset-1690816977073
+
+            var client = new AmazonRekognitionClient();
+            var response = client.UpdateDatasetEntries(new UpdateDatasetEntriesRequest 
+            {
+                Changes = new DatasetChanges { GroundTruth = new MemoryStream({"source-ref":"s3://custom-labels-console-us-east-1-111111111/assets/flowers_1_test_dataset/mediterranean_spurge4.jpg","mediterranean_spurge":1,"mediterranean_spurge-metadata":{"confidence":1,"job-name":"labeling-job/mediterranean_spurge","class-name":"mediterranean_spurge","human-annotated":"yes","creation-date":"2021-07-11T03:33:42.025Z","type":"groundtruth/image-classification"},"with_leaves":1,"with_leaves-metadata":{"confidence":1,"job-name":"labeling-job/with_leaves","class-name":"with_leaves","human-annotated":"yes","creation-date":"2021-07-11T03:33:42.025Z","type":"groundtruth/image-classification"}}) },
+                DatasetArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-proj-2/dataset/train/1690564858106"
+            });
+
 
             #endregion
         }
