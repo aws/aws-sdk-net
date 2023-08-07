@@ -46,10 +46,11 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The media must contain h.264 or h.265 encoded video and, optionally, AAC encoded audio.
-    /// Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264)
-    /// or <code>V_MPEG/ISO/HEVC</code> (for h.265). Optionally, the codec ID of track 2 should
-    /// be <code>A_AAC</code>.
+    /// For streaming video, the media must contain H.264 or H.265 encoded video and, optionally,
+    /// AAC encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+    /// (for H.264) or <code>V_MPEG/ISO/HEVC</code> (for H.265). Optionally, the codec ID
+    /// of track 2 should be <code>A_AAC</code>. For audio only streaming, the codec ID of
+    /// track 1 should be <code>A_AAC</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -98,7 +99,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <para>
     /// Don't share or store this token where an unauthorized entity could access it. The
     /// token provides access to the content of the stream. Safeguard the token with the same
-    /// measures that you would use with your AWS credentials.
+    /// measures that you would use with your Amazon Web Services credentials.
     /// </para>
     ///  </note> 
     /// <para>
@@ -161,17 +162,19 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// After the first media fragment is made available in a streaming session, any fragments
-    /// that don't contain the same codec private data cause an error to be returned when
-    /// those different media fragments are loaded. Therefore, the codec private data should
-    /// not change between fragments in a session. This also means that the session fails
-    /// if the fragments in a stream change from having only video to having both audio and
-    /// video.
+    /// For the HLS streaming session, in-track codec private data (CPD) changes are supported.
+    /// After the first media fragment is made available in a streaming session, fragments
+    /// can contain CPD changes for each track. Therefore, the fragments in a session can
+    /// have a different resolution, bit rate, or other information in the CPD without interrupting
+    /// playback. However, any change made in the track number or track codec format can return
+    /// an error when those different media fragments are loaded. For example, streaming will
+    /// fail if the fragments in the stream change from having only video to having both audio
+    /// and video, or if an AAC audio track is changed to an ALAW audio track. For each streaming
+    /// session, only 500 CPD changes are allowed.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Data retrieved with this action is billable. See <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a>
-    /// for details.
+    /// Data retrieved with this action is billable. For information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -202,8 +205,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information
     /// about using CloudWatch to monitor Kinesis Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
     /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
-    /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
-    /// Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.
+    /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">Amazon
+    /// Web Services Pricing</a>. Charges for both HLS sessions and outgoing Amazon Web Services
+    /// data apply.
     /// </para>
     ///  
     /// <para>
@@ -223,8 +227,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS,
-    /// the support team can better diagnose the problem if given the Request Id.
+    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to Amazon
+    /// Web Services, the support team can better diagnose the problem if given the Request
+    /// Id.
     /// </para>
     ///  </li> </ul> 
     /// <para>

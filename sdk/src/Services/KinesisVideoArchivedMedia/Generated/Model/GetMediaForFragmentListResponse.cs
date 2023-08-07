@@ -82,14 +82,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  <ul> <li> 
         /// <para>
         /// AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception
+        /// AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception
+        /// AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception 
         /// </para>
         ///  </li> </ul>
         /// </summary>

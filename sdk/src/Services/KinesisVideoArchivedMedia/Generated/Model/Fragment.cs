@@ -117,7 +117,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property ServerTimestamp. 
         /// <para>
-        /// The timestamp from the AWS server corresponding to the fragment.
+        /// The timestamp from the Amazon Web Services server corresponding to the fragment.
         /// </para>
         /// </summary>
         public DateTime ServerTimestamp

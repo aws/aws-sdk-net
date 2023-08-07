@@ -51,7 +51,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The end timestamp for the range of images to be generated.
+        /// The end timestamp for the range of images to be generated. If the time range between
+        /// <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds
+        /// above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,8 +163,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The default limit is 100 images per API response. The additional results will be paginated.
-        /// 
+        /// The default limit is 25 images per API response. Providing a <code>MaxResults</code>
+        /// greater than this value will result in a page size of 25. Any additional results will
+        /// be paginated. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -203,18 +206,16 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property SamplingInterval. 
         /// <para>
         /// The time interval in milliseconds (ms) at which the images need to be generated from
-        /// the stream. The minimum value that can be provided is 3000 ms. If the timestamp range
-        /// is less than the sampling interval, the Image from the <code>startTimestamp</code>
-        /// will be returned if available. 
+        /// the stream, with a default of 3000 ms. The minimum value that can be provided is 200
+        /// ms. If the timestamp range is less than the sampling interval, the Image from the
+        /// <code>startTimestamp</code> will be returned if available. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency
-        /// can be requested.
+        /// The minimum value of 200 ms is a hard limit.
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=3000, Max=20000)]
         public int SamplingInterval
         {
             get { return this._samplingInterval.GetValueOrDefault(); }

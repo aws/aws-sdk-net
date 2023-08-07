@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the
-    /// stream that you specified.
+    /// <code>GetImages</code> will throw this error when Kinesis Video Streams can't find
+    /// the stream that you specified.
     /// 
     ///  
     /// <para>
