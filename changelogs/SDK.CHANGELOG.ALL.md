@@ -1,3 +1,18 @@
+### 3.7.615.0 (2023-08-07 18:34 UTC)
+* Detective (3.7.201.0)
+	* Updated the email validation regex to be in line with the TLD name specifications.
+* IVSRealTime (3.7.201.0)
+	* Add QUOTA_EXCEEDED and PUBLISHER_NOT_FOUND to EventErrorCode for stage health events.
+* KinesisVideo (3.7.201.0)
+	* This release enables minimum of Images SamplingInterval to be as low as 200 milliseconds in Kinesis Video Stream Image feature.
+* KinesisVideoArchivedMedia (3.7.201.0)
+	* This release enables minimum of Images SamplingInterval to be as low as 200 milliseconds in Kinesis Video Stream Image feature.
+* Rekognition (3.7.200.11)
+	* This release adds code snippets for Amazon Rekognition Custom Labels.
+* Core 3.7.200.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.614.0 (2023-08-04 18:34 UTC)
 * ACMPCA (3.7.200.10)
 	* Documentation correction for AWS Private CA
