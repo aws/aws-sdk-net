@@ -507,11 +507,6 @@
     <max>2160</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KinesisVideo.Model.ImageGenerationConfiguration.SamplingInterval</property>
-    <min>3000</min>
-    <max>20000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ImageGenerationConfiguration.WidthPixels</property>
     <min>1</min>
     <max>3840</max>

@@ -159,7 +159,7 @@ namespace Amazon.KinesisVideo.Model
         /// will be returned if available. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3000, Max=20000)]
+        [AWSProperty(Required=true)]
         public int SamplingInterval
         {
             get { return this._samplingInterval.GetValueOrDefault(); }
