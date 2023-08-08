@@ -81,7 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroupCount. 
         /// <para>
-        /// The number of node groups you wish to add
+        /// Total number of node groups you want
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

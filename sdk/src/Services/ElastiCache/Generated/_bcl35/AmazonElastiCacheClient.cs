@@ -5838,5 +5838,71 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  TestMigration
+
+        /// <summary>
+        /// Async API to test connection between source and target replication group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestMigration service method.</param>
+        /// 
+        /// <returns>The response from the TestMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
+        /// The targeted replication group is not available.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">REST API Reference for TestMigration Operation</seealso>
+        public virtual TestMigrationResponse TestMigration(TestMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<TestMigrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestMigration operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">REST API Reference for TestMigration Operation</seealso>
+        public virtual IAsyncResult BeginTestMigration(TestMigrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestMigrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestMigration.</param>
+        /// 
+        /// <returns>Returns a  TestMigrationResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">REST API Reference for TestMigration Operation</seealso>
+        public virtual TestMigrationResponse EndTestMigration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TestMigrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }
