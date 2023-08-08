@@ -1,3 +1,14 @@
+### 3.7.616.0 (2023-08-08 18:27 UTC)
+* Backup (3.7.201.0)
+	* This release introduces a new logically air-gapped vault (Preview) in AWS Backup that stores immutable backup copies, which are locked by default and isolated with encryption using AWS owned keys. Logically air-gapped vault (Preview) allows secure recovery of application data across accounts.
+* ElastiCache (3.7.201.0)
+	* Added support for cluster mode in online migration and test migration API
+* ServiceCatalog (3.7.201.0)
+	* Introduce support for HashiCorp Terraform Cloud in Service Catalog by addying TERRAFORM_CLOUD product type in CreateProduct and CreateProvisioningArtifact API.
+* Core 3.7.200.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.615.1 (2023-08-08 14:12 UTC)
 * Core 3.7.200.12
 	* The update involves adding EndpointAttributes to the internal request, updating all service's csproj to sign assemblies locally and increasing credentials lock timeout for Default Instance Profile Credentials.
