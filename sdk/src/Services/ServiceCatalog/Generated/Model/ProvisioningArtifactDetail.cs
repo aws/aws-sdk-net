@@ -187,20 +187,10 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The type of provisioning artifact.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
         ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon
-        /// Web Services Resources
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public ProvisioningArtifactType Type
         {

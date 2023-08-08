@@ -70,7 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The user to which the access level applies. The only supported value is <code>Self</code>.
+        /// The user to which the access level applies. The only supported value is <code>self</code>.
         /// </para>
         /// </summary>
         public string Value
