@@ -29,19 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRecoveryPointRestoreMetadata operation.
-    /// Returns a set of metadata key-value pairs that were used to create the backup.
+    /// Container for the parameters to the ListProtectedResourcesByBackupVault operation.
+    /// This request lists the protected resources corresponding to each backup vault.
     /// </summary>
-    public partial class GetRecoveryPointRestoreMetadataRequest : AmazonBackupRequest
+    public partial class ListProtectedResourcesByBackupVaultRequest : AmazonBackupRequest
     {
         private string _backupVaultAccountId;
         private string _backupVaultName;
-        private string _recoveryPointArn;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property BackupVaultAccountId. 
         /// <para>
-        /// This is the account ID of the specified backup vault.
+        /// This is the list of protected resources by backup vault within the vault(s) you specify
+        /// by account ID.
         /// </para>
         /// </summary>
         public string BackupVaultAccountId
@@ -59,9 +61,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultName. 
         /// <para>
-        /// The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// This is the list of protected resources by backup vault within the vault(s) you specify
+        /// by name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,23 +79,43 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryPointArn. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// The maximum number of items to be returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string RecoveryPointArn
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
         {
-            get { return this._recoveryPointArn; }
-            set { this._recoveryPointArn = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if RecoveryPointArn property is set
-        internal bool IsSetRecoveryPointArn()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._recoveryPointArn != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The next item following a partial list of returned items. For example, if a request
+        /// is made to return <code>maxResults</code> number of items, <code>NextToken</code>
+        /// allows you to return more items in your list starting at the location pointed to by
+        /// the next token.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

@@ -64,7 +64,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetRecoveryPointArn())
                 throw new AmazonBackupException("Request object does not have required field RecoveryPointArn set");
             request.AddPathResource("{recoveryPointArn}", StringUtils.FromString(publicRequest.RecoveryPointArn));
+            
+            if (publicRequest.IsSetBackupVaultAccountId())
+                request.Parameters.Add("backupVaultAccountId", StringUtils.FromString(publicRequest.BackupVaultAccountId));
             request.ResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/{recoveryPointArn}/restore-metadata";
+            request.UseQueryString = true;
 
             return request;
         }

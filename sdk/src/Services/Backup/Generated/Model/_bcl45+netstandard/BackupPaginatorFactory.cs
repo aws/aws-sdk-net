@@ -116,6 +116,14 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListProtectedResourcesByBackupVault operation
+        ///</summary>
+        public IListProtectedResourcesByBackupVaultPaginator ListProtectedResourcesByBackupVault(ListProtectedResourcesByBackupVaultRequest request) 
+        {
+            return new ListProtectedResourcesByBackupVaultPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecoveryPointsByBackupVault operation
         ///</summary>
         public IListRecoveryPointsByBackupVaultPaginator ListRecoveryPointsByBackupVault(ListRecoveryPointsByBackupVaultRequest request) 

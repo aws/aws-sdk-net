@@ -475,7 +475,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of a resource recovery point.
+        /// The current state of a backup job.
         /// </para>
         /// </summary>
         public BackupJobState State

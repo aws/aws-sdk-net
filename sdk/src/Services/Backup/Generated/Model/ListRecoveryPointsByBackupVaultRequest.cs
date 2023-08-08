@@ -34,6 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListRecoveryPointsByBackupVaultRequest : AmazonBackupRequest
     {
+        private string _backupVaultAccountId;
         private string _backupVaultName;
         private string _byBackupPlanId;
         private DateTime? _byCreatedAfter;
@@ -43,6 +44,24 @@ namespace Amazon.Backup.Model
         private string _byResourceType;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property BackupVaultAccountId. 
+        /// <para>
+        /// This parameter will sort the list of recovery points by account ID.
+        /// </para>
+        /// </summary>
+        public string BackupVaultAccountId
+        {
+            get { return this._backupVaultAccountId; }
+            set { this._backupVaultAccountId = value; }
+        }
+
+        // Check to see if BackupVaultAccountId property is set
+        internal bool IsSetBackupVaultAccountId()
+        {
+            return this._backupVaultAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupVaultName. 

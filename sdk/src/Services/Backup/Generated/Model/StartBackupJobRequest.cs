@@ -98,6 +98,11 @@ namespace Amazon.Backup.Model
         /// from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>,
         /// or if the backup started later than scheduled.
         /// </para>
+        ///  
+        /// <para>
+        /// Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years
+        /// (52,560,000 minutes).
+        /// </para>
         /// </summary>
         public long CompleteWindowMinutes
         {
@@ -172,6 +177,10 @@ namespace Amazon.Backup.Model
         /// Feature availability by resource</a> table. Backup ignores this expression for other
         /// resource types.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter has a maximum value of 100 years (36,500 days).
+        /// </para>
         /// </summary>
         public Lifecycle Lifecycle
         {
@@ -231,6 +240,10 @@ namespace Amazon.Backup.Model
         /// A value in minutes after a backup is scheduled before a job will be canceled if it
         /// doesn't start successfully. This value is optional, and the default is 8 hours. If
         /// this value is included, it must be at least 60 minutes to avoid errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter has a maximum value of 100 years (52,560,000 minutes).
         /// </para>
         ///  
         /// <para>

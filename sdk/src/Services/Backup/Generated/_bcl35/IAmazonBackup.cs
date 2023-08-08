@@ -413,6 +413,78 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  CreateLogicallyAirGappedBackupVault
+
+
+        /// <summary>
+        /// This request creates a logical container where backups are stored.
+        /// 
+        ///  
+        /// <para>
+        /// This request includes a name, optionally one or more resource tags, an encryption
+        /// key, and a request ID.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not include sensitive data, such as passport numbers, in the name of a backup vault.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogicallyAirGappedBackupVault service method.</param>
+        /// 
+        /// <returns>The response from the CreateLogicallyAirGappedBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">REST API Reference for CreateLogicallyAirGappedBackupVault Operation</seealso>
+        CreateLogicallyAirGappedBackupVaultResponse CreateLogicallyAirGappedBackupVault(CreateLogicallyAirGappedBackupVaultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLogicallyAirGappedBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogicallyAirGappedBackupVault operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogicallyAirGappedBackupVault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">REST API Reference for CreateLogicallyAirGappedBackupVault Operation</seealso>
+        IAsyncResult BeginCreateLogicallyAirGappedBackupVault(CreateLogicallyAirGappedBackupVaultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLogicallyAirGappedBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLogicallyAirGappedBackupVault.</param>
+        /// 
+        /// <returns>Returns a  CreateLogicallyAirGappedBackupVaultResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">REST API Reference for CreateLogicallyAirGappedBackupVault Operation</seealso>
+        CreateLogicallyAirGappedBackupVaultResponse EndCreateLogicallyAirGappedBackupVault(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateReportPlan
 
 
@@ -2760,6 +2832,56 @@ namespace Amazon.Backup
         /// <returns>Returns a  ListProtectedResourcesResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResources">REST API Reference for ListProtectedResources Operation</seealso>
         ListProtectedResourcesResponse EndListProtectedResources(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListProtectedResourcesByBackupVault
+
+
+        /// <summary>
+        /// This request lists the protected resources corresponding to each backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedResourcesByBackupVault service method.</param>
+        /// 
+        /// <returns>The response from the ListProtectedResourcesByBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault">REST API Reference for ListProtectedResourcesByBackupVault Operation</seealso>
+        ListProtectedResourcesByBackupVaultResponse ListProtectedResourcesByBackupVault(ListProtectedResourcesByBackupVaultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProtectedResourcesByBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedResourcesByBackupVault operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProtectedResourcesByBackupVault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault">REST API Reference for ListProtectedResourcesByBackupVault Operation</seealso>
+        IAsyncResult BeginListProtectedResourcesByBackupVault(ListProtectedResourcesByBackupVaultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProtectedResourcesByBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProtectedResourcesByBackupVault.</param>
+        /// 
+        /// <returns>Returns a  ListProtectedResourcesByBackupVaultResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault">REST API Reference for ListProtectedResourcesByBackupVault Operation</seealso>
+        ListProtectedResourcesByBackupVaultResponse EndListProtectedResourcesByBackupVault(IAsyncResult asyncResult);
 
         #endregion
         

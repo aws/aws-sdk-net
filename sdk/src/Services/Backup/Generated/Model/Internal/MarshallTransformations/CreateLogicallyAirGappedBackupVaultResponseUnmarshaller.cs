@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeBackupVault operation
+    /// Response Unmarshaller for CreateLogicallyAirGappedBackupVault operation
     /// </summary>  
-    public class DescribeBackupVaultResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateLogicallyAirGappedBackupVaultResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeBackupVaultResponse response = new DescribeBackupVaultResponse();
+            CreateLogicallyAirGappedBackupVaultResponse response = new CreateLogicallyAirGappedBackupVaultResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -69,52 +69,10 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatorRequestId", targetDepth))
+                if (context.TestExpression("VaultState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatorRequestId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EncryptionKeyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EncryptionKeyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LockDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LockDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Locked", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Locked = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxRetentionDays", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.MaxRetentionDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MinRetentionDays", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.MinRetentionDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NumberOfRecoveryPoints", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.NumberOfRecoveryPoints = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VaultType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.VaultType = unmarshaller.Unmarshall(context);
+                    response.VaultState = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -140,17 +98,25 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
+                {
+                    return AlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+                {
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
                 {
                     return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
@@ -160,9 +126,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             return new AmazonBackupException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeBackupVaultResponseUnmarshaller _instance = new DescribeBackupVaultResponseUnmarshaller();        
+        private static CreateLogicallyAirGappedBackupVaultResponseUnmarshaller _instance = new CreateLogicallyAirGappedBackupVaultResponseUnmarshaller();        
 
-        internal static DescribeBackupVaultResponseUnmarshaller GetInstance()
+        internal static CreateLogicallyAirGappedBackupVaultResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -170,7 +136,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeBackupVaultResponseUnmarshaller Instance
+        public static CreateLogicallyAirGappedBackupVaultResponseUnmarshaller Instance
         {
             get
             {

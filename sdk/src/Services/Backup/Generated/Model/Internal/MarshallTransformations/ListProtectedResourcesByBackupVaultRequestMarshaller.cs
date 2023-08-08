@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeBackupVault Request Marshaller
+    /// ListProtectedResourcesByBackupVault Request Marshaller
     /// </summary>       
-    public class DescribeBackupVaultRequestMarshaller : IMarshaller<IRequest, DescribeBackupVaultRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListProtectedResourcesByBackupVaultRequestMarshaller : IMarshaller<IRequest, ListProtectedResourcesByBackupVaultRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeBackupVaultRequest)input);
+            return this.Marshall((ListProtectedResourcesByBackupVaultRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeBackupVaultRequest publicRequest)
+        public IRequest Marshall(ListProtectedResourcesByBackupVaultRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
@@ -64,14 +64,20 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetBackupVaultAccountId())
                 request.Parameters.Add("backupVaultAccountId", StringUtils.FromString(publicRequest.BackupVaultAccountId));
-            request.ResourcePath = "/backup-vaults/{backupVaultName}";
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/resources/";
             request.UseQueryString = true;
 
             return request;
         }
-        private static DescribeBackupVaultRequestMarshaller _instance = new DescribeBackupVaultRequestMarshaller();        
+        private static ListProtectedResourcesByBackupVaultRequestMarshaller _instance = new ListProtectedResourcesByBackupVaultRequestMarshaller();        
 
-        internal static DescribeBackupVaultRequestMarshaller GetInstance()
+        internal static ListProtectedResourcesByBackupVaultRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -79,7 +85,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeBackupVaultRequestMarshaller Instance
+        public static ListProtectedResourcesByBackupVaultRequestMarshaller Instance
         {
             get
             {
