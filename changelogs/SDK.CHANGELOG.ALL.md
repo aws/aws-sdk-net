@@ -1,3 +1,8 @@
+### 3.7.615.1 (2023-08-08 14:12 UTC)
+* Core 3.7.200.12
+	* The update involves adding EndpointAttributes to the internal request, updating all service's csproj to sign assemblies locally and increasing credentials lock timeout for Default Instance Profile Credentials.
+	* All services packages updated to require new Core
+
 ### 3.7.615.0 (2023-08-07 18:34 UTC)
 * Detective (3.7.201.0)
 	* Updated the email validation regex to be in line with the TLD name specifications.
