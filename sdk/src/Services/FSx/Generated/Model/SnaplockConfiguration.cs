@@ -96,7 +96,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
         /// delete</a>. 
         /// </para>
         /// </summary>
@@ -150,7 +150,7 @@ namespace Amazon.FSx.Model
         /// deleted by authorized users before their retention periods expire using privileged
         /// delete. This retention mode is used to advance an organization's data integrity and
         /// internal compliance or to test retention settings before using SnapLock Compliance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
         /// Enterprise</a>. 
         /// </para>
         ///  </li> </ul>

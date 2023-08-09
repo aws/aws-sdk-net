@@ -86,6 +86,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEndpointIpAddressRange())
+            {
+                context.Writer.WritePropertyName("EndpointIpAddressRange");
+                context.Writer.Write(requestObject.EndpointIpAddressRange);
+            }
+
+            if(requestObject.IsSetPreferredSubnetId())
+            {
+                context.Writer.WritePropertyName("PreferredSubnetId");
+                context.Writer.Write(requestObject.PreferredSubnetId);
+            }
+
             if(requestObject.IsSetRootVolumeConfiguration())
             {
                 context.Writer.WritePropertyName("RootVolumeConfiguration");
@@ -95,6 +107,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.RootVolumeConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRouteTableIds())
+            {
+                context.Writer.WritePropertyName("RouteTableIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRouteTableIdsListValue in requestObject.RouteTableIds)
+                {
+                        context.Writer.Write(requestObjectRouteTableIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetThroughputCapacity())

@@ -106,6 +106,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DiskIopsConfiguration", targetDepth))
+                {
+                    var unmarshaller = DiskIopsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DiskIopsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaintenanceOperationsInProgress", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

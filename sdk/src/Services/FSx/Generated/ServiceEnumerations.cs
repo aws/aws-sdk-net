@@ -101,6 +101,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly AdministrativeActionType FILE_SYSTEM_UPDATE = new AdministrativeActionType("FILE_SYSTEM_UPDATE");
         /// <summary>
+        /// Constant IOPS_OPTIMIZATION for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType IOPS_OPTIMIZATION = new AdministrativeActionType("IOPS_OPTIMIZATION");
+        /// <summary>
         /// Constant RELEASE_NFS_V3_LOCKS for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType RELEASE_NFS_V3_LOCKS = new AdministrativeActionType("RELEASE_NFS_V3_LOCKS");
@@ -112,6 +116,14 @@ namespace Amazon.FSx
         /// Constant STORAGE_OPTIMIZATION for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType STORAGE_OPTIMIZATION = new AdministrativeActionType("STORAGE_OPTIMIZATION");
+        /// <summary>
+        /// Constant STORAGE_TYPE_OPTIMIZATION for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType STORAGE_TYPE_OPTIMIZATION = new AdministrativeActionType("STORAGE_TYPE_OPTIMIZATION");
+        /// <summary>
+        /// Constant THROUGHPUT_OPTIMIZATION for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType THROUGHPUT_OPTIMIZATION = new AdministrativeActionType("THROUGHPUT_OPTIMIZATION");
         /// <summary>
         /// Constant VOLUME_RESTORE for AdministrativeActionType
         /// </summary>
@@ -1893,6 +1905,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant MULTI_AZ_1 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType MULTI_AZ_1 = new OpenZFSDeploymentType("MULTI_AZ_1");
+        /// <summary>
         /// Constant SINGLE_AZ_1 for OpenZFSDeploymentType
         /// </summary>
         public static readonly OpenZFSDeploymentType SINGLE_AZ_1 = new OpenZFSDeploymentType("SINGLE_AZ_1");
@@ -2988,6 +3004,52 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TieringPolicyName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Unit.
+    /// </summary>
+    public class Unit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for Unit
+        /// </summary>
+        public static readonly Unit DAYS = new Unit("DAYS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Unit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Unit FindValue(string value)
+        {
+            return FindValue<Unit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Unit(string value)
         {
             return FindValue(value);
         }

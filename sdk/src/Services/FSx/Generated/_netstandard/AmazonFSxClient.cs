@@ -340,8 +340,8 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Cancels an existing Amazon FSx for Lustre data repository task if that task is in
-        /// either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a
-        /// task, Amazon FSx does the following.
+        /// either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel am
+        /// export task, Amazon FSx does the following.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -349,14 +349,18 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FSx continues to export any files that are "in-flight" when the cancel operation is
+        /// FSx continues to export any files that are in-flight when the cancel operation is
         /// received.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// FSx does not export any files that have not yet been exported.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a release task, Amazon FSx will stop releasing files upon cancellation. Any files
+        /// that have already been released will remain in the released state.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelDataRepositoryTask service method.</param>
         /// <param name="cancellationToken">
@@ -723,16 +727,31 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates an Amazon FSx for Lustre data repository task. You use data repository tasks
-        /// to perform bulk operations between your Amazon FSx file system and its linked data
-        /// repositories. An example of a data repository task is exporting any data and metadata
-        /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
-        /// from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code>
-        /// operation will fail if a data repository is not linked to the FSx file system. To
-        /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+        /// Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code>
+        /// operation will fail if a data repository is not linked to the FSx file system.
+        /// 
+        ///  
+        /// <para>
+        /// You use import and export data repository tasks to perform bulk operations between
+        /// your FSx for Lustre file system and its linked data repositories. An example of a
+        /// data repository task is exporting any data and metadata changes, including POSIX metadata,
+        /// to files, directories, and symbolic links (symlinks) from your FSx file system to
+        /// a linked data repository.
+        /// </para>
+        ///  
+        /// <para>
+        /// You use release data repository tasks to release data from your file system for files
+        /// that are archived to S3. The metadata of released files remains on the file system
+        /// so users or applications can still access released files by reading the files again,
+        /// which will restore data from Amazon S3 to the FSx for Lustre file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
         /// Repository Tasks</a>. To learn more about linking a data repository to your file system,
         /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
         /// your file system to an S3 bucket</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask service method.</param>
         /// <param name="cancellationToken">
@@ -2868,7 +2887,15 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>StorageType</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>ThroughputCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DiskIopsConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

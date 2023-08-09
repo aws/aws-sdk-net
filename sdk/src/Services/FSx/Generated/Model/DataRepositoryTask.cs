@@ -29,10 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A description of the data repository task. You use data repository tasks to perform
-    /// bulk transfer operations between an Amazon FSx for Lustre file system and a linked
-    /// data repository. An Amazon File Cache resource uses a task to automatically release
-    /// files from the cache.
+    /// A description of the data repository task.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// You use import and export data repository tasks to perform bulk transfer operations
+    /// between an Amazon FSx for Lustre file system and a linked data repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You use release data repository tasks to release archived files from your Amazon FSx
+    /// for Lustre file system.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An Amazon File Cache resource uses a task to automatically release files from the
+    /// cache.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+    /// Repository Tasks</a>. 
+    /// </para>
     /// </summary>
     public partial class DataRepositoryTask
     {
@@ -44,6 +62,7 @@ namespace Amazon.FSx.Model
         private string _fileSystemId;
         private DataRepositoryTaskLifecycle _lifecycle;
         private List<string> _paths = new List<string>();
+        private ReleaseConfiguration _releaseConfiguration;
         private CompletionReport _report;
         private string _resourceARN;
         private DateTime? _startTime;
@@ -245,6 +264,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReleaseConfiguration. 
+        /// <para>
+        /// The configuration that specifies the last accessed time criteria for files that will
+        /// be released from an Amazon FSx for Lustre file system.
+        /// </para>
+        /// </summary>
+        public ReleaseConfiguration ReleaseConfiguration
+        {
+            get { return this._releaseConfiguration; }
+            set { this._releaseConfiguration = value; }
+        }
+
+        // Check to see if ReleaseConfiguration property is set
+        internal bool IsSetReleaseConfiguration()
+        {
+            return this._releaseConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Report.
         /// </summary>
         public CompletionReport Report
@@ -364,12 +402,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File
-        /// Cache resource.
+        ///  <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
+        /// for Lustre file system that are archived and that meet your specified release criteria.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+        ///  <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File
+        /// Cache resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

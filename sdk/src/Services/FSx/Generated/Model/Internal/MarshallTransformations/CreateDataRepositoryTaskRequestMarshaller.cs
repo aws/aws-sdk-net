@@ -101,6 +101,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetReleaseConfiguration())
+                {
+                    context.Writer.WritePropertyName("ReleaseConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ReleaseConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ReleaseConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetReport())
                 {
                     context.Writer.WritePropertyName("Report");

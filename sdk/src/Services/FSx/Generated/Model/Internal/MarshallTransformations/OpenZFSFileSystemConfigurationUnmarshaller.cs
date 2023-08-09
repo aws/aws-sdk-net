@@ -100,10 +100,34 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DiskIopsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointIpAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndpointIpAddressRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointIpAddressRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredSubnetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RootVolumeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RootVolumeId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RouteTableIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RouteTableIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThroughputCapacity", targetDepth))

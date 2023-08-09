@@ -59,7 +59,15 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>StorageType</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>ThroughputCapacity</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DiskIopsConfiguration</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -187,6 +195,7 @@ namespace Amazon.FSx.Model
         private UpdateFileSystemOntapConfiguration _ontapConfiguration;
         private UpdateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private int? _storageCapacity;
+        private StorageType _storageType;
         private UpdateFileSystemWindowsConfiguration _windowsConfiguration;
 
         /// <summary>
@@ -350,6 +359,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetStorageCapacity()
         {
             return this._storageCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType.
+        /// </summary>
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>
