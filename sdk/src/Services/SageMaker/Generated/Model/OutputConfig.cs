@@ -144,8 +144,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about supported compiler options, see <a href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-        /// Neuron Compiler CLI</a>. 
+        /// For information about supported compiler options, see <a href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+        /// Neuron Compiler CLI Reference Guide</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
