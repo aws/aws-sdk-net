@@ -95,11 +95,11 @@ namespace Amazon.Runtime.Internal.Auth
             get
             {
                 var authParams = new StringBuilder()
-                    .AppendFormat("{0}={1}", HeaderKeys.XAmzAlgorithm, AWS4Signer.AWS4AlgorithmTag)
-                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzCredential, string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope))
-                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzDateHeader, ISO8601DateTime)
-                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzSignedHeadersHeader, SignedHeaders)
-                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzSignature, Signature);
+                    .AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzAlgorithm, false), AWSSDKUtils.UrlEncode(AWS4Signer.AWS4AlgorithmTag, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzCredential, false), AWSSDKUtils.UrlEncode(string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope), false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzDateHeader, false), AWSSDKUtils.UrlEncode(ISO8601DateTime, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzSignedHeadersHeader, false), AWSSDKUtils.UrlEncode(SignedHeaders, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzSignature, false), AWSSDKUtils.UrlEncode(Signature, false));
 
                 return authParams.ToString();
             }

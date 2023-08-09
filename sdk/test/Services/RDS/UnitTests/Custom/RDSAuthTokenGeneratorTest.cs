@@ -17,6 +17,7 @@ using Amazon;
 using Amazon.RDS;
 using Amazon.RDS.Util;
 using Amazon.Runtime;
+using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -209,10 +210,10 @@ namespace AWSSDK.UnitTests.RDS
             DateTime utcNow = DateTime.UtcNow;
             var todayRegex = "(" + utcNow.ToString("yyyyMMdd") + "|" + utcNow.AddDays(-1).ToString("yyyyMMdd") + ")";
 
-            var sessionTokenPart = hasSessionToken ? "X-Amz-Security-Token=" + SessionToken + "&" : "";
+            var sessionTokenPart = hasSessionToken ? "X-Amz-Security-Token=" + AWSSDKUtils.UrlEncode(SessionToken, false) + "&" : "";
             var regex = Regex.Escape(string.Format(CultureInfo.InvariantCulture,
                 "{0}:{1}/?Action=connect&DBUser={2}&X-Amz-Expires=900&{3}X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=" +
-                "{4}/TODAYREGEX/{5}/rds-db/aws4_request&X-Amz-Date=TODAYREGEXTTIMEREGEXZ&X-Amz-SignedHeaders=host&X-Amz-Signature=SIGNATUREREGEX",
+                "{4}%2FTODAYREGEX%2F{5}%2Frds-db%2Faws4_request&X-Amz-Date=TODAYREGEXTTIMEREGEXZ&X-Amz-SignedHeaders=host&X-Amz-Signature=SIGNATUREREGEX",
                 DBHost, DBPort, DBUser, sessionTokenPart, accessKey, region.SystemName));
             regex = regex.Replace("TIMEREGEX", "[0-9]{6}").Replace("SIGNATUREREGEX", "[0-9a-f]{64}").Replace("TODAYREGEX", todayRegex);
 
