@@ -1,3 +1,18 @@
+### 3.7.617.0 (2023-08-09 18:26 UTC)
+* ChimeSDKVoice (3.7.201.0)
+	* Updating CreatePhoneNumberOrder, UpdatePhoneNumber and BatchUpdatePhoneNumbers APIs, adding phone number name
+* FSx (3.7.201.0)
+	* For FSx for Lustre, add new data repository task type, RELEASE_DATA_FROM_FILESYSTEM, to release files that have been archived to S3. For FSx for Windows, enable support for configuring and updating SSD IOPS, and for updating storage type. For FSx for OpenZFS, add new deployment type, MULTI_AZ_1.
+* GlobalAccelerator (3.7.200.14)
+	* Documentation update for dualstack EC2 endpoint support
+* GuardDuty (3.7.201.0)
+	* Added autoEnable ALL to UpdateOrganizationConfiguration and DescribeOrganizationConfiguration APIs.
+* SageMaker (3.7.208.0)
+	* This release adds support for cross account access for SageMaker Model Cards through AWS RAM.
+* Core 3.7.200.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.616.0 (2023-08-08 18:27 UTC)
 * Backup (3.7.201.0)
 	* This release introduces a new logically air-gapped vault (Preview) in AWS Backup that stores immutable backup copies, which are locked by default and isolated with encryption using AWS owned keys. Logically air-gapped vault (Preview) allows secure recovery of application data across accounts.
