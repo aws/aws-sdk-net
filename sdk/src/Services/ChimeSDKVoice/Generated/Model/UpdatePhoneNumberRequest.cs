@@ -48,6 +48,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class UpdatePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
         private string _callingName;
+        private string _name;
         private string _phoneNumberId;
         private PhoneNumberProductType _productType;
 
@@ -68,6 +69,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetCallingName()
         {
             return this._callingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies the name assigned to one or more phone numbers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

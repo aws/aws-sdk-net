@@ -41,6 +41,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _createdTimestamp;
         private DateTime? _deletionTimestamp;
         private string _e164PhoneNumber;
+        private string _name;
         private string _orderId;
         private string _phoneNumberId;
         private PhoneNumberProductType _productType;
@@ -192,6 +193,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetE164PhoneNumber()
         {
             return this._e164PhoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the phone number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

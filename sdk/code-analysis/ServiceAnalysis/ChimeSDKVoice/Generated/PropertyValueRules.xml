@@ -9,6 +9,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.CreatePhoneNumberOrderRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateProxySessionRequest.ExpiryMinutes</property>
     <min>1</min>
   </property-value-rule>
@@ -507,6 +512,11 @@
     <pattern>^$|^[a-zA-Z0-9 ]{2,15}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdatePhoneNumberRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdatePhoneNumberRequest.PhoneNumberId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -785,6 +795,11 @@
     <pattern>^\+?[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.PhoneNumber.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumber.OrderId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
@@ -930,6 +945,11 @@
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdatePhoneNumberRequestItem.CallingName</property>
     <pattern>^$|^[a-zA-Z0-9 ]{2,15}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.UpdatePhoneNumberRequestItem.Name</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdatePhoneNumberRequestItem.PhoneNumberId</property>

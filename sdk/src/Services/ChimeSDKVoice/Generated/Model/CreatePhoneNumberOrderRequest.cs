@@ -36,6 +36,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class CreatePhoneNumberOrderRequest : AmazonChimeSDKVoiceRequest
     {
         private List<string> _e164PhoneNumbers = new List<string>();
+        private string _name;
         private PhoneNumberProductType _productType;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetE164PhoneNumbers()
         {
             return this._e164PhoneNumbers != null && this._e164PhoneNumbers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies the name assigned to one or more phone numbers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
