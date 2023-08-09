@@ -141,11 +141,51 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// id
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// region
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// id
+        /// severity
+        /// </para>
+        ///  
+        /// <para>
+        /// To filter on the basis of severity, the API and CLI use the following input list for
+        /// the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a>
+        /// condition:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Low</b>: <code>["1", "2", "3"]</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Medium</b>: <code>["4", "5", "6"]</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>High</b>: <code>["7", "8", "9"]</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity
+        /// levels for GuardDuty findings</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// updatedAt
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending
+        /// on whether the value contains milliseconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -177,7 +217,11 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// resource.instanceDetails.outpostArn
+        /// resource.instanceDetails.tags.key
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.instanceDetails.tags.value
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -213,15 +257,31 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// resource.instanceDetails.tags.key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.instanceDetails.tags.value
+        /// resource.instanceDetails.outpostArn
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// resource.resourceType
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.publicAccess.effectivePermissions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.tags.key
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.tags.value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.type
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -238,10 +298,6 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// service.action.awsApiCallAction.errorCode
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// service.action.awsApiCallAction.userAgent
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -289,10 +345,6 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// service.action.networkConnectionAction.localIpDetails.ipAddressV4
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// service.action.networkConnectionAction.remoteIpDetails.city.cityName
         /// </para>
         ///  </li> <li> 
@@ -317,27 +369,35 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.awsApiCallAction.remoteAccountDetails.affiliated
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.kubernetesApiCallAction.requestUri
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.networkConnectionAction.localIpDetails.ipAddressV4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.networkConnectionAction.protocol
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.awsApiCallAction.serviceName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.awsApiCallAction.remoteAccountDetails.accountId
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.additionalInfo.threatListName
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.s3BucketDetails.publicAccess.effectivePermissions
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.s3BucketDetails.name
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.s3BucketDetails.tags.key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.s3BucketDetails.tags.value
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.s3BucketDetails.type
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -345,20 +405,111 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// severity
+        /// resource.eksClusterDetails.name
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// type
+        /// resource.kubernetesDetails.kubernetesWorkloadDetails.name
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// updatedAt
+        /// resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending
-        /// on whether the value contains milliseconds.
+        /// resource.kubernetesDetails.kubernetesUserDetails.username
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.ebsVolumeScanDetails.scanId
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.ecsClusterDetails.name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.ecsClusterDetails.taskDetails.containers.image
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.ecsClusterDetails.taskDetails.definitionArn
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.containerDetails.image
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.rdsDbInstanceDetails.dbInstanceIdentifier
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.rdsDbInstanceDetails.dbClusterIdentifier
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.rdsDbInstanceDetails.engine
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.rdsDbUserDetails.user
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.rdsDbInstanceDetails.tags.key
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.rdsDbInstanceDetails.tags.value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.runtimeDetails.process.executableSha256
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.runtimeDetails.process.name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.runtimeDetails.process.name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.lambdaDetails.functionName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.lambdaDetails.functionArn
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.lambdaDetails.tags.key
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.lambdaDetails.tags.value
         /// </para>
         ///  </li> </ul>
         /// </summary>

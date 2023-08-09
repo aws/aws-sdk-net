@@ -3568,8 +3568,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-        /// IP sets, threat intel sets, publishing destination, with a limit of 50 tags per resource.
-        /// When invoked, this operation returns all assigned tags for a given resource.
+        /// IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per
+        /// each resource. When invoked, this operation returns all assigned tags for a given
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
