@@ -36,6 +36,7 @@ namespace Amazon.Omics.Model
         private int? _cpus;
         private DateTime? _creationTime;
         private int? _gpus;
+        private string _instanceType;
         private int? _memory;
         private string _name;
         private DateTime? _startTime;
@@ -97,6 +98,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetGpus()
         {
             return this._gpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        ///  The instance type for a task. 
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

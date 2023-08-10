@@ -99,7 +99,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specify the pagination token from a previous request to retrieve the next page of
+        /// Specifies the pagination token from a previous request to retrieve the next page of
         /// results.
         /// </para>
         /// </summary>
