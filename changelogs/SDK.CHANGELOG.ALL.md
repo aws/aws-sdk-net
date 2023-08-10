@@ -1,3 +1,20 @@
+### 3.7.618.0 (2023-08-10 18:33 UTC)
+* CloudTrail (3.7.200.15)
+	* Documentation updates for CloudTrail.
+* Connect (3.7.203.0)
+	* This release adds APIs to provision agents that are global / available in multiple AWS regions and distribute them across these regions by percentage.
+* ElasticLoadBalancingV2 (3.7.201.0)
+	* This release enables configuring security groups for Network Load Balancers
+* Omics (3.7.202.0)
+	* This release adds instanceType to GetRunTask & ListRunTasks responses.
+* SecretsManager (3.7.201.0)
+	* Add additional InvalidRequestException to list of possible exceptions for ListSecret.
+* Transfer (3.7.201.11)
+	* Documentation updates for AW Transfer Family
+* Core 3.7.200.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.617.0 (2023-08-09 18:26 UTC)
 * ChimeSDKVoice (3.7.201.0)
 	* Updating CreatePhoneNumberOrder, UpdatePhoneNumber and BatchUpdatePhoneNumbers APIs, adding phone number name
