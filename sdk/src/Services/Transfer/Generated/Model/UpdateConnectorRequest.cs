@@ -46,6 +46,16 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property AccessRole. 
         /// <para>
+        /// Connectors are used to send files using either the AS2 or SFTP protocol. For the access
+        /// role, provide the Amazon Resource Name (ARN) of the Identity and Access Management
+        /// role to use.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>For AS2 connectors</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
         /// the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s
         /// parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>,
@@ -64,6 +74,17 @@ namespace Amazon.Transfer.Model
         /// is encrypted using a customer-managed key instead of the Amazon Web Services managed
         /// key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission
         /// for that key.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>For SFTP connectors</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that the access role provides read and write access to the parent directory
+        /// of the file location that's used in the <code>StartFileTransfer</code> request. Additionally,
+        /// make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission
+        /// to Secrets Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
