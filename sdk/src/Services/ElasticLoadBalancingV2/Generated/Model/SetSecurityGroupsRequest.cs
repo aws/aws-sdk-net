@@ -30,18 +30,44 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the SetSecurityGroups operation.
-    /// Associates the specified security groups with the specified Application Load Balancer.
-    /// The specified security groups override the previously associated security groups.
+    /// Associates the specified security groups with the specified Application Load Balancer
+    /// or Network Load Balancer. The specified security groups override the previously associated
+    /// security groups.
     /// 
     ///  
     /// <para>
-    /// You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+    /// You can't perform this operation on a Network Load Balancer unless you specified a
+    /// security group for the load balancer when you created it.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can't associate a security group with a Gateway Load Balancer.
     /// </para>
     /// </summary>
     public partial class SetSecurityGroupsRequest : AmazonElasticLoadBalancingV2Request
     {
+        private EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum _enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
         private string _loadBalancerArn;
         private List<string> _securityGroups = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic. 
+        /// <para>
+        /// Indicates whether to evaluate inbound security group rules for traffic sent to a Network
+        /// Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.
+        /// </para>
+        /// </summary>
+        public EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic
+        {
+            get { return this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
+            set { this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
+        }
+
+        // Check to see if EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic property is set
+        internal bool IsSetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic()
+        {
+            return this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerArn. 

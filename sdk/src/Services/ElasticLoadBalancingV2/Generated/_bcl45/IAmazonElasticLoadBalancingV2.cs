@@ -1068,6 +1068,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Deregisters the specified targets from the specified target group. After the targets
         /// are deregistered, they no longer receive traffic from the load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// Note: If the specified target does not exist, the action returns successfully.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTargets service method.</param>
         /// 
@@ -1087,6 +1092,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Deregisters the specified targets from the specified target group. After the targets
         /// are deregistered, they no longer receive traffic from the load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// Note: If the specified target does not exist, the action returns successfully.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTargets service method.</param>
         /// <param name="cancellationToken">
@@ -2448,12 +2458,18 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Associates the specified security groups with the specified Application Load Balancer.
-        /// The specified security groups override the previously associated security groups.
+        /// Associates the specified security groups with the specified Application Load Balancer
+        /// or Network Load Balancer. The specified security groups override the previously associated
+        /// security groups.
         /// 
         ///  
         /// <para>
-        /// You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+        /// You can't perform this operation on a Network Load Balancer unless you specified a
+        /// security group for the load balancer when you created it.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't associate a security group with a Gateway Load Balancer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSecurityGroups service method.</param>
@@ -2474,12 +2490,18 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Associates the specified security groups with the specified Application Load Balancer.
-        /// The specified security groups override the previously associated security groups.
+        /// Associates the specified security groups with the specified Application Load Balancer
+        /// or Network Load Balancer. The specified security groups override the previously associated
+        /// security groups.
         /// 
         ///  
         /// <para>
-        /// You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+        /// You can't perform this operation on a Network Load Balancer unless you specified a
+        /// security group for the load balancer when you created it.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't associate a security group with a Gateway Load Balancer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSecurityGroups service method.</param>

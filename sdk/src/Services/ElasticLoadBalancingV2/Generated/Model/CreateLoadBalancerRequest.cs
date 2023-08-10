@@ -173,7 +173,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [Application Load Balancers] The IDs of the security groups for the load balancer.
+        /// [Application Load Balancers and Network Load Balancers] The IDs of the security groups
+        /// for the load balancer.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

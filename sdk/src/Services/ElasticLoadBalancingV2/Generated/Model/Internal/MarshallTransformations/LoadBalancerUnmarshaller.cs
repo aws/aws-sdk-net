@@ -85,6 +85,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DNSName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IpAddressType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

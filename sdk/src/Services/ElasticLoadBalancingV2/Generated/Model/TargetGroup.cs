@@ -208,8 +208,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the load balancers that route traffic to this target
-        /// group.
+        /// The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target
+        /// group. You can use each target group with only one load balancer.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerArns
@@ -245,7 +245,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which the targets are listening. Not used if the target is a Lambda function.
+        /// The port on which the targets are listening. This parameter is not used if the target
+        /// is a Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

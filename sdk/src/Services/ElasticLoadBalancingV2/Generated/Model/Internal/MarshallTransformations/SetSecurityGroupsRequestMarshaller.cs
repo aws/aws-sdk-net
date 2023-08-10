@@ -58,6 +58,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic())
+                {
+                    request.Parameters.Add("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic", StringUtils.FromString(publicRequest.EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic));
+                }
                 if(publicRequest.IsSetLoadBalancerArn())
                 {
                     request.Parameters.Add("LoadBalancerArn", StringUtils.FromString(publicRequest.LoadBalancerArn));

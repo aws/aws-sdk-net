@@ -114,7 +114,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The port on which the target is listening. If the target group protocol is GENEVE,
         /// the supported port is 6081. If the target type is <code>alb</code>, the targeted Application
         /// Load Balancer must have at least one listener whose port matches the target group
-        /// port. Not used if the target is a Lambda function.
+        /// port. This parameter is not used if the target is a Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
