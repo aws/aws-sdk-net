@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateTrafficDistribution Request Marshaller
+    /// AssociateTrafficDistributionGroupUser Request Marshaller
     /// </summary>       
-    public class UpdateTrafficDistributionRequestMarshaller : IMarshaller<IRequest, UpdateTrafficDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateTrafficDistributionGroupUserRequestMarshaller : IMarshaller<IRequest, AssociateTrafficDistributionGroupUserRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateTrafficDistributionRequest)input);
+            return this.Marshall((AssociateTrafficDistributionGroupUserRequest)input);
         }
 
         /// <summary>
@@ -52,53 +52,32 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateTrafficDistributionRequest publicRequest)
+        public IRequest Marshall(AssociateTrafficDistributionGroupUserRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "PUT";
 
-            if (!publicRequest.IsSetId())
-                throw new AmazonConnectException("Request object does not have required field Id set");
-            request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
-            request.ResourcePath = "/traffic-distribution/{Id}";
+            if (!publicRequest.IsSetTrafficDistributionGroupId())
+                throw new AmazonConnectException("Request object does not have required field TrafficDistributionGroupId set");
+            request.AddPathResource("{TrafficDistributionGroupId}", StringUtils.FromString(publicRequest.TrafficDistributionGroupId));
+            request.ResourcePath = "/traffic-distribution-group/{TrafficDistributionGroupId}/user";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentConfig())
+                if(publicRequest.IsSetInstanceId())
                 {
-                    context.Writer.WritePropertyName("AgentConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AgentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AgentConfig, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
-                if(publicRequest.IsSetSignInConfig())
+                if(publicRequest.IsSetUserId())
                 {
-                    context.Writer.WritePropertyName("SignInConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SignInConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SignInConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTelephonyConfig())
-                {
-                    context.Writer.WritePropertyName("TelephonyConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TelephonyConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TelephonyConfig, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("UserId");
+                    context.Writer.Write(publicRequest.UserId);
                 }
 
                 writer.WriteObjectEnd();
@@ -109,9 +88,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateTrafficDistributionRequestMarshaller _instance = new UpdateTrafficDistributionRequestMarshaller();        
+        private static AssociateTrafficDistributionGroupUserRequestMarshaller _instance = new AssociateTrafficDistributionGroupUserRequestMarshaller();        
 
-        internal static UpdateTrafficDistributionRequestMarshaller GetInstance()
+        internal static AssociateTrafficDistributionGroupUserRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +98,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTrafficDistributionRequestMarshaller Instance
+        public static AssociateTrafficDistributionGroupUserRequestMarshaller Instance
         {
             get
             {

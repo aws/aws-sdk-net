@@ -766,6 +766,64 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateTrafficDistributionGroupUser
+
+
+        /// <summary>
+        /// Associates an agent with a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTrafficDistributionGroupUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
+        AssociateTrafficDistributionGroupUserResponse AssociateTrafficDistributionGroupUser(AssociateTrafficDistributionGroupUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTrafficDistributionGroupUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTrafficDistributionGroupUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
+        IAsyncResult BeginAssociateTrafficDistributionGroupUser(AssociateTrafficDistributionGroupUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateTrafficDistributionGroupUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateTrafficDistributionGroupUser.</param>
+        /// 
+        /// <returns>Returns a  AssociateTrafficDistributionGroupUserResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
+        AssociateTrafficDistributionGroupUserResponse EndAssociateTrafficDistributionGroupUser(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ClaimPhoneNumber
 
 
@@ -5151,6 +5209,64 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateTrafficDistributionGroupUser
+
+
+        /// <summary>
+        /// Disassociates an agent from a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTrafficDistributionGroupUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">REST API Reference for DisassociateTrafficDistributionGroupUser Operation</seealso>
+        DisassociateTrafficDistributionGroupUserResponse DisassociateTrafficDistributionGroupUser(DisassociateTrafficDistributionGroupUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTrafficDistributionGroupUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTrafficDistributionGroupUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">REST API Reference for DisassociateTrafficDistributionGroupUser Operation</seealso>
+        IAsyncResult BeginDisassociateTrafficDistributionGroupUser(DisassociateTrafficDistributionGroupUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateTrafficDistributionGroupUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateTrafficDistributionGroupUser.</param>
+        /// 
+        /// <returns>Returns a  DisassociateTrafficDistributionGroupUserResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">REST API Reference for DisassociateTrafficDistributionGroupUser Operation</seealso>
+        DisassociateTrafficDistributionGroupUserResponse EndDisassociateTrafficDistributionGroupUser(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DismissUserContact
 
 
@@ -6815,6 +6931,17 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// When given an instance ARN, <code>ListPhoneNumbersV2</code> returns only the phone
+        /// numbers claimed to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When given a traffic distribution group ARN <code>ListPhoneNumbersV2</code> returns
+        /// only the phone numbers claimed to the traffic distribution group.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbersV2 service method.</param>
         /// 
@@ -7623,6 +7750,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  ListTrafficDistributionGroupsResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
         ListTrafficDistributionGroupsResponse EndListTrafficDistributionGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTrafficDistributionGroupUsers
+
+
+        /// <summary>
+        /// Lists traffic distribution group users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroupUsers service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficDistributionGroupUsers service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">REST API Reference for ListTrafficDistributionGroupUsers Operation</seealso>
+        ListTrafficDistributionGroupUsersResponse ListTrafficDistributionGroupUsers(ListTrafficDistributionGroupUsersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficDistributionGroupUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroupUsers operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficDistributionGroupUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">REST API Reference for ListTrafficDistributionGroupUsers Operation</seealso>
+        IAsyncResult BeginListTrafficDistributionGroupUsers(ListTrafficDistributionGroupUsersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficDistributionGroupUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficDistributionGroupUsers.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficDistributionGroupUsersResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">REST API Reference for ListTrafficDistributionGroupUsers Operation</seealso>
+        ListTrafficDistributionGroupUsersResponse EndListTrafficDistributionGroupUsers(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11673,7 +11855,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates the traffic distribution for a given traffic distribution group. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
+        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon

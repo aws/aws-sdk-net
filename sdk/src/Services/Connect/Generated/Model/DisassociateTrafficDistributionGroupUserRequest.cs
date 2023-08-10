@@ -29,67 +29,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the GetFederationToken operation.
+    /// Container for the parameters to the DisassociateTrafficDistributionGroupUser operation.
+    /// Disassociates an agent from a traffic distribution group.
     /// </summary>
-    public partial class GetFederationTokenResponse : AmazonWebServiceResponse
+    public partial class DisassociateTrafficDistributionGroupUserRequest : AmazonConnectRequest
     {
-        private Credentials _credentials;
-        private string _signInUrl;
-        private string _userArn;
+        private string _instanceId;
+        private string _trafficDistributionGroupId;
         private string _userId;
 
         /// <summary>
-        /// Gets and sets the property Credentials. 
+        /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The credentials to use for federation.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        public Credentials Credentials
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string InstanceId
         {
-            get { return this._credentials; }
-            set { this._credentials = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
-        // Check to see if Credentials property is set
-        internal bool IsSetCredentials()
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
         {
-            return this._credentials != null;
+            return this._instanceId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SignInUrl. 
+        /// Gets and sets the property TrafficDistributionGroupId. 
         /// <para>
-        /// The URL to sign into the user's instance. 
+        /// The identifier of the traffic distribution group. This can be the ID or the ARN if
+        /// the API is being called in the Region where the traffic distribution group was created.
+        /// The ARN must be provided if the call is from the replicated Region.
         /// </para>
         /// </summary>
-        public string SignInUrl
+        [AWSProperty(Required=true)]
+        public string TrafficDistributionGroupId
         {
-            get { return this._signInUrl; }
-            set { this._signInUrl = value; }
+            get { return this._trafficDistributionGroupId; }
+            set { this._trafficDistributionGroupId = value; }
         }
 
-        // Check to see if SignInUrl property is set
-        internal bool IsSetSignInUrl()
+        // Check to see if TrafficDistributionGroupId property is set
+        internal bool IsSetTrafficDistributionGroupId()
         {
-            return this._signInUrl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the user.
-        /// </para>
-        /// </summary>
-        public string UserArn
-        {
-            get { return this._userArn; }
-            set { this._userArn = value; }
-        }
-
-        // Check to see if UserArn property is set
-        internal bool IsSetUserArn()
-        {
-            return this._userArn != null;
+            return this._trafficDistributionGroupId != null;
         }
 
         /// <summary>
@@ -98,7 +85,7 @@ namespace Amazon.Connect.Model
         /// The identifier for the user. This can be the ID or the ARN of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true)]
         public string UserId
         {
             get { return this._userId; }

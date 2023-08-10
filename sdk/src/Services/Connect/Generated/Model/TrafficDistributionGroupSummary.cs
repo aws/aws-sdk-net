@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
         private string _arn;
         private string _id;
         private string _instanceArn;
+        private bool? _isDefault;
         private string _name;
         private TrafficDistributionGroupStatus _status;
 
@@ -93,6 +94,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceArn()
         {
             return this._instanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Whether this is the default traffic distribution group created during instance replication.
+        /// The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code>
+        /// API. The default traffic distribution group is deleted as part of the process for
+        /// deleting a replica.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
         }
 
         /// <summary>

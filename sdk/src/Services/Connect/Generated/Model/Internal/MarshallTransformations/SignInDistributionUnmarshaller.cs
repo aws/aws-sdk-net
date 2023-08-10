@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrafficDistributionGroupSummary Object
+    /// Response Unmarshaller for SignInDistribution Object
     /// </summary>  
-    public class TrafficDistributionGroupSummaryUnmarshaller : IUnmarshaller<TrafficDistributionGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<TrafficDistributionGroupSummary, JsonUnmarshallerContext>
+    public class SignInDistributionUnmarshaller : IUnmarshaller<SignInDistribution, XmlUnmarshallerContext>, IUnmarshaller<SignInDistribution, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TrafficDistributionGroupSummary IUnmarshaller<TrafficDistributionGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SignInDistribution IUnmarshaller<SignInDistribution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TrafficDistributionGroupSummary Unmarshall(JsonUnmarshallerContext context)
+        public SignInDistribution Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TrafficDistributionGroupSummary unmarshalledObject = new TrafficDistributionGroupSummary();
+            SignInDistribution unmarshalledObject = new SignInDistribution();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsDefault", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrafficDistributionGroupSummaryUnmarshaller _instance = new TrafficDistributionGroupSummaryUnmarshaller();        
+        private static SignInDistributionUnmarshaller _instance = new SignInDistributionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrafficDistributionGroupSummaryUnmarshaller Instance
+        public static SignInDistributionUnmarshaller Instance
         {
             get
             {

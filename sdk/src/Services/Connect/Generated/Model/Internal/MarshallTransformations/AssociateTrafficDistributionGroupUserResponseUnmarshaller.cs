@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTrafficDistribution operation
+    /// Response Unmarshaller for AssociateTrafficDistributionGroupUser operation
     /// </summary>  
-    public class GetTrafficDistributionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateTrafficDistributionGroupUserResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,43 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTrafficDistributionResponse response = new GetTrafficDistributionResponse();
+            AssociateTrafficDistributionGroupUserResponse response = new AssociateTrafficDistributionGroupUserResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("AgentConfig", targetDepth))
-                {
-                    var unmarshaller = AgentConfigUnmarshaller.Instance;
-                    response.AgentConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SignInConfig", targetDepth))
-                {
-                    var unmarshaller = SignInConfigUnmarshaller.Instance;
-                    response.SignInConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TelephonyConfig", targetDepth))
-                {
-                    var unmarshaller = TelephonyConfigUnmarshaller.Instance;
-                    response.TelephonyConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -116,6 +81,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
+                {
+                    return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -128,9 +97,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetTrafficDistributionResponseUnmarshaller _instance = new GetTrafficDistributionResponseUnmarshaller();        
+        private static AssociateTrafficDistributionGroupUserResponseUnmarshaller _instance = new AssociateTrafficDistributionGroupUserResponseUnmarshaller();        
 
-        internal static GetTrafficDistributionResponseUnmarshaller GetInstance()
+        internal static AssociateTrafficDistributionGroupUserResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +107,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTrafficDistributionResponseUnmarshaller Instance
+        public static AssociateTrafficDistributionGroupUserResponseUnmarshaller Instance
         {
             get
             {

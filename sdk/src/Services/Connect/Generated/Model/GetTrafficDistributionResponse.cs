@@ -33,9 +33,29 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetTrafficDistributionResponse : AmazonWebServiceResponse
     {
+        private AgentConfig _agentConfig;
         private string _arn;
         private string _id;
+        private SignInConfig _signInConfig;
         private TelephonyConfig _telephonyConfig;
+
+        /// <summary>
+        /// Gets and sets the property AgentConfig. 
+        /// <para>
+        /// The distribution of agents between the instance and its replica(s).
+        /// </para>
+        /// </summary>
+        public AgentConfig AgentConfig
+        {
+            get { return this._agentConfig; }
+            set { this._agentConfig = value; }
+        }
+
+        // Check to see if AgentConfig property is set
+        internal bool IsSetAgentConfig()
+        {
+            return this._agentConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -73,6 +93,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignInConfig. 
+        /// <para>
+        /// The distribution of allowing signing in to the instance and its replica(s).
+        /// </para>
+        /// </summary>
+        public SignInConfig SignInConfig
+        {
+            get { return this._signInConfig; }
+            set { this._signInConfig = value; }
+        }
+
+        // Check to see if SignInConfig property is set
+        internal bool IsSetSignInConfig()
+        {
+            return this._signInConfig != null;
         }
 
         /// <summary>

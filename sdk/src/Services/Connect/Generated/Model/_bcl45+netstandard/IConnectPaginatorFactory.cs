@@ -201,6 +201,11 @@ namespace Amazon.Connect.Model
         IListTrafficDistributionGroupsPaginator ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListTrafficDistributionGroupUsers operation
+        ///</summary>
+        IListTrafficDistributionGroupUsersPaginator ListTrafficDistributionGroupUsers(ListTrafficDistributionGroupUsersRequest request);
+
+        /// <summary>
         /// Paginator for ListUseCases operation
         ///</summary>
         IListUseCasesPaginator ListUseCases(ListUseCasesRequest request);
