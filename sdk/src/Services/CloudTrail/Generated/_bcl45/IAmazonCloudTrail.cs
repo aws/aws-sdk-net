@@ -5738,8 +5738,9 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided S3 prefix is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaxConcurrentQueriesException">
-        /// You are already running the maximum number of concurrent queries. Wait a minute for
-        /// some queries to finish, and then run the query again.
+        /// You are already running the maximum number of concurrent queries. The maximum number
+        /// of concurrent queries is 10. Wait a minute for some queries to finish, and then run
+        /// the query again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -5810,8 +5811,9 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided S3 prefix is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaxConcurrentQueriesException">
-        /// You are already running the maximum number of concurrent queries. Wait a minute for
-        /// some queries to finish, and then run the query again.
+        /// You are already running the maximum number of concurrent queries. The maximum number
+        /// of concurrent queries is 10. Wait a minute for some queries to finish, and then run
+        /// the query again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked

@@ -172,7 +172,15 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::ManagedBlockchain::Network</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::ManagedBlockchain::Node</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::MedicalImaging::Datastore</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -193,6 +201,14 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::S3Outposts::Object</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SSMMessages::ControlChannel</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::VerifiedPermissions::PolicyStore</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

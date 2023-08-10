@@ -207,7 +207,15 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::ManagedBlockchain::Network</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::ManagedBlockchain::Node</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::MedicalImaging::Datastore</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -228,6 +236,14 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::S3Outposts::Object</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SSMMessages::ControlChannel</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::VerifiedPermissions::PolicyStore</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -392,6 +408,17 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
         /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
         /// must be in the following format:
@@ -399,6 +426,17 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::MedicalImaging::Datastore</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -461,6 +499,28 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::VerifiedPermissions::PolicyStore</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>
