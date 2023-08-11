@@ -153,6 +153,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NeverAggregateInFilter);
             }
 
+            if(requestObject.IsSetNonAdditive())
+            {
+                context.Writer.WritePropertyName("NonAdditive");
+                context.Writer.Write(requestObject.NonAdditive);
+            }
+
             if(requestObject.IsSetNotAllowedAggregations())
             {
                 context.Writer.WritePropertyName("NotAllowedAggregations");

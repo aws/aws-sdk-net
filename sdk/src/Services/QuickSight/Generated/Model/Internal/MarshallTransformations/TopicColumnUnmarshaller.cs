@@ -142,6 +142,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.NeverAggregateInFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NonAdditive", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.NonAdditive = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotAllowedAggregations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -1025,6 +1025,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly AuthenticationMethodOption IAM_AND_QUICKSIGHT = new AuthenticationMethodOption("IAM_AND_QUICKSIGHT");
         /// <summary>
+        /// Constant IAM_IDENTITY_CENTER for AuthenticationMethodOption
+        /// </summary>
+        public static readonly AuthenticationMethodOption IAM_IDENTITY_CENTER = new AuthenticationMethodOption("IAM_IDENTITY_CENTER");
+        /// <summary>
         /// Constant IAM_ONLY for AuthenticationMethodOption
         /// </summary>
         public static readonly AuthenticationMethodOption IAM_ONLY = new AuthenticationMethodOption("IAM_ONLY");
@@ -3409,13 +3413,33 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DefaultAggregation MAX = new DefaultAggregation("MAX");
         /// <summary>
+        /// Constant MEDIAN for DefaultAggregation
+        /// </summary>
+        public static readonly DefaultAggregation MEDIAN = new DefaultAggregation("MEDIAN");
+        /// <summary>
         /// Constant MIN for DefaultAggregation
         /// </summary>
         public static readonly DefaultAggregation MIN = new DefaultAggregation("MIN");
         /// <summary>
+        /// Constant STDEV for DefaultAggregation
+        /// </summary>
+        public static readonly DefaultAggregation STDEV = new DefaultAggregation("STDEV");
+        /// <summary>
+        /// Constant STDEVP for DefaultAggregation
+        /// </summary>
+        public static readonly DefaultAggregation STDEVP = new DefaultAggregation("STDEVP");
+        /// <summary>
         /// Constant SUM for DefaultAggregation
         /// </summary>
         public static readonly DefaultAggregation SUM = new DefaultAggregation("SUM");
+        /// <summary>
+        /// Constant VAR for DefaultAggregation
+        /// </summary>
+        public static readonly DefaultAggregation VAR = new DefaultAggregation("VAR");
+        /// <summary>
+        /// Constant VARP for DefaultAggregation
+        /// </summary>
+        public static readonly DefaultAggregation VARP = new DefaultAggregation("VARP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4928,6 +4952,10 @@ namespace Amazon.QuickSight
         /// Constant IAM for IdentityType
         /// </summary>
         public static readonly IdentityType IAM = new IdentityType("IAM");
+        /// <summary>
+        /// Constant IAM_IDENTITY_CENTER for IdentityType
+        /// </summary>
+        public static readonly IdentityType IAM_IDENTITY_CENTER = new IdentityType("IAM_IDENTITY_CENTER");
         /// <summary>
         /// Constant QUICKSIGHT for IdentityType
         /// </summary>
@@ -7295,6 +7323,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type PivotTableRowsLayout.
+    /// </summary>
+    public class PivotTableRowsLayout : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIERARCHY for PivotTableRowsLayout
+        /// </summary>
+        public static readonly PivotTableRowsLayout HIERARCHY = new PivotTableRowsLayout("HIERARCHY");
+        /// <summary>
+        /// Constant TABULAR for PivotTableRowsLayout
+        /// </summary>
+        public static readonly PivotTableRowsLayout TABULAR = new PivotTableRowsLayout("TABULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PivotTableRowsLayout(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PivotTableRowsLayout FindValue(string value)
+        {
+            return FindValue<PivotTableRowsLayout>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PivotTableRowsLayout(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PivotTableSubtotalLevel.
     /// </summary>
     public class PivotTableSubtotalLevel : ConstantClass
@@ -9165,6 +9243,60 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type StyledCellType.
+    /// </summary>
+    public class StyledCellType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METRIC_HEADER for StyledCellType
+        /// </summary>
+        public static readonly StyledCellType METRIC_HEADER = new StyledCellType("METRIC_HEADER");
+        /// <summary>
+        /// Constant TOTAL for StyledCellType
+        /// </summary>
+        public static readonly StyledCellType TOTAL = new StyledCellType("TOTAL");
+        /// <summary>
+        /// Constant VALUE for StyledCellType
+        /// </summary>
+        public static readonly StyledCellType VALUE = new StyledCellType("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StyledCellType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StyledCellType FindValue(string value)
+        {
+            return FindValue<StyledCellType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StyledCellType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TableBorderStyle.
     /// </summary>
     public class TableBorderStyle : ConstantClass
@@ -10524,6 +10656,10 @@ namespace Amazon.QuickSight
     public class VerticalTextAlignment : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for VerticalTextAlignment
+        /// </summary>
+        public static readonly VerticalTextAlignment AUTO = new VerticalTextAlignment("AUTO");
         /// <summary>
         /// Constant BOTTOM for VerticalTextAlignment
         /// </summary>

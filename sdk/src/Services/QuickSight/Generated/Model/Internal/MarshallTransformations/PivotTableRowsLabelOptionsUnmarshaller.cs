@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RowAlternateColorOptions Object
+    /// Response Unmarshaller for PivotTableRowsLabelOptions Object
     /// </summary>  
-    public class RowAlternateColorOptionsUnmarshaller : IUnmarshaller<RowAlternateColorOptions, XmlUnmarshallerContext>, IUnmarshaller<RowAlternateColorOptions, JsonUnmarshallerContext>
+    public class PivotTableRowsLabelOptionsUnmarshaller : IUnmarshaller<PivotTableRowsLabelOptions, XmlUnmarshallerContext>, IUnmarshaller<PivotTableRowsLabelOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RowAlternateColorOptions IUnmarshaller<RowAlternateColorOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PivotTableRowsLabelOptions IUnmarshaller<PivotTableRowsLabelOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RowAlternateColorOptions Unmarshall(JsonUnmarshallerContext context)
+        public PivotTableRowsLabelOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RowAlternateColorOptions unmarshalledObject = new RowAlternateColorOptions();
+            PivotTableRowsLabelOptions unmarshalledObject = new PivotTableRowsLabelOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("RowAlternateColors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RowAlternateColors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("CustomLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomLabel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UsePrimaryBackgroundColor", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsePrimaryBackgroundColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static RowAlternateColorOptionsUnmarshaller _instance = new RowAlternateColorOptionsUnmarshaller();        
+        private static PivotTableRowsLabelOptionsUnmarshaller _instance = new PivotTableRowsLabelOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RowAlternateColorOptionsUnmarshaller Instance
+        public static PivotTableRowsLabelOptionsUnmarshaller Instance
         {
             get
             {

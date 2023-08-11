@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The field options for a table visual.
+    /// The options for the label thta is located above the row headers. This option is only
+    /// applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
     /// </summary>
-    public partial class TableFieldOptions
+    public partial class PivotTableRowsLabelOptions
     {
-        private List<string> _order = new List<string>();
-        private List<TableFieldOption> _selectedFieldOptions = new List<TableFieldOption>();
+        private string _customLabel;
+        private Visibility _visibility;
 
         /// <summary>
-        /// Gets and sets the property Order. 
+        /// Gets and sets the property CustomLabel. 
         /// <para>
-        /// The order of field IDs of the field options for a table visual.
+        /// The custom label string for the rows label.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
-        public List<string> Order
+        [AWSProperty(Min=1, Max=1024)]
+        public string CustomLabel
         {
-            get { return this._order; }
-            set { this._order = value; }
+            get { return this._customLabel; }
+            set { this._customLabel = value; }
         }
 
-        // Check to see if Order property is set
-        internal bool IsSetOrder()
+        // Check to see if CustomLabel property is set
+        internal bool IsSetCustomLabel()
         {
-            return this._order != null && this._order.Count > 0; 
+            return this._customLabel != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SelectedFieldOptions. 
+        /// Gets and sets the property Visibility. 
         /// <para>
-        /// The selected field options for the table field options.
+        /// The visibility of the rows label.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
-        public List<TableFieldOption> SelectedFieldOptions
+        public Visibility Visibility
         {
-            get { return this._selectedFieldOptions; }
-            set { this._selectedFieldOptions = value; }
+            get { return this._visibility; }
+            set { this._visibility = value; }
         }
 
-        // Check to see if SelectedFieldOptions property is set
-        internal bool IsSetSelectedFieldOptions()
+        // Check to see if Visibility property is set
+        internal bool IsSetVisibility()
         {
-            return this._selectedFieldOptions != null && this._selectedFieldOptions.Count > 0; 
+            return this._visibility != null;
         }
 
     }

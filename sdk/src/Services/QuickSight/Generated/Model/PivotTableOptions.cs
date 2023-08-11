@@ -37,10 +37,13 @@ namespace Amazon.QuickSight.Model
         private Visibility _collapsedRowDimensionsVisibility;
         private TableCellStyle _columnHeaderStyle;
         private Visibility _columnNamesVisibility;
+        private string _defaultCellWidth;
         private PivotTableMetricPlacement _metricPlacement;
         private RowAlternateColorOptions _rowAlternateColorOptions;
         private TableCellStyle _rowFieldNamesStyle;
         private TableCellStyle _rowHeaderStyle;
+        private PivotTableRowsLabelOptions _rowsLabelOptions;
+        private PivotTableRowsLayout _rowsLayout;
         private Visibility _singleMetricVisibility;
         private Visibility _toggleButtonsVisibility;
 
@@ -119,6 +122,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultCellWidth. 
+        /// <para>
+        /// The default cell width of the pivot table.
+        /// </para>
+        /// </summary>
+        public string DefaultCellWidth
+        {
+            get { return this._defaultCellWidth; }
+            set { this._defaultCellWidth = value; }
+        }
+
+        // Check to see if DefaultCellWidth property is set
+        internal bool IsSetDefaultCellWidth()
+        {
+            return this._defaultCellWidth != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MetricPlacement. 
         /// <para>
         /// The metric placement (row, column) options.
@@ -188,6 +209,54 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowHeaderStyle()
         {
             return this._rowHeaderStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowsLabelOptions. 
+        /// <para>
+        /// The options for the label that is located above the row headers. This option is only
+        /// applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+        /// </para>
+        /// </summary>
+        public PivotTableRowsLabelOptions RowsLabelOptions
+        {
+            get { return this._rowsLabelOptions; }
+            set { this._rowsLabelOptions = value; }
+        }
+
+        // Check to see if RowsLabelOptions property is set
+        internal bool IsSetRowsLabelOptions()
+        {
+            return this._rowsLabelOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowsLayout. 
+        /// <para>
+        /// The layout for the row dimension headers of a pivot table. Choose one of the following
+        /// options.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation
+        /// is used to differentiate row headers of different fields.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PivotTableRowsLayout RowsLayout
+        {
+            get { return this._rowsLayout; }
+            set { this._rowsLayout = value; }
+        }
+
+        // Check to see if RowsLayout property is set
+        internal bool IsSetRowsLayout()
+        {
+            return this._rowsLayout != null;
         }
 
         /// <summary>

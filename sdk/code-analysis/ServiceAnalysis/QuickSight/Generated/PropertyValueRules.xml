@@ -41,6 +41,12 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateAccountSubscriptionRequest.AccountName</property>
+    <min>1</min>
+    <max>62</max>
+    <pattern>^(?!D-|d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateAccountSubscriptionRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -4306,6 +4312,11 @@
     <property>Amazon.QuickSight.Model.PivotTableFieldSubtotalOptions.FieldId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PivotTableRowsLabelOptions.CustomLabel</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.PivotTableVisual.VisualId</property>

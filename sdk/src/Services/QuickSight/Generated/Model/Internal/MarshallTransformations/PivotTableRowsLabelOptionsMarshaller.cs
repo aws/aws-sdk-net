@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RowAlternateColorOptions Marshaller
+    /// PivotTableRowsLabelOptions Marshaller
     /// </summary>
-    public class RowAlternateColorOptionsMarshaller : IRequestMarshaller<RowAlternateColorOptions, JsonMarshallerContext> 
+    public class PivotTableRowsLabelOptionsMarshaller : IRequestMarshaller<PivotTableRowsLabelOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RowAlternateColorOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(PivotTableRowsLabelOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetRowAlternateColors())
+            if(requestObject.IsSetCustomLabel())
             {
-                context.Writer.WritePropertyName("RowAlternateColors");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectRowAlternateColorsListValue in requestObject.RowAlternateColors)
-                {
-                        context.Writer.Write(requestObjectRowAlternateColorsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("CustomLabel");
+                context.Writer.Write(requestObject.CustomLabel);
             }
 
-            if(requestObject.IsSetStatus())
+            if(requestObject.IsSetVisibility())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
-            }
-
-            if(requestObject.IsSetUsePrimaryBackgroundColor())
-            {
-                context.Writer.WritePropertyName("UsePrimaryBackgroundColor");
-                context.Writer.Write(requestObject.UsePrimaryBackgroundColor);
+                context.Writer.WritePropertyName("Visibility");
+                context.Writer.Write(requestObject.Visibility);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RowAlternateColorOptionsMarshaller Instance = new RowAlternateColorOptionsMarshaller();
+        public readonly static PivotTableRowsLabelOptionsMarshaller Instance = new PivotTableRowsLabelOptionsMarshaller();
 
     }
 }

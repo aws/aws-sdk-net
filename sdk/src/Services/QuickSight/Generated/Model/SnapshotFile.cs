@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property FormatType. 
         /// <para>
         /// The format of the snapshot file to be generated. You can choose between <code>CSV</code>
-        /// and <code>PDF</code>.
+        /// or <code>PDF</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

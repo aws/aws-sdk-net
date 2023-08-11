@@ -88,6 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColumnNamesVisibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultCellWidth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultCellWidth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MetricPlacement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.RowHeaderStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RowsLabelOptions", targetDepth))
+                {
+                    var unmarshaller = PivotTableRowsLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.RowsLabelOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RowsLayout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RowsLayout = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SingleMetricVisibility", targetDepth))

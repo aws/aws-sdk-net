@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         private bool? _disableIndexing;
         private bool? _isIncludedInTopic;
         private bool? _neverAggregateInFilter;
+        private bool? _nonAdditive;
         private List<string> _notAllowedAggregations = new List<string>();
         private SemanticType _semanticType;
         private TopicTimeGranularity _timeGranularity;
@@ -53,9 +54,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Aggregation. 
         /// <para>
-        /// The type of aggregation that is performed on the column data when it's queried. Valid
-        /// values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>,
-        /// <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.
+        /// The type of aggregation that is performed on the column data when it's queried.
         /// </para>
         /// </summary>
         public DefaultAggregation Aggregation
@@ -292,6 +291,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNeverAggregateInFilter()
         {
             return this._neverAggregateInFilter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NonAdditive. 
+        /// <para>
+        /// The non additive value for the column.
+        /// </para>
+        /// </summary>
+        public bool NonAdditive
+        {
+            get { return this._nonAdditive.GetValueOrDefault(); }
+            set { this._nonAdditive = value; }
+        }
+
+        // Check to see if NonAdditive property is set
+        internal bool IsSetNonAdditive()
+        {
+            return this._nonAdditive.HasValue; 
         }
 
         /// <summary>

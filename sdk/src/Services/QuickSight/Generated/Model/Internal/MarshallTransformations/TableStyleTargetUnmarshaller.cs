@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RowAlternateColorOptions Object
+    /// Response Unmarshaller for TableStyleTarget Object
     /// </summary>  
-    public class RowAlternateColorOptionsUnmarshaller : IUnmarshaller<RowAlternateColorOptions, XmlUnmarshallerContext>, IUnmarshaller<RowAlternateColorOptions, JsonUnmarshallerContext>
+    public class TableStyleTargetUnmarshaller : IUnmarshaller<TableStyleTarget, XmlUnmarshallerContext>, IUnmarshaller<TableStyleTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RowAlternateColorOptions IUnmarshaller<RowAlternateColorOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TableStyleTarget IUnmarshaller<TableStyleTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RowAlternateColorOptions Unmarshall(JsonUnmarshallerContext context)
+        public TableStyleTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RowAlternateColorOptions unmarshalledObject = new RowAlternateColorOptions();
+            TableStyleTarget unmarshalledObject = new TableStyleTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("RowAlternateColors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RowAlternateColors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("CellType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UsePrimaryBackgroundColor", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsePrimaryBackgroundColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CellType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static RowAlternateColorOptionsUnmarshaller _instance = new RowAlternateColorOptionsUnmarshaller();        
+        private static TableStyleTargetUnmarshaller _instance = new TableStyleTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RowAlternateColorOptionsUnmarshaller Instance
+        public static TableStyleTargetUnmarshaller Instance
         {
             get
             {
