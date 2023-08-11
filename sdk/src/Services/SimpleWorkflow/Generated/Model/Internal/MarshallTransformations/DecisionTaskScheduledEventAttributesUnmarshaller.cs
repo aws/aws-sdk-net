@@ -64,6 +64,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("scheduleToStartTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleToStartTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startToCloseTimeout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

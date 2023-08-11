@@ -383,6 +383,10 @@
     <max>32768</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.RespondDecisionTaskCompletedRequest.TaskListScheduleToStartTimeout</property>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.RespondDecisionTaskCompletedRequest.TaskToken</property>
     <min>1</min>
     <max>1024</max>
@@ -636,6 +640,14 @@
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskCompletedEventAttributes.ExecutionContext</property>
     <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.DecisionTaskCompletedEventAttributes.TaskListScheduleToStartTimeout</property>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleWorkflow.Model.DecisionTaskScheduledEventAttributes.ScheduleToStartTimeout</property>
+    <max>8</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleWorkflow.Model.DecisionTaskScheduledEventAttributes.StartToCloseTimeout</property>

@@ -82,6 +82,18 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("taskList", targetDepth))
+                {
+                    var unmarshaller = TaskListUnmarshaller.Instance;
+                    unmarshalledObject.TaskList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskListScheduleToStartTimeout", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskListScheduleToStartTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -33,9 +33,29 @@ namespace Amazon.SimpleWorkflow.Model
     /// </summary>
     public partial class DecisionTaskScheduledEventAttributes
     {
+        private string _scheduleToStartTimeout;
         private string _startToCloseTimeout;
         private TaskList _taskList;
         private string _taskPriority;
+
+        /// <summary>
+        /// Gets and sets the property ScheduleToStartTimeout. 
+        /// <para>
+        /// The maximum amount of time the decision task can wait to be assigned to a worker.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8)]
+        public string ScheduleToStartTimeout
+        {
+            get { return this._scheduleToStartTimeout; }
+            set { this._scheduleToStartTimeout = value; }
+        }
+
+        // Check to see if ScheduleToStartTimeout property is set
+        internal bool IsSetScheduleToStartTimeout()
+        {
+            return this._scheduleToStartTimeout != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StartToCloseTimeout. 
