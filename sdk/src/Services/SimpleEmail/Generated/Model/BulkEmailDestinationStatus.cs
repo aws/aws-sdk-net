@@ -87,8 +87,8 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver
-        /// it to the recipients.
+        ///  <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it
+        /// to the recipients.
         /// </para>
         ///  </li> <li> 
         /// <para>

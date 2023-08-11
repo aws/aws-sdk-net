@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+    /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -93,12 +93,12 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the receipt rule. The name must:
+        /// The name of the receipt rule. The name must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-),
+        /// or periods (.). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 64 characters.
+        /// Contain 64 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Recipients. 
         /// <para>
         /// The recipient domains and email addresses that the receipt rule applies to. If this
-        /// field is not specified, this rule will match all recipients under all verified domains.
+        /// field is not specified, this rule matches all recipients on all verified domains.
         /// </para>
         /// </summary>
         public List<string> Recipients
@@ -166,8 +166,8 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// Specifies whether Amazon SES should require that incoming email is delivered over
         /// a connection encrypted with Transport Layer Security (TLS). If this parameter is set
-        /// to <code>Require</code>, Amazon SES will bounce emails that are not received over
-        /// TLS. The default is <code>Optional</code>.
+        /// to <code>Require</code>, Amazon SES bounces emails that are not received over TLS.
+        /// The default is <code>Optional</code>.
         /// </para>
         /// </summary>
         public TlsPolicy TlsPolicy

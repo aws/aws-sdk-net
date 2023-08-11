@@ -44,7 +44,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates Message with the parameterized properties
         /// </summary>
-        /// <param name="subject">The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</param>
+        /// <param name="subject">The subject of the message: A short summary of the content, which appears in the recipient's inbox.</param>
         /// <param name="body">The message body.</param>
         public Message(Content subject, Body body)
         {
@@ -74,8 +74,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject of the message: A short summary of the content, which will appear in the
-        /// recipient's inbox.
+        /// The subject of the message: A short summary of the content, which appears in the recipient's
+        /// inbox.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

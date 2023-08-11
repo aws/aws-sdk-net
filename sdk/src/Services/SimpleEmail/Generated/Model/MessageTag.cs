@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     ///  
     /// <para>
     /// Message tags, which you use with configuration sets, enable you to publish email sending
-    /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -47,16 +47,15 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the tag. The name must:
+        /// The name of the tag. The name must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 256 characters.
+        /// Contain 256 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -76,16 +75,15 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the tag. The value must:
+        /// The value of the tag. The value must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 256 characters.
+        /// Contain 256 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>

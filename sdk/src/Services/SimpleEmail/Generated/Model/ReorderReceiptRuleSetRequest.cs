@@ -34,13 +34,12 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// All of the rules in the rule set must be represented in this request. That is, this
-    /// API will return an error if the reorder request doesn't explicitly position all of
-    /// the rules.
+    /// All of the rules in the rule set must be represented in this request. That is, it
+    /// is error if the reorder request doesn't explicitly position all of the rules.
     /// </para>
     ///  </note> 
     /// <para>
-    /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+    /// For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  
@@ -56,8 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property RuleNames. 
         /// <para>
-        /// A list of the specified receipt rule set's receipt rules in the order that you want
-        /// to put them.
+        /// The specified receipt rule set's receipt rules, in order.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The email address that the message was ultimately delivered to. This corresponds to
         /// the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code>
-        /// will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code>
+        /// is set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code>
         /// structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code>
         /// must be a recipient of the original bounced message.
         /// </para>

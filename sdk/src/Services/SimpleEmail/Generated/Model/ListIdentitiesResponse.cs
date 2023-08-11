@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// A list of all identities that you have attempted to verify under your AWS account,
-    /// regardless of verification status.
+    /// A list of all identities that you have attempted to verify under your Amazon Web Services
+    /// account, regardless of verification status.
     /// </summary>
     public partial class ListIdentitiesResponse : AmazonWebServiceResponse
     {

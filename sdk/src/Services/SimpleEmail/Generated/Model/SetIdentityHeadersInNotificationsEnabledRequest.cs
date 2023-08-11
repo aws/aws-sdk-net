@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+    /// For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -55,8 +55,8 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// Sets whether Amazon SES includes the original email headers in Amazon SNS notifications
         /// of the specified notification type. A value of <code>true</code> specifies that Amazon
-        /// SES will include headers in notifications, and a value of <code>false</code> specifies
-        /// that Amazon SES will not include headers in notifications.
+        /// SES includes headers in notifications, and a value of <code>false</code> specifies
+        /// that Amazon SES does not include headers in notifications.
         /// </para>
         ///  
         /// <para>

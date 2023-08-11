@@ -31,8 +31,8 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the VerifyDomainIdentity operation.
     /// Adds a domain to the list of identities for your Amazon SES account in the current
-    /// AWS Region and attempts to verify it. For more information about verifying domains,
-    /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+    /// Amazon Web Services Region and attempts to verify it. For more information about verifying
+    /// domains, see <a href="https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html">Verifying
     /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
     /// 
     ///  

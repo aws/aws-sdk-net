@@ -31,17 +31,17 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the SendBounce operation.
     /// Generates and sends a bounce message to the sender of an email you received through
-    /// Amazon SES. You can only use this API on an email up to 24 hours after you receive
+    /// Amazon SES. You can only use this operation on an email up to 24 hours after you receive
     /// it.
     /// 
     ///  <note> 
     /// <para>
-    /// You cannot use this API to send generic bounces for mail that was not received by
-    /// Amazon SES.
+    /// You cannot use this operation to send generic bounces for mail that was not received
+    /// by Amazon SES.
     /// </para>
     ///  </note> 
     /// <para>
-    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  
@@ -105,7 +105,7 @@ namespace Amazon.SimpleEmail.Model
         /// This parameter is used only for sending authorization. It is the ARN of the identity
         /// that is associated with the sending authorization policy that permits you to use the
         /// address in the "From" header of the bounce. For more information about sending authorization,
-        /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -125,7 +125,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Explanation. 
         /// <para>
         /// Human-readable text for the bounce message to explain the failure. If not specified,
-        /// the text will be auto-generated based on the bounced recipient information.
+        /// the text is auto-generated based on the bounced recipient information.
         /// </para>
         /// </summary>
         public string Explanation
@@ -143,7 +143,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property MessageDsn. 
         /// <para>
-        /// Message-related DSN fields. If not specified, Amazon SES will choose the values.
+        /// Message-related DSN fields. If not specified, Amazon SES chooses the values.
         /// </para>
         /// </summary>
         public MessageDsn MessageDsn

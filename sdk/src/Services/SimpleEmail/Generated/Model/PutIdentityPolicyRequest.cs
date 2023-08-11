@@ -35,14 +35,14 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This API is for the identity owner only. If you have not verified the identity, this
-    /// API will return an error.
+    /// This operation is for the identity owner only. If you have not verified the identity,
+    /// it returns an error.
     /// </para>
     ///  </note> 
     /// <para>
     /// Sending authorization is a feature that enables an identity owner to authorize other
     /// senders to use its identities. For information about using sending authorization,
-    /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+    /// see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  
@@ -59,13 +59,13 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity that the policy will apply to. You can specify an identity by using its
-        /// name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
+        /// The identity to which that the policy applies. You can specify an identity by using
+        /// its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
         /// <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
         /// </para>
         ///  
         /// <para>
-        /// To successfully call this API, you must own the identity.
+        /// To successfully call this operation, you must own the identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +88,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
+        /// For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon
         /// SES Developer Guide</a>. 
         /// </para>
         /// </summary>

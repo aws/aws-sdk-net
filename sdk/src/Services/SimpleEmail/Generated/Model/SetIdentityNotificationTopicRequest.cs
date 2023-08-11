@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+    /// For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity (email address or domain) that you want to set the Amazon SNS topic for.
+        /// The identity (email address or domain) for the Amazon SNS topic.
         /// </para>
         ///  <important> 
         /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        /// The type of notifications that will be published to the specified Amazon SNS topic.
+        /// The type of notifications that are published to the specified Amazon SNS topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

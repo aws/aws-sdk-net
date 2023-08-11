@@ -40,9 +40,9 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// An event destination is the AWS service to which Amazon SES publishes the email sending
-    /// events associated with a configuration set. For information about using configuration
-    /// sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// An event destination is the Amazon Web Services service to which Amazon SES publishes
+    /// the email sending events associated with a configuration set. For information about
+    /// using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  
@@ -78,8 +78,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property EventDestination. 
         /// <para>
-        /// An object that describes the AWS service that email sending event information will
-        /// be published to.
+        /// An object that describes the Amazon Web Services service that email sending event
+        /// where information is published.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+    /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
     /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
     /// </para>
     ///  
@@ -115,7 +115,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The content of the custom verification email. The total size of the email must be
         /// less than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
         /// Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         /// </summary>

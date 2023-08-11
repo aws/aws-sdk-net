@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     ///  
     /// <para>
     /// For information about publishing email sending events to Amazon CloudWatch, see the
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -49,16 +49,17 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DefaultDimensionValue. 
         /// <para>
         /// The default value of the dimension that is published to Amazon CloudWatch if you do
-        /// not provide the value of the dimension when you send an email. The default value must:
+        /// not provide the value of the dimension when you send an email. The default value must
+        /// meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-),
+        /// at signs (@), or periods (.).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 256 characters.
+        /// Contain 256 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,16 +80,16 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DimensionName. 
         /// <para>
         /// The name of an Amazon CloudWatch dimension associated with an email sending metric.
-        /// The name must:
+        /// The name must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-),
+        /// or colons (:).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 256 characters.
+        /// Contain 256 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -109,10 +110,10 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DimensionValueSource. 
         /// <para>
         /// The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch.
-        /// If you want Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code>
+        /// To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code>
         /// header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API,
-        /// choose <code>messageTag</code>. If you want Amazon SES to use your own email headers,
-        /// choose <code>emailHeader</code>.
+        /// specify <code>messageTag</code>. To use your own email headers, specify <code>emailHeader</code>.
+        /// To put a custom tag on any link included in your email, specify <code>linkTag</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

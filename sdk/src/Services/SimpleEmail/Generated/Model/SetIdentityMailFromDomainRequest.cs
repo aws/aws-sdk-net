@@ -36,9 +36,9 @@ namespace Amazon.SimpleEmail.Model
     ///  <important> 
     /// <para>
     /// To send emails using the specified MAIL FROM domain, you must add an MX record to
-    /// your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy
+    /// your MAIL FROM domain's DNS settings. To ensure that your emails pass Sender Policy
     /// Framework (SPF) checks, you must also add or update an SPF record. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+    /// see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  </important> 
@@ -55,11 +55,11 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property BehaviorOnMXFailure. 
         /// <para>
-        /// The action that you want Amazon SES to take if it cannot successfully read the required
-        /// MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon
-        /// SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you
-        /// choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code>
-        /// error and not send the email.
+        /// The action for Amazon SES to take if it cannot successfully read the required MX record
+        /// when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES uses
+        /// amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>,
+        /// Amazon SES returns a <code>MailFromDomainNotVerified</code> error and not send the
+        /// email.
         /// </para>
         ///  
         /// <para>
@@ -83,8 +83,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The verified identity for which you want to enable or disable the specified custom
-        /// MAIL FROM domain.
+        /// The verified identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,10 +102,10 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property MailFromDomain. 
         /// <para>
-        /// The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
-        /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
-        /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+        /// The custom MAIL FROM domain for the verified identity to use. The MAIL FROM domain
+        /// must 1) be a subdomain of the verified identity, 2) not be used in a "From" address
+        /// if the MAIL FROM domain is the destination of email feedback forwarding (for more
+        /// information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon
         /// SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code>
         /// disables the custom MAIL FROM setting for the identity.
         /// </para>
