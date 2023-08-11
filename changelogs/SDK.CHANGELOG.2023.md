@@ -1,3 +1,20 @@
+### 3.7.619.0 (2023-08-11 18:26 UTC)
+* AmplifyBackend (3.7.201.0)
+	* Adds sensitive trait to required input shapes.
+* ConfigService (3.7.201.0)
+	* Updated ResourceType enum with new resource types onboarded by AWS Config in July 2023.
+* EC2 (3.7.205.0)
+	* Amazon EC2 P5 instances, powered by the latest NVIDIA H100 Tensor Core GPUs, deliver the highest performance in EC2 for deep learning (DL) and HPC applications. M7i-flex and M7i instances are next-generation general purpose instances powered by custom 4th Generation Intel Xeon Scalable processors.
+* QuickSight (3.7.202.0)
+	* New Authentication method for Account subscription - IAM Identity Center. Hierarchy layout support, default column width support and related style properties for pivot table visuals. Non-additive topic field aggregations for Topic API
+* SimpleEmail (3.7.200.16)
+	* Doc only updates to include: 1) Clarified which part of an email address where it's okay to have Punycode when it contains non-ASCII characters for the SendRawEmail action and other actions where this is applicable. 2) Updated S3Action description with new MB max bucket size from 30 to 40.
+* SimpleWorkflow (3.7.201.0)
+	* This release adds new API parameters to override workflow task list for workflow executions.
+* Core 3.7.200.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.618.0 (2023-08-10 18:33 UTC)
 * CloudTrail (3.7.200.15)
 	* Documentation updates for CloudTrail.
