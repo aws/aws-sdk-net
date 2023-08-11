@@ -41,6 +41,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Facebook.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public BackendAuthSocialProviderConfig Facebook
         {
             get { return this._facebook; }
@@ -56,6 +57,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Google.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public BackendAuthSocialProviderConfig Google
         {
             get { return this._google; }
@@ -71,6 +73,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property LoginWithAmazon.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public BackendAuthSocialProviderConfig LoginWithAmazon
         {
             get { return this._loginWithAmazon; }
@@ -86,6 +89,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SignInWithApple.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public BackendAuthAppleProviderConfig SignInWithApple
         {
             get { return this._signInWithApple; }
