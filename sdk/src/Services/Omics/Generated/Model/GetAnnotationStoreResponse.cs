@@ -37,6 +37,7 @@ namespace Amazon.Omics.Model
         private string _description;
         private string _id;
         private string _name;
+        private int? _numVersions;
         private ReferenceItem _reference;
         private SseConfig _sseConfig;
         private StoreStatus _status;
@@ -122,6 +123,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumVersions. 
+        /// <para>
+        ///  An integer indicating how many versions of an annotation store exist. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public int NumVersions
+        {
+            get { return this._numVersions.GetValueOrDefault(); }
+            set { this._numVersions = value; }
+        }
+
+        // Check to see if NumVersions property is set
+        internal bool IsSetNumVersions()
+        {
+            return this._numVersions.HasValue; 
         }
 
         /// <summary>

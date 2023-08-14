@@ -123,6 +123,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("versionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
