@@ -1,3 +1,14 @@
+### 3.7.620.0 (2023-08-14 18:25 UTC)
+* MediaPackage (3.7.201.0)
+	* Fix SDK logging of certain fields.
+* Omics (3.7.203.0)
+	* This release provides support for annotation store versioning and cross account sharing for Omics Analytics
+* Transfer (3.7.201.13)
+	* Documentation updates for AWS Transfer Family
+* Core 3.7.200.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.619.0 (2023-08-11 18:26 UTC)
 * AmplifyBackend (3.7.201.0)
 	* Adds sensitive trait to required input shapes.
