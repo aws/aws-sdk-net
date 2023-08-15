@@ -239,8 +239,6 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Specify the fields using the <code>${field-id}</code> format, separated by spaces.
-        /// For the CLI, surround this parameter value with single quotes on Linux or double quotes
-        /// on Windows.
         /// </para>
         /// </summary>
         public string LogFormat
