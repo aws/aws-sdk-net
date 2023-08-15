@@ -63,7 +63,7 @@ namespace Amazon.Route53Domains.Model
         /// email.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=254)]
+        [AWSProperty(Sensitive=true, Max=254)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

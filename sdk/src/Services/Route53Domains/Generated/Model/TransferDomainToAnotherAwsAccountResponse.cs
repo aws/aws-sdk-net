@@ -66,6 +66,7 @@ namespace Amazon.Route53Domains.Model
         /// was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }

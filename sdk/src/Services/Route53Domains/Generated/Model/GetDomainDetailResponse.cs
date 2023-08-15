@@ -64,7 +64,7 @@ namespace Amazon.Route53Domains.Model
         /// on a domain name, or report some other type of abuse.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=254)]
+        [AWSProperty(Sensitive=true, Max=254)]
         public string AbuseContactEmail
         {
             get { return this._abuseContactEmail; }
@@ -83,7 +83,7 @@ namespace Amazon.Route53Domains.Model
         /// Phone number for reporting abuse.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Sensitive=true, Max=30)]
         public string AbuseContactPhone
         {
             get { return this._abuseContactPhone; }

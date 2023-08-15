@@ -54,7 +54,7 @@ namespace Amazon.Route53Domains.Model
         /// First line of the contact's address.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string AddressLine1
         {
             get { return this._addressLine1; }
@@ -73,7 +73,7 @@ namespace Amazon.Route53Domains.Model
         /// Second line of contact's address, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string AddressLine2
         {
             get { return this._addressLine2; }
@@ -92,7 +92,7 @@ namespace Amazon.Route53Domains.Model
         /// The city of the contact's address.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string City
         {
             get { return this._city; }
@@ -149,6 +149,7 @@ namespace Amazon.Route53Domains.Model
         /// Code for the country of the contact's address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public CountryCode CountryCode
         {
             get { return this._countryCode; }
@@ -167,7 +168,7 @@ namespace Amazon.Route53Domains.Model
         /// Email address of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=254)]
+        [AWSProperty(Sensitive=true, Max=254)]
         public string Email
         {
             get { return this._email; }
@@ -209,7 +210,7 @@ namespace Amazon.Route53Domains.Model
         /// including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Sensitive=true, Max=30)]
         public string Fax
         {
             get { return this._fax; }
@@ -228,7 +229,7 @@ namespace Amazon.Route53Domains.Model
         /// First name of contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -247,7 +248,7 @@ namespace Amazon.Route53Domains.Model
         /// Last name of contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string LastName
         {
             get { return this._lastName; }
@@ -266,7 +267,7 @@ namespace Amazon.Route53Domains.Model
         /// Name of the organization for contact types other than <code>PERSON</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string OrganizationName
         {
             get { return this._organizationName; }
@@ -290,7 +291,7 @@ namespace Amazon.Route53Domains.Model
         /// including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Sensitive=true, Max=30)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -309,7 +310,7 @@ namespace Amazon.Route53Domains.Model
         /// The state or province of the contact's city.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string State
         {
             get { return this._state; }
@@ -328,7 +329,7 @@ namespace Amazon.Route53Domains.Model
         /// The zip or postal code of the contact's address.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Sensitive=true, Max=255)]
         public string ZipCode
         {
             get { return this._zipCode; }
