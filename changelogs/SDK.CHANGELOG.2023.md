@@ -1,3 +1,20 @@
+### 3.7.621.0 (2023-08-15 18:26 UTC)
+* ChimeSDKMeetings (3.7.201.0)
+	* Updated API documentation to include additional exceptions.
+* EC2 (3.7.206.0)
+	* Documentation updates for Elastic Compute Cloud (EC2).
+* Glue (3.7.205.0)
+	* AWS Glue Crawlers can now accept SerDe overrides from a custom csv classifier. The two SerDe options are LazySimpleSerDe and OpenCSVSerDe. In case, the user wants crawler to do the selection, "None" can be selected for this purpose.
+* PI (3.7.201.0)
+	* AWS Performance Insights for Amazon RDS is launching Performance Analysis On Demand, a new feature that allows you to analyze database performance metrics and find out the performance issues. You can now use SDK to create, list, get, delete, and manage tags of performance analysis reports.
+* Route53Domains (3.7.201.0)
+	* Provide explanation if CheckDomainTransferability return false. Provide requestId if a request is already submitted.  Add sensitive protection for customer information
+* SageMaker (3.7.209.0)
+	* SageMaker Inference Recommender now provides SupportedResponseMIMETypes from DescribeInferenceRecommendationsJob response
+* Core 3.7.200.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.620.0 (2023-08-14 18:25 UTC)
 * MediaPackage (3.7.201.0)
 	* Fix SDK logging of certain fields.
