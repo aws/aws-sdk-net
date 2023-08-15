@@ -1257,6 +1257,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type CsvSerdeOption.
+    /// </summary>
+    public class CsvSerdeOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LazySimpleSerDe for CsvSerdeOption
+        /// </summary>
+        public static readonly CsvSerdeOption LazySimpleSerDe = new CsvSerdeOption("LazySimpleSerDe");
+        /// <summary>
+        /// Constant None for CsvSerdeOption
+        /// </summary>
+        public static readonly CsvSerdeOption None = new CsvSerdeOption("None");
+        /// <summary>
+        /// Constant OpenCSVSerDe for CsvSerdeOption
+        /// </summary>
+        public static readonly CsvSerdeOption OpenCSVSerDe = new CsvSerdeOption("OpenCSVSerDe");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CsvSerdeOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CsvSerdeOption FindValue(string value)
+        {
+            return FindValue<CsvSerdeOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CsvSerdeOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataFormat.
     /// </summary>
     public class DataFormat : ConstantClass

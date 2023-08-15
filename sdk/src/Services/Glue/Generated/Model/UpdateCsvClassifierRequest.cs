@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         private List<string> _header = new List<string>();
         private string _name;
         private string _quoteSymbol;
+        private CsvSerdeOption _serde;
 
         /// <summary>
         /// Gets and sets the property AllowSingleColumn. 
@@ -208,6 +209,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetQuoteSymbol()
         {
             return this._quoteSymbol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Serde. 
+        /// <para>
+        /// Sets the SerDe for processing CSV in the classifier, which will be applied in the
+        /// Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>,
+        /// and <code>None</code>. You can specify the <code>None</code> value when you want the
+        /// crawler to do the detection.
+        /// </para>
+        /// </summary>
+        public CsvSerdeOption Serde
+        {
+            get { return this._serde; }
+            set { this._serde = value; }
+        }
+
+        // Check to see if Serde property is set
+        internal bool IsSetSerde()
+        {
+            return this._serde != null;
         }
 
     }

@@ -130,6 +130,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.QuoteSymbol = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Serde", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Serde = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
