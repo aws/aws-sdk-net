@@ -411,6 +411,12 @@ namespace Amazon.SageMaker.Model
         /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
         /// Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you supply <code>ModelPackageGroupName</code>, your model package belongs to the
+        /// model group you specify and uses the tags associated with the model group. In this
+        /// case, you cannot supply a <code>tag</code> argument. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

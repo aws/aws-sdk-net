@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private RecommendationJobPayloadConfig _payloadConfig;
         private RecommendationJobSupportedEndpointType _supportedEndpointType;
         private List<string> _supportedInstanceTypes = new List<string>();
+        private List<string> _supportedResponseMIMETypes = new List<string>();
         private string _task;
 
         /// <summary>
@@ -214,6 +215,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSupportedInstanceTypes()
         {
             return this._supportedInstanceTypes != null && this._supportedInstanceTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedResponseMIMETypes. 
+        /// <para>
+        /// The supported MIME types for the output data.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedResponseMIMETypes
+        {
+            get { return this._supportedResponseMIMETypes; }
+            set { this._supportedResponseMIMETypes = value; }
+        }
+
+        // Check to see if SupportedResponseMIMETypes property is set
+        internal bool IsSetSupportedResponseMIMETypes()
+        {
+            return this._supportedResponseMIMETypes != null && this._supportedResponseMIMETypes.Count > 0; 
         }
 
         /// <summary>

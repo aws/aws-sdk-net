@@ -103,6 +103,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSupportedResponseMIMETypes())
+            {
+                context.Writer.WritePropertyName("SupportedResponseMIMETypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSupportedResponseMIMETypesListValue in requestObject.SupportedResponseMIMETypes)
+                {
+                        context.Writer.Write(requestObjectSupportedResponseMIMETypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTask())
             {
                 context.Writer.WritePropertyName("Task");
