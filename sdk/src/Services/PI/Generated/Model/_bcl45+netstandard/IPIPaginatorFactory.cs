@@ -44,5 +44,10 @@ namespace Amazon.PI.Model
         /// Paginator for ListAvailableResourceMetrics operation
         ///</summary>
         IListAvailableResourceMetricsPaginator ListAvailableResourceMetrics(ListAvailableResourceMetricsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPerformanceAnalysisReports operation
+        ///</summary>
+        IListPerformanceAnalysisReportsPaginator ListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request);
     }
 }
