@@ -1,3 +1,9 @@
+### 3.7.622.0 (2023-08-16 18:33 UTC)
+* CloudWatch (3.7.200.19)
+	* Doc-only update to incorporate several doc bug fixes
+* LexModelsV2 (3.7.203.0)
+	* This release updates the Custom Vocabulary Weight field to support a value of 0.
+
 ### 3.7.621.0 (2023-08-15 18:26 UTC)
 * ChimeSDKMeetings (3.7.201.0)
 	* Updated API documentation to include additional exceptions.
