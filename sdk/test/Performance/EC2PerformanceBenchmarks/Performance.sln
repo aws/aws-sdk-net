@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance", "Performance.csproj", "{EF9F666C-DB56-4B98-A103-B2DA70658F35}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetStandard", "..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj", "{E846D000-89A1-4A44-B578-273A170421AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.NetStandard", "..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj", "{97323C77-AAD8-429A-BA13-046B301FA907}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchLogs.NetStandard", "..\..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.NetStandard.csproj", "{5D90CD03-7F60-4368-9062-1931149E0105}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2.NetStandard", "..\..\..\src\Services\EC2\AWSSDK.EC2.NetStandard.csproj", "{26274641-6FA3-429A-AC17-AB98A2701440}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.NetStandard", "..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj", "{5CC4892F-F913-4BB5-A372-4D1A7277D3B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.NetStandard", "..\..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj", "{00604B01-A242-4CE8-96BC-E02D8AE2D5EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SimpleNotificationService.NetStandard", "..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.NetStandard.csproj", "{C760A646-9BB1-417A-8384-8D6C7745BB68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SQS.NetStandard", "..\..\..\src\Services\SQS\AWSSDK.SQS.NetStandard.csproj", "{50E975CB-AA3A-45CE-A01F-4B8968874DDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGenerator", "..\..\..\..\generator\ServiceClientGenerator\ServiceClientGenerator.csproj", "{D3C088B4-9D88-4718-B956-B7682DE5614D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9F666C-DB56-4B98-A103-B2DA70658F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9F666C-DB56-4B98-A103-B2DA70658F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9F666C-DB56-4B98-A103-B2DA70658F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9F666C-DB56-4B98-A103-B2DA70658F35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E846D000-89A1-4A44-B578-273A170421AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E846D000-89A1-4A44-B578-273A170421AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E846D000-89A1-4A44-B578-273A170421AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E846D000-89A1-4A44-B578-273A170421AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97323C77-AAD8-429A-BA13-046B301FA907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97323C77-AAD8-429A-BA13-046B301FA907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97323C77-AAD8-429A-BA13-046B301FA907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97323C77-AAD8-429A-BA13-046B301FA907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D90CD03-7F60-4368-9062-1931149E0105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D90CD03-7F60-4368-9062-1931149E0105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D90CD03-7F60-4368-9062-1931149E0105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D90CD03-7F60-4368-9062-1931149E0105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26274641-6FA3-429A-AC17-AB98A2701440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26274641-6FA3-429A-AC17-AB98A2701440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26274641-6FA3-429A-AC17-AB98A2701440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26274641-6FA3-429A-AC17-AB98A2701440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC4892F-F913-4BB5-A372-4D1A7277D3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC4892F-F913-4BB5-A372-4D1A7277D3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC4892F-F913-4BB5-A372-4D1A7277D3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC4892F-F913-4BB5-A372-4D1A7277D3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00604B01-A242-4CE8-96BC-E02D8AE2D5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00604B01-A242-4CE8-96BC-E02D8AE2D5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00604B01-A242-4CE8-96BC-E02D8AE2D5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00604B01-A242-4CE8-96BC-E02D8AE2D5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C760A646-9BB1-417A-8384-8D6C7745BB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C760A646-9BB1-417A-8384-8D6C7745BB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C760A646-9BB1-417A-8384-8D6C7745BB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C760A646-9BB1-417A-8384-8D6C7745BB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E975CB-AA3A-45CE-A01F-4B8968874DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E975CB-AA3A-45CE-A01F-4B8968874DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E975CB-AA3A-45CE-A01F-4B8968874DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E975CB-AA3A-45CE-A01F-4B8968874DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAE6DDFB-B151-465E-A502-815BF53ED059}
+	EndGlobalSection
+EndGlobal

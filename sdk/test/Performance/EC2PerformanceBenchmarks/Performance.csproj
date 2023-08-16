@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+  </PropertyGroup>
+	<PropertyGroup>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.7" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>    
+	<ProjectReference Include="..\..\..\..\generator\ServiceClientGenerator\ServiceClientGenerator.csproj" />
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\EC2\AWSSDK.EC2.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="sample_data\books.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BenchmarkDotNet.Artifacts\" />
+  </ItemGroup>
+
+</Project>
