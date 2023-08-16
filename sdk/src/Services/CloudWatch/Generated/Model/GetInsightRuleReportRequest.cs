@@ -194,8 +194,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        /// Determines what statistic to use to rank the contributors. Valid values are SUM and
-        /// MAXIMUM.
+        /// Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code>
+        /// and <code>Maximum</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
