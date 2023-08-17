@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private List<string> _routeTableIds = new List<string>();
         private List<string> _securityGroupIds = new List<string>();
         private string _serviceName;
+        private List<SubnetConfiguration> _subnetConfigurations = new List<SubnetConfiguration>();
         private List<string> _subnetIds = new List<string>();
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private VpcEndpointType _vpcEndpointType;
@@ -183,7 +184,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// (Interface endpoint) The IDs of the security groups to associate with the endpoint
-        /// network interface. If this parameter is not specified, we use the default security
+        /// network interfaces. If this parameter is not specified, we use the default security
         /// group for the VPC.
         /// </para>
         /// </summary>
@@ -219,10 +220,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubnetConfigurations. 
+        /// <para>
+        /// The subnet configurations for the endpoint.
+        /// </para>
+        /// </summary>
+        public List<SubnetConfiguration> SubnetConfigurations
+        {
+            get { return this._subnetConfigurations; }
+            set { this._subnetConfigurations = value; }
+        }
+
+        // Check to see if SubnetConfigurations property is set
+        internal bool IsSetSubnetConfigurations()
+        {
+            return this._subnetConfigurations != null && this._subnetConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to
-        /// create an endpoint network interface. For a Gateway Load Balancer endpoint, you can
+        /// create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can
         /// specify only one subnet.
         /// </para>
         /// </summary>
