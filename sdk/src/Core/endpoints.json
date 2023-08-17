@@ -29648,7 +29648,8 @@
             ]
           },
           "endpoints": {
-            "us-iso-east-1": {}
+            "us-iso-east-1": {},
+            "us-iso-west-1": {}
           }
         },
         "elasticache": {
@@ -29913,6 +29914,12 @@
           }
         },
         "redshift": {
+          "endpoints": {
+            "us-iso-east-1": {},
+            "us-iso-west-1": {}
+          }
+        },
+        "resource-groups": {
           "endpoints": {
             "us-iso-east-1": {},
             "us-iso-west-1": {}
