@@ -1,3 +1,12 @@
+### 3.7.623.0 (2023-08-17 18:29 UTC)
+* EC2 (3.7.207.0)
+	* Adds support for SubnetConfigurations to allow users to select their own IPv4 and IPv6 addresses for Interface VPC endpoints
+* GameLift (3.7.201.0)
+	* Amazon GameLift updates its instance types support.
+* Core 3.7.200.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.622.0 (2023-08-16 18:33 UTC)
 * CloudWatch (3.7.200.19)
 	* Doc-only update to incorporate several doc bug fixes
