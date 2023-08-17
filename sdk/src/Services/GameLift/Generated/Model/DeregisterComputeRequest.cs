@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterCompute operation.
-    /// Removes a compute resource from the specified fleet. Deregister your compute resources
-    /// before you delete the compute.
+    /// Removes a compute resource from an Amazon GameLift Anywhere fleet. Deregistered computes
+    /// can no longer host game sessions through Amazon GameLift.
     /// </summary>
     public partial class DeregisterComputeRequest : AmazonGameLiftRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// The name of the compute resource you want to delete.
+        /// The name of the compute resource to remove from the specified Anywhere fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// &gt;A unique identifier for the fleet the compute resource is registered to.
+        /// A unique identifier for the fleet the compute resource is currently registered to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

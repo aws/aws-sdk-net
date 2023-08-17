@@ -29,9 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Temporary access credentials used for uploading game build files to Amazon GameLift.
-    /// They are valid for a limited time. If they expire before you upload your game build,
-    /// get a new set by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.
+    /// Amazon Web Services account security credentials that allow interactions with Amazon
+    /// GameLift resources. The credentials are temporary and valid for a limited time span.
+    /// You can request fresh credentials at any time. 
+    /// 
+    ///  
+    /// <para>
+    ///  Amazon Web Services security credentials consist of three parts: an access key ID,
+    /// a secret access key, and a session token. You must use all three parts together to
+    /// authenticate your access requests.
+    /// </para>
+    ///  
+    /// <para>
+    /// You need Amazon Web Services credentials for the following tasks: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>.
+    /// To get access for this task, call <a>RequestUploadCredentials</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To remotely connect to an active Amazon GameLift fleet instances. To get remote access,
+    /// call <a>GetComputeAccess</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Credentials
     {
@@ -42,7 +64,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
         /// <para>
-        /// Temporary key allowing access to the Amazon GameLift S3 account.
+        /// The access key ID that identifies the temporary security credentials. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -61,7 +83,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SecretAccessKey. 
         /// <para>
-        /// Temporary secret key allowing access to the Amazon GameLift S3 account.
+        /// The secret access key that can be used to sign requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -80,7 +102,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SessionToken. 
         /// <para>
-        /// Token used to associate a specific build ID with the files uploaded using these credentials.
+        /// The token that users must pass to the service API to use the temporary credentials.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

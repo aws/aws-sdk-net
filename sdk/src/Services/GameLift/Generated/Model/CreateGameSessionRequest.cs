@@ -34,17 +34,17 @@ namespace Amazon.GameLift.Model
     /// operation prompts an available server process to start a game session and retrieves
     /// connection information for the new game session. As an alternative, consider using
     /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
-    /// , which uses FleetIQ algorithms and queues to optimize the placement process.
+    /// , which uses the FleetIQ algorithm and queues to optimize the placement process.
     /// 
     ///  
     /// <para>
     /// When creating a game session, you specify exactly where you want to place it and provide
-    /// a set of game session configuration settings. The fleet must be in <code>ACTIVE</code>
-    /// status before a game session can be created in it. 
+    /// a set of game session configuration settings. The target fleet must be in <code>ACTIVE</code>
+    /// status. 
     /// </para>
     ///  
     /// <para>
-    /// This operation can be used in the following ways: 
+    /// You can use this operation in the following ways: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -56,19 +56,24 @@ namespace Amazon.GameLift.Model
     /// To create a game session on an instance in a fleet's remote location, provide a fleet
     /// or alias ID and a location name, along with your game session configuration. 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To create a game session on an instance in an Anywhere fleet, specify the fleet's
+    /// custom location.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If successful, a workflow is initiated to start a new game session. A <code>GameSession</code>
-    /// object is returned containing the game session configuration and status. When the
-    /// status is <code>ACTIVE</code>, game session connection information is provided and
-    /// player sessions can be created for the game session. By default, newly created game
-    /// sessions are open to new players. You can restrict new player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+    /// If successful, Amazon GameLift initiates a workflow to start a new game session and
+    /// returns a <code>GameSession</code> object containing the game session configuration
+    /// and status. When the game session status is <code>ACTIVE</code>, it is updated with
+    /// connection information and you can create player sessions for the game session. By
+    /// default, newly created game sessions are open to new players. You can restrict new
+    /// player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
     /// to change the game session's player session creation policy.
     /// </para>
     ///  
     /// <para>
-    /// Game session logs are retained for all active game sessions for 14 days. To access
-    /// the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
+    /// Amazon GameLift retains logs for active for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
     /// to download the log files.
     /// </para>
     ///  
@@ -281,7 +286,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A fleet's remote location to place the new game session in. If this parameter is not
         /// set, the new game session is placed in the fleet's home Region. Specify a remote location
-        /// with an Amazon Web Services Region code such as <code>us-west-2</code>. 
+        /// with an Amazon Web Services Region code such as <code>us-west-2</code>. When using
+        /// an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's
+        /// custom location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

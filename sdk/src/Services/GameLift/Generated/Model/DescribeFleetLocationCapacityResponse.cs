@@ -39,7 +39,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetCapacity. 
         /// <para>
         /// Resource capacity information for the requested fleet location. Capacity objects are
-        /// returned only for fleets and locations that currently exist.
+        /// returned only for fleets and locations that currently exist. Changes in desired instance
+        /// value can take up to 1 minute to be reflected.
         /// </para>
         /// </summary>
         public FleetCapacity FleetCapacity

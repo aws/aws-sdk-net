@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Set of credentials required to remotely access a fleet instance.
+    /// A set of credentials that allow remote access to an instance in an EC2 managed fleet.
+    /// These credentials are returned in response to a call to <a>GetInstanceAccess</a>,
+    /// which requests access for instances that are running game servers with the Amazon
+    /// GameLift server SDK version 4.x or earlier.
     /// </summary>
     public partial class InstanceCredentials
     {
@@ -40,8 +43,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Secret. 
         /// <para>
         /// Secret string. For Windows instances, the secret is a password for use with Windows
-        /// Remote Desktop. For Linux instances, it is a private key (which must be saved as a
-        /// <code>.pem</code> file) for use with SSH.
+        /// Remote Desktop. For Linux instances, it's a private key for use with SSH.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -60,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// User login string.
+        /// A user name for logging in.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

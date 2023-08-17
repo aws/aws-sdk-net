@@ -619,6 +619,70 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EC2InstanceType C6aXlarge = new EC2InstanceType("c6a.xlarge");
         /// <summary>
+        /// Constant C6g12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6g12xlarge = new EC2InstanceType("c6g.12xlarge");
+        /// <summary>
+        /// Constant C6g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6g16xlarge = new EC2InstanceType("c6g.16xlarge");
+        /// <summary>
+        /// Constant C6g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6g2xlarge = new EC2InstanceType("c6g.2xlarge");
+        /// <summary>
+        /// Constant C6g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6g4xlarge = new EC2InstanceType("c6g.4xlarge");
+        /// <summary>
+        /// Constant C6g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6g8xlarge = new EC2InstanceType("c6g.8xlarge");
+        /// <summary>
+        /// Constant C6gLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gLarge = new EC2InstanceType("c6g.large");
+        /// <summary>
+        /// Constant C6gMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gMedium = new EC2InstanceType("c6g.medium");
+        /// <summary>
+        /// Constant C6gn12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gn12xlarge = new EC2InstanceType("c6gn.12xlarge");
+        /// <summary>
+        /// Constant C6gn16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gn16xlarge = new EC2InstanceType("c6gn.16xlarge");
+        /// <summary>
+        /// Constant C6gn2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gn2xlarge = new EC2InstanceType("c6gn.2xlarge");
+        /// <summary>
+        /// Constant C6gn4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gn4xlarge = new EC2InstanceType("c6gn.4xlarge");
+        /// <summary>
+        /// Constant C6gn8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gn8xlarge = new EC2InstanceType("c6gn.8xlarge");
+        /// <summary>
+        /// Constant C6gnLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gnLarge = new EC2InstanceType("c6gn.large");
+        /// <summary>
+        /// Constant C6gnMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gnMedium = new EC2InstanceType("c6gn.medium");
+        /// <summary>
+        /// Constant C6gnXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gnXlarge = new EC2InstanceType("c6gn.xlarge");
+        /// <summary>
+        /// Constant C6gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C6gXlarge = new EC2InstanceType("c6g.xlarge");
+        /// <summary>
         /// Constant C6i12xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType C6i12xlarge = new EC2InstanceType("c6i.12xlarge");
@@ -650,6 +714,58 @@ namespace Amazon.GameLift
         /// Constant C6iXlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType C6iXlarge = new EC2InstanceType("c6i.xlarge");
+        /// <summary>
+        /// Constant C7g12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7g12xlarge = new EC2InstanceType("c7g.12xlarge");
+        /// <summary>
+        /// Constant C7g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7g16xlarge = new EC2InstanceType("c7g.16xlarge");
+        /// <summary>
+        /// Constant C7g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7g2xlarge = new EC2InstanceType("c7g.2xlarge");
+        /// <summary>
+        /// Constant C7g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7g4xlarge = new EC2InstanceType("c7g.4xlarge");
+        /// <summary>
+        /// Constant C7g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7g8xlarge = new EC2InstanceType("c7g.8xlarge");
+        /// <summary>
+        /// Constant C7gLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7gLarge = new EC2InstanceType("c7g.large");
+        /// <summary>
+        /// Constant C7gMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7gMedium = new EC2InstanceType("c7g.medium");
+        /// <summary>
+        /// Constant C7gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C7gXlarge = new EC2InstanceType("c7g.xlarge");
+        /// <summary>
+        /// Constant G5g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType G5g16xlarge = new EC2InstanceType("g5g.16xlarge");
+        /// <summary>
+        /// Constant G5g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType G5g2xlarge = new EC2InstanceType("g5g.2xlarge");
+        /// <summary>
+        /// Constant G5g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType G5g4xlarge = new EC2InstanceType("g5g.4xlarge");
+        /// <summary>
+        /// Constant G5g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType G5g8xlarge = new EC2InstanceType("g5g.8xlarge");
+        /// <summary>
+        /// Constant G5gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType G5gXlarge = new EC2InstanceType("g5g.xlarge");
         /// <summary>
         /// Constant M32xlarge for EC2InstanceType
         /// </summary>
@@ -750,6 +866,70 @@ namespace Amazon.GameLift
         /// Constant M5Xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType M5Xlarge = new EC2InstanceType("m5.xlarge");
+        /// <summary>
+        /// Constant M6g12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6g12xlarge = new EC2InstanceType("m6g.12xlarge");
+        /// <summary>
+        /// Constant M6g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6g16xlarge = new EC2InstanceType("m6g.16xlarge");
+        /// <summary>
+        /// Constant M6g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6g2xlarge = new EC2InstanceType("m6g.2xlarge");
+        /// <summary>
+        /// Constant M6g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6g4xlarge = new EC2InstanceType("m6g.4xlarge");
+        /// <summary>
+        /// Constant M6g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6g8xlarge = new EC2InstanceType("m6g.8xlarge");
+        /// <summary>
+        /// Constant M6gLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6gLarge = new EC2InstanceType("m6g.large");
+        /// <summary>
+        /// Constant M6gMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6gMedium = new EC2InstanceType("m6g.medium");
+        /// <summary>
+        /// Constant M6gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M6gXlarge = new EC2InstanceType("m6g.xlarge");
+        /// <summary>
+        /// Constant M7g12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7g12xlarge = new EC2InstanceType("m7g.12xlarge");
+        /// <summary>
+        /// Constant M7g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7g16xlarge = new EC2InstanceType("m7g.16xlarge");
+        /// <summary>
+        /// Constant M7g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7g2xlarge = new EC2InstanceType("m7g.2xlarge");
+        /// <summary>
+        /// Constant M7g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7g4xlarge = new EC2InstanceType("m7g.4xlarge");
+        /// <summary>
+        /// Constant M7g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7g8xlarge = new EC2InstanceType("m7g.8xlarge");
+        /// <summary>
+        /// Constant M7gLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7gLarge = new EC2InstanceType("m7g.large");
+        /// <summary>
+        /// Constant M7gMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7gMedium = new EC2InstanceType("m7g.medium");
+        /// <summary>
+        /// Constant M7gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M7gXlarge = new EC2InstanceType("m7g.xlarge");
         /// <summary>
         /// Constant R32xlarge for EC2InstanceType
         /// </summary>
@@ -890,6 +1070,70 @@ namespace Amazon.GameLift
         /// Constant R5Xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType R5Xlarge = new EC2InstanceType("r5.xlarge");
+        /// <summary>
+        /// Constant R6g12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6g12xlarge = new EC2InstanceType("r6g.12xlarge");
+        /// <summary>
+        /// Constant R6g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6g16xlarge = new EC2InstanceType("r6g.16xlarge");
+        /// <summary>
+        /// Constant R6g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6g2xlarge = new EC2InstanceType("r6g.2xlarge");
+        /// <summary>
+        /// Constant R6g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6g4xlarge = new EC2InstanceType("r6g.4xlarge");
+        /// <summary>
+        /// Constant R6g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6g8xlarge = new EC2InstanceType("r6g.8xlarge");
+        /// <summary>
+        /// Constant R6gLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6gLarge = new EC2InstanceType("r6g.large");
+        /// <summary>
+        /// Constant R6gMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6gMedium = new EC2InstanceType("r6g.medium");
+        /// <summary>
+        /// Constant R6gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R6gXlarge = new EC2InstanceType("r6g.xlarge");
+        /// <summary>
+        /// Constant R7g12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7g12xlarge = new EC2InstanceType("r7g.12xlarge");
+        /// <summary>
+        /// Constant R7g16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7g16xlarge = new EC2InstanceType("r7g.16xlarge");
+        /// <summary>
+        /// Constant R7g2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7g2xlarge = new EC2InstanceType("r7g.2xlarge");
+        /// <summary>
+        /// Constant R7g4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7g4xlarge = new EC2InstanceType("r7g.4xlarge");
+        /// <summary>
+        /// Constant R7g8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7g8xlarge = new EC2InstanceType("r7g.8xlarge");
+        /// <summary>
+        /// Constant R7gLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7gLarge = new EC2InstanceType("r7g.large");
+        /// <summary>
+        /// Constant R7gMedium for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7gMedium = new EC2InstanceType("r7g.medium");
+        /// <summary>
+        /// Constant R7gXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R7gXlarge = new EC2InstanceType("r7g.xlarge");
         /// <summary>
         /// Constant T2Large for EC2InstanceType
         /// </summary>

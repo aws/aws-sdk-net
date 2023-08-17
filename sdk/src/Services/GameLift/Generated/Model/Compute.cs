@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Resources used to host your game servers. A compute resource can be managed Amazon
-    /// GameLift Amazon EC2 instances or your own resources.
+    /// An Amazon GameLift compute resource for hosting your game servers. A compute can be
+    /// an EC2instance in a managed EC2 fleet or a registered compute in an Anywhere fleet.
     /// </summary>
     public partial class Compute
     {
@@ -50,8 +50,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeArn. 
         /// <para>
-        /// The ARN that is assigned to the compute resource and uniquely identifies it. ARNs
-        /// are unique across locations.
+        /// The ARN that is assigned to a compute resource and uniquely identifies it. ARNs are
+        /// unique across locations. Instances in managed EC2 fleets are not assigned a ComputeARN.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -70,8 +70,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// A descriptive label that is associated with the compute resource registered to your
-        /// fleet.
+        /// A descriptive label for the compute resource. For instances in a managed EC2 fleet,
+        /// the compute name is an instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -128,8 +128,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP
-        /// address to manage your compute resource.
+        /// The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP address
+        /// for a compute.
         /// </para>
         /// </summary>
         public string DnsName
@@ -147,7 +147,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the fleet that the compute is registered to.
+        /// The Amazon Resource Name (ARN) of the fleet that the compute belongs to.
         /// </para>
         /// </summary>
         public string FleetArn
@@ -165,7 +165,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet that the compute is registered to.
+        /// A unique identifier for the fleet that the compute belongs to.
         /// </para>
         /// </summary>
         public string FleetId
@@ -183,8 +183,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameLiftServiceSdkEndpoint. 
         /// <para>
-        /// The endpoint connection details of the Amazon GameLift SDK endpoint that your game
-        /// server connects to.
+        /// The Amazon GameLift SDK endpoint connection for a registered compute resource in an
+        /// Anywhere fleet. The game servers on the compute use this endpoint to connect to the
+        /// Amazon GameLift service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -203,8 +204,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the compute resource. Amazon GameLift requires the DNS name or IP
-        /// address to manage your compute resource.
+        /// The IP address of a compute resource. Amazon GameLift requires a DNS name or IP address
+        /// for a compute.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -243,7 +244,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// The type of operating system on your compute resource.
+        /// The type of operating system on the compute resource.
         /// </para>
         /// </summary>
         public OperatingSystem OperatingSystem
@@ -261,8 +262,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The compute type that the fleet uses. A fleet can use Anywhere compute resources that
-        /// you own, or use managed Amazon EC2 instances.
+        /// The Amazon EC2 instance type that the fleet uses. For registered computes in an Amazon
+        /// GameLift Anywhere fleet, this property is empty. 
         /// </para>
         /// </summary>
         public EC2InstanceType Type

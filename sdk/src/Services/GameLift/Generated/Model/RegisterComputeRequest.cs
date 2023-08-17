@@ -30,11 +30,24 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// Registers your compute resources in a fleet you previously created. After you register
-    /// a compute to your fleet, you can monitor and manage your compute using Amazon GameLift.
-    /// The operation returns the compute resource containing SDK endpoint you can use to
-    /// connect your game server to Amazon GameLift.
+    /// Registers a compute resource to an Amazon GameLift Anywhere fleet. With Anywhere fleets
+    /// you can incorporate your own computing hardware into an Amazon GameLift game hosting
+    /// solution.
     /// 
+    ///  
+    /// <para>
+    /// To register a compute to a fleet, give the compute a name (must be unique within the
+    /// fleet) and specify the compute resource's DNS name or IP address. Provide the Anywhere
+    /// fleet ID and a fleet location to associate with the compute being registered. You
+    /// can optionally include the path to a TLS certificate on the compute resource.
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation returns the compute details, including an Amazon GameLift
+    /// SDK endpoint. Game server processes that run on the compute use this endpoint to communicate
+    /// with the Amazon GameLift service. Each server process includes the SDK endpoint in
+    /// its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 
@@ -48,6 +61,11 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test
     /// your integration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server
+    /// SDK reference guides</a> (for version 5.x)
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -63,8 +81,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CertificatePath. 
         /// <para>
-        /// The path to the TLS certificate on your compute resource. The path and certificate
-        /// are not validated by Amazon GameLift.
+        /// The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate
+        /// the path and certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -83,8 +101,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// A descriptive label that is associated with the compute resource registered to your
-        /// fleet.
+        /// A descriptive label for the compute resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -103,8 +120,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP
-        /// address to manage your compute resource.
+        /// The DNS name of the compute resource. Amazon GameLift requires either a DNS name or
+        /// IP address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -143,8 +160,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the compute resource. Amazon GameLift requires the DNS name or IP
-        /// address to manage your compute resource.
+        /// The IP address of the compute resource. Amazon GameLift requires either a DNS name
+        /// or IP address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -163,8 +180,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The name of the custom location you added to the fleet you are registering this compute
-        /// resource to.
+        /// The name of a custom location to associate with the compute resource being registered.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

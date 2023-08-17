@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeList. 
         /// <para>
-        /// A list of compute resources registered to the fleet you specified.
+        /// A list of compute resources in the specified fleet.
         /// </para>
         /// </summary>
         public List<Compute> ComputeList

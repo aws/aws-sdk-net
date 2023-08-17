@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AuthToken. 
         /// <para>
-        /// The authentication token that your game server uses to authenticate with Amazon GameLift.
+        /// A valid temporary authentication token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -63,9 +63,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift compute resource and uniquely identifies it.
-        /// ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
-        /// 
+        /// that is assigned to an Amazon GameLift compute resource and uniquely identifies it.
+        /// ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -84,7 +83,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// The name of the compute resource you are requesting the authentication token for.
+        /// The name of the compute resource that the authentication token is issued to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -103,9 +102,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ExpirationTimestamp. 
         /// <para>
-        /// The amount of time until the authentication token is no longer valid. To continue
-        /// using the compute resource for game server hosting, renew the authentication token
-        /// by using this operation again.
+        /// The amount of time until the authentication token is no longer valid.
         /// </para>
         /// </summary>
         public DateTime ExpirationTimestamp
