@@ -1,0 +1,8 @@
+{
+    "emitIsSetProperties": {
+        "UpdateEndpointGroupRequest": [
+            "EndpointConfigurations",
+            "PortOverrides"
+        ]
+    }
+}
