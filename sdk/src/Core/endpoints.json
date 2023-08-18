@@ -28413,18 +28413,18 @@
                 {
                   "hostname": "servicediscovery-fips.us-gov-east-1.amazonaws.com",
                   "tags": [
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "servicediscovery-fips.us-gov-east-1.api.aws",
+                  "tags": [
                     "dualstack",
                     "fips"
                   ]
                 },
                 {
-                  "hostname": "servicediscovery-fips.us-gov-east-1.amazonaws.com",
-                  "tags": [
-                    "fips"
-                  ]
-                },
-                {
-                  "hostname": "servicediscovery.us-gov-east-1.amazonaws.com",
+                  "hostname": "servicediscovery.us-gov-east-1.api.aws",
                   "tags": [
                     "dualstack"
                   ]
@@ -28443,18 +28443,18 @@
                 {
                   "hostname": "servicediscovery-fips.us-gov-west-1.amazonaws.com",
                   "tags": [
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "servicediscovery-fips.us-gov-west-1.api.aws",
+                  "tags": [
                     "dualstack",
                     "fips"
                   ]
                 },
                 {
-                  "hostname": "servicediscovery-fips.us-gov-west-1.amazonaws.com",
-                  "tags": [
-                    "fips"
-                  ]
-                },
-                {
-                  "hostname": "servicediscovery.us-gov-west-1.amazonaws.com",
+                  "hostname": "servicediscovery.us-gov-west-1.api.aws",
                   "tags": [
                     "dualstack"
                   ]
@@ -30428,6 +30428,11 @@
           }
         },
         "monitoring": {
+          "endpoints": {
+            "us-isob-east-1": {}
+          }
+        },
+        "outposts": {
           "endpoints": {
             "us-isob-east-1": {}
           }
