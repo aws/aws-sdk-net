@@ -1,3 +1,12 @@
+### 3.7.625.0 (2023-08-18 18:25 UTC)
+* CodeCommit (3.7.201.0)
+	* Add new ListFileCommitHistory operation to retrieve commits which introduced changes to a specific file.
+* SecurityHub (3.7.202.0)
+	* Added Inspector Lambda code Vulnerability section to ASFF, including GeneratorDetails, EpssScore, ExploitAvailable, and CodeVulnerabilities.
+* Core 3.7.201.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.624.0 (2023-08-18 13:44 UTC)
 * S3 (3.7.202.0)
 	* This is a new feature for Transfer Utility, where UploadAsync and Upload now supports uploading unseekable streams or unknown length streams. Note: TransferUtility will buffer the stream in memory, refer to the docs for details. Update S3ErrorResponseUnmarshaller to allow character sets
