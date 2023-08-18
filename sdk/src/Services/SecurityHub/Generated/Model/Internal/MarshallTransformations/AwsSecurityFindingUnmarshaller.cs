@@ -124,6 +124,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstObservedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GeneratorDetails", targetDepth))
+                {
+                    var unmarshaller = GeneratorDetailsUnmarshaller.Instance;
+                    unmarshalledObject.GeneratorDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GeneratorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
