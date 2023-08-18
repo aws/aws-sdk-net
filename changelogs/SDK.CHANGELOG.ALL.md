@@ -1,3 +1,10 @@
+### 3.7.624.0 (2023-08-18 13:44 UTC)
+* S3 (3.7.202.0)
+	* This is a new feature for Transfer Utility, where UploadAsync and Upload now supports uploading unseekable streams or unknown length streams. Note: TransferUtility will buffer the stream in memory, refer to the docs for details. Update S3ErrorResponseUnmarshaller to allow character sets
+* Core 3.7.201.0
+	* Add DetermineServiceOperationEndpoint method to the serviceClients. All credential providers PreemptExpiry time has been increased to 15 minutes to align with the 15 minute expiration of presignedUrls to guarantee valid credentials during the lifetime of a presigned URL. Fixed an issue where generated PresignedUrl didn't contain URL encoded querystring parameter name/values.
+	* All services packages updated to require new Core
+
 ### 3.7.623.0 (2023-08-17 18:29 UTC)
 * EC2 (3.7.207.0)
 	* Adds support for SubnetConfigurations to allow users to select their own IPv4 and IPv6 addresses for Interface VPC endpoints
