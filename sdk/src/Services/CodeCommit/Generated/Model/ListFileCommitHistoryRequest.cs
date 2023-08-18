@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetFile operation.
-    /// Returns the base-64 encoded contents of a specified file and its metadata.
+    /// Container for the parameters to the ListFileCommitHistory operation.
+    /// Retrieves a list of commits and changes to a specified file.
     /// </summary>
-    public partial class GetFileRequest : AmazonCodeCommitRequest
+    public partial class ListFileCommitHistoryRequest : AmazonCodeCommitRequest
     {
         private string _commitSpecifier;
         private string _filePath;
+        private int? _maxResults;
+        private string _nextToken;
         private string _repositoryName;
 
         /// <summary>
@@ -43,7 +45,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The fully quaified reference that identifies the commit that contains the file. For
         /// example, you can specify a full commit ID, a tag, a branch name, or a reference such
-        /// as refs/heads/main. If none is provided, the head commit is used.
+        /// as <code>refs/heads/main</code>. If none is provided, the head commit is used.
         /// </para>
         /// </summary>
         public string CommitSpecifier
@@ -61,9 +63,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property FilePath. 
         /// <para>
-        /// The fully qualified path to the file, including the full name and extension of the
-        /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
-        /// in a folder named examples.
+        /// The full path of the file whose history you want to retrieve, including the name of
+        /// the file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,6 +78,42 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetFilePath()
         {
             return this._filePath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// A non-zero, non-negative integer used to limit the number of returned results.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An enumeration token that allows the operation to batch the results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

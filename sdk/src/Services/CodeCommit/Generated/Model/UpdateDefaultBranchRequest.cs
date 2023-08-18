@@ -48,7 +48,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property DefaultBranchName. 
         /// <para>
-        /// The name of the branch to set as the default.
+        /// The name of the branch to set as the default branch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -67,7 +67,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to set or change the default branch for.
+        /// The name of the repository for which you want to set or change the default branch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

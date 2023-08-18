@@ -29,21 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRepositories operation.
-    /// Gets information about one or more repositories.
+    /// This is the response object from the ListFileCommitHistory operation.
     /// </summary>
-    public partial class ListRepositoriesRequest : AmazonCodeCommitRequest
+    public partial class ListFileCommitHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private OrderEnum _order;
-        private SortByEnum _sortBy;
+        private List<FileVersion> _revisionDag = new List<FileVersion>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that allows the operation to batch the results of the operation.
-        /// Batch sizes are 1,000 for list repository operations. When the client sends the token
-        /// back to CodeCommit, another page of 1,000 records is retrieved.
+        /// An enumeration token that can be used to return the next batch of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -59,39 +55,23 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Order. 
+        /// Gets and sets the property RevisionDag. 
         /// <para>
-        /// The order in which to sort the results of a list repositories operation.
+        /// An array of FileVersion objects that form a directed acyclic graph (DAG) of the changes
+        /// to the file made by the commits that changed the file.
         /// </para>
         /// </summary>
-        public OrderEnum Order
+        [AWSProperty(Required=true)]
+        public List<FileVersion> RevisionDag
         {
-            get { return this._order; }
-            set { this._order = value; }
+            get { return this._revisionDag; }
+            set { this._revisionDag = value; }
         }
 
-        // Check to see if Order property is set
-        internal bool IsSetOrder()
+        // Check to see if RevisionDag property is set
+        internal bool IsSetRevisionDag()
         {
-            return this._order != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SortBy. 
-        /// <para>
-        /// The criteria used to sort the results of a list repositories operation.
-        /// </para>
-        /// </summary>
-        public SortByEnum SortBy
-        {
-            get { return this._sortBy; }
-            set { this._sortBy = value; }
-        }
-
-        // Check to see if SortBy property is set
-        internal bool IsSetSortBy()
-        {
-            return this._sortBy != null;
+            return this._revisionDag != null && this._revisionDag.Count > 0; 
         }
 
     }

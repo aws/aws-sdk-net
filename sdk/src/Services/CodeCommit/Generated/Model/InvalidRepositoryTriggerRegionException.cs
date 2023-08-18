@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The AWS Region for the trigger target does not match the AWS Region for the repository.
-    /// Triggers must be created in the same Region as the target for the trigger.
+    /// The Amazon Web Services Region for the trigger target does not match the Amazon Web
+    /// Services Region for the repository. Triggers must be created in the same Amazon Web
+    /// Services Region as the target for the trigger.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
