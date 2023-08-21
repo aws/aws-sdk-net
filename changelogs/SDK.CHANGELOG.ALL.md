@@ -1,3 +1,18 @@
+### 3.7.626.0 (2023-08-21 18:22 UTC)
+* Cloud9 (3.7.200.23)
+	* Doc only update to add Ubuntu 22.04 as an Image ID option for Cloud9
+* EC2 (3.7.208.0)
+	* The DeleteKeyPair API has been updated to return the keyPairId when an existing key pair is deleted.
+* Finspace (3.7.201.0)
+	* Allow customers to manage outbound traffic from their Kx Environment when attaching a transit gateway by providing network acl entries. Allow the customer to choose how they want to update the databases on a cluster allowing updates to possibly be faster than usual.
+* RDS (3.7.205.0)
+	* Adding support for RDS Aurora Global Database Unplanned Failover
+* Route53Domains (3.7.201.4)
+	* Fixed typos in description fields
+* Core 3.7.201.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.625.0 (2023-08-18 18:25 UTC)
 * CodeCommit (3.7.201.0)
 	* Add new ListFileCommitHistory operation to retrieve commits which introduced changes to a specific file.
