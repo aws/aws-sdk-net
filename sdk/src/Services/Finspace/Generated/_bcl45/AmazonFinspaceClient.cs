@@ -2398,6 +2398,9 @@ namespace Amazon.Finspace
         /// <exception cref="Amazon.Finspace.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ConflictException">
+        /// There was a conflict with this action, and it could not be completed.
+        /// </exception>
         /// <exception cref="Amazon.Finspace.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
@@ -2443,6 +2446,9 @@ namespace Amazon.Finspace
         /// <returns>The response from the UpdateKxClusterDatabases service method, as returned by Finspace.</returns>
         /// <exception cref="Amazon.Finspace.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ConflictException">
+        /// There was a conflict with this action, and it could not be completed.
         /// </exception>
         /// <exception cref="Amazon.Finspace.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.

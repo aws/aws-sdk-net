@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TransitGatewayConfiguration Marshaller
+    /// PortRange Marshaller
     /// </summary>
-    public class TransitGatewayConfigurationMarshaller : IRequestMarshaller<TransitGatewayConfiguration, JsonMarshallerContext> 
+    public class PortRangeMarshaller : IRequestMarshaller<PortRange, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,18 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TransitGatewayConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PortRange requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAttachmentNetworkAclConfiguration())
+            if(requestObject.IsSetFrom())
             {
-                context.Writer.WritePropertyName("attachmentNetworkAclConfiguration");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectAttachmentNetworkAclConfigurationListValue in requestObject.AttachmentNetworkAclConfiguration)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NetworkACLEntryMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAttachmentNetworkAclConfigurationListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("from");
+                context.Writer.Write(requestObject.From);
             }
 
-            if(requestObject.IsSetRoutableCIDRSpace())
+            if(requestObject.IsSetTo())
             {
-                context.Writer.WritePropertyName("routableCIDRSpace");
-                context.Writer.Write(requestObject.RoutableCIDRSpace);
-            }
-
-            if(requestObject.IsSetTransitGatewayID())
-            {
-                context.Writer.WritePropertyName("transitGatewayID");
-                context.Writer.Write(requestObject.TransitGatewayID);
+                context.Writer.WritePropertyName("to");
+                context.Writer.Write(requestObject.To);
             }
 
         }
@@ -78,7 +62,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TransitGatewayConfigurationMarshaller Instance = new TransitGatewayConfigurationMarshaller();
+        public readonly static PortRangeMarshaller Instance = new PortRangeMarshaller();
 
     }
 }

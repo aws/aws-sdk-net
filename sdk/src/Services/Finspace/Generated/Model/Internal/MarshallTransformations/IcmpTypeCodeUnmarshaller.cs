@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TransitGatewayConfiguration Object
+    /// Response Unmarshaller for IcmpTypeCode Object
     /// </summary>  
-    public class TransitGatewayConfigurationUnmarshaller : IUnmarshaller<TransitGatewayConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayConfiguration, JsonUnmarshallerContext>
+    public class IcmpTypeCodeUnmarshaller : IUnmarshaller<IcmpTypeCode, XmlUnmarshallerContext>, IUnmarshaller<IcmpTypeCode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TransitGatewayConfiguration IUnmarshaller<TransitGatewayConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IcmpTypeCode IUnmarshaller<IcmpTypeCode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TransitGatewayConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public IcmpTypeCode Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TransitGatewayConfiguration unmarshalledObject = new TransitGatewayConfiguration();
+            IcmpTypeCode unmarshalledObject = new IcmpTypeCode();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("attachmentNetworkAclConfiguration", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkACLEntry, NetworkACLEntryUnmarshaller>(NetworkACLEntryUnmarshaller.Instance);
-                    unmarshalledObject.AttachmentNetworkAclConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("routableCIDRSpace", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoutableCIDRSpace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transitGatewayID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayID = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         }
 
 
-        private static TransitGatewayConfigurationUnmarshaller _instance = new TransitGatewayConfigurationUnmarshaller();        
+        private static IcmpTypeCodeUnmarshaller _instance = new IcmpTypeCodeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TransitGatewayConfigurationUnmarshaller Instance
+        public static IcmpTypeCodeUnmarshaller Instance
         {
             get
             {

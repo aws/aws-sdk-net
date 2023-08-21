@@ -30,7 +30,7 @@ namespace Amazon.Finspace.Model
 {
     /// <summary>
     /// A structure for the metadata of a cluster. It includes information like the CPUs needed,
-    /// memory of instances, number of instances, and the port used while establishing a connection.
+    /// memory of instances, and number of instances.
     /// </summary>
     public partial class CapacityConfiguration
     {
@@ -43,7 +43,7 @@ namespace Amazon.Finspace.Model
         /// The number of instances running in a cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1)]
         public int NodeCount
         {
             get { return this._nodeCount.GetValueOrDefault(); }

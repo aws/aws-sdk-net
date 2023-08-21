@@ -29,57 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Finspace.Model
 {
     /// <summary>
-    /// The size and type of temporary storage that is used to hold data during the savedown
-    /// process. All the data written to this storage space is lost when the cluster node
-    /// is restarted.
+    /// Defines the ICMP protocol that consists of the ICMP type and code.
     /// </summary>
-    public partial class KxSavedownStorageConfiguration
+    public partial class IcmpTypeCode
     {
-        private int? _size;
-        private KxSavedownStorageType _type;
+        private int? _code;
+        private int? _type;
 
         /// <summary>
-        /// Gets and sets the property Size. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// The size of temporary storage in gibibytes.
+        ///  The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP type.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=16000)]
-        public int Size
+        [AWSProperty(Required=true)]
+        public int Code
         {
-            get { return this._size.GetValueOrDefault(); }
-            set { this._size = value; }
+            get { return this._code.GetValueOrDefault(); }
+            set { this._code = value; }
         }
 
-        // Check to see if Size property is set
-        internal bool IsSetSize()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._size.HasValue; 
+            return this._code.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of writeable storage space for temporarily storing your savedown data. The
-        /// valid values are:
+        /// The ICMP type. A value of <i>-1</i> means all types. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// SDS01 – This type represents 3000 IOPS and io2 ebs volume type.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
-        public KxSavedownStorageType Type
+        public int Type
         {
-            get { return this._type; }
+            get { return this._type.GetValueOrDefault(); }
             set { this._type = value; }
         }
 
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._type != null;
+            return this._type.HasValue; 
         }
 
     }

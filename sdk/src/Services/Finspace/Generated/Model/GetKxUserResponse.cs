@@ -80,7 +80,7 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property UserArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) that identifies the user. For more information about
-        /// ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
         /// Identifiers</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>

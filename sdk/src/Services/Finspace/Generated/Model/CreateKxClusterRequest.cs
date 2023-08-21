@@ -142,9 +142,8 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property CapacityConfiguration. 
         /// <para>
-        /// A structure for the metadata of a cluster. It includes information about like the
-        /// CPUs needed, memory of instances, number of instances, and the port used while establishing
-        /// a connection.
+        /// A structure for the metadata of a cluster. It includes information like the CPUs needed,
+        /// memory of instances, and number of instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

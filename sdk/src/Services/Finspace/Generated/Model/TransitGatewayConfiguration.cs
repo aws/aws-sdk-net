@@ -34,8 +34,29 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class TransitGatewayConfiguration
     {
+        private List<NetworkACLEntry> _attachmentNetworkAclConfiguration = new List<NetworkACLEntry>();
         private string _routablecidrSpace;
         private string _transitGatewayID;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentNetworkAclConfiguration. 
+        /// <para>
+        ///  The rules that define how you manage the outbound traffic from kdb network to your
+        /// internal network. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<NetworkACLEntry> AttachmentNetworkAclConfiguration
+        {
+            get { return this._attachmentNetworkAclConfiguration; }
+            set { this._attachmentNetworkAclConfiguration = value; }
+        }
+
+        // Check to see if AttachmentNetworkAclConfiguration property is set
+        internal bool IsSetAttachmentNetworkAclConfiguration()
+        {
+            return this._attachmentNetworkAclConfiguration != null && this._attachmentNetworkAclConfiguration.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property RoutableCIDRSpace. 
