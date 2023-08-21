@@ -121,9 +121,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FailoverState. 
         /// <para>
         /// A data object containing all properties for the current state of an in-process or
-        /// pending failover process for this Aurora global database. This object is empty unless
-        /// the <a>FailoverGlobalCluster</a> API operation has been called on this Aurora global
-        /// database (<a>GlobalCluster</a>).
+        /// pending switchover or failover process for this global cluster (Aurora global database).
+        /// This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+        /// operation was called on this global cluster.
         /// </para>
         /// </summary>
         public FailoverState FailoverState

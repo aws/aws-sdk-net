@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FailoverGlobalCluster Request Marshaller
+    /// SwitchoverGlobalCluster Request Marshaller
     /// </summary>       
-    public class FailoverGlobalClusterRequestMarshaller : IMarshaller<IRequest, FailoverGlobalClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class SwitchoverGlobalClusterRequestMarshaller : IMarshaller<IRequest, SwitchoverGlobalClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((FailoverGlobalClusterRequest)input);
+            return this.Marshall((SwitchoverGlobalClusterRequest)input);
         }
     
         /// <summary>
@@ -50,25 +50,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(FailoverGlobalClusterRequest publicRequest)
+        public IRequest Marshall(SwitchoverGlobalClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
-            request.Parameters.Add("Action", "FailoverGlobalCluster");
+            request.Parameters.Add("Action", "SwitchoverGlobalCluster");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAllowDataLoss())
-                {
-                    request.Parameters.Add("AllowDataLoss", StringUtils.FromBool(publicRequest.AllowDataLoss));
-                }
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("GlobalClusterIdentifier", StringUtils.FromString(publicRequest.GlobalClusterIdentifier));
-                }
-                if(publicRequest.IsSetSwitchover())
-                {
-                    request.Parameters.Add("Switchover", StringUtils.FromBool(publicRequest.Switchover));
                 }
                 if(publicRequest.IsSetTargetDbClusterIdentifier())
                 {
@@ -77,9 +69,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
-                    private static FailoverGlobalClusterRequestMarshaller _instance = new FailoverGlobalClusterRequestMarshaller();        
+                    private static SwitchoverGlobalClusterRequestMarshaller _instance = new SwitchoverGlobalClusterRequestMarshaller();        
 
-        internal static FailoverGlobalClusterRequestMarshaller GetInstance()
+        internal static SwitchoverGlobalClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +79,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FailoverGlobalClusterRequestMarshaller Instance
+        public static SwitchoverGlobalClusterRequestMarshaller Instance
         {
             get
             {

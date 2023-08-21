@@ -60,6 +60,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.FromDbClusterArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsDataLossAllowed", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsDataLossAllowed = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

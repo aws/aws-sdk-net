@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the state of scheduled or in-process failover operations on an Aurora global
-    /// database (<a>GlobalCluster</a>). This Data type is empty unless a failover operation
-    /// is scheduled or is currently underway on the Aurora global database.
+    /// Contains the state of scheduled or in-process operations on a global cluster (Aurora
+    /// global database). This data type is empty unless a switchover or failover operation
+    /// is scheduled or is in progress on the Aurora global database.
     /// </summary>
     public partial class FailoverState
     {
         private string _fromDbClusterArn;
+        private bool? _isDataLossAllowed;
         private FailoverStatus _status;
         private string _toDbClusterArn;
 
@@ -59,29 +60,46 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsDataLossAllowed. 
+        /// <para>
+        /// Indicates whether the operation is a global switchover or a global failover. If data
+        /// loss is allowed, then the operation is a global failover. Otherwise, it's a switchover.
+        /// </para>
+        /// </summary>
+        public bool IsDataLossAllowed
+        {
+            get { return this._isDataLossAllowed.GetValueOrDefault(); }
+            set { this._isDataLossAllowed = value; }
+        }
+
+        // Check to see if IsDataLossAllowed property is set
+        internal bool IsSetIsDataLossAllowed()
+        {
+            return this._isDataLossAllowed.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Aurora global database (<a>GlobalCluster</a>). Possible
-        /// values are as follows:
+        /// The current status of the global cluster. Possible values are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>)
-        /// has been received by the service. The <code>GlobalCluster</code>'s primary DB cluster
-        /// and the specified secondary DB cluster are being verified before the failover process
-        /// can start.
+        /// pending &#x96; The service received a request to switch over or fail over the global
+        /// cluster. The global cluster's primary DB cluster and the specified secondary DB cluster
+        /// are being verified before the operation starts.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// failing-over &#x96; This status covers the range of Aurora internal operations that
-        /// take place during the failover process, such as demoting the primary Aurora DB cluster,
-        /// promoting the secondary Aurora DB, and synchronizing replicas.
+        /// take place during the switchover or failover process, such as demoting the primary
+        /// Aurora DB cluster, promoting the secondary Aurora DB cluster, and synchronizing replicas.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>)
-        /// was cancelled and the primary Aurora DB cluster and the selected secondary Aurora
-        /// DB cluster are returning to their previous states.
+        /// cancelling &#x96; The request to switch over or fail over the global cluster was cancelled
+        /// and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are
+        /// returning to their previous states.
         /// </para>
         ///  </li> </ul>
         /// </summary>
