@@ -116,7 +116,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        ///  The sort order ofr returned values, either ascending or descending. 
+        ///  The sort order for returned values, either ascending or descending. 
         /// </para>
         /// </summary>
         public SortOrder SortOrder
