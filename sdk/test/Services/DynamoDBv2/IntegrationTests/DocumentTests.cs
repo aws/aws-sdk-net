@@ -81,6 +81,82 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        /// <summary>
+        /// Runs the same tests as <see cref="TestTableOperations"/>, but with 
+        /// static table definitions that avoid the internal <see cref="IAmazonDynamoDB.DescribeTable(string)" /> call to populate the cache
+        /// </summary>
+        [TestMethod]
+        public void TestTableOperationsViaBuilder()
+        {
+            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            {
+                // Clear tables
+                CleanupTables();
+
+                var hashTable = new TableBuilder(Client, "DotNetTests-HashTable", conversion, true, null)
+                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price", DynamoDBEntryType.Numeric)
+                    .Build();
+
+
+                var hashRangeTable = new TableBuilder(Client, "DotNetTests-HashRangeTable", conversion, true, null)
+                    .AddHashKey("Name", DynamoDBEntryType.String)
+                    .AddRangeKey("Age", DynamoDBEntryType.Numeric)
+                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Score", DynamoDBEntryType.Numeric)
+                    .AddLocalSecondaryIndex("LocalIndex", "Manager", DynamoDBEntryType.String)
+                    .Build();
+                
+                var numericHashRangeTable = new TableBuilder(Client, "DotNetTests-NumericHashRangeTable", conversion, true, null)
+                    .AddHashKey("CreationTime", DynamoDBEntryType.Numeric)
+                    .AddRangeKey("Name", DynamoDBEntryType.String)
+                    .Build();
+
+                TestEmptyString(hashTable);
+
+                // Test saving and loading empty lists and maps
+                TestEmptyCollections(hashTable);
+
+                // Test operations on hash-key table
+                TestHashTable(hashTable, conversion);
+
+                // Test operations on hash-and-range-key table
+                TestHashRangeTable(hashRangeTable, conversion);
+
+                // Test using multiple test batch writer
+                TestMultiTableDocumentBatchWrite(hashTable, hashRangeTable);
+
+                // Test multi-table transactional operations
+                TestMultiTableDocumentTransactWrite(hashTable, hashRangeTable, conversion);
+
+                // Test large batch writes and gets
+                TestLargeBatchOperations(hashTable);
+
+                // Test expressions for update
+                TestExpressionUpdate(hashTable);
+
+                // Test expressions for put
+                TestExpressionPut(hashTable);
+
+                // Test expressions for delete
+                TestExpressionsOnDelete(hashTable);
+
+                // Test expressions for transactional operations
+                TestExpressionsOnTransactWrite(hashTable, conversion);
+
+                // Test expressions for query
+                TestExpressionsOnQuery(hashRangeTable);
+
+                // Test expressions for scan
+                TestExpressionsOnScan(hashRangeTable);
+
+                // Test Query and Scan manual pagination
+                TestPagination(hashRangeTable);
+
+                // Test storing some attributes as epoch seconds
+                TestStoreAsEpoch(hashRangeTable, numericHashRangeTable);
+            }
+        }
+
         private void TestEmptyString(Table hashTable)
         {
             var companyInfo = new DynamoDBList();
