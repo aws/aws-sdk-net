@@ -142,7 +142,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string PrincipalEntityType
         {
             get { return this._principalEntityType; }

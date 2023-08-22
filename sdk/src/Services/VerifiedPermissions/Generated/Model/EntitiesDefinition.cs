@@ -52,7 +52,6 @@ namespace Amazon.VerifiedPermissions.Model
         /// of the entity, and a list of any parent entities.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
         public List<EntityItem> EntityList
         {
             get { return this._entityList; }

@@ -59,7 +59,7 @@ namespace Amazon.VerifiedPermissions.Model
         ///  <code>"entityId":"<i>identifier</i>"</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -82,7 +82,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Example: <code>"entityType":"<i>typeName</i>"</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string EntityType
         {
             get { return this._entityType; }

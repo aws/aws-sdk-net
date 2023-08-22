@@ -46,7 +46,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=10000)]
         public string CedarJson
         {
             get { return this._cedarJson; }

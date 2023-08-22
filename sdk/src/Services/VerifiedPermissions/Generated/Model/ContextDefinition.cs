@@ -61,7 +61,6 @@ namespace Amazon.VerifiedPermissions.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
         public Dictionary<string, AttributeValue> ContextMap
         {
             get { return this._contextMap; }

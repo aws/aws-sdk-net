@@ -48,7 +48,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The description of the static policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=150)]
+        [AWSProperty(Sensitive=true, Min=0, Max=150)]
         public string Description
         {
             get { return this._description; }
@@ -67,7 +67,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The policy content of the static policy, written in the Cedar policy language.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
         public string Statement
         {
             get { return this._statement; }
