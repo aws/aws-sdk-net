@@ -53,6 +53,61 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region Public methods
+        /// <summary>
+        /// Adds a <see cref="Table"/> to this context's internal cache, which
+        /// will avoid the need to fetch table metadata automatically from DynamoDB.
+        /// This may be used in conjunction with an <see cref="ITableBuilder"/>.
+        /// </summary>
+        /// <remarks>
+        /// Using this method can avoid latency and potential deadlocks due to the internal 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> call that is used to populate 
+        /// the SDK's cache of table metadata. It requires that the table's index schema described accurately, 
+        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change. 
+        /// It is recommended to test your application prior to using this in production code.
+        /// </remarks>
+        /// <param name="table">Table to add to the internal cache</param>
+        public void RegisterTableDefinition(Table table)
+        {
+            try
+            {
+                _readerWriterLockSlim.EnterReadLock();
+
+                if (tablesMap.ContainsKey(table.TableName))
+                {
+                    return;
+                }
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsReadLockHeld)
+                {
+                    _readerWriterLockSlim.ExitReadLock();
+                }
+            }
+
+            try
+            {
+                _readerWriterLockSlim.EnterWriteLock();
+
+                // Check to see if another thread go the write lock before this thread and filled the cache.
+                if (tablesMap.ContainsKey(table.TableName))
+                {
+                    return;
+                }
+
+                tablesMap[table.TableName] = table;
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsWriteLockHeld)
+                {
+                    _readerWriterLockSlim.ExitWriteLock();
+                }
+            }
+        }
+        #endregion
+
         #region Constructors
 
 #if !NETSTANDARD
