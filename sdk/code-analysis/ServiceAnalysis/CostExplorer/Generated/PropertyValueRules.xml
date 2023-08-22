@@ -659,6 +659,18 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTag.LastUpdatedDate</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTag.LastUsedDate</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostAllocationTag.TagKey</property>
     <min>0</min>
     <max>1024</max>

@@ -1229,7 +1229,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the details for a Savings Plan recommendation. These details include the
-        /// hourly data-points that construct the new cost, coverage, and utilization charts.
+        /// hourly data-points that construct the cost, coverage, and utilization charts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlanPurchaseRecommendationDetails service method.</param>
         /// 
@@ -1247,7 +1247,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the details for a Savings Plan recommendation. These details include the
-        /// hourly data-points that construct the new cost, coverage, and utilization charts.
+        /// hourly data-points that construct the cost, coverage, and utilization charts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlanPurchaseRecommendationDetails service method.</param>
         /// <param name="cancellationToken">
