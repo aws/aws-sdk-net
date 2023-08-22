@@ -53,6 +53,49 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region Public methods
+        /// <inheritdoc/>
+        public void RegisterTableDefinition(Table table)
+        {
+            try
+            {
+                _readerWriterLockSlim.EnterReadLock();
+
+                if (tablesMap.ContainsKey(table.TableName))
+                {
+                    return;
+                }
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsReadLockHeld)
+                {
+                    _readerWriterLockSlim.ExitReadLock();
+                }
+            }
+
+            try
+            {
+                _readerWriterLockSlim.EnterWriteLock();
+
+                // Check to see if another thread got the write lock before this thread and filled the cache.
+                if (tablesMap.ContainsKey(table.TableName))
+                {
+                    return;
+                }
+
+                tablesMap[table.TableName] = table;
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsWriteLockHeld)
+                {
+                    _readerWriterLockSlim.ExitWriteLock();
+                }
+            }
+        }
+        #endregion
+
         #region Constructors
 
 #if !NETSTANDARD
