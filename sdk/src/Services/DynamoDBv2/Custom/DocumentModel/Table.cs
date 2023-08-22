@@ -340,7 +340,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new InvalidOperationException("Only one of the conditonal properties Expected, ExpectedState and ConditionalExpression can be set.");
         }
 
-        private void ClearTableData()
+        internal void ClearTableData()
         {
             Keys = new Dictionary<string, KeyDescription>();
             HashKeys = new List<string>();
@@ -399,7 +399,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Constructor/factory
 
-        private Table(IAmazonDynamoDB ddbClient, TableConfig config)
+        internal Table(IAmazonDynamoDB ddbClient, TableConfig config)
         {
             if (config == null)
                 throw new ArgumentNullException("config");

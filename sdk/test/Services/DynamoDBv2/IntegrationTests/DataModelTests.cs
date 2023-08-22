@@ -159,6 +159,66 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
 
+        /// <summary>
+        /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,
+        /// but using table definitions created by <see cref="TableBuilder"/> instead of the internal <see cref="IAmazonDynamoDB.DescribeTable"/> call
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestWithBuilderTables()
+        {
+            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            {
+                // Cleanup existing data in the tables
+                CleanupTables();
+
+                // Clear existing SDK-wide cache
+                TableCache.Clear();
+
+                // Redeclare Context, which will start with empty caches
+                Context = new DynamoDBContext(Client, new DynamoDBContextConfig
+                {
+                    IsEmptyStringValueEnabled = true,
+                    Conversion = conversion
+                });
+
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashRangeTable")
+                                                    .AddHashKey("Name", DynamoDBEntryType.String)
+                                                    .AddRangeKey("Age", DynamoDBEntryType.Numeric)
+                                                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Score", DynamoDBEntryType.Numeric)
+                                                    .AddLocalSecondaryIndex("LocalIndex", "Manager", DynamoDBEntryType.String)
+                                                    .Build());
+
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
+                                                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                                                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price", DynamoDBEntryType.Numeric)
+                                                    .Build());
+
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-NumericHashRangeTable")
+                                                    .AddHashKey("CreationTime", DynamoDBEntryType.Numeric)
+                                                    .AddRangeKey("Name", DynamoDBEntryType.String)
+                                                    .Build());
+
+                TestEmptyStringsWithFeatureEnabled();
+
+                TestEnumHashKeyObjects();
+
+                TestEmptyCollections(conversion);
+
+                TestUnsupportedTypes();
+                TestEnums(conversion);
+
+                TestHashObjects();
+                TestHashRangeObjects<Employee>();
+                TestOtherContextOperations();
+                TestBatchOperations();
+                TestTransactionOperations();
+                TestMultiTableTransactionOperations();
+
+                TestStoreAsEpoch();
+            }
+        }
+
         private static void TestEmptyStringsWithFeatureEnabled()
         {
             var product = new Product
