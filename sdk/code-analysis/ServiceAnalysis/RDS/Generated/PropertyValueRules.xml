@@ -79,6 +79,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.SourceCustomDbEngineVersionIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
     <min>1</min>
     <max>51000</max>

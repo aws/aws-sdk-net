@@ -90,6 +90,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Manifest", StringUtils.FromString(publicRequest.Manifest));
                 }
+                if(publicRequest.IsSetSourceCustomDbEngineVersionIdentifier())
+                {
+                    request.Parameters.Add("SourceCustomDbEngineVersionIdentifier", StringUtils.FromString(publicRequest.SourceCustomDbEngineVersionIdentifier));
+                }
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -105,6 +109,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetUseAwsProvidedLatestImage())
+                {
+                    request.Parameters.Add("UseAwsProvidedLatestImage", StringUtils.FromBool(publicRequest.UseAwsProvidedLatestImage));
                 }
             }
             return request;
