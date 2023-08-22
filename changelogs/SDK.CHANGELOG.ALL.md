@@ -1,3 +1,16 @@
+### 3.7.627.0 (2023-08-22 19:56 UTC)
+* CostExplorer (3.7.202.0)
+	* This release adds the LastUpdatedDate and LastUsedDate timestamps to help you manage your cost allocation tags.
+* GlobalAccelerator (3.7.200.23)
+	* Global Accelerator now supports Client Ip Preservation for Network Load Balancer endpoints.
+* RDS (3.7.206.0)
+	* Adding parameters to CreateCustomDbEngineVersion reserved for future use.
+* VerifiedPermissions (3.7.201.0)
+	* Documentation updates for Amazon Verified Permissions. Increases max results per page for ListPolicyStores, ListPolicies, and ListPolicyTemplates APIs from 20 to 50.
+* Core 3.7.201.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.626.0 (2023-08-21 18:22 UTC)
 * Cloud9 (3.7.200.23)
 	* Doc only update to add Ubuntu 22.04 as an Image ID option for Cloud9
