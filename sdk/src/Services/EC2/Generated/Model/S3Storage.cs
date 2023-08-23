@@ -124,6 +124,7 @@ namespace Amazon.EC2.Model
         /// The signature of the JSON document.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UploadPolicySignature
         {
             get { return this._uploadPolicySignature; }

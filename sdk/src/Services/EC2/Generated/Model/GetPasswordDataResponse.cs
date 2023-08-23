@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The password of the instance. Returns an empty string if the password is not available.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PasswordData
         {
             get { return this._passwordData; }
