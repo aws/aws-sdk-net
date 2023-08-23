@@ -1,3 +1,14 @@
+### 3.7.628.0 (2023-08-23 18:50 UTC)
+* APIGateway (3.7.201.0)
+	* This release adds RootResourceId to GetRestApi response.
+* EC2 (3.7.209.0)
+	* Marking fields as sensitive on BundleTask and GetPasswordData
+* Polly (3.7.203.0)
+	* Amazon Polly adds 1 new voice - Zayd (ar-AE)
+* Core 3.7.201.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.627.0 (2023-08-22 19:56 UTC)
 * CostExplorer (3.7.202.0)
 	* This release adds the LastUpdatedDate and LastUsedDate timestamps to help you manage your cost allocation tags.
