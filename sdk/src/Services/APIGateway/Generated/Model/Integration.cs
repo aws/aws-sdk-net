@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.
+    /// Represents an <code>HTTP</code>, <code>HTTP_PROXY</code>, <code>AWS</code>, <code>AWS_PROXY</code>,
+    /// or Mock integration.
     /// </summary>
     public partial class Integration
     {
@@ -162,7 +163,8 @@ namespace Amazon.APIGateway.Model
         /// three options are available. To specify an IAM Role for API Gateway to assume, use
         /// the role's Amazon Resource Name (ARN). To require that the caller's identity be passed
         /// through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>.
-        /// To use resource-based permissions on supported AWS services, specify null.
+        /// To use resource-based permissions on supported Amazon Web Services services, specify
+        /// null.
         /// </para>
         /// </summary>
         public string Credentials
@@ -180,7 +182,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// Specifies the integration's HTTP method type.
+        /// Specifies the integration's HTTP method type. For the Type property, if you specify
+        /// <code>MOCK</code>, this property is optional. For Lambda integrations, you must set
+        /// the integration method to <code>POST</code>. For all other types, you must specify
+        /// this property.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -361,20 +366,20 @@ namespace Amazon.APIGateway.Model
         ///  
         /// <para>
         /// For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully
-        /// formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard
-        /// integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-        /// integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private
-        /// HTTP integration, the URI is not used for routing. For <code>AWS</code> or <code>AWS_PROXY</code>
-        /// integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
+        /// formed, encoded HTTP(S) URL according to the RFC-3986 specification for standard integrations.
+        /// If <code>connectionType</code> is <code>VPC_LINK</code> specify the Network Load Balancer
+        /// DNS name. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is
+        /// of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
         /// Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name
         /// of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated
         /// subdomain supported by certain Amazon Web Services service for fast host-name lookup.
         /// action can be used for an Amazon Web Services service action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}...
         /// query string. The ensuing {service_api} refers to a supported action {name} plus any
-        /// required input parameters. Alternatively, path can be used for an AWS service path-based
-        /// API. The ensuing service_api refers to the path to an Amazon Web Services service
-        /// resource, including the region of the integrated Amazon Web Services service, if applicable.
-        /// For example, for integration with the S3 API of GetObject, the uri can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
+        /// required input parameters. Alternatively, path can be used for an Amazon Web Services
+        /// service path-based API. The ensuing service_api refers to the path to an Amazon Web
+        /// Services service resource, including the region of the integrated Amazon Web Services
+        /// service, if applicable. For example, for integration with the S3 API of GetObject,
+        /// the uri can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
         /// or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> 
         /// </para>
         /// </summary>

@@ -46,7 +46,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CustomerId. 
         /// <para>
-        /// An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+        /// An Amazon Web Services Marketplace customer identifier, when integrating with the
+        /// Amazon Web Services SaaS Marketplace.
         /// </para>
         /// </summary>
         public string CustomerId

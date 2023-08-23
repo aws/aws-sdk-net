@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated RestApi..
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

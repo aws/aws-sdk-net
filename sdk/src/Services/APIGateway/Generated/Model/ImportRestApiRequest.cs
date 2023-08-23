@@ -101,14 +101,6 @@ namespace Amazon.APIGateway.Model
         ///  To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
         /// <code>basepath=prepend</code> or <code>basepath=split</code>.
         /// </para>
-        ///  
-        /// <para>
-        /// For example, the AWS CLI command to exclude documentation from the imported API is:
-        /// </para>
-        ///  
-        /// <para>
-        /// The AWS CLI command to set the regional endpoint on the imported API is:
-        /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
         {

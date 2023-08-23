@@ -156,7 +156,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property TargetArns. 
         /// <para>
         /// The ARN of the network load balancer of the VPC targeted by the VPC link. The network
-        /// load balancer must be owned by the same AWS account of the API owner.
+        /// load balancer must be owned by the same Amazon Web Services account of the API owner.
         /// </para>
         /// </summary>
         public List<string> TargetArns

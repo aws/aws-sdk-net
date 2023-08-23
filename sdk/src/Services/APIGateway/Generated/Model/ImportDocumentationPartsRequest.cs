@@ -81,9 +81,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing
-        /// DocumentationParts definition or to merge (<code>MERGE</code>) the new definition
-        /// into the existing one. The default value is <code>MERGE</code>.
+        /// A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing
+        /// DocumentationParts definition or to merge (<code>merge</code>) the new definition
+        /// into the existing one. The default value is <code>merge</code>.
         /// </para>
         /// </summary>
         public PutMode Mode
