@@ -27,6 +27,7 @@ using System.Globalization;
 
 using Amazon.Util.Internal;
 
+#if BCL
 namespace Amazon.Util
 {
     public static class PaginatedResourceFactory
@@ -294,3 +295,4 @@ namespace Amazon.Util
         }
     }
 }
+#endif
