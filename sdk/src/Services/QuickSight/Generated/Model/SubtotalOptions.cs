@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private PivotTableSubtotalLevel _fieldLevel;
         private List<PivotTableFieldSubtotalOptions> _fieldLevelOptions = new List<PivotTableFieldSubtotalOptions>();
         private TableCellStyle _metricHeaderCellStyle;
+        private List<TableStyleTarget> _styleTargets = new List<TableStyleTarget>();
         private TableCellStyle _totalCellStyle;
         private Visibility _totalsVisibility;
         private TableCellStyle _valueCellStyle;
@@ -112,6 +113,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetMetricHeaderCellStyle()
         {
             return this._metricHeaderCellStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StyleTargets. 
+        /// <para>
+        /// The style targets options for subtotals.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3)]
+        public List<TableStyleTarget> StyleTargets
+        {
+            get { return this._styleTargets; }
+            set { this._styleTargets = value; }
+        }
+
+        // Check to see if StyleTargets property is set
+        internal bool IsSetStyleTargets()
+        {
+            return this._styleTargets != null && this._styleTargets.Count > 0; 
         }
 
         /// <summary>

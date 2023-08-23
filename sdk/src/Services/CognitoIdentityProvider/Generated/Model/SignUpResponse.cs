@@ -81,7 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The UUID of the authenticated user. This isn't the same as <code>username</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=131072)]
         public string UserSub
         {
             get { return this._userSub; }

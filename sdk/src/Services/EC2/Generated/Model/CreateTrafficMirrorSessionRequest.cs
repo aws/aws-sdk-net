@@ -133,6 +133,12 @@ namespace Amazon.EC2.Model
         /// If you do not want to mirror the entire packet, use the <code>PacketLength</code>
         /// parameter to specify the number of bytes in each packet to mirror.
         /// </para>
+        ///  
+        /// <para>
+        /// For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code>
+        /// will be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code>
+        /// greater than 8500 will result in an error response.
+        /// </para>
         /// </summary>
         public int PacketLength
         {

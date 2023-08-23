@@ -51,6 +51,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AgentConfig", targetDepth))
+                {
+                    var unmarshaller = AgentConfigUnmarshaller.Instance;
+                    response.AgentConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -61,6 +67,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SignInConfig", targetDepth))
+                {
+                    var unmarshaller = SignInConfigUnmarshaller.Instance;
+                    response.SignInConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TelephonyConfig", targetDepth))

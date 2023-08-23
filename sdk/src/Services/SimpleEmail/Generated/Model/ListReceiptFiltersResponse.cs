@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// A list of IP address filters that exist under your AWS account.
+    /// A list of IP address filters that exist under your Amazon Web Services account.
     /// </summary>
     public partial class ListReceiptFiltersResponse : AmazonWebServiceResponse
     {

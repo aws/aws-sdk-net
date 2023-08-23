@@ -71,6 +71,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppArn);
                 }
 
+                if(publicRequest.IsSetEndTime())
+                {
+                    context.Writer.WritePropertyName("endTime");
+                    context.Writer.Write(publicRequest.EndTime);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
@@ -81,6 +87,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("nextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WritePropertyName("startTime");
+                    context.Writer.Write(publicRequest.StartTime);
                 }
 
                 writer.WriteObjectEnd();

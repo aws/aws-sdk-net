@@ -40,7 +40,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -81,11 +81,9 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceMappings. 
         /// <para>
-        /// Mappings used to map logical resources from the template to physical resources. You
-        /// can use the mapping type <code>CFN_STACK</code> if the application template uses a
-        /// logical stack name. Or you can map individual resources by using the mapping type
-        /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code>
-        /// if the application is backed by a CloudFormation stack.
+        /// List of sources that are used to map a logical resource from the template to a physical
+        /// resource. You can use sources such as CloudFormation, Terraform state files, AppRegistry
+        /// applications, or Amazon EKS.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

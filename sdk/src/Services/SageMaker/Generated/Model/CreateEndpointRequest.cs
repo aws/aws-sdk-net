@@ -39,12 +39,6 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  Use this API to deploy models using SageMaker hosting services. 
     /// </para>
-    ///  
-    /// <para>
-    /// For an example that calls this method when deploying a model to SageMaker hosting
-    /// services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
-    /// Endpoint example notebook.</a> 
-    /// </para>
     ///  <note> 
     /// <para>
     ///  You must not delete an <code>EndpointConfig</code> that is in use by an endpoint

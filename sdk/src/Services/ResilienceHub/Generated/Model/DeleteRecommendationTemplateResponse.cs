@@ -58,7 +58,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the action.
+        /// Status of the action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

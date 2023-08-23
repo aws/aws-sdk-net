@@ -316,6 +316,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListTrafficDistributionGroupUsers operation
+        ///</summary>
+        public IListTrafficDistributionGroupUsersPaginator ListTrafficDistributionGroupUsers(ListTrafficDistributionGroupUsersRequest request) 
+        {
+            return new ListTrafficDistributionGroupUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUseCases operation
         ///</summary>
         public IListUseCasesPaginator ListUseCases(ListUseCasesRequest request) 

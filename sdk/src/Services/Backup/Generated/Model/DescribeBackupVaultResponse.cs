@@ -43,6 +43,7 @@ namespace Amazon.Backup.Model
         private long? _maxRetentionDays;
         private long? _minRetentionDays;
         private long? _numberOfRecoveryPoints;
+        private VaultType _vaultType;
 
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
@@ -267,6 +268,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetNumberOfRecoveryPoints()
         {
             return this._numberOfRecoveryPoints.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultType. 
+        /// <para>
+        /// This is the type of vault described.
+        /// </para>
+        /// </summary>
+        public VaultType VaultType
+        {
+            get { return this._vaultType; }
+            set { this._vaultType = value; }
+        }
+
+        // Check to see if VaultType property is set
+        internal bool IsSetVaultType()
+        {
+            return this._vaultType != null;
         }
 
     }

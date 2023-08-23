@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+    /// For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/configure-custom-open-click-domains.html">Configuring
     /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer
     /// Guide</i>.
     /// </para>
@@ -46,8 +46,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property CustomRedirectDomain. 
         /// <para>
-        /// The custom subdomain that will be used to redirect email recipients to the Amazon
-        /// SES event tracking domain.
+        /// The custom subdomain that is used to redirect email recipients to the Amazon SES event
+        /// tracking domain.
         /// </para>
         /// </summary>
         public string CustomRedirectDomain

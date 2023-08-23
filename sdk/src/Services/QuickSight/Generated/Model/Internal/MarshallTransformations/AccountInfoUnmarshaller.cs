@@ -88,6 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Edition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IAMIdentityCenterInstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IAMIdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotificationEmail", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

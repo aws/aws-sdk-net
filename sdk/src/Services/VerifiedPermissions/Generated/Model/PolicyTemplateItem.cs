@@ -70,7 +70,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The description attached to the policy template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=150)]
+        [AWSProperty(Sensitive=true, Min=0, Max=150)]
         public string Description
         {
             get { return this._description; }

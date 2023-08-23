@@ -33,7 +33,26 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class CheckDomainTransferabilityResponse : AmazonWebServiceResponse
     {
+        private string _message;
         private DomainTransferability _transferability;
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// Provides an explanation for when a domain can't be transferred.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Transferability. 

@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private string _description;
         private string _id;
         private string _instanceArn;
+        private bool? _isDefault;
         private string _name;
         private TrafficDistributionGroupStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -114,6 +115,35 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceArn()
         {
             return this._instanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Whether this is the default traffic distribution group created during instance replication.
+        /// The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code>
+        /// API. The default traffic distribution group is deleted as part of the process for
+        /// deleting a replica.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
+        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
         }
 
         /// <summary>

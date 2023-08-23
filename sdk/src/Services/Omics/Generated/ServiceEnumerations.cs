@@ -1213,6 +1213,56 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceOwner.
+    /// </summary>
+    public class ResourceOwner : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OTHER for ResourceOwner
+        /// </summary>
+        public static readonly ResourceOwner OTHER = new ResourceOwner("OTHER");
+        /// <summary>
+        /// Constant SELF for ResourceOwner
+        /// </summary>
+        public static readonly ResourceOwner SELF = new ResourceOwner("SELF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceOwner(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceOwner FindValue(string value)
+        {
+            return FindValue<ResourceOwner>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceOwner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RunExport.
     /// </summary>
     public class RunExport : ConstantClass
@@ -1457,6 +1507,72 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type ShareStatus.
+    /// </summary>
+    public class ShareStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus ACTIVATING = new ShareStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus ACTIVE = new ShareStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus DELETED = new ShareStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus DELETING = new ShareStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus FAILED = new ShareStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus PENDING = new ShareStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareStatus FindValue(string value)
+        {
+            return FindValue<ShareStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StoreFormat.
     /// </summary>
     public class StoreFormat : ConstantClass
@@ -1636,6 +1752,68 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VersionStatus.
+    /// </summary>
+    public class VersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus ACTIVE = new VersionStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus CREATING = new VersionStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus DELETING = new VersionStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus FAILED = new VersionStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus UPDATING = new VersionStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionStatus FindValue(string value)
+        {
+            return FindValue<VersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionStatus(string value)
         {
             return FindValue(value);
         }

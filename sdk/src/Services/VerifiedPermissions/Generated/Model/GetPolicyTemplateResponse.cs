@@ -65,7 +65,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The description of the policy template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=150)]
+        [AWSProperty(Sensitive=true, Min=0, Max=150)]
         public string Description
         {
             get { return this._description; }
@@ -141,7 +141,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The content of the body of the policy template written in the Cedar policy language.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
         public string Statement
         {
             get { return this._statement; }

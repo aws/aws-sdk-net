@@ -31,6 +31,11 @@ namespace Amazon.ResilienceHub.Model
         IListAlarmRecommendationsPaginator ListAlarmRecommendations(ListAlarmRecommendationsRequest request);
 
         /// <summary>
+        /// Paginator for ListAppAssessmentComplianceDrifts operation
+        ///</summary>
+        IListAppAssessmentComplianceDriftsPaginator ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request);
+
+        /// <summary>
         /// Paginator for ListAppAssessments operation
         ///</summary>
         IListAppAssessmentsPaginator ListAppAssessments(ListAppAssessmentsRequest request);

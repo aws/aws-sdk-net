@@ -51,6 +51,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CallingName);
             }
 
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
+            }
+
             if(requestObject.IsSetPhoneNumberId())
             {
                 context.Writer.WritePropertyName("PhoneNumberId");

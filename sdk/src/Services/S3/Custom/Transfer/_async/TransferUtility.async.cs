@@ -18,11 +18,13 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer.Internal;
+using Amazon.S3.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.S3.Transfer
 {
@@ -69,6 +71,12 @@ namespace Amazon.S3.Transfer
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
         /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
+        /// <para>
+        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer each part in memory 
+        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
+        /// and the default value is 5 megabytes. You can also adjust the read buffer size (i.e. how many bytes to read before adding it to the 
+        /// part buffer) via the BufferSize property on the ClientConfig. The default value for this is 8192 bytes.
+        /// </para>
         /// </remarks>
         /// <param name="filePath">
         /// 	The file path of the file to upload.
@@ -100,6 +108,12 @@ namespace Amazon.S3.Transfer
         /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
         /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
+        /// </para>
+        /// <para>
+        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer each part in memory 
+        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
+        /// and the default value is 5 megabytes. You can also adjust the read buffer size (i.e. how many bytes to read before adding it to the 
+        /// part buffer) via the BufferSize property on the ClientConfig. The default value for this is 8192 bytes.
         /// </para>
         /// </remarks>
         /// <param name="filePath">
@@ -135,6 +149,12 @@ namespace Amazon.S3.Transfer
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
         /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
+        /// <para>
+        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer each part in memory 
+        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
+        /// and the default value is 5 megabytes. You can also adjust the read buffer size (i.e. how many bytes to read before adding it to the 
+        /// part buffer) via the BufferSize property on the ClientConfig. The default value for this is 8192 bytes.
+        /// </para>
         /// </remarks>
         /// <param name="stream">
         /// 	The stream to read to obtain the content to upload.
@@ -155,6 +175,8 @@ namespace Amazon.S3.Transfer
             return UploadAsync(request, cancellationToken);                    
         }
 
+
+
         /// <summary>
         /// 	Uploads the file or stream specified by the request.  
         /// 	To track the progress of the upload,
@@ -171,6 +193,12 @@ namespace Amazon.S3.Transfer
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
         /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
+        /// <para>
+        /// For nonseekable streams or streams with an unknown length, TransferUtility will use multipart upload and buffer each part in memory 
+        /// until the final part is reached and complete the upload. The buffer for the multipart upload is controlled by S3Constants.MinPartSize
+        /// and the default value is 5 megabytes. You can also adjust the read buffer size (i.e. how many bytes to read before adding it to the 
+        /// part buffer) via the BufferSize property on the ClientConfig. The default value for this is 8192 bytes.
+        /// </para>
         /// </remarks>
         /// <param name="request">
         /// 	Contains all the parameters required to upload to Amazon S3.
@@ -185,7 +213,7 @@ namespace Amazon.S3.Transfer
             var command = GetUploadCommand(request, null);
             return command.ExecuteAsync(cancellationToken);
         }
-        #endregion
+    #endregion
 
         #region AbortMultipartUploads
         /// <summary>

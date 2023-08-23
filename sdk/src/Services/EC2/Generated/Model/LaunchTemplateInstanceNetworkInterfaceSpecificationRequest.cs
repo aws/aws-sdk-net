@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private List<Ipv6PrefixSpecificationRequest> _ipv6Prefixes = new List<Ipv6PrefixSpecificationRequest>();
         private int? _networkCardIndex;
         private string _networkInterfaceId;
+        private bool? _primaryIpv6;
         private string _privateIpAddress;
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? _secondaryPrivateIpAddressCount;
@@ -347,6 +348,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryIpv6. 
+        /// <para>
+        /// The primary IPv6 address of the network interface. When you enable an IPv6 GUA address
+        /// to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until
+        /// the instance is terminated or the network interface is detached. For more information
+        /// about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+        /// </para>
+        /// </summary>
+        public bool PrimaryIpv6
+        {
+            get { return this._primaryIpv6.GetValueOrDefault(); }
+            set { this._primaryIpv6 = value; }
+        }
+
+        // Check to see if PrimaryIpv6 property is set
+        internal bool IsSetPrimaryIpv6()
+        {
+            return this._primaryIpv6.HasValue; 
         }
 
         /// <summary>

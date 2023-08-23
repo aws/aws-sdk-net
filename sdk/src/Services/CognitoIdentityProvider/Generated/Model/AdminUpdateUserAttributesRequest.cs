@@ -30,20 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminUpdateUserAttributes operation.
-    /// Updates the specified user's attributes, including developer attributes, as an administrator.
-    /// Works on any user.
-    /// 
-    ///  
-    /// <para>
-    /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
-    /// name.
-    /// </para>
-    ///  
-    /// <para>
-    /// In addition to updating user attributes, this API can also be used to mark phone and
-    /// email as verified.
-    /// </para>
-    ///  <note> 
+    /// <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
     /// carriers require you to register an origination phone number before you can send SMS
@@ -60,14 +47,44 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
-    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Calling this action requires developer credentials.
+    /// Updates the specified user's attributes, including developer attributes, as an administrator.
+    /// Works on any user.
     /// </para>
+    ///  
+    /// <para>
+    /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+    /// name.
+    /// </para>
+    ///  
+    /// <para>
+    /// In addition to updating user attributes, this API can also be used to mark phone and
+    /// email as verified.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class AdminUpdateUserAttributesRequest : AmazonCognitoIdentityProviderRequest
     {

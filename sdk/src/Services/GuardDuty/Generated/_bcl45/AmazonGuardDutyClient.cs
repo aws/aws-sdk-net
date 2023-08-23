@@ -3417,8 +3417,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-        /// IP sets, threat intel sets, publishing destination, with a limit of 50 tags per resource.
-        /// When invoked, this operation returns all assigned tags for a given resource.
+        /// IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per
+        /// each resource. When invoked, this operation returns all assigned tags for a given
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3445,8 +3446,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-        /// IP sets, threat intel sets, publishing destination, with a limit of 50 tags per resource.
-        /// When invoked, this operation returns all assigned tags for a given resource.
+        /// IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per
+        /// each resource. When invoked, this operation returns all assigned tags for a given
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -4435,5 +4437,28 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonGuardDutyEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

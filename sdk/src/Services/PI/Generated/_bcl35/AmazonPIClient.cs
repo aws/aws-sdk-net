@@ -302,6 +302,132 @@ namespace Amazon.PI
         #endregion
 
 
+        #region  CreatePerformanceAnalysisReport
+
+        /// <summary>
+        /// Creates a new performance analysis report for a specific time period for the DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePerformanceAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the CreatePerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">REST API Reference for CreatePerformanceAnalysisReport Operation</seealso>
+        public virtual CreatePerformanceAnalysisReportResponse CreatePerformanceAnalysisReport(CreatePerformanceAnalysisReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePerformanceAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePerformanceAnalysisReportResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePerformanceAnalysisReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePerformanceAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePerformanceAnalysisReport operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePerformanceAnalysisReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">REST API Reference for CreatePerformanceAnalysisReport Operation</seealso>
+        public virtual IAsyncResult BeginCreatePerformanceAnalysisReport(CreatePerformanceAnalysisReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePerformanceAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePerformanceAnalysisReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePerformanceAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePerformanceAnalysisReport.</param>
+        /// 
+        /// <returns>Returns a  CreatePerformanceAnalysisReportResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">REST API Reference for CreatePerformanceAnalysisReport Operation</seealso>
+        public virtual CreatePerformanceAnalysisReportResponse EndCreatePerformanceAnalysisReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePerformanceAnalysisReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePerformanceAnalysisReport
+
+        /// <summary>
+        /// Deletes a performance analysis report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePerformanceAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the DeletePerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">REST API Reference for DeletePerformanceAnalysisReport Operation</seealso>
+        public virtual DeletePerformanceAnalysisReportResponse DeletePerformanceAnalysisReport(DeletePerformanceAnalysisReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePerformanceAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePerformanceAnalysisReportResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePerformanceAnalysisReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePerformanceAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePerformanceAnalysisReport operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePerformanceAnalysisReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">REST API Reference for DeletePerformanceAnalysisReport Operation</seealso>
+        public virtual IAsyncResult BeginDeletePerformanceAnalysisReport(DeletePerformanceAnalysisReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePerformanceAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePerformanceAnalysisReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePerformanceAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePerformanceAnalysisReport.</param>
+        /// 
+        /// <returns>Returns a  DeletePerformanceAnalysisReportResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">REST API Reference for DeletePerformanceAnalysisReport Operation</seealso>
+        public virtual DeletePerformanceAnalysisReportResponse EndDeletePerformanceAnalysisReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePerformanceAnalysisReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDimensionKeys
 
         /// <summary>
@@ -436,6 +562,72 @@ namespace Amazon.PI
         public virtual GetDimensionKeyDetailsResponse EndGetDimensionKeyDetails(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDimensionKeyDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPerformanceAnalysisReport
+
+        /// <summary>
+        /// Retrieves the report including the report ID, status, time details, and the insights
+        /// with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>,
+        /// or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code>
+        /// fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPerformanceAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the GetPerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">REST API Reference for GetPerformanceAnalysisReport Operation</seealso>
+        public virtual GetPerformanceAnalysisReportResponse GetPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPerformanceAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPerformanceAnalysisReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetPerformanceAnalysisReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPerformanceAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPerformanceAnalysisReport operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPerformanceAnalysisReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">REST API Reference for GetPerformanceAnalysisReport Operation</seealso>
+        public virtual IAsyncResult BeginGetPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPerformanceAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPerformanceAnalysisReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPerformanceAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPerformanceAnalysisReport.</param>
+        /// 
+        /// <returns>Returns a  GetPerformanceAnalysisReportResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">REST API Reference for GetPerformanceAnalysisReport Operation</seealso>
+        public virtual GetPerformanceAnalysisReportResponse EndGetPerformanceAnalysisReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPerformanceAnalysisReportResponse>(asyncResult);
         }
 
         #endregion
@@ -703,5 +895,281 @@ namespace Amazon.PI
 
         #endregion
         
+        #region  ListPerformanceAnalysisReports
+
+        /// <summary>
+        /// Lists all the analysis reports created for the DB instance. The reports are sorted
+        /// based on the start time of each report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceAnalysisReports service method.</param>
+        /// 
+        /// <returns>The response from the ListPerformanceAnalysisReports service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">REST API Reference for ListPerformanceAnalysisReports Operation</seealso>
+        public virtual ListPerformanceAnalysisReportsResponse ListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPerformanceAnalysisReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPerformanceAnalysisReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPerformanceAnalysisReportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPerformanceAnalysisReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceAnalysisReports operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPerformanceAnalysisReports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">REST API Reference for ListPerformanceAnalysisReports Operation</seealso>
+        public virtual IAsyncResult BeginListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPerformanceAnalysisReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPerformanceAnalysisReportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPerformanceAnalysisReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPerformanceAnalysisReports.</param>
+        /// 
+        /// <returns>Returns a  ListPerformanceAnalysisReportsResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">REST API Reference for ListPerformanceAnalysisReports Operation</seealso>
+        public virtual ListPerformanceAnalysisReportsResponse EndListPerformanceAnalysisReports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPerformanceAnalysisReportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds metadata tags to the Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonPIClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from PI.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonPIEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

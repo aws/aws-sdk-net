@@ -60,6 +60,7 @@ namespace Amazon.QuickSight.Model
         private string _accountSubscriptionStatus;
         private string _authenticationType;
         private Edition _edition;
+        private string _iamIdentityCenterInstanceArn;
         private string _notificationEmail;
 
         /// <summary>
@@ -134,6 +135,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetEdition()
         {
             return this._edition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMIdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+        /// </para>
+        /// </summary>
+        public string IAMIdentityCenterInstanceArn
+        {
+            get { return this._iamIdentityCenterInstanceArn; }
+            set { this._iamIdentityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IAMIdentityCenterInstanceArn property is set
+        internal bool IsSetIAMIdentityCenterInstanceArn()
+        {
+            return this._iamIdentityCenterInstanceArn != null;
         }
 
         /// <summary>

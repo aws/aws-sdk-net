@@ -40,7 +40,7 @@ namespace Amazon.InternetMonitor
     ///
     /// Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact
     /// the performance and availability between your applications hosted on Amazon Web Services
-    /// and your end users. It reduces the time it takes for you to diagnose internet issues
+    /// and your end users. It can reduce the time it takes for you to diagnose internet issues
     /// from days to minutes. Internet Monitor uses the connectivity data that Amazon Web
     /// Services captures from its global networking footprint to calculate a baseline of
     /// performance and availability for internet traffic. This is the same data that Amazon
@@ -62,10 +62,11 @@ namespace Amazon.InternetMonitor
     ///  
     /// <para>
     /// To use Internet Monitor, you create a <i>monitor</i> and associate your application's
-    /// resources with it, VPCs, CloudFront distributions, or WorkSpaces directories, to enable
-    /// Internet Monitor to know where your application's internet traffic is. Internet Monitor
-    /// then provides internet measurements from Amazon Web Services that are specific to
-    /// the locations and networks that communicate with your application.
+    /// resources with it - VPCs, NLBs, CloudFront distributions, or WorkSpaces directories
+    /// - so Internet Monitor can determine where your application's internet traffic is.
+    /// Internet Monitor then provides internet measurements from Amazon Web Services that
+    /// are specific to the locations and ASNs (typically, internet service providers or ISPs)
+    /// that communicate with your application.
     /// </para>
     ///  
     /// <para>
@@ -301,20 +302,22 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Creates a monitor in Amazon CloudWatch Internet Monitor. A monitor is built based
-        /// on information from the application resources that you add: Amazon Virtual Private
-        /// Clouds (VPCs), Amazon CloudFront distributions, and WorkSpaces directories. Internet
+        /// on information from the application resources that you add: VPCs, Network Load Balancers
+        /// (NLBs), Amazon CloudFront distributions, and Amazon WorkSpaces directories. Internet
         /// Monitor then publishes internet measurements from Amazon Web Services that are specific
-        /// to the <i>city-networks</i>, that is, the locations and ASNs (typically internet service
+        /// to the <i>city-networks</i>. That is, the locations and ASNs (typically internet service
         /// providers or ISPs), where clients access your application. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html">Using
         /// Amazon CloudWatch Internet Monitor</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// When you create a monitor, you set a maximum limit for the number of city-networks
-        /// where client traffic is monitored. The city-network maximum that you choose is the
-        /// limit, but you only pay for the number of city-networks that are actually monitored.
-        /// You can change the maximum at any time by updating your monitor. For more information,
+        /// When you create a monitor, you choose the percentage of traffic that you want to monitor.
+        /// You can also set a maximum limit for the number of city-networks where client traffic
+        /// is monitored, that caps the total traffic that Internet Monitor monitors. A city-network
+        /// maximum is the limit of city-networks, but you only pay for the number of city-networks
+        /// that are actually monitored. You can update your monitor at any time to change the
+        /// percentage of traffic to monitor or the city-networks maximum. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
         /// a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
@@ -353,20 +356,22 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Creates a monitor in Amazon CloudWatch Internet Monitor. A monitor is built based
-        /// on information from the application resources that you add: Amazon Virtual Private
-        /// Clouds (VPCs), Amazon CloudFront distributions, and WorkSpaces directories. Internet
+        /// on information from the application resources that you add: VPCs, Network Load Balancers
+        /// (NLBs), Amazon CloudFront distributions, and Amazon WorkSpaces directories. Internet
         /// Monitor then publishes internet measurements from Amazon Web Services that are specific
-        /// to the <i>city-networks</i>, that is, the locations and ASNs (typically internet service
+        /// to the <i>city-networks</i>. That is, the locations and ASNs (typically internet service
         /// providers or ISPs), where clients access your application. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html">Using
         /// Amazon CloudWatch Internet Monitor</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// When you create a monitor, you set a maximum limit for the number of city-networks
-        /// where client traffic is monitored. The city-network maximum that you choose is the
-        /// limit, but you only pay for the number of city-networks that are actually monitored.
-        /// You can change the maximum at any time by updating your monitor. For more information,
+        /// When you create a monitor, you choose the percentage of traffic that you want to monitor.
+        /// You can also set a maximum limit for the number of city-networks where client traffic
+        /// is monitored, that caps the total traffic that Internet Monitor monitors. A city-network
+        /// maximum is the limit of city-networks, but you only pay for the number of city-networks
+        /// that are actually monitored. You can update your monitor at any time to change the
+        /// percentage of traffic to monitor or the city-networks maximum. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
         /// a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
@@ -478,12 +483,12 @@ namespace Amazon.InternetMonitor
         /// <summary>
         /// Gets information the Amazon CloudWatch Internet Monitor has created and stored about
         /// a health event for a specified monitor. This information includes the impacted locations,
-        /// and all of the information related to the event by location.
+        /// and all the information related to the event, by location.
         /// 
         ///  
         /// <para>
-        /// The information returned includes the performance, availability, and round-trip time
-        /// impact, information about the network providers, the event type, and so on.
+        /// The information returned includes the impact on performance, availability, and round-trip
+        /// time, information about the network providers (ASNs), the event type, and so on.
         /// </para>
         ///  
         /// <para>
@@ -520,12 +525,12 @@ namespace Amazon.InternetMonitor
         /// <summary>
         /// Gets information the Amazon CloudWatch Internet Monitor has created and stored about
         /// a health event for a specified monitor. This information includes the impacted locations,
-        /// and all of the information related to the event by location.
+        /// and all the information related to the event, by location.
         /// 
         ///  
         /// <para>
-        /// The information returned includes the performance, availability, and round-trip time
-        /// impact, information about the network providers, the event type, and so on.
+        /// The information returned includes the impact on performance, availability, and round-trip
+        /// time, information about the network providers (ASNs), the event type, and so on.
         /// </para>
         ///  
         /// <para>
@@ -637,9 +642,7 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns
-        /// all information for health events including the client location information the network
-        /// cause and status, event start and end time, percentage of total traffic impacted,
-        /// and status.
+        /// information for health events including the event start and end time and the status.
         /// 
         ///  <note> 
         /// <para>
@@ -676,9 +679,7 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns
-        /// all information for health events including the client location information the network
-        /// cause and status, event start and end time, percentage of total traffic impacted,
-        /// and status.
+        /// information for health events including the event start and end time and the status.
         /// 
         ///  <note> 
         /// <para>
@@ -1017,9 +1018,10 @@ namespace Amazon.InternetMonitor
 
 
         /// <summary>
-        /// Updates a monitor. You can update a monitor to change the maximum number of city-networks
-        /// (locations and ASNs or internet service providers), to add or remove resources, or
-        /// to change the status of the monitor. Note that you can't change the name of a monitor.
+        /// Updates a monitor. You can update a monitor to change the percentage of traffic to
+        /// monitor or the maximum number of city-networks (locations and ASNs), to add or remove
+        /// resources, or to change the status of the monitor. Note that you can't change the
+        /// name of a monitor.
         /// 
         ///  
         /// <para>
@@ -1061,9 +1063,10 @@ namespace Amazon.InternetMonitor
 
 
         /// <summary>
-        /// Updates a monitor. You can update a monitor to change the maximum number of city-networks
-        /// (locations and ASNs or internet service providers), to add or remove resources, or
-        /// to change the status of the monitor. Note that you can't change the name of a monitor.
+        /// Updates a monitor. You can update a monitor to change the percentage of traffic to
+        /// monitor or the maximum number of city-networks (locations and ASNs), to add or remove
+        /// resources, or to change the status of the monitor. Note that you can't change the
+        /// name of a monitor.
         /// 
         ///  
         /// <para>
@@ -1108,5 +1111,28 @@ namespace Amazon.InternetMonitor
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonInternetMonitorEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

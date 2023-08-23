@@ -35,9 +35,9 @@ namespace Amazon.IVSRealTime
     /// 
     ///  
     /// <para>
-    /// The Amazon Interactive Video Service (IVS) stage API is REST compatible, using a standard
-    /// HTTP API and an AWS EventBridge event stream for responses. JSON is used for both
-    /// requests and responses, including errors. 
+    /// The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using
+    /// a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used
+    /// for both requests and responses, including errors. 
     /// </para>
     ///  
     /// <para>
@@ -45,11 +45,11 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The IVS stage API sometimes is referred to as the IVS <i>RealTime</i> API.
+    /// A <i>stage</i> is a virtual space where participants can exchange video in real time.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <i>participant token</i> is an authorization token used to publish/subscribe to
+    /// A <i>participant token</i> is a token that authenticates a participant when they join
     /// a stage.
     /// </para>
     ///  </li> <li> 
@@ -65,13 +65,13 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  
     /// <para>
-    /// The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">Getting
-    /// Started with Amazon IVS</a>):
+    /// The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
+    /// Started with Amazon IVS Real-Time Streaming</a>):
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Stage</b> — A stage is a virtual space where multiple participants can exchange
-    /// audio and video in real time.
+    ///  <b>Stage</b> — A stage is a virtual space where participants can exchange video in
+    /// real time.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -95,8 +95,9 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  
     /// <para>
-    /// The Amazon IVS stage API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>,
-    /// and <a>ListTagsForResource</a>. The following resource supports tagging: Stage.
+    /// The Amazon IVS real-time API has these tag-related endpoints: <a>TagResource</a>,
+    /// <a>UntagResource</a>, and <a>ListTagsForResource</a>. The following resource supports
+    /// tagging: Stage.
     /// </para>
     ///  
     /// <para>
@@ -614,6 +615,17 @@ namespace Amazon.IVSRealTime
         Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

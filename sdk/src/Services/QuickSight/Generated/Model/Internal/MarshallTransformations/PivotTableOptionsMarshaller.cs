@@ -79,6 +79,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ColumnNamesVisibility);
             }
 
+            if(requestObject.IsSetDefaultCellWidth())
+            {
+                context.Writer.WritePropertyName("DefaultCellWidth");
+                context.Writer.Write(requestObject.DefaultCellWidth);
+            }
+
             if(requestObject.IsSetMetricPlacement())
             {
                 context.Writer.WritePropertyName("MetricPlacement");
@@ -116,6 +122,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.RowHeaderStyle, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRowsLabelOptions())
+            {
+                context.Writer.WritePropertyName("RowsLabelOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PivotTableRowsLabelOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RowsLabelOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRowsLayout())
+            {
+                context.Writer.WritePropertyName("RowsLayout");
+                context.Writer.Write(requestObject.RowsLayout);
             }
 
             if(requestObject.IsSetSingleMetricVisibility())

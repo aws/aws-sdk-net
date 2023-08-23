@@ -29,13 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Represents an EC2 instance of virtual computing resources that hosts one or more game
-    /// servers. In Amazon GameLift, a fleet can contain zero or more instances.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
+    /// Represents a virtual computing instance that runs game server processes and hosts
+    /// game sessions. In Amazon GameLift, one or more instances make up a managed EC2 fleet.
     /// </summary>
     public partial class Instance
     {
@@ -83,7 +78,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>.
         /// (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-        /// EC2 Instance IP Addressing</a>.)
+        /// Elastic Compute Cloud Instance IP Addressing</a>.)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -126,7 +121,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet that the instance is in.
+        /// A unique identifier for the fleet that the instance belongs to.
         /// </para>
         /// </summary>
         public string FleetId
@@ -201,7 +196,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// Operating system that is running on this instance. 
+        /// Operating system that is running on this EC2 instance. 
         /// </para>
         /// </summary>
         public OperatingSystem OperatingSystem
@@ -256,7 +251,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Amazon EC2 instance type that defines the computing resources of this instance. 
+        /// EC2 instance type that defines the computing resources of this instance. 
         /// </para>
         /// </summary>
         public EC2InstanceType Type

@@ -38,12 +38,14 @@ namespace Amazon.ResilienceHub.Model
         private AppAssessmentScheduleType _assessmentSchedule;
         private bool? _clearResiliencyPolicyArn;
         private string _description;
+        private List<EventSubscription> _eventSubscriptions = new List<EventSubscription>();
+        private PermissionModel _permissionModel;
         private string _policyArn;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -118,10 +120,49 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventSubscriptions. 
+        /// <para>
+        /// The list of events you would like to subscribe and get notification for. Currently,
+        /// Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled
+        /// assessment failure</b> events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EventSubscription> EventSubscriptions
+        {
+            get { return this._eventSubscriptions; }
+            set { this._eventSubscriptions = value; }
+        }
+
+        // Check to see if EventSubscriptions property is set
+        internal bool IsSetEventSubscriptions()
+        {
+            return this._eventSubscriptions != null && this._eventSubscriptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionModel. 
+        /// <para>
+        /// Defines the roles and credentials that Resilience Hub would use while creating an
+        /// application, importing its resources, and running an assessment.
+        /// </para>
+        /// </summary>
+        public PermissionModel PermissionModel
+        {
+            get { return this._permissionModel; }
+            set { this._permissionModel = value; }
+        }
+
+        // Check to see if PermissionModel property is set
+        internal bool IsSetPermissionModel()
+        {
+            return this._permissionModel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+        /// Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>

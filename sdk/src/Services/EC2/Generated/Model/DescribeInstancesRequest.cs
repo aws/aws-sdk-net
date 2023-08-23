@@ -88,7 +88,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume
-        /// mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.
+        /// mapped to the instance, for example, <code>2022-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -111,8 +111,28 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code>
+        /// | <code>uefi</code> | <code>uefi-preferred</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which
         /// the instance was launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>capacity-reservation-specification.capacity-reservation-preference</code> -
+        /// The instance's Capacity Reservation preference (<code>open</code> | <code>none</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code>
+        /// - The ID of the targeted Capacity Reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+        /// - The ARN of the targeted Capacity Reservation group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -121,13 +141,33 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>current-instance-boot-mode</code> - The boot mode that is used to launch the
+        /// instance at launch or start (<code>legacy-bios</code> | <code>uefi</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>dns-name</code> - The public DNS name of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized
+        /// for Amazon EBS I/O.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ena-support</code> - A Boolean that indicates whether the instance is enabled
+        /// for enhanced networking with ENA.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance
+        /// is enabled for Amazon Web Services Nitro Enclaves.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>hibernation-options.configured</code> - A Boolean that indicates whether the
         /// instance is enabled for hibernation. A value of <code>true</code> means that the instance
-        /// is enabled for hibernation. 
+        /// is enabled for hibernation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -143,6 +183,16 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>iam-instance-profile.arn</code> - The instance profile associated with the
         /// instance. Specified as an ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>iam-instance-profile.id</code> - The instance profile associated with the instance.
+        /// Specified as an ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>iam-instance-profile.name</code> - The instance profile associated with the
+        /// instance. Specified as an name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -189,6 +239,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>ipv6-address</code> - The IPv6 address of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>kernel-id</code> - The kernel ID.
         /// </para>
         ///  </li> <li> 
@@ -209,13 +263,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>metadata-options.http-tokens</code> - The metadata request authorization state
-        /// (<code>optional</code> | <code>required</code>)
+        ///  <code>license-pool</code> - 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request
-        /// put response hop limit (integer, possible values <code>1</code> to <code>64</code>)
+        ///  <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior
+        /// of the instance (<code>disabled</code> | <code>default</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -224,8 +277,33 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint
+        /// is enabled (<code>disabled</code> | <code>enabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint
+        /// is enabled (<code>disabled</code> | <code>enabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request
+        /// put response hop limit (integer, possible values <code>1</code> to <code>64</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-options.http-tokens</code> - The metadata request authorization state
+        /// (<code>optional</code> | <code>required</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>metadata-options.instance-metadata-tags</code> - The status of access to instance
         /// tags from the instance metadata (<code>enabled</code> | <code>disabled</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code>
+        /// | <code>applied</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -234,13 +312,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address
-        /// associated with the network interface.
+        ///  <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address
+        /// of the network interface is the primary private IPv4 address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address
-        /// of the network interface is the primary private IPv4 address.
+        ///  <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address
+        /// associated with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -401,7 +479,38 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red
+        /// Hat BYOL Linux</code> | <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise
+        /// Linux with HA</code> | <code>Red Hat Enterprise Linux with SQL Server Standard and
+        /// HA</code> | <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code>
+        /// | <code>Red Hat Enterprise Linux with SQL Server Standard</code> | <code>Red Hat Enterprise
+        /// Linux with SQL Server Web</code> | <code>Red Hat Enterprise Linux with SQL Server
+        /// Enterprise</code> | <code>SQL Server Enterprise</code> | <code>SQL Server Standard</code>
+        /// | <code>SQL Server Web</code> | <code>SUSE Linux</code> | <code>Ubuntu Pro</code>
+        /// | <code>Windows</code> | <code>Windows BYOL</code> | <code>Windows with SQL Server
+        /// Enterprise</code> | <code>Windows with SQL Server Standard</code> | <code>Windows
+        /// with SQL Server Web</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean
+        /// that indicates whether to respond to DNS queries for instance hostnames with DNS A
+        /// records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean
+        /// that indicates whether to respond to DNS queries for instance hostnames with DNS AAAA
+        /// records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code>
+        /// | <code>resource-name</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -492,6 +601,26 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>
         /// | <code>host</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support
+        /// (<code>v2.0</code>). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code>
+        /// | <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code>
+        /// | <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code>
+        /// | <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code>
+        /// | <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code>
+        /// | <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code>
+        /// | <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>usage-operation-update-time</code> - The time that the usage operation was
+        /// last updated, for example, <code>2022-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -1398,5 +1398,28 @@ namespace Amazon.AppRegistry
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonAppRegistryEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

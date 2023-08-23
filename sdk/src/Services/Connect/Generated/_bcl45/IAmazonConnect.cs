@@ -893,6 +893,70 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateTrafficDistributionGroupUser
+
+
+        /// <summary>
+        /// Associates an agent with a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTrafficDistributionGroupUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
+        AssociateTrafficDistributionGroupUserResponse AssociateTrafficDistributionGroupUser(AssociateTrafficDistributionGroupUserRequest request);
+
+
+
+        /// <summary>
+        /// Associates an agent with a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateTrafficDistributionGroupUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
+        Task<AssociateTrafficDistributionGroupUserResponse> AssociateTrafficDistributionGroupUserAsync(AssociateTrafficDistributionGroupUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ClaimPhoneNumber
 
 
@@ -5919,6 +5983,70 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateTrafficDistributionGroupUser
+
+
+        /// <summary>
+        /// Disassociates an agent from a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTrafficDistributionGroupUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">REST API Reference for DisassociateTrafficDistributionGroupUser Operation</seealso>
+        DisassociateTrafficDistributionGroupUserResponse DisassociateTrafficDistributionGroupUser(DisassociateTrafficDistributionGroupUserRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates an agent from a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateTrafficDistributionGroupUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">REST API Reference for DisassociateTrafficDistributionGroupUser Operation</seealso>
+        Task<DisassociateTrafficDistributionGroupUserResponse> DisassociateTrafficDistributionGroupUserAsync(DisassociateTrafficDistributionGroupUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DismissUserContact
 
 
@@ -7776,6 +7904,17 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// When given an instance ARN, <code>ListPhoneNumbersV2</code> returns only the phone
+        /// numbers claimed to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When given a traffic distribution group ARN <code>ListPhoneNumbersV2</code> returns
+        /// only the phone numbers claimed to the traffic distribution group.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbersV2 service method.</param>
         /// 
@@ -7812,6 +7951,17 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// When given an instance ARN, <code>ListPhoneNumbersV2</code> returns only the phone
+        /// numbers claimed to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When given a traffic distribution group ARN <code>ListPhoneNumbersV2</code> returns
+        /// only the phone numbers claimed to the traffic distribution group.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbersV2 service method.</param>
         /// <param name="cancellationToken">
@@ -8682,6 +8832,64 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
         Task<ListTrafficDistributionGroupsResponse> ListTrafficDistributionGroupsAsync(ListTrafficDistributionGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTrafficDistributionGroupUsers
+
+
+        /// <summary>
+        /// Lists traffic distribution group users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroupUsers service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficDistributionGroupUsers service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">REST API Reference for ListTrafficDistributionGroupUsers Operation</seealso>
+        ListTrafficDistributionGroupUsersResponse ListTrafficDistributionGroupUsers(ListTrafficDistributionGroupUsersRequest request);
+
+
+
+        /// <summary>
+        /// Lists traffic distribution group users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroupUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrafficDistributionGroupUsers service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">REST API Reference for ListTrafficDistributionGroupUsers Operation</seealso>
+        Task<ListTrafficDistributionGroupUsersResponse> ListTrafficDistributionGroupUsersAsync(ListTrafficDistributionGroupUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -12923,6 +13131,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateRoutingProfileAgentAvailabilityTimer
+
+
+        /// <summary>
+        /// Whether agents with this routing profile will have their routing order calculated
+        /// based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileAgentAvailabilityTimer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRoutingProfileAgentAvailabilityTimer service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileAgentAvailabilityTimer">REST API Reference for UpdateRoutingProfileAgentAvailabilityTimer Operation</seealso>
+        UpdateRoutingProfileAgentAvailabilityTimerResponse UpdateRoutingProfileAgentAvailabilityTimer(UpdateRoutingProfileAgentAvailabilityTimerRequest request);
+
+
+
+        /// <summary>
+        /// Whether agents with this routing profile will have their routing order calculated
+        /// based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileAgentAvailabilityTimer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRoutingProfileAgentAvailabilityTimer service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileAgentAvailabilityTimer">REST API Reference for UpdateRoutingProfileAgentAvailabilityTimer Operation</seealso>
+        Task<UpdateRoutingProfileAgentAvailabilityTimerResponse> UpdateRoutingProfileAgentAvailabilityTimerAsync(UpdateRoutingProfileAgentAvailabilityTimerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateRoutingProfileConcurrency
 
 
@@ -13385,7 +13653,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates the traffic distribution for a given traffic distribution group. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
+        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
@@ -13421,7 +13696,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates the traffic distribution for a given traffic distribution group. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
+        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
@@ -13896,6 +14178,17 @@ namespace Amazon.Connect
         Task<UpdateUserSecurityProfilesResponse> UpdateUserSecurityProfilesAsync(UpdateUserSecurityProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

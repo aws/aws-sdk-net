@@ -41,6 +41,11 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribeConnectionsPaginator DescribeConnections(DescribeConnectionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeDataProviders operation
+        ///</summary>
+        IDescribeDataProvidersPaginator DescribeDataProviders(DescribeDataProvidersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeEndpoints operation
         ///</summary>
         IDescribeEndpointsPaginator DescribeEndpoints(DescribeEndpointsRequest request);
@@ -56,6 +61,11 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribeEndpointTypesPaginator DescribeEndpointTypes(DescribeEndpointTypesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeEngineVersions operation
+        ///</summary>
+        IDescribeEngineVersionsPaginator DescribeEngineVersions(DescribeEngineVersionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeEvents operation
         ///</summary>
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
@@ -64,6 +74,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Paginator for DescribeEventSubscriptions operation
         ///</summary>
         IDescribeEventSubscriptionsPaginator DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeExtensionPackAssociations operation
+        ///</summary>
+        IDescribeExtensionPackAssociationsPaginator DescribeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeFleetAdvisorCollectors operation
@@ -89,6 +104,41 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Paginator for DescribeFleetAdvisorSchemas operation
         ///</summary>
         IDescribeFleetAdvisorSchemasPaginator DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeInstanceProfiles operation
+        ///</summary>
+        IDescribeInstanceProfilesPaginator DescribeInstanceProfiles(DescribeInstanceProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelAssessments operation
+        ///</summary>
+        IDescribeMetadataModelAssessmentsPaginator DescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelConversions operation
+        ///</summary>
+        IDescribeMetadataModelConversionsPaginator DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelExportsAsScript operation
+        ///</summary>
+        IDescribeMetadataModelExportsAsScriptPaginator DescribeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelExportsToTarget operation
+        ///</summary>
+        IDescribeMetadataModelExportsToTargetPaginator DescribeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelImports operation
+        ///</summary>
+        IDescribeMetadataModelImportsPaginator DescribeMetadataModelImports(DescribeMetadataModelImportsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMigrationProjects operation
+        ///</summary>
+        IDescribeMigrationProjectsPaginator DescribeMigrationProjects(DescribeMigrationProjectsRequest request);
 
         /// <summary>
         /// Paginator for DescribeOrderableReplicationInstances operation

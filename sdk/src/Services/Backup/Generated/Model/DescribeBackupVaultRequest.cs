@@ -34,7 +34,26 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class DescribeBackupVaultRequest : AmazonBackupRequest
     {
+        private string _backupVaultAccountId;
         private string _backupVaultName;
+
+        /// <summary>
+        /// Gets and sets the property BackupVaultAccountId. 
+        /// <para>
+        /// This is the account ID of the specified backup vault.
+        /// </para>
+        /// </summary>
+        public string BackupVaultAccountId
+        {
+            get { return this._backupVaultAccountId; }
+            set { this._backupVaultAccountId = value; }
+        }
+
+        // Check to see if BackupVaultAccountId property is set
+        internal bool IsSetBackupVaultAccountId()
+        {
+            return this._backupVaultAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupVaultName. 

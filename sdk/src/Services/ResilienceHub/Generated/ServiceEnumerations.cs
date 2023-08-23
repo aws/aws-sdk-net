@@ -195,6 +195,60 @@ namespace Amazon.ResilienceHub
 
 
     /// <summary>
+    /// Constants used for properties of type AppDriftStatusType.
+    /// </summary>
+    public class AppDriftStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Detected for AppDriftStatusType
+        /// </summary>
+        public static readonly AppDriftStatusType Detected = new AppDriftStatusType("Detected");
+        /// <summary>
+        /// Constant NotChecked for AppDriftStatusType
+        /// </summary>
+        public static readonly AppDriftStatusType NotChecked = new AppDriftStatusType("NotChecked");
+        /// <summary>
+        /// Constant NotDetected for AppDriftStatusType
+        /// </summary>
+        public static readonly AppDriftStatusType NotDetected = new AppDriftStatusType("NotDetected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppDriftStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppDriftStatusType FindValue(string value)
+        {
+            return FindValue<AppDriftStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppDriftStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppStatusType.
     /// </summary>
     public class AppStatusType : ConstantClass
@@ -581,6 +635,52 @@ namespace Amazon.ResilienceHub
 
 
     /// <summary>
+    /// Constants used for properties of type DifferenceType.
+    /// </summary>
+    public class DifferenceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NotEqual for DifferenceType
+        /// </summary>
+        public static readonly DifferenceType NotEqual = new DifferenceType("NotEqual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DifferenceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DifferenceType FindValue(string value)
+        {
+            return FindValue<DifferenceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DifferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DisruptionType.
     /// </summary>
     public class DisruptionType : ConstantClass
@@ -632,6 +732,106 @@ namespace Amazon.ResilienceHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DisruptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DriftStatus.
+    /// </summary>
+    public class DriftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Detected for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus Detected = new DriftStatus("Detected");
+        /// <summary>
+        /// Constant NotChecked for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus NotChecked = new DriftStatus("NotChecked");
+        /// <summary>
+        /// Constant NotDetected for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus NotDetected = new DriftStatus("NotDetected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DriftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DriftStatus FindValue(string value)
+        {
+            return FindValue<DriftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DriftStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DriftType.
+    /// </summary>
+    public class DriftType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApplicationCompliance for DriftType
+        /// </summary>
+        public static readonly DriftType ApplicationCompliance = new DriftType("ApplicationCompliance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DriftType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DriftType FindValue(string value)
+        {
+            return FindValue<DriftType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DriftType(string value)
         {
             return FindValue(value);
         }
@@ -697,6 +897,110 @@ namespace Amazon.ResilienceHub
 
 
     /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DriftDetected for EventType
+        /// </summary>
+        public static readonly EventType DriftDetected = new EventType("DriftDetected");
+        /// <summary>
+        /// Constant ScheduledAssessmentFailure for EventType
+        /// </summary>
+        public static readonly EventType ScheduledAssessmentFailure = new EventType("ScheduledAssessmentFailure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExcludeRecommendationReason.
+    /// </summary>
+    public class ExcludeRecommendationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AlreadyImplemented for ExcludeRecommendationReason
+        /// </summary>
+        public static readonly ExcludeRecommendationReason AlreadyImplemented = new ExcludeRecommendationReason("AlreadyImplemented");
+        /// <summary>
+        /// Constant ComplexityOfImplementation for ExcludeRecommendationReason
+        /// </summary>
+        public static readonly ExcludeRecommendationReason ComplexityOfImplementation = new ExcludeRecommendationReason("ComplexityOfImplementation");
+        /// <summary>
+        /// Constant NotRelevant for ExcludeRecommendationReason
+        /// </summary>
+        public static readonly ExcludeRecommendationReason NotRelevant = new ExcludeRecommendationReason("NotRelevant");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExcludeRecommendationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExcludeRecommendationReason FindValue(string value)
+        {
+            return FindValue<ExcludeRecommendationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExcludeRecommendationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HaArchitecture.
     /// </summary>
     public class HaArchitecture : ConstantClass
@@ -752,6 +1056,56 @@ namespace Amazon.ResilienceHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HaArchitecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PermissionModelType.
+    /// </summary>
+    public class PermissionModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LegacyIAMUser for PermissionModelType
+        /// </summary>
+        public static readonly PermissionModelType LegacyIAMUser = new PermissionModelType("LegacyIAMUser");
+        /// <summary>
+        /// Constant RoleBased for PermissionModelType
+        /// </summary>
+        public static readonly PermissionModelType RoleBased = new PermissionModelType("RoleBased");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionModelType FindValue(string value)
+        {
+            return FindValue<PermissionModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionModelType(string value)
         {
             return FindValue(value);
         }
@@ -1000,6 +1354,10 @@ namespace Amazon.ResilienceHub
         /// Constant NonCritical for ResiliencyPolicyTier
         /// </summary>
         public static readonly ResiliencyPolicyTier NonCritical = new ResiliencyPolicyTier("NonCritical");
+        /// <summary>
+        /// Constant NotApplicable for ResiliencyPolicyTier
+        /// </summary>
+        public static readonly ResiliencyPolicyTier NotApplicable = new ResiliencyPolicyTier("NotApplicable");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

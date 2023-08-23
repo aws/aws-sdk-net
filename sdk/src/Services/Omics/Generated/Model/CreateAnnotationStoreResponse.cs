@@ -40,6 +40,7 @@ namespace Amazon.Omics.Model
         private StoreStatus _status;
         private StoreFormat _storeFormat;
         private StoreOptions _storeOptions;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -170,6 +171,26 @@ namespace Amazon.Omics.Model
         internal bool IsSetStoreOptions()
         {
             return this._storeOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        ///  The name given to an annotation store version to distinguish it from other versions.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

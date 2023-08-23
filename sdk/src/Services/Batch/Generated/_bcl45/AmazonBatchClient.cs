@@ -460,8 +460,8 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
-        /// or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
+        /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -598,8 +598,8 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
-        /// or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
+        /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2101,5 +2101,28 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonBatchEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

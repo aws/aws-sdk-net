@@ -43,7 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The content of the approval rule, including the number of approvals needed and the
         /// structure of an approval pool defined for approvals, if any. For more information
-        /// about approval pools, see the AWS CodeCommit User Guide.
+        /// about approval pools, see the CodeCommit User Guide.
         /// </para>
         ///  <note> 
         /// <para>
@@ -52,11 +52,12 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource.
-        /// It can be used for both IAM users and federated access users whose name matches the
-        /// provided resource name. This is a very powerful option that offers a great deal of
-        /// flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>,
-        /// all of the following would be counted as approvals coming from that user:
+        ///  <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account
+        /// and a resource. It can be used for both IAM users and federated access users whose
+        /// name matches the provided resource name. This is a very powerful option that offers
+        /// a great deal of flexibility. For example, if you specify the Amazon Web Services account
+        /// <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as
+        /// approvals coming from that user:
         /// </para>
         ///  <ul> <li> 
         /// <para>

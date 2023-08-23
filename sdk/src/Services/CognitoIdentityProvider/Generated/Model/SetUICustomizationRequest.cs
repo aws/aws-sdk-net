@@ -81,6 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The CSS values in the UI customization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string CSS
         {
             get { return this._css; }
@@ -99,6 +100,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The uploaded logo image for the UI customization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public MemoryStream ImageFile
         {
             get { return this._imageFile; }

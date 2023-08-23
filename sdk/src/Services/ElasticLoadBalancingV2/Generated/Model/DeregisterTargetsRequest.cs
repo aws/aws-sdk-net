@@ -32,6 +32,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Container for the parameters to the DeregisterTargets operation.
     /// Deregisters the specified targets from the specified target group. After the targets
     /// are deregistered, they no longer receive traffic from the load balancer.
+    /// 
+    ///  
+    /// <para>
+    /// Note: If the specified target does not exist, the action returns successfully.
+    /// </para>
     /// </summary>
     public partial class DeregisterTargetsRequest : AmazonElasticLoadBalancingV2Request
     {

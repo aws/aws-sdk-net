@@ -34,8 +34,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class RecommendationJobStoppingConditions
     {
+        private FlatInvocations _flatInvocations;
         private int? _maxInvocations;
         private List<ModelLatencyThreshold> _modelLatencyThresholds = new List<ModelLatencyThreshold>();
+
+        /// <summary>
+        /// Gets and sets the property FlatInvocations. 
+        /// <para>
+        /// Stops a load test when the number of invocations (TPS) peaks and flattens, which means
+        /// that the instance has reached capacity. The default value is <code>Stop</code>. If
+        /// you want the load test to continue after invocations have flattened, set the value
+        /// to <code>Continue</code>.
+        /// </para>
+        /// </summary>
+        public FlatInvocations FlatInvocations
+        {
+            get { return this._flatInvocations; }
+            set { this._flatInvocations = value; }
+        }
+
+        // Check to see if FlatInvocations property is set
+        internal bool IsSetFlatInvocations()
+        {
+            return this._flatInvocations != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxInvocations. 

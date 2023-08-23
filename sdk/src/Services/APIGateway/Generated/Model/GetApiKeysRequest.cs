@@ -43,8 +43,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CustomerId. 
         /// <para>
-        /// The identifier of a customer in AWS Marketplace or an external system, such as a developer
-        /// portal.
+        /// The identifier of a customer in Amazon Web Services Marketplace or an external system,
+        /// such as a developer portal.
         /// </para>
         /// </summary>
         public string CustomerId

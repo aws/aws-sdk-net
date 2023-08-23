@@ -211,6 +211,14 @@ namespace Amazon.SageMaker.Model
         /// for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
         /// is the only operation that can be performed on a failed endpoint.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UpdateRollbackFailed</code>: Both the rolling deployment and auto-rollback
+        /// failed. Your endpoint is in service with a mix of the old and new endpoint configurations.
+        /// For information about how to remedy this issue and restore the endpoint's status to
+        /// <code>InService</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling
+        /// Deployments</a>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

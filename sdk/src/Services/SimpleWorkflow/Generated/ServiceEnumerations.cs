@@ -437,6 +437,10 @@ namespace Amazon.SimpleWorkflow
     {
 
         /// <summary>
+        /// Constant SCHEDULE_TO_START for DecisionTaskTimeoutType
+        /// </summary>
+        public static readonly DecisionTaskTimeoutType SCHEDULE_TO_START = new DecisionTaskTimeoutType("SCHEDULE_TO_START");
+        /// <summary>
         /// Constant START_TO_CLOSE for DecisionTaskTimeoutType
         /// </summary>
         public static readonly DecisionTaskTimeoutType START_TO_CLOSE = new DecisionTaskTimeoutType("START_TO_CLOSE");

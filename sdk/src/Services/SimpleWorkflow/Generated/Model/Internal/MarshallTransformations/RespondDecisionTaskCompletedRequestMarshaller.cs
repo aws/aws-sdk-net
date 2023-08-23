@@ -89,6 +89,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExecutionContext);
                 }
 
+                if(publicRequest.IsSetTaskList())
+                {
+                    context.Writer.WritePropertyName("taskList");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskListMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskList, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTaskListScheduleToStartTimeout())
+                {
+                    context.Writer.WritePropertyName("taskListScheduleToStartTimeout");
+                    context.Writer.Write(publicRequest.TaskListScheduleToStartTimeout);
+                }
+
                 if(publicRequest.IsSetTaskToken())
                 {
                     context.Writer.WritePropertyName("taskToken");

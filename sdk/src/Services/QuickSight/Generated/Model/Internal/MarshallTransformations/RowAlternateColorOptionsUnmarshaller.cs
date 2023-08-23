@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UsePrimaryBackgroundColor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UsePrimaryBackgroundColor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -25,6 +25,56 @@ namespace Amazon.DatabaseMigrationService
 {
 
     /// <summary>
+    /// Constants used for properties of type AssessmentReportType.
+    /// </summary>
+    public class AssessmentReportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Csv for AssessmentReportType
+        /// </summary>
+        public static readonly AssessmentReportType Csv = new AssessmentReportType("csv");
+        /// <summary>
+        /// Constant Pdf for AssessmentReportType
+        /// </summary>
+        public static readonly AssessmentReportType Pdf = new AssessmentReportType("pdf");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssessmentReportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssessmentReportType FindValue(string value)
+        {
+            return FindValue<AssessmentReportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssessmentReportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthMechanismValue.
     /// </summary>
     public class AuthMechanismValue : ConstantClass
@@ -1156,6 +1206,56 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NestingLevelValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginTypeValue.
+    /// </summary>
+    public class OriginTypeValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE for OriginTypeValue
+        /// </summary>
+        public static readonly OriginTypeValue SOURCE = new OriginTypeValue("SOURCE");
+        /// <summary>
+        /// Constant TARGET for OriginTypeValue
+        /// </summary>
+        public static readonly OriginTypeValue TARGET = new OriginTypeValue("TARGET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginTypeValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginTypeValue FindValue(string value)
+        {
+            return FindValue<OriginTypeValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginTypeValue(string value)
         {
             return FindValue(value);
         }

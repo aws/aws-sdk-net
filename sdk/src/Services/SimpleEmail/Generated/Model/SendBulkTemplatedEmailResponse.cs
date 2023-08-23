@@ -38,8 +38,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-        /// action.
+        /// One object per intended recipient. Check each response object and retry any messages
+        /// with a failure status. (Note that order of responses will be respective to order of
+        /// destinations in the request.)Receipt rules enable you to specify which actions 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -41,6 +41,17 @@ namespace Amazon.Connect.Model
     /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
     /// Guide</i>.
     /// </para>
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// When given an instance ARN, <code>ListPhoneNumbersV2</code> returns only the phone
+    /// numbers claimed to the instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When given a traffic distribution group ARN <code>ListPhoneNumbersV2</code> returns
+    /// only the phone numbers claimed to the traffic distribution group.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class ListPhoneNumbersV2Request : AmazonConnectRequest
     {

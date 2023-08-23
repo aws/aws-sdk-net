@@ -1145,7 +1145,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the details for a Savings Plan recommendation. These details include the
-        /// hourly data-points that construct the new cost, coverage, and utilization charts.
+        /// hourly data-points that construct the cost, coverage, and utilization charts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlanPurchaseRecommendationDetails service method.</param>
         /// 
@@ -2144,6 +2144,17 @@ namespace Amazon.CostExplorer
         UpdateCostCategoryDefinitionResponse EndUpdateCostCategoryDefinition(IAsyncResult asyncResult);
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

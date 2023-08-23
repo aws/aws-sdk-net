@@ -40,7 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// Specifies how long traffic phase should be.
+        /// Specifies how long a traffic phase should be. For custom load tests, the value should
+        /// be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -59,7 +60,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InitialNumberOfUsers. 
         /// <para>
-        /// Specifies how many concurrent users to start with.
+        /// Specifies how many concurrent users to start with. The value should be between 1 and
+        /// 3.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -77,7 +77,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier of the physical resource.
+        /// Identifier of the physical resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -100,13 +100,111 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  <dl> <dt>Arn</dt> <dd> 
         /// <para>
-        /// The resource identifier is an Amazon Resource Name (ARN) .
+        /// The resource identifier is an Amazon Resource Name (ARN) and it can identify the following
+        /// list of resources:
         /// </para>
-        ///  </dd> <dt>Native</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// The resource identifier is an Resilience Hub-native identifier.
+        ///  <code>AWS::ECS::Service</code> 
         /// </para>
-        ///  </dd> </dl>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EFS::FileSystem</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Lambda::Function</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SNS::Topic</code> 
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Native</dt> <dd> 
+        /// <para>
+        /// The resource identifier is an Resilience Hub-native identifier and it can identify
+        /// the following list of resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::ApiGateway::RestApi</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ApiGatewayV2::Api</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::AutoScaling::AutoScalingGroup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DocDB::DBCluster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DocDB::DBGlobalCluster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DocDB::DBInstance</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::GlobalTable</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Table</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::EC2Fleet</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::Instance</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::NatGateway</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::Volume</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ElasticLoadBalancing::LoadBalancer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::RDS::DBCluster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::RDS::DBInstance</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::RDS::GlobalCluster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Route53::RecordSet</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3::Bucket</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SQS::Queue</code> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true)]
         public PhysicalIdentifierType Type

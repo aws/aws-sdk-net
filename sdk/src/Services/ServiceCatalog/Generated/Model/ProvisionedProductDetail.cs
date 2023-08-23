@@ -131,7 +131,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  ProvisionedProduct 
+        ///  ProvisionProduct 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -186,7 +186,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  ProvisionedProduct 
+        ///  ProvisionProduct 
         /// </para>
         ///  </li> <li> 
         /// <para>

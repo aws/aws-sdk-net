@@ -36,6 +36,12 @@ namespace Amazon.ECS.Model
     /// <para>
     /// Currently, stopped tasks appear in the returned results for at least one hour.
     /// </para>
+    ///  
+    /// <para>
+    /// If you have tasks with tags, and then delete the cluster, the tagged tasks are returned
+    /// in the response. If you create a new cluster with the same name as the deleted cluster,
+    /// the tagged tasks are not included in the response.
+    /// </para>
     /// </summary>
     public partial class DescribeTasksRequest : AmazonECSRequest
     {

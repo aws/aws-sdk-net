@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
-    /// about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.
+    /// The specified file exceeds the file size limit for CodeCommit. For more information
+    /// about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+    /// in the <i>CodeCommit User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

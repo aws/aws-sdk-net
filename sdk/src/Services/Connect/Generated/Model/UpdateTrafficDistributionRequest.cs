@@ -32,7 +32,14 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the UpdateTrafficDistribution operation.
     /// Updates the traffic distribution for a given traffic distribution group. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
+    /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+    /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+    /// is returned.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
     /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
@@ -41,8 +48,28 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateTrafficDistributionRequest : AmazonConnectRequest
     {
+        private AgentConfig _agentConfig;
         private string _id;
+        private SignInConfig _signInConfig;
         private TelephonyConfig _telephonyConfig;
+
+        /// <summary>
+        /// Gets and sets the property AgentConfig. 
+        /// <para>
+        /// The distribution of agents between the instance and its replica(s).
+        /// </para>
+        /// </summary>
+        public AgentConfig AgentConfig
+        {
+            get { return this._agentConfig; }
+            set { this._agentConfig = value; }
+        }
+
+        // Check to see if AgentConfig property is set
+        internal bool IsSetAgentConfig()
+        {
+            return this._agentConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -63,6 +90,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignInConfig. 
+        /// <para>
+        /// The distribution of allowing signing in to the instance and its replica(s).
+        /// </para>
+        /// </summary>
+        public SignInConfig SignInConfig
+        {
+            get { return this._signInConfig; }
+            set { this._signInConfig = value; }
+        }
+
+        // Check to see if SignInConfig property is set
+        internal bool IsSetSignInConfig()
+        {
+            return this._signInConfig != null;
         }
 
         /// <summary>

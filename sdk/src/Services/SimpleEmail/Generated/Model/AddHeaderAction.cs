@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon
+    /// For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-add-header.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -45,8 +45,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property HeaderName. 
         /// <para>
-        /// The name of the header to add. Must be between 1 and 50 characters, inclusive, and
-        /// consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.
+        /// The name of the header to add to the incoming message. The name must contain at least
+        /// one character, and can contain up to 50 characters. It consists of alphanumeric (a–z,
+        /// A–Z, 0–9) characters and dashes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,8 +66,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property HeaderValue. 
         /// <para>
-        /// Must be less than 2048 characters, and must not contain newline characters ("\r" or
-        /// "\n").
+        /// The content to include in the header. This value can contain up to 2048 characters.
+        /// It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

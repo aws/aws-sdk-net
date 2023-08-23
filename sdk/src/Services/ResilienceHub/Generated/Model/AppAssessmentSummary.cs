@@ -40,16 +40,18 @@ namespace Amazon.ResilienceHub.Model
         private AssessmentStatus _assessmentStatus;
         private ComplianceStatus _complianceStatus;
         private Cost _cost;
+        private DriftStatus _driftStatus;
         private DateTime? _endTime;
         private AssessmentInvoker _invoker;
         private string _message;
         private double? _resiliencyScore;
         private DateTime? _startTime;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -70,7 +72,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppVersion. 
         /// <para>
-        /// The version of the application.
+        /// Version of an application.
         /// </para>
         /// </summary>
         public string AppVersion
@@ -88,7 +90,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+        /// Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -109,7 +111,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentName. 
         /// <para>
-        /// The name of the assessment.
+        /// Name of the assessment.
         /// </para>
         /// </summary>
         public string AssessmentName
@@ -127,7 +129,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentStatus. 
         /// <para>
-        /// The current status of the assessment for the resiliency policy.
+        /// Current status of the assessment for the resiliency policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,7 +148,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
-        /// The current status of compliance for the resiliency policy.
+        /// TCurrent status of compliance for the resiliency policy.
         /// </para>
         /// </summary>
         public ComplianceStatus ComplianceStatus
@@ -164,7 +166,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Cost. 
         /// <para>
-        /// The cost for the application.
+        /// Cost for an application.
         /// </para>
         /// </summary>
         public Cost Cost
@@ -180,9 +182,28 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriftStatus. 
+        /// <para>
+        /// Indicates if compliance drifts (deviations) were detected while running an assessment
+        /// for your application.
+        /// </para>
+        /// </summary>
+        public DriftStatus DriftStatus
+        {
+            get { return this._driftStatus; }
+            set { this._driftStatus = value; }
+        }
+
+        // Check to see if DriftStatus property is set
+        internal bool IsSetDriftStatus()
+        {
+            return this._driftStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time for the action.
+        /// End time for the action.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -200,7 +221,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Invoker. 
         /// <para>
-        /// The entity that invoked the assessment.
+        /// Entity that invoked the assessment.
         /// </para>
         /// </summary>
         public AssessmentInvoker Invoker
@@ -218,7 +239,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message from the assessment run.
+        /// Message from the assessment run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -237,7 +258,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResiliencyScore. 
         /// <para>
-        /// The current resiliency score for the application.
+        /// Current resiliency score for the application.
         /// </para>
         /// </summary>
         public double ResiliencyScore
@@ -255,7 +276,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The starting time for the action.
+        /// Starting time for the action.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -268,6 +289,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// Name of an application version.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

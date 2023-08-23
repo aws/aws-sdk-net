@@ -64,6 +64,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ClusterCloudStorageUsed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ClusterCloudStorageUsed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogicalUsed", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

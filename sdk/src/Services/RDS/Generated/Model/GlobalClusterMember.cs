@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// A data structure with information about any primary and secondary clusters associated
-    /// with an Aurora global database.
+    /// with a global cluster (Aurora global database).
     /// </summary>
     public partial class GlobalClusterMember
     {
@@ -38,11 +38,12 @@ namespace Amazon.RDS.Model
         private WriteForwardingStatus _globalWriteForwardingStatus;
         private bool? _isWriter;
         private List<string> _readers = new List<string>();
+        private GlobalClusterMemberSynchronizationStatus _synchronizationStatus;
 
         /// <summary>
         /// Gets and sets the property DBClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for each Aurora cluster.
+        /// The Amazon Resource Name (ARN) for each Aurora DB cluster in the global cluster.
         /// </para>
         /// </summary>
         public string DBClusterArn
@@ -60,8 +61,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalWriteForwardingStatus. 
         /// <para>
-        /// Specifies whether a secondary cluster in an Aurora global database has write forwarding
-        /// enabled, not enabled, or is in the process of enabling it.
+        /// Specifies whether a secondary cluster in the global cluster has write forwarding enabled,
+        /// not enabled, or is in the process of enabling it.
         /// </para>
         /// </summary>
         public WriteForwardingStatus GlobalWriteForwardingStatus
@@ -79,8 +80,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsWriter. 
         /// <para>
-        /// Specifies whether the Aurora cluster is the primary cluster (that is, has read-write
-        /// capability) for the Aurora global database with which it is associated.
+        /// Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write
+        /// capability) for the global cluster with which it is associated.
         /// </para>
         /// </summary>
         public bool IsWriter
@@ -99,7 +100,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Readers. 
         /// <para>
         /// The Amazon Resource Name (ARN) for each read-only secondary cluster associated with
-        /// the Aurora global database.
+        /// the global cluster.
         /// </para>
         /// </summary>
         public List<string> Readers
@@ -112,6 +113,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetReaders()
         {
             return this._readers != null && this._readers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SynchronizationStatus. 
+        /// <para>
+        /// The status of synchronization of each Aurora DB cluster in the global cluster.
+        /// </para>
+        /// </summary>
+        public GlobalClusterMemberSynchronizationStatus SynchronizationStatus
+        {
+            get { return this._synchronizationStatus; }
+            set { this._synchronizationStatus = value; }
+        }
+
+        // Check to see if SynchronizationStatus property is set
+        internal bool IsSetSynchronizationStatus()
+        {
+            return this._synchronizationStatus != null;
         }
 
     }

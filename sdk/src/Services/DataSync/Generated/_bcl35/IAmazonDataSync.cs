@@ -575,8 +575,21 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Network File System (NFS) file server that DataSync can
+        /// Creates an endpoint for a Network File System (NFS) file server that DataSync can
         /// use for a data transfer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
+        /// transfers to or from an NFS file server</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're copying data to or from an Snowcone device, you can also use <code>CreateLocationNfs</code>
+        /// to create your transfer location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
+        /// transfers with Snowcone</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// 
@@ -1425,7 +1438,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as the path information, about an NFS location.
+        /// Provides details about how an DataSync transfer location for a Network File System
+        /// (NFS) file server is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationNfs service method.</param>
         /// 
@@ -2743,9 +2757,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates some of the parameters of a previously created location for Network File System
-        /// (NFS) access. For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
-        /// a location for NFS</a>.
+        /// Modifies some configurations of the Network File System (NFS) transfer location that
+        /// you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
+        /// transfers to or from an NFS file server</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationNfs service method.</param>
         /// 
@@ -3031,6 +3050,17 @@ namespace Amazon.DataSync
         UpdateTaskExecutionResponse EndUpdateTaskExecution(IAsyncResult asyncResult);
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

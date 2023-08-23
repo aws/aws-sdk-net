@@ -750,12 +750,6 @@ namespace Amazon.SageMaker
         /// <para>
         ///  Use this API to deploy models using SageMaker hosting services. 
         /// </para>
-        ///  
-        /// <para>
-        /// For an example that calls this method when deploying a model to SageMaker hosting
-        /// services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
-        /// Endpoint example notebook.</a> 
-        /// </para>
         ///  <note> 
         /// <para>
         ///  You must not delete an <code>EndpointConfig</code> that is in use by an endpoint
@@ -4891,6 +4885,28 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  GetScalingConfigurationRecommendation
+
+
+
+        /// <summary>
+        /// Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns
+        /// recommendations for autoscaling policies that you can apply to your SageMaker endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingConfigurationRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScalingConfigurationRecommendation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation">REST API Reference for GetScalingConfigurationRecommendation Operation</seealso>
+        Task<GetScalingConfigurationRecommendationResponse> GetScalingConfigurationRecommendationAsync(GetScalingConfigurationRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetSearchSuggestions
 
 
@@ -7991,6 +8007,17 @@ namespace Amazon.SageMaker
         Task<UpdateWorkteamResponse> UpdateWorkteamAsync(UpdateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

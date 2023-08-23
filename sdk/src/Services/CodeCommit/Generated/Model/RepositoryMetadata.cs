@@ -47,7 +47,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the AWS account associated with the repository.
+        /// The ID of the Amazon Web Services account associated with the repository.
         /// </para>
         /// </summary>
         public string AccountId

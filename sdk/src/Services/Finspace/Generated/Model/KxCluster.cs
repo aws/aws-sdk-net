@@ -67,8 +67,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        /// The number of availability zones assigned per cluster. This can be one of the following
-        /// 
+        /// The number of availability zones assigned per cluster. This can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

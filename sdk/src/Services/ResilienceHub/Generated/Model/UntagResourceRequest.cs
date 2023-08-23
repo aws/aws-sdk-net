@@ -40,7 +40,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource. 
+        /// Amazon Resource Name (ARN) of the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

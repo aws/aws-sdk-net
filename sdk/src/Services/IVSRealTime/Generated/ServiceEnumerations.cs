@@ -34,6 +34,14 @@ namespace Amazon.IVSRealTime
         /// Constant INSUFFICIENT_CAPABILITIES for EventErrorCode
         /// </summary>
         public static readonly EventErrorCode INSUFFICIENT_CAPABILITIES = new EventErrorCode("INSUFFICIENT_CAPABILITIES");
+        /// <summary>
+        /// Constant PUBLISHER_NOT_FOUND for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode PUBLISHER_NOT_FOUND = new EventErrorCode("PUBLISHER_NOT_FOUND");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode QUOTA_EXCEEDED = new EventErrorCode("QUOTA_EXCEEDED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

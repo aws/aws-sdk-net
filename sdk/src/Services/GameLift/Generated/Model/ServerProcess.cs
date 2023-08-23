@@ -62,9 +62,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LaunchPath. 
         /// <para>
-        /// The location of a game build executable or the Realtime script file that contains
-        /// the <code>Init()</code> function. Game builds and Realtime scripts are installed on
-        /// instances at the root: 
+        /// The location of a game build executable or Realtime script. Game builds and Realtime
+        /// scripts are installed on instances at the root: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -76,7 +75,13 @@ namespace Amazon.GameLift.Model
         /// Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
         /// or "<code>/local/game/MyRealtimeScript.js</code>"
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Amazon GameLift doesn't support the use of setup scripts that launch the game executable.
+        /// For custom game builds, this parameter must indicate the executable that calls the
+        /// server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string LaunchPath

@@ -52,6 +52,7 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private FindingProviderFields _findingProviderFields;
         private string _firstObservedAt;
+        private GeneratorDetails _generatorDetails;
         private string _generatorId;
         private string _id;
         private string _lastObservedAt;
@@ -310,6 +311,28 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetFirstObservedAt()
         {
             return this._firstObservedAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeneratorDetails. 
+        /// <para>
+        /// Provides metadata for the Amazon CodeGuru detector associated with a finding. This
+        /// field pertains to findings that relate to Lambda functions. Amazon Inspector identifies
+        /// policy violations and vulnerabilities in Lambda function code based on internal detectors
+        /// developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.
+        /// 
+        /// </para>
+        /// </summary>
+        public GeneratorDetails GeneratorDetails
+        {
+            get { return this._generatorDetails; }
+            set { this._generatorDetails = value; }
+        }
+
+        // Check to see if GeneratorDetails property is set
+        internal bool IsSetGeneratorDetails()
+        {
+            return this._generatorDetails != null;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSendingEnabled operation.
-    /// Returns the email sending status of the Amazon SES account for the current region.
+    /// Returns the email sending status of the Amazon SES account for the current Region.
     /// 
     ///  
     /// <para>

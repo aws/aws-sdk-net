@@ -67,7 +67,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the template that you want to render.
+        /// The name of the template to render.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

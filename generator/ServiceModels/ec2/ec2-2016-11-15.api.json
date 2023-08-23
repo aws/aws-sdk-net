@@ -1394,7 +1394,8 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"DeleteKeyPairRequest"}
+      "input":{"shape":"DeleteKeyPairRequest"},
+      "output":{"shape":"DeleteKeyPairResult"}
     },
     "DeleteLaunchTemplate":{
       "name":"DeleteLaunchTemplate",
@@ -11031,7 +11032,8 @@
         "ClientToken":{
           "shape":"String",
           "idempotencyToken":true
-        }
+        },
+        "EnablePrimaryIpv6":{"shape":"Boolean"}
       }
     },
     "CreateNetworkInterfaceResult":{
@@ -12204,6 +12206,10 @@
         "TagSpecifications":{
           "shape":"TagSpecificationList",
           "locationName":"TagSpecification"
+        },
+        "SubnetConfigurations":{
+          "shape":"SubnetConfigurationsList",
+          "locationName":"SubnetConfiguration"
         }
       }
     },
@@ -12971,6 +12977,19 @@
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
+        }
+      }
+    },
+    "DeleteKeyPairResult":{
+      "type":"structure",
+      "members":{
+        "Return":{
+          "shape":"Boolean",
+          "locationName":"return"
+        },
+        "KeyPairId":{
+          "shape":"String",
+          "locationName":"keyPairId"
         }
       }
     },
@@ -23102,7 +23121,7 @@
           "locationName":"instanceId"
         },
         "PasswordData":{
-          "shape":"String",
+          "shape":"PasswordData",
           "locationName":"passwordData"
         },
         "Timestamp":{
@@ -25842,6 +25861,10 @@
         "Ipv6Address":{
           "shape":"String",
           "locationName":"ipv6Address"
+        },
+        "IsPrimaryIpv6":{
+          "shape":"Boolean",
+          "locationName":"isPrimaryIpv6"
         }
       }
     },
@@ -26221,7 +26244,8 @@
           "shape":"Ipv6PrefixList",
           "locationName":"Ipv6Prefix"
         },
-        "Ipv6PrefixCount":{"shape":"Integer"}
+        "Ipv6PrefixCount":{"shape":"Integer"},
+        "PrimaryIpv6":{"shape":"Boolean"}
       }
     },
     "InstanceNetworkInterfaceSpecificationList":{
@@ -27315,7 +27339,22 @@
         "c7gn.4xlarge",
         "c7gn.8xlarge",
         "c7gn.12xlarge",
-        "c7gn.16xlarge"
+        "c7gn.16xlarge",
+        "p5.48xlarge",
+        "m7i.large",
+        "m7i.xlarge",
+        "m7i.2xlarge",
+        "m7i.4xlarge",
+        "m7i.8xlarge",
+        "m7i.12xlarge",
+        "m7i.16xlarge",
+        "m7i.24xlarge",
+        "m7i.48xlarge",
+        "m7i-flex.large",
+        "m7i-flex.xlarge",
+        "m7i-flex.2xlarge",
+        "m7i-flex.4xlarge",
+        "m7i-flex.8xlarge"
       ]
     },
     "InstanceTypeHypervisor":{
@@ -29540,6 +29579,10 @@
         "Ipv6PrefixCount":{
           "shape":"Integer",
           "locationName":"ipv6PrefixCount"
+        },
+        "PrimaryIpv6":{
+          "shape":"Boolean",
+          "locationName":"primaryIpv6"
         }
       }
     },
@@ -29580,7 +29623,8 @@
           "shape":"Ipv6PrefixList",
           "locationName":"Ipv6Prefix"
         },
-        "Ipv6PrefixCount":{"shape":"Integer"}
+        "Ipv6PrefixCount":{"shape":"Integer"},
+        "PrimaryIpv6":{"shape":"Boolean"}
       }
     },
     "LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList":{
@@ -31447,7 +31491,8 @@
           "shape":"AttributeBooleanValue",
           "locationName":"sourceDestCheck"
         },
-        "EnaSrdSpecification":{"shape":"EnaSrdSpecification"}
+        "EnaSrdSpecification":{"shape":"EnaSrdSpecification"},
+        "EnablePrimaryIpv6":{"shape":"Boolean"}
       }
     },
     "ModifyPrivateDnsNameOptionsRequest":{
@@ -32103,7 +32148,11 @@
         },
         "IpAddressType":{"shape":"IpAddressType"},
         "DnsOptions":{"shape":"DnsOptionsSpecification"},
-        "PrivateDnsEnabled":{"shape":"Boolean"}
+        "PrivateDnsEnabled":{"shape":"Boolean"},
+        "SubnetConfigurations":{
+          "shape":"SubnetConfigurationsList",
+          "locationName":"SubnetConfiguration"
+        }
       }
     },
     "ModifyVpcEndpointResult":{
@@ -33408,6 +33457,10 @@
         "Ipv6Address":{
           "shape":"String",
           "locationName":"ipv6Address"
+        },
+        "IsPrimaryIpv6":{
+          "shape":"Boolean",
+          "locationName":"isPrimaryIpv6"
         }
       }
     },
@@ -33820,6 +33873,10 @@
         "weekly",
         "monthly"
       ]
+    },
+    "PasswordData":{
+      "type":"string",
+      "sensitive":true
     },
     "PathComponent":{
       "type":"structure",
@@ -37884,7 +37941,8 @@
         "EnclaveOptions":{"shape":"EnclaveOptionsRequest"},
         "PrivateDnsNameOptions":{"shape":"PrivateDnsNameOptionsRequest"},
         "MaintenanceOptions":{"shape":"InstanceMaintenanceOptionsRequest"},
-        "DisableApiStop":{"shape":"Boolean"}
+        "DisableApiStop":{"shape":"Boolean"},
+        "EnablePrimaryIpv6":{"shape":"Boolean"}
       }
     },
     "RunInstancesUserData":{
@@ -37948,10 +38006,18 @@
           "locationName":"uploadPolicy"
         },
         "UploadPolicySignature":{
-          "shape":"String",
+          "shape":"S3StorageUploadPolicySignature",
           "locationName":"uploadPolicySignature"
         }
       }
+    },
+    "S3StorageUploadPolicy":{
+      "type":"string",
+      "sensitive":true
+    },
+    "S3StorageUploadPolicySignature":{
+      "type":"string",
+      "sensitive":true
     },
     "SSEType":{
       "type":"string",
@@ -40340,6 +40406,21 @@
         "prefix",
         "explicit"
       ]
+    },
+    "SubnetConfiguration":{
+      "type":"structure",
+      "members":{
+        "SubnetId":{"shape":"SubnetId"},
+        "Ipv4":{"shape":"String"},
+        "Ipv6":{"shape":"String"}
+      }
+    },
+    "SubnetConfigurationsList":{
+      "type":"list",
+      "member":{
+        "shape":"SubnetConfiguration",
+        "locationName":"item"
+      }
     },
     "SubnetId":{"type":"string"},
     "SubnetIdStringList":{

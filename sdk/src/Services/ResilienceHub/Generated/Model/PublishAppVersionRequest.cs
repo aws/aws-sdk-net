@@ -35,11 +35,12 @@ namespace Amazon.ResilienceHub.Model
     public partial class PublishAppVersionRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -56,6 +57,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// Name of the application version.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

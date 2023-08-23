@@ -30,8 +30,8 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the PutFile operation.
-    /// Adds or updates a file in a branch in an AWS CodeCommit repository, and generates
-    /// a commit for the addition in the specified branch.
+    /// Adds or updates a file in a branch in an CodeCommit repository, and generates a commit
+    /// for the addition in the specified branch.
     /// </summary>
     public partial class PutFileRequest : AmazonCodeCommitRequest
     {

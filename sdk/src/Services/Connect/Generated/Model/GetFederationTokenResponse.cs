@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The identifier for the user.
+        /// The identifier for the user. This can be the ID or the ARN of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

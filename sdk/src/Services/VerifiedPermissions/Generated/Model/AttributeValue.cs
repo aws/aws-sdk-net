@@ -64,6 +64,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Example: <code>{"boolean": true}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Boolean
         {
             get { return this._boolean.GetValueOrDefault(); }
@@ -110,6 +111,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Example: <code>{"long": 0}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public long Long
         {
             get { return this._long.GetValueOrDefault(); }
@@ -179,6 +181,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Example: <code>{"string": "abc"}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string String
         {
             get { return this._string; }

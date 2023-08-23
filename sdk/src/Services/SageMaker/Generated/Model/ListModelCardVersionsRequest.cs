@@ -101,10 +101,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelCardName. 
         /// <para>
-        /// List model card versions for the model card with the specified name.
+        /// List model card versions for the model card with the specified name or Amazon Resource
+        /// Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ModelCardName
         {
             get { return this._modelCardName; }

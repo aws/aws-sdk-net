@@ -68,6 +68,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    context.Writer.WritePropertyName("availabilityZone");
+                    context.Writer.Write(publicRequest.AvailabilityZone);
+                }
+
                 if(publicRequest.IsSetHdDeviceSettings())
                 {
                     context.Writer.WritePropertyName("hdDeviceSettings");

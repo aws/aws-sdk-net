@@ -278,9 +278,9 @@ namespace Amazon.ECS.Model
         /// The default ephemeral port range for Docker version 1.6.0 and later is listed on the
         /// instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel
         /// parameter is unavailable, the default ephemeral port range from 49153 through 65535
-        /// is used. Do not attempt to specify a host port in the ephemeral port range as these
-        /// are reserved for automatic assignment. In general, ports below 32768 are outside of
-        /// the ephemeral port range.
+        /// (Linux) or 49152 through 65535 (Windows) is used. Do not attempt to specify a host
+        /// port in the ephemeral port range as these are reserved for automatic assignment. In
+        /// general, ports below 32768 are outside of the ephemeral port range.
         /// </para>
         ///  
         /// <para>

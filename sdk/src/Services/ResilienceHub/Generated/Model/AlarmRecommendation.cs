@@ -34,6 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class AlarmRecommendation
     {
         private string _appComponentName;
+        private List<string> _appComponentNames = new List<string>();
         private string _description;
         private List<RecommendationItem> _items = new List<RecommendationItem>();
         private string _name;
@@ -45,9 +46,11 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The Application Component for the CloudWatch alarm recommendation.
+        /// Application Component name for the CloudWatch alarm recommendation. This name is saved
+        /// as the first item in the <code>appComponentNames</code> list.
         /// </para>
         /// </summary>
+        [Obsolete("An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'.")]
         public string AppComponentName
         {
             get { return this._appComponentName; }
@@ -61,9 +64,27 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AppComponentNames. 
+        /// <para>
+        /// List of Application Component names for the CloudWatch alarm recommendation.
+        /// </para>
+        /// </summary>
+        public List<string> AppComponentNames
+        {
+            get { return this._appComponentNames; }
+            set { this._appComponentNames = value; }
+        }
+
+        // Check to see if AppComponentNames property is set
+        internal bool IsSetAppComponentNames()
+        {
+            return this._appComponentNames != null && this._appComponentNames.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the recommendation.
+        /// Description of the alarm recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -82,7 +103,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The list of CloudWatch alarm recommendations.
+        /// List of CloudWatch alarm recommendations.
         /// </para>
         /// </summary>
         public List<RecommendationItem> Items
@@ -100,7 +121,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the alarm recommendation.
+        /// Name of the alarm recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -138,7 +159,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        /// The identifier of the alarm recommendation.
+        /// Identifier of the alarm recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +178,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// The reference identifier of the alarm recommendation.
+        /// Reference identifier of the alarm recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -176,7 +197,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of alarm recommendation.
+        /// Type of alarm recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

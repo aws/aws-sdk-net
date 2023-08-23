@@ -77,6 +77,11 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetDatabases())
                 {
                     context.Writer.WritePropertyName("databases");
@@ -91,6 +96,17 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDeploymentConfiguration())
+                {
+                    context.Writer.WritePropertyName("deploymentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KxDeploymentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeploymentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

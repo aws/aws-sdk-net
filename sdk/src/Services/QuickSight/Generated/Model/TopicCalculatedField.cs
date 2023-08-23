@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         private string _expression;
         private bool? _isIncludedInTopic;
         private bool? _neverAggregateInFilter;
+        private bool? _nonAdditive;
         private List<string> _notAllowedAggregations = new List<string>();
         private SemanticType _semanticType;
         private TopicTimeGranularity _timeGranularity;
@@ -291,6 +292,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNeverAggregateInFilter()
         {
             return this._neverAggregateInFilter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NonAdditive. 
+        /// <para>
+        /// The non additive for the table style target.
+        /// </para>
+        /// </summary>
+        public bool NonAdditive
+        {
+            get { return this._nonAdditive.GetValueOrDefault(); }
+            set { this._nonAdditive = value; }
+        }
+
+        // Check to see if NonAdditive property is set
+        internal bool IsSetNonAdditive()
+        {
+            return this._nonAdditive.HasValue; 
         }
 
         /// <summary>

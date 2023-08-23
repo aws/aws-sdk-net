@@ -72,6 +72,25 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
     /// Your Own Domain for the Hosted UI</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class UpdateUserPoolDomainRequest : AmazonCognitoIdentityProviderRequest
     {

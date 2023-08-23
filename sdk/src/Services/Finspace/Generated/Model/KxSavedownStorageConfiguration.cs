@@ -41,7 +41,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size of temporary storage in bytes.
+        /// The size of temporary storage in gibibytes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=16000)]

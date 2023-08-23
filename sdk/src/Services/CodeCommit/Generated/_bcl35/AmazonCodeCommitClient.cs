@@ -35,14 +35,14 @@ namespace Amazon.CodeCommit
     /// <summary>
     /// Implementation for accessing CodeCommit
     ///
-    /// AWS CodeCommit 
+    /// CodeCommit 
     /// <para>
-    /// This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions
-    /// of the operations and data types for AWS CodeCommit API along with usage examples.
+    /// This is the <i>CodeCommit API Reference</i>. This reference provides descriptions
+    /// of the operations and data types for CodeCommit API along with usage examples.
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodeCommit API to work with the following objects:
+    /// You can use the CodeCommit API to work with the following objects:
     /// </para>
     ///  
     /// <para>
@@ -51,15 +51,15 @@ namespace Amazon.CodeCommit
     ///  <ul> <li> 
     /// <para>
     ///  <a>BatchGetRepositories</a>, which returns information about one or more repositories
-    /// associated with your AWS account.
+    /// associated with your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
+    ///  <a>CreateRepository</a>, which creates an CodeCommit repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
+    ///  <a>DeleteRepository</a>, which deletes an CodeCommit repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with
-    /// your AWS account.
+    ///  <a>ListRepositories</a>, which lists all CodeCommit repositories associated with
+    /// your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -127,6 +127,11 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListFileCommitHistory</a>, which retrieves a list of commits and changes to a
+    /// specified file. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -273,7 +278,7 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of
+    ///  <a>MergePullRequestByThreeWay</a>, which merges the source destination branch of
     /// a pull request into the specified destination branch for that pull request using the
     /// three-way merge option.
     /// </para>
@@ -316,7 +321,7 @@ namespace Amazon.CodeCommit
     ///  <ul> <li> 
     /// <para>
     ///  <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with
-    /// a specified repository. After the template is associated with a repository, AWS CodeCommit
+    /// a specified repository. After the template is associated with a repository, CodeCommit
     /// creates approval rules that match the template conditions on every pull request created
     /// in the specified repository.
     /// </para>
@@ -324,8 +329,8 @@ namespace Amazon.CodeCommit
     /// <para>
     ///  <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template
     /// with one or more specified repositories. After the template is associated with a repository,
-    /// AWS CodeCommit creates approval rules that match the template conditions on every
-    /// pull request created in the specified repositories.
+    /// CodeCommit creates approval rules that match the template conditions on every pull
+    /// request created in the specified repositories.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -336,7 +341,7 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that
-    /// can then be associated with one or more repositories in your AWS account.
+    /// can then be associated with one or more repositories in your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -357,7 +362,7 @@ namespace Amazon.CodeCommit
     ///  </li> <li> 
     /// <para>
     ///  <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the
-    /// AWS Region in your AWS account.
+    /// Amazon Web Services Region in your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -425,20 +430,20 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+    /// Tags used to tag resources in CodeCommit (not Git tags), by calling the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListTagsForResource</a>, which gets information about AWS tags for a specified
-    /// Amazon Resource Name (ARN) in AWS CodeCommit.
+    ///  <a>ListTagsForResource</a>, which gets information about Amazon Web Servicestags
+    /// for a specified Amazon Resource Name (ARN) in CodeCommit.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+    ///  <a>TagResource</a>, which adds or updates tags for a resource in CodeCommit.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+    ///  <a>UntagResource</a>, which removes tags for a resource in CodeCommit.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -461,8 +466,8 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about how to use AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-    /// CodeCommit User Guide</a>.
+    /// For information about how to use CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit
+    /// User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCodeCommitClient : AmazonServiceClient, IAmazonCodeCommit
@@ -707,8 +712,8 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the AssociateApprovalRuleTemplateWithRepository service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -730,9 +735,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// A specified repository name is not valid.
@@ -812,8 +817,8 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the BatchAssociateApprovalRuleTemplateWithRepositories service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -835,9 +840,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
         /// The maximum number of allowed repository names was exceeded. Currently, this number
@@ -1034,8 +1039,8 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the BatchDisassociateApprovalRuleTemplateFromRepositories service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -1057,9 +1062,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
         /// The maximum number of allowed repository names was exceeded. Currently, this number
@@ -1308,10 +1313,10 @@ namespace Amazon.CodeCommit
 
         /// <summary>
         /// Creates a template for approval rules that can then be associated with one or more
-        /// repositories in your AWS account. When you associate a template with a repository,
-        /// AWS CodeCommit creates an approval rule that matches the conditions of the template
-        /// for all pull requests that meet the conditions of the template. For more information,
-        /// see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+        /// repositories in your Amazon Web Services account. When you associate a template with
+        /// a repository, CodeCommit creates an approval rule that matches the conditions of the
+        /// template for all pull requests that meet the conditions of the template. For more
+        /// information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApprovalRuleTemplate service method.</param>
         /// 
@@ -1322,8 +1327,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameAlreadyExistsException">
         /// You cannot create an approval rule template with that name because a template with
-        /// that name already exists in this AWS Region for your AWS account. Approval rule template
-        /// names must be unique.
+        /// that name already exists in this Amazon Web Services Region for your Amazon Web Services
+        /// account. Approval rule template names must be unique.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -1334,17 +1339,18 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateDescriptionException">
         /// The description for the approval rule template is not valid because it exceeds the
         /// maximum characters allowed for a description. For more information about limits in
-        /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NumberOfRuleTemplatesExceededException">
-        /// The maximum number of approval rule templates has been exceeded for this AWS Region.
+        /// The maximum number of approval rule templates has been exceeded for this Amazon Web
+        /// Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate">REST API Reference for CreateApprovalRuleTemplate Operation</seealso>
         public virtual CreateApprovalRuleTemplateResponse CreateApprovalRuleTemplate(CreateApprovalRuleTemplateRequest request)
@@ -1757,8 +1763,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidReferenceNameException">
         /// The specified reference name format is not valid. Reference names must conform to
-        /// the Git references format (for example, refs/heads/master). For more information,
-        /// see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals
+        /// the Git references format (for example, refs/heads/main). For more information, see
+        /// <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals
         /// - Git References</a> or consult your Git documentation.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
@@ -2030,7 +2036,7 @@ namespace Amazon.CodeCommit
         /// The tag policy is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TooManyTagsException">
-        /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+        /// The maximum number of tags for an CodeCommit resource has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
@@ -2297,9 +2303,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate">REST API Reference for DeleteApprovalRuleTemplate Operation</seealso>
         public virtual DeleteApprovalRuleTemplateResponse DeleteApprovalRuleTemplate(DeleteApprovalRuleTemplateRequest request)
@@ -2988,7 +2994,8 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the DescribePullRequestEvents service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ActorDoesNotExistException">
-        /// The specified Amazon Resource Name (ARN) does not exist in the AWS account.
+        /// The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -3089,8 +3096,8 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the DisassociateApprovalRuleTemplateFromRepository service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -3112,9 +3119,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// A specified repository name is not valid.
@@ -3280,17 +3287,17 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the GetApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate">REST API Reference for GetApprovalRuleTemplate Operation</seealso>
         public virtual GetApprovalRuleTemplateResponse GetApprovalRuleTemplate(GetApprovalRuleTemplateRequest request)
@@ -3368,9 +3375,9 @@ namespace Amazon.CodeCommit
         /// The encryption key is not available.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
-        /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
-        /// about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// The specified file exceeds the file size limit for CodeCommit. For more information
+        /// about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBlobIdException">
         /// The specified blob is not valid.
@@ -4176,9 +4183,9 @@ namespace Amazon.CodeCommit
         /// full path, and extension.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
-        /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
-        /// about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// The specified file exceeds the file size limit for CodeCommit. For more information
+        /// about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
         /// The specified commit is not valid.
@@ -5149,8 +5156,9 @@ namespace Amazon.CodeCommit
         #region  ListApprovalRuleTemplates
 
         /// <summary>
-        /// Lists all approval rule templates in the specified AWS Region in your AWS account.
-        /// If an AWS Region is not specified, the AWS Region where you are signed in is used.
+        /// Lists all approval rule templates in the specified Amazon Web Services Region in your
+        /// Amazon Web Services account. If an Amazon Web Services Region is not specified, the
+        /// Amazon Web Services Region where you are signed in is used.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApprovalRuleTemplates service method.</param>
         /// 
@@ -5388,6 +5396,113 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  ListFileCommitHistory
+
+        /// <summary>
+        /// Retrieves a list of commits and changes to a specified file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileCommitHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListFileCommitHistory service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitRequiredException">
+        /// A commit was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
+        /// The divergence between the tips of the provided commit specifiers is too great to
+        /// determine whether there might be any merge conflicts. Locally compare the specifiers
+        /// using <code>git diff</code> or a diff tool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory">REST API Reference for ListFileCommitHistory Operation</seealso>
+        public virtual ListFileCommitHistoryResponse ListFileCommitHistory(ListFileCommitHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFileCommitHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFileCommitHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListFileCommitHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileCommitHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileCommitHistory operation on AmazonCodeCommitClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFileCommitHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory">REST API Reference for ListFileCommitHistory Operation</seealso>
+        public virtual IAsyncResult BeginListFileCommitHistory(ListFileCommitHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFileCommitHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFileCommitHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFileCommitHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFileCommitHistory.</param>
+        /// 
+        /// <returns>Returns a  ListFileCommitHistoryResult from CodeCommit.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory">REST API Reference for ListFileCommitHistory Operation</seealso>
+        public virtual ListFileCommitHistoryResponse EndListFileCommitHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFileCommitHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPullRequests
 
         /// <summary>
@@ -5398,7 +5513,8 @@ namespace Amazon.CodeCommit
         /// 
         /// <returns>The response from the ListPullRequests service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.AuthorDoesNotExistException">
-        /// The specified Amazon Resource Name (ARN) does not exist in the AWS account.
+        /// The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
         /// An encryption integrity check failed.
@@ -5565,8 +5681,8 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the ListRepositoriesForApprovalRuleTemplate service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -5588,9 +5704,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
         /// The specified continuation token is not valid.
@@ -5647,9 +5763,9 @@ namespace Amazon.CodeCommit
         #region  ListTagsForResource
 
         /// <summary>
-        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
-        /// CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
+        /// Gets information about Amazon Web Servicestags for a specified Amazon Resource Name
+        /// (ARN) in CodeCommit. For a list of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the<i> CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -5667,16 +5783,16 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidResourceArnException">
         /// The value for the resource ARN is not valid. For more information about resources
-        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the CodeCommit User Guide.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ResourceArnRequiredException">
-        /// A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For
-        /// a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list
+        /// of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the CodeCommit User Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -6903,7 +7019,7 @@ namespace Amazon.CodeCommit
         /// be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentSizeLimitExceededException">
-        /// The comment is too large. Comments are limited to 1,000 characters.
+        /// The comment is too large. Comments are limited to 10,240 characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -7045,7 +7161,7 @@ namespace Amazon.CodeCommit
         /// be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentSizeLimitExceededException">
-        /// The comment is too large. Comments are limited to 1,000 characters.
+        /// The comment is too large. Comments are limited to 10,240 characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
         /// The specified commit does not exist or no commit was specified, and the specified
@@ -7199,7 +7315,7 @@ namespace Amazon.CodeCommit
         /// be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentSizeLimitExceededException">
-        /// The comment is too large. Comments are limited to 1,000 characters.
+        /// The comment is too large. Comments are limited to 10,240 characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDoesNotExistException">
         /// No comment exists with the provided ID. Verify that you have used the correct ID,
@@ -7290,8 +7406,8 @@ namespace Amazon.CodeCommit
         /// comment ID.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidReactionValueException">
-        /// The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit
+        /// User Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ReactionLimitExceededException">
         /// The number of reactions has been exceeded. Reactions are limited to one reaction per
@@ -7349,8 +7465,8 @@ namespace Amazon.CodeCommit
         #region  PutFile
 
         /// <summary>
-        /// Adds or updates a file in a branch in an AWS CodeCommit repository, and generates
-        /// a commit for the addition in the specified branch.
+        /// Adds or updates a file in a branch in an CodeCommit repository, and generates a commit
+        /// for the addition in the specified branch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFile service method.</param>
         /// 
@@ -7573,8 +7689,9 @@ namespace Amazon.CodeCommit
         /// The name of the trigger is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
-        /// The AWS Region for the trigger target does not match the AWS Region for the repository.
-        /// Triggers must be created in the same Region as the target for the trigger.
+        /// The Amazon Web Services Region for the trigger target does not match the Amazon Web
+        /// Services Region for the repository. Triggers must be created in the same Amazon Web
+        /// Services Region as the target for the trigger.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
         /// The number of branches for the trigger was exceeded.
@@ -7653,9 +7770,9 @@ namespace Amazon.CodeCommit
         #region  TagResource
 
         /// <summary>
-        /// Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources
-        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// Adds or updates tags for a resource in CodeCommit. For a list of valid resources in
+        /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -7673,8 +7790,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidResourceArnException">
         /// The value for the resource ARN is not valid. For more information about resources
-        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the CodeCommit User Guide.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidSystemTagUsageException">
         /// The specified tag is not valid. Key names cannot be prefixed with aws:.
@@ -7686,9 +7803,9 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ResourceArnRequiredException">
-        /// A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For
-        /// a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list
+        /// of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the CodeCommit User Guide.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TagPolicyException">
         /// The tag policy is not valid.
@@ -7697,7 +7814,7 @@ namespace Amazon.CodeCommit
         /// A map of tags is required.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TooManyTagsException">
-        /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+        /// The maximum number of tags for an CodeCommit resource has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -7800,8 +7917,9 @@ namespace Amazon.CodeCommit
         /// The name of the trigger is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
-        /// The AWS Region for the trigger target does not match the AWS Region for the repository.
-        /// Triggers must be created in the same Region as the target for the trigger.
+        /// The Amazon Web Services Region for the trigger target does not match the Amazon Web
+        /// Services Region for the repository. Triggers must be created in the same Amazon Web
+        /// Services Region as the target for the trigger.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
         /// The number of branches for the trigger was exceeded.
@@ -7880,9 +7998,9 @@ namespace Amazon.CodeCommit
         #region  UntagResource
 
         /// <summary>
-        /// Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS
-        /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// Removes tags for a resource in CodeCommit. For a list of valid resources in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -7900,8 +8018,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidResourceArnException">
         /// The value for the resource ARN is not valid. For more information about resources
-        /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the CodeCommit User Guide.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidSystemTagUsageException">
         /// The specified tag is not valid. Key names cannot be prefixed with aws:.
@@ -7913,9 +8031,9 @@ namespace Amazon.CodeCommit
         /// The specified repository does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ResourceArnRequiredException">
-        /// A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For
-        /// a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-        /// Resources and Operations</a> in the AWS CodeCommit User Guide.
+        /// A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list
+        /// of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+        /// Resources and Operations</a> in the CodeCommit User Guide.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TagKeysListRequiredException">
         /// A list of tag keys is required. The list cannot be empty or null.
@@ -7924,7 +8042,7 @@ namespace Amazon.CodeCommit
         /// The tag policy is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.TooManyTagsException">
-        /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+        /// The maximum number of tags for an CodeCommit resource has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -7987,8 +8105,8 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -7998,9 +8116,9 @@ namespace Amazon.CodeCommit
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRuleContentSha256Exception">
         /// The SHA-256 hash signature for the rule content is not valid.
@@ -8061,8 +8179,8 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the UpdateApprovalRuleTemplateDescription service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
@@ -8070,14 +8188,14 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateDescriptionException">
         /// The description for the approval rule template is not valid because it exceeds the
         /// maximum characters allowed for a description. For more information about limits in
-        /// AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription">REST API Reference for UpdateApprovalRuleTemplateDescription Operation</seealso>
         public virtual UpdateApprovalRuleTemplateDescriptionResponse UpdateApprovalRuleTemplateDescription(UpdateApprovalRuleTemplateDescriptionRequest request)
@@ -8135,22 +8253,22 @@ namespace Amazon.CodeCommit
         /// <returns>The response from the UpdateApprovalRuleTemplateName service method, as returned by CodeCommit.</returns>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateDoesNotExistException">
         /// The specified approval rule template does not exist. Verify that the name is correct
-        /// and that you are signed in to the AWS Region where the template was created, and then
-        /// try again.
+        /// and that you are signed in to the Amazon Web Services Region where the template was
+        /// created, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameAlreadyExistsException">
         /// You cannot create an approval rule template with that name because a template with
-        /// that name already exists in this AWS Region for your AWS account. Approval rule template
-        /// names must be unique.
+        /// that name already exists in this Amazon Web Services Region for your Amazon Web Services
+        /// account. Approval rule template names must be unique.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ApprovalRuleTemplateNameRequiredException">
         /// An approval rule template name is required, but was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidApprovalRuleTemplateNameException">
         /// The name of the approval rule template is not valid. Template names must be between
-        /// 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-        /// CodeCommit User Guide</a>.
+        /// 1 and 100 valid characters in length. For more information about limits in CodeCommit,
+        /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName">REST API Reference for UpdateApprovalRuleTemplateName Operation</seealso>
         public virtual UpdateApprovalRuleTemplateNameResponse UpdateApprovalRuleTemplateName(UpdateApprovalRuleTemplateNameRequest request)
@@ -8211,7 +8329,7 @@ namespace Amazon.CodeCommit
         /// be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentContentSizeLimitExceededException">
-        /// The comment is too large. Comments are limited to 1,000 characters.
+        /// The comment is too large. Comments are limited to 10,240 characters.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.CommentDeletedException">
         /// This comment has already been deleted. You cannot edit or delete a deleted comment.
@@ -8937,11 +9055,11 @@ namespace Amazon.CodeCommit
         #region  UpdateRepositoryName
 
         /// <summary>
-        /// Renames a repository. The repository name must be unique across the calling AWS account.
-        /// Repository names are limited to 100 alphanumeric, dash, and underscore characters,
-        /// and cannot include certain characters. The suffix .git is prohibited. For more information
-        /// about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-        /// in the AWS CodeCommit User Guide.
+        /// Renames a repository. The repository name must be unique across the calling Amazon
+        /// Web Services account. Repository names are limited to 100 alphanumeric, dash, and
+        /// underscore characters, and cannot include certain characters. The suffix .git is prohibited.
+        /// For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the CodeCommit User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryName service method.</param>
         /// 
@@ -9012,5 +9130,28 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonCodeCommitEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

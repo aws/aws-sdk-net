@@ -387,7 +387,7 @@ namespace AWSSDK.UnitTests
 
             Console.WriteLine(url);
             
-            Assert.IsTrue(url.Contains($"X-Amz-Credential=ACCESS_KEY_ID/{aws4Request}&"), "aws4Request Credential did not match");
+            Assert.IsTrue(url.Contains($"X-Amz-Credential={AWSSDKUtils.UrlEncode("ACCESS_KEY_ID/" + aws4Request, false)}&"), "aws4Request Credential did not match");
             Assert.IsTrue(url.Contains($"&X-Amz-Signature={signature}"), "signature did not match");
         }
 

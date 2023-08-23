@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.
+    /// The content of the email, composed of a subject line and either an HTML part or a
+    /// text-only part.
     /// </summary>
     public partial class Template
     {
@@ -78,8 +78,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the template. You will refer to this name when you send email using the
-        /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+        /// The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code>
+        /// or <code>SendBulkTemplatedEmail</code> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,8 +98,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property TextPart. 
         /// <para>
-        /// The email body that will be visible to recipients whose email clients do not display
-        /// HTML.
+        /// The email body that is visible to recipients whose email clients do not display HTML
+        /// content.
         /// </para>
         /// </summary>
         public string TextPart

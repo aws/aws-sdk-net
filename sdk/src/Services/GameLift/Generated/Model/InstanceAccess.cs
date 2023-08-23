@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Information required to remotely connect to a fleet instance.
+    /// Information and credentials that you can use to remotely connect to an instance in
+    /// an EC2 managed fleet. This data type is returned in response to a call to <a>GetInstanceAccess</a>.
     /// </summary>
     public partial class InstanceAccess
     {
@@ -42,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// Credentials required to access the instance.
+        /// Security credentials that are required to access the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -61,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet containing the instance being accessed.
+        /// A unique identifier for the fleet containing the instance to be accessed.
         /// </para>
         /// </summary>
         public string FleetId
@@ -79,7 +80,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// A unique identifier for the instance being accessed.
+        /// A unique identifier for the instance to be accessed.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -97,7 +98,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address that is assigned to the instance.
+        /// IP address assigned to the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

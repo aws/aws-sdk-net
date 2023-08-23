@@ -30,8 +30,8 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// The specified approval rule template does not exist. Verify that the name is correct
-    /// and that you are signed in to the AWS Region where the template was created, and then
-    /// try again.
+    /// and that you are signed in to the Amazon Web Services Region where the template was
+    /// created, and then try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

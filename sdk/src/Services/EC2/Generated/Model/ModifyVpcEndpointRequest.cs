@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private List<string> _removeSecurityGroupIds = new List<string>();
         private List<string> _removeSubnetIds = new List<string>();
         private bool? _resetPolicy;
+        private List<SubnetConfiguration> _subnetConfigurations = new List<SubnetConfiguration>();
         private string _vpcEndpointId;
 
         /// <summary>
@@ -71,8 +72,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) The IDs of the security groups to associate with the network
-        /// interface.
+        /// (Interface endpoint) The IDs of the security groups to associate with the endpoint
+        /// network interfaces.
         /// </para>
         /// </summary>
         public List<string> AddSecurityGroupIds
@@ -202,8 +203,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveSecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) The IDs of the security groups to disassociate from the network
-        /// interface.
+        /// (Interface endpoint) The IDs of the security groups to disassociate from the endpoint
+        /// network interfaces.
         /// </para>
         /// </summary>
         public List<string> RemoveSecurityGroupIds
@@ -253,6 +254,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetResetPolicy()
         {
             return this._resetPolicy.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetConfigurations. 
+        /// <para>
+        /// The subnet configurations for the endpoint.
+        /// </para>
+        /// </summary>
+        public List<SubnetConfiguration> SubnetConfigurations
+        {
+            get { return this._subnetConfigurations; }
+            set { this._subnetConfigurations = value; }
+        }
+
+        // Check to see if SubnetConfigurations property is set
+        internal bool IsSetSubnetConfigurations()
+        {
+            return this._subnetConfigurations != null && this._subnetConfigurations.Count > 0; 
         }
 
         /// <summary>

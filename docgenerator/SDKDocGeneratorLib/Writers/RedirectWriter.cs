@@ -92,7 +92,7 @@ namespace SDKDocGenerator
 
         public static void AddRule(string serviceId, string shape, string docPath)
         {
-            string requestedPath = string.Format("^/goto/{0}/{1}/{2}", ToolId, serviceId, shape);
+            string requestedPath = string.Format("^/goto/{0}/{1}/{2}$", ToolId, serviceId, shape);
 
             ISet<RewriteRule> set;
             if (!_rulesForServices.TryGetValue(serviceId, out set))

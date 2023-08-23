@@ -39,6 +39,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <code>http-header</code> and <code>query-string</code>. Note that the value for a
     /// condition cannot be empty.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+    /// for your Application Load Balancers</a>.
+    /// </para>
     /// </summary>
     public partial class RuleCondition
     {

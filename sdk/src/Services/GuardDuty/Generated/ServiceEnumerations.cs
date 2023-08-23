@@ -1511,6 +1511,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant ALL for OrgFeatureStatus
+        /// </summary>
+        public static readonly OrgFeatureStatus ALL = new OrgFeatureStatus("ALL");
+        /// <summary>
         /// Constant NEW for OrgFeatureStatus
         /// </summary>
         public static readonly OrgFeatureStatus NEW = new OrgFeatureStatus("NEW");

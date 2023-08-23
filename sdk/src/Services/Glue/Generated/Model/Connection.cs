@@ -225,6 +225,11 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>KAFKA_SASL_SCRAM_SECRETS_ARN</code> - The Amazon Resource Name of a secret
+        /// in Amazon Web Services Secrets Manager.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3 location of a Kerberos <code>keytab</code>
         /// file. A keytab stores long-term keys for one or more principals. For more information,
         /// see <a href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT

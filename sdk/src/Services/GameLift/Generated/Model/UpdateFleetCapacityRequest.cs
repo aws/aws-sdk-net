@@ -99,7 +99,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property DesiredInstances. 
         /// <para>
         /// The number of Amazon EC2 instances you want to maintain in the specified fleet location.
-        /// This value must fall between the minimum and maximum size limits.
+        /// This value must fall between the minimum and maximum size limits. Changes in desired
+        /// instance value can take up to 1 minute to be reflected when viewing the fleet's capacity
+        /// settings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

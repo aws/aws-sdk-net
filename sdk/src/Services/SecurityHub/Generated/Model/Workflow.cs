@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides information about the status of the investigation into a finding.
+    /// Provides details about the status of the investigation into a finding.
     /// </summary>
     public partial class Workflow
     {

@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+    /// For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -89,7 +89,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property LambdaAction. 
         /// <para>
-        /// Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.
+        /// Calls an Amazon Web Services Lambda function, and optionally, publishes a notification
+        /// to Amazon SNS.
         /// </para>
         /// </summary>
         public LambdaAction LambdaAction

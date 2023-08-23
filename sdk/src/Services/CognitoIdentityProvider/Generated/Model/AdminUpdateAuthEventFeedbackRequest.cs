@@ -33,6 +33,26 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Provides feedback for an authentication event indicating if it was from a valid user.
     /// This feedback is used for improving the risk evaluation decision for the user pool
     /// as part of Amazon Cognito advanced security.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class AdminUpdateAuthEventFeedbackRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -63,7 +83,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FeedbackValue. 
         /// <para>
-        /// The authentication event feedback value.
+        /// The authentication event feedback value. When you provide a <code>FeedbackValue</code>
+        /// value of <code>valid</code>, you tell Amazon Cognito that you trust a user session
+        /// where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code>
+        /// value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+        /// session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

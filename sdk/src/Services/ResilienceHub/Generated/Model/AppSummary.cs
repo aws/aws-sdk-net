@@ -38,6 +38,7 @@ namespace Amazon.ResilienceHub.Model
         private AppComplianceStatusType _complianceStatus;
         private DateTime? _creationTime;
         private string _description;
+        private AppDriftStatusType _driftStatus;
         private string _name;
         private double? _resiliencyScore;
         private AppStatusType _status;
@@ -45,7 +46,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -139,6 +140,25 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriftStatus. 
+        /// <para>
+        /// Indicates if compliance drifts (deviations) were detected while running an assessment
+        /// for your application.
+        /// </para>
+        /// </summary>
+        public AppDriftStatusType DriftStatus
+        {
+            get { return this._driftStatus; }
+            set { this._driftStatus = value; }
+        }
+
+        // Check to see if DriftStatus property is set
+        internal bool IsSetDriftStatus()
+        {
+            return this._driftStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the application.
@@ -178,7 +198,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the application.
+        /// Status of the application.
         /// </para>
         /// </summary>
         public AppStatusType Status

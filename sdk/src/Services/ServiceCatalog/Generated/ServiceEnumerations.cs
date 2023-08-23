@@ -713,6 +713,10 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         public static readonly ProductType MARKETPLACE = new ProductType("MARKETPLACE");
         /// <summary>
+        /// Constant TERRAFORM_CLOUD for ProductType
+        /// </summary>
+        public static readonly ProductType TERRAFORM_CLOUD = new ProductType("TERRAFORM_CLOUD");
+        /// <summary>
         /// Constant TERRAFORM_OPEN_SOURCE for ProductType
         /// </summary>
         public static readonly ProductType TERRAFORM_OPEN_SOURCE = new ProductType("TERRAFORM_OPEN_SOURCE");
@@ -1248,6 +1252,10 @@ namespace Amazon.ServiceCatalog
         /// Constant MARKETPLACE_CAR for ProvisioningArtifactType
         /// </summary>
         public static readonly ProvisioningArtifactType MARKETPLACE_CAR = new ProvisioningArtifactType("MARKETPLACE_CAR");
+        /// <summary>
+        /// Constant TERRAFORM_CLOUD for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType TERRAFORM_CLOUD = new ProvisioningArtifactType("TERRAFORM_CLOUD");
         /// <summary>
         /// Constant TERRAFORM_OPEN_SOURCE for ProvisioningArtifactType
         /// </summary>

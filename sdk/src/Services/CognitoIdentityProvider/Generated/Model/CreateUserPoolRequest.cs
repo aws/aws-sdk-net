@@ -30,9 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserPool operation.
-    /// Creates a new Amazon Cognito user pool and sets the password policy for the pool.
-    /// 
-    ///  <note> 
+    /// <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
     /// carriers require you to register an origination phone number before you can send SMS
@@ -49,11 +47,38 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
-    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// Creates a new Amazon Cognito user pool and sets the password policy for the pool.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+    /// value.
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateUserPoolRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -483,10 +508,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UsernameConfiguration. 
         /// <para>
-        /// Case sensitivity on the username input for the selected sign-in option. For example,
-        /// when case sensitivity is set to <code>False</code>, users can sign in using either
-        /// "username" or "Username". This configuration is immutable once it has been set. For
-        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
+        /// Case sensitivity on the username input for the selected sign-in option. When case
+        /// sensitivity is set to <code>False</code> (case insensitive), users can sign in with
+        /// any combination of capital and lowercase letters. For example, <code>username</code>,
+        /// <code>USERNAME</code>, or <code>UserName</code>, or for email, <code>email@example.com</code>
+        /// or <code>EMaiL@eXamplE.Com</code>. For most use cases, set case sensitivity to <code>False</code>
+        /// (case insensitive) as a best practice. When usernames and email addresses are case
+        /// insensitive, Amazon Cognito treats any variation in case as the same user, and prevents
+        /// a case variation from being assigned to the same attribute for a different user.
+        /// </para>
+        ///  
+        /// <para>
+        /// This configuration is immutable after you set it. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
         /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration
@@ -504,8 +537,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
-        /// Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code>
-        /// to the value "AUDIT".
+        /// User pool add-ons. Contains settings for activation of advanced security features.
+        /// To log user security information but take no action, set to <code>AUDIT</code>. To
+        /// configure automatic security responses to risky traffic to your user pool, set to
+        /// <code>ENFORCED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
+        /// advanced security to a user pool</a>.
         /// </para>
         /// </summary>
         public UserPoolAddOnsType UserPoolAddOns

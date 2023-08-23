@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Latency. 
         /// <para>
-        /// The execution latency of the test invoke request.
+        /// The execution latency, in ms, of the test invoke request.
         /// </para>
         /// </summary>
         public long Latency

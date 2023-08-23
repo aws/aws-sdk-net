@@ -1396,6 +1396,30 @@ namespace Amazon.SecretsManager
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// The parameter name or value is invalid.
         /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         ListSecretsResponse ListSecrets(ListSecretsRequest request);
 
@@ -1454,6 +1478,30 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// The parameter name or value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// A parameter value is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The secret is scheduled for deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         Task<ListSecretsResponse> ListSecretsAsync(ListSecretsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3555,6 +3603,17 @@ namespace Amazon.SecretsManager
         Task<ValidateResourcePolicyResponse> ValidateResourcePolicyAsync(ValidateResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

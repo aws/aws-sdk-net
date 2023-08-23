@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift compute resource and uniquely identifies it.
+        /// that is assigned to an Amazon GameLift compute resource and uniquely identifies it.
         /// ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// </para>
         /// </summary>
@@ -63,7 +63,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// The name of the compute resource you requested credentials for.
+        /// The identifier of the compute resource to be accessed. This value might be either
+        /// a compute name or an instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -82,7 +83,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// The access credentials for the compute resource.
+        /// A set of temporary Amazon Web Services credentials for use when connecting to the
+        /// compute resource with Amazon EC2 Systems Manager (SSM).
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -121,7 +123,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// The fleet ID of compute resource.
+        /// The ID of the fleet that contains the compute resource to be accessed.
         /// </para>
         /// </summary>
         public string FleetId

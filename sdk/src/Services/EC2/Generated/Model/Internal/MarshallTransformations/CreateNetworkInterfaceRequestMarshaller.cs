@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetEnablePrimaryIpv6())
+                {
+                    request.Parameters.Add("EnablePrimaryIpv6", StringUtils.FromBool(publicRequest.EnablePrimaryIpv6));
+                }
                 if(publicRequest.IsSetGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -111,6 +115,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetIpv6Address())
                         {
                             request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
+                        }
+                        if(publicRequestlistValue.IsSetIsPrimaryIpv6())
+                        {
+                            request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
                         }
                         publicRequestlistValueIndex++;
                     }

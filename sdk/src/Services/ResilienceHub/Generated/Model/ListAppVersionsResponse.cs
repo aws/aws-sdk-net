@@ -58,7 +58,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// Token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken

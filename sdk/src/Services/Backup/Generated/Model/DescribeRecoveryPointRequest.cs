@@ -35,8 +35,27 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class DescribeRecoveryPointRequest : AmazonBackupRequest
     {
+        private string _backupVaultAccountId;
         private string _backupVaultName;
         private string _recoveryPointArn;
+
+        /// <summary>
+        /// Gets and sets the property BackupVaultAccountId. 
+        /// <para>
+        /// This is the account ID of the specified backup vault.
+        /// </para>
+        /// </summary>
+        public string BackupVaultAccountId
+        {
+            get { return this._backupVaultAccountId; }
+            set { this._backupVaultAccountId = value; }
+        }
+
+        // Check to see if BackupVaultAccountId property is set
+        internal bool IsSetBackupVaultAccountId()
+        {
+            return this._backupVaultAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupVaultName. 

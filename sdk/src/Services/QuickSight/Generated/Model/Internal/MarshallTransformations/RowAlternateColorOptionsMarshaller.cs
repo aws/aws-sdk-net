@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Status);
             }
 
+            if(requestObject.IsSetUsePrimaryBackgroundColor())
+            {
+                context.Writer.WritePropertyName("UsePrimaryBackgroundColor");
+                context.Writer.Write(requestObject.UsePrimaryBackgroundColor);
+            }
+
         }
 
         /// <summary>

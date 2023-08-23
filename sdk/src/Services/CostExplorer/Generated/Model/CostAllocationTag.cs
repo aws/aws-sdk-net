@@ -34,9 +34,49 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class CostAllocationTag
     {
+        private string _lastUpdatedDate;
+        private string _lastUsedDate;
         private CostAllocationTagStatus _status;
         private string _tagKey;
         private CostAllocationTagType _type;
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedDate. 
+        /// <para>
+        /// The last date that the tag was either activated or deactivated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=25)]
+        public string LastUpdatedDate
+        {
+            get { return this._lastUpdatedDate; }
+            set { this._lastUpdatedDate = value; }
+        }
+
+        // Check to see if LastUpdatedDate property is set
+        internal bool IsSetLastUpdatedDate()
+        {
+            return this._lastUpdatedDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUsedDate. 
+        /// <para>
+        /// The last month that the tag was used on an Amazon Web Services resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=25)]
+        public string LastUsedDate
+        {
+            get { return this._lastUsedDate; }
+            set { this._lastUsedDate = value; }
+        }
+
+        // Check to see if LastUsedDate property is set
+        internal bool IsSetLastUsedDate()
+        {
+            return this._lastUsedDate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

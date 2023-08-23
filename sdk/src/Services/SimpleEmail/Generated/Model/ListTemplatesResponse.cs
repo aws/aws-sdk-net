@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// A token indicating that there are additional email templates available to be listed.
         /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the
-        /// next 50 email templates.
+        /// next set of email templates within your page size.
         /// </para>
         /// </summary>
         public string NextToken

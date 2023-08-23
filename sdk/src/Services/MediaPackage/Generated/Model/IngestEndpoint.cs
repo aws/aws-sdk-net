@@ -56,6 +56,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property Password. The system generated password for ingest authentication.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -87,6 +88,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property Username. The system generated username for ingest authentication.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Username
         {
             get { return this._username; }

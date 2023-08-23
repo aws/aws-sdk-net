@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeDBClusterSnapshotsRequest : AmazonRDSRequest
     {
         private string _dbClusterIdentifier;
+        private string _dbClusterResourceId;
         private string _dbClusterSnapshotIdentifier;
         private List<Filter> _filters = new List<Filter>();
         private bool? _includePublic;
@@ -81,6 +82,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbClusterResourceId. 
+        /// <para>
+        /// A specific DB cluster resource ID to describe.
+        /// </para>
+        /// </summary>
+        public string DbClusterResourceId
+        {
+            get { return this._dbClusterResourceId; }
+            set { this._dbClusterResourceId = value; }
+        }
+
+        // Check to see if DbClusterResourceId property is set
+        internal bool IsSetDbClusterResourceId()
+        {
+            return this._dbClusterResourceId != null;
         }
 
         /// <summary>

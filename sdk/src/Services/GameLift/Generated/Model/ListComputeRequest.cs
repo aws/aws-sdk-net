@@ -30,8 +30,21 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCompute operation.
-    /// Retrieves all compute resources registered to a fleet in your Amazon Web Services
-    /// account. You can filter the result set by location.
+    /// Retrieves the compute resources in an Amazon GameLift fleet. You can request information
+    /// for either managed EC2 fleets or Anywhere fleets. 
+    /// 
+    ///  
+    /// <para>
+    /// To request a list of computes, specify the fleet ID. You can filter the result set
+    /// by location. Use the pagination parameters to retrieve results in a set of sequential
+    /// pages.
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation returns the compute resource for the requested fleet.
+    /// For managed EC2 fleets, it returns a list of EC2 instances. For Anywhere fleets, it
+    /// returns a list of registered compute names.
+    /// </para>
     /// </summary>
     public partial class ListComputeRequest : AmazonGameLiftRequest
     {
@@ -43,7 +56,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet the compute resources are registered to.
+        /// A unique identifier for the fleet to retrieve compute resources for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The name of the custom location that the compute resources are assigned to.
+        /// The name of a location to retrieve compute resources for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

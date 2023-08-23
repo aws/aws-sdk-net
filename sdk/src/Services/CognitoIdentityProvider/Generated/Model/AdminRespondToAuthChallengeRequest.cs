@@ -49,14 +49,29 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
-    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note> 
+    ///  </note> <note> 
     /// <para>
-    /// Calling this action requires developer credentials.
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
     /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class AdminRespondToAuthChallengeRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -164,8 +179,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified
         /// an alias in your call to <code>AdminInitiateAuth</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+        /// secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with user devices in your user pool</a>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> ChallengeResponses
         {
             get { return this._challengeResponses; }
@@ -320,7 +340,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

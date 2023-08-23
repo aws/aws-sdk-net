@@ -62,6 +62,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
+                if(publicRequest.IsSetDbClusterResourceId())
+                {
+                    request.Parameters.Add("DbClusterResourceId", StringUtils.FromString(publicRequest.DbClusterResourceId));
+                }
                 if(publicRequest.IsSetDBClusterSnapshotIdentifier())
                 {
                     request.Parameters.Add("DBClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.DBClusterSnapshotIdentifier));

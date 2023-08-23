@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// user device and session data to API requests</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string EncodedData
         {
             get { return this._encodedData; }
@@ -85,7 +86,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The source IP address of your user's device.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=131072)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -104,7 +105,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Your server endpoint where this API is invoked.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=131072)]
         public string ServerName
         {
             get { return this._serverName; }
@@ -123,7 +124,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Your server path where this API is invoked.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=131072)]
         public string ServerPath
         {
             get { return this._serverPath; }

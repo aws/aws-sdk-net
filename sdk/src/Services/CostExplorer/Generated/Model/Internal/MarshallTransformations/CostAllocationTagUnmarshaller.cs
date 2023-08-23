@@ -64,6 +64,18 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("LastUpdatedDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUsedDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUsedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

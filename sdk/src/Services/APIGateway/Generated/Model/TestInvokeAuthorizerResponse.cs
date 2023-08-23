@@ -100,7 +100,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Latency. 
         /// <para>
-        /// The execution latency of the test authorizer request.
+        /// The execution latency, in ms, of the test authorizer request.
         /// </para>
         /// </summary>
         public long Latency

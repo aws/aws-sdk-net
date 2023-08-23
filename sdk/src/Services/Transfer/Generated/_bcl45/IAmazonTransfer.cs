@@ -220,10 +220,13 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Creates the connector, which captures the parameters for an outbound connection for
-        /// the AS2 or SFTP protocol. The connector is required for sending files to an externally
-        /// hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
-        /// AS2 connectors</a>.
+        /// Creates the connector, which captures the parameters for a connection for the AS2
+        /// or SFTP protocol. For AS2, the connector is required for sending files to an externally
+        /// hosted AS2 server. For SFTP, the connector is required when sending files to an SFTP
+        /// server or receiving files from an SFTP server. For more details about connectors,
+        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// AS2 connectors</a> and <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
+        /// SFTP connectors</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -262,10 +265,13 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Creates the connector, which captures the parameters for an outbound connection for
-        /// the AS2 or SFTP protocol. The connector is required for sending files to an externally
-        /// hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
-        /// AS2 connectors</a>.
+        /// Creates the connector, which captures the parameters for a connection for the AS2
+        /// or SFTP protocol. For AS2, the connector is required for sending files to an externally
+        /// hosted AS2 server. For SFTP, the connector is required when sending files to an SFTP
+        /// server or receiving files from an SFTP server. For more details about connectors,
+        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// AS2 connectors</a> and <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
+        /// SFTP connectors</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -3056,7 +3062,7 @@ namespace Amazon.Transfer
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are transferring file from a partner's SFTP server to a Transfer Family server,
+        /// If you are transferring file from a partner's SFTP server to Amazon Web Services storage,
         /// you specify one or more <code>RetreiveFilePaths</code> to identify the files you want
         /// to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.
         /// </para>
@@ -3111,7 +3117,7 @@ namespace Amazon.Transfer
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are transferring file from a partner's SFTP server to a Transfer Family server,
+        /// If you are transferring file from a partner's SFTP server to Amazon Web Services storage,
         /// you specify one or more <code>RetreiveFilePaths</code> to identify the files you want
         /// to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.
         /// </para>
@@ -4325,6 +4331,17 @@ namespace Amazon.Transfer
         Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

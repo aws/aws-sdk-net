@@ -34,9 +34,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <note> 
     /// <para>
-    /// In Regions where Amazon Pinpointisn't available, user pools only support sending events
-    /// to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
-    /// user pools support sending events to Amazon Pinpoint projects within that same Region.
+    /// In Regions where Amazon Pinpoint isn't available, user pools only support sending
+    /// events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint
+    /// is available, user pools support sending events to Amazon Pinpoint projects within
+    /// that same Region.
     /// </para>
     ///  </note>
     /// </summary>
@@ -93,6 +94,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The external ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string ExternalId
         {
             get { return this._externalId; }

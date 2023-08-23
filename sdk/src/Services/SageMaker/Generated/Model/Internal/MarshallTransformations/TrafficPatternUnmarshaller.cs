@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Phases = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Stairs", targetDepth))
+                {
+                    var unmarshaller = StairsUnmarshaller.Instance;
+                    unmarshalledObject.Stairs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrafficType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

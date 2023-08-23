@@ -42,7 +42,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ConfigRecommendations. 
         /// <para>
-        /// The list of recommendations.
+        /// List of recommendations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RecommendationStatus. 
         /// <para>
-        /// The recommendation status.
+        /// Status of the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

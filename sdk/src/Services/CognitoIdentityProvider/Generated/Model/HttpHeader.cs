@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The header name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string HeaderName
         {
             get { return this._headerName; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The header value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string HeaderValue
         {
             get { return this._headerValue; }

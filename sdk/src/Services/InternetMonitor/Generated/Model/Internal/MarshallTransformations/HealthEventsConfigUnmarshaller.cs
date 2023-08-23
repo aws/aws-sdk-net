@@ -64,10 +64,22 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AvailabilityLocalHealthEventsConfig", targetDepth))
+                {
+                    var unmarshaller = LocalHealthEventsConfigUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityLocalHealthEventsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AvailabilityScoreThreshold", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityScoreThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PerformanceLocalHealthEventsConfig", targetDepth))
+                {
+                    var unmarshaller = LocalHealthEventsConfigUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceLocalHealthEventsConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PerformanceScoreThreshold", targetDepth))

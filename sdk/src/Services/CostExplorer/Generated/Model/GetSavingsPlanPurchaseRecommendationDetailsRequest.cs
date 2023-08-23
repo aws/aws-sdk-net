@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetSavingsPlanPurchaseRecommendationDetails operation.
     /// Retrieves the details for a Savings Plan recommendation. These details include the
-    /// hourly data-points that construct the new cost, coverage, and utilization charts.
+    /// hourly data-points that construct the cost, coverage, and utilization charts.
     /// </summary>
     public partial class GetSavingsPlanPurchaseRecommendationDetailsRequest : AmazonCostExplorerRequest
     {

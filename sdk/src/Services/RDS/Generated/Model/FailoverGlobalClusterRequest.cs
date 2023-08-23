@@ -30,43 +30,86 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the FailoverGlobalCluster operation.
-    /// Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+    /// Promotes the specified secondary DB cluster to be the primary DB cluster in the global
+    /// database cluster to fail over or switch over a global database. Switchover operations
+    /// were previously called "managed planned failovers."
     /// 
-    ///  
-    /// <para>
-    /// A failover for an Aurora global database promotes one of secondary read-only DB clusters
-    /// to be the primary DB cluster and demotes the primary DB cluster to being a secondary
-    /// (read-only) DB cluster. In other words, the role of the current primary DB cluster
-    /// and the selected (target) DB cluster are switched. The selected secondary DB cluster
-    /// assumes full read/write capabilities for the Aurora global database.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
-    /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
-    /// Guide</i>.
-    /// </para>
     ///  <note> 
     /// <para>
-    /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
-    /// action only on healthy Aurora global databases with running Aurora DB clusters and
-    /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
-    /// Aurora global database topology.
+    /// Although this operation can be used either to fail over or to switch over a global
+    /// database cluster, its intended use is for global database failover. To switch over
+    /// a global database cluster, we recommend that you use the <a>SwitchoverGlobalCluster</a>
+    /// operation instead.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// How you use this operation depends on whether you are failing over or switching over
+    /// your global database cluster:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Failing over - Specify the <code>AllowDataLoss</code> parameter and don't specify
+    /// the <code>Switchover</code> parameter.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Switching over - Specify the <code>Switchover</code> parameter or omit it, but don't
+    /// specify the <code>AllowDataLoss</code> parameter.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>About failing over and switching over</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// While failing over and switching over a global database cluster both change the primary
+    /// DB cluster, you use these operations for different reasons:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Failing over</i> - Use this operation to respond to an unplanned event, such as
+    /// a Regional disaster in the primary Region. Failing over can result in a loss of write
+    /// transaction data that wasn't replicated to the chosen secondary before the failover
+    /// event occurred. However, the recovery process that promotes a DB instance on the chosen
+    /// seconday DB cluster to be the primary writer DB instance guarantees that the data
+    /// is in a transactionally consistent state.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned">Performing
+    /// managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Switching over</i> - Use this operation on a healthy global database cluster for
+    /// planned events, such as Regional rotation or to fail back to the original primary
+    /// DB cluster after a failover operation. With this operation, there is no data loss.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about switching over an Amazon Aurora global database, see <a
+    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing
+    /// switchovers for Aurora global databases</a> in the <i>Amazon Aurora User Guide</i>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class FailoverGlobalClusterRequest : AmazonRDSRequest
     {
+        private bool? _allowDataLoss;
         private string _globalClusterIdentifier;
+        private bool? _switchover;
         private string _targetDbClusterIdentifier;
 
         /// <summary>
-        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// Gets and sets the property AllowDataLoss. 
         /// <para>
-        /// Identifier of the Aurora global database (<a>GlobalCluster</a>) that should be failed
-        /// over. The identifier is the unique key assigned by the user when the Aurora global
-        /// database was created. In other words, it's the name of the Aurora global database
-        /// that you want to fail over.
+        /// Specifies whether to allow data loss for this global database cluster operation. Allowing
+        /// data loss triggers a global failover operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <code>AllowDataLoss</code>, the global database cluster operation
+        /// defaults to a switchover.
         /// </para>
         ///  
         /// <para>
@@ -74,7 +117,36 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global database).
+        /// Can't be specified together with the <code>Switchover</code> parameter.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool AllowDataLoss
+        {
+            get { return this._allowDataLoss.GetValueOrDefault(); }
+            set { this._allowDataLoss = value; }
+        }
+
+        // Check to see if AllowDataLoss property is set
+        internal bool IsSetAllowDataLoss()
+        {
+            return this._allowDataLoss.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// The identifier of the global database cluster (Aurora global database) this operation
+        /// should apply to. The identifier is the unique key assigned by the user when the Aurora
+        /// global database is created. In other words, it's the name of the Aurora global database.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must match the identifier of an existing global database cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -92,12 +164,38 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Switchover. 
+        /// <para>
+        /// Specifies whether to switch over this global database cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be specified together with the <code>AllowDataLoss</code> parameter.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool Switchover
+        {
+            get { return this._switchover.GetValueOrDefault(); }
+            set { this._switchover = value; }
+        }
+
+        // Check to see if Switchover property is set
+        internal bool IsSetSwitchover()
+        {
+            return this._switchover.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetDbClusterIdentifier. 
         /// <para>
-        /// Identifier of the secondary Aurora DB cluster that you want to promote to primary
-        /// for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name
-        /// (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services
-        /// Region.
+        /// The identifier of the secondary Aurora DB cluster that you want to promote to the
+        /// primary for the global database cluster. Use the Amazon Resource Name (ARN) for the
+        /// identifier so that Aurora can locate the cluster in its Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

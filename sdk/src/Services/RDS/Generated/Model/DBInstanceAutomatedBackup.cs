@@ -197,7 +197,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The customer id of the instance that is/was associated with the automated backup.
+        /// The identifier for the source DB instance, which can't be changed and which is unique
+        /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -215,7 +216,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
         /// <para>
-        /// The identifier for the source DB instance, which can't be changed and which is unique
+        /// The resource ID for the source DB instance, which can't be changed and which is unique
         /// to an Amazon Web Services Region.
         /// </para>
         /// </summary>
@@ -384,7 +385,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The license model of an automated backup.
+        /// The master user name of an automated backup.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -487,15 +488,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - automated backups for current instances
+        ///  <code>active</code> - Automated backups for current instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>retained</code> - automated backups for deleted instances
+        ///  <code>retained</code> - Automated backups for deleted instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code> - automated backups that are waiting for the first automated
+        ///  <code>creating</code> - Automated backups that are waiting for the first automated
         /// snapshot to be available.
         /// </para>
         ///  </li> </ul>

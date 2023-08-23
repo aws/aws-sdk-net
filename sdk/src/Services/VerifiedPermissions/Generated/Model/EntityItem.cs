@@ -55,7 +55,6 @@ namespace Amazon.VerifiedPermissions.Model
         /// A list of attributes for the entity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
         public Dictionary<string, AttributeValue> Attributes
         {
             get { return this._attributes; }

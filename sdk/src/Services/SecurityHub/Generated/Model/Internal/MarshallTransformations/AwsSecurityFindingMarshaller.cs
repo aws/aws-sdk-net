@@ -120,6 +120,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FirstObservedAt);
             }
 
+            if(requestObject.IsSetGeneratorDetails())
+            {
+                context.Writer.WritePropertyName("GeneratorDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GeneratorDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.GeneratorDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGeneratorId())
             {
                 context.Writer.WritePropertyName("GeneratorId");

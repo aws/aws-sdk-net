@@ -115,7 +115,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceLastModifiedDate. 
         /// <para>
-        /// The last modified date of the device.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
         public DateTime DeviceLastModifiedDate

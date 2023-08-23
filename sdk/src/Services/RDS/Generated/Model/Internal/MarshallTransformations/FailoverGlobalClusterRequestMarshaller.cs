@@ -58,9 +58,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllowDataLoss())
+                {
+                    request.Parameters.Add("AllowDataLoss", StringUtils.FromBool(publicRequest.AllowDataLoss));
+                }
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("GlobalClusterIdentifier", StringUtils.FromString(publicRequest.GlobalClusterIdentifier));
+                }
+                if(publicRequest.IsSetSwitchover())
+                {
+                    request.Parameters.Add("Switchover", StringUtils.FromBool(publicRequest.Switchover));
                 }
                 if(publicRequest.IsSetTargetDbClusterIdentifier())
                 {

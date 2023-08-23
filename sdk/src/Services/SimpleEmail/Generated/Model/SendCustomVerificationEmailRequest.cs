@@ -31,14 +31,14 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the SendCustomVerificationEmail operation.
     /// Adds an email address to the list of identities for your Amazon SES account in the
-    /// current AWS Region and attempts to verify it. As a result of executing this operation,
-    /// a customized verification email is sent to the specified address.
+    /// current Amazon Web Services Region and attempts to verify it. As a result of executing
+    /// this operation, a customized verification email is sent to the specified address.
     /// 
     ///  
     /// <para>
     /// To use this operation, you must first create a custom verification email template.
     /// For more information about creating and using custom verification email templates,
-    /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+    /// see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
     /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
     /// </para>
     ///  

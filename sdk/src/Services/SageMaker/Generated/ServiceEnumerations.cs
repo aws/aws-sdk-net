@@ -4957,6 +4957,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type FlatInvocations.
+    /// </summary>
+    public class FlatInvocations : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Continue for FlatInvocations
+        /// </summary>
+        public static readonly FlatInvocations Continue = new FlatInvocations("Continue");
+        /// <summary>
+        /// Constant Stop for FlatInvocations
+        /// </summary>
+        public static readonly FlatInvocations Stop = new FlatInvocations("Stop");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlatInvocations(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlatInvocations FindValue(string value)
+        {
+            return FindValue<FlatInvocations>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlatInvocations(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FlowDefinitionStatus.
     /// </summary>
     public class FlowDefinitionStatus : ConstantClass
@@ -13729,6 +13779,68 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type Statistic.
+    /// </summary>
+    public class Statistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for Statistic
+        /// </summary>
+        public static readonly Statistic Average = new Statistic("Average");
+        /// <summary>
+        /// Constant Maximum for Statistic
+        /// </summary>
+        public static readonly Statistic Maximum = new Statistic("Maximum");
+        /// <summary>
+        /// Constant Minimum for Statistic
+        /// </summary>
+        public static readonly Statistic Minimum = new Statistic("Minimum");
+        /// <summary>
+        /// Constant SampleCount for Statistic
+        /// </summary>
+        public static readonly Statistic SampleCount = new Statistic("SampleCount");
+        /// <summary>
+        /// Constant Sum for Statistic
+        /// </summary>
+        public static readonly Statistic Sum = new Statistic("Sum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Statistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Statistic FindValue(string value)
+        {
+            return FindValue<Statistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Statistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StepStatus.
     /// </summary>
     public class StepStatus : ConstantClass
@@ -14360,6 +14472,10 @@ namespace Amazon.SageMaker
         /// Constant PHASES for TrafficType
         /// </summary>
         public static readonly TrafficType PHASES = new TrafficType("PHASES");
+        /// <summary>
+        /// Constant STAIRS for TrafficType
+        /// </summary>
+        public static readonly TrafficType STAIRS = new TrafficType("STAIRS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -14644,6 +14760,10 @@ namespace Amazon.SageMaker
         /// Constant MlP4d24xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP4d24xlarge = new TrainingInstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlP548xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP548xlarge = new TrainingInstanceType("ml.p5.48xlarge");
         /// <summary>
         /// Constant MlTrn12xlarge for TrainingInstanceType
         /// </summary>

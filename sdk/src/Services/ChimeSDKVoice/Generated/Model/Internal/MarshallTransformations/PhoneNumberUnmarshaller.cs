@@ -112,6 +112,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     unmarshalledObject.E164PhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

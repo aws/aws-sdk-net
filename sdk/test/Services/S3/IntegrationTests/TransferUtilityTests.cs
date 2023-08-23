@@ -16,6 +16,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Amazon.Auth.AccessControlPolicy;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -110,7 +111,57 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestDownloadedFile(downloadPath);
             }
         }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnSeekableStreamTest()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 20 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+            
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, fileName);
 
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+
+                //Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+        private UnseekableStream GenerateUnseekableStreamFromFile(string filePath)
+        {
+            try
+            {
+                byte[] fileBytes = File.ReadAllBytes(filePath);
+                UnseekableStream unseekableStream = new UnseekableStream(fileBytes);
+                unseekableStream.Position = 0;
+
+                return unseekableStream;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while generating the stream: {ex.Message}");
+                throw;
+            }
+        }
         private void TestDownloadedFile(string downloadPath)
         {
             var fileExists = File.Exists(downloadPath);
@@ -847,5 +898,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             }
         }
+        private class UnseekableStream : MemoryStream
+        {
+            public UnseekableStream(byte[] buffer) : base(buffer) { }
+
+            public UnseekableStream(): base() { }
+
+            public override bool CanSeek
+            {
+                get => false;
+            }
+            public override long Length
+            {
+                get => throw new NotSupportedException();
+            }
+        }
     }
+
 }

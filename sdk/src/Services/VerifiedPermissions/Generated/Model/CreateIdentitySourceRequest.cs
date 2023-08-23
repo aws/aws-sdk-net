@@ -168,7 +168,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// by the new identity source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string PrincipalEntityType
         {
             get { return this._principalEntityType; }

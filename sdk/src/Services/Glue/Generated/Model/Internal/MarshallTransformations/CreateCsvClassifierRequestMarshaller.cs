@@ -109,6 +109,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.QuoteSymbol);
             }
 
+            if(requestObject.IsSetSerde())
+            {
+                context.Writer.WritePropertyName("Serde");
+                context.Writer.Write(requestObject.Serde);
+            }
+
         }
 
         /// <summary>

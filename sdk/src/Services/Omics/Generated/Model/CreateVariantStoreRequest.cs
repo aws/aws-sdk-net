@@ -66,6 +66,7 @@ namespace Amazon.Omics.Model
         /// A name for the store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string Name
         {
             get { return this._name; }

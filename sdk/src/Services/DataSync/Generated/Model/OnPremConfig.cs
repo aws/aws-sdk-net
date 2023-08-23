@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// A list of Amazon Resource Names (ARNs) of agents to use for a Network File System
-    /// (NFS) location.
+    /// The DataSync agents that are connecting to a Network File System (NFS) location.
     /// </summary>
     public partial class OnPremConfig
     {
@@ -39,7 +38,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// ARNs of the agents to use for an NFS location.
+        /// The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]

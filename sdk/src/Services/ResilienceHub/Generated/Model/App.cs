@@ -38,9 +38,13 @@ namespace Amazon.ResilienceHub.Model
         private AppComplianceStatusType _complianceStatus;
         private DateTime? _creationTime;
         private string _description;
+        private AppDriftStatusType _driftStatus;
+        private List<EventSubscription> _eventSubscriptions = new List<EventSubscription>();
         private DateTime? _lastAppComplianceEvaluationTime;
+        private DateTime? _lastDriftEvaluationTime;
         private DateTime? _lastResiliencyScoreEvaluationTime;
         private string _name;
+        private PermissionModel _permissionModel;
         private string _policyArn;
         private double? _resiliencyScore;
         private AppStatusType _status;
@@ -49,7 +53,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -71,7 +75,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AssessmentSchedule. 
         /// <para>
-        ///  Assessment execution schedule with 'Daily' or 'Disabled' values. 
+        /// Assessment execution schedule with 'Daily' or 'Disabled' values. 
         /// </para>
         /// </summary>
         public AppAssessmentScheduleType AssessmentSchedule
@@ -89,7 +93,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
-        /// The current status of compliance for the resiliency policy.
+        /// Current status of compliance for the resiliency policy.
         /// </para>
         /// </summary>
         public AppComplianceStatusType ComplianceStatus
@@ -107,7 +111,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp for when the app was created.
+        /// Timestamp for when the app was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +130,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The optional description for an app.
+        /// Optional description for an application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -143,9 +147,49 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriftStatus. 
+        /// <para>
+        /// Indicates if compliance drifts (deviations) were detected while running an assessment
+        /// for your application.
+        /// </para>
+        /// </summary>
+        public AppDriftStatusType DriftStatus
+        {
+            get { return this._driftStatus; }
+            set { this._driftStatus = value; }
+        }
+
+        // Check to see if DriftStatus property is set
+        internal bool IsSetDriftStatus()
+        {
+            return this._driftStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventSubscriptions. 
+        /// <para>
+        /// The list of events you would like to subscribe and get notification for. Currently,
+        /// Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled
+        /// assessment failure</b> events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EventSubscription> EventSubscriptions
+        {
+            get { return this._eventSubscriptions; }
+            set { this._eventSubscriptions = value; }
+        }
+
+        // Check to see if EventSubscriptions property is set
+        internal bool IsSetEventSubscriptions()
+        {
+            return this._eventSubscriptions != null && this._eventSubscriptions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastAppComplianceEvaluationTime. 
         /// <para>
-        /// The timestamp for the most recent compliance evaluation.
+        /// Timestamp for the most recent compliance evaluation.
         /// </para>
         /// </summary>
         public DateTime LastAppComplianceEvaluationTime
@@ -161,9 +205,27 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastDriftEvaluationTime. 
+        /// <para>
+        /// Indicates the last time that a drift was evaluated.
+        /// </para>
+        /// </summary>
+        public DateTime LastDriftEvaluationTime
+        {
+            get { return this._lastDriftEvaluationTime.GetValueOrDefault(); }
+            set { this._lastDriftEvaluationTime = value; }
+        }
+
+        // Check to see if LastDriftEvaluationTime property is set
+        internal bool IsSetLastDriftEvaluationTime()
+        {
+            return this._lastDriftEvaluationTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastResiliencyScoreEvaluationTime. 
         /// <para>
-        /// The timestamp for the most recent resiliency score evaluation.
+        /// Timestamp for the most recent resiliency score evaluation.
         /// </para>
         /// </summary>
         public DateTime LastResiliencyScoreEvaluationTime
@@ -181,7 +243,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the application.
+        /// Name for the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,10 +260,28 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionModel. 
+        /// <para>
+        /// Defines the roles and credentials that Resilience Hub would use while creating the
+        /// application, importing its resources, and running an assessment.
+        /// </para>
+        /// </summary>
+        public PermissionModel PermissionModel
+        {
+            get { return this._permissionModel; }
+            set { this._permissionModel = value; }
+        }
+
+        // Check to see if PermissionModel property is set
+        internal bool IsSetPermissionModel()
+        {
+            return this._permissionModel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+        /// Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -221,7 +301,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResiliencyScore. 
         /// <para>
-        /// The current resiliency score for the application.
+        /// Current resiliency score for the application.
         /// </para>
         /// </summary>
         public double ResiliencyScore
@@ -239,7 +319,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the application.
+        /// Status of the application.
         /// </para>
         /// </summary>
         public AppStatusType Status
@@ -257,8 +337,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
-        /// Services resource. Each tag consists of a key/value pair.
+        /// Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services
+        /// resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]

@@ -123,8 +123,9 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property HealthScoreThreshold. 
         /// <para>
-        /// The threshold percentage for health events when Amazon CloudWatch Internet Monitor
-        /// creates a health event.
+        /// The threshold percentage for a health score that determines, along with other configuration
+        /// information, when Internet Monitor creates a health event when there's an internet
+        /// issue that affects your application end users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -200,7 +201,10 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property PercentOfTotalTrafficImpacted. 
         /// <para>
-        /// The impact on total traffic that a health event has.
+        /// The impact on total traffic that a health event has, in increased latency or reduced
+        /// availability. This is the percentage of how much latency has increased or availability
+        /// has decreased during the event, compared to what is typical for traffic from this
+        /// client location to the Amazon Web Services location using this client network.
         /// </para>
         /// </summary>
         public double PercentOfTotalTrafficImpacted

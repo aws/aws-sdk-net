@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class TrafficPattern
     {
         private List<Phase> _phases = new List<Phase>();
+        private Stairs _stairs;
         private TrafficType _trafficType;
 
         /// <summary>
@@ -56,9 +57,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Stairs. 
+        /// <para>
+        /// Defines the stairs traffic pattern.
+        /// </para>
+        /// </summary>
+        public Stairs Stairs
+        {
+            get { return this._stairs; }
+            set { this._stairs = value; }
+        }
+
+        // Check to see if Stairs property is set
+        internal bool IsSetStairs()
+        {
+            return this._stairs != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrafficType. 
         /// <para>
-        /// Defines the traffic patterns.
+        /// Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
         /// </para>
         /// </summary>
         public TrafficType TrafficType

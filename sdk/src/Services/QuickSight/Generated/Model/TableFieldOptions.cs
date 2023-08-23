@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// The order of field IDs of the field options for a table visual.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=200)]
         public List<string> Order
         {
             get { return this._order; }

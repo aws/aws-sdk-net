@@ -35,18 +35,82 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Implementation for accessing CognitoIdentityProvider
     ///
-    /// Using the Amazon Cognito user pools API, you can create a user pool to manage directories
-    /// and users. You can authenticate a user to obtain tokens related to user identity and
-    /// access policies.
+    /// With the Amazon Cognito user pools API, you can set up user pools and app clients,
+    /// and authenticate users. To authenticate users from third-party identity providers
+    /// (IdPs) in this API, you can <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">link
+    /// IdP users to native user profiles</a>. Learn more about the authentication and authorization
+    /// of federated users in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a>.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito user pools.
+    /// This API reference provides detailed information about API operations and object types
+    /// in Amazon Cognito. At the bottom of the page for each API operation and object, under
+    /// <i>See Also</i>, you can learn how to use it in an Amazon Web Services SDK in the
+    /// language of your choice.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon
-    /// Cognito Documentation</a>.
+    /// Along with resource management operations, the Amazon Cognito user pools API includes
+    /// classes of operations and authorization models for client-side and server-side user
+    /// operations. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito native and OIDC APIs</a> in the <i>Amazon Cognito Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also start reading about the <code>CognitoIdentityProvider</code> client in
+    /// the following SDK guides.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/cognito-idp/index.html#cli-aws-cognito-idp">Amazon
+    /// Web Services Command Line Interface</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/CognitoIdentityProvider/TCognitoIdentityProviderClient.html">Amazon
+    /// Web Services SDK for .NET</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://sdk.amazonaws.com/cpp/api/LATEST/aws-cpp-sdk-cognito-idp/html/class_aws_1_1_cognito_identity_provider_1_1_cognito_identity_provider_client.html">Amazon
+    /// Web Services SDK for C++</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-go/api/service/cognitoidentityprovider/#CognitoIdentityProvider">Amazon
+    /// Web Services SDK for Go</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/cognitoidentityprovider/CognitoIdentityProviderClient.html">Amazon
+    /// Web Services SDK for Java V2</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CognitoIdentityServiceProvider.html">Amazon
+    /// Web Services SDK for JavaScript</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-cognito-idp-2016-04-18.html">Amazon
+    /// Web Services SDK for PHP V3</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html">Amazon
+    /// Web Services SDK for Python</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/CognitoIdentityProvider/Client.html">Amazon
+    /// Web Services SDK for Ruby V3</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To get started with an Amazon Web Services SDK, see <a href="http://aws.amazon.com/developer/tools/">Tools
+    /// to Build on Amazon Web Services</a>. For example actions and scenarios, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html">Code
+    /// examples for Amazon Cognito Identity Provider using Amazon Web Services SDKs</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityProviderClient : AmazonServiceClient, IAmazonCognitoIdentityProvider
@@ -279,6 +343,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Adds additional user attributes to the user pool schema.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddCustomAttributes service method.</param>
         /// 
@@ -354,10 +438,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Adds the specified user to the specified group.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminAddUserToGroup service method.</param>
         /// 
@@ -433,10 +532,25 @@ namespace Amazon.CognitoIdentityProvider
         /// Confirms user registration as an admin without using a confirmation code. Works on
         /// any user.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminConfirmSignUp service method.</param>
         /// 
@@ -552,7 +666,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -573,10 +687,25 @@ namespace Amazon.CognitoIdentityProvider
         /// In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until
         /// they sign in and change their password.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        ///  <code>AdminCreateUser</code> requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser service method.</param>
         /// 
@@ -688,10 +817,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Deletes a user as an administrator. Works on any user.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUser service method.</param>
         /// 
@@ -766,10 +910,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Deletes the user attributes in a user pool as an administrator. Works on any user.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUserAttributes service method.</param>
         /// 
@@ -852,10 +1011,6 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// This action is enabled only for admin access and requires developer credentials.
-        /// </para>
-        ///  
-        /// <para>
         /// The <code>ProviderName</code> must match the value specified when creating an IdP
         /// for the pool. 
         /// </para>
@@ -883,6 +1038,25 @@ namespace Amazon.CognitoIdentityProvider
         /// must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must
         /// be the subject of the SAML assertion.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableProviderForUser service method.</param>
         /// 
@@ -966,11 +1140,25 @@ namespace Amazon.CognitoIdentityProvider
         /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
         /// API requests.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// You must make this API request with Amazon Web Services credentials that have <code>cognito-idp:AdminDisableUser</code>
-        /// permissions.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableUser service method.</param>
         /// 
@@ -1045,10 +1233,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Enables the specified user as an administrator. Works on any user.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminEnableUser service method.</param>
         /// 
@@ -1123,10 +1326,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Forgets the device, as an administrator.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice service method.</param>
         /// 
@@ -1204,10 +1422,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Gets the device, as an administrator.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice service method.</param>
         /// 
@@ -1283,10 +1516,25 @@ namespace Amazon.CognitoIdentityProvider
         /// Gets the specified user by user name in a user pool as an administrator. Works on
         /// any user.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetUser service method.</param>
         /// 
@@ -1378,14 +1626,29 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </note> <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth service method.</param>
         /// 
@@ -1515,10 +1778,25 @@ namespace Amazon.CognitoIdentityProvider
         /// existing user in the user pool, it is critical that it only be used with external
         /// IdPs and provider attributes that have been trusted by the application owner.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// This action is administrative and requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminLinkProviderForUser service method.</param>
         /// 
@@ -1604,10 +1882,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Lists devices, as an administrator.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListDevices service method.</param>
         /// 
@@ -1682,10 +1975,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Lists the groups that the user belongs to.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListGroupsForUser service method.</param>
         /// 
@@ -1760,6 +2068,26 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// A history of user activity and any risks detected as part of Amazon Cognito advanced
         /// security.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListUserAuthEvents service method.</param>
         /// 
@@ -1837,10 +2165,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Removes the specified user from the specified group.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminRemoveUserFromGroup service method.</param>
         /// 
@@ -1916,16 +2259,6 @@ namespace Amazon.CognitoIdentityProvider
         /// Resets the specified user's password in a user pool as an administrator. Works on
         /// any user.
         /// 
-        ///  
-        /// <para>
-        /// When a developer calls this API, the current password is invalidated, so it must be
-        /// changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException
-        /// exception back and should direct the user down the flow to reset the password, which
-        /// is the same as the forgot password flow. In addition, if the user pool has phone verification
-        /// selected and a verified phone number exists for the user, or if email verification
-        /// is selected and a verified email exists for the user, calling this API will also result
-        /// in sending a message to the end user with the code to change their password.
-        /// </para>
         ///  <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
@@ -1943,14 +2276,39 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Deactivates a user's password, requiring them to change it. If a user tries to sign
+        /// in after the API is called, Amazon Cognito responds with a <code>PasswordResetRequiredException</code>
+        /// error. Your app must then perform the actions that reset your user's password: the
+        /// forgot-password flow. In addition, if the user pool has phone verification selected
+        /// and a verified phone number exists for the user, or if email verification is selected
+        /// and a verified email exists for the user, calling this API will also result in sending
+        /// a message to the end user with the code to change their password.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminResetUserPassword service method.</param>
         /// 
@@ -2071,14 +2429,29 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </note> <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge service method.</param>
         /// 
@@ -2210,6 +2583,26 @@ namespace Amazon.CognitoIdentityProvider
         /// The preferred MFA factor will be used to authenticate a user if multiple factors are
         /// activated. If multiple options are activated and no preference is set, a challenge
         /// to choose an MFA option will be returned during sign-in.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserMFAPreference service method.</param>
         /// 
@@ -2301,6 +2694,38 @@ namespace Amazon.CognitoIdentityProvider
         /// Once the user has set a new password, or the password is permanent, the user status
         /// is set to <code>Confirmed</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>AdminSetUserPassword</code> can set a password for the user profile that Amazon
+        /// Cognito creates for third-party federated users. When you set a password, the federated
+        /// user's status changes from <code>EXTERNAL_PROVIDER</code> to <code>CONFIRMED</code>.
+        /// A user in this state can sign in as a federated user, and initiate authentication
+        /// flows in the API like a linked native user. They can also modify their password and
+        /// attributes in token-authenticated API requests like <code>ChangePassword</code> and
+        /// <code>UpdateUserAttributes</code>. As a best security practice and to keep users in
+        /// sync with your external IdP, don't set passwords on federated user profiles. To set
+        /// up a federated user for native sign-in with a linked native user, refer to <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">Linking
+        /// federated users to an existing user profile</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserPassword service method.</param>
         /// 
@@ -2380,6 +2805,26 @@ namespace Amazon.CognitoIdentityProvider
         /// You can't use it to configure time-based one-time password (TOTP) software token MFA.
         /// To configure either type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
         /// instead.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserSettings service method.</param>
         /// 
@@ -2452,6 +2897,26 @@ namespace Amazon.CognitoIdentityProvider
         /// Provides feedback for an authentication event indicating if it was from a valid user.
         /// This feedback is used for improving the risk evaluation decision for the user pool
         /// as part of Amazon Cognito advanced security.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateAuthEventFeedback service method.</param>
         /// 
@@ -2529,10 +2994,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Updates the device status as an administrator.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus service method.</param>
         /// 
@@ -2608,20 +3088,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminUpdateUserAttributes
 
         /// <summary>
-        /// Updates the specified user's attributes, including developer attributes, as an administrator.
-        /// Works on any user.
-        /// 
-        ///  
-        /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
-        /// name.
-        /// </para>
-        ///  
-        /// <para>
-        /// In addition to updating user attributes, this API can also be used to mark phone and
-        /// email as verified.
-        /// </para>
-        ///  <note> 
+        /// <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
@@ -2638,14 +3105,44 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Updates the specified user's attributes, including developer attributes, as an administrator.
+        /// Works on any user.
         /// </para>
+        ///  
+        /// <para>
+        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// name.
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to updating user attributes, this API can also be used to mark phone and
+        /// email as verified.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateUserAttributes service method.</param>
         /// 
@@ -2750,17 +3247,36 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminUserGlobalSignOut
 
         /// <summary>
-        /// Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code>
-        /// requests with Amazon Web Services credentials. It also invalidates all refresh tokens
-        /// that Amazon Cognito has issued to a user. The user's current access and ID tokens
-        /// remain valid until they expire. By default, access and ID tokens expire one hour after
-        /// they're issued. A user can still use a hosted UI cookie to retrieve new tokens for
-        /// the duration of the cookie validity period of 1 hour.
+        /// Signs out a user from all devices. <code>AdminUserGlobalSignOut</code> invalidates
+        /// all identity, access and refresh tokens that Amazon Cognito has issued to a user.
+        /// A user can still use a hosted UI cookie to retrieve new tokens for the duration of
+        /// the 1-hour cookie validity period.
         /// 
         ///  
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Your app isn't aware that a user's access token is revoked unless it attempts to authorize
+        /// a user pools API request with an access token that contains the scope <code>aws.cognito.signin.user.admin</code>.
+        /// Your app might otherwise accept access tokens until they expire.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut service method.</param>
         /// 
@@ -2854,6 +3370,14 @@ namespace Amazon.CognitoIdentityProvider
         /// After you set up software token MFA for your user, Amazon Cognito generates a <code>SOFTWARE_TOKEN_MFA</code>
         /// challenge when they authenticate. Respond to this challenge with your user's TOTP.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSoftwareToken service method.</param>
@@ -2933,6 +3457,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Changes the password for a specified user in a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword service method.</param>
         /// 
@@ -3023,6 +3557,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Confirms tracking of the device. This API call is the call that begins device tracking.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice service method.</param>
         /// 
@@ -3119,6 +3663,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Allows a user to enter a confirmation code to reset a forgotten password.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmForgotPassword service method.</param>
         /// 
@@ -3227,6 +3781,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Confirms registration of a new user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmSignUp service method.</param>
         /// 
@@ -3337,10 +3901,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Creates a new group in the specified user pool.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
@@ -3419,6 +3998,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Creates an IdP for a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider service method.</param>
         /// 
@@ -3496,6 +4095,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Creates a new OAuth2.0 resource server and defines custom scopes within it.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceServer service method.</param>
         /// 
@@ -3569,7 +4188,27 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserImportJob
 
         /// <summary>
-        /// Creates the user import job.
+        /// Creates a user import job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserImportJob service method.</param>
         /// 
@@ -3646,9 +4285,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserPool
 
         /// <summary>
-        /// Creates a new Amazon Cognito user pool and sets the password policy for the pool.
-        /// 
-        ///  <note> 
+        /// <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
@@ -3665,11 +4302,38 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Creates a new Amazon Cognito user pool and sets the password policy for the pool.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+        /// value.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserPool service method.</param>
         /// 
@@ -3763,6 +4427,30 @@ namespace Amazon.CognitoIdentityProvider
         /// When you create a new user pool client, token revocation is automatically activated.
         /// For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+        /// value.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolClient service method.</param>
         /// 
@@ -3843,6 +4531,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Creates a new domain for a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolDomain service method.</param>
         /// 
@@ -4134,7 +4842,17 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteUser
 
         /// <summary>
-        /// Allows a user to delete himself or herself.
+        /// Allows a user to delete their own user profile.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -4218,6 +4936,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deletes the attributes for a user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserAttributes service method.</param>
         /// 
@@ -4798,6 +5526,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Returns the configuration information and metadata of the specified user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserPool service method.</param>
         /// 
@@ -4872,6 +5620,26 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Client method for returning the configuration information and metadata of the specified
         /// user pool app client.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserPoolClient service method.</param>
         /// 
@@ -5009,6 +5777,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Forgets the specified device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ForgetDevice service method.</param>
         /// 
@@ -5099,12 +5877,25 @@ namespace Amazon.CognitoIdentityProvider
         /// you can use the username or user alias. The method used to send the confirmation code
         /// is sent according to the specified AccountRecoverySetting. For more information, see
         /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
-        /// User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified
-        /// phone number nor a verified email exists, an <code>InvalidParameterException</code>
-        /// is thrown. To use the confirmation code for resetting the password, call <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
+        /// User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. To use the confirmation
+        /// code for resetting the password, call <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
         /// 
         /// 
+        ///  
+        /// <para>
+        /// If neither a verified phone number nor a verified email exists, this API returns <code>InvalidParameterException</code>.
+        /// If your app client has a client secret and you don't provide a <code>SECRET_HASH</code>
+        /// parameter, this API returns <code>NotAuthorizedException</code>.
+        /// </para>
         ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
@@ -5121,7 +5912,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -5306,6 +6097,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Gets the device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDevice service method.</param>
         /// 
@@ -5533,6 +6334,76 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetLogDeliveryConfiguration
+
+        /// <summary>
+        /// Gets the detailed activity logging configuration for a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogDeliveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetLogDeliveryConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetLogDeliveryConfiguration">REST API Reference for GetLogDeliveryConfiguration Operation</seealso>
+        public virtual GetLogDeliveryConfigurationResponse GetLogDeliveryConfiguration(GetLogDeliveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogDeliveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogDeliveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogDeliveryConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLogDeliveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLogDeliveryConfiguration operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLogDeliveryConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetLogDeliveryConfiguration">REST API Reference for GetLogDeliveryConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetLogDeliveryConfiguration(GetLogDeliveryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogDeliveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogDeliveryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLogDeliveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLogDeliveryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetLogDeliveryConfigurationResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetLogDeliveryConfiguration">REST API Reference for GetLogDeliveryConfiguration Operation</seealso>
+        public virtual GetLogDeliveryConfigurationResponse EndGetLogDeliveryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLogDeliveryConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSigningCertificate
 
         /// <summary>
@@ -5683,6 +6554,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Gets the user attributes and metadata for a user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUser service method.</param>
         /// 
@@ -5770,6 +6651,14 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
         /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
@@ -5785,7 +6674,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -5974,9 +6863,26 @@ namespace Amazon.CognitoIdentityProvider
         #region  GlobalSignOut
 
         /// <summary>
-        /// Signs out users from all devices. It also invalidates all refresh tokens that Amazon
-        /// Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve
-        /// new tokens for the duration of the 1-hour cookie validity period.
+        /// Signs out a user from all devices. <code>GlobalSignOut</code> invalidates all identity,
+        /// access and refresh tokens that Amazon Cognito has issued to a user. A user can still
+        /// use a hosted UI cookie to retrieve new tokens for the duration of the 1-hour cookie
+        /// validity period.
+        /// 
+        ///  
+        /// <para>
+        /// Your app isn't aware that a user's access token is revoked unless it attempts to authorize
+        /// a user pools API request with an access token that contains the scope <code>aws.cognito.signin.user.admin</code>.
+        /// Your app might otherwise accept access tokens until they expire.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// 
@@ -6063,6 +6969,14 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
         /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
@@ -6078,7 +6992,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -6190,6 +7104,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists the sign-in devices that Amazon Cognito has registered to the current user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
         /// 
@@ -6277,10 +7201,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Lists the groups associated with a user pool.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// 
@@ -6351,6 +7290,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists information about all IdPs for a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
         /// 
@@ -6421,6 +7380,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists the resource servers for a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceServers service method.</param>
         /// 
@@ -6570,7 +7549,27 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUserImportJobs
 
         /// <summary>
-        /// Lists the user import jobs.
+        /// Lists user import jobs for a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserImportJobs service method.</param>
         /// 
@@ -6641,6 +7640,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists the clients that have been created for the specified user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPoolClients service method.</param>
         /// 
@@ -6711,6 +7730,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists the user pools associated with an Amazon Web Services account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPools service method.</param>
         /// 
@@ -6776,7 +7815,27 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUsers
 
         /// <summary>
-        /// Lists the users in the Amazon Cognito user pool.
+        /// Lists users and their basic details in a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
@@ -6848,10 +7907,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Lists the users in the specified group.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsersInGroup service method.</param>
         /// 
@@ -6926,6 +8000,14 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
         /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
@@ -6941,7 +8023,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -7058,6 +8140,14 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
         /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
@@ -7073,7 +8163,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -7211,6 +8301,16 @@ namespace Amazon.CognitoIdentityProvider
         /// Revokes all of the access tokens generated by, and at the same time as, the specified
         /// refresh token. After a token is revoked, you can't use the revoked token to access
         /// Amazon Cognito user APIs, or to authorize access to your resource server.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeToken service method.</param>
         /// 
@@ -7281,6 +8381,76 @@ namespace Amazon.CognitoIdentityProvider
         public virtual RevokeTokenResponse EndRevokeToken(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeTokenResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetLogDeliveryConfiguration
+
+        /// <summary>
+        /// Sets up or modifies the detailed activity logging configuration of a user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetLogDeliveryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the SetLogDeliveryConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetLogDeliveryConfiguration">REST API Reference for SetLogDeliveryConfiguration Operation</seealso>
+        public virtual SetLogDeliveryConfigurationResponse SetLogDeliveryConfiguration(SetLogDeliveryConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetLogDeliveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetLogDeliveryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetLogDeliveryConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetLogDeliveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetLogDeliveryConfiguration operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLogDeliveryConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetLogDeliveryConfiguration">REST API Reference for SetLogDeliveryConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginSetLogDeliveryConfiguration(SetLogDeliveryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetLogDeliveryConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetLogDeliveryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetLogDeliveryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLogDeliveryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  SetLogDeliveryConfigurationResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetLogDeliveryConfiguration">REST API Reference for SetLogDeliveryConfiguration Operation</seealso>
+        public virtual SetLogDeliveryConfigurationResponse EndSetLogDeliveryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetLogDeliveryConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -7471,6 +8641,16 @@ namespace Amazon.CognitoIdentityProvider
         /// unless device tracking is turned on and the device has been trusted. If you want MFA
         /// to be applied selectively based on the assessed risk level of sign-in attempts, deactivate
         /// MFA for users and turn on Adaptive Authentication for the user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetUserMFAPreference service method.</param>
         /// 
@@ -7569,7 +8749,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -7657,6 +8837,16 @@ namespace Amazon.CognitoIdentityProvider
         /// You can't use it to configure time-based one-time password (TOTP) software token MFA.
         /// To configure either type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
         /// instead.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetUserSettings service method.</param>
         /// 
@@ -7741,6 +8931,14 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
         /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
@@ -7756,7 +8954,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -8182,6 +9380,16 @@ namespace Amazon.CognitoIdentityProvider
         /// Provides the feedback for an authentication event, whether it was from a valid user
         /// or not. This feedback is used for improving the risk evaluation decision for the user
         /// pool as part of Amazon Cognito advanced security.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthEventFeedback service method.</param>
         /// 
@@ -8258,6 +9466,16 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Updates the device status.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceStatus service method.</param>
         /// 
@@ -8345,10 +9563,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Updates the specified group with the specified attributes.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
@@ -8419,6 +9652,26 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Updates IdP information for a user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider service method.</param>
         /// 
@@ -8500,7 +9753,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// If you don't provide a value for an attribute, it is set to the default value.
         /// </para>
-        ///  </important>
+        ///  </important> <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceServer service method.</param>
         /// 
@@ -8574,6 +9845,14 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
         /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
@@ -8589,7 +9868,7 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
@@ -8717,12 +9996,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateUserPool
 
         /// <summary>
-        /// Updates the specified user pool with the specified attributes. You can get a list
-        /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
-        /// If you don't provide a value for an attribute, it will be set to the default value.
-        /// 
-        /// 
-        ///  <note> 
+        /// <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
@@ -8739,11 +10013,39 @@ namespace Amazon.CognitoIdentityProvider
         /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
-        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+        /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Updates the specified user pool with the specified attributes. You can get a list
+        /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+        /// value.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPool service method.</param>
         /// 
@@ -8842,13 +10144,33 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <important> 
         /// <para>
-        /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+        /// value.
         /// </para>
         ///  </important> 
         /// <para>
         /// You can also use this operation to enable token revocation for user pool clients.
         /// For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolClient service method.</param>
         /// 
@@ -8969,6 +10291,25 @@ namespace Amazon.CognitoIdentityProvider
         /// For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
         /// Your Own Domain for the Hosted UI</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  <p class="title"> <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolDomain service method.</param>
         /// 
@@ -9041,6 +10382,16 @@ namespace Amazon.CognitoIdentityProvider
         /// Use this API to register a user's entered time-based one-time password (TOTP) code
         /// and mark the user's software token MFA status as "verified" if successful. The request
         /// takes an access token or a session string, but not both.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifySoftwareToken service method.</param>
         /// 
@@ -9146,6 +10497,15 @@ namespace Amazon.CognitoIdentityProvider
         /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
         /// UserAttributeUpdateSettingsType</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyUserAttribute service method.</param>
         /// 
@@ -9242,5 +10602,28 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonCognitoIdentityProviderEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

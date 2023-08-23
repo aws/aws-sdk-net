@@ -33,7 +33,7 @@ namespace Amazon.Runtime
     /// </summary>
     public class AssumeRoleWithWebIdentityCredentials : RefreshingAWSCredentials
     {
-        private const int PREEMPT_EXPIRY_MINUTES = 5;
+        private const int PREEMPT_EXPIRY_MINUTES = 15;
         private static readonly RegionEndpoint _defaultSTSClientRegion = RegionEndpoint.USEast1;
         private static readonly string _roleSessionNameDefault = Guid.NewGuid().ToString();
 

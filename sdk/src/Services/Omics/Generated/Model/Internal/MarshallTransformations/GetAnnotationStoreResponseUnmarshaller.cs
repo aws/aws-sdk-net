@@ -75,6 +75,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("numVersions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.NumVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("reference", targetDepth))
                 {
                     var unmarshaller = ReferenceItemUnmarshaller.Instance;

@@ -52,7 +52,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property AfterCommitId. 
         /// <para>
         /// The full commit ID of the commit in the source branch that was the tip of the branch
-        /// at the time the comment was made.
+        /// at the time the comment was made. Requirement is conditional: <code>afterCommitId</code>
+        /// must be specified when <code>repositoryName</code> is included.
         /// </para>
         /// </summary>
         public string AfterCommitId
@@ -71,7 +72,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property BeforeCommitId. 
         /// <para>
         /// The full commit ID of the commit in the destination branch that was the tip of the
-        /// branch at the time the pull request was created.
+        /// branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code>
+        /// must be specified when <code>repositoryName</code> is included.
         /// </para>
         /// </summary>
         public string BeforeCommitId
@@ -146,7 +148,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository that contains the pull request.
+        /// The name of the repository that contains the pull request. Requirement is conditional:
+        /// <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and
+        /// <code>afterCommitId</code> are included.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

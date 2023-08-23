@@ -354,6 +354,89 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  AcceptShare
+
+
+        /// <summary>
+        /// Accepts a share for an analytics store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptShare service method.</param>
+        /// 
+        /// <returns>The response from the AcceptShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">REST API Reference for AcceptShare Operation</seealso>
+        public virtual AcceptShareResponse AcceptShare(AcceptShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptShareResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts a share for an analytics store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">REST API Reference for AcceptShare Operation</seealso>
+        public virtual Task<AcceptShareResponse> AcceptShareAsync(AcceptShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteReadSet
 
 
@@ -834,6 +917,89 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  CreateAnnotationStoreVersion
+
+
+        /// <summary>
+        /// Creates a new version of an annotation store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnnotationStoreVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnnotationStoreVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">REST API Reference for CreateAnnotationStoreVersion Operation</seealso>
+        public virtual CreateAnnotationStoreVersionResponse CreateAnnotationStoreVersion(CreateAnnotationStoreVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnnotationStoreVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnnotationStoreVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnnotationStoreVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new version of an annotation store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnnotationStoreVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnnotationStoreVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">REST API Reference for CreateAnnotationStoreVersion Operation</seealso>
+        public virtual Task<CreateAnnotationStoreVersionResponse> CreateAnnotationStoreVersionAsync(CreateAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnnotationStoreVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnnotationStoreVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAnnotationStoreVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMultipartReadSetUpload
 
 
@@ -1166,6 +1332,91 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  CreateShare
+
+
+        /// <summary>
+        /// Creates a share offer that can be accepted outside the account by a subscriber. The
+        /// share is created by the owner and accepted by the principal subscriber.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">REST API Reference for CreateShare Operation</seealso>
+        public virtual CreateShareResponse CreateShare(CreateShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a share offer that can be accepted outside the account by a subscriber. The
+        /// share is created by the owner and accepted by the principal subscriber.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">REST API Reference for CreateShare Operation</seealso>
+        public virtual Task<CreateShareResponse> CreateShareAsync(CreateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVariantStore
 
 
@@ -1411,6 +1662,83 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = DeleteAnnotationStoreResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAnnotationStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAnnotationStoreVersions
+
+
+        /// <summary>
+        /// Deletes one or multiple versions of an annotation store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnnotationStoreVersions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnnotationStoreVersions service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">REST API Reference for DeleteAnnotationStoreVersions Operation</seealso>
+        public virtual DeleteAnnotationStoreVersionsResponse DeleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnnotationStoreVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnnotationStoreVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAnnotationStoreVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes one or multiple versions of an annotation store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnnotationStoreVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnnotationStoreVersions service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">REST API Reference for DeleteAnnotationStoreVersions Operation</seealso>
+        public virtual Task<DeleteAnnotationStoreVersionsResponse> DeleteAnnotationStoreVersionsAsync(DeleteAnnotationStoreVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnnotationStoreVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnnotationStoreVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAnnotationStoreVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1842,6 +2170,89 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  DeleteShare
+
+
+        /// <summary>
+        /// Deletes a share of an analytics store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">REST API Reference for DeleteShare Operation</seealso>
+        public virtual DeleteShareResponse DeleteShare(DeleteShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteShareResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a share of an analytics store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">REST API Reference for DeleteShare Operation</seealso>
+        public virtual Task<DeleteShareResponse> DeleteShareAsync(DeleteShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteVariantStore
 
 
@@ -2146,6 +2557,77 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = GetAnnotationStoreResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetAnnotationStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAnnotationStoreVersion
+
+
+        /// <summary>
+        /// Retrieves the metadata for an annotation store version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnnotationStoreVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetAnnotationStoreVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">REST API Reference for GetAnnotationStoreVersion Operation</seealso>
+        public virtual GetAnnotationStoreVersionResponse GetAnnotationStoreVersion(GetAnnotationStoreVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnnotationStoreVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnnotationStoreVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetAnnotationStoreVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the metadata for an annotation store version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnnotationStoreVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAnnotationStoreVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">REST API Reference for GetAnnotationStoreVersion Operation</seealso>
+        public virtual Task<GetAnnotationStoreVersionResponse> GetAnnotationStoreVersionAsync(GetAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnnotationStoreVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnnotationStoreVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAnnotationStoreVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3205,6 +3687,89 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  GetShare
+
+
+        /// <summary>
+        /// Retrieves the metadata for a share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetShare service method.</param>
+        /// 
+        /// <returns>The response from the GetShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">REST API Reference for GetShare Operation</seealso>
+        public virtual GetShareResponse GetShare(GetShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShareResponseUnmarshaller.Instance;
+
+            return Invoke<GetShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the metadata for a share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetShare service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">REST API Reference for GetShare Operation</seealso>
+        public virtual Task<GetShareResponse> GetShareAsync(GetShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetVariantImportJob
 
 
@@ -3574,6 +4139,77 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = ListAnnotationStoresResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAnnotationStoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAnnotationStoreVersions
+
+
+        /// <summary>
+        /// Lists the versions of an annotation store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnnotationStoreVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAnnotationStoreVersions service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">REST API Reference for ListAnnotationStoreVersions Operation</seealso>
+        public virtual ListAnnotationStoreVersionsResponse ListAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnnotationStoreVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnnotationStoreVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnnotationStoreVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the versions of an annotation store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnnotationStoreVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnnotationStoreVersions service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">REST API Reference for ListAnnotationStoreVersions Operation</seealso>
+        public virtual Task<ListAnnotationStoreVersionsResponse> ListAnnotationStoreVersionsAsync(ListAnnotationStoreVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnnotationStoreVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnnotationStoreVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAnnotationStoreVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4625,6 +5261,89 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = ListSequenceStoresResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListSequenceStoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListShares
+
+
+        /// <summary>
+        /// Lists all shares associated with an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListShares service method.</param>
+        /// 
+        /// <returns>The response from the ListShares service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">REST API Reference for ListShares Operation</seealso>
+        public virtual ListSharesResponse ListShares(ListSharesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSharesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all shares associated with an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListShares service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListShares service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">REST API Reference for ListShares Operation</seealso>
+        public virtual Task<ListSharesResponse> ListSharesAsync(ListSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSharesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5775,6 +6494,77 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  UpdateAnnotationStoreVersion
+
+
+        /// <summary>
+        /// Updates the description of an annotation store version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnnotationStoreVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnnotationStoreVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">REST API Reference for UpdateAnnotationStoreVersion Operation</seealso>
+        public virtual UpdateAnnotationStoreVersionResponse UpdateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnnotationStoreVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnnotationStoreVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAnnotationStoreVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the description of an annotation store version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnnotationStoreVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAnnotationStoreVersion service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">REST API Reference for UpdateAnnotationStoreVersion Operation</seealso>
+        public virtual Task<UpdateAnnotationStoreVersionResponse> UpdateAnnotationStoreVersionAsync(UpdateAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnnotationStoreVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnnotationStoreVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAnnotationStoreVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateRunGroup
 
 
@@ -6115,5 +6905,28 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonOmicsEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

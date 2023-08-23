@@ -45,6 +45,7 @@ namespace Amazon.Finspace.Model
         private string _clientToken;
         private string _clusterName;
         private List<KxDatabaseConfiguration> _databases = new List<KxDatabaseConfiguration>();
+        private KxDeploymentConfiguration _deploymentConfiguration;
         private string _environmentId;
 
         /// <summary>
@@ -102,6 +103,25 @@ namespace Amazon.Finspace.Model
         internal bool IsSetDatabases()
         {
             return this._databases != null && this._databases.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        ///  The configuration that allows you to choose how you want to update the databases
+        /// on a cluster. 
+        /// </para>
+        /// </summary>
+        public KxDeploymentConfiguration DeploymentConfiguration
+        {
+            get { return this._deploymentConfiguration; }
+            set { this._deploymentConfiguration = value; }
+        }
+
+        // Check to see if DeploymentConfiguration property is set
+        internal bool IsSetDeploymentConfiguration()
+        {
+            return this._deploymentConfiguration != null;
         }
 
         /// <summary>

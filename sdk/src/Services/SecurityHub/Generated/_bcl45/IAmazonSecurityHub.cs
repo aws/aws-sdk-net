@@ -37,8 +37,8 @@ namespace Amazon.SecurityHub
     /// Hub collects security data from Amazon Web Services accounts, services, and integrated
     /// third-party products and helps you analyze security trends in your environment to
     /// identify the highest priority security issues. For more information about Security
-    /// Hub, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">Security
-    /// HubUser Guide</a>.
+    /// Hub, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
+    /// <i>Security Hub User Guide</i> </a>.
     /// 
     ///  
     /// <para>
@@ -2082,8 +2082,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Can be used to delete member accounts that belong to an organization as well as member
-        /// accounts that were invited manually.
+        /// You can invoke this API only to delete accounts that became members through invitation.
+        /// You can't invoke this API to delete accounts that belong to an Organizations organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
@@ -2117,8 +2117,8 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Can be used to delete member accounts that belong to an organization as well as member
-        /// accounts that were invited manually.
+        /// You can invoke this API only to delete accounts that became members through invitation.
+        /// You can't invoke this API to delete accounts that belong to an Organizations organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
@@ -2666,14 +2666,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables Security Hub in your account only in the current Region. To disable Security
-        /// Hub in all Regions, you must submit one request per Region where you have enabled
-        /// Security Hub.
+        /// Disables Security Hub in your account only in the current Amazon Web Services Region.
+        /// To disable Security Hub in all Regions, you must submit one request per Region where
+        /// you have enabled Security Hub.
         /// 
         ///  
         /// <para>
-        /// When you disable Security Hub for an administrator account, it doesn't disable Security
-        /// Hub for any associated member accounts.
+        /// You can't disable Security Hub in an account that is currently the Security Hub administrator.
         /// </para>
         ///  
         /// <para>
@@ -2711,14 +2710,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables Security Hub in your account only in the current Region. To disable Security
-        /// Hub in all Regions, you must submit one request per Region where you have enabled
-        /// Security Hub.
+        /// Disables Security Hub in your account only in the current Amazon Web Services Region.
+        /// To disable Security Hub in all Regions, you must submit one request per Region where
+        /// you have enabled Security Hub.
         /// 
         ///  
         /// <para>
-        /// When you disable Security Hub for an administrator account, it doesn't disable Security
-        /// Hub for any associated member accounts.
+        /// You can't disable Security Hub in an account that is currently the Security Hub administrator.
         /// </para>
         ///  
         /// <para>
@@ -5223,6 +5221,17 @@ namespace Amazon.SecurityHub
         Task<UpdateStandardsControlResponse> UpdateStandardsControlAsync(UpdateStandardsControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

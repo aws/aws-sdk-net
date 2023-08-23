@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Compute. 
         /// <para>
-        /// The details of the compute resource you registered to the specified fleet.
+        /// The set of properties for the requested compute resource.
         /// </para>
         /// </summary>
         public Compute Compute

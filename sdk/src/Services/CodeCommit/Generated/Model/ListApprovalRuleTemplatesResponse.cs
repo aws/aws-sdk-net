@@ -39,8 +39,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ApprovalRuleTemplateNames. 
         /// <para>
-        /// The names of all the approval rule templates found in the AWS Region for your AWS
-        /// account.
+        /// The names of all the approval rule templates found in the Amazon Web Services Region
+        /// for your Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<string> ApprovalRuleTemplateNames

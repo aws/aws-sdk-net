@@ -3917,7 +3917,7 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         ///  Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets,
-        /// and non-root nested stacks are not supported. 
+        /// and non-root nested stacks, are not supported. 
         /// </para>
         ///  
         /// <para>
@@ -3932,15 +3932,21 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  <note> 
         /// <para>
-        ///  When you import an existing CloudFormation stack into a portfolio, constraints that
-        /// are associated with the product aren't applied during the import process. The constraints
-        /// are applied after you call <code>UpdateProvisionedProduct</code> for the provisioned
-        /// product. 
+        ///  When you import an existing CloudFormation stack into a portfolio, Service Catalog
+        /// does not apply the product's associated constraints during the import process. Service
+        /// Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code>
+        /// for the provisioned product. 
         /// </para>
         ///  </note> 
         /// <para>
         ///  The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
         /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only import one provisioned product at a time. The product's CloudFormation
+        /// stack must have the <code>IMPORT_COMPLETE</code> status before you import another.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct service method.</param>
@@ -3978,7 +3984,7 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         ///  Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets,
-        /// and non-root nested stacks are not supported. 
+        /// and non-root nested stacks, are not supported. 
         /// </para>
         ///  
         /// <para>
@@ -3993,15 +3999,21 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  <note> 
         /// <para>
-        ///  When you import an existing CloudFormation stack into a portfolio, constraints that
-        /// are associated with the product aren't applied during the import process. The constraints
-        /// are applied after you call <code>UpdateProvisionedProduct</code> for the provisioned
-        /// product. 
+        ///  When you import an existing CloudFormation stack into a portfolio, Service Catalog
+        /// does not apply the product's associated constraints during the import process. Service
+        /// Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code>
+        /// for the provisioned product. 
         /// </para>
         ///  </note> 
         /// <para>
         ///  The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
         /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only import one provisioned product at a time. The product's CloudFormation
+        /// stack must have the <code>IMPORT_COMPLETE</code> status before you import another.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct service method.</param>
@@ -5778,7 +5790,7 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation
         /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
-        /// In this case, you must wait for the portfolio share to be COMPLETED.
+        /// In this case, you must wait for the portfolio share to be completed.
         /// </para>
         ///  
         /// <para>
@@ -5846,7 +5858,7 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation
         /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
-        /// In this case, you must wait for the portfolio share to be COMPLETED.
+        /// In this case, you must wait for the portfolio share to be completed.
         /// </para>
         ///  
         /// <para>
@@ -6296,5 +6308,28 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonServiceCatalogEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

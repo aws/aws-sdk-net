@@ -63,7 +63,12 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property DisableTemplateValidation. 
         /// <para>
         /// If set to true, Service Catalog stops validating the specified provisioning artifact
-        /// even if it is invalid.
+        /// even if it is invalid. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Service Catalog does not support template validation for the <code>TERRAFORM_OS</code>
+        /// product type. 
         /// </para>
         /// </summary>
         public bool DisableTemplateValidation
@@ -142,15 +147,6 @@ namespace Amazon.ServiceCatalog.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon
-        /// Web Services Resources
         /// </para>
         ///  </li> <li> 
         /// <para>

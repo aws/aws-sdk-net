@@ -47,7 +47,7 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     ///  <code>GetTextDetection</code> returns an array of detected text (<code>TextDetections</code>)
-    /// sorted by the time the text was detected, up to 50 words per frame of video.
+    /// sorted by the time the text was detected, up to 100 words per frame of video.
     /// </para>
     ///  
     /// <para>

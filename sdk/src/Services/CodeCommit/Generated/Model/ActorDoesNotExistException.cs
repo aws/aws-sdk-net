@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The specified Amazon Resource Name (ARN) does not exist in the AWS account.
+    /// The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services
+    /// account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -347,17 +347,90 @@ namespace Amazon.ResilienceHub
 
         #endregion
         
+        #region  BatchUpdateRecommendationStatus
+
+        /// <summary>
+        /// Enables you to include or exclude one or more operational recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationStatus service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateRecommendationStatus service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus">REST API Reference for BatchUpdateRecommendationStatus Operation</seealso>
+        public virtual BatchUpdateRecommendationStatusResponse BatchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateRecommendationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateRecommendationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateRecommendationStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateRecommendationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationStatus operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateRecommendationStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus">REST API Reference for BatchUpdateRecommendationStatus Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateRecommendationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateRecommendationStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateRecommendationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateRecommendationStatus.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateRecommendationStatusResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus">REST API Reference for BatchUpdateRecommendationStatus Operation</seealso>
+        public virtual BatchUpdateRecommendationStatusResponse EndBatchUpdateRecommendationStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateRecommendationStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateApp
 
         /// <summary>
         /// Creates an Resilience Hub application. An Resilience Hub application is a collection
         /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
-        /// application disruptions. To describe an Resilience Hub application, you provide an
+        /// application disruptions. To describe a Resilience Hub application, you provide an
         /// application name, resources from one or more CloudFormation stacks, Resource Groups,
         /// Terraform state files, AppRegistry applications, and an appropriate resiliency policy.
-        /// For more information about the number of resources supported per application, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
-        /// Quotas</a>.
+        /// In addition, you can also add resources that are located on Amazon Elastic Kubernetes
+        /// Service (Amazon EKS) clusters as optional resources. For more information about the
+        /// number of resources supported per application, see <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
+        /// quotas</a>.
         /// 
         ///  
         /// <para>
@@ -2090,6 +2163,11 @@ namespace Amazon.ResilienceHub
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
+        /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
         /// This exception occurs when you have exceeded the limit on the number of requests per
         /// second.
@@ -2211,6 +2289,75 @@ namespace Amazon.ResilienceHub
         public virtual ListAlarmRecommendationsResponse EndListAlarmRecommendations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAlarmRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAppAssessmentComplianceDrifts
+
+        /// <summary>
+        /// List of compliance drifts that were detected while running an assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentComplianceDrifts service method.</param>
+        /// 
+        /// <returns>The response from the ListAppAssessmentComplianceDrifts service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">REST API Reference for ListAppAssessmentComplianceDrifts Operation</seealso>
+        public virtual ListAppAssessmentComplianceDriftsResponse ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppAssessmentComplianceDriftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppAssessmentComplianceDriftsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppAssessmentComplianceDriftsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppAssessmentComplianceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentComplianceDrifts operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppAssessmentComplianceDrifts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">REST API Reference for ListAppAssessmentComplianceDrifts Operation</seealso>
+        public virtual IAsyncResult BeginListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppAssessmentComplianceDriftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppAssessmentComplianceDriftsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppAssessmentComplianceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppAssessmentComplianceDrifts.</param>
+        /// 
+        /// <returns>Returns a  ListAppAssessmentComplianceDriftsResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">REST API Reference for ListAppAssessmentComplianceDrifts Operation</seealso>
+        public virtual ListAppAssessmentComplianceDriftsResponse EndListAppAssessmentComplianceDrifts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAppAssessmentComplianceDriftsResponse>(asyncResult);
         }
 
         #endregion
@@ -4375,5 +4522,28 @@ namespace Amazon.ResilienceHub
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonResilienceHubEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

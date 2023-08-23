@@ -58,6 +58,8 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private List<Decision> _decisions = new List<Decision>();
         private string _executionContext;
+        private TaskList _taskList;
+        private string _taskListScheduleToStartTimeout;
         private string _taskToken;
 
         /// <summary>
@@ -96,6 +98,55 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetExecutionContext()
         {
             return this._executionContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskList. 
+        /// <para>
+        /// The task list to use for the future decision tasks of this workflow execution. This
+        /// list overrides the original task list you specified while starting the workflow execution.
+        /// 
+        /// </para>
+        /// </summary>
+        public TaskList TaskList
+        {
+            get { return this._taskList; }
+            set { this._taskList = value; }
+        }
+
+        // Check to see if TaskList property is set
+        internal bool IsSetTaskList()
+        {
+            return this._taskList != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskListScheduleToStartTimeout. 
+        /// <para>
+        /// Specifies a timeout (in seconds) for the task list override. When this parameter is
+        /// missing, the task list override is permanent. This parameter makes it possible to
+        /// temporarily override the task list. If a decision task scheduled on the override task
+        /// list is not started within the timeout, the decision task will time out. Amazon SWF
+        /// will revert the override and schedule a new decision task to the original task list.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a decision task scheduled on the override task list is started within the timeout,
+        /// but not completed within the start-to-close timeout, Amazon SWF will also revert the
+        /// override and schedule a new decision task to the original task list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8)]
+        public string TaskListScheduleToStartTimeout
+        {
+            get { return this._taskListScheduleToStartTimeout; }
+            set { this._taskListScheduleToStartTimeout = value; }
+        }
+
+        // Check to see if TaskListScheduleToStartTimeout property is set
+        internal bool IsSetTaskListScheduleToStartTimeout()
+        {
+            return this._taskListScheduleToStartTimeout != null;
         }
 
         /// <summary>

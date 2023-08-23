@@ -81,6 +81,7 @@ namespace Amazon.RDS.Model
         private ScalingConfiguration _scalingConfiguration;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceDBClusterIdentifier;
+        private string _sourceDbClusterResourceId;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private bool? _useLatestRestorableTime;
@@ -882,7 +883,6 @@ namespace Amazon.RDS.Model
         /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceDBClusterIdentifier
         {
             get { return this._sourceDBClusterIdentifier; }
@@ -893,6 +893,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceDBClusterIdentifier()
         {
             return this._sourceDBClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDbClusterResourceId. 
+        /// <para>
+        /// The resource ID of the source DB cluster from which to restore.
+        /// </para>
+        /// </summary>
+        public string SourceDbClusterResourceId
+        {
+            get { return this._sourceDbClusterResourceId; }
+            set { this._sourceDbClusterResourceId = value; }
+        }
+
+        // Check to see if SourceDbClusterResourceId property is set
+        internal bool IsSetSourceDbClusterResourceId()
+        {
+            return this._sourceDbClusterResourceId != null;
         }
 
         /// <summary>

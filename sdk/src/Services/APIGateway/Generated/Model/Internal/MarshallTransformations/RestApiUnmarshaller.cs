@@ -124,6 +124,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rootResourceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RootResourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

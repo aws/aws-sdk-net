@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
-    /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
-    /// For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+    /// Indicates that the provided Amazon S3 bucket or Amazon Web Services KMS encryption
+    /// key is invalid, or that Amazon SES could not publish to the bucket, possibly due to
+    /// permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
     /// SES Developer Guide</a>.
     /// </summary>
     #if !NETSTANDARD

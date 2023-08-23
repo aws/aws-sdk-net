@@ -76,6 +76,11 @@ namespace Amazon.CodeCommit.Model
         IListBranchesPaginator ListBranches(ListBranchesRequest request);
 
         /// <summary>
+        /// Paginator for ListFileCommitHistory operation
+        ///</summary>
+        IListFileCommitHistoryPaginator ListFileCommitHistory(ListFileCommitHistoryRequest request);
+
+        /// <summary>
         /// Paginator for ListPullRequests operation
         ///</summary>
         IListPullRequestsPaginator ListPullRequests(ListPullRequestsRequest request);

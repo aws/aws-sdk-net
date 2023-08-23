@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The quota for retained automated backups was exceeded. This prevents you from retaining
     /// any additional automated backups. The retained automated backups quota is the same
-    /// as your DB Instance quota.
+    /// as your DB instance quota.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

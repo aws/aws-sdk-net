@@ -57,6 +57,11 @@ namespace Amazon.Rekognition.Model
     /// the <code>NextToken</code> request parameter with the token value returned from the
     /// previous call to <code>GetFaceDetection</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// Note that for the <code>GetFaceDetection</code> operation, the returned values for
+    /// <code>FaceOccluded</code> and <code>EyeDirection</code> will always be "null".
+    /// </para>
     /// </summary>
     public partial class GetFaceDetectionRequest : AmazonRekognitionRequest
     {

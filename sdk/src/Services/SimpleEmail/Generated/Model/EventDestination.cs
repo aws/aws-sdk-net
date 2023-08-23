@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Contains information about the event destination that the specified email sending
-    /// events will be published to.
+    /// Contains information about an event destination.
     /// 
     ///  <note> 
     /// <para>
@@ -43,7 +42,7 @@ namespace Amazon.SimpleEmail.Model
     /// Event destinations are associated with configuration sets, which enable you to publish
     /// email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
     /// Notification Service (Amazon SNS). For information about using configuration sets,
-    /// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+    /// see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -120,6 +119,45 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The type of email sending events to publish to the event destination.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>send</code> - The call was successful and Amazon SES is attempting to deliver
+        /// the email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>reject</code> - Amazon SES determined that the email contained a virus and
+        /// rejected it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>bounce</code> - The recipient's mail server permanently rejected the email.
+        /// This corresponds to a hard bounce.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>complaint</code> - The recipient marked the email as spam.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's
+        /// mail server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>open</code> - The recipient received the email and opened it in their email
+        /// client.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>click</code> - The recipient clicked one or more links in the email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>renderingFailure</code> - Amazon SES did not send the email because of a template
+        /// rendering issue.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> MatchingEventTypes
@@ -137,16 +175,15 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the event destination. The name must:
+        /// The name of the event destination. The name must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 64 characters.
+        /// Contain 64 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>

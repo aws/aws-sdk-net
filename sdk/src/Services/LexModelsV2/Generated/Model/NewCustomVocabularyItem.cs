@@ -82,7 +82,7 @@ namespace Amazon.LexModelsV2.Model
         /// The weight assigned to the new custom vocabulary item from the custom vocabulary list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=0, Max=3)]
         public int Weight
         {
             get { return this._weight.GetValueOrDefault(); }

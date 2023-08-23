@@ -63,7 +63,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property EksSourceName. 
         /// <para>
-        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
         /// belongs to.
         /// </para>
         ///  <note> 
@@ -147,7 +147,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
-        /// The identifier of this resource.
+        /// Identifier of the physical resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,7 +166,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupName. 
         /// <para>
-        /// The name of the resource group this resource is mapped to.
+        /// Name of the resource group that the resource is mapped to.
         /// </para>
         /// </summary>
         public string ResourceGroupName
@@ -184,7 +184,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the resource this resource is mapped to.
+        /// Name of the resource that the resource is mapped to.
         /// </para>
         /// </summary>
         public string ResourceName

@@ -57,11 +57,62 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateAnnotationStoreRequest.Name</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreRequest.VersionName</property>
+    <min>3</min>
+    <max>255</max>
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateAnnotationStoreResponse.Id</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreResponse.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionRequest.Name</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionRequest.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionResponse.Id</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionResponse.Name</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionResponse.StoreId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateAnnotationStoreVersionResponse.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.ClientToken</property>
@@ -296,12 +347,26 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateShareRequest.ShareName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateShareResponse.ShareName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateVariantStoreRequest.Description</property>
     <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateVariantStoreRequest.Name</property>
+    <min>3</min>
+    <max>255</max>
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -433,6 +498,12 @@
     <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationImportJobResponse.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationStoreResponse.Description</property>
     <min>0</min>
     <max>500</max>
@@ -451,6 +522,42 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.Id</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.Name</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.StatusMessage</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.StoreId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.VersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetAnnotationStoreVersionResponse.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetRequest.Id</property>
@@ -941,6 +1048,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunTaskResponse.InstanceType</property>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.LogStream</property>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
@@ -1140,6 +1251,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListAnnotationStoresRequest.NextToken</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListAnnotationStoreVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListAnnotationStoreVersionsRequest.NextToken</property>
     <min>1</min>
     <max>10000</max>
   </property-value-rule>
@@ -1519,6 +1640,12 @@
     <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartAnnotationImportJobRequest.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartAnnotationImportJobResponse.JobId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
@@ -1778,6 +1905,36 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateAnnotationStoreVersionRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateAnnotationStoreVersionResponse.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateAnnotationStoreVersionResponse.Id</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateAnnotationStoreVersionResponse.Name</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateAnnotationStoreVersionResponse.StoreId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateAnnotationStoreVersionResponse.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.Id</property>
     <min>1</min>
     <max>18</max>
@@ -1897,6 +2054,12 @@
     <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationImportJobItem.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationStoreItem.Description</property>
     <min>0</min>
     <max>500</max>
@@ -1915,6 +2078,42 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.Id</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.Name</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.StatusMessage</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.StoreId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.VersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AnnotationStoreVersionItem.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.PartNumber</property>
@@ -2450,6 +2649,17 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ShareDetails.ShareName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ShareDetails.StatusMessage</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.SourceFiles.Source1</property>
     <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
@@ -2530,6 +2740,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.TaskListItem.InstanceType</property>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.TaskListItem.Memory</property>
     <min>1</min>
   </property-value-rule>
@@ -2582,6 +2796,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.VersionDeleteError.VersionName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowListItem.Arn</property>

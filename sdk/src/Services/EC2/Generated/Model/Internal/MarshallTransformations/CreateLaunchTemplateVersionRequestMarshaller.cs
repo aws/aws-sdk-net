@@ -615,6 +615,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NetworkInterfaceId));
                             }
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetPrimaryIpv6())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.PrimaryIpv6));
+                            }
                             if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddress())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.PrivateIpAddress));

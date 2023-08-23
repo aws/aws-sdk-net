@@ -189,8 +189,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -257,8 +263,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -370,6 +382,9 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
@@ -408,6 +423,9 @@ namespace Amazon.ChimeSDKMeetings
         /// <returns>The response from the CreateMeeting service method, as returned by ChimeSDKMeetings.</returns>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
@@ -448,6 +466,9 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
@@ -486,6 +507,9 @@ namespace Amazon.ChimeSDKMeetings
         /// <returns>The response from the CreateMeetingWithAttendees service method, as returned by ChimeSDKMeetings.</returns>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
@@ -893,8 +917,29 @@ namespace Amazon.ChimeSDKMeetings
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
         /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -910,8 +955,29 @@ namespace Amazon.ChimeSDKMeetings
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
         /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1152,11 +1218,29 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
         /// The resource that you want to tag couldn't be found.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.TooManyTagsException">
         /// Too many tags were added to the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1175,11 +1259,29 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
         /// The resource that you want to tag couldn't be found.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.TooManyTagsException">
         /// Too many tags were added to the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1232,8 +1334,26 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
         /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1286,8 +1406,26 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.LimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
         /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1350,8 +1488,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -1417,8 +1561,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -1427,6 +1577,17 @@ namespace Amazon.ChimeSDKMeetings
         Task<UpdateAttendeeCapabilitiesResponse> UpdateAttendeeCapabilitiesAsync(UpdateAttendeeCapabilitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
         
+        #endregion
+
     }
 }

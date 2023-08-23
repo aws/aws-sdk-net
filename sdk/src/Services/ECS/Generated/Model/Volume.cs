@@ -148,6 +148,10 @@ namespace Amazon.ECS.Model
         /// and hyphens are allowed. This name is referenced in the <code>sourceVolume</code>
         /// parameter of container definition <code>mountPoints</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// This is required wwhen you use an Amazon EFS volume.
+        /// </para>
         /// </summary>
         public string Name
         {

@@ -34,8 +34,46 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListBackupVaultsRequest : AmazonBackupRequest
     {
+        private bool? _byShared;
+        private VaultType _byVaultType;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ByShared. 
+        /// <para>
+        /// This parameter will sort the list of vaults by shared vaults.
+        /// </para>
+        /// </summary>
+        public bool ByShared
+        {
+            get { return this._byShared.GetValueOrDefault(); }
+            set { this._byShared = value; }
+        }
+
+        // Check to see if ByShared property is set
+        internal bool IsSetByShared()
+        {
+            return this._byShared.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByVaultType. 
+        /// <para>
+        /// This parameter will sort the list of vaults by vault type.
+        /// </para>
+        /// </summary>
+        public VaultType ByVaultType
+        {
+            get { return this._byVaultType; }
+            set { this._byVaultType = value; }
+        }
+
+        // Check to see if ByVaultType property is set
+        internal bool IsSetByVaultType()
+        {
+            return this._byVaultType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

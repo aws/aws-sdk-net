@@ -73,7 +73,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SheetId. 
         /// <para>
         /// The sheet ID of the dashboard to generate the snapshot artifact from. This value is
-        /// required for CSV or PDF format types.
+        /// required for CSV and PDF format types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -92,9 +92,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VisualIds. 
         /// <para>
-        ///  A structure that lists the IDs of the visuals in the selected sheet. Supported visual
-        /// types are table, pivot table visuals. This value is required if you are generating
-        /// a CSV. This value supports a maximum of 1 visual ID. 
+        ///  A list of visual IDs that are located in the selected sheet. This structure supports
+        /// tables and pivot tables. This structure is required if you are generating a CSV. You
+        /// can add a maximum of 1 visual ID to this structure. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

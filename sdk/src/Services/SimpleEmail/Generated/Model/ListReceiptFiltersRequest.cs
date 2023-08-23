@@ -30,11 +30,12 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReceiptFilters operation.
-    /// Lists the IP address filters associated with your AWS account in the current AWS Region.
+    /// Lists the IP address filters associated with your Amazon Web Services account in the
+    /// current Amazon Web Services Region.
     /// 
     ///  
     /// <para>
-    /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+    /// For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     ///  

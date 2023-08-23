@@ -50,6 +50,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The endpoint ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string AnalyticsEndpointId
         {
             get { return this._analyticsEndpointId; }

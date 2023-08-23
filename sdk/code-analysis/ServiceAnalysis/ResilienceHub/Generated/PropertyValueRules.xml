@@ -13,6 +13,14 @@
     <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusRequest.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusResponse.AppArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.CreateAppRequest.ClientToken</property>
     <min>1</min>
     <max>63</max>
@@ -451,6 +459,23 @@
     <pattern>^\S{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppAssessmentComplianceDriftsRequest.AssessmentArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppAssessmentComplianceDriftsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppAssessmentComplianceDriftsRequest.NextToken</property>
+    <pattern>^\S{1,2000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ListAppAssessmentComplianceDriftsResponse.NextToken</property>
+    <pattern>^\S{1,2000}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ListAppAssessmentsRequest.AppArn</property>
     <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
@@ -774,11 +799,19 @@
     <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.PublishAppVersionRequest.VersionName</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PublishAppVersionResponse.AppArn</property>
     <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PublishAppVersionResponse.AppVersion</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.PublishAppVersionResponse.VersionName</property>
     <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1024,6 +1057,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.AppAssessment.VersionName</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.AppArn</property>
     <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
   </property-value-rule>
@@ -1043,6 +1080,10 @@
     <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.Message</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.AppAssessmentSummary.VersionName</property>
+    <pattern>^\S{1,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppComponent.Id</property>
@@ -1093,6 +1134,60 @@
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AppVersionSummary.AppVersion</property>
     <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.AppVersionSummary.VersionName</property>
+    <pattern>^\S{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusFailedEntry.EntryId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusFailedEntry.ErrorMessage</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusSuccessfulEntry.EntryId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusSuccessfulEntry.ReferenceId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ComplianceDrift.ActualReferenceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ComplianceDrift.AppId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ComplianceDrift.AppVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ComplianceDrift.EntityId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ComplianceDrift.EntityType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.ComplianceDrift.ExpectedReferenceId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.ComponentRecommendation.AppComponentName</property>
@@ -1185,6 +1280,15 @@
     <pattern>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.EventSubscription.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.EventSubscription.SnsTopicArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.FailurePolicy.RpoInSecs</property>
     <min>0</min>
   </property-value-rule>
@@ -1215,6 +1319,10 @@
     <property>Amazon.ResilienceHub.Model.LogicalResourceId.TerraformSourceName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.PermissionModel.InvokerRoleName</property>
+    <pattern>^([^/]([!-~]+/){1,511})?[A-Za-z0-9_+=,.@-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PhysicalResource.ParentResourceName</property>
@@ -1443,5 +1551,28 @@
     <property>Amazon.ResilienceHub.Model.UnsupportedResource.UnsupportedResourceStatus</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusItem.ResourceId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusItem.TargetAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusItem.TargetRegion</property>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusRequestEntry.EntryId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusRequestEntry.ReferenceId</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
 </property-value-rules>

@@ -72,10 +72,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelCardName. 
         /// <para>
-        /// The name of the model card to update.
+        /// The name or Amazon Resource Name (ARN) of the model card to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ModelCardName
         {
             get { return this._modelCardName; }

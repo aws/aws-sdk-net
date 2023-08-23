@@ -45,6 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user's city.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string City
         {
             get { return this._city; }
@@ -63,6 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user's country.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string Country
         {
             get { return this._country; }
@@ -81,6 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user's device name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string DeviceName
         {
             get { return this._deviceName; }
@@ -99,6 +102,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The source IP address of your user's device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -117,6 +121,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user's time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string Timezone
         {
             get { return this._timezone; }

@@ -30,9 +30,20 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCompute operation.
-    /// Retrieves properties for a compute resource. To request a compute resource specify
-    /// the fleet ID and compute name. If successful, Amazon GameLift returns an object containing
-    /// the build properties.
+    /// Retrieves properties for a compute resource in an Amazon GameLift fleet. Call <a>ListCompute</a>
+    /// to get a list of compute resources in a fleet. You can request information for computes
+    /// in either managed EC2 fleets or Anywhere fleets. 
+    /// 
+    ///  
+    /// <para>
+    /// To request compute properties, specify the compute name and fleet ID.
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation returns details for the requested compute resource.
+    /// For managed EC2 fleets, this operation returns the fleet's EC2 instances. For Anywhere
+    /// fleets, this operation returns the fleet's registered computes. 
+    /// </para>
     /// </summary>
     public partial class DescribeComputeRequest : AmazonGameLiftRequest
     {
@@ -42,8 +53,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// A descriptive label that is associated with the compute resource registered to your
-        /// fleet.
+        /// The unique identifier of the compute resource to retrieve properties for. For an Anywhere
+        /// fleet compute, use the registered compute name. For a managed EC2 fleet instance,
+        /// use the instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -62,7 +74,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet the compute is registered to.
+        /// A unique identifier for the fleet that the compute is registered to. You can use either
+        /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

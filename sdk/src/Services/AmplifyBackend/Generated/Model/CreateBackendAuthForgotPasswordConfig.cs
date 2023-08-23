@@ -65,6 +65,7 @@ namespace Amazon.AmplifyBackend.Model
         /// their password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public EmailSettings EmailSettings
         {
             get { return this._emailSettings; }
@@ -84,6 +85,7 @@ namespace Amazon.AmplifyBackend.Model
         /// their password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public SmsSettings SmsSettings
         {
             get { return this._smsSettings; }

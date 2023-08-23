@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to specify the delivery options for.
+        /// The name of the configuration set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

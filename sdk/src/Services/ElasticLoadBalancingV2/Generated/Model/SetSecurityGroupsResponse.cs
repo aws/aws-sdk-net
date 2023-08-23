@@ -33,7 +33,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class SetSecurityGroupsResponse : AmazonWebServiceResponse
     {
+        private EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum _enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
         private List<string> _securityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic. 
+        /// <para>
+        /// Indicates whether to evaluate inbound security group rules for traffic sent to a Network
+        /// Load Balancer through Amazon Web Services PrivateLink.
+        /// </para>
+        /// </summary>
+        public EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic
+        {
+            get { return this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
+            set { this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
+        }
+
+        // Check to see if EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic property is set
+        internal bool IsSetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic()
+        {
+            return this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

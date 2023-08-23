@@ -116,6 +116,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBClusterAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterAutomatedBackupNotFoundFault"))
+                {
+                    return DBClusterAutomatedBackupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
                 {
                     return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

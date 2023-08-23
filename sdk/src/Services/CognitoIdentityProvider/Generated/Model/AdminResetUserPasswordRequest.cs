@@ -33,16 +33,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Resets the specified user's password in a user pool as an administrator. Works on
     /// any user.
     /// 
-    ///  
-    /// <para>
-    /// When a developer calls this API, the current password is invalidated, so it must be
-    /// changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException
-    /// exception back and should direct the user down the flow to reset the password, which
-    /// is the same as the forgot password flow. In addition, if the user pool has phone verification
-    /// selected and a verified phone number exists for the user, or if email verification
-    /// is selected and a verified email exists for the user, calling this API will also result
-    /// in sending a message to the end user with the code to change their password.
-    /// </para>
     ///  <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
@@ -60,14 +50,39 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
-    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Calling this action requires developer credentials.
+    /// Deactivates a user's password, requiring them to change it. If a user tries to sign
+    /// in after the API is called, Amazon Cognito responds with a <code>PasswordResetRequiredException</code>
+    /// error. Your app must then perform the actions that reset your user's password: the
+    /// forgot-password flow. In addition, if the user pool has phone verification selected
+    /// and a verified phone number exists for the user, or if email verification is selected
+    /// and a verified email exists for the user, calling this API will also result in sending
+    /// a message to the end user with the code to change their password.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class AdminResetUserPasswordRequest : AmazonCognitoIdentityProviderRequest
     {

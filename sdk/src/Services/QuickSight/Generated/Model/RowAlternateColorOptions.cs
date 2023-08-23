@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private List<string> _rowAlternateColors = new List<string>();
         private WidgetStatus _status;
+        private WidgetStatus _usePrimaryBackgroundColor;
 
         /// <summary>
         /// Gets and sets the property RowAlternateColors. 
@@ -71,6 +72,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsePrimaryBackgroundColor. 
+        /// <para>
+        /// The primary background color options for alternate rows.
+        /// </para>
+        /// </summary>
+        public WidgetStatus UsePrimaryBackgroundColor
+        {
+            get { return this._usePrimaryBackgroundColor; }
+            set { this._usePrimaryBackgroundColor = value; }
+        }
+
+        // Check to see if UsePrimaryBackgroundColor property is set
+        internal bool IsSetUsePrimaryBackgroundColor()
+        {
+            return this._usePrimaryBackgroundColor != null;
         }
 
     }

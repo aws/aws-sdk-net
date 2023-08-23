@@ -38,9 +38,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// Once the session ends, the game session object is retained for 30 days. This means
-    /// you can reuse idempotency token values after this time. Game session logs are retained
-    /// for 14 days.
+    /// Amazon GameLift retains a game session resource for 30 days after the game session
+    /// ends. You can reuse idempotency token values after this time. Game session logs are
+    /// retained for 14 days.
     /// </para>
     ///  
     /// <para>
@@ -165,7 +165,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetArn. 
         /// <para>
-        ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift fleet that this game session is running on. 
         /// </para>
         /// </summary>
@@ -308,12 +308,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MatchmakerData. 
         /// <para>
-        /// Information about the matchmaking process that was used to create the game session.
-        /// It is in JSON syntax, formatted as a string. In addition the matchmaking configuration
-        /// used, it contains data on all players assigned to the match, including player attributes
-        /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-        /// Data</a>. Matchmaker data is useful when requesting match backfills, and is updated
-        /// whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
+        /// Information about the matchmaking process that resulted in the game session, if matchmaking
+        /// was used. Data is in JSON syntax, formatted as a string. Information includes the
+        /// matchmaker ID as well as player attributes and team assignments. For more details
+        /// on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
+        /// Data</a>. Matchmaker data is updated whenever new players are added during a successful
+        /// backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
         /// 
         /// </para>
         /// </summary>

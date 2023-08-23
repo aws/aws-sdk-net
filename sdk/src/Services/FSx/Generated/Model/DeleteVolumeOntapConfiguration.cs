@@ -50,8 +50,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
-        /// Deleting a SnapLock volume </a>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html">
+        /// Deleting a SnapLock volume</a>. 
         /// </para>
         /// </summary>
         public bool BypassSnaplockEnterpriseRetention

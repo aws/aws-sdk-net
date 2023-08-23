@@ -551,4 +551,108 @@ namespace Amazon.Backup
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type VaultState.
+    /// </summary>
+    public class VaultState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for VaultState
+        /// </summary>
+        public static readonly VaultState AVAILABLE = new VaultState("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for VaultState
+        /// </summary>
+        public static readonly VaultState CREATING = new VaultState("CREATING");
+        /// <summary>
+        /// Constant FAILED for VaultState
+        /// </summary>
+        public static readonly VaultState FAILED = new VaultState("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VaultState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VaultState FindValue(string value)
+        {
+            return FindValue<VaultState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VaultState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VaultType.
+    /// </summary>
+    public class VaultType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKUP_VAULT for VaultType
+        /// </summary>
+        public static readonly VaultType BACKUP_VAULT = new VaultType("BACKUP_VAULT");
+        /// <summary>
+        /// Constant LOGICALLY_AIR_GAPPED_BACKUP_VAULT for VaultType
+        /// </summary>
+        public static readonly VaultType LOGICALLY_AIR_GAPPED_BACKUP_VAULT = new VaultType("LOGICALLY_AIR_GAPPED_BACKUP_VAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VaultType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VaultType FindValue(string value)
+        {
+            return FindValue<VaultType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VaultType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

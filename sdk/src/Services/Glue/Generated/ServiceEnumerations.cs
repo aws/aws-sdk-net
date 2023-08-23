@@ -749,6 +749,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
         /// <summary>
+        /// Constant ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD");
+        /// <summary>
         /// Constant ENCRYPTED_PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_PASSWORD");
@@ -804,6 +808,38 @@ namespace Amazon.Glue
         /// Constant KAFKA_CUSTOM_CERT for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey KAFKA_CUSTOM_CERT = new ConnectionPropertyKey("KAFKA_CUSTOM_CERT");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_KEYTAB for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_KEYTAB = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_KEYTAB");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_KRB5_CONF for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_KRB5_CONF = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_KRB5_CONF");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_PRINCIPAL for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_PRINCIPAL = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_PRINCIPAL");
+        /// <summary>
+        /// Constant KAFKA_SASL_GSSAPI_SERVICE for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_GSSAPI_SERVICE = new ConnectionPropertyKey("KAFKA_SASL_GSSAPI_SERVICE");
+        /// <summary>
+        /// Constant KAFKA_SASL_MECHANISM for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_MECHANISM = new ConnectionPropertyKey("KAFKA_SASL_MECHANISM");
+        /// <summary>
+        /// Constant KAFKA_SASL_SCRAM_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_SCRAM_PASSWORD = new ConnectionPropertyKey("KAFKA_SASL_SCRAM_PASSWORD");
+        /// <summary>
+        /// Constant KAFKA_SASL_SCRAM_SECRETS_ARN for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_SCRAM_SECRETS_ARN = new ConnectionPropertyKey("KAFKA_SASL_SCRAM_SECRETS_ARN");
+        /// <summary>
+        /// Constant KAFKA_SASL_SCRAM_USERNAME for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_SCRAM_USERNAME = new ConnectionPropertyKey("KAFKA_SASL_SCRAM_USERNAME");
         /// <summary>
         /// Constant KAFKA_SKIP_CUSTOM_CERT_VALIDATION for ConnectionPropertyKey
         /// </summary>
@@ -1214,6 +1250,60 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CsvHeaderOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CsvSerdeOption.
+    /// </summary>
+    public class CsvSerdeOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LazySimpleSerDe for CsvSerdeOption
+        /// </summary>
+        public static readonly CsvSerdeOption LazySimpleSerDe = new CsvSerdeOption("LazySimpleSerDe");
+        /// <summary>
+        /// Constant None for CsvSerdeOption
+        /// </summary>
+        public static readonly CsvSerdeOption None = new CsvSerdeOption("None");
+        /// <summary>
+        /// Constant OpenCSVSerDe for CsvSerdeOption
+        /// </summary>
+        public static readonly CsvSerdeOption OpenCSVSerDe = new CsvSerdeOption("OpenCSVSerDe");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CsvSerdeOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CsvSerdeOption FindValue(string value)
+        {
+            return FindValue<CsvSerdeOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CsvSerdeOption(string value)
         {
             return FindValue(value);
         }

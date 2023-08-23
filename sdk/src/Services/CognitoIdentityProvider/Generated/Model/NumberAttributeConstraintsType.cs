@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The maximum value of an attribute that is of the number data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string MaxValue
         {
             get { return this._maxValue; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The minimum value of an attribute that is of the number data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string MinValue
         {
             get { return this._minValue; }

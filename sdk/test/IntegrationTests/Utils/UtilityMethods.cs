@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return new SHA256CryptoServiceProvider().ComputeHash(data);
         }
 
-        public static void CompareFiles(string file1, string file2)
+        public static void  CompareFiles(string file1, string file2)
         {
             byte[] file1MD5 = computeHash(file1);
             byte[] file2MD5 = computeHash(file2);
@@ -262,7 +262,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             return name + new Random().Next();
         }
-
         public class ListSleeper
         {
             private int attempt;

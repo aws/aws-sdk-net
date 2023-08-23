@@ -58,7 +58,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code>
-        /// prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with
+        /// prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with
         /// the <code>aws-fsx</code> prefix.
         /// </para>
         ///  </li> <li> 

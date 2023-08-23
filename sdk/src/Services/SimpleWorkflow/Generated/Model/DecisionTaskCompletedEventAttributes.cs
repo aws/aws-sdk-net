@@ -36,6 +36,8 @@ namespace Amazon.SimpleWorkflow.Model
         private string _executionContext;
         private long? _scheduledEventId;
         private long? _startedEventId;
+        private TaskList _taskList;
+        private string _taskListScheduleToStartTimeout;
 
         /// <summary>
         /// Gets and sets the property ExecutionContext. 
@@ -96,6 +98,40 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetStartedEventId()
         {
             return this._startedEventId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskList.
+        /// </summary>
+        public TaskList TaskList
+        {
+            get { return this._taskList; }
+            set { this._taskList = value; }
+        }
+
+        // Check to see if TaskList property is set
+        internal bool IsSetTaskList()
+        {
+            return this._taskList != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskListScheduleToStartTimeout. 
+        /// <para>
+        /// The maximum amount of time the decision task can wait to be assigned to a worker.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=8)]
+        public string TaskListScheduleToStartTimeout
+        {
+            get { return this._taskListScheduleToStartTimeout; }
+            set { this._taskListScheduleToStartTimeout = value; }
+        }
+
+        // Check to see if TaskListScheduleToStartTimeout property is set
+        internal bool IsSetTaskListScheduleToStartTimeout()
+        {
+            return this._taskListScheduleToStartTimeout != null;
         }
 
     }

@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecommendationJobStoppingConditions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFlatInvocations())
+            {
+                context.Writer.WritePropertyName("FlatInvocations");
+                context.Writer.Write(requestObject.FlatInvocations);
+            }
+
             if(requestObject.IsSetMaxInvocations())
             {
                 context.Writer.WritePropertyName("MaxInvocations");

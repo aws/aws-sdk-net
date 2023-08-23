@@ -47,6 +47,10 @@ namespace Amazon.IVSRealTime.Model
         /// <code>INSUFFICIENT_CAPABILITIES</code> indicates that the participant tried to take
         /// an action that the participant’s token is not allowed to do. For more information
         /// about participant capabilities, see the <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+        /// <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want to
+        /// publish/subscribe to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+        /// Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant tried
+        /// to subscribe to a publisher that doesn’t exist. 
         /// </para>
         /// </summary>
         public EventErrorCode ErrorCode

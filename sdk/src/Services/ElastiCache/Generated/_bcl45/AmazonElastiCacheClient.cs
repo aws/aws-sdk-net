@@ -7081,5 +7081,93 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  TestMigration
+
+
+        /// <summary>
+        /// Async API to test connection between source and target replication group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestMigration service method.</param>
+        /// 
+        /// <returns>The response from the TestMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
+        /// The targeted replication group is not available.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">REST API Reference for TestMigration Operation</seealso>
+        public virtual TestMigrationResponse TestMigration(TestMigrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<TestMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Async API to test connection between source and target replication group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestMigration service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
+        /// The targeted replication group is not available.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">REST API Reference for TestMigration Operation</seealso>
+        public virtual Task<TestMigrationResponse> TestMigrationAsync(TestMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestMigrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonElastiCacheEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

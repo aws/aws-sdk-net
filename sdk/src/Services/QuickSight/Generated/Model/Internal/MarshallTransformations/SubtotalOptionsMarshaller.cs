@@ -84,6 +84,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStyleTargets())
+            {
+                context.Writer.WritePropertyName("StyleTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStyleTargetsListValue in requestObject.StyleTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TableStyleTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStyleTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTotalCellStyle())
             {
                 context.Writer.WritePropertyName("TotalCellStyle");

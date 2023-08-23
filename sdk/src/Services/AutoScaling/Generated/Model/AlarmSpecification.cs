@@ -38,7 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        /// The names of one or more CloudWatch alarms to monitor for the instance refresh.
+        /// The names of one or more CloudWatch alarms to monitor for the instance refresh. You
+        /// can specify up to 10 alarms.
         /// </para>
         /// </summary>
         public List<string> Alarms

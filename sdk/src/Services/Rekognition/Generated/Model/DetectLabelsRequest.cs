@@ -69,10 +69,11 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// You can specify <code>MinConfidence</code> to control the confidence threshold for
-    /// the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
+    /// When getting labels, you can specify <code>MinConfidence</code> to control the confidence
+    /// threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
     /// parameter to limit the number of labels returned. The default and upper limit is 1000
-    /// labels.
+    /// labels. These arguments are only valid when supplying GENERAL_LABELS as a feature
+    /// type.
     /// </para>
     ///  
     /// <para>
@@ -258,7 +259,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property MaxLabels. 
         /// <para>
         /// Maximum number of labels you want the service to return in the response. The service
-        /// returns the specified number of highest confidence labels. 
+        /// returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS
+        /// is specified as a feature type in the Feature input parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -283,7 +285,8 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If <code>MinConfidence</code> is not specified, the operation returns labels with
-        /// a confidence values greater than or equal to 55 percent.
+        /// a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS
+        /// is specified as a feature type in the Feature input parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

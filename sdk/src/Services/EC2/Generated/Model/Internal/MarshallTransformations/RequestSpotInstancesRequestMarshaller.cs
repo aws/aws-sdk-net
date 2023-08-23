@@ -249,6 +249,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue.Ipv6Address));
                                     }
+                                    if(publicRequestLaunchSpecificationlistValuelistValue.IsSetIsPrimaryIpv6())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestLaunchSpecificationlistValuelistValue.IsPrimaryIpv6));
+                                    }
                                     publicRequestLaunchSpecificationlistValuelistValueIndex++;
                                 }
                             }
@@ -275,6 +279,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestLaunchSpecificationlistValue.IsSetNetworkInterfaceId())
                             {
                                 request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.NetworkInterfaceId));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetPrimaryIpv6())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.PrimaryIpv6));
                             }
                             if(publicRequestLaunchSpecificationlistValue.IsSetPrivateIpAddress())
                             {

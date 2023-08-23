@@ -1395,8 +1395,8 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// To create a training dataset for a project, specify <code>train</code> for the value
-        /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>test</code>
+        /// To create a training dataset for a project, specify <code>TRAIN</code> for the value
+        /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>TEST</code>
         /// for the value of <code>DatasetType</code>. 
         /// </para>
         ///  
@@ -1482,8 +1482,8 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// To create a training dataset for a project, specify <code>train</code> for the value
-        /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>test</code>
+        /// To create a training dataset for a project, specify <code>TRAIN</code> for the value
+        /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>TEST</code>
         /// for the value of <code>DatasetType</code>. 
         /// </para>
         ///  
@@ -1572,11 +1572,21 @@ namespace Amazon.Rekognition
         /// <summary>
         /// This API operation initiates a Face Liveness session. It returns a <code>SessionId</code>,
         /// which you can use to start streaming Face Liveness video and get the results for a
-        /// Face Liveness session. You can use the <code>OutputConfig</code> option in the Settings
-        /// parameter to provide an Amazon S3 bucket location. The Amazon S3 bucket stores reference
-        /// images and audit images. You can use <code>AuditImagesLimit</code> to limit the number
-        /// of audit images returned. This number is between 0 and 4. By default, it is set to
-        /// 0. The limit is best effort and based on the duration of the selfie-video.
+        /// Face Liveness session. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>OutputConfig</code> option in the Settings parameter to provide
+        /// an Amazon S3 bucket location. The Amazon S3 bucket stores reference images and audit
+        /// images. If no Amazon S3 bucket is defined, raw bytes are sent instead. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <code>AuditImagesLimit</code> to limit the number of audit images returned
+        /// when <code>GetFaceLivenessSessionResults</code> is called. This number is between
+        /// 0 and 4. By default, it is set to 0. The limit is best effort and based on the duration
+        /// of the selfie-video. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaceLivenessSession service method.</param>
         /// 
@@ -1612,11 +1622,21 @@ namespace Amazon.Rekognition
         /// <summary>
         /// This API operation initiates a Face Liveness session. It returns a <code>SessionId</code>,
         /// which you can use to start streaming Face Liveness video and get the results for a
-        /// Face Liveness session. You can use the <code>OutputConfig</code> option in the Settings
-        /// parameter to provide an Amazon S3 bucket location. The Amazon S3 bucket stores reference
-        /// images and audit images. You can use <code>AuditImagesLimit</code> to limit the number
-        /// of audit images returned. This number is between 0 and 4. By default, it is set to
-        /// 0. The limit is best effort and based on the duration of the selfie-video.
+        /// Face Liveness session. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>OutputConfig</code> option in the Settings parameter to provide
+        /// an Amazon S3 bucket location. The Amazon S3 bucket stores reference images and audit
+        /// images. If no Amazon S3 bucket is defined, raw bytes are sent instead. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <code>AuditImagesLimit</code> to limit the number of audit images returned
+        /// when <code>GetFaceLivenessSessionResults</code> is called. This number is between
+        /// 0 and 4. By default, it is set to 0. The limit is best effort and based on the duration
+        /// of the selfie-video. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaceLivenessSession service method.</param>
         /// <param name="cancellationToken">
@@ -4069,10 +4089,11 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>MinConfidence</code> to control the confidence threshold for
-        /// the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
+        /// When getting labels, you can specify <code>MinConfidence</code> to control the confidence
+        /// threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
         /// parameter to limit the number of labels returned. The default and upper limit is 1000
-        /// labels.
+        /// labels. These arguments are only valid when supplying GENERAL_LABELS as a feature
+        /// type.
         /// </para>
         ///  
         /// <para>
@@ -4280,10 +4301,11 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>MinConfidence</code> to control the confidence threshold for
-        /// the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
+        /// When getting labels, you can specify <code>MinConfidence</code> to control the confidence
+        /// threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
         /// parameter to limit the number of labels returned. The default and upper limit is 1000
-        /// labels.
+        /// labels. These arguments are only valid when supplying GENERAL_LABELS as a feature
+        /// type.
         /// </para>
         ///  
         /// <para>
@@ -5784,6 +5806,11 @@ namespace Amazon.Rekognition
         /// the <code>NextToken</code> request parameter with the token value returned from the
         /// previous call to <code>GetFaceDetection</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that for the <code>GetFaceDetection</code> operation, the returned values for
+        /// <code>FaceOccluded</code> and <code>EyeDirection</code> will always be "null".
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFaceDetection service method.</param>
         /// 
@@ -5850,6 +5877,11 @@ namespace Amazon.Rekognition
         /// the <code>NextToken</code> request parameter with the token value returned from the
         /// previous call to <code>GetFaceDetection</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that for the <code>GetFaceDetection</code> operation, the returned values for
+        /// <code>FaceOccluded</code> and <code>EyeDirection</code> will always be "null".
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFaceDetection service method.</param>
         /// <param name="cancellationToken">
@@ -5900,8 +5932,14 @@ namespace Amazon.Rekognition
         /// as input, which was created using <code>CreateFaceLivenessSession</code>. Returns
         /// the corresponding Face Liveness confidence score, a reference image that includes
         /// a face bounding box, and audit images that also contain face bounding boxes. The Face
-        /// Liveness confidence score ranges from 0 to 100. The reference image can optionally
-        /// be returned.
+        /// Liveness confidence score ranges from 0 to 100. 
+        /// 
+        ///  
+        /// <para>
+        /// The number of audit images returned by <code>GetFaceLivenessSessionResults</code>
+        /// is defined by the <code>AuditImagesLimit</code> paramater when calling <code>CreateFaceLivenessSession</code>.
+        /// Reference images are always returned when possible.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFaceLivenessSessionResults service method.</param>
         /// 
@@ -5942,8 +5980,14 @@ namespace Amazon.Rekognition
         /// as input, which was created using <code>CreateFaceLivenessSession</code>. Returns
         /// the corresponding Face Liveness confidence score, a reference image that includes
         /// a face bounding box, and audit images that also contain face bounding boxes. The Face
-        /// Liveness confidence score ranges from 0 to 100. The reference image can optionally
-        /// be returned.
+        /// Liveness confidence score ranges from 0 to 100. 
+        /// 
+        ///  
+        /// <para>
+        /// The number of audit images returned by <code>GetFaceLivenessSessionResults</code>
+        /// is defined by the <code>AuditImagesLimit</code> paramater when calling <code>CreateFaceLivenessSession</code>.
+        /// Reference images are always returned when possible.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFaceLivenessSessionResults service method.</param>
         /// <param name="cancellationToken">
@@ -6800,7 +6844,7 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         ///  <code>GetTextDetection</code> returns an array of detected text (<code>TextDetections</code>)
-        /// sorted by the time the text was detected, up to 50 words per frame of video.
+        /// sorted by the time the text was detected, up to 100 words per frame of video.
         /// </para>
         ///  
         /// <para>
@@ -6873,7 +6917,7 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         ///  <code>GetTextDetection</code> returns an array of detected text (<code>TextDetections</code>)
-        /// sorted by the time the text was detected, up to 50 words per frame of video.
+        /// sorted by the time the text was detected, up to 100 words per frame of video.
         /// </para>
         ///  
         /// <para>
@@ -11317,5 +11361,28 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonRekognitionEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

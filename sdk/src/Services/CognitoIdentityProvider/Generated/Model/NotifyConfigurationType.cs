@@ -66,6 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// with Amazon SES.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string From
         {
             get { return this._from; }
@@ -121,6 +122,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The destination to which the receiver of an email should reply to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string ReplyTo
         {
             get { return this._replyTo; }

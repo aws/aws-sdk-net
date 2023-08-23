@@ -59,6 +59,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetByShared())
+                request.Parameters.Add("shared", StringUtils.FromBool(publicRequest.ByShared));
+            
+            if (publicRequest.IsSetByVaultType())
+                request.Parameters.Add("vaultType", StringUtils.FromString(publicRequest.ByVaultType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

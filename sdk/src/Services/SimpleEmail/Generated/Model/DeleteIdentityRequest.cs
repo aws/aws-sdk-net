@@ -45,7 +45,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity to be removed from the list of identities for the AWS Account.
+        /// The identity to be removed from the list of identities for the Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

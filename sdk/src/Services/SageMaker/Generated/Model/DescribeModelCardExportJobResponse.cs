@@ -160,7 +160,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelCardName. 
         /// <para>
-        /// The name of the model card that the model export job exports.
+        /// The name or Amazon Resource Name (ARN) of the model card that the model export job
+        /// exports.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

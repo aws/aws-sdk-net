@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private WindowsAuditLogCreateConfiguration _auditLogConfiguration;
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
+        private DiskIopsConfiguration _diskIopsConfiguration;
         private SelfManagedActiveDirectoryConfigurationUpdates _selfManagedActiveDirectoryConfiguration;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
@@ -102,6 +103,27 @@ namespace Amazon.FSx.Model
         internal bool IsSetDailyAutomaticBackupStartTime()
         {
             return this._dailyAutomaticBackupStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskIopsConfiguration. 
+        /// <para>
+        /// The SSD IOPS (input/output operations per second) configuration for an Amazon FSx
+        /// for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per
+        /// GiB of storage capacity. You can provision additional IOPS per GiB of storage, up
+        /// to the maximum limit associated with your chosen throughput capacity.
+        /// </para>
+        /// </summary>
+        public DiskIopsConfiguration DiskIopsConfiguration
+        {
+            get { return this._diskIopsConfiguration; }
+            set { this._diskIopsConfiguration = value; }
+        }
+
+        // Check to see if DiskIopsConfiguration property is set
+        internal bool IsSetDiskIopsConfiguration()
+        {
+            return this._diskIopsConfiguration != null;
         }
 
         /// <summary>

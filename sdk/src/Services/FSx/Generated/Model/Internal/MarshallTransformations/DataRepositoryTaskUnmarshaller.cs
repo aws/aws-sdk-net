@@ -112,6 +112,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Paths = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReleaseConfiguration", targetDepth))
+                {
+                    var unmarshaller = ReleaseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReleaseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Report", targetDepth))
                 {
                     var unmarshaller = CompletionReportUnmarshaller.Instance;

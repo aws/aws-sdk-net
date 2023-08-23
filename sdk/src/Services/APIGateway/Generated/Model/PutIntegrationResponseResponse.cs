@@ -119,8 +119,8 @@ namespace Amazon.APIGateway.Model
         /// nothing and the error response returns some string, you could use the <code>.+</code>
         /// regex to match error response. However, make sure that the error response does not
         /// contain any newline (<code>\n</code>) character in such cases. If the back end is
-        /// an AWS Lambda function, the AWS Lambda function error header is matched. For all other
-        /// HTTP and AWS back ends, the HTTP status code is matched.
+        /// an Lambda function, the Lambda function error header is matched. For all other HTTP
+        /// and Amazon Web Services back ends, the HTTP status code is matched.
         /// </para>
         /// </summary>
         public string SelectionPattern

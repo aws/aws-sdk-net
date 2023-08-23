@@ -29,7 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about a trigger for a repository.
+    /// Information about a trigger for a repository. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you want to receive notifications about repository events, consider using notifications
+    /// instead of triggers. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-repository-email.html">Configuring
+    /// notifications for repository events</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RepositoryTrigger
     {

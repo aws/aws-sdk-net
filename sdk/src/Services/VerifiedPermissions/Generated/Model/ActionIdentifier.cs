@@ -55,7 +55,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The ID of an action.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string ActionId
         {
             get { return this._actionId; }
@@ -74,7 +74,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The type of an action.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string ActionType
         {
             get { return this._actionType; }

@@ -2311,6 +2311,9 @@ namespace Amazon.Finspace
         /// <exception cref="Amazon.Finspace.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ConflictException">
+        /// There was a conflict with this action, and it could not be completed.
+        /// </exception>
         /// <exception cref="Amazon.Finspace.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
@@ -2671,5 +2674,28 @@ namespace Amazon.Finspace
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonFinspaceEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

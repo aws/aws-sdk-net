@@ -89,6 +89,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user's preferred MFA setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string PreferredMfaSetting
         {
             get { return this._preferredMfaSetting; }
@@ -140,7 +141,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserLastModifiedDate. 
         /// <para>
-        /// The date the user was last modified.
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
         public DateTime UserLastModifiedDate
@@ -177,7 +179,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user about whom you're receiving information.
+        /// The username of the user that you requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -205,10 +207,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         /// CONFIRMED - User has been confirmed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ARCHIVED - User is no longer active.
         /// </para>
         ///  </li> <li> 
         /// <para>

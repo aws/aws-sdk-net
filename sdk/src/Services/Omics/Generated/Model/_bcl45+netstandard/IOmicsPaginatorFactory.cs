@@ -36,6 +36,11 @@ namespace Amazon.Omics.Model
         IListAnnotationStoresPaginator ListAnnotationStores(ListAnnotationStoresRequest request);
 
         /// <summary>
+        /// Paginator for ListAnnotationStoreVersions operation
+        ///</summary>
+        IListAnnotationStoreVersionsPaginator ListAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListMultipartReadSetUploads operation
         ///</summary>
         IListMultipartReadSetUploadsPaginator ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request);
@@ -99,6 +104,11 @@ namespace Amazon.Omics.Model
         /// Paginator for ListSequenceStores operation
         ///</summary>
         IListSequenceStoresPaginator ListSequenceStores(ListSequenceStoresRequest request);
+
+        /// <summary>
+        /// Paginator for ListShares operation
+        ///</summary>
+        IListSharesPaginator ListShares(ListSharesRequest request);
 
         /// <summary>
         /// Paginator for ListVariantImportJobs operation

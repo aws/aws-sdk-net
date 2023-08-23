@@ -70,6 +70,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlreadyImplemented = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("excluded", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("excludeReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExcludeReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

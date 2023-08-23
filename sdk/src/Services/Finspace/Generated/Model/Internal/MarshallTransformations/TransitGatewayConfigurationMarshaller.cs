@@ -45,6 +45,22 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TransitGatewayConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAttachmentNetworkAclConfiguration())
+            {
+                context.Writer.WritePropertyName("attachmentNetworkAclConfiguration");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAttachmentNetworkAclConfigurationListValue in requestObject.AttachmentNetworkAclConfiguration)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkACLEntryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAttachmentNetworkAclConfigurationListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRoutableCIDRSpace())
             {
                 context.Writer.WritePropertyName("routableCIDRSpace");

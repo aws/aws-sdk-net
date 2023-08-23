@@ -25,6 +25,156 @@ namespace Amazon.PI
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceptLanguage.
+    /// </summary>
+    public class AcceptLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EN_US for AcceptLanguage
+        /// </summary>
+        public static readonly AcceptLanguage EN_US = new AcceptLanguage("EN_US");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceptLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceptLanguage FindValue(string value)
+        {
+            return FindValue<AcceptLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceptLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalysisStatus.
+    /// </summary>
+    public class AnalysisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus FAILED = new AnalysisStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus RUNNING = new AnalysisStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus SUCCEEDED = new AnalysisStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisStatus FindValue(string value)
+        {
+            return FindValue<AnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContextType.
+    /// </summary>
+    public class ContextType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAUSAL for ContextType
+        /// </summary>
+        public static readonly ContextType CAUSAL = new ContextType("CAUSAL");
+        /// <summary>
+        /// Constant CONTEXTUAL for ContextType
+        /// </summary>
+        public static readonly ContextType CONTEXTUAL = new ContextType("CONTEXTUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContextType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextType FindValue(string value)
+        {
+            return FindValue<ContextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DetailStatus.
     /// </summary>
     public class DetailStatus : ConstantClass
@@ -238,6 +388,110 @@ namespace Amazon.PI
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Severity.
+    /// </summary>
+    public class Severity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for Severity
+        /// </summary>
+        public static readonly Severity HIGH = new Severity("HIGH");
+        /// <summary>
+        /// Constant LOW for Severity
+        /// </summary>
+        public static readonly Severity LOW = new Severity("LOW");
+        /// <summary>
+        /// Constant MEDIUM for Severity
+        /// </summary>
+        public static readonly Severity MEDIUM = new Severity("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Severity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Severity FindValue(string value)
+        {
+            return FindValue<Severity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Severity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TextFormat.
+    /// </summary>
+    public class TextFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MARKDOWN for TextFormat
+        /// </summary>
+        public static readonly TextFormat MARKDOWN = new TextFormat("MARKDOWN");
+        /// <summary>
+        /// Constant PLAIN_TEXT for TextFormat
+        /// </summary>
+        public static readonly TextFormat PLAIN_TEXT = new TextFormat("PLAIN_TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TextFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TextFormat FindValue(string value)
+        {
+            return FindValue<TextFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TextFormat(string value)
         {
             return FindValue(value);
         }

@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+    /// For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -66,12 +66,11 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the IP address filter. The name must:
+        /// The name of the IP address filter. The name must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
-        /// or dashes (-).
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -79,7 +78,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contain less than 64 characters.
+        /// Contain 64 characters or fewer.
         /// </para>
         ///  </li> </ul>
         /// </summary>

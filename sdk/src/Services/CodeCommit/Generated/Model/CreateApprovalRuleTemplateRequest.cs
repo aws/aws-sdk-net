@@ -31,10 +31,10 @@ namespace Amazon.CodeCommit.Model
     /// <summary>
     /// Container for the parameters to the CreateApprovalRuleTemplate operation.
     /// Creates a template for approval rules that can then be associated with one or more
-    /// repositories in your AWS account. When you associate a template with a repository,
-    /// AWS CodeCommit creates an approval rule that matches the conditions of the template
-    /// for all pull requests that meet the conditions of the template. For more information,
-    /// see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+    /// repositories in your Amazon Web Services account. When you associate a template with
+    /// a repository, CodeCommit creates an approval rule that matches the conditions of the
+    /// template for all pull requests that meet the conditions of the template. For more
+    /// information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
     /// </summary>
     public partial class CreateApprovalRuleTemplateRequest : AmazonCodeCommitRequest
     {
@@ -57,11 +57,12 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource.
-        /// It can be used for both IAM users and federated access users whose name matches the
-        /// provided resource name. This is a very powerful option that offers a great deal of
-        /// flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>,
-        /// all of the following are counted as approvals coming from that user:
+        ///  <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account
+        /// and a resource. It can be used for both IAM users and federated access users whose
+        /// name matches the provided resource name. This is a very powerful option that offers
+        /// a great deal of flexibility. For example, if you specify the Amazon Web Services account
+        /// <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals
+        /// coming from that user:
         /// </para>
         ///  <ul> <li> 
         /// <para>

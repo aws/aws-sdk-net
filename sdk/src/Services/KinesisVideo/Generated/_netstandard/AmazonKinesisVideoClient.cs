@@ -1942,7 +1942,14 @@ namespace Amazon.KinesisVideo
         /// If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
         /// provided. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// If <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer) connections
+        /// no longer occur. Peers connect directly to the storage session. You must call the
+        /// <code>JoinStorageSession</code> API to trigger an SDP offer send and establish a connection
+        /// between a peer and the storage session. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMediaStorageConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2248,5 +2255,28 @@ namespace Amazon.KinesisVideo
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonKinesisVideoEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

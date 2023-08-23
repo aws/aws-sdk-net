@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+    /// For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -66,8 +66,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the header to add. Must be less than 2048 characters, and must not contain
-        /// newline characters ("\r" or "\n").
+        /// The value of the header to add. Must contain 2048 characters or fewer, and must not
+        /// contain newline characters ("\r" or "\n").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

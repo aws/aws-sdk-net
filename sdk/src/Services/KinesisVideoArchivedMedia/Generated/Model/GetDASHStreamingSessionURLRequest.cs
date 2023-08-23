@@ -92,7 +92,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <para>
     /// Don't share or store this token where an unauthorized entity can access it. The token
     /// provides access to the content of the stream. Safeguard the token with the same measures
-    /// that you use with your AWS credentials.
+    /// that you use with your Amazon Web Services credentials.
     /// </para>
     ///  </note> 
     /// <para>
@@ -163,8 +163,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information
     /// about using CloudWatch to monitor Kinesis Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
     /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
-    /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
-    /// Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.
+    /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">Amazon
+    /// Web Services Pricing</a>. Charges for both HLS sessions and outgoing Amazon Web Services
+    /// data apply.
     /// </para>
     ///  
     /// <para>
@@ -184,8 +185,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS,
-    /// the support team can better diagnose the problem if given the Request Id.
+    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to Amazon
+    /// Web Services the support team can better diagnose the problem if given the Request
+    /// Id.
     /// </para>
     ///  </li> </ul> 
     /// <para>

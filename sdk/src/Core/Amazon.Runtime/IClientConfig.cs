@@ -271,13 +271,13 @@ namespace Amazon.Runtime
         /// Using either the RegionEndpoint or the ServiceURL determine what the URL to the service is.
         /// </summary>
         /// <returns>The URL to the service.</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         string DetermineServiceURL();
 
         /// <summary>
         /// Given this client configuration, return a DNS suffix for service endpoint url.
         /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         string DetermineDnsSuffix();
 
         /// <summary>

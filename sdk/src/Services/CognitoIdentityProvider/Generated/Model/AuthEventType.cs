@@ -63,7 +63,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The creation date
+        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -122,6 +123,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The event ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string EventId
         {
             get { return this._eventId; }

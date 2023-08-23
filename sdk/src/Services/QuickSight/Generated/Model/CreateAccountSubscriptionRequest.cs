@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// value after the Amazon QuickSight account is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=62)]
         public string AccountName
         {
             get { return this._accountName; }

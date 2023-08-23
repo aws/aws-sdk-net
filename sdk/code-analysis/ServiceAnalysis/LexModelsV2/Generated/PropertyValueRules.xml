@@ -2965,7 +2965,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CustomVocabularyItem.Weight</property>
-    <min>1</min>
+    <min>0</min>
     <max>3</max>
   </property-value-rule>
   <property-value-rule>
@@ -3184,7 +3184,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.NewCustomVocabularyItem.Weight</property>
-    <min>1</min>
+    <min>0</min>
     <max>3</max>
   </property-value-rule>
   <property-value-rule>

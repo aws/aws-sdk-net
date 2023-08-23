@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The comment is too large. Comments are limited to 1,000 characters.
+    /// The comment is too large. Comments are limited to 10,240 characters.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

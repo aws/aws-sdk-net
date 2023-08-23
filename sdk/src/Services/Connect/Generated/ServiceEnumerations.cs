@@ -83,6 +83,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type AgentAvailabilityTimer.
+    /// </summary>
+    public class AgentAvailabilityTimer : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TIME_SINCE_LAST_ACTIVITY for AgentAvailabilityTimer
+        /// </summary>
+        public static readonly AgentAvailabilityTimer TIME_SINCE_LAST_ACTIVITY = new AgentAvailabilityTimer("TIME_SINCE_LAST_ACTIVITY");
+        /// <summary>
+        /// Constant TIME_SINCE_LAST_INBOUND for AgentAvailabilityTimer
+        /// </summary>
+        public static readonly AgentAvailabilityTimer TIME_SINCE_LAST_INBOUND = new AgentAvailabilityTimer("TIME_SINCE_LAST_INBOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentAvailabilityTimer(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentAvailabilityTimer FindValue(string value)
+        {
+            return FindValue<AgentAvailabilityTimer>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentAvailabilityTimer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgentStatusState.
     /// </summary>
     public class AgentStatusState : ConstantClass

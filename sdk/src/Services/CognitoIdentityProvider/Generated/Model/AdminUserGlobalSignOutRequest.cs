@@ -30,17 +30,36 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminUserGlobalSignOut operation.
-    /// Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code>
-    /// requests with Amazon Web Services credentials. It also invalidates all refresh tokens
-    /// that Amazon Cognito has issued to a user. The user's current access and ID tokens
-    /// remain valid until they expire. By default, access and ID tokens expire one hour after
-    /// they're issued. A user can still use a hosted UI cookie to retrieve new tokens for
-    /// the duration of the cookie validity period of 1 hour.
+    /// Signs out a user from all devices. <code>AdminUserGlobalSignOut</code> invalidates
+    /// all identity, access and refresh tokens that Amazon Cognito has issued to a user.
+    /// A user can still use a hosted UI cookie to retrieve new tokens for the duration of
+    /// the 1-hour cookie validity period.
     /// 
     ///  
     /// <para>
-    /// Calling this action requires developer credentials.
+    /// Your app isn't aware that a user's access token is revoked unless it attempts to authorize
+    /// a user pools API request with an access token that contains the scope <code>aws.cognito.signin.user.admin</code>.
+    /// Your app might otherwise accept access tokens until they expire.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  <p class="title"> <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class AdminUserGlobalSignOutRequest : AmazonCognitoIdentityProviderRequest
     {

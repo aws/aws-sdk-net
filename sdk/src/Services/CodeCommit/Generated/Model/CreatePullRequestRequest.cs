@@ -49,8 +49,8 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency
-        /// token is created for you.
+        /// The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an
+        /// Amazon Web ServicesSDK, an idempotency token is created for you.
         /// </para>
         ///  </note>
         /// </summary>

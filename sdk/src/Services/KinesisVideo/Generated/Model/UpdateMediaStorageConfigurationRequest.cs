@@ -43,7 +43,14 @@ namespace Amazon.KinesisVideo.Model
     /// If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
     /// provided. 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// If <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer) connections
+    /// no longer occur. Peers connect directly to the storage session. You must call the
+    /// <code>JoinStorageSession</code> API to trigger an SDP offer send and establish a connection
+    /// between a peer and the storage session. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateMediaStorageConfigurationRequest : AmazonKinesisVideoRequest
     {

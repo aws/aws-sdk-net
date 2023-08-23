@@ -162,7 +162,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039
+            #region autoscaling-create-auto-scaling-group-3
 
             var client = new AmazonAutoScalingClient();
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
@@ -204,7 +204,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
 
         public void AutoScalingCreateAutoScalingGroup()
         {
-            #region to-create-an-auto-scaling-group-with-a-mixed-instances-policy-1617815269039
+            #region autoscaling-create-auto-scaling-group-4
 
             var client = new AmazonAutoScalingClient();
             var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 

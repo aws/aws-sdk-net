@@ -36,6 +36,7 @@ namespace Amazon.Route53Domains.Model
     #endif
     public partial class DuplicateRequestException : AmazonRoute53DomainsException
     {
+        private string _requestId;
 
         /// <summary>
         /// Constructs a new DuplicateRequestException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.Route53Domains.Model
         protected DuplicateRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.RequestId = (string)info.GetValue("RequestId", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.Route53Domains.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("RequestId", this.RequestId);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// ID of the request operation.
+        /// </para>
+        /// </summary>
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
+        }
 
     }
 }

@@ -68,6 +68,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAgentConfig())
+                {
+                    context.Writer.WritePropertyName("AgentConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AgentConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AgentConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSignInConfig())
+                {
+                    context.Writer.WritePropertyName("SignInConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SignInConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SignInConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTelephonyConfig())
                 {
                     context.Writer.WritePropertyName("TelephonyConfig");

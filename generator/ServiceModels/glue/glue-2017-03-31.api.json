@@ -4628,7 +4628,16 @@
         "SECRET_ID",
         "CONNECTOR_URL",
         "CONNECTOR_TYPE",
-        "CONNECTOR_CLASS_NAME"
+        "CONNECTOR_CLASS_NAME",
+        "KAFKA_SASL_MECHANISM",
+        "KAFKA_SASL_SCRAM_USERNAME",
+        "KAFKA_SASL_SCRAM_PASSWORD",
+        "KAFKA_SASL_SCRAM_SECRETS_ARN",
+        "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD",
+        "KAFKA_SASL_GSSAPI_KEYTAB",
+        "KAFKA_SASL_GSSAPI_KRB5_CONF",
+        "KAFKA_SASL_GSSAPI_SERVICE",
+        "KAFKA_SASL_GSSAPI_PRINCIPAL"
       ]
     },
     "ConnectionType":{
@@ -4924,7 +4933,8 @@
         "DisableValueTrimming":{"shape":"NullableBoolean"},
         "AllowSingleColumn":{"shape":"NullableBoolean"},
         "CustomDatatypeConfigured":{"shape":"NullableBoolean"},
-        "CustomDatatypes":{"shape":"CustomDatatypes"}
+        "CustomDatatypes":{"shape":"CustomDatatypes"},
+        "Serde":{"shape":"CsvSerdeOption"}
       }
     },
     "CreateCustomEntityTypeRequest":{
@@ -5390,7 +5400,8 @@
         "DisableValueTrimming":{"shape":"NullableBoolean"},
         "AllowSingleColumn":{"shape":"NullableBoolean"},
         "CustomDatatypeConfigured":{"shape":"NullableBoolean"},
-        "CustomDatatypes":{"shape":"CustomDatatypes"}
+        "CustomDatatypes":{"shape":"CustomDatatypes"},
+        "Serde":{"shape":"CsvSerdeOption"}
       }
     },
     "CsvColumnDelimiter":{
@@ -5416,6 +5427,14 @@
       "max":1,
       "min":1,
       "pattern":"[^\\r\\n]"
+    },
+    "CsvSerdeOption":{
+      "type":"string",
+      "enum":[
+        "OpenCSVSerDe",
+        "LazySimpleSerDe",
+        "None"
+      ]
     },
     "CustomCode":{
       "type":"structure",
@@ -12235,7 +12254,8 @@
         "DisableValueTrimming":{"shape":"NullableBoolean"},
         "AllowSingleColumn":{"shape":"NullableBoolean"},
         "CustomDatatypeConfigured":{"shape":"NullableBoolean"},
-        "CustomDatatypes":{"shape":"CustomDatatypes"}
+        "CustomDatatypes":{"shape":"CustomDatatypes"},
+        "Serde":{"shape":"CsvSerdeOption"}
       }
     },
     "UpdateDataQualityRulesetRequest":{

@@ -683,6 +683,56 @@ namespace Amazon.Finspace
 
 
     /// <summary>
+    /// Constants used for properties of type KxDeploymentStrategy.
+    /// </summary>
+    public class KxDeploymentStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_RESTART for KxDeploymentStrategy
+        /// </summary>
+        public static readonly KxDeploymentStrategy NO_RESTART = new KxDeploymentStrategy("NO_RESTART");
+        /// <summary>
+        /// Constant ROLLING for KxDeploymentStrategy
+        /// </summary>
+        public static readonly KxDeploymentStrategy ROLLING = new KxDeploymentStrategy("ROLLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxDeploymentStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxDeploymentStrategy FindValue(string value)
+        {
+            return FindValue<KxDeploymentStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxDeploymentStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KxSavedownStorageType.
     /// </summary>
     public class KxSavedownStorageType : ConstantClass
@@ -722,6 +772,56 @@ namespace Amazon.Finspace
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KxSavedownStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleAction.
+    /// </summary>
+    public class RuleAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for RuleAction
+        /// </summary>
+        public static readonly RuleAction Allow = new RuleAction("allow");
+        /// <summary>
+        /// Constant Deny for RuleAction
+        /// </summary>
+        public static readonly RuleAction Deny = new RuleAction("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleAction FindValue(string value)
+        {
+            return FindValue<RuleAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleAction(string value)
         {
             return FindValue(value);
         }

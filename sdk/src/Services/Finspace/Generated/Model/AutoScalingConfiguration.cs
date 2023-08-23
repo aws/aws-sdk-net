@@ -66,7 +66,7 @@ namespace Amazon.Finspace.Model
         /// The highest number of nodes to scale. This value cannot be greater than 5.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1)]
         public int MaxNodeCount
         {
             get { return this._maxNodeCount.GetValueOrDefault(); }
@@ -108,7 +108,7 @@ namespace Amazon.Finspace.Model
         /// zones, then <code>minNodeCount</code> must be at least 3.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1)]
         public int MinNodeCount
         {
             get { return this._minNodeCount.GetValueOrDefault(); }

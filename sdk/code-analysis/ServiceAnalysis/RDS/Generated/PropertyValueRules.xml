@@ -79,6 +79,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.CreateCustomDBEngineVersionRequest.SourceCustomDbEngineVersionIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.CreateCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
     <min>1</min>
     <max>51000</max>
@@ -237,6 +243,18 @@
   <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest.SwitchoverTimeout</property>
     <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.SwitchoverGlobalClusterRequest.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.SwitchoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.BlueGreenDeployment.BlueGreenDeploymentIdentifier</property>

@@ -37,9 +37,9 @@ namespace Amazon.Runtime
         private Logger _logger;
 
         private static readonly TimeSpan _neverTimespan = TimeSpan.FromMilliseconds(-1);
-        private static readonly TimeSpan _refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 5 min before expiration
+        private static readonly TimeSpan _refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 2 min before expiration
         private const string FailedToGetCredentialsMessage = "Failed to retrieve credentials from EC2 Instance Metadata Service.";
-        private static readonly TimeSpan _credentialsLockTimeout = TimeSpan.FromSeconds(5);
+        private static readonly TimeSpan _credentialsLockTimeout = TimeSpan.FromMinutes(1);
 
         /// <summary>
         /// Control flag: in the event IMDS returns an expired credential, a refresh must be immediately

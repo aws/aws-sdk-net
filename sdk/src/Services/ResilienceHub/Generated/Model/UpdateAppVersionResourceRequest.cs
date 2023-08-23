@@ -83,7 +83,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
@@ -105,8 +105,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponents. 
         /// <para>
-        /// The list of Application Components that this resource belongs to. If an Application
-        /// Component is not part of the Resilience Hub application, it will be added.
+        /// List of Application Components that this resource belongs to. If an Application Component
+        /// is not part of the Resilience Hub application, it will be added.
         /// </para>
         /// </summary>
         public List<string> AppComponents
@@ -124,7 +124,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account that owns the physical resource.
+        /// Amazon Web Services account that owns the physical resource.
         /// </para>
         /// </summary>
         public string AwsAccountId
@@ -142,7 +142,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The Amazon Web Services region that owns the physical resource.
+        /// Amazon Web Services region that owns the physical resource.
         /// </para>
         /// </summary>
         public string AwsRegion
@@ -183,7 +183,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
-        /// The logical identifier of the resource.
+        /// Logical identifier of the resource.
         /// </para>
         /// </summary>
         public LogicalResourceId LogicalResourceId
@@ -201,7 +201,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
-        /// The physical identifier of the resource.
+        /// Physical identifier of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -220,7 +220,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the resource.
+        /// Name of the resource.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -238,7 +238,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource.
+        /// Type of resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

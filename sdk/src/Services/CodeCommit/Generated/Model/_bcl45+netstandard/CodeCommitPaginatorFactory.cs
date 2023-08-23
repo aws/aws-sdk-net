@@ -116,6 +116,14 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
+        /// Paginator for ListFileCommitHistory operation
+        ///</summary>
+        public IListFileCommitHistoryPaginator ListFileCommitHistory(ListFileCommitHistoryRequest request) 
+        {
+            return new ListFileCommitHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPullRequests operation
         ///</summary>
         public IListPullRequestsPaginator ListPullRequests(ListPullRequestsRequest request) 

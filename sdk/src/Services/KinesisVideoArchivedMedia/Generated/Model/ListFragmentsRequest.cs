@@ -59,8 +59,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS,
-    /// the support team can better diagnose the problem if given the Request Id.
+    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to Amazon
+    /// Web Services, the support team can better diagnose the problem if given the Request
+    /// Id.
     /// </para>
     ///  </li> </ul> 
     /// <para>

@@ -189,6 +189,11 @@ namespace Amazon.GameLift.Model
         ///  INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute
         /// notification.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption
+        /// and is scheduled to be recycled once it has no active game sessions.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Server process events:</b> 

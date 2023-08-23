@@ -130,6 +130,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVersionName())
+                {
+                    context.Writer.WritePropertyName("versionName");
+                    context.Writer.Write(publicRequest.VersionName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

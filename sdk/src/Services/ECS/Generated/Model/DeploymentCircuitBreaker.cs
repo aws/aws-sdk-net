@@ -43,6 +43,11 @@ namespace Amazon.ECS.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
     /// update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information about API failure reasons, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+    /// failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeploymentCircuitBreaker
     {

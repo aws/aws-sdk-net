@@ -35,6 +35,14 @@ namespace Amazon.InternetMonitor
         /// </summary>
         public static readonly HealthEventImpactType AVAILABILITY = new HealthEventImpactType("AVAILABILITY");
         /// <summary>
+        /// Constant LOCAL_AVAILABILITY for HealthEventImpactType
+        /// </summary>
+        public static readonly HealthEventImpactType LOCAL_AVAILABILITY = new HealthEventImpactType("LOCAL_AVAILABILITY");
+        /// <summary>
+        /// Constant LOCAL_PERFORMANCE for HealthEventImpactType
+        /// </summary>
+        public static readonly HealthEventImpactType LOCAL_PERFORMANCE = new HealthEventImpactType("LOCAL_PERFORMANCE");
+        /// <summary>
         /// Constant PERFORMANCE for HealthEventImpactType
         /// </summary>
         public static readonly HealthEventImpactType PERFORMANCE = new HealthEventImpactType("PERFORMANCE");
@@ -118,6 +126,56 @@ namespace Amazon.InternetMonitor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HealthEventStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LocalHealthEventsConfigStatus.
+    /// </summary>
+    public class LocalHealthEventsConfigStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for LocalHealthEventsConfigStatus
+        /// </summary>
+        public static readonly LocalHealthEventsConfigStatus DISABLED = new LocalHealthEventsConfigStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for LocalHealthEventsConfigStatus
+        /// </summary>
+        public static readonly LocalHealthEventsConfigStatus ENABLED = new LocalHealthEventsConfigStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocalHealthEventsConfigStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocalHealthEventsConfigStatus FindValue(string value)
+        {
+            return FindValue<LocalHealthEventsConfigStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocalHealthEventsConfigStatus(string value)
         {
             return FindValue(value);
         }

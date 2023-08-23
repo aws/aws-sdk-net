@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property CpuArchitecture. 
         /// <para>
         /// The vCPU architecture. The default value is <code>X86_64</code>. Valid values are
-        /// <code>X86_64</code> and <code> ARM64</code>.
+        /// <code>X86_64</code> and <code>ARM64</code>.
         /// </para>
         ///  <note> 
         /// <para>

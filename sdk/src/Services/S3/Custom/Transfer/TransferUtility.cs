@@ -67,7 +67,14 @@ namespace Amazon.S3.Transfer
         {
             "s3-object-lambda"
         };
+        private static Logger Logger
+        {
+            get
+            {
 
+                return Logger.GetLogger(typeof(ITransferUtility));
+            }
+        }
         #region Constructors
 
         /// <summary>
@@ -391,6 +398,13 @@ namespace Amazon.S3.Transfer
 
         bool IsMultipartUpload(TransferUtilityUploadRequest request)
         {
+            //If the length is -1 that means when we tried to get the ContentLength, we caught a NotSupportedException
+            //or it means the length is unknown. In this case we do a multpartupload. If we are uploading
+            //a nonseekable stream we also do a multipart upload.
+            if(request.ContentLength == -1 || (request.InputStream != null && !request.InputStream.CanSeek))
+            {
+                return true;
+            }
             return request.ContentLength >= this._config.MinSizeBeforePartUpload;
         }
 

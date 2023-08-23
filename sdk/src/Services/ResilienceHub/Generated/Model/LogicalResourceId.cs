@@ -42,7 +42,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property EksSourceName. 
         /// <para>
-        /// The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
+        /// Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
         /// belongs to.
         /// </para>
         ///  <note> 
@@ -67,7 +67,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier of the resource.
+        /// Identifier of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

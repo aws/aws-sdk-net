@@ -1838,7 +1838,13 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Multi-AZ DB clusters - <code>io1</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>,
+        /// the storage type is returned in the response. The storage type isn't returned when
+        /// you set it to <code>aurora</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string StorageType
         {

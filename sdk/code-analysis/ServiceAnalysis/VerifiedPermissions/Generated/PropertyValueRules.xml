@@ -321,7 +321,7 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPoliciesRequest.MaxResults</property>
     <min>1</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPoliciesRequest.NextToken</property>
@@ -344,7 +344,7 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPolicyStoresRequest.MaxResults</property>
     <min>1</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPolicyStoresRequest.NextToken</property>
@@ -361,7 +361,7 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPolicyTemplatesRequest.MaxResults</property>
     <min>1</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPolicyTemplatesRequest.NextToken</property>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+    /// The maximum number of tags for an CodeCommit resource has been exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

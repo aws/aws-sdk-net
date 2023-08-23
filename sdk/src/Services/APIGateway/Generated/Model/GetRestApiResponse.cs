@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         private int? _minimumCompressionSize;
         private string _name;
         private string _policy;
+        private string _rootResourceId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
         private List<string> _warnings = new List<string>();
@@ -238,6 +239,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootResourceId. 
+        /// <para>
+        /// The API's root resource ID.
+        /// </para>
+        /// </summary>
+        public string RootResourceId
+        {
+            get { return this._rootResourceId; }
+            set { this._rootResourceId = value; }
+        }
+
+        // Check to see if RootResourceId property is set
+        internal bool IsSetRootResourceId()
+        {
+            return this._rootResourceId != null;
         }
 
         /// <summary>

@@ -43,7 +43,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
         /// <code>days</code> for the value that you set in the <code>AccessTokenValidity</code>
-        /// parameter. The default <code>AccessTokenValidity</code> time unit is hours.
+        /// parameter. The default <code>AccessTokenValidity</code> time unit is hours. <code>AccessTokenValidity</code>
+        /// duration can range from five minutes to one day.
         /// </para>
         /// </summary>
         public TimeUnitsType AccessToken
@@ -63,7 +64,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
         /// <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter.
-        /// The default <code>IdTokenValidity</code> time unit is hours.
+        /// The default <code>IdTokenValidity</code> time unit is hours. <code>IdTokenValidity</code>
+        /// duration can range from five minutes to one day.
         /// </para>
         /// </summary>
         public TimeUnitsType IdToken
@@ -83,7 +85,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
         /// <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code>
-        /// parameter. The default <code>RefreshTokenValidity</code> time unit is days.
+        /// parameter. The default <code>RefreshTokenValidity</code> time unit is days. <code>RefreshTokenValidity</code>
+        /// duration can range from 60 minutes to 10 years.
         /// </para>
         /// </summary>
         public TimeUnitsType RefreshToken

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Defines a configuration recommendation.
+    /// Defines a recommendation configuration.
     /// </summary>
     public partial class ConfigRecommendation
     {
@@ -47,7 +47,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The name of the Application Component.
+        /// Name of the Application Component.
         /// </para>
         /// </summary>
         public string AppComponentName
@@ -196,7 +196,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// The reference identifier for the recommendation configuration.
+        /// Reference identifier for the recommendation configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

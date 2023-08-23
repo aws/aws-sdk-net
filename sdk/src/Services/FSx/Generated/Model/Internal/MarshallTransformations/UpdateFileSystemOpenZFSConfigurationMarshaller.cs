@@ -45,6 +45,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFileSystemOpenZFSConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAddRouteTableIds())
+            {
+                context.Writer.WritePropertyName("AddRouteTableIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAddRouteTableIdsListValue in requestObject.AddRouteTableIds)
+                {
+                        context.Writer.Write(requestObjectAddRouteTableIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
@@ -78,6 +89,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRemoveRouteTableIds())
+            {
+                context.Writer.WritePropertyName("RemoveRouteTableIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRemoveRouteTableIdsListValue in requestObject.RemoveRouteTableIds)
+                {
+                        context.Writer.Write(requestObjectRemoveRouteTableIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetThroughputCapacity())

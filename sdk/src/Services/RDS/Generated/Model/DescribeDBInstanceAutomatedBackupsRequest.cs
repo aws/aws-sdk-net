@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// (Optional) The user-supplied instance identifier. If this parameter is specified,
         /// it must match the identifier of an existing DB instance. It returns information from
-        /// the specific DB instance' automated backup. This parameter isn't case-sensitive.
+        /// the specific DB instance's automated backup. This parameter isn't case-sensitive.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -125,17 +125,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - automated backups for current instances
+        ///  <code>active</code> - Automated backups for current instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>retained</code> - automated backups for deleted instances and after backup
-        /// replication is stopped
+        ///  <code>creating</code> - Automated backups that are waiting for the first automated
+        /// snapshot to be available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code> - automated backups that are waiting for the first automated
-        /// snapshot to be available
+        ///  <code>retained</code> - Automated backups for deleted instances and after backup
+        /// replication is stopped.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

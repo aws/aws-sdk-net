@@ -44,6 +44,14 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListAppAssessmentComplianceDrifts operation
+        ///</summary>
+        public IListAppAssessmentComplianceDriftsPaginator ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request) 
+        {
+            return new ListAppAssessmentComplianceDriftsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAppAssessments operation
         ///</summary>
         public IListAppAssessmentsPaginator ListAppAssessments(ListAppAssessmentsRequest request) 

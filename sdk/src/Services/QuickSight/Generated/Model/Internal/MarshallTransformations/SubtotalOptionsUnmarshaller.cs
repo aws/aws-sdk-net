@@ -88,6 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricHeaderCellStyle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StyleTargets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TableStyleTarget, TableStyleTargetUnmarshaller>(TableStyleTargetUnmarshaller.Instance);
+                    unmarshalledObject.StyleTargets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TotalCellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;

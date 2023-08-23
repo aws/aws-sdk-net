@@ -81,6 +81,98 @@ namespace Amazon.PI
         IPIPaginatorFactory Paginators { get; }
 
         
+        #region  CreatePerformanceAnalysisReport
+
+
+        /// <summary>
+        /// Creates a new performance analysis report for a specific time period for the DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePerformanceAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the CreatePerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">REST API Reference for CreatePerformanceAnalysisReport Operation</seealso>
+        CreatePerformanceAnalysisReportResponse CreatePerformanceAnalysisReport(CreatePerformanceAnalysisReportRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new performance analysis report for a specific time period for the DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePerformanceAnalysisReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">REST API Reference for CreatePerformanceAnalysisReport Operation</seealso>
+        Task<CreatePerformanceAnalysisReportResponse> CreatePerformanceAnalysisReportAsync(CreatePerformanceAnalysisReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePerformanceAnalysisReport
+
+
+        /// <summary>
+        /// Deletes a performance analysis report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePerformanceAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the DeletePerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">REST API Reference for DeletePerformanceAnalysisReport Operation</seealso>
+        DeletePerformanceAnalysisReportResponse DeletePerformanceAnalysisReport(DeletePerformanceAnalysisReportRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a performance analysis report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePerformanceAnalysisReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">REST API Reference for DeletePerformanceAnalysisReport Operation</seealso>
+        Task<DeletePerformanceAnalysisReportResponse> DeletePerformanceAnalysisReportAsync(DeletePerformanceAnalysisReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDimensionKeys
 
 
@@ -194,6 +286,58 @@ namespace Amazon.PI
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">REST API Reference for GetDimensionKeyDetails Operation</seealso>
         Task<GetDimensionKeyDetailsResponse> GetDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPerformanceAnalysisReport
+
+
+        /// <summary>
+        /// Retrieves the report including the report ID, status, time details, and the insights
+        /// with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>,
+        /// or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code>
+        /// fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPerformanceAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the GetPerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">REST API Reference for GetPerformanceAnalysisReport Operation</seealso>
+        GetPerformanceAnalysisReportResponse GetPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the report including the report ID, status, time details, and the insights
+        /// with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>,
+        /// or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code>
+        /// fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPerformanceAnalysisReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPerformanceAnalysisReport service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">REST API Reference for GetPerformanceAnalysisReport Operation</seealso>
+        Task<GetPerformanceAnalysisReportResponse> GetPerformanceAnalysisReportAsync(GetPerformanceAnalysisReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -403,5 +547,202 @@ namespace Amazon.PI
 
         #endregion
         
+        #region  ListPerformanceAnalysisReports
+
+
+        /// <summary>
+        /// Lists all the analysis reports created for the DB instance. The reports are sorted
+        /// based on the start time of each report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceAnalysisReports service method.</param>
+        /// 
+        /// <returns>The response from the ListPerformanceAnalysisReports service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">REST API Reference for ListPerformanceAnalysisReports Operation</seealso>
+        ListPerformanceAnalysisReportsResponse ListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the analysis reports created for the DB instance. The reports are sorted
+        /// based on the start time of each report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceAnalysisReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPerformanceAnalysisReports service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">REST API Reference for ListPerformanceAnalysisReports Operation</seealso>
+        Task<ListPerformanceAnalysisReportsResponse> ListPerformanceAnalysisReportsAsync(ListPerformanceAnalysisReportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds metadata tags to the Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds metadata tags to the Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+        
+        #endregion
+
     }
 }

@@ -31,11 +31,11 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the ListCustomVerificationEmailTemplates operation.
     /// Lists the existing custom verification email templates for your account in the current
-    /// AWS Region.
+    /// Amazon Web Services Region.
     /// 
     ///  
     /// <para>
-    /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+    /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
     /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
     /// </para>
     ///  
@@ -53,8 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The maximum number of custom verification email templates to return. This value must
         /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
-        /// specify a value less than 1 or greater than 50, the operation will return up to 50
-        /// results.
+        /// specify a value less than 1 or greater than 50, the operation returns up to 50 results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

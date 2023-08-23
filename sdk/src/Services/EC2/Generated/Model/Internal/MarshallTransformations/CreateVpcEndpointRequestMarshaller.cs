@@ -107,6 +107,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ServiceName", StringUtils.FromString(publicRequest.ServiceName));
                 }
+                if(publicRequest.IsSetSubnetConfigurations())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SubnetConfigurations)
+                    {
+                        if(publicRequestlistValue.IsSetIpv4())
+                        {
+                            request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv4", StringUtils.FromString(publicRequestlistValue.Ipv4));
+                        }
+                        if(publicRequestlistValue.IsSetIpv6())
+                        {
+                            request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv6", StringUtils.FromString(publicRequestlistValue.Ipv6));
+                        }
+                        if(publicRequestlistValue.IsSetSubnetId())
+                        {
+                            request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetSubnetIds())
                 {
                     int publicRequestlistValueIndex = 1;

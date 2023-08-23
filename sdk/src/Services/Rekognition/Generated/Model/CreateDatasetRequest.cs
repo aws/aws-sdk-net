@@ -36,8 +36,8 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// To create a training dataset for a project, specify <code>train</code> for the value
-    /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>test</code>
+    /// To create a training dataset for a project, specify <code>TRAIN</code> for the value
+    /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>TEST</code>
     /// for the value of <code>DatasetType</code>. 
     /// </para>
     ///  
@@ -100,8 +100,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property DatasetType. 
         /// <para>
-        ///  The type of the dataset. Specify <code>train</code> to create a training dataset.
-        /// Specify <code>test</code> to create a test dataset. 
+        ///  The type of the dataset. Specify <code>TRAIN</code> to create a training dataset.
+        /// Specify <code>TEST</code> to create a test dataset. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

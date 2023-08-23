@@ -30,7 +30,8 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTemplates operation.
-    /// Lists the email templates present in your Amazon SES account in the current AWS Region.
+    /// Lists the email templates present in your Amazon SES account in the current Amazon
+    /// Web Services Region.
     /// 
     ///  
     /// <para>
@@ -46,8 +47,8 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// The maximum number of templates to return. This value must be at least 1 and less
-        /// than or equal to 10. If you do not specify a value, or if you specify a value less
-        /// than 1 or greater than 10, the operation will return up to 10 results.
+        /// than or equal to 100. If more than 100 items are requested, the page size will automatically
+        /// set to 100. If you do not specify a value, 10 is the default page size. 
         /// </para>
         /// </summary>
         public int MaxItems

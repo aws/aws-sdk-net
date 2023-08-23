@@ -112,6 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.SupportedInstanceTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SupportedResponseMIMETypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedResponseMIMETypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Task", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

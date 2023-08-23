@@ -36,8 +36,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-    /// appear in the returned results for at least one hour.
+    /// Recently stopped tasks might appear in the returned results. 
     /// </para>
     /// </summary>
     public partial class ListTasksRequest : AmazonECSRequest

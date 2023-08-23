@@ -51,8 +51,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The reference to an AWS-managed certificate that will be used by edge-optimized endpoint
-        /// for this domain name. AWS Certificate Manager is the only supported source.
+        /// The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized
+        /// endpoint for this domain name. Certificate Manager is the only supported source.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -222,8 +222,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RegionalCertificateArn. 
         /// <para>
-        /// The reference to an AWS-managed certificate that will be used by regional endpoint
-        /// for this domain name. AWS Certificate Manager is the only supported source.
+        /// The reference to an Amazon Web Services-managed certificate that will be used by regional
+        /// endpoint for this domain name. Certificate Manager is the only supported source.
         /// </para>
         /// </summary>
         public string RegionalCertificateArn

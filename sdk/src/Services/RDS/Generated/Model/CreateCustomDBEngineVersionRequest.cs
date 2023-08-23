@@ -42,7 +42,9 @@ namespace Amazon.RDS.Model
         private string _imageId;
         private string _kmsKeyId;
         private string _manifest;
+        private string _sourceCustomDbEngineVersionIdentifier;
         private List<Tag> _tags = new List<Tag>();
+        private bool? _useAwsProvidedLatestImage;
 
         /// <summary>
         /// Gets and sets the property DatabaseInstallationFilesS3BucketName. 
@@ -254,6 +256,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceCustomDbEngineVersionIdentifier. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SourceCustomDbEngineVersionIdentifier
+        {
+            get { return this._sourceCustomDbEngineVersionIdentifier; }
+            set { this._sourceCustomDbEngineVersionIdentifier = value; }
+        }
+
+        // Check to see if SourceCustomDbEngineVersionIdentifier property is set
+        internal bool IsSetSourceCustomDbEngineVersionIdentifier()
+        {
+            return this._sourceCustomDbEngineVersionIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
@@ -266,6 +287,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAwsProvidedLatestImage. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public bool UseAwsProvidedLatestImage
+        {
+            get { return this._useAwsProvidedLatestImage.GetValueOrDefault(); }
+            set { this._useAwsProvidedLatestImage = value; }
+        }
+
+        // Check to see if UseAwsProvidedLatestImage property is set
+        internal bool IsSetUseAwsProvidedLatestImage()
+        {
+            return this._useAwsProvidedLatestImage.HasValue; 
         }
 
     }

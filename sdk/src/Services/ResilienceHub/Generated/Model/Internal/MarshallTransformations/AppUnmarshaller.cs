@@ -94,10 +94,28 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("driftStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventSubscriptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EventSubscription, EventSubscriptionUnmarshaller>(EventSubscriptionUnmarshaller.Instance);
+                    unmarshalledObject.EventSubscriptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastAppComplianceEvaluationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAppComplianceEvaluationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastDriftEvaluationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastDriftEvaluationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastResiliencyScoreEvaluationTime", targetDepth))
@@ -110,6 +128,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("permissionModel", targetDepth))
+                {
+                    var unmarshaller = PermissionModelUnmarshaller.Instance;
+                    unmarshalledObject.PermissionModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("policyArn", targetDepth))

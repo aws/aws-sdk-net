@@ -25,6 +25,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
+using System.Web.UI.WebControls;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -86,6 +88,117 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void USEastSignedParameters() {
             TestSignedUrlParameters(RegionEndpoint.USEast1, DateTime.Now.AddDays(1));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void EUCentral1PutWithMetadata()
+        {
+            Dictionary<string, string> metadata = new Dictionary<string, string>()
+            {
+                { "MyMetadata", "Metadata-Value" }
+            };
+
+            TestPreSignedUrlPut(RegionEndpoint.EUCentral1, AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2), true, metadata);
+        }
+
+        private void TestPreSignedUrlPut(RegionEndpoint region, DateTime expires, bool expectSigV4Url, Dictionary<string, string> metadata = null)
+        {
+            var client = new AmazonS3Client(region);
+            var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
+            string bucketName = null;
+
+            try
+            {
+                AWSConfigsS3.UseSignatureVersion4 = true;
+                bucketName = S3TestUtils.CreateBucketWithWait(client);
+
+                AssertPresignedUrlPut(client, bucketName, expires, expectSigV4Url, metadata);
+            }
+            finally
+            {
+                AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
+                if (bucketName != null)
+                    DeleteBucket(client, bucketName);
+            }
+        }
+
+        private static void AssertPresignedUrlPut(AmazonS3Client client, string bucketName, DateTime expires, bool expectSigV4Url, Dictionary<string, string> metadata = null)
+        {
+            string objectKey = TestKey + DateTime.Now.Ticks;
+
+            var request = new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                Verb = HttpVerb.PUT,
+                Expires = expires,
+                Protocol = Protocol.HTTPS
+            };
+
+            if (metadata != null && metadata.Count > 0)
+            {
+                foreach (KeyValuePair<string, string> kvp in metadata)
+                {
+                    request.Metadata.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            string putPresignedUrl = client.GetPreSignedURL(request);
+
+            // make sure we used the correct signtaure version
+            var urlIsSigV4 = putPresignedUrl.Contains("aws4_request");
+            Assert.AreEqual(expectSigV4Url, urlIsSigV4);
+            List<string> signedHeadersList = new List<string> { "host" };
+
+            if (metadata != null && metadata.Count > 0)
+            {
+                signedHeadersList.AddRange(metadata.Select(m => "x-amz-meta-" + m.Key.ToLowerInvariant()));
+            }
+            
+            string signedHeadersString = string.Join(";", signedHeadersList.OrderBy(k => k, StringComparer.Ordinal));
+            Assert.IsFalse(putPresignedUrl.Contains(signedHeadersString));
+            Assert.IsTrue(putPresignedUrl.Contains(AWSSDKUtils.UrlEncode(signedHeadersString, false)));
+
+            var response = PutObjectUsingPresignedUrl(putPresignedUrl, metadata);
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            if (metadata != null && metadata.Count > 0)
+            {
+                var getObjectMetadataResponse = client.GetObjectMetadata(bucketName, objectKey);
+
+                foreach (KeyValuePair<string, string> kvp in metadata)
+                {
+                    Assert.IsTrue(getObjectMetadataResponse.Metadata.Keys.Contains("x-amz-meta-" + kvp.Key.ToLowerInvariant()));
+                    Assert.AreEqual(kvp.Value, getObjectMetadataResponse.Metadata[kvp.Key.ToLowerInvariant()]);
+                }
+            }
+        }
+
+        private static HttpWebResponse PutObjectUsingPresignedUrl(string putPresignedUrl, Dictionary<string, string> metadata = null)
+        {
+            HttpWebRequest httpRequest = WebRequest.Create(putPresignedUrl) as HttpWebRequest;
+            httpRequest.Method = "PUT";
+
+            if (metadata != null && metadata.Count > 0)
+            {
+                WebHeaderCollection myWebHeaderCollection = httpRequest.Headers;
+
+                foreach (KeyValuePair<string, string> keyValuePair in metadata)
+                {
+                    myWebHeaderCollection.Add($"X-Amz-Meta-{keyValuePair.Key}", keyValuePair.Value);
+                }
+            }
+
+            using (Stream dataStream = httpRequest.GetRequestStream())
+            {
+                var buffer = Encoding.UTF8.GetBytes(TestContent);
+                dataStream.Write(buffer, 0, buffer.Length);
+            }
+
+            HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
+
+            return response;
         }
 
         private void TestPreSignedUrl(RegionEndpoint region, DateTime expires, bool useSigV4, bool expectSigV4Url)

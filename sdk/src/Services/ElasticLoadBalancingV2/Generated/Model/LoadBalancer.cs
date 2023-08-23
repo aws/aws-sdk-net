@@ -38,6 +38,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private DateTime? _createdTime;
         private string _customerOwnedIpv4Pool;
         private string _dnsName;
+        private string _enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
         private IpAddressType _ipAddressType;
         private string _loadBalancerArn;
         private string _loadBalancerName;
@@ -136,6 +137,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetDNSName()
         {
             return this._dnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic. 
+        /// <para>
+        /// Indicates whether to evaluate inbound security group rules for traffic sent to a Network
+        /// Load Balancer through Amazon Web Services PrivateLink.
+        /// </para>
+        /// </summary>
+        public string EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic
+        {
+            get { return this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
+            set { this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
+        }
+
+        // Check to see if EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic property is set
+        internal bool IsSetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic()
+        {
+            return this._enforceSecurityGroupInboundRulesOnPrivateLinkTraffic != null;
         }
 
         /// <summary>

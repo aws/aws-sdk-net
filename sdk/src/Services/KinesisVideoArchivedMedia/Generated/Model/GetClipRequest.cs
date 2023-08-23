@@ -80,8 +80,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// Amazon CloudWatch metric. For information about using CloudWatch to monitor Kinesis
     /// Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
     /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
-    /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
-    /// Pricing</a>. Charges for outgoing AWS data apply.
+    /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/"> Amazon
+    /// Web Services Pricing</a>. Charges for outgoing Amazon Web Services data apply.
     /// </para>
     /// </summary>
     public partial class GetClipRequest : AmazonKinesisVideoArchivedMediaRequest

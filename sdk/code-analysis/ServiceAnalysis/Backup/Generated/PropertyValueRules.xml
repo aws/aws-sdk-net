@@ -25,6 +25,12 @@
     <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.CreateLogicallyAirGappedBackupVaultRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateLogicallyAirGappedBackupVaultResponse.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.CreateReportPlanRequest.ReportPlanDescription</property>
     <min>0</min>
     <max>1024</max>
@@ -98,6 +104,10 @@
     <property>Amazon.Backup.Model.DescribeProtectedResourceResponse.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeRecoveryPointRequest.BackupVaultAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DescribeRecoveryPointRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -136,6 +146,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.GetBackupVaultNotificationsResponse.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.GetRecoveryPointRestoreMetadataRequest.BackupVaultAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.GetRecoveryPointRestoreMetadataRequest.BackupVaultName</property>
@@ -206,6 +220,22 @@
     <property>Amazon.Backup.Model.ListProtectedResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListProtectedResourcesByBackupVaultRequest.BackupVaultAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListProtectedResourcesByBackupVaultRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListProtectedResourcesByBackupVaultRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRecoveryPointsByBackupVaultRequest.BackupVaultAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListRecoveryPointsByBackupVaultRequest.BackupVaultName</property>

@@ -30,8 +30,9 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApprovalRuleTemplates operation.
-    /// Lists all approval rule templates in the specified AWS Region in your AWS account.
-    /// If an AWS Region is not specified, the AWS Region where you are signed in is used.
+    /// Lists all approval rule templates in the specified Amazon Web Services Region in your
+    /// Amazon Web Services account. If an Amazon Web Services Region is not specified, the
+    /// Amazon Web Services Region where you are signed in is used.
     /// </summary>
     public partial class ListApprovalRuleTemplatesRequest : AmazonCodeCommitRequest
     {

@@ -61,7 +61,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetBackupVaultName())
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
             request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
+            
+            if (publicRequest.IsSetBackupVaultAccountId())
+                request.Parameters.Add("backupVaultAccountId", StringUtils.FromString(publicRequest.BackupVaultAccountId));
             request.ResourcePath = "/backup-vaults/{backupVaultName}";
+            request.UseQueryString = true;
 
             return request;
         }

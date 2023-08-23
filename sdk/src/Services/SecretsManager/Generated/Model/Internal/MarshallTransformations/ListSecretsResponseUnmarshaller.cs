@@ -98,6 +98,10 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+                {
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonSecretsManagerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

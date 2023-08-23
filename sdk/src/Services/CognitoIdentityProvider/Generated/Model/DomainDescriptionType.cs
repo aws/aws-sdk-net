@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The Amazon Web Services ID for the user pool owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=12)]
         public string AWSAccountId
         {
             get { return this._awsAccountId; }
@@ -63,9 +64,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDistribution. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+        /// The Amazon CloudFront endpoint that you use as the target of the alias that you set
+        /// up with your Domain Name Service (DNS) provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string CloudFrontDistribution
         {
             get { return this._cloudFrontDistribution; }

@@ -36,7 +36,7 @@ namespace Amazon.SimpleEmail.Model
     ///  
     /// <para>
     /// For information about sending a bounce message in response to a received email, see
-    /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon
+    /// the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-bounce.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Sender. 
         /// <para>
         /// The email address of the sender of the bounced email. This is the address from which
-        /// the bounce message will be sent.
+        /// the bounce message is sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,7 +130,11 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property TopicArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action
-        /// is taken. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>.
+        /// is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+        /// operation in Amazon SNS.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
         /// SNS Developer Guide</a>.
         /// </para>

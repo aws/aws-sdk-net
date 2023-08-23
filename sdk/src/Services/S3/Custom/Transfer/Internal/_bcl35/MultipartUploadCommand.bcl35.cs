@@ -31,6 +31,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.S3.Encryption;
 using Amazon.Runtime;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -53,31 +54,37 @@ namespace Amazon.S3.Transfer.Internal
             var initRequest = ConstructInitiateMultipartUploadRequest();
             var initResponse = this._s3Client.InitiateMultipartUpload(initRequest);
             Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
-
             try
             {
                 Logger.DebugFormat("Queue up the UploadPartRequests to be executed");
                 long filePosition = 0;
-                for (int partNumber = 1; filePosition < this._contentLength; partNumber++)
+                //if ContentLength is -1 the Stream doesn't support Length so we do a chunked upload
+                if ((this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.InputStream.CanSeek) || this._fileTransporterRequest.ContentLength == -1)
                 {
-                    var uploadRequest = ConstructUploadPartRequest(partNumber, filePosition, initResponse);
-                    this._partsToUpload.Enqueue(uploadRequest);
-                    filePosition += this._partSize;
+                    UploadUnseekableStream(_fileTransporterRequest);
                 }
+                else
+                {
+                    for (int partNumber = 1; filePosition < this._contentLength; partNumber++)
+                    {
+                        var uploadRequest = ConstructUploadPartRequest(partNumber, filePosition, initResponse);
+                        this._partsToUpload.Enqueue(uploadRequest);
+                        filePosition += this._partSize;
+                    }
 
-                this._totalNumberOfParts = this._partsToUpload.Count;
-                Logger.DebugFormat("Starting threads to execute the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
-                startInvokerPool();
+                    this._totalNumberOfParts = this._partsToUpload.Count;
+                    Logger.DebugFormat("Starting threads to execute the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
+                    startInvokerPool();
 
-                Logger.DebugFormat("Waiting for threads to complete. ({0})", initResponse.UploadId);
-                waitTillAllThreadsComplete();
+                    Logger.DebugFormat("Waiting for threads to complete. ({0})", initResponse.UploadId);
+                    waitTillAllThreadsComplete();
 
-                Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
+                    Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
 
-                var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
-                this._s3Client.CompleteMultipartUpload(compRequest);
-                Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
-
+                    var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
+                    this._s3Client.CompleteMultipartUpload(compRequest);
+                    Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
+                }
             }
             catch (Exception e)
             {
@@ -97,7 +104,98 @@ namespace Amazon.S3.Transfer.Internal
                 }
             }
         }
+        private void UploadUnseekableStream(TransferUtilityUploadRequest request)
+        {
+            //do chunked upload
+            int READ_BUFFER_SIZE = _s3Client.Config.BufferSize;
+            var initiateRequest = new InitiateMultipartUploadRequest()
+            {
+                BucketName = request.BucketName,
+                Key = request.Key
+            };
 
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initiateRequest).AddBeforeRequestHandler((o, args) =>
+            {
+                WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
+                if (wsArgs != null)
+                {
+                    string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
+                    wsArgs.Headers[AWSSDKUtils.UserAgentHeader] =
+                        currentUserAgent + " TransferManager/UploadNonSeekableStream";
+                }
+            });
+            var initiateResponse = _s3Client.InitiateMultipartUpload(initiateRequest);
+            try
+            {
+                var partETags = new List<PartETag>();
+                var readBuffer = new byte[READ_BUFFER_SIZE];
+                var partBuffer = new byte[(int)S3Constants.MinPartSize + READ_BUFFER_SIZE];
+                MemoryStream nextUploadBuffer = new MemoryStream(partBuffer);
+
+                using (var stream = request.InputStream)
+                {
+                    try
+                    {
+                        int partNumber = 1;
+                        int readBytesCount;
+                        while (true)
+                        {
+                            readBytesCount = stream.Read(readBuffer, 0, readBuffer.Length);
+                            nextUploadBuffer.Write(readBuffer, 0, readBytesCount);
+                            if (nextUploadBuffer.Position > S3Constants.MinPartSize || readBytesCount == 0)
+                            {
+                                bool isLastPart = readBytesCount == 0;
+                                var partSize = nextUploadBuffer.Position;
+                                nextUploadBuffer.Position = 0;
+                                var partResponse = _s3Client.UploadPart(new UploadPartRequest()
+                                {
+                                    BucketName = request.BucketName,
+                                    Key = request.Key,
+                                    UploadId = initiateResponse.UploadId,
+                                    InputStream = nextUploadBuffer,
+                                    PartSize = partSize,
+                                    PartNumber = partNumber,
+                                    IsLastPart = isLastPart
+                                });
+
+                                Logger.DebugFormat($"Uploaded part {partNumber}. (Last part = {isLastPart}, Part size = {partSize}, Upload Id: {initiateResponse.UploadId}");
+                                partETags.Add(new PartETag { PartNumber = partResponse.PartNumber, ETag = partResponse.ETag });
+                                partNumber++;
+                                nextUploadBuffer = new MemoryStream(partBuffer);
+                            }
+                            if(readBytesCount == 0)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        _s3Client.CompleteMultipartUpload(new CompleteMultipartUploadRequest()
+                        {
+                            BucketName = request.BucketName,
+                            Key = request.Key,
+                            UploadId = initiateResponse.UploadId,
+                            PartETags = partETags
+                        });
+
+                        Logger.DebugFormat($"Completed multi part upload. (Part count: {partETags.Count}, Upload Id:" +
+                        $"{initiateResponse.UploadId})");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                _s3Client.AbortMultipartUpload(new AbortMultipartUploadRequest()
+                {
+                    BucketName = request.BucketName,
+                    Key = request.Key,
+                    UploadId = initiateResponse.UploadId
+                });
+                Logger.Error(ex, ex.Message);
+                throw;
+            }
+        }
         private void AbortMultipartUpload(string uploadId)
         {
             try

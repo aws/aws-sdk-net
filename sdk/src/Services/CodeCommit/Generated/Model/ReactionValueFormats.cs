@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about the values for reactions to a comment. AWS CodeCommit supports a
-    /// limited set of reactions.
+    /// Information about the values for reactions to a comment. CodeCommit supports a limited
+    /// set of reactions.
     /// </summary>
     public partial class ReactionValueFormats
     {

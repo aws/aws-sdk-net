@@ -94,6 +94,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("driftStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

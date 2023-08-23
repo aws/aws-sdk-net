@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
     public partial class DeleteDBClusterRequest : AmazonRDSRequest
     {
         private string _dbClusterIdentifier;
+        private bool? _deleteAutomatedBackups;
         private string _finalDBSnapshotIdentifier;
         private bool? _skipFinalSnapshot;
 
@@ -82,6 +83,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteAutomatedBackups. 
+        /// <para>
+        /// A value that indicates whether to remove automated backups immediately after the DB
+        /// cluster is deleted. This parameter isn't case-sensitive. The default is to remove
+        /// automated backups immediately after the DB cluster is deleted.
+        /// </para>
+        /// </summary>
+        public bool DeleteAutomatedBackups
+        {
+            get { return this._deleteAutomatedBackups.GetValueOrDefault(); }
+            set { this._deleteAutomatedBackups = value; }
+        }
+
+        // Check to see if DeleteAutomatedBackups property is set
+        internal bool IsSetDeleteAutomatedBackups()
+        {
+            return this._deleteAutomatedBackups.HasValue; 
         }
 
         /// <summary>

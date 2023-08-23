@@ -9079,6 +9079,62 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M7gXlarge = new InstanceType("m7g.xlarge");
         /// <summary>
+        /// Constant M7i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i12xlarge = new InstanceType("m7i.12xlarge");
+        /// <summary>
+        /// Constant M7i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i16xlarge = new InstanceType("m7i.16xlarge");
+        /// <summary>
+        /// Constant M7i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i24xlarge = new InstanceType("m7i.24xlarge");
+        /// <summary>
+        /// Constant M7i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i2xlarge = new InstanceType("m7i.2xlarge");
+        /// <summary>
+        /// Constant M7i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i48xlarge = new InstanceType("m7i.48xlarge");
+        /// <summary>
+        /// Constant M7i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i4xlarge = new InstanceType("m7i.4xlarge");
+        /// <summary>
+        /// Constant M7i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7i8xlarge = new InstanceType("m7i.8xlarge");
+        /// <summary>
+        /// Constant M7iFlex2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iFlex2xlarge = new InstanceType("m7i-flex.2xlarge");
+        /// <summary>
+        /// Constant M7iFlex4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iFlex4xlarge = new InstanceType("m7i-flex.4xlarge");
+        /// <summary>
+        /// Constant M7iFlex8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iFlex8xlarge = new InstanceType("m7i-flex.8xlarge");
+        /// <summary>
+        /// Constant M7iFlexLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iFlexLarge = new InstanceType("m7i-flex.large");
+        /// <summary>
+        /// Constant M7iFlexXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iFlexXlarge = new InstanceType("m7i-flex.xlarge");
+        /// <summary>
+        /// Constant M7iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iLarge = new InstanceType("m7i.large");
+        /// <summary>
+        /// Constant M7iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7iXlarge = new InstanceType("m7i.xlarge");
+        /// <summary>
         /// Constant Mac1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType Mac1Metal = new InstanceType("mac1.metal");
@@ -9122,6 +9178,10 @@ namespace Amazon.EC2
         /// Constant P4de24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P4de24xlarge = new InstanceType("p4de.24xlarge");
+        /// <summary>
+        /// Constant P548xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P548xlarge = new InstanceType("p5.48xlarge");
         /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>

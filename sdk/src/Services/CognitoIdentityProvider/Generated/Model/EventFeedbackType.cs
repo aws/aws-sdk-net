@@ -58,7 +58,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FeedbackValue. 
         /// <para>
-        /// The event feedback value.
+        /// The authentication event feedback value. When you provide a <code>FeedbackValue</code>
+        /// value of <code>valid</code>, you tell Amazon Cognito that you trust a user session
+        /// where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code>
+        /// value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+        /// session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=131072)]
         public string Provider
         {
             get { return this._provider; }

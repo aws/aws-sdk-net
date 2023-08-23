@@ -10896,10 +10896,18 @@ namespace Amazon.QuickSight
         #region  StartDashboardSnapshotJob
 
         /// <summary>
-        /// Starts an asynchronous job that generates a dashboard snapshot. You can request up
-        /// to one paginated PDF and up to five CSVs per API call.
+        /// Starts an asynchronous job that generates a dashboard snapshot. You can request one
+        /// of the following format configurations per API call.
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// 1 paginated PDF
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 5 CSVs
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
         /// the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain
@@ -13593,5 +13601,28 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
+        {
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonQuickSightEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+        }
+
+        #endregion
+
     }
 }

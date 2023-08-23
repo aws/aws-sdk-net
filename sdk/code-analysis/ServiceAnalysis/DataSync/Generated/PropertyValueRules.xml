@@ -1126,6 +1126,10 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.Capacity.ClusterCloudStorageUsed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.Capacity.LogicalUsed</property>
     <min>0</min>
   </property-value-rule>
@@ -1299,6 +1303,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterBlockStorageUsed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterCloudStorageUsed</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>

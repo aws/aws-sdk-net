@@ -33,6 +33,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteKeyPairResponse : AmazonWebServiceResponse
     {
+        private string _keyPairId;
+        private bool? _return;
+
+        /// <summary>
+        /// Gets and sets the property KeyPairId. 
+        /// <para>
+        /// The ID of the key pair.
+        /// </para>
+        /// </summary>
+        public string KeyPairId
+        {
+            get { return this._keyPairId; }
+            set { this._keyPairId = value; }
+        }
+
+        // Check to see if KeyPairId property is set
+        internal bool IsSetKeyPairId()
+        {
+            return this._keyPairId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Return. 
+        /// <para>
+        /// Is <code>true</code> if the request succeeds, and an error otherwise.
+        /// </para>
+        /// </summary>
+        public bool Return
+        {
+            get { return this._return.GetValueOrDefault(); }
+            set { this._return = value; }
+        }
+
+        // Check to see if Return property is set
+        internal bool IsSetReturn()
+        {
+            return this._return.HasValue; 
+        }
 
     }
 }
