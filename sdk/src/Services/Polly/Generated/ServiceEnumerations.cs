@@ -913,6 +913,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Vitoria = new VoiceId("Vitoria");
         /// <summary>
+        /// Constant Zayd for VoiceId
+        /// </summary>
+        public static readonly VoiceId Zayd = new VoiceId("Zayd");
+        /// <summary>
         /// Constant Zeina for VoiceId
         /// </summary>
         public static readonly VoiceId Zeina = new VoiceId("Zeina");
