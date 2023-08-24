@@ -1,3 +1,28 @@
+### 3.7.629.0 (2023-08-24 18:29 UTC)
+* EC2 (3.7.210.0)
+	* Amazon EC2 M7a instances, powered by 4th generation AMD EPYC processors, deliver up to 50% higher performance compared to M6a instances. Amazon EC2 Hpc7a instances, powered by 4th Gen AMD EPYC processors, deliver up to 2.5x better performance compared to Amazon EC2 Hpc6a instances.
+* Glue (3.7.206.0)
+	* Added API attributes that help in the monitoring of sessions.
+* MediaConvert (3.7.202.0)
+	* This release includes additional audio channel tags in Quicktime outputs, support for film grain synthesis for AV1 outputs, ability to create audio-only FLAC outputs, and ability to specify Amazon S3 destination storage class.
+* MediaLive (3.7.202.0)
+	* MediaLive now supports passthrough of KLV data to a HLS output group with a TS container. MediaLive now supports setting an attenuation mode for AC3 audio when the coding mode is 3/2 LFE. MediaLive now supports specifying whether to include filler NAL units in RTMP output group settings.
+* MediaTailor (3.7.201.0)
+	* Adds new source location AUTODETECT_SIGV4 access type.
+* QuickSight (3.7.203.0)
+	* Excel support in Snapshot Export APIs. Removed Required trait for some insight Computations. Namespace-shared Folders support. Global Filters support. Table pin Column support.
+* RDS (3.7.207.0)
+	* This release updates the supported versions for Percona XtraBackup in Aurora MySQL.
+* S3 (3.7.203.0)
+	* Updates to endpoint ruleset tests to address Smithy validation issues.
+* S3Control (3.7.201.0)
+	* Updates to endpoint ruleset tests to address Smithy validation issues and standardize the capitalization of DualStack.
+* VerifiedPermissions (3.7.201.2)
+	* Documentation updates for Amazon Verified Permissions.
+* Core 3.7.201.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.628.0 (2023-08-23 18:50 UTC)
 * APIGateway (3.7.201.0)
 	* This release adds RootResourceId to GetRestApi response.

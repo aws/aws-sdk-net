@@ -32,7 +32,7 @@ namespace Amazon.LookoutforVision
     public partial class AmazonLookoutforVisionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.200.24");
+            InternalSDKUtils.BuildUserAgentString("3.7.200.25");
 
         private string _userAgent = UserAgentString;
         ///<summary>
