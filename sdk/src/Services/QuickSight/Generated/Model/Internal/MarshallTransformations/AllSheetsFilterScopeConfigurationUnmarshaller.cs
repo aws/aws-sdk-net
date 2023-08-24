@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FilterScopeConfiguration Object
+    /// Response Unmarshaller for AllSheetsFilterScopeConfiguration Object
     /// </summary>  
-    public class FilterScopeConfigurationUnmarshaller : IUnmarshaller<FilterScopeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FilterScopeConfiguration, JsonUnmarshallerContext>
+    public class AllSheetsFilterScopeConfigurationUnmarshaller : IUnmarshaller<AllSheetsFilterScopeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AllSheetsFilterScopeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FilterScopeConfiguration IUnmarshaller<FilterScopeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AllSheetsFilterScopeConfiguration IUnmarshaller<AllSheetsFilterScopeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,41 +53,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FilterScopeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AllSheetsFilterScopeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FilterScopeConfiguration unmarshalledObject = new FilterScopeConfiguration();
+            AllSheetsFilterScopeConfiguration unmarshalledObject = new AllSheetsFilterScopeConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AllSheets", targetDepth))
-                {
-                    var unmarshaller = AllSheetsFilterScopeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AllSheets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SelectedSheets", targetDepth))
-                {
-                    var unmarshaller = SelectedSheetsFilterScopeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SelectedSheets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static FilterScopeConfigurationUnmarshaller _instance = new FilterScopeConfigurationUnmarshaller();        
+        private static AllSheetsFilterScopeConfigurationUnmarshaller _instance = new AllSheetsFilterScopeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FilterScopeConfigurationUnmarshaller Instance
+        public static AllSheetsFilterScopeConfigurationUnmarshaller Instance
         {
             get
             {

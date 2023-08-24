@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The field options for a table visual.
+    /// The field options of a table visual.
     /// </summary>
     public partial class TableFieldOptions
     {
         private List<string> _order = new List<string>();
+        private TablePinnedFieldOptions _pinnedFieldOptions;
         private List<TableFieldOption> _selectedFieldOptions = new List<TableFieldOption>();
 
         /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
-        /// The order of field IDs of the field options for a table visual.
+        /// The order of the field IDs that are configured as field options for a table visual.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -56,9 +57,27 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PinnedFieldOptions. 
+        /// <para>
+        /// The settings for the pinned columns of a table visual.
+        /// </para>
+        /// </summary>
+        public TablePinnedFieldOptions PinnedFieldOptions
+        {
+            get { return this._pinnedFieldOptions; }
+            set { this._pinnedFieldOptions = value; }
+        }
+
+        // Check to see if PinnedFieldOptions property is set
+        internal bool IsSetPinnedFieldOptions()
+        {
+            return this._pinnedFieldOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SelectedFieldOptions. 
         /// <para>
-        /// The selected field options for the table field options.
+        /// The field options to be configured to a table.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

@@ -39,6 +39,10 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// 1 Excel workbook
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// 5 CSVs
     /// </para>
     ///  </li> </ul> 

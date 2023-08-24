@@ -3078,6 +3078,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
@@ -3120,6 +3123,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -6039,6 +6045,10 @@ namespace Amazon.QuickSight
         ///  <ul> <li> 
         /// <para>
         /// 1 paginated PDF
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1 Excel workbook
         /// </para>
         ///  </li> <li> 
         /// <para>

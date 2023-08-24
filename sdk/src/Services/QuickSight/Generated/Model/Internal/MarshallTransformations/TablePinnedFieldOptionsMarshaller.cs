@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FilterScopeConfiguration Marshaller
+    /// TablePinnedFieldOptions Marshaller
     /// </summary>
-    public class FilterScopeConfigurationMarshaller : IRequestMarshaller<FilterScopeConfiguration, JsonMarshallerContext> 
+    public class TablePinnedFieldOptionsMarshaller : IRequestMarshaller<TablePinnedFieldOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FilterScopeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TablePinnedFieldOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAllSheets())
+            if(requestObject.IsSetPinnedLeftFields())
             {
-                context.Writer.WritePropertyName("AllSheets");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AllSheetsFilterScopeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AllSheets, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSelectedSheets())
-            {
-                context.Writer.WritePropertyName("SelectedSheets");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SelectedSheetsFilterScopeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SelectedSheets, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("PinnedLeftFields");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPinnedLeftFieldsListValue in requestObject.PinnedLeftFields)
+                {
+                        context.Writer.Write(requestObjectPinnedLeftFieldsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -72,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FilterScopeConfigurationMarshaller Instance = new FilterScopeConfigurationMarshaller();
+        public readonly static TablePinnedFieldOptionsMarshaller Instance = new TablePinnedFieldOptionsMarshaller();
 
     }
 }

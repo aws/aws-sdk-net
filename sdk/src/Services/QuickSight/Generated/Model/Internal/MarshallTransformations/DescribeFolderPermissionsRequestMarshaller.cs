@@ -64,7 +64,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFolderId())
                 throw new AmazonQuickSightException("Request object does not have required field FolderId set");
             request.AddPathResource("{FolderId}", StringUtils.FromString(publicRequest.FolderId));
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNamespace())
+                request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/accounts/{AwsAccountId}/folders/{FolderId}/permissions";
+            request.UseQueryString = true;
 
             return request;
         }

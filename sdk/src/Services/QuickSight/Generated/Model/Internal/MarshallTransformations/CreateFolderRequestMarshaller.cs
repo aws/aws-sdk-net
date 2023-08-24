@@ -105,6 +105,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSharingModel())
+                {
+                    context.Writer.WritePropertyName("SharingModel");
+                    context.Writer.Write(publicRequest.SharingModel);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

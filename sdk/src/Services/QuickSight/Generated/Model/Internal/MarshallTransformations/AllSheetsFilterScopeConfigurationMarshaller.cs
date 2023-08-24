@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FilterScopeConfiguration Marshaller
+    /// AllSheetsFilterScopeConfiguration Marshaller
     /// </summary>
-    public class FilterScopeConfigurationMarshaller : IRequestMarshaller<FilterScopeConfiguration, JsonMarshallerContext> 
+    public class AllSheetsFilterScopeConfigurationMarshaller : IRequestMarshaller<AllSheetsFilterScopeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FilterScopeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AllSheetsFilterScopeConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAllSheets())
-            {
-                context.Writer.WritePropertyName("AllSheets");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AllSheetsFilterScopeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AllSheets, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSelectedSheets())
-            {
-                context.Writer.WritePropertyName("SelectedSheets");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SelectedSheetsFilterScopeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SelectedSheets, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FilterScopeConfigurationMarshaller Instance = new FilterScopeConfigurationMarshaller();
+        public readonly static AllSheetsFilterScopeConfigurationMarshaller Instance = new AllSheetsFilterScopeConfigurationMarshaller();
 
     }
 }

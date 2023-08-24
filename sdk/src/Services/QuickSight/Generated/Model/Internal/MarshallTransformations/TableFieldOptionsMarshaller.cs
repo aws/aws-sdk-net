@@ -56,6 +56,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetPinnedFieldOptions())
+            {
+                context.Writer.WritePropertyName("PinnedFieldOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TablePinnedFieldOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PinnedFieldOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSelectedFieldOptions())
             {
                 context.Writer.WritePropertyName("SelectedFieldOptions");

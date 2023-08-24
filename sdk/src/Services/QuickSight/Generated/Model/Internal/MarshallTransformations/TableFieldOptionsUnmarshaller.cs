@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Order = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PinnedFieldOptions", targetDepth))
+                {
+                    var unmarshaller = TablePinnedFieldOptionsUnmarshaller.Instance;
+                    unmarshalledObject.PinnedFieldOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelectedFieldOptions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TableFieldOption, TableFieldOptionUnmarshaller>(TableFieldOptionUnmarshaller.Instance);

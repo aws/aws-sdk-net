@@ -36,6 +36,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFolderPermissions operation
+        ///</summary>
+        public IDescribeFolderPermissionsPaginator DescribeFolderPermissions(DescribeFolderPermissionsRequest request) 
+        {
+            return new DescribeFolderPermissionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeFolderResolvedPermissions operation
+        ///</summary>
+        public IDescribeFolderResolvedPermissionsPaginator DescribeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request) 
+        {
+            return new DescribeFolderResolvedPermissionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnalyses operation
         ///</summary>
         public IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request) 
@@ -89,6 +105,22 @@ namespace Amazon.QuickSight.Model
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 
         {
             return new ListDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFolderMembers operation
+        ///</summary>
+        public IListFolderMembersPaginator ListFolderMembers(ListFolderMembersRequest request) 
+        {
+            return new ListFolderMembersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFolders operation
+        ///</summary>
+        public IListFoldersPaginator ListFolders(ListFoldersRequest request) 
+        {
+            return new ListFoldersPaginator(this.client, request);
         }
 
         /// <summary>
@@ -241,6 +273,14 @@ namespace Amazon.QuickSight.Model
         public ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request) 
         {
             return new SearchDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchFolders operation
+        ///</summary>
+        public ISearchFoldersPaginator SearchFolders(SearchFoldersRequest request) 
+        {
+            return new SearchFoldersPaginator(this.client, request);
         }
 
         /// <summary>

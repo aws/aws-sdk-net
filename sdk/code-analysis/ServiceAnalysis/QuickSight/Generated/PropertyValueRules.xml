@@ -1140,6 +1140,16 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeFolderPermissionsResponse.FolderId</property>
     <min>1</min>
     <max>2048</max>
@@ -1156,6 +1166,16 @@
     <min>1</min>
     <max>2048</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsResponse.FolderId</property>

@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private FolderType _folderType;
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private SharingModel _sharingModel;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -148,6 +149,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingModel. 
+        /// <para>
+        /// The sharing scope of the folder.
+        /// </para>
+        /// </summary>
+        public SharingModel SharingModel
+        {
+            get { return this._sharingModel; }
+            set { this._sharingModel = value; }
+        }
+
+        // Check to see if SharingModel property is set
+        internal bool IsSetSharingModel()
+        {
+            return this._sharingModel != null;
         }
 
     }

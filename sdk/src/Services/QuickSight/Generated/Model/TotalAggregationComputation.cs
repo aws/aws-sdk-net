@@ -80,7 +80,6 @@ namespace Amazon.QuickSight.Model
         /// The value field that is used in a computation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MeasureField Value
         {
             get { return this._value; }

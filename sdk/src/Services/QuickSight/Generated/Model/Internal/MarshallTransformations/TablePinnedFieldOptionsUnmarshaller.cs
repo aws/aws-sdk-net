@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FilterScopeConfiguration Object
+    /// Response Unmarshaller for TablePinnedFieldOptions Object
     /// </summary>  
-    public class FilterScopeConfigurationUnmarshaller : IUnmarshaller<FilterScopeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FilterScopeConfiguration, JsonUnmarshallerContext>
+    public class TablePinnedFieldOptionsUnmarshaller : IUnmarshaller<TablePinnedFieldOptions, XmlUnmarshallerContext>, IUnmarshaller<TablePinnedFieldOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FilterScopeConfiguration IUnmarshaller<FilterScopeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TablePinnedFieldOptions IUnmarshaller<TablePinnedFieldOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FilterScopeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TablePinnedFieldOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FilterScopeConfiguration unmarshalledObject = new FilterScopeConfiguration();
+            TablePinnedFieldOptions unmarshalledObject = new TablePinnedFieldOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AllSheets", targetDepth))
+                if (context.TestExpression("PinnedLeftFields", targetDepth))
                 {
-                    var unmarshaller = AllSheetsFilterScopeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AllSheets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SelectedSheets", targetDepth))
-                {
-                    var unmarshaller = SelectedSheetsFilterScopeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SelectedSheets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PinnedLeftFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static FilterScopeConfigurationUnmarshaller _instance = new FilterScopeConfigurationUnmarshaller();        
+        private static TablePinnedFieldOptionsUnmarshaller _instance = new TablePinnedFieldOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FilterScopeConfigurationUnmarshaller Instance
+        public static TablePinnedFieldOptionsUnmarshaller Instance
         {
             get
             {

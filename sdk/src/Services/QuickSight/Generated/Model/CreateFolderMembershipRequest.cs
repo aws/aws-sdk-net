@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MemberId. 
         /// <para>
-        /// The ID of the asset (the dashboard, analysis, or dataset).
+        /// The ID of the asset that you want to add to the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -99,8 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and
-        /// <code>DATASET</code>.
+        /// The member type of the asset that you want to add to a folder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
