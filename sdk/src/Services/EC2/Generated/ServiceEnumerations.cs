@@ -8235,6 +8235,22 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Hpc6id32xlarge = new InstanceType("hpc6id.32xlarge");
         /// <summary>
+        /// Constant Hpc7a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7a12xlarge = new InstanceType("hpc7a.12xlarge");
+        /// <summary>
+        /// Constant Hpc7a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7a24xlarge = new InstanceType("hpc7a.24xlarge");
+        /// <summary>
+        /// Constant Hpc7a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7a48xlarge = new InstanceType("hpc7a.48xlarge");
+        /// <summary>
+        /// Constant Hpc7a96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc7a96xlarge = new InstanceType("hpc7a.96xlarge");
+        /// <summary>
         /// Constant Hpc7g16xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hpc7g16xlarge = new InstanceType("hpc7g.16xlarge");
@@ -9042,6 +9058,54 @@ namespace Amazon.EC2
         /// Constant M6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6iXlarge = new InstanceType("m6i.xlarge");
+        /// <summary>
+        /// Constant M7a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a12xlarge = new InstanceType("m7a.12xlarge");
+        /// <summary>
+        /// Constant M7a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a16xlarge = new InstanceType("m7a.16xlarge");
+        /// <summary>
+        /// Constant M7a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a24xlarge = new InstanceType("m7a.24xlarge");
+        /// <summary>
+        /// Constant M7a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a2xlarge = new InstanceType("m7a.2xlarge");
+        /// <summary>
+        /// Constant M7a32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a32xlarge = new InstanceType("m7a.32xlarge");
+        /// <summary>
+        /// Constant M7a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a48xlarge = new InstanceType("m7a.48xlarge");
+        /// <summary>
+        /// Constant M7a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a4xlarge = new InstanceType("m7a.4xlarge");
+        /// <summary>
+        /// Constant M7a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7a8xlarge = new InstanceType("m7a.8xlarge");
+        /// <summary>
+        /// Constant M7aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7aLarge = new InstanceType("m7a.large");
+        /// <summary>
+        /// Constant M7aMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7aMedium = new InstanceType("m7a.medium");
+        /// <summary>
+        /// Constant M7aMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7aMetal48xl = new InstanceType("m7a.metal-48xl");
+        /// <summary>
+        /// Constant M7aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7aXlarge = new InstanceType("m7a.xlarge");
         /// <summary>
         /// Constant M7g12xlarge for InstanceType
         /// </summary>
