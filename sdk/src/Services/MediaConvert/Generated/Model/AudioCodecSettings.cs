@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private AudioCodec _codec;
         private Eac3AtmosSettings _eac3AtmosSettings;
         private Eac3Settings _eac3Settings;
+        private FlacSettings _flacSettings;
         private Mp2Settings _mp2Settings;
         private Mp3Settings _mp3Settings;
         private OpusSettings _opusSettings;
@@ -148,6 +149,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEac3Settings()
         {
             return this._eac3Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlacSettings. Required when you set Codec, under AudioDescriptions>CodecSettings,
+        /// to the value FLAC.
+        /// </summary>
+        public FlacSettings FlacSettings
+        {
+            get { return this._flacSettings; }
+            set { this._flacSettings = value; }
+        }
+
+        // Check to see if FlacSettings property is set
+        internal bool IsSetFlacSettings()
+        {
+            return this._flacSettings != null;
         }
 
         /// <summary>

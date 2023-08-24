@@ -57,6 +57,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BitDepth);
             }
 
+            if(requestObject.IsSetFilmGrainSynthesis())
+            {
+                context.Writer.WritePropertyName("filmGrainSynthesis");
+                context.Writer.Write(requestObject.FilmGrainSynthesis);
+            }
+
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");

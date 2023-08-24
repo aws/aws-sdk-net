@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filmGrainSynthesis", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FilmGrainSynthesis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

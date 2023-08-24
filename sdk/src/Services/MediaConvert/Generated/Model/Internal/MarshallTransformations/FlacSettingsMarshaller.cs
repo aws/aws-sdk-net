@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DestinationSettings Marshaller
+    /// FlacSettings Marshaller
     /// </summary>
-    public class S3DestinationSettingsMarshaller : IRequestMarshaller<S3DestinationSettings, JsonMarshallerContext> 
+    public class FlacSettingsMarshaller : IRequestMarshaller<FlacSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(FlacSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAccessControl())
+            if(requestObject.IsSetBitDepth())
             {
-                context.Writer.WritePropertyName("accessControl");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3DestinationAccessControlMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessControl, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("bitDepth");
+                context.Writer.Write(requestObject.BitDepth);
             }
 
-            if(requestObject.IsSetEncryption())
+            if(requestObject.IsSetChannels())
             {
-                context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3EncryptionSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Encryption, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("channels");
+                context.Writer.Write(requestObject.Channels);
             }
 
-            if(requestObject.IsSetStorageClass())
+            if(requestObject.IsSetSampleRate())
             {
-                context.Writer.WritePropertyName("storageClass");
-                context.Writer.Write(requestObject.StorageClass);
+                context.Writer.WritePropertyName("sampleRate");
+                context.Writer.Write(requestObject.SampleRate);
             }
 
         }
@@ -78,7 +68,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3DestinationSettingsMarshaller Instance = new S3DestinationSettingsMarshaller();
+        public readonly static FlacSettingsMarshaller Instance = new FlacSettingsMarshaller();
 
     }
 }

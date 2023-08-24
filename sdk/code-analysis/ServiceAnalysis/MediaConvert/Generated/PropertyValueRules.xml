@@ -621,6 +621,21 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.FlacSettings.BitDepth</property>
+    <min>16</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.FlacSettings.Channels</property>
+    <min>1</min>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.FlacSettings.SampleRate</property>
+    <min>22050</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ForceIncludeRenditionSize.Height</property>
     <min>32</min>
     <max>8192</max>
@@ -1250,6 +1265,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M2tsSettings.PtsOffset</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.M2tsSettings.Scte35Pid</property>
     <min>32</min>
     <max>8182</max>
@@ -1308,6 +1328,11 @@
     <property>Amazon.MediaConvert.Model.M3u8Settings.ProgramNumber</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M3u8Settings.PtsOffset</property>
+    <min>0</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.M3u8Settings.Scte35Pid</property>

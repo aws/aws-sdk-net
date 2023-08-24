@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private Av1AdaptiveQuantization _adaptiveQuantization;
         private Av1BitDepth _bitDepth;
+        private Av1FilmGrainSynthesis _filmGrainSynthesis;
         private Av1FramerateControl _framerateControl;
         private Av1FramerateConversionAlgorithm _framerateConversionAlgorithm;
         private int? _framerateDenominator;
@@ -78,6 +79,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBitDepth()
         {
             return this._bitDepth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilmGrainSynthesis. Film grain synthesis replaces film
+        /// grain present in your content with similar quality synthesized AV1 film grain. We
+        /// recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level
+        /// 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you
+        /// keep the default value, Disabled. When you include Film grain synthesis, you cannot
+        /// include the Noise reducer preprocessor.
+        /// </summary>
+        public Av1FilmGrainSynthesis FilmGrainSynthesis
+        {
+            get { return this._filmGrainSynthesis; }
+            set { this._filmGrainSynthesis = value; }
+        }
+
+        // Check to see if FilmGrainSynthesis property is set
+        internal bool IsSetFilmGrainSynthesis()
+        {
+            return this._filmGrainSynthesis != null;
         }
 
         /// <summary>

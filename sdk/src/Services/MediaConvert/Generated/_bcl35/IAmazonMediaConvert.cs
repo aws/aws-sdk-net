@@ -786,7 +786,7 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Retrieve the JSON for a specific completed transcoding job.
+        /// Retrieve the JSON for a specific transcoding job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJob service method.</param>
         /// 

@@ -47,6 +47,8 @@ namespace Amazon.MediaConvert.Model
         private int? _pmtPid;
         private int? _privateMetadataPid;
         private int? _programNumber;
+        private int? _ptsOffset;
+        private TsPtsOffset _ptsOffsetMode;
         private int? _scte35Pid;
         private M3u8Scte35Source _scte35Source;
         private TimedMetadata _timedMetadata;
@@ -285,6 +287,45 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProgramNumber()
         {
             return this._programNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PtsOffset. Manually specify the initial PTS offset, in
+        /// seconds, when you set PTS offset to Seconds. Enter an integer from 0 to 3600. Leave
+        /// blank to keep the default value 2.
+        /// </summary>
+        [AWSProperty(Min=0, Max=3600)]
+        public int PtsOffset
+        {
+            get { return this._ptsOffset.GetValueOrDefault(); }
+            set { this._ptsOffset = value; }
+        }
+
+        // Check to see if PtsOffset property is set
+        internal bool IsSetPtsOffset()
+        {
+            return this._ptsOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PtsOffsetMode. Specify the initial presentation timestamp
+        /// (PTS) offset for your transport stream output. To let MediaConvert automatically determine
+        /// the initial PTS offset: Keep the default value, Auto. We recommend that you choose
+        /// Auto for the widest player compatibility. The initial PTS will be at least two seconds
+        /// and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+        /// fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify
+        /// the number of seconds with PTS offset.
+        /// </summary>
+        public TsPtsOffset PtsOffsetMode
+        {
+            get { return this._ptsOffsetMode; }
+            set { this._ptsOffsetMode = value; }
+        }
+
+        // Check to see if PtsOffsetMode property is set
+        internal bool IsSetPtsOffsetMode()
+        {
+            return this._ptsOffsetMode != null;
         }
 
         /// <summary>

@@ -238,6 +238,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ptsOffset", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PtsOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ptsOffsetMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PtsOffsetMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rateMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
