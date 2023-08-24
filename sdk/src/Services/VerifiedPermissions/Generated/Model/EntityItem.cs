@@ -38,9 +38,9 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>{ "id": { "entityType": "Photo", "entityId": "VacationPhoto94.jpg" }, "Attributes":
-    /// {}, "Parents": [ { "entityType": "Album", "entityId": "alice_folder" } ] }</code>
-    /// 
+    ///  <code>{ "identifier": { "entityType": "Photo", "entityId": "VacationPhoto94.jpg"
+    /// }, "attributes": {}, "parents": [ { "entityType": "Album", "entityId": "alice_folder"
+    /// } ] }</code> 
     /// </para>
     /// </summary>
     public partial class EntityItem

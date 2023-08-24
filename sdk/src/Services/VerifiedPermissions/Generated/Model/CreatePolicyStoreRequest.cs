@@ -38,6 +38,13 @@ namespace Amazon.VerifiedPermissions.Model
     /// multiple namespaces</a>, Verified Permissions currently supports only one namespace
     /// per policy store.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
+    /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
+    /// propagate through the service and be visible in the results of other Verified Permissions
+    /// operations.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class CreatePolicyStoreRequest : AmazonVerifiedPermissionsRequest
