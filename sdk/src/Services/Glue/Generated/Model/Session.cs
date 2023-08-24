@@ -34,18 +34,24 @@ namespace Amazon.Glue.Model
     public partial class Session
     {
         private SessionCommand _command;
+        private DateTime? _completedOn;
         private ConnectionsList _connections;
         private DateTime? _createdOn;
         private Dictionary<string, string> _defaultArguments = new Dictionary<string, string>();
         private string _description;
+        private double? _dpuSeconds;
         private string _errorMessage;
+        private double? _executionTime;
         private string _glueVersion;
         private string _id;
+        private int? _idleTimeout;
         private double? _maxCapacity;
+        private int? _numberOfWorkers;
         private double? _progress;
         private string _role;
         private string _securityConfiguration;
         private SessionStatus _status;
+        private WorkerType _workerType;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -63,6 +69,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCommand()
         {
             return this._command != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletedOn. 
+        /// <para>
+        /// The date and time that this session is completed.
+        /// </para>
+        /// </summary>
+        public DateTime CompletedOn
+        {
+            get { return this._completedOn.GetValueOrDefault(); }
+            set { this._completedOn = value; }
+        }
+
+        // Check to see if CompletedOn property is set
+        internal bool IsSetCompletedOn()
+        {
+            return this._completedOn.HasValue; 
         }
 
         /// <summary>
@@ -140,6 +164,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DPUSeconds. 
+        /// <para>
+        /// The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+        /// </para>
+        /// </summary>
+        public double DPUSeconds
+        {
+            get { return this._dpuSeconds.GetValueOrDefault(); }
+            set { this._dpuSeconds = value; }
+        }
+
+        // Check to see if DPUSeconds property is set
+        internal bool IsSetDPUSeconds()
+        {
+            return this._dpuSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
         /// The error message displayed during the session.
@@ -156,6 +198,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionTime. 
+        /// <para>
+        /// The total time the session ran for.
+        /// </para>
+        /// </summary>
+        public double ExecutionTime
+        {
+            get { return this._executionTime.GetValueOrDefault(); }
+            set { this._executionTime = value; }
+        }
+
+        // Check to see if ExecutionTime property is set
+        internal bool IsSetExecutionTime()
+        {
+            return this._executionTime.HasValue; 
         }
 
         /// <summary>
@@ -198,6 +258,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdleTimeout. 
+        /// <para>
+        /// The number of minutes when idle before the session times out.
+        /// </para>
+        /// </summary>
+        public int IdleTimeout
+        {
+            get { return this._idleTimeout.GetValueOrDefault(); }
+            set { this._idleTimeout = value; }
+        }
+
+        // Check to see if IdleTimeout property is set
+        internal bool IsSetIdleTimeout()
+        {
+            return this._idleTimeout.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
         /// The number of Glue data processing units (DPUs) that can be allocated when the job
@@ -215,6 +293,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetMaxCapacity()
         {
             return this._maxCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfWorkers. 
+        /// <para>
+        /// The number of workers of a defined <code>WorkerType</code> to use for the session.
+        /// </para>
+        /// </summary>
+        public int NumberOfWorkers
+        {
+            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            set { this._numberOfWorkers = value; }
+        }
+
+        // Check to see if NumberOfWorkers property is set
+        internal bool IsSetNumberOfWorkers()
+        {
+            return this._numberOfWorkers.HasValue; 
         }
 
         /// <summary>
@@ -289,6 +385,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerType. 
+        /// <para>
+        /// The type of predefined worker that is allocated when a session runs. Accepts a value
+        /// of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for
+        /// Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.
+        /// </para>
+        /// </summary>
+        public WorkerType WorkerType
+        {
+            get { return this._workerType; }
+            set { this._workerType = value; }
+        }
+
+        // Check to see if WorkerType property is set
+        internal bool IsSetWorkerType()
+        {
+            return this._workerType != null;
         }
 
     }
