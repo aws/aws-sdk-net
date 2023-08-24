@@ -24,13 +24,13 @@ using System.Threading.Tasks;
 #endif
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 #if NETSTANDARD
 using System.Runtime.InteropServices;
-using Amazon.Util.Internal;
 #endif
 
 namespace Amazon.Runtime
