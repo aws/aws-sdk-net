@@ -497,7 +497,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+        /// Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
         /// 
         /// </para>
         /// </summary>
@@ -968,11 +968,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// MySQL versions 5.5, 5.6, and 5.7 are supported.
+        /// MySQL versions 5.7 and 8.0 are supported.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.40</code>, <code>5.7.28</code> 
+        /// Example: <code>5.7.40</code>, <code>8.0.28</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
