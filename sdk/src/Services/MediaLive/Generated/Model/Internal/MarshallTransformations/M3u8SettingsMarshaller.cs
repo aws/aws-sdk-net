@@ -63,6 +63,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EcmPid);
             }
 
+            if(requestObject.IsSetKlvBehavior())
+            {
+                context.Writer.WritePropertyName("klvBehavior");
+                context.Writer.Write(requestObject.KlvBehavior);
+            }
+
+            if(requestObject.IsSetKlvDataPids())
+            {
+                context.Writer.WritePropertyName("klvDataPids");
+                context.Writer.Write(requestObject.KlvDataPids);
+            }
+
             if(requestObject.IsSetNielsenId3Behavior())
             {
                 context.Writer.WritePropertyName("nielsenId3Behavior");

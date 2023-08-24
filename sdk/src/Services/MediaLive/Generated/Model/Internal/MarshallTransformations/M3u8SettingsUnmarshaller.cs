@@ -82,6 +82,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcmPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("klvBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KlvBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("klvDataPids", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KlvDataPids = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nielsenId3Behavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
