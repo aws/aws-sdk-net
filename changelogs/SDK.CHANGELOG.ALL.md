@@ -1,3 +1,14 @@
+### 3.7.630.0 (2023-08-25 18:24 UTC)
+* CloudTrail (3.7.201.0)
+	* Add ThrottlingException with error code 429 to handle CloudTrail Delegated Admin request rate exceeded on organization resources.
+* CloudWatch (3.7.200.27)
+	* Doc-only update to get doc bug fixes into the SDK docs
+* Detective (3.7.202.0)
+	* Added protections to interacting with fields containing customer information.
+* Core 3.7.201.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.629.0 (2023-08-24 18:29 UTC)
 * EC2 (3.7.210.0)
 	* Amazon EC2 M7a instances, powered by 4th generation AMD EPYC processors, deliver up to 50% higher performance compared to M6a instances. Amazon EC2 Hpc7a instances, powered by 4th Gen AMD EPYC processors, deliver up to 2.5x better performance compared to Amazon EC2 Hpc6a instances.
