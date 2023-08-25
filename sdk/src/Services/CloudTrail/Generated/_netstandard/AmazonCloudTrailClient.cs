@@ -892,6 +892,9 @@ namespace Amazon.CloudTrail
         /// The number of tags per trail, event data store, or channel has exceeded the permitted
         /// amount. Currently, the limit is 50.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailAlreadyExistsException">
         /// This exception is thrown when the specified trail already exists.
         /// </exception>
@@ -1212,6 +1215,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -1887,6 +1893,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -3041,6 +3050,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
@@ -3182,6 +3194,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -3874,6 +3889,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
@@ -4215,6 +4233,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -4680,6 +4701,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
