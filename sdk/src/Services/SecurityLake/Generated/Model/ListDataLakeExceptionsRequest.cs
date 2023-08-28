@@ -71,6 +71,7 @@ namespace Amazon.SecurityLake.Model
         /// return an HTTP 400 InvalidToken error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

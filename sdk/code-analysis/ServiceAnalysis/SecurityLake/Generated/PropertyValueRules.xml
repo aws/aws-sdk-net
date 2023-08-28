@@ -78,7 +78,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.GetDataLakeSourcesRequest.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.GetDataLakeSourcesResponse.DataLakeArn</property>
@@ -88,7 +89,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.GetDataLakeSourcesResponse.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.GetSubscriberRequest.SubscriberId</property>
@@ -101,11 +103,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsRequest.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsResponse.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListLogSourcesRequest.MaxResults</property>
@@ -114,11 +118,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListLogSourcesRequest.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListLogSourcesResponse.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListSubscribersRequest.MaxResults</property>
@@ -127,11 +133,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListSubscribersRequest.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListSubscribersResponse.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListTagsForResourceRequest.ResourceArn</property>
