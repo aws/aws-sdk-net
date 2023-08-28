@@ -65,6 +65,20 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalEncryptionContext())
+                {
+                    context.Writer.WritePropertyName("additionalEncryptionContext");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAdditionalEncryptionContextKvp in publicRequest.AdditionalEncryptionContext)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAdditionalEncryptionContextKvp.Key);
+                        var publicRequestAdditionalEncryptionContextValue = publicRequestAdditionalEncryptionContextKvp.Value;
+
+                            context.Writer.Write(publicRequestAdditionalEncryptionContextValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -76,10 +90,27 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCookieSynchronizationConfiguration())
+                {
+                    context.Writer.WritePropertyName("cookieSynchronizationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CookieSynchronizationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CookieSynchronizationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCopyAllowed())
                 {
                     context.Writer.WritePropertyName("copyAllowed");
                     context.Writer.Write(publicRequest.CopyAllowed);
+                }
+
+                if(publicRequest.IsSetCustomerManagedKey())
+                {
+                    context.Writer.WritePropertyName("customerManagedKey");
+                    context.Writer.Write(publicRequest.CustomerManagedKey);
                 }
 
                 if(publicRequest.IsSetDisconnectTimeoutInMinutes())

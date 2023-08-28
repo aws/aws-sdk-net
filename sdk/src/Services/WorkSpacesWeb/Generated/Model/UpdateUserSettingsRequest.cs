@@ -35,6 +35,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class UpdateUserSettingsRequest : AmazonWorkSpacesWebRequest
     {
         private string _clientToken;
+        private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
         private int? _disconnectTimeoutInMinutes;
         private EnabledType _downloadAllowed;
@@ -69,6 +70,30 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CookieSynchronizationConfiguration. 
+        /// <para>
+        /// The configuration that specifies which cookies should be synchronized from the end
+        /// user's local browser to the remote browser.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the allowlist and blocklist are empty, the configuration becomes null.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public CookieSynchronizationConfiguration CookieSynchronizationConfiguration
+        {
+            get { return this._cookieSynchronizationConfiguration; }
+            set { this._cookieSynchronizationConfiguration = value; }
+        }
+
+        // Check to see if CookieSynchronizationConfiguration property is set
+        internal bool IsSetCookieSynchronizationConfiguration()
+        {
+            return this._cookieSynchronizationConfiguration != null;
         }
 
         /// <summary>

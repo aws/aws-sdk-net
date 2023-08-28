@@ -100,7 +100,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of IP access settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string IpAccessSettingsArn
         {
             get { return this._ipAccessSettingsArn; }

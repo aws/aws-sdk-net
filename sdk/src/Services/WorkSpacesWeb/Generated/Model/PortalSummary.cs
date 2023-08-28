@@ -200,7 +200,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the web portal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string PortalArn
         {
             get { return this._portalArn; }
