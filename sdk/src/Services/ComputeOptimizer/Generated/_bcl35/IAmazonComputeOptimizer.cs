@@ -593,6 +593,83 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
+        #region  ExportLicenseRecommendations
+
+
+        /// <summary>
+        /// Export optimization recommendations for your licenses. 
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (CSV) file, and its metadata
+        /// in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one license export job in progress per Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportLicenseRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ExportLicenseRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations">REST API Reference for ExportLicenseRecommendations Operation</seealso>
+        ExportLicenseRecommendationsResponse ExportLicenseRecommendations(ExportLicenseRecommendationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportLicenseRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportLicenseRecommendations operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportLicenseRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations">REST API Reference for ExportLicenseRecommendations Operation</seealso>
+        IAsyncResult BeginExportLicenseRecommendations(ExportLicenseRecommendationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportLicenseRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportLicenseRecommendations.</param>
+        /// 
+        /// <returns>Returns a  ExportLicenseRecommendationsResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations">REST API Reference for ExportLicenseRecommendations Operation</seealso>
+        ExportLicenseRecommendationsResponse EndExportLicenseRecommendations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAutoScalingGroupRecommendations
 
 
@@ -1298,6 +1375,78 @@ namespace Amazon.ComputeOptimizer
         /// <returns>Returns a  GetLambdaFunctionRecommendationsResult from ComputeOptimizer.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
         GetLambdaFunctionRecommendationsResponse EndGetLambdaFunctionRecommendations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLicenseRecommendations
+
+
+        /// <summary>
+        /// Returns license recommendations for Amazon EC2 instances that run on a specific license.
+        /// 
+        ///  
+        /// <para>
+        /// Compute Optimizer generates recommendations for licenses that meet a specific set
+        /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the GetLicenseRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">REST API Reference for GetLicenseRecommendations Operation</seealso>
+        GetLicenseRecommendationsResponse GetLicenseRecommendations(GetLicenseRecommendationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLicenseRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseRecommendations operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLicenseRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">REST API Reference for GetLicenseRecommendations Operation</seealso>
+        IAsyncResult BeginGetLicenseRecommendations(GetLicenseRecommendationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLicenseRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLicenseRecommendations.</param>
+        /// 
+        /// <returns>Returns a  GetLicenseRecommendationsResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">REST API Reference for GetLicenseRecommendations Operation</seealso>
+        GetLicenseRecommendationsResponse EndGetLicenseRecommendations(IAsyncResult asyncResult);
 
         #endregion
         

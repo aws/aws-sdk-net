@@ -36,6 +36,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.GetLicenseRecommendationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComputeOptimizer.Model.GetRecommendationPreferencesRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
