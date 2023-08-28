@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         private string _ruleId;
         private string _ruleName;
         private string _scheduleExpression;
+        private string _scheduleExpressionTimezone;
         private long? _startWindowMinutes;
         private string _targetBackupVaultName;
 
@@ -215,6 +216,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleExpressionTimezone. 
+        /// <para>
+        /// This is the timezone in which the schedule expression is set. By default, ScheduleExpressions
+        /// are in UTC. You can modify this to a specified timezone.
+        /// </para>
+        /// </summary>
+        public string ScheduleExpressionTimezone
+        {
+            get { return this._scheduleExpressionTimezone; }
+            set { this._scheduleExpressionTimezone = value; }
+        }
+
+        // Check to see if ScheduleExpressionTimezone property is set
+        internal bool IsSetScheduleExpressionTimezone()
+        {
+            return this._scheduleExpressionTimezone != null;
         }
 
         /// <summary>

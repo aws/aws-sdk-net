@@ -110,6 +110,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScheduleExpression);
             }
 
+            if(requestObject.IsSetScheduleExpressionTimezone())
+            {
+                context.Writer.WritePropertyName("ScheduleExpressionTimezone");
+                context.Writer.Write(requestObject.ScheduleExpressionTimezone);
+            }
+
             if(requestObject.IsSetStartWindowMinutes())
             {
                 context.Writer.WritePropertyName("StartWindowMinutes");
