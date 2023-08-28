@@ -54,19 +54,16 @@ namespace Amazon.Organizations.Model
     /// Check the CloudTrail log for the <code>CloseAccountResult</code> event that gets published
     /// after the account closes successfully. For information on using CloudTrail with Organizations,
     /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
-    /// and monitoring in Organizations</a> in the <i>Organizations User Guide.</i> 
+    /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
     /// You can close only 10% of member accounts, between 10 and 200, within a rolling 30
     /// day period. This quota is not bound by a calendar month, but starts when you close
-    /// an account.
-    /// </para>
-    ///  
-    /// <para>
-    /// After you reach this limit, you can close additional accounts in the Billing console.
-    /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html">Closing
-    /// an account</a> in the Amazon Web Services Billing and Cost Management User Guide.
+    /// an account. After you reach this limit, you can close additional accounts. For more
+    /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+    /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,11 +78,7 @@ namespace Amazon.Organizations.Model
     /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
     /// GovCloud User Guide</i>.
     /// </para>
-    ///  </li> </ul> </note> 
-    /// <para>
-    /// For more information about closing accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
-    /// an Amazon Web Services account</a> in the <i>Organizations User Guide.</i> 
-    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CloseAccountRequest : AmazonOrganizationsRequest
     {

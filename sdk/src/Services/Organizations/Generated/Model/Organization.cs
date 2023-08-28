@@ -98,7 +98,7 @@ namespace Amazon.Organizations.Model
         /// to "ALL", then all features are enabled and policies can be applied to accounts in
         /// the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing
         /// functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-        /// All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+        /// all features in your organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         /// </summary>
         public OrganizationFeatureSet FeatureSet

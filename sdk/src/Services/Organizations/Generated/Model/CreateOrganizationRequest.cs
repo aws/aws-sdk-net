@@ -46,8 +46,8 @@ namespace Amazon.Organizations.Model
     /// the new organization is created with all features enabled and service control policies
     /// automatically enabled in the root. If you instead choose to create the organization
     /// supporting only the consolidated billing features by setting the <code>FeatureSet</code>
-    /// parameter to <code>CONSOLIDATED_BILLING"</code>, no policy types are enabled by default,
-    /// and you can't use organization policies
+    /// parameter to <code>CONSOLIDATED_BILLING</code>, no policy types are enabled by default
+    /// and you can't use organization policies.
     /// </para>
     /// </summary>
     public partial class CreateOrganizationRequest : AmazonOrganizationsRequest
@@ -64,7 +64,7 @@ namespace Amazon.Organizations.Model
         /// <para>
         ///  <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated
         /// to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
-        /// billing</a> in the <i>Organizations User Guide.</i> 
+        /// billing</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.Organizations.Model
         ///  <code>ALL</code>: In addition to all the features supported by the consolidated billing
         /// feature set, the management account can also apply any policy type to any member account
         /// in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
-        /// features</a> in the <i>Organizations User Guide.</i> 
+        /// features</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

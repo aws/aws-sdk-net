@@ -49,8 +49,8 @@ namespace Amazon.Organizations.Model
     /// permission. If you enabled all features in the organization, the user must also have
     /// the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
     /// create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">Organizations
-    /// and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
+    /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -61,9 +61,9 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// For more information about invitations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
     /// an Amazon Web Services account to join your organization</a> in the <i>Organizations
-    /// User Guide.</i> For more information about requests to enable all features in the
+    /// User Guide</i>. For more information about requests to enable all features in the
     /// organization, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-    /// all features in your organization</a> in the <i>Organizations User Guide.</i> 
+    /// all features in your organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>

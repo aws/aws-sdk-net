@@ -36,7 +36,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// For more information about policies and their use, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
-    /// Organization Policies</a>.
+    /// Organizations policies</a>.
     /// </para>
     ///  
     /// <para>
@@ -45,7 +45,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// This operation can be called only from the organization's management account or by
+    /// a member account that is a delegated administrator for an Amazon Web Services service.
     /// </para>
     /// </summary>
     public partial class CreatePolicyRequest : AmazonOrganizationsRequest
