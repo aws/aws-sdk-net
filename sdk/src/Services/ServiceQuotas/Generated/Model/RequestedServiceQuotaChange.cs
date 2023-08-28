@@ -41,7 +41,9 @@ namespace Amazon.ServiceQuotas.Model
         private DateTime? _lastUpdated;
         private string _quotaArn;
         private string _quotaCode;
+        private QuotaContextInfo _quotaContext;
         private string _quotaName;
+        private AppliedLevelEnum _quotaRequestedAtLevel;
         private string _requester;
         private string _serviceCode;
         private string _serviceName;
@@ -180,7 +182,9 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The quota identifier.
+        /// Specifies the quota identifier. To find the quota code for a specific quota, use the
+        /// <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response
+        /// in the output for the quota you want.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -197,9 +201,27 @@ namespace Amazon.ServiceQuotas.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuotaContext. 
+        /// <para>
+        /// The context for this service quota.
+        /// </para>
+        /// </summary>
+        public QuotaContextInfo QuotaContext
+        {
+            get { return this._quotaContext; }
+            set { this._quotaContext = value; }
+        }
+
+        // Check to see if QuotaContext property is set
+        internal bool IsSetQuotaContext()
+        {
+            return this._quotaContext != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QuotaName. 
         /// <para>
-        /// The quota name.
+        /// Specifies the quota name.
         /// </para>
         /// </summary>
         public string QuotaName
@@ -212,6 +234,25 @@ namespace Amazon.ServiceQuotas.Model
         internal bool IsSetQuotaName()
         {
             return this._quotaName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaRequestedAtLevel. 
+        /// <para>
+        /// Specifies at which level within the Amazon Web Services account the quota request
+        /// applies to.
+        /// </para>
+        /// </summary>
+        public AppliedLevelEnum QuotaRequestedAtLevel
+        {
+            get { return this._quotaRequestedAtLevel; }
+            set { this._quotaRequestedAtLevel = value; }
+        }
+
+        // Check to see if QuotaRequestedAtLevel property is set
+        internal bool IsSetQuotaRequestedAtLevel()
+        {
+            return this._quotaRequestedAtLevel != null;
         }
 
         /// <summary>
@@ -235,7 +276,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The service identifier.
+        /// Specifies the service identifier. To find the service code value for an Amazon Web
+        /// Services service, use the <a>ListServices</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -254,7 +296,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// Specifies the service name.
         /// </para>
         /// </summary>
         public string ServiceName

@@ -25,6 +25,60 @@ namespace Amazon.ServiceQuotas
 {
 
     /// <summary>
+    /// Constants used for properties of type AppliedLevelEnum.
+    /// </summary>
+    public class AppliedLevelEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for AppliedLevelEnum
+        /// </summary>
+        public static readonly AppliedLevelEnum ACCOUNT = new AppliedLevelEnum("ACCOUNT");
+        /// <summary>
+        /// Constant ALL for AppliedLevelEnum
+        /// </summary>
+        public static readonly AppliedLevelEnum ALL = new AppliedLevelEnum("ALL");
+        /// <summary>
+        /// Constant RESOURCE for AppliedLevelEnum
+        /// </summary>
+        public static readonly AppliedLevelEnum RESOURCE = new AppliedLevelEnum("RESOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppliedLevelEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppliedLevelEnum FindValue(string value)
+        {
+            return FindValue<AppliedLevelEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppliedLevelEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass
@@ -153,6 +207,56 @@ namespace Amazon.ServiceQuotas
 
 
     /// <summary>
+    /// Constants used for properties of type QuotaContextScope.
+    /// </summary>
+    public class QuotaContextScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for QuotaContextScope
+        /// </summary>
+        public static readonly QuotaContextScope ACCOUNT = new QuotaContextScope("ACCOUNT");
+        /// <summary>
+        /// Constant RESOURCE for QuotaContextScope
+        /// </summary>
+        public static readonly QuotaContextScope RESOURCE = new QuotaContextScope("RESOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaContextScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaContextScope FindValue(string value)
+        {
+            return FindValue<QuotaContextScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaContextScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RequestStatus.
     /// </summary>
     public class RequestStatus : ConstantClass
@@ -174,6 +278,14 @@ namespace Amazon.ServiceQuotas
         /// Constant DENIED for RequestStatus
         /// </summary>
         public static readonly RequestStatus DENIED = new RequestStatus("DENIED");
+        /// <summary>
+        /// Constant INVALID_REQUEST for RequestStatus
+        /// </summary>
+        public static readonly RequestStatus INVALID_REQUEST = new RequestStatus("INVALID_REQUEST");
+        /// <summary>
+        /// Constant NOT_APPROVED for RequestStatus
+        /// </summary>
+        public static readonly RequestStatus NOT_APPROVED = new RequestStatus("NOT_APPROVED");
         /// <summary>
         /// Constant PENDING for RequestStatus
         /// </summary>

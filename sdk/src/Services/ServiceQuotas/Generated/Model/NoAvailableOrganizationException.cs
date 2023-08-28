@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// The account making this call is not a member of an organization.
+    /// The Amazon Web Services account making this call is not a member of an organization.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

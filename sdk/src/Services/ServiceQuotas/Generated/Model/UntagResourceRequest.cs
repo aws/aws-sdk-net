@@ -44,8 +44,8 @@ namespace Amazon.ServiceQuotas.Model
         /// The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can
         /// get this information by using the Service Quotas console, or by listing the quotas
         /// using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-        /// AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-        /// AWS API operation.
+        /// CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
+        /// Amazon Web Services API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

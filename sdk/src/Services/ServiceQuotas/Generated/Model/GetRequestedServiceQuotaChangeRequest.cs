@@ -39,7 +39,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The ID of the quota increase request.
+        /// Specifies the ID of the quota increase request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
