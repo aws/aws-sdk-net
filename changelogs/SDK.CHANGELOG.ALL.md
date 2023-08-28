@@ -1,3 +1,20 @@
+### 3.7.631.0 (2023-08-28 18:34 UTC)
+* Backup (3.7.202.0)
+	* Add support for customizing time zone for backup window in backup plan rules.
+* ComputeOptimizer (3.7.201.0)
+	* This release enables AWS Compute Optimizer to analyze and generate licensing optimization recommendations for sql server running on EC2 instances.
+* Organizations (3.7.200.27)
+	* Documentation updates for permissions and links.
+* SecurityLake (3.7.202.0)
+	* Remove incorrect regex enforcement on pagination tokens.
+* ServiceQuotas (3.7.201.0)
+	* Service Quotas now supports viewing the applied quota value and requesting a quota increase for a specific resource in an AWS account.
+* WorkSpacesWeb (3.7.201.0)
+	* WorkSpaces Web now enables Admins to configure which cookies are synchronized from an end-user's local browser to the in-session browser. In conjunction with a browser extension, this feature enables enhanced Single-Sign On capability by reducing the number of times an end-user has to authenticate.
+* Core 3.7.201.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.630.0 (2023-08-25 18:24 UTC)
 * CloudTrail (3.7.201.0)
 	* Add ThrottlingException with error code 429 to handle CloudTrail Delegated Admin request rate exceeded on organization resources.
