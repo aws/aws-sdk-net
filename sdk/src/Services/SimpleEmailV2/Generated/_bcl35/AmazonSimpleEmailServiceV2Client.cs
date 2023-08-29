@@ -347,6 +347,69 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CancelExportJob
+
+        /// <summary>
+        /// Cancels an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob">REST API Reference for CancelExportJob Operation</seealso>
+        public virtual CancelExportJobResponse CancelExportJob(CancelExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportJob operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob">REST API Reference for CancelExportJob Operation</seealso>
+        public virtual IAsyncResult BeginCancelExportJob(CancelExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelExportJob.</param>
+        /// 
+        /// <returns>Returns a  CancelExportJobResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob">REST API Reference for CancelExportJob Operation</seealso>
+        public virtual CancelExportJobResponse EndCancelExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelExportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateConfigurationSet
 
         /// <summary>
@@ -1144,6 +1207,77 @@ namespace Amazon.SimpleEmailV2
         public virtual CreateEmailTemplateResponse EndCreateEmailTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEmailTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateExportJob
+
+        /// <summary>
+        /// Creates an export job for a data source and destination.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
+        public virtual CreateExportJobResponse CreateExportJob(CreateExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateExportJob(CreateExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateExportJobResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
+        public virtual CreateExportJobResponse EndCreateExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -3048,6 +3182,69 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetExportJob
+
+        /// <summary>
+        /// Provides information about an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
+        public virtual GetExportJobResponse GetExportJob(GetExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
+        public virtual IAsyncResult BeginGetExportJob(GetExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExportJob.</param>
+        /// 
+        /// <returns>Returns a  GetExportJobResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
+        public virtual GetExportJobResponse EndGetExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetImportJob
 
         /// <summary>
@@ -3107,6 +3304,75 @@ namespace Amazon.SimpleEmailV2
         public virtual GetImportJobResponse EndGetImportJob(IAsyncResult asyncResult)
         {
             return EndInvoke<GetImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMessageInsights
+
+        /// <summary>
+        /// Provides information about a specific message, including the from address, the subject,
+        /// the recipient address, email tags, as well as events associated with the message.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageInsights service method.</param>
+        /// 
+        /// <returns>The response from the GetMessageInsights service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights">REST API Reference for GetMessageInsights Operation</seealso>
+        public virtual GetMessageInsightsResponse GetMessageInsights(GetMessageInsightsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMessageInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMessageInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMessageInsightsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMessageInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageInsights operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMessageInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights">REST API Reference for GetMessageInsights Operation</seealso>
+        public virtual IAsyncResult BeginGetMessageInsights(GetMessageInsightsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMessageInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMessageInsightsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMessageInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMessageInsights.</param>
+        /// 
+        /// <returns>Returns a  GetMessageInsightsResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights">REST API Reference for GetMessageInsights Operation</seealso>
+        public virtual GetMessageInsightsResponse EndGetMessageInsights(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMessageInsightsResponse>(asyncResult);
         }
 
         #endregion
@@ -3753,6 +4019,66 @@ namespace Amazon.SimpleEmailV2
         public virtual ListEmailTemplatesResponse EndListEmailTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEmailTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExportJobs
+
+        /// <summary>
+        /// Lists all of the export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListExportJobs service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs">REST API Reference for ListExportJobs Operation</seealso>
+        public virtual ListExportJobsResponse ListExportJobs(ListExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExportJobs operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs">REST API Reference for ListExportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListExportJobs(ListExportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListExportJobsResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs">REST API Reference for ListExportJobs Operation</seealso>
+        public virtual ListExportJobsResponse EndListExportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExportJobsResponse>(asyncResult);
         }
 
         #endregion

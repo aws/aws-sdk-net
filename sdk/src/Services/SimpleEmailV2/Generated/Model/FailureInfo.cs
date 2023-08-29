@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// An object that contains the failure details about an import job.
+    /// An object that contains the failure details about a job.
     /// </summary>
     public partial class FailureInfo
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A message about why the import job failed.
+        /// A message about why the job failed.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property FailedRecordsS3Url. 
         /// <para>
-        /// An Amazon S3 presigned URL that contains all the failed records and related information.
+        /// An Amazon S3 pre-signed URL that contains all the failed records and related information.
         /// </para>
         /// </summary>
         public string FailedRecordsS3Url

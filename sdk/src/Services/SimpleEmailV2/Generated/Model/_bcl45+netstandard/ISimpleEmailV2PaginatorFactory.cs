@@ -76,6 +76,11 @@ namespace Amazon.SimpleEmailV2.Model
         IListEmailTemplatesPaginator ListEmailTemplates(ListEmailTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListExportJobs operation
+        ///</summary>
+        IListExportJobsPaginator ListExportJobs(ListExportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListImportJobs operation
         ///</summary>
         IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request);

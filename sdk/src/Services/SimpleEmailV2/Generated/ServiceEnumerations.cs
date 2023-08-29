@@ -75,6 +75,60 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type BounceType.
+    /// </summary>
+    public class BounceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERMANENT for BounceType
+        /// </summary>
+        public static readonly BounceType PERMANENT = new BounceType("PERMANENT");
+        /// <summary>
+        /// Constant TRANSIENT for BounceType
+        /// </summary>
+        public static readonly BounceType TRANSIENT = new BounceType("TRANSIENT");
+        /// <summary>
+        /// Constant UNDETERMINED for BounceType
+        /// </summary>
+        public static readonly BounceType UNDETERMINED = new BounceType("UNDETERMINED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BounceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BounceType FindValue(string value)
+        {
+            return FindValue<BounceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BounceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BulkEmailStatus.
     /// </summary>
     public class BulkEmailStatus : ConstantClass
@@ -427,6 +481,72 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type DeliveryEventType.
+    /// </summary>
+    public class DeliveryEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLAINT for DeliveryEventType
+        /// </summary>
+        public static readonly DeliveryEventType COMPLAINT = new DeliveryEventType("COMPLAINT");
+        /// <summary>
+        /// Constant DELIVERY for DeliveryEventType
+        /// </summary>
+        public static readonly DeliveryEventType DELIVERY = new DeliveryEventType("DELIVERY");
+        /// <summary>
+        /// Constant PERMANENT_BOUNCE for DeliveryEventType
+        /// </summary>
+        public static readonly DeliveryEventType PERMANENT_BOUNCE = new DeliveryEventType("PERMANENT_BOUNCE");
+        /// <summary>
+        /// Constant SEND for DeliveryEventType
+        /// </summary>
+        public static readonly DeliveryEventType SEND = new DeliveryEventType("SEND");
+        /// <summary>
+        /// Constant TRANSIENT_BOUNCE for DeliveryEventType
+        /// </summary>
+        public static readonly DeliveryEventType TRANSIENT_BOUNCE = new DeliveryEventType("TRANSIENT_BOUNCE");
+        /// <summary>
+        /// Constant UNDETERMINED_BOUNCE for DeliveryEventType
+        /// </summary>
+        public static readonly DeliveryEventType UNDETERMINED_BOUNCE = new DeliveryEventType("UNDETERMINED_BOUNCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeliveryEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeliveryEventType FindValue(string value)
+        {
+            return FindValue<DeliveryEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeliveryEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DimensionValueSource.
     /// </summary>
     public class DimensionValueSource : ConstantClass
@@ -643,6 +763,56 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type EngagementEventType.
+    /// </summary>
+    public class EngagementEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLICK for EngagementEventType
+        /// </summary>
+        public static readonly EngagementEventType CLICK = new EngagementEventType("CLICK");
+        /// <summary>
+        /// Constant OPEN for EngagementEventType
+        /// </summary>
+        public static readonly EngagementEventType OPEN = new EngagementEventType("OPEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngagementEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngagementEventType FindValue(string value)
+        {
+            return FindValue<EngagementEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngagementEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventType.
     /// </summary>
     public class EventType : ConstantClass
@@ -718,6 +888,56 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportSourceType.
+    /// </summary>
+    public class ExportSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MESSAGE_INSIGHTS for ExportSourceType
+        /// </summary>
+        public static readonly ExportSourceType MESSAGE_INSIGHTS = new ExportSourceType("MESSAGE_INSIGHTS");
+        /// <summary>
+        /// Constant METRICS_DATA for ExportSourceType
+        /// </summary>
+        public static readonly ExportSourceType METRICS_DATA = new ExportSourceType("METRICS_DATA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportSourceType FindValue(string value)
+        {
+            return FindValue<ExportSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportSourceType(string value)
         {
             return FindValue(value);
         }
@@ -884,6 +1104,10 @@ namespace Amazon.SimpleEmailV2
     public class JobStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CANCELLED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCELLED = new JobStatus("CANCELLED");
         /// <summary>
         /// Constant COMPLETED for JobStatus
         /// </summary>
@@ -1178,6 +1402,56 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Metric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricAggregation.
+    /// </summary>
+    public class MetricAggregation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RATE for MetricAggregation
+        /// </summary>
+        public static readonly MetricAggregation RATE = new MetricAggregation("RATE");
+        /// <summary>
+        /// Constant VOLUME for MetricAggregation
+        /// </summary>
+        public static readonly MetricAggregation VOLUME = new MetricAggregation("VOLUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricAggregation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricAggregation FindValue(string value)
+        {
+            return FindValue<MetricAggregation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricAggregation(string value)
         {
             return FindValue(value);
         }

@@ -116,6 +116,14 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListExportJobs operation
+        ///</summary>
+        public IListExportJobsPaginator ListExportJobs(ListExportJobsRequest request) 
+        {
+            return new ListExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListImportJobs operation
         ///</summary>
         public IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request) 
