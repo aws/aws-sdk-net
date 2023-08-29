@@ -16,8 +16,6 @@
 using System;
 using System.Collections.Generic;
 
-using Amazon.DynamoDBv2.Model;
-
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
@@ -29,6 +27,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Name of the table.
         /// </summary>
         public string TableName { get; set; }
+
+        /// <summary>
+        /// The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// </summary>
+        /// <remarks>
+        /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
+        /// For <see cref="MetadataCachingMode.TableNameOnly"/> the cache key will only consist of the table name. This reduces cache misses in contexts
+        /// where you are accessing tables with identical structure but using different credentials or endpoints (such as a multi-tenant application).
+        /// </remarks>
+        public MetadataCachingMode? MetadataCachingMode { get; set; }
 
         /// <summary>
         /// Conversion to use for converting .NET values to DynamoDB values.
@@ -54,16 +64,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         public TableConfig(string tableName)
             : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null,
-                false)
+                false, metadataCachingMode: DynamoDBv2.MetadataCachingMode.Default)
         {
         }
 
         internal TableConfig(string tableName, DynamoDBEntryConversion conversion, Table.DynamoDBConsumer consumer,
-            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled)
+            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled, MetadataCachingMode? metadataCachingMode)
         {
             if (string.IsNullOrEmpty(tableName)) throw new ArgumentNullException("tableName");
 
             TableName = tableName;
+            MetadataCachingMode = metadataCachingMode;
             Conversion = conversion;
             Consumer = consumer;
             IsEmptyStringValueEnabled = isEmptyStringValueEnabled;

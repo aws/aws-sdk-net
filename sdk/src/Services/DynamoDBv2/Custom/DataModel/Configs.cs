@@ -60,6 +60,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             TableNamePrefix = AWSConfigsDynamoDB.Context.TableNamePrefix;
             Conversion = DynamoDBEntryConversion.CurrentConversion;
+            MetadataCachingMode = AWSConfigsDynamoDB.Context.MetadataCachingMode;
         }
 
         /// <summary>
@@ -82,6 +83,18 @@ namespace Amazon.DynamoDBv2.DataModel
         /// table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// The object persistence model API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// </summary>
+        /// <remarks>
+        /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
+        /// For <see cref="MetadataCachingMode.TableNameOnly"/> the cache key will only consist of the table name. This reduces cache misses in contexts
+        /// where you are accessing tables with identical structure but using different credentials or endpoints (such as a multi-tenant application).
+        /// </remarks>
+        public MetadataCachingMode? MetadataCachingMode { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values
@@ -283,7 +296,8 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
             Conversion = null,
-            IsEmptyStringValueEnabled = null
+            IsEmptyStringValueEnabled = null,
+            MetadataCachingMode = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -292,7 +306,8 @@ namespace Amazon.DynamoDBv2.DataModel
             TableNamePrefix = null,
             IgnoreNullValues = null,
             Conversion = null,
-            IsEmptyStringValueEnabled = null
+            IsEmptyStringValueEnabled = null,
+            MetadataCachingMode = null
         };
 
         public DynamoDBFlatConfig(DynamoDBOperationConfig operationConfig, DynamoDBContextConfig contextConfig)
@@ -317,6 +332,7 @@ namespace Amazon.DynamoDBv2.DataModel
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
+            MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
@@ -329,6 +345,7 @@ namespace Amazon.DynamoDBv2.DataModel
             QueryFilter = queryFilter;
             ConditionalOperator = conditionalOperator;
             Conversion = conversion;
+            MetadataCachingMode = metadataCachingMode;
 
             State = new OperationState();
         }
@@ -353,6 +370,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// The object mapping API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// </summary>
+        public MetadataCachingMode? MetadataCachingMode { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values

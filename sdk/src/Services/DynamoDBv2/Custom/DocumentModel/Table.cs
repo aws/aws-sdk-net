@@ -33,7 +33,7 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
-    /// The Table class is the starting object when using the Document API. It is used to Get documents from the DynamnoDB table
+    /// The Table class is the starting object when using the Document API. It is used to Get documents from the DynamoDB table
     /// and write documents back to the DynamoDB table.
     /// </summary>
     public partial class Table
@@ -125,13 +125,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
             throw new InvalidOperationException("Unknown attribute type");
         }
 
-        private void LoadTableInfo()
+        private ICache<string, TableDescription> GetTableDescriptionCache()
+        {
+            if (Config.MetadataCachingMode == MetadataCachingMode.TableNameOnly)
+            {
+                // Use only the table name as the cache key to enable cache reuse when the consumer is certain
+                // different credentials identify the same physical table
+                return SdkCache.GetCache<string, TableDescription>(null, TableInfoCacheIdentifier, StringComparer.Ordinal);
+            }
+            
+            // Assuming CachingMode.Default, use the SdkCache's default credentials, region and service url to form the cache key.
+            // Each of these could identify a different physical table
+            return SdkCache.GetCache<string, TableDescription>(DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
+        }
+
+        private void LoadTableInfo(ICache<string, TableDescription> tableDescriptionCache)
         {
             ClearTableData();
 
-            var tableInfoCache = SdkCache.GetCache<string, TableDescription>(DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
             bool staleCacheData;
-            TableDescription table = tableInfoCache.GetValue(TableName, this.DescribeTable, out staleCacheData);
+            TableDescription table = tableDescriptionCache.GetValue(TableName, this.DescribeTable, out staleCacheData);
             if (staleCacheData)
             {
                 var logger = Logger.GetLogger(typeof(Table));
@@ -409,7 +422,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static Table LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
         {
             Table table = new Table(ddbClient, config);
-            table.LoadTableInfo();
+            var tableDescriptionCache = table.GetTableDescriptionCache();
+            table.LoadTableInfo(tableDescriptionCache);
             return table;
         }
 
@@ -472,7 +486,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
+
+            return LoadTable(ddbClient, config);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will throw an exception if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// <returns>Table object representing the specified table.</returns>
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
+        {
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
 
             return LoadTable(ddbClient, config);
         }
@@ -548,7 +583,40 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            return TryLoadTable(ddbClient, tableName, conversion, isEmptyStringValueEnabled, MetadataCachingMode.Default, out table);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified name, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will return false if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="tableName">Name of the table.</param>
+        /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
+        /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
+        /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// <param name="table">Loaded table.</param>
+        /// <returns>
+        /// True if table was successfully loaded; otherwise false.
+        /// </returns>
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, 
+                                        string tableName, 
+                                        DynamoDBEntryConversion conversion, 
+                                        bool isEmptyStringValueEnabled, 
+                                        MetadataCachingMode? metadataCachingMode, 
+                                        out Table table)
+        {
+            var config = new TableConfig(tableName, 
+                                         conversion, 
+                                         DynamoDBConsumer.DocumentModel, 
+                                         storeAsEpoch: null, 
+                                         isEmptyStringValueEnabled: isEmptyStringValueEnabled, 
+                                         metadataCachingMode: metadataCachingMode);
+
             return TryLoadTable(ddbClient, config, out table);
         }
 
