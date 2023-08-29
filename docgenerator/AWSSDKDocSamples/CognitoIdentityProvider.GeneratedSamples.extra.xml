@@ -89,7 +89,7 @@
                     This request submits a value for all possible parameters for ListUsers. By iterating the PaginationToken, you can page through and collect all users in a user pool.
                 </para>
                 <code
-                    title="A ListUsers request for the next 3 users whose email address starts with "testuser.""
+                    title="A ListUsers request for the next 3 users whose email address starts with \"testuser.\""
                     source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
                     region="a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246" />
             </example>
@@ -108,7 +108,7 @@
                     This request submits a value for all possible parameters for ListUsers. By iterating the PaginationToken, you can page through and collect all users in a user pool.
                 </para>
                 <code
-                    title="A ListUsers request for the next 3 users whose email address starts with "testuser.""
+                    title="A ListUsers request for the next 3 users whose email address starts with \"testuser.\""
                     source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
                     region="a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246" />
             </example>
