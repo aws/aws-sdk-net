@@ -42,6 +42,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// sends logs. The log group must not be encrypted with Key Management Service and must
         /// be in the same Amazon Web Services account as your user pool.
         /// </para>
+        ///  
+        /// <para>
+        /// To send logs to log groups with a resource policy of a size greater than 5120 characters,
+        /// configure a log group with a path that starts with <code>/aws/vendedlogs</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
+        /// logging from certain Amazon Web Services services</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string LogGroupArn

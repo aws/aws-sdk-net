@@ -218,6 +218,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// it makes API requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UserContextDataType UserContextData
         {
             get { return this._userContextData; }

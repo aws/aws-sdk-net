@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=131072)]
         public string NextToken
         {
             get { return this._nextToken; }

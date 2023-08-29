@@ -250,7 +250,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The IdP name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string ProviderName
         {
             get { return this._providerName; }

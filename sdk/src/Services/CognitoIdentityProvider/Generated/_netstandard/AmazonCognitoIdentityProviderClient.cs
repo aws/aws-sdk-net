@@ -2627,7 +2627,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  </note> 
         /// <para>
         /// Updates the specified user's attributes, including developer attributes, as an administrator.
-        /// Works on any user.
+        /// Works on any user. To delete an attribute from your user, submit the attribute in
+        /// your API request with a blank value.
         /// </para>
         ///  
         /// <para>

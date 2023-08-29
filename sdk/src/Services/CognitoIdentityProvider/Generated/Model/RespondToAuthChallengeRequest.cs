@@ -185,6 +185,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// with user devices in your user pool</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> ChallengeResponses
         {
             get { return this._challengeResponses; }
@@ -283,7 +284,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }
@@ -305,6 +306,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// it makes API requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UserContextDataType UserContextData
         {
             get { return this._userContextData; }
