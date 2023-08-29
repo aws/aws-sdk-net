@@ -1,3 +1,13 @@
+### 3.7.632.0 (2023-08-29 18:23 UTC)
+* CognitoIdentityProvider (3.7.202.0)
+	* Added API example requests and responses for several operations. Fixed the validation regex for user pools Identity Provider name.
+* FSx (3.7.201.14)
+	* Documentation updates for project quotas.
+* Omics (3.7.204.0)
+	* Add RetentionMode support for Runs.
+* SimpleEmailV2 (3.7.201.0)
+	* Adds support for the new Export and Message Insights features: create, get, list and cancel export jobs; get message insights.
+
 ### 3.7.631.0 (2023-08-28 18:34 UTC)
 * Backup (3.7.202.0)
 	* Add support for customizing time zone for backup window in backup plan rules.
