@@ -155,6 +155,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <code>AddRouteTableIds</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>AutomaticBackupRetentionDays</code> 
     /// </para>
     ///  </li> <li> 
@@ -172,6 +176,10 @@ namespace Amazon.FSx.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>DiskIopsConfiguration</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RemoveRouteTableIds</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>

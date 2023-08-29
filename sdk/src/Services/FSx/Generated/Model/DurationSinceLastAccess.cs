@@ -30,8 +30,9 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Defines the minimum amount of time since last access for a file to be eligible for
-    /// release. Only archived files that were last accessed or modified before this point-in-time
-    /// are eligible to be released from the Amazon FSx for Lustre file system.
+    /// release. Only files that have been exported to S3 and that were last accessed or modified
+    /// before this point-in-time are eligible to be released from the Amazon FSx for Lustre
+    /// file system.
     /// </summary>
     public partial class DurationSinceLastAccess
     {
@@ -62,14 +63,14 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// An integer that represents the minimum amount of time (in days) since a file was last
-        /// accessed in the file system. Only archived files with a <code>MAX(atime, ctime, mtime)</code>
+        /// accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code>
         /// timestamp that is more than this amount of time in the past (relative to the task
         /// create time) will be released. The default of <code>Value</code> is <code>0</code>.
         /// This is a required parameter.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If an archived file meets the last accessed time criteria, its file or directory path
+        /// If an exported file meets the last accessed time criteria, its file or directory path
         /// must also be specified in the <code>Paths</code> parameter of the operation in order
         /// for the file to be released.
         /// </para>

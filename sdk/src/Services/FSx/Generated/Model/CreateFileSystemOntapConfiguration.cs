@@ -197,10 +197,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your
-        /// file system's endpoints will be created. You should specify all VPC route tables associated
-        /// with the subnets in which your clients are located. By default, Amazon FSx selects
-        /// your VPC's default route table.
+        /// (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for
+        /// routing traffic to the correct file server. You should specify all virtual private
+        /// cloud (VPC) route tables associated with the subnets in which your clients are located.
+        /// By default, Amazon FSx selects your VPC's default route table.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

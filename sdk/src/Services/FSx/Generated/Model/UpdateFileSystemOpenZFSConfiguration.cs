@@ -186,13 +186,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
-        /// or 4096 MB/s.
+        /// For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320,
+        /// 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120,
-        /// 7680, or 10240 MB/s.
+        /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
+        /// or 4096 MB/s.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,19 +30,19 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration that specifies a minimum amount of time since last access for an
-    /// archived file to be eligible for release from an Amazon FSx for Lustre file system.
+    /// exported file to be eligible for release from an Amazon FSx for Lustre file system.
     /// Only files that were last accessed before this point-in-time can be released. For
     /// example, if you specify a last accessed time criteria of 9 days, only files that were
     /// last accessed 9.00001 or more days ago can be released.
     /// 
     ///  
     /// <para>
-    /// Only file data that has been archived can be released. Files that have not yet been
-    /// archived, such as new or changed files that have not been exported, are not eligible
-    /// for release. When files are released, their metadata stays on the file system, so
-    /// they can still be accessed later. Users and applications can access a released file
-    /// by reading the file again, which restores data from Amazon S3 to the FSx for Lustre
-    /// file system.
+    /// Only file data that has been exported to S3 can be released. Files that have not yet
+    /// been exported to S3, such as new or changed files that have not been exported, are
+    /// not eligible for release. When files are released, their metadata stays on the file
+    /// system, so they can still be accessed later. Users and applications can access a released
+    /// file by reading the file again, which restores data from Amazon S3 to the FSx for
+    /// Lustre file system.
     /// </para>
     ///  <note> 
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DurationSinceLastAccess. 
         /// <para>
-        /// Defines the point-in-time since an archived file was last accessed, in order for that
+        /// Defines the point-in-time since an exported file was last accessed, in order for that
         /// file to be eligible for release. Only files that were last accessed before this point-in-time
         /// are eligible to be released from the file system.
         /// </para>
