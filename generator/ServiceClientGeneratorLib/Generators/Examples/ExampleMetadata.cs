@@ -149,7 +149,7 @@ namespace ServiceClientGenerator.Generators.Examples
             this.Write("\r\n\t\t\t\t</para>\r\n\t\t\t\t<code\r\n\t\t\t\t\ttitle=\"");
             
             #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleMetadata.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(example.Title.Replace("\"", "\\\"")));
+            this.Write(this.ToStringHelper.ToStringWithCulture(example.Title.Replace("\"", "&quot;")));
             
             #line default
             #line hidden
