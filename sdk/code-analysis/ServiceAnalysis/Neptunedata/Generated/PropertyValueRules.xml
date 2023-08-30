@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.GetLoaderJobStatusRequest.ErrorsPerPage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.GetLoaderJobStatusRequest.Page</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.GetPropertygraphStreamRequest.Limit</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.GetSparqlStreamRequest.Limit</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.ListLoaderJobsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.ListMLDataProcessingJobsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.ListMLEndpointsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.ListMLModelTrainingJobsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Neptunedata.Model.ListMLModelTransformJobsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+</property-value-rules>

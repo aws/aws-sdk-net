@@ -574,6 +574,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* (New Service) Amazon MWAA is a managed service for Apache Airflow that makes it easy for data engineers and data scientists to execute data processing workflows in the cloud.
 * [AWSSDK.Neptune](https://www.nuget.org/packages/AWSSDK.Neptune/)
 	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
+* [AWSSDK.Neptunedata](https://www.nuget.org/packages/AWSSDK.Neptunedata/)
+	* Allows customers to execute data plane actions like bulk loading graphs, issuing graph queries using Gremlin and openCypher directly from the SDK.
 * [AWSSDK.NetworkFirewall](https://www.nuget.org/packages/AWSSDK.NetworkFirewall/)
 	* (New Service) AWS Network Firewall is a managed network layer firewall service that makes it easy to secure your virtual private cloud (VPC) networks and block malicious traffic.
 * [AWSSDK.NetworkManager](https://www.nuget.org/packages/AWSSDK.NetworkManager/)
