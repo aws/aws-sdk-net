@@ -48,6 +48,7 @@ namespace Amazon.AuditManager.Model
         /// The default S3 destination bucket for storing assessment reports.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AssessmentReportsDestination DefaultAssessmentReportsDestination
         {
             get { return this._defaultAssessmentReportsDestination; }
@@ -84,6 +85,7 @@ namespace Amazon.AuditManager.Model
         ///  The designated default audit owners. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Role> DefaultProcessOwners
         {
             get { return this._defaultProcessOwners; }
@@ -176,7 +178,7 @@ namespace Amazon.AuditManager.Model
         ///  The designated Amazon Simple Notification Service (Amazon SNS) topic. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string SnsTopic
         {
             get { return this._snsTopic; }

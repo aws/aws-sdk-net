@@ -70,7 +70,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the assessment that's associated with the delegation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string AssessmentName
         {
             get { return this._assessmentName; }
@@ -89,7 +89,7 @@ namespace Amazon.AuditManager.Model
         ///  The comment that's related to the delegation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=350)]
+        [AWSProperty(Sensitive=true, Max=350)]
         public string Comment
         {
             get { return this._comment; }
@@ -127,7 +127,7 @@ namespace Amazon.AuditManager.Model
         ///  The user or role that created the delegation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string CreatedBy
         {
             get { return this._createdBy; }

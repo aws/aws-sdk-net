@@ -142,6 +142,7 @@ namespace Amazon.AuditManager.Model
         ///  The roles that are associated with the control set. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Role> Roles
         {
             get { return this._roles; }

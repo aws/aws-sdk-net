@@ -51,6 +51,7 @@ namespace Amazon.AuditManager.Model
         ///  The destination that evidence reports are stored in for the assessment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AssessmentReportsDestination AssessmentReportsDestination
         {
             get { return this._assessmentReportsDestination; }
@@ -70,7 +71,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }
@@ -125,7 +126,7 @@ namespace Amazon.AuditManager.Model
         ///  The description of the assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -181,7 +182,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }
@@ -200,6 +201,7 @@ namespace Amazon.AuditManager.Model
         ///  The roles that are associated with the assessment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Role> Roles
         {
             get { return this._roles; }
@@ -219,6 +221,7 @@ namespace Amazon.AuditManager.Model
         /// assessment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Scope Scope
         {
             get { return this._scope; }

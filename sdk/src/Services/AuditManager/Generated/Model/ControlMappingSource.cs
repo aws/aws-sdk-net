@@ -176,7 +176,7 @@ namespace Amazon.AuditManager.Model
         ///  The instructions for troubleshooting the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string TroubleshootingText
         {
             get { return this._troubleshootingText; }

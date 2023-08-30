@@ -47,7 +47,7 @@ namespace Amazon.AuditManager.Model
         ///  The description of the assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string AssessmentDescription
         {
             get { return this._assessmentDescription; }
@@ -85,7 +85,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the assessment to be updated. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string AssessmentName
         {
             get { return this._assessmentName; }
@@ -105,6 +105,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AssessmentReportsDestination AssessmentReportsDestination
         {
             get { return this._assessmentReportsDestination; }
@@ -123,6 +124,7 @@ namespace Amazon.AuditManager.Model
         ///  The list of roles for the assessment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Role> Roles
         {
             get { return this._roles; }
@@ -141,7 +143,7 @@ namespace Amazon.AuditManager.Model
         ///  The scope of the assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Scope Scope
         {
             get { return this._scope; }

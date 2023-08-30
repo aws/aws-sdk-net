@@ -44,7 +44,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the user who authored the comment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string AuthorName
         {
             get { return this._authorName; }
@@ -63,7 +63,7 @@ namespace Amazon.AuditManager.Model
         ///  The body text of a control comment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Sensitive=true, Max=500)]
         public string CommentBody
         {
             get { return this._commentBody; }

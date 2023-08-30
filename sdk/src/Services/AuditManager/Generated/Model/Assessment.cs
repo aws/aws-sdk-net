@@ -83,6 +83,7 @@ namespace Amazon.AuditManager.Model
         ///  The framework that the assessment was created from. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AssessmentFramework Framework
         {
             get { return this._framework; }

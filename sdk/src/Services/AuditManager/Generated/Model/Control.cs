@@ -55,7 +55,7 @@ namespace Amazon.AuditManager.Model
         ///  The recommended actions to carry out if the control isn't fulfilled. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string ActionPlanInstructions
         {
             get { return this._actionPlanInstructions; }
@@ -74,7 +74,7 @@ namespace Amazon.AuditManager.Model
         ///  The title of the action plan for remediating the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=300)]
+        [AWSProperty(Sensitive=true, Max=300)]
         public string ActionPlanTitle
         {
             get { return this._actionPlanTitle; }
@@ -169,7 +169,7 @@ namespace Amazon.AuditManager.Model
         ///  The user or role that created the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string CreatedBy
         {
             get { return this._createdBy; }
@@ -244,7 +244,7 @@ namespace Amazon.AuditManager.Model
         ///  The user or role that most recently updated the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string LastUpdatedBy
         {
             get { return this._lastUpdatedBy; }
@@ -302,7 +302,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string TestingInformation
         {
             get { return this._testingInformation; }

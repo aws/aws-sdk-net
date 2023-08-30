@@ -48,6 +48,7 @@ namespace Amazon.AuditManager.Model
         ///  The default S3 destination bucket for storing assessment reports. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AssessmentReportsDestination DefaultAssessmentReportsDestination
         {
             get { return this._defaultAssessmentReportsDestination; }
@@ -84,6 +85,7 @@ namespace Amazon.AuditManager.Model
         ///  A list of the default audit owners. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Role> DefaultProcessOwners
         {
             get { return this._defaultProcessOwners; }

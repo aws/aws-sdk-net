@@ -71,7 +71,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the associated assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string AssessmentName
         {
             get { return this._assessmentName; }
@@ -90,7 +90,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the user who created the assessment report. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Author
         {
             get { return this._author; }
@@ -146,7 +146,7 @@ namespace Amazon.AuditManager.Model
         ///  The description of the specified assessment report. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string Description
         {
             get { return this._description; }
