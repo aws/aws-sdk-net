@@ -32,7 +32,7 @@ namespace Amazon.ChimeSDKMediaPipelines
     public partial class AmazonChimeSDKMediaPipelinesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.23");
+            InternalSDKUtils.BuildUserAgentString("3.7.201.24");
 
         private string _userAgent = UserAgentString;
         ///<summary>

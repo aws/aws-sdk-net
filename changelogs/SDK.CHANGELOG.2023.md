@@ -1,3 +1,26 @@
+### 3.7.633.0 (2023-08-30 18:40 UTC)
+* Appflow (3.7.201.0)
+	* Add SAP source connector parallel and pagination feature
+* AppRunner (3.7.201.0)
+	* App Runner adds support for Bitbucket. You can now create App Runner connection that connects to your Bitbucket repositories and deploy App Runner service with the source code stored in a Bitbucket repository.
+* AuditManager (3.7.201.0)
+	* This release marks some assessment metadata as sensitive. We added a sensitive trait to the following attributes: assessmentName, emailAddress, scope, createdBy, lastUpdatedBy, and userName.
+* CleanRooms (3.7.202.0)
+	* This release decouples member abilities in a collaboration. With this change, the member who can run queries no longer needs to be the same as the member who can receive results.
+* DataSync (3.7.203.0)
+	* AWS DataSync introduces Task Reports, a new feature that provides detailed reports of data transfer operations for each task execution.
+* Neptunedata (3.7.200.0)
+	* Allows customers to execute data plane actions like bulk loading graphs, issuing graph queries using Gremlin and openCypher directly from the SDK.
+* NetworkFirewall (3.7.201.0)
+	* Network Firewall increasing pagination token string length
+* PcaConnectorAd (3.7.200.0)
+	* The Connector for AD allows you to use a fully-managed AWS Private CA as a drop-in replacement for your self-managed enterprise CAs without local agents or proxy servers. Enterprises that use AD to manage Windows environments can reduce their private certificate authority (CA) costs and complexity.
+* SageMaker (3.7.210.0)
+	* Amazon SageMaker Canvas adds IdentityProviderOAuthSettings support for CanvasAppSettings
+* Core 3.7.201.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.632.0 (2023-08-29 18:23 UTC)
 * CognitoIdentityProvider (3.7.202.0)
 	* Added API example requests and responses for several operations. Fixed the validation regex for user pools Identity Provider name.
