@@ -53,6 +53,12 @@ namespace Amazon.CleanRooms
     /// <a href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">Clean
     /// Rooms User Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// To learn more about SQL commands, functions, and conditions supported in Clean Rooms,
+    /// see the <a href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean
+    /// Rooms SQL Reference</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonCleanRoomsClient : AmazonServiceClient, IAmazonCleanRooms
     {
@@ -2812,7 +2818,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates a protected query that is started by Clean Rooms .
+        /// Creates a protected query that is started by Clean Rooms.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartProtectedQuery service method.</param>
         /// 
@@ -2847,7 +2853,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates a protected query that is started by Clean Rooms .
+        /// Creates a protected query that is started by Clean Rooms.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartProtectedQuery service method.</param>
         /// <param name="cancellationToken">

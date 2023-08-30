@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProtectedQueryOutput Object
+    /// Response Unmarshaller for MembershipProtectedQueryResultConfiguration Object
     /// </summary>  
-    public class ProtectedQueryOutputUnmarshaller : IUnmarshaller<ProtectedQueryOutput, XmlUnmarshallerContext>, IUnmarshaller<ProtectedQueryOutput, JsonUnmarshallerContext>
+    public class MembershipProtectedQueryResultConfigurationUnmarshaller : IUnmarshaller<MembershipProtectedQueryResultConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MembershipProtectedQueryResultConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProtectedQueryOutput IUnmarshaller<ProtectedQueryOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MembershipProtectedQueryResultConfiguration IUnmarshaller<MembershipProtectedQueryResultConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProtectedQueryOutput Unmarshall(JsonUnmarshallerContext context)
+        public MembershipProtectedQueryResultConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProtectedQueryOutput unmarshalledObject = new ProtectedQueryOutput();
+            MembershipProtectedQueryResultConfiguration unmarshalledObject = new MembershipProtectedQueryResultConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("memberList", targetDepth))
+                if (context.TestExpression("outputConfiguration", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ProtectedQuerySingleMemberOutput, ProtectedQuerySingleMemberOutputUnmarshaller>(ProtectedQuerySingleMemberOutputUnmarshaller.Instance);
-                    unmarshalledObject.MemberList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MembershipProtectedQueryOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OutputConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
-                    var unmarshaller = ProtectedQueryS3OutputUnmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProtectedQueryOutputUnmarshaller _instance = new ProtectedQueryOutputUnmarshaller();        
+        private static MembershipProtectedQueryResultConfigurationUnmarshaller _instance = new MembershipProtectedQueryResultConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProtectedQueryOutputUnmarshaller Instance
+        public static MembershipProtectedQueryResultConfigurationUnmarshaller Instance
         {
             get
             {

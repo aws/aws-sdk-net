@@ -1087,6 +1087,12 @@
     <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.MembershipProtectedQueryResultConfiguration.RoleArn</property>
+    <min>32</min>
+    <max>512</max>
+    <pattern>arn:aws:iam::[\w]+:role/[\w+=,./@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.MembershipSummary.Arn</property>
     <min>0</min>
     <max>100</max>
@@ -1190,7 +1196,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQueryS3OutputConfiguration.KeyPrefix</property>
-    <pattern>[\w!.*/-]*</pattern>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[\w!.=*/-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ProtectedQuerySingleMemberOutput.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuerySQLParameters.AnalysisTemplateArn</property>

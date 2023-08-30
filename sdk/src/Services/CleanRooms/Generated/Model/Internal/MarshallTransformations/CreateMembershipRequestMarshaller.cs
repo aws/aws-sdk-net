@@ -71,6 +71,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CollaborationIdentifier);
                 }
 
+                if(publicRequest.IsSetDefaultResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetQueryLogStatus())
                 {
                     context.Writer.WritePropertyName("queryLogStatus");

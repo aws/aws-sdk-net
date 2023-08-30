@@ -34,8 +34,28 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class UpdateMembershipRequest : AmazonCleanRoomsRequest
     {
+        private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private string _membershipIdentifier;
         private MembershipQueryLogStatus _queryLogStatus;
+
+        /// <summary>
+        /// Gets and sets the property DefaultResultConfiguration. 
+        /// <para>
+        /// The default protected query result configuration as specified by the member who can
+        /// receive results.
+        /// </para>
+        /// </summary>
+        public MembershipProtectedQueryResultConfiguration DefaultResultConfiguration
+        {
+            get { return this._defaultResultConfiguration; }
+            set { this._defaultResultConfiguration = value; }
+        }
+
+        // Check to see if DefaultResultConfiguration property is set
+        internal bool IsSetDefaultResultConfiguration()
+        {
+            return this._defaultResultConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MembershipIdentifier. 

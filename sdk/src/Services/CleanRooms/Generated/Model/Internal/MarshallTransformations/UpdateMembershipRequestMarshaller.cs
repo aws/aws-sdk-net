@@ -68,6 +68,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetQueryLogStatus())
                 {
                     context.Writer.WritePropertyName("queryLogStatus");

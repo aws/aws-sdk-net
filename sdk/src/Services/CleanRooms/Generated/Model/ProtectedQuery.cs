@@ -162,7 +162,6 @@ namespace Amazon.CleanRooms.Model
         /// Contains any details needed to write the query results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProtectedQueryResultConfiguration ResultConfiguration
         {
             get { return this._resultConfiguration; }
@@ -181,7 +180,7 @@ namespace Amazon.CleanRooms.Model
         /// The protected query SQL parameters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public ProtectedQuerySQLParameters SqlParameters
         {
             get { return this._sqlParameters; }

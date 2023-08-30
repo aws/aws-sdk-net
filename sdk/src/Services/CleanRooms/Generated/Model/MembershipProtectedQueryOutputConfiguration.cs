@@ -29,39 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains details about the protected query output.
+    /// Contains configurations for protected query results.
     /// </summary>
-    public partial class ProtectedQueryOutput
+    public partial class MembershipProtectedQueryOutputConfiguration
     {
-        private List<ProtectedQuerySingleMemberOutput> _memberList = new List<ProtectedQuerySingleMemberOutput>();
-        private ProtectedQueryS3Output _s3;
+        private ProtectedQueryS3OutputConfiguration _s3;
 
         /// <summary>
-        /// Gets and sets the property MemberList. 
-        /// <para>
-        /// The list of member Amazon Web Services account(s) that received the results of the
-        /// query. 
-        /// </para>
+        /// Gets and sets the property S3.
         /// </summary>
-        public List<ProtectedQuerySingleMemberOutput> MemberList
-        {
-            get { return this._memberList; }
-            set { this._memberList = value; }
-        }
-
-        // Check to see if MemberList property is set
-        internal bool IsSetMemberList()
-        {
-            return this._memberList != null && this._memberList.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3. 
-        /// <para>
-        /// If present, the output for a protected query with an `S3` output type.
-        /// </para>
-        /// </summary>
-        public ProtectedQueryS3Output S3
+        public ProtectedQueryS3OutputConfiguration S3
         {
             get { return this._s3; }
             set { this._s3 = value; }

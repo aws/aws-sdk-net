@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class CreateMembershipRequest : AmazonCleanRoomsRequest
     {
         private string _collaborationIdentifier;
+        private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private MembershipQueryLogStatus _queryLogStatus;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -55,6 +56,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCollaborationIdentifier()
         {
             return this._collaborationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultResultConfiguration. 
+        /// <para>
+        /// The default protected query result configuration as specified by the member who can
+        /// receive results.
+        /// </para>
+        /// </summary>
+        public MembershipProtectedQueryResultConfiguration DefaultResultConfiguration
+        {
+            get { return this._defaultResultConfiguration; }
+            set { this._defaultResultConfiguration = value; }
+        }
+
+        // Check to see if DefaultResultConfiguration property is set
+        internal bool IsSetDefaultResultConfiguration()
+        {
+            return this._defaultResultConfiguration != null;
         }
 
         /// <summary>
