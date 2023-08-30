@@ -1050,7 +1050,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// After you create a TLS inspection configuration, you associate it with a firewall
+        /// After you create a TLS inspection configuration, you associate it with a new firewall
         /// policy.
         /// </para>
         ///  
@@ -1077,6 +1077,10 @@ namespace Amazon.NetworkFirewall
         /// <param name="request">Container for the necessary parameters to execute the CreateTLSInspectionConfiguration service method.</param>
         /// 
         /// <returns>The response from the CreateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
         /// of a system problem. Retry your request.
@@ -1099,6 +1103,9 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
         /// Unable to process the request due to throttling limitations.
         /// </exception>
@@ -1120,7 +1127,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// After you create a TLS inspection configuration, you associate it with a firewall
+        /// After you create a TLS inspection configuration, you associate it with a new firewall
         /// policy.
         /// </para>
         ///  
@@ -1150,6 +1157,10 @@ namespace Amazon.NetworkFirewall
         /// </param>
         /// 
         /// <returns>The response from the CreateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
         /// of a system problem. Retry your request.
@@ -1171,6 +1182,9 @@ namespace Amazon.NetworkFirewall
         /// isn't valid in the context of the request.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
         /// Unable to process the request due to throttling limitations.
