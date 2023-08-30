@@ -30,13 +30,13 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTaskExecution operation.
-    /// Modifies a running DataSync task.
+    /// Updates the configuration of a running DataSync task execution.
     /// 
     ///  <note> 
     /// <para>
     /// Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code>
     /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-    /// </code>, which throttles bandwidth for a running or queued task.
+    /// </code>, which throttles bandwidth for a running or queued task execution.
     /// </para>
     ///  </note>
     /// </summary>

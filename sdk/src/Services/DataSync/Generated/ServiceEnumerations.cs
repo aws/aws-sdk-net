@@ -1177,6 +1177,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type ObjectVersionIds.
+    /// </summary>
+    public class ObjectVersionIds : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCLUDE for ObjectVersionIds
+        /// </summary>
+        public static readonly ObjectVersionIds INCLUDE = new ObjectVersionIds("INCLUDE");
+        /// <summary>
+        /// Constant NONE for ObjectVersionIds
+        /// </summary>
+        public static readonly ObjectVersionIds NONE = new ObjectVersionIds("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectVersionIds(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectVersionIds FindValue(string value)
+        {
+            return FindValue<ObjectVersionIds>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectVersionIds(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass
@@ -1564,6 +1614,106 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecommendationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportLevel.
+    /// </summary>
+    public class ReportLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERRORS_ONLY for ReportLevel
+        /// </summary>
+        public static readonly ReportLevel ERRORS_ONLY = new ReportLevel("ERRORS_ONLY");
+        /// <summary>
+        /// Constant SUCCESSES_AND_ERRORS for ReportLevel
+        /// </summary>
+        public static readonly ReportLevel SUCCESSES_AND_ERRORS = new ReportLevel("SUCCESSES_AND_ERRORS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportLevel FindValue(string value)
+        {
+            return FindValue<ReportLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportOutputType.
+    /// </summary>
+    public class ReportOutputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STANDARD for ReportOutputType
+        /// </summary>
+        public static readonly ReportOutputType STANDARD = new ReportOutputType("STANDARD");
+        /// <summary>
+        /// Constant SUMMARY_ONLY for ReportOutputType
+        /// </summary>
+        public static readonly ReportOutputType SUMMARY_ONLY = new ReportOutputType("SUMMARY_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportOutputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportOutputType FindValue(string value)
+        {
+            return FindValue<ReportOutputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportOutputType(string value)
         {
             return FindValue(value);
         }

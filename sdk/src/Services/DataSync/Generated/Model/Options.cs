@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Configures your DataSync task settings. These options include how DataSync handles
-    /// files, objects, and their associated metadata. You also can specify how DataSync verifies
-    /// data integrity, set bandwidth limits for your task, among other options.
+    /// Indicates how your transfer task is configured. These options include how DataSync
+    /// handles files, objects, and their associated metadata during your transfer. You also
+    /// can specify how to verify data integrity, set bandwidth limits for your task, among
+    /// other options.
     /// 
     ///  
     /// <para>
-    /// Each task setting has a default value. Unless you need to, you don't have to configure
-    /// any of these <code>Options</code> before starting your task.
+    /// Each option has a default value. Unless you need to, you don't have to configure any
+    /// of these options before starting your task.
     /// </para>
     /// </summary>
     public partial class Options

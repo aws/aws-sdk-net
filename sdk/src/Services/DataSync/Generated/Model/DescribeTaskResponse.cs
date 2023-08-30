@@ -49,6 +49,7 @@ namespace Amazon.DataSync.Model
         private List<string> _sourceNetworkInterfaceArns = new List<string>();
         private TaskStatus _status;
         private string _taskArn;
+        private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupArn. 
@@ -372,6 +373,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskArn()
         {
             return this._taskArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskReportConfig. 
+        /// <para>
+        /// The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating
+        /// a task report</a>.
+        /// </para>
+        /// </summary>
+        public TaskReportConfig TaskReportConfig
+        {
+            get { return this._taskReportConfig; }
+            set { this._taskReportConfig = value; }
+        }
+
+        // Check to see if TaskReportConfig property is set
+        internal bool IsSetTaskReportConfig()
+        {
+            return this._taskReportConfig != null;
         }
 
     }

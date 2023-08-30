@@ -147,6 +147,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.TaskArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TaskReportConfig", targetDepth))
+                {
+                    var unmarshaller = TaskReportConfigUnmarshaller.Instance;
+                    response.TaskReportConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

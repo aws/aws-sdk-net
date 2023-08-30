@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteTask operation.
-    /// Deletes an DataSync transfer task.
+    /// Specifies where DataSync uploads your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+    /// report</a>.
     /// </summary>
-    public partial class DeleteTaskRequest : AmazonDataSyncRequest
+    public partial class ReportDestination
     {
-        private string _taskArn;
+        private ReportDestinationS3 _s3;
 
         /// <summary>
-        /// Gets and sets the property TaskArn. 
+        /// Gets and sets the property S3. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
+        /// Specifies the Amazon S3 bucket where DataSync uploads your task report.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string TaskArn
+        public ReportDestinationS3 S3
         {
-            get { return this._taskArn; }
-            set { this._taskArn = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if TaskArn property is set
-        internal bool IsSetTaskArn()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._taskArn != null;
+            return this._s3 != null;
         }
 
     }

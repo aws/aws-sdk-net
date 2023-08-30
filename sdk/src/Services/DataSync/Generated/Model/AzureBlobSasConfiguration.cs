@@ -45,8 +45,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
-        /// Specifies a SAS token that provides permissions at the Azure storage account, container,
-        /// or folder level.
+        /// Specifies a SAS token that provides permissions to access your Azure Blob Storage.
         /// </para>
         ///  
         /// <para>
