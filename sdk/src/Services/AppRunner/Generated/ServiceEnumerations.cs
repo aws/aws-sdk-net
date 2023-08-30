@@ -649,6 +649,10 @@ namespace Amazon.AppRunner
     {
 
         /// <summary>
+        /// Constant BITBUCKET for ProviderType
+        /// </summary>
+        public static readonly ProviderType BITBUCKET = new ProviderType("BITBUCKET");
+        /// <summary>
         /// Constant GITHUB for ProviderType
         /// </summary>
         public static readonly ProviderType GITHUB = new ProviderType("GITHUB");

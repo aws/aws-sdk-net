@@ -517,8 +517,9 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// A connection resource is needed to access GitHub repositories. GitHub requires a user
-        /// interface approval process through the App Runner console before you can use the connection.
+        /// A connection resource is needed to access GitHub and Bitbucket repositories. Both
+        /// require a user interface approval process through the App Runner console before you
+        /// can use the connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
@@ -559,8 +560,9 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// A connection resource is needed to access GitHub repositories. GitHub requires a user
-        /// interface approval process through the App Runner console before you can use the connection.
+        /// A connection resource is needed to access GitHub and Bitbucket repositories. Both
+        /// require a user interface approval process through the App Runner console before you
+        /// can use the connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
