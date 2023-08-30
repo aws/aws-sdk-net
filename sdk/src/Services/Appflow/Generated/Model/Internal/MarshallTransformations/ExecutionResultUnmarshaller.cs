@@ -82,6 +82,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxPageSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.MaxPageSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numParallelProcesses", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumParallelProcesses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recordsProcessed", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

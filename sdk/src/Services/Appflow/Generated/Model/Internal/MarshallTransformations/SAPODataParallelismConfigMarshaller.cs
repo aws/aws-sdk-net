@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SAPODataSourceProperties Marshaller
+    /// SAPODataParallelismConfig Marshaller
     /// </summary>
-    public class SAPODataSourcePropertiesMarshaller : IRequestMarshaller<SAPODataSourceProperties, JsonMarshallerContext> 
+    public class SAPODataParallelismConfigMarshaller : IRequestMarshaller<SAPODataParallelismConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SAPODataSourceProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(SAPODataParallelismConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetObjectPath())
+            if(requestObject.IsSetMaxParallelism())
             {
-                context.Writer.WritePropertyName("objectPath");
-                context.Writer.Write(requestObject.ObjectPath);
-            }
-
-            if(requestObject.IsSetPaginationConfig())
-            {
-                context.Writer.WritePropertyName("paginationConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SAPODataPaginationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.PaginationConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetParallelismConfig())
-            {
-                context.Writer.WritePropertyName("parallelismConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SAPODataParallelismConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ParallelismConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxParallelism");
+                context.Writer.Write(requestObject.MaxParallelism);
             }
 
         }
@@ -78,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SAPODataSourcePropertiesMarshaller Instance = new SAPODataSourcePropertiesMarshaller();
+        public readonly static SAPODataParallelismConfigMarshaller Instance = new SAPODataParallelismConfigMarshaller();
 
     }
 }

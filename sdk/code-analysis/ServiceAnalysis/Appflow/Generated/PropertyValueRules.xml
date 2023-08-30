@@ -1167,6 +1167,16 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataPaginationConfig.MaxPageSize</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SAPODataParallelismConfig.MaxParallelism</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataSourceProperties.ObjectPath</property>
     <max>512</max>
     <pattern>\S+</pattern>

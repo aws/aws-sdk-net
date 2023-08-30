@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SAPODataSourceProperties Object
+    /// Response Unmarshaller for SAPODataParallelismConfig Object
     /// </summary>  
-    public class SAPODataSourcePropertiesUnmarshaller : IUnmarshaller<SAPODataSourceProperties, XmlUnmarshallerContext>, IUnmarshaller<SAPODataSourceProperties, JsonUnmarshallerContext>
+    public class SAPODataParallelismConfigUnmarshaller : IUnmarshaller<SAPODataParallelismConfig, XmlUnmarshallerContext>, IUnmarshaller<SAPODataParallelismConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SAPODataSourceProperties IUnmarshaller<SAPODataSourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SAPODataParallelismConfig IUnmarshaller<SAPODataParallelismConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SAPODataSourceProperties Unmarshall(JsonUnmarshallerContext context)
+        public SAPODataParallelismConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SAPODataSourceProperties unmarshalledObject = new SAPODataSourceProperties();
+            SAPODataParallelismConfig unmarshalledObject = new SAPODataParallelismConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("objectPath", targetDepth))
+                if (context.TestExpression("maxParallelism", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("paginationConfig", targetDepth))
-                {
-                    var unmarshaller = SAPODataPaginationConfigUnmarshaller.Instance;
-                    unmarshalledObject.PaginationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parallelismConfig", targetDepth))
-                {
-                    var unmarshaller = SAPODataParallelismConfigUnmarshaller.Instance;
-                    unmarshalledObject.ParallelismConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxParallelism = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static SAPODataSourcePropertiesUnmarshaller _instance = new SAPODataSourcePropertiesUnmarshaller();        
+        private static SAPODataParallelismConfigUnmarshaller _instance = new SAPODataParallelismConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SAPODataSourcePropertiesUnmarshaller Instance
+        public static SAPODataParallelismConfigUnmarshaller Instance
         {
             get
             {

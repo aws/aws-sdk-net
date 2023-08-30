@@ -482,6 +482,9 @@ namespace Amazon.Appflow
         /// </param>
         /// 
         /// <returns>The response from the CreateFlow service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
         /// <exception cref="Amazon.Appflow.Model.ConflictException">
         /// There was a conflict when processing the request (for example, a flow with the given
         /// name already exists within the account. Check for conflicting resource names and try
@@ -1598,6 +1601,9 @@ namespace Amazon.Appflow
         /// </param>
         /// 
         /// <returns>The response from the UpdateFlow service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
         /// <exception cref="Amazon.Appflow.Model.ConflictException">
         /// There was a conflict when processing the request (for example, a flow with the given
         /// name already exists within the account. Check for conflicting resource names and try

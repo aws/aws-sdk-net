@@ -34,6 +34,8 @@ namespace Amazon.Appflow.Model
     public partial class SAPODataSourceProperties
     {
         private string _objectPath;
+        private SAPODataPaginationConfig _paginationConfig;
+        private SAPODataParallelismConfig _parallelismConfig;
 
         /// <summary>
         /// Gets and sets the property ObjectPath. 
@@ -52,6 +54,44 @@ namespace Amazon.Appflow.Model
         internal bool IsSetObjectPath()
         {
             return this._objectPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaginationConfig. 
+        /// <para>
+        /// Sets the page size for each concurrent process that transfers OData records from your
+        /// SAP instance.
+        /// </para>
+        /// </summary>
+        public SAPODataPaginationConfig PaginationConfig
+        {
+            get { return this._paginationConfig; }
+            set { this._paginationConfig = value; }
+        }
+
+        // Check to see if PaginationConfig property is set
+        internal bool IsSetPaginationConfig()
+        {
+            return this._paginationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelismConfig. 
+        /// <para>
+        /// Sets the number of concurrent processes that transfers OData records from your SAP
+        /// instance.
+        /// </para>
+        /// </summary>
+        public SAPODataParallelismConfig ParallelismConfig
+        {
+            get { return this._parallelismConfig; }
+            set { this._parallelismConfig = value; }
+        }
+
+        // Check to see if ParallelismConfig property is set
+        internal bool IsSetParallelismConfig()
+        {
+            return this._parallelismConfig != null;
         }
 
     }
