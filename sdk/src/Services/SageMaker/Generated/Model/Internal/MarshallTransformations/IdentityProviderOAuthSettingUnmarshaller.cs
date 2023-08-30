@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CanvasAppSettings Object
+    /// Response Unmarshaller for IdentityProviderOAuthSetting Object
     /// </summary>  
-    public class CanvasAppSettingsUnmarshaller : IUnmarshaller<CanvasAppSettings, XmlUnmarshallerContext>, IUnmarshaller<CanvasAppSettings, JsonUnmarshallerContext>
+    public class IdentityProviderOAuthSettingUnmarshaller : IUnmarshaller<IdentityProviderOAuthSetting, XmlUnmarshallerContext>, IUnmarshaller<IdentityProviderOAuthSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CanvasAppSettings IUnmarshaller<CanvasAppSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IdentityProviderOAuthSetting IUnmarshaller<IdentityProviderOAuthSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CanvasAppSettings Unmarshall(JsonUnmarshallerContext context)
+        public IdentityProviderOAuthSetting Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CanvasAppSettings unmarshalledObject = new CanvasAppSettings();
+            IdentityProviderOAuthSetting unmarshalledObject = new IdentityProviderOAuthSetting();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("IdentityProviderOAuthSettings", targetDepth))
+                if (context.TestExpression("DataSourceName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<IdentityProviderOAuthSetting, IdentityProviderOAuthSettingUnmarshaller>(IdentityProviderOAuthSettingUnmarshaller.Instance);
-                    unmarshalledObject.IdentityProviderOAuthSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataSourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ModelRegisterSettings", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth))
                 {
-                    var unmarshaller = ModelRegisterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ModelRegisterSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesForecastingSettings", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = TimeSeriesForecastingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesForecastingSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkspaceSettings", targetDepth))
-                {
-                    var unmarshaller = WorkspaceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.WorkspaceSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static CanvasAppSettingsUnmarshaller _instance = new CanvasAppSettingsUnmarshaller();        
+        private static IdentityProviderOAuthSettingUnmarshaller _instance = new IdentityProviderOAuthSettingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CanvasAppSettingsUnmarshaller Instance
+        public static IdentityProviderOAuthSettingUnmarshaller Instance
         {
             get
             {

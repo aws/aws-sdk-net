@@ -33,9 +33,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CanvasAppSettings
     {
+        private List<IdentityProviderOAuthSetting> _identityProviderOAuthSettings = new List<IdentityProviderOAuthSetting>();
         private ModelRegisterSettings _modelRegisterSettings;
         private TimeSeriesForecastingSettings _timeSeriesForecastingSettings;
         private WorkspaceSettings _workspaceSettings;
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderOAuthSettings. 
+        /// <para>
+        /// The settings for connecting to an external data source with OAuth.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<IdentityProviderOAuthSetting> IdentityProviderOAuthSettings
+        {
+            get { return this._identityProviderOAuthSettings; }
+            set { this._identityProviderOAuthSettings = value; }
+        }
+
+        // Check to see if IdentityProviderOAuthSettings property is set
+        internal bool IsSetIdentityProviderOAuthSettings()
+        {
+            return this._identityProviderOAuthSettings != null && this._identityProviderOAuthSettings.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ModelRegisterSettings. 
