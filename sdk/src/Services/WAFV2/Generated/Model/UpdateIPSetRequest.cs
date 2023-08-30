@@ -145,10 +145,32 @@ namespace Amazon.WAFV2.Model
             set { this._addresses = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Addresses"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsAddressesSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._addresses);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._addresses);
+            }
+        }
+
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this.IsAddressesSet; 
         }
 
         /// <summary>
