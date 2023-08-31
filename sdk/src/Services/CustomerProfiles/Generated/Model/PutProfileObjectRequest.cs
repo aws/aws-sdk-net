@@ -81,7 +81,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A string that is serialized from a JSON object.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256000)]
         public string Object
         {
             get { return this._object; }

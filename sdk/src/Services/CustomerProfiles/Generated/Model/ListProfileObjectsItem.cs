@@ -43,7 +43,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A JSON representation of a ProfileObject that belongs to a profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256000)]
         public string Object
         {
             get { return this._object; }

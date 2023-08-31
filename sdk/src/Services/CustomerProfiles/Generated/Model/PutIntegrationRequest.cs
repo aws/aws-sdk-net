@@ -78,6 +78,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The configuration that controls how Customer Profiles retrieves data from the source.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public FlowDefinition FlowDefinition
         {
             get { return this._flowDefinition; }

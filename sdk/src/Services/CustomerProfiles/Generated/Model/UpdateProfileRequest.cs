@@ -74,7 +74,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A unique account number that you have given to the customer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string AccountNumber
         {
             get { return this._accountNumber; }
@@ -93,7 +93,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Any additional information relevant to the customer’s profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
         public string AdditionalInformation
         {
             get { return this._additionalInformation; }
@@ -112,6 +112,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A generic address associated with the customer that is not mailing, shipping, or billing.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UpdateAddress Address
         {
             get { return this._address; }
@@ -130,6 +131,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A key value pair of attributes of a customer profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -148,6 +150,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s billing address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UpdateAddress BillingAddress
         {
             get { return this._billingAddress; }
@@ -166,7 +169,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s birth date. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string BirthDate
         {
             get { return this._birthDate; }
@@ -185,7 +188,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s business email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string BusinessEmailAddress
         {
             get { return this._businessEmailAddress; }
@@ -204,7 +207,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The name of the customer’s business.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string BusinessName
         {
             get { return this._businessName; }
@@ -223,7 +226,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s business phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string BusinessPhoneNumber
         {
             get { return this._businessPhoneNumber; }
@@ -262,7 +265,7 @@ namespace Amazon.CustomerProfiles.Model
         /// address. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -281,7 +284,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s first name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -300,6 +303,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The gender with which the customer identifies. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Gender Gender
         {
             get { return this._gender; }
@@ -318,7 +322,7 @@ namespace Amazon.CustomerProfiles.Model
         /// An alternative to <code>Gender</code> which accepts any string as input.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string GenderString
         {
             get { return this._genderString; }
@@ -337,7 +341,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s home phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string HomePhoneNumber
         {
             get { return this._homePhoneNumber; }
@@ -356,7 +360,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s last name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string LastName
         {
             get { return this._lastName; }
@@ -375,6 +379,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s mailing address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UpdateAddress MailingAddress
         {
             get { return this._mailingAddress; }
@@ -393,7 +398,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s middle name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string MiddleName
         {
             get { return this._middleName; }
@@ -412,7 +417,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s mobile phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string MobilePhoneNumber
         {
             get { return this._mobilePhoneNumber; }
@@ -431,6 +436,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The type of profile used to describe the customer.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public PartyType PartyType
         {
             get { return this._partyType; }
@@ -449,7 +455,7 @@ namespace Amazon.CustomerProfiles.Model
         /// An alternative to <code>PartyType</code> which accepts any string as input.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string PartyTypeString
         {
             get { return this._partyTypeString; }
@@ -468,7 +474,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s personal email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string PersonalEmailAddress
         {
             get { return this._personalEmailAddress; }
@@ -488,7 +494,7 @@ namespace Amazon.CustomerProfiles.Model
         /// number. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -526,6 +532,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The customer’s shipping address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public UpdateAddress ShippingAddress
         {
             get { return this._shippingAddress; }

@@ -49,6 +49,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Mathematical expression and a list of attribute items specified in that expression.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AttributeDetails AttributeDetails
         {
             get { return this._attributeDetails; }
@@ -86,6 +87,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The conditions including range, object count, and threshold for the calculated attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Conditions Conditions
         {
             get { return this._conditions; }
@@ -178,6 +180,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The aggregation operation to perform for the calculated attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Statistic Statistic
         {
             get { return this._statistic; }

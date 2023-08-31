@@ -42,6 +42,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The list of ListProfileObjectTypes instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<ListProfileObjectTypeItem> Items
         {
             get { return this._items; }

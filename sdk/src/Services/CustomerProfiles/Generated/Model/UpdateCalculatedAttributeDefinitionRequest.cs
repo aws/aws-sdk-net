@@ -67,6 +67,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The conditions including range, object count, and threshold for the calculated attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Conditions Conditions
         {
             get { return this._conditions; }
