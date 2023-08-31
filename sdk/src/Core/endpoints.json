@@ -4028,6 +4028,7 @@
           "endpoints": {
             "ap-northeast-1": {},
             "ap-northeast-2": {},
+            "ap-northeast-3": {},
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
@@ -4066,6 +4067,7 @@
               "deprecated": true,
               "hostname": "cognito-identity-fips.us-west-2.amazonaws.com"
             },
+            "il-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
@@ -4114,6 +4116,7 @@
           "endpoints": {
             "ap-northeast-1": {},
             "ap-northeast-2": {},
+            "ap-northeast-3": {},
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
@@ -4152,6 +4155,7 @@
               "deprecated": true,
               "hostname": "cognito-idp-fips.us-west-2.amazonaws.com"
             },
+            "il-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
@@ -12231,6 +12235,7 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ap-southeast-3": {},
             "ca-central-1": {},
             "eu-central-1": {},
             "eu-north-1": {},
@@ -12266,6 +12271,7 @@
               "deprecated": true,
               "hostname": "license-manager-user-subscriptions-fips.us-west-2.amazonaws.com"
             },
+            "il-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
@@ -14644,6 +14650,12 @@
                 "region": "eu-west-3"
               },
               "hostname": "portal.sso.eu-west-3.amazonaws.com"
+            },
+            "il-central-1": {
+              "credentialScope": {
+                "region": "il-central-1"
+              },
+              "hostname": "portal.sso.il-central-1.amazonaws.com"
             },
             "me-south-1": {
               "credentialScope": {
