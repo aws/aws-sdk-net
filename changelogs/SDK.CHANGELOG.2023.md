@@ -1,3 +1,15 @@
+### 3.7.634.0 (2023-08-31 00:54 UTC)
+* DynamoDBv2 (3.7.201.0)
+	* Add the MetadataCachingMode option to the document and object-mapper DynamoDB APIs. This can be used to reduce the amount of internal DescribeTable calls the SDK makes to fill its cache in some contexts. 
+Fix malformed documentation for DynamoDB's CreateBatchWrite.
+* GlobalAccelerator (3.7.200.29)
+	* Add service customization to generate IsSet property for Global Accelerator (EndpointConfigurations and PortOverrides)
+* S3 (3.7.203.4)
+	* Fixed a bug where TransferUtility upload request SSE-C customer algorithm was not being set for CompleteMultipartUpload.
+* Core 3.7.201.9
+	* Add thread safety to FallbackCredentialsFactory
+	* All services packages updated to require new Core
+
 ### 3.7.633.0 (2023-08-30 18:40 UTC)
 * Appflow (3.7.201.0)
 	* Add SAP source connector parallel and pagination feature
