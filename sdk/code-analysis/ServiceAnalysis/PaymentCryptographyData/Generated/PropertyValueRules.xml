@@ -110,7 +110,7 @@
     <property>Amazon.PaymentCryptographyData.Model.GenerateMacRequest.MessageData</property>
     <min>2</min>
     <max>4096</max>
-    <pattern>^[0-9a-fA-F]+$</pattern>
+    <pattern>^(?:[0-9a-fA-F][0-9a-fA-F])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateMacResponse.KeyArn</property>
@@ -223,7 +223,7 @@
     <property>Amazon.PaymentCryptographyData.Model.TranslatePinDataRequest.EncryptedPinBlock</property>
     <min>16</min>
     <max>32</max>
-    <pattern>^[0-9a-fA-F]+$</pattern>
+    <pattern>^(?:[0-9a-fA-F][0-9a-fA-F])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.TranslatePinDataRequest.IncomingKeyIdentifier</property>
@@ -331,7 +331,7 @@
     <property>Amazon.PaymentCryptographyData.Model.VerifyMacRequest.Mac</property>
     <min>4</min>
     <max>128</max>
-    <pattern>^[0-9a-fA-F]+$</pattern>
+    <pattern>^(?:[0-9a-fA-F][0-9a-fA-F])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.VerifyMacRequest.MacLength</property>
@@ -342,7 +342,7 @@
     <property>Amazon.PaymentCryptographyData.Model.VerifyMacRequest.MessageData</property>
     <min>2</min>
     <max>4096</max>
-    <pattern>^[0-9a-fA-F]+$</pattern>
+    <pattern>^(?:[0-9a-fA-F][0-9a-fA-F])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.VerifyMacResponse.KeyArn</property>

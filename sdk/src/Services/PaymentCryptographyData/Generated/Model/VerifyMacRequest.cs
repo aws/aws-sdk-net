@@ -97,7 +97,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The MAC being verified.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=128)]
         public string Mac
         {
             get { return this._mac; }
@@ -135,7 +135,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The data on for which MAC is under verification.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4096)]
         public string MessageData
         {
             get { return this._messageData; }
