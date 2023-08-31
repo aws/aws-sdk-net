@@ -114,6 +114,54 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.Accept</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.Body</property>
+    <max>6291456</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.ContentType</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.CustomAttributes</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.EndpointName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.InferenceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.TargetContainerHostname</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamRequest.TargetVariant</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamResponse.ContentType</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamResponse.CustomAttributes</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointWithResponseStreamResponse.InvokedProductionVariant</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.ModelErrorException.OriginalMessage</property>
     <max>2048</max>
   </property-value-rule>

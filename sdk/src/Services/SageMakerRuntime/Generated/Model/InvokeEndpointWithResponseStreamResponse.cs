@@ -29,34 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerRuntime.Model
 {
     /// <summary>
-    /// This is the response object from the InvokeEndpoint operation.
+    /// This is the response object from the InvokeEndpointWithResponseStream operation.
     /// </summary>
-    public partial class InvokeEndpointResponse : AmazonWebServiceResponse
+    public partial class InvokeEndpointWithResponseStreamResponse : AmazonWebServiceResponse
     {
-        private MemoryStream _body;
+        private ResponseStream _body;
         private string _contentType;
         private string _customAttributes;
         private string _invokedProductionVariant;
 
         /// <summary>
-        /// Gets and sets the property Body. 
-        /// <para>
-        /// Includes the inference provided by the model. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-        /// Data Formats-Inference</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the explainer is activated, the body includes the explanations provided by the
-        /// model. For more information, see the <b>Response section</b> under <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke
-        /// the Endpoint</a> in the Developer Guide.
-        /// </para>
+        /// Gets and sets the property Body.
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=6291456)]
-        public MemoryStream Body
+        [AWSProperty(Required=true)]
+        public ResponseStream Body
         {
             get { return this._body; }
             set { this._body = value; }

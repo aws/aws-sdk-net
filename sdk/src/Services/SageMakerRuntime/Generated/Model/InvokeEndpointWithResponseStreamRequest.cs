@@ -29,17 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerRuntime.Model
 {
     /// <summary>
-    /// Container for the parameters to the InvokeEndpoint operation.
-    /// After you deploy a model into production using Amazon SageMaker hosting services,
-    /// your client applications use this API to get inferences from the model hosted at the
-    /// specified endpoint. 
+    /// Container for the parameters to the InvokeEndpointWithResponseStream operation.
+    /// Invokes a model at the specified endpoint to return the inference response as a stream.
+    /// The inference stream provides the response payload incrementally as a series of parts.
+    /// Before you can get an inference stream, you must have access to a model that's deployed
+    /// using Amazon SageMaker hosting services, and the container for that model must support
+    /// inference streaming.
     /// 
     ///  
     /// <para>
-    /// For an overview of Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
-    /// It Works</a>. 
+    /// For more information that can help you use this API, see the following sections in
+    /// the <i>Amazon SageMaker Developer Guide</i>:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// For information about how to add streaming support to a model, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-code-how-containe-serves-requests">How
+    /// Containers Serve Requests</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For information about how to process the streaming response, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-test-endpoints.html">Invoke
+    /// real-time endpoints</a>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
     /// SageMaker might add additional headers. You should not rely on the behavior of headers
@@ -47,36 +59,20 @@ namespace Amazon.SageMakerRuntime.Model
     /// </para>
     ///  
     /// <para>
-    /// Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services
-    /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Calls to <code>InvokeEndpointWithResponseStream</code> are authenticated by using
+    /// Amazon Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
     /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
     /// </para>
-    ///  
-    /// <para>
-    /// A customer's model containers must respond to requests within 60 seconds. The model
-    /// itself can have a maximum processing time of 60 seconds before responding to invocations.
-    /// If your model is going to take 50-60 seconds of processing time, the SDK socket timeout
-    /// should be set to be 70 seconds.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// Endpoints are scoped to an individual account, and are not public. The URL does not
-    /// contain the account ID, but Amazon SageMaker determines the account ID from the authentication
-    /// token that is supplied by the caller.
-    /// </para>
-    ///  </note>
     /// </summary>
-    public partial class InvokeEndpointRequest : AmazonSageMakerRuntimeRequest
+    public partial class InvokeEndpointWithResponseStreamRequest : AmazonSageMakerRuntimeRequest
     {
         private string _accept;
         private MemoryStream _body;
         private string _contentType;
         private string _customAttributes;
-        private string _enableExplanations;
         private string _endpointName;
         private string _inferenceId;
         private string _targetContainerHostname;
-        private string _targetModel;
         private string _targetVariant;
 
         /// <summary>
@@ -181,27 +177,6 @@ namespace Amazon.SageMakerRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableExplanations. 
-        /// <para>
-        /// An optional JMESPath expression used to override the <code>EnableExplanations</code>
-        /// parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
-        /// section in the developer guide for more information. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string EnableExplanations
-        {
-            get { return this._enableExplanations; }
-            set { this._enableExplanations = value; }
-        }
-
-        // Check to see if EnableExplanations property is set
-        internal bool IsSetEnableExplanations()
-        {
-            return this._enableExplanations != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
         /// The name of the endpoint that you specified when you created the endpoint using the
@@ -225,9 +200,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property InferenceId. 
         /// <para>
-        /// If you provide a value, it is added to the captured data when you enable data capture
-        /// on the endpoint. For information about data capture, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
-        /// Data</a>.
+        /// An identifier that you assign to your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -261,25 +234,6 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetTargetContainerHostname()
         {
             return this._targetContainerHostname != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetModel. 
-        /// <para>
-        /// The model to request for inference when invoking a multi-model endpoint.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string TargetModel
-        {
-            get { return this._targetModel; }
-            set { this._targetModel = value; }
-        }
-
-        // Check to see if TargetModel property is set
-        internal bool IsSetTargetModel()
-        {
-            return this._targetModel != null;
         }
 
         /// <summary>
