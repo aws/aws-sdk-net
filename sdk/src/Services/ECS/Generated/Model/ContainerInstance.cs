@@ -291,8 +291,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RunningTasksCount. 
         /// <para>
-        /// The number of tasks on the container instance that are in the <code>RUNNING</code>
-        /// status.
+        /// The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>)
+        /// of <code>RUNNING</code>.
         /// </para>
         /// </summary>
         public int RunningTasksCount

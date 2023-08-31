@@ -2437,6 +2437,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly SettingName FargateFIPSMode = new SettingName("fargateFIPSMode");
         /// <summary>
+        /// Constant FargateTaskRetirementWaitPeriod for SettingName
+        /// </summary>
+        public static readonly SettingName FargateTaskRetirementWaitPeriod = new SettingName("fargateTaskRetirementWaitPeriod");
+        /// <summary>
         /// Constant ServiceLongArnFormat for SettingName
         /// </summary>
         public static readonly SettingName ServiceLongArnFormat = new SettingName("serviceLongArnFormat");
