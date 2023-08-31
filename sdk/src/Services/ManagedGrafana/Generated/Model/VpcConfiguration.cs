@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model
         /// workspace to connect. Duplicates not allowed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -76,7 +76,7 @@ namespace Amazon.ManagedGrafana.Model
         /// to connect. Duplicates not allowed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=2, Max=6)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
