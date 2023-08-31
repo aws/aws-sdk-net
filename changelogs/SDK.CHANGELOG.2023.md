@@ -1,3 +1,34 @@
+### 3.7.635.0 (2023-08-31 19:18 UTC)
+* AWSHealth (3.7.201.0)
+	* Adds new API DescribeEntityAggregatesForOrganization that retrieves entity aggregates across your organization. Also adds support for resource status filtering in DescribeAffectedEntitiesForOrganization, resource status aggregates in the DescribeEntityAggregates response, and new resource statuses.
+* ChimeSDKMediaPipelines (3.7.202.0)
+	* This release adds support for feature Voice Enhancement for Call Recording as part of Amazon Chime SDK call analytics.
+* CloudHSM (3.7.201.0)
+	* Deprecating CloudHSM Classic API Service.
+* CloudWatchEvents (3.7.201.0)
+	* Documentation updates for CloudWatch Events.
+* ConnectCampaignService (3.7.201.0)
+	* Amazon Connect outbound campaigns has launched agentless dialing mode which enables customers to make automated outbound calls without agent engagement. This release updates three of the campaign management API's to support the new agentless dialing mode and the new dialing capacity field.
+* ConnectParticipant (3.7.201.0)
+	* Amazon Connect Participant Service adds the ability to get a view resource using a view token, which is provided in a participant message, with the release of the DescribeView API.
+* CustomerProfiles (3.7.202.0)
+	* Adds sensitive trait to various shapes in Customer Profiles API model.
+* ECS (3.7.201.0)
+	* This release adds support for an account-level setting that you can use to configure the number of days for AWS Fargate task retirement.
+* IVS (3.7.201.0)
+	* Updated "type" description for CreateChannel, UpdateChannel, Channel, and ChannelSummary.
+* KafkaConnect (3.7.201.0)
+	* Minor model changes for Kafka Connect as well as endpoint updates.
+* ManagedGrafana (3.7.202.0)
+	* Marking SAML RoleValues attribute as sensitive and updating VpcConfiguration attributes to match documentation.
+* PaymentCryptographyData (3.7.201.0)
+	* Make KeyCheckValue field optional when using asymmetric keys as Key Check Values typically only apply to symmetric keys
+* SageMakerRuntime (3.7.201.0)
+	* This release adds a new InvokeEndpointWithResponseStream API to support streaming of model responses.
+* Core 3.7.201.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.634.0 (2023-08-31 00:54 UTC)
 * DynamoDBv2 (3.7.201.0)
 	* Add the MetadataCachingMode option to the document and object-mapper DynamoDB APIs. This can be used to reduce the amount of internal DescribeTable calls the SDK makes to fill its cache in some contexts. 
