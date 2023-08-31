@@ -139,6 +139,17 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVoiceEnhancementSinkConfiguration())
+            {
+                context.Writer.WritePropertyName("VoiceEnhancementSinkConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VoiceEnhancementSinkConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VoiceEnhancementSinkConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

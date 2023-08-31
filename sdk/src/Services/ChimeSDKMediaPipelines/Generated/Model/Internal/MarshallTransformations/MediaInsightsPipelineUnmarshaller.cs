@@ -70,6 +70,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ElementStatuses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MediaInsightsPipelineElementStatus, MediaInsightsPipelineElementStatusUnmarshaller>(MediaInsightsPipelineElementStatusUnmarshaller.Instance);
+                    unmarshalledObject.ElementStatuses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KinesisVideoStreamRecordingSourceRuntimeConfiguration", targetDepth))
                 {
                     var unmarshaller = KinesisVideoStreamRecordingSourceRuntimeConfigurationUnmarshaller.Instance;

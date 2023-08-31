@@ -118,6 +118,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.VoiceAnalyticsProcessorConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VoiceEnhancementSinkConfiguration", targetDepth))
+                {
+                    var unmarshaller = VoiceEnhancementSinkConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VoiceEnhancementSinkConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

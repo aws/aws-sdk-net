@@ -1326,6 +1326,10 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// Constant VoiceAnalyticsProcessor for MediaInsightsPipelineConfigurationElementType
         /// </summary>
         public static readonly MediaInsightsPipelineConfigurationElementType VoiceAnalyticsProcessor = new MediaInsightsPipelineConfigurationElementType("VoiceAnalyticsProcessor");
+        /// <summary>
+        /// Constant VoiceEnhancementSink for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType VoiceEnhancementSink = new MediaInsightsPipelineConfigurationElementType("VoiceEnhancementSink");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1356,6 +1360,80 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MediaInsightsPipelineConfigurationElementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaPipelineElementStatus.
+    /// </summary>
+    public class MediaPipelineElementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus Failed = new MediaPipelineElementStatus("Failed");
+        /// <summary>
+        /// Constant Initializing for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus Initializing = new MediaPipelineElementStatus("Initializing");
+        /// <summary>
+        /// Constant InProgress for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus InProgress = new MediaPipelineElementStatus("InProgress");
+        /// <summary>
+        /// Constant NotStarted for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus NotStarted = new MediaPipelineElementStatus("NotStarted");
+        /// <summary>
+        /// Constant NotSupported for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus NotSupported = new MediaPipelineElementStatus("NotSupported");
+        /// <summary>
+        /// Constant Paused for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus Paused = new MediaPipelineElementStatus("Paused");
+        /// <summary>
+        /// Constant Stopped for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus Stopped = new MediaPipelineElementStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for MediaPipelineElementStatus
+        /// </summary>
+        public static readonly MediaPipelineElementStatus Stopping = new MediaPipelineElementStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaPipelineElementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPipelineElementStatus FindValue(string value)
+        {
+            return FindValue<MediaPipelineElementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPipelineElementStatus(string value)
         {
             return FindValue(value);
         }
@@ -1472,6 +1550,10 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// Constant InProgress for MediaPipelineStatus
         /// </summary>
         public static readonly MediaPipelineStatus InProgress = new MediaPipelineStatus("InProgress");
+        /// <summary>
+        /// Constant NotStarted for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus NotStarted = new MediaPipelineStatus("NotStarted");
         /// <summary>
         /// Constant Paused for MediaPipelineStatus
         /// </summary>
