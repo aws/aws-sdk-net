@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProgressiveDialerConfig Marshaller
+    /// AgentlessDialerConfig Marshaller
     /// </summary>
-    public class ProgressiveDialerConfigMarshaller : IRequestMarshaller<ProgressiveDialerConfig, JsonMarshallerContext> 
+    public class AgentlessDialerConfigMarshaller : IRequestMarshaller<AgentlessDialerConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,14 +43,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProgressiveDialerConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AgentlessDialerConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBandwidthAllocation())
-            {
-                context.Writer.WritePropertyName("bandwidthAllocation");
-                context.Writer.Write(requestObject.BandwidthAllocation);
-            }
-
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
@@ -62,7 +56,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProgressiveDialerConfigMarshaller Instance = new ProgressiveDialerConfigMarshaller();
+        public readonly static AgentlessDialerConfigMarshaller Instance = new AgentlessDialerConfigMarshaller();
 
     }
 }

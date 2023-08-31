@@ -34,6 +34,7 @@ namespace Amazon.ConnectCampaignService.Model
     public partial class ProgressiveDialerConfig
     {
         private double? _bandwidthAllocation;
+        private double? _dialingCapacity;
 
         /// <summary>
         /// Gets and sets the property BandwidthAllocation.
@@ -49,6 +50,22 @@ namespace Amazon.ConnectCampaignService.Model
         internal bool IsSetBandwidthAllocation()
         {
             return this._bandwidthAllocation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DialingCapacity.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public double DialingCapacity
+        {
+            get { return this._dialingCapacity.GetValueOrDefault(); }
+            set { this._dialingCapacity = value; }
+        }
+
+        // Check to see if DialingCapacity property is set
+        internal bool IsSetDialingCapacity()
+        {
+            return this._dialingCapacity.HasValue; 
         }
 
     }

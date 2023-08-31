@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictiveDialerConfig Object
+    /// Response Unmarshaller for AgentlessDialerConfig Object
     /// </summary>  
-    public class PredictiveDialerConfigUnmarshaller : IUnmarshaller<PredictiveDialerConfig, XmlUnmarshallerContext>, IUnmarshaller<PredictiveDialerConfig, JsonUnmarshallerContext>
+    public class AgentlessDialerConfigUnmarshaller : IUnmarshaller<AgentlessDialerConfig, XmlUnmarshallerContext>, IUnmarshaller<AgentlessDialerConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PredictiveDialerConfig IUnmarshaller<PredictiveDialerConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentlessDialerConfig IUnmarshaller<AgentlessDialerConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,23 +53,17 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PredictiveDialerConfig Unmarshall(JsonUnmarshallerContext context)
+        public AgentlessDialerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictiveDialerConfig unmarshalledObject = new PredictiveDialerConfig();
+            AgentlessDialerConfig unmarshalledObject = new AgentlessDialerConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bandwidthAllocation", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("dialingCapacity", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
@@ -82,12 +76,12 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictiveDialerConfigUnmarshaller _instance = new PredictiveDialerConfigUnmarshaller();        
+        private static AgentlessDialerConfigUnmarshaller _instance = new AgentlessDialerConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictiveDialerConfigUnmarshaller Instance
+        public static AgentlessDialerConfigUnmarshaller Instance
         {
             get
             {

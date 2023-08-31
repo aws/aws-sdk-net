@@ -29,28 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignService.Model
 {
     /// <summary>
-    /// Predictive Dialer config
+    /// Agentless Dialer config
     /// </summary>
-    public partial class PredictiveDialerConfig
+    public partial class AgentlessDialerConfig
     {
-        private double? _bandwidthAllocation;
         private double? _dialingCapacity;
-
-        /// <summary>
-        /// Gets and sets the property BandwidthAllocation.
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
-        public double BandwidthAllocation
-        {
-            get { return this._bandwidthAllocation.GetValueOrDefault(); }
-            set { this._bandwidthAllocation = value; }
-        }
-
-        // Check to see if BandwidthAllocation property is set
-        internal bool IsSetBandwidthAllocation()
-        {
-            return this._bandwidthAllocation.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property DialingCapacity.

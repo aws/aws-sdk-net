@@ -72,7 +72,7 @@ namespace Amazon.ConnectCampaignService.Model
         /// <summary>
         /// Gets and sets the property ConnectQueueId.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=500)]
         public string ConnectQueueId
         {
             get { return this._connectQueueId; }
