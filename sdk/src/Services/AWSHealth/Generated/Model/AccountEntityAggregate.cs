@@ -29,20 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The number of entities that are affected by one or more events. Returned by the <a
-    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a>
-    /// operation.
+    /// The number of entities in an account that are impacted by a specific event aggregated
+    /// by the entity status codes.
     /// </summary>
-    public partial class EntityAggregate
+    public partial class AccountEntityAggregate
     {
+        private string _accountId;
         private int? _count;
-        private string _eventArn;
         private Dictionary<string, int> _statuses = new Dictionary<string, int>();
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The 12-digit Amazon Web Services account numbers that contains the affected entities.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1600)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of entities that match the criteria for the specified events.
+        /// The number of entities that match the filter criteria for the specified events.
         /// </para>
         /// </summary>
         public int Count
@@ -55,35 +73,6 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetCount()
         {
             return this._count.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EventArn. 
-        /// <para>
-        /// The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code> format.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, an event ARN might look like the following:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-        /// 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=1600)]
-        public string EventArn
-        {
-            get { return this._eventArn; }
-            set { this._eventArn = value; }
-        }
-
-        // Check to see if EventArn property is set
-        internal bool IsSetEventArn()
-        {
-            return this._eventArn != null;
         }
 
         /// <summary>

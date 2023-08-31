@@ -29,32 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The number of entities that are affected by one or more events. Returned by the <a
-    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a>
-    /// operation.
+    /// A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code>
+    /// and a set of <code>statusCodes</code>.
     /// </summary>
-    public partial class EntityAggregate
+    public partial class EntityAccountFilter
     {
-        private int? _count;
+        private string _awsAccountId;
         private string _eventArn;
-        private Dictionary<string, int> _statuses = new Dictionary<string, int>();
+        private List<string> _statusCodes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Count. 
+        /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The number of entities that match the criteria for the specified events.
+        /// The 12-digit Amazon Web Services account numbers that contains the affected entities.
         /// </para>
         /// </summary>
-        public int Count
+        [AWSProperty(Max=12)]
+        public string AwsAccountId
         {
-            get { return this._count.GetValueOrDefault(); }
-            set { this._count = value; }
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
         }
 
-        // Check to see if Count property is set
-        internal bool IsSetCount()
+        // Check to see if AwsAccountId property is set
+        internal bool IsSetAwsAccountId()
         {
-            return this._count.HasValue; 
+            return this._awsAccountId != null;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AWSHealth.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1600)]
+        [AWSProperty(Required=true, Max=1600)]
         public string EventArn
         {
             get { return this._eventArn; }
@@ -87,21 +87,22 @@ namespace Amazon.AWSHealth.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statuses. 
+        /// Gets and sets the property StatusCodes. 
         /// <para>
-        /// The number of affected entities aggregated by the entity status codes.
+        /// A list of entity status codes.
         /// </para>
         /// </summary>
-        public Dictionary<string, int> Statuses
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> StatusCodes
         {
-            get { return this._statuses; }
-            set { this._statuses = value; }
+            get { return this._statusCodes; }
+            set { this._statusCodes = value; }
         }
 
-        // Check to see if Statuses property is set
-        internal bool IsSetStatuses()
+        // Check to see if StatusCodes property is set
+        internal bool IsSetStatusCodes()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statusCodes != null && this._statusCodes.Count > 0; 
         }
 
     }

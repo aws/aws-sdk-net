@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EntityAggregate Object
+    /// Response Unmarshaller for OrganizationEntityAggregate Object
     /// </summary>  
-    public class EntityAggregateUnmarshaller : IUnmarshaller<EntityAggregate, XmlUnmarshallerContext>, IUnmarshaller<EntityAggregate, JsonUnmarshallerContext>
+    public class OrganizationEntityAggregateUnmarshaller : IUnmarshaller<OrganizationEntityAggregate, XmlUnmarshallerContext>, IUnmarshaller<OrganizationEntityAggregate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EntityAggregate IUnmarshaller<EntityAggregate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OrganizationEntityAggregate IUnmarshaller<OrganizationEntityAggregate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,17 +53,23 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EntityAggregate Unmarshall(JsonUnmarshallerContext context)
+        public OrganizationEntityAggregate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EntityAggregate unmarshalledObject = new EntityAggregate();
+            OrganizationEntityAggregate unmarshalledObject = new OrganizationEntityAggregate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accounts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AccountEntityAggregate, AccountEntityAggregateUnmarshaller>(AccountEntityAggregateUnmarshaller.Instance);
+                    unmarshalledObject.Accounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("count", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -88,12 +94,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         }
 
 
-        private static EntityAggregateUnmarshaller _instance = new EntityAggregateUnmarshaller();        
+        private static OrganizationEntityAggregateUnmarshaller _instance = new OrganizationEntityAggregateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EntityAggregateUnmarshaller Instance
+        public static OrganizationEntityAggregateUnmarshaller Instance
         {
             get
             {

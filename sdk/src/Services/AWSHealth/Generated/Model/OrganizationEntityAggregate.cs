@@ -29,20 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The number of entities that are affected by one or more events. Returned by the <a
-    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a>
-    /// operation.
+    /// The aggregate results of entities affected by the specified event in your organization.
+    /// The results are aggregated by the entity status codes for the specified set of accountsIDs.
     /// </summary>
-    public partial class EntityAggregate
+    public partial class OrganizationEntityAggregate
     {
+        private List<AccountEntityAggregate> _accounts = new List<AccountEntityAggregate>();
         private int? _count;
         private string _eventArn;
         private Dictionary<string, int> _statuses = new Dictionary<string, int>();
 
         /// <summary>
+        /// Gets and sets the property Accounts. 
+        /// <para>
+        /// A list of entity aggregates for each of the specified accounts in your organization
+        /// that are affected by a specific event. If there are no <code>awsAccountIds</code>
+        /// provided in the request, this field will be empty in the response.
+        /// </para>
+        /// </summary>
+        public List<AccountEntityAggregate> Accounts
+        {
+            get { return this._accounts; }
+            set { this._accounts = value; }
+        }
+
+        // Check to see if Accounts property is set
+        internal bool IsSetAccounts()
+        {
+            return this._accounts != null && this._accounts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of entities that match the criteria for the specified events.
+        /// The number of entities for the organization that match the filter criteria for the
+        /// specified events.
         /// </para>
         /// </summary>
         public int Count
@@ -60,16 +81,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code> format.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, an event ARN might look like the following:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+        /// "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
         /// 
         /// </para>
         /// </summary>
@@ -89,7 +102,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Statuses. 
         /// <para>
-        /// The number of affected entities aggregated by the entity status codes.
+        /// The number of affected entities aggregated by the entitiy status codes.
         /// </para>
         /// </summary>
         public Dictionary<string, int> Statuses

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeAffectedEntitiesForOrganization Request Marshaller
+    /// DescribeEntityAggregatesForOrganization Request Marshaller
     /// </summary>       
-    public class DescribeAffectedEntitiesForOrganizationRequestMarshaller : IMarshaller<IRequest, DescribeAffectedEntitiesForOrganizationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeEntityAggregatesForOrganizationRequestMarshaller : IMarshaller<IRequest, DescribeEntityAggregatesForOrganizationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeAffectedEntitiesForOrganizationRequest)input);
+            return this.Marshall((DescribeEntityAggregatesForOrganizationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeAffectedEntitiesForOrganizationRequest publicRequest)
+        public IRequest Marshall(DescribeEntityAggregatesForOrganizationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSHealth");
-            string target = "AWSHealth_20160804.DescribeAffectedEntitiesForOrganization";
+            string target = "AWSHealth_20160804.DescribeEntityAggregatesForOrganization";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-08-04";
@@ -67,52 +67,24 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocale())
+                if(publicRequest.IsSetAwsAccountIds())
                 {
-                    context.Writer.WritePropertyName("locale");
-                    context.Writer.Write(publicRequest.Locale);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOrganizationEntityAccountFilters())
-                {
-                    context.Writer.WritePropertyName("organizationEntityAccountFilters");
+                    context.Writer.WritePropertyName("awsAccountIds");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrganizationEntityAccountFiltersListValue in publicRequest.OrganizationEntityAccountFilters)
+                    foreach(var publicRequestAwsAccountIdsListValue in publicRequest.AwsAccountIds)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntityAccountFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOrganizationEntityAccountFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestAwsAccountIdsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetOrganizationEntityFilters())
+                if(publicRequest.IsSetEventArns())
                 {
-                    context.Writer.WritePropertyName("organizationEntityFilters");
+                    context.Writer.WritePropertyName("eventArns");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOrganizationEntityFiltersListValue in publicRequest.OrganizationEntityFilters)
+                    foreach(var publicRequestEventArnsListValue in publicRequest.EventArns)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EventAccountFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOrganizationEntityFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestEventArnsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -125,9 +97,9 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeAffectedEntitiesForOrganizationRequestMarshaller _instance = new DescribeAffectedEntitiesForOrganizationRequestMarshaller();        
+        private static DescribeEntityAggregatesForOrganizationRequestMarshaller _instance = new DescribeEntityAggregatesForOrganizationRequestMarshaller();        
 
-        internal static DescribeAffectedEntitiesForOrganizationRequestMarshaller GetInstance()
+        internal static DescribeEntityAggregatesForOrganizationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +107,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAffectedEntitiesForOrganizationRequestMarshaller Instance
+        public static DescribeEntityAggregatesForOrganizationRequestMarshaller Instance
         {
             get
             {

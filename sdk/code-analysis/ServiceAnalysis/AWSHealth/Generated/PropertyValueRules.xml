@@ -167,6 +167,11 @@
     <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSHealth.Model.AccountEntityAggregate.AccountId</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.AwsAccountId</property>
     <max>12</max>
     <pattern>^\S+$</pattern>
@@ -183,6 +188,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EventArn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.EntityAccountFilter.AwsAccountId</property>
+    <max>12</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.EntityAccountFilter.EventArn</property>
     <max>1600</max>
     <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
   </property-value-rule>
@@ -262,6 +277,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.OrganizationAffectedEntitiesErrorItem.EventArn</property>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.OrganizationEntityAggregate.EventArn</property>
     <max>1600</max>
     <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
   </property-value-rule>

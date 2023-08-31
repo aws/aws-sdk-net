@@ -35,6 +35,14 @@ namespace Amazon.AWSHealth
         /// </summary>
         public static readonly EntityStatusCode IMPAIRED = new EntityStatusCode("IMPAIRED");
         /// <summary>
+        /// Constant PENDING for EntityStatusCode
+        /// </summary>
+        public static readonly EntityStatusCode PENDING = new EntityStatusCode("PENDING");
+        /// <summary>
+        /// Constant RESOLVED for EntityStatusCode
+        /// </summary>
+        public static readonly EntityStatusCode RESOLVED = new EntityStatusCode("RESOLVED");
+        /// <summary>
         /// Constant UNIMPAIRED for EntityStatusCode
         /// </summary>
         public static readonly EntityStatusCode UNIMPAIRED = new EntityStatusCode("UNIMPAIRED");
