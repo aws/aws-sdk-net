@@ -1,3 +1,14 @@
+### 3.7.636.0 (2023-09-01 01:49 UTC)
+* S3 (3.7.203.6)
+	* Updated to use new Core, version 3.7.202.0
+	* Refactor checksum handling for potential interaction with the new RequestCompression trait.
+* S3Control (3.7.201.6)
+	* Updated to use new Core, version 3.7.202.0
+	* Refactor checksum handling for potential interaction with the new RequestCompression trait.
+* Core 3.7.202.0
+	* Add support for the RequestCompression trait, which allows services to model that they support receiving compressed requests.
+	* All services packages updated to require new Core
+
 ### 3.7.635.0 (2023-08-31 19:18 UTC)
 * AWSHealth (3.7.201.0)
 	* Adds new API DescribeEntityAggregatesForOrganization that retrieves entity aggregates across your organization. Also adds support for resource status filtering in DescribeAffectedEntitiesForOrganization, resource status aggregates in the DescribeEntityAggregates response, and new resource statuses.
