@@ -1653,6 +1653,72 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type MediaPipelineTaskStatus.
+    /// </summary>
+    public class MediaPipelineTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for MediaPipelineTaskStatus
+        /// </summary>
+        public static readonly MediaPipelineTaskStatus Failed = new MediaPipelineTaskStatus("Failed");
+        /// <summary>
+        /// Constant Initializing for MediaPipelineTaskStatus
+        /// </summary>
+        public static readonly MediaPipelineTaskStatus Initializing = new MediaPipelineTaskStatus("Initializing");
+        /// <summary>
+        /// Constant InProgress for MediaPipelineTaskStatus
+        /// </summary>
+        public static readonly MediaPipelineTaskStatus InProgress = new MediaPipelineTaskStatus("InProgress");
+        /// <summary>
+        /// Constant NotStarted for MediaPipelineTaskStatus
+        /// </summary>
+        public static readonly MediaPipelineTaskStatus NotStarted = new MediaPipelineTaskStatus("NotStarted");
+        /// <summary>
+        /// Constant Stopped for MediaPipelineTaskStatus
+        /// </summary>
+        public static readonly MediaPipelineTaskStatus Stopped = new MediaPipelineTaskStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for MediaPipelineTaskStatus
+        /// </summary>
+        public static readonly MediaPipelineTaskStatus Stopping = new MediaPipelineTaskStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaPipelineTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPipelineTaskStatus FindValue(string value)
+        {
+            return FindValue<MediaPipelineTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPipelineTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PartialResultsStability.
     /// </summary>
     public class PartialResultsStability : ConstantClass
@@ -2258,6 +2324,52 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VoiceAnalyticsConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VoiceAnalyticsLanguageCode.
+    /// </summary>
+    public class VoiceAnalyticsLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EnUS for VoiceAnalyticsLanguageCode
+        /// </summary>
+        public static readonly VoiceAnalyticsLanguageCode EnUS = new VoiceAnalyticsLanguageCode("en-US");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VoiceAnalyticsLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceAnalyticsLanguageCode FindValue(string value)
+        {
+            return FindValue<VoiceAnalyticsLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceAnalyticsLanguageCode(string value)
         {
             return FindValue(value);
         }

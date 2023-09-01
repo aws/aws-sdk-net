@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteMediaPipeline operation
+    /// Response Unmarshaller for StopSpeakerSearchTask operation
     /// </summary>  
-    public class DeleteMediaPipelineResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StopSpeakerSearchTaskResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteMediaPipelineResponse response = new DeleteMediaPipelineResponse();
+            StopSpeakerSearchTaskResponse response = new StopSpeakerSearchTaskResponse();
 
 
             return response;
@@ -105,9 +105,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             return new AmazonChimeSDKMediaPipelinesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteMediaPipelineResponseUnmarshaller _instance = new DeleteMediaPipelineResponseUnmarshaller();        
+        private static StopSpeakerSearchTaskResponseUnmarshaller _instance = new StopSpeakerSearchTaskResponseUnmarshaller();        
 
-        internal static DeleteMediaPipelineResponseUnmarshaller GetInstance()
+        internal static StopSpeakerSearchTaskResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +115,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteMediaPipelineResponseUnmarshaller Instance
+        public static StopSpeakerSearchTaskResponseUnmarshaller Instance
         {
             get
             {

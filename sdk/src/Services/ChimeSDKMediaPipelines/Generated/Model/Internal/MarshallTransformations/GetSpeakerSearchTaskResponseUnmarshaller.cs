@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteMediaPipeline operation
+    /// Response Unmarshaller for GetSpeakerSearchTask operation
     /// </summary>  
-    public class DeleteMediaPipelineResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetSpeakerSearchTaskResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteMediaPipelineResponse response = new DeleteMediaPipelineResponse();
+            GetSpeakerSearchTaskResponse response = new GetSpeakerSearchTaskResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("SpeakerSearchTask", targetDepth))
+                {
+                    var unmarshaller = SpeakerSearchTaskUnmarshaller.Instance;
+                    response.SpeakerSearchTask = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -72,10 +83,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
@@ -105,9 +112,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             return new AmazonChimeSDKMediaPipelinesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteMediaPipelineResponseUnmarshaller _instance = new DeleteMediaPipelineResponseUnmarshaller();        
+        private static GetSpeakerSearchTaskResponseUnmarshaller _instance = new GetSpeakerSearchTaskResponseUnmarshaller();        
 
-        internal static DeleteMediaPipelineResponseUnmarshaller GetInstance()
+        internal static GetSpeakerSearchTaskResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +122,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteMediaPipelineResponseUnmarshaller Instance
+        public static GetSpeakerSearchTaskResponseUnmarshaller Instance
         {
             get
             {

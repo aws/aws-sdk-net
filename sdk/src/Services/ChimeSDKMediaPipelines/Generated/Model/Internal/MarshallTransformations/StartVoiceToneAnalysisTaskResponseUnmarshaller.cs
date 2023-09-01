@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteMediaPipeline operation
+    /// Response Unmarshaller for StartVoiceToneAnalysisTask operation
     /// </summary>  
-    public class DeleteMediaPipelineResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartVoiceToneAnalysisTaskResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteMediaPipelineResponse response = new DeleteMediaPipelineResponse();
+            StartVoiceToneAnalysisTaskResponse response = new StartVoiceToneAnalysisTaskResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("VoiceToneAnalysisTask", targetDepth))
+                {
+                    var unmarshaller = VoiceToneAnalysisTaskUnmarshaller.Instance;
+                    response.VoiceToneAnalysisTask = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -105,9 +116,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             return new AmazonChimeSDKMediaPipelinesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteMediaPipelineResponseUnmarshaller _instance = new DeleteMediaPipelineResponseUnmarshaller();        
+        private static StartVoiceToneAnalysisTaskResponseUnmarshaller _instance = new StartVoiceToneAnalysisTaskResponseUnmarshaller();        
 
-        internal static DeleteMediaPipelineResponseUnmarshaller GetInstance()
+        internal static StartVoiceToneAnalysisTaskResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +126,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteMediaPipelineResponseUnmarshaller Instance
+        public static StartVoiceToneAnalysisTaskResponseUnmarshaller Instance
         {
             get
             {

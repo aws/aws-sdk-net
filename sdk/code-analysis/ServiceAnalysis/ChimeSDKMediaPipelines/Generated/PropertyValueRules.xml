@@ -91,6 +91,28 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.GetSpeakerSearchTaskRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.GetSpeakerSearchTaskRequest.SpeakerSearchTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.GetVoiceToneAnalysisTaskRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.GetVoiceToneAnalysisTaskRequest.VoiceToneAnalysisTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.ListMediaCapturePipelinesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -139,6 +161,55 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StartSpeakerSearchTaskRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StartSpeakerSearchTaskRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StartSpeakerSearchTaskRequest.VoiceProfileDomainArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StartVoiceToneAnalysisTaskRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StartVoiceToneAnalysisTaskRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StopSpeakerSearchTaskRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StopSpeakerSearchTaskRequest.SpeakerSearchTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StopVoiceToneAnalysisTaskRequest.Identifier</property>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.StopVoiceToneAnalysisTaskRequest.VoiceToneAnalysisTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.TagResourceRequest.ResourceARN</property>
@@ -286,6 +357,23 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.KinesisVideoStreamSourceRuntimeConfiguration.MediaSampleRate</property>
     <min>8000</min>
     <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.KinesisVideoStreamSourceTaskConfiguration.ChannelId</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.KinesisVideoStreamSourceTaskConfiguration.FragmentNumber</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.KinesisVideoStreamSourceTaskConfiguration.StreamArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.LambdaFunctionSinkConfiguration.InsightsTarget</property>
@@ -499,6 +587,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SpeakerSearchTask.SpeakerSearchTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.SqsQueueSinkConfiguration.InsightsTarget</property>
     <min>1</min>
     <max>1024</max>
@@ -558,5 +652,11 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.VideoAttribute.CornerRadius</property>
     <min>1</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.VoiceToneAnalysisTask.VoiceToneAnalysisTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
 </property-value-rules>

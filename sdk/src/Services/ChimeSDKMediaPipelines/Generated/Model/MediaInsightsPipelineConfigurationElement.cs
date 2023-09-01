@@ -218,8 +218,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property VoiceEnhancementSinkConfiguration. 
         /// <para>
-        /// The configuration settings for the <code>VoiceEnhancementSinkConfiguration</code>
-        /// element.
+        /// The configuration settings for voice enhancement sink in a media insights pipeline
+        /// configuration element.
         /// </para>
         /// </summary>
         public VoiceEnhancementSinkConfiguration VoiceEnhancementSinkConfiguration
