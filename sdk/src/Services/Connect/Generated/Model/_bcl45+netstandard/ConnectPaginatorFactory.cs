@@ -348,6 +348,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListViews operation
+        ///</summary>
+        public IListViewsPaginator ListViews(ListViewsRequest request) 
+        {
+            return new ListViewsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListViewVersions operation
+        ///</summary>
+        public IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request) 
+        {
+            return new ListViewVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         public ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) 

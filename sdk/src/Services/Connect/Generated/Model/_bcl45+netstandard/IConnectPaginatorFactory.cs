@@ -221,6 +221,16 @@ namespace Amazon.Connect.Model
         IListUsersPaginator ListUsers(ListUsersRequest request);
 
         /// <summary>
+        /// Paginator for ListViews operation
+        ///</summary>
+        IListViewsPaginator ListViews(ListViewsRequest request);
+
+        /// <summary>
+        /// Paginator for ListViewVersions operation
+        ///</summary>
+        IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request);
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);

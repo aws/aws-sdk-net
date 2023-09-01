@@ -501,6 +501,50 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewRequest.ClientToken</property>
+    <max>500</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewRequest.Description</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewVersionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewVersionRequest.VersionDescription</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewVersionRequest.ViewContentSha256</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateViewVersionRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateVocabularyRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -691,6 +735,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteViewRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteViewRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteViewVersionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteViewVersionRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteVocabularyRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -846,6 +910,16 @@
     <property>Amazon.Connect.Model.DescribeUserHierarchyStructureRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeViewRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeViewRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeVocabularyRequest.InstanceId</property>
@@ -1459,6 +1533,55 @@
     <property>Amazon.Connect.Model.ListUsersRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewVersionsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewVersionsRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListViewVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9=\/+_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MonitorContactRequest.ClientToken</property>
@@ -2492,6 +2615,38 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateViewContentRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateViewContentRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateViewMetadataRequest.Description</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateViewMetadataRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateViewMetadataRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateViewMetadataRequest.ViewId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AgentContactReference.ContactId</property>
     <min>1</min>
     <max>256</max>
@@ -3447,6 +3602,75 @@
     <property>Amazon.Connect.Model.UserSummary.Username</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.View.Description</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.View.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.View.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.View.VersionDescription</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.View.ViewContentSha256</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewSummary.Description</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewSummary.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewVersionSummary.Description</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewVersionSummary.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewVersionSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@()']*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ViewVersionSummary.VersionDescription</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{N}_.:\/=+\-@,()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@,()']*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Vocabulary.Content</property>

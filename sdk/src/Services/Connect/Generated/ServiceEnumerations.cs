@@ -4797,6 +4797,106 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ViewStatus.
+    /// </summary>
+    public class ViewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLISHED for ViewStatus
+        /// </summary>
+        public static readonly ViewStatus PUBLISHED = new ViewStatus("PUBLISHED");
+        /// <summary>
+        /// Constant SAVED for ViewStatus
+        /// </summary>
+        public static readonly ViewStatus SAVED = new ViewStatus("SAVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewStatus FindValue(string value)
+        {
+            return FindValue<ViewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ViewType.
+    /// </summary>
+    public class ViewType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for ViewType
+        /// </summary>
+        public static readonly ViewType AWS_MANAGED = new ViewType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for ViewType
+        /// </summary>
+        public static readonly ViewType CUSTOMER_MANAGED = new ViewType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewType FindValue(string value)
+        {
+            return FindValue<ViewType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VocabularyLanguageCode.
     /// </summary>
     public class VocabularyLanguageCode : ConstantClass

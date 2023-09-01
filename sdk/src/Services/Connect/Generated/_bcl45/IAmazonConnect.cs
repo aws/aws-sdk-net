@@ -1793,25 +1793,31 @@ namespace Amazon.Connect
         /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// If the number being used in the input is claimed to a traffic distribution group,
-        /// and you are calling this API using an instance in the Amazon Web Services Region where
-        /// the traffic distribution group was created, you can use either a full phone number
-        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-        /// request body parameter. However, if the number is claimed to a traffic distribution
-        /// group and you are calling this API using an instance in the alternate Amazon Web Services
-        /// Region associated with the traffic distribution group, you must provide a full phone
-        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// If the phone number is claimed to a traffic distribution group that was created in
+        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// However, if the phone number is claimed to a traffic distribution group that is in
+        /// one Region, and you are calling this API from an instance in another Amazon Web Services
+        /// Region that is associated with the traffic distribution group, you must provide a
+        /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
+        /// <code>ResourceNotFoundException</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
         /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
         /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you plan to use IAM policies to allow/deny access to this API for phone number
+        /// resources claimed to a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+        /// or Deny queue API actions for phone numbers in a replica Region</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// 
@@ -1849,25 +1855,31 @@ namespace Amazon.Connect
         /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// If the number being used in the input is claimed to a traffic distribution group,
-        /// and you are calling this API using an instance in the Amazon Web Services Region where
-        /// the traffic distribution group was created, you can use either a full phone number
-        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-        /// request body parameter. However, if the number is claimed to a traffic distribution
-        /// group and you are calling this API using an instance in the alternate Amazon Web Services
-        /// Region associated with the traffic distribution group, you must provide a full phone
-        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// If the phone number is claimed to a traffic distribution group that was created in
+        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// However, if the phone number is claimed to a traffic distribution group that is in
+        /// one Region, and you are calling this API from an instance in another Amazon Web Services
+        /// Region that is associated with the traffic distribution group, you must provide a
+        /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
+        /// <code>ResourceNotFoundException</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
         /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
         /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you plan to use IAM policies to allow/deny access to this API for phone number
+        /// resources claimed to a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+        /// or Deny queue API actions for phone numbers in a replica Region</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// <param name="cancellationToken">
@@ -2274,7 +2286,15 @@ namespace Amazon.Connect
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
         /// replicated. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
         /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
@@ -2317,7 +2337,15 @@ namespace Amazon.Connect
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
         /// replicated. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
         /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
@@ -2568,6 +2596,212 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup">REST API Reference for CreateUserHierarchyGroup Operation</seealso>
         Task<CreateUserHierarchyGroupResponse> CreateUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateView
+
+
+        /// <summary>
+        /// Creates a new view with the possible status of <code>SAVED</code> or <code>PUBLISHED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// The views will have a unique name for each connect instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// It performs basic content validation if the status is <code>SAVED</code> or full content
+        /// validation if the status is set to <code>PUBLISHED</code>. An error is returned if
+        /// validation fails. It associates either the <code>$SAVED</code> qualifier or both of
+        /// the <code>$SAVED</code> and <code>$LATEST</code> qualifiers with the provided view
+        /// content based on the status. The view is idempotent if ClientToken is provided.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateView service method.</param>
+        /// 
+        /// <returns>The response from the CreateView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">REST API Reference for CreateView Operation</seealso>
+        CreateViewResponse CreateView(CreateViewRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new view with the possible status of <code>SAVED</code> or <code>PUBLISHED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// The views will have a unique name for each connect instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// It performs basic content validation if the status is <code>SAVED</code> or full content
+        /// validation if the status is set to <code>PUBLISHED</code>. An error is returned if
+        /// validation fails. It associates either the <code>$SAVED</code> qualifier or both of
+        /// the <code>$SAVED</code> and <code>$LATEST</code> qualifiers with the provided view
+        /// content based on the status. The view is idempotent if ClientToken is provided.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">REST API Reference for CreateView Operation</seealso>
+        Task<CreateViewResponse> CreateViewAsync(CreateViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateViewVersion
+
+
+        /// <summary>
+        /// Publishes a new version of the view identifier.
+        /// 
+        ///  
+        /// <para>
+        /// Versions are immutable and monotonically increasing.
+        /// </para>
+        ///  
+        /// <para>
+        /// It returns the highest version if there is no change in content compared to that version.
+        /// An error is displayed if the supplied ViewContentSha256 is different from the ViewContentSha256
+        /// of the <code>$LATEST</code> alias.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateViewVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateViewVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">REST API Reference for CreateViewVersion Operation</seealso>
+        CreateViewVersionResponse CreateViewVersion(CreateViewVersionRequest request);
+
+
+
+        /// <summary>
+        /// Publishes a new version of the view identifier.
+        /// 
+        ///  
+        /// <para>
+        /// Versions are immutable and monotonically increasing.
+        /// </para>
+        ///  
+        /// <para>
+        /// It returns the highest version if there is no change in content compared to that version.
+        /// An error is displayed if the supplied ViewContentSha256 is different from the ViewContentSha256
+        /// of the <code>$LATEST</code> alias.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateViewVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateViewVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">REST API Reference for CreateViewVersion Operation</seealso>
+        Task<CreateViewVersionResponse> CreateViewVersionAsync(CreateViewVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3870,6 +4104,148 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup">REST API Reference for DeleteUserHierarchyGroup Operation</seealso>
         Task<DeleteUserHierarchyGroupResponse> DeleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteView
+
+
+        /// <summary>
+        /// Deletes the view entirely. It deletes the view and all associated qualifiers (versions
+        /// and aliases).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteView service method.</param>
+        /// 
+        /// <returns>The response from the DeleteView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">REST API Reference for DeleteView Operation</seealso>
+        DeleteViewResponse DeleteView(DeleteViewRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the view entirely. It deletes the view and all associated qualifiers (versions
+        /// and aliases).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">REST API Reference for DeleteView Operation</seealso>
+        Task<DeleteViewResponse> DeleteViewAsync(DeleteViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteViewVersion
+
+
+        /// <summary>
+        /// Deletes the particular version specified in <code>ViewVersion</code> identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteViewVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteViewVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">REST API Reference for DeleteViewVersion Operation</seealso>
+        DeleteViewVersionResponse DeleteViewVersion(DeleteViewVersionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the particular version specified in <code>ViewVersion</code> identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteViewVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteViewVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">REST API Reference for DeleteViewVersion Operation</seealso>
+        Task<DeleteViewVersionResponse> DeleteViewVersionAsync(DeleteViewVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5302,6 +5678,104 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure">REST API Reference for DescribeUserHierarchyStructure Operation</seealso>
         Task<DescribeUserHierarchyStructureResponse> DescribeUserHierarchyStructureAsync(DescribeUserHierarchyStructureRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeView
+
+
+        /// <summary>
+        /// Retrieves the view for the specified Amazon Connect instance and view identifier.
+        /// 
+        ///  
+        /// <para>
+        /// The view identifier can be supplied as a ViewId or ARN.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>$SAVED</code> needs to be supplied if a view is unpublished.
+        /// </para>
+        ///  
+        /// <para>
+        /// The view identifier can contain an optional qualifier, for example, <code>&lt;view-id&gt;:$SAVED</code>,
+        /// which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED
+        /// | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for
+        /// customer managed views and an error is returned if there is no published content available.
+        /// Version 1 is assumed for Amazon Web Services managed views.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
+        /// 
+        /// <returns>The response from the DescribeView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">REST API Reference for DescribeView Operation</seealso>
+        DescribeViewResponse DescribeView(DescribeViewRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the view for the specified Amazon Connect instance and view identifier.
+        /// 
+        ///  
+        /// <para>
+        /// The view identifier can be supplied as a ViewId or ARN.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>$SAVED</code> needs to be supplied if a view is unpublished.
+        /// </para>
+        ///  
+        /// <para>
+        /// The view identifier can contain an optional qualifier, for example, <code>&lt;view-id&gt;:$SAVED</code>,
+        /// which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED
+        /// | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for
+        /// customer managed views and an error is returned if there is no published content available.
+        /// Version 1 is assumed for Amazon Web Services managed views.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">REST API Reference for DescribeView Operation</seealso>
+        Task<DescribeViewResponse> DescribeViewAsync(DescribeViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7810,7 +8284,15 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// to return phone number types. ListPhoneNumbers doesn't support number types <code>UIFN</code>,
+        /// <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>.
+        /// While it returns numbers of those types, it incorrectly lists them as <code>TOLL_FREE</code>
+        /// or <code>DID</code>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// The phone number <code>Arn</code> value that is returned from each of the items in
         /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
@@ -7818,7 +8300,7 @@ namespace Amazon.Connect
         /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API. It returns the new phone number ARN that can be used to tag phone number resources.
         /// </para>
-        ///  </important>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// 
@@ -7853,7 +8335,15 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// to return phone number types. ListPhoneNumbers doesn't support number types <code>UIFN</code>,
+        /// <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>.
+        /// While it returns numbers of those types, it incorrectly lists them as <code>TOLL_FREE</code>
+        /// or <code>DID</code>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// The phone number <code>Arn</code> value that is returned from each of the items in
         /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
@@ -7861,7 +8351,7 @@ namespace Amazon.Connect
         /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API. It returns the new phone number ARN that can be used to tag phone number resources.
         /// </para>
-        ///  </important>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -9072,6 +9562,156 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListViews
+
+
+        /// <summary>
+        /// Returns views in the given instance.
+        /// 
+        ///  
+        /// <para>
+        /// Results are sorted primarily by type, and secondarily by name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListViews service method.</param>
+        /// 
+        /// <returns>The response from the ListViews service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">REST API Reference for ListViews Operation</seealso>
+        ListViewsResponse ListViews(ListViewsRequest request);
+
+
+
+        /// <summary>
+        /// Returns views in the given instance.
+        /// 
+        ///  
+        /// <para>
+        /// Results are sorted primarily by type, and secondarily by name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListViews service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">REST API Reference for ListViews Operation</seealso>
+        Task<ListViewsResponse> ListViewsAsync(ListViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListViewVersions
+
+
+        /// <summary>
+        /// Returns all the available versions for the specified Amazon Connect instance and view
+        /// identifier.
+        /// 
+        ///  
+        /// <para>
+        /// Results will be sorted from highest to lowest.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListViewVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListViewVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">REST API Reference for ListViewVersions Operation</seealso>
+        ListViewVersionsResponse ListViewVersions(ListViewVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns all the available versions for the specified Amazon Connect instance and view
+        /// identifier.
+        /// 
+        ///  
+        /// <para>
+        /// Results will be sorted from highest to lowest.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListViewVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListViewVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">REST API Reference for ListViewVersions Operation</seealso>
+        Task<ListViewVersionsResponse> ListViewVersionsAsync(ListViewVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10697,7 +11337,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Ends the specified contact. This call does not work for the following initiation methods:
+        /// Ends the specified contact. This call does not work for voice contacts that use the
+        /// following initiation methods:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -10711,14 +11352,18 @@ namespace Amazon.Connect
         /// <para>
         /// QUEUE_TRANSFER
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Chat and task contacts, however, can be terminated in any state, regardless of initiation
+        /// method.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
         /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat, Task, or Voice Callback.
+        /// calls only, not to Chat or Task contacts.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -10738,7 +11383,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Ends the specified contact. This call does not work for the following initiation methods:
+        /// Ends the specified contact. This call does not work for voice contacts that use the
+        /// following initiation methods:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -10752,7 +11398,11 @@ namespace Amazon.Connect
         /// <para>
         /// QUEUE_TRANSFER
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Chat and task contacts, however, can be terminated in any state, regardless of initiation
+        /// method.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>
         /// <param name="cancellationToken">
@@ -10762,7 +11412,7 @@ namespace Amazon.Connect
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
         /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat, Task, or Voice Callback.
+        /// calls only, not to Chat or Task contacts.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -12846,25 +13496,31 @@ namespace Amazon.Connect
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// If the number being used in the input is claimed to a traffic distribution group,
-        /// and you are calling this API using an instance in the Amazon Web Services Region where
-        /// the traffic distribution group was created, you can use either a full phone number
-        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-        /// request body parameter. However, if the number is claimed to a traffic distribution
-        /// group and you are calling this API using an instance in the alternate Amazon Web Services
-        /// Region associated with the traffic distribution group, you must provide a full phone
-        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// If the phone number is claimed to a traffic distribution group that was created in
+        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// However, if the phone number is claimed to a traffic distribution group that is in
+        /// one Region, and you are calling this API from an instance in another Amazon Web Services
+        /// Region that is associated with the traffic distribution group, you must provide a
+        /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
+        /// <code>ResourceNotFoundException</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
         /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
         /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you plan to use IAM policies to allow/deny access to this API for phone number
+        /// resources claimed to a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+        /// or Deny queue API actions for phone numbers in a replica Region</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
         /// 
@@ -12897,25 +13553,31 @@ namespace Amazon.Connect
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// If the number being used in the input is claimed to a traffic distribution group,
-        /// and you are calling this API using an instance in the Amazon Web Services Region where
-        /// the traffic distribution group was created, you can use either a full phone number
-        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-        /// request body parameter. However, if the number is claimed to a traffic distribution
-        /// group and you are calling this API using an instance in the alternate Amazon Web Services
-        /// Region associated with the traffic distribution group, you must provide a full phone
-        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// If the phone number is claimed to a traffic distribution group that was created in
+        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// However, if the phone number is claimed to a traffic distribution group that is in
+        /// one Region, and you are calling this API from an instance in another Amazon Web Services
+        /// Region that is associated with the traffic distribution group, you must provide a
+        /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
+        /// <code>ResourceNotFoundException</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
         /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
         /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you plan to use IAM policies to allow/deny access to this API for phone number
+        /// resources claimed to a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+        /// or Deny queue API actions for phone numbers in a replica Region</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
         /// <param name="cancellationToken">
@@ -13655,8 +14317,9 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
-        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
         /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
         /// is returned.
         /// </para>
@@ -13698,8 +14361,9 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
-        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
         /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
         /// is returned.
         /// </para>
@@ -14176,6 +14840,172 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserSecurityProfiles">REST API Reference for UpdateUserSecurityProfiles Operation</seealso>
         Task<UpdateUserSecurityProfilesResponse> UpdateUserSecurityProfilesAsync(UpdateUserSecurityProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateViewContent
+
+
+        /// <summary>
+        /// Updates the view content of the given view identifier in the specified Amazon Connect
+        /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// It performs content validation if <code>Status</code> is set to <code>SAVED</code>
+        /// and performs full content validation if <code>Status</code> is <code>PUBLISHED</code>.
+        /// Note that the <code>$SAVED</code> alias' content will always be updated, but the <code>$LATEST</code>
+        /// alias' content will only be updated if <code>Status</code> is <code>PUBLISHED</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateViewContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">REST API Reference for UpdateViewContent Operation</seealso>
+        UpdateViewContentResponse UpdateViewContent(UpdateViewContentRequest request);
+
+
+
+        /// <summary>
+        /// Updates the view content of the given view identifier in the specified Amazon Connect
+        /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// It performs content validation if <code>Status</code> is set to <code>SAVED</code>
+        /// and performs full content validation if <code>Status</code> is <code>PUBLISHED</code>.
+        /// Note that the <code>$SAVED</code> alias' content will always be updated, but the <code>$LATEST</code>
+        /// alias' content will only be updated if <code>Status</code> is <code>PUBLISHED</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateViewContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">REST API Reference for UpdateViewContent Operation</seealso>
+        Task<UpdateViewContentResponse> UpdateViewContentAsync(UpdateViewContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateViewMetadata
+
+
+        /// <summary>
+        /// Updates the view metadata. Note that either <code>Name</code> or <code>Description</code>
+        /// must be provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateViewMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">REST API Reference for UpdateViewMetadata Operation</seealso>
+        UpdateViewMetadataResponse UpdateViewMetadata(UpdateViewMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Updates the view metadata. Note that either <code>Name</code> or <code>Description</code>
+        /// must be provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateViewMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">REST API Reference for UpdateViewMetadata Operation</seealso>
+        Task<UpdateViewMetadataResponse> UpdateViewMetadataAsync(UpdateViewMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
