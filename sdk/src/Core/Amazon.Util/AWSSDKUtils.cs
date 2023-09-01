@@ -1081,11 +1081,30 @@ namespace Amazon.Util
                 }
                 else
                 {
-                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    encoded.Append('%');
+
+                    // Break apart the byte into two four-bit components and
+                    // then convert each into their hexadecimal equivalent.
+                    byte b = (byte)symbol;
+                    int hinibble = b >> 4;
+                    int lonibble = b & 0xF;
+                    encoded.Append(ToUpperHexit(hinibble));
+                    encoded.Append(ToUpperHexit(lonibble));
                 }
             }
 
             return encoded.ToString();
+        }
+
+        private static char ToUpperHexit(int value)
+        {
+            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
+            if (value <= 9)
+            {
+                return (char)(value + '0');
+            }
+            // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
+            return (char)(value - 10 + 'A');
         }
                 
         internal static string UrlEncodeSlash(string data)
