@@ -32,6 +32,14 @@ namespace Amazon.IdentityStore.Model
     /// Container for the parameters to the DescribeGroup operation.
     /// Retrieves the group metadata and attributes from <code>GroupId</code> in an identity
     /// store.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you have administrator access to a member account, you can use this API from the
+    /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+    /// accounts</a> in the <i>Organizations User Guide</i>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeGroupRequest : AmazonIdentityStoreRequest
     {

@@ -393,13 +393,13 @@
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsForMemberRequest.IdentityStoreId</property>
@@ -416,13 +416,13 @@
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsForMemberRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsForMemberResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupsRequest.IdentityStoreId</property>
@@ -439,13 +439,13 @@
     <property>Amazon.IdentityStore.Model.ListGroupsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListUsersRequest.IdentityStoreId</property>
@@ -462,13 +462,13 @@
     <property>Amazon.IdentityStore.Model.ListUsersRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListUsersResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[-a-zA-Z0-9+=/:]*</pattern>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.UpdateGroupRequest.GroupId</property>
