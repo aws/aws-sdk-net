@@ -1,3 +1,16 @@
+### 3.7.637.0 (2023-09-01 18:23 UTC)
+* ChimeSDKMediaPipelines (3.7.203.0)
+	* This release adds support for the Voice Analytics feature for customer-owned KVS streams as part of the Amazon Chime SDK call analytics.
+* Connect (3.7.204.0)
+	* Amazon Connect adds the ability to read, create, update, delete, and list view resources, and adds the ability to read, create, delete, and list view versions.
+* IdentityStore (3.7.201.0)
+	* New Identity Store content for China Region launch
+* Neptunedata (3.7.200.4)
+	* Removed the descriptive text in the introduction.
+* Core 3.7.202.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.636.0 (2023-09-01 01:49 UTC)
 * S3 (3.7.203.6)
 	* Updated to use new Core, version 3.7.202.0
