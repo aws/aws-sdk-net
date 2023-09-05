@@ -319,7 +319,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string DataInputConfig
         {
             get { return this._dataInputConfig; }

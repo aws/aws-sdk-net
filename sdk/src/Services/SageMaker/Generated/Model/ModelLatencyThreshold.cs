@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Percentile. 
         /// <para>
-        /// The model latency percentile threshold. For custom load tests, specify the value as
-        /// <code>P95</code>.
+        /// The model latency percentile threshold. Acceptable values are <code>P95</code> and
+        /// <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
