@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateCustomLineItemChargeDetails Marshaller
+    /// LineItemFilter Marshaller
     /// </summary>
-    public class UpdateCustomLineItemChargeDetailsMarshaller : IRequestMarshaller<UpdateCustomLineItemChargeDetails, JsonMarshallerContext> 
+    public class LineItemFilterMarshaller : IRequestMarshaller<LineItemFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,44 +43,29 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateCustomLineItemChargeDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(LineItemFilter requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFlat())
+            if(requestObject.IsSetAttribute())
             {
-                context.Writer.WritePropertyName("Flat");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = UpdateCustomLineItemFlatChargeDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Flat, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Attribute");
+                context.Writer.Write(requestObject.Attribute);
             }
 
-            if(requestObject.IsSetLineItemFilters())
+            if(requestObject.IsSetMatchOption())
             {
-                context.Writer.WritePropertyName("LineItemFilters");
+                context.Writer.WritePropertyName("MatchOption");
+                context.Writer.Write(requestObject.MatchOption);
+            }
+
+            if(requestObject.IsSetValues())
+            {
+                context.Writer.WritePropertyName("Values");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectLineItemFiltersListValue in requestObject.LineItemFilters)
+                foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LineItemFilterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectLineItemFiltersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectValuesListValue);
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetPercentage())
-            {
-                context.Writer.WritePropertyName("Percentage");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = UpdateCustomLineItemPercentageChargeDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Percentage, context);
-
-                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -88,7 +73,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateCustomLineItemChargeDetailsMarshaller Instance = new UpdateCustomLineItemChargeDetailsMarshaller();
+        public readonly static LineItemFilterMarshaller Instance = new LineItemFilterMarshaller();
 
     }
 }

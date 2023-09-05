@@ -34,6 +34,7 @@ namespace Amazon.BillingConductor.Model
     public partial class ListCustomLineItemChargeDetails
     {
         private ListCustomLineItemFlatChargeDetails _flat;
+        private List<LineItemFilter> _lineItemFilters = new List<LineItemFilter>();
         private ListCustomLineItemPercentageChargeDetails _percentage;
         private CustomLineItemType _type;
 
@@ -54,6 +55,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetFlat()
         {
             return this._flat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LineItemFilters. 
+        /// <para>
+        /// A representation of the line item filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<LineItemFilter> LineItemFilters
+        {
+            get { return this._lineItemFilters; }
+            set { this._lineItemFilters = value; }
+        }
+
+        // Check to see if LineItemFilters property is set
+        internal bool IsSetLineItemFilters()
+        {
+            return this._lineItemFilters != null && this._lineItemFilters.Count > 0; 
         }
 
         /// <summary>

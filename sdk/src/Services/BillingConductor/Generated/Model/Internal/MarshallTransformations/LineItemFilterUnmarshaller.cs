@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListCustomLineItemChargeDetails Object
+    /// Response Unmarshaller for LineItemFilter Object
     /// </summary>  
-    public class ListCustomLineItemChargeDetailsUnmarshaller : IUnmarshaller<ListCustomLineItemChargeDetails, XmlUnmarshallerContext>, IUnmarshaller<ListCustomLineItemChargeDetails, JsonUnmarshallerContext>
+    public class LineItemFilterUnmarshaller : IUnmarshaller<LineItemFilter, XmlUnmarshallerContext>, IUnmarshaller<LineItemFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ListCustomLineItemChargeDetails IUnmarshaller<ListCustomLineItemChargeDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LineItemFilter IUnmarshaller<LineItemFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListCustomLineItemChargeDetails Unmarshall(JsonUnmarshallerContext context)
+        public LineItemFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListCustomLineItemChargeDetails unmarshalledObject = new ListCustomLineItemChargeDetails();
+            LineItemFilter unmarshalledObject = new LineItemFilter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Flat", targetDepth))
-                {
-                    var unmarshaller = ListCustomLineItemFlatChargeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Flat = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LineItemFilters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LineItemFilter, LineItemFilterUnmarshaller>(LineItemFilterUnmarshaller.Instance);
-                    unmarshalledObject.LineItemFilters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Percentage", targetDepth))
-                {
-                    var unmarshaller = ListCustomLineItemPercentageChargeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Percentage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Attribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Attribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MatchOption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MatchOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Values", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListCustomLineItemChargeDetailsUnmarshaller _instance = new ListCustomLineItemChargeDetailsUnmarshaller();        
+        private static LineItemFilterUnmarshaller _instance = new LineItemFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListCustomLineItemChargeDetailsUnmarshaller Instance
+        public static LineItemFilterUnmarshaller Instance
         {
             get
             {
