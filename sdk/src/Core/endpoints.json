@@ -9825,7 +9825,7 @@
               "hostname": "internetmonitor.ca-central-1.api.aws",
               "variants": [
                 {
-                  "hostname": "internetmonitor-fips.ca-central-1.api.aws",
+                  "hostname": "internetmonitor-fips.ca-central-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -9872,7 +9872,7 @@
               "hostname": "internetmonitor.us-east-1.api.aws",
               "variants": [
                 {
-                  "hostname": "internetmonitor-fips.us-east-1.api.aws",
+                  "hostname": "internetmonitor-fips.us-east-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -9883,7 +9883,7 @@
               "hostname": "internetmonitor.us-east-2.api.aws",
               "variants": [
                 {
-                  "hostname": "internetmonitor-fips.us-east-2.api.aws",
+                  "hostname": "internetmonitor-fips.us-east-2.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -9894,7 +9894,7 @@
               "hostname": "internetmonitor.us-west-1.api.aws",
               "variants": [
                 {
-                  "hostname": "internetmonitor-fips.us-west-1.api.aws",
+                  "hostname": "internetmonitor-fips.us-west-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -9905,7 +9905,7 @@
               "hostname": "internetmonitor.us-west-2.api.aws",
               "variants": [
                 {
-                  "hostname": "internetmonitor-fips.us-west-2.api.aws",
+                  "hostname": "internetmonitor-fips.us-west-2.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -13956,6 +13956,12 @@
                 "region": "eu-west-3"
               },
               "hostname": "oidc.eu-west-3.amazonaws.com"
+            },
+            "il-central-1": {
+              "credentialScope": {
+                "region": "il-central-1"
+              },
+              "hostname": "oidc.il-central-1.amazonaws.com"
             },
             "me-south-1": {
               "credentialScope": {
@@ -20483,6 +20489,7 @@
               "deprecated": true,
               "hostname": "transfer-fips.us-west-2.amazonaws.com"
             },
+            "il-central-1": {},
             "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
