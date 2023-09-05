@@ -192,6 +192,10 @@ namespace Amazon.Cloud9.Model
         /// <para>
         /// Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>SSM paths</b> 
@@ -209,6 +213,11 @@ namespace Amazon.Cloud9.Model
         ///  </li> <li> 
         /// <para>
         /// Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
         /// 
         /// </para>
         ///  </li> </ul>
