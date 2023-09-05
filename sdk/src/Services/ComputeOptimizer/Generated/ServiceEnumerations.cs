@@ -829,6 +829,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentConfigurationMinSize = new ExportableAutoScalingGroupField("CurrentConfigurationMinSize");
         /// <summary>
+        /// Constant CurrentInstanceGpuInfo for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentInstanceGpuInfo = new ExportableAutoScalingGroupField("CurrentInstanceGpuInfo");
+        /// <summary>
         /// Constant CurrentMemory for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentMemory = new ExportableAutoScalingGroupField("CurrentMemory");
@@ -913,6 +917,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableAutoScalingGroupField("RecommendationOptionsEstimatedMonthlySavingsValue");
         /// <summary>
+        /// Constant RecommendationOptionsInstanceGpuInfo for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsInstanceGpuInfo = new ExportableAutoScalingGroupField("RecommendationOptionsInstanceGpuInfo");
+        /// <summary>
         /// Constant RecommendationOptionsMemory for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsMemory = new ExportableAutoScalingGroupField("RecommendationOptionsMemory");
@@ -936,6 +944,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
@@ -996,6 +1012,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuMemoryPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsGpuMemoryPercentageMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsGpuPercentageMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
@@ -1201,6 +1225,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField AccountId = new ExportableInstanceField("AccountId");
         /// <summary>
+        /// Constant CurrentInstanceGpuInfo for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField CurrentInstanceGpuInfo = new ExportableInstanceField("CurrentInstanceGpuInfo");
+        /// <summary>
         /// Constant CurrentInstanceType for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField CurrentInstanceType = new ExportableInstanceField("CurrentInstanceType");
@@ -1269,6 +1297,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField FindingReasonCodes = new ExportableInstanceField("FindingReasonCodes");
         /// <summary>
+        /// Constant Idle for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField Idle = new ExportableInstanceField("Idle");
+        /// <summary>
         /// Constant InferredWorkloadTypes for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField InferredWorkloadTypes = new ExportableInstanceField("InferredWorkloadTypes");
@@ -1301,6 +1333,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableInstanceField("RecommendationOptionsEstimatedMonthlySavingsValue");
         /// <summary>
+        /// Constant RecommendationOptionsInstanceGpuInfo for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsInstanceGpuInfo = new ExportableInstanceField("RecommendationOptionsInstanceGpuInfo");
+        /// <summary>
         /// Constant RecommendationOptionsInstanceType for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsInstanceType = new ExportableInstanceField("RecommendationOptionsInstanceType");
@@ -1332,6 +1368,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
@@ -1404,6 +1448,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuMemoryPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsGpuMemoryPercentageMaximum = new ExportableInstanceField("UtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsGpuPercentageMaximum = new ExportableInstanceField("UtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
@@ -1746,6 +1798,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant AccountId for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField AccountId = new ExportableVolumeField("AccountId");
+        /// <summary>
+        /// Constant CurrentConfigurationRootVolume for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField CurrentConfigurationRootVolume = new ExportableVolumeField("CurrentConfigurationRootVolume");
         /// <summary>
         /// Constant CurrentConfigurationVolumeBaselineIOPS for ExportableVolumeField
         /// </summary>
@@ -2379,6 +2435,56 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceIdle.
+    /// </summary>
+    public class InstanceIdle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant False for InstanceIdle
+        /// </summary>
+        public static readonly InstanceIdle False = new InstanceIdle("False");
+        /// <summary>
+        /// Constant True for InstanceIdle
+        /// </summary>
+        public static readonly InstanceIdle True = new InstanceIdle("True");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceIdle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceIdle FindValue(string value)
+        {
+            return FindValue<InstanceIdle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceIdle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceRecommendationFindingReasonCode.
     /// </summary>
     public class InstanceRecommendationFindingReasonCode : ConstantClass
@@ -2424,6 +2530,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant EBSThroughputUnderprovisioned for InstanceRecommendationFindingReasonCode
         /// </summary>
         public static readonly InstanceRecommendationFindingReasonCode EBSThroughputUnderprovisioned = new InstanceRecommendationFindingReasonCode("EBSThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant GPUMemoryOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUMemoryOverprovisioned = new InstanceRecommendationFindingReasonCode("GPUMemoryOverprovisioned");
+        /// <summary>
+        /// Constant GPUMemoryUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUMemoryUnderprovisioned = new InstanceRecommendationFindingReasonCode("GPUMemoryUnderprovisioned");
+        /// <summary>
+        /// Constant GPUOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUOverprovisioned = new InstanceRecommendationFindingReasonCode("GPUOverprovisioned");
+        /// <summary>
+        /// Constant GPUUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUUnderprovisioned = new InstanceRecommendationFindingReasonCode("GPUUnderprovisioned");
         /// <summary>
         /// Constant MemoryOverprovisioned for InstanceRecommendationFindingReasonCode
         /// </summary>
@@ -3382,6 +3504,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant EBS_WRITE_OPS_PER_SECOND for MetricName
         /// </summary>
         public static readonly MetricName EBS_WRITE_OPS_PER_SECOND = new MetricName("EBS_WRITE_OPS_PER_SECOND");
+        /// <summary>
+        /// Constant GPU_MEMORY_PERCENTAGE for MetricName
+        /// </summary>
+        public static readonly MetricName GPU_MEMORY_PERCENTAGE = new MetricName("GPU_MEMORY_PERCENTAGE");
+        /// <summary>
+        /// Constant GPU_PERCENTAGE for MetricName
+        /// </summary>
+        public static readonly MetricName GPU_PERCENTAGE = new MetricName("GPU_PERCENTAGE");
         /// <summary>
         /// Constant Memory for MetricName
         /// </summary>

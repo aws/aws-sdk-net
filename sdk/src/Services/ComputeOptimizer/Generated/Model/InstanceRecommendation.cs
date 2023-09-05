@@ -34,12 +34,14 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class InstanceRecommendation
     {
         private string _accountId;
+        private GpuInfo _currentInstanceGpuInfo;
         private string _currentInstanceType;
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private ExternalMetricStatus _externalMetricStatus;
         private Finding _finding;
         private List<string> _findingReasonCodes = new List<string>();
+        private InstanceIdle _idle;
         private List<string> _inferredWorkloadTypes = new List<string>();
         private string _instanceArn;
         private string _instanceName;
@@ -67,6 +69,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentInstanceGpuInfo. 
+        /// <para>
+        ///  Describes the GPU accelerator settings for the current instance type. 
+        /// </para>
+        /// </summary>
+        public GpuInfo CurrentInstanceGpuInfo
+        {
+            get { return this._currentInstanceGpuInfo; }
+            set { this._currentInstanceGpuInfo = value; }
+        }
+
+        // Check to see if CurrentInstanceGpuInfo property is set
+        internal bool IsSetCurrentInstanceGpuInfo()
+        {
+            return this._currentInstanceGpuInfo != null;
         }
 
         /// <summary>
@@ -351,6 +371,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetFindingReasonCodes()
         {
             return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Idle. 
+        /// <para>
+        ///  Describes if an Amazon EC2 instance is idle. 
+        /// </para>
+        /// </summary>
+        public InstanceIdle Idle
+        {
+            get { return this._idle; }
+            set { this._idle = value; }
+        }
+
+        // Check to see if Idle property is set
+        internal bool IsSetIdle()
+        {
+            return this._idle != null;
         }
 
         /// <summary>

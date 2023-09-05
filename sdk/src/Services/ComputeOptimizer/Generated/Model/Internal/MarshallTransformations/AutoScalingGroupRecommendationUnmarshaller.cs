@@ -88,6 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("currentInstanceGpuInfo", targetDepth))
+                {
+                    var unmarshaller = GpuInfoUnmarshaller.Instance;
+                    unmarshalledObject.CurrentInstanceGpuInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("currentPerformanceRisk", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

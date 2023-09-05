@@ -81,7 +81,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  An array of objects that describes the estimated monthly saving amounts for the instances
         /// running on the specified <code>inferredWorkloadTypes</code>. The array contains the
-        /// top three savings opportunites for the instances running inferred workload types.
+        /// top five savings opportunites for the instances that run inferred workload types.
         /// 
         /// </para>
         /// </summary>

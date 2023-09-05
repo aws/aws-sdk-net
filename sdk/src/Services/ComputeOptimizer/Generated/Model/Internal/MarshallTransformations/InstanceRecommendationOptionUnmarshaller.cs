@@ -64,6 +64,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("instanceGpuInfo", targetDepth))
+                {
+                    var unmarshaller = GpuInfoUnmarshaller.Instance;
+                    unmarshalledObject.InstanceGpuInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

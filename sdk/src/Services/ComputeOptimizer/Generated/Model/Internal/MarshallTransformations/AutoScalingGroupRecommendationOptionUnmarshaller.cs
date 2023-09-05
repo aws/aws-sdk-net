@@ -70,6 +70,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceGpuInfo", targetDepth))
+                {
+                    var unmarshaller = GpuInfoUnmarshaller.Instance;
+                    unmarshalledObject.InstanceGpuInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("migrationEffort", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -70,6 +70,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("currentInstanceGpuInfo", targetDepth))
+                {
+                    var unmarshaller = GpuInfoUnmarshaller.Instance;
+                    unmarshalledObject.CurrentInstanceGpuInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("currentInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("idle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Idle = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inferredWorkloadTypes", targetDepth))
