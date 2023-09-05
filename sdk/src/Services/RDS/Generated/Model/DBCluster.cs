@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private DateTime? _automaticRestartTime;
         private bool? _autoMinorVersionUpgrade;
         private List<string> _availabilityZones = new List<string>();
+        private string _awsBackupRecoveryPointArn;
         private long? _backtrackConsumedChangeRecords;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
@@ -311,6 +312,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupRecoveryPointArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
+        /// </para>
+        /// </summary>
+        public string AwsBackupRecoveryPointArn
+        {
+            get { return this._awsBackupRecoveryPointArn; }
+            set { this._awsBackupRecoveryPointArn = value; }
+        }
+
+        // Check to see if AwsBackupRecoveryPointArn property is set
+        internal bool IsSetAwsBackupRecoveryPointArn()
+        {
+            return this._awsBackupRecoveryPointArn != null;
         }
 
         /// <summary>
