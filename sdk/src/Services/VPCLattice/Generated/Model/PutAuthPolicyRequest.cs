@@ -30,8 +30,7 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAuthPolicy operation.
-    /// Creates or updates the auth policy. The policy string in JSON must not contain newlines
-    /// or blank lines.
+    /// Creates or updates the auth policy.
     /// </summary>
     public partial class PutAuthPolicyRequest : AmazonVPCLatticeRequest
     {
@@ -41,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The auth policy. The policy string in JSON must not contain newlines or blank lines.
+        /// The auth policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]

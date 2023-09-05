@@ -232,7 +232,7 @@
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkRequest.Name</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkResponse.Arn</property>
@@ -244,13 +244,13 @@
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkResponse.Id</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkResponse.Name</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkServiceAssociationRequest.ClientToken</property>
@@ -543,7 +543,6 @@
     <property>Amazon.VPCLattice.Model.GetAuthPolicyResponse.Policy</property>
     <min>0</min>
     <max>10000</max>
-    <pattern>^.*\S.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetListenerRequest.ListenerIdentifier</property>
@@ -696,13 +695,13 @@
     <property>Amazon.VPCLattice.Model.GetServiceNetworkResponse.Id</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkResponse.Name</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkServiceAssociationRequest.ServiceNetworkServiceAssociationIdentifier</property>
@@ -761,13 +760,13 @@
     <property>Amazon.VPCLattice.Model.GetServiceNetworkServiceAssociationResponse.ServiceNetworkId</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkServiceAssociationResponse.ServiceNetworkName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkVpcAssociationRequest.ServiceNetworkVpcAssociationIdentifier</property>
@@ -803,13 +802,13 @@
     <property>Amazon.VPCLattice.Model.GetServiceNetworkVpcAssociationResponse.ServiceNetworkId</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkVpcAssociationResponse.ServiceNetworkName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkVpcAssociationResponse.VpcId</property>
@@ -1046,7 +1045,6 @@
     <property>Amazon.VPCLattice.Model.PutAuthPolicyRequest.Policy</property>
     <min>0</min>
     <max>10000</max>
-    <pattern>^.*\S.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutAuthPolicyRequest.ResourceIdentifier</property>
@@ -1058,7 +1056,6 @@
     <property>Amazon.VPCLattice.Model.PutAuthPolicyResponse.Policy</property>
     <min>0</min>
     <max>10000</max>
-    <pattern>^.*\S.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutResourcePolicyRequest.Policy</property>
@@ -1282,13 +1279,13 @@
     <property>Amazon.VPCLattice.Model.UpdateServiceNetworkResponse.Id</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.UpdateServiceNetworkResponse.Name</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.UpdateServiceNetworkVpcAssociationRequest.ServiceNetworkVpcAssociationIdentifier</property>
@@ -1584,13 +1581,13 @@
     <property>Amazon.VPCLattice.Model.ServiceNetworkServiceAssociationSummary.ServiceNetworkId</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkServiceAssociationSummary.ServiceNetworkName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkSummary.Arn</property>
@@ -1602,13 +1599,13 @@
     <property>Amazon.VPCLattice.Model.ServiceNetworkSummary.Id</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkSummary.Name</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkVpcAssociationSummary.Arn</property>
@@ -1638,13 +1635,13 @@
     <property>Amazon.VPCLattice.Model.ServiceNetworkVpcAssociationSummary.ServiceNetworkId</property>
     <min>32</min>
     <max>32</max>
-    <pattern>^servicenetwork-[0-9a-z]{17}$</pattern>
+    <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkVpcAssociationSummary.ServiceNetworkName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+    <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkVpcAssociationSummary.VpcId</property>

@@ -37,6 +37,7 @@ namespace Amazon.VPCLattice.Model
         private DateTime? _createdAt;
         private string _id;
         private IpAddressType _ipAddressType;
+        private LambdaEventStructureVersion _lambdaEventStructureVersion;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private int? _port;
@@ -120,6 +121,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaEventStructureVersion. 
+        /// <para>
+        /// Lambda event structure version
+        /// </para>
+        /// </summary>
+        public LambdaEventStructureVersion LambdaEventStructureVersion
+        {
+            get { return this._lambdaEventStructureVersion; }
+            set { this._lambdaEventStructureVersion = value; }
+        }
+
+        // Check to see if LambdaEventStructureVersion property is set
+        internal bool IsSetLambdaEventStructureVersion()
+        {
+            return this._lambdaEventStructureVersion != null;
         }
 
         /// <summary>
