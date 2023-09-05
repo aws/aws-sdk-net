@@ -1,3 +1,26 @@
+### 3.7.638.0 (2023-09-05 18:28 UTC)
+* BillingConductor (3.7.202.0)
+	* This release adds support for line item filtering in for the custom line item resource.
+* Cloud9 (3.7.200.34)
+	* Added support for Ubuntu 22.04 that was not picked up in a previous Trebuchet request. Doc-only update.
+* ComputeOptimizer (3.7.202.0)
+	* This release adds support to provide recommendations for G4dn and P3 instances that use NVIDIA GPUs.
+* EC2 (3.7.211.0)
+	* Introducing Amazon EC2 C7gd, M7gd, and R7gd Instances with up to 3.8 TB of local NVMe-based SSD block-level storage. These instances are powered by AWS Graviton3 processors, delivering up to 25% better performance over Graviton2-based instances.
+* ECS (3.7.201.3)
+	* Documentation only update for Amazon ECS.
+* EventBridge (3.7.201.0)
+	* Improve Endpoint Ruleset test coverage.
+* RDS (3.7.208.0)
+	* Add support for feature integration with AWS Backup.
+* SageMaker (3.7.211.0)
+	* SageMaker Neo now supports data input shape derivation for Pytorch 2.0  and XGBoost compilation job for cloud instance targets. You can skip DataInputConfig field during compilation job creation. You can also access derived information from model in DescribeCompilationJob response.
+* VPCLattice (3.7.201.0)
+	* This release adds Lambda event structure version config support for LAMBDA target groups. It also adds newline support for auth policies.
+* Core 3.7.202.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.637.0 (2023-09-01 18:23 UTC)
 * ChimeSDKMediaPipelines (3.7.203.0)
 	* This release adds support for the Voice Analytics feature for customer-owned KVS streams as part of the Amazon Chime SDK call analytics.
