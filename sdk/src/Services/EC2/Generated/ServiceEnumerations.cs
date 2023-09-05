@@ -7943,6 +7943,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7g8xlarge = new InstanceType("c7g.8xlarge");
         /// <summary>
+        /// Constant C7gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gd12xlarge = new InstanceType("c7gd.12xlarge");
+        /// <summary>
+        /// Constant C7gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gd16xlarge = new InstanceType("c7gd.16xlarge");
+        /// <summary>
+        /// Constant C7gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gd2xlarge = new InstanceType("c7gd.2xlarge");
+        /// <summary>
+        /// Constant C7gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gd4xlarge = new InstanceType("c7gd.4xlarge");
+        /// <summary>
+        /// Constant C7gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gd8xlarge = new InstanceType("c7gd.8xlarge");
+        /// <summary>
+        /// Constant C7gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gdLarge = new InstanceType("c7gd.large");
+        /// <summary>
+        /// Constant C7gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gdMedium = new InstanceType("c7gd.medium");
+        /// <summary>
+        /// Constant C7gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gdXlarge = new InstanceType("c7gd.xlarge");
+        /// <summary>
         /// Constant C7gLarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gLarge = new InstanceType("c7g.large");
@@ -9127,6 +9159,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M7g8xlarge = new InstanceType("m7g.8xlarge");
         /// <summary>
+        /// Constant M7gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gd12xlarge = new InstanceType("m7gd.12xlarge");
+        /// <summary>
+        /// Constant M7gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gd16xlarge = new InstanceType("m7gd.16xlarge");
+        /// <summary>
+        /// Constant M7gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gd2xlarge = new InstanceType("m7gd.2xlarge");
+        /// <summary>
+        /// Constant M7gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gd4xlarge = new InstanceType("m7gd.4xlarge");
+        /// <summary>
+        /// Constant M7gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gd8xlarge = new InstanceType("m7gd.8xlarge");
+        /// <summary>
+        /// Constant M7gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gdLarge = new InstanceType("m7gd.large");
+        /// <summary>
+        /// Constant M7gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gdMedium = new InstanceType("m7gd.medium");
+        /// <summary>
+        /// Constant M7gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gdXlarge = new InstanceType("m7gd.xlarge");
+        /// <summary>
         /// Constant M7gLarge for InstanceType
         /// </summary>
         public static readonly InstanceType M7gLarge = new InstanceType("m7g.large");
@@ -9830,6 +9894,38 @@ namespace Amazon.EC2
         /// Constant R7g8xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R7g8xlarge = new InstanceType("r7g.8xlarge");
+        /// <summary>
+        /// Constant R7gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gd12xlarge = new InstanceType("r7gd.12xlarge");
+        /// <summary>
+        /// Constant R7gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gd16xlarge = new InstanceType("r7gd.16xlarge");
+        /// <summary>
+        /// Constant R7gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gd2xlarge = new InstanceType("r7gd.2xlarge");
+        /// <summary>
+        /// Constant R7gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gd4xlarge = new InstanceType("r7gd.4xlarge");
+        /// <summary>
+        /// Constant R7gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gd8xlarge = new InstanceType("r7gd.8xlarge");
+        /// <summary>
+        /// Constant R7gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gdLarge = new InstanceType("r7gd.large");
+        /// <summary>
+        /// Constant R7gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gdMedium = new InstanceType("r7gd.medium");
+        /// <summary>
+        /// Constant R7gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gdXlarge = new InstanceType("r7gd.xlarge");
         /// <summary>
         /// Constant R7gLarge for InstanceType
         /// </summary>
