@@ -20,6 +20,7 @@
 
 using Amazon.Runtime.Internal.Util;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -128,7 +129,7 @@ namespace Amazon.Util
         {
             const string basePathCharacters = "/:'()!*[]$";
 
-            var sb = new StringBuilder();
+            var sb = new ValueStringBuilder(basePathCharacters.Length * 2);
             foreach (var c in basePathCharacters)
             {
                 var escaped = Uri.EscapeUriString(c.ToString());
@@ -221,13 +222,14 @@ namespace Amazon.Util
          */
         internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
         {
-            StringBuilder data = new StringBuilder("POST\n", 512);
+            var data = new ValueStringBuilder(512);
+            data.Append("POST\n");
             var sortedParameters = parameterCollection.GetSortedParametersList();
-            Uri endpoint = new Uri(serviceUrl);
+            var endpoint = new Uri(serviceUrl);
 
             data.Append(endpoint.Host);
             data.Append("\n");
-            string uri = endpoint.AbsolutePath;
+            var uri = endpoint.AbsolutePath;
             if (uri == null || uri.Length == 0)
             {
                 uri = "/";
@@ -237,17 +239,14 @@ namespace Amazon.Util
             data.Append("\n");
             foreach (KeyValuePair<string, string> pair in sortedParameters)
             {
-                if (pair.Value != null)
-                {
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
-                }
-            }
+                if (pair.Value == null) continue;
 
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
+                data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
+                data.Append("=");
+                data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
+                data.Append("&");
+            }
+            return data.ToString(0, data.Length - 1);
         }
 
         /**
@@ -290,24 +289,24 @@ namespace Amazon.Util
         {
             var sortedParameters = parameterCollection.GetSortedParametersList();
 
-            StringBuilder data = new StringBuilder(512);
+            if (sortedParameters.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            var data = new ValueStringBuilder(512);
             foreach (var kvp in sortedParameters)
             {
                 var key = kvp.Key;
                 var value = kvp.Value;
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
-            }
-            string result = data.ToString();
-            if (result.Length == 0)
-                return string.Empty;
+                if (value == null) continue;
 
-            return result.Remove(result.Length - 1);
+                data.Append(key);
+                data.Append('=');
+                data.Append(AWSSDKUtils.UrlEncode(value, false));
+                data.Append('&');
+            }
+            return data.Length == 0 ? string.Empty : data.ToString(0, data.Length - 1);
         }
 
         /// <summary>
@@ -565,10 +564,10 @@ namespace Amazon.Util
         /// specified list together, with a comma between strings.</returns>
         public static String Join(List<String> strings)
         {
-            StringBuilder result = new StringBuilder();
+            var result = new ValueStringBuilder(512);
 
-            Boolean first = true;
-            foreach (String s in strings)
+            var first = true;
+            foreach (string s in strings)
             {
                 if (!first) result.Append(", ");
 
@@ -695,9 +694,10 @@ namespace Amazon.Util
         /// <returns>String version of the data</returns>
         public static string ToHex(byte[] data, bool lowercase)
         {
-            StringBuilder sb = new StringBuilder();
+            // TODO: Set initial size
+            var sb = new ValueStringBuilder();
 
-            for (int i = 0; i < data.Length; i++)
+            for (var i = 0; i < data.Length; i++)
             {
                 sb.Append(data[i].ToString(lowercase ? "x2" : "X2", CultureInfo.InvariantCulture));
             }
@@ -1066,26 +1066,46 @@ namespace Amazon.Util
         /// </remarks>
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
-            StringBuilder encoded = new StringBuilder(data.Length * 2);
-            string validUrlCharacters;
-            if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
+            ValueStringBuilder encoded = new ValueStringBuilder(data.Length * 2);
+            if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out var validUrlCharacters))
                 validUrlCharacters = ValidUrlCharacters;
 
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
+            string unreservedChars = string.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
 
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
+            var dataAsSpan = data.AsSpan();
+            var length = Encoding.UTF8.GetMaxByteCount(dataAsSpan.Length);
+            const int MaxStackSizeLimit = 256;
+            byte[] pooledArray = null;
+            var bytes = length < MaxStackSizeLimit ?
+                stackalloc byte[MaxStackSizeLimit] :
+                pooledArray = ArrayPool<byte>.Shared.Rent(length);
+            try
             {
-                if (unreservedChars.IndexOf(symbol) != -1)
+                var written = Encoding.UTF8.GetBytes(data.AsSpan(), bytes);
+                var writtenBytes = bytes.Slice(0, written);
+
+                foreach (char symbol in writtenBytes)
                 {
-                    encoded.Append(symbol);
+                    if (unreservedChars.IndexOf(symbol) != -1)
+                    {
+                        encoded.Append(symbol);
+                    }
+                    else
+                    {
+                        encoded.Append("%");
+                        encoded.Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    }
                 }
-                else
+
+                return encoded.ToString();
+            }
+            finally
+            {
+                if (pooledArray != null)
                 {
-                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    ArrayPool<byte>.Shared.Return(pooledArray, clearArray: true);
                 }
             }
-
-            return encoded.ToString();
         }
                 
         internal static string UrlEncodeSlash(string data)
@@ -1106,20 +1126,42 @@ namespace Amazon.Util
         /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
         internal static string EncodeTraceIdHeaderValue(string value)
         {
-            var encoded = new StringBuilder(value.Length * 2);
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(value))
+            var encoded = new ValueStringBuilder(value.Length * 2);
+            
+            var valueAsSpan = value.AsSpan();
+            var length = Encoding.UTF8.GetMaxByteCount(valueAsSpan.Length);
+            const int MaxStackSizeLimit = 256;
+            byte[] pooledArray = null;
+            var bytes = length < MaxStackSizeLimit ?
+                stackalloc byte[MaxStackSizeLimit] :
+                pooledArray = ArrayPool<byte>.Shared.Rent(length);
+            try
             {
-                if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+                var written = Encoding.UTF8.GetBytes(valueAsSpan, bytes);
+                var writtenBytes = bytes.Slice(0, written);
+
+                foreach (char symbol in writtenBytes)
                 {
-                    encoded.Append(symbol);
+                    if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+                    {
+                        encoded.Append(symbol);
+                    }
+                    else
+                    {
+                        encoded.Append("%");
+                        encoded.Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    }
                 }
-                else
+
+                return encoded.ToString();
+            }
+            finally
+            {
+                if (pooledArray != null)
                 {
-                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    ArrayPool<byte>.Shared.Return(pooledArray, clearArray: true);
                 }
             }
-
-            return encoded.ToString();
         }
 
         /// <summary>
@@ -1138,7 +1180,7 @@ namespace Amazon.Util
             }
 
             var index = 0;
-            var sb = new StringBuilder();
+            var sb = new ValueStringBuilder(data.Length * 2);
             var findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
             while (findIndex != -1)
             {
@@ -1151,6 +1193,7 @@ namespace Amazon.Util
             //If encoded slash was not found return the original data
             if(index == 0)
             {
+                sb.Dispose();
                 return UrlEncode(data, path);
             }
 
@@ -1533,7 +1576,7 @@ namespace Amazon.Util
                 return string.Empty;
             }
 
-            var stringBuilder = new StringBuilder();
+            var stringBuilder = new ValueStringBuilder(data.Length * 2);
             var isWhiteSpace = false;
             foreach (var character in data)
             {
