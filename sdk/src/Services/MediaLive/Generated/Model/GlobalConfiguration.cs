@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private GlobalConfigurationInputEndAction _inputEndAction;
         private InputLossBehavior _inputLossBehavior;
         private GlobalConfigurationOutputLockingMode _outputLockingMode;
+        private OutputLockingSettings _outputLockingSettings;
         private GlobalConfigurationOutputTimingSource _outputTimingSource;
         private GlobalConfigurationLowFramerateInputs _supportLowFramerateInputs;
 
@@ -109,6 +110,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetOutputLockingMode()
         {
             return this._outputLockingMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputLockingSettings. Advanced output locking settings
+        /// </summary>
+        public OutputLockingSettings OutputLockingSettings
+        {
+            get { return this._outputLockingSettings; }
+            set { this._outputLockingSettings = value; }
+        }
+
+        // Check to see if OutputLockingSettings property is set
+        internal bool IsSetOutputLockingSettings()
+        {
+            return this._outputLockingSettings != null;
         }
 
         /// <summary>

@@ -74,6 +74,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OutputLockingMode);
             }
 
+            if(requestObject.IsSetOutputLockingSettings())
+            {
+                context.Writer.WritePropertyName("outputLockingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OutputLockingSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutputLockingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOutputTimingSource())
             {
                 context.Writer.WritePropertyName("outputTimingSource");
