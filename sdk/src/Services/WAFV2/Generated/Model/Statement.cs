@@ -519,12 +519,11 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// If you configure WAF to inspect the request body, WAF inspects only the number of
         /// bytes of the body up to the limit for the web ACL. By default, for regional web ACLs,
-        /// this limit is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16
-        /// KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-        /// web ACL <code>AssociationConfig</code>, for additional fees. If you know that the
-        /// request body for your web requests should never exceed the inspection limit, you could
-        /// use a size constraint statement to block requests that have a larger request body
-        /// size.
+        /// this limit is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB
+        /// (16,384 bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+        /// <code>AssociationConfig</code>, for additional fees. If you know that the request
+        /// body for your web requests should never exceed the inspection limit, you could use
+        /// a size constraint statement to block requests that have a larger request body size.
         /// </para>
         ///  
         /// <para>

@@ -95,9 +95,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for
-        /// CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions,
-        /// you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
+        /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
+        /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
+        /// can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
         /// processing fees. 
         /// </para>
         ///  
@@ -206,9 +206,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for
-        /// CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions,
-        /// you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
+        /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
+        /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
+        /// can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
         /// processing fees. 
         /// </para>
         ///  

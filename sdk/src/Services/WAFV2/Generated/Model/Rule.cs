@@ -129,8 +129,14 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule. You can't change the name of a <code>Rule</code> after you create
-        /// it. 
+        /// The name of the rule. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the name of a <code>Rule</code> after you create it and you want the
+        /// rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code>
+        /// settings. WAF doesn't automatically update the metric name when you update the rule
+        /// name. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -279,6 +285,12 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property VisibilityConfig. 
         /// <para>
         /// Defines and enables Amazon CloudWatch metrics and web request sample collection. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the name of a <code>Rule</code> after you create it and you want the
+        /// rule's metric name to reflect the change, update the metric name as well. WAF doesn't
+        /// automatically update the metric name. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

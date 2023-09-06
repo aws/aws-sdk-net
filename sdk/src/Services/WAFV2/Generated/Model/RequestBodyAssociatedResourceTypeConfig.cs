@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Customizes the maximum size of the request body that your protected CloudFront distributions
-    /// forward to WAF for inspection. The default size is 16 KB (16,384 kilobytes). 
+    /// forward to WAF for inspection. The default size is 16 KB (16,384 bytes). 
     /// 
     ///  <note> 
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>16 KB (16,384 kilobytes)</code> 
+        /// Default: <code>16 KB (16,384 bytes)</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
