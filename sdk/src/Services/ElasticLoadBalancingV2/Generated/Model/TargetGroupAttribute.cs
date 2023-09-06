@@ -180,7 +180,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
         /// the load balancer terminates connections at the end of the deregistration timeout.
-        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups
+        /// the default is <code>true</code>. Otherwise, the default is <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -195,6 +196,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
         /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is
         /// <code>false</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates
+        /// whether the load balancer terminates connections to unhealthy targets. The value is
+        /// <code>true</code> or <code>false</code>. The default is <code>true</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
