@@ -46,6 +46,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// A DynamoDBEntry that represents a scalar DynamoDB type
     /// </summary>
+#if NET6_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class Primitive : DynamoDBEntry, IEquatable<Primitive>
     {
         #region Private members
