@@ -38,6 +38,9 @@ namespace Amazon.CognitoSync.Internal
     /// the service client is using the CognitoAWSCredentials credentials object it makes sure that all
     /// CognitoSync calls have the latest identity id and identity pool id.
     /// </summary>
+#if NET6_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Amazon CognitoSync has not been updated to support Native AOT compilations.")]
+#endif
     public class CognitoCredentialsRetriever : CredentialsRetriever
     {
         /// <summary>
@@ -96,11 +99,17 @@ namespace Amazon.CognitoSync.Internal
         /// A cache of objects that store the reflection objects. This is done so that reflection is only used once in order to 
         /// set the fields on the request.
         /// </summary>
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("CognitoSync has not been updated to support Native AOT compilations.")]
+#endif
         private static class CSRequestCache
         {
             /// <summary>
             /// This class holds on to the reflection objects to invoke the setters for IdentityId and IdentityPoolId for the given type.
             /// </summary>
+#if NET6_0_OR_GREATER
+            [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("CognitoSync has not been updated to support Native AOT compilations.")]
+#endif
             private class CSRequest
             {
                 private Type requestType;

@@ -71,6 +71,9 @@ namespace Amazon.DynamoDBv2
     /// A collection of converters capable of converting between
     /// .NET and DynamoDB objects.
     /// </summary>
+#if NET6_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class DynamoDBEntryConversion
     {
         #region Static members
@@ -406,7 +409,12 @@ namespace Amazon.DynamoDBv2
         {
             ConverterCache.AddConverter(converter, this);
         }
+
+#if NET6_0_OR_GREATER        
+        internal void AddConverter([System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)] Type type)
+#else
         internal void AddConverter(Type type)
+#endif
         {
             var converter = Activator.CreateInstance(type) as Converter;
             AddConverter(converter);
@@ -447,7 +455,7 @@ namespace Amazon.DynamoDBv2
             }
         }
 
-        #endregion
+#endregion
     }
 
     internal abstract class Converter

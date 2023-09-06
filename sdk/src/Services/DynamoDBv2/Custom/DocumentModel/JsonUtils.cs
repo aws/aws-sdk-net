@@ -28,6 +28,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Utility methods to handle conversion from/to JSON
     /// </summary>
+#if NET6_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif    
     internal static class JsonUtils
     {
         /// <summary>
