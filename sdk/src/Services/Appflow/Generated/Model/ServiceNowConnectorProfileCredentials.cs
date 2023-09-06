@@ -33,8 +33,27 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ServiceNowConnectorProfileCredentials
     {
+        private OAuth2Credentials _oAuth2Credentials;
         private string _password;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property OAuth2Credentials. 
+        /// <para>
+        ///  The OAuth 2.0 credentials required to authenticate the user. 
+        /// </para>
+        /// </summary>
+        public OAuth2Credentials OAuth2Credentials
+        {
+            get { return this._oAuth2Credentials; }
+            set { this._oAuth2Credentials = value; }
+        }
+
+        // Check to see if OAuth2Credentials property is set
+        internal bool IsSetOAuth2Credentials()
+        {
+            return this._oAuth2Credentials != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Password. 
@@ -42,7 +61,7 @@ namespace Amazon.Appflow.Model
         ///  The password that corresponds to the user name. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=512)]
+        [AWSProperty(Sensitive=true, Max=512)]
         public string Password
         {
             get { return this._password; }
@@ -61,7 +80,7 @@ namespace Amazon.Appflow.Model
         ///  The name of the user. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Max=512)]
         public string Username
         {
             get { return this._username; }
