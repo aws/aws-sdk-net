@@ -12611,6 +12611,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly LocationType AvailabilityZoneId = new LocationType("availability-zone-id");
         /// <summary>
+        /// Constant Outpost for LocationType
+        /// </summary>
+        public static readonly LocationType Outpost = new LocationType("outpost");
+        /// <summary>
         /// Constant Region for LocationType
         /// </summary>
         public static readonly LocationType Region = new LocationType("region");
