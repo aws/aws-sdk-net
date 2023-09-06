@@ -298,7 +298,7 @@ namespace AWSSDK.UnitTests
                     RuntimePipeline.InvokeSync(executionContext);
                 });
 
-                Assert.AreEqual("While attempting to retry a request error capacity could not be obtained. The client is configured to fail fast and there is insufficent capacity to attempt the request.", exception.Message);
+                Assert.AreEqual("While attempting to retry a request error capacity could not be obtained. The client is configured to fail fast and there is insufficient capacity to attempt the request.", exception.Message);
 
                 var capacity = MockAdaptiveRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(1, executionContext.RequestContext.Retries);
@@ -338,7 +338,7 @@ namespace AWSSDK.UnitTests
                     RuntimePipeline.InvokeSync(executionContext);
                 });
 
-                Assert.AreEqual("While attempting to retry a request error capacity could not be obtained. There is insufficent capacity to attempt the request after attempting to obtain capacity multiple times.", exception.Message);
+                Assert.AreEqual("While attempting to retry a request error capacity could not be obtained. There is insufficient capacity to attempt the request after attempting to obtain capacity multiple times.", exception.Message);
 
                 var capacity = MockAdaptiveRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
                 Assert.AreEqual(1, executionContext.RequestContext.Retries);
