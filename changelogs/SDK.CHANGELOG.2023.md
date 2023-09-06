@@ -1,3 +1,18 @@
+### 3.7.639.0 (2023-09-06 18:25 UTC)
+* Appflow (3.7.202.0)
+	* Adding OAuth2.0 support for servicenow connector.
+* EC2 (3.7.212.0)
+	* This release adds 'outpost' location type to the DescribeInstanceTypeOfferings API, allowing customers that have been allowlisted for outpost to query their offerings in the API.
+* ElasticLoadBalancingV2 (3.7.201.19)
+	* This release enables default UDP connection termination and disabling unhealthy target connection termination for Network Load Balancers.
+* MediaLive (3.7.203.0)
+	* Adds advanced Output Locking options for Epoch Locking: Custom Epoch and Jam Sync Time
+* WAFV2 (3.7.202.0)
+	* The targeted protection level of the Bot Control managed rule group now provides optional, machine-learning analysis of traffic statistics to detect some bot-related activity. You can enable or disable the machine learning functionality through the API.
+* Core 3.7.202.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.638.0 (2023-09-05 18:28 UTC)
 * BillingConductor (3.7.202.0)
 	* This release adds support for line item filtering in for the custom line item resource.
