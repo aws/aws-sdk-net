@@ -1,3 +1,14 @@
+### 3.7.640.0 (2023-09-07 21:57 UTC)
+* Neptunedata (3.7.201.0)
+	* Minor changes to send unsigned requests to Neptune clusters
+* SecurityHub (3.7.202.14)
+	* Documentation updates for AWS Security Hub
+* SimSpaceWeaver (3.7.201.0)
+	* BucketName and ObjectKey are now required for the S3Location data type. BucketName is now required for the S3Destination data type.
+* Core 3.7.202.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.639.0 (2023-09-06 18:25 UTC)
 * Appflow (3.7.202.0)
 	* Adding OAuth2.0 support for servicenow connector.
