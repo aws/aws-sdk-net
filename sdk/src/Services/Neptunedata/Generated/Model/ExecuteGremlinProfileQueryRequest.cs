@@ -25,7 +25,6 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Neptunedata.Model
 {
@@ -139,13 +138,5 @@ namespace Amazon.Neptunedata.Model
             return this._serializer != null;
         }
 
-        /// <summary>
-        /// Get the signer to use for this request.
-        /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }
     }
 }
