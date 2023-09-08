@@ -38,8 +38,8 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You use release data repository tasks to release have been exported to a linked S3
-    /// bucketed files from your Amazon FSx for Lustre file system.
+    /// You use release data repository tasks to release files that have been exported to
+    /// a linked S3 bucket from your Amazon FSx for Lustre file system.
     /// </para>
     ///  </li> <li> 
     /// <para>
