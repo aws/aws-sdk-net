@@ -1,3 +1,16 @@
+### 3.7.641.0 (2023-09-08 18:22 UTC)
+* FSx (3.7.201.23)
+	* Amazon FSx documentation fixes
+* SageMaker (3.7.212.0)
+	* Autopilot APIs will now support holiday featurization for Timeseries models. The models will now hold holiday metadata and should be able to accommodate holiday effect during inference.
+* SSOAdmin (3.7.201.0)
+	* Content updates to IAM Identity Center API for China Regions.
+* WorkSpaces (3.7.201.0)
+	* A new field "ErrorDetails" will be added to the output of "DescribeWorkspaceImages" API call. This field provides in-depth details about the error occurred during image import process. These details include the possible causes of the errors and troubleshooting information.
+* Core 3.7.202.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.640.0 (2023-09-07 21:57 UTC)
 * Neptunedata (3.7.201.0)
 	* Minor changes to send unsigned requests to Neptune clusters
