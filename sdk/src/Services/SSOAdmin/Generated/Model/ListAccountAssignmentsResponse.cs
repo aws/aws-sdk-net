@@ -39,7 +39,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccountAssignments. 
         /// <para>
-        /// The list of assignments that match the input AWS account and permission set.
+        /// The list of assignments that match the input Amazon Web Services account and permission
+        /// set.
         /// </para>
         /// </summary>
         public List<AccountAssignment> AccountAssignments
@@ -61,7 +62,7 @@ namespace Amazon.SSOAdmin.Model
         /// of previous API calls to make subsequent calls.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

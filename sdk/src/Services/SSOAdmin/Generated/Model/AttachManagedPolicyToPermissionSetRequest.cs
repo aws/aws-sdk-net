@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachManagedPolicyToPermissionSet operation.
-    /// Attaches an AWS managed policy ARN to a permission set.
+    /// Attaches an Amazon Web Services managed policy ARN to a permission set.
     /// 
     ///  <note> 
     /// <para>
@@ -52,7 +52,8 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -71,7 +72,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property ManagedPolicyArn. 
         /// <para>
-        /// The AWS managed policy ARN to be attached to a permission set.
+        /// The Amazon Web Services managed policy ARN to be attached to a permission set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

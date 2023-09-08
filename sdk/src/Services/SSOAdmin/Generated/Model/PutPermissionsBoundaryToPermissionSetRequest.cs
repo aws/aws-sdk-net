@@ -30,8 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPermissionsBoundaryToPermissionSet operation.
-    /// Attaches an AWS managed or customer managed policy to the specified <a>PermissionSet</a>
-    /// as a permissions boundary.
+    /// Attaches an Amazon Web Services managed or customer managed policy to the specified
+    /// <a>PermissionSet</a> as a permissions boundary.
     /// </summary>
     public partial class PutPermissionsBoundaryToPermissionSetRequest : AmazonSSOAdminRequest
     {

@@ -42,8 +42,8 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property CustomerManagedPolicyReference. 
         /// <para>
         /// Specifies the name and path of a customer managed policy. You must have an IAM policy
-        /// that matches the name and path in each AWS account where you want to deploy your permission
-        /// set.
+        /// that matches the name and path in each Amazon Web Services account where you want
+        /// to deploy your permission set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

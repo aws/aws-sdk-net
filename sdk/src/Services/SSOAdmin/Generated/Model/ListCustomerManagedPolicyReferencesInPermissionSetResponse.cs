@@ -62,7 +62,7 @@ namespace Amazon.SSOAdmin.Model
         /// of previous API calls to make subsequent calls.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

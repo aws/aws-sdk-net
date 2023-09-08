@@ -39,7 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The list of AWS <code>AccountIds</code>.
+        /// The list of Amazon Web Services <code>AccountIds</code>.
         /// </para>
         /// </summary>
         public List<string> AccountIds
@@ -61,7 +61,7 @@ namespace Amazon.SSOAdmin.Model
         /// of previous API calls to make subsequent calls.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

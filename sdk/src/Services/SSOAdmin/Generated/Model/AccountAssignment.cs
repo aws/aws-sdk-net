@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// The assignment that indicates a principal's limited access to a specified AWS account
-    /// with a specified permission set.
+    /// The assignment that indicates a principal's limited access to a specified Amazon Web
+    /// Services account with a specified permission set.
     /// 
     ///  <note> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of the AWS account.
+        /// The identifier of the Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -69,7 +69,8 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
         /// The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]

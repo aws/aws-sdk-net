@@ -30,7 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListManagedPoliciesInPermissionSet operation.
-    /// Lists the AWS managed policy that is attached to a specified permission set.
+    /// Lists the Amazon Web Services managed policy that is attached to a specified permission
+    /// set.
     /// </summary>
     public partial class ListManagedPoliciesInPermissionSetRequest : AmazonSSOAdminRequest
     {
@@ -44,7 +45,8 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -86,7 +88,7 @@ namespace Amazon.SSOAdmin.Model
         /// of previous API calls to make subsequent calls.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

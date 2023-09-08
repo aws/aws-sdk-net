@@ -4,43 +4,43 @@
     <property>Amazon.SSOAdmin.Model.AttachCustomerManagedPolicyReferenceToPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AttachCustomerManagedPolicyReferenceToPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AttachManagedPolicyToPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AttachManagedPolicyToPermissionSetRequest.ManagedPolicyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AttachManagedPolicyToPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreateAccountAssignmentRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreateAccountAssignmentRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreateAccountAssignmentRequest.PrincipalId</property>
@@ -52,37 +52,37 @@
     <property>Amazon.SSOAdmin.Model.CreateAccountAssignmentRequest.TargetId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreateInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreatePermissionSetRequest.Description</property>
     <min>1</min>
     <max>700</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A0-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreatePermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreatePermissionSetRequest.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreatePermissionSetRequest.RelayState</property>
     <min>1</min>
     <max>240</max>
-    <pattern>[a-zA-Z0-9&amp;$@#\\\/%?=~\-_'"|!:,.;*+\[\]\ \(\)\{\}]+</pattern>
+    <pattern>^[a-zA-Z0-9&amp;$@#\\\/%?=~\-_'"|!:,.;*+\[\]\ \(\)\{\}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreatePermissionSetRequest.SessionDuration</property>
@@ -94,13 +94,13 @@
     <property>Amazon.SSOAdmin.Model.DeleteAccountAssignmentRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeleteAccountAssignmentRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeleteAccountAssignmentRequest.PrincipalId</property>
@@ -112,169 +112,169 @@
     <property>Amazon.SSOAdmin.Model.DeleteAccountAssignmentRequest.TargetId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeleteInlinePolicyFromPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeleteInlinePolicyFromPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeleteInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeletePermissionsBoundaryFromPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeletePermissionsBoundaryFromPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeletePermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeletePermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeAccountAssignmentCreationStatusRequest.AccountAssignmentCreationRequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeAccountAssignmentCreationStatusRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeAccountAssignmentDeletionStatusRequest.AccountAssignmentDeletionRequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeAccountAssignmentDeletionStatusRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribePermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribePermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribePermissionSetProvisioningStatusRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribePermissionSetProvisioningStatusRequest.ProvisionPermissionSetRequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DetachCustomerManagedPolicyReferenceFromPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DetachCustomerManagedPolicyReferenceFromPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DetachManagedPolicyFromPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DetachManagedPolicyFromPermissionSetRequest.ManagedPolicyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DetachManagedPolicyFromPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetInlinePolicyForPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetInlinePolicyForPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetInlinePolicyForPermissionSetResponse.InlinePolicy</property>
     <min>1</min>
-    <max>10240</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <max>32768</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetPermissionsBoundaryForPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetPermissionsBoundaryForPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentCreationStatusRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentCreationStatusRequest.MaxResults</property>
@@ -283,19 +283,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentCreationStatusRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentCreationStatusResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentDeletionStatusRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentDeletionStatusRequest.MaxResults</property>
@@ -304,25 +306,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentDeletionStatusRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentDeletionStatusResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsRequest.MaxResults</property>
@@ -331,25 +335,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountsForProvisionedPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountsForProvisionedPermissionSetRequest.MaxResults</property>
@@ -358,25 +364,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountsForProvisionedPermissionSetRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountsForProvisionedPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountsForProvisionedPermissionSetResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListCustomerManagedPolicyReferencesInPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListCustomerManagedPolicyReferencesInPermissionSetRequest.MaxResults</property>
@@ -385,19 +393,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListCustomerManagedPolicyReferencesInPermissionSetRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListCustomerManagedPolicyReferencesInPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListCustomerManagedPolicyReferencesInPermissionSetResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListInstancesRequest.MaxResults</property>
@@ -406,19 +416,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListInstancesRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListInstancesResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListManagedPoliciesInPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListManagedPoliciesInPermissionSetRequest.MaxResults</property>
@@ -427,25 +439,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListManagedPoliciesInPermissionSetRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListManagedPoliciesInPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListManagedPoliciesInPermissionSetResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetProvisioningStatusRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetProvisioningStatusRequest.MaxResults</property>
@@ -454,19 +468,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetProvisioningStatusRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetProvisioningStatusResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsRequest.MaxResults</property>
@@ -475,25 +491,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsProvisionedToAccountRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsProvisionedToAccountRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsProvisionedToAccountRequest.MaxResults</property>
@@ -502,137 +520,141 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsProvisionedToAccountRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListPermissionSetsProvisionedToAccountResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListTagsForResourceRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListTagsForResourceRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>10</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListTagsForResourceResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^[-a-zA-Z0-9+=/_]*</pattern>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ProvisionPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ProvisionPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ProvisionPermissionSetRequest.TargetId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutInlinePolicyToPermissionSetRequest.InlinePolicy</property>
     <min>1</min>
-    <max>10240</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+    <max>32768</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutInlinePolicyToPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutInlinePolicyToPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutPermissionsBoundaryToPermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutPermissionsBoundaryToPermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.TagResourceRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.TagResourceRequest.ResourceArn</property>
     <min>10</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UntagResourceRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UntagResourceRequest.ResourceArn</property>
     <min>10</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdateInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdatePermissionSetRequest.Description</property>
     <min>1</min>
     <max>700</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A0-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdatePermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdatePermissionSetRequest.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdatePermissionSetRequest.RelayState</property>
     <min>1</min>
     <max>240</max>
-    <pattern>[a-zA-Z0-9&amp;$@#\\\/%?=~\-_'"|!:,.;*+\[\]\ \(\)\{\}]+</pattern>
+    <pattern>^[a-zA-Z0-9&amp;$@#\\\/%?=~\-_'"|!:,.;*+\[\]\ \(\)\{\}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdatePermissionSetRequest.SessionDuration</property>
@@ -644,19 +666,19 @@
     <property>Amazon.SSOAdmin.Model.AccessControlAttribute.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:\/=+\-@]+</pattern>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:\/=+\-@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignment.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignment.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignment.PrincipalId</property>
@@ -666,13 +688,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignmentOperationStatus.FailureReason</property>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>^[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignmentOperationStatus.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignmentOperationStatus.PrincipalId</property>
@@ -684,25 +706,25 @@
     <property>Amazon.SSOAdmin.Model.AccountAssignmentOperationStatus.RequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignmentOperationStatus.TargetId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignmentOperationStatusMetadata.RequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AttachedManagedPolicy.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AttachedManagedPolicy.Name</property>
@@ -713,55 +735,55 @@
     <property>Amazon.SSOAdmin.Model.CustomerManagedPolicyReference.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CustomerManagedPolicyReference.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>((/[A-Za-z0-9\.,\+@=_-]+)*)/</pattern>
+    <pattern>^((/[A-Za-z0-9\.,\+@=_-]+)*)/$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.InstanceMetadata.IdentityStoreId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9-]*</pattern>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.InstanceMetadata.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionsBoundary.ManagedPolicyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy/[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSet.Description</property>
     <min>1</min>
     <max>700</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A0-\u00FF]*</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSet.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSet.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSet.RelayState</property>
     <min>1</min>
     <max>240</max>
-    <pattern>[a-zA-Z0-9&amp;$@#\\\/%?=~\-_'"|!:,.;*+\[\]\ \(\)\{\}]+</pattern>
+    <pattern>^[a-zA-Z0-9&amp;$@#\\\/%?=~\-_'"|!:,.;*+\[\]\ \(\)\{\}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSet.SessionDuration</property>
@@ -773,29 +795,29 @@
     <property>Amazon.SSOAdmin.Model.PermissionSetProvisioningStatus.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSetProvisioningStatus.FailureReason</property>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>^[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSetProvisioningStatus.PermissionSetArn</property>
     <min>10</min>
     <max>1224</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSetProvisioningStatus.RequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PermissionSetProvisioningStatusMetadata.RequestId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b</pattern>
+    <pattern>^\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.Tag.Key</property>
