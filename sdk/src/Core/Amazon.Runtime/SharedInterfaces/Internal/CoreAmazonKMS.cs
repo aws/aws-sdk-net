@@ -14,6 +14,7 @@
  */
 
  using Amazon.Runtime.Internal;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -87,15 +88,27 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
 
         private static ICoreAmazonKMS CreateFromExistingClient(AmazonServiceClient existingClient, string feature)
         {
-            ICoreAmazonKMS coreKMSClient = null;
+            ICoreAmazonKMS coreKMSClient = RuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME);
+            if(coreKMSClient != null)
+            {
+                return coreKMSClient;
+            }
+
             try
             {
+#pragma warning disable IL2026
                 coreKMSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonKMS>(
                     ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
                     existingClient);
+#pragma warning restore IL2026
             }
             catch (Exception e)
             {
+                if (InternalSDKUtils.IsRunningNativeAot())
+                {
+                    throw new MissingRuntimeDependencyException(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, nameof(RuntimeDependencyRegistry.RegisterKeyManagementServiceClient));
+                }
+
                 var msg = string.Format(CultureInfo.CurrentCulture,
                     "Error instantiating {0} from assembly {1}.  " +
                     "The assembly and class must be available at runtime in order to use {2}.",
