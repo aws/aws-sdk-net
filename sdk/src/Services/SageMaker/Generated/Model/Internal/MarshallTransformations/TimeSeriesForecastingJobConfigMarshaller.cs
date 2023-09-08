@@ -85,6 +85,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetHolidayConfig())
+            {
+                context.Writer.WritePropertyName("HolidayConfig");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHolidayConfigListValue in requestObject.HolidayConfig)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HolidayConfigAttributesMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHolidayConfigListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTimeSeriesConfig())
             {
                 context.Writer.WritePropertyName("TimeSeriesConfig");
