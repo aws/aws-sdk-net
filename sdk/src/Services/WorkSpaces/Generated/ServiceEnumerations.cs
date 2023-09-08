@@ -1563,6 +1563,152 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type WorkspaceImageErrorDetailCode.
+    /// </summary>
+    public class WorkspaceImageErrorDetailCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AdditionalDrivesAttached for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AdditionalDrivesAttached = new WorkspaceImageErrorDetailCode("AdditionalDrivesAttached");
+        /// <summary>
+        /// Constant AntiVirusInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AntiVirusInstalled = new WorkspaceImageErrorDetailCode("AntiVirusInstalled");
+        /// <summary>
+        /// Constant AutoLogonEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AutoLogonEnabled = new WorkspaceImageErrorDetailCode("AutoLogonEnabled");
+        /// <summary>
+        /// Constant AutoMountDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AutoMountDisabled = new WorkspaceImageErrorDetailCode("AutoMountDisabled");
+        /// <summary>
+        /// Constant AzureDomainJoined for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AzureDomainJoined = new WorkspaceImageErrorDetailCode("AzureDomainJoined");
+        /// <summary>
+        /// Constant DHCPDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DHCPDisabled = new WorkspaceImageErrorDetailCode("DHCPDisabled");
+        /// <summary>
+        /// Constant DiskFreeSpace for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DiskFreeSpace = new WorkspaceImageErrorDetailCode("DiskFreeSpace");
+        /// <summary>
+        /// Constant DiskSizeExceeded for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DiskSizeExceeded = new WorkspaceImageErrorDetailCode("DiskSizeExceeded");
+        /// <summary>
+        /// Constant DomainJoined for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DomainJoined = new WorkspaceImageErrorDetailCode("DomainJoined");
+        /// <summary>
+        /// Constant FirewallEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode FirewallEnabled = new WorkspaceImageErrorDetailCode("FirewallEnabled");
+        /// <summary>
+        /// Constant IncompatiblePartitioning for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode IncompatiblePartitioning = new WorkspaceImageErrorDetailCode("IncompatiblePartitioning");
+        /// <summary>
+        /// Constant InPlaceUpgrade for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InPlaceUpgrade = new WorkspaceImageErrorDetailCode("InPlaceUpgrade");
+        /// <summary>
+        /// Constant MultipleBootPartition for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode MultipleBootPartition = new WorkspaceImageErrorDetailCode("MultipleBootPartition");
+        /// <summary>
+        /// Constant OfficeInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode OfficeInstalled = new WorkspaceImageErrorDetailCode("OfficeInstalled");
+        /// <summary>
+        /// Constant OSNotSupported for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode OSNotSupported = new WorkspaceImageErrorDetailCode("OSNotSupported");
+        /// <summary>
+        /// Constant OutdatedPowershellVersion for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode OutdatedPowershellVersion = new WorkspaceImageErrorDetailCode("OutdatedPowershellVersion");
+        /// <summary>
+        /// Constant PCoIPAgentInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode PCoIPAgentInstalled = new WorkspaceImageErrorDetailCode("PCoIPAgentInstalled");
+        /// <summary>
+        /// Constant PendingReboot for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode PendingReboot = new WorkspaceImageErrorDetailCode("PendingReboot");
+        /// <summary>
+        /// Constant RealTimeUniversalDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode RealTimeUniversalDisabled = new WorkspaceImageErrorDetailCode("RealTimeUniversalDisabled");
+        /// <summary>
+        /// Constant Requires64BitOS for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode Requires64BitOS = new WorkspaceImageErrorDetailCode("Requires64BitOS");
+        /// <summary>
+        /// Constant UEFINotSupported for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UEFINotSupported = new WorkspaceImageErrorDetailCode("UEFINotSupported");
+        /// <summary>
+        /// Constant VMWareToolsInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode VMWareToolsInstalled = new WorkspaceImageErrorDetailCode("VMWareToolsInstalled");
+        /// <summary>
+        /// Constant WindowsUpdatesEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WindowsUpdatesEnabled = new WorkspaceImageErrorDetailCode("WindowsUpdatesEnabled");
+        /// <summary>
+        /// Constant WorkspacesBYOLAccountDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WorkspacesBYOLAccountDisabled = new WorkspaceImageErrorDetailCode("WorkspacesBYOLAccountDisabled");
+        /// <summary>
+        /// Constant WorkspacesBYOLAccountNotFound for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WorkspacesBYOLAccountNotFound = new WorkspaceImageErrorDetailCode("WorkspacesBYOLAccountNotFound");
+        /// <summary>
+        /// Constant ZeroRearmCount for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode ZeroRearmCount = new WorkspaceImageErrorDetailCode("ZeroRearmCount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceImageErrorDetailCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceImageErrorDetailCode FindValue(string value)
+        {
+            return FindValue<WorkspaceImageErrorDetailCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceImageErrorDetailCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceImageIngestionProcess.
     /// </summary>
     public class WorkspaceImageIngestionProcess : ConstantClass

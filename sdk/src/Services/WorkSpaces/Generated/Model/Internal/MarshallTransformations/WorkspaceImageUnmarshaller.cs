@@ -82,6 +82,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ErrorDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
+                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
