@@ -1,3 +1,11 @@
+### 3.7.642.0 (2023-09-11 18:23 UTC)
+* ECR (3.7.201.0)
+	* This release will have ValidationException be thrown from ECR LifecyclePolicy APIs in regions LifecyclePolicy is not supported, this includes existing Amazon Dedicated Cloud (ADC) regions. This release will also change Tag: TagValue and Tag: TagKey to required.
+* MediaLive (3.7.204.0)
+	* AWS Elemental Link now supports attaching a Link UHD device to a MediaConnect flow.
+* QuickSight (3.7.204.0)
+	* This release launches new updates to QuickSight KPI visuals - support for sparklines, new templated layout and new targets for conditional formatting rules.
+
 ### 3.7.641.0 (2023-09-08 18:22 UTC)
 * FSx (3.7.201.23)
 	* Amazon FSx documentation fixes
