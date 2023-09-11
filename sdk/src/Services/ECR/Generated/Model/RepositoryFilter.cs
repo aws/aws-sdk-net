@@ -31,7 +31,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// The filter settings used with image replication. Specifying a repository filter to
     /// a replication rule provides a method for controlling which repositories in a private
-    /// registry are replicated. If no repository filter is specified, all images in the repository
+    /// registry are replicated. If no filters are added, the contents of all repositories
     /// are replicated.
     /// </summary>
     public partial class RepositoryFilter

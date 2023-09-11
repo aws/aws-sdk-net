@@ -137,7 +137,7 @@ namespace Amazon.ECR.Model
         /// The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
         /// <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon
         /// Web Services account ID of the repository owner, repository namespace, and repository
-        /// name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+        /// name. For example, <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
         /// </para>
         /// </summary>
         public string RepositoryArn
