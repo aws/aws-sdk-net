@@ -96,19 +96,19 @@ namespace Amazon.Util.Internal.PlatformServices
         private static object CreateInstance(Type serviceType)
         {
             object service;
-            if (serviceType == typeof(IApplicationSettings))
+            if (serviceType == typeof(ApplicationSettings))
             {
                 service = new ApplicationSettings();
             }
-            else if (serviceType == typeof(INetworkReachability))
+            else if (serviceType == typeof(NetworkReachability))
             {
                 service = new NetworkReachability();
             }
-            else if (serviceType == typeof(IApplicationInfo))
+            else if (serviceType == typeof(ApplicationInfo))
             {
                 service = new ApplicationInfo();
             }
-            else if (serviceType == typeof(IEnvironmentInfo))
+            else if (serviceType == typeof(EnvironmentInfo))
             {
                 service = new EnvironmentInfo();
             }
