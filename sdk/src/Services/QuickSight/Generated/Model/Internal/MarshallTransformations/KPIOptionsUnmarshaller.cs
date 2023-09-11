@@ -100,10 +100,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecondaryValueFontConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sparkline", targetDepth))
+                {
+                    var unmarshaller = KPISparklineOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Sparkline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrendArrows", targetDepth))
                 {
                     var unmarshaller = TrendArrowOptionsUnmarshaller.Instance;
                     unmarshalledObject.TrendArrows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VisualLayoutOptions", targetDepth))
+                {
+                    var unmarshaller = KPIVisualLayoutOptionsUnmarshaller.Instance;
+                    unmarshalledObject.VisualLayoutOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

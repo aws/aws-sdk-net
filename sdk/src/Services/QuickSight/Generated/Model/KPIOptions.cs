@@ -39,7 +39,9 @@ namespace Amazon.QuickSight.Model
         private ProgressBarOptions _progressBar;
         private SecondaryValueOptions _secondaryValue;
         private FontConfiguration _secondaryValueFontConfiguration;
+        private KPISparklineOptions _sparkline;
         private TrendArrowOptions _trendArrows;
+        private KPIVisualLayoutOptions _visualLayoutOptions;
 
         /// <summary>
         /// Gets and sets the property Comparison. 
@@ -150,6 +152,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Sparkline. 
+        /// <para>
+        /// The options that determine the visibility, color, type, and tooltip visibility of
+        /// the sparkline of a KPI visual.
+        /// </para>
+        /// </summary>
+        public KPISparklineOptions Sparkline
+        {
+            get { return this._sparkline; }
+            set { this._sparkline = value; }
+        }
+
+        // Check to see if Sparkline property is set
+        internal bool IsSetSparkline()
+        {
+            return this._sparkline != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrendArrows. 
         /// <para>
         /// The options that determine the presentation of trend arrows in a KPI visual.
@@ -165,6 +186,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTrendArrows()
         {
             return this._trendArrows != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualLayoutOptions. 
+        /// <para>
+        /// The options that determine the layout a KPI visual.
+        /// </para>
+        /// </summary>
+        public KPIVisualLayoutOptions VisualLayoutOptions
+        {
+            get { return this._visualLayoutOptions; }
+            set { this._visualLayoutOptions = value; }
+        }
+
+        // Check to see if VisualLayoutOptions property is set
+        internal bool IsSetVisualLayoutOptions()
+        {
+            return this._visualLayoutOptions != null;
         }
 
     }

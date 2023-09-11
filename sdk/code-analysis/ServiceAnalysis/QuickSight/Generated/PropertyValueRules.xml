@@ -3908,6 +3908,10 @@
     <pattern>[0-9a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.KPISparklineOptions.Color</property>
+    <pattern>^#[A-F0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.KPIVisual.VisualId</property>
     <min>1</min>
     <max>512</max>

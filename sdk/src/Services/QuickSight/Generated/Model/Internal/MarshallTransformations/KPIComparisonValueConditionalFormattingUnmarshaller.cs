@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KPIConditionalFormattingOption Object
+    /// Response Unmarshaller for KPIComparisonValueConditionalFormatting Object
     /// </summary>  
-    public class KPIConditionalFormattingOptionUnmarshaller : IUnmarshaller<KPIConditionalFormattingOption, XmlUnmarshallerContext>, IUnmarshaller<KPIConditionalFormattingOption, JsonUnmarshallerContext>
+    public class KPIComparisonValueConditionalFormattingUnmarshaller : IUnmarshaller<KPIComparisonValueConditionalFormatting, XmlUnmarshallerContext>, IUnmarshaller<KPIComparisonValueConditionalFormatting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KPIConditionalFormattingOption IUnmarshaller<KPIConditionalFormattingOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KPIComparisonValueConditionalFormatting IUnmarshaller<KPIComparisonValueConditionalFormatting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KPIConditionalFormattingOption Unmarshall(JsonUnmarshallerContext context)
+        public KPIComparisonValueConditionalFormatting Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KPIConditionalFormattingOption unmarshalledObject = new KPIConditionalFormattingOption();
+            KPIComparisonValueConditionalFormatting unmarshalledObject = new KPIComparisonValueConditionalFormatting();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActualValue", targetDepth))
+                if (context.TestExpression("Icon", targetDepth))
                 {
-                    var unmarshaller = KPIActualValueConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.ActualValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ConditionalFormattingIconUnmarshaller.Instance;
+                    unmarshalledObject.Icon = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ComparisonValue", targetDepth))
+                if (context.TestExpression("TextColor", targetDepth))
                 {
-                    var unmarshaller = KPIComparisonValueConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PrimaryValue", targetDepth))
-                {
-                    var unmarshaller = KPIPrimaryValueConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProgressBar", targetDepth))
-                {
-                    var unmarshaller = KPIProgressBarConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.ProgressBar = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ConditionalFormattingColorUnmarshaller.Instance;
+                    unmarshalledObject.TextColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KPIConditionalFormattingOptionUnmarshaller _instance = new KPIConditionalFormattingOptionUnmarshaller();        
+        private static KPIComparisonValueConditionalFormattingUnmarshaller _instance = new KPIComparisonValueConditionalFormattingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KPIConditionalFormattingOptionUnmarshaller Instance
+        public static KPIComparisonValueConditionalFormattingUnmarshaller Instance
         {
             get
             {

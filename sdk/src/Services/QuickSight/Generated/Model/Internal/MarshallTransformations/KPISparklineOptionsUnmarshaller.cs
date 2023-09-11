@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KPIConditionalFormattingOption Object
+    /// Response Unmarshaller for KPISparklineOptions Object
     /// </summary>  
-    public class KPIConditionalFormattingOptionUnmarshaller : IUnmarshaller<KPIConditionalFormattingOption, XmlUnmarshallerContext>, IUnmarshaller<KPIConditionalFormattingOption, JsonUnmarshallerContext>
+    public class KPISparklineOptionsUnmarshaller : IUnmarshaller<KPISparklineOptions, XmlUnmarshallerContext>, IUnmarshaller<KPISparklineOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KPIConditionalFormattingOption IUnmarshaller<KPIConditionalFormattingOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KPISparklineOptions IUnmarshaller<KPISparklineOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KPIConditionalFormattingOption Unmarshall(JsonUnmarshallerContext context)
+        public KPISparklineOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KPIConditionalFormattingOption unmarshalledObject = new KPIConditionalFormattingOption();
+            KPISparklineOptions unmarshalledObject = new KPISparklineOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActualValue", targetDepth))
+                if (context.TestExpression("Color", targetDepth))
                 {
-                    var unmarshaller = KPIActualValueConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.ActualValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Color = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ComparisonValue", targetDepth))
+                if (context.TestExpression("TooltipVisibility", targetDepth))
                 {
-                    var unmarshaller = KPIComparisonValueConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TooltipVisibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValue", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
-                    var unmarshaller = KPIPrimaryValueConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProgressBar", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth))
                 {
-                    var unmarshaller = KPIProgressBarConditionalFormattingUnmarshaller.Instance;
-                    unmarshalledObject.ProgressBar = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KPIConditionalFormattingOptionUnmarshaller _instance = new KPIConditionalFormattingOptionUnmarshaller();        
+        private static KPISparklineOptionsUnmarshaller _instance = new KPISparklineOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KPIConditionalFormattingOptionUnmarshaller Instance
+        public static KPISparklineOptionsUnmarshaller Instance
         {
             get
             {

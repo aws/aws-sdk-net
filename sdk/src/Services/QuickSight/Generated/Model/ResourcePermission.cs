@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// The IAM action to grant or revoke permissions on.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> Actions
         {
             get { return this._actions; }
