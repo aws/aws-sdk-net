@@ -38,6 +38,8 @@ namespace Amazon.Runtime
 
         private bool _disposed;
         private Logger _logger;
+        public ServiceClientRuntimeDependencyRegistry RuntimeDependencyRegistry { get; } = new ServiceClientRuntimeDependencyRegistry();
+
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
@@ -410,6 +412,9 @@ namespace Amazon.Runtime
             {
                 if (RuntimePipeline != null)
                     RuntimePipeline.Dispose();
+
+                if(RuntimeDependencyRegistry != null)
+                    RuntimeDependencyRegistry.Dispose();
 
                 _disposed = true;
             }

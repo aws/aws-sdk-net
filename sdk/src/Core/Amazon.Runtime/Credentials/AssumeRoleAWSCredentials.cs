@@ -91,7 +91,7 @@ namespace Amazon.Runtime
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
-            ICoreAmazonSTS coreSTSClient = RuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME);
+            ICoreAmazonSTS coreSTSClient = DefaultRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME);
             if (coreSTSClient == null)
             {
                 try
@@ -113,7 +113,7 @@ namespace Amazon.Runtime
                 {
                     if (InternalSDKUtils.IsRunningNativeAot())
                     {
-                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(RuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
+                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(DefaultRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
                     }
 
                     var msg = string.Format(CultureInfo.CurrentCulture,

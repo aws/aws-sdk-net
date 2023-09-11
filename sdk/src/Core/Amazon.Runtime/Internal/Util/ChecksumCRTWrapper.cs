@@ -48,7 +48,7 @@ namespace AWSSDK.Runtime.Internal.Util
                 {
                     if (_instance == null)
                     {
-                        _instance = RuntimeDependencyRegistry.Instance.GetInstance<IChecksumProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
+                        _instance = DefaultRuntimeDependencyRegistry.Instance.GetInstance<IChecksumProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
                         if(_instance != null)
                         {
                             return _instance;
@@ -67,7 +67,7 @@ namespace AWSSDK.Runtime.Internal.Util
                         {
                             if(InternalSDKUtils.IsRunningNativeAot())
                             {
-                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKAGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(RuntimeDependencyRegistry.RegisterChecksumProvider));
+                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKAGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(DefaultRuntimeDependencyRegistry.RegisterChecksumProvider));
                             }
                             else if(e is FileNotFoundException)
                             {

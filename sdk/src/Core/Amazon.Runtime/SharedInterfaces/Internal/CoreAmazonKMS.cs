@@ -88,7 +88,7 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
 
         private static ICoreAmazonKMS CreateFromExistingClient(AmazonServiceClient existingClient, string feature)
         {
-            ICoreAmazonKMS coreKMSClient = RuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME);
+            ICoreAmazonKMS coreKMSClient = existingClient.RuntimeDependencyRegistry.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME);
             if(coreKMSClient != null)
             {
                 return coreKMSClient;
@@ -106,7 +106,7 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
             {
                 if (InternalSDKUtils.IsRunningNativeAot())
                 {
-                    throw new MissingRuntimeDependencyException(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, nameof(RuntimeDependencyRegistry.RegisterKeyManagementServiceClient));
+                    throw new MissingRuntimeDependencyException(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, nameof(ServiceClientRuntimeDependencyRegistry.RegisterKeyManagementServiceClient));
                 }
 
                 var msg = string.Format(CultureInfo.CurrentCulture,

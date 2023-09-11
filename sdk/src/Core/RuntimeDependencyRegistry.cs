@@ -7,56 +7,13 @@ using System.Threading;
 
 namespace Amazon
 {
-    /// <summary>
-    /// Their are some features of the AWS .NET SDK that at runtime load dependencies from assemblies. The most common
-    /// example is using credential profiles that require the service client from the AWSSDK.SecurityToken package.
-    /// Normally these runtime dependencies are resolved by using reflection to load the assembly and the type,
-    /// In Native AOT with trimming turned on that will not worked because the dependency would be trimmed out.
-    /// 
-    /// The RuntimeDependencyRegistry is used to work around this limitation by allowing users to explicitly register
-    /// the runtime dependency instance into the SDK removing any use of reflection.
-    /// </summary>
-    public class RuntimeDependencyRegistry : IDisposable
+    public abstract class AbstractRuntimeDependencyRegistry : IDisposable
     {
-        private static readonly RuntimeDependencyRegistry _instance = new RuntimeDependencyRegistry();
-        public static RuntimeDependencyRegistry Instance { get { return _instance; } }
-
-        internal RuntimeDependencyRegistry() 
-        { 
-        }
-
         private ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();
         private IDictionary<string, object> _runtimeDependency = new Dictionary<string, object>();
         private bool disposedValue;
 
-        /// <summary>
-        /// Register the Checksum provider. This should be an instance of AWSSDK.Extensions.CrtIntegration.CrtChecksums from AWSSDK.Extensions.CrtIntegration package.
-        /// </summary>
-        /// <param name="instance"></param>
-        public void RegisterChecksumProvider(object instance)
-        {
-            RegisterInstance(ChecksumCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, ChecksumCRTWrapper.CRT_WRAPPER_CLASS_NAME, instance);
-        }
-
-        /// <summary>
-        /// Register the Amazon.KeyManagementService.AmazonKeyManagementServiceClient instance from AWSSDK.KeyManagementService package.
-        /// </summary>
-        /// <param name="instance"></param>
-        public void RegisterKeyManagementServiceClient(object instance)
-        {
-            RegisterInstance(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, instance);
-        }
-
-        /// <summary>
-        /// Register the Amazon.SecurityToken.AmazonSecurityTokenServiceClient instance from the AWSSDK.SecurityToken package.
-        /// </summary>
-        /// <param name="instance"></param>
-        public void RegisterSecurityTokenServiceClient(object instance)
-        {
-            RegisterInstance(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, instance);
-        }
-
-        private void RegisterInstance(string assemblyName, string className, object instance)
+        protected void RegisterInstance(string assemblyName, string className, object instance)
         {
             try
             {
@@ -81,7 +38,7 @@ namespace Amazon
         /// <param name="assemblyName"></param>
         /// <param name="className"></param>
         /// <returns></returns>
-        public T GetInstance<T>(string assemblyName, string className)
+        public virtual T GetInstance<T>(string assemblyName, string className)
             where T : class
         {
             try
@@ -97,7 +54,7 @@ namespace Amazon
             }
             finally
             {
-                if(_rwlock.IsReadLockHeld)
+                if (_rwlock.IsReadLockHeld)
                 {
                     _rwlock.ExitReadLock();
                 }
@@ -130,6 +87,88 @@ namespace Amazon
         }
     }
 
+    public class ServiceClientRuntimeDependencyRegistry : AbstractRuntimeDependencyRegistry
+    {
+        internal ServiceClientRuntimeDependencyRegistry() { }
+
+        /// <summary>
+        /// Register the Amazon.KeyManagementService.AmazonKeyManagementServiceClient instance from AWSSDK.KeyManagementService package.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterKeyManagementServiceClient(object instance)
+        {
+            RegisterInstance(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, instance);
+        }
+
+        /// <summary>
+        /// Register the Amazon.SecurityToken.AmazonSecurityTokenServiceClient instance from the AWSSDK.SecurityToken package.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterSecurityTokenServiceClient(object instance)
+        {
+            RegisterInstance(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, instance);
+        }
+
+        public override T GetInstance<T>(string assemblyName, string className)
+        {
+            var instance = base.GetInstance<T>(assemblyName, className);
+            if(instance == null)
+            {
+                instance = DefaultRuntimeDependencyRegistry.Instance.GetInstance<T>(assemblyName, className);
+            }
+
+            return instance;
+        }
+    }
+
+    /// <summary>
+    /// There are some features of the AWS .NET SDK that at runtime load dependencies from assemblies. The most common
+    /// example is using credential profiles that require the service client from the AWSSDK.SecurityToken package.
+    /// Normally these runtime dependencies are resolved by using reflection to load the assembly and the type,
+    /// In Native AOT with trimming turned on that will not worked because the dependency would be trimmed out.
+    /// 
+    /// The RuntimeDependencyRegistry is used to work around this limitation by allowing users to explicitly register
+    /// the runtime dependency instance into the SDK removing any use of reflection.
+    /// </summary>
+    public class DefaultRuntimeDependencyRegistry : AbstractRuntimeDependencyRegistry
+    {
+        private static readonly DefaultRuntimeDependencyRegistry _instance = new DefaultRuntimeDependencyRegistry();
+        public static DefaultRuntimeDependencyRegistry Instance { get { return _instance; } }
+
+        internal DefaultRuntimeDependencyRegistry() 
+        { 
+        }
+
+        /// <summary>
+        /// Register the Checksum provider. This should be an instance of AWSSDK.Extensions.CrtIntegration.CrtChecksums from AWSSDK.Extensions.CrtIntegration package.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterChecksumProvider(object instance)
+        {
+            RegisterInstance(ChecksumCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, ChecksumCRTWrapper.CRT_WRAPPER_CLASS_NAME, instance);
+        }
+
+        /// <summary>
+        /// Register the Amazon.KeyManagementService.AmazonKeyManagementServiceClient instance from AWSSDK.KeyManagementService package.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterKeyManagementServiceClient(object instance)
+        {
+            RegisterInstance(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, instance);
+        }
+
+        /// <summary>
+        /// Register the Amazon.SecurityToken.AmazonSecurityTokenServiceClient instance from the AWSSDK.SecurityToken package.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterSecurityTokenServiceClient(object instance)
+        {
+            RegisterInstance(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, instance);
+        }
+
+
+    }
+
     /// <summary>
     /// This exception is thrown when the SDK is used as part of an application compiled for Native AOT with trimming turned on.
     /// In this environment assemblies can not be dynamically loaded and the usual ServiceClientHelpers operations will fail.
@@ -138,7 +177,7 @@ namespace Amazon
     {
 
         public MissingRuntimeDependencyException(string packageName, string className, string registerMethod)
-            : base("Operation failed because of missing runtime dependency. In Native AOT builds runtime dependencies can not be " +
+            : base("Operation failed because of a missing runtime dependency. In Native AOT builds runtime dependencies can not be " +
                   "dynamically loaded from assembles. Instead the runtime dependency needs to be explicitly registered. " +
                   $"To complete this operation register an instance of {className} from package {packageName} using the " +
                   $"operation Amazon.RuntimeDependencyRegistry.Instance.{registerMethod}.")
