@@ -8217,6 +8217,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputDeviceCodec.
+    /// </summary>
+    public class InputDeviceCodec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVC for InputDeviceCodec
+        /// </summary>
+        public static readonly InputDeviceCodec AVC = new InputDeviceCodec("AVC");
+        /// <summary>
+        /// Constant HEVC for InputDeviceCodec
+        /// </summary>
+        public static readonly InputDeviceCodec HEVC = new InputDeviceCodec("HEVC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceCodec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceCodec FindValue(string value)
+        {
+            return FindValue<InputDeviceCodec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputDeviceConfiguredInput.
     /// </summary>
     public class InputDeviceConfiguredInput : ConstantClass
@@ -8364,6 +8414,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputDeviceIpScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceOutputType.
+    /// </summary>
+    public class InputDeviceOutputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEDIACONNECT_FLOW for InputDeviceOutputType
+        /// </summary>
+        public static readonly InputDeviceOutputType MEDIACONNECT_FLOW = new InputDeviceOutputType("MEDIACONNECT_FLOW");
+        /// <summary>
+        /// Constant MEDIALIVE_INPUT for InputDeviceOutputType
+        /// </summary>
+        public static readonly InputDeviceOutputType MEDIALIVE_INPUT = new InputDeviceOutputType("MEDIALIVE_INPUT");
+        /// <summary>
+        /// Constant NONE for InputDeviceOutputType
+        /// </summary>
+        public static readonly InputDeviceOutputType NONE = new InputDeviceOutputType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceOutputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceOutputType FindValue(string value)
+        {
+            return FindValue<InputDeviceOutputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceOutputType(string value)
         {
             return FindValue(value);
         }

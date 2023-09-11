@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InputDeviceConfigurableSettings Marshaller
+    /// InputDeviceMediaConnectConfigurableSettings Marshaller
     /// </summary>
-    public class InputDeviceConfigurableSettingsMarshaller : IRequestMarshaller<InputDeviceConfigurableSettings, JsonMarshallerContext> 
+    public class InputDeviceMediaConnectConfigurableSettingsMarshaller : IRequestMarshaller<InputDeviceMediaConnectConfigurableSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,41 +43,30 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputDeviceConfigurableSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(InputDeviceMediaConnectConfigurableSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCodec())
+            if(requestObject.IsSetFlowArn())
             {
-                context.Writer.WritePropertyName("codec");
-                context.Writer.Write(requestObject.Codec);
+                context.Writer.WritePropertyName("flowArn");
+                context.Writer.Write(requestObject.FlowArn);
             }
 
-            if(requestObject.IsSetConfiguredInput())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("configuredInput");
-                context.Writer.Write(requestObject.ConfiguredInput);
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.Write(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetLatencyMs())
+            if(requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("latencyMs");
-                context.Writer.Write(requestObject.LatencyMs);
+                context.Writer.WritePropertyName("secretArn");
+                context.Writer.Write(requestObject.SecretArn);
             }
 
-            if(requestObject.IsSetMaxBitrate())
+            if(requestObject.IsSetSourceName())
             {
-                context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
-            }
-
-            if(requestObject.IsSetMediaconnectSettings())
-            {
-                context.Writer.WritePropertyName("mediaconnectSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InputDeviceMediaConnectConfigurableSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.MediaconnectSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("sourceName");
+                context.Writer.Write(requestObject.SourceName);
             }
 
         }
@@ -85,7 +74,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InputDeviceConfigurableSettingsMarshaller Instance = new InputDeviceConfigurableSettingsMarshaller();
+        public readonly static InputDeviceMediaConnectConfigurableSettingsMarshaller Instance = new InputDeviceMediaConnectConfigurableSettingsMarshaller();
 
     }
 }

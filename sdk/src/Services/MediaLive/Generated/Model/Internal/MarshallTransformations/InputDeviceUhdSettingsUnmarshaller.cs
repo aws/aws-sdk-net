@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configuredInput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MaxBitrate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mediaconnectSettings", targetDepth))
+                {
+                    var unmarshaller = InputDeviceMediaConnectSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MediaconnectSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scanType", targetDepth))
