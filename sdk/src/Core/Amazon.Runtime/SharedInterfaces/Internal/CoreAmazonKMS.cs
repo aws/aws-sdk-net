@@ -14,6 +14,7 @@
  */
 
  using Amazon.Runtime.Internal;
+using Amazon.RuntimeDependencyRegistry;
 using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
@@ -88,7 +89,7 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
 
         private static ICoreAmazonKMS CreateFromExistingClient(AmazonServiceClient existingClient, string feature)
         {
-            ICoreAmazonKMS coreKMSClient = existingClient.RuntimeDependencyRegistry.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME);
+            ICoreAmazonKMS coreKMSClient = existingClient.RuntimeDependencyRegistry.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, new CreateInstanceContext(new KeyManagementServiceClientContext(existingClient)));
             if(coreKMSClient != null)
             {
                 return coreKMSClient;
@@ -96,11 +97,11 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
 
             try
             {
-#pragma warning disable IL2026
+#pragma warning disable IL2026,IL2075
                 coreKMSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonKMS>(
                     ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
                     existingClient);
-#pragma warning restore IL2026
+#pragma warning restore IL2026,IL2075
             }
             catch (Exception e)
             {

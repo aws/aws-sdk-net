@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
+using Amazon.RuntimeDependencyRegistry;
 using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,9 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class AWS4aSignerCRTWrapper : AbstractAWSSigner
     {
-        private const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
-        private const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
-        private const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
+        internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
 
         private static IAWSSigV4aProvider _awsSigV4AProvider;
         private static object _lock = new object();
@@ -51,20 +52,30 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 lock(_lock)
                 {
+                    _awsSigV4AProvider = GlobalRuntimeDependencyRegistry.Instance.GetInstance<IAWSSigV4aProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME,
+                            new CreateInstanceContext(new SigV4aCrtSignerContext(signPayload)));
+
                     if (_awsSigV4AProvider == null)
                     {
                         try
                         {
+#pragma warning disable IL2026,IL2075
                             var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
                             var constructor = crtWrapperType.GetConstructor(new Type[]
                             {
                                 typeof(bool)
                             });
-
+#pragma warning restore IL2026,IL2075
                             _awsSigV4AProvider = constructor.Invoke(new object[] { signPayload }) as IAWSSigV4aProvider;
+
                         }
-                        catch (FileNotFoundException)
+                        catch (Exception)
                         {
+                            if (InternalSDKUtils.IsRunningNativeAot())
+                            {
+                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSigV4aProvider));
+                            }
+
                             throw new AWSCommonRuntimeException
                             (
                                 string.Format(CultureInfo.InvariantCulture, "Attempting to make a request that requires an implementation of AWS Signature V4a. " +

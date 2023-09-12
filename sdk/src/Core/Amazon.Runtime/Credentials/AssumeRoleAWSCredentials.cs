@@ -15,6 +15,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
+using Amazon.RuntimeDependencyRegistry;
 using Amazon.Util.Internal;
 using System;
 using System.Globalization;
@@ -91,12 +92,14 @@ namespace Amazon.Runtime
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
-            ICoreAmazonSTS coreSTSClient = DefaultRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME);
+            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
+                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.SourceContext.AssumeRoleAWSCredentials, region)));
+
             if (coreSTSClient == null)
             {
                 try
                 {
-#pragma warning disable IL2026
+#pragma warning disable IL2026,IL2075
                     var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
                     stsConfig.RegionEndpoint = region;
 
@@ -107,13 +110,13 @@ namespace Amazon.Runtime
 
                     coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
                         ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, SourceCredentials, stsConfig);
-#pragma warning restore IL2026
+#pragma warning restore IL2026,IL2075
                 }
                 catch (Exception e)
                 {
                     if (InternalSDKUtils.IsRunningNativeAot())
                     {
-                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(DefaultRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
+                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
                     }
 
                     var msg = string.Format(CultureInfo.CurrentCulture,

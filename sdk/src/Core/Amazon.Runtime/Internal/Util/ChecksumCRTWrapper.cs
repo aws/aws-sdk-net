@@ -16,6 +16,7 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces.Internal;
+using Amazon.RuntimeDependencyRegistry;
 using Amazon.Util.Internal;
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -48,7 +49,7 @@ namespace AWSSDK.Runtime.Internal.Util
                 {
                     if (_instance == null)
                     {
-                        _instance = DefaultRuntimeDependencyRegistry.Instance.GetInstance<IChecksumProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
+                        _instance = GlobalRuntimeDependencyRegistry.Instance.GetInstance<IChecksumProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME, new CreateInstanceContext(new CheckSumProviderContext()));
                         if(_instance != null)
                         {
                             return _instance;
@@ -67,7 +68,7 @@ namespace AWSSDK.Runtime.Internal.Util
                         {
                             if(InternalSDKUtils.IsRunningNativeAot())
                             {
-                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKAGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(DefaultRuntimeDependencyRegistry.RegisterChecksumProvider));
+                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKAGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterChecksumProvider));
                             }
                             else if(e is FileNotFoundException)
                             {

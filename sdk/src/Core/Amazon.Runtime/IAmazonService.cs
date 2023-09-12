@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.RuntimeDependencyRegistry;
+
 namespace Amazon.Runtime
 {
     /// <summary>

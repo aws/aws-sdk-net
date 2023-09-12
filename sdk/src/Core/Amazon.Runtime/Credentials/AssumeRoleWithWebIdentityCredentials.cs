@@ -15,7 +15,9 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
+using Amazon.RuntimeDependencyRegistry;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Globalization;
 using System.IO;
@@ -216,26 +218,40 @@ namespace Amazon.Runtime
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;
 
-            try
+            ICoreAmazonSTS_WebIdentity coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS_WebIdentity>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.SourceContext.AssumeRoleAWSCredentials, region)));
+            if(coreSTSClient == null)
             {
-                var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
-                stsConfig.RegionEndpoint = region;
-
-                if (_options?.ProxySettings != null)
+                try
                 {
-                    stsConfig.SetWebProxy(_options.ProxySettings);
-                }
+#pragma warning disable IL2026,IL2075
+                    var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
+                    stsConfig.RegionEndpoint = region;
 
-                return ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS_WebIdentity>(
-                            ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, new AnonymousAWSCredentials(), region);
+                    if (_options?.ProxySettings != null)
+                    {
+                        stsConfig.SetWebProxy(_options.ProxySettings);
+                    }
+
+                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS_WebIdentity>(
+                                ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, new AnonymousAWSCredentials(), region);
+#pragma warning restore IL2026,IL2075
+                }
+                catch (Exception e)
+                {
+                    if (InternalSDKUtils.IsRunningNativeAot())
+                    {
+                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
+                    }
+
+                    var msg = string.Format(CultureInfo.CurrentCulture,
+                        "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use Amazon.Runtime.AssumeRoleAWSCredentials.",
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME);
+                    throw new InvalidOperationException(msg, e);
+                }
             }
-            catch (Exception e)
-            {
-                var msg = string.Format(CultureInfo.CurrentCulture,
-                    "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use Amazon.Runtime.AssumeRoleAWSCredentials.",
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME);
-                throw new InvalidOperationException(msg, e);
-            }
+
+            return coreSTSClient;
         }
     }
 }

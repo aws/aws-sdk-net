@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
+using Amazon.RuntimeDependencyRegistry;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime
 {
@@ -189,28 +191,39 @@ namespace Amazon.Runtime
                 region = DefaultSTSClientRegion;
             }
 
-            ICoreAmazonSTS coreSTSClient = null;
-            try
+            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.SourceContext.FederatedAWSCredentials, region)));
+            if(coreSTSClient == null)
             {
-                var stsConfig = ServiceClientHelpers.CreateServiceConfig(
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
-
-                stsConfig.RegionEndpoint = region;
-                if (Options.ProxySettings != null)
+                try
                 {
-                    stsConfig.SetWebProxy(Options.ProxySettings);
-                }
+#pragma warning disable IL2026,IL2075
+                    var stsConfig = ServiceClientHelpers.CreateServiceConfig(
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
 
-                coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                    new AnonymousAWSCredentials(), stsConfig);
-            }
-            catch (Exception e)
-            {
-                var msg = string.Format(CultureInfo.CurrentCulture,
-                    "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME);
-                throw new InvalidOperationException(msg, e);
+                    stsConfig.RegionEndpoint = region;
+                    if (Options.ProxySettings != null)
+                    {
+                        stsConfig.SetWebProxy(Options.ProxySettings);
+                    }
+
+                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+                        new AnonymousAWSCredentials(), stsConfig);
+#pragma warning restore IL2026,IL2075
+                }
+                catch (Exception e)
+                {
+                    if (InternalSDKUtils.IsRunningNativeAot())
+                    {
+                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
+                    }
+
+                    var msg = string.Format(CultureInfo.CurrentCulture,
+                        "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME);
+                    throw new InvalidOperationException(msg, e);
+                }
             }
 
             var samlCoreSTSClient
