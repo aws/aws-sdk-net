@@ -29,35 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides filtering the query results based on document attributes or metadata fields.
+    /// Filters the search results based on document attributes or fields.
     /// 
     ///  
     /// <para>
-    /// When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters
-    /// you can use 2 layers under the first attribute filter. For example, you can use:
+    /// You can filter results using attributes for your particular documents. The attributes
+    /// must exist in your index. For example, if your documents include the custom attribute
+    /// "Department", you can filter documents that belong to the "HR" department. You would
+    /// use the <code>EqualsTo</code> operation to filter results or documents with "Department"
+    /// equals to "HR".
     /// </para>
     ///  
     /// <para>
-    ///  <code>&lt;AndAllFilters&gt;</code> 
+    /// You can use <code>AndAllFilters</code> and <code>AndOrFilters</code> in combination
+    /// with each other or with other operations such as <code>EqualsTo</code>. For example:
     /// </para>
-    ///  <ol> <li> 
+    ///  
     /// <para>
-    ///  <code> &lt;OrAllFilters&gt;</code> 
+    ///  <code>AndAllFilters</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>EqualsTo</code>: "Department", "HR"
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code> &lt;EqualsTo&gt;</code> 
+    ///  <code>AndOrFilters</code> 
     /// </para>
-    ///  </li> </ol> 
+    ///  <ul> <li> 
     /// <para>
-    /// If you use more than 2 layers, you receive a <code>ValidationException</code> exception
-    /// with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
+    ///  <code>ContainsAny</code>: "Project Name", ["new hires", "new hiring"]
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// This example filters results or documents that belong to the HR department <i>and</i>
+    /// belong to projects that contain "new hires" <i>or</i> "new hiring" in the project
+    /// name (must use <code>ContainAny</code> with <code>StringListValue</code>). This example
+    /// is filtering with a depth of 2.
     /// </para>
     ///  
     /// <para>
-    /// If you use more than 10 attribute filters in a given list for <code>AndAllFilters</code>
+    /// You cannot filter more than a depth of 2, otherwise you receive a <code>ValidationException</code>
+    /// exception with the message "AttributeFilter cannot have a depth of more than 2." Also,
+    /// if you use more than 10 attribute filters in a given list for <code>AndAllFilters</code>
     /// or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with
-    /// the message "<code>AttributeFilter</code> cannot have a length of more than 10".
+    /// the message "AttributeFilter cannot have a length of more than 10".
+    /// </para>
+    ///  
+    /// <para>
+    /// For examples of using <code>AttributeFilter</code>, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using
+    /// document attributes to filter search results</a>.
     /// </para>
     /// </summary>
     public partial class AttributeFilter
@@ -76,7 +97,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AndAllFilters. 
         /// <para>
-        /// Performs a logical <code>AND</code> operation on all supplied filters.
+        /// Performs a logical <code>AND</code> operation on all filters that you specify.
         /// </para>
         /// </summary>
         public List<AttributeFilter> AndAllFilters
@@ -94,8 +115,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAll. 
         /// <para>
-        /// Returns true when a document contains all of the specified document attributes or
-        /// metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.
+        /// Returns true when a document contains all of the specified document attributes/fields.
+        /// This filter is only applicable to <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue</a>.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAll
@@ -113,8 +134,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAny. 
         /// <para>
-        /// Returns true when a document contains any of the specified document attributes or
-        /// metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.
+        /// Returns true when a document contains any of the specified document attributes/fields.
+        /// This filter is only applicable to <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue</a>.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAny
@@ -132,7 +153,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EqualsTo. 
         /// <para>
-        /// Performs an equals operation on two document attributes or metadata fields.
+        /// Performs an equals operation on document attributes/fields and their values.
         /// </para>
         /// </summary>
         public DocumentAttribute EqualsTo
@@ -150,8 +171,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GreaterThan. 
         /// <para>
-        /// Performs a greater than operation on two document attributes or metadata fields. Use
-        /// with a document attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a greater than operation on document attributes/fields and their values.
+        /// Use with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+        /// attribute type</a> <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThan
@@ -169,8 +191,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GreaterThanOrEquals. 
         /// <para>
-        /// Performs a greater or equals than operation on two document attributes or metadata
-        /// fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a greater or equals than operation on document attributes/fields and their
+        /// values. Use with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+        /// attribute type</a> <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThanOrEquals
@@ -188,8 +211,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LessThan. 
         /// <para>
-        /// Performs a less than operation on two document attributes or metadata fields. Use
-        /// with a document attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a less than operation on document attributes/fields and their values. Use
+        /// with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+        /// attribute type</a> <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThan
@@ -207,8 +231,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LessThanOrEquals. 
         /// <para>
-        /// Performs a less than or equals operation on two document attributes or metadata fields.
-        /// Use with a document attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a less than or equals operation on document attributes/fields and their values.
+        /// Use with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+        /// attribute type</a> <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThanOrEquals
@@ -226,7 +251,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NotFilter. 
         /// <para>
-        /// Performs a logical <code>NOT</code> operation on all supplied filters.
+        /// Performs a logical <code>NOT</code> operation on all filters that you specify.
         /// </para>
         /// </summary>
         public AttributeFilter NotFilter
@@ -244,7 +269,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrAllFilters. 
         /// <para>
-        /// Performs a logical <code>OR</code> operation on all supplied filters.
+        /// Performs a logical <code>OR</code> operation on all filters that you specify.
         /// </para>
         /// </summary>
         public List<AttributeFilter> OrAllFilters

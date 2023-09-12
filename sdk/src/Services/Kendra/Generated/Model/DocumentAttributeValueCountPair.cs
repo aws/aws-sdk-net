@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the count of documents that match a particular attribute when doing a faceted
-    /// search.
+    /// Provides the count of documents that match a particular document attribute or field
+    /// when doing a faceted search.
     /// </summary>
     public partial class DocumentAttributeValueCountPair
     {
@@ -41,7 +41,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of documents in the response that have the attribute value for the key.
+        /// The number of documents in the response that have the attribute/field value for the
+        /// key.
         /// </para>
         /// </summary>
         public int Count
@@ -59,7 +60,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentAttributeValue. 
         /// <para>
-        /// The value of the attribute. For example, "HR".
+        /// The value of the attribute/field. For example, "HR".
         /// </para>
         /// </summary>
         public DocumentAttributeValue DocumentAttributeValue
@@ -77,7 +78,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FacetResults. 
         /// <para>
-        /// Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code>
+        /// Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code>
         /// contains the counts for each facet nested within a facet.
         /// </para>
         ///  

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information to connect to a index.
+    /// Provides the configuration information to an <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Amazon
+    /// Kendra supported database</a>.
     /// </summary>
     public partial class DatabaseConfiguration
     {

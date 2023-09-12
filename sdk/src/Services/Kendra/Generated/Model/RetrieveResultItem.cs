@@ -39,6 +39,7 @@ namespace Amazon.Kendra.Model
         private string _documentTitle;
         private string _documentURI;
         private string _id;
+        private ScoreAttributes _scoreAttributes;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -151,6 +152,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScoreAttributes. 
+        /// <para>
+        /// The confidence score bucket for a retrieved passage result. The confidence bucket
+        /// provides a relative ranking that indicates how confident Amazon Kendra is that the
+        /// response is relevant to the query.
+        /// </para>
+        /// </summary>
+        public ScoreAttributes ScoreAttributes
+        {
+            get { return this._scoreAttributes; }
+            set { this._scoreAttributes = value; }
+        }
+
+        // Check to see if ScoreAttributes property is set
+        internal bool IsSetScoreAttributes()
+        {
+            return this._scoreAttributes != null;
         }
 
     }

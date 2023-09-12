@@ -43,7 +43,8 @@ namespace Amazon.Kendra.Model
     /// <para>
     /// The documents are indexed asynchronously. You can see the progress of the batch using
     /// Amazon Web Services CloudWatch. Any error messages related to processing the batch
-    /// are sent to your Amazon Web Services CloudWatch log.
+    /// are sent to your Amazon Web Services CloudWatch log. You can also use the <code>BatchGetDocumentStatus</code>
+    /// API to monitor the progress of indexing your documents.
     /// </para>
     ///  
     /// <para>

@@ -35,6 +35,13 @@ namespace Amazon.Kendra.Model
     /// <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
     /// API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
     /// Data Sources</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Deleting an entire data source or re-syncing your index after deleting specific documents
+    /// from a data source could take up to an hour or more, depending on the number of documents
+    /// you want to delete.
+    /// </para>
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonKendraRequest
     {
