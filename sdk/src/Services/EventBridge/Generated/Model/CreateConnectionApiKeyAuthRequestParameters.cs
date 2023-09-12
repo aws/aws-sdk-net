@@ -61,7 +61,7 @@ namespace Amazon.EventBridge.Model
         /// The value for the API key to use for authorization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=512)]
         public string ApiKeyValue
         {
             get { return this._apiKeyValue; }
