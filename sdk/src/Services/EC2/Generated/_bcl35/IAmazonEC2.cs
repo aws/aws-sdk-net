@@ -18467,6 +18467,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImageBlockPublicAccess
+
+
+        /// <summary>
+        /// Disables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This removes the <i>block public access</i> restriction
+        /// from your account. With the restriction removed, you can publicly share your AMIs
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>block-new-sharing</code>. When the API has completed the
+        /// configuration, the response will be <code>unblocked</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageBlockPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
+        DisableImageBlockPublicAccessResponse DisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableImageBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageBlockPublicAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableImageBlockPublicAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
+        IAsyncResult BeginDisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableImageBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableImageBlockPublicAccess.</param>
+        /// 
+        /// <returns>Returns a  DisableImageBlockPublicAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
+        DisableImageBlockPublicAccessResponse EndDisableImageBlockPublicAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableImageDeprecation
 
 
@@ -19676,6 +19732,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableImageBlockPublicAccess
+
+
+        /// <summary>
+        /// Enables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This prevents the public sharing of your AMIs. However,
+        /// if you already have public AMIs, they will remain publicly available.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>unblocked</code>. When the API has completed the configuration,
+        /// the response will be <code>block-new-sharing</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageBlockPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
+        EnableImageBlockPublicAccessResponse EnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableImageBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageBlockPublicAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableImageBlockPublicAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
+        IAsyncResult BeginEnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableImageBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableImageBlockPublicAccess.</param>
+        /// 
+        /// <returns>Returns a  EnableImageBlockPublicAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
+        EnableImageBlockPublicAccessResponse EndEnableImageBlockPublicAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableImageDeprecation
 
 
@@ -20866,6 +20977,53 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetHostReservationPurchasePreviewResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         GetHostReservationPurchasePreviewResponse EndGetHostReservationPurchasePreview(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetImageBlockPublicAccessState
+
+
+        /// <summary>
+        /// Gets the current state of <i>block public access for AMIs</i> at the account level
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageBlockPublicAccessState service method.</param>
+        /// 
+        /// <returns>The response from the GetImageBlockPublicAccessState service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
+        GetImageBlockPublicAccessStateResponse GetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImageBlockPublicAccessState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImageBlockPublicAccessState operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImageBlockPublicAccessState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
+        IAsyncResult BeginGetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImageBlockPublicAccessState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImageBlockPublicAccessState.</param>
+        /// 
+        /// <returns>Returns a  GetImageBlockPublicAccessStateResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
+        GetImageBlockPublicAccessStateResponse EndGetImageBlockPublicAccessState(IAsyncResult asyncResult);
 
         #endregion
         

@@ -17646,6 +17646,66 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImageBlockPublicAccess
+
+
+        /// <summary>
+        /// Disables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This removes the <i>block public access</i> restriction
+        /// from your account. With the restriction removed, you can publicly share your AMIs
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>block-new-sharing</code>. When the API has completed the
+        /// configuration, the response will be <code>unblocked</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageBlockPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
+        DisableImageBlockPublicAccessResponse DisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request);
+
+
+
+        /// <summary>
+        /// Disables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This removes the <i>block public access</i> restriction
+        /// from your account. With the restriction removed, you can publicly share your AMIs
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>block-new-sharing</code>. When the API has completed the
+        /// configuration, the response will be <code>unblocked</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageBlockPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
+        Task<DisableImageBlockPublicAccessResponse> DisableImageBlockPublicAccessAsync(DisableImageBlockPublicAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableImageDeprecation
 
 
@@ -18712,6 +18772,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableImageBlockPublicAccess
+
+
+        /// <summary>
+        /// Enables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This prevents the public sharing of your AMIs. However,
+        /// if you already have public AMIs, they will remain publicly available.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>unblocked</code>. When the API has completed the configuration,
+        /// the response will be <code>block-new-sharing</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageBlockPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
+        EnableImageBlockPublicAccessResponse EnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request);
+
+
+
+        /// <summary>
+        /// Enables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This prevents the public sharing of your AMIs. However,
+        /// if you already have public AMIs, they will remain publicly available.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>unblocked</code>. When the API has completed the configuration,
+        /// the response will be <code>block-new-sharing</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageBlockPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
+        Task<EnableImageBlockPublicAccessResponse> EnableImageBlockPublicAccessAsync(EnableImageBlockPublicAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableImageDeprecation
 
 
@@ -19743,6 +19861,48 @@ namespace Amazon.EC2
         /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         Task<GetHostReservationPurchasePreviewResponse> GetHostReservationPurchasePreviewAsync(GetHostReservationPurchasePreviewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetImageBlockPublicAccessState
+
+
+        /// <summary>
+        /// Gets the current state of <i>block public access for AMIs</i> at the account level
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageBlockPublicAccessState service method.</param>
+        /// 
+        /// <returns>The response from the GetImageBlockPublicAccessState service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
+        GetImageBlockPublicAccessStateResponse GetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request);
+
+
+
+        /// <summary>
+        /// Gets the current state of <i>block public access for AMIs</i> at the account level
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageBlockPublicAccessState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImageBlockPublicAccessState service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
+        Task<GetImageBlockPublicAccessStateResponse> GetImageBlockPublicAccessStateAsync(GetImageBlockPublicAccessStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
