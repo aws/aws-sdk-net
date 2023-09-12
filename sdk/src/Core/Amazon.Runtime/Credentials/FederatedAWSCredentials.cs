@@ -177,6 +177,10 @@ namespace Amazon.Runtime
             return newState;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         private CredentialsRefreshState Authenticate(ICredentials userCredential)
         {
             CredentialsRefreshState state;
@@ -197,7 +201,6 @@ namespace Amazon.Runtime
             {
                 try
                 {
-#pragma warning disable IL2026,IL2075
                     var stsConfig = ServiceClientHelpers.CreateServiceConfig(
                         ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
 
@@ -210,7 +213,6 @@ namespace Amazon.Runtime
                     coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
                         ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
                         new AnonymousAWSCredentials(), stsConfig);
-#pragma warning restore IL2026,IL2075
                 }
                 catch (Exception e)
                 {

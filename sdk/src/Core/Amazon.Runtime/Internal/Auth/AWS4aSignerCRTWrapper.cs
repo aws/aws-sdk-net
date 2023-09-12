@@ -46,6 +46,12 @@ namespace Amazon.Runtime.Internal.Auth
         /// Instantiates an SigV4a signer using CRT's SigV4a implementation
         /// </summary>
         /// <param name="signPayload">Whether to sign the request's payload</param>
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         public AWS4aSignerCRTWrapper(bool signPayload)
         {
             if (_awsSigV4AProvider == null)
@@ -59,13 +65,11 @@ namespace Amazon.Runtime.Internal.Auth
                     {
                         try
                         {
-#pragma warning disable IL2026,IL2075
                             var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
                             var constructor = crtWrapperType.GetConstructor(new Type[]
                             {
                                 typeof(bool)
                             });
-#pragma warning restore IL2026,IL2075
                             _awsSigV4AProvider = constructor.Invoke(new object[] { signPayload }) as IAWSSigV4aProvider;
 
                         }

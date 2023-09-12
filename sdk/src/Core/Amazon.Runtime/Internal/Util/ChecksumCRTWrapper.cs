@@ -38,6 +38,12 @@ namespace AWSSDK.Runtime.Internal.Util
         private static volatile IChecksumProvider _instance;
 
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         private static IChecksumProvider Instance
         {
             get
@@ -57,10 +63,8 @@ namespace AWSSDK.Runtime.Internal.Util
 
                         try
                         {
-#pragma warning disable IL2026,IL2075
                             var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
                             var constructor = crtWrapperType.GetConstructor(new Type[] { });
-#pragma warning restore IL2026,IL2075
 
                             _instance = constructor.Invoke(null) as IChecksumProvider;
                         }

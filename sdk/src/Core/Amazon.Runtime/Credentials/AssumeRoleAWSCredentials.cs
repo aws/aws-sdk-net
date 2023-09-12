@@ -89,6 +89,10 @@ namespace Amazon.Runtime
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
@@ -99,7 +103,6 @@ namespace Amazon.Runtime
             {
                 try
                 {
-#pragma warning disable IL2026,IL2075
                     var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
                     stsConfig.RegionEndpoint = region;
 
@@ -110,7 +113,6 @@ namespace Amazon.Runtime
 
                     coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
                         ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, SourceCredentials, stsConfig);
-#pragma warning restore IL2026,IL2075
                 }
                 catch (Exception e)
                 {

@@ -442,7 +442,11 @@ namespace Amazon.Internal
             //
             // If the endpoints.json file has been provided next to the assembly:
             //
+#if NET6_0_OR_GREATER
+            string assemblyLocation = System.AppContext.BaseDirectory;
+#else
             string assemblyLocation = typeof(RegionEndpointProviderV3).Assembly.Location;
+#endif
             if (!string.IsNullOrEmpty(assemblyLocation))
             {
                 string endpointsPath = Path.Combine(Path.GetDirectoryName(assemblyLocation), ENDPOINT_JSON);

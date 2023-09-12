@@ -214,6 +214,10 @@ namespace Amazon.Runtime
         /// Gets a client to be used for AssumeRoleWithWebIdentity requests.
         /// </summary>
         /// <returns>The STS client.</returns>
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif        
         protected virtual ICoreAmazonSTS_WebIdentity CreateClient()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;
@@ -224,7 +228,6 @@ namespace Amazon.Runtime
             {
                 try
                 {
-#pragma warning disable IL2026,IL2075
                     var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
                     stsConfig.RegionEndpoint = region;
 
@@ -235,7 +238,6 @@ namespace Amazon.Runtime
 
                     coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS_WebIdentity>(
                                 ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, new AnonymousAWSCredentials(), region);
-#pragma warning restore IL2026,IL2075
                 }
                 catch (Exception e)
                 {

@@ -12,6 +12,10 @@ namespace Amazon.Runtime.Internal
     /// Collection of helper methods for constructing the necessary Service client to
     /// interrogate AWS SSO Services.
     /// </summary>
+#if NET6_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
     public static class SSOServiceClientHelpers
     {
         public static ICoreAmazonSSOOIDC BuildSSOIDCClient(
@@ -26,7 +30,6 @@ namespace Amazon.Runtime.Internal
             ICoreAmazonSSOOIDC coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSOOIDC>(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOOIDCClientContext(region)));
             if (coreSSO == null)
             {
-#pragma warning disable IL2026,IL2075
                 coreSSO = CreateClient<ICoreAmazonSSOOIDC>(
                     region,
                     ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
@@ -34,12 +37,15 @@ namespace Amazon.Runtime.Internal
                     ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME,
                     nameof(GlobalRuntimeDependencyRegistry.RegisterSSOOIDCClient),
                     proxySettings);
-#pragma warning restore IL2026,IL2075
             }
 
             return coreSSO;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         public static ICoreAmazonSSO BuildSSOClient(
             RegionEndpoint region,
 #if BCL
@@ -52,7 +58,6 @@ namespace Amazon.Runtime.Internal
             ICoreAmazonSSO coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSO>(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOClientContext(region)));
             if(coreSSO == null)
             {
-#pragma warning disable IL2026,IL2075
                 coreSSO = CreateClient<ICoreAmazonSSO>(
                     region,
                     ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
@@ -60,7 +65,6 @@ namespace Amazon.Runtime.Internal
                     ServiceClientHelpers.SSO_ASSEMBLY_NAME,
                     nameof(GlobalRuntimeDependencyRegistry.RegisterSSOClient),
                     proxySettings);
-#pragma warning restore IL2026,IL2075
             }
             return coreSSO;
         }

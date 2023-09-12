@@ -87,6 +87,10 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
             }
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         private static ICoreAmazonKMS CreateFromExistingClient(AmazonServiceClient existingClient, string feature)
         {
             ICoreAmazonKMS coreKMSClient = existingClient.RuntimeDependencyRegistry.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, new CreateInstanceContext(new KeyManagementServiceClientContext(existingClient)));
@@ -97,11 +101,9 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
 
             try
             {
-#pragma warning disable IL2026,IL2075
                 coreKMSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonKMS>(
                     ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
                     existingClient);
-#pragma warning restore IL2026,IL2075
             }
             catch (Exception e)
             {
