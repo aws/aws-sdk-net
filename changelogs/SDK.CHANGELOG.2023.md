@@ -1,3 +1,14 @@
+### 3.7.643.0 (2023-09-12 18:30 UTC)
+* EC2 (3.7.213.0)
+	* This release adds support for restricting public sharing of AMIs through AMI Block Public Access
+* EventBridge (3.7.202.0)
+	* Adds sensitive trait to various shapes in Jetstream Connections API model.
+* Kendra (3.7.201.0)
+	* Amazon Kendra now supports confidence score buckets for retrieved passage results using the Retrieve API.
+* Core 3.7.202.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.642.0 (2023-09-11 18:23 UTC)
 * ECR (3.7.201.0)
 	* This release will have ValidationException be thrown from ECR LifecyclePolicy APIs in regions LifecyclePolicy is not supported, this includes existing Amazon Dedicated Cloud (ADC) regions. This release will also change Tag: TagValue and Tag: TagKey to required.
