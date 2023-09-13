@@ -178,6 +178,11 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  
         /// <para>
+        /// Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you
+        /// choose Ubuntu 22.04.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>AMI aliases </b> 
         /// </para>
         ///  <ul> <li> 
