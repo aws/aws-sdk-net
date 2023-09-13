@@ -294,9 +294,12 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-        /// Redshift, or Splunk. You must specify only one of the following destination configuration
-        /// parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
+        /// A delivery stream is configured with a single destination, such as Amazon Simple Storage
+        /// Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch
+        /// Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported
+        /// by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB,
+        /// New Relic, and Sumo Logic. You must specify only one of the following destination
+        /// configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
         /// <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>,
         /// or <code>SplunkDestinationConfiguration</code>.
         /// </para>
@@ -414,9 +417,12 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-        /// Redshift, or Splunk. You must specify only one of the following destination configuration
-        /// parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
+        /// A delivery stream is configured with a single destination, such as Amazon Simple Storage
+        /// Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch
+        /// Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported
+        /// by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB,
+        /// New Relic, and Sumo Logic. You must specify only one of the following destination
+        /// configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
         /// <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>,
         /// or <code>SplunkDestinationConfiguration</code>.
         /// </para>
@@ -2237,8 +2243,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Switching between Amazon ES and other services is not supported. For an Amazon ES
-        /// destination, you can only update to another Amazon ES destination.
+        /// Switching between Amazon OpenSearch Service and other services is not supported. For
+        /// an Amazon OpenSearch Service destination, you can only update to another Amazon OpenSearch
+        /// Service destination.
         /// </para>
         ///  
         /// <para>
@@ -2306,8 +2313,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Switching between Amazon ES and other services is not supported. For an Amazon ES
-        /// destination, you can only update to another Amazon ES destination.
+        /// Switching between Amazon OpenSearch Service and other services is not supported. For
+        /// an Amazon OpenSearch Service destination, you can only update to another Amazon OpenSearch
+        /// Service destination.
         /// </para>
         ///  
         /// <para>

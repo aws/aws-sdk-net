@@ -152,7 +152,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS credentials.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

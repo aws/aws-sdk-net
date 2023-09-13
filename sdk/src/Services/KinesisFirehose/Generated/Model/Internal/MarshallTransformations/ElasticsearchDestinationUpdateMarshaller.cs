@@ -73,6 +73,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ClusterEndpoint);
             }
 
+            if(requestObject.IsSetDocumentIdOptions())
+            {
+                context.Writer.WritePropertyName("DocumentIdOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DocumentIdOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DocumentIdOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDomainARN())
             {
                 context.Writer.WritePropertyName("DomainARN");

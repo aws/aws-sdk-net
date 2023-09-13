@@ -36,6 +36,7 @@ namespace Amazon.KinesisFirehose.Model
         private ElasticsearchBufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _clusterEndpoint;
+        private DocumentIdOptions _documentIdOptions;
         private string _domainARN;
         private string _indexName;
         private ElasticsearchIndexRotationPeriod _indexRotationPeriod;
@@ -100,6 +101,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetClusterEndpoint()
         {
             return this._clusterEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentIdOptions. 
+        /// <para>
+        /// Indicates the method for setting up document ID. The supported methods are Kinesis
+        /// Data Firehose generated document ID and OpenSearch Service generated document ID.
+        /// </para>
+        /// </summary>
+        public DocumentIdOptions DocumentIdOptions
+        {
+            get { return this._documentIdOptions; }
+            set { this._documentIdOptions = value; }
+        }
+
+        // Check to see if DocumentIdOptions property is set
+        internal bool IsSetDocumentIdOptions()
+        {
+            return this._documentIdOptions != null;
         }
 
         /// <summary>

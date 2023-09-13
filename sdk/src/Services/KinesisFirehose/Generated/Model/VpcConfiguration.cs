@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The details of the VPC of the Amazon ES destination.
+    /// The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.
     /// </summary>
     public partial class VpcConfiguration
     {

@@ -43,8 +43,9 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// Switching between Amazon ES and other services is not supported. For an Amazon ES
-    /// destination, you can only update to another Amazon ES destination.
+    /// Switching between Amazon OpenSearch Service and other services is not supported. For
+    /// an Amazon OpenSearch Service destination, you can only update to another Amazon OpenSearch
+    /// Service destination.
     /// </para>
     ///  
     /// <para>
