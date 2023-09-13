@@ -38,7 +38,6 @@ namespace Amazon.Runtime
 
         private bool _disposed;
         private Logger _logger;
-
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
