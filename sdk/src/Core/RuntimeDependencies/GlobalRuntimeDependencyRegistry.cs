@@ -155,7 +155,7 @@ namespace Amazon.RuntimeDependencies
         /// <param name="instance"></param>
         public void RegisterSSOOIDCClient(object instance)
         {
-            RegisterInstance(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, instance);
+            RegisterInstance(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, instance);
         }
 
         /// <summary>
