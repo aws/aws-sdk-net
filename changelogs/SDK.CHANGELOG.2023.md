@@ -1,3 +1,24 @@
+### 3.7.644.0 (2023-09-13 18:26 UTC)
+* Cloud9 (3.7.200.39)
+	* Update to include information on Ubuntu 18 deprecation.
+* Drs (3.7.202.0)
+	* Updated existing APIs and added new ones to support using AWS Elastic Disaster Recovery post-launch actions. Added support for new regions.
+* GuardDuty (3.7.202.0)
+	* Add `managementType` field to ListCoverage API response.
+* InternetMonitor (3.7.202.0)
+	* This release updates the Amazon CloudWatch Internet Monitor API domain name.
+* IVSRealTime (3.7.201.27)
+	* Doc only update that changes description for ParticipantToken.
+* KinesisFirehose (3.7.201.0)
+	* DocumentIdOptions has been added for the Amazon OpenSearch destination.
+* SimSpaceWeaver (3.7.201.3)
+	* Edited the introductory text for the API reference.
+* XRay (3.7.201.0)
+	* Add StartTime field in GetTraceSummaries API response for each TraceSummary.
+* Core 3.7.202.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.643.0 (2023-09-12 18:30 UTC)
 * EC2 (3.7.213.0)
 	* This release adds support for restricting public sharing of AMIs through AMI Block Public Access

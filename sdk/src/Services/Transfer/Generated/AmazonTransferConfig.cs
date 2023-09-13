@@ -32,7 +32,7 @@ namespace Amazon.Transfer
     public partial class AmazonTransferConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.33");
+            InternalSDKUtils.BuildUserAgentString("3.7.201.34");
 
         private string _userAgent = UserAgentString;
         ///<summary>
