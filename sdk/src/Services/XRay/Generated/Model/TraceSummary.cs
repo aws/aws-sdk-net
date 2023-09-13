@@ -52,6 +52,7 @@ namespace Amazon.XRay.Model
         private List<ResponseTimeRootCause> _responseTimeRootCauses = new List<ResponseTimeRootCause>();
         private int? _revision;
         private List<ServiceId> _serviceIds = new List<ServiceId>();
+        private DateTime? _startTime;
         private List<TraceUser> _users = new List<TraceUser>();
 
         /// <summary>
@@ -399,6 +400,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetServiceIds()
         {
             return this._serviceIds != null && this._serviceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start time of a trace, based on the earliest trace segment start time.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
         /// <summary>
