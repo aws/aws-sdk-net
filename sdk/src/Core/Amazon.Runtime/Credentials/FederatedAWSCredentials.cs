@@ -196,7 +196,7 @@ namespace Amazon.Runtime
             }
 
             ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.ActionContext.FederatedAWSCredentials, region)));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings }));
             if(coreSTSClient == null)
             {
                 try

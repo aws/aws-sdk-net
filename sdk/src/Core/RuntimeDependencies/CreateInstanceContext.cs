@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using System.Net;
 
 namespace Amazon.RuntimeDependencies
 {
@@ -163,29 +164,27 @@ namespace Amazon.RuntimeDependencies
     {
         /// <summary>
         /// The possibly actions the the SecurityTokenServiceClient will be created for.
+        /// 
+        /// For FederatedAWSCredentials the Amazon.Runtime.AnonymousAWSCredentials can be used as credentials for the STS client
+        /// because the authentication will come from the SAML endpoint.
         /// </summary>
         public enum ActionContext { AssumeRoleAWSCredentials, AssumeRoleWithWebIdentityCredentials, FederatedAWSCredentials };
 
-        /// <summary>
-        /// Create an instance of the context
-        /// </summary>
-        /// <param name="action">The action the SecurityTokenServiceClient is being created for.</param>
-        /// <param name="region">The region the SDK expects the SecurityTokenServiceClient to be configured for.</param>
-        public SecurityTokenServiceClientContext(ActionContext action, RegionEndpoint region)
-        {
-            Action = action;
-            Region = region;
-        }
 
         /// <summary>
         /// The action the SecurityTokenServiceClient is being created for. For example AssumeRoleAWSCredentials.
         /// </summary>
-        public ActionContext Action { get; }
+        public ActionContext Action { get; set; }
 
         /// <summary>
         /// The region the SDK expects the SecurityTokenServiceClient to be configured for.
         /// </summary>
-        public RegionEndpoint Region { get; }
+        public RegionEndpoint Region { get; set; }
+
+        /// <summary>
+        /// Proxy settings that can be applied to the service client config object.
+        /// </summary>
+        public IWebProxy ProxySettings { get; set; }
     }
 
     /// <summary>
@@ -193,20 +192,12 @@ namespace Amazon.RuntimeDependencies
     /// </summary>
     public class KeyManagementServiceClientContext
     {
-        /// <summary>
-        /// Create an instance of the context
-        /// </summary>
-        /// <param name="parentServiceClient">The service client that is creating the KeyManagementServiceClient.</param>
-        public KeyManagementServiceClientContext(AmazonServiceClient parentServiceClient)
-        {
-            ParentServiceClient = parentServiceClient;
-        }
 
         /// <summary>
         /// The service client that is creating the KeyManagementServiceClient. The factory method should use the 
         /// configuration like AWS region when constructing the KeyManagementServiceClient.
         /// </summary>
-        public AmazonServiceClient ParentServiceClient { get; }
+        public AmazonServiceClient ParentServiceClient { get; set; }
     }
 
     /// <summary>
@@ -217,13 +208,16 @@ namespace Amazon.RuntimeDependencies
         /// <summary>
         /// Create an instance of the context
         /// </summary>
-        /// <param name="payload"></param>
-        public SigV4aCrtSignerContext(bool payload)
+        /// <param name="signPayload"></param>
+        public SigV4aCrtSignerContext(bool signPayload)
         {
-            Payload = payload;
+            SignPayload = signPayload;
         }
 
-        public bool Payload { get; }
+        /// <summary>
+        /// A boolean to pass into the constructor for the Amazon.Extensions.CrtIntegration.CrtAWS4aSigner to control whether the request payload should be signed.
+        /// </summary>
+        public bool SignPayload { get; set; }
     }
 
     /// <summary>
@@ -239,19 +233,16 @@ namespace Amazon.RuntimeDependencies
     /// </summary>
     public class SSOClientContext
     {
-        /// <summary>
-        /// Create an instance of the context
-        /// </summary>
-        /// <param name="region">The region the SDK expects the SecurityTokenServiceClient to be configured for.</param>
-        public SSOClientContext(RegionEndpoint region)
-        {
-            Region = region;
-        }
 
         /// <summary>
-        /// The region the SDK expects the SecurityTokenServiceClient to be configured for.
+        /// The region the SDK expects the SSOClient to be configured for.
         /// </summary>
-        public RegionEndpoint Region { get; }
+        public RegionEndpoint Region { get; set; }
+
+        /// <summary>
+        /// Proxy settings that can be applied to the service client config object.
+        /// </summary>
+        public IWebProxy ProxySettings { get; set; }
     }
 
     /// <summary>
@@ -259,18 +250,15 @@ namespace Amazon.RuntimeDependencies
     /// </summary>
     public class SSOOIDCClientContext
     {
-        /// <summary>
-        /// Create an instance of the context
-        /// </summary>
-        /// <param name="region">The region the SDK expects the SecurityTokenServiceClient to be configured for.</param>
-        public SSOOIDCClientContext(RegionEndpoint region)
-        {
-            Region = region;
-        }
 
         /// <summary>
-        /// The region the SDK expects the SecurityTokenServiceClient to be configured for.
+        /// The region the SDK expects the SSOOIDCClient to be configured for.
         /// </summary>
-        public RegionEndpoint Region { get; }
+        public RegionEndpoint Region { get; set; }
+
+        /// <summary>
+        /// Proxy settings that can be applied to the service client config object.
+        /// </summary>
+        public IWebProxy ProxySettings { get; set; }
     }
 }

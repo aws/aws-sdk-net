@@ -27,7 +27,7 @@ namespace Amazon.Runtime.Internal
 #endif
         )
         {
-            ICoreAmazonSSOOIDC coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSOOIDC>(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOOIDCClientContext(region)));
+            ICoreAmazonSSOOIDC coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSOOIDC>(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOOIDCClientContext { Region = region, ProxySettings = proxySettings }));
             if (coreSSO == null)
             {
                 coreSSO = CreateClient<ICoreAmazonSSOOIDC>(
@@ -55,7 +55,7 @@ namespace Amazon.Runtime.Internal
 #endif
         )
         {
-            ICoreAmazonSSO coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSO>(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOClientContext(region)));
+            ICoreAmazonSSO coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSO>(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOClientContext { Region = region, ProxySettings = proxySettings }));
             if(coreSSO == null)
             {
                 coreSSO = CreateClient<ICoreAmazonSSO>(

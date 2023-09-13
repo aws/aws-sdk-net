@@ -97,7 +97,7 @@ namespace Amazon.Runtime
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
             ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
-                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, region)));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext {Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings } ));
 
             if (coreSTSClient == null)
             {
@@ -106,7 +106,7 @@ namespace Amazon.Runtime
                     var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
                     stsConfig.RegionEndpoint = region;
 
-                    if (Options != null && Options.ProxySettings != null)
+                    if (Options?.ProxySettings != null)
                     {
                         stsConfig.SetWebProxy(Options.ProxySettings);
                     }
