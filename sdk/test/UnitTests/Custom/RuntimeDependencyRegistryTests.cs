@@ -32,7 +32,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonSecurityTokenService>(
                 ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
-                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, RegionEndpoint.USWest2)));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = RegionEndpoint.USWest2 }));
 
             Assert.AreSame(expectedInstance, registerdInstance);
         }
@@ -54,7 +54,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonSecurityTokenService>(
                 ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, RegionEndpoint.USWest2)));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = RegionEndpoint.USWest2 }));
 
             Assert.IsTrue(factoryCalled);
             Assert.AreSame(expectedInstanace, registerdInstance);
@@ -79,7 +79,7 @@ namespace AWSSDK.UnitTests
             var registry = new GlobalRuntimeDependencyRegistry();
             registry.RegisterSigV4aProvider((context) =>
             {
-                Assert.IsTrue(context.SigV4aCrtSignerContextData.Payload);
+                Assert.IsTrue(context.SigV4aCrtSignerContextData.SignPayload);
                 return expectedInstance;
             });
 
@@ -98,7 +98,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonKeyManagementService>(
                 ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new KeyManagementServiceClientContext(null)));
+                new CreateInstanceContext(new KeyManagementServiceClientContext()));
             
             Assert.AreSame(expectedInstance, registerdInstance);
         }
@@ -120,7 +120,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonKeyManagementService>(
                 ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new KeyManagementServiceClientContext(null)));
+                new CreateInstanceContext(new KeyManagementServiceClientContext()));
 
             Assert.IsTrue(factoryCalled);
             Assert.AreSame(expectedInstanace, registerdInstance);
@@ -136,7 +136,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonSSO>(
                 ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOClientContext(RegionEndpoint.USWest2)));
+                new CreateInstanceContext(new SSOClientContext { Region = RegionEndpoint.USWest2 }));
 
             Assert.AreSame(expectedInstance, registerdInstance);
         }
@@ -158,7 +158,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonSSO>(
                 ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOClientContext(RegionEndpoint.USWest2)));
+                new CreateInstanceContext(new SSOClientContext { Region = RegionEndpoint.USWest2 }));
 
             Assert.IsTrue(factoryCalled);
             Assert.AreSame(expectedInstanace, registerdInstance);
@@ -174,7 +174,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonSSOOIDC>(
                 ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOOIDCClientContext(RegionEndpoint.USWest2)));
+                new CreateInstanceContext(new SSOOIDCClientContext { Region = RegionEndpoint.USWest2 }));
 
             Assert.AreSame(expectedInstance, registerdInstance);
         }
@@ -196,7 +196,7 @@ namespace AWSSDK.UnitTests
 
             var registerdInstance = registry.GetInstance<IAmazonSSOOIDC>(
                 ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOOIDCClientContext(RegionEndpoint.USWest2)));
+                new CreateInstanceContext(new SSOOIDCClientContext { Region = RegionEndpoint.USWest2 }));
 
             Assert.IsTrue(factoryCalled);
             Assert.AreSame(expectedInstanace, registerdInstance);
