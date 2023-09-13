@@ -100,6 +100,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPostLaunchEnabled())
+                {
+                    context.Writer.WritePropertyName("postLaunchEnabled");
+                    context.Writer.Write(publicRequest.PostLaunchEnabled);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

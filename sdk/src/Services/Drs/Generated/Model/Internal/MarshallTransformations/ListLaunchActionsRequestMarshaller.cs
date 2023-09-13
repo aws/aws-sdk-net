@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateLaunchConfiguration Request Marshaller
+    /// ListLaunchActions Request Marshaller
     /// </summary>       
-    public class UpdateLaunchConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateLaunchConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListLaunchActionsRequestMarshaller : IMarshaller<IRequest, ListLaunchActionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateLaunchConfigurationRequest)input);
+            return this.Marshall((ListLaunchActionsRequest)input);
         }
 
         /// <summary>
@@ -52,70 +52,46 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateLaunchConfigurationRequest publicRequest)
+        public IRequest Marshall(ListLaunchActionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Drs");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/UpdateLaunchConfiguration";
+            request.ResourcePath = "/ListLaunchActions";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCopyPrivateIp())
+                if(publicRequest.IsSetFilters())
                 {
-                    context.Writer.WritePropertyName("copyPrivateIp");
-                    context.Writer.Write(publicRequest.CopyPrivateIp);
-                }
-
-                if(publicRequest.IsSetCopyTags())
-                {
-                    context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags);
-                }
-
-                if(publicRequest.IsSetLaunchDisposition())
-                {
-                    context.Writer.WritePropertyName("launchDisposition");
-                    context.Writer.Write(publicRequest.LaunchDisposition);
-                }
-
-                if(publicRequest.IsSetLicensing())
-                {
-                    context.Writer.WritePropertyName("licensing");
+                    context.Writer.WritePropertyName("filters");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = LicensingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Licensing, context);
+                    var marshaller = LaunchActionsRequestFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filters, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetPostLaunchEnabled())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("postLaunchEnabled");
-                    context.Writer.Write(publicRequest.PostLaunchEnabled);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetSourceServerID())
+                if(publicRequest.IsSetResourceId())
                 {
-                    context.Writer.WritePropertyName("sourceServerID");
-                    context.Writer.Write(publicRequest.SourceServerID);
-                }
-
-                if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
-                {
-                    context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
-                    context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
+                    context.Writer.WritePropertyName("resourceId");
+                    context.Writer.Write(publicRequest.ResourceId);
                 }
 
                 writer.WriteObjectEnd();
@@ -126,9 +102,9 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateLaunchConfigurationRequestMarshaller _instance = new UpdateLaunchConfigurationRequestMarshaller();        
+        private static ListLaunchActionsRequestMarshaller _instance = new ListLaunchActionsRequestMarshaller();        
 
-        internal static UpdateLaunchConfigurationRequestMarshaller GetInstance()
+        internal static ListLaunchActionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +112,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateLaunchConfigurationRequestMarshaller Instance
+        public static ListLaunchActionsRequestMarshaller Instance
         {
             get
             {

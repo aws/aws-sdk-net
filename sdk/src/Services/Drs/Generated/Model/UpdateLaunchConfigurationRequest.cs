@@ -39,6 +39,7 @@ namespace Amazon.Drs.Model
         private LaunchDisposition _launchDisposition;
         private Licensing _licensing;
         private string _name;
+        private bool? _postLaunchEnabled;
         private string _sourceServerID;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
 
@@ -132,6 +133,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostLaunchEnabled. 
+        /// <para>
+        /// Whether we want to enable post-launch actions for the Source Server.
+        /// </para>
+        /// </summary>
+        public bool PostLaunchEnabled
+        {
+            get { return this._postLaunchEnabled.GetValueOrDefault(); }
+            set { this._postLaunchEnabled = value; }
+        }
+
+        // Check to see if PostLaunchEnabled property is set
+        internal bool IsSetPostLaunchEnabled()
+        {
+            return this._postLaunchEnabled.HasValue; 
         }
 
         /// <summary>

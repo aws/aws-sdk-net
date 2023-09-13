@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateLaunchConfiguration operation
+    /// Response Unmarshaller for PutLaunchAction operation
     /// </summary>  
-    public class UpdateLaunchConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutLaunchActionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,46 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateLaunchConfigurationResponse response = new UpdateLaunchConfigurationResponse();
+            PutLaunchActionResponse response = new PutLaunchActionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("copyPrivateIp", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CopyPrivateIp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("copyTags", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CopyTags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ec2LaunchTemplateID", targetDepth))
+                if (context.TestExpression("actionCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context);
+                    response.ActionCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("launchDisposition", targetDepth))
+                if (context.TestExpression("actionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LaunchDisposition = unmarshaller.Unmarshall(context);
+                    response.ActionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("licensing", targetDepth))
+                if (context.TestExpression("actionVersion", targetDepth))
                 {
-                    var unmarshaller = LicensingUnmarshaller.Instance;
-                    response.Licensing = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ActionVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("active", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.Active = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -87,22 +93,34 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("postLaunchEnabled", targetDepth))
+                if (context.TestExpression("optional", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    response.PostLaunchEnabled = unmarshaller.Unmarshall(context);
+                    response.Optional = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("order", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceServerID = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.Order = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
+                if (context.TestExpression("parameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, LaunchActionParameter, StringUnmarshaller, LaunchActionParameterUnmarshaller>(StringUnmarshaller.Instance, LaunchActionParameterUnmarshaller.Instance);
+                    response.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context);
+                    response.ResourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -156,9 +174,9 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             return new AmazonDrsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateLaunchConfigurationResponseUnmarshaller _instance = new UpdateLaunchConfigurationResponseUnmarshaller();        
+        private static PutLaunchActionResponseUnmarshaller _instance = new PutLaunchActionResponseUnmarshaller();        
 
-        internal static UpdateLaunchConfigurationResponseUnmarshaller GetInstance()
+        internal static PutLaunchActionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -166,7 +184,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateLaunchConfigurationResponseUnmarshaller Instance
+        public static PutLaunchActionResponseUnmarshaller Instance
         {
             get
             {

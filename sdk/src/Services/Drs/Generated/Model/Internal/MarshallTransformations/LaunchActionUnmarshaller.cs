@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchConfigurationTemplate Object
+    /// Response Unmarshaller for LaunchAction Object
     /// </summary>  
-    public class LaunchConfigurationTemplateUnmarshaller : IUnmarshaller<LaunchConfigurationTemplate, XmlUnmarshallerContext>, IUnmarshaller<LaunchConfigurationTemplate, JsonUnmarshallerContext>
+    public class LaunchActionUnmarshaller : IUnmarshaller<LaunchAction, XmlUnmarshallerContext>, IUnmarshaller<LaunchAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LaunchConfigurationTemplate IUnmarshaller<LaunchConfigurationTemplate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LaunchAction IUnmarshaller<LaunchAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,75 +53,81 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchConfigurationTemplate Unmarshall(JsonUnmarshallerContext context)
+        public LaunchAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LaunchConfigurationTemplate unmarshalledObject = new LaunchConfigurationTemplate();
+            LaunchAction unmarshalledObject = new LaunchAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("actionCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("copyPrivateIp", targetDepth))
+                if (context.TestExpression("actionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("actionVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("active", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.CopyPrivateIp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("copyTags", targetDepth))
+                if (context.TestExpression("category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("optional", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Optional = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("exportBucketArn", targetDepth))
+                if (context.TestExpression("order", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Order = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("parameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, LaunchActionParameter, StringUnmarshaller, LaunchActionParameterUnmarshaller>(StringUnmarshaller.Instance, LaunchActionParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportBucketArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchConfigurationTemplateID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchConfigurationTemplateID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchDisposition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchDisposition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("licensing", targetDepth))
-                {
-                    var unmarshaller = LicensingUnmarshaller.Instance;
-                    unmarshalledObject.Licensing = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("postLaunchEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.PostLaunchEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,12 +136,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         }
 
 
-        private static LaunchConfigurationTemplateUnmarshaller _instance = new LaunchConfigurationTemplateUnmarshaller();        
+        private static LaunchActionUnmarshaller _instance = new LaunchActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchConfigurationTemplateUnmarshaller Instance
+        public static LaunchActionUnmarshaller Instance
         {
             get
             {

@@ -40,6 +40,7 @@ namespace Amazon.Drs.Model
         private string _launchConfigurationTemplateID;
         private LaunchDisposition _launchDisposition;
         private Licensing _licensing;
+        private bool? _postLaunchEnabled;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
 
         /// <summary>
@@ -150,6 +151,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetLicensing()
         {
             return this._licensing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostLaunchEnabled. 
+        /// <para>
+        /// Whether we want to activate post-launch actions.
+        /// </para>
+        /// </summary>
+        public bool PostLaunchEnabled
+        {
+            get { return this._postLaunchEnabled.GetValueOrDefault(); }
+            set { this._postLaunchEnabled = value; }
+        }
+
+        // Check to see if PostLaunchEnabled property is set
+        internal bool IsSetPostLaunchEnabled()
+        {
+            return this._postLaunchEnabled.HasValue; 
         }
 
         /// <summary>

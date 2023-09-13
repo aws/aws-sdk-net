@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ParticipatingServer Object
+    /// Response Unmarshaller for LaunchActionRun Object
     /// </summary>  
-    public class ParticipatingServerUnmarshaller : IUnmarshaller<ParticipatingServer, XmlUnmarshallerContext>, IUnmarshaller<ParticipatingServer, JsonUnmarshallerContext>
+    public class LaunchActionRunUnmarshaller : IUnmarshaller<LaunchActionRun, XmlUnmarshallerContext>, IUnmarshaller<LaunchActionRun, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ParticipatingServer IUnmarshaller<ParticipatingServer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LaunchActionRun IUnmarshaller<LaunchActionRun, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ParticipatingServer Unmarshall(JsonUnmarshallerContext context)
+        public LaunchActionRun Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ParticipatingServer unmarshalledObject = new ParticipatingServer();
+            LaunchActionRun unmarshalledObject = new LaunchActionRun();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("launchActionsStatus", targetDepth))
+                if (context.TestExpression("action", targetDepth))
                 {
-                    var unmarshaller = LaunchActionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.LaunchActionsStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LaunchActionUnmarshaller.Instance;
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("launchStatus", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("recoveryInstanceID", targetDepth))
+                if (context.TestExpression("runId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryInstanceID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         }
 
 
-        private static ParticipatingServerUnmarshaller _instance = new ParticipatingServerUnmarshaller();        
+        private static LaunchActionRunUnmarshaller _instance = new LaunchActionRunUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ParticipatingServerUnmarshaller Instance
+        public static LaunchActionRunUnmarshaller Instance
         {
             get
             {

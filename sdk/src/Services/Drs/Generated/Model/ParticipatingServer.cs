@@ -33,9 +33,28 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class ParticipatingServer
     {
+        private LaunchActionsStatus _launchActionsStatus;
         private LaunchStatus _launchStatus;
         private string _recoveryInstanceID;
         private string _sourceServerID;
+
+        /// <summary>
+        /// Gets and sets the property LaunchActionsStatus. 
+        /// <para>
+        /// The post-launch action runs of a participating server.
+        /// </para>
+        /// </summary>
+        public LaunchActionsStatus LaunchActionsStatus
+        {
+            get { return this._launchActionsStatus; }
+            set { this._launchActionsStatus = value; }
+        }
+
+        // Check to see if LaunchActionsStatus property is set
+        internal bool IsSetLaunchActionsStatus()
+        {
+            return this._launchActionsStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LaunchStatus. 

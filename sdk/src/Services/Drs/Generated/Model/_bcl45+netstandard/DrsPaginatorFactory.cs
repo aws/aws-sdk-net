@@ -108,6 +108,14 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Paginator for ListLaunchActions operation
+        ///</summary>
+        public IListLaunchActionsPaginator ListLaunchActions(ListLaunchActionsRequest request) 
+        {
+            return new ListLaunchActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStagingAccounts operation
         ///</summary>
         public IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request) 

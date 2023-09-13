@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ParticipatingServer Object
+    /// Response Unmarshaller for LaunchActionParameter Object
     /// </summary>  
-    public class ParticipatingServerUnmarshaller : IUnmarshaller<ParticipatingServer, XmlUnmarshallerContext>, IUnmarshaller<ParticipatingServer, JsonUnmarshallerContext>
+    public class LaunchActionParameterUnmarshaller : IUnmarshaller<LaunchActionParameter, XmlUnmarshallerContext>, IUnmarshaller<LaunchActionParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ParticipatingServer IUnmarshaller<ParticipatingServer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LaunchActionParameter IUnmarshaller<LaunchActionParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ParticipatingServer Unmarshall(JsonUnmarshallerContext context)
+        public LaunchActionParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ParticipatingServer unmarshalledObject = new ParticipatingServer();
+            LaunchActionParameter unmarshalledObject = new LaunchActionParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("launchActionsStatus", targetDepth))
-                {
-                    var unmarshaller = LaunchActionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.LaunchActionsStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchStatus", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("recoveryInstanceID", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryInstanceID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceServerID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         }
 
 
-        private static ParticipatingServerUnmarshaller _instance = new ParticipatingServerUnmarshaller();        
+        private static LaunchActionParameterUnmarshaller _instance = new LaunchActionParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ParticipatingServerUnmarshaller Instance
+        public static LaunchActionParameterUnmarshaller Instance
         {
             get
             {

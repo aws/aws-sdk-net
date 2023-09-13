@@ -270,6 +270,39 @@ namespace Amazon.Drs
 
         #endregion
                 
+        #region  DeleteLaunchAction
+
+
+
+        /// <summary>
+        /// Deletes a resource launch action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLaunchAction service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
+        Task<DeleteLaunchActionResponse> DeleteLaunchActionAsync(DeleteLaunchActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteLaunchConfigurationTemplate
 
 
@@ -982,6 +1015,39 @@ namespace Amazon.Drs
 
         #endregion
                 
+        #region  ListLaunchActions
+
+
+
+        /// <summary>
+        /// Lists resource launch actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLaunchActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLaunchActions service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
+        Task<ListLaunchActionsResponse> ListLaunchActionsAsync(ListLaunchActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListStagingAccounts
 
 
@@ -1045,6 +1111,43 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutLaunchAction
+
+
+
+        /// <summary>
+        /// Puts a resource launch action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLaunchAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutLaunchAction service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
+        Task<PutLaunchActionResponse> PutLaunchActionAsync(PutLaunchActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
