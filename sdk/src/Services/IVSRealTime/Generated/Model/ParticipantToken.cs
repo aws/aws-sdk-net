@@ -30,6 +30,12 @@ namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
     /// Object specifying a participant token in a stage.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Important</b>: Treat tokens as opaque; i.e., do not build functionality based
+    /// on token contents. The format of tokens could change in the future.
+    /// </para>
     /// </summary>
     public partial class ParticipantToken
     {
