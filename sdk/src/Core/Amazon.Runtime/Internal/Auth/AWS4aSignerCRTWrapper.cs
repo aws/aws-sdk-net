@@ -14,7 +14,7 @@
  */
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
-using Amazon.RuntimeDependencyRegistry;
+using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;

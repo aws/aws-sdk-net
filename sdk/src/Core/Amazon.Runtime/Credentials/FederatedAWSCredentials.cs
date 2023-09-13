@@ -19,12 +19,13 @@ using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
+using Amazon.RuntimeDependencies;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
-using Amazon.RuntimeDependencyRegistry;
-using Amazon.Util.Internal;
+
 
 namespace Amazon.Runtime
 {
@@ -196,7 +197,7 @@ namespace Amazon.Runtime
             }
 
             ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.SourceContext.FederatedAWSCredentials, region)));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.ActionContext.FederatedAWSCredentials, region)));
             if(coreSTSClient == null)
             {
                 try

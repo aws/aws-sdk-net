@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.RuntimeDependencyRegistry;
-
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -30,10 +28,5 @@ namespace Amazon.Runtime
         {
             get;
         }
-
-        /// <summary>
-        /// Register service client specific runtime dependencies.
-        /// </summary>
-        ServiceClientRuntimeDependencyRegistry RuntimeDependencyRegistry { get; }
     }
 }

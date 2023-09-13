@@ -15,7 +15,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
-using Amazon.RuntimeDependencyRegistry;
+using Amazon.RuntimeDependencies;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -223,7 +223,7 @@ namespace Amazon.Runtime
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;
 
             ICoreAmazonSTS_WebIdentity coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS_WebIdentity>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.SourceContext.AssumeRoleAWSCredentials, region)));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext(SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, region)));
             if(coreSTSClient == null)
             {
                 try

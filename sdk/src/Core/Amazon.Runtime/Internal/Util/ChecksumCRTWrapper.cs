@@ -16,7 +16,7 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces.Internal;
-using Amazon.RuntimeDependencyRegistry;
+using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
 using System;
 using System.Diagnostics.CodeAnalysis;

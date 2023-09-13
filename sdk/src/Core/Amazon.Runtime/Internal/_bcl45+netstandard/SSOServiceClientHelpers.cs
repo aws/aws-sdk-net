@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Net;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
-using Amazon.RuntimeDependencyRegistry;
+using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal
