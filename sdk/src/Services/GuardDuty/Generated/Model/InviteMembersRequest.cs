@@ -31,10 +31,10 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the InviteMembers operation.
     /// Invites Amazon Web Services accounts to become members of an organization administered
-    /// by the Amazon Web Services account that invokes this API. If you are using Amazon
-    /// Web Services Organizations to manager your GuardDuty environment, this step is not
-    /// needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
-    /// accounts with Amazon Web Services Organizations</a>.
+    /// by the Amazon Web Services account that invokes this API. If you are using organizations
+    /// to manager your GuardDuty environment, this step is not needed. For more information,
+    /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
+    /// accounts with organizations</a>.
     /// 
     ///  
     /// <para>

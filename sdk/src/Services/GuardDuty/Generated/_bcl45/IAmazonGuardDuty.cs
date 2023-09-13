@@ -1086,8 +1086,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disables an Amazon Web Services account within the Organization as the GuardDuty delegated
-        /// administrator.
+        /// Removes the existing GuardDuty delegated administrator of the organization. Only the
+        /// organization's management account can run this API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// 
@@ -1104,8 +1104,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disables an Amazon Web Services account within the Organization as the GuardDuty delegated
-        /// administrator.
+        /// Removes the existing GuardDuty delegated administrator of the organization. Only the
+        /// organization's management account can run this API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1283,7 +1283,7 @@ namespace Amazon.GuardDuty
         /// <para>
         /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
         /// set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a
-        /// member account before removing them from your Amazon Web Services organization.
+        /// member account before removing them from your organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -1318,7 +1318,7 @@ namespace Amazon.GuardDuty
         /// <para>
         /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
         /// set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a
-        /// member account before removing them from your Amazon Web Services organization.
+        /// member account before removing them from your organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -1342,8 +1342,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Enables an Amazon Web Services account within the organization as the GuardDuty delegated
-        /// administrator.
+        /// Designates an Amazon Web Services account within the organization as your GuardDuty
+        /// delegated administrator. Only the organization's management account can run this API
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// 
@@ -1360,8 +1361,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Enables an Amazon Web Services account within the organization as the GuardDuty delegated
-        /// administrator.
+        /// Designates an Amazon Web Services account within the organization as your GuardDuty
+        /// delegated administrator. Only the organization's management account can run this API
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1384,8 +1386,15 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Provides the details for the GuardDuty administrator account associated with the current
+        /// Provides the details of the GuardDuty administrator account associated with the current
         /// GuardDuty member account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the organization's management account or a delegated administrator runs this API,
+        /// it will return success (<code>HTTP 200</code>) but no content.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
         /// 
@@ -1402,8 +1411,15 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Provides the details for the GuardDuty administrator account associated with the current
+        /// Provides the details of the GuardDuty administrator account associated with the current
         /// GuardDuty member account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the organization's management account or a delegated administrator runs this API,
+        /// it will return success (<code>HTTP 200</code>) but no content.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2059,10 +2075,10 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Invites Amazon Web Services accounts to become members of an organization administered
-        /// by the Amazon Web Services account that invokes this API. If you are using Amazon
-        /// Web Services Organizations to manager your GuardDuty environment, this step is not
-        /// needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
-        /// accounts with Amazon Web Services Organizations</a>.
+        /// by the Amazon Web Services account that invokes this API. If you are using organizations
+        /// to manager your GuardDuty environment, this step is not needed. For more information,
+        /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
+        /// accounts with organizations</a>.
         /// 
         ///  
         /// <para>
@@ -2102,10 +2118,10 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Invites Amazon Web Services accounts to become members of an organization administered
-        /// by the Amazon Web Services account that invokes this API. If you are using Amazon
-        /// Web Services Organizations to manager your GuardDuty environment, this step is not
-        /// needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
-        /// accounts with Amazon Web Services Organizations</a>.
+        /// by the Amazon Web Services account that invokes this API. If you are using organizations
+        /// to manager your GuardDuty environment, this step is not needed. For more information,
+        /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
+        /// accounts with organizations</a>.
         /// 
         ///  
         /// <para>
@@ -2452,7 +2468,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists the accounts configured as GuardDuty delegated administrators.
+        /// Lists the accounts configured as GuardDuty delegated administrators. Only the organization's
+        /// management account can run this API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// 
@@ -2469,7 +2486,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists the accounts configured as GuardDuty delegated administrators.
+        /// Lists the accounts configured as GuardDuty delegated administrators. Only the organization's
+        /// management account can run this API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -2534,8 +2552,7 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
         /// IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per
-        /// each resource. When invoked, this operation returns all assigned tags for a given
-        /// resource.
+        /// resource. When invoked, this operation returns all assigned tags for a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2557,8 +2574,7 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
         /// IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per
-        /// each resource. When invoked, this operation returns all assigned tags for a given
-        /// resource.
+        /// resource. When invoked, this operation returns all assigned tags for a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3197,8 +3213,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Configures the delegated administrator account with the provided values. You must
-        /// provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.
-        /// 
+        /// provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>,
+        /// but not both. 
         /// 
         ///  
         /// <para>
@@ -3224,8 +3240,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Configures the delegated administrator account with the provided values. You must
-        /// provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.
-        /// 
+        /// provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>,
+        /// but not both. 
         /// 
         ///  
         /// <para>

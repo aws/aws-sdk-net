@@ -32,8 +32,7 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
     /// IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per
-    /// each resource. When invoked, this operation returns all assigned tags for a given
-    /// resource.
+    /// resource. When invoked, this operation returns all assigned tags for a given resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGuardDutyRequest
     {
