@@ -5,7 +5,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="ServiceClientGenerator.DefaultConfiguration" #>
-
+<#@ import namespace="System.Text.RegularExpressions" #>
 
 <#+	
     // An object that contains all the information about a service
@@ -314,6 +314,15 @@
         }
     }
 
+    // Even though these tags will be replaced, there might be occurrences with extra attributes (for example, "<p class='title'>") in the service documentation.
+    // We'll replace them as well by using a regular expression:
+    // - "[^>]" matches any character other than ">" (so it captures additional attributes in the HTML definition)
+    // - "*" matches the previous token 0 or more times (in case there are multiple additional attributes)
+    // As a result, "[^>]*" will return any extra characters included between the start and end of the element ("<p" and ">") and remove them.
+
+    static Regex pTagRegex = new Regex("<p [^>]*>", RegexOptions.Compiled);
+    static Regex tagsRegex = new Regex(String.Join("|", "<fullname [^>]*>", "<function [^>]*>", "<br [^>]*>"), RegexOptions.Compiled);
+
     // Removes unneccesary tags from the documentation and formats paragraph tags correctly
     public string CleanupDocumentation(string documentation)
     {
@@ -330,7 +339,9 @@
             .Replace("<p/>","")
             .Trim();
 
-        
+        documentation = pTagRegex.Replace(documentation, "\n<para>\n");
+        documentation = tagsRegex.Replace(documentation, "");
+
         // Remove examples because these will be wire protocol examples
         documentation = RemoveSnippets(documentation, "<examples>", "</examples>");
 
