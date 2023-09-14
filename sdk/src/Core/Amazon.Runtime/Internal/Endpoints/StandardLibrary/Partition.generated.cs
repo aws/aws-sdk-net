@@ -34,7 +34,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "amazonaws.com",
                 dualStackDnsSuffix = "api.aws",
                 supportsFIPS = true,
-                supportsDualStack = true
+                supportsDualStack = true,
+                implicitGlobalRegion = "us-east-1"
             };
             _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af|il)\-\w+\-\d+$", aws);
             _partitionsByRegionName.Add("af-south-1", aws);
@@ -73,7 +74,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "amazonaws.com.cn",
                 dualStackDnsSuffix = "api.amazonwebservices.com.cn",
                 supportsFIPS = true,
-                supportsDualStack = true
+                supportsDualStack = true,
+                implicitGlobalRegion = "cn-northwest-1"
             };
             _partitionsByRegex.Add(@"^cn\-\w+\-\d+$", aws_cn);
             _partitionsByRegionName.Add("aws-cn-global", aws_cn);
@@ -86,7 +88,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "amazonaws.com",
                 dualStackDnsSuffix = "api.aws",
                 supportsFIPS = true,
-                supportsDualStack = true
+                supportsDualStack = true,
+                implicitGlobalRegion = "us-gov-west-1"
             };
             _partitionsByRegex.Add(@"^us\-gov\-\w+\-\d+$", aws_us_gov);
             _partitionsByRegionName.Add("aws-us-gov-global", aws_us_gov);
@@ -99,7 +102,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "c2s.ic.gov",
                 dualStackDnsSuffix = "c2s.ic.gov",
                 supportsFIPS = true,
-                supportsDualStack = false
+                supportsDualStack = false,
+                implicitGlobalRegion = "us-iso-east-1"
             };
             _partitionsByRegex.Add(@"^us\-iso\-\w+\-\d+$", aws_iso);
             _partitionsByRegionName.Add("aws-iso-global", aws_iso);
@@ -112,7 +116,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "sc2s.sgov.gov",
                 dualStackDnsSuffix = "sc2s.sgov.gov",
                 supportsFIPS = true,
-                supportsDualStack = false
+                supportsDualStack = false,
+                implicitGlobalRegion = "us-isob-east-1"
             };
             _partitionsByRegex.Add(@"^us\-isob\-\w+\-\d+$", aws_iso_b);
             _partitionsByRegionName.Add("aws-iso-b-global", aws_iso_b);
@@ -124,7 +129,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "cloud.adc-e.uk",
                 dualStackDnsSuffix = "cloud.adc-e.uk",
                 supportsFIPS = true,
-                supportsDualStack = false
+                supportsDualStack = false,
+                implicitGlobalRegion = "eu-isoe-west-1"
             };
             _partitionsByRegex.Add(@"^eu\-isoe\-\w+\-\d+$", aws_iso_e);
 
@@ -134,7 +140,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "csp.hci.ic.gov",
                 dualStackDnsSuffix = "csp.hci.ic.gov",
                 supportsFIPS = true,
-                supportsDualStack = false
+                supportsDualStack = false,
+                implicitGlobalRegion = "us-isof-south-1"
             };
             _partitionsByRegex.Add(@"^us\-isof\-\w+\-\d+$", aws_iso_f);
 
