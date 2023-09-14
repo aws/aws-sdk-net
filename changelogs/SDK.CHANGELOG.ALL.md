@@ -1,3 +1,8 @@
+### 3.7.644.1 (2023-09-14 13:38 UTC)
+* Core 3.7.202.8
+	* Update CleanupDocumentation to replace tags that might contain additional attributes. Add public IsAddressesSet method for WAFv2 UpdateIPSetRequest to handle empty list.
+	* All services packages updated to require new Core
+
 ### 3.7.644.0 (2023-09-13 18:26 UTC)
 * Cloud9 (3.7.200.39)
 	* Update to include information on Ubuntu 18 deprecation.

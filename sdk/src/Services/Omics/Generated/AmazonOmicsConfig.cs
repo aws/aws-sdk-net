@@ -32,7 +32,7 @@ namespace Amazon.Omics
     public partial class AmazonOmicsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.204.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.204.12");
 
         private string _userAgent = UserAgentString;
         ///<summary>
