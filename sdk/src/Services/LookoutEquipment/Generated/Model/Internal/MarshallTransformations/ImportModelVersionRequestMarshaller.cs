@@ -84,6 +84,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatasetName);
                 }
 
+                if(publicRequest.IsSetInferenceDataImportStrategy())
+                {
+                    context.Writer.WritePropertyName("InferenceDataImportStrategy");
+                    context.Writer.Write(publicRequest.InferenceDataImportStrategy);
+                }
+
                 if(publicRequest.IsSetLabelsInputConfiguration())
                 {
                     context.Writer.WritePropertyName("LabelsInputConfiguration");

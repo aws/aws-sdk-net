@@ -94,6 +94,24 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatasetName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LatestScheduledRetrainingModelVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LatestScheduledRetrainingModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestScheduledRetrainingStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LatestScheduledRetrainingStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestScheduledRetrainingStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestScheduledRetrainingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +122,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextScheduledRetrainingStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.NextScheduledRetrainingStartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetrainingSchedulerStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RetrainingSchedulerStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

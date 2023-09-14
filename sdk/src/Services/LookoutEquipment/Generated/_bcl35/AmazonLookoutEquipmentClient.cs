@@ -578,7 +578,7 @@ namespace Amazon.LookoutEquipment
         #region  CreateModel
 
         /// <summary>
-        /// Creates an ML model for data inference. 
+        /// Creates a machine learning model for data inference. 
         /// 
         ///  
         /// <para>
@@ -668,6 +668,81 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  CreateRetrainingScheduler
+
+        /// <summary>
+        /// Creates a retraining scheduler on the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRetrainingScheduler service method.</param>
+        /// 
+        /// <returns>The response from the CreateRetrainingScheduler service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        public virtual CreateRetrainingSchedulerResponse CreateRetrainingScheduler(CreateRetrainingSchedulerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRetrainingSchedulerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRetrainingScheduler operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRetrainingScheduler
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        public virtual IAsyncResult BeginCreateRetrainingScheduler(CreateRetrainingSchedulerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRetrainingScheduler.</param>
+        /// 
+        /// <returns>Returns a  CreateRetrainingSchedulerResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
+        public virtual CreateRetrainingSchedulerResponse EndCreateRetrainingScheduler(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRetrainingSchedulerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDataset
 
         /// <summary>
@@ -750,8 +825,8 @@ namespace Amazon.LookoutEquipment
         #region  DeleteInferenceScheduler
 
         /// <summary>
-        /// Deletes an inference scheduler that has been set up. Already processed output results
-        /// are not affected.
+        /// Deletes an inference scheduler that has been set up. Prior inference results will
+        /// not be deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceScheduler service method.</param>
         /// 
@@ -976,9 +1051,9 @@ namespace Amazon.LookoutEquipment
         #region  DeleteModel
 
         /// <summary>
-        /// Deletes an ML model currently available for Amazon Lookout for Equipment. This will
-        /// prevent it from being used with an inference scheduler, even one that is already set
-        /// up.
+        /// Deletes a machine learning model currently available for Amazon Lookout for Equipment.
+        /// This will prevent it from being used with an inference scheduler, even one that is
+        /// already set up.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// 
@@ -1121,6 +1196,82 @@ namespace Amazon.LookoutEquipment
         public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRetrainingScheduler
+
+        /// <summary>
+        /// Deletes a retraining scheduler from a model. The retraining scheduler must be in the
+        /// <code>STOPPED</code> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetrainingScheduler service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRetrainingScheduler service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        public virtual DeleteRetrainingSchedulerResponse DeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRetrainingSchedulerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetrainingScheduler operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRetrainingScheduler
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRetrainingScheduler.</param>
+        /// 
+        /// <returns>Returns a  DeleteRetrainingSchedulerResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
+        public virtual DeleteRetrainingSchedulerResponse EndDeleteRetrainingScheduler(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRetrainingSchedulerResponse>(asyncResult);
         }
 
         #endregion
@@ -1486,8 +1637,9 @@ namespace Amazon.LookoutEquipment
         #region  DescribeModel
 
         /// <summary>
-        /// Provides a JSON containing the overall information about a specific ML model, including
-        /// model name and ARN, dataset, training and evaluation information, status, and so on.
+        /// Provides a JSON containing the overall information about a specific machine learning
+        /// model, including model name and ARN, dataset, training and evaluation information,
+        /// status, and so on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModel service method.</param>
         /// 
@@ -1693,6 +1845,78 @@ namespace Amazon.LookoutEquipment
         public virtual DescribeResourcePolicyResponse EndDescribeResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeRetrainingScheduler
+
+        /// <summary>
+        /// Provides a description of the retraining scheduler, including information such as
+        /// the model name and retraining parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetrainingScheduler service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRetrainingScheduler service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        public virtual DescribeRetrainingSchedulerResponse DescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRetrainingSchedulerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetrainingScheduler operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRetrainingScheduler
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRetrainingScheduler.</param>
+        /// 
+        /// <returns>Returns a  DescribeRetrainingSchedulerResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
+        public virtual DescribeRetrainingSchedulerResponse EndDescribeRetrainingScheduler(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRetrainingSchedulerResponse>(asyncResult);
         }
 
         #endregion
@@ -2473,6 +2697,74 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  ListRetrainingSchedulers
+
+        /// <summary>
+        /// Lists all retraining schedulers in your account, filtering by model name prefix and
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrainingSchedulers service method.</param>
+        /// 
+        /// <returns>The response from the ListRetrainingSchedulers service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        public virtual ListRetrainingSchedulersResponse ListRetrainingSchedulers(ListRetrainingSchedulersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRetrainingSchedulersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRetrainingSchedulersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRetrainingSchedulersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRetrainingSchedulers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrainingSchedulers operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRetrainingSchedulers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        public virtual IAsyncResult BeginListRetrainingSchedulers(ListRetrainingSchedulersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRetrainingSchedulersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRetrainingSchedulersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRetrainingSchedulers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRetrainingSchedulers.</param>
+        /// 
+        /// <returns>Returns a  ListRetrainingSchedulersResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
+        public virtual ListRetrainingSchedulersResponse EndListRetrainingSchedulers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRetrainingSchedulersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSensorStatistics
 
         /// <summary>
@@ -2848,6 +3140,81 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  StartRetrainingScheduler
+
+        /// <summary>
+        /// Starts a retraining scheduler.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRetrainingScheduler service method.</param>
+        /// 
+        /// <returns>The response from the StartRetrainingScheduler service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        public virtual StartRetrainingSchedulerResponse StartRetrainingScheduler(StartRetrainingSchedulerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return Invoke<StartRetrainingSchedulerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartRetrainingScheduler operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartRetrainingScheduler
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        public virtual IAsyncResult BeginStartRetrainingScheduler(StartRetrainingSchedulerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartRetrainingScheduler.</param>
+        /// 
+        /// <returns>Returns a  StartRetrainingSchedulerResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
+        public virtual StartRetrainingSchedulerResponse EndStartRetrainingScheduler(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartRetrainingSchedulerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopInferenceScheduler
 
         /// <summary>
@@ -2919,6 +3286,81 @@ namespace Amazon.LookoutEquipment
         public virtual StopInferenceSchedulerResponse EndStopInferenceScheduler(IAsyncResult asyncResult)
         {
             return EndInvoke<StopInferenceSchedulerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopRetrainingScheduler
+
+        /// <summary>
+        /// Stops a retraining scheduler.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRetrainingScheduler service method.</param>
+        /// 
+        /// <returns>The response from the StopRetrainingScheduler service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        public virtual StopRetrainingSchedulerResponse StopRetrainingScheduler(StopRetrainingSchedulerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return Invoke<StopRetrainingSchedulerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRetrainingScheduler operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRetrainingScheduler
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        public virtual IAsyncResult BeginStopRetrainingScheduler(StopRetrainingSchedulerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopRetrainingScheduler.</param>
+        /// 
+        /// <returns>Returns a  StopRetrainingSchedulerResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
+        public virtual StopRetrainingSchedulerResponse EndStopRetrainingScheduler(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopRetrainingSchedulerResponse>(asyncResult);
         }
 
         #endregion
@@ -3293,6 +3735,156 @@ namespace Amazon.LookoutEquipment
         public virtual UpdateLabelGroupResponse EndUpdateLabelGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLabelGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateModel
+
+        /// <summary>
+        /// Updates a model in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateModel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModel operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateModel.</param>
+        /// 
+        /// <returns>Returns a  UpdateModelResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
+        public virtual UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRetrainingScheduler
+
+        /// <summary>
+        /// Updates a retraining scheduler.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRetrainingScheduler service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRetrainingScheduler service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related Amazon Web Services service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        public virtual UpdateRetrainingSchedulerResponse UpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRetrainingSchedulerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRetrainingScheduler operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRetrainingScheduler
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRetrainingSchedulerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRetrainingSchedulerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRetrainingScheduler operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRetrainingScheduler.</param>
+        /// 
+        /// <returns>Returns a  UpdateRetrainingSchedulerResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
+        public virtual UpdateRetrainingSchedulerResponse EndUpdateRetrainingScheduler(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRetrainingSchedulerResponse>(asyncResult);
         }
 
         #endregion

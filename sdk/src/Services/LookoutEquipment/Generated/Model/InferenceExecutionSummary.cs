@@ -44,13 +44,15 @@ namespace Amazon.LookoutEquipment.Model
         private string _inferenceSchedulerName;
         private string _modelArn;
         private string _modelName;
+        private long? _modelVersion;
+        private string _modelVersionArn;
         private DateTime? _scheduledStartTime;
         private InferenceExecutionStatus _status;
 
         /// <summary>
         /// Gets and sets the property CustomerResultObject. 
         /// <para>
-        ///  
+        /// The S3 object that the inference execution results were uploaded to.
         /// </para>
         /// </summary>
         public S3Object CustomerResultObject
@@ -202,7 +204,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the ML model used for the inference execution. 
+        /// The Amazon Resource Name (ARN) of the machine learning model used for the inference
+        /// execution. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -221,7 +224,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the ML model being used for the inference execution. 
+        /// The name of the machine learning model being used for the inference execution. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -235,6 +238,44 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelVersion. 
+        /// <para>
+        /// The model version used for the inference execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long ModelVersion
+        {
+            get { return this._modelVersion.GetValueOrDefault(); }
+            set { this._modelVersion = value; }
+        }
+
+        // Check to see if ModelVersion property is set
+        internal bool IsSetModelVersion()
+        {
+            return this._modelVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelVersionArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the model version used for the inference execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ModelVersionArn
+        {
+            get { return this._modelVersionArn; }
+            set { this._modelVersionArn = value; }
+        }
+
+        // Check to see if ModelVersionArn property is set
+        internal bool IsSetModelVersionArn()
+        {
+            return this._modelVersionArn != null;
         }
 
         /// <summary>

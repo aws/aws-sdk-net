@@ -51,6 +51,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccumulatedInferenceDataEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.AccumulatedInferenceDataEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AccumulatedInferenceDataStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.AccumulatedInferenceDataStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ActiveModelVersion", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -129,6 +141,36 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.LastUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LatestScheduledRetrainingAvailableDataInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.LatestScheduledRetrainingAvailableDataInDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestScheduledRetrainingFailedReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestScheduledRetrainingFailedReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestScheduledRetrainingModelVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.LatestScheduledRetrainingModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestScheduledRetrainingStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestScheduledRetrainingStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestScheduledRetrainingStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestScheduledRetrainingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -153,6 +195,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.ModelVersionActivatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextScheduledRetrainingStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.NextScheduledRetrainingStartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OffCondition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -175,6 +223,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.PreviousModelVersionActivatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PriorModelMetrics", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PriorModelMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetrainingSchedulerStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RetrainingSchedulerStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))

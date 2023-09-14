@@ -38,7 +38,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property InlineDataSchema. 
         /// <para>
-        ///  
+        /// The data schema used within the given dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000000)]

@@ -36,6 +36,7 @@ namespace Amazon.LookoutEquipment.Model
     {
         private string _clientToken;
         private string _datasetName;
+        private InferenceDataImportStrategy _inferenceDataImportStrategy;
         private LabelsInputConfiguration _labelsInputConfiguration;
         private string _modelName;
         private string _roleArn;
@@ -80,6 +81,40 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetDatasetName()
         {
             return this._datasetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceDataImportStrategy. 
+        /// <para>
+        /// Indicates how to import the accumulated inference data when a model version is imported.
+        /// The possible values are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// NO_IMPORT – Don't import the data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing
+        /// data in the target model.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OVERWRITE – Import the data from the source model and overwrite the existing data
+        /// in the target model.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InferenceDataImportStrategy InferenceDataImportStrategy
+        {
+            get { return this._inferenceDataImportStrategy; }
+            set { this._inferenceDataImportStrategy = value; }
+        }
+
+        // Check to see if InferenceDataImportStrategy property is set
+        internal bool IsSetInferenceDataImportStrategy()
+        {
+            return this._inferenceDataImportStrategy != null;
         }
 
         /// <summary>

@@ -30,9 +30,9 @@ namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteModel operation.
-    /// Deletes an ML model currently available for Amazon Lookout for Equipment. This will
-    /// prevent it from being used with an inference scheduler, even one that is already set
-    /// up.
+    /// Deletes a machine learning model currently available for Amazon Lookout for Equipment.
+    /// This will prevent it from being used with an inference scheduler, even one that is
+    /// already set up.
     /// </summary>
     public partial class DeleteModelRequest : AmazonLookoutEquipmentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the ML model to be deleted. 
+        /// The name of the machine learning model to be deleted. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
