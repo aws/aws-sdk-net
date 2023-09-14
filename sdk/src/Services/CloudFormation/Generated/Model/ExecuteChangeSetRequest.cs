@@ -143,11 +143,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RetainExceptOnCreate. 
         /// <para>
-        /// This deletion policy deletes newly created resources, but retains existing resources,
-        /// when a stack operation is rolled back. This ensures new, empty, and unused resources
-        /// are deleted, while critical resources and their data are retained. <code>RetainExceptOnCreate</code>
-        /// can be specified for any resource that supports the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-        /// DeletionPolicy</a> attribute.
+        /// When set to <code>true</code>, newly created resources are deleted when the operation
+        /// rolls back. This includes newly created resources marked with a deletion policy of
+        /// <code>Retain</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool RetainExceptOnCreate

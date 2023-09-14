@@ -67,8 +67,12 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackName. <note> 
         /// <para>
         /// If you don't pass a parameter to <code>StackName</code>, the API returns a response
-        /// that describes all resources in the account. This requires <code>ListStacks</code>
-        /// and <code>DescribeStacks</code> permissions.
+        /// that describes all resources in the account, which can impact performance. This requires
+        /// <code>ListStacks</code> and <code>DescribeStacks</code> permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
         /// </para>
         ///  
         /// <para>
