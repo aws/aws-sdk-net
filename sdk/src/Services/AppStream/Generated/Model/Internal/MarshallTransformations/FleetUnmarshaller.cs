@@ -160,6 +160,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxConcurrentSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxSessionsPerInstance", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxSessionsPerInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxUserDurationInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
