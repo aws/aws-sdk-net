@@ -145,8 +145,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionTechniques. 
         /// <para>
-        /// An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>
-        /// 
+        /// An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -165,8 +164,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this
-        /// role to access resources on your behalf.
+        /// The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role
+        /// to access resources on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

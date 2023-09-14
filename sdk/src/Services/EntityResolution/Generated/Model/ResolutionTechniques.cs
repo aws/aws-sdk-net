@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>
+    /// An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.
     /// </summary>
     public partial class ResolutionTechniques
     {
@@ -39,10 +39,11 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionType. 
         /// <para>
-        /// There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>
-        /// 
+        /// The type of matching. There are two types of matching: <code>RULE_MATCHING</code>
+        /// and <code>ML_MATCHING</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResolutionType ResolutionType
         {
             get { return this._resolutionType; }

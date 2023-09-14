@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+    /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
     /// Status Code: 400</code>
     /// </summary>
     #if !NETSTANDARD

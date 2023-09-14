@@ -136,8 +136,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the job. Either <code>running</code>, <code>succeeded</code>,
-        /// <code>queued</code>, or <code>failed</code>.
+        /// The current status of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

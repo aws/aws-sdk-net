@@ -78,7 +78,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property RecordsNotProcessed. 
         /// <para>
-        /// The total number of records that did not get processed,
+        /// The total number of records that did not get processed.
         /// </para>
         /// </summary>
         public int RecordsNotProcessed

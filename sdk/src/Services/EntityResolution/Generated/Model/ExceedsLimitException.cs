@@ -30,7 +30,7 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// The request was rejected because it attempted to create resources beyond the current
-    /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+    /// Entity Resolution account limits. The error message describes the limit exceeded.
     /// <code>HTTP Status Code: 402</code>
     /// </summary>
     #if !NETSTANDARD
@@ -38,6 +38,8 @@ namespace Amazon.EntityResolution.Model
     #endif
     public partial class ExceedsLimitException : AmazonEntityResolutionException
     {
+        private string _quotaName;
+        private int? _quotaValue;
 
         /// <summary>
         /// Constructs a new ExceedsLimitException with the specified error
@@ -99,6 +101,8 @@ namespace Amazon.EntityResolution.Model
         protected ExceedsLimitException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.QuotaName = (string)info.GetValue("QuotaName", typeof(string));
+            this.QuotaValue = (int)info.GetValue("QuotaValue", typeof(int));
         }
 
         /// <summary>
@@ -119,8 +123,46 @@ namespace Amazon.EntityResolution.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("QuotaName", this.QuotaName);
+            info.AddValue("QuotaValue", this.QuotaValue);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property QuotaName. 
+        /// <para>
+        /// The name of the quota that has been breached.
+        /// </para>
+        /// </summary>
+        public string QuotaName
+        {
+            get { return this._quotaName; }
+            set { this._quotaName = value; }
+        }
+
+        // Check to see if QuotaName property is set
+        internal bool IsSetQuotaName()
+        {
+            return this._quotaName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaValue. 
+        /// <para>
+        /// The current quota value for the customers.
+        /// </para>
+        /// </summary>
+        public int QuotaValue
+        {
+            get { return this._quotaValue.GetValueOrDefault(); }
+            set { this._quotaValue = value; }
+        }
+
+        // Check to see if QuotaValue property is set
+        internal bool IsSetQuotaValue()
+        {
+            return this._quotaValue.HasValue; 
+        }
 
     }
 }

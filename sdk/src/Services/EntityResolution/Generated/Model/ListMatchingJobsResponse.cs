@@ -39,8 +39,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property Jobs. 
         /// <para>
-        /// A list of JobSummary objects, each of which contain the ID, status, start time, and
-        /// end time of a job.
+        /// A list of <code>JobSummary</code> objects, each of which contain the ID, status, start
+        /// time, and end time of a job.
         /// </para>
         /// </summary>
         public List<JobSummary> Jobs

@@ -40,14 +40,15 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property AttributeMatchingModel. 
         /// <para>
-        /// You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the
-        /// AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match
-        /// attribute across the sub-types of an attribute type. For example, if the value of
-        /// the Email field of Profile A and the value of BusinessEmail field of Profile B matches,
-        /// the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code>
-        /// the system can only match if the sub-types are exact matches. For example, only when
-        /// the value of the Email field of Profile A and the value of the Email field of Profile
-        /// B matches, the two profiles are matched on the Email type.
+        /// The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code>
+        /// as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system
+        /// can match attributes across the sub-types of an attribute type. For example, if the
+        /// value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code>
+        /// field of Profile B matches, the two profiles are matched on the <code>Email</code>
+        /// type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types
+        /// are exact matches. For example, only when the value of the <code>Email</code> field
+        /// of Profile A and the value of the <code>Email</code> field of Profile B matches, the
+        /// two profiles are matched on the <code>Email</code> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +67,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.
+        /// A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code>
+        /// and <code>MatchingKeys</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]
