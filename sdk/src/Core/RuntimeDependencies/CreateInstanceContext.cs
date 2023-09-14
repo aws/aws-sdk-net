@@ -163,7 +163,7 @@ namespace Amazon.RuntimeDependencies
     public class SecurityTokenServiceClientContext
     {
         /// <summary>
-        /// The possibly actions the the SecurityTokenServiceClient will be created for.
+        /// The possibly actions the SecurityTokenServiceClient will be created for.
         /// 
         /// For FederatedAWSCredentials the Amazon.Runtime.AnonymousAWSCredentials can be used as credentials for the STS client
         /// because the authentication will come from the SAML endpoint.

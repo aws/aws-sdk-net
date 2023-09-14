@@ -30,17 +30,17 @@ namespace AWSSDK.UnitTests
             registry.RegisterSecurityTokenServiceClient(expectedInstance);
 
 
-            var registerdInstance = registry.GetInstance<IAmazonSecurityTokenService>(
+            var registeredInstance = registry.GetInstance<IAmazonSecurityTokenService>(
                 ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
                 new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = RegionEndpoint.USWest2 }));
 
-            Assert.AreSame(expectedInstance, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
         public void RegisterSTSWithFactory()
         {
-            var expectedInstanace = new Mock<IAmazonSecurityTokenService>().Object;
+            var expectedInstance = new Mock<IAmazonSecurityTokenService>().Object;
             var registry = new GlobalRuntimeDependencyRegistry();
 
             var factoryCalled = false;
@@ -48,16 +48,16 @@ namespace AWSSDK.UnitTests
             {
                 factoryCalled = true;
                 Assert.AreEqual(RegionEndpoint.USWest2, context.SecurityTokenServiceClientContextData.Region);
-                return expectedInstanace;
+                return expectedInstance;
             });
 
 
-            var registerdInstance = registry.GetInstance<IAmazonSecurityTokenService>(
+            var registeredInstance = registry.GetInstance<IAmazonSecurityTokenService>(
                 ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = RegionEndpoint.USWest2 }));
 
             Assert.IsTrue(factoryCalled);
-            Assert.AreSame(expectedInstanace, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
@@ -96,17 +96,17 @@ namespace AWSSDK.UnitTests
             registry.RegisterKeyManagementServiceClient(expectedInstance);
 
 
-            var registerdInstance = registry.GetInstance<IAmazonKeyManagementService>(
+            var registeredInstance = registry.GetInstance<IAmazonKeyManagementService>(
                 ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new KeyManagementServiceClientContext()));
             
-            Assert.AreSame(expectedInstance, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
         public void RegisterKMSWithFactory()
         {
-            var expectedInstanace = new Mock<IAmazonKeyManagementService>().Object;
+            var expectedInstance = new Mock<IAmazonKeyManagementService>().Object;
             var registry = new GlobalRuntimeDependencyRegistry();
 
             var factoryCalled = false;
@@ -114,16 +114,16 @@ namespace AWSSDK.UnitTests
             {
                 factoryCalled = true;
                 Assert.IsNotNull(context.KeyManagementServiceClientContextData);
-                return expectedInstanace;
+                return expectedInstance;
             });
 
 
-            var registerdInstance = registry.GetInstance<IAmazonKeyManagementService>(
+            var registeredInstance = registry.GetInstance<IAmazonKeyManagementService>(
                 ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new KeyManagementServiceClientContext()));
 
             Assert.IsTrue(factoryCalled);
-            Assert.AreSame(expectedInstanace, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
@@ -134,17 +134,17 @@ namespace AWSSDK.UnitTests
             registry.RegisterSSOClient(expectedInstance);
 
 
-            var registerdInstance = registry.GetInstance<IAmazonSSO>(
+            var registeredInstance = registry.GetInstance<IAmazonSSO>(
                 ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SSOClientContext { Region = RegionEndpoint.USWest2 }));
 
-            Assert.AreSame(expectedInstance, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
         public void RegisterSSOWithFactory()
         {
-            var expectedInstanace = new Mock<IAmazonSSO>().Object;
+            var expectedInstance = new Mock<IAmazonSSO>().Object;
             var registry = new GlobalRuntimeDependencyRegistry();
 
             var factoryCalled = false;
@@ -152,16 +152,16 @@ namespace AWSSDK.UnitTests
             {
                 factoryCalled = true;
                 Assert.AreEqual(RegionEndpoint.USWest2, context.SSOClientContextData.Region);
-                return expectedInstanace;
+                return expectedInstance;
             });
 
 
-            var registerdInstance = registry.GetInstance<IAmazonSSO>(
+            var registeredInstance = registry.GetInstance<IAmazonSSO>(
                 ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SSOClientContext { Region = RegionEndpoint.USWest2 }));
 
             Assert.IsTrue(factoryCalled);
-            Assert.AreSame(expectedInstanace, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
@@ -172,17 +172,17 @@ namespace AWSSDK.UnitTests
             registry.RegisterSSOOIDCClient(expectedInstance);
 
 
-            var registerdInstance = registry.GetInstance<IAmazonSSOOIDC>(
+            var registeredInstance = registry.GetInstance<IAmazonSSOOIDC>(
                 ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SSOOIDCClientContext { Region = RegionEndpoint.USWest2 }));
 
-            Assert.AreSame(expectedInstance, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
         public void RegisterSSOOIDCWithFactory()
         {
-            var expectedInstanace = new Mock<IAmazonSSOOIDC>().Object;
+            var expectedInstance = new Mock<IAmazonSSOOIDC>().Object;
             var registry = new GlobalRuntimeDependencyRegistry();
 
             var factoryCalled = false;
@@ -190,16 +190,16 @@ namespace AWSSDK.UnitTests
             {
                 factoryCalled = true;
                 Assert.AreEqual(RegionEndpoint.USWest2, context.SSOOIDCClientContextData.Region);
-                return expectedInstanace;
+                return expectedInstance;
             });
 
 
-            var registerdInstance = registry.GetInstance<IAmazonSSOOIDC>(
+            var registeredInstance = registry.GetInstance<IAmazonSSOOIDC>(
                 ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SSOOIDCClientContext { Region = RegionEndpoint.USWest2 }));
 
             Assert.IsTrue(factoryCalled);
-            Assert.AreSame(expectedInstanace, registerdInstance);
+            Assert.AreSame(expectedInstance, registeredInstance);
         }
 
         [TestMethod]
