@@ -49,7 +49,9 @@ This project file should not be used as part of a release pipeline.
         <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj" />
         <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
         <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj" />
         <ProjectReference Include="..\..\src\Services\SSOOIDC\AWSSDK.SSOOIDC.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\SSO\AWSSDK.SSO.Net45.csproj" />
         <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
         <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
         <ProjectReference Include="..\Services\BearerTokenAuthTest\AWSSDK.BearerTokenAuthTest.Net45.csproj" />

@@ -28,7 +28,13 @@ namespace Amazon.Runtime.Internal
         public const string KMS_ASSEMBLY_NAME = "AWSSDK.KeyManagementService";
         public const string KMS_SERVICE_CLASS_NAME = "Amazon.KeyManagementService.AmazonKeyManagementServiceClient";
 
+
+#if NET6_0_OR_GREATER
+        public static TClient CreateServiceFromAnother<[System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, 
+                                    [System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors)] TConfig>(AmazonServiceClient originalServiceClient)
+#else
         public static TClient CreateServiceFromAnother<TClient, TConfig>(AmazonServiceClient originalServiceClient)
+#endif
             where TConfig : ClientConfig, new ()
             where TClient : AmazonServiceClient
         {
@@ -48,6 +54,9 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+#endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
             RegionEndpoint region)
             where TClient : class
@@ -64,6 +73,9 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+#endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, 
             AWSCredentials credentials, RegionEndpoint region)
             where TClient : class
@@ -81,6 +93,9 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+#endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
             AWSCredentials credentials, ClientConfig config)
             where TClient : class
@@ -98,6 +113,9 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+#endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, AmazonServiceClient originalServiceClient)
             where TClient : class
         {
@@ -117,6 +135,9 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+#endif
         public static ClientConfig CreateServiceConfig(string assemblyName, string serviceConfigClassName)
         {
             var typeInfo = LoadServiceConfigType(assemblyName, serviceConfigClassName);
@@ -127,16 +148,25 @@ namespace Amazon.Runtime.Internal
             return config as ClientConfig;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+#endif
         private static Type LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
             return LoadTypeFromAssembly(assemblyName, serviceClientClassName);
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+#endif
         private static Type LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
         {
             return LoadTypeFromAssembly(assemblyName, serviceConfigClassName);
         }
 
+#if NET6_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+#endif
         internal static Type LoadTypeFromAssembly(string assemblyName, string className)
         {
             var assembly = GetSDKAssembly(assemblyName);
@@ -145,6 +175,9 @@ namespace Amazon.Runtime.Internal
             return type;
         }
 
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+#endif
         private static Assembly GetSDKAssembly(string assemblyName)
         {
             return AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => string.Equals(x.GetName().Name, assemblyName, StringComparison.Ordinal))

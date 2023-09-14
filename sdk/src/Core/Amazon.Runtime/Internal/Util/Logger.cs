@@ -39,6 +39,11 @@ namespace Amazon.Runtime.Internal.Util
         {
             loggers = new List<InternalLogger>();
         }
+
+#if NET6_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Constructor looks to see if running in a NativeAOT environment and if so skips the Log4net internal logger which is not Native AOT complaint.")]
+#endif
         private Logger(Type type)
         {
             loggers = new List<InternalLogger>();
