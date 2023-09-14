@@ -105,14 +105,14 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             
             #line default
             #line hidden
-            this.Write(",\r\n                implicitGlobalRegion = ");
+            this.Write(",\r\n                implicitGlobalRegion = \"");
             
             #line 41 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.implicitGlobalRegion));
             
             #line default
             #line hidden
-            this.Write("\r\n            };\r\n            _partitionsByRegex.Add(@\"");
+            this.Write("\"\r\n            };\r\n            _partitionsByRegex.Add(@\"");
             
             #line 43 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.regionRegex));

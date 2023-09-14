@@ -38,7 +38,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dualStackDnsSuffix = "<#=partition.outputs.dualStackDnsSuffix#>",
                 supportsFIPS = <#=partition.outputs.supportsFIPS.ToString().ToLower()#>,
                 supportsDualStack = <#=partition.outputs.supportsDualStack.ToString().ToLower()#>,
-                implicitGlobalRegion = <#=partition.outputs.implicitGlobalRegion#>
+                implicitGlobalRegion = "<#=partition.outputs.implicitGlobalRegion#>"
             };
             _partitionsByRegex.Add(@"<#=partition.regionRegex#>", <#=partition.id.ToVariableName()#>);
 <#     foreach(var region in partition.regions.Keys) { #>
