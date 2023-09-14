@@ -84,7 +84,9 @@ namespace Amazon.Personalize.Model
     /// group. If you specify a KMS key, you must also include an Identity and Access Management
     /// (IAM) role that has permission to access the key.
     /// </para>
-    ///  <p class="title"> <b>APIs that require a dataset group ARN in the request</b> 
+    ///  
+    /// <para>
+    ///  <b>APIs that require a dataset group ARN in the request</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -101,7 +103,9 @@ namespace Amazon.Personalize.Model
     ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
     /// 
     /// </para>
-    ///  </li> </ul> <p class="title"> <b>Related APIs</b> 
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

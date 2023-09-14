@@ -219,8 +219,9 @@ namespace Amazon.OpsWorksCM.Model
         /// server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they
         /// are returned only as part of the result of createServer(). 
         /// </para>
-        ///  <p class="title"> <b>Attributes returned in a createServer response for Chef</b>
-        /// 
+        ///  
+        /// <para>
+        ///  <b>Attributes returned in a createServer response for Chef</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,8 +236,9 @@ namespace Amazon.OpsWorksCM.Model
         /// RSA private key. Save this file, unzip it, and then change to the directory where
         /// you've unzipped the file contents. From this directory, you can run Knife commands.
         /// </para>
-        ///  </li> </ul> <p class="title"> <b>Attributes returned in a createServer response for
-        /// Puppet</b> 
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Attributes returned in a createServer response for Puppet</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

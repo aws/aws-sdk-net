@@ -90,7 +90,9 @@ namespace Amazon.ControlTower
     ///  <code>arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}</code>
     /// 
     /// </para>
-    ///  </note> <p class="title"> <b>Details and examples</b> 
+    ///  </note> 
+    /// <para>
+    ///  <b>Details and examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

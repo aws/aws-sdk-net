@@ -147,7 +147,9 @@ namespace Amazon.Neptunedata.Model
         /// command, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format.html">Load
         /// Data Formats</a>.
         /// </para>
-        ///  <p class="title"> <b>Allowed values</b> 
+        ///  
+        /// <para>
+        ///  <b>Allowed values</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -229,7 +231,9 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         ///  <i>Default value</i>: <code>AUTO</code>.
         /// </para>
-        ///  <p class="title"> <b/> 
+        ///  
+        /// <para>
+        ///  <b/> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -344,7 +348,9 @@ namespace Amazon.Neptunedata.Model
         ///  <b> <code>parserConfiguration</code> </b>   –   An optional object with additional
         /// parser configuration values. Each of the child parameters is also optional:
         /// </para>
-        ///  <p class="title"> <b/> 
+        ///  
+        /// <para>
+        ///  <b/> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

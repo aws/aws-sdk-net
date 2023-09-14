@@ -43,7 +43,9 @@ namespace Amazon.ACMPCA.Model
     /// The policy can be displayed with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
     /// and removed with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
     /// </para>
-    ///  <p class="title"> <b>About Policies</b> 
+    ///  
+    /// <para>
+    ///  <b>About Policies</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

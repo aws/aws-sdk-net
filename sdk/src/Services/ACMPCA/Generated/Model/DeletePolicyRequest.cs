@@ -49,7 +49,9 @@ namespace Amazon.ACMPCA.Model
     /// The current policy can be shown with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
     /// and updated with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>.
     /// </para>
-    ///  <p class="title"> <b>About Policies</b> 
+    ///  
+    /// <para>
+    ///  <b>About Policies</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

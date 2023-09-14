@@ -47,7 +47,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// for this API operation. For this operation, you must use IAM credentials to authorize
     /// requests, and you must grant yourself the corresponding IAM permission in a policy.
     /// </para>
-    ///  <p class="title"> <b>Learn more</b> 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

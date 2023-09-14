@@ -45,7 +45,9 @@ namespace Amazon.SimpleSystemsManagement
     /// Web Services Systems Manager User Guide</a>. To get started, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
     /// up Amazon Web Services Systems Manager</a>.
     /// </para>
-    ///  <p class="title"> <b>Related resources</b> 
+    ///  
+    /// <para>
+    ///  <b>Related resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

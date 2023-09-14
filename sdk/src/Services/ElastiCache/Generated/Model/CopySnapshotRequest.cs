@@ -50,7 +50,9 @@ namespace Amazon.ElastiCache.Model
     /// <para>
     /// You could receive the following error messages.
     /// </para>
-    ///  <p class="title"> <b>Error Messages</b> 
+    ///  
+    /// <para>
+    ///  <b>Error Messages</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

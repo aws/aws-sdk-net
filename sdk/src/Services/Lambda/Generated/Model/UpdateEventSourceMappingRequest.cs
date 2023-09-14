@@ -321,7 +321,9 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The name of the Lambda function.
         /// </para>
-        ///  <p class="title"> <b>Name formats</b> 
+        ///  
+        /// <para>
+        ///  <b>Name formats</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

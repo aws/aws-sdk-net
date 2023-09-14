@@ -53,7 +53,9 @@ namespace Amazon.S3Control.Model
     /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html#API_control_DeleteBucket_Examples">Examples</a>
     /// section.
     /// </para>
-    ///  <p class="title"> <b>Related Resources</b> 
+    ///  
+    /// <para>
+    ///  <b>Related Resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

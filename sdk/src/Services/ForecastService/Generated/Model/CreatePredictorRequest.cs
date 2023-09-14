@@ -143,7 +143,9 @@ namespace Amazon.ForecastService.Model
         /// The Amazon Resource Name (ARN) of the algorithm to use for model training. Required
         /// if <code>PerformAutoML</code> is not set to <code>true</code>.
         /// </para>
-        ///  <p class="title"> <b>Supported algorithms:</b> 
+        ///  
+        /// <para>
+        ///  <b>Supported algorithms:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

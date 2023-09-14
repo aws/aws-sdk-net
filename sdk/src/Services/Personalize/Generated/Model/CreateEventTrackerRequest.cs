@@ -67,7 +67,9 @@ namespace Amazon.Personalize.Model
     /// <para>
     /// The event tracker must be in the ACTIVE state before using the tracking ID.
     /// </para>
-    ///  </note> <p class="title"> <b>Related APIs</b> 
+    ///  </note> 
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

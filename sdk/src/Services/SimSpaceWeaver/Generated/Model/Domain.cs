@@ -50,7 +50,9 @@ namespace Amazon.SimSpaceWeaver.Model
         /// this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i>
         /// (you must start and stop the apps).
         /// </para>
-        ///  <p class="title"> <b>Lifecycle types</b> 
+        ///  
+        /// <para>
+        ///  <b>Lifecycle types</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

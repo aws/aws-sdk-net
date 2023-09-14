@@ -250,7 +250,9 @@ namespace Amazon.ACMPCA
         /// action and revoke them with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
         /// action.
         /// </para>
-        ///  <p class="title"> <b>About Permissions</b> 
+        ///  
+        /// <para>
+        ///  <b>About Permissions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -432,7 +434,9 @@ namespace Amazon.ACMPCA
         /// action and listed with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
         /// action. 
         /// </para>
-        ///  <p class="title"> <b>About Permissions</b> 
+        ///  
+        /// <para>
+        ///  <b>About Permissions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -525,7 +529,9 @@ namespace Amazon.ACMPCA
         /// The current policy can be shown with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
         /// and updated with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>.
         /// </para>
-        ///  <p class="title"> <b>About Policies</b> 
+        ///  
+        /// <para>
+        ///  <b>About Policies</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -940,7 +946,9 @@ namespace Amazon.ACMPCA
         /// The policy can be attached or updated with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
         /// and removed with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
         /// </para>
-        ///  <p class="title"> <b>About Policies</b> 
+        ///  
+        /// <para>
+        ///  <b>About Policies</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1383,7 +1391,9 @@ namespace Amazon.ACMPCA
         /// action and revoked with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
         /// action.
         /// </para>
-        ///  <p class="title"> <b>About Permissions</b> 
+        ///  
+        /// <para>
+        ///  <b>About Permissions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1528,7 +1538,9 @@ namespace Amazon.ACMPCA
         /// The policy can be displayed with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
         /// and removed with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
         /// </para>
-        ///  <p class="title"> <b>About Policies</b> 
+        ///  
+        /// <para>
+        ///  <b>About Policies</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

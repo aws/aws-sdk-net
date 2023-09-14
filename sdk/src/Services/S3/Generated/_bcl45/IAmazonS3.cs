@@ -4676,7 +4676,9 @@ namespace Amazon.S3
         /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Related Resources</b> 
+        ///  
+        /// <para>
+        ///  <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4710,7 +4712,9 @@ namespace Amazon.S3
         /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Related Resources</b> 
+        ///  
+        /// <para>
+        ///  <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4745,7 +4749,9 @@ namespace Amazon.S3
         /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Related Resources</b> 
+        ///  
+        /// <para>
+        ///  <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4783,7 +4789,9 @@ namespace Amazon.S3
         /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Related Resources</b> 
+        ///  
+        /// <para>
+        ///  <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

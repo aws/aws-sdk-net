@@ -60,7 +60,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// The status of the association or disassociation request. 
         /// </para>
-        ///  <p class="title"> <b>Possible values:</b> 
+        ///  
+        /// <para>
+        ///  <b>Possible values:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

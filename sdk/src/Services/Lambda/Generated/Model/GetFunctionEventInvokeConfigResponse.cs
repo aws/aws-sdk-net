@@ -44,7 +44,9 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// A destination for events after they have been sent to a function for processing.
         /// </para>
-        ///  <p class="title"> <b>Destinations</b> 
+        ///  
+        /// <para>
+        ///  <b>Destinations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

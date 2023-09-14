@@ -38,7 +38,9 @@ namespace Amazon.IoTEvents.Model
     /// The expressions accept literals, operators, functions, references, and substitution
     /// templates.
     /// </para>
-    ///  <p class="title"> <b>Examples</b> 
+    ///  
+    /// <para>
+    ///  <b>Examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

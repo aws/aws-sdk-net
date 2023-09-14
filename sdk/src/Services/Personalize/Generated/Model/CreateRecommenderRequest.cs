@@ -102,7 +102,9 @@ namespace Amazon.Personalize.Model
     /// Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before
     /// asking the recommender for recommendations.
     /// </para>
-    ///  </note> <p class="title"> <b>Related APIs</b> 
+    ///  </note> 
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

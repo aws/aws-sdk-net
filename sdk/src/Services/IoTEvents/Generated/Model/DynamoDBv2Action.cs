@@ -40,7 +40,9 @@ namespace Amazon.IoTEvents.Model
     /// You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The
     /// expressions accept literals, operators, functions, references, and substitution templates.
     /// </para>
-    ///  <p class="title"> <b>Examples</b> 
+    ///  
+    /// <para>
+    ///  <b>Examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

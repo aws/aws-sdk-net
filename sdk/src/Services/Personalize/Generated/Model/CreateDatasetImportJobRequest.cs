@@ -68,7 +68,9 @@ namespace Amazon.Personalize.Model
     /// Importing takes time. You must wait until the status shows as ACTIVE before training
     /// a model using the dataset.
     /// </para>
-    ///  </note> <p class="title"> <b>Related APIs</b> 
+    ///  </note> 
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -55,8 +55,9 @@ namespace Amazon.OpsWorksCM.Model
         /// Engine attributes that are used for disassociating the node. No attributes are required
         /// for Puppet. 
         /// </para>
-        ///  <p class="title"> <b>Attributes required in a DisassociateNode request for Chef</b>
-        /// 
+        ///  
+        /// <para>
+        ///  <b>Attributes required in a DisassociateNode request for Chef</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

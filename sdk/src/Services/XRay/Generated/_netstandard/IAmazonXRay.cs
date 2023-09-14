@@ -739,7 +739,9 @@ namespace Amazon.XRay
         /// Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer
         /// Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Required segment document fields</b> 
+        ///  
+        /// <para>
+        ///  <b>Required segment document fields</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -779,7 +781,9 @@ namespace Amazon.XRay
         /// A <code>trace_id</code> consists of three numbers separated by hyphens. For example,
         /// 1-58406520-a006649127e371903a2de979. This includes:
         /// </para>
-        ///  <p class="title"> <b>Trace ID Format</b> 
+        ///  
+        /// <para>
+        ///  <b>Trace ID Format</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

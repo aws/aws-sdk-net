@@ -7400,7 +7400,9 @@ namespace Amazon.EC2
         /// For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet
         /// is deleted. A deleted <code>instant</code> fleet with running instances is not supported.
         /// </para>
-        ///  <p class="title"> <b>Restrictions</b> 
+        ///  
+        /// <para>
+        ///  <b>Restrictions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7447,7 +7449,9 @@ namespace Amazon.EC2
         /// For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet
         /// is deleted. A deleted <code>instant</code> fleet with running instances is not supported.
         /// </para>
-        ///  <p class="title"> <b>Restrictions</b> 
+        ///  
+        /// <para>
+        ///  <b>Restrictions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

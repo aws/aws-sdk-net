@@ -284,7 +284,9 @@ namespace Amazon.ElastiCache
         /// <para>
         /// You could receive the following error messages.
         /// </para>
-        ///  <p class="title"> <b>Error Messages</b> 
+        ///  
+        /// <para>
+        ///  <b>Error Messages</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3175,7 +3177,9 @@ namespace Amazon.ElastiCache
         /// overcome a problem you may have with the cluster. Moreover, in certain conditions
         /// such as large-scale operational events, Amazon may block this API. 
         /// </para>
-        ///  <p class="title"> <b>Note the following</b> 
+        ///  
+        /// <para>
+        ///  <b>Note the following</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
