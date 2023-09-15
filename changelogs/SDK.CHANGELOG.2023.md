@@ -1,3 +1,16 @@
+### 3.7.646.0 (2023-09-15 18:51 UTC)
+* AppStream (3.7.202.0)
+	* This release introduces app block builder, allowing customers to provision a resource to package applications into an app block
+* Connect (3.7.205.0)
+	* New rule type (OnMetricDataUpdate) has been added
+* DataSync (3.7.203.13)
+	* Documentation-only updates for AWS DataSync.
+* SageMaker (3.7.213.0)
+	* This release introduces Skip Model Validation for Model Packages
+* Core 3.7.202.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.645.0 (2023-09-14 23:24 UTC)
 * AppStream (3.7.201.0)
 	* This release introduces multi-session fleets, allowing customers to provision more than one user session on a single fleet instance.
