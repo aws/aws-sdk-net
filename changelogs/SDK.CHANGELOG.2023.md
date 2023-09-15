@@ -1,3 +1,15 @@
+### 3.7.645.0 (2023-09-14 23:24 UTC)
+* AppStream (3.7.201.0)
+	* This release introduces multi-session fleets, allowing customers to provision more than one user session on a single fleet instance.
+* CloudFormation (3.7.203.34)
+	* Documentation updates for AWS CloudFormation
+* EntityResolution (3.7.201.0)
+	* Changed "ResolutionTechniques" and "MappedInputFields" in workflow and schema mapping operations to be required fields.
+* LookoutEquipment (3.7.202.0)
+	* This release adds APIs for the new scheduled retraining feature.
+* Core 3.7.202.9
+	* All services packages updated to require new Core
+
 ### 3.7.644.1 (2023-09-14 13:38 UTC)
 * Core 3.7.202.8
 	* Update CleanupDocumentation to replace tags that might contain additional attributes. Add public IsAddressesSet method for WAFv2 UpdateIPSetRequest to handle empty list.
