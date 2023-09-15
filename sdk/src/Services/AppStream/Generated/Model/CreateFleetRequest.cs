@@ -48,7 +48,6 @@ namespace Amazon.AppStream.Model
         private string _imageName;
         private string _instanceType;
         private int? _maxConcurrentSessions;
-        private int? _maxSessionsPerInstance;
         private int? _maxUserDurationInSeconds;
         private string _name;
         private PlatformType _platform;
@@ -519,25 +518,6 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxSessionsPerInstance. 
-        /// <para>
-        /// The maximum number of user sessions on an instance. This only applies to multi-session
-        /// fleets.
-        /// </para>
-        /// </summary>
-        public int MaxSessionsPerInstance
-        {
-            get { return this._maxSessionsPerInstance.GetValueOrDefault(); }
-            set { this._maxSessionsPerInstance = value; }
-        }
-
-        // Check to see if MaxSessionsPerInstance property is set
-        internal bool IsSetMaxSessionsPerInstance()
-        {
-            return this._maxSessionsPerInstance.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxUserDurationInSeconds. 
         /// <para>
         /// The maximum amount of time that a streaming session can remain active, in seconds.
@@ -547,7 +527,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify a value between 600 and 432000.
+        /// Specify a value between 600 and 360000.
         /// </para>
         /// </summary>
         public int MaxUserDurationInSeconds

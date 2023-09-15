@@ -34,7 +34,6 @@ namespace Amazon.AppStream.Model
     public partial class ComputeCapacity
     {
         private int? _desiredInstances;
-        private int? _desiredSessions;
 
         /// <summary>
         /// Gets and sets the property DesiredInstances. 
@@ -42,6 +41,7 @@ namespace Amazon.AppStream.Model
         /// The desired number of streaming instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int DesiredInstances
         {
             get { return this._desiredInstances.GetValueOrDefault(); }
@@ -52,31 +52,6 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDesiredInstances()
         {
             return this._desiredInstances.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DesiredSessions. 
-        /// <para>
-        /// The desired number of user sessions for a multi-session fleet. This is not allowed
-        /// for single-session fleets.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you create a fleet, you must set either the DesiredSessions or DesiredInstances
-        /// attribute, based on the type of fleet you create. You can’t define both attributes
-        /// or leave both attributes blank.
-        /// </para>
-        /// </summary>
-        public int DesiredSessions
-        {
-            get { return this._desiredSessions.GetValueOrDefault(); }
-            set { this._desiredSessions = value; }
-        }
-
-        // Check to see if DesiredSessions property is set
-        internal bool IsSetDesiredSessions()
-        {
-            return this._desiredSessions.HasValue; 
         }
 
     }

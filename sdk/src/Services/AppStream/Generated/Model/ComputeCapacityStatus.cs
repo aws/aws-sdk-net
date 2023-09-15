@@ -33,60 +33,10 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class ComputeCapacityStatus
     {
-        private int? _activeUserSessions;
-        private int? _actualUserSessions;
         private int? _available;
-        private int? _availableUserSessions;
         private int? _desired;
-        private int? _desiredUserSessions;
         private int? _inUse;
         private int? _running;
-
-        /// <summary>
-        /// Gets and sets the property ActiveUserSessions. 
-        /// <para>
-        /// The number of user sessions currently being used for streaming sessions. This only
-        /// applies to multi-session fleets.
-        /// </para>
-        /// </summary>
-        public int ActiveUserSessions
-        {
-            get { return this._activeUserSessions.GetValueOrDefault(); }
-            set { this._activeUserSessions = value; }
-        }
-
-        // Check to see if ActiveUserSessions property is set
-        internal bool IsSetActiveUserSessions()
-        {
-            return this._activeUserSessions.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ActualUserSessions. 
-        /// <para>
-        /// The total number of session slots that are available for streaming or are currently
-        /// streaming.
-        /// </para>
-        ///  
-        /// <para>
-        /// ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
-        /// </para>
-        ///  
-        /// <para>
-        /// This only applies to multi-session fleets.
-        /// </para>
-        /// </summary>
-        public int ActualUserSessions
-        {
-            get { return this._actualUserSessions.GetValueOrDefault(); }
-            set { this._actualUserSessions = value; }
-        }
-
-        // Check to see if ActualUserSessions property is set
-        internal bool IsSetActualUserSessions()
-        {
-            return this._actualUserSessions.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property Available. 
@@ -107,32 +57,6 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailableUserSessions. 
-        /// <para>
-        /// The number of idle session slots currently available for user sessions.
-        /// </para>
-        ///  
-        /// <para>
-        /// AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
-        /// </para>
-        ///  
-        /// <para>
-        /// This only applies to multi-session fleets.
-        /// </para>
-        /// </summary>
-        public int AvailableUserSessions
-        {
-            get { return this._availableUserSessions.GetValueOrDefault(); }
-            set { this._availableUserSessions = value; }
-        }
-
-        // Check to see if AvailableUserSessions property is set
-        internal bool IsSetAvailableUserSessions()
-        {
-            return this._availableUserSessions.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Desired. 
         /// <para>
         /// The desired number of streaming instances.
@@ -149,34 +73,6 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDesired()
         {
             return this._desired.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DesiredUserSessions. 
-        /// <para>
-        /// The total number of sessions slots that are either running or pending. This represents
-        /// the total number of concurrent streaming sessions your fleet can support in a steady
-        /// state.
-        /// </para>
-        ///  
-        /// <para>
-        /// DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
-        /// </para>
-        ///  
-        /// <para>
-        /// This only applies to multi-session fleets.
-        /// </para>
-        /// </summary>
-        public int DesiredUserSessions
-        {
-            get { return this._desiredUserSessions.GetValueOrDefault(); }
-            set { this._desiredUserSessions = value; }
-        }
-
-        // Check to see if DesiredUserSessions property is set
-        internal bool IsSetDesiredUserSessions()
-        {
-            return this._desiredUserSessions.HasValue; 
         }
 
         /// <summary>

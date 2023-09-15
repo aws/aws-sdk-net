@@ -155,12 +155,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxConcurrentSessions);
                 }
 
-                if(publicRequest.IsSetMaxSessionsPerInstance())
-                {
-                    context.Writer.WritePropertyName("MaxSessionsPerInstance");
-                    context.Writer.Write(publicRequest.MaxSessionsPerInstance);
-                }
-
                 if(publicRequest.IsSetMaxUserDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("MaxUserDurationInSeconds");

@@ -39,7 +39,6 @@ namespace Amazon.AppStream.Model
     {
         private AuthenticationType _authenticationType;
         private string _fleetName;
-        private string _instanceId;
         private int? _limit;
         private string _nextToken;
         private string _stackName;
@@ -71,7 +70,7 @@ namespace Amazon.AppStream.Model
         /// The name of the fleet. This value is case-sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string FleetName
         {
             get { return this._fleetName; }
@@ -82,25 +81,6 @@ namespace Amazon.AppStream.Model
         internal bool IsSetFleetName()
         {
             return this._fleetName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceId. 
-        /// <para>
-        /// The identifier for the instance hosting the session.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public string InstanceId
-        {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this._instanceId != null;
         }
 
         /// <summary>
@@ -148,7 +128,7 @@ namespace Amazon.AppStream.Model
         /// The name of the stack. This value is case-sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

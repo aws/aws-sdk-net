@@ -88,12 +88,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("MaxExpirationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

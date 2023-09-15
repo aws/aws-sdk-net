@@ -621,10 +621,6 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly FleetAttribute IAM_ROLE_ARN = new FleetAttribute("IAM_ROLE_ARN");
         /// <summary>
-        /// Constant MAX_SESSIONS_PER_INSTANCE for FleetAttribute
-        /// </summary>
-        public static readonly FleetAttribute MAX_SESSIONS_PER_INSTANCE = new FleetAttribute("MAX_SESSIONS_PER_INSTANCE");
-        /// <summary>
         /// Constant SESSION_SCRIPT_S3_LOCATION for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute SESSION_SCRIPT_S3_LOCATION = new FleetAttribute("SESSION_SCRIPT_S3_LOCATION");
