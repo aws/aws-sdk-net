@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Configuration object for setting options on the DynamoDBContext.
     /// and individual operations.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public class DynamoDBContextConfig
@@ -270,7 +270,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DynamoDBFlatConfig

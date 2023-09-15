@@ -12,7 +12,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// S3Link is an object that provides a connection to an S3 resource
     /// that can be stored in a DynamoDB field through DynamoDBContext
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public partial class S3Link
@@ -216,7 +216,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Helper Classes
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
 

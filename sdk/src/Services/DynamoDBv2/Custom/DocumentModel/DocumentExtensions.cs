@@ -5,7 +5,7 @@ using ThirdParty.Json.LitJson;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public static class DocumentExtensions

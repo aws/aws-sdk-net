@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Basic property storage information
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class SimplePropertyStorage
@@ -75,9 +75,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// DynamoDB property storage information
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif    
+#endif
     internal class PropertyStorage : SimplePropertyStorage
     {
         // flags
@@ -194,7 +194,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a single item
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ItemStorage
@@ -233,7 +233,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a specific class
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class StorageConfig
@@ -356,7 +356,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a specific class that is associated with a table
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ItemStorageConfig : StorageConfig
@@ -585,7 +585,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Cache of ItemStorageConfig objects
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ItemStorageConfigCache : IDisposable

@@ -21,7 +21,7 @@ using Amazon.Util;
 using Amazon.Util.Internal;
 using ThirdParty.Json.LitJson;
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
 using System.Text.Json;
 #endif
 

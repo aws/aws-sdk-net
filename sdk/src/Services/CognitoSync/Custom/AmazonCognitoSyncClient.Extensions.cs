@@ -15,7 +15,7 @@
 
 namespace Amazon.CognitoSync
 {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Amazon Cognito Sync has not been updated to support Native AOT compilations.")]
 #endif
     public partial class AmazonCognitoSyncClient

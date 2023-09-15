@@ -214,10 +214,10 @@ namespace Amazon.Runtime
         /// Gets a client to be used for AssumeRoleWithWebIdentity requests.
         /// </summary>
         /// <returns>The STS client.</returns>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif        
+#endif
         protected virtual ICoreAmazonSTS_WebIdentity CreateClient()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;

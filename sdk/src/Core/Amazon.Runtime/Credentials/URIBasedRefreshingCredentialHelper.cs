@@ -50,7 +50,7 @@ namespace Amazon.Runtime
         }
 
         [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
 #endif
         protected static T GetObjectFromResponse<T>(Uri uri)
@@ -59,7 +59,7 @@ namespace Amazon.Runtime
         }
 
         [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
 #endif
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy)
@@ -68,7 +68,7 @@ namespace Amazon.Runtime
         }
 
         [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
 #endif
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
@@ -79,7 +79,7 @@ namespace Amazon.Runtime
 
         protected static T GetObjectFromResponse<T, TC>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
             where TC :
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
                 System.Text.Json.Serialization.JsonSerializerContext,
 #else
                 Amazon.Util.Internal.JsonSerializerContext,

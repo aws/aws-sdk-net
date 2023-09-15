@@ -34,10 +34,10 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
-    if (this.Project.TargetFrameworks.Contains("net6.0"))
+    if (this.Project.TargetFrameworks.Contains("net8.0"))
     {
 #>
-    <DefineConstants Condition="'$(TargetFramework)' == 'net6.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
 #>
@@ -100,10 +100,11 @@
 <#
     }
 
-    if (this.Project.TargetFrameworks.Contains("net6.0"))
+    if (this.Project.TargetFrameworks.Contains("net8.0"))
     {
 #>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
   </PropertyGroup>
 <#

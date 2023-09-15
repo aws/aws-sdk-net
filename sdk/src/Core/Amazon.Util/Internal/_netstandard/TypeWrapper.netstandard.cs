@@ -31,12 +31,12 @@ namespace Amazon.Util.Internal
     {
         class TypeInfoWrapper : AbstractTypeInfo
         {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 #endif
             TypeInfo _typeInfo;
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             internal TypeInfoWrapper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
 #else
             internal TypeInfoWrapper(Type type)
@@ -88,7 +88,7 @@ namespace Amazon.Util.Internal
                 return isBackingField;
             }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             private static IEnumerable<MemberInfo> GetMembers_Helper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] TypeInfo ti)
 #else
             private static IEnumerable<MemberInfo> GetMembers_Helper(TypeInfo ti)

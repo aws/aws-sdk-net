@@ -110,9 +110,9 @@ namespace Amazon.DynamoDBv2
     /// HashSet input - converts to a DynamoDB set (NS, SS, BS)
     /// Any other IEnumerable input - converts to a DynamoDB list (L)
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif    
+#endif
     internal class CollectionConverterV2 : PrimitiveCollectionConverterV1
     {
         private static Type setTypeInfo = typeof(HashSet<>);
@@ -166,7 +166,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DynamoDBListConverter : CollectionConverter

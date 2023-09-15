@@ -93,7 +93,7 @@ namespace Amazon.Util.Internal
     {
         public static readonly ITypeInfo[] EmptyTypes = new ITypeInfo[] { };
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         
         public static ITypeInfo GetTypeInfo([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]  Type type)
 #else
@@ -110,12 +110,12 @@ namespace Amazon.Util.Internal
 
         abstract class AbstractTypeInfo : ITypeInfo
         {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 #endif
             protected Type _type;
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             internal AbstractTypeInfo([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
 #else
             internal AbstractTypeInfo(Type type)

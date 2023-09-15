@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
-#elif NET6_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 6.0) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
+#elif NET8_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

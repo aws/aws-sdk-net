@@ -93,9 +93,9 @@
     <file src=".\bin\Release\netcoreapp3.1\\<#=this.Session["AssemblyName"]#>.xml" target="lib\netcoreapp3.1" />
     <file src=".\bin\Release\netcoreapp3.1\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\netcoreapp3.1" />
 
-    <file src="<#=Path.Combine(".", "bin", "Release", "net6.0", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\net6.0" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "net6.0", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\net6.0" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "net6.0", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\net6.0" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "net8.0", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\net8.0" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "net8.0", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\net8.0" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "net8.0", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\net8.0" />
 <#
 	}
 #>

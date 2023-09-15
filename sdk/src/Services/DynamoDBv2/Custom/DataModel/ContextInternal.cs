@@ -28,7 +28,7 @@ using System.Globalization;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public partial class DynamoDBContext
