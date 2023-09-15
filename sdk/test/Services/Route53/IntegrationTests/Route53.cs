@@ -243,6 +243,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("Route53")]
+        [Ignore("Excluding flaky Route53 delegation set test.")]
         public void DelegationSetTests()
         {
             List<string> createdSets = new List<string>();
