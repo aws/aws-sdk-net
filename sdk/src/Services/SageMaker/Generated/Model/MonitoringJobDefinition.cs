@@ -123,8 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MonitoringOutputConfig. 
         /// <para>
-        /// The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage
-        /// Service (Amazon S3).
+        /// The array of outputs from the monitoring job to be uploaded to Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -183,6 +183,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.SamplePayloadUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SkipModelValidation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SkipModelValidation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceAlgorithmSpecification", targetDepth))
                 {
                     var unmarshaller = SourceAlgorithmSpecificationUnmarshaller.Instance;

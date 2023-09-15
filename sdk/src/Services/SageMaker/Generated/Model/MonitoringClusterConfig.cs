@@ -80,9 +80,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
-        /// Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
-        /// instance(s) that run the model monitoring job.
+        /// The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on
+        /// the storage volume attached to the ML compute instance(s) that run the model monitoring
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

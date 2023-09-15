@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The input for the model quality monitoring job. Currently endponts are supported for
-    /// input for model quality monitoring jobs.
+    /// The input for the model quality monitoring job. Currently endpoints are supported
+    /// for input for model quality monitoring jobs.
     /// </summary>
     public partial class ModelQualityJobInput
     {
