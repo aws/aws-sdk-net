@@ -101,9 +101,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Verified. 
         /// <para>
         /// Specifies the level of reporting for the files, objects, and directories that DataSync
-        /// attempted to verify at the end of your transfer. This only applies if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-        /// your task</a> to verify data during and after the transfer (which DataSync does by
-        /// default).
+        /// attempted to verify at the end of your transfer.
         /// </para>
         /// </summary>
         public ReportOverride Verified
