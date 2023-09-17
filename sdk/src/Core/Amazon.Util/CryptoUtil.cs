@@ -16,6 +16,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 using AWSSDK.Runtime.Internal.Util;
+using System;
+using System.Buffers;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -98,8 +100,21 @@ namespace Amazon.Util
             /// <returns>Computed hash code</returns>
             public string HMACSign(string data, string key, SigningAlgorithm algorithmName)
             {
-                var binaryData = Encoding.UTF8.GetBytes(data);
-                return HMACSign(binaryData, key, algorithmName);
+                Encoding encoding = Encoding.UTF8;
+                int maxSize = encoding.GetMaxByteCount(data.Length);
+                byte[] buffer = ArrayPool<byte>.Shared.Rent(maxSize);
+
+                try
+                {
+                    int size = encoding.GetBytes(data, buffer);
+                    ArraySegment<byte> segment = new ArraySegment<byte>(buffer, 0, size);
+
+                    return HMACSign(segment, key, algorithmName);
+                }
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(buffer);
+                }
             }
 
             /// <summary>
