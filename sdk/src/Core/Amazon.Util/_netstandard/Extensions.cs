@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace Amazon.Util
 {
@@ -14,5 +12,10 @@ namespace Amazon.Util
                 throw new ArgumentException("The extension method ToUpper only works for invariant culture");
             return str.ToUpperInvariant();
         }
+
+#if !NETCOREAPP3_1_OR_GREATER
+        internal static int GetBytes(this Encoding encoding, string chars, byte[] bytes)
+            => encoding.GetBytes(chars, 0, chars.Length, bytes, 0);
+#endif
     }
 }
