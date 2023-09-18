@@ -42,10 +42,29 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of the user, group, or resource for which to update mailbox permissions.
+        /// The identifier of the user or resource for which to update mailbox permissions.
         /// </para>
+        ///  
+        /// <para>
+        /// The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username, Resourcename,
+        /// or Groupname</i>, or <i>email</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789,
+        /// or S-1-1-12-1234567890-123456789-123456789-1234
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Email address: entity@domain.tld
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Entity name: entity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -63,8 +82,27 @@ namespace Amazon.WorkMail.Model
         /// <para>
         /// The identifier of the user, group, or resource to which to grant the permissions.
         /// </para>
+        ///  
+        /// <para>
+        /// The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username, Resourcename,
+        /// or Groupname</i>, or <i>email</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Grantee ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789,
+        /// or S-1-1-12-1234567890-123456789-123456789-1234
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Email address: grantee@domain.tld
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Grantee name: grantee
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GranteeId
         {
             get { return this._granteeId; }

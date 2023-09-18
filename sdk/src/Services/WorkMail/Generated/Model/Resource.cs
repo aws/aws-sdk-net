@@ -33,6 +33,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class Resource
     {
+        private string _description;
         private DateTime? _disabledDate;
         private string _email;
         private DateTime? _enabledDate;
@@ -40,6 +41,25 @@ namespace Amazon.WorkMail.Model
         private string _name;
         private EntityState _state;
         private ResourceType _type;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Resource description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisabledDate. 

@@ -50,7 +50,7 @@ namespace Amazon.WorkMail.Model
         /// The fully qualified domain name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

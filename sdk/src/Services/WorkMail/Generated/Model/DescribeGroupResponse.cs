@@ -37,6 +37,7 @@ namespace Amazon.WorkMail.Model
         private string _email;
         private DateTime? _enabledDate;
         private string _groupId;
+        private bool? _hiddenFromGlobalAddressList;
         private string _name;
         private EntityState _state;
 
@@ -112,6 +113,24 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetGroupId()
         {
             return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HiddenFromGlobalAddressList. 
+        /// <para>
+        /// If the value is set to <i>true</i>, the group is hidden from the address book.
+        /// </para>
+        /// </summary>
+        public bool HiddenFromGlobalAddressList
+        {
+            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            set { this._hiddenFromGlobalAddressList = value; }
+        }
+
+        // Check to see if HiddenFromGlobalAddressList property is set
+        internal bool IsSetHiddenFromGlobalAddressList()
+        {
+            return this._hiddenFromGlobalAddressList.HasValue; 
         }
 
         /// <summary>

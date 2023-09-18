@@ -34,9 +34,48 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class CreateResourceRequest : AmazonWorkMailRequest
     {
+        private string _description;
+        private bool? _hiddenFromGlobalAddressList;
         private string _name;
         private string _organizationId;
         private ResourceType _type;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Resource description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HiddenFromGlobalAddressList. 
+        /// <para>
+        /// If this parameter is enabled, the resource will be hidden from the address book.
+        /// </para>
+        /// </summary>
+        public bool HiddenFromGlobalAddressList
+        {
+            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            set { this._hiddenFromGlobalAddressList = value; }
+        }
+
+        // Check to see if HiddenFromGlobalAddressList property is set
+        internal bool IsSetHiddenFromGlobalAddressList()
+        {
+            return this._hiddenFromGlobalAddressList.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

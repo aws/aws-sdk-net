@@ -64,8 +64,27 @@ namespace Amazon.WorkMail.Model
         /// <para>
         /// The user, group, or resource to update.
         /// </para>
+        ///  
+        /// <para>
+        /// The identifier can accept <i>UseriD, ResourceId, or GroupId</i>, <i>Username, Resourcename,
+        /// or Groupname</i>, or <i>email</i>. The following identity formats are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789,
+        /// or S-1-1-12-1234567890-123456789-123456789-1234
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Email address: entity@domain.tld
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Entity name: entity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }

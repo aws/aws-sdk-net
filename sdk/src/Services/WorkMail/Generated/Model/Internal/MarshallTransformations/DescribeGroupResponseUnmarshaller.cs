@@ -75,6 +75,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     response.GroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HiddenFromGlobalAddressList", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.HiddenFromGlobalAddressList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

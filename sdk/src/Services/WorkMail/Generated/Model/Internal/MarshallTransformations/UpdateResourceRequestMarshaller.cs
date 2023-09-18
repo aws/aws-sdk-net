@@ -78,6 +78,18 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetHiddenFromGlobalAddressList())
+                {
+                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
@@ -94,6 +106,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ResourceId");
                     context.Writer.Write(publicRequest.ResourceId);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
                 }
 
                 writer.WriteObjectEnd();

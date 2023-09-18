@@ -42,10 +42,29 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier for the member (user or group) to be updated.
+        /// The identifier for the member to be updated.
         /// </para>
+        ///  
+        /// <para>
+        /// The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename,
+        /// or Groupname</i>, or <i>email</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789,
+        /// or S-1-1-12-1234567890-123456789-123456789-1234
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Email address: entity@domain.tld
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Entity name: entity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }

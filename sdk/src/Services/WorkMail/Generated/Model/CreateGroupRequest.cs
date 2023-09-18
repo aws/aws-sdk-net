@@ -35,8 +35,27 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class CreateGroupRequest : AmazonWorkMailRequest
     {
+        private bool? _hiddenFromGlobalAddressList;
         private string _name;
         private string _organizationId;
+
+        /// <summary>
+        /// Gets and sets the property HiddenFromGlobalAddressList. 
+        /// <para>
+        /// If this parameter is enabled, the group will be hidden from the address book.
+        /// </para>
+        /// </summary>
+        public bool HiddenFromGlobalAddressList
+        {
+            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            set { this._hiddenFromGlobalAddressList = value; }
+        }
+
+        // Check to see if HiddenFromGlobalAddressList property is set
+        internal bool IsSetHiddenFromGlobalAddressList()
+        {
+            return this._hiddenFromGlobalAddressList.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

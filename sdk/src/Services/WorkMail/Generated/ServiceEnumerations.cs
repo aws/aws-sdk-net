@@ -283,6 +283,60 @@ namespace Amazon.WorkMail
 
 
     /// <summary>
+    /// Constants used for properties of type EntityType.
+    /// </summary>
+    public class EntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUP for EntityType
+        /// </summary>
+        public static readonly EntityType GROUP = new EntityType("GROUP");
+        /// <summary>
+        /// Constant RESOURCE for EntityType
+        /// </summary>
+        public static readonly EntityType RESOURCE = new EntityType("RESOURCE");
+        /// <summary>
+        /// Constant USER for EntityType
+        /// </summary>
+        public static readonly EntityType USER = new EntityType("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityType FindValue(string value)
+        {
+            return FindValue<EntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FolderName.
     /// </summary>
     public class FolderName : ConstantClass
@@ -716,6 +770,10 @@ namespace Amazon.WorkMail
     public class UserRole : ConstantClass
     {
 
+        /// <summary>
+        /// Constant REMOTE_USER for UserRole
+        /// </summary>
+        public static readonly UserRole REMOTE_USER = new UserRole("REMOTE_USER");
         /// <summary>
         /// Constant RESOURCE for UserRole
         /// </summary>
