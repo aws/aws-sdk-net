@@ -1,3 +1,11 @@
+### 3.7.647.0 (2023-09-18 18:25 UTC)
+* ApplicationDiscoveryService (3.7.201.0)
+	* Add sensitive protection for customer information
+* Macie2 (3.7.200.42)
+	* This release changes the default managedDataIdentifierSelector setting for new classification jobs to RECOMMENDED. By default, new classification jobs now use the recommended set of managed data identifiers.
+* WorkMail (3.7.201.0)
+	* This release includes four new APIs UpdateUser, UpdateGroup, ListGroupsForEntity and DescribeEntity, along with RemoteUsers and some enhancements to existing APIs.
+
 ### 3.7.646.0 (2023-09-15 18:51 UTC)
 * AppStream (3.7.202.0)
 	* This release introduces app block builder, allowing customers to provision a resource to package applications into an app block
