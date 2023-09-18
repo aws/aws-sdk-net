@@ -213,8 +213,8 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ALL (default) - Use all managed data identifiers. If you specify this value, don't
-        /// specify any values for the managedDataIdentifierIds property.
+        /// ALL - Use all managed data identifiers. If you specify this value, don't specify any
+        /// values for the managedDataIdentifierIds property.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -229,26 +229,25 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// NONE - Don't use any managed data identifiers. If you specify this value, specify
-        /// at least one custom data identifier for the job (customDataIdentifierIds) and don't
-        /// specify any values for the managedDataIdentifierIds property.
+        /// at least one value for the customDataIdentifierIds property and don't specify any
+        /// values for the managedDataIdentifierIds property.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services
-        /// recommends for jobs. If you specify this value, don't specify any values for the managedDataIdentifierIds
-        /// property.
+        /// RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you
+        /// specify this value, don't specify any values for the managedDataIdentifierIds property.
         /// </para>
         /// </li></ul> 
         /// <para>
-        /// If you don't specify a value for this property, the job uses all managed data identifiers.
+        /// If you don't specify a value for this property, the job uses the recommended set of
+        /// managed data identifiers.
         /// </para>
         ///  
         /// <para>
-        /// If the job is a recurring job and you don't specify a value for this property or you
-        /// specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers
-        /// that are released. If you specify RECOMMENDED for a recurring job, each job run automatically
-        /// uses all the managed data identifiers that are in the recommended set when the job
-        /// starts to run.
+        /// If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically
+        /// uses new managed data identifiers that are released. If you specify RECOMMENDED for
+        /// a recurring job, each job run automatically uses all the managed data identifiers
+        /// that are in the recommended set when the run starts.
         /// </para>
         ///  
         /// <para>
