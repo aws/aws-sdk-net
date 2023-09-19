@@ -1,3 +1,14 @@
+### 3.7.648.0 (2023-09-19 18:50 UTC)
+* EC2 (3.7.214.0)
+	* This release adds support for C7i, and R7a instance types.
+* Outposts (3.7.201.0)
+	* This release adds the InstanceFamilies field to the ListAssets response.
+* SageMaker (3.7.214.0)
+	* This release adds support for one-time model monitoring schedules that are executed immediately without delay, explicit data analysis windows for model monitoring schedules and exclude features attributes to remove features from model monitor analysis.
+* Core 3.7.202.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.647.0 (2023-09-18 18:25 UTC)
 * ApplicationDiscoveryService (3.7.201.0)
 	* Add sensitive protection for customer information
