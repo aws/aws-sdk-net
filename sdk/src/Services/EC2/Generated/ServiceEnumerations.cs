@@ -8115,6 +8115,42 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gXlarge = new InstanceType("c7g.xlarge");
         /// <summary>
+        /// Constant C7i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i12xlarge = new InstanceType("c7i.12xlarge");
+        /// <summary>
+        /// Constant C7i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i16xlarge = new InstanceType("c7i.16xlarge");
+        /// <summary>
+        /// Constant C7i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i24xlarge = new InstanceType("c7i.24xlarge");
+        /// <summary>
+        /// Constant C7i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i2xlarge = new InstanceType("c7i.2xlarge");
+        /// <summary>
+        /// Constant C7i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i48xlarge = new InstanceType("c7i.48xlarge");
+        /// <summary>
+        /// Constant C7i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i4xlarge = new InstanceType("c7i.4xlarge");
+        /// <summary>
+        /// Constant C7i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7i8xlarge = new InstanceType("c7i.8xlarge");
+        /// <summary>
+        /// Constant C7iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iLarge = new InstanceType("c7i.large");
+        /// <summary>
+        /// Constant C7iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iXlarge = new InstanceType("c7i.xlarge");
+        /// <summary>
         /// Constant Cc14xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Cc14xlarge = new InstanceType("cc1.4xlarge");
@@ -9966,6 +10002,50 @@ namespace Amazon.EC2
         /// Constant R6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6iXlarge = new InstanceType("r6i.xlarge");
+        /// <summary>
+        /// Constant R7a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a12xlarge = new InstanceType("r7a.12xlarge");
+        /// <summary>
+        /// Constant R7a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a16xlarge = new InstanceType("r7a.16xlarge");
+        /// <summary>
+        /// Constant R7a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a24xlarge = new InstanceType("r7a.24xlarge");
+        /// <summary>
+        /// Constant R7a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a2xlarge = new InstanceType("r7a.2xlarge");
+        /// <summary>
+        /// Constant R7a32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a32xlarge = new InstanceType("r7a.32xlarge");
+        /// <summary>
+        /// Constant R7a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a48xlarge = new InstanceType("r7a.48xlarge");
+        /// <summary>
+        /// Constant R7a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a4xlarge = new InstanceType("r7a.4xlarge");
+        /// <summary>
+        /// Constant R7a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7a8xlarge = new InstanceType("r7a.8xlarge");
+        /// <summary>
+        /// Constant R7aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7aLarge = new InstanceType("r7a.large");
+        /// <summary>
+        /// Constant R7aMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7aMedium = new InstanceType("r7a.medium");
+        /// <summary>
+        /// Constant R7aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7aXlarge = new InstanceType("r7a.xlarge");
         /// <summary>
         /// Constant R7g12xlarge for InstanceType
         /// </summary>
