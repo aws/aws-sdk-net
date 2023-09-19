@@ -1086,17 +1086,17 @@ namespace Amazon.Util
                     // Break apart the byte into two four-bit components and
                     // then convert each into their hexadecimal equivalent.
                     byte b = (byte)symbol;
-                    int hinibble = b >> 4;
-                    int lonibble = b & 0xF;
-                    encoded.Append(ToUpperHexit(hinibble));
-                    encoded.Append(ToUpperHexit(lonibble));
+                    int hiNibble = b >> 4;
+                    int loNibble = b & 0xF;
+                    encoded.Append(ToUpperHex(hiNibble));
+                    encoded.Append(ToUpperHex(loNibble));
                 }
             }
 
             return encoded.ToString();
         }
 
-        private static char ToUpperHexit(int value)
+        private static char ToUpperHex(int value)
         {
             // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
             if (value <= 9)
