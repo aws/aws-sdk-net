@@ -45,6 +45,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataAnalysisEndTime())
+            {
+                context.Writer.WritePropertyName("DataAnalysisEndTime");
+                context.Writer.Write(requestObject.DataAnalysisEndTime);
+            }
+
+            if(requestObject.IsSetDataAnalysisStartTime())
+            {
+                context.Writer.WritePropertyName("DataAnalysisStartTime");
+                context.Writer.Write(requestObject.DataAnalysisStartTime);
+            }
+
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");

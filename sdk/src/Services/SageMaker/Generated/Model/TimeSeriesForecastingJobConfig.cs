@@ -212,7 +212,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HolidayConfig. 
         /// <para>
-        /// The collection of holiday featurization attributes used to incorporate national holiday
+        /// The collection of holidays featurization attributes used to incorporate national holiday
         /// information into your forecasting model.
         /// </para>
         /// </summary>

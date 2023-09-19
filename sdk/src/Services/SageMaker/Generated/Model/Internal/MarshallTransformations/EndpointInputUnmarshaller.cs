@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTimeOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExcludeFeaturesAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExcludeFeaturesAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FeaturesAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

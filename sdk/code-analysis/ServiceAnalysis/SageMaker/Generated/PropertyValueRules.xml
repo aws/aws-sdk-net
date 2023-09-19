@@ -6418,6 +6418,10 @@
     <pattern>^.?P.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchTransformInput.ExcludeFeaturesAttribute</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchTransformInput.LocalPath</property>
     <max>256</max>
     <pattern>.*</pattern>
@@ -7258,6 +7262,10 @@
     <min>1</min>
     <max>15</max>
     <pattern>^.?P.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EndpointInput.ExcludeFeaturesAttribute</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.EndpointInput.LocalPath</property>
