@@ -29,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
     /// This class adds extension methods to IServiceCollection making it easier to add Amazon service clients
     /// to the NET Core dependency injection framework.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public static class ServiceCollectionExtensions

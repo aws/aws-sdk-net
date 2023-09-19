@@ -27,7 +27,7 @@ namespace Amazon.Extensions.NETCore.Setup
     /// <summary>
     /// The options used to construct AWS service clients like the Amazon.S3.AmazonS3Client.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public class AWSOptions
