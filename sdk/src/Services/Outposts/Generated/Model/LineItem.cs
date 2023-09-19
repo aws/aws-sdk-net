@@ -63,7 +63,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property CatalogItemId. 
         /// <para>
-        ///  The ID of the catalog item. 
+        ///  The ID of the catalog item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -118,7 +118,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PreviousOrderId. 
         /// <para>
-        /// The ID of the previous order item.
+        /// The ID of the previous order.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

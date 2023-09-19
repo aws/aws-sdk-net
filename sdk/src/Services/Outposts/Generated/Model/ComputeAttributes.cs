@@ -34,6 +34,7 @@ namespace Amazon.Outposts.Model
     public partial class ComputeAttributes
     {
         private string _hostId;
+        private List<string> _instanceFamilies = new List<string>();
         private ComputeAssetState _state;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.Outposts.Model
         internal bool IsSetHostId()
         {
             return this._hostId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceFamilies. 
+        /// <para>
+        /// A list of the names of instance families that are currently associated with a given
+        /// asset.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceFamilies
+        {
+            get { return this._instanceFamilies; }
+            set { this._instanceFamilies = value; }
+        }
+
+        // Check to see if InstanceFamilies property is set
+        internal bool IsSetInstanceFamilies()
+        {
+            return this._instanceFamilies != null && this._instanceFamilies.Count > 0; 
         }
 
         /// <summary>

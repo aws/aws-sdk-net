@@ -119,7 +119,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OrderType. 
         /// <para>
-        /// Type of order.
+        /// The type of order.
         /// </para>
         /// </summary>
         public OrderType OrderType
