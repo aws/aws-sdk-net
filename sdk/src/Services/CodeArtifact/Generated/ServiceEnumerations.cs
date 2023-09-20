@@ -304,6 +304,10 @@ namespace Amazon.CodeArtifact
         /// Constant Pypi for PackageFormat
         /// </summary>
         public static readonly PackageFormat Pypi = new PackageFormat("pypi");
+        /// <summary>
+        /// Constant Swift for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Swift = new PackageFormat("swift");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
