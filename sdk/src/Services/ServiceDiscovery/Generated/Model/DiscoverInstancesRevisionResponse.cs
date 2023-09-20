@@ -29,37 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOperation operation.
-    /// Gets information about any operation that returns an operation ID in the response,
-    /// such as a <code>CreateHttpNamespace</code> request.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// To get a list of operations that match specified criteria, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the DiscoverInstancesRevision operation.
     /// </summary>
-    public partial class GetOperationRequest : AmazonServiceDiscoveryRequest
+    public partial class DiscoverInstancesRevisionResponse : AmazonWebServiceResponse
     {
-        private string _operationId;
+        private long? _instancesRevision;
 
         /// <summary>
-        /// Gets and sets the property OperationId. 
+        /// Gets and sets the property InstancesRevision. 
         /// <para>
-        /// The ID of the operation that you want to get more information about.
+        /// The increasing revision associated to the response Instances list. If a new instance
+        /// is registered or deregistered, the <code>InstancesRevision</code> updates. The health
+        /// status updates don't update <code>InstancesRevision</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
-        public string OperationId
+        public long InstancesRevision
         {
-            get { return this._operationId; }
-            set { this._operationId = value; }
+            get { return this._instancesRevision.GetValueOrDefault(); }
+            set { this._instancesRevision = value; }
         }
 
-        // Check to see if OperationId property is set
-        internal bool IsSetOperationId()
+        // Check to see if InstancesRevision property is set
+        internal bool IsSetInstancesRevision()
         {
-            return this._operationId != null;
+            return this._instancesRevision.HasValue; 
         }
 
     }

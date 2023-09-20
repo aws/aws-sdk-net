@@ -34,6 +34,7 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class DiscoverInstancesResponse : AmazonWebServiceResponse
     {
         private List<HttpInstanceSummary> _instances = new List<HttpInstanceSummary>();
+        private long? _instancesRevision;
 
         /// <summary>
         /// Gets and sets the property Instances. 
@@ -52,6 +53,26 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetInstances()
         {
             return this._instances != null && this._instances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesRevision. 
+        /// <para>
+        /// The increasing revision associated to the response Instances list. If a new instance
+        /// is registered or deregistered, the <code>InstancesRevision</code> updates. The health
+        /// status updates don't update <code>InstancesRevision</code>.
+        /// </para>
+        /// </summary>
+        public long InstancesRevision
+        {
+            get { return this._instancesRevision.GetValueOrDefault(); }
+            set { this._instancesRevision = value; }
+        }
+
+        // Check to see if InstancesRevision property is set
+        internal bool IsSetInstancesRevision()
+        {
+            return this._instancesRevision.HasValue; 
         }
 
     }

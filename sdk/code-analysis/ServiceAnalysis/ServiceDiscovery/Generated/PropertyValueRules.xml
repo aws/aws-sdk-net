@@ -109,6 +109,14 @@
     <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest.NamespaceName</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest.ServiceName</property>
+    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.GetInstanceRequest.InstanceId</property>
     <max>64</max>
   </property-value-rule>

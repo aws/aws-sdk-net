@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DiscoverInstances operation
+    /// Response Unmarshaller for DiscoverInstancesRevision operation
     /// </summary>  
-    public class DiscoverInstancesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DiscoverInstancesRevisionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,18 +45,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DiscoverInstancesResponse response = new DiscoverInstancesResponse();
+            DiscoverInstancesRevisionResponse response = new DiscoverInstancesRevisionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Instances", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<HttpInstanceSummary, HttpInstanceSummaryUnmarshaller>(HttpInstanceSummaryUnmarshaller.Instance);
-                    response.Instances = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("InstancesRevision", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -106,9 +100,9 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             return new AmazonServiceDiscoveryException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DiscoverInstancesResponseUnmarshaller _instance = new DiscoverInstancesResponseUnmarshaller();        
+        private static DiscoverInstancesRevisionResponseUnmarshaller _instance = new DiscoverInstancesRevisionResponseUnmarshaller();        
 
-        internal static DiscoverInstancesResponseUnmarshaller GetInstance()
+        internal static DiscoverInstancesRevisionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +110,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DiscoverInstancesResponseUnmarshaller Instance
+        public static DiscoverInstancesRevisionResponseUnmarshaller Instance
         {
             get
             {
