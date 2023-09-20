@@ -1,3 +1,24 @@
+### 3.7.649.0 (2023-09-20 19:36 UTC)
+* AppConfig (3.7.201.0)
+	* Enabling boto3 paginators for list APIs and adding documentation around ServiceQuotaExceededException errors
+* AppRunner (3.7.202.0)
+	* This release adds improvements for managing App Runner auto scaling configuration resources. New APIs: UpdateDefaultAutoScalingConfiguration and ListServicesForAutoScalingConfiguration. Updated API: DeleteAutoScalingConfiguration.
+* CloudWatchLogs (3.7.201.0)
+	* Add ClientToken to QueryDefinition CFN Handler in CWL
+* CodeArtifact (3.7.201.0)
+	* Add support for the Swift package format.
+* KinesisVideo (3.7.201.32)
+	* Updated DescribeMediaStorageConfiguration, StartEdgeConfigurationUpdate, ImageGenerationConfiguration$SamplingInterval, and UpdateMediaStorageConfiguration to match AWS Docs.
+* S3 (3.7.204.0)
+	* Fix an issue where the SDK can fail to unmarshall response due to NumberFormatException
+* ServiceDiscovery (3.7.201.0)
+	* Adds a new DiscoverInstancesRevision API and also adds InstanceRevision field to the DiscoverInstances API response.
+* SSOOIDC (3.7.201.0)
+	* Update FIPS endpoints in aws-us-gov.
+* Core 3.7.202.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.648.0 (2023-09-19 18:50 UTC)
 * EC2 (3.7.214.0)
 	* This release adds support for C7i, and R7a instance types.
