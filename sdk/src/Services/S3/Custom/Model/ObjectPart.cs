@@ -35,7 +35,7 @@ namespace Amazon.S3.Model
         private string _checksumSHA1;
         private string _checksumSHA256;
         private int? _partNumber;
-        private int? _size;
+        private long? _size;
 
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
@@ -136,7 +136,7 @@ namespace Amazon.S3.Model
         /// The size of the uploaded part in bytes.
         /// </para>
         /// </summary>
-        public int Size
+        public long Size
         {
             get { return this._size.GetValueOrDefault(); }
             set { this._size = value; }
