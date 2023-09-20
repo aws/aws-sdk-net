@@ -30,8 +30,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLogGroup operation.
-    /// Creates a log group with the specified name. You can create up to 20,000 log groups
-    /// per account.
+    /// Creates a log group with the specified name. You can create up to 1,000,000 log groups
+    /// per Region per account.
     /// 
     ///  
     /// <para>

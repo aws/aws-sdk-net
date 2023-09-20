@@ -49,6 +49,14 @@ namespace Amazon.CloudWatchLogs.Model
     /// Alternatively, wait to change the retention setting until you confirm that the earlier
     /// log events are deleted. 
     /// </para>
+    ///  
+    /// <para>
+    /// When log events reach their retention setting they are marked for deletion. After
+    /// they are marked for deletion, they do not add to your archival storage costs anymore,
+    /// even if they are not actually deleted until later. These log events marked for deletion
+    /// are also not included when you use an API to retrieve the <code>storedBytes</code>
+    /// value to see how many bytes a log group is storing.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class PutRetentionPolicyRequest : AmazonCloudWatchLogsRequest
