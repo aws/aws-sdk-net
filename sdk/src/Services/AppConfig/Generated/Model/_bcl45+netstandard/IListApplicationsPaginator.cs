@@ -29,5 +29,10 @@ namespace Amazon.AppConfig.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListApplicationsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Items
+        /// </summary>
+        IPaginatedEnumerable<Application> Items { get; }
     }
 }

@@ -85,7 +85,8 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property ConfigurationVersion. 
         /// <para>
         /// The configuration version to deploy. If deploying an AppConfig hosted configuration
-        /// version, you can specify either the version number or version label.
+        /// version, you can specify either the version number or version label. For all other
+        /// configurations, you must specify the version number.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

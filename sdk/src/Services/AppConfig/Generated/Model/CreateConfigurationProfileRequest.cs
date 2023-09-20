@@ -150,7 +150,12 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://&lt;secret
+        /// For an Amazon Web Services CodePipeline pipeline, specify the URI in the following
+        /// format: <code>codepipeline</code>://&lt;pipeline name&gt;.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
         /// name&gt;.
         /// </para>
         ///  </li> <li> 

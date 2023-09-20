@@ -41,6 +41,12 @@ namespace Amazon.AppConfig.Model
         /// </summary>
         public IPaginatedEnumerable<ListDeploymentStrategiesResponse> Responses => new PaginatedResponse<ListDeploymentStrategiesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Items
+        /// </summary>
+        public IPaginatedEnumerable<DeploymentStrategy> Items => 
+            new PaginatedResultKeyResponse<ListDeploymentStrategiesResponse, DeploymentStrategy>(this, (i) => i.Items);
+
         internal ListDeploymentStrategiesPaginator(IAmazonAppConfig client, ListDeploymentStrategiesRequest request)
         {
             this._client = client;

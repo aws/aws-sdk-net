@@ -44,6 +44,7 @@ namespace Amazon.AppConfig.Model
         private float? _percentageComplete;
         private DateTime? _startedAt;
         private DeploymentState _state;
+        private string _versionLabel;
 
         /// <summary>
         /// Gets and sets the property CompletedAt. 
@@ -248,6 +249,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// A user-defined label for an AppConfig hosted configuration version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }

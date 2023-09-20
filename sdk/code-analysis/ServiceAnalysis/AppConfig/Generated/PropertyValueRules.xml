@@ -489,6 +489,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetDeploymentResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyRequest.DeploymentStrategyId</property>
     <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
   </property-value-rule>
@@ -905,6 +911,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartDeploymentResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentRequest.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -978,6 +990,12 @@
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.PercentageComplete</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopDeploymentResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.TagResourceRequest.ResourceArn</property>
@@ -1345,6 +1363,12 @@
     <property>Amazon.AppConfig.Model.DeploymentSummary.PercentageComplete</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeploymentSummary.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ExtensionArn</property>

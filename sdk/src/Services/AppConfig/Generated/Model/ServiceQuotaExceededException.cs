@@ -29,8 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-    /// configuration store. Delete one or more versions and try again.
+    /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+    /// your environment doesn't exceed the following service quotas:
+    /// 
+    ///  
+    /// <para>
+    /// Applications: 100 max
+    /// </para>
+    ///  
+    /// <para>
+    /// Deployment strategies: 20 max
+    /// </para>
+    ///  
+    /// <para>
+    /// Configuration profiles: 100 max per application
+    /// </para>
+    ///  
+    /// <para>
+    /// Environments: 20 max per application
+    /// </para>
+    ///  
+    /// <para>
+    /// To resolve this issue, you can delete one or more resources and try again. Or, you
+    /// can request a quota increase. For more information about quotas and to request an
+    /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+    /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
