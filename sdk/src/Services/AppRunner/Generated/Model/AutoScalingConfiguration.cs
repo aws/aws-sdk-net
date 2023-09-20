@@ -55,6 +55,8 @@ namespace Amazon.AppRunner.Model
         private int? _autoScalingConfigurationRevision;
         private DateTime? _createdAt;
         private DateTime? _deletedAt;
+        private bool? _hasAssociatedService;
+        private bool? _isDefault;
         private bool? _latest;
         private int? _maxConcurrency;
         private int? _maxSize;
@@ -155,6 +157,48 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetDeletedAt()
         {
             return this._deletedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasAssociatedService. 
+        /// <para>
+        /// Indicates if this auto scaling configuration has an App Runner service associated
+        /// with it. A value of <code>true</code> indicates one or more services are associated.
+        /// A value of <code>false</code> indicates no services are associated.
+        /// </para>
+        /// </summary>
+        public bool HasAssociatedService
+        {
+            get { return this._hasAssociatedService.GetValueOrDefault(); }
+            set { this._hasAssociatedService = value; }
+        }
+
+        // Check to see if HasAssociatedService property is set
+        internal bool IsSetHasAssociatedService()
+        {
+            return this._hasAssociatedService.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Indicates if this auto scaling configuration should be used as the default for a new
+        /// App Runner service that does not have an auto scaling configuration ARN specified
+        /// during creation. Each account can have only one default <code>AutoScalingConfiguration</code>
+        /// per region. The default <code>AutoScalingConfiguration</code> can be any revision
+        /// under the same <code>AutoScalingConfigurationName</code>.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
         }
 
         /// <summary>

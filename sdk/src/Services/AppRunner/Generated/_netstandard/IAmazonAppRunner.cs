@@ -399,9 +399,10 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an App Runner automatic scaling configuration resource. You can delete a specific
-        /// revision or the latest active revision. You can't delete a configuration that's used
-        /// by one or more App Runner services.
+        /// Delete an App Runner automatic scaling configuration resource. You can delete a top
+        /// level auto scaling configuration, a specific revision of one, or all revisions associated
+        /// with the top level configuration. You can't delete the default auto scaling configuration
+        /// or a configuration that's used by one or more App Runner services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -984,6 +985,35 @@ namespace Amazon.AppRunner
 
         #endregion
                 
+        #region  ListServicesForAutoScalingConfiguration
+
+
+
+        /// <summary>
+        /// Returns a list of the associated App Runner services using an auto scaling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesForAutoScalingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServicesForAutoScalingConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration">REST API Reference for ListServicesForAutoScalingConfiguration Operation</seealso>
+        Task<ListServicesForAutoScalingConfigurationResponse> ListServicesForAutoScalingConfigurationAsync(ListServicesForAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
@@ -1253,6 +1283,36 @@ namespace Amazon.AppRunner
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDefaultAutoScalingConfiguration
+
+
+
+        /// <summary>
+        /// Update an auto scaling configuration to be the default. The existing default auto
+        /// scaling configuration will be set to non-default automatically.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultAutoScalingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDefaultAutoScalingConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration">REST API Reference for UpdateDefaultAutoScalingConfiguration Operation</seealso>
+        Task<UpdateDefaultAutoScalingConfigurationResponse> UpdateDefaultAutoScalingConfigurationAsync(UpdateDefaultAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

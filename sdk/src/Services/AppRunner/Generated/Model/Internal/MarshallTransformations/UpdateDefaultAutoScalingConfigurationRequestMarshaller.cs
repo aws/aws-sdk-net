@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteAutoScalingConfiguration Request Marshaller
+    /// UpdateDefaultAutoScalingConfiguration Request Marshaller
     /// </summary>       
-    public class DeleteAutoScalingConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteAutoScalingConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateDefaultAutoScalingConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateDefaultAutoScalingConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteAutoScalingConfigurationRequest)input);
+            return this.Marshall((UpdateDefaultAutoScalingConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteAutoScalingConfigurationRequest publicRequest)
+        public IRequest Marshall(UpdateDefaultAutoScalingConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppRunner");
-            string target = "AppRunner.DeleteAutoScalingConfiguration";
+            string target = "AppRunner.UpdateDefaultAutoScalingConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-15";
@@ -73,12 +73,6 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoScalingConfigurationArn);
                 }
 
-                if(publicRequest.IsSetDeleteAllRevisions())
-                {
-                    context.Writer.WritePropertyName("DeleteAllRevisions");
-                    context.Writer.Write(publicRequest.DeleteAllRevisions);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -87,9 +81,9 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteAutoScalingConfigurationRequestMarshaller _instance = new DeleteAutoScalingConfigurationRequestMarshaller();        
+        private static UpdateDefaultAutoScalingConfigurationRequestMarshaller _instance = new UpdateDefaultAutoScalingConfigurationRequestMarshaller();        
 
-        internal static DeleteAutoScalingConfigurationRequestMarshaller GetInstance()
+        internal static UpdateDefaultAutoScalingConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +91,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteAutoScalingConfigurationRequestMarshaller Instance
+        public static UpdateDefaultAutoScalingConfigurationRequestMarshaller Instance
         {
             get
             {

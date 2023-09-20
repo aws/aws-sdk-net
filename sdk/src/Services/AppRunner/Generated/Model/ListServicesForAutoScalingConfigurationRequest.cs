@@ -29,28 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAutoScalingConfiguration operation.
-    /// Delete an App Runner automatic scaling configuration resource. You can delete a top
-    /// level auto scaling configuration, a specific revision of one, or all revisions associated
-    /// with the top level configuration. You can't delete the default auto scaling configuration
-    /// or a configuration that's used by one or more App Runner services.
+    /// Container for the parameters to the ListServicesForAutoScalingConfiguration operation.
+    /// Returns a list of the associated App Runner services using an auto scaling configuration.
     /// </summary>
-    public partial class DeleteAutoScalingConfigurationRequest : AmazonAppRunnerRequest
+    public partial class ListServicesForAutoScalingConfigurationRequest : AmazonAppRunnerRequest
     {
         private string _autoScalingConfigurationArn;
-        private bool? _deleteAllRevisions;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AutoScalingConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you
-        /// want to delete.
+        /// want to list the services for.
         /// </para>
         ///  
         /// <para>
         /// The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with
         /// either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>.
-        /// If a revision isn't specified, the latest active revision is deleted.
+        /// If a revision isn't specified, the latest active revision is used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -67,27 +65,54 @@ namespace Amazon.AppRunner.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeleteAllRevisions. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set to <code>true</code> to delete all of the revisions associated with the <code>AutoScalingConfigurationArn</code>
-        /// parameter value.
+        /// The maximum number of results to include in each response (result page). It's used
+        /// for a paginated request.
         /// </para>
         ///  
         /// <para>
-        /// When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value
-        /// for the Amazon Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+        /// If you don't specify <code>MaxResults</code>, the request retrieves all available
+        /// results in a single response.
         /// </para>
         /// </summary>
-        public bool DeleteAllRevisions
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._deleteAllRevisions.GetValueOrDefault(); }
-            set { this._deleteAllRevisions = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if DeleteAllRevisions property is set
-        internal bool IsSetDeleteAllRevisions()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._deleteAllRevisions.HasValue; 
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token from a previous result page. It's used for a paginated request. The request
+        /// retrieves the next result page. All other parameter values must be identical to the
+        /// ones specified in the initial request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <code>NextToken</code>, the request retrieves the first result
+        /// page.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

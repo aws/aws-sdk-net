@@ -56,6 +56,11 @@ namespace Amazon.AppRunner.Model
         IListServicesPaginator ListServices(ListServicesRequest request);
 
         /// <summary>
+        /// Paginator for ListServicesForAutoScalingConfiguration operation
+        ///</summary>
+        IListServicesForAutoScalingConfigurationPaginator ListServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request);
+
+        /// <summary>
         /// Paginator for ListVpcConnectors operation
         ///</summary>
         IListVpcConnectorsPaginator ListVpcConnectors(ListVpcConnectorsRequest request);

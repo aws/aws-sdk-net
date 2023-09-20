@@ -29,28 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAutoScalingConfiguration operation.
-    /// Delete an App Runner automatic scaling configuration resource. You can delete a top
-    /// level auto scaling configuration, a specific revision of one, or all revisions associated
-    /// with the top level configuration. You can't delete the default auto scaling configuration
-    /// or a configuration that's used by one or more App Runner services.
+    /// Container for the parameters to the UpdateDefaultAutoScalingConfiguration operation.
+    /// Update an auto scaling configuration to be the default. The existing default auto
+    /// scaling configuration will be set to non-default automatically.
     /// </summary>
-    public partial class DeleteAutoScalingConfigurationRequest : AmazonAppRunnerRequest
+    public partial class UpdateDefaultAutoScalingConfigurationRequest : AmazonAppRunnerRequest
     {
         private string _autoScalingConfigurationArn;
-        private bool? _deleteAllRevisions;
 
         /// <summary>
         /// Gets and sets the property AutoScalingConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you
-        /// want to delete.
+        /// want to set as the default.
         /// </para>
         ///  
         /// <para>
         /// The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with
         /// either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>.
-        /// If a revision isn't specified, the latest active revision is deleted.
+        /// If a revision isn't specified, the latest active revision is set as the default.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -64,30 +61,6 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetAutoScalingConfigurationArn()
         {
             return this._autoScalingConfigurationArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeleteAllRevisions. 
-        /// <para>
-        /// Set to <code>true</code> to delete all of the revisions associated with the <code>AutoScalingConfigurationArn</code>
-        /// parameter value.
-        /// </para>
-        ///  
-        /// <para>
-        /// When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value
-        /// for the Amazon Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
-        /// </para>
-        /// </summary>
-        public bool DeleteAllRevisions
-        {
-            get { return this._deleteAllRevisions.GetValueOrDefault(); }
-            set { this._deleteAllRevisions = value; }
-        }
-
-        // Check to see if DeleteAllRevisions property is set
-        internal bool IsSetDeleteAllRevisions()
-        {
-            return this._deleteAllRevisions.HasValue; 
         }
 
     }

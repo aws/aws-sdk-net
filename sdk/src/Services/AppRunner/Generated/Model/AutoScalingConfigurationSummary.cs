@@ -46,6 +46,10 @@ namespace Amazon.AppRunner.Model
         private string _autoScalingConfigurationArn;
         private string _autoScalingConfigurationName;
         private int? _autoScalingConfigurationRevision;
+        private DateTime? _createdAt;
+        private bool? _hasAssociatedService;
+        private bool? _isDefault;
+        private AutoScalingConfigurationStatus _status;
 
         /// <summary>
         /// Gets and sets the property AutoScalingConfigurationArn. 
@@ -103,6 +107,87 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetAutoScalingConfigurationRevision()
         {
             return this._autoScalingConfigurationRevision.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time when the auto scaling configuration was created. It's in Unix time stamp
+        /// format.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasAssociatedService. 
+        /// <para>
+        /// Indicates if this auto scaling configuration has an App Runner service associated
+        /// with it. A value of <code>true</code> indicates one or more services are associated.
+        /// A value of <code>false</code> indicates no services are associated.
+        /// </para>
+        /// </summary>
+        public bool HasAssociatedService
+        {
+            get { return this._hasAssociatedService.GetValueOrDefault(); }
+            set { this._hasAssociatedService = value; }
+        }
+
+        // Check to see if HasAssociatedService property is set
+        internal bool IsSetHasAssociatedService()
+        {
+            return this._hasAssociatedService.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Indicates if this auto scaling configuration should be used as the default for a new
+        /// App Runner service that does not have an auto scaling configuration ARN specified
+        /// during creation. Each account can have only one default <code>AutoScalingConfiguration</code>
+        /// per region. The default <code>AutoScalingConfiguration</code> can be any revision
+        /// under the same <code>AutoScalingConfigurationName</code>.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current state of the auto scaling configuration. If the status of a configuration
+        /// revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration
+        /// revisions are permanently removed some time after they are deleted.
+        /// </para>
+        /// </summary>
+        public AutoScalingConfigurationStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }
