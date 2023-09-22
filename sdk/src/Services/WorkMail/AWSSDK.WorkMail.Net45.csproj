@@ -50,7 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../src/Core/AWSSDK.Core.Net45.csproj"/>
+    <ProjectReference Include="../../Core/AWSSDK.Core.Net45.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
