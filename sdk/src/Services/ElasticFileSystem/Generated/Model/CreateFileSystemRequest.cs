@@ -307,7 +307,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// The <code>maxIO</code> mode is not supported on file systems using One Zone storage
         /// classes.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Default is <code>generalPurpose</code>.
+        /// </para>
         /// </summary>
         public PerformanceMode PerformanceMode
         {
@@ -324,11 +327,11 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ProvisionedThroughputInMibps. 
         /// <para>
-        /// The throughput, measured in MiB/s, that you want to provision for a file system that
-        /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code>
-        /// is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s.
-        /// To increase this limit, contact Amazon Web Services Support. For more information,
-        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+        /// The throughput, measured in mebibytes per second (MiBps), that you want to provision
+        /// for a file system that you're creating. Required if <code>ThroughputMode</code> is
+        /// set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit
+        /// depending on Region. To increase this limit, contact Amazon Web Services Support.
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
         /// EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>

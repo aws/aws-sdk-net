@@ -309,7 +309,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ProvisionedThroughputInMibps. 
         /// <para>
-        /// The amount of provisioned throughput, measured in MiB/s, for the file system. Valid
+        /// The amount of provisioned throughput, measured in MiBps, for the file system. Valid
         /// for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.
         /// </para>
         /// </summary>

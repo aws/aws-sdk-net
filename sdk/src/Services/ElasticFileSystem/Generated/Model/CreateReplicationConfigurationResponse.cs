@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// This is the response object from the CreateReplicationConfiguration operation.
+    /// Describes the replication configuration for a specific file system.
     /// </summary>
     public partial class CreateReplicationConfigurationResponse : AmazonWebServiceResponse
     {
