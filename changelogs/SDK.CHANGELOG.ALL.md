@@ -1,3 +1,22 @@
+### 3.7.650.0 (2023-09-22 18:32 UTC)
+* Braket (3.7.201.0)
+	* This release adds support to view the device queue depth (the number of queued quantum tasks and hybrid jobs on a device) and queue position for a quantum task and hybrid job.
+* CloudWatchEvents (3.7.202.0)
+	* Adds sensitive trait to various shapes in Jetstream Connections API model.
+* DatabaseMigrationService (3.7.203.0)
+	* new vendors for DMS CSF: MongoDB, MariaDB, DocumentDb and Redshift
+* EC2 (3.7.215.0)
+	* EC2 M2 Pro Mac instances are powered by Apple M2 Pro Mac Mini computers featuring 12 core CPU, 19 core GPU, 32 GiB of memory, and 16 core Apple Neural Engine and uniquely enabled by the AWS Nitro System through high-speed Thunderbolt connections.
+* ElasticFileSystem (3.7.200.44)
+	* Documentation updates for Elastic File System
+* GuardDuty (3.7.203.0)
+	* Add `EKS_CLUSTER_NAME` to filter and sort key.
+* MediaConvert (3.7.203.0)
+	* This release supports the creation of of audio-only tracks in CMAF output groups.
+* Core 3.7.202.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.649.0 (2023-09-20 19:36 UTC)
 * AppConfig (3.7.201.0)
 	* Enabling boto3 paginators for list APIs and adding documentation around ServiceQuotaExceededException errors
