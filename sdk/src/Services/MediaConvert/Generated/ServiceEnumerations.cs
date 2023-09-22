@@ -4862,6 +4862,10 @@ namespace Amazon.MediaConvert
         /// Constant ALTERNATE_AUDIO_NOT_AUTO_SELECT for CmfcAudioTrackType
         /// </summary>
         public static readonly CmfcAudioTrackType ALTERNATE_AUDIO_NOT_AUTO_SELECT = new CmfcAudioTrackType("ALTERNATE_AUDIO_NOT_AUTO_SELECT");
+        /// <summary>
+        /// Constant AUDIO_ONLY_VARIANT_STREAM for CmfcAudioTrackType
+        /// </summary>
+        public static readonly CmfcAudioTrackType AUDIO_ONLY_VARIANT_STREAM = new CmfcAudioTrackType("AUDIO_ONLY_VARIANT_STREAM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

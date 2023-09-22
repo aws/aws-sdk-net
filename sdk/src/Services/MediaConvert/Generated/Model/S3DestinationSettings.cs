@@ -72,7 +72,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property StorageClass. Specify the S3 storage class to use for this
-        /// destination.
+        /// output. To use your destination's default storage class: Keep the default value, Not
+        /// set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
         /// </summary>
         public S3StorageClass StorageClass
         {
