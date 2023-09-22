@@ -290,7 +290,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MapBooleanAsBoolean. 
         /// <para>
         /// When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL
-        /// migrates booleans as <code>varchar(5)</code>.
+        /// migrates booleans as <code>varchar(5)</code>. You must set this setting on both the
+        /// source and target endpoints for it to take effect.
         /// </para>
         /// </summary>
         public bool MapBooleanAsBoolean

@@ -33,10 +33,47 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DataProviderSettings
     {
+        private DocDbDataProviderSettings _docDbSettings;
+        private MariaDbDataProviderSettings _mariaDbSettings;
         private MicrosoftSqlServerDataProviderSettings _microsoftSqlServerSettings;
+        private MongoDbDataProviderSettings _mongoDbSettings;
         private MySqlDataProviderSettings _mySqlSettings;
         private OracleDataProviderSettings _oracleSettings;
         private PostgreSqlDataProviderSettings _postgreSqlSettings;
+        private RedshiftDataProviderSettings _redshiftSettings;
+
+        /// <summary>
+        /// Gets and sets the property DocDbSettings.
+        /// </summary>
+        public DocDbDataProviderSettings DocDbSettings
+        {
+            get { return this._docDbSettings; }
+            set { this._docDbSettings = value; }
+        }
+
+        // Check to see if DocDbSettings property is set
+        internal bool IsSetDocDbSettings()
+        {
+            return this._docDbSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MariaDbSettings. 
+        /// <para>
+        /// Provides information that defines a MariaDB data provider.
+        /// </para>
+        /// </summary>
+        public MariaDbDataProviderSettings MariaDbSettings
+        {
+            get { return this._mariaDbSettings; }
+            set { this._mariaDbSettings = value; }
+        }
+
+        // Check to see if MariaDbSettings property is set
+        internal bool IsSetMariaDbSettings()
+        {
+            return this._mariaDbSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MicrosoftSqlServerSettings.
@@ -51,6 +88,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMicrosoftSqlServerSettings()
         {
             return this._microsoftSqlServerSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MongoDbSettings. 
+        /// <para>
+        /// Provides information that defines a MongoDB data provider.
+        /// </para>
+        /// </summary>
+        public MongoDbDataProviderSettings MongoDbSettings
+        {
+            get { return this._mongoDbSettings; }
+            set { this._mongoDbSettings = value; }
+        }
+
+        // Check to see if MongoDbSettings property is set
+        internal bool IsSetMongoDbSettings()
+        {
+            return this._mongoDbSettings != null;
         }
 
         /// <summary>
@@ -96,6 +151,21 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPostgreSqlSettings()
         {
             return this._postgreSqlSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftSettings.
+        /// </summary>
+        public RedshiftDataProviderSettings RedshiftSettings
+        {
+            get { return this._redshiftSettings; }
+            set { this._redshiftSettings = value; }
+        }
+
+        // Check to see if RedshiftSettings property is set
+        internal bool IsSetRedshiftSettings()
+        {
+            return this._redshiftSettings != null;
         }
 
     }

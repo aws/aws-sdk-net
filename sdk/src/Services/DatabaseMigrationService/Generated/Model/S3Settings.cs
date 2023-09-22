@@ -461,10 +461,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// An optional parameter that specifies how DMS treats null values. While handling the
         /// null value, you can use this parameter to pass a user-defined string as null when
-        /// writing to the target. For example, when target columns are not nullable, you can
-        /// use this option to differentiate between the empty string value and the null value.
-        /// So, if you set this parameter value to the empty string ("" or ''), DMS treats the
-        /// empty string as the null value instead of <code>NULL</code>.
+        /// writing to the target. For example, when target columns are nullable, you can use
+        /// this option to differentiate between the empty string value and the null value. So,
+        /// if you set this parameter value to the empty string ("" or ''), DMS treats the empty
+        /// string as the null value instead of <code>NULL</code>.
         /// </para>
         ///  
         /// <para>

@@ -41,6 +41,14 @@ namespace Amazon.DatabaseMigrationService.Model
     /// permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
     /// Permissions Needed to Use DMS</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you don't specify a version when creating a replication instance, DMS will create
+    /// the instance using the default engine version. For information about the default engine
+    /// version, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReleaseNotes.html">Release
+    /// Notes</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateReplicationInstanceRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -90,18 +98,6 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// Default: <code>true</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
-        /// engine version when you create a replication instance. For example, if you set <code>EngineVersion</code>
-        /// to a lower version number than the current default version, DMS uses the default version.
-        /// </para>
-        ///  
-        /// <para>
-        /// If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you create a replication
-        /// instance, DMS uses the engine version specified by the <code>EngineVersion</code>
-        /// parameter. 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade

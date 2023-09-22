@@ -729,8 +729,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
         /// values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can
-        /// specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>,
-        /// and <code>AsmServerName</code>. You can't specify both. For more information on creating
+        /// specify clear-text values for <code>AsmUser</code>, <code>AsmPassword</code>, and
+        /// <code>AsmServerName</code>. You can't specify both. For more information on creating
         /// this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code>
         /// and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration

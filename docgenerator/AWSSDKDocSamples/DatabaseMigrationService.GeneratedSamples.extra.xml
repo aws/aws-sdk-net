@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateDataProvider(Amazon.DatabaseMigrationService.Model.CreateDataProviderRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateDataProvider(Amazon.DatabaseMigrationService.Model.CreateDataProviderRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateDataProviderRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateDataProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates the data provider with the specified parameters.
+                </para>
+                <code
+                    title="Create Data Provider"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-data-provider-1689726511871" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateEndpoint(Amazon.DatabaseMigrationService.Model.CreateEndpointRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateEndpoint(Amazon.DatabaseMigrationService.Model.CreateEndpointRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.CreateEndpointRequest" />
@@ -35,6 +54,44 @@
                     title="Create endpoint"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="create-endpoint-1481746254348" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateInstanceProfile(Amazon.DatabaseMigrationService.Model.CreateInstanceProfileRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateInstanceProfile(Amazon.DatabaseMigrationService.Model.CreateInstanceProfileRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateInstanceProfileRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates the instance profile using the specified parameters.
+                </para>
+                <code
+                    title="Create Instance Profile"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-instance-profile-1689716070633" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateMigrationProject(Amazon.DatabaseMigrationService.Model.CreateMigrationProjectRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateMigrationProject(Amazon.DatabaseMigrationService.Model.CreateMigrationProjectRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateMigrationProjectRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CreateMigrationProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates the migration project with the specified parameters.
+                </para>
+                <code
+                    title="Create Migration Project"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="create-migration-project-1689716672685" />
             </example>
         </value>
     </doc>
@@ -135,6 +192,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteDataProvider(Amazon.DatabaseMigrationService.Model.DeleteDataProviderRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteDataProvider(Amazon.DatabaseMigrationService.Model.DeleteDataProviderRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteDataProviderRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteDataProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified data provider.
+                </para>
+                <code
+                    title="Delete Data Provider"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-data-provider-1689724476356" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteEndpoint(Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteEndpoint(Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.DeleteEndpointRequest" />
@@ -150,6 +226,44 @@
                     title="Delete Endpoint"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="delete-endpoint-1481752425530" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteInstanceProfile(Amazon.DatabaseMigrationService.Model.DeleteInstanceProfileRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteInstanceProfile(Amazon.DatabaseMigrationService.Model.DeleteInstanceProfileRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteInstanceProfileRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified instance profile.
+                </para>
+                <code
+                    title="Delete Instance Profile"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-instance-profile-1689716924105" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DeleteMigrationProject(Amazon.DatabaseMigrationService.Model.DeleteMigrationProjectRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DeleteMigrationProject(Amazon.DatabaseMigrationService.Model.DeleteMigrationProjectRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteMigrationProjectRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DeleteMigrationProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified migration project.
+                </para>
+                <code
+                    title="Delete Migration Project"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="delete-migration-project-1689717217454" />
             </example>
         </value>
     </doc>
@@ -271,6 +385,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeConversionConfiguration(Amazon.DatabaseMigrationService.Model.DescribeConversionConfigurationRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeConversionConfiguration(Amazon.DatabaseMigrationService.Model.DescribeConversionConfigurationRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeConversionConfigurationRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeConversionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns configuration parameters for a schema conversion project.
+                </para>
+                <code
+                    title="Describe Conversion Configuration"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-conversion-configuration-1689717690907" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeDataProviders(Amazon.DatabaseMigrationService.Model.DescribeDataProvidersRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeDataProviders(Amazon.DatabaseMigrationService.Model.DescribeDataProvidersRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeDataProvidersRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeDataProvidersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Describe Data Providers"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-data-providers-1689725897156" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeEndpoints(Amazon.DatabaseMigrationService.Model.DescribeEndpointsRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeEndpoints(Amazon.DatabaseMigrationService.Model.DescribeEndpointsRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.DescribeEndpointsRequest" />
@@ -304,6 +456,158 @@
                     title="Describe endpoint types"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-endpoint-types-1481754742591" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeExtensionPackAssociations(Amazon.DatabaseMigrationService.Model.DescribeExtensionPackAssociationsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeExtensionPackAssociations(Amazon.DatabaseMigrationService.Model.DescribeExtensionPackAssociationsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeExtensionPackAssociationsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeExtensionPackAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of extension pack associations for the specified migration project.
+                </para>
+                <code
+                    title="Describe Extension Pack Associations"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-extension-pack-associations-1689718322580" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeInstanceProfiles(Amazon.DatabaseMigrationService.Model.DescribeInstanceProfilesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeInstanceProfiles(Amazon.DatabaseMigrationService.Model.DescribeInstanceProfilesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeInstanceProfilesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeInstanceProfilesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of instance profiles for your account in the current region.
+                </para>
+                <code
+                    title="Describe Instance Profiles"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-instance-profiles-1689718406840" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelAssessments(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelAssessmentsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelAssessments(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelAssessmentsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelAssessmentsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelAssessmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of metadata model assessments for your account in the current region.
+                </para>
+                <code
+                    title="Describe Metadata Model Assessments"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-assessments-1689718702303" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelConversions(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelConversionsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelConversions(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelConversionsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelConversionsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelConversionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of metadata model conversions for a migration project.
+                </para>
+                <code
+                    title="Describe Metadata Model Conversions"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-conversions-1689719021495" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelExportsAsScript(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsAsScriptRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelExportsAsScript(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsAsScriptRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsAsScriptRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsAsScriptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of metadata model exports.
+                </para>
+                <code
+                    title="Describe Metadata Model Exports As Script"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-exports-as-script-1689719253938" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelExportsToTarget(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsToTargetRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelExportsToTarget(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsToTargetRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsToTargetRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelExportsToTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of metadata model exports.
+                </para>
+                <code
+                    title="Describe Metadata Model Exports To Target"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-exports-to-target-1689719484750" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelImports(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelImportsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelImports(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelImportsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelImportsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelImportsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of metadata model imports.
+                </para>
+                <code
+                    title="Describe Metadata Model Imports"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-imports-1689719771322" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMigrationProjects(Amazon.DatabaseMigrationService.Model.DescribeMigrationProjectsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMigrationProjects(Amazon.DatabaseMigrationService.Model.DescribeMigrationProjectsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMigrationProjectsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMigrationProjectsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a paginated list of migration projects for your account in the current region.
+                </para>
+                <code
+                    title="Describe Migration Projects"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-migration-projects-1689719912075" />
             </example>
         </value>
     </doc>
@@ -442,6 +746,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ExportMetadataModelAssessment(Amazon.DatabaseMigrationService.Model.ExportMetadataModelAssessmentRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ExportMetadataModelAssessment(Amazon.DatabaseMigrationService.Model.ExportMetadataModelAssessmentRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ExportMetadataModelAssessmentRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ExportMetadataModelAssessmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Saves a copy of a database migration assessment report to your S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file.
+                </para>
+                <code
+                    title="Export Metadata Model Assessment"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="export-metadata-model-assessment-1689720309558" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ImportCertificate(Amazon.DatabaseMigrationService.Model.ImportCertificateRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ImportCertificate(Amazon.DatabaseMigrationService.Model.ImportCertificateRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.ImportCertificateRequest" />
@@ -480,6 +803,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyConversionConfiguration(Amazon.DatabaseMigrationService.Model.ModifyConversionConfigurationRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyConversionConfiguration(Amazon.DatabaseMigrationService.Model.ModifyConversionConfigurationRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyConversionConfigurationRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyConversionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the specified schema conversion configuration using the provided parameters.
+                </para>
+                <code
+                    title="Modify Conversion Configuration"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-conversion-configuration-1689720529855" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyDataProvider(Amazon.DatabaseMigrationService.Model.ModifyDataProviderRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyDataProvider(Amazon.DatabaseMigrationService.Model.ModifyDataProviderRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyDataProviderRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyDataProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the specified data provider using the provided settings.
+                </para>
+                <code
+                    title="Modify Data Provider"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-data-provider-1689720700567" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyEndpoint(Amazon.DatabaseMigrationService.Model.ModifyEndpointRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyEndpoint(Amazon.DatabaseMigrationService.Model.ModifyEndpointRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.ModifyEndpointRequest" />
@@ -494,6 +855,44 @@
                     title="Modify endpoint"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="modify-endpoint-1481761649937" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyInstanceProfile(Amazon.DatabaseMigrationService.Model.ModifyInstanceProfileRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyInstanceProfile(Amazon.DatabaseMigrationService.Model.ModifyInstanceProfileRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyInstanceProfileRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the specified instance profile using the provided parameters.
+                </para>
+                <code
+                    title="Modify Instance Profile"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-instance-profile-1689724223329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.ModifyMigrationProject(Amazon.DatabaseMigrationService.Model.ModifyMigrationProjectRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.ModifyMigrationProject(Amazon.DatabaseMigrationService.Model.ModifyMigrationProjectRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyMigrationProjectRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.ModifyMigrationProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the specified migration project using the provided parameters.
+                </para>
+                <code
+                    title="Modify Migration Project"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="modify-migration-project-1689721117475" />
             </example>
         </value>
     </doc>
@@ -570,6 +969,121 @@
                     title="Remove tags from resource"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="remove-tags-from-resource-1481762571330" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartExtensionPackAssociation(Amazon.DatabaseMigrationService.Model.StartExtensionPackAssociationRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartExtensionPackAssociation(Amazon.DatabaseMigrationService.Model.StartExtensionPackAssociationRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartExtensionPackAssociationRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartExtensionPackAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Applies the extension pack to your target database.
+                </para>
+                <code
+                    title="Start Extension Pack Association"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-extension-pack-association-1689721897266" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartMetadataModelAssessment(Amazon.DatabaseMigrationService.Model.StartMetadataModelAssessmentRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartMetadataModelAssessment(Amazon.DatabaseMigrationService.Model.StartMetadataModelAssessmentRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelAssessmentRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelAssessmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a database migration assessment report by assessing the migration complexity for 
+         your source database.
+                </para>
+                <code
+                    title="Start Metadata Model Assessment"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-metadata-model-assessment-1689722322596" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartMetadataModelConversion(Amazon.DatabaseMigrationService.Model.StartMetadataModelConversionRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartMetadataModelConversion(Amazon.DatabaseMigrationService.Model.StartMetadataModelConversionRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelConversionRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelConversionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Converts your source database objects to a format compatible with the target database. 
+                </para>
+                <code
+                    title="Start Metadata Model Conversion"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-metadata-model-conversion-1689722427798" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartMetadataModelExportAsScript(Amazon.DatabaseMigrationService.Model.StartMetadataModelExportAsScriptRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartMetadataModelExportAsScript(Amazon.DatabaseMigrationService.Model.StartMetadataModelExportAsScriptRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelExportAsScriptRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelExportAsScriptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Saves your converted code to a file as a SQL script, and stores this file on your S3 bucket.
+                </para>
+                <code
+                    title="Start Metadata Model Export As Script"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-metadata-model-export-as-script-1689722681469" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartMetadataModelExportToTarget(Amazon.DatabaseMigrationService.Model.StartMetadataModelExportToTargetRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartMetadataModelExportToTarget(Amazon.DatabaseMigrationService.Model.StartMetadataModelExportToTargetRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelExportToTargetRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelExportToTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Applies converted database objects to your target database.
+                </para>
+                <code
+                    title="Start Metadata Model Export To Target"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-metadata-model-export-to-target-1689783666835" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartMetadataModelImport(Amazon.DatabaseMigrationService.Model.StartMetadataModelImportRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartMetadataModelImport(Amazon.DatabaseMigrationService.Model.StartMetadataModelImportRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelImportRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelImportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Loads the metadata for all the dependent database objects of the parent object.
+                </para>
+                <code
+                    title="Start Metadata Model Import"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-metadata-model-import-1689723124259" />
             </example>
         </value>
     </doc>
