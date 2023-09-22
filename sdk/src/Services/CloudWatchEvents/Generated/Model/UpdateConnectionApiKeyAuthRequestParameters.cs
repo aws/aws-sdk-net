@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The value associated with teh API key to use for authorization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=1, Max=512)]
         public string ApiKeyValue
         {
             get { return this._apiKeyValue; }
