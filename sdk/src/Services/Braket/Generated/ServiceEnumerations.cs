@@ -229,6 +229,52 @@ namespace Amazon.Braket
 
 
     /// <summary>
+    /// Constants used for properties of type HybridJobAdditionalAttributeName.
+    /// </summary>
+    public class HybridJobAdditionalAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QueueInfo for HybridJobAdditionalAttributeName
+        /// </summary>
+        public static readonly HybridJobAdditionalAttributeName QueueInfo = new HybridJobAdditionalAttributeName("QueueInfo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HybridJobAdditionalAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HybridJobAdditionalAttributeName FindValue(string value)
+        {
+            return FindValue<HybridJobAdditionalAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HybridJobAdditionalAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceType.
     /// </summary>
     public class InstanceType : ConstantClass
@@ -579,6 +625,52 @@ namespace Amazon.Braket
 
 
     /// <summary>
+    /// Constants used for properties of type QuantumTaskAdditionalAttributeName.
+    /// </summary>
+    public class QuantumTaskAdditionalAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QueueInfo for QuantumTaskAdditionalAttributeName
+        /// </summary>
+        public static readonly QuantumTaskAdditionalAttributeName QueueInfo = new QuantumTaskAdditionalAttributeName("QueueInfo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuantumTaskAdditionalAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuantumTaskAdditionalAttributeName FindValue(string value)
+        {
+            return FindValue<QuantumTaskAdditionalAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuantumTaskAdditionalAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QuantumTaskStatus.
     /// </summary>
     public class QuantumTaskStatus : ConstantClass
@@ -642,6 +734,106 @@ namespace Amazon.Braket
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QuantumTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueueName.
+    /// </summary>
+    public class QueueName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JOBS_QUEUE for QueueName
+        /// </summary>
+        public static readonly QueueName JOBS_QUEUE = new QueueName("JOBS_QUEUE");
+        /// <summary>
+        /// Constant QUANTUM_TASKS_QUEUE for QueueName
+        /// </summary>
+        public static readonly QueueName QUANTUM_TASKS_QUEUE = new QueueName("QUANTUM_TASKS_QUEUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueueName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueueName FindValue(string value)
+        {
+            return FindValue<QueueName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueueName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueuePriority.
+    /// </summary>
+    public class QueuePriority : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Normal for QueuePriority
+        /// </summary>
+        public static readonly QueuePriority Normal = new QueuePriority("Normal");
+        /// <summary>
+        /// Constant Priority for QueuePriority
+        /// </summary>
+        public static readonly QueuePriority Priority = new QueuePriority("Priority");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueuePriority(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueuePriority FindValue(string value)
+        {
+            return FindValue<QueuePriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueuePriority(string value)
         {
             return FindValue(value);
         }

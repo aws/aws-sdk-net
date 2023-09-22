@@ -47,6 +47,7 @@ namespace Amazon.Braket.Model
         private string _jobArn;
         private string _jobName;
         private JobOutputDataConfig _outputDataConfig;
+        private HybridJobQueueInfo _queueInfo;
         private string _roleArn;
         private DateTime? _startedAt;
         private JobPrimaryStatus _status;
@@ -318,6 +319,26 @@ namespace Amazon.Braket.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueueInfo. 
+        /// <para>
+        /// Queue information for the requested job. Only returned if <code>QueueInfo</code> is
+        /// specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code>
+        /// API request.
+        /// </para>
+        /// </summary>
+        public HybridJobQueueInfo QueueInfo
+        {
+            get { return this._queueInfo; }
+            set { this._queueInfo = value; }
+        }
+
+        // Check to see if QueueInfo property is set
+        internal bool IsSetQueueInfo()
+        {
+            return this._queueInfo != null;
         }
 
         /// <summary>

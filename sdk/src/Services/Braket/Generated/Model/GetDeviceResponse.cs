@@ -36,6 +36,7 @@ namespace Amazon.Braket.Model
         private string _deviceArn;
         private string _deviceCapabilities;
         private string _deviceName;
+        private List<DeviceQueueInfo> _deviceQueueInfo = new List<DeviceQueueInfo>();
         private DeviceStatus _deviceStatus;
         private DeviceType _deviceType;
         private string _providerName;
@@ -95,6 +96,24 @@ namespace Amazon.Braket.Model
         internal bool IsSetDeviceName()
         {
             return this._deviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceQueueInfo. 
+        /// <para>
+        /// List of information about tasks and jobs queued on a device.
+        /// </para>
+        /// </summary>
+        public List<DeviceQueueInfo> DeviceQueueInfo
+        {
+            get { return this._deviceQueueInfo; }
+            set { this._deviceQueueInfo = value; }
+        }
+
+        // Check to see if DeviceQueueInfo property is set
+        internal bool IsSetDeviceQueueInfo()
+        {
+            return this._deviceQueueInfo != null && this._deviceQueueInfo.Count > 0; 
         }
 
         /// <summary>

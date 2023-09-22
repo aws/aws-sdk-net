@@ -135,6 +135,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     response.OutputDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("queueInfo", targetDepth))
+                {
+                    var unmarshaller = HybridJobQueueInfoUnmarshaller.Instance;
+                    response.QueueInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

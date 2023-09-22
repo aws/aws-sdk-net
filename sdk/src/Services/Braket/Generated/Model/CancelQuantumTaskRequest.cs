@@ -62,7 +62,7 @@ namespace Amazon.Braket.Model
         /// The ARN of the task to cancel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string QuantumTaskArn
         {
             get { return this._quantumTaskArn; }

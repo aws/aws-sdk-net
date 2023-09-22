@@ -105,6 +105,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     response.QuantumTaskArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("queueInfo", targetDepth))
+                {
+                    var unmarshaller = QuantumTaskQueueInfoUnmarshaller.Instance;
+                    response.QueueInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shots", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
