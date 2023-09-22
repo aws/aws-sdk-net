@@ -58,8 +58,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// The status of the feature that will be configured for the organization. Use one of
-        /// the following values to configure the feature status for the entire organization:
+        /// Describes the status of the feature that is configured for the member accounts within
+        /// the organization. One of the following values is the status for the entire organization:
         /// </para>
         ///  <ul> <li> 
         /// <para>

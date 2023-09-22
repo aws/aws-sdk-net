@@ -41,6 +41,12 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// An enum value representing possible filter fields.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+        /// <code>CLUSTER_NAME</code> has been deprecated.
+        /// </para>
+        ///  </note>
         /// </summary>
         public CoverageFilterCriterionKey CriterionKey
         {

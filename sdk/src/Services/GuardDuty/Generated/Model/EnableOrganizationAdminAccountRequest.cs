@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The Amazon Web Services Account ID for the organization account to be enabled as a
+        /// The Amazon Web Services account ID for the organization account to be enabled as a
         /// GuardDuty delegated administrator.
         /// </para>
         /// </summary>

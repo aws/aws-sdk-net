@@ -2147,9 +2147,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Invites Amazon Web Services accounts to become members of an organization administered
-        /// by the Amazon Web Services account that invokes this API. If you are using organizations
-        /// to manager your GuardDuty environment, this step is not needed. For more information,
-        /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
+        /// by the Amazon Web Services account that invokes this API. If you are using Amazon
+        /// Web Services Organizations to manage your GuardDuty environment, this step is not
+        /// needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
         /// accounts with organizations</a>.
         /// 
         ///  
@@ -2551,7 +2551,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists the accounts configured as GuardDuty delegated administrators. Only the organization's
+        /// Lists the accounts designated as GuardDuty delegated administrators. Only the organization's
         /// management account can run this API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>

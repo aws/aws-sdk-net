@@ -151,6 +151,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly CoverageFilterCriterionKey COVERAGE_STATUS = new CoverageFilterCriterionKey("COVERAGE_STATUS");
         /// <summary>
+        /// Constant EKS_CLUSTER_NAME for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey EKS_CLUSTER_NAME = new CoverageFilterCriterionKey("EKS_CLUSTER_NAME");
+        /// <summary>
         /// Constant MANAGEMENT_TYPE for CoverageFilterCriterionKey
         /// </summary>
         public static readonly CoverageFilterCriterionKey MANAGEMENT_TYPE = new CoverageFilterCriterionKey("MANAGEMENT_TYPE");
@@ -216,6 +220,10 @@ namespace Amazon.GuardDuty
         /// Constant COVERAGE_STATUS for CoverageSortKey
         /// </summary>
         public static readonly CoverageSortKey COVERAGE_STATUS = new CoverageSortKey("COVERAGE_STATUS");
+        /// <summary>
+        /// Constant EKS_CLUSTER_NAME for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey EKS_CLUSTER_NAME = new CoverageSortKey("EKS_CLUSTER_NAME");
         /// <summary>
         /// Constant ISSUE for CoverageSortKey
         /// </summary>

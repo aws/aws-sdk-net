@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the finding, which is generated when abnormal or suspicious
+    /// Contains information about the finding that is generated when abnormal or suspicious
     /// activity is detected.
     /// </summary>
     public partial class Finding
