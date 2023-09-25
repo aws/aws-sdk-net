@@ -647,6 +647,163 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  CreateMediaPipelineKinesisVideoStreamPool
+
+        /// <summary>
+        /// Creates an Kinesis video stream pool for the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual CreateMediaPipelineKinesisVideoStreamPoolResponse CreateMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaPipelineKinesisVideoStreamPool operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMediaPipelineKinesisVideoStreamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual IAsyncResult BeginCreateMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMediaPipelineKinesisVideoStreamPool.</param>
+        /// 
+        /// <returns>Returns a  CreateMediaPipelineKinesisVideoStreamPoolResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual CreateMediaPipelineKinesisVideoStreamPoolResponse EndCreateMediaPipelineKinesisVideoStreamPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMediaPipelineKinesisVideoStreamPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMediaStreamPipeline
+
+        /// <summary>
+        /// Creates a streaming media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaStreamPipeline service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaStreamPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
+        public virtual CreateMediaStreamPipelineResponse CreateMediaStreamPipeline(CreateMediaStreamPipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaStreamPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaStreamPipelineResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMediaStreamPipelineResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMediaStreamPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaStreamPipeline operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMediaStreamPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
+        public virtual IAsyncResult BeginCreateMediaStreamPipeline(CreateMediaStreamPipelineRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaStreamPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaStreamPipelineResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMediaStreamPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMediaStreamPipeline.</param>
+        /// 
+        /// <returns>Returns a  CreateMediaStreamPipelineResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
+        public virtual CreateMediaStreamPipelineResponse EndCreateMediaStreamPipeline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMediaStreamPipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteMediaCapturePipeline
 
         /// <summary>
@@ -880,6 +1037,85 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  DeleteMediaPipelineKinesisVideoStreamPool
+
+        /// <summary>
+        /// Deletes an Kinesis video stream pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual DeleteMediaPipelineKinesisVideoStreamPoolResponse DeleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaPipelineKinesisVideoStreamPool operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMediaPipelineKinesisVideoStreamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMediaPipelineKinesisVideoStreamPool.</param>
+        /// 
+        /// <returns>Returns a  DeleteMediaPipelineKinesisVideoStreamPoolResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual DeleteMediaPipelineKinesisVideoStreamPoolResponse EndDeleteMediaPipelineKinesisVideoStreamPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMediaPipelineKinesisVideoStreamPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMediaCapturePipeline
 
         /// <summary>
@@ -1101,6 +1337,81 @@ namespace Amazon.ChimeSDKMediaPipelines
         public virtual GetMediaPipelineResponse EndGetMediaPipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMediaPipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMediaPipelineKinesisVideoStreamPool
+
+        /// <summary>
+        /// Gets an Kinesis video stream pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the GetMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual GetMediaPipelineKinesisVideoStreamPoolResponse GetMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<GetMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaPipelineKinesisVideoStreamPool operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMediaPipelineKinesisVideoStreamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual IAsyncResult BeginGetMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMediaPipelineKinesisVideoStreamPool.</param>
+        /// 
+        /// <returns>Returns a  GetMediaPipelineKinesisVideoStreamPoolResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual GetMediaPipelineKinesisVideoStreamPoolResponse EndGetMediaPipelineKinesisVideoStreamPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMediaPipelineKinesisVideoStreamPoolResponse>(asyncResult);
         }
 
         #endregion
@@ -1401,6 +1712,81 @@ namespace Amazon.ChimeSDKMediaPipelines
         public virtual ListMediaInsightsPipelineConfigurationsResponse EndListMediaInsightsPipelineConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMediaInsightsPipelineConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMediaPipelineKinesisVideoStreamPools
+
+        /// <summary>
+        /// Lists the video stream pools in the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaPipelineKinesisVideoStreamPools service method.</param>
+        /// 
+        /// <returns>The response from the ListMediaPipelineKinesisVideoStreamPools service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
+        public virtual ListMediaPipelineKinesisVideoStreamPoolsResponse ListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMediaPipelineKinesisVideoStreamPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMediaPipelineKinesisVideoStreamPoolsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMediaPipelineKinesisVideoStreamPools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaPipelineKinesisVideoStreamPools operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMediaPipelineKinesisVideoStreamPools
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
+        public virtual IAsyncResult BeginListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMediaPipelineKinesisVideoStreamPoolsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMediaPipelineKinesisVideoStreamPools operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMediaPipelineKinesisVideoStreamPools.</param>
+        /// 
+        /// <returns>Returns a  ListMediaPipelineKinesisVideoStreamPoolsResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
+        public virtual ListMediaPipelineKinesisVideoStreamPoolsResponse EndListMediaPipelineKinesisVideoStreamPools(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMediaPipelineKinesisVideoStreamPoolsResponse>(asyncResult);
         }
 
         #endregion
@@ -2196,6 +2582,85 @@ namespace Amazon.ChimeSDKMediaPipelines
         public virtual UpdateMediaInsightsPipelineStatusResponse EndUpdateMediaInsightsPipelineStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMediaInsightsPipelineStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMediaPipelineKinesisVideoStreamPool
+
+        /// <summary>
+        /// Updates an Kinesis video stream pool in a media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual UpdateMediaPipelineKinesisVideoStreamPoolResponse UpdateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMediaPipelineKinesisVideoStreamPool operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMediaPipelineKinesisVideoStreamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMediaPipelineKinesisVideoStreamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMediaPipelineKinesisVideoStreamPool.</param>
+        /// 
+        /// <returns>Returns a  UpdateMediaPipelineKinesisVideoStreamPoolResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual UpdateMediaPipelineKinesisVideoStreamPoolResponse EndUpdateMediaPipelineKinesisVideoStreamPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMediaPipelineKinesisVideoStreamPoolResponse>(asyncResult);
         }
 
         #endregion

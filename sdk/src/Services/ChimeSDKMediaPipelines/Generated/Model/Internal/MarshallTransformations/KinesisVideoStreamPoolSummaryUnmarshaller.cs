@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPipeline Object
+    /// Response Unmarshaller for KinesisVideoStreamPoolSummary Object
     /// </summary>  
-    public class MediaPipelineUnmarshaller : IUnmarshaller<MediaPipeline, XmlUnmarshallerContext>, IUnmarshaller<MediaPipeline, JsonUnmarshallerContext>
+    public class KinesisVideoStreamPoolSummaryUnmarshaller : IUnmarshaller<KinesisVideoStreamPoolSummary, XmlUnmarshallerContext>, IUnmarshaller<KinesisVideoStreamPoolSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MediaPipeline IUnmarshaller<MediaPipeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KinesisVideoStreamPoolSummary IUnmarshaller<KinesisVideoStreamPoolSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MediaPipeline Unmarshall(JsonUnmarshallerContext context)
+        public KinesisVideoStreamPoolSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MediaPipeline unmarshalledObject = new MediaPipeline();
+            KinesisVideoStreamPoolSummary unmarshalledObject = new KinesisVideoStreamPoolSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MediaCapturePipeline", targetDepth))
+                if (context.TestExpression("PoolArn", targetDepth))
                 {
-                    var unmarshaller = MediaCapturePipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaCapturePipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MediaConcatenationPipeline", targetDepth))
+                if (context.TestExpression("PoolId", targetDepth))
                 {
-                    var unmarshaller = MediaConcatenationPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaConcatenationPipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipeline", targetDepth))
+                if (context.TestExpression("PoolName", targetDepth))
                 {
-                    var unmarshaller = MediaInsightsPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaInsightsPipeline = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MediaLiveConnectorPipeline", targetDepth))
-                {
-                    var unmarshaller = MediaLiveConnectorPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaLiveConnectorPipeline = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MediaStreamPipeline", targetDepth))
-                {
-                    var unmarshaller = MediaStreamPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaStreamPipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPipelineUnmarshaller _instance = new MediaPipelineUnmarshaller();        
+        private static KinesisVideoStreamPoolSummaryUnmarshaller _instance = new KinesisVideoStreamPoolSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPipelineUnmarshaller Instance
+        public static KinesisVideoStreamPoolSummaryUnmarshaller Instance
         {
             get
             {

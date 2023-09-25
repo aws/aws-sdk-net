@@ -1055,6 +1055,68 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type KinesisVideoStreamPoolStatus.
+    /// </summary>
+    public class KinesisVideoStreamPoolStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for KinesisVideoStreamPoolStatus
+        /// </summary>
+        public static readonly KinesisVideoStreamPoolStatus ACTIVE = new KinesisVideoStreamPoolStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for KinesisVideoStreamPoolStatus
+        /// </summary>
+        public static readonly KinesisVideoStreamPoolStatus CREATING = new KinesisVideoStreamPoolStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for KinesisVideoStreamPoolStatus
+        /// </summary>
+        public static readonly KinesisVideoStreamPoolStatus DELETING = new KinesisVideoStreamPoolStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for KinesisVideoStreamPoolStatus
+        /// </summary>
+        public static readonly KinesisVideoStreamPoolStatus FAILED = new KinesisVideoStreamPoolStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for KinesisVideoStreamPoolStatus
+        /// </summary>
+        public static readonly KinesisVideoStreamPoolStatus UPDATING = new KinesisVideoStreamPoolStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KinesisVideoStreamPoolStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KinesisVideoStreamPoolStatus FindValue(string value)
+        {
+            return FindValue<KinesisVideoStreamPoolStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KinesisVideoStreamPoolStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LayoutOption.
     /// </summary>
     public class LayoutOption : ConstantClass
@@ -1712,6 +1774,102 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MediaPipelineTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaStreamPipelineSinkType.
+    /// </summary>
+    public class MediaStreamPipelineSinkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KinesisVideoStreamPool for MediaStreamPipelineSinkType
+        /// </summary>
+        public static readonly MediaStreamPipelineSinkType KinesisVideoStreamPool = new MediaStreamPipelineSinkType("KinesisVideoStreamPool");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaStreamPipelineSinkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStreamPipelineSinkType FindValue(string value)
+        {
+            return FindValue<MediaStreamPipelineSinkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStreamPipelineSinkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaStreamType.
+    /// </summary>
+    public class MediaStreamType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IndividualAudio for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType IndividualAudio = new MediaStreamType("IndividualAudio");
+        /// <summary>
+        /// Constant MixedAudio for MediaStreamType
+        /// </summary>
+        public static readonly MediaStreamType MixedAudio = new MediaStreamType("MixedAudio");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaStreamType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaStreamType FindValue(string value)
+        {
+            return FindValue<MediaStreamType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaStreamType(string value)
         {
             return FindValue(value);
         }

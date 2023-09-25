@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPipeline Object
+    /// Response Unmarshaller for MediaStreamSink Object
     /// </summary>  
-    public class MediaPipelineUnmarshaller : IUnmarshaller<MediaPipeline, XmlUnmarshallerContext>, IUnmarshaller<MediaPipeline, JsonUnmarshallerContext>
+    public class MediaStreamSinkUnmarshaller : IUnmarshaller<MediaStreamSink, XmlUnmarshallerContext>, IUnmarshaller<MediaStreamSink, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MediaPipeline IUnmarshaller<MediaPipeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MediaStreamSink IUnmarshaller<MediaStreamSink, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MediaPipeline Unmarshall(JsonUnmarshallerContext context)
+        public MediaStreamSink Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MediaPipeline unmarshalledObject = new MediaPipeline();
+            MediaStreamSink unmarshalledObject = new MediaStreamSink();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MediaCapturePipeline", targetDepth))
+                if (context.TestExpression("MediaStreamType", targetDepth))
                 {
-                    var unmarshaller = MediaCapturePipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaCapturePipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaStreamType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MediaConcatenationPipeline", targetDepth))
+                if (context.TestExpression("ReservedStreamCapacity", targetDepth))
                 {
-                    var unmarshaller = MediaConcatenationPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaConcatenationPipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ReservedStreamCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipeline", targetDepth))
+                if (context.TestExpression("SinkArn", targetDepth))
                 {
-                    var unmarshaller = MediaInsightsPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaInsightsPipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SinkArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MediaLiveConnectorPipeline", targetDepth))
+                if (context.TestExpression("SinkType", targetDepth))
                 {
-                    var unmarshaller = MediaLiveConnectorPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaLiveConnectorPipeline = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MediaStreamPipeline", targetDepth))
-                {
-                    var unmarshaller = MediaStreamPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaStreamPipeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SinkType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPipelineUnmarshaller _instance = new MediaPipelineUnmarshaller();        
+        private static MediaStreamSinkUnmarshaller _instance = new MediaStreamSinkUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPipelineUnmarshaller Instance
+        public static MediaStreamSinkUnmarshaller Instance
         {
             get
             {

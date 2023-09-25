@@ -29,19 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetVoiceToneAnalysisTask operation.
-    /// Retrieves the details of a voice tone analysis task.
+    /// Container for the parameters to the UpdateMediaPipelineKinesisVideoStreamPool operation.
+    /// Updates an Kinesis video stream pool in a media pipeline.
     /// </summary>
-    public partial class GetVoiceToneAnalysisTaskRequest : AmazonChimeSDKMediaPipelinesRequest
+    public partial class UpdateMediaPipelineKinesisVideoStreamPoolRequest : AmazonChimeSDKMediaPipelinesRequest
     {
         private string _identifier;
-        private string _voiceToneAnalysisTaskId;
+        private KinesisVideoStreamConfigurationUpdate _streamConfiguration;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The unique identifier of the resource to be updated. Valid values include the ID and
-        /// ARN of the media insights pipeline.
+        /// The ID of the video stream pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -58,22 +57,21 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceToneAnalysisTaskId. 
+        /// Gets and sets the property StreamConfiguration. 
         /// <para>
-        /// The ID of the voice tone analysis task.
+        /// The configuration settings for the video stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string VoiceToneAnalysisTaskId
+        public KinesisVideoStreamConfigurationUpdate StreamConfiguration
         {
-            get { return this._voiceToneAnalysisTaskId; }
-            set { this._voiceToneAnalysisTaskId = value; }
+            get { return this._streamConfiguration; }
+            set { this._streamConfiguration = value; }
         }
 
-        // Check to see if VoiceToneAnalysisTaskId property is set
-        internal bool IsSetVoiceToneAnalysisTaskId()
+        // Check to see if StreamConfiguration property is set
+        internal bool IsSetStreamConfiguration()
         {
-            return this._voiceToneAnalysisTaskId != null;
+            return this._streamConfiguration != null;
         }
 
     }

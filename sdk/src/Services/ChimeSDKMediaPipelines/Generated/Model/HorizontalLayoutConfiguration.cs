@@ -41,7 +41,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property TileAspectRatio. 
         /// <para>
-        /// Sets the aspect ratio of the video tiles, such as 16:9.
+        /// Specifies the aspect ratio of all video tiles.
         /// </para>
         /// </summary>
         public string TileAspectRatio
