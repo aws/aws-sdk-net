@@ -1,3 +1,22 @@
+### 3.7.651.0 (2023-09-25 18:28 UTC)
+* AmplifyUIBuilder (3.7.202.0)
+	* Support for generating code that is compatible with future versions of amplify project dependencies.
+* ChimeSDKMediaPipelines (3.7.204.0)
+	* Adds support for sending WebRTC audio to Amazon Kineses Video Streams.
+* EMRServerless (3.7.202.0)
+	* This release adds support for application-wide default job configurations.
+* FinSpaceData (3.7.201.0)
+	* Adding sensitive trait to attributes. Change max SessionDuration from 720 to 60. Correct "ApiAccess" attribute to "apiAccess" to maintain consistency between APIs.
+* QuickSight (3.7.205.0)
+	* Added ability to tag users upon creation.
+* SimpleSystemsManagement (3.7.201.0)
+	* This release updates the enum values for ResourceType in SSM DescribeInstanceInformation input and ConnectionStatus in GetConnectionStatus output.
+* WAFV2 (3.7.203.0)
+	* You can now perform an exact match against the web request's JA3 fingerprint.
+* Core 3.7.202.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.650.0 (2023-09-22 18:32 UTC)
 * Braket (3.7.201.0)
 	* This release adds support to view the device queue depth (the number of queued quantum tasks and hybrid jobs on a device) and queue position for a quantum task and hybrid job.
