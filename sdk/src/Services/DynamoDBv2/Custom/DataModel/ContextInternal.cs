@@ -858,6 +858,13 @@ namespace Amazon.DynamoDBv2.DataModel
             if (hashKeyValue == null)
                 throw new ArgumentNullException("hashKeyValue");
 
+            if (storageConfig.HashKeyPropertyNames == null || storageConfig.HashKeyPropertyNames.Count == 0)
+            {
+                throw new InvalidOperationException($"Attempted to make a query without a defined hash key attribute. " +
+                    $"If using {nameof(DynamoDBContextConfig.DisableFetchingTableMetadata)}, ensure that the table's hash key " +
+                    $"is annotated with {nameof(DynamoDBHashKeyAttribute)}.");
+            }
+
             // Set hash key property name
             // In case of index queries, if GSI, different key could be used
             string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
@@ -916,6 +923,13 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (QueryCondition condition in conditions)
                 {
+                    if (string.IsNullOrEmpty(condition.PropertyName))
+                    {
+                        throw new InvalidOperationException($"Attempted to make a query with a range key condition without a defined range attribute. " +
+                            $"If using {nameof(DynamoDBContextConfig.DisableFetchingTableMetadata)}, ensure that the table's range key(s) " +
+                            $"are annotated with {nameof(DynamoDBRangeKeyAttribute)}, {nameof(DynamoDBLocalSecondaryIndexRangeKeyAttribute)}, " +
+                            $"or {nameof(DynamoDBGlobalSecondaryIndexRangeKeyAttribute)}.");
+                    }
                     object[] conditionValues = condition.Values;
                     PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
                     if (conditionProperty.IsLSIRangeKey || conditionProperty.IsGSIKey)

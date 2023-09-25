@@ -121,12 +121,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// If true disables fetching table metadata automatically from DynamoDB. Table metadata must be 
-        /// defined by<see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
+        /// defined by <see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
         /// </summary>
         /// <remarks>
-        /// Setting this to true can avoid latency and potential deadlocks due to the internal  <see cref="DescribeTableRequest"/> call that is used to populate the SDK's cache of 
-        /// table metadata. It requires that the table's index schema be fully described via the above methods, otherwise exceptions may be thrown and/or 
-        /// the results of certain DynamoDB operations may change. It is recommended to test your application prior to setting it to true in production code.
+        /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> calls that are used to populate the SDK's cache of 
+        /// table metadata. It requires that the table's index schema be accurately described via the above methods, 
+        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
         /// </remarks>
         public bool? DisableFetchingTableMetadata { get; set; }
     }
