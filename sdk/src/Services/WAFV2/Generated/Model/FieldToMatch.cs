@@ -59,6 +59,7 @@ namespace Amazon.WAFV2.Model
         private Cookies _cookies;
         private HeaderOrder _headerOrder;
         private Headers _headers;
+        private JA3Fingerprint _ja3Fingerprint;
         private JsonBody _jsonBody;
         private Method _method;
         private QueryString _queryString;
@@ -193,6 +194,31 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetHeaders()
         {
             return this._headers != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JA3Fingerprint. 
+        /// <para>
+        /// Match against the request's JA3 fingerprint header. The header contains a hash fingerprint
+        /// of the TLS Client Hello packet for the request. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this choice only with a string match <code>ByteMatchStatement</code> with
+        /// the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public JA3Fingerprint JA3Fingerprint
+        {
+            get { return this._ja3Fingerprint; }
+            set { this._ja3Fingerprint = value; }
+        }
+
+        // Check to see if JA3Fingerprint property is set
+        internal bool IsSetJA3Fingerprint()
+        {
+            return this._ja3Fingerprint != null;
         }
 
         /// <summary>

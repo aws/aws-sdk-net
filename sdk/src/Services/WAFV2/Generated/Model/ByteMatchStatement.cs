@@ -163,6 +163,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint
+        /// header. The header contains a hash fingerprint of the TLS Client Hello packet for
+        /// the request. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>HeaderOrder</code>: The comma-separated list of header names to match for.
         /// WAF creates a string that contains the ordered list of header names, from the headers
         /// in the web request, and then matches against that string. 
@@ -221,7 +227,8 @@ namespace Amazon.WAFV2.Model
         /// inspecting it, and they're used in rate-based rule statements, to transform request
         /// components before using them as custom aggregation keys. If you specify one or more
         /// transformations to apply, WAF performs all transformations on the specified content,
-        /// starting from the lowest priority setting, and then uses the component contents. 
+        /// starting from the lowest priority setting, and then uses the transformed component
+        /// contents. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

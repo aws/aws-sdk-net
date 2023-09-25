@@ -95,7 +95,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ResponseHeaders. 
         /// <para>
-        /// The HTTP headers to use in the response. Duplicate header names are not allowed. 
+        /// The HTTP headers to use in the response. You can specify any header name except for
+        /// <code>content-type</code>. Duplicate header names are not allowed.
         /// </para>
         ///  
         /// <para>

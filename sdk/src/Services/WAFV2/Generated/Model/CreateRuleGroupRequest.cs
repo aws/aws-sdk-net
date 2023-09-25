@@ -161,9 +161,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The <a>Rule</a> statements used to identify the web requests that you want to allow,
-        /// block, or count. Each rule includes one top-level statement that WAF uses to identify
-        /// matching web requests, and parameters that govern how WAF handles them. 
+        /// The <a>Rule</a> statements used to identify the web requests that you want to manage.
+        /// Each rule includes one top-level statement that WAF uses to identify matching web
+        /// requests, and parameters that govern how WAF handles them. 
         /// </para>
         /// </summary>
         public List<Rule> Rules

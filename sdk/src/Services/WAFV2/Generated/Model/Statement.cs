@@ -220,8 +220,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
-        /// a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-        /// as a top-level statement within a rule.
+        /// a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+        /// rule group inside another rule group. You can only reference a managed rule group
+        /// as a top-level statement within a rule that you define in a web ACL.
         /// </para>
         ///  <note> 
         /// <para>
@@ -491,8 +492,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside
-        /// a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group
-        /// reference statement at the top level inside a web ACL. 
+        /// a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group
+        /// reference statement inside another rule group. You can only reference a rule group
+        /// as a top-level statement within a rule that you define in a web ACL.
         /// </para>
         /// </summary>
         public RuleGroupReferenceStatement RuleGroupReferenceStatement
