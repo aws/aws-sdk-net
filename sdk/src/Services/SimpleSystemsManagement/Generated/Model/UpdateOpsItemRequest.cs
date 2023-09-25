@@ -120,8 +120,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Update the information about the OpsItem. Provide enough information so that users
-        /// reading this OpsItem for the first time understand the issue. 
+        /// User-defined text that contains information about the OpsItem, in Markdown format.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

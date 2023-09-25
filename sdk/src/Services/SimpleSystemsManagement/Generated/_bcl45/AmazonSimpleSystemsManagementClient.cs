@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement
     ///  <ul> <li> 
     /// <para>
     /// For information about each of the capabilities that comprise Systems Manager, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html">Systems
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
     /// Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     ///  </li> <li> 
