@@ -674,7 +674,14 @@ namespace Amazon.AmplifyUIBuilder
         #region  ExchangeCodeForToken
 
         /// <summary>
-        /// Exchanges an access code for a token.
+        /// <note> 
+        /// <para>
+        /// This is for internal use.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Amplify uses this action to exchange an access code for a token.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExchangeCodeForToken service method.</param>
         /// 
@@ -1530,7 +1537,15 @@ namespace Amazon.AmplifyUIBuilder
         #region  RefreshToken
 
         /// <summary>
-        /// Refreshes a previously issued access token that might have expired.
+        /// <note> 
+        /// <para>
+        /// This is for internal use.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Amplify uses this action to refresh a previously issued access token that might have
+        /// expired.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshToken service method.</param>
         /// 

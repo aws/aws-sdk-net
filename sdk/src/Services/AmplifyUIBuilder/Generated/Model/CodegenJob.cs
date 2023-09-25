@@ -38,6 +38,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private CodegenJobAsset _asset;
         private bool? _autoGenerateForms;
         private DateTime? _createdAt;
+        private List<CodegenDependency> _dependencies = new List<CodegenDependency>();
         private string _environmentName;
         private CodegenFeatureFlags _features;
         private CodegenJobGenericDataSchema _genericDataSchema;
@@ -119,6 +120,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dependencies. 
+        /// <para>
+        /// Lists the dependency packages that may be required for the project code to run.
+        /// </para>
+        /// </summary>
+        public List<CodegenDependency> Dependencies
+        {
+            get { return this._dependencies; }
+            set { this._dependencies = value; }
+        }
+
+        // Check to see if Dependencies property is set
+        internal bool IsSetDependencies()
+        {
+            return this._dependencies != null && this._dependencies.Count > 0; 
         }
 
         /// <summary>

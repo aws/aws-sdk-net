@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReactStartCodegenJobData Object
+    /// Response Unmarshaller for CodegenDependency Object
     /// </summary>  
-    public class ReactStartCodegenJobDataUnmarshaller : IUnmarshaller<ReactStartCodegenJobData, XmlUnmarshallerContext>, IUnmarshaller<ReactStartCodegenJobData, JsonUnmarshallerContext>
+    public class CodegenDependencyUnmarshaller : IUnmarshaller<CodegenDependency, XmlUnmarshallerContext>, IUnmarshaller<CodegenDependency, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReactStartCodegenJobData IUnmarshaller<ReactStartCodegenJobData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CodegenDependency IUnmarshaller<CodegenDependency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,39 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReactStartCodegenJobData Unmarshall(JsonUnmarshallerContext context)
+        public CodegenDependency Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReactStartCodegenJobData unmarshalledObject = new ReactStartCodegenJobData();
+            CodegenDependency unmarshalledObject = new CodegenDependency();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("apiConfiguration", targetDepth))
-                {
-                    var unmarshaller = ApiConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ApiConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dependencies", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Dependencies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inlineSourceMap", targetDepth))
+                if (context.TestExpression("isSemVer", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.InlineSourceMap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsSemVer = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("module", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Module = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("renderTypeDeclarations", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RenderTypeDeclarations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("script", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Script = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("supportedVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupportedVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +94,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReactStartCodegenJobDataUnmarshaller _instance = new ReactStartCodegenJobDataUnmarshaller();        
+        private static CodegenDependencyUnmarshaller _instance = new CodegenDependencyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReactStartCodegenJobDataUnmarshaller Instance
+        public static CodegenDependencyUnmarshaller Instance
         {
             get
             {

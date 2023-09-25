@@ -34,6 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class ReactStartCodegenJobData
     {
         private ApiConfiguration _apiConfiguration;
+        private Dictionary<string, string> _dependencies = new Dictionary<string, string>();
         private bool? _inlineSourceMap;
         private JSModule _module;
         private bool? _renderTypeDeclarations;
@@ -56,6 +57,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetApiConfiguration()
         {
             return this._apiConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dependencies. 
+        /// <para>
+        /// Lists the dependency packages that may be required for the project code to run.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Dependencies
+        {
+            get { return this._dependencies; }
+            set { this._dependencies = value; }
+        }
+
+        // Check to see if Dependencies property is set
+        internal bool IsSetDependencies()
+        {
+            return this._dependencies != null && this._dependencies.Count > 0; 
         }
 
         /// <summary>

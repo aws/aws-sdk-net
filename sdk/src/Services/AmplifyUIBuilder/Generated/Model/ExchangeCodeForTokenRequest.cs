@@ -30,7 +30,14 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ExchangeCodeForToken operation.
-    /// Exchanges an access code for a token.
+    /// <note> 
+    /// <para>
+    /// This is for internal use.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Amplify uses this action to exchange an access code for a token.
+    /// </para>
     /// </summary>
     public partial class ExchangeCodeForTokenRequest : AmazonAmplifyUIBuilderRequest
     {

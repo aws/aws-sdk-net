@@ -88,6 +88,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dependencies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CodegenDependency, CodegenDependencyUnmarshaller>(CodegenDependencyUnmarshaller.Instance);
+                    unmarshalledObject.Dependencies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
