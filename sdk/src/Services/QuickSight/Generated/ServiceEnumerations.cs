@@ -6182,6 +6182,10 @@ namespace Amazon.QuickSight
         /// Constant DATASET for MemberType
         /// </summary>
         public static readonly MemberType DATASET = new MemberType("DATASET");
+        /// <summary>
+        /// Constant TOPIC for MemberType
+        /// </summary>
+        public static readonly MemberType TOPIC = new MemberType("TOPIC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
