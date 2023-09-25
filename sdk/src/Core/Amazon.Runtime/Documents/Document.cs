@@ -410,9 +410,9 @@ namespace Amazon.Runtime.Documents
         /// for performance critical work.  Additionally, if <paramref name="o"/> is a known primitive (ie <see cref="int"/>),
         /// using a <see cref="Document"/> constructor directly will be more performant.
         /// </summary> 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-#endif        
+#endif
         public static Document FromObject(object o)
         {
             IJsonWrapper jsonData = JsonMapper.ToObject(JsonMapper.ToJson(o));
@@ -420,7 +420,7 @@ namespace Amazon.Runtime.Documents
             return FromObject(jsonData);
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
 #endif  
         private static Document FromObject(IJsonWrapper jsonData)
@@ -450,7 +450,7 @@ namespace Amazon.Runtime.Documents
             throw new NotSupportedException($"Couldn't convert {jsonData.GetJsonType()}");
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
 #endif  
         private static void Copy(IDictionary source, Dictionary<string, Document> target)

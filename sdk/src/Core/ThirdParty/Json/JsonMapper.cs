@@ -172,7 +172,7 @@ namespace ThirdParty.Json.LitJson
 
         #region Private Methods
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static void AddArrayMetadata (Type type)
@@ -210,7 +210,7 @@ namespace ThirdParty.Json.LitJson
             }
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static void AddObjectMetadata (Type type)
@@ -268,7 +268,7 @@ namespace ThirdParty.Json.LitJson
             }
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static void AddTypeProperties (Type type)
@@ -307,7 +307,7 @@ namespace ThirdParty.Json.LitJson
             }
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static MethodInfo GetConvOp (Type t1, Type t2)
@@ -334,7 +334,7 @@ namespace ThirdParty.Json.LitJson
             return op;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static object ReadValue (Type inst_type, JsonReader reader)
@@ -505,7 +505,7 @@ namespace ThirdParty.Json.LitJson
             return instance;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static void ValidateRequiredFields(object instance, Type inst_type)
@@ -763,7 +763,7 @@ namespace ThirdParty.Json.LitJson
             table[json_type][value_type] = importer;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         private static void WriteValue (object obj, JsonWriter writer,
@@ -917,7 +917,7 @@ namespace ThirdParty.Json.LitJson
         }
         #endregion
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         public static string ToJson (object obj)
@@ -931,7 +931,7 @@ namespace ThirdParty.Json.LitJson
             }
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         public static void ToJson (object obj, JsonWriter writer)
@@ -959,7 +959,7 @@ namespace ThirdParty.Json.LitJson
                 delegate { return new JsonData (); }, json);
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         public static T ToObject<T>(JsonReader reader)
@@ -967,7 +967,7 @@ namespace ThirdParty.Json.LitJson
             return (T) ReadValue (typeof (T), reader);
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         public static T ToObject<T> (TextReader reader)
@@ -977,7 +977,7 @@ namespace ThirdParty.Json.LitJson
             return (T) ReadValue (typeof (T), json_reader);
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JsonMapper requires reflection of unknown types. System.Text.Json should be used instead.")]
 #endif
         public static T ToObject<T> (string json)

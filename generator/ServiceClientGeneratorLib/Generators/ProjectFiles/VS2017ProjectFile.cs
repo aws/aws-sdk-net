@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+    #line 1 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class VS2017ProjectFile : VS2017ProjectFileBase
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("<Project Sdk=\"Microsoft.NET.Sdk\">\r\n  <PropertyGroup>\r\n   <RunAnalyzersDuringBuild" +
                     " Condition=\"\'$(RunAnalyzersDuringBuild)\'==\'\'\">true</RunAnalyzersDuringBuild>\r\n");
             
-            #line 7 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 7 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.TargetFrameworks.Count() == 1)
     {
@@ -39,14 +39,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <TargetFramework>");
             
-            #line 11 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 11 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.TargetFrameworks.Single()));
             
             #line default
             #line hidden
             this.Write("</TargetFramework>\r\n");
             
-            #line 12 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 12 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     else
@@ -57,14 +57,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <TargetFrameworks>");
             
-            #line 17 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 17 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(";", this.Project.TargetFrameworks)));
             
             #line default
             #line hidden
             this.Write("</TargetFrameworks>\r\n");
             
-            #line 19 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 19 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -73,14 +73,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <DefineConstants>$(DefineConstants);");
             
-            #line 22 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 22 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(";", this.Project.DefineConstants)));
             
             #line default
             #line hidden
             this.Write("</DefineConstants>\r\n");
             
-            #line 24 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 24 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
@@ -91,7 +91,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <DefineConstants Condition=\"\'$(TargetFramework)\' == \'netstandard2.0\'\">$(Defin" +
                     "eConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>\r\n");
             
-            #line 29 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 29 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if (this.Project.TargetFrameworks.Contains("netcoreapp3.1"))
@@ -103,19 +103,19 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <DefineConstants Condition=\"\'$(TargetFramework)\' == \'netcoreapp3.1\'\">$(Define" +
                     "Constants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>\r\n");
             
-            #line 35 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 35 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
-    if (this.Project.TargetFrameworks.Contains("net6.0"))
+    if (this.Project.TargetFrameworks.Contains("net8.0"))
     {
 
             
             #line default
             #line hidden
-            this.Write("    <DefineConstants Condition=\"\'$(TargetFramework)\' == \'net6.0\'\">$(DefineConstan" +
+            this.Write("    <DefineConstants Condition=\"\'$(TargetFramework)\' == \'net8.0\'\">$(DefineConstan" +
                     "ts);AWS_ASYNC_ENUMERABLES_API</DefineConstants>\r\n");
             
-            #line 41 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 41 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -125,14 +125,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <DebugType>portable</DebugType>\r\n    <GenerateDocumentationFile>true</Generat" +
                     "eDocumentationFile>\r\n    <AssemblyName>");
             
-            #line 46 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 46 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.AssemblyName));
             
             #line default
             #line hidden
             this.Write("</AssemblyName>\r\n    <PackageId>");
             
-            #line 47 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 47 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.AssemblyName));
             
             #line default
@@ -151,7 +151,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 
 ");
             
-            #line 59 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 59 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
     {
@@ -162,14 +162,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->\r\n   " +
                     " <FrameworkPathOverride>");
             
-            #line 64 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 64 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.FrameworkPathOverride));
             
             #line default
             #line hidden
             this.Write("</FrameworkPathOverride>\r\n");
             
-            #line 65 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 65 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -183,7 +183,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "utomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssembl" +
                     "yPackages>\r\n");
             
-            #line 73 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 73 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -195,14 +195,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <NoWarn>");
             
-            #line 79 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 79 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.SupressWarnings));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 80 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 80 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -215,14 +215,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>\r" +
                     "\n    <OutputPath>");
             
-            #line 87 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 87 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.OutputPathOverride));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n");
             
-            #line 88 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 88 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -231,7 +231,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </PropertyGroup>\r\n");
             
-            #line 92 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 92 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
@@ -243,20 +243,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "ramework)\' == \'netstandard2.0\'\">\r\n    <LangVersion>8.0</LangVersion>\r\n  </Proper" +
                     "tyGroup>\r\n");
             
-            #line 100 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 100 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
-    if (this.Project.TargetFrameworks.Contains("net6.0"))
+    if (this.Project.TargetFrameworks.Contains("net8.0"))
     {
 
             
             #line default
             #line hidden
-            this.Write("  <PropertyGroup Condition=\"\'$(TargetFramework)\' == \'net6.0\'\">\r\n    <EnableTrimAn" +
-                    "alyzer>true</EnableTrimAnalyzer>\r\n  </PropertyGroup>\r\n");
+            this.Write("  <PropertyGroup Condition=\"\'$(TargetFramework)\' == \'net8.0\'\">\r\n    <WarningsAsEr" +
+                    "rors>IL2026,IL2075</WarningsAsErrors>\r\n    <EnableTrimAnalyzer>true</EnableTrimA" +
+                    "nalyzer>\r\n  </PropertyGroup>\r\n");
             
-            #line 109 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 110 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -264,7 +265,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 112 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 113 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
 	if (!this.Project.AssemblyName.Contains("UnitTests"))
 	{
@@ -275,7 +276,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("  <PropertyGroup Condition=\" \'$(RuleSetFileForBuild)\' == \'false\' Or \'$(RuleSetFil" +
                     "eForBuild)\' == \'\' \">\r\n\t<CodeAnalysisRuleSet>");
             
-            #line 117 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 118 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.FxcopAnalyzerRuleSetFilePath));
             
             #line default
@@ -283,14 +284,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" \'$(RuleS" +
                     "etFileForBuild)\' == \'true\' \">\r\n\t<CodeAnalysisRuleSet>");
             
-            #line 120 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 121 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.FxcopAnalyzerRuleSetFilePathForBuild));
             
             #line default
             #line hidden
             this.Write("</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n\r\n");
             
-            #line 123 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 124 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
 	}
     if (this.Project.SignBinaries)
@@ -302,7 +303,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("  <Choose>\r\n    <When Condition=\" \'$(AWSKeyFile)\' == \'\' \">\r\n      <PropertyGroup>" +
                     "\r\n");
             
-            #line 131 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 132 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if(this.Project.AssemblyName == "AWSSDK.UnitTests.Net35" || this.Project.AssemblyName == "AWSSDK.UnitTests.Net45")
     {
@@ -313,7 +314,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("        <AssemblyOriginatorKeyFile>../../awssdk.dll.snk</AssemblyOriginatorKeyFil" +
                     "e>\r\n");
             
-            #line 136 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 137 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -321,7 +322,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 139 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 140 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     else
     {
@@ -332,7 +333,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("        <AssemblyOriginatorKeyFile>../../../awssdk.dll.snk</AssemblyOriginatorKey" +
                     "File>\r\n");
             
-            #line 144 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 145 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -343,7 +344,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "    <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>\r\n      " +
                     "</PropertyGroup>\r\n    </Otherwise>\r\n  </Choose>\r\n\r\n");
             
-            #line 156 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 157 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if(this.Project.CustomRoslynAnalyzersDllDirectory != null)
@@ -354,14 +355,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup Condition=\"$(RunAnalyzersDuringBuild)\">\r\n    <Analyzer Include= \"");
             
-            #line 162 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 163 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.CustomRoslynAnalyzersDllDirectory));
             
             #line default
             #line hidden
             this.Write("\" />\r\n  </ItemGroup>\r\n");
             
-            #line 164 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 165 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if(this.Project.IndividualFileIncludes != null)
@@ -372,7 +373,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 170 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 171 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     foreach (var compileIncludeEntry in this.Project.IndividualFileIncludes)
     {
@@ -382,14 +383,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 174 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 175 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileIncludeEntry));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 175 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 176 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -398,7 +399,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 179 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 180 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -410,7 +411,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 186 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 187 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     foreach (var compileRemoveEntry in this.Project.CompileRemoveList)
     {
@@ -422,21 +423,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Remove=\"**/");
             
-            #line 192 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 193 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry));
             
             #line default
             #line hidden
             this.Write("/**\"/>\r\n\t<None Remove=\"**/");
             
-            #line 193 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 194 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry));
             
             #line default
             #line hidden
             this.Write("/**\" />\r\n");
             
-            #line 194 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 195 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     continue;
         }
@@ -446,14 +447,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Remove=\"**/");
             
-            #line 198 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 199 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry));
             
             #line default
             #line hidden
             this.Write("/**\"/>\r\n");
             
-            #line 199 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 200 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -462,7 +463,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 204 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 205 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -470,7 +471,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 207 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 208 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.ProjectReferences != null)
     {
@@ -480,7 +481,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 212 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 213 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     foreach (var projectReference in this.Project.ProjectReferences)
     {
@@ -490,14 +491,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <ProjectReference Include=\"");
             
-            #line 216 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 217 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReference.IncludePath));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 217 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 218 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -506,7 +507,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 222 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 223 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -514,7 +515,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 225 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 226 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.PackageReferences != null)
     {
@@ -524,7 +525,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup Condition=\"$(RunAnalyzersDuringBuild)\">\r\n");
             
-            #line 230 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 231 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         foreach(var package in this.Project.PackageReferences.Where(p => p.IsAnalyzer))
         {
@@ -536,28 +537,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("        <PackageReference Include=\"");
             
-            #line 236 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 237 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Include));
             
             #line default
             #line hidden
             this.Write("\" Version=\"");
             
-            #line 236 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 237 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Version));
             
             #line default
             #line hidden
             this.Write("\">\r\n            <PrivateAssets>");
             
-            #line 237 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 238 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.PrivateAssets));
             
             #line default
             #line hidden
             this.Write("</PrivateAssets>\r\n        </PackageReference>\r\n");
             
-            #line 239 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 240 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
             else
@@ -568,21 +569,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t    <PackageReference Include=\"");
             
-            #line 244 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 245 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Include));
             
             #line default
             #line hidden
             this.Write("\" Version=\"");
             
-            #line 244 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 245 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Version));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 245 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 246 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
 		    }
         }
@@ -592,7 +593,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 251 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 252 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         foreach(var package in this.Project.PackageReferences.Where(p => !p.IsAnalyzer))
         {
@@ -604,28 +605,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("        <PackageReference Include=\"");
             
-            #line 257 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 258 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Include));
             
             #line default
             #line hidden
             this.Write("\" Version=\"");
             
-            #line 257 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 258 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Version));
             
             #line default
             #line hidden
             this.Write("\">\r\n            <PrivateAssets>");
             
-            #line 258 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 259 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.PrivateAssets));
             
             #line default
             #line hidden
             this.Write("</PrivateAssets>\r\n        </PackageReference>\r\n");
             
-            #line 260 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 261 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
             else
@@ -636,21 +637,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t    <PackageReference Include=\"");
             
-            #line 265 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 266 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Include));
             
             #line default
             #line hidden
             this.Write("\" Version=\"");
             
-            #line 265 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 266 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Version));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 266 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 267 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
 		    }
         }
@@ -660,7 +661,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 272 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 273 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if (this.Project.ReferenceDependencies != null)
@@ -671,7 +672,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 278 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 279 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         foreach (var reference in this.Project.ReferenceDependencies)
         {
@@ -683,14 +684,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 284 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 285 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 285 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 286 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
             else
@@ -701,21 +702,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 290 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 291 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <HintPath>");
             
-            #line 291 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 292 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.HintPath));
             
             #line default
             #line hidden
             this.Write("</HintPath>\r\n    </Reference>\r\n");
             
-            #line 293 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 294 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
         }
@@ -725,7 +726,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 299 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 300 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if (this.Project.EmbeddedResources != null)
@@ -736,7 +737,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 305 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 306 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     foreach (var resource in this.Project.EmbeddedResources)
     {
@@ -746,14 +747,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 309 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 310 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 310 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 311 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -762,7 +763,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 314 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 315 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -774,7 +775,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 321 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 322 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         foreach (var service in this.Project.Services)
         {
@@ -784,14 +785,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Service Include=\"");
             
-            #line 325 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 326 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(service));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 326 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 327 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -800,7 +801,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 330 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 331 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -811,7 +812,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 336 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+        #line 337 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     public Project Project { get; set; }
     public ServiceConfiguration ServiceConfiguration { get; set; }

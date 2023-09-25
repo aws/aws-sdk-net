@@ -337,7 +337,7 @@ namespace Amazon.Internal
                 string endpointsFile;
                 try
                 {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
                     var dirPath = System.AppContext.BaseDirectory;
                     var dirInfo = new DirectoryInfo(dirPath);
 #else

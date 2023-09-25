@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// The Table class is the starting object when using the Document API. It is used to Get documents from the DynamnoDB table
     /// and write documents back to the DynamoDB table.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public partial class Table

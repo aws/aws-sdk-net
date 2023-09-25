@@ -77,9 +77,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for writing/deleting/version-checking multiple items
     /// in a single DynamoDB table in a transaction.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif    
+#endif
     public class TransactWrite<T> : TransactWrite
     {
         #region Public Combine methods

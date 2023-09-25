@@ -5,7 +5,7 @@ using Amazon.Runtime.Internal.Settings;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
 using System.Text.Json;
 #endif
 

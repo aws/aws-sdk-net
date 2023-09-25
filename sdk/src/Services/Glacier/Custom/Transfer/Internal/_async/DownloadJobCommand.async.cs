@@ -25,7 +25,7 @@ using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("ArchiveTransferManager has not been updated to support Native AOT compilations.")]
 #endif
     internal partial class DownloadJobCommand

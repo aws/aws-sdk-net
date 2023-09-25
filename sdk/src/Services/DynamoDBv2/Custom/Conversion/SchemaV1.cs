@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2
 {
     #region Basic converters
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ByteConverterV1 : Converter<byte>
@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class SByteConverterV1 : Converter<SByte>
@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UInt16ConverterV1 : Converter<UInt16>
@@ -78,7 +78,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class Int16ConverterV1 : Converter<Int16>
@@ -94,7 +94,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UInt32ConverterV1 : Converter<UInt32>
@@ -110,7 +110,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class Int32ConverterV1 : Converter<Int32>
@@ -126,7 +126,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UInt64ConverterV1 : Converter<UInt64>
@@ -142,7 +142,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class Int64ConverterV1 : Converter<Int64>
@@ -158,7 +158,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class SingleConverterV1 : Converter<Single>
@@ -174,7 +174,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DoubleConverterV1 : Converter<Double>
@@ -190,7 +190,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DecimalConverterV1 : Converter<Decimal>
@@ -206,7 +206,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class CharConverterV1 : Converter<Char>
@@ -222,7 +222,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class StringConverterV1 : Converter<String>
@@ -239,7 +239,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DateTimeConverterV1 : Converter<DateTime>
@@ -260,7 +260,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class GuidConverterV1 : Converter<Guid>
@@ -277,7 +277,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class BytesConverterV1 : Converter<byte[]>
@@ -294,7 +294,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class MemoryStreamConverterV1 : Converter<MemoryStream>
@@ -318,7 +318,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class EnumConverterV1 : Converter<Enum>
@@ -401,7 +401,7 @@ namespace Amazon.DynamoDBv2
     /// A boolean converter which reads booleans as N or BOOL types,
     /// but writes out N type (1 if true, 0 if false).
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class BoolConverterV1 : Converter<bool>
@@ -423,7 +423,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal abstract class CollectionConverter : Converter
@@ -468,7 +468,7 @@ namespace Amazon.DynamoDBv2
     /// A collection converter which reads both sets of collections (sets and lists)
     /// and writes out sets (NS, SS, BS)
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class PrimitiveCollectionConverterV1 : CollectionConverter
@@ -509,7 +509,7 @@ namespace Amazon.DynamoDBv2
     /// Converts from Dictionary{string,object} to DynamoDBEntry.
     /// Does NOT convert from DynamoDBEntry to Dictionary{string,object}.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DictionaryConverterV1 : Converter

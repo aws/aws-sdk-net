@@ -12,7 +12,7 @@ namespace Amazon.Runtime.Internal
     /// Collection of helper methods for constructing the necessary Service client to
     /// interrogate AWS SSO Services.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
         Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
 #endif
@@ -42,7 +42,7 @@ namespace Amazon.Runtime.Internal
             return coreSSO;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
 #endif
@@ -72,7 +72,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Attempts to get a service client at runtime which cannot be made a project reference.
         /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using CreateClient to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
 #endif
         private static T CreateClient<T>(

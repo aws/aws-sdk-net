@@ -27,7 +27,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Logger wrapper for reflected log4net logging methods.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("SDK logging to Log4net is not supported when trimming is enabled.")]
 #endif
     internal class InternalLog4netLogger : InternalLogger

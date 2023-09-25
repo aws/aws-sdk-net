@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal
         public const string KMS_SERVICE_CLASS_NAME = "Amazon.KeyManagementService.AmazonKeyManagementServiceClient";
 
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         public static TClient CreateServiceFromAnother<[System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, 
                                     [System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors)] TConfig>(AmazonServiceClient originalServiceClient)
 #else
@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
 #endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
@@ -73,7 +73,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
 #endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, 
@@ -93,7 +93,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
 #endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
@@ -113,7 +113,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
 #endif
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, AmazonServiceClient originalServiceClient)
@@ -135,7 +135,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
 #endif
         public static ClientConfig CreateServiceConfig(string assemblyName, string serviceConfigClassName)
@@ -148,7 +148,7 @@ namespace Amazon.Runtime.Internal
             return config as ClientConfig;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
 #endif
         private static Type LoadServiceClientType(string assemblyName, string serviceClientClassName)
@@ -156,7 +156,7 @@ namespace Amazon.Runtime.Internal
             return LoadTypeFromAssembly(assemblyName, serviceClientClassName);
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
 #endif
         private static Type LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
@@ -164,7 +164,7 @@ namespace Amazon.Runtime.Internal
             return LoadTypeFromAssembly(assemblyName, serviceConfigClassName);
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
 #endif
         internal static Type LoadTypeFromAssembly(string assemblyName, string className)
@@ -175,7 +175,7 @@ namespace Amazon.Runtime.Internal
             return type;
         }
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
 #endif
         private static Assembly GetSDKAssembly(string assemblyName)

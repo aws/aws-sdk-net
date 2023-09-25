@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -35,8 +35,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ime\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"The Amazon Web Serv" +
                     "ices SDK for .NET (NetStandard 2.0) - Core Runtime\")]\r\n#elif NETCOREAPP3_1\r\n[ass" +
                     "embly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (.NET Core 3.1)" +
-                    " - Core Runtime\")]\r\n#elif NET6_0\r\n[assembly: AssemblyDescription(\"The Amazon Web" +
-                    " Services SDK for .NET (.NET 6.0) - Core Runtime\")]\r\n#else\r\n#error Unknown platf" +
+                    " - Core Runtime\")]\r\n#elif NET8_0\r\n[assembly: AssemblyDescription(\"The Amazon Web" +
+                    " Services SDK for .NET (.NET 8.0) - Core Runtime\")]\r\n#else\r\n#error Unknown platf" +
                     "orm constant - unable to set correct AssemblyDescription\r\n#endif\r\n// this is for" +
                     " the dev snk\r\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.Net45, PublicKey=0" +
                     "024000004800000940000000602000000240000525341310004000001000100516caa6311db961cb" +
@@ -71,14 +71,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " the Build and Revision Numbers \r\n// by using the \'*\' as shown below:\r\n// [assem" +
                     "bly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
             
-            #line 55 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 55 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 56 "C:\codebase\v3\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 56 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default

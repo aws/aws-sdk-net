@@ -26,7 +26,7 @@ namespace Amazon.Extensions.NETCore.Setup
     /// <summary>
     /// The factory class for creating AWS service clients from the AWS SDK for .NET.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ClientFactory

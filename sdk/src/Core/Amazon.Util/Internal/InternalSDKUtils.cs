@@ -250,11 +250,11 @@ namespace Amazon.Util.Internal
         /// <returns></returns>
         public static bool IsRunningNativeAot()
         {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             // If dynamic code is not supported we are most likely running in an AOT environment. 
             return !RuntimeFeature.IsDynamicCodeSupported;
 #else
-        return false;
+            return false;
 #endif
         }
 

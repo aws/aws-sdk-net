@@ -62,7 +62,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// </summary>
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     public abstract class EventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : IEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
 #else
     public abstract class EventStream<T, TE> : IEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()

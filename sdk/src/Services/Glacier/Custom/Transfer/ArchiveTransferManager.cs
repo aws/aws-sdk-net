@@ -30,9 +30,9 @@ namespace Amazon.Glacier.Transfer
     /// Provides a high level API for managing transfers to and from Amazon Glacier. This removes 
     /// complexities such as breaking files into parts and computing check sums.
     /// </summary>
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("ArchiveTransferManager has not been updated to support Native AOT compilations.")]
-#endif    
+#endif
     public partial class ArchiveTransferManager : IDisposable
     {
         #region Private/internal members

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
@@ -12,7 +12,7 @@ namespace Amazon.Util.Internal
 {
     public static class JsonSerializerHelper
     {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
         public static T Deserialize<T>(string json, JsonSerializerContext context)
         {
             return JsonSerializer.Deserialize<T>(json, context.GetTypeInfo(typeof(T)) as JsonTypeInfo<T>);
@@ -51,7 +51,7 @@ namespace Amazon.Util.Internal
     [JsonSerializable(typeof(Dictionary<string, string>))]
     public partial class DictionaryStringStringJsonSerializerContexts : JsonSerializerContext
     {
-#if !NET6_0_OR_GREATER
+#if !NET8_0_OR_GREATER
         public DictionaryStringStringJsonSerializerContexts(JsonSerializerOptions defaultOptions)
             : base(defaultOptions)
         {
@@ -62,7 +62,7 @@ namespace Amazon.Util.Internal
     [JsonSerializable(typeof(Dictionary<string, Dictionary<string, string>>))]
     public partial class DictionaryStringDictionaryStringJsonSerializerContexts : JsonSerializerContext
     {
-#if !NET6_0_OR_GREATER
+#if !NET8_0_OR_GREATER
         public DictionaryStringDictionaryStringJsonSerializerContexts(JsonSerializerOptions defaultOptions)
             : base(defaultOptions)
         {
@@ -99,7 +99,7 @@ namespace Amazon.Util.Internal
     // For targets below .NET 6 create stub versions of the System.Text.Json types so that the context objects can still compile.
     // None of these type are actually used because the JSON parsing ends up using JsonMapper from LitJson for targets below .NET 6.
     // Doing this allows the SDK to have a single JsonSerializerHelper.Deserialize method to use throughout the SDK to handle JSON marshalling.
-#if !NET6_0_OR_GREATER
+#if !NET8_0_OR_GREATER
     public class JsonSerializerContext
     {
         public JsonSerializerContext() { }
