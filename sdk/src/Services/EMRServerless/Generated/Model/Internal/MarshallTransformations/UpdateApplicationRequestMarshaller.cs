@@ -148,6 +148,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMonitoringConfiguration())
+                {
+                    context.Writer.WritePropertyName("monitoringConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MonitoringConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MonitoringConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNetworkConfiguration())
                 {
                     context.Writer.WritePropertyName("networkConfiguration");
@@ -163,6 +174,22 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("releaseLabel");
                     context.Writer.Write(publicRequest.ReleaseLabel);
+                }
+
+                if(publicRequest.IsSetRuntimeConfiguration())
+                {
+                    context.Writer.WritePropertyName("runtimeConfiguration");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRuntimeConfigurationListValue in publicRequest.RuntimeConfiguration)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRuntimeConfigurationListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetWorkerTypeSpecifications())

@@ -42,9 +42,11 @@ namespace Amazon.EMRServerless.Model
         private ImageConfiguration _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = new Dictionary<string, InitialCapacityConfig>();
         private MaximumAllowedResources _maximumCapacity;
+        private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
         private NetworkConfiguration _networkConfiguration;
         private string _releaseLabel;
+        private List<Configuration> _runtimeConfiguration = new List<Configuration>();
         private ApplicationState _state;
         private string _stateDetails;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -222,6 +224,21 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitoringConfiguration.
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the application.
@@ -275,6 +292,29 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeConfiguration. 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+        /// specifications of an application. Each configuration consists of a classification
+        /// and properties. You use this parameter when creating or updating an application. To
+        /// see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+        /// API operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<Configuration> RuntimeConfiguration
+        {
+            get { return this._runtimeConfiguration; }
+            set { this._runtimeConfiguration = value; }
+        }
+
+        // Check to see if RuntimeConfiguration property is set
+        internal bool IsSetRuntimeConfiguration()
+        {
+            return this._runtimeConfiguration != null && this._runtimeConfiguration.Count > 0; 
         }
 
         /// <summary>

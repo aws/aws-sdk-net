@@ -118,6 +118,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaximumCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("monitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runtimeConfiguration", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.RuntimeConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
