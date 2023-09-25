@@ -452,5 +452,72 @@ namespace AWSSDK_DotNet35.UnitTests
             }
         }
 #endif
+
+        /// <summary>
+        /// Asserts that our desired exception is thrown when attempting to make a query
+        /// that relies on the hash key without correct table metadata
+        /// </summary>
+        [TestMethod]
+        public void DisableFetchingTableMetadata_QueryWithMissingHashKey_ThrowsException()
+        {
+            var config = new DynamoDBContextConfig()
+            {
+                DisableFetchingTableMetadata = true
+            };
+
+            var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
+
+            Assert.ThrowsException<InvalidOperationException>(() => context.Query<EmployeeMissingHashKey>("123"));
+        }
+
+        /// <summary>
+        /// Asserts that our desired exception is thrown when attempting to make a query
+        /// that relies on a range key without correct table metadata
+        /// </summary>
+        [TestMethod]
+        public void DisableFetchingTableMetadata_QueryWithMissingRangeKey_ThrowsException()
+        {
+            var config = new DynamoDBContextConfig()
+            {
+                DisableFetchingTableMetadata = true
+            };
+
+            var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
+
+            // This is the table's range key, which is not attributed
+            Assert.ThrowsException<InvalidOperationException>(() => 
+            context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, 5));
+            
+            // This is a GSI's range key, which is not attributed
+            Assert.ThrowsException<InvalidOperationException>(() =>
+                context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new List<object> { 5 }, new DynamoDBOperationConfig { IndexName = "GlobalIndex"}));
+        }
+
+        [DynamoDBTable("EmployeeDetails")]
+        public class EmployeeMissingHashKey
+        {
+            public string Name { get; set; }
+
+            public int Age { get; set; }
+        }
+
+        [DynamoDBTable("EmployeeDetails")]
+        public class EmployeeMissingRangeKeys
+        {
+            [DynamoDBHashKey]
+            public string Name { get; set; }
+
+            // This is the range key for our typical testing table
+            public int Age { get; set; }
+
+            [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex")]
+            public string Manager { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+            public string CompanyName { get; set; }
+
+            // This is the range key for "GlobalIndex" for our typical testing table
+            public int Score { get; set; }
+        }
     }
 }

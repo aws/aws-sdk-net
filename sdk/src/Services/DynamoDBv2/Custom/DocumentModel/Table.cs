@@ -583,12 +583,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     KeyType = KeyType.HASH
                 });
 
-                var rangeKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
-                indexDescription.KeySchema.Add(new KeySchemaElement()
+                if (!string.IsNullOrEmpty(gsi.RangeKeyPropertyName))
                 {
-                    AttributeName = rangeKeyProperty.AttributeName,
-                    KeyType = KeyType.RANGE
-                });
+                    var rangeKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
+                    indexDescription.KeySchema.Add(new KeySchemaElement()
+                    {
+                        AttributeName = rangeKeyProperty.AttributeName,
+                        KeyType = KeyType.RANGE
+                    });
+                }
 
                 table.GlobalSecondaryIndexes[gsiIndexName] = indexDescription;
             }
