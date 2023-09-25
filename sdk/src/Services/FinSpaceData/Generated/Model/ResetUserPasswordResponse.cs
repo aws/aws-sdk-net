@@ -39,8 +39,8 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property TemporaryPassword. 
         /// <para>
-        /// A randomly generated temporary password for the requested user account. This password
-        /// expires in 7 days.
+        /// A randomly generated temporary password for the requested user. This password expires
+        /// in 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=8, Max=20)]

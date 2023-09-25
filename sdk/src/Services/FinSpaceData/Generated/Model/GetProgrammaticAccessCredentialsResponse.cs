@@ -42,6 +42,7 @@ namespace Amazon.FinSpaceData.Model
         /// Returns the programmatic credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Credentials Credentials
         {
             get { return this._credentials; }
@@ -60,7 +61,7 @@ namespace Amazon.FinSpaceData.Model
         /// Returns the duration in which the credentials will remain valid.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=720)]
+        [AWSProperty(Min=1, Max=60)]
         public long DurationInMinutes
         {
             get { return this._durationInMinutes.GetValueOrDefault(); }

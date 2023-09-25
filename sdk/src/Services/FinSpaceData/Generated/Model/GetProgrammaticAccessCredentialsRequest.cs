@@ -30,7 +30,9 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProgrammaticAccessCredentials operation.
-    /// Request programmatic credentials to use with FinSpace SDK.
+    /// Request programmatic credentials to use with FinSpace SDK. For more information, see
+    /// <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step
+    /// 2. Access credentials programmatically using IAM access key id and secret access key</a>.
     /// </summary>
     public partial class GetProgrammaticAccessCredentialsRequest : AmazonFinSpaceDataRequest
     {
@@ -43,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// The time duration in which the credentials remain valid. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=720)]
+        [AWSProperty(Min=1, Max=60)]
         public long DurationInMinutes
         {
             get { return this._durationInMinutes.GetValueOrDefault(); }

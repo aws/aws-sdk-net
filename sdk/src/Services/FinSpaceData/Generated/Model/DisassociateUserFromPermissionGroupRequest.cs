@@ -30,7 +30,7 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateUserFromPermissionGroup operation.
-    /// Removes a user account from a permission group.
+    /// Removes a user from a permission group.
     /// </summary>
     public partial class DisassociateUserFromPermissionGroupRequest : AmazonFinSpaceDataRequest
     {

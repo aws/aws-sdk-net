@@ -30,7 +30,7 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUser operation.
-    /// Modifies the details of the specified user account. You cannot update the <code>userId</code>
+    /// Modifies the details of the specified user. You cannot update the <code>userId</code>
     /// for a user.
     /// </summary>
     public partial class UpdateUserRequest : AmazonFinSpaceDataRequest
@@ -182,7 +182,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier for the user account to update.
+        /// The unique identifier for the user that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=26)]
