@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// An IAM user ARN was not specified.
+    /// An user ARN was not specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

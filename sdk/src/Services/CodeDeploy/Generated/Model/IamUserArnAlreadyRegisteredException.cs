@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The specified IAM user ARN is already registered with an on-premises instance.
+    /// The specified user ARN is already registered with an on-premises instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

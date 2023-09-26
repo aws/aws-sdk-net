@@ -30,7 +30,17 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourcesByExternalId operation.
-    /// Deletes resources linked to an external ID.
+    /// Deletes resources linked to an external ID. This action only applies if you have configured
+    /// blue/green deployments through CloudFormation. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// It is not necessary to call this action directly. CloudFormation calls it on your
+    /// behalf when it needs to delete stack resources. This action is offered publicly in
+    /// case you need to delete resources to comply with General Data Protection Regulation
+    /// (GDPR) requirements.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteResourcesByExternalIdRequest : AmazonCodeDeployRequest
     {

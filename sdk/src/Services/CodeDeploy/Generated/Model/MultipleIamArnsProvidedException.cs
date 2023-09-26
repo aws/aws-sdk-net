@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Both an IAM user ARN and an IAM session ARN were included in the request. Use only
-    /// one ARN type.
+    /// Both an user ARN and an IAM session ARN were included in the request. Use only one
+    /// ARN type.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

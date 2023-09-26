@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The named deployment group with the IAM user or Amazon Web Services account does not
-    /// exist.
+    /// The named deployment group with the user or Amazon Web Services account does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

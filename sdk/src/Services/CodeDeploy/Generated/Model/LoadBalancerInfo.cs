@@ -31,6 +31,14 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Information about the Elastic Load Balancing load balancer or target group used in
     /// a deployment.
+    /// 
+    ///  
+    /// <para>
+    /// You can use load balancers and target groups in combination. For example, if you have
+    /// two Classic Load Balancers, and five target groups tied to an Application Load Balancer,
+    /// you can specify the two Classic Load Balancers in <code>elbInfoList</code>, and the
+    /// five target groups in <code>targetGroupInfoList</code>.
+    /// </para>
     /// </summary>
     public partial class LoadBalancerInfo
     {
@@ -41,13 +49,18 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ElbInfoList. 
         /// <para>
-        /// An array that contains information about the load balancer to use for load balancing
-        /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
-        /// Balancers.
+        /// An array that contains information about the load balancers to use for load balancing
+        /// in a deployment. If you're using Classic Load Balancers, specify those load balancers
+        /// in this array. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Adding more than one load balancer to the array is not supported. 
+        /// You can add up to 10 load balancers to the array.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code>
+        /// array instead of this one.
         /// </para>
         ///  </note>
         /// </summary>
@@ -66,13 +79,18 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetGroupInfoList. 
         /// <para>
-        /// An array that contains information about the target group to use for load balancing
-        /// in a deployment. In Elastic Load Balancing, target groups are used with Application
-        /// Load Balancers.
+        /// An array that contains information about the target groups to use for load balancing
+        /// in a deployment. If you're using Application Load Balancers and Network Load Balancers,
+        /// specify their associated target groups in this array.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Adding more than one target group to the array is not supported. 
+        /// You can add up to 10 target groups to the array.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead
+        /// of this one.
         /// </para>
         ///  </note>
         /// </summary>

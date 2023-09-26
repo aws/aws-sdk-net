@@ -74,6 +74,14 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         ///  <code>zip</code>: A zip archive file.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>YAML</code>: A YAML-formatted file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JSON</code>: A JSON-formatted file.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public BundleType BundleType

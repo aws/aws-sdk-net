@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  Lists the instance for a deployment associated with the IAM user or Amazon Web Services
+    ///  Lists the instance for a deployment associated with the user or Amazon Web Services
     /// account. 
     /// </para>
     /// </summary>

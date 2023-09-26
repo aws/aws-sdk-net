@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// No IAM ARN was included in the request. You must use an IAM session ARN or IAM user
-    /// ARN in the request.
+    /// No IAM ARN was included in the request. You must use an IAM session ARN or user ARN
+    /// in the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
