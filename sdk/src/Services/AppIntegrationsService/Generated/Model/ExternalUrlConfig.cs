@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateEventIntegration operation.
-    /// Updates the description of an event integration.
+    /// The external URL source for the application.
     /// </summary>
-    public partial class UpdateEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class ExternalUrlConfig
     {
-        private string _description;
-        private string _name;
+        private string _accessUrl;
+        private List<string> _approvedOrigins = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property AccessUrl. 
         /// <para>
-        /// The description of the event integration.
+        /// The URL to access the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string Description
+        [AWSProperty(Required=true, Min=1, Max=1000)]
+        public string AccessUrl
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._accessUrl; }
+            set { this._accessUrl = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if AccessUrl property is set
+        internal bool IsSetAccessUrl()
         {
-            return this._description != null;
+            return this._accessUrl != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ApprovedOrigins. 
         /// <para>
-        /// The name of the event integration.
+        /// Additional URLs to allow list if different than the access URL.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> ApprovedOrigins
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._approvedOrigins; }
+            set { this._approvedOrigins = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ApprovedOrigins property is set
+        internal bool IsSetApprovedOrigins()
         {
-            return this._name != null;
+            return this._approvedOrigins != null && this._approvedOrigins.Count > 0; 
         }
 
     }

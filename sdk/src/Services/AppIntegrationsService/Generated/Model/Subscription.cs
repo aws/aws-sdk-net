@@ -29,18 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateEventIntegration operation.
-    /// Updates the description of an event integration.
+    /// The configuration of an event that the application subscribes.
     /// </summary>
-    public partial class UpdateEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class Subscription
     {
         private string _description;
-        private string _name;
+        private string _event;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the event integration.
+        /// The description of the subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -57,22 +56,22 @@ namespace Amazon.AppIntegrationsService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Event. 
         /// <para>
-        /// The name of the event integration.
+        /// The name of the subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        public string Event
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._event; }
+            set { this._event = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Event property is set
+        internal bool IsSetEvent()
         {
-            return this._name != null;
+            return this._event != null;
         }
 
     }

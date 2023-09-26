@@ -29,50 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateEventIntegration operation.
-    /// Updates the description of an event integration.
+    /// This is the response object from the CreateApplication operation.
     /// </summary>
-    public partial class UpdateEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class CreateApplicationResponse : AmazonWebServiceResponse
     {
-        private string _description;
-        private string _name;
+        private string _arn;
+        private string _id;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The description of the event integration.
+        /// The Amazon Resource Name (ARN) of the Application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string Description
+        [AWSProperty(Min=1, Max=2048)]
+        public string Arn
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._description != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The name of the event integration.
+        /// A unique identifier for the Application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        public string Id
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._name != null;
+            return this._id != null;
         }
 
     }

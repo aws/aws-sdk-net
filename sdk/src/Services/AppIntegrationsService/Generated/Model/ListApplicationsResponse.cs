@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateEventIntegration operation.
-    /// Updates the description of an event integration.
+    /// This is the response object from the ListApplications operation.
     /// </summary>
-    public partial class UpdateEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private string _description;
-        private string _name;
+        private List<ApplicationSummary> _applications = new List<ApplicationSummary>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Applications. 
         /// <para>
-        /// The description of the event integration.
+        /// The Applications associated with this account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<ApplicationSummary> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public string Description
+        public string NextToken
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the event integration.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._nextToken != null;
         }
 
     }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.CreateApplication(Amazon.AppIntegrationsService.Model.CreateApplicationRequest)" />
+            <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.CreateApplication(Amazon.AppIntegrationsService.Model.CreateApplicationRequest)" />
+            <member name="T:Amazon.AppIntegrationsService.Model.CreateApplicationRequest" />
+            <member name="T:Amazon.AppIntegrationsService.Model.CreateApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following creates an application named My Application with access url https://example.com.
+                </para>
+                <code
+                    title="To create an application"
+                    source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
+                    region="create-an-application" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.GetApplication(Amazon.AppIntegrationsService.Model.GetApplicationRequest)" />
+            <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.GetApplication(Amazon.AppIntegrationsService.Model.GetApplicationRequest)" />
+            <member name="T:Amazon.AppIntegrationsService.Model.GetApplicationRequest" />
+            <member name="T:Amazon.AppIntegrationsService.Model.GetApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following retrives an application.
+                </para>
+                <code
+                    title="To get an application"
+                    source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
+                    region="get-an-application" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.ListApplications(Amazon.AppIntegrationsService.Model.ListApplicationsRequest)" />
+            <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.ListApplications(Amazon.AppIntegrationsService.Model.ListApplicationsRequest)" />
+            <member name="T:Amazon.AppIntegrationsService.Model.ListApplicationsRequest" />
+            <member name="T:Amazon.AppIntegrationsService.Model.ListApplicationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following lists application summary in the account.
+                </para>
+                <code
+                    title="To list applications in the account"
+                    source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
+                    region="list-applications" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppIntegrationsService.IAmazonAppIntegrationsService.UpdateApplication(Amazon.AppIntegrationsService.Model.UpdateApplicationRequest)" />
+            <member name="M:Amazon.AppIntegrationsService.AmazonAppIntegrationsServiceClient.UpdateApplication(Amazon.AppIntegrationsService.Model.UpdateApplicationRequest)" />
+            <member name="T:Amazon.AppIntegrationsService.Model.UpdateApplicationRequest" />
+            <member name="T:Amazon.AppIntegrationsService.Model.UpdateApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following updates an existing application named with a new name.
+                </para>
+                <code
+                    title="To update an application"
+                    source=".\AWSSDKDocSamples\AppIntegrationsService\AppIntegrationsService.GeneratedSamples.cs"
+                    region="update-an-application" />
+            </example>
+        </value>
+    </doc>
+</docs>
