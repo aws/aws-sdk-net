@@ -270,6 +270,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListLakeFormationOptInsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.ListLFTagsRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -550,6 +555,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LakeFormationOptInsInfo.LastUpdatedBy</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.LFTag.TagKey</property>
     <min>1</min>
     <max>128</max>
@@ -578,6 +588,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.LFTagPolicyResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.PrincipalResourcePermissions.LastUpdatedBy</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

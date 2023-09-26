@@ -68,6 +68,14 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
+        /// Paginator for ListLakeFormationOptIns operation
+        ///</summary>
+        public IListLakeFormationOptInsPaginator ListLakeFormationOptIns(ListLakeFormationOptInsRequest request) 
+        {
+            return new ListLakeFormationOptInsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLFTags operation
         ///</summary>
         public IListLFTagsPaginator ListLFTags(ListLFTagsRequest request) 

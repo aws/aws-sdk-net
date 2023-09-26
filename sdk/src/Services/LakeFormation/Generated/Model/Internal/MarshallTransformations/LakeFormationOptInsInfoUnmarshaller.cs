@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrincipalResourcePermissions Object
+    /// Response Unmarshaller for LakeFormationOptInsInfo Object
     /// </summary>  
-    public class PrincipalResourcePermissionsUnmarshaller : IUnmarshaller<PrincipalResourcePermissions, XmlUnmarshallerContext>, IUnmarshaller<PrincipalResourcePermissions, JsonUnmarshallerContext>
+    public class LakeFormationOptInsInfoUnmarshaller : IUnmarshaller<LakeFormationOptInsInfo, XmlUnmarshallerContext>, IUnmarshaller<LakeFormationOptInsInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PrincipalResourcePermissions IUnmarshaller<PrincipalResourcePermissions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LakeFormationOptInsInfo IUnmarshaller<LakeFormationOptInsInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PrincipalResourcePermissions Unmarshall(JsonUnmarshallerContext context)
+        public LakeFormationOptInsInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PrincipalResourcePermissions unmarshalledObject = new PrincipalResourcePermissions();
+            LakeFormationOptInsInfo unmarshalledObject = new LakeFormationOptInsInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdditionalDetails", targetDepth))
-                {
-                    var unmarshaller = DetailsMapUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdated", targetDepth))
+                if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Permissions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Permissions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PermissionsWithGrantOption", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.PermissionsWithGrantOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Principal", targetDepth))
@@ -112,12 +94,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         }
 
 
-        private static PrincipalResourcePermissionsUnmarshaller _instance = new PrincipalResourcePermissionsUnmarshaller();        
+        private static LakeFormationOptInsInfoUnmarshaller _instance = new LakeFormationOptInsInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrincipalResourcePermissionsUnmarshaller Instance
+        public static LakeFormationOptInsInfoUnmarshaller Instance
         {
             get
             {

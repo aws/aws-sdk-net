@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterResource Request Marshaller
+    /// ListLakeFormationOptIns Request Marshaller
     /// </summary>       
-    public class RegisterResourceRequestMarshaller : IMarshaller<IRequest, RegisterResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListLakeFormationOptInsRequestMarshaller : IMarshaller<IRequest, ListLakeFormationOptInsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterResourceRequest)input);
+            return this.Marshall((ListLakeFormationOptInsRequest)input);
         }
 
         /// <summary>
@@ -52,47 +52,51 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RegisterResourceRequest publicRequest)
+        public IRequest Marshall(ListLakeFormationOptInsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LakeFormation");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/RegisterResource";
+            request.ResourcePath = "/ListLakeFormationOptIns";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHybridAccessEnabled())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("HybridAccessEnabled");
-                    context.Writer.Write(publicRequest.HybridAccessEnabled);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetResourceArn())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("ResourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetRoleArn())
+                if(publicRequest.IsSetPrincipal())
                 {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
+                    context.Writer.WritePropertyName("Principal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Principal, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUseServiceLinkedRole())
+                if(publicRequest.IsSetResource())
                 {
-                    context.Writer.WritePropertyName("UseServiceLinkedRole");
-                    context.Writer.Write(publicRequest.UseServiceLinkedRole);
-                }
+                    context.Writer.WritePropertyName("Resource");
+                    context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetWithFederation())
-                {
-                    context.Writer.WritePropertyName("WithFederation");
-                    context.Writer.Write(publicRequest.WithFederation);
+                    var marshaller = ResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Resource, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -103,9 +107,9 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RegisterResourceRequestMarshaller _instance = new RegisterResourceRequestMarshaller();        
+        private static ListLakeFormationOptInsRequestMarshaller _instance = new ListLakeFormationOptInsRequestMarshaller();        
 
-        internal static RegisterResourceRequestMarshaller GetInstance()
+        internal static ListLakeFormationOptInsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +117,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterResourceRequestMarshaller Instance
+        public static ListLakeFormationOptInsRequestMarshaller Instance
         {
             get
             {

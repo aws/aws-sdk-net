@@ -769,6 +769,78 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  CreateLakeFormationOptIn
+
+        /// <summary>
+        /// Enforce Lake Formation permissions for the given databases, tables, and principals.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLakeFormationOptIn service method.</param>
+        /// 
+        /// <returns>The response from the CreateLakeFormationOptIn service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">REST API Reference for CreateLakeFormationOptIn Operation</seealso>
+        public virtual CreateLakeFormationOptInResponse CreateLakeFormationOptIn(CreateLakeFormationOptInRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLakeFormationOptInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLakeFormationOptInResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLakeFormationOptInResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLakeFormationOptIn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLakeFormationOptIn operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLakeFormationOptIn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">REST API Reference for CreateLakeFormationOptIn Operation</seealso>
+        public virtual IAsyncResult BeginCreateLakeFormationOptIn(CreateLakeFormationOptInRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLakeFormationOptInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLakeFormationOptInResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLakeFormationOptIn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLakeFormationOptIn.</param>
+        /// 
+        /// <returns>Returns a  CreateLakeFormationOptInResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">REST API Reference for CreateLakeFormationOptIn Operation</seealso>
+        public virtual CreateLakeFormationOptInResponse EndCreateLakeFormationOptIn(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLakeFormationOptInResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLFTag
 
         /// <summary>
@@ -906,6 +978,79 @@ namespace Amazon.LakeFormation
         public virtual DeleteDataCellsFilterResponse EndDeleteDataCellsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDataCellsFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLakeFormationOptIn
+
+        /// <summary>
+        /// Remove the Lake Formation permissions enforcement of the given databases, tables,
+        /// and principals.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLakeFormationOptIn service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLakeFormationOptIn service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">REST API Reference for DeleteLakeFormationOptIn Operation</seealso>
+        public virtual DeleteLakeFormationOptInResponse DeleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLakeFormationOptInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLakeFormationOptInResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLakeFormationOptInResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLakeFormationOptIn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLakeFormationOptIn operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLakeFormationOptIn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">REST API Reference for DeleteLakeFormationOptIn Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLakeFormationOptInRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLakeFormationOptInResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLakeFormationOptIn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLakeFormationOptIn.</param>
+        /// 
+        /// <returns>Returns a  DeleteLakeFormationOptInResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">REST API Reference for DeleteLakeFormationOptIn Operation</seealso>
+        public virtual DeleteLakeFormationOptInResponse EndDeleteLakeFormationOptIn(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLakeFormationOptInResponse>(asyncResult);
         }
 
         #endregion
@@ -2343,6 +2488,73 @@ namespace Amazon.LakeFormation
         public virtual ListDataCellsFilterResponse EndListDataCellsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDataCellsFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLakeFormationOptIns
+
+        /// <summary>
+        /// Retrieve the current list of resources and principals that are opt in to enforce Lake
+        /// Formation permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLakeFormationOptIns service method.</param>
+        /// 
+        /// <returns>The response from the ListLakeFormationOptIns service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
+        public virtual ListLakeFormationOptInsResponse ListLakeFormationOptIns(ListLakeFormationOptInsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLakeFormationOptInsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLakeFormationOptInsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLakeFormationOptInsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLakeFormationOptIns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLakeFormationOptIns operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLakeFormationOptIns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
+        public virtual IAsyncResult BeginListLakeFormationOptIns(ListLakeFormationOptInsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLakeFormationOptInsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLakeFormationOptInsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLakeFormationOptIns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLakeFormationOptIns.</param>
+        /// 
+        /// <returns>Returns a  ListLakeFormationOptInsResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
+        public virtual ListLakeFormationOptInsResponse EndListLakeFormationOptIns(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLakeFormationOptInsResponse>(asyncResult);
         }
 
         #endregion
