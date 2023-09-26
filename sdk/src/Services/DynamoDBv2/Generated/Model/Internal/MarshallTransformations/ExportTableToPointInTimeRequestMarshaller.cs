@@ -90,6 +90,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExportTime);
                 }
 
+                if(publicRequest.IsSetExportType())
+                {
+                    context.Writer.WritePropertyName("ExportType");
+                    context.Writer.Write(publicRequest.ExportType);
+                }
+
+                if(publicRequest.IsSetIncrementalExportSpecification())
+                {
+                    context.Writer.WritePropertyName("IncrementalExportSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IncrementalExportSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IncrementalExportSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetS3Bucket())
                 {
                     context.Writer.WritePropertyName("S3Bucket");

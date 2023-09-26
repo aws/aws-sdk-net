@@ -35,6 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _exportArn;
         private ExportStatus _exportStatus;
+        private ExportType _exportType;
 
         /// <summary>
         /// Gets and sets the property ExportArn. 
@@ -71,6 +72,26 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetExportStatus()
         {
             return this._exportStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportType. 
+        /// <para>
+        /// Choice of whether to execute as a full export or incremental export. Valid values
+        /// are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code>
+        /// is provided, the <code>IncrementalExportSpecification</code> must also be used.
+        /// </para>
+        /// </summary>
+        public ExportType ExportType
+        {
+            get { return this._exportType; }
+            set { this._exportType = value; }
+        }
+
+        // Check to see if ExportType property is set
+        internal bool IsSetExportType()
+        {
+            return this._exportType != null;
         }
 
     }

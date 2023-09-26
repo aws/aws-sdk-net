@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExportSummary Object
+    /// Response Unmarshaller for IncrementalExportSpecification Object
     /// </summary>  
-    public class ExportSummaryUnmarshaller : IUnmarshaller<ExportSummary, XmlUnmarshallerContext>, IUnmarshaller<ExportSummary, JsonUnmarshallerContext>
+    public class IncrementalExportSpecificationUnmarshaller : IUnmarshaller<IncrementalExportSpecification, XmlUnmarshallerContext>, IUnmarshaller<IncrementalExportSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExportSummary IUnmarshaller<ExportSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IncrementalExportSpecification IUnmarshaller<IncrementalExportSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExportSummary Unmarshall(JsonUnmarshallerContext context)
+        public IncrementalExportSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExportSummary unmarshalledObject = new ExportSummary();
+            IncrementalExportSpecification unmarshalledObject = new IncrementalExportSpecification();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExportArn", targetDepth))
+                if (context.TestExpression("ExportFromTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExportFromTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExportStatus", targetDepth))
+                if (context.TestExpression("ExportToTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExportToTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExportType", targetDepth))
+                if (context.TestExpression("ExportViewType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportViewType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExportSummaryUnmarshaller _instance = new ExportSummaryUnmarshaller();        
+        private static IncrementalExportSpecificationUnmarshaller _instance = new IncrementalExportSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExportSummaryUnmarshaller Instance
+        public static IncrementalExportSpecificationUnmarshaller Instance
         {
             get
             {
