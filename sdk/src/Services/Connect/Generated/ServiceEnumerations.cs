@@ -1883,6 +1883,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant APPLICATION for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType APPLICATION = new IntegrationType("APPLICATION");
+        /// <summary>
         /// Constant CASES_DOMAIN for IntegrationType
         /// </summary>
         public static readonly IntegrationType CASES_DOMAIN = new IntegrationType("CASES_DOMAIN");

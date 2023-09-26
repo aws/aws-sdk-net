@@ -9834,6 +9834,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListSecurityProfileApplications
+
+        /// <summary>
+        /// Returns a list of third party applications in a specific security profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityProfileApplications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
+        public virtual ListSecurityProfileApplicationsResponse ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfileApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityProfileApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityProfileApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
+        public virtual IAsyncResult BeginListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityProfileApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityProfileApplications.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityProfileApplicationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
+        public virtual ListSecurityProfileApplicationsResponse EndListSecurityProfileApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityProfileApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSecurityProfilePermissions
 
         /// <summary>

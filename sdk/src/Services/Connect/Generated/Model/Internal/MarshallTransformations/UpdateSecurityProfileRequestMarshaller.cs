@@ -85,6 +85,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetApplications())
+                {
+                    context.Writer.WritePropertyName("Applications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ApplicationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestApplicationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

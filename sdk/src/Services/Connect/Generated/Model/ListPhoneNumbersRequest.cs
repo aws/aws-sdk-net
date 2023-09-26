@@ -147,6 +147,14 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The type of phone number.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>,
+        /// <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>,
+        /// it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=6)]
         public List<string> PhoneNumberTypes

@@ -1445,6 +1445,16 @@
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListSecurityProfileApplicationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListSecurityProfileApplicationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfilePermissionsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2680,6 +2690,11 @@
     <property>Amazon.Connect.Model.AgentStatusSummary.Name</property>
     <min>1</min>
     <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Application.Namespace</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AttachmentReference.Name</property>

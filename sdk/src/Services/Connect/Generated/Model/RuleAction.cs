@@ -63,6 +63,13 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Information about the contact category action.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>
+        /// | <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> |
+        /// <code>OnSalesforceCaseCreate</code> 
+        /// </para>
         /// </summary>
         public AssignContactCategoryActionDefinition AssignContactCategoryAction
         {
@@ -81,6 +88,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Information about the EventBridge action.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>
+        /// | <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> 
+        /// </para>
         /// </summary>
         public EventBridgeActionDefinition EventBridgeAction
         {
@@ -98,6 +111,12 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SendNotificationAction. 
         /// <para>
         /// Information about the send notification action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>
+        /// | <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> 
         /// </para>
         /// </summary>
         public SendNotificationActionDefinition SendNotificationAction
