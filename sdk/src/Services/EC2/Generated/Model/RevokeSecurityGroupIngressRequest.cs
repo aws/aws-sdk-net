@@ -50,6 +50,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// For a non-default VPC, if the values you specify do not match the existing rule's
+    /// values, an <code>InvalidPermission.NotFound</code> client error is returned, and no
+    /// rules are revoked.
+    /// </para>
+    ///  
+    /// <para>
     /// Amazon Web Services recommends that you describe the security group to verify that
     /// the rules were removed.
     /// </para>

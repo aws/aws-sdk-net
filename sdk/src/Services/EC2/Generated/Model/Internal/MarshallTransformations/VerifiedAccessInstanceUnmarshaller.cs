@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("fipsEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.FipsEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("lastUpdatedTime", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
