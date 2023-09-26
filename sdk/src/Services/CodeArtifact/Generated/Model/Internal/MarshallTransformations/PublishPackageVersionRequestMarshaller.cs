@@ -88,6 +88,10 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                 request.Parameters.Add("unfinished", StringUtils.FromBool(publicRequest.Unfinished));
             request.ResourcePath = "/v1/package/version/publish";
             request.ContentStream =  publicRequest.AssetContent ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

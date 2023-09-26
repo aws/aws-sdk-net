@@ -54,5 +54,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 Assert.AreEqual(responseBody, Encoding.UTF8.GetString(response.Payload.ToArray()));
             }
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Lambda")]
+        public void EnsureMemoryStreamIsReset()
+        {
+            var invokeRequest = new InvokeRequest
+            {
+                FunctionName = "unit-test"
+            };
+
+            var stream = new MemoryStream();
+            stream.Write(new byte[] {1, 2, 3, 4}, 0, 4);
+
+            // Confirm stream as been left at the end.
+            Assert.AreEqual(4, stream.Length);
+            invokeRequest.PayloadStream = stream;
+
+            var request = InvokeRequestMarshaller.Instance.Marshall(invokeRequest);
+
+            Assert.AreEqual("4", request.Headers["content-length"]);
+            Assert.AreEqual(0, request.ContentStream.Position);
+            Assert.AreEqual(4, request.ContentStream.Length);
+        }
     }
 }

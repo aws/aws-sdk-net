@@ -64,6 +64,10 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             request.AddPathResource("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
             request.ResourcePath = "/endpoints/{EndpointName}/invocations";
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
