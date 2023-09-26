@@ -1,3 +1,23 @@
+### 3.7.652.0 (2023-09-26 18:37 UTC)
+* AppIntegrationsService (3.7.201.0)
+	* The Amazon AppIntegrations service adds a set of APIs (in preview) to manage third party applications to be used in Amazon Connect agent workspace.
+* AppRunner (3.7.203.0)
+	* This release allows an App Runner customer to specify a custom source directory to run the build & start command. This change allows App Runner to support monorepo based repositories
+* CodeDeploy (3.7.200.46)
+	* CodeDeploy now supports In-place and Blue/Green EC2 deployments with multiple Classic Load Balancers and multiple Target Groups.
+* Connect (3.7.206.0)
+	* This release updates a set of Amazon Connect APIs that provides the ability to integrate third party applications in the Amazon Connect agent workspace.
+* DynamoDBv2 (3.7.202.0)
+	* Amazon DynamoDB now supports Incremental Export as an enhancement to the existing Export Table
+* EC2 (3.7.216.0)
+	* The release includes AWS verified access to support FIPs compliance in North America regions
+* LakeFormation (3.7.201.0)
+	* This release adds three new API support "CreateLakeFormationOptIn", "DeleteLakeFormationOptIn" and "ListLakeFormationOptIns", and also updates the corresponding documentation.
+* Pinpoint (3.7.201.40)
+	* Update documentation for RemoveAttributes to more accurately reflect its behavior when attributes are deleted.
+* S3 (3.7.205.0)
+	* This release adds a new field COMPLETED to the ReplicationStatus Enum. You can now use this field to validate the replication status of S3 objects using the AWS SDK.
+
 ### 3.7.651.0 (2023-09-25 18:28 UTC)
 * AmplifyUIBuilder (3.7.202.0)
 	* Support for generating code that is compatible with future versions of amplify project dependencies.
