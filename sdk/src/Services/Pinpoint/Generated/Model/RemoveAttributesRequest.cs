@@ -30,8 +30,9 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveAttributes operation.
-    /// Removes one or more attributes, of the same attribute type, from all the endpoints
-    /// that are associated with an application.
+    /// Removes one or more custom attributes, of the same attribute type, from the application.
+    /// Existing endpoints still have the attributes but Amazon Pinpoint will stop capturing
+    /// new or changed values for these attributes.
     /// </summary>
     public partial class RemoveAttributesRequest : AmazonPinpointRequest
     {
