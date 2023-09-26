@@ -74,8 +74,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-yyyy-mm-dd-asc-improvements.html">Managing
-        /// auto scaling</a>, the name <code>DefaultConfiguration</code> was reserved. 
+        /// Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+        /// scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was
+        /// reserved. 
         /// </para>
         ///  
         /// <para>

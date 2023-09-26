@@ -82,6 +82,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceCodeVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceDirectory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceDirectory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

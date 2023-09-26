@@ -548,6 +548,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRunner.Model.CodeRepository.SourceDirectory</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[^\x00]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRunner.Model.Connection.ConnectionArn</property>
     <min>1</min>
     <max>1011</max>
