@@ -1,3 +1,16 @@
+### 3.7.653.0 (2023-09-27 18:25 UTC)
+* CognitoIdentityProvider (3.7.203.0)
+	* The UserPoolType Status field is no longer used.
+* IoT (3.7.201.0)
+	* Added support for IoT Rules Engine Kafka Action Headers
+* KinesisFirehose (3.7.202.0)
+	* Features : Adding support for new data ingestion source to Kinesis Firehose - AWS Managed Services Kafka.
+* Textract (3.7.201.0)
+	* This release adds new feature - Layout to Analyze Document API which can automatically extract layout elements such as titles, paragraphs, headers, section headers, lists, page numbers, footers, table areas, key-value areas and figure areas and order the elements as a human would read.
+* Core 3.7.202.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.652.0 (2023-09-26 18:37 UTC)
 * AppIntegrationsService (3.7.201.0)
 	* The Amazon AppIntegrations service adds a set of APIs (in preview) to manage third party applications to be used in Amazon Connect agent workspace.
