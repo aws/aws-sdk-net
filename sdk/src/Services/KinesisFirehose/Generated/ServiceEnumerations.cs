@@ -249,6 +249,56 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type Connectivity.
+    /// </summary>
+    public class Connectivity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE for Connectivity
+        /// </summary>
+        public static readonly Connectivity PRIVATE = new Connectivity("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for Connectivity
+        /// </summary>
+        public static readonly Connectivity PUBLIC = new Connectivity("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Connectivity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Connectivity FindValue(string value)
+        {
+            return FindValue<Connectivity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Connectivity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentEncoding.
     /// </summary>
     public class ContentEncoding : ConstantClass
@@ -592,6 +642,10 @@ namespace Amazon.KinesisFirehose
         /// Constant KinesisStreamAsSource for DeliveryStreamType
         /// </summary>
         public static readonly DeliveryStreamType KinesisStreamAsSource = new DeliveryStreamType("KinesisStreamAsSource");
+        /// <summary>
+        /// Constant MSKAsSource for DeliveryStreamType
+        /// </summary>
+        public static readonly DeliveryStreamType MSKAsSource = new DeliveryStreamType("MSKAsSource");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1159,6 +1213,10 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         public static readonly ProcessorParameterName BufferSizeInMBs = new ProcessorParameterName("BufferSizeInMBs");
         /// <summary>
+        /// Constant CompressionFormat for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName CompressionFormat = new ProcessorParameterName("CompressionFormat");
+        /// <summary>
         /// Constant Delimiter for ProcessorParameterName
         /// </summary>
         public static readonly ProcessorParameterName Delimiter = new ProcessorParameterName("Delimiter");
@@ -1232,6 +1290,10 @@ namespace Amazon.KinesisFirehose
         /// Constant AppendDelimiterToRecord for ProcessorType
         /// </summary>
         public static readonly ProcessorType AppendDelimiterToRecord = new ProcessorType("AppendDelimiterToRecord");
+        /// <summary>
+        /// Constant Decompression for ProcessorType
+        /// </summary>
+        public static readonly ProcessorType Decompression = new ProcessorType("Decompression");
         /// <summary>
         /// Constant Lambda for ProcessorType
         /// </summary>

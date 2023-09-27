@@ -35,6 +35,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class SourceDescription
     {
         private KinesisStreamSourceDescription _kinesisStreamSourceDescription;
+        private MSKSourceDescription _mskSourceDescription;
 
         /// <summary>
         /// Gets and sets the property KinesisStreamSourceDescription. 
@@ -52,6 +53,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetKinesisStreamSourceDescription()
         {
             return this._kinesisStreamSourceDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MSKSourceDescription. 
+        /// <para>
+        /// The configuration description for the Amazon MSK cluster to be used as the source
+        /// for a delivery stream.
+        /// </para>
+        /// </summary>
+        public MSKSourceDescription MSKSourceDescription
+        {
+            get { return this._mskSourceDescription; }
+            set { this._mskSourceDescription = value; }
+        }
+
+        // Check to see if MSKSourceDescription property is set
+        internal bool IsSetMSKSourceDescription()
+        {
+            return this._mskSourceDescription != null;
         }
 
     }

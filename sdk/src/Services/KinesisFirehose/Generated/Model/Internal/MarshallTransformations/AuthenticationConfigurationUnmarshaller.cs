@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceDescription Object
+    /// Response Unmarshaller for AuthenticationConfiguration Object
     /// </summary>  
-    public class SourceDescriptionUnmarshaller : IUnmarshaller<SourceDescription, XmlUnmarshallerContext>, IUnmarshaller<SourceDescription, JsonUnmarshallerContext>
+    public class AuthenticationConfigurationUnmarshaller : IUnmarshaller<AuthenticationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AuthenticationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SourceDescription IUnmarshaller<SourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuthenticationConfiguration IUnmarshaller<AuthenticationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public AuthenticationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SourceDescription unmarshalledObject = new SourceDescription();
+            AuthenticationConfiguration unmarshalledObject = new AuthenticationConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("KinesisStreamSourceDescription", targetDepth))
+                if (context.TestExpression("Connectivity", targetDepth))
                 {
-                    var unmarshaller = KinesisStreamSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.KinesisStreamSourceDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Connectivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MSKSourceDescription", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth))
                 {
-                    var unmarshaller = MSKSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.MSKSourceDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceDescriptionUnmarshaller _instance = new SourceDescriptionUnmarshaller();        
+        private static AuthenticationConfigurationUnmarshaller _instance = new AuthenticationConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceDescriptionUnmarshaller Instance
+        public static AuthenticationConfigurationUnmarshaller Instance
         {
             get
             {

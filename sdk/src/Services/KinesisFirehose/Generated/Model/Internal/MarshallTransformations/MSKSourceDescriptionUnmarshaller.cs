@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceDescription Object
+    /// Response Unmarshaller for MSKSourceDescription Object
     /// </summary>  
-    public class SourceDescriptionUnmarshaller : IUnmarshaller<SourceDescription, XmlUnmarshallerContext>, IUnmarshaller<SourceDescription, JsonUnmarshallerContext>
+    public class MSKSourceDescriptionUnmarshaller : IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>, IUnmarshaller<MSKSourceDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SourceDescription IUnmarshaller<SourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MSKSourceDescription IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public MSKSourceDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SourceDescription unmarshalledObject = new SourceDescription();
+            MSKSourceDescription unmarshalledObject = new MSKSourceDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("KinesisStreamSourceDescription", targetDepth))
+                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
                 {
-                    var unmarshaller = KinesisStreamSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.KinesisStreamSourceDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MSKSourceDescription", targetDepth))
+                if (context.TestExpression("DeliveryStartTimestamp", targetDepth))
                 {
-                    var unmarshaller = MSKSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.MSKSourceDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeliveryStartTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MSKClusterARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MSKClusterARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TopicName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceDescriptionUnmarshaller _instance = new SourceDescriptionUnmarshaller();        
+        private static MSKSourceDescriptionUnmarshaller _instance = new MSKSourceDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceDescriptionUnmarshaller Instance
+        public static MSKSourceDescriptionUnmarshaller Instance
         {
             get
             {

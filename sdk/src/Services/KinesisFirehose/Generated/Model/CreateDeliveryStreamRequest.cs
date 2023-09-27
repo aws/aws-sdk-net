@@ -134,6 +134,7 @@ namespace Amazon.KinesisFirehose.Model
         private ExtendedS3DestinationConfiguration _extendedS3DestinationConfiguration;
         private HttpEndpointDestinationConfiguration _httpEndpointDestinationConfiguration;
         private KinesisStreamSourceConfiguration _kinesisStreamSourceConfiguration;
+        private MSKSourceConfiguration _mskSourceConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
         private SplunkDestinationConfiguration _splunkDestinationConfiguration;
@@ -318,6 +319,21 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetKinesisStreamSourceConfiguration()
         {
             return this._kinesisStreamSourceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MSKSourceConfiguration.
+        /// </summary>
+        public MSKSourceConfiguration MSKSourceConfiguration
+        {
+            get { return this._mskSourceConfiguration; }
+            set { this._mskSourceConfiguration = value; }
+        }
+
+        // Check to see if MSKSourceConfiguration property is set
+        internal bool IsSetMSKSourceConfiguration()
+        {
+            return this._mskSourceConfiguration != null;
         }
 
         /// <summary>
