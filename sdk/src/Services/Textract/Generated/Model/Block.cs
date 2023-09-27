@@ -148,7 +148,7 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>SIGNATURE</i> - The location and confidene score of a signature detected on a
+        ///  <i>SIGNATURE</i> - The location and confidence score of a signature detected on a
         /// document page. Can be returned as part of a Key-Value pair or a detected cell.
         /// </para>
         ///  </li> <li> 
@@ -354,8 +354,7 @@ namespace Amazon.Textract.Model
         /// documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an
         /// asynchronous operation, even if it contains multiple document pages, is considered
         /// a single-page document. This means that for scanned images the value of <code>Page</code>
-        /// is always 1. Synchronous operations will also return a <code>Page</code> value of
-        /// 1 because every input document is considered to be a single-page document.
+        /// is always 1. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
