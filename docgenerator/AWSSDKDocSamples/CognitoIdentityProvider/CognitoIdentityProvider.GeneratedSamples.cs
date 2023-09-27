@@ -284,29 +284,6 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
-        public void CognitoIdentityProviderListUsers()
-        {
-            #region a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246
-
-            var client = new AmazonCognitoIdentityProviderClient();
-            var response = client.ListUsers(new ListUsersRequest 
-            {
-                AttributesToGet = new List<string> {
-                    "email",
-                    "sub"
-                },
-                Filter = "\"email\"^=\"testuser\"",
-                Limit = 3,
-                PaginationToken = "abcd1234EXAMPLE",
-                UserPoolId = "us-east-1_EXAMPLE"
-            });
-
-            string paginationToken = response.PaginationToken;
-            List<UserType> users = response.Users;
-
-            #endregion
-        }
-
         
         # region ISample Members
         public virtual void Run()

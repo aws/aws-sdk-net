@@ -140,6 +140,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool status in a user pool description.
         /// </para>
         /// </summary>
+        [Obsolete("This property is no longer available.")]
         public StatusType Status
         {
             get { return this._status; }
