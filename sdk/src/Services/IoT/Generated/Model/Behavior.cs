@@ -44,6 +44,12 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT
+        /// Device Defender detects that a device is behaving anomalously.
+        /// </para>
+        ///  </note>
         /// </summary>
         public BehaviorCriteria Criteria
         {

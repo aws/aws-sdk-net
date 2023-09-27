@@ -71,6 +71,11 @@ namespace Amazon.IoT.Model
         /// is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD
         /// for the date and HH:MM for the time.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information on the syntax for <code>endTime</code> when using an API command
+        /// or the Command Line Interface, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string EndTime
@@ -113,6 +118,11 @@ namespace Amazon.IoT.Model
         /// and must be scheduled a minimum of thirty minutes from the current time. The date
         /// and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM
         /// for the time.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on the syntax for <code>startTime</code> when using an API command
+        /// or the Command Line Interface, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

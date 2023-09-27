@@ -96,7 +96,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// The name for the target package.
+        /// The name for the target software package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

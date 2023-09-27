@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KafkaAction Object
+    /// Response Unmarshaller for KafkaActionHeader Object
     /// </summary>  
-    public class KafkaActionUnmarshaller : IUnmarshaller<KafkaAction, XmlUnmarshallerContext>, IUnmarshaller<KafkaAction, JsonUnmarshallerContext>
+    public class KafkaActionHeaderUnmarshaller : IUnmarshaller<KafkaActionHeader, XmlUnmarshallerContext>, IUnmarshaller<KafkaActionHeader, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KafkaAction IUnmarshaller<KafkaAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KafkaActionHeader IUnmarshaller<KafkaActionHeader, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KafkaAction Unmarshall(JsonUnmarshallerContext context)
+        public KafkaActionHeader Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KafkaAction unmarshalledObject = new KafkaAction();
+            KafkaActionHeader unmarshalledObject = new KafkaActionHeader();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientProperties", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ClientProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("destinationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("headers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<KafkaActionHeader, KafkaActionHeaderUnmarshaller>(KafkaActionHeaderUnmarshaller.Instance);
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("partition", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Partition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("topic", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Topic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static KafkaActionUnmarshaller _instance = new KafkaActionUnmarshaller();        
+        private static KafkaActionHeaderUnmarshaller _instance = new KafkaActionHeaderUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KafkaActionUnmarshaller Instance
+        public static KafkaActionHeaderUnmarshaller Instance
         {
             get
             {

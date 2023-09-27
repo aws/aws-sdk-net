@@ -35,7 +35,7 @@ namespace Amazon.IoT.Model
     ///  
     /// <para>
     ///  <b>Note:</b> If a package version is designated as default, you must remove the designation
-    /// from the package using the <a>UpdatePackage</a> action.
+    /// from the software package using the <a>UpdatePackage</a> action.
     /// </para>
     /// </summary>
     public partial class DeletePackageVersionRequest : AmazonIoTRequest
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// The name of the associated package.
+        /// The name of the associated software package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

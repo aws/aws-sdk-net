@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePackageConfiguration operation.
-    /// Updates the package configuration.
+    /// Updates the software package configuration.
     /// 
     ///  
     /// <para>

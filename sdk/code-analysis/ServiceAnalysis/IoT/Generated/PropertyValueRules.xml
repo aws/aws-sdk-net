@@ -3533,6 +3533,16 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.KafkaActionHeader.Key</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.KafkaActionHeader.Value</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PrivateKey</property>
     <min>1</min>
   </property-value-rule>
