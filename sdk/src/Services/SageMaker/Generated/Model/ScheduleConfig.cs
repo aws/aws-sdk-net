@@ -128,6 +128,14 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  <code>cron(0 [00-23] ? * * *)</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to run the job one time, immediately, use the following keyword:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>NOW</code> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For example, the following are valid cron expressions:

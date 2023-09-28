@@ -29,28 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Represents the JSON dataset format used when running a monitoring job.
+    /// Configuration for your vector collection type.
     /// </summary>
-    public partial class MonitoringJsonDatasetFormat
+    public partial class VectorConfig
     {
-        private bool? _line;
+        private int? _dimension;
 
         /// <summary>
-        /// Gets and sets the property Line. 
+        /// Gets and sets the property Dimension. 
         /// <para>
-        /// Indicates if the file should be read as a JSON object per line. 
+        /// The number of elements in your vector.
         /// </para>
         /// </summary>
-        public bool Line
+        [AWSProperty(Required=true, Min=1, Max=8192)]
+        public int Dimension
         {
-            get { return this._line.GetValueOrDefault(); }
-            set { this._line = value; }
+            get { return this._dimension.GetValueOrDefault(); }
+            set { this._dimension = value; }
         }
 
-        // Check to see if Line property is set
-        internal bool IsSetLine()
+        // Check to see if Dimension property is set
+        internal bool IsSetDimension()
         {
-            return this._line.HasValue; 
+            return this._dimension.HasValue; 
         }
 
     }

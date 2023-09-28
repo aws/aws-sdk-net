@@ -212,9 +212,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
-        /// (IAM) role that has read permission to the input data location and write permission
-        /// to the output data location in Amazon S3.
+        /// The Amazon Resource Name (ARN) of the IAM role that has read permission to the input
+        /// data location and write permission to the output data location in Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

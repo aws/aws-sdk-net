@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStorageType())
+            {
+                context.Writer.WritePropertyName("StorageType");
+                context.Writer.Write(requestObject.StorageType);
+            }
+
             if(requestObject.IsSetTtlDuration())
             {
                 context.Writer.WritePropertyName("TtlDuration");

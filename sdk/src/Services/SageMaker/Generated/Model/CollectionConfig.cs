@@ -29,36 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Stores the holiday featurization attributes applicable to each item of time-series
-    /// datasets during the training of a forecasting model. This allows the model to identify
-    /// patterns associated with specific holidays.
+    /// Configuration for your collection.
     /// </summary>
-    public partial class HolidayConfigAttributes
+    public partial class CollectionConfig
     {
-        private string _countryCode;
+        private VectorConfig _vectorConfig;
 
         /// <summary>
-        /// Gets and sets the property CountryCode. 
+        /// Gets and sets the property VectorConfig. 
         /// <para>
-        /// The country code for the holiday calendar.
+        /// Configuration for your vector collection type.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
-        /// Codes</a>. Use the country code corresponding to the country of your choice.
+        ///  <code>Dimension</code>: The number of elements in your vector.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=2, Max=2)]
-        public string CountryCode
+        public VectorConfig VectorConfig
         {
-            get { return this._countryCode; }
-            set { this._countryCode = value; }
+            get { return this._vectorConfig; }
+            set { this._vectorConfig = value; }
         }
 
-        // Check to see if CountryCode property is set
-        internal bool IsSetCountryCode()
+        // Check to see if VectorConfig property is set
+        internal bool IsSetVectorConfig()
         {
-            return this._countryCode != null;
+            return this._vectorConfig != null;
         }
 
     }

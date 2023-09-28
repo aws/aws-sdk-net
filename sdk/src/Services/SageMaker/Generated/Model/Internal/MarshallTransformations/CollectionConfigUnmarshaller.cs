@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnlineStoreConfig Object
+    /// Response Unmarshaller for CollectionConfig Object
     /// </summary>  
-    public class OnlineStoreConfigUnmarshaller : IUnmarshaller<OnlineStoreConfig, XmlUnmarshallerContext>, IUnmarshaller<OnlineStoreConfig, JsonUnmarshallerContext>
+    public class CollectionConfigUnmarshaller : IUnmarshaller<CollectionConfig, XmlUnmarshallerContext>, IUnmarshaller<CollectionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OnlineStoreConfig IUnmarshaller<OnlineStoreConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CollectionConfig IUnmarshaller<CollectionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnlineStoreConfig Unmarshall(JsonUnmarshallerContext context)
+        public CollectionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnlineStoreConfig unmarshalledObject = new OnlineStoreConfig();
+            CollectionConfig unmarshalledObject = new CollectionConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EnableOnlineStore", targetDepth))
+                if (context.TestExpression("VectorConfig", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableOnlineStore = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityConfig", targetDepth))
-                {
-                    var unmarshaller = OnlineStoreSecurityConfigUnmarshaller.Instance;
-                    unmarshalledObject.SecurityConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StorageType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TtlDuration", targetDepth))
-                {
-                    var unmarshaller = TtlDurationUnmarshaller.Instance;
-                    unmarshalledObject.TtlDuration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = VectorConfigUnmarshaller.Instance;
+                    unmarshalledObject.VectorConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OnlineStoreConfigUnmarshaller _instance = new OnlineStoreConfigUnmarshaller();        
+        private static CollectionConfigUnmarshaller _instance = new CollectionConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnlineStoreConfigUnmarshaller Instance
+        public static CollectionConfigUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FeatureDefinition Marshaller
+    /// VectorConfig Marshaller
     /// </summary>
-    public class FeatureDefinitionMarshaller : IRequestMarshaller<FeatureDefinition, JsonMarshallerContext> 
+    public class VectorConfigMarshaller : IRequestMarshaller<VectorConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FeatureDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(VectorConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCollectionConfig())
+            if(requestObject.IsSetDimension())
             {
-                context.Writer.WritePropertyName("CollectionConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CollectionConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.CollectionConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetCollectionType())
-            {
-                context.Writer.WritePropertyName("CollectionType");
-                context.Writer.Write(requestObject.CollectionType);
-            }
-
-            if(requestObject.IsSetFeatureName())
-            {
-                context.Writer.WritePropertyName("FeatureName");
-                context.Writer.Write(requestObject.FeatureName);
-            }
-
-            if(requestObject.IsSetFeatureType())
-            {
-                context.Writer.WritePropertyName("FeatureType");
-                context.Writer.Write(requestObject.FeatureType);
+                context.Writer.WritePropertyName("Dimension");
+                context.Writer.Write(requestObject.Dimension);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FeatureDefinitionMarshaller Instance = new FeatureDefinitionMarshaller();
+        public readonly static VectorConfigMarshaller Instance = new VectorConfigMarshaller();
 
     }
 }

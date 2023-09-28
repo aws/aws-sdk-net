@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
     {
         private bool? _enableOnlineStore;
         private OnlineStoreSecurityConfig _securityConfig;
+        private StorageType _storageType;
         private TtlDuration _ttlDuration;
 
         /// <summary>
@@ -84,6 +85,34 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecurityConfig()
         {
             return this._securityConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Option for different tiers of low latency storage for real-time data retrieval.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Standard</code>: A managed low latency data store for feature groups.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InMemory</code>: A managed data store for feature groups that supports very
+        /// low latency retrieval. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>
