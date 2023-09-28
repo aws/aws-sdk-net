@@ -293,7 +293,7 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// ETag that should not be matched as a pre-condition for returning the object,
-        /// otherwise a PreconditionFailed signal is returned.
+        /// otherwise a NotModified (304) signal is returned.
         /// </summary>
         public string EtagToNotMatch
         {
