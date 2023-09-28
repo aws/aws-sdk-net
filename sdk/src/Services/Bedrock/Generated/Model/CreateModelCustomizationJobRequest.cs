@@ -1,0 +1,324 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the bedrock-2023-04-20.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Bedrock.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateModelCustomizationJob operation.
+    /// Creates a fine-tuning job to customize a base model.
+    /// 
+    ///  
+    /// <para>
+    /// You specify the base foundation model and the location of the training data. After
+    /// the model-customization job completes successfully, your custom model resource will
+    /// be ready to use. Training data contains input and output text for each record in a
+    /// JSONL format. Optionally, you can specify validation data in the same format as the
+    /// training data. Bedrock returns validation loss metrics and output generations after
+    /// the job completes. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  Model-customization jobs are asynchronous and the completion time depends on the
+    /// base model and the training/validation data size. To monitor a job, use the <code>GetModelCustomizationJob</code>
+    /// operation to retrieve the job status.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+    /// models</a> in the Bedrock User Guide.
+    /// </para>
+    /// </summary>
+    public partial class CreateModelCustomizationJobRequest : AmazonBedrockRequest
+    {
+        private string _baseModelIdentifier;
+        private string _clientRequestToken;
+        private string _customModelKmsKeyId;
+        private string _customModelName;
+        private List<Tag> _customModelTags = new List<Tag>();
+        private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
+        private string _jobName;
+        private List<Tag> _jobTags = new List<Tag>();
+        private OutputDataConfig _outputDataConfig;
+        private string _roleArn;
+        private TrainingDataConfig _trainingDataConfig;
+        private ValidationDataConfig _validationDataConfig;
+        private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property BaseModelIdentifier. 
+        /// <para>
+        /// Name of the base model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string BaseModelIdentifier
+        {
+            get { return this._baseModelIdentifier; }
+            set { this._baseModelIdentifier = value; }
+        }
+
+        // Check to see if BaseModelIdentifier property is set
+        internal bool IsSetBaseModelIdentifier()
+        {
+            return this._baseModelIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// Unique token value that you can provide. The GetModelCustomizationJob response includes
+        /// the same token value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ClientRequestToken
+        {
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
+        }
+
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
+        {
+            return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomModelKmsKeyId. 
+        /// <para>
+        /// The custom model is encrypted at rest using this key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CustomModelKmsKeyId
+        {
+            get { return this._customModelKmsKeyId; }
+            set { this._customModelKmsKeyId = value; }
+        }
+
+        // Check to see if CustomModelKmsKeyId property is set
+        internal bool IsSetCustomModelKmsKeyId()
+        {
+            return this._customModelKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomModelName. 
+        /// <para>
+        /// Enter a name for the custom model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string CustomModelName
+        {
+            get { return this._customModelName; }
+            set { this._customModelName = value; }
+        }
+
+        // Check to see if CustomModelName property is set
+        internal bool IsSetCustomModelName()
+        {
+            return this._customModelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomModelTags. 
+        /// <para>
+        /// Assign tags to the custom model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> CustomModelTags
+        {
+            get { return this._customModelTags; }
+            set { this._customModelTags = value; }
+        }
+
+        // Check to see if CustomModelTags property is set
+        internal bool IsSetCustomModelTags()
+        {
+            return this._customModelTags != null && this._customModelTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HyperParameters. 
+        /// <para>
+        /// Parameters related to tuning the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Dictionary<string, string> HyperParameters
+        {
+            get { return this._hyperParameters; }
+            set { this._hyperParameters = value; }
+        }
+
+        // Check to see if HyperParameters property is set
+        internal bool IsSetHyperParameters()
+        {
+            return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// Enter a unique name for the fine-tuning job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string JobName
+        {
+            get { return this._jobName; }
+            set { this._jobName = value; }
+        }
+
+        // Check to see if JobName property is set
+        internal bool IsSetJobName()
+        {
+            return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTags. 
+        /// <para>
+        /// Assign tags to the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> JobTags
+        {
+            get { return this._jobTags; }
+            set { this._jobTags = value; }
+        }
+
+        // Check to see if JobTags property is set
+        internal bool IsSetJobTags()
+        {
+            return this._jobTags != null && this._jobTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        /// S3 location for the output data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public OutputDataConfig OutputDataConfig
+        {
+            get { return this._outputDataConfig; }
+            set { this._outputDataConfig = value; }
+        }
+
+        // Check to see if OutputDataConfig property is set
+        internal bool IsSetOutputDataConfig()
+        {
+            return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks
+        /// on your behalf. For example, during model training, Bedrock needs your permission
+        /// to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass
+        /// this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code>
+        /// permission. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataConfig. 
+        /// <para>
+        /// Information about the training dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TrainingDataConfig TrainingDataConfig
+        {
+            get { return this._trainingDataConfig; }
+            set { this._trainingDataConfig = value; }
+        }
+
+        // Check to see if TrainingDataConfig property is set
+        internal bool IsSetTrainingDataConfig()
+        {
+            return this._trainingDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationDataConfig. 
+        /// <para>
+        /// Information about the validation dataset. 
+        /// </para>
+        /// </summary>
+        public ValidationDataConfig ValidationDataConfig
+        {
+            get { return this._validationDataConfig; }
+            set { this._validationDataConfig = value; }
+        }
+
+        // Check to see if ValidationDataConfig property is set
+        internal bool IsSetValidationDataConfig()
+        {
+            return this._validationDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// VPC configuration (optional). Configuration parameters for the private Virtual Private
+        /// Cloud (VPC) that contains the resources you are using for this job.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
+        }
+
+    }
+}
