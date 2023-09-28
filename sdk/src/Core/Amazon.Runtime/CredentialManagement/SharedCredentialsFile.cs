@@ -53,6 +53,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string MaxAttemptsField = "max_attempts";
         private const string SsoAccountId = "sso_account_id";
         private const string SsoRegion = "sso_region";
+        private const string SsoRegistrationScopes = "sso_registration_scopes";
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
         private const string SsoSession = "sso_session";
@@ -187,6 +188,7 @@ namespace Amazon.Runtime.CredentialManagement
 #if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
+                    { nameof(CredentialProfileOptions.SsoRegistrationScopes), SsoRegistrationScopes },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
@@ -812,6 +814,7 @@ namespace Amazon.Runtime.CredentialManagement
                     if (TryGetProfile(session, doRefresh: false, isSsoSession: true, isServicesSection:false, out var sessionProfile))
                     {
                         profileOptions.SsoRegion = sessionProfile.Options.SsoRegion;
+                        profileOptions.SsoRegistrationScopes = sessionProfile.Options.SsoRegistrationScopes;
                         profileOptions.SsoStartUrl = sessionProfile.Options.SsoStartUrl;
                     }
                     else
