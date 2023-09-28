@@ -57,6 +57,17 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                 context.Writer.Write(requestObject.ValueAsString);
             }
 
+            if(requestObject.IsSetValueAsStringList())
+            {
+                context.Writer.WritePropertyName("ValueAsStringList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectValueAsStringListListValue in requestObject.ValueAsStringList)
+                {
+                        context.Writer.Write(requestObjectValueAsStringListListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

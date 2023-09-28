@@ -76,6 +76,12 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                     unmarshalledObject.ValueAsString = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValueAsStringList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ValueAsStringList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
