@@ -827,6 +827,40 @@ namespace Amazon.IoTFleetWise
 
         #endregion
                 
+        #region  GetEncryptionConfiguration
+
+
+
+        /// <summary>
+        /// Retrieves the encryption configuration for resources and data in Amazon Web Services
+        /// IoT FleetWise.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEncryptionConfiguration service method, as returned by IoTFleetWise.</returns>
+        /// <exception cref="Amazon.IoTFleetWise.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.InternalServerException">
+        /// The request couldn't be completed because the server temporarily failed.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
+        /// The request couldn't be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">REST API Reference for GetEncryptionConfiguration Operation</seealso>
+        Task<GetEncryptionConfigurationResponse> GetEncryptionConfigurationAsync(GetEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetFleet
 
 
@@ -1658,6 +1692,46 @@ namespace Amazon.IoTFleetWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListVehiclesInFleet">REST API Reference for ListVehiclesInFleet Operation</seealso>
         Task<ListVehiclesInFleetResponse> ListVehiclesInFleetAsync(ListVehiclesInFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutEncryptionConfiguration
+
+
+
+        /// <summary>
+        /// Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise
+        /// can encrypt your data and resources using an Amazon Web Services managed key. Or,
+        /// you can use a KMS key that you own and manage. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data
+        /// encryption</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutEncryptionConfiguration service method, as returned by IoTFleetWise.</returns>
+        /// <exception cref="Amazon.IoTFleetWise.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ConflictException">
+        /// The request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.InternalServerException">
+        /// The request couldn't be completed because the server temporarily failed.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
+        /// The request couldn't be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">REST API Reference for PutEncryptionConfiguration Operation</seealso>
+        Task<PutEncryptionConfigurationResponse> PutEncryptionConfigurationAsync(PutEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
