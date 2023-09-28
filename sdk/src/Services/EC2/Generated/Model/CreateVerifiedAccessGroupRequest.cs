@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private string _description;
         private string _policyDocument;
+        private VerifiedAccessSseSpecificationRequest _sseSpecification;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _verifiedAccessInstanceId;
 
@@ -98,6 +99,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPolicyDocument()
         {
             return this._policyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseSpecification. 
+        /// <para>
+        ///  Options for server side encryption. 
+        /// </para>
+        /// </summary>
+        public VerifiedAccessSseSpecificationRequest SseSpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SseSpecification property is set
+        internal bool IsSetSseSpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

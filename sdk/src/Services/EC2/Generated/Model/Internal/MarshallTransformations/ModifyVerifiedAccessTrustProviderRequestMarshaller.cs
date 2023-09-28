@@ -101,6 +101,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("OidcOptions" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequest.OidcOptions.UserInfoEndpoint));
                     }
                 }
+                if(publicRequest.IsSetSseSpecification())
+                {
+                    if(publicRequest.SseSpecification.IsSetCustomerManagedKeyEnabled())
+                    {
+                        request.Parameters.Add("SseSpecification" + "." + "CustomerManagedKeyEnabled", StringUtils.FromBool(publicRequest.SseSpecification.CustomerManagedKeyEnabled));
+                    }
+                    if(publicRequest.SseSpecification.IsSetKmsKeyArn())
+                    {
+                        request.Parameters.Add("SseSpecification" + "." + "KmsKeyArn", StringUtils.FromString(publicRequest.SseSpecification.KmsKeyArn));
+                    }
+                }
                 if(publicRequest.IsSetVerifiedAccessTrustProviderId())
                 {
                     request.Parameters.Add("VerifiedAccessTrustProviderId", StringUtils.FromString(publicRequest.VerifiedAccessTrustProviderId));

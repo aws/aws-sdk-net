@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _policyDocument;
         private bool? _policyEnabled;
+        private VerifiedAccessSseSpecificationResponse _sseSpecification;
 
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
@@ -70,6 +71,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPolicyEnabled()
         {
             return this._policyEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseSpecification. 
+        /// <para>
+        ///  Describes the options in use for server side encryption. 
+        /// </para>
+        /// </summary>
+        public VerifiedAccessSseSpecificationResponse SseSpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SseSpecification property is set
+        internal bool IsSetSseSpecification()
+        {
+            return this._sseSpecification != null;
         }
 
     }

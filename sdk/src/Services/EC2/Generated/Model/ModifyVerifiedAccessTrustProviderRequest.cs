@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private string _description;
         private ModifyVerifiedAccessTrustProviderOidcOptions _oidcOptions;
+        private VerifiedAccessSseSpecificationRequest _sseSpecification;
         private string _verifiedAccessTrustProviderId;
 
         /// <summary>
@@ -94,6 +95,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOidcOptions()
         {
             return this._oidcOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseSpecification. 
+        /// <para>
+        ///  Options for server side encryption. 
+        /// </para>
+        /// </summary>
+        public VerifiedAccessSseSpecificationRequest SseSpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SseSpecification property is set
+        internal bool IsSetSseSpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

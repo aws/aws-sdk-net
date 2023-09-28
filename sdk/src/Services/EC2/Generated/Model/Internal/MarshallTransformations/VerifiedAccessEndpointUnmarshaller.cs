@@ -133,6 +133,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SecurityGroupIds.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("sseSpecification", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessSseSpecificationResponseUnmarshaller.Instance;
+                        unmarshalledObject.SseSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("status", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessEndpointStatusUnmarshaller.Instance;

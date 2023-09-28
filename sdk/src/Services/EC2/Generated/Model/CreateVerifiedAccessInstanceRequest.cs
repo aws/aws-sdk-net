@@ -81,8 +81,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FIPSEnabled. 
         /// <para>
-        ///  Choose to enable or disable support for Federal Information Processing Standards
-        /// (FIPS) on the instance. 
+        /// Enable or disable support for Federal Information Processing Standards (FIPS) on the
+        /// instance.
         /// </para>
         /// </summary>
         public bool FIPSEnabled

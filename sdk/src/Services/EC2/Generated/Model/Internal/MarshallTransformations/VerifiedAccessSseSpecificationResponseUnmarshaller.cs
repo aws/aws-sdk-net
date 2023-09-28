@@ -32,82 +32,72 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyVerifiedAccessGroupPolicy operation
+    /// Response Unmarshaller for VerifiedAccessSseSpecificationResponse Object
     /// </summary>  
-    public class ModifyVerifiedAccessGroupPolicyResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class VerifiedAccessSseSpecificationResponseUnmarshaller : IUnmarshaller<VerifiedAccessSseSpecificationResponse, XmlUnmarshallerContext>, IUnmarshaller<VerifiedAccessSseSpecificationResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public VerifiedAccessSseSpecificationResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ModifyVerifiedAccessGroupPolicyResponse response = new ModifyVerifiedAccessGroupPolicyResponse();
-
+            VerifiedAccessSseSpecificationResponse unmarshalledObject = new VerifiedAccessSseSpecificationResponse();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("policyDocument", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.PolicyDocument = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("policyEnabled", targetDepth))
+                    if (context.TestExpression("customerManagedKeyEnabled", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        response.PolicyEnabled = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CustomerManagedKeyEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("sseSpecification", targetDepth))
+                    if (context.TestExpression("kmsKeyArn", targetDepth))
                     {
-                        var unmarshaller = VerifiedAccessSseSpecificationResponseUnmarshaller.Instance;
-                        response.SseSpecification = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public VerifiedAccessSseSpecificationResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static ModifyVerifiedAccessGroupPolicyResponseUnmarshaller _instance = new ModifyVerifiedAccessGroupPolicyResponseUnmarshaller();        
 
-        internal static ModifyVerifiedAccessGroupPolicyResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static VerifiedAccessSseSpecificationResponseUnmarshaller _instance = new VerifiedAccessSseSpecificationResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyVerifiedAccessGroupPolicyResponseUnmarshaller Instance
+        public static VerifiedAccessSseSpecificationResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }
