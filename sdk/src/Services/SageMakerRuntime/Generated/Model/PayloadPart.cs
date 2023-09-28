@@ -45,6 +45,8 @@ namespace Amazon.SageMakerRuntime.Model
     {
         Bytes = new MemoryStream(message.Payload);
     }
+
+    partial void Deserialize(IEventStreamMessage message);
         private MemoryStream _bytes;
 
         /// <summary>

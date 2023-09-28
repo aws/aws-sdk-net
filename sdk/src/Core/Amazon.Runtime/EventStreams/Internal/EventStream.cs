@@ -308,13 +308,10 @@ namespace Amazon.Runtime.EventStreams.Internal
         protected void ReadFromStream(byte[] buffer)
         {
             var bytesRead = NetworkStream.Read(buffer, 0, buffer.Length);
-            if (NetworkStream.CanRead)
+            if (bytesRead > 0)
             {
-                if (bytesRead > 0)
-                {
-                    // Decoder raises MessageReceived for every message it encounters.
-                    Decoder.ProcessData(buffer, 0, bytesRead);
-                }
+                // Decoder raises MessageReceived for every message it encounters.
+                Decoder.ProcessData(buffer, 0, bytesRead);
             }
             else
             {

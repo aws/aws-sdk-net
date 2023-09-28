@@ -43,7 +43,7 @@ namespace Amazon.SageMakerRuntime.Model
         ///The mapping of event message to a generator function to construct the matching EventStream event
         ///</summary>
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
-        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>
+        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"PayloadPart", payload => new PayloadPart(payload)},
         };

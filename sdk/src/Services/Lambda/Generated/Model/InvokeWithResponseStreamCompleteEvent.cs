@@ -35,7 +35,6 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class InvokeWithResponseStreamCompleteEvent
         : IEventStreamEvent
-        ,IEventStreamTerminalEvent
     {
     public InvokeWithResponseStreamCompleteEvent()
     {
@@ -43,7 +42,10 @@ namespace Amazon.Lambda.Model
 
     public InvokeWithResponseStreamCompleteEvent(IEventStreamMessage message)
     {
+        Deserialize(message);
     }
+
+    partial void Deserialize(IEventStreamMessage message);
         private string _errorCode;
         private string _errorDetails;
         private string _logResult;

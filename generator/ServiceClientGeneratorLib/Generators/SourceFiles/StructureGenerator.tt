@@ -81,7 +81,7 @@ namespace <#=this.Config.Namespace#>.Model
         ///The mapping of event message to a generator function to construct the matching EventStream event
         ///</summary>
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
-        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>
+        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
 <#
         foreach(var member in this.Structure.Members)
@@ -226,14 +226,6 @@ namespace <#=this.Config.Namespace#>.Model
 <#
             }
 #>
-<#
-            if(structureIsEvent && !structureContainsEventPayload)
-            {
-#>
-        ,IEventStreamTerminalEvent
-<#
-            }
-#>
     {
 <#
         }
@@ -258,8 +250,16 @@ namespace <#=this.Config.Namespace#>.Model
         <#=payloadMember.PropertyName#> = new <#=payloadMember.DetermineType()#>(message.Payload);
 <#
         }
+        else
+        {
+#>
+        Deserialize(message);
+<#
+        }
 #>
     }
+
+    partial void Deserialize(IEventStreamMessage message);
 <#
     }
 #>

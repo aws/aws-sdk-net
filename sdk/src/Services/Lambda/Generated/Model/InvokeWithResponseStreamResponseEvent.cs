@@ -43,7 +43,7 @@ namespace Amazon.Lambda.Model
         ///The mapping of event message to a generator function to construct the matching EventStream event
         ///</summary>
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
-        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>
+        new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"InvokeComplete", payload => new InvokeWithResponseStreamCompleteEvent(payload)},
             {"PayloadChunk", payload => new InvokeResponseStreamUpdate(payload)},
