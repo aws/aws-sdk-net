@@ -270,7 +270,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountRequest.MaxResults</property>
     <min>1</min>
-    <max>50</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountRequest.NextToken</property>
@@ -322,7 +322,7 @@
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetsRequest.NextToken</property>

@@ -82,7 +82,6 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional integer that represents how many entries a paginated response contains.
-        /// The maximum is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

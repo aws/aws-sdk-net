@@ -49,8 +49,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>accountId</code> that is associated with the budgets that you want descriptions
-        /// of.
+        /// The <code>accountId</code> that is associated with the budgets that you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -69,11 +68,11 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// An optional integer that represents how many entries a paginated response contains.
-        /// The maximum is 100.
+        /// An integer that represents how many budgets a paginated response contains. The default
+        /// is 100.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

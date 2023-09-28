@@ -42,7 +42,7 @@ namespace Amazon.Budgets.Model
         ///  A list of budget names and associated notifications for an account. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Max=1000)]
         public List<BudgetNotificationsForAccount> BudgetNotificationsForAccount
         {
             get { return this._budgetNotificationsForAccount; }
