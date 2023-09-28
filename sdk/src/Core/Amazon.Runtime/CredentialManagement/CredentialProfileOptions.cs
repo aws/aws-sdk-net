@@ -122,6 +122,11 @@ namespace Amazon.Runtime.CredentialManagement
         public string SsoRegion { get; set; }
 
         /// <summary>
+        /// The SSO scopes that are provided for authorization when using AWS SSO.
+        /// </summary>
+        public string SsoRegistrationScopes { get; set; }
+
+        /// <summary>
         /// The corresponding IAM role in the AWS account that temporary AWS credentials will be resolved for using AWS SSO.
         /// </summary>
         public string SsoRoleName { get; set; }

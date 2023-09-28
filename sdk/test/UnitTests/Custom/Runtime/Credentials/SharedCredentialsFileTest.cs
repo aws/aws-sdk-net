@@ -40,6 +40,7 @@ namespace AWSSDK.UnitTests
         {
             public const string SsoAccountId = "sso_account_id";
             public const string SsoRegion = "sso_region";
+            public const string SsoRegistrationScopes = "sso_registration_scopes";
             public const string SsoRoleName = "sso_role_name";
             public const string SsoStartUrl = "sso_start_url";
             public const string SsoSession = "sso_session";
@@ -117,6 +118,7 @@ namespace AWSSDK.UnitTests
             .AppendLine()
             .AppendLine($"[sso-session {SampleValues.SsoSession}]")
             .AppendLine($"sso_region={SampleValues.SsoRegion}")
+            .AppendLine($"sso_registration_scopes={SampleValues.SsoRegistrationScopes}")
             .Append($"sso_start_url={SampleValues.SsoStartUrl}")
             .ToString();
 
@@ -148,6 +150,7 @@ namespace AWSSDK.UnitTests
             .AppendLine()
             .AppendLine($"[sso-session {SampleValues.SsoSession}]")
             .AppendLine($"sso_region={SampleValues.SsoRegion}")
+            .AppendLine($"sso_registration_scopes={SampleValues.SsoRegistrationScopes}")
             .Append($"sso_start_url={SampleValues.SsoStartUrl}")
             .ToString();
 
@@ -163,6 +166,7 @@ namespace AWSSDK.UnitTests
         {
             SsoAccountId = SampleValues.SsoAccountId,
             SsoRegion = SampleValues.SsoRegion,
+            SsoRegistrationScopes = SampleValues.SsoRegistrationScopes,
             SsoRoleName = SampleValues.SsoRoleName,
             SsoStartUrl = SampleValues.SsoStartUrl,
             SsoSession = SampleValues.SsoSession
@@ -176,6 +180,7 @@ namespace AWSSDK.UnitTests
             SsoRoleName = $"updated_{SampleValues.SsoRoleName}",
             SsoSession = SampleValues.SsoSession,
             SsoRegion = SampleValues.SsoRegion,
+            SsoRegistrationScopes = SampleValues.SsoRegistrationScopes,
             SsoStartUrl = SampleValues.SsoStartUrl,
         };
 #endif
