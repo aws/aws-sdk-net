@@ -1,3 +1,12 @@
+### 3.7.653.1 (2023-09-28 02:14 UTC)
+* Core 3.7.202.16
+	* Ensure MemoryStreams used as request payloads are at the beginning position before sending request.
+Optimize memory allocations for HMAC signing.
+Removed temporary strings when converting bytes to their ASCII hex representation.
+Fix the typo with 'insufficient' across the repo.
+Fixes for processing events from eventstream APIs.
+	* All services packages updated to require new Core
+
 ### 3.7.653.0 (2023-09-27 18:25 UTC)
 * CognitoIdentityProvider (3.7.203.0)
 	* The UserPoolType Status field is no longer used.
