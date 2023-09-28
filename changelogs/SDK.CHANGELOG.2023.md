@@ -1,3 +1,24 @@
+### 3.7.654.0 (2023-09-28 19:03 UTC)
+* Bedrock (3.7.200.0)
+	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
+* BedrockRuntime (3.7.200.0)
+	* Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
+* Budgets (3.7.202.0)
+	* Update DescribeBudgets and DescribeBudgetNotificationsForAccount MaxResults limit to 1000.
+* EC2 (3.7.217.0)
+	* Adds support for Customer Managed Key encryption for Amazon Verified Access resources
+* IoTFleetWise (3.7.201.0)
+	* AWS IoT FleetWise now supports encryption through a customer managed AWS KMS key. The PutEncryptionConfiguration and GetEncryptionConfiguration APIs were added.
+* SageMaker (3.7.215.0)
+	* Online store feature groups supports Standard and InMemory tier storage types for low latency storage for real-time data retrieval. The InMemory tier supports collection types List, Set, and Vector.
+* SageMakerFeatureStoreRuntime (3.7.202.0)
+	* Feature Store supports read/write of records with collection type features.
+* WAFV2 (3.7.203.3)
+	* Correct and improve the documentation for the FieldToMatch option JA3 fingerprint.
+* Core 3.7.202.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.653.1 (2023-09-28 02:14 UTC)
 * Core 3.7.202.16
 	* Ensure MemoryStreams used as request payloads are at the beginning position before sending request.
