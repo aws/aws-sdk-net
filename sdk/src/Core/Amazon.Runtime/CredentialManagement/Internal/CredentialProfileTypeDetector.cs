@@ -129,12 +129,13 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 #if !BCL35
         private const string SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId);
         private const string SsoRegion = nameof(CredentialProfileOptions.SsoRegion);
+        private const string SsoRegistrationScopes = nameof(CredentialProfileOptions.SsoRegistrationScopes);
         private const string SsoRoleName = nameof(CredentialProfileOptions.SsoRoleName);
         private const string SsoStartUrl = nameof(CredentialProfileOptions.SsoStartUrl);
         private const string SsoSession = nameof(CredentialProfileOptions.SsoSession);
 
         private static HashSet<string> SsoProperties = new HashSet<string>(
-            new string[] {SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl, SsoSession},
+            new string[] {SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession},
             StringComparer.OrdinalIgnoreCase);
 #endif
 
@@ -732,6 +733,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     {
                         SsoAccountId,
                         SsoRegion,
+                        SsoRegistrationScopes,
                         SsoRoleName,
                         SsoStartUrl,
                         SsoSession
