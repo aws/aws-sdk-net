@@ -194,6 +194,7 @@ namespace Amazon.Runtime.CredentialManagement
 #if !BCL35
                 ", " + "SsoAccountId=" + SsoAccountId +
                 ", " + "SsoRegion=" + SsoRegion +
+                ", " + "SsoRegistrationScopes=" + SsoRegistrationScopes +
                 ", " + "SsoRoleName=" + SsoRoleName +
                 ", " + "SsoStartUrl=" + SsoStartUrl +
                 ", " + "SsoSession=" + SsoSession +
@@ -212,8 +213,8 @@ namespace Amazon.Runtime.CredentialManagement
 
 #if !BCL35
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl },
-                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile, po.SsoAccountId, po.SsoRegion, po.SsoRoleName, po.SsoStartUrl, po.SsoSession, po.Services, po.EndpointUrl });
+                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl },
+                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile, po.SsoAccountId, po.SsoRegion, po.SsoRegistrationScopes, po.SsoRoleName, po.SsoStartUrl, po.SsoSession, po.Services, po.EndpointUrl });
 #else
             return AWSSDKUtils.AreEqual(
                 new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile },
@@ -224,7 +225,7 @@ namespace Amazon.Runtime.CredentialManagement
         public override int GetHashCode()
         {
 #if !BCL35
-            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl);
+            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl);
 #else
             return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile);
 #endif
