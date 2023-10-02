@@ -10119,6 +10119,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R7gXlarge = new InstanceType("r7g.xlarge");
         /// <summary>
+        /// Constant R7iz12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iz12xlarge = new InstanceType("r7iz.12xlarge");
+        /// <summary>
+        /// Constant R7iz16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iz16xlarge = new InstanceType("r7iz.16xlarge");
+        /// <summary>
+        /// Constant R7iz2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iz2xlarge = new InstanceType("r7iz.2xlarge");
+        /// <summary>
+        /// Constant R7iz32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iz32xlarge = new InstanceType("r7iz.32xlarge");
+        /// <summary>
+        /// Constant R7iz4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iz4xlarge = new InstanceType("r7iz.4xlarge");
+        /// <summary>
+        /// Constant R7iz8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iz8xlarge = new InstanceType("r7iz.8xlarge");
+        /// <summary>
+        /// Constant R7izLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7izLarge = new InstanceType("r7iz.large");
+        /// <summary>
+        /// Constant R7izXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7izXlarge = new InstanceType("r7iz.xlarge");
+        /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
