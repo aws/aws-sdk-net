@@ -408,7 +408,7 @@ namespace Amazon.S3.Model
         {
             foreach (CopyPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response.PartNumber, response.ETag));
+                this.PartETags.Add(new PartETag(response));
             }
         }
 
@@ -420,7 +420,7 @@ namespace Amazon.S3.Model
         {
             foreach (CopyPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response.PartNumber, response.ETag));
+                this.PartETags.Add(new PartETag(response));
             }
         }
 
