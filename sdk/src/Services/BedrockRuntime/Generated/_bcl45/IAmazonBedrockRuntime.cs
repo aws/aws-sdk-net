@@ -48,8 +48,8 @@ namespace Amazon.BedrockRuntime
         /// 
         ///  
         /// <para>
-        /// For more information about invoking models, see Using the API in the <a href="https://d2eo22ngex1n9g.cloudfront.net/Documentation/BedrockUserGuide.pdf">Bedrock
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
         /// </para>
         ///  
         /// <para>
@@ -98,8 +98,8 @@ namespace Amazon.BedrockRuntime
         /// 
         ///  
         /// <para>
-        /// For more information about invoking models, see Using the API in the <a href="https://d2eo22ngex1n9g.cloudfront.net/Documentation/BedrockUserGuide.pdf">Bedrock
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
         /// </para>
         ///  
         /// <para>
@@ -153,8 +153,8 @@ namespace Amazon.BedrockRuntime
         /// 
         ///  
         /// <para>
-        /// For more information about invoking models, see Using the API in the <a href="https://d2eo22ngex1n9g.cloudfront.net/Documentation/BedrockUserGuide.pdf">Bedrock
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
         /// </para>
         ///  
         /// <para>
@@ -205,8 +205,8 @@ namespace Amazon.BedrockRuntime
         /// 
         ///  
         /// <para>
-        /// For more information about invoking models, see Using the API in the <a href="https://d2eo22ngex1n9g.cloudfront.net/Documentation/BedrockUserGuide.pdf">Bedrock
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
         /// </para>
         ///  
         /// <para>
