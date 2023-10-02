@@ -624,7 +624,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>String value of DynamoDBEntry</returns>
         public static implicit operator String(DynamoDBEntry p)
         {
-            return p?.AsString();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to string");
+
+            return p.AsString();
         }
 
         /// <summary>
@@ -709,7 +711,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>byte[] value of DynamoDBEntry</returns>
         public static explicit operator byte[](DynamoDBEntry p)
         {
-            return p?.AsByteArray();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to byte[]");
+
+            return p.AsByteArray();
         }
 
         /// <summary>
@@ -736,7 +740,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>MemoryStream value of DynamoDBEntry</returns>
         public static explicit operator MemoryStream(DynamoDBEntry p)
         {
-            return p?.AsMemoryStream();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to MemoryStream");
+
+            return p.AsMemoryStream();
         }
 
         #endregion
@@ -793,7 +799,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive[] value of DynamoDBEntry</returns>
         public static explicit operator Primitive[](DynamoDBEntry p)
         {
-            return p?.AsArrayOfPrimitive();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to Primitive[]");
+
+            return p.AsArrayOfPrimitive();
         }
 
         /// <summary>
@@ -820,7 +828,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;Primitive&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<Primitive>(DynamoDBEntry p)
         {
-            return p?.AsListOfPrimitive();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to List<Primitive>");
+
+            return p.AsListOfPrimitive();
         }
 
         /// <summary>
@@ -847,7 +857,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;Primitive&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<Primitive>(DynamoDBEntry p)
         {
-            return p?.AsHashSetOfPrimitive();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to HashSet<Primitive>");
+
+            return p.AsHashSetOfPrimitive();
         }
 
 
@@ -875,7 +887,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;Document&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<Document>(DynamoDBEntry p)
         {
-            return p?.AsListOfDocument();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to List<Document>");
+
+            return p.AsListOfDocument();
         }
 
 
@@ -903,7 +917,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>String[] value of DynamoDBEntry</returns>
         public static explicit operator String[](DynamoDBEntry p)
         {
-            return p?.AsArrayOfString();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to string[]");
+
+            return p.AsArrayOfString();
         }
 
         /// <summary>
@@ -930,7 +946,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;String&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<String>(DynamoDBEntry p)
         {
-            return p?.AsListOfString();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to List<string>");
+
+            return p.AsListOfString();
         }
 
         /// <summary>
@@ -957,7 +975,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;String&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<String>(DynamoDBEntry p)
         {
-            return p?.AsHashSetOfString();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to HashSet<string>");
+
+            return p.AsHashSetOfString();
         }
 
 
@@ -985,7 +1005,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;byte[]&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<byte[]>(DynamoDBEntry p)
         {
-            return p?.AsListOfByteArray();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to List<byte[]>");
+
+            return p.AsListOfByteArray();
         }
 
         /// <summary>
@@ -1012,7 +1034,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;byte[]&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<byte[]>(DynamoDBEntry p)
         {
-            return p?.AsHashSetOfByteArray();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to HashSet<byte[]>");
+
+            return p.AsHashSetOfByteArray();
         }
 
 
@@ -1040,7 +1064,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;MemoryStream&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<MemoryStream>(DynamoDBEntry p)
         {
-            return p?.AsListOfMemoryStream();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to List<MemoryStream>");
+
+            return p.AsListOfMemoryStream();
         }
 
         /// <summary>
@@ -1067,7 +1093,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;MemoryStream&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<MemoryStream>(DynamoDBEntry p)
         {
-            return p?.AsHashSetOfMemoryStream();
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to HashSet<MemoryStream>");
+
+            return p.AsHashSetOfMemoryStream();
         }
 
         #endregion
