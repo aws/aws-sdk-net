@@ -49,10 +49,6 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// goerli = <code>5</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// rinkeby = <code>4</code> 
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ChainId
