@@ -16,28 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the bedrock-2023-04-20.normal.json service model.
  */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Paginators for the Bedrock service
-    ///</summary>
-    public interface IBedrockPaginatorFactory
+    /// This is the response object from the DeleteProvisionedModelThroughput operation.
+    /// </summary>
+    public partial class DeleteProvisionedModelThroughputResponse : AmazonWebServiceResponse
     {
 
-        /// <summary>
-        /// Paginator for ListCustomModels operation
-        ///</summary>
-        IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request);
-
-        /// <summary>
-        /// Paginator for ListModelCustomizationJobs operation
-        ///</summary>
-        IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request);
-
-        /// <summary>
-        /// Paginator for ListProvisionedModelThroughputs operation
-        ///</summary>
-        IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request);
     }
 }

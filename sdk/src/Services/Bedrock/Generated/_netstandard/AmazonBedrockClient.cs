@@ -348,6 +348,70 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateProvisionedModelThroughput
+
+        internal virtual CreateProvisionedModelThroughputResponse CreateProvisionedModelThroughput(CreateProvisionedModelThroughputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProvisionedModelThroughputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a provisioned throughput with dedicated capacity for a foundation model or
+        /// a fine-tuned model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+        /// throughput</a> in the Bedrock User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedModelThroughput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProvisionedModelThroughput service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProvisionedModelThroughput">REST API Reference for CreateProvisionedModelThroughput Operation</seealso>
+        public virtual Task<CreateProvisionedModelThroughputResponse> CreateProvisionedModelThroughputAsync(CreateProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProvisionedModelThroughputResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCustomModel
 
         internal virtual DeleteCustomModelResponse DeleteCustomModel(DeleteCustomModelRequest request)
@@ -440,6 +504,59 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = DeleteModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteModelInvocationLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProvisionedModelThroughput
+
+        internal virtual DeleteProvisionedModelThroughputResponse DeleteProvisionedModelThroughput(DeleteProvisionedModelThroughputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProvisionedModelThroughputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+        /// throughput</a> in the Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedModelThroughput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProvisionedModelThroughput service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProvisionedModelThroughput">REST API Reference for DeleteProvisionedModelThroughput Operation</seealso>
+        public virtual Task<DeleteProvisionedModelThroughputResponse> DeleteProvisionedModelThroughputAsync(DeleteProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProvisionedModelThroughputResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -638,6 +755,56 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetProvisionedModelThroughput
+
+        internal virtual GetProvisionedModelThroughputResponse GetProvisionedModelThroughput(GetProvisionedModelThroughputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return Invoke<GetProvisionedModelThroughputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get details for a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+        /// throughput</a> in the Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProvisionedModelThroughput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProvisionedModelThroughput service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProvisionedModelThroughput">REST API Reference for GetProvisionedModelThroughput Operation</seealso>
+        public virtual Task<GetProvisionedModelThroughputResponse> GetProvisionedModelThroughputAsync(GetProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProvisionedModelThroughputResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCustomModels
 
         internal virtual ListCustomModelsResponse ListCustomModels(ListCustomModelsRequest request)
@@ -787,6 +954,53 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = ListModelCustomizationJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListModelCustomizationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProvisionedModelThroughputs
+
+        internal virtual ListProvisionedModelThroughputsResponse ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProvisionedModelThroughputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProvisionedModelThroughputsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProvisionedModelThroughputsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the provisioned capacities. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+        /// throughput</a> in the Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedModelThroughputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProvisionedModelThroughputs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProvisionedModelThroughputs">REST API Reference for ListProvisionedModelThroughputs Operation</seealso>
+        public virtual Task<ListProvisionedModelThroughputsResponse> ListProvisionedModelThroughputsAsync(ListProvisionedModelThroughputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProvisionedModelThroughputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProvisionedModelThroughputsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProvisionedModelThroughputsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1046,6 +1260,56 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProvisionedModelThroughput
+
+        internal virtual UpdateProvisionedModelThroughputResponse UpdateProvisionedModelThroughput(UpdateProvisionedModelThroughputRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProvisionedModelThroughputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+        /// throughput</a> in the Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProvisionedModelThroughput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProvisionedModelThroughput service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProvisionedModelThroughput">REST API Reference for UpdateProvisionedModelThroughput Operation</seealso>
+        public virtual Task<UpdateProvisionedModelThroughputResponse> UpdateProvisionedModelThroughputAsync(UpdateProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProvisionedModelThroughputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProvisionedModelThroughputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProvisionedModelThroughputResponse>(request, options, cancellationToken);
         }
 
         #endregion

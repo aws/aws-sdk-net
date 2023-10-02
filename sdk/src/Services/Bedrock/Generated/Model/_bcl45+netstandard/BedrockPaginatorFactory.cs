@@ -50,5 +50,13 @@ namespace Amazon.Bedrock.Model
         {
             return new ListModelCustomizationJobsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListProvisionedModelThroughputs operation
+        ///</summary>
+        public IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request) 
+        {
+            return new ListProvisionedModelThroughputsPaginator(this.client, request);
+        }
     }
 }

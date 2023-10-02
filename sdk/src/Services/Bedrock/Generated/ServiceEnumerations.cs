@@ -25,6 +25,56 @@ namespace Amazon.Bedrock
 {
 
     /// <summary>
+    /// Constants used for properties of type CommitmentDuration.
+    /// </summary>
+    public class CommitmentDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OneMonth for CommitmentDuration
+        /// </summary>
+        public static readonly CommitmentDuration OneMonth = new CommitmentDuration("OneMonth");
+        /// <summary>
+        /// Constant SixMonths for CommitmentDuration
+        /// </summary>
+        public static readonly CommitmentDuration SixMonths = new CommitmentDuration("SixMonths");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommitmentDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommitmentDuration FindValue(string value)
+        {
+            return FindValue<CommitmentDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommitmentDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FineTuningJobStatus.
     /// </summary>
     public class FineTuningJobStatus : ConstantClass
@@ -292,6 +342,110 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelModality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProvisionedModelStatus.
+    /// </summary>
+    public class ProvisionedModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for ProvisionedModelStatus
+        /// </summary>
+        public static readonly ProvisionedModelStatus Creating = new ProvisionedModelStatus("Creating");
+        /// <summary>
+        /// Constant Failed for ProvisionedModelStatus
+        /// </summary>
+        public static readonly ProvisionedModelStatus Failed = new ProvisionedModelStatus("Failed");
+        /// <summary>
+        /// Constant InService for ProvisionedModelStatus
+        /// </summary>
+        public static readonly ProvisionedModelStatus InService = new ProvisionedModelStatus("InService");
+        /// <summary>
+        /// Constant Updating for ProvisionedModelStatus
+        /// </summary>
+        public static readonly ProvisionedModelStatus Updating = new ProvisionedModelStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvisionedModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvisionedModelStatus FindValue(string value)
+        {
+            return FindValue<ProvisionedModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvisionedModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortByProvisionedModels.
+    /// </summary>
+    public class SortByProvisionedModels : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for SortByProvisionedModels
+        /// </summary>
+        public static readonly SortByProvisionedModels CreationTime = new SortByProvisionedModels("CreationTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortByProvisionedModels(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortByProvisionedModels FindValue(string value)
+        {
+            return FindValue<SortByProvisionedModels>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortByProvisionedModels(string value)
         {
             return FindValue(value);
         }

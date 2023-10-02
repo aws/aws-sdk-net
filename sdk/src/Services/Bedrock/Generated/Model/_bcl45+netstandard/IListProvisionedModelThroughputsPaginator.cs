@@ -16,28 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the bedrock-2023-04-20.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Paginators for the Bedrock service
+    /// Paginator for the ListProvisionedModelThroughputs operation
     ///</summary>
-    public interface IBedrockPaginatorFactory
+    public interface IListProvisionedModelThroughputsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListProvisionedModelThroughputsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListCustomModels operation
-        ///</summary>
-        IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request);
-
-        /// <summary>
-        /// Paginator for ListModelCustomizationJobs operation
-        ///</summary>
-        IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request);
-
-        /// <summary>
-        /// Paginator for ListProvisionedModelThroughputs operation
-        ///</summary>
-        IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request);
+        /// Enumerable containing all of the ProvisionedModelSummaries
+        /// </summary>
+        IPaginatedEnumerable<ProvisionedModelSummary> ProvisionedModelSummaries { get; }
     }
 }
