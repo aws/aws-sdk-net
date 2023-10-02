@@ -48,7 +48,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The three standard SSH public key format elements are <code>&lt;key type&gt;</code>,
         /// <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with
-        /// spaces between each element.
+        /// spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body
+        /// base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.
         /// </para>
         ///  
         /// <para>

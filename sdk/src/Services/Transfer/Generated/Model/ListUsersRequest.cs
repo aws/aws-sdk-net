@@ -62,9 +62,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-        /// parameter is returned in the output. You can then pass in a subsequent command to
-        /// the <code>NextToken</code> parameter to continue listing additional users.
+        /// If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
+        /// parameter is returned in the output. You can then pass the <code>NextToken</code>
+        /// to a subsequent <code>ListUsers</code> command, to continue listing additional users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

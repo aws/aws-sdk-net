@@ -287,14 +287,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -369,14 +369,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateAgreement service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -457,14 +457,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateConnector service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -532,8 +532,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateProfile service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -610,14 +609,14 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -691,14 +690,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the CreateUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -769,14 +768,14 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the Amazon Web ServicesTransfer Family service is not
@@ -841,8 +840,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -910,8 +908,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteAgreement service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -979,8 +976,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1048,8 +1044,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteConnector service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1117,8 +1112,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteHostKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1189,8 +1183,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteProfile service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1266,8 +1259,7 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1335,8 +1327,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteSshPublicKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1417,8 +1408,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1489,8 +1479,7 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1565,8 +1554,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1634,8 +1622,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeAgreement service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1703,8 +1690,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeCertificate service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1772,8 +1758,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeConnector service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1854,8 +1839,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeExecution service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1924,8 +1908,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeHostKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -1993,8 +1976,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeProfile service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -2065,8 +2047,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeSecurityPolicy service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -2141,8 +2122,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -2217,8 +2197,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -2286,8 +2265,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the DescribeWorkflow service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -2356,8 +2334,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ImportCertificate service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -2425,14 +2402,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ImportHostKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -2508,14 +2485,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ImportSshPublicKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -2583,8 +2560,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListAccesses service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -2659,8 +2635,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListAgreements service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -2735,8 +2710,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -2807,8 +2781,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListConnectors service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -2886,8 +2859,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListExecutions service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -2959,8 +2931,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListHostKeys service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3034,8 +3005,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListProfiles service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3107,8 +3077,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListSecurityPolicies service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3176,8 +3145,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListServers service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3245,8 +3213,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3314,8 +3281,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListUsers service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3387,8 +3353,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the ListWorkflows service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> parameter that was passed is invalid.
@@ -3465,8 +3430,7 @@ namespace Amazon.Transfer
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -3563,8 +3527,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StartFileTransfer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -3648,8 +3611,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StartServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -3739,8 +3701,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the StopServer service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -3817,8 +3778,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the TagResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -3881,15 +3841,14 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Tests whether your SFTP connector is set up successfully. We highly recommend that
-        /// you call this operation to test your ability to transfer files between a Transfer
-        /// Family server and a trading partner's SFTP server.
+        /// you call this operation to test your ability to transfer files between local Amazon
+        /// Web Services storage and a trading partner's SFTP server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
         /// 
         /// <returns>The response from the TestConnection service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -4019,8 +3978,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the TestIdentityProvider service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -4094,8 +4052,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -4164,14 +4121,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateAccess service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -4241,14 +4198,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateAgreement service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -4316,8 +4273,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -4390,14 +4346,14 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateConnector service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -4466,8 +4422,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateHostKey service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -4540,8 +4495,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateProfile service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
@@ -4627,14 +4581,14 @@ namespace Amazon.Transfer
         /// is not in the available state.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
-        /// The requested resource does not exist.
+        /// The requested resource does not exist, or exists in a region other than the one specified
+        /// for the command.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
@@ -4710,8 +4664,7 @@ namespace Amazon.Transfer
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by Transfer.</returns>
         /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
-        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
-        /// service.
+        /// This exception is thrown when an error occurs in the Transfer Family service.
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
