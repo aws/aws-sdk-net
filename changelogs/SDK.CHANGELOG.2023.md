@@ -1,3 +1,24 @@
+### 3.7.655.0 (2023-10-02 18:29 UTC)
+* Bedrock (3.7.201.0)
+	* Provisioned throughput feature with Amazon and third-party base models, and update validators for model identifier and taggable resource ARNs.
+* BedrockRuntime (3.7.201.0)
+	* Add model timeout exception for InvokeModelWithResponseStream API and update validator for invoke model identifier.
+* EC2 (3.7.218.0)
+	* Introducing Amazon EC2 R7iz instances with 3.9 GHz sustained all-core turbo frequency and deliver up to 20% better performance than previous generation z1d instances.
+* ManagedBlockchain (3.7.200.49)
+	* Remove Rinkeby as option from Ethereum APIs
+* RDS (3.7.209.0)
+	* Adds DefaultCertificateForNewLaunches field in the DescribeCertificates API response.
+* SecurityToken (3.7.202.0)
+	* STS API updates for assumeRole
+* SSO (3.7.201.0)
+	* Fix FIPS Endpoints in aws-us-gov.
+* Transfer (3.7.201.45)
+	* Documentation updates for AWS Transfer Family
+* Core 3.7.202.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.654.0 (2023-09-28 19:03 UTC)
 * Bedrock (3.7.200.0)
 	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
