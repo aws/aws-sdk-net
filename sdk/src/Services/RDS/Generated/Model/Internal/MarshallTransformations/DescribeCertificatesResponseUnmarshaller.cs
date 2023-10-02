@@ -88,6 +88,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.Certificates.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("DefaultCertificateForNewLaunches", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DefaultCertificateForNewLaunches = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Marker", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

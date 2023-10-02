@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificates operation.
-    /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
-    /// account.
+    /// Lists the set of certificate authority (CA) certificates provided by Amazon RDS for
+    /// this Amazon Web Services account.
     /// 
     ///  
     /// <para>

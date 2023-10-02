@@ -3429,8 +3429,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
-        /// account.
+        /// Lists the set of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -8172,8 +8172,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Restores a DB instance to an arbitrary point in time. You can restore to any point
-        /// in time before the time identified by the LatestRestorableTime property. You can restore
-        /// to a point up to the number of days specified by the BackupRetentionPeriod property.
+        /// in time before the time identified by the <code>LatestRestorableTime</code> property.
+        /// You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code>
+        /// property.
         /// 
         ///  
         /// <para>

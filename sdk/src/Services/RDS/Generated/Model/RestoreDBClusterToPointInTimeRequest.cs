@@ -195,7 +195,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For the full list of DB instance classes, and availability for your engine, see <a
         /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// instance class</a> in the <i>Amazon RDS User Guide.</i> 
+        /// instance class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -217,9 +217,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group to associate with this DB cluster. If this
-        /// argument is omitted, the default DB cluster parameter group for the specified engine
-        /// is used.
+        /// The name of the custom DB cluster parameter group to associate with this DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default
+        /// DB cluster parameter group for the specified engine is used.
         /// </para>
         ///  
         /// <para>
