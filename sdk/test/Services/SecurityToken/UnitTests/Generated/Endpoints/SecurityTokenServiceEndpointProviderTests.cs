@@ -1134,10 +1134,10 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void UseGlobalEndpoint_with_unset_region_and_custom_endpoint_Test()
         {
             var parameters = new SecurityTokenServiceEndpointParameters();
-            parameters["Endpoint"] = "https://example.com";
             parameters["UseGlobalEndpoint"] = false;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSecurityTokenServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
         }
