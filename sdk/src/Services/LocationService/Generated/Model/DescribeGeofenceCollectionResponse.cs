@@ -37,6 +37,7 @@ namespace Amazon.LocationService.Model
         private string _collectionName;
         private DateTime? _createTime;
         private string _description;
+        private int? _geofenceCount;
         private string _kmsKeyId;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
@@ -125,6 +126,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeofenceCount. 
+        /// <para>
+        /// The number of geofences in the geofence collection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int GeofenceCount
+        {
+            get { return this._geofenceCount.GetValueOrDefault(); }
+            set { this._geofenceCount = value; }
+        }
+
+        // Check to see if GeofenceCount property is set
+        internal bool IsSetGeofenceCount()
+        {
+            return this._geofenceCount.HasValue; 
         }
 
         /// <summary>

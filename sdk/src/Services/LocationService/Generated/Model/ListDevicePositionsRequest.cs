@@ -34,9 +34,28 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ListDevicePositionsRequest : AmazonLocationServiceRequest
     {
+        private TrackingFilterGeometry _filterGeometry;
         private int? _maxResults;
         private string _nextToken;
         private string _trackerName;
+
+        /// <summary>
+        /// Gets and sets the property FilterGeometry. 
+        /// <para>
+        /// The geomerty used to filter device positions.
+        /// </para>
+        /// </summary>
+        public TrackingFilterGeometry FilterGeometry
+        {
+            get { return this._filterGeometry; }
+            set { this._filterGeometry = value; }
+        }
+
+        // Check to see if FilterGeometry property is set
+        internal bool IsSetFilterGeometry()
+        {
+            return this._filterGeometry != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

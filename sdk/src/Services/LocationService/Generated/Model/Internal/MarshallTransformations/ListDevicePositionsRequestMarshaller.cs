@@ -68,6 +68,17 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilterGeometry())
+                {
+                    context.Writer.WritePropertyName("FilterGeometry");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TrackingFilterGeometryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FilterGeometry, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

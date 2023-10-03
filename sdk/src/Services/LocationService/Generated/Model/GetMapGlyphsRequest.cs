@@ -47,7 +47,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
         /// styles: 
         /// </para>
         ///  <ul> <li> 

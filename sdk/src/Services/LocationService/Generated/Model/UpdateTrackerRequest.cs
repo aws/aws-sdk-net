@@ -36,6 +36,7 @@ namespace Amazon.LocationService.Model
     {
         private string _description;
         private bool? _eventBridgeEnabled;
+        private bool? _kmsKeyEnableGeospatialQueries;
         private PositionFiltering _positionFiltering;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
@@ -83,6 +84,29 @@ namespace Amazon.LocationService.Model
         internal bool IsSetEventBridgeEnabled()
         {
             return this._eventBridgeEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyEnableGeospatialQueries. 
+        /// <para>
+        /// Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Web Services KMS customer managed key</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only used if you are using a KMS customer managed key.
+        /// </para>
+        /// </summary>
+        public bool KmsKeyEnableGeospatialQueries
+        {
+            get { return this._kmsKeyEnableGeospatialQueries.GetValueOrDefault(); }
+            set { this._kmsKeyEnableGeospatialQueries = value; }
+        }
+
+        // Check to see if KmsKeyEnableGeospatialQueries property is set
+        internal bool IsSetKmsKeyEnableGeospatialQueries()
+        {
+            return this._kmsKeyEnableGeospatialQueries.HasValue; 
         }
 
         /// <summary>

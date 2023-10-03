@@ -75,6 +75,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GeofenceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.GeofenceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
