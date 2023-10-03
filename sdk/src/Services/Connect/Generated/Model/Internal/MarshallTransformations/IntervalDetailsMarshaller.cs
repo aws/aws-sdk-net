@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MetricFilterV2 Marshaller
+    /// IntervalDetails Marshaller
     /// </summary>
-    public class MetricFilterV2Marshaller : IRequestMarshaller<MetricFilterV2, JsonMarshallerContext> 
+    public class IntervalDetailsMarshaller : IRequestMarshaller<IntervalDetails, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MetricFilterV2 requestObject, JsonMarshallerContext context)
+        public void Marshall(IntervalDetails requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMetricFilterKey())
+            if(requestObject.IsSetIntervalPeriod())
             {
-                context.Writer.WritePropertyName("MetricFilterKey");
-                context.Writer.Write(requestObject.MetricFilterKey);
+                context.Writer.WritePropertyName("IntervalPeriod");
+                context.Writer.Write(requestObject.IntervalPeriod);
             }
 
-            if(requestObject.IsSetMetricFilterValues())
+            if(requestObject.IsSetTimeZone())
             {
-                context.Writer.WritePropertyName("MetricFilterValues");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectMetricFilterValuesListValue in requestObject.MetricFilterValues)
-                {
-                        context.Writer.Write(requestObjectMetricFilterValuesListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetNegate())
-            {
-                context.Writer.WritePropertyName("Negate");
-                context.Writer.Write(requestObject.Negate);
+                context.Writer.WritePropertyName("TimeZone");
+                context.Writer.Write(requestObject.TimeZone);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MetricFilterV2Marshaller Instance = new MetricFilterV2Marshaller();
+        public readonly static IntervalDetailsMarshaller Instance = new IntervalDetailsMarshaller();
 
     }
 }

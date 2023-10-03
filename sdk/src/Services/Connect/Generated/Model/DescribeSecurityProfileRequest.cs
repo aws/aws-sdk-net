@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityProfile operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Gets basic information about the security profle.
-    /// </para>
     /// </summary>
     public partial class DescribeSecurityProfileRequest : AmazonConnectRequest
     {

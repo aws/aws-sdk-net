@@ -1947,6 +1947,72 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type IntervalPeriod.
+    /// </summary>
+    public class IntervalPeriod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAY for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod DAY = new IntervalPeriod("DAY");
+        /// <summary>
+        /// Constant FIFTEEN_MIN for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod FIFTEEN_MIN = new IntervalPeriod("FIFTEEN_MIN");
+        /// <summary>
+        /// Constant HOUR for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod HOUR = new IntervalPeriod("HOUR");
+        /// <summary>
+        /// Constant THIRTY_MIN for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod THIRTY_MIN = new IntervalPeriod("THIRTY_MIN");
+        /// <summary>
+        /// Constant TOTAL for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod TOTAL = new IntervalPeriod("TOTAL");
+        /// <summary>
+        /// Constant WEEK for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod WEEK = new IntervalPeriod("WEEK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntervalPeriod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntervalPeriod FindValue(string value)
+        {
+            return FindValue<IntervalPeriod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntervalPeriod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LexVersion.
     /// </summary>
     public class LexVersion : ConstantClass

@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSecurityProfile operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates a security profile.
-    /// </para>
     /// </summary>
     public partial class UpdateSecurityProfileRequest : AmazonConnectRequest
     {

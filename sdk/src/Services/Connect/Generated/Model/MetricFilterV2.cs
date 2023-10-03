@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
     {
         private string _metricFilterKey;
         private List<string> _metricFilterValues = new List<string>();
+        private bool? _negate;
 
         /// <summary>
         /// Gets and sets the property MetricFilterKey. 
@@ -93,6 +94,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetMetricFilterValues()
         {
             return this._metricFilterValues != null && this._metricFilterValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Negate. 
+        /// <para>
+        /// The flag to use to filter on requested metric filter values or to not filter on requested
+        /// metric filter values. By default the negate is <code>false</code>, which indicates
+        /// to filter on the requested metric filter. 
+        /// </para>
+        /// </summary>
+        public bool Negate
+        {
+            get { return this._negate.GetValueOrDefault(); }
+            set { this._negate = value; }
+        }
+
+        // Check to see if Negate property is set
+        internal bool IsSetNegate()
+        {
+            return this._negate.HasValue; 
         }
 
     }

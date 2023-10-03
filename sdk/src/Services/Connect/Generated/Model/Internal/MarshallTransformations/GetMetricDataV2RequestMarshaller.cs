@@ -98,6 +98,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInterval())
+                {
+                    context.Writer.WritePropertyName("Interval");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IntervalDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Interval, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

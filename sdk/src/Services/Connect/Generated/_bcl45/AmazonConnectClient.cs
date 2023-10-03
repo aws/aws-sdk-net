@@ -2698,12 +2698,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile service method.</param>
         /// 
@@ -2741,12 +2736,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -4554,12 +4544,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityProfile service method.</param>
         /// 
@@ -4597,12 +4582,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -6549,12 +6529,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Gets basic information about the security profle.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile service method.</param>
         /// 
@@ -6586,12 +6561,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Gets basic information about the security profle.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile service method.</param>
         /// <param name="cancellationToken">
@@ -8406,7 +8376,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 35 days, in 24-hour intervals.
+        /// the last 3 months, at varying intervals. 
         /// </para>
         ///  
         /// <para>
@@ -8453,7 +8423,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 35 days, in 24-hour intervals.
+        /// the last 3 months, at varying intervals. 
         /// </para>
         ///  
         /// <para>
@@ -10950,12 +10920,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the permissions granted to a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilePermissions service method.</param>
         /// 
@@ -10987,12 +10952,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the permissions granted to a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -17030,12 +16990,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile service method.</param>
         /// 
@@ -17067,12 +17022,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile service method.</param>
         /// <param name="cancellationToken">

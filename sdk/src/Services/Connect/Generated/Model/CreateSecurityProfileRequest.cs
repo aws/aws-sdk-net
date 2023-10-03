@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSecurityProfile operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates a security profile.
-    /// </para>
     /// </summary>
     public partial class CreateSecurityProfileRequest : AmazonConnectRequest
     {

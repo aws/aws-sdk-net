@@ -39,6 +39,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// </para>
+        ///  
+        /// <para>
         /// A list of the third party application's metadata.
         /// </para>
         /// </summary>

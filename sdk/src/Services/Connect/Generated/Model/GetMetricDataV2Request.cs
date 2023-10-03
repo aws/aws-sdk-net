@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
     /// the previous version of this API. It has new metrics, offers filtering at a metric
     /// level, and offers the ability to filter and group data by channels, queues, routing
     /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-    /// the last 35 days, in 24-hour intervals.
+    /// the last 3 months, at varying intervals. 
     /// </para>
     ///  
     /// <para>
@@ -52,6 +52,7 @@ namespace Amazon.Connect.Model
         private DateTime? _endTime;
         private List<FilterV2> _filters = new List<FilterV2>();
         private List<string> _groupings = new List<string>();
+        private IntervalDetails _interval;
         private int? _maxResults;
         private List<MetricV2> _metrics = new List<MetricV2>();
         private string _nextToken;
@@ -64,10 +65,6 @@ namespace Amazon.Connect.Model
         /// The timestamp, in UNIX Epoch time format, at which to end the reporting interval for
         /// the retrieval of historical metrics data. The time must be later than the start time
         /// timestamp. It cannot be later than the current timestamp.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time range between the start and end time must be less than 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -196,6 +193,77 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Interval. 
+        /// <para>
+        /// The interval period and timezone to apply to returned metrics.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid
+        /// <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code>
+        /// | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code>
+        /// and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results
+        /// in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon
+        /// Connect aggregates results based on the <code>TOTAL</code> interval period. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following list describes restrictions on <code>StartTime</code> and <code>EndTime</code>
+        /// based on which <code>IntervalPeriod</code> is requested. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>FIFTEEN_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
+        /// must be less than 3 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>THIRTY_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
+        /// must be less than 3 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HOUR</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
+        /// must be less than 3 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DAY</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
+        /// must be less than 35 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WEEK</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
+        /// must be less than 35 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
+        /// must be less than 35 days.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>TimeZone</code>: The timezone applied to requested metrics.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IntervalDetails Interval
+        {
+            get { return this._interval; }
+            set { this._interval = value; }
+        }
+
+        // Check to see if Interval property is set
+        internal bool IsSetInterval()
+        {
+            return this._interval != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return per page.
@@ -222,7 +290,15 @@ namespace Amazon.Connect.Model
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
         /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
         /// </para>
-        ///  <dl> <dt>AGENT_ADHERENT_TIME</dt> <dd> 
+        ///  <dl> <dt>ABANDONMENT_RATE</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AGENT_ADHERENT_TIME</dt> <dd> 
         /// <para>
         /// This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting,
         /// capacity planning, and scheduling</a> is available.
@@ -244,6 +320,18 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// 
+        /// </para>
+        ///  </dd> <dt>AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  
+        /// <para>
+        /// Data for this metric is available starting from October 1, 2023 0:00:00 GMT.
         /// </para>
         ///  </dd> <dt>AGENT_OCCUPANCY</dt> <dd> 
         /// <para>
@@ -314,21 +402,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
-        ///  </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd> 
+        ///  <note> 
         /// <para>
-        /// Unit: Seconds
+        /// The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only
-        /// supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code>
-        /// | <code>CALLBACK</code> | <code>API</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
-        /// </para>
-        ///  </dd> <dt>AVG_CONTACT_DURATION</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_CONTACT_DURATION</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
@@ -388,7 +466,15 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>AVG_HOLDS</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>AVG_HOLDS</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -472,7 +558,15 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>AVG_TALK_TIME</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_RESOLUTION_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// </para>
+        ///  </dd> <dt>AVG_TALK_TIME</dt> <dd> 
         /// <para>
         /// This metric is available only for contacts analyzed by Contact Lens conversational
         /// analytics.
@@ -568,6 +662,20 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800
+        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
+        /// (for "Less than").
         /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> 
         /// <para>
@@ -732,9 +840,9 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The timestamp, in UNIX Epoch time format, at which to start the reporting interval
         /// for the retrieval of historical metrics data. The time must be before the end time
-        /// timestamp. The time range between the start and end time must be less than 24 hours.
-        /// The start time cannot be earlier than 35 days before the time of the request. Historical
-        /// metrics are available for 35 days.
+        /// timestamp. The start and end time depends on the <code>IntervalPeriod</code> selected.
+        /// By default the time range between start and end time is 35 days. Historical metrics
+        /// are available for 3 months.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

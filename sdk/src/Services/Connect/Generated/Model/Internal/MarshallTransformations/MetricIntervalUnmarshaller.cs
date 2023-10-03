@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetricFilterV2 Object
+    /// Response Unmarshaller for MetricInterval Object
     /// </summary>  
-    public class MetricFilterV2Unmarshaller : IUnmarshaller<MetricFilterV2, XmlUnmarshallerContext>, IUnmarshaller<MetricFilterV2, JsonUnmarshallerContext>
+    public class MetricIntervalUnmarshaller : IUnmarshaller<MetricInterval, XmlUnmarshallerContext>, IUnmarshaller<MetricInterval, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MetricFilterV2 IUnmarshaller<MetricFilterV2, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetricInterval IUnmarshaller<MetricInterval, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetricFilterV2 Unmarshall(JsonUnmarshallerContext context)
+        public MetricInterval Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MetricFilterV2 unmarshalledObject = new MetricFilterV2();
+            MetricInterval unmarshalledObject = new MetricInterval();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MetricFilterKey", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Interval", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricFilterKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MetricFilterValues", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.MetricFilterValues = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Negate", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Negate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MetricFilterV2Unmarshaller _instance = new MetricFilterV2Unmarshaller();        
+        private static MetricIntervalUnmarshaller _instance = new MetricIntervalUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetricFilterV2Unmarshaller Instance
+        public static MetricIntervalUnmarshaller Instance
         {
             get
             {
