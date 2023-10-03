@@ -167,6 +167,7 @@ namespace Amazon.Runtime.CredentialManagement
 #if !BCL35
                     string.IsNullOrEmpty(SsoAccountId) &&
                     string.IsNullOrEmpty(SsoRegion) &&
+                    string.IsNullOrEmpty(SsoRegistrationScopes) &&
                     string.IsNullOrEmpty(SsoRoleName) &&
                     string.IsNullOrEmpty(SsoStartUrl) &&
                     string.IsNullOrEmpty(SsoSession) &&
