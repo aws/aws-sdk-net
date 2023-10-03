@@ -631,6 +631,14 @@ namespace ServiceClientGenerator
                 //This is because we attach the payload to the generic response and unmarshall it from there.
                 if (operation.IsEventStreamOutput)
                 {
+                    if (!((operation.Name == "InvokeWithResponseStream" && operation.model.ServiceId == "Lambda") ||
+                          (operation.Name == "InvokeEndpointWithResponseStream" && operation.model.ServiceId == "SageMaker Runtime") ||
+                          (operation.Name == "InvokeModelWithResponseStream" && operation.model.ServiceId == "Bedrock Runtime")))
+                    {
+                        throw new Exception("Event streams may not be fully supported until internal ticket DOTNET-7200 is implemented. " +
+                            "We can remove this check once that ticket is resolved. Until then, manually test that the new operation " +
+                            "behaves correctly and then add it to the above allowlist.");
+                    }
 
                     if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
                     {
