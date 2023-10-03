@@ -59,6 +59,7 @@ namespace Amazon.MediaConvert.Model
         private InputTimecodeSource _timecodeSource;
         private string _timecodeStart;
         private InputVideoGenerator _videoGenerator;
+        private List<VideoOverlay> _videoOverlays = new List<VideoOverlay>();
         private VideoSelector _videoSelector;
 
         /// <summary>
@@ -499,6 +500,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetVideoGenerator()
         {
             return this._videoGenerator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoOverlays. Contains an array of video overlays.
+        /// </summary>
+        public List<VideoOverlay> VideoOverlays
+        {
+            get { return this._videoOverlays; }
+            set { this._videoOverlays = value; }
+        }
+
+        // Check to see if VideoOverlays property is set
+        internal bool IsSetVideoOverlays()
+        {
+            return this._videoOverlays != null && this._videoOverlays.Count > 0; 
         }
 
         /// <summary>

@@ -38,7 +38,6 @@ namespace Amazon.MediaConvert.Model
         private AvailBlanking _availBlanking;
         private EsamSettings _esam;
         private ExtendedDataServices _extendedDataServices;
-        private int? _followInputIndex;
         private List<InputTemplate> _inputs = new List<InputTemplate>();
         private KantarWatermarkSettings _kantarWatermark;
         private MotionImageInserter _motionImageInserter;
@@ -115,27 +114,6 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetExtendedDataServices()
         {
             return this._extendedDataServices != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property FollowInputIndex. Specifies which input metadata to use
-        /// for the default "Follow input" option for the following settings: resolution, frame
-        /// rate, and pixel aspect ratio. In the simplest case, specify which input is used based
-        /// on its index in the job. For example if you specify 3, then the fourth input will
-        /// be used from each input. If the job does not have a fourth input, then the first input
-        /// will be used. If no followInputIndex is specified, then 0 will be chosen automatically.
-        /// </summary>
-        [AWSProperty(Min=0, Max=149)]
-        public int FollowInputIndex
-        {
-            get { return this._followInputIndex.GetValueOrDefault(); }
-            set { this._followInputIndex = value; }
-        }
-
-        // Check to see if FollowInputIndex property is set
-        internal bool IsSetFollowInputIndex()
-        {
-            return this._followInputIndex.HasValue; 
         }
 
         /// <summary>

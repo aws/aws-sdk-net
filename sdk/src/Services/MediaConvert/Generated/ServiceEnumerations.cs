@@ -9477,6 +9477,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H264EndOfStreamMarkers.
+    /// </summary>
+    public class H264EndOfStreamMarkers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCLUDE for H264EndOfStreamMarkers
+        /// </summary>
+        public static readonly H264EndOfStreamMarkers INCLUDE = new H264EndOfStreamMarkers("INCLUDE");
+        /// <summary>
+        /// Constant SUPPRESS for H264EndOfStreamMarkers
+        /// </summary>
+        public static readonly H264EndOfStreamMarkers SUPPRESS = new H264EndOfStreamMarkers("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264EndOfStreamMarkers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264EndOfStreamMarkers FindValue(string value)
+        {
+            return FindValue<H264EndOfStreamMarkers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264EndOfStreamMarkers(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H264EntropyEncoding.
     /// </summary>
     public class H264EntropyEncoding : ConstantClass
@@ -10852,6 +10902,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265DynamicSubGop(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265EndOfStreamMarkers.
+    /// </summary>
+    public class H265EndOfStreamMarkers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCLUDE for H265EndOfStreamMarkers
+        /// </summary>
+        public static readonly H265EndOfStreamMarkers INCLUDE = new H265EndOfStreamMarkers("INCLUDE");
+        /// <summary>
+        /// Constant SUPPRESS for H265EndOfStreamMarkers
+        /// </summary>
+        public static readonly H265EndOfStreamMarkers SUPPRESS = new H265EndOfStreamMarkers("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265EndOfStreamMarkers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265EndOfStreamMarkers FindValue(string value)
+        {
+            return FindValue<H265EndOfStreamMarkers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265EndOfStreamMarkers(string value)
         {
             return FindValue(value);
         }

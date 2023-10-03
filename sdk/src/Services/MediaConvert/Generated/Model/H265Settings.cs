@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private H265CodecLevel _codecLevel;
         private H265CodecProfile _codecProfile;
         private H265DynamicSubGop _dynamicSubGop;
+        private H265EndOfStreamMarkers _endOfStreamMarkers;
         private H265FlickerAdaptiveQuantization _flickerAdaptiveQuantization;
         private H265FramerateControl _framerateControl;
         private H265FramerateConversionAlgorithm _framerateConversionAlgorithm;
@@ -206,6 +207,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDynamicSubGop()
         {
             return this._dynamicSubGop != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndOfStreamMarkers. Optionally include or suppress markers
+        /// at the end of your output that signal the end of the video stream. To include end
+        /// of stream markers: Leave blank or keep the default value, Include. To not include
+        /// end of stream markers: Choose Suppress. This is useful when your output will be inserted
+        /// into another stream.
+        /// </summary>
+        public H265EndOfStreamMarkers EndOfStreamMarkers
+        {
+            get { return this._endOfStreamMarkers; }
+            set { this._endOfStreamMarkers = value; }
+        }
+
+        // Check to see if EndOfStreamMarkers property is set
+        internal bool IsSetEndOfStreamMarkers()
+        {
+            return this._endOfStreamMarkers != null;
         }
 
         /// <summary>

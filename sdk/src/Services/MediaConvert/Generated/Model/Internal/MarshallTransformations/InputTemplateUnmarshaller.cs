@@ -178,6 +178,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimecodeStart = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("videoOverlays", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VideoOverlay, VideoOverlayUnmarshaller>(VideoOverlayUnmarshaller.Instance);
+                    unmarshalledObject.VideoOverlays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("videoSelector", targetDepth))
                 {
                     var unmarshaller = VideoSelectorUnmarshaller.Instance;
