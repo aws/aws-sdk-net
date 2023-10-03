@@ -85,6 +85,7 @@ namespace Amazon.Runtime.CredentialManagement
             MaxAttemptsField,
             SsoAccountId,
             SsoRegion,
+            SsoRegistrationScopes,
             SsoRoleName,
             SsoStartUrl,
             EndpointUrlField,
