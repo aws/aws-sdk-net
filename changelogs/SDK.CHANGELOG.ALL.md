@@ -1,3 +1,20 @@
+### 3.7.656.0 (2023-10-03 18:28 UTC)
+* Connect (3.7.207.0)
+	* GetMetricDataV2 API: Update to include new metrics CONTACTS_RESOLVED_IN_X , AVG_HOLD_TIME_ALL_CONTACTS , AVG_RESOLUTION_TIME , ABANDONMENT_RATE , AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS with added features: Interval Period, TimeZone, Negate MetricFilters, Extended date time range.
+* LocationService (3.7.201.0)
+	* Amazon Location Service adds support for bounding polygon queries. Additionally, the GeofenceCount field has been added to the DescribeGeofenceCollection API response.
+* MediaConvert (3.7.204.0)
+	* This release adds the ability to replace video frames without modifying the audio essence.
+* OAM (3.7.201.0)
+	* This release adds support for sharing AWS::ApplicationInsights::Application resources.
+* SageMaker (3.7.216.0)
+	* This release allows users to run Selective Execution in SageMaker Pipelines without SourcePipelineExecutionArn if selected steps do not have any dependent steps.
+* WellArchitected (3.7.201.0)
+	* AWS Well-Architected now supports Review Templates that allows you to create templates with pre-filled answers for Well-Architected and Custom Lens best practices.
+* Core 3.7.202.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.655.0 (2023-10-02 18:29 UTC)
 * Bedrock (3.7.201.0)
 	* Provisioned throughput feature with Amazon and third-party base models, and update validators for model identifier and taggable resource ARNs.
