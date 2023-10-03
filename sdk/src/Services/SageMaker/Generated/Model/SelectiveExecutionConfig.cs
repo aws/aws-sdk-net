@@ -63,8 +63,15 @@ namespace Amazon.SageMaker.Model
         /// needed for the selected steps to run. The execution status of the pipeline can be
         /// either <code>Failed</code> or <code>Success</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// This field is required if the steps you specify for <code>SelectedSteps</code> depend
+        /// on output collaterals from any non-specified pipeline steps. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+        /// Execution for Pipeline Steps</a>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string SourcePipelineExecutionArn
         {
             get { return this._sourcePipelineExecutionArn; }
