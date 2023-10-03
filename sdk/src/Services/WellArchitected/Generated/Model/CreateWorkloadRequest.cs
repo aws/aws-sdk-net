@@ -53,7 +53,28 @@ namespace Amazon.WellArchitected.Model
     /// You also must specify <code>ReviewOwner</code>, even though the parameter is listed
     /// as not being required in the following section. 
     /// </para>
-    ///  </important>
+    ///  </important> 
+    /// <para>
+    /// When creating a workload using a review template, you must have the following IAM
+    /// permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>wellarchitected:GetReviewTemplate</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>wellarchitected:GetReviewTemplateAnswer</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>wellarchitected:ListReviewTemplateAnswers</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>wellarchitected:GetReviewTemplateLensReview</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateWorkloadRequest : AmazonWellArchitectedRequest
     {
@@ -73,6 +94,7 @@ namespace Amazon.WellArchitected.Model
         private List<string> _pillarPriorities = new List<string>();
         private List<string> _profileArns = new List<string>();
         private string _reviewOwner;
+        private List<string> _reviewTemplateArns = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workloadName;
 
@@ -337,6 +359,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetReviewOwner()
         {
             return this._reviewOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewTemplateArns. 
+        /// <para>
+        /// The list of review template ARNs to associate with the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> ReviewTemplateArns
+        {
+            get { return this._reviewTemplateArns; }
+            set { this._reviewTemplateArns = value; }
+        }
+
+        // Check to see if ReviewTemplateArns property is set
+        internal bool IsSetReviewTemplateArns()
+        {
+            return this._reviewTemplateArns != null && this._reviewTemplateArns.Count > 0; 
         }
 
         /// <summary>

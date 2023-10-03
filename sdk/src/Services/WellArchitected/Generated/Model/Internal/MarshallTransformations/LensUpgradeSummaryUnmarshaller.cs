@@ -88,6 +88,18 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.LensArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkloadId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

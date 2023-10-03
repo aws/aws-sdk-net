@@ -716,6 +716,158 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  CreateReviewTemplate
+
+        internal virtual CreateReviewTemplateResponse CreateReviewTemplate(CreateReviewTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReviewTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReviewTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a review template.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include or gather personal identifiable information (PII) of end users or other
+        /// identifiable individuals in or via your review templates. If your review template
+        /// or those shared with you and used in your account do include or collect PII you are
+        /// responsible for: ensuring that the included PII is processed in accordance with applicable
+        /// law, providing adequate privacy notices, and obtaining necessary consents for processing
+        /// such data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReviewTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate">REST API Reference for CreateReviewTemplate Operation</seealso>
+        public virtual Task<CreateReviewTemplateResponse> CreateReviewTemplateAsync(CreateReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReviewTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateReviewTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTemplateShare
+
+        internal virtual CreateTemplateShareResponse CreateTemplateShare(CreateTemplateShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTemplateShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTemplateShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTemplateShareResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a review template share.
+        /// 
+        ///  
+        /// <para>
+        /// The owner of a review template can share it with other Amazon Web Services accounts,
+        /// users, an organization, and organizational units (OUs) in the same Amazon Web Services
+        /// Region. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Shared access to a review template is not removed until the review template share
+        /// invitation is deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you share a review template with an organization or OU, all accounts in the organization
+        /// or OU are granted access to the review template.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your review template with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your review template available to those other accounts.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplateShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTemplateShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare">REST API Reference for CreateTemplateShare Operation</seealso>
+        public virtual Task<CreateTemplateShareResponse> CreateTemplateShareAsync(CreateTemplateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTemplateShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTemplateShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTemplateShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkload
 
         internal virtual CreateWorkloadResponse CreateWorkload(CreateWorkloadRequest request)
@@ -753,7 +905,28 @@ namespace Amazon.WellArchitected
         /// You also must specify <code>ReviewOwner</code>, even though the parameter is listed
         /// as not being required in the following section. 
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// When creating a workload using a review template, you must have the following IAM
+        /// permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>wellarchitected:GetReviewTemplate</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wellarchitected:GetReviewTemplateAnswer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wellarchitected:ListReviewTemplateAnswers</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wellarchitected:GetReviewTemplateLensReview</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkload service method.</param>
         /// <param name="cancellationToken">
@@ -1124,6 +1297,128 @@ namespace Amazon.WellArchitected
             options.ResponseUnmarshaller = DeleteProfileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProfileShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteReviewTemplate
+
+        internal virtual DeleteReviewTemplateResponse DeleteReviewTemplate(DeleteReviewTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReviewTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReviewTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a review template.
+        /// 
+        ///  
+        /// <para>
+        /// Only the owner of a review template can delete it.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the review template is deleted, Amazon Web Services accounts, users, organizations,
+        /// and organizational units (OUs) that you shared the review template with will no longer
+        /// be able to apply it to new workloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReviewTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate">REST API Reference for DeleteReviewTemplate Operation</seealso>
+        public virtual Task<DeleteReviewTemplateResponse> DeleteReviewTemplateAsync(DeleteReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReviewTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteReviewTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTemplateShare
+
+        internal virtual DeleteTemplateShareResponse DeleteTemplateShare(DeleteTemplateShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTemplateShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTemplateShareResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTemplateShareResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a review template share.
+        /// 
+        ///  
+        /// <para>
+        /// After the review template share is deleted, Amazon Web Services accounts, users, organizations,
+        /// and organizational units (OUs) that you shared the review template with will no longer
+        /// be able to apply it to new workloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTemplateShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare">REST API Reference for DeleteTemplateShare Operation</seealso>
+        public virtual Task<DeleteTemplateShareResponse> DeleteTemplateShareAsync(DeleteTemplateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTemplateShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTemplateShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTemplateShareResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1867,6 +2162,153 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  GetReviewTemplate
+
+        internal virtual GetReviewTemplateResponse GetReviewTemplate(GetReviewTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReviewTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetReviewTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate">REST API Reference for GetReviewTemplate Operation</seealso>
+        public virtual Task<GetReviewTemplateResponse> GetReviewTemplateAsync(GetReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReviewTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReviewTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetReviewTemplateAnswer
+
+        internal virtual GetReviewTemplateAnswerResponse GetReviewTemplateAnswer(GetReviewTemplateAnswerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReviewTemplateAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReviewTemplateAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<GetReviewTemplateAnswerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get review template answer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplateAnswer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReviewTemplateAnswer service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer">REST API Reference for GetReviewTemplateAnswer Operation</seealso>
+        public virtual Task<GetReviewTemplateAnswerResponse> GetReviewTemplateAnswerAsync(GetReviewTemplateAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReviewTemplateAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReviewTemplateAnswerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReviewTemplateAnswerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetReviewTemplateLensReview
+
+        internal virtual GetReviewTemplateLensReviewResponse GetReviewTemplateLensReview(GetReviewTemplateLensReviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReviewTemplateLensReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReviewTemplateLensReviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetReviewTemplateLensReviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get a lens review associated with a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplateLensReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReviewTemplateLensReview service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview">REST API Reference for GetReviewTemplateLensReview Operation</seealso>
+        public virtual Task<GetReviewTemplateLensReviewResponse> GetReviewTemplateLensReviewAsync(GetReviewTemplateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReviewTemplateLensReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReviewTemplateLensReviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReviewTemplateLensReviewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWorkload
 
         internal virtual GetWorkloadResponse GetWorkload(GetWorkloadRequest request)
@@ -2582,6 +3024,101 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ListReviewTemplateAnswers
+
+        internal virtual ListReviewTemplateAnswersResponse ListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReviewTemplateAnswersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReviewTemplateAnswersResponseUnmarshaller.Instance;
+
+            return Invoke<ListReviewTemplateAnswersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the answers of a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReviewTemplateAnswers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReviewTemplateAnswers service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers">REST API Reference for ListReviewTemplateAnswers Operation</seealso>
+        public virtual Task<ListReviewTemplateAnswersResponse> ListReviewTemplateAnswersAsync(ListReviewTemplateAnswersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReviewTemplateAnswersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReviewTemplateAnswersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReviewTemplateAnswersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReviewTemplates
+
+        internal virtual ListReviewTemplatesResponse ListReviewTemplates(ListReviewTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReviewTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReviewTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListReviewTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List review templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReviewTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReviewTemplates service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates">REST API Reference for ListReviewTemplates Operation</seealso>
+        public virtual Task<ListReviewTemplatesResponse> ListReviewTemplatesAsync(ListReviewTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReviewTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReviewTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReviewTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListShareInvitations
 
         internal virtual ListShareInvitationsResponse ListShareInvitations(ListShareInvitationsRequest request)
@@ -2596,7 +3133,14 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// List the workload invitations.
+        /// List the share invitations.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>,
+        /// and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that
+        /// matches your <code>ShareResourceType</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListShareInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -2646,7 +3190,8 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+        /// or review template ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2670,6 +3215,55 @@ namespace Amazon.WellArchitected
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTemplateShares
+
+        internal virtual ListTemplateSharesResponse ListTemplateShares(ListTemplateSharesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTemplateSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTemplateSharesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTemplateSharesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List review template shares.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateShares service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTemplateShares service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares">REST API Reference for ListTemplateShares Operation</seealso>
+        public virtual Task<ListTemplateSharesResponse> ListTemplateSharesAsync(ListTemplateSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTemplateSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTemplateSharesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTemplateSharesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2787,7 +3381,8 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+        /// or review template ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2833,7 +3428,8 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+        /// or review template ARN.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3070,6 +3666,162 @@ namespace Amazon.WellArchitected
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateReviewTemplate
+
+        internal virtual UpdateReviewTemplateResponse UpdateReviewTemplate(UpdateReviewTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReviewTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReviewTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate">REST API Reference for UpdateReviewTemplate Operation</seealso>
+        public virtual Task<UpdateReviewTemplateResponse> UpdateReviewTemplateAsync(UpdateReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReviewTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReviewTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateReviewTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateReviewTemplateAnswer
+
+        internal virtual UpdateReviewTemplateAnswerResponse UpdateReviewTemplateAnswer(UpdateReviewTemplateAnswerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReviewTemplateAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReviewTemplateAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReviewTemplateAnswerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a review template answer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplateAnswer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReviewTemplateAnswer service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer">REST API Reference for UpdateReviewTemplateAnswer Operation</seealso>
+        public virtual Task<UpdateReviewTemplateAnswerResponse> UpdateReviewTemplateAnswerAsync(UpdateReviewTemplateAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReviewTemplateAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReviewTemplateAnswerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateReviewTemplateAnswerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateReviewTemplateLensReview
+
+        internal virtual UpdateReviewTemplateLensReviewResponse UpdateReviewTemplateLensReview(UpdateReviewTemplateLensReviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReviewTemplateLensReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReviewTemplateLensReviewResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReviewTemplateLensReviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a lens review associated with a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplateLensReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReviewTemplateLensReview service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview">REST API Reference for UpdateReviewTemplateLensReview Operation</seealso>
+        public virtual Task<UpdateReviewTemplateLensReviewResponse> UpdateReviewTemplateLensReviewAsync(UpdateReviewTemplateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReviewTemplateLensReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReviewTemplateLensReviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateReviewTemplateLensReviewResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3337,6 +4089,58 @@ namespace Amazon.WellArchitected
             options.ResponseUnmarshaller = UpgradeProfileVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpgradeProfileVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpgradeReviewTemplateLensReview
+
+        internal virtual UpgradeReviewTemplateLensReviewResponse UpgradeReviewTemplateLensReview(UpgradeReviewTemplateLensReviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeReviewTemplateLensReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeReviewTemplateLensReviewResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeReviewTemplateLensReviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Upgrade the lens review of a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeReviewTemplateLensReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpgradeReviewTemplateLensReview service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview">REST API Reference for UpgradeReviewTemplateLensReview Operation</seealso>
+        public virtual Task<UpgradeReviewTemplateLensReviewResponse> UpgradeReviewTemplateLensReviewAsync(UpgradeReviewTemplateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeReviewTemplateLensReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeReviewTemplateLensReviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpgradeReviewTemplateLensReviewResponse>(request, options, cancellationToken);
         }
 
         #endregion

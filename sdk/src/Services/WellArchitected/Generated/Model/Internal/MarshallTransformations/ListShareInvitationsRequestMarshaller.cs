@@ -74,6 +74,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetShareResourceType())
                 request.Parameters.Add("ShareResourceType", StringUtils.FromString(publicRequest.ShareResourceType));
             
+            if (publicRequest.IsSetTemplateNamePrefix())
+                request.Parameters.Add("TemplateNamePrefix", StringUtils.FromString(publicRequest.TemplateNamePrefix));
+            
             if (publicRequest.IsSetWorkloadNamePrefix())
                 request.Parameters.Add("WorkloadNamePrefix", StringUtils.FromString(publicRequest.WorkloadNamePrefix));
             request.ResourcePath = "/shareInvitations";

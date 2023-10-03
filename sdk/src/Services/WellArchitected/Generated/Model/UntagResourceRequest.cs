@@ -34,7 +34,8 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+    /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+    /// or review template ARN.
     /// </para>
     ///  </note> 
     /// <para>

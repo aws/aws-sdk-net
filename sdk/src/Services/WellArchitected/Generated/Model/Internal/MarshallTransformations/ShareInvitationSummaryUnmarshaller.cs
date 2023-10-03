@@ -118,6 +118,18 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.ShareResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemplateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TemplateName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkloadId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

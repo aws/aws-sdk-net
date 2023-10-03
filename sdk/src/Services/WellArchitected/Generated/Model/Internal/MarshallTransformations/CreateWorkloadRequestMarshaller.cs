@@ -206,6 +206,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReviewOwner);
                 }
 
+                if(publicRequest.IsSetReviewTemplateArns())
+                {
+                    context.Writer.WritePropertyName("ReviewTemplateArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReviewTemplateArnsListValue in publicRequest.ReviewTemplateArns)
+                    {
+                            context.Writer.Write(publicRequestReviewTemplateArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

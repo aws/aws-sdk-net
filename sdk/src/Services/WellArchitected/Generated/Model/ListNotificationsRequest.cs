@@ -36,6 +36,7 @@ namespace Amazon.WellArchitected.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _resourceArn;
         private string _workloadId;
 
         /// <summary>
@@ -70,6 +71,30 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN for the related resource for the notification.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=50, Max=250)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
         /// <summary>

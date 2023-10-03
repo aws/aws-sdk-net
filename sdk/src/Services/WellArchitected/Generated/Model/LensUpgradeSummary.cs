@@ -37,6 +37,8 @@ namespace Amazon.WellArchitected.Model
         private string _latestLensVersion;
         private string _lensAlias;
         private string _lensArn;
+        private string _resourceArn;
+        private string _resourceName;
         private string _workloadId;
         private string _workloadName;
 
@@ -110,6 +112,41 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensArn()
         {
             return this._lensArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  <code>ResourceArn</code> of the lens being upgraded
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=250)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName.
+        /// </summary>
+        [AWSProperty(Min=3, Max=100)]
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

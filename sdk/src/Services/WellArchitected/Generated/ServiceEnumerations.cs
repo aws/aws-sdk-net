@@ -1093,6 +1093,56 @@ namespace Amazon.WellArchitected
 
 
     /// <summary>
+    /// Constants used for properties of type Question.
+    /// </summary>
+    public class Question : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANSWERED for Question
+        /// </summary>
+        public static readonly Question ANSWERED = new Question("ANSWERED");
+        /// <summary>
+        /// Constant UNANSWERED for Question
+        /// </summary>
+        public static readonly Question UNANSWERED = new Question("UNANSWERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Question(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Question FindValue(string value)
+        {
+            return FindValue<Question>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Question(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QuestionPriority.
     /// </summary>
     public class QuestionPriority : ConstantClass
@@ -1243,6 +1293,106 @@ namespace Amazon.WellArchitected
 
 
     /// <summary>
+    /// Constants used for properties of type ReviewTemplateAnswerStatus.
+    /// </summary>
+    public class ReviewTemplateAnswerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANSWERED for ReviewTemplateAnswerStatus
+        /// </summary>
+        public static readonly ReviewTemplateAnswerStatus ANSWERED = new ReviewTemplateAnswerStatus("ANSWERED");
+        /// <summary>
+        /// Constant UNANSWERED for ReviewTemplateAnswerStatus
+        /// </summary>
+        public static readonly ReviewTemplateAnswerStatus UNANSWERED = new ReviewTemplateAnswerStatus("UNANSWERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReviewTemplateAnswerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReviewTemplateAnswerStatus FindValue(string value)
+        {
+            return FindValue<ReviewTemplateAnswerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReviewTemplateAnswerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReviewTemplateUpdateStatus.
+    /// </summary>
+    public class ReviewTemplateUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENT for ReviewTemplateUpdateStatus
+        /// </summary>
+        public static readonly ReviewTemplateUpdateStatus CURRENT = new ReviewTemplateUpdateStatus("CURRENT");
+        /// <summary>
+        /// Constant LENS_NOT_CURRENT for ReviewTemplateUpdateStatus
+        /// </summary>
+        public static readonly ReviewTemplateUpdateStatus LENS_NOT_CURRENT = new ReviewTemplateUpdateStatus("LENS_NOT_CURRENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReviewTemplateUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReviewTemplateUpdateStatus FindValue(string value)
+        {
+            return FindValue<ReviewTemplateUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReviewTemplateUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Risk.
     /// </summary>
     public class Risk : ConstantClass
@@ -1368,6 +1518,10 @@ namespace Amazon.WellArchitected
         /// Constant PROFILE for ShareResourceType
         /// </summary>
         public static readonly ShareResourceType PROFILE = new ShareResourceType("PROFILE");
+        /// <summary>
+        /// Constant TEMPLATE for ShareResourceType
+        /// </summary>
+        public static readonly ShareResourceType TEMPLATE = new ShareResourceType("TEMPLATE");
         /// <summary>
         /// Constant WORKLOAD for ShareResourceType
         /// </summary>

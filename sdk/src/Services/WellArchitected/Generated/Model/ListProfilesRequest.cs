@@ -73,7 +73,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ProfileNamePrefix. 
         /// <para>
-        /// Prefix for profile name.
+        /// An optional string added to the beginning of each profile name returned in the results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
