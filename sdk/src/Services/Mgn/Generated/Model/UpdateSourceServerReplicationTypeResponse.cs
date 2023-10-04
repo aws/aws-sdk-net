@@ -35,6 +35,7 @@ namespace Amazon.Mgn.Model
     {
         private string _applicationid;
         private string _arn;
+        private SourceServerConnectorAction _connectorAction;
         private DataReplicationInfo _dataReplicationInfo;
         private string _fqdnForActionFramework;
         private bool? _isArchived;
@@ -83,6 +84,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorAction. 
+        /// <para>
+        /// Source Server connector action.
+        /// </para>
+        /// </summary>
+        public SourceServerConnectorAction ConnectorAction
+        {
+            get { return this._connectorAction; }
+            set { this._connectorAction = value; }
+        }
+
+        // Check to see if ConnectorAction property is set
+        internal bool IsSetConnectorAction()
+        {
+            return this._connectorAction != null;
         }
 
         /// <summary>

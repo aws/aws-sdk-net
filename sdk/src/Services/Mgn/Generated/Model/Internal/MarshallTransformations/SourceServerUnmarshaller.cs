@@ -76,6 +76,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectorAction", targetDepth))
+                {
+                    var unmarshaller = SourceServerConnectorActionUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataReplicationInfo", targetDepth))
                 {
                     var unmarshaller = DataReplicationInfoUnmarshaller.Instance;

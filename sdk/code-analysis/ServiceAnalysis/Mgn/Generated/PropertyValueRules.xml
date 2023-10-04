@@ -229,6 +229,41 @@
     <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateConnectorRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateConnectorRequest.SsmInstanceID</property>
+    <min>19</min>
+    <max>20</max>
+    <pattern>(^i-[0-9a-zA-Z]{17}$)|(^mi-[0-9a-zA-Z]{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateConnectorResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateConnectorResponse.ConnectorID</property>
+    <min>27</min>
+    <max>27</max>
+    <pattern>^connector-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateConnectorResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateConnectorResponse.SsmInstanceID</property>
+    <min>19</min>
+    <max>20</max>
+    <pattern>(^i-[0-9a-zA-Z]{17}$)|(^mi-[0-9a-zA-Z]{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateRequest.MapAutoTaggingMpeID</property>
     <min>0</min>
     <max>256</max>
@@ -380,6 +415,12 @@
     <min>21</min>
     <max>21</max>
     <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DeleteConnectorRequest.ConnectorID</property>
+    <min>27</min>
+    <max>27</max>
+    <pattern>^connector-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DeleteJobRequest.AccountID</property>
@@ -758,6 +799,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.ListApplicationsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListConnectorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListConnectorsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ListConnectorsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
@@ -1603,6 +1659,41 @@
     <pattern>^wave-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateConnectorRequest.ConnectorID</property>
+    <min>27</min>
+    <max>27</max>
+    <pattern>^connector-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateConnectorRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateConnectorResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateConnectorResponse.ConnectorID</property>
+    <min>27</min>
+    <max>27</max>
+    <pattern>^connector-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateConnectorResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateConnectorResponse.SsmInstanceID</property>
+    <min>19</min>
+    <max>20</max>
+    <pattern>(^i-[0-9a-zA-Z]{17}$)|(^mi-[0-9a-zA-Z]{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateLaunchConfigurationRequest.AccountID</property>
     <min>12</min>
     <max>12</max>
@@ -1821,6 +1912,51 @@
     <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerRequest.AccountID</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerResponse.ApplicationID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^app-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerResponse.FqdnForActionFramework</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerResponse.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerResponse.UserProvidedID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeRequest.AccountID</property>
     <min>12</min>
     <max>12</max>
@@ -1953,6 +2089,16 @@
     <property>Amazon.Mgn.Model.ConflictException.ResourceType</property>
     <min>0</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ConnectorSsmCommandConfig.CloudWatchLogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\.\-_/#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ConnectorSsmCommandConfig.OutputS3BucketName</property>
+    <pattern>^[a-zA-Z0-9.\-_]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.CPU.Cores</property>
@@ -2520,6 +2666,18 @@
     <property>Amazon.Mgn.Model.SourceProperties.RecommendedInstanceType</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.SourceServerConnectorAction.ConnectorArn</property>
+    <min>27</min>
+    <max>100</max>
+    <pattern>^arn:[\w-]+:mgn:([a-z]{2}-(gov-)?[a-z]+-\d{1})?:(\d{12})?:connector\/(connector-[0-9a-zA-Z]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.SourceServerConnectorAction.CredentialsSecretArn</property>
+    <min>20</min>
+    <max>100</max>
+    <pattern>^arn:[\w-]+:secretsmanager:([a-z]{2}-(gov-)?[a-z]+-\d{1})?:(\d{12})?:secret:(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.SsmDocument.ActionName</property>

@@ -92,6 +92,14 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        public IListConnectorsPaginator ListConnectors(ListConnectorsRequest request) 
+        {
+            return new ListConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListExportErrors operation
         ///</summary>
         public IListExportErrorsPaginator ListExportErrors(ListExportErrorsRequest request) 
