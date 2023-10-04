@@ -1,3 +1,18 @@
+### 3.7.657.0 (2023-10-04 18:27 UTC)
+* AppConfig (3.7.202.0)
+	* AWS AppConfig introduces KMS customer-managed key (CMK) encryption support for data saved to AppConfig's hosted configuration store.
+* DataZone (3.7.200.0)
+	* Initial release of Amazon DataZone
+* MediaTailor (3.7.202.0)
+	* Updates DescribeVodSource to include a list of ad break opportunities in the response
+* Mgn (3.7.201.0)
+	* This release includes the following new APIs: ListConnectors, CreateConnector,  UpdateConnector, DeleteConnector and UpdateSourceServer to support the source action framework feature.
+* SageMaker (3.7.217.0)
+	* Adding support for AdditionalS3DataSource, a data source used for training or inference that is in addition to the input dataset or model data.
+* Core 3.7.202.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.656.0 (2023-10-03 18:28 UTC)
 * Connect (3.7.207.0)
 	* GetMetricDataV2 API: Update to include new metrics CONTACTS_RESOLVED_IN_X , AVG_HOLD_TIME_ALL_CONTACTS , AVG_RESOLUTION_TIME , ABANDONMENT_RATE , AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS with added features: Interval Period, TimeZone, Negate MetricFilters, Extended date time range.
