@@ -138,7 +138,7 @@ namespace Amazon.AppConfig.Model
         /// versions use the same name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

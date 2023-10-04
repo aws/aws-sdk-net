@@ -380,11 +380,10 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
-        /// The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to
-        /// encrypt the configuration data using a customer managed key. 
+        /// The Key Management Service key identifier (key ID, key alias, or key ARN) provided
+        /// when the resource was created or updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyIdentifier
         {
             get { return this._kmsKeyIdentifier; }

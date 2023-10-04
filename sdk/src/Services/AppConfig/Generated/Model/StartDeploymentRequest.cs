@@ -166,7 +166,6 @@ namespace Amazon.AppConfig.Model
         /// encrypt the configuration data using a customer managed key. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyIdentifier
         {
             get { return this._kmsKeyIdentifier; }
