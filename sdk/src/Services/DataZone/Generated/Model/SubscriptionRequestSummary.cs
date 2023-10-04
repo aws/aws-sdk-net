@@ -1,0 +1,276 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the datazone-2018-05-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.DataZone.Model
+{
+    /// <summary>
+    /// The details of the subscription request.
+    /// </summary>
+    public partial class SubscriptionRequestSummary
+    {
+        private DateTime? _createdAt;
+        private string _createdBy;
+        private string _decisionComment;
+        private string _domainId;
+        private string _id;
+        private string _requestReason;
+        private string _reviewerId;
+        private SubscriptionRequestStatus _status;
+        private List<SubscribedListing> _subscribedListings = new List<SubscribedListing>();
+        private List<SubscribedPrincipal> _subscribedPrincipals = new List<SubscribedPrincipal>();
+        private DateTime? _updatedAt;
+        private string _updatedBy;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp of when a subscription request was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The Amazon DataZone user who created the subscription request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DecisionComment. 
+        /// <para>
+        /// The decision comment of the subscription request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
+        public string DecisionComment
+        {
+            get { return this._decisionComment; }
+            set { this._decisionComment = value; }
+        }
+
+        // Check to see if DecisionComment property is set
+        internal bool IsSetDecisionComment()
+        {
+            return this._decisionComment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The identifier of the Amazon DataZone domain in which a subscription request exists.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string DomainId
+        {
+            get { return this._domainId; }
+            set { this._domainId = value; }
+        }
+
+        // Check to see if DomainId property is set
+        internal bool IsSetDomainId()
+        {
+            return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier of the subscription request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestReason. 
+        /// <para>
+        /// The reason for the subscription request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
+        public string RequestReason
+        {
+            get { return this._requestReason; }
+            set { this._requestReason = value; }
+        }
+
+        // Check to see if RequestReason property is set
+        internal bool IsSetRequestReason()
+        {
+            return this._requestReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewerId. 
+        /// <para>
+        /// The identifier of the subscription request reviewer.
+        /// </para>
+        /// </summary>
+        public string ReviewerId
+        {
+            get { return this._reviewerId; }
+            set { this._reviewerId = value; }
+        }
+
+        // Check to see if ReviewerId property is set
+        internal bool IsSetReviewerId()
+        {
+            return this._reviewerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the subscription request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SubscriptionRequestStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscribedListings. 
+        /// <para>
+        /// The listings included in the subscription request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<SubscribedListing> SubscribedListings
+        {
+            get { return this._subscribedListings; }
+            set { this._subscribedListings = value; }
+        }
+
+        // Check to see if SubscribedListings property is set
+        internal bool IsSetSubscribedListings()
+        {
+            return this._subscribedListings != null && this._subscribedListings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscribedPrincipals. 
+        /// <para>
+        /// The principals included in the subscription request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<SubscribedPrincipal> SubscribedPrincipals
+        {
+            get { return this._subscribedPrincipals; }
+            set { this._subscribedPrincipals = value; }
+        }
+
+        // Check to see if SubscribedPrincipals property is set
+        internal bool IsSetSubscribedPrincipals()
+        {
+            return this._subscribedPrincipals != null && this._subscribedPrincipals.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp of when the subscription request was updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBy. 
+        /// <para>
+        /// The identifier of the Amazon DataZone user who updated the subscription request.
+        /// </para>
+        /// </summary>
+        public string UpdatedBy
+        {
+            get { return this._updatedBy; }
+            set { this._updatedBy = value; }
+        }
+
+        // Check to see if UpdatedBy property is set
+        internal bool IsSetUpdatedBy()
+        {
+            return this._updatedBy != null;
+        }
+
+    }
+}
