@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelPackageContainerDefinition
     {
+        private AdditionalS3DataSource _additionalS3DataSource;
         private string _containerHostname;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _framework;
@@ -43,6 +44,25 @@ namespace Amazon.SageMaker.Model
         private ModelInput _modelInput;
         private string _nearestModelName;
         private string _productId;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalS3DataSource. 
+        /// <para>
+        /// The additional data source that is used during inference in the Docker container for
+        /// your model package.
+        /// </para>
+        /// </summary>
+        public AdditionalS3DataSource AdditionalS3DataSource
+        {
+            get { return this._additionalS3DataSource; }
+            set { this._additionalS3DataSource = value; }
+        }
+
+        // Check to see if AdditionalS3DataSource property is set
+        internal bool IsSetAdditionalS3DataSource()
+        {
+            return this._additionalS3DataSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerHostname. 

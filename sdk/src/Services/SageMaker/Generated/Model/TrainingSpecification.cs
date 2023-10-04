@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TrainingSpecification
     {
+        private AdditionalS3DataSource _additionalS3DataSource;
         private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private List<HyperParameterSpecification> _supportedHyperParameters = new List<HyperParameterSpecification>();
         private List<string> _supportedTrainingInstanceTypes = new List<string>();
@@ -41,6 +42,24 @@ namespace Amazon.SageMaker.Model
         private List<ChannelSpecification> _trainingChannels = new List<ChannelSpecification>();
         private string _trainingImage;
         private string _trainingImageDigest;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalS3DataSource. 
+        /// <para>
+        /// The additional data source used during the training job.
+        /// </para>
+        /// </summary>
+        public AdditionalS3DataSource AdditionalS3DataSource
+        {
+            get { return this._additionalS3DataSource; }
+            set { this._additionalS3DataSource = value; }
+        }
+
+        // Check to see if AdditionalS3DataSource property is set
+        internal bool IsSetAdditionalS3DataSource()
+        {
+            return this._additionalS3DataSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MetricDefinitions. 

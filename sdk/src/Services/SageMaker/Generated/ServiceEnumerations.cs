@@ -91,6 +91,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AdditionalS3DataSourceDataType.
+    /// </summary>
+    public class AdditionalS3DataSourceDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3Object for AdditionalS3DataSourceDataType
+        /// </summary>
+        public static readonly AdditionalS3DataSourceDataType S3Object = new AdditionalS3DataSourceDataType("S3Object");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalS3DataSourceDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalS3DataSourceDataType FindValue(string value)
+        {
+            return FindValue<AdditionalS3DataSourceDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalS3DataSourceDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggregationTransformationValue.
     /// </summary>
     public class AggregationTransformationValue : ConstantClass
