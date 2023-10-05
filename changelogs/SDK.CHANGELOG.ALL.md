@@ -1,3 +1,20 @@
+### 3.7.658.0 (2023-10-05 18:25 UTC)
+* Omics (3.7.205.0)
+	* Add Etag Support for Omics Storage in ListReadSets and GetReadSetMetadata API
+* RDS (3.7.209.3)
+	* Updates Amazon RDS documentation for corrections and minor improvements.
+* Route53 (3.7.202.0)
+	* Add hostedzonetype filter to ListHostedZones API.
+* SecurityHub (3.7.203.0)
+	* Added new resource detail objects to ASFF, including resources for AwsEventsEventbus, AwsEventsEndpoint, AwsDmsEndpoint, AwsDmsReplicationTask, AwsDmsReplicationInstance, AwsRoute53HostedZone, and AwsMskCluster
+* StorageGateway (3.7.201.0)
+	* Add SoftwareVersion to response of DescribeGatewayInformation.
+* WorkSpaces (3.7.202.0)
+	* This release introduces Manage applications. This feature allows users to manage their WorkSpaces applications by associating or disassociating their WorkSpaces with applications. The DescribeWorkspaces API will now additionally return OperatingSystemName in its responses.
+* Core 3.7.202.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.657.0 (2023-10-04 18:27 UTC)
 * AppConfig (3.7.202.0)
 	* AWS AppConfig introduces KMS customer-managed key (CMK) encryption support for data saved to AppConfig's hosted configuration store.
