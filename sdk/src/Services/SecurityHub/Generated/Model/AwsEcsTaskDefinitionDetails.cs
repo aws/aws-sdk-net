@@ -46,6 +46,7 @@ namespace Amazon.SecurityHub.Model
         private List<AwsEcsTaskDefinitionPlacementConstraintsDetails> _placementConstraints = new List<AwsEcsTaskDefinitionPlacementConstraintsDetails>();
         private AwsEcsTaskDefinitionProxyConfigurationDetails _proxyConfiguration;
         private List<string> _requiresCompatibilities = new List<string>();
+        private string _status;
         private string _taskRoleArn;
         private List<AwsEcsTaskDefinitionVolumesDetails> _volumes = new List<AwsEcsTaskDefinitionVolumesDetails>();
 
@@ -327,6 +328,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRequiresCompatibilities()
         {
             return this._requiresCompatibilities != null && this._requiresCompatibilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status of the task definition. 
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

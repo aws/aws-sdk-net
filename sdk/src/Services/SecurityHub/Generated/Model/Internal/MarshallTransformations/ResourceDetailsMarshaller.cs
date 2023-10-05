@@ -243,6 +243,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsDmsEndpoint())
+            {
+                context.Writer.WritePropertyName("AwsDmsEndpoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsDmsEndpointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsDmsEndpoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsDmsReplicationInstance())
+            {
+                context.Writer.WritePropertyName("AwsDmsReplicationInstance");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsDmsReplicationInstanceDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsDmsReplicationInstance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsDmsReplicationTask())
+            {
+                context.Writer.WritePropertyName("AwsDmsReplicationTask");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsDmsReplicationTaskDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsDmsReplicationTask, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsDynamoDbTable())
             {
                 context.Writer.WritePropertyName("AwsDynamoDbTable");
@@ -562,6 +595,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEventsEndpoint())
+            {
+                context.Writer.WritePropertyName("AwsEventsEndpoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEventsEndpointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEventsEndpoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEventsEventbus())
+            {
+                context.Writer.WritePropertyName("AwsEventsEventbus");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEventsEventbusDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEventsEventbus, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsGuardDutyDetector())
             {
                 context.Writer.WritePropertyName("AwsGuardDutyDetector");
@@ -668,6 +723,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsLambdaLayerVersionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsLambdaLayerVersion, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsMskCluster())
+            {
+                context.Writer.WritePropertyName("AwsMskCluster");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsMskClusterDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsMskCluster, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -789,6 +855,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsRedshiftClusterDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsRedshiftCluster, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsRoute53HostedZone())
+            {
+                context.Writer.WritePropertyName("AwsRoute53HostedZone");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRoute53HostedZoneDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRoute53HostedZone, context);
 
                 context.Writer.WriteObjectEnd();
             }
