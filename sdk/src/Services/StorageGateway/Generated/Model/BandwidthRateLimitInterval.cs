@@ -72,6 +72,15 @@ namespace Amazon.StorageGateway.Model
         /// bits per second. This field does not appear in the response if the upload rate limit
         /// is not set. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=51200)]
         public long AverageUploadRateLimitInBitsPerSec

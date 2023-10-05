@@ -51,6 +51,7 @@ namespace Amazon.StorageGateway.Model
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
         private string _softwareUpdatesEndDate;
+        private string _softwareVersion;
         private List<string> _supportedGatewayCapacities = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpoint;
@@ -402,6 +403,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetSoftwareUpdatesEndDate()
         {
             return this._softwareUpdatesEndDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareVersion. 
+        /// <para>
+        /// The version number of the software running on the gateway appliance.
+        /// </para>
+        /// </summary>
+        public string SoftwareVersion
+        {
+            get { return this._softwareVersion; }
+            set { this._softwareVersion = value; }
+        }
+
+        // Check to see if SoftwareVersion property is set
+        internal bool IsSetSoftwareVersion()
+        {
+            return this._softwareVersion != null;
         }
 
         /// <summary>

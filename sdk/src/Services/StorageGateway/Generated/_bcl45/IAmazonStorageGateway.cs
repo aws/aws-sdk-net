@@ -2444,9 +2444,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns metadata about a gateway such as its name, network interfaces, configured
-        /// time zone, and the state (whether the gateway is running or not). To specify which
-        /// gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
+        /// Returns metadata about a gateway such as its name, network interfaces, time zone,
+        /// status, and software version. To specify which gateway to describe, use the Amazon
+        /// Resource Name (ARN) of the gateway in your request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayInformation service method.</param>
         /// 
@@ -2465,9 +2465,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns metadata about a gateway such as its name, network interfaces, configured
-        /// time zone, and the state (whether the gateway is running or not). To specify which
-        /// gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
+        /// Returns metadata about a gateway such as its name, network interfaces, time zone,
+        /// status, and software version. To specify which gateway to describe, use the Amazon
+        /// Resource Name (ARN) of the gateway in your request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayInformation service method.</param>
         /// <param name="cancellationToken">
@@ -3351,6 +3351,20 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Adds a file gateway to an Active Directory domain. This operation is only supported
         /// for file gateways that support the SMB file protocol.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Joining a domain creates an Active Directory computer account in the default organizational
+        /// unit, using the gateway's <b>Gateway ID</b> as the account name (for example, SGW-1234ADE).
+        /// If your Active Directory environment requires that you pre-stage accounts to facilitate
+        /// the join domain process, you will need to create this account ahead of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create the gateway's computer account in an organizational unit other than the
+        /// default, you must specify the organizational unit when joining the domain.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the JoinDomain service method.</param>
         /// 
@@ -3371,6 +3385,20 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Adds a file gateway to an Active Directory domain. This operation is only supported
         /// for file gateways that support the SMB file protocol.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Joining a domain creates an Active Directory computer account in the default organizational
+        /// unit, using the gateway's <b>Gateway ID</b> as the account name (for example, SGW-1234ADE).
+        /// If your Active Directory environment requires that you pre-stage accounts to facilitate
+        /// the join domain process, you will need to create this account ahead of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create the gateway's computer account in an organizational unit other than the
+        /// default, you must specify the organizational unit when joining the domain.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the JoinDomain service method.</param>
         /// <param name="cancellationToken">
@@ -3452,8 +3480,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets a list of the file shares for a specific S3 File Gateway, or the list of file
-        /// shares that belong to the calling user account. This operation is only supported for
-        /// S3 File Gateways.
+        /// shares that belong to the calling Amazon Web Services account. This operation is only
+        /// supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
         /// 
@@ -3473,8 +3501,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets a list of the file shares for a specific S3 File Gateway, or the list of file
-        /// shares that belong to the calling user account. This operation is only supported for
-        /// S3 File Gateways.
+        /// shares that belong to the calling Amazon Web Services account. This operation is only
+        /// supported for S3 File Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
         /// <param name="cancellationToken">
@@ -4131,8 +4159,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
-        /// file upload notification</a> in the <i>Storage Gateway User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// file upload notification</a> in the <i>Amazon S3 File Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyWhenUploaded service method.</param>
@@ -4167,8 +4195,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
-        /// file upload notification</a> in the <i>Storage Gateway User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// file upload notification</a> in the <i>Amazon S3 File Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyWhenUploaded service method.</param>
@@ -4227,11 +4255,6 @@ namespace Amazon.StorageGateway
         ///  <important> <ul> <li> 
         /// <para>
         /// Wait at least 60 seconds between consecutive RefreshCache API requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// RefreshCache does not evict cache entries if invoked consecutively within 60 seconds
-        /// of a previous RefreshCache request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4300,11 +4323,6 @@ namespace Amazon.StorageGateway
         ///  <important> <ul> <li> 
         /// <para>
         /// Wait at least 60 seconds between consecutive RefreshCache API requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// RefreshCache does not evict cache entries if invoked consecutively within 60 seconds
-        /// of a previous RefreshCache request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5162,8 +5180,9 @@ namespace Amazon.StorageGateway
         /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
         /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
         /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
-        /// This operation is supported only for volume, tape and S3 file gateways. FSx file gateways
-        /// do not support bandwidth rate limits.
+        /// This operation is supported for volume, tape, and S3 file gateways. S3 file gateways
+        /// support bandwidth rate limits for upload only. FSx file gateways do not support bandwidth
+        /// rate limits.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
         /// 
@@ -5185,8 +5204,9 @@ namespace Amazon.StorageGateway
         /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
         /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
         /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
-        /// This operation is supported only for volume, tape and S3 file gateways. FSx file gateways
-        /// do not support bandwidth rate limits.
+        /// This operation is supported for volume, tape, and S3 file gateways. S3 file gateways
+        /// support bandwidth rate limits for upload only. FSx file gateways do not support bandwidth
+        /// rate limits.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
         /// <param name="cancellationToken">

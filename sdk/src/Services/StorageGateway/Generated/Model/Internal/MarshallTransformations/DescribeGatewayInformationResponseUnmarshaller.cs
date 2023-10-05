@@ -159,6 +159,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.SoftwareUpdatesEndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SoftwareVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SoftwareVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SupportedGatewayCapacities", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
