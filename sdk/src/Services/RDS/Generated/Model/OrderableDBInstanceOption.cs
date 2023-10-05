@@ -402,7 +402,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OutpostCapable. 
         /// <para>
-        /// Whether a DB instance supports RDS on Outposts.
+        /// Indicates whether a DB instance supports RDS on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -443,7 +443,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Indicates the storage type for a DB instance.
+        /// The storage type for a DB instance.
         /// </para>
         /// </summary>
         public string StorageType
@@ -527,7 +527,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsClusters. 
         /// <para>
-        /// Whether DB instances can be configured as a Multi-AZ DB cluster.
+        /// Indicates whether DB instances can be configured as a Multi-AZ DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -570,8 +570,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsGlobalDatabases. 
         /// <para>
-        /// A value that indicates whether you can use Aurora global databases with a specific
-        /// combination of other DB engine attributes.
+        /// Indicates whether you can use Aurora global databases with a specific combination
+        /// of other DB engine attributes.
         /// </para>
         /// </summary>
         public bool SupportsGlobalDatabases
@@ -625,7 +625,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsKerberosAuthentication. 
         /// <para>
-        /// Whether a DB instance supports Kerberos Authentication.
+        /// Indicates whether a DB instance supports Kerberos Authentication.
         /// </para>
         /// </summary>
         public bool SupportsKerberosAuthentication
@@ -643,7 +643,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsPerformanceInsights. 
         /// <para>
-        /// True if a DB instance supports Performance Insights, otherwise false.
+        /// Indicates whether a DB instance supports Performance Insights.
         /// </para>
         /// </summary>
         public bool SupportsPerformanceInsights
@@ -661,8 +661,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsStorageAutoscaling. 
         /// <para>
-        /// Whether Amazon RDS can automatically scale storage for DB instances that use the specified
-        /// DB instance class.
+        /// Indicates whether Amazon RDS can automatically scale storage for DB instances that
+        /// use the specified DB instance class.
         /// </para>
         /// </summary>
         public bool SupportsStorageAutoscaling

@@ -153,8 +153,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
-        /// of the restored DB cluster. The default is not to copy them.
+        /// Specifies whether to copy all tags from the restored DB cluster to snapshots of the
+        /// restored DB cluster. The default is not to copy them.
         /// </para>
         ///  
         /// <para>
@@ -346,9 +346,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled.
+        /// Specifies whether to enable deletion protection for the DB cluster. The database can't
+        /// be deleted when deletion protection is enabled. By default, deletion protection isn't
+        /// enabled.
         /// </para>
         ///  
         /// <para>
@@ -370,9 +370,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
-        /// must be created prior to this operation. Currently, only MySQL, Microsoft SQL Server,
-        /// Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
+        /// The Active Directory directory ID to restore the DB cluster in. The domain must be
+        /// created prior to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle,
+        /// and PostgreSQL DB instances can be created in an Active Directory Domain.
         /// </para>
         ///  
         /// <para>
@@ -399,8 +399,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        /// Specify the name of the IAM role to be used when making API calls to the Directory
-        /// Service.
+        /// The name of the IAM role to be used when making API calls to the Directory Service.
         /// </para>
         ///  
         /// <para>
@@ -488,8 +487,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -756,7 +755,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -849,7 +848,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB cluster is publicly accessible.
+        /// Specifies whether the DB cluster is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1003,7 +1002,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
         /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  

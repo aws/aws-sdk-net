@@ -539,7 +539,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsBabelfish. 
         /// <para>
-        /// A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+        /// Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
         /// </para>
         /// </summary>
         public bool SupportsBabelfish
@@ -557,8 +557,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsCertificateRotationWithoutRestart. 
         /// <para>
-        /// A value that indicates whether the engine version supports rotating the server certificate
-        /// without rebooting the DB instance.
+        /// Indicates whether the engine version supports rotating the server certificate without
+        /// rebooting the DB instance.
         /// </para>
         /// </summary>
         public bool SupportsCertificateRotationWithoutRestart
@@ -576,8 +576,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsGlobalDatabases. 
         /// <para>
-        /// A value that indicates whether you can use Aurora global databases with a specific
-        /// DB engine version.
+        /// Indicates whether you can use Aurora global databases with a specific DB engine version.
         /// </para>
         /// </summary>
         public bool SupportsGlobalDatabases
@@ -595,9 +594,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsLocalWriteForwarding. 
         /// <para>
-        /// A value that indicates whether the DB engine version supports forwarding write operations
-        /// from reader DB instances to the writer DB instance in the DB cluster. By default,
-        /// write operations aren't allowed on reader DB instances.
+        /// Indicates whether the DB engine version supports forwarding write operations from
+        /// reader DB instances to the writer DB instance in the DB cluster. By default, write
+        /// operations aren't allowed on reader DB instances.
         /// </para>
         ///  
         /// <para>
@@ -619,8 +618,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsLogExportsToCloudwatchLogs. 
         /// <para>
-        /// A value that indicates whether the engine version supports exporting the log types
-        /// specified by ExportableLogTypes to CloudWatch Logs.
+        /// Indicates whether the engine version supports exporting the log types specified by
+        /// ExportableLogTypes to CloudWatch Logs.
         /// </para>
         /// </summary>
         public bool SupportsLogExportsToCloudwatchLogs
@@ -638,8 +637,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsParallelQuery. 
         /// <para>
-        /// A value that indicates whether you can use Aurora parallel query with a specific DB
-        /// engine version.
+        /// Indicates whether you can use Aurora parallel query with a specific DB engine version.
         /// </para>
         /// </summary>
         public bool SupportsParallelQuery

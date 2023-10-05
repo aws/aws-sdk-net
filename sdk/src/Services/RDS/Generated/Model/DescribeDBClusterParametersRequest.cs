@@ -148,9 +148,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// A value that indicates to return only parameters for a specific source. Parameter
-        /// sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.
+        /// A specific source to return parameters for.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>customer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>engine</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>service</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Source
         {

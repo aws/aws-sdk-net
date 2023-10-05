@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size in gibibytes (GiB).
+        /// The allocated storage size for the the automated backup in gibibytes (GiB).
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -142,7 +142,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupTarget. 
         /// <para>
-        /// Specifies where automated backups are stored: Amazon Web Services Outposts or the
+        /// The location where automated backups are stored: Amazon Web Services Outposts or the
         /// Amazon Web Services Region.
         /// </para>
         /// </summary>
@@ -254,7 +254,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the automated backup is encrypted.
+        /// Indicates whether the automated backup is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -327,7 +327,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        /// Provides the date and time that the DB instance was created.
+        /// The date and time when the DB instance was created.
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -386,7 +386,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// License model information for the automated backup.
+        /// The license model information for the automated backup.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -485,7 +485,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RestoreWindow. 
         /// <para>
-        /// Earliest and latest time an instance can be restored to.
+        /// The earliest and latest time a DB instance can be restored to.
         /// </para>
         /// </summary>
         public RestoreWindow RestoreWindow
@@ -503,7 +503,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Provides a list of status information for an automated backup:
+        /// A list of status information for an automated backup:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -535,7 +535,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
-        /// Specifies the storage throughput for the automated backup.
+        /// The storage throughput for the automated backup.
         /// </para>
         /// </summary>
         public int StorageThroughput
@@ -553,7 +553,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type associated with the automated backup.
+        /// The storage type associated with the automated backup.
         /// </para>
         /// </summary>
         public string StorageType
@@ -609,7 +609,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the VPC ID associated with the DB instance.
+        /// The VPC ID associated with the DB instance.
         /// </para>
         /// </summary>
         public string VpcId

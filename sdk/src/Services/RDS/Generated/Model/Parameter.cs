@@ -188,7 +188,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        /// Specifies the name of the parameter.
+        /// The name of the parameter.
         /// </para>
         /// </summary>
         public string ParameterName
@@ -206,7 +206,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        /// Specifies the value of the parameter.
+        /// The value of the parameter.
         /// </para>
         /// </summary>
         public string ParameterValue
@@ -224,7 +224,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Indicates the source of the parameter value.
+        /// The source of the parameter value.
         /// </para>
         /// </summary>
         public string Source

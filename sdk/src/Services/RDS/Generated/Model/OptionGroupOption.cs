@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyableCrossAccount. 
         /// <para>
-        /// Specifies whether the option can be copied across Amazon Web Services accounts.
+        /// Indicates whether the option can be copied across Amazon Web Services accounts.
         /// </para>
         /// </summary>
         public bool CopyableCrossAccount
@@ -292,7 +292,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PortRequired. 
         /// <para>
-        /// Specifies whether the option requires a port.
+        /// Indicates whether the option requires a port.
         /// </para>
         /// </summary>
         public bool PortRequired

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Option details.
+    /// The details of an option.
     /// </summary>
     public partial class Option
     {
@@ -137,7 +137,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Permanent. 
         /// <para>
-        /// Indicate if this option is permanent.
+        /// Indicates whether this option is permanent.
         /// </para>
         /// </summary>
         public bool Permanent
@@ -155,7 +155,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Persistent. 
         /// <para>
-        /// Indicate if this option is persistent.
+        /// Indicates whether this option is persistent.
         /// </para>
         /// </summary>
         public bool Persistent

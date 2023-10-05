@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+        /// Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
         /// <code>ca-certificate-rotation</code> 
         /// </para>
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

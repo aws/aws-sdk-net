@@ -98,8 +98,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTags. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the source DB cluster snapshot
-        /// to the target DB cluster snapshot. By default, tags are not copied.
+        /// Specifies whether to copy all tags from the source DB cluster snapshot to the target
+        /// DB cluster snapshot. By default, tags are not copied.
         /// </para>
         /// </summary>
         public bool CopyTags

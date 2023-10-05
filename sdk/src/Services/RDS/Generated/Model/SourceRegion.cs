@@ -96,8 +96,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsDBInstanceAutomatedBackupsReplication. 
         /// <para>
-        /// Whether the source Amazon Web Services Region supports replicating automated backups
-        /// to the current Amazon Web Services Region.
+        /// Indicates whether the source Amazon Web Services Region supports replicating automated
+        /// backups to the current Amazon Web Services Region.
         /// </para>
         /// </summary>
         public bool SupportsDBInstanceAutomatedBackupsReplication

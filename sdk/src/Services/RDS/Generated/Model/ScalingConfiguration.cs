@@ -49,9 +49,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoPause. 
         /// <para>
-        /// A value that indicates whether to allow or disallow automatic pause for an Aurora
-        /// DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only
-        /// when it's idle (it has no connections).
+        /// Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
+        /// <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's
+        /// idle (it has no connections).
         /// </para>
         ///  <note> 
         /// <para>

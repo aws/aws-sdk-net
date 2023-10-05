@@ -102,9 +102,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// A value that indicates whether to reset all parameters in the DB cluster parameter
-        /// group to their default values. You can't use this parameter if there is a list of
-        /// parameter names specified for the <code>Parameters</code> parameter.
+        /// Specifies whether to reset all parameters in the DB cluster parameter group to their
+        /// default values. You can't use this parameter if there is a list of parameter names
+        /// specified for the <code>Parameters</code> parameter.
         /// </para>
         /// </summary>
         public bool ResetAllParameters

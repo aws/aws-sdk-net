@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeExportTasks</code>
-    /// action.
+    /// operation.
     /// </para>
     /// </summary>
     public partial class CancelExportTaskResponse : AmazonWebServiceResponse
@@ -59,7 +59,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ExportOnly. 
         /// <para>
-        /// The data exported from the snapshot or cluster. Valid values are the following:
+        /// The data exported from the snapshot or cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -193,7 +197,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The Amazon S3 bucket that the snapshot or cluster is exported to.
+        /// The Amazon S3 bucket where the snapshot or cluster is exported to.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -229,7 +233,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotTime. 
         /// <para>
-        /// The time that the snapshot was created.
+        /// The time when the snapshot was created.
         /// </para>
         /// </summary>
         public DateTime SnapshotTime
@@ -326,7 +330,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TaskEndTime. 
         /// <para>
-        /// The time that the snapshot or cluster export task ended.
+        /// The time when the snapshot or cluster export task ended.
         /// </para>
         /// </summary>
         public DateTime TaskEndTime
@@ -344,7 +348,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TaskStartTime. 
         /// <para>
-        /// The time that the snapshot or cluster export task started.
+        /// The time when the snapshot or cluster export task started.
         /// </para>
         /// </summary>
         public DateTime TaskStartTime

@@ -77,8 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsClusterWriter. 
         /// <para>
-        /// Value that is <code>true</code> if the cluster member is the primary instance for
-        /// the DB cluster and <code>false</code> otherwise.
+        /// Indicates whether the cluster member is the primary DB instance for the DB cluster.
         /// </para>
         /// </summary>
         public bool IsClusterWriter

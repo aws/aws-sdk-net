@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Describes an Amazon Web Services Identity and Access Management (IAM) role that is
-    /// associated with a DB instance.
+    /// Information about an Amazon Web Services Identity and Access Management (IAM) role
+    /// that is associated with a DB instance.
     /// </summary>
     public partial class DBInstanceRole
     {
@@ -78,8 +78,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the state of association between the IAM role and the DB instance. The Status
-        /// property returns one of the following values:
+        /// Information about the state of association between the IAM role and the DB instance.
+        /// The Status property returns one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

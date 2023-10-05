@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Normal. 
         /// <para>
-        /// Boolean value that is true if the instance is operating normally, or false if the
+        /// A Boolean value that is true if the instance is operating normally, or false if the
         /// instance is in an error state.
         /// </para>
         /// </summary>
@@ -79,8 +79,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the DB instance. For a StatusType of read replica, the values can be replicating,
-        /// replication stop point set, replication stop point reached, error, stopped, or terminated.
+        /// The status of the DB instance. For a StatusType of read replica, the values can be
+        /// replicating, replication stop point set, replication stop point reached, error, stopped,
+        /// or terminated.
         /// </para>
         /// </summary>
         public string Status

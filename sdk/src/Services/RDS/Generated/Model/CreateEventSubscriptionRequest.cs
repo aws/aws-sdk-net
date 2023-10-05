@@ -78,8 +78,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// A value that indicates whether to activate the subscription. If the event notification
-        /// subscription isn't activated, the subscription is created but not active.
+        /// Specifies whether to activate the subscription. If the event notification subscription
+        /// isn't activated, the subscription is created but not active.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -211,7 +211,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code>
+        /// Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code>
         /// | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// | <code>db-proxy</code> 
         /// </para>

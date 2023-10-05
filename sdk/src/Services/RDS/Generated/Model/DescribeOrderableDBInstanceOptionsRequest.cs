@@ -283,8 +283,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        /// A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports
-        /// only VPC offerings.
+        /// Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only
+        /// VPC offerings.
         /// </para>
         ///  
         /// <para>

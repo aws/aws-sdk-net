@@ -44,17 +44,23 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ConnectionBorrowTimeout. 
         /// <para>
         /// The number of seconds for a proxy to wait for a connection to become available in
-        /// the connection pool. Only applies when the proxy has opened its maximum number of
-        /// connections and all connections are busy with client sessions.
+        /// the connection pool. This setting only applies when the proxy has opened its maximum
+        /// number of connections and all connections are busy with client sessions. For an unlimited
+        /// wait time, specify <code>0</code>.
         /// </para>
         ///  
         /// <para>
-        /// Default: 120
+        /// Default: <code>120</code> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: between 1 and 3600, or 0 representing unlimited
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be between 0 and 3600.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int ConnectionBorrowTimeout
         {
@@ -108,12 +114,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+        /// Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for
+        /// all other engines
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be between 1 and 100.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be between 1 and 100.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int MaxConnectionsPercent
         {
@@ -130,11 +142,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxIdleConnectionsPercent. 
         /// <para>
-        /// Controls how actively the proxy closes idle database connections in the connection
-        /// pool. The value is expressed as a percentage of the <code>max_connections</code> setting
-        /// for the RDS DB instance or Aurora DB cluster used by the target group. With a high
-        /// value, the proxy leaves a high percentage of idle database connections open. A low
-        /// value causes the proxy to close more idle connections and return them to the database.
+        /// A value that controls how actively the proxy closes idle database connections in the
+        /// connection pool. The value is expressed as a percentage of the <code>max_connections</code>
+        /// setting for the RDS DB instance or Aurora DB cluster used by the target group. With
+        /// a high value, the proxy leaves a high percentage of idle database connections open.
+        /// A low value causes the proxy to close more idle connections and return them to the
+        /// database.
         /// </para>
         ///  
         /// <para>
@@ -145,13 +158,18 @@ namespace Amazon.RDS.Model
         /// Default: The default value is half of the value of <code>MaxConnectionsPercent</code>.
         /// For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of
         /// <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code>
-        /// isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5,
-        /// and for all other engines, the default is 50.
+        /// isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>,
+        /// and for all other engines, the default is <code>50</code>.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int MaxIdleConnectionsPercent
         {

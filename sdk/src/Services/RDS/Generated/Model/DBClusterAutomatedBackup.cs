@@ -286,8 +286,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts
-        /// to database accounts is enabled, and otherwise false.
+        /// Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+        /// accounts to database accounts is enabled.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -468,7 +468,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the source DB cluster is encrypted.
+        /// Indicates whether the source DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

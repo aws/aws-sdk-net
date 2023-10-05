@@ -121,9 +121,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether minor engine upgrades are applied automatically to
-        /// the DB instance during the maintenance window. By default, minor engine upgrades are
-        /// not applied automatically.
+        /// Specifies whether to automatically apply minor engine upgrades to the DB instance
+        /// during the maintenance window. By default, minor engine upgrades are not applied automatically.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -195,8 +194,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the DB instance to snapshots
-        /// of the DB instance. By default, tags are not copied.
+        /// Specifies whether to copy all tags from the DB instance to snapshots of the DB instance.
+        /// By default, tags are not copied.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -370,9 +369,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB instance has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// Specifies whether to enable deletion protection for the DB instance. The database
+        /// can't be deleted when deletion protection is enabled. By default, deletion protection
+        /// isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
@@ -412,8 +411,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -437,7 +436,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// A value that indicates whether to enable Performance Insights for the DB instance.
+        /// Specifies whether to enable Performance Insights for the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -573,8 +572,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ManageMasterUserPassword. 
         /// <para>
-        /// A value that indicates whether to manage the master user password with Amazon Web
-        /// Services Secrets Manager.
+        /// Specifies whether to manage the master user password with Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         ///  
         /// <para>
@@ -833,9 +832,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates whether the DB instance is a Multi-AZ deployment. If the DB
-        /// instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code>
-        /// parameter.
+        /// Specifies whether the DB instance is a Multi-AZ deployment. If the DB instance is
+        /// a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code> parameter.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -857,7 +855,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1135,7 +1133,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible.
+        /// Specifies whether the DB instance is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1278,7 +1276,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the new DB instance is encrypted or not.
+        /// Specifies whether the new DB instance is encrypted or not.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -1322,7 +1320,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
         /// <para>
@@ -1369,8 +1367,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseDefaultProcessorFeatures. 
         /// <para>
-        /// A value that indicates whether the DB instance class of the DB instance uses its default
-        /// processor features.
+        /// Specifies whether the DB instance class of the DB instance uses its default processor
+        /// features.
         /// </para>
         /// </summary>
         public bool UseDefaultProcessorFeatures

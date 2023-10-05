@@ -125,7 +125,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Indicates if the offering applies to Multi-AZ deployments.
+        /// Indicates whether the offering applies to Multi-AZ deployments.
         /// </para>
         /// </summary>
         public bool MultiAZ

@@ -156,8 +156,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsStorageAutoscaling. 
         /// <para>
-        /// Whether or not Amazon RDS can automatically scale storage for DB instances that use
-        /// the new instance class.
+        /// Indicates whether or not Amazon RDS can automatically scale storage for DB instances
+        /// that use the new instance class.
         /// </para>
         /// </summary>
         public bool SupportsStorageAutoscaling

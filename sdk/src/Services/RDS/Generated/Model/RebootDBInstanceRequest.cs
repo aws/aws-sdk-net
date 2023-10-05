@@ -104,7 +104,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
-        /// A value that indicates whether the reboot is conducted through a Multi-AZ failover.
+        /// Specifies whether the reboot is conducted through a Multi-AZ failover.
         /// </para>
         ///  
         /// <para>

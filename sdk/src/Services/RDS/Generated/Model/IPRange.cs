@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CIDRIP. 
         /// <para>
-        /// Specifies the IP range.
+        /// The IP range.
         /// </para>
         /// </summary>
         public string CIDRIP
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking",
+        /// The status of the IP range. Status can be "authorizing", "authorized", "revoking",
         /// and "revoked".
         /// </para>
         /// </summary>

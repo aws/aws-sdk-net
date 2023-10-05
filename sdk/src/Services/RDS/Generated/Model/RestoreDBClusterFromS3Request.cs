@@ -203,8 +203,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
-        /// of the restored DB cluster. The default is not to copy them.
+        /// Specifies whether to copy all tags from the restored DB cluster to snapshots of the
+        /// restored DB cluster. The default is not to copy them.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -335,9 +335,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled.
+        /// Specifies whether to enable deletion protection for the DB cluster. The database can't
+        /// be deleted when deletion protection is enabled. By default, deletion protection isn't
+        /// enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -432,8 +432,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -547,8 +547,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ManageMasterUserPassword. 
         /// <para>
-        /// A value that indicates whether to manage the master user password with Amazon Web
-        /// Services Secrets Manager.
+        /// Specifies whether to manage the master user password with Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         ///  
         /// <para>
@@ -698,7 +698,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -945,7 +945,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>mysql</code> 
+        /// Valid Values: <code>mysql</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -991,7 +991,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// A value that indicates whether the restored DB cluster is encrypted.
+        /// Specifies whether the restored DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -1013,7 +1013,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> 
+        /// Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> 
         /// </para>
         ///  
         /// <para>

@@ -1338,8 +1338,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseDefaultProcessorFeatures. 
         /// <para>
-        /// A value that indicates whether the DB instance class of the DB instance uses its default
-        /// processor features.
+        /// Specifies whether the DB instance class of the DB instance uses its default processor
+        /// features.
         /// </para>
         ///  
         /// <para>

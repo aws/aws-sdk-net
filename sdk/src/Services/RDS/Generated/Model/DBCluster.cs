@@ -887,7 +887,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalWriteForwardingRequested. 
         /// <para>
-        /// Specifies whether write forwarding is enabled for a secondary cluster in an Aurora
+        /// Indicates whether write forwarding is enabled for a secondary cluster in an Aurora
         /// global database. Because write forwarding takes time to enable, check the value of
         /// <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed
         /// before using the write forwarding feature for this cluster.
@@ -1079,7 +1079,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LocalWriteForwardingStatus. 
         /// <para>
-        /// Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not
+        /// Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not
         /// enabled, requested, or is in the process of enabling it.
         /// </para>
         /// </summary>

@@ -236,8 +236,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts
-        /// to database accounts is enabled.
+        /// Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+        /// accounts to database accounts is enabled.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
@@ -314,7 +314,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+        /// Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ

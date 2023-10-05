@@ -207,7 +207,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the DB snapshot is encrypted.
+        /// Indicates whether the DB snapshot is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -261,8 +261,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts
-        /// to database accounts is enabled, and otherwise false.
+        /// Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+        /// accounts to database accounts is enabled.
         /// </para>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled

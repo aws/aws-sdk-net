@@ -100,8 +100,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RemoveCustomerOverride. 
         /// <para>
-        /// A value that indicates whether to remove the override for the default certificate.
-        /// If the override is removed, the default certificate is the system default.
+        /// Specifies whether to remove the override for the default certificate. If the override
+        /// is removed, the default certificate is the system default.
         /// </para>
         /// </summary>
         public bool RemoveCustomerOverride

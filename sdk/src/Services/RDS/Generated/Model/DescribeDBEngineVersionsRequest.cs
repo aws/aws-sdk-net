@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBEngineVersions operation.
-    /// Returns a list of the available DB engines.
+    /// Describes the properties of specific versions of DB engines.
     /// </summary>
     public partial class DescribeDBEngineVersionsRequest : AmazonRDSRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match an existing DBParameterGroupFamily.
+        /// If supplied, must match an existing DB parameter group family.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -80,8 +80,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultOnly. 
         /// <para>
-        /// A value that indicates whether only the default version of the specified engine or
-        /// engine and major version combination is returned.
+        /// Specifies whether to return only the default version of the specified engine or the
+        /// engine and major version combination.
         /// </para>
         /// </summary>
         public bool DefaultOnly
@@ -99,7 +99,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine to return.
+        /// The database engine to return version details for.
         /// </para>
         ///  
         /// <para>
@@ -178,7 +178,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The database engine version to return.
+        /// A specific database engine version to return details for.
         /// </para>
         ///  
         /// <para>
@@ -279,8 +279,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludeAll. 
         /// <para>
-        /// A value that indicates whether to include engine versions that aren't available in
-        /// the list. The default is to list only available engine versions.
+        /// Specifies whether to also list the engine versions that aren't available. The default
+        /// is to list only available engine versions.
         /// </para>
         /// </summary>
         public bool IncludeAll
@@ -298,8 +298,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ListSupportedCharacterSets. 
         /// <para>
-        /// A value that indicates whether to list the supported character sets for each engine
-        /// version.
+        /// Specifies whether to list the supported character sets for each engine version.
         /// </para>
         ///  
         /// <para>
@@ -309,8 +308,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code>
-        /// to <code>true</code>, RDS Custom returns no results.
+        /// For RDS Custom, the default is not to list supported character sets. If you enable
+        /// this parameter, RDS Custom returns no results.
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
@@ -328,7 +327,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ListSupportedTimezones. 
         /// <para>
-        /// A value that indicates whether to list the supported time zones for each engine version.
+        /// Specifies whether to list the supported time zones for each engine version.
         /// </para>
         ///  
         /// <para>
@@ -338,8 +337,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
-        /// to <code>true</code>, RDS Custom returns no results.
+        /// For RDS Custom, the default is not to list supported time zones. If you enable this
+        /// parameter, RDS Custom returns no results.
         /// </para>
         /// </summary>
         public bool ListSupportedTimezones
