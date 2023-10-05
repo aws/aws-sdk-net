@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         private string _marker;
         private string _maxItems;
         private string _delegationSetId;
+        private HostedZoneType _hostedZoneType;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -125,6 +126,24 @@ namespace Amazon.Route53.Model
         internal bool IsSetDelegationSetId()
         {
             return this._delegationSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostedZoneType. 
+        /// <para>
+        ///  (Optional) Specifies if the hosted zone is private. 
+        /// </para>
+        /// </summary>
+        public HostedZoneType HostedZoneType
+        {
+            get { return this._hostedZoneType; }
+            set { this._hostedZoneType = value; }
+        }
+
+        // Check to see if HostedZoneType property is set
+        internal bool IsSetHostedZoneType()
+        {
+            return this._hostedZoneType != null;
         }
 
     }
