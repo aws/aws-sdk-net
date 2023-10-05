@@ -106,7 +106,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorDetails. 
         /// <para>
-        /// The details of the error returned for the image.
+        /// Additional details of the error returned for the image, including the possible causes
+        /// of the errors and troubleshooting information.
         /// </para>
         /// </summary>
         public List<ErrorDetails> ErrorDetails

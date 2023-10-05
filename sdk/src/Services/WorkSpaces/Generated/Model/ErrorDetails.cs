@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Provides in-depth details about the error. These details include the possible causes
-    /// of the errors and troubleshooting information.
+    /// Describes in-depth details about the error. These details include the possible causes
+    /// of the error and troubleshooting information.
     /// </summary>
     public partial class ErrorDetails
     {

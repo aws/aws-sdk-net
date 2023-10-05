@@ -443,6 +443,90 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  AssociateWorkspaceApplication
+
+        /// <summary>
+        /// Associates the specified application to the specified WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWorkspaceApplication service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWorkspaceApplication service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ApplicationNotSupportedException">
+        /// The specified application is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ComputeNotCompatibleException">
+        /// The compute type of the WorkSpace is not compatible with the application.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.IncompatibleApplicationsException">
+        /// The specified application is not compatible with the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperatingSystemNotCompatibleException">
+        /// The operating system of the WorkSpace is not compatible with the application.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceInUseException">
+        /// The specified resource is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateWorkspaceApplication">REST API Reference for AssociateWorkspaceApplication Operation</seealso>
+        public virtual AssociateWorkspaceApplicationResponse AssociateWorkspaceApplication(AssociateWorkspaceApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWorkspaceApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWorkspaceApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWorkspaceApplication operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWorkspaceApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateWorkspaceApplication">REST API Reference for AssociateWorkspaceApplication Operation</seealso>
+        public virtual IAsyncResult BeginAssociateWorkspaceApplication(AssociateWorkspaceApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateWorkspaceApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateWorkspaceApplication.</param>
+        /// 
+        /// <returns>Returns a  AssociateWorkspaceApplicationResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateWorkspaceApplication">REST API Reference for AssociateWorkspaceApplication Operation</seealso>
+        public virtual AssociateWorkspaceApplicationResponse EndAssociateWorkspaceApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateWorkspaceApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AuthorizeIpRules
 
         /// <summary>
@@ -1790,6 +1874,78 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeployWorkspaceApplications
+
+        /// <summary>
+        /// Deploys associated applications to the specified WorkSpace
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeployWorkspaceApplications service method.</param>
+        /// 
+        /// <returns>The response from the DeployWorkspaceApplications service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.IncompatibleApplicationsException">
+        /// The specified application is not compatible with the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceInUseException">
+        /// The specified resource is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeployWorkspaceApplications">REST API Reference for DeployWorkspaceApplications Operation</seealso>
+        public virtual DeployWorkspaceApplicationsResponse DeployWorkspaceApplications(DeployWorkspaceApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeployWorkspaceApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeployWorkspaceApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DeployWorkspaceApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeployWorkspaceApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeployWorkspaceApplications operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeployWorkspaceApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeployWorkspaceApplications">REST API Reference for DeployWorkspaceApplications Operation</seealso>
+        public virtual IAsyncResult BeginDeployWorkspaceApplications(DeployWorkspaceApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeployWorkspaceApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeployWorkspaceApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeployWorkspaceApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeployWorkspaceApplications.</param>
+        /// 
+        /// <returns>Returns a  DeployWorkspaceApplicationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeployWorkspaceApplications">REST API Reference for DeployWorkspaceApplications Operation</seealso>
+        public virtual DeployWorkspaceApplicationsResponse EndDeployWorkspaceApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeployWorkspaceApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeregisterWorkspaceDirectory
 
         /// <summary>
@@ -1990,6 +2146,205 @@ namespace Amazon.WorkSpaces
         public virtual DescribeAccountModificationsResponse EndDescribeAccountModifications(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountModificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeApplicationAssociations
+
+        /// <summary>
+        /// Describes the associations between the application and the specified associated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationAssociations service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplicationAssociations">REST API Reference for DescribeApplicationAssociations Operation</seealso>
+        public virtual DescribeApplicationAssociationsResponse DescribeApplicationAssociations(DescribeApplicationAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplicationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationAssociations operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicationAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplicationAssociations">REST API Reference for DescribeApplicationAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApplicationAssociations(DescribeApplicationAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplicationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplicationAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationAssociationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplicationAssociations">REST API Reference for DescribeApplicationAssociations Operation</seealso>
+        public virtual DescribeApplicationAssociationsResponse EndDescribeApplicationAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApplicationAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeApplications
+
+        /// <summary>
+        /// Describes the specified applications by filtering based on their compute types, license
+        /// availability, operating systems, and owners.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplications service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        public virtual DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplications.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        public virtual DescribeApplicationsResponse EndDescribeApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBundleAssociations
+
+        /// <summary>
+        /// Describes the associations between the applications and the specified bundle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBundleAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBundleAssociations service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeBundleAssociations">REST API Reference for DescribeBundleAssociations Operation</seealso>
+        public virtual DescribeBundleAssociationsResponse DescribeBundleAssociations(DescribeBundleAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBundleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBundleAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBundleAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBundleAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBundleAssociations operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBundleAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeBundleAssociations">REST API Reference for DescribeBundleAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBundleAssociations(DescribeBundleAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBundleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBundleAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBundleAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBundleAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeBundleAssociationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeBundleAssociations">REST API Reference for DescribeBundleAssociations Operation</seealso>
+        public virtual DescribeBundleAssociationsResponse EndDescribeBundleAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBundleAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -2326,6 +2681,72 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeImageAssociations
+
+        /// <summary>
+        /// Describes the associations between the applications and the specified image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageAssociations service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations">REST API Reference for DescribeImageAssociations Operation</seealso>
+        public virtual DescribeImageAssociationsResponse DescribeImageAssociations(DescribeImageAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageAssociations operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations">REST API Reference for DescribeImageAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImageAssociations(DescribeImageAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageAssociationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations">REST API Reference for DescribeImageAssociations Operation</seealso>
+        public virtual DescribeImageAssociationsResponse EndDescribeImageAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeIpGroups
 
         /// <summary>
@@ -2439,6 +2860,72 @@ namespace Amazon.WorkSpaces
         public virtual DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeWorkspaceAssociations
+
+        /// <summary>
+        /// Describes the associations betweens applications and the specified WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceAssociations service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceAssociations">REST API Reference for DescribeWorkspaceAssociations Operation</seealso>
+        public virtual DescribeWorkspaceAssociationsResponse DescribeWorkspaceAssociations(DescribeWorkspaceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceAssociations operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceAssociations">REST API Reference for DescribeWorkspaceAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWorkspaceAssociations(DescribeWorkspaceAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspaceAssociationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceAssociations">REST API Reference for DescribeWorkspaceAssociations Operation</seealso>
+        public virtual DescribeWorkspaceAssociationsResponse EndDescribeWorkspaceAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWorkspaceAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3074,6 +3561,75 @@ namespace Amazon.WorkSpaces
         public virtual DisassociateIpGroupsResponse EndDisassociateIpGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateIpGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateWorkspaceApplication
+
+        /// <summary>
+        /// Disassociates the specified application from a WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWorkspaceApplication service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWorkspaceApplication service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceInUseException">
+        /// The specified resource is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateWorkspaceApplication">REST API Reference for DisassociateWorkspaceApplication Operation</seealso>
+        public virtual DisassociateWorkspaceApplicationResponse DisassociateWorkspaceApplication(DisassociateWorkspaceApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWorkspaceApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWorkspaceApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWorkspaceApplication operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWorkspaceApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateWorkspaceApplication">REST API Reference for DisassociateWorkspaceApplication Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateWorkspaceApplication(DisassociateWorkspaceApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateWorkspaceApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateWorkspaceApplication.</param>
+        /// 
+        /// <returns>Returns a  DisassociateWorkspaceApplicationResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateWorkspaceApplication">REST API Reference for DisassociateWorkspaceApplication Operation</seealso>
+        public virtual DisassociateWorkspaceApplicationResponse EndDisassociateWorkspaceApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateWorkspaceApplicationResponse>(asyncResult);
         }
 
         #endregion

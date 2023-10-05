@@ -51,6 +51,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComputeTypeName);
             }
 
+            if(requestObject.IsSetOperatingSystemName())
+            {
+                context.Writer.WritePropertyName("OperatingSystemName");
+                context.Writer.Write(requestObject.OperatingSystemName);
+            }
+
             if(requestObject.IsSetProtocols())
             {
                 context.Writer.WritePropertyName("Protocols");

@@ -34,6 +34,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class WorkspaceProperties
     {
         private Compute _computeTypeName;
+        private OperatingSystemName _operatingSystemName;
         private List<string> _protocols = new List<string>();
         private int? _rootVolumeSizeGib;
         private RunningMode _runningMode;
@@ -57,6 +58,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetComputeTypeName()
         {
             return this._computeTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystemName. 
+        /// <para>
+        /// The name of the operating system.
+        /// </para>
+        /// </summary>
+        public OperatingSystemName OperatingSystemName
+        {
+            get { return this._operatingSystemName; }
+            set { this._operatingSystemName = value; }
+        }
+
+        // Check to see if OperatingSystemName property is set
+        internal bool IsSetOperatingSystemName()
+        {
+            return this._operatingSystemName != null;
         }
 
         /// <summary>

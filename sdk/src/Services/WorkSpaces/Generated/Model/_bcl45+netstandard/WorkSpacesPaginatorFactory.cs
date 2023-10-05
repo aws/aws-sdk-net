@@ -36,6 +36,22 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeApplicationAssociations operation
+        ///</summary>
+        public IDescribeApplicationAssociationsPaginator DescribeApplicationAssociations(DescribeApplicationAssociationsRequest request) 
+        {
+            return new DescribeApplicationAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeApplications operation
+        ///</summary>
+        public IDescribeApplicationsPaginator DescribeApplications(DescribeApplicationsRequest request) 
+        {
+            return new DescribeApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeWorkspaceBundles operation
         ///</summary>
         public IDescribeWorkspaceBundlesPaginator DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request) 
