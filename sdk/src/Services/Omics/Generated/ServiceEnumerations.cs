@@ -237,6 +237,60 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type ETagAlgorithm.
+    /// </summary>
+    public class ETagAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BAM_MD5up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm BAM_MD5up = new ETagAlgorithm("BAM_MD5up");
+        /// <summary>
+        /// Constant CRAM_MD5up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm CRAM_MD5up = new ETagAlgorithm("CRAM_MD5up");
+        /// <summary>
+        /// Constant FASTQ_MD5up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm FASTQ_MD5up = new ETagAlgorithm("FASTQ_MD5up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ETagAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ETagAlgorithm FindValue(string value)
+        {
+            return FindValue<ETagAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ETagAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileType.
     /// </summary>
     public class FileType : ConstantClass

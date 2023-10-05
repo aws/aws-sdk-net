@@ -37,6 +37,7 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private CreationType _creationType;
         private string _description;
+        private ETag _etag;
         private ReadSetFiles _files;
         private FileType _fileType;
         private string _id;
@@ -122,6 +123,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Etag. 
+        /// <para>
+        ///  The entity tag (ETag) is a hash of the object meant to represent its semantic content.
+        /// 
+        /// </para>
+        /// </summary>
+        public ETag Etag
+        {
+            get { return this._etag; }
+            set { this._etag = value; }
+        }
+
+        // Check to see if Etag property is set
+        internal bool IsSetEtag()
+        {
+            return this._etag != null;
         }
 
         /// <summary>
