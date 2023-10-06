@@ -1,0 +1,7 @@
+{
+    "core": {
+      "changeLogMessages": ["Improve documentation for InstanceProfileAWSCredentials constructors"],
+      "type": "patch",
+      "updateMinimum": false
+    }
+}
