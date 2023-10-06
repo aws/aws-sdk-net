@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.MatchOperator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NullOption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NullOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelectAllOptions", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

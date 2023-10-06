@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private string _name;
         private TemplateSourceEntity _sourceEntity;
         private string _templateId;
+        private ValidationStrategy _validationStrategy;
         private string _versionDescription;
 
         /// <summary>
@@ -148,6 +149,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTemplateId()
         {
             return this._templateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStrategy. 
+        /// <para>
+        /// The option to relax the validation needed to update a template with definition objects.
+        /// This skips the validation step for specific errors.
+        /// </para>
+        /// </summary>
+        public ValidationStrategy ValidationStrategy
+        {
+            get { return this._validationStrategy; }
+            set { this._validationStrategy = value; }
+        }
+
+        // Check to see if ValidationStrategy property is set
+        internal bool IsSetValidationStrategy()
+        {
+            return this._validationStrategy != null;
         }
 
         /// <summary>

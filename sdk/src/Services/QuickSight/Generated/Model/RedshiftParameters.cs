@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private string _clusterId;
         private string _database;
         private string _host;
+        private RedshiftIAMParameters _iamParameters;
         private int? _port;
 
         /// <summary>
@@ -96,6 +97,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetHost()
         {
             return this._host != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMParameters. 
+        /// <para>
+        /// An optional parameter that uses IAM authentication to grant Amazon QuickSight access
+        /// to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.
+        /// </para>
+        /// </summary>
+        public RedshiftIAMParameters IAMParameters
+        {
+            get { return this._iamParameters; }
+            set { this._iamParameters = value; }
+        }
+
+        // Check to see if IAMParameters property is set
+        internal bool IsSetIAMParameters()
+        {
+            return this._iamParameters != null;
         }
 
         /// <summary>

@@ -4420,6 +4420,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RedshiftIAMParameters.DatabaseUser</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RedshiftIAMParameters.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RedshiftParameters.ClusterId</property>
     <min>1</min>
     <max>64</max>
@@ -4475,11 +4485,11 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Schema</property>
-    <max>64</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RelativeDatesFilter.FilterId</property>

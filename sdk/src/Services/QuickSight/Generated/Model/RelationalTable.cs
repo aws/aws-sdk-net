@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The name of the relational table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -121,7 +121,7 @@ namespace Amazon.QuickSight.Model
         /// The schema name. This name applies to certain relational database engines.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Max=256)]
         public string Schema
         {
             get { return this._schema; }

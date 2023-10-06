@@ -159,6 +159,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ThemeArn);
                 }
 
+                if(publicRequest.IsSetValidationStrategy())
+                {
+                    context.Writer.WritePropertyName("ValidationStrategy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ValidationStrategyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVersionDescription())
                 {
                     context.Writer.WritePropertyName("VersionDescription");

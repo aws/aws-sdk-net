@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RedshiftParameters Marshaller
+    /// ValidationStrategy Marshaller
     /// </summary>
-    public class RedshiftParametersMarshaller : IRequestMarshaller<RedshiftParameters, JsonMarshallerContext> 
+    public class ValidationStrategyMarshaller : IRequestMarshaller<ValidationStrategy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,41 +43,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RedshiftParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(ValidationStrategy requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClusterId())
+            if(requestObject.IsSetMode())
             {
-                context.Writer.WritePropertyName("ClusterId");
-                context.Writer.Write(requestObject.ClusterId);
-            }
-
-            if(requestObject.IsSetDatabase())
-            {
-                context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
-            }
-
-            if(requestObject.IsSetHost())
-            {
-                context.Writer.WritePropertyName("Host");
-                context.Writer.Write(requestObject.Host);
-            }
-
-            if(requestObject.IsSetIAMParameters())
-            {
-                context.Writer.WritePropertyName("IAMParameters");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RedshiftIAMParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.IAMParameters, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPort())
-            {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.Write(requestObject.Mode);
             }
 
         }
@@ -85,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RedshiftParametersMarshaller Instance = new RedshiftParametersMarshaller();
+        public readonly static ValidationStrategyMarshaller Instance = new ValidationStrategyMarshaller();
 
     }
 }

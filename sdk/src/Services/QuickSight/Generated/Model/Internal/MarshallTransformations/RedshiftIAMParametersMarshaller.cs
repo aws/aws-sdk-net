@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RedshiftParameters Marshaller
+    /// RedshiftIAMParameters Marshaller
     /// </summary>
-    public class RedshiftParametersMarshaller : IRequestMarshaller<RedshiftParameters, JsonMarshallerContext> 
+    public class RedshiftIAMParametersMarshaller : IRequestMarshaller<RedshiftIAMParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,41 +43,35 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RedshiftParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(RedshiftIAMParameters requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClusterId())
+            if(requestObject.IsSetAutoCreateDatabaseUser())
             {
-                context.Writer.WritePropertyName("ClusterId");
-                context.Writer.Write(requestObject.ClusterId);
+                context.Writer.WritePropertyName("AutoCreateDatabaseUser");
+                context.Writer.Write(requestObject.AutoCreateDatabaseUser);
             }
 
-            if(requestObject.IsSetDatabase())
+            if(requestObject.IsSetDatabaseGroups())
             {
-                context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
+                context.Writer.WritePropertyName("DatabaseGroups");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDatabaseGroupsListValue in requestObject.DatabaseGroups)
+                {
+                        context.Writer.Write(requestObjectDatabaseGroupsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetHost())
+            if(requestObject.IsSetDatabaseUser())
             {
-                context.Writer.WritePropertyName("Host");
-                context.Writer.Write(requestObject.Host);
+                context.Writer.WritePropertyName("DatabaseUser");
+                context.Writer.Write(requestObject.DatabaseUser);
             }
 
-            if(requestObject.IsSetIAMParameters())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("IAMParameters");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RedshiftIAMParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.IAMParameters, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPort())
-            {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.Write(requestObject.RoleArn);
             }
 
         }
@@ -85,7 +79,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RedshiftParametersMarshaller Instance = new RedshiftParametersMarshaller();
+        public readonly static RedshiftIAMParametersMarshaller Instance = new RedshiftIAMParametersMarshaller();
 
     }
 }

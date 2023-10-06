@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private List<string> _categoryValues = new List<string>();
         private CategoryFilterMatchOperator _matchOperator;
+        private FilterNullOption _nullOption;
         private CategoryFilterSelectAllOptions _selectAllOptions;
 
         /// <summary>
@@ -73,6 +74,37 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetMatchOperator()
         {
             return this._matchOperator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NullOption. 
+        /// <para>
+        /// This option determines how null values should be treated when filtering data.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALL_VALUES</code>: Include null values in filtered results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NULLS_ONLY</code>: Only include null values in filtered results.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FilterNullOption NullOption
+        {
+            get { return this._nullOption; }
+            set { this._nullOption = value; }
+        }
+
+        // Check to see if NullOption property is set
+        internal bool IsSetNullOption()
+        {
+            return this._nullOption != null;
         }
 
         /// <summary>

@@ -6183,6 +6183,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly MemberType DATASET = new MemberType("DATASET");
         /// <summary>
+        /// Constant DATASOURCE for MemberType
+        /// </summary>
+        public static readonly MemberType DATASOURCE = new MemberType("DATASOURCE");
+        /// <summary>
         /// Constant TOPIC for MemberType
         /// </summary>
         public static readonly MemberType TOPIC = new MemberType("TOPIC");
@@ -9661,6 +9665,10 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant AUTO for TableTotalsPlacement
+        /// </summary>
+        public static readonly TableTotalsPlacement AUTO = new TableTotalsPlacement("AUTO");
+        /// <summary>
         /// Constant END for TableTotalsPlacement
         /// </summary>
         public static readonly TableTotalsPlacement END = new TableTotalsPlacement("END");
@@ -10752,6 +10760,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationStrategyMode.
+    /// </summary>
+    public class ValidationStrategyMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LENIENT for ValidationStrategyMode
+        /// </summary>
+        public static readonly ValidationStrategyMode LENIENT = new ValidationStrategyMode("LENIENT");
+        /// <summary>
+        /// Constant STRICT for ValidationStrategyMode
+        /// </summary>
+        public static readonly ValidationStrategyMode STRICT = new ValidationStrategyMode("STRICT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationStrategyMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationStrategyMode FindValue(string value)
+        {
+            return FindValue<ValidationStrategyMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationStrategyMode(string value)
         {
             return FindValue(value);
         }
