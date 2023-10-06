@@ -139,11 +139,6 @@ namespace Amazon.EC2.Model
         /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
         /// to view the network border groups.
         /// </para>
-        ///  
-        /// <para>
-        /// You cannot use a network border group with EC2 Classic. If you attempt this operation
-        /// on EC2 Classic, you receive an <code>InvalidParameterCombination</code> error.
-        /// </para>
         /// </summary>
         public string NetworkBorderGroup
         {

@@ -100,6 +100,16 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum amount per hour for On-Demand Instances that you're willing to pay.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If your fleet includes T instances that are configured as <code>unlimited</code>,
+        /// and if their average CPU usage exceeds the baseline utilization, you will incur a
+        /// charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus
+        /// credits, and, if you use surplus credits, your final cost might be higher than what
+        /// you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+        /// credits can incur charges</a> in the <i>EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string MaxTotalPrice
         {

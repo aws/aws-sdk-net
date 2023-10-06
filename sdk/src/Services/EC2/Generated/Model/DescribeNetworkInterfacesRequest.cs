@@ -31,6 +31,14 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeNetworkInterfaces operation.
     /// Describes one or more of your network interfaces.
+    /// 
+    ///  
+    /// <para>
+    /// If you have a large number of network interfaces, the operation fails unless you use
+    /// pagination or one of the following filters: <code>group-id</code>, <code>mac-address</code>,
+    /// <code>private-dns-name</code>, <code>private-ip-address</code>, <code>private-dns-name</code>,
+    /// <code>subnet-id</code>, or <code>vpc-id</code>.
+    /// </para>
     /// </summary>
     public partial class DescribeNetworkInterfacesRequest : AmazonEC2Request
     {
@@ -46,23 +54,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>addresses.private-ip-address</code> - The private IPv4 addresses associated
-        /// with the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>addresses.primary</code> - Whether the private IPv4 address is the primary
-        /// IP address associated with the network interface. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>addresses.association.public-ip</code> - The association ID returned when the
-        /// network interface was associated with the Elastic IP address (IPv4).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>addresses.association.owner-id</code> - The owner ID of the addresses associated
-        /// with the network interface.
+        ///  <code>association.allocation-id</code> - The allocation ID returned when you allocated
+        /// the Elastic IP address (IPv4) for your network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -71,8 +64,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>association.allocation-id</code> - The allocation ID returned when you allocated
-        /// the Elastic IP address (IPv4) for your network interface.
+        ///  <code>addresses.association.owner-id</code> - The owner ID of the addresses associated
+        /// with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>addresses.association.public-ip</code> - The association ID returned when the
+        /// network interface was associated with the Elastic IP address (IPv4).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>addresses.primary</code> - Whether the private IPv4 address is the primary
+        /// IP address associated with the network interface. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>addresses.private-ip-address</code> - The private IPv4 addresses associated
+        /// with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,12 +99,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.attachment-id</code> - The ID of the interface attachment.
+        ///  <code>attachment.attach-time</code> - The time that the network interface was attached
+        /// to an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.attach-time</code> - The time that the network interface was attached
-        /// to an instance.
+        ///  <code>attachment.attachment-id</code> - The ID of the interface attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,19 +145,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>group-name</code> - The name of a security group associated with the network
-        /// interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the network
         /// interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code>
-        /// | <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code>
-        /// | <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code>
+        /// | <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>ec2_instance_connect_endpoint</code>
+        /// | <code>efa</code> | <code>efs</code> | <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code>
         /// | <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code>
         /// | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
         /// | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
@@ -169,12 +172,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private-ip-address</code> - The private IPv4 address or addresses of the network
-        /// interface.
+        ///  <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private-dns-name</code> - The private DNS name of the network interface (IPv4).
+        ///  <code>private-ip-address</code> - The private IPv4 address or addresses of the network
+        /// interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
