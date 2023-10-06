@@ -1,3 +1,15 @@
+### 3.7.660.0 (2023-10-06 18:25 UTC)
+* EC2 (3.7.219.0)
+	* Documentation updates for Elastic Compute Cloud (EC2).
+* FSx (3.7.202.0)
+	* After performing steps to repair the Active Directory configuration of a file system, use this action to initiate the process of attempting to recover to the file system.
+* MarketplaceCatalog (3.7.201.0)
+	* This release adds support for Document type as an alternative for stringified JSON for StartChangeSet, DescribeChangeSet and DescribeEntity APIs
+* QuickSight (3.7.206.0)
+	* NullOption in FilterListConfiguration; Dataset schema/table max length increased; Support total placement for pivot table visual; Lenient mode relaxes the validation to create resources with definition; Data sources can be added to folders; Redshift data sources support IAM Role-based authentication
+* Transfer (3.7.202.0)
+	* This release updates the max character limit of PreAuthenticationLoginBanner and PostAuthenticationLoginBanner to 4096 characters
+
 ### 3.7.659.0 (2023-10-06 00:09 UTC)
 * DynamoDBv2 (3.7.203.0)
 	* Add TableBuilder and DisableFetchingTableMetadata, which can be used to provide table metadata for both the document and object mapper programming models. This can avoid throttling, improve cold-start latency, and avoid threadpool starvation.
