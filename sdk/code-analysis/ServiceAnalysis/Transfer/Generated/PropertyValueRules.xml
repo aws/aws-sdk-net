@@ -128,12 +128,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateServerRequest.PostAuthenticationLoginBanner</property>
-    <max>512</max>
+    <max>4096</max>
     <pattern>[\x09-\x0D\x20-\x7E]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateServerRequest.PreAuthenticationLoginBanner</property>
-    <max>512</max>
+    <max>4096</max>
     <pattern>[\x09-\x0D\x20-\x7E]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1035,12 +1035,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.PostAuthenticationLoginBanner</property>
-    <max>512</max>
+    <max>4096</max>
     <pattern>[\x09-\x0D\x20-\x7E]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.PreAuthenticationLoginBanner</property>
-    <max>512</max>
+    <max>4096</max>
     <pattern>[\x09-\x0D\x20-\x7E]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1369,12 +1369,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.PostAuthenticationLoginBanner</property>
-    <max>512</max>
+    <max>4096</max>
     <pattern>[\x09-\x0D\x20-\x7E]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.PreAuthenticationLoginBanner</property>
-    <max>512</max>
+    <max>4096</max>
     <pattern>[\x09-\x0D\x20-\x7E]*</pattern>
   </property-value-rule>
   <property-value-rule>

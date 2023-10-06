@@ -40,9 +40,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property TrustedHostKeys. 
         /// <para>
-        /// The public portion of the host key, or keys, that are used to authenticate the user
-        /// to the external server to which you are connecting. You can use the <code>ssh-keyscan</code>
-        /// command against the SFTP server to retrieve the necessary key.
+        /// The public portion of the host key, or keys, that are used to identify the external
+        /// server to which you are connecting. You can use the <code>ssh-keyscan</code> command
+        /// against the SFTP server to retrieve the necessary key.
         /// </para>
         ///  
         /// <para>
@@ -57,12 +57,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For RSA keys, the key type is <code>ssh-rsa</code>.
+        /// For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>,
-        /// or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.
+        /// For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>,
+        /// <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on
+        /// the size of the key you generated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

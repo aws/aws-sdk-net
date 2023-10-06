@@ -376,7 +376,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=4096)]
         public string PostAuthenticationLoginBanner
         {
             get { return this._postAuthenticationLoginBanner; }
@@ -404,7 +404,7 @@ namespace Amazon.Transfer.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=4096)]
         public string PreAuthenticationLoginBanner
         {
             get { return this._preAuthenticationLoginBanner; }
