@@ -34,6 +34,7 @@ namespace Amazon.MarketplaceCatalog.Model
     public partial class DescribeEntityResponse : AmazonWebServiceResponse
     {
         private string _details;
+        private Amazon.Runtime.Documents.Document _detailsDocument;
         private string _entityArn;
         private string _entityIdentifier;
         private string _entityType;
@@ -56,6 +57,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetDetails()
         {
             return this._details != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailsDocument. 
+        /// <para>
+        /// The JSON value of the details specific to the entity.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document DetailsDocument
+        {
+            get { return this._detailsDocument; }
+            set { this._detailsDocument = value; }
+        }
+
+        // Check to see if DetailsDocument property is set
+        internal bool IsSetDetailsDocument()
+        {
+            return !this._detailsDocument.IsNull();
         }
 
         /// <summary>

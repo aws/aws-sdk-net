@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _changeName;
         private string _changeType;
         private string _details;
+        private Amazon.Runtime.Documents.Document _detailsDocument;
         private Entity _entity;
         private List<ErrorDetail> _errorDetailList = new List<ErrorDetail>();
 
@@ -95,6 +96,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetDetails()
         {
             return this._details != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailsDocument. 
+        /// <para>
+        /// The JSON value of the details specific to the change type of the requested change.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document DetailsDocument
+        {
+            get { return this._detailsDocument; }
+            set { this._detailsDocument = value; }
+        }
+
+        // Check to see if DetailsDocument property is set
+        internal bool IsSetDetailsDocument()
+        {
+            return !this._detailsDocument.IsNull();
         }
 
         /// <summary>
