@@ -1892,6 +1892,35 @@ namespace Amazon.FSx
 
         #endregion
                 
+        #region  StartMisconfiguredStateRecovery
+
+
+
+        /// <summary>
+        /// After performing steps to repair the Active Directory configuration of an FSx for
+        /// Windows File Server file system, use this action to initiate the process of Amazon
+        /// FSx attempting to reconnect to the file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMisconfiguredStateRecovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMisconfiguredStateRecovery service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
+        Task<StartMisconfiguredStateRecoveryResponse> StartMisconfiguredStateRecoveryAsync(StartMisconfiguredStateRecoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 

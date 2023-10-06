@@ -2620,6 +2620,57 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  StartMisconfiguredStateRecovery
+
+
+        /// <summary>
+        /// After performing steps to repair the Active Directory configuration of an FSx for
+        /// Windows File Server file system, use this action to initiate the process of Amazon
+        /// FSx attempting to reconnect to the file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMisconfiguredStateRecovery service method.</param>
+        /// 
+        /// <returns>The response from the StartMisconfiguredStateRecovery service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
+        StartMisconfiguredStateRecoveryResponse StartMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMisconfiguredStateRecovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMisconfiguredStateRecovery operation on AmazonFSxClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMisconfiguredStateRecovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
+        IAsyncResult BeginStartMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMisconfiguredStateRecovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMisconfiguredStateRecovery.</param>
+        /// 
+        /// <returns>Returns a  StartMisconfiguredStateRecoveryResult from FSx.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
+        StartMisconfiguredStateRecoveryResponse EndStartMisconfiguredStateRecovery(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 

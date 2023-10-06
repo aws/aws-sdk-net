@@ -622,6 +622,18 @@
     <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.StartMisconfiguredStateRecoveryRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StartMisconfiguredStateRecoveryRequest.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.TagResourceRequest.ResourceARN</property>
     <min>8</min>
     <max>512</max>

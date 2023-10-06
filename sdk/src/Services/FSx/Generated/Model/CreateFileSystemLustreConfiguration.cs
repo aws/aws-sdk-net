@@ -46,7 +46,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ImportedChunkSize</code> 
+    ///  <code>ImportedFileChunkSize</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
