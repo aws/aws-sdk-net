@@ -1,0 +1,11 @@
+{
+  "core": {
+    "changeLogMessages": ["Add ContextAttributes property to IRequestContext to store request state in custom pipeline handlers."],
+    "type": "patch",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [
+		"Amazon.Runtime.Internal.RequestContext/MethodIsNowSealed", 
+		"Amazon.Runtime.IRequestContext/MethodAbstractMethodAdded"
+	]
+  }
+}
