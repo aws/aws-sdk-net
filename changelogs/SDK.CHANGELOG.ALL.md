@@ -1,3 +1,11 @@
+### 3.7.659.0 (2023-10-06 00:09 UTC)
+* DynamoDBv2 (3.7.203.0)
+	* Add TableBuilder and DisableFetchingTableMetadata, which can be used to provide table metadata for both the document and object mapper programming models. This can avoid throttling, improve cold-start latency, and avoid threadpool starvation.
+* S3 (3.7.205.8)
+	* Fixed documentation for EtagToNotMatch property in GetObjectRequest and GetObjectMetadataRequest classes; Fixed an issue where CompleteMultipartUploadRequest.AddPartETags() does not include checksums from CopyPartResponse.
+* Core 3.7.203.0
+	* Add SSO registration scopes from the shared config file to CredentialProfileOptions.
+
 ### 3.7.658.0 (2023-10-05 18:25 UTC)
 * Omics (3.7.205.0)
 	* Add Etag Support for Omics Storage in ListReadSets and GetReadSetMetadata API
