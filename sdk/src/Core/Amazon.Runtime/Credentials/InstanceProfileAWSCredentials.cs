@@ -154,16 +154,17 @@ namespace Amazon.Runtime
         #region Constructors
 
         /// <summary>
-        /// Constructs a InstanceProfileAWSCredentials object for specific role
+        /// Constructs <see cref="InstanceProfileAWSCredentials"/> for the specified role.
         /// </summary>
-        /// <param name="role">Role to use</param>
+        /// <param name="role">Name of the role to use</param>
         public InstanceProfileAWSCredentials(string role)
             : this(role, null) { }
 
         /// <summary>
-        /// Constructs a InstanceProfileAWSCredentials object for specific role
+        /// Constructs <see cref="InstanceProfileAWSCredentials"/> for the specified role.
         /// </summary>
-        /// <param name="role">Role to use</param>
+        /// <param name="role">Name of the role to use</param>
+        /// <param name="proxy">Proxy used to process requests to the instance metadata service</param>
         public InstanceProfileAWSCredentials(string role, IWebProxy proxy)
         {
             _logger = Logger.GetLogger(GetType());
@@ -180,14 +181,19 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Constructs a InstanceProfileAWSCredentials object for the first found role
+        /// Constructs <see cref="InstanceProfileAWSCredentials"/> for the first found role.
         /// </summary>
+        /// <remarks>This makes an IMDS call to retrieve the name of the IAM role associated with the instance during construction.</remarks>
+        /// <exception cref="AmazonServiceException">Thrown when unable to retrieve the name of the IAM role.</exception>
         public InstanceProfileAWSCredentials()
             : this(proxy: null) { }
 
         /// <summary>
-        /// Constructs a InstanceProfileAWSCredentials object for the first found role
+        /// Constructs <see cref="InstanceProfileAWSCredentials"/> for the first found role.
         /// </summary>
+        /// <remarks>This makes an IMDS call to retrieve the name of the IAM role associated with the instance during construction.</remarks>
+        /// <param name="proxy">Proxy used to process requests to the instance metadata service</param>
+        /// <exception cref="AmazonServiceException">Thrown when unable to retrieve the name of the IAM role.</exception>
         public InstanceProfileAWSCredentials(IWebProxy proxy)
             : this(GetFirstRole(proxy), proxy) { }
 
