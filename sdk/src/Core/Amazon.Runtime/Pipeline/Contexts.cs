@@ -25,7 +25,7 @@ namespace Amazon.Runtime
 {
     public interface IRequestContext
     {
-        AmazonWebServiceRequest OriginalRequest { get; }
+        AmazonWebServiceRequest OriginalRequest { get; set; }
         string RequestName { get; }
         IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; }
         ResponseUnmarshaller Unmarshaller { get; }
@@ -53,6 +53,8 @@ namespace Amazon.Runtime
         bool IsLastExceptionRetryable { get; set; }
 
         Guid InvocationId { get; }
+
+        IDictionary<string, object> ContextAttributes { get; }
     }
 
     public interface IResponseContext
@@ -95,6 +97,7 @@ namespace Amazon.Runtime.Internal
     {
         private IServiceMetadata _serviceMetadata;
         AbstractAWSSigner clientSigner;
+        IDictionary<string, object> _contextAttributes;
 
         public RequestContext(bool enableMetrics, AbstractAWSSigner clientSigner)
         {
@@ -168,6 +171,19 @@ namespace Amazon.Runtime.Internal
         public bool IsLastExceptionRetryable { get; set; }
 
         public Guid InvocationId { get; private set; }
+
+        public IDictionary<string, object> ContextAttributes 
+        { 
+            get
+            {
+                if(_contextAttributes == null)
+                {
+                    _contextAttributes = new Dictionary<string, object>();
+                }
+
+                return _contextAttributes;
+            }
+        }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext
