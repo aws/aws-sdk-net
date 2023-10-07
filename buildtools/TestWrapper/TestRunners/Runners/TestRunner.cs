@@ -44,6 +44,7 @@ namespace TestWrapper.TestRunners
             RunnerName = this.GetType().Name;
             MaxTestRuns = MAX_TEST_RUNS_DEFAULT;
             MaxConsecutiveFailures = MAX_CONSECUTIVE_FAILURES_DEFAULT;
+            TestResultsPath = Path.Combine(TestContainer.DirectoryName, "TestResults");
         }
 
         public string RunnerName { get; set; }
@@ -65,7 +66,19 @@ namespace TestWrapper.TestRunners
         /// </summary>
         public bool KeepTestResults { get; set; }
 
-        private string TestResultsPath => Path.Combine(TestContainer.DirectoryName, "TestResults");
+        /// <summary>
+        /// Specified the framework to use for testing. This is typically the framework that the
+        /// test project has been built as in multi-target solutions. The default is to not specify
+        /// a TargetFramework.
+        /// </summary>
+        public string TargetFramework { get; set; }
+
+        /// <summary>
+        /// Specifies the path to the TestResults folder. By default this will be the same as the project 
+        /// directory but there are cases when running the build test dll where the path will not be
+        /// the same as the project.
+        /// </summary>
+        public string TestResultsPath { get; set; }
 
         /// <summary>
         /// Run the tests for this test runner.
@@ -355,8 +368,17 @@ namespace TestWrapper.TestRunners
             // add container
             components.Add(GetContainerArg(TestContainer.FullName));
 
+            if(!string.IsNullOrEmpty(TargetFramework))
+            {
+                // add the target framework
+                components.Add($"-f {TargetFramework}");
+            }
+
             // change logger to trx
             components.Add("--logger trx");
+
+            // set the results directory so it will always be a predictable value.
+            components.Add($"--results-directory \"{TestResultsPath}\"");
 
             // add configuration
             components.Add(GetConfigArg(Configuration));

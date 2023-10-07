@@ -6,7 +6,7 @@ This project file should not be used as part of a release pipeline.
 -->
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
         <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
         <DebugType>portable</DebugType>
         <PackageId>UnitTests</PackageId>
@@ -24,10 +24,7 @@ This project file should not be used as part of a release pipeline.
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
         <NoWarn>CS1591</NoWarn>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-        <LangVersion>8.0</LangVersion>
+        <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

@@ -26,6 +26,8 @@ namespace TestWrapper
                 (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
             msTestRunner.TestExecutionProfile = TestExecutionProfile.ItemSpec;
             msTestRunner.KeepTestResults = KeepTestResultsFile;
+            msTestRunner.TargetFramework = TargetFramework?.ItemSpec;
+            msTestRunner.TestResultsPath = TestResultsPath?.ItemSpec ?? msTestRunner.TestResultsPath;
             Runner = msTestRunner;
         }
     }
