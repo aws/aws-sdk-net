@@ -1,9 +1,0 @@
-{
-    "core": {
-        "changeLogMessages": [
-            "Update SDK components for CI build system migration."
-        ],
-        "type": "minor",
-        "updateMinimum": true
-    }
-}

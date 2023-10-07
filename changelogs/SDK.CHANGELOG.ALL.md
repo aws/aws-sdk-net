@@ -1,3 +1,9 @@
+### 3.7.661.0 (2023-10-07 04:59 UTC)
+* Core 3.7.204.0
+	* Add ContextAttributes property to IRequestContext to store request state in custom pipeline handlers.
+	* Update SDK components for CI build system migration.
+	* All services packages updated to require new Core
+
 ### 3.7.660.0 (2023-10-06 18:25 UTC)
 * EC2 (3.7.219.0)
 	* Documentation updates for Elastic Compute Cloud (EC2).
