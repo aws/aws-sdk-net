@@ -143,7 +143,9 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// An array of one or more filter values.
         /// </para>
-        ///  <p class="title"> <b>Operator Values</b> 
+        ///  
+        /// <para>
+        ///  <b>Operator Values</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -153,7 +155,9 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The other operators require an array with a single element.
         /// </para>
-        ///  </li> </ul> <p class="title"> <b>Attribute Values</b> 
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Attribute Values</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

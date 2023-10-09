@@ -2033,25 +2033,31 @@ namespace Amazon.Connect
         /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// If the number being used in the input is claimed to a traffic distribution group,
-        /// and you are calling this API using an instance in the Amazon Web Services Region where
-        /// the traffic distribution group was created, you can use either a full phone number
-        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-        /// request body parameter. However, if the number is claimed to a traffic distribution
-        /// group and you are calling this API using an instance in the alternate Amazon Web Services
-        /// Region associated with the traffic distribution group, you must provide a full phone
-        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// If the phone number is claimed to a traffic distribution group that was created in
+        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// However, if the phone number is claimed to a traffic distribution group that is in
+        /// one Region, and you are calling this API from an instance in another Amazon Web Services
+        /// Region that is associated with the traffic distribution group, you must provide a
+        /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
+        /// <code>ResourceNotFoundException</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
         /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
         /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you plan to use IAM policies to allow/deny access to this API for phone number
+        /// resources claimed to a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+        /// or Deny queue API actions for phone numbers in a replica Region</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// 
@@ -2357,12 +2363,7 @@ namespace Amazon.Connect
         #region  CreateSecurityProfile
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile service method.</param>
         /// 
@@ -2512,7 +2513,15 @@ namespace Amazon.Connect
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
         /// replicated. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// is returned.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
         /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
@@ -2814,6 +2823,189 @@ namespace Amazon.Connect
         public virtual CreateUserHierarchyGroupResponse EndCreateUserHierarchyGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserHierarchyGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateView
+
+        /// <summary>
+        /// Creates a new view with the possible status of <code>SAVED</code> or <code>PUBLISHED</code>.
+        /// 
+        ///  
+        /// <para>
+        /// The views will have a unique name for each connect instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// It performs basic content validation if the status is <code>SAVED</code> or full content
+        /// validation if the status is set to <code>PUBLISHED</code>. An error is returned if
+        /// validation fails. It associates either the <code>$SAVED</code> qualifier or both of
+        /// the <code>$SAVED</code> and <code>$LATEST</code> qualifiers with the provided view
+        /// content based on the status. The view is idempotent if ClientToken is provided.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateView service method.</param>
+        /// 
+        /// <returns>The response from the CreateView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">REST API Reference for CreateView Operation</seealso>
+        public virtual CreateViewResponse CreateView(CreateViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateViewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateViewResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateView operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateView operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateView
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">REST API Reference for CreateView Operation</seealso>
+        public virtual IAsyncResult BeginCreateView(CreateViewRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateViewResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateView operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateView.</param>
+        /// 
+        /// <returns>Returns a  CreateViewResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">REST API Reference for CreateView Operation</seealso>
+        public virtual CreateViewResponse EndCreateView(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateViewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateViewVersion
+
+        /// <summary>
+        /// Publishes a new version of the view identifier.
+        /// 
+        ///  
+        /// <para>
+        /// Versions are immutable and monotonically increasing.
+        /// </para>
+        ///  
+        /// <para>
+        /// It returns the highest version if there is no change in content compared to that version.
+        /// An error is displayed if the supplied ViewContentSha256 is different from the ViewContentSha256
+        /// of the <code>$LATEST</code> alias.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateViewVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateViewVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">REST API Reference for CreateViewVersion Operation</seealso>
+        public virtual CreateViewVersionResponse CreateViewVersion(CreateViewVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateViewVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateViewVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateViewVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateViewVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateViewVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateViewVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">REST API Reference for CreateViewVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateViewVersion(CreateViewVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateViewVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateViewVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateViewVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateViewVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateViewVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">REST API Reference for CreateViewVersion Operation</seealso>
+        public virtual CreateViewVersionResponse EndCreateViewVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateViewVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -3831,12 +4023,7 @@ namespace Amazon.Connect
         #region  DeleteSecurityProfile
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityProfile service method.</param>
         /// 
@@ -4265,6 +4452,157 @@ namespace Amazon.Connect
         public virtual DeleteUserHierarchyGroupResponse EndDeleteUserHierarchyGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserHierarchyGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteView
+
+        /// <summary>
+        /// Deletes the view entirely. It deletes the view and all associated qualifiers (versions
+        /// and aliases).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteView service method.</param>
+        /// 
+        /// <returns>The response from the DeleteView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">REST API Reference for DeleteView Operation</seealso>
+        public virtual DeleteViewResponse DeleteView(DeleteViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteViewResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteViewResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteView operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteView operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteView
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">REST API Reference for DeleteView Operation</seealso>
+        public virtual IAsyncResult BeginDeleteView(DeleteViewRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteViewResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteView operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteView.</param>
+        /// 
+        /// <returns>Returns a  DeleteViewResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">REST API Reference for DeleteView Operation</seealso>
+        public virtual DeleteViewResponse EndDeleteView(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteViewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteViewVersion
+
+        /// <summary>
+        /// Deletes the particular version specified in <code>ViewVersion</code> identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteViewVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteViewVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">REST API Reference for DeleteViewVersion Operation</seealso>
+        public virtual DeleteViewVersionResponse DeleteViewVersion(DeleteViewVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteViewVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteViewVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteViewVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteViewVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteViewVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteViewVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">REST API Reference for DeleteViewVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteViewVersion(DeleteViewVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteViewVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteViewVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteViewVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteViewVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteViewVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">REST API Reference for DeleteViewVersion Operation</seealso>
+        public virtual DeleteViewVersionResponse EndDeleteViewVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteViewVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -5515,12 +5853,7 @@ namespace Amazon.Connect
         #region  DescribeSecurityProfile
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Gets basic information about the security profle.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile service method.</param>
         /// 
@@ -5861,6 +6194,95 @@ namespace Amazon.Connect
         public virtual DescribeUserHierarchyStructureResponse EndDescribeUserHierarchyStructure(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUserHierarchyStructureResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeView
+
+        /// <summary>
+        /// Retrieves the view for the specified Amazon Connect instance and view identifier.
+        /// 
+        ///  
+        /// <para>
+        /// The view identifier can be supplied as a ViewId or ARN.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>$SAVED</code> needs to be supplied if a view is unpublished.
+        /// </para>
+        ///  
+        /// <para>
+        /// The view identifier can contain an optional qualifier, for example, <code>&lt;view-id&gt;:$SAVED</code>,
+        /// which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED
+        /// | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for
+        /// customer managed views and an error is returned if there is no published content available.
+        /// Version 1 is assumed for Amazon Web Services managed views.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
+        /// 
+        /// <returns>The response from the DescribeView service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">REST API Reference for DescribeView Operation</seealso>
+        public virtual DescribeViewResponse DescribeView(DescribeViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeViewResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeViewResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeView operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeView operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeView
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">REST API Reference for DescribeView Operation</seealso>
+        public virtual IAsyncResult BeginDescribeView(DescribeViewRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeViewResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeView operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeView.</param>
+        /// 
+        /// <returns>Returns a  DescribeViewResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">REST API Reference for DescribeView Operation</seealso>
+        public virtual DescribeViewResponse EndDescribeView(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeViewResponse>(asyncResult);
         }
 
         #endregion
@@ -7129,7 +7551,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 35 days, in 24-hour intervals.
+        /// the last 3 months, at varying intervals. 
         /// </para>
         ///  
         /// <para>
@@ -8643,7 +9065,15 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// to return phone number types. ListPhoneNumbers doesn't support number types <code>UIFN</code>,
+        /// <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>.
+        /// While it returns numbers of those types, it incorrectly lists them as <code>TOLL_FREE</code>
+        /// or <code>DID</code>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// The phone number <code>Arn</code> value that is returned from each of the items in
         /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
@@ -8651,7 +9081,7 @@ namespace Amazon.Connect
         /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API. It returns the new phone number ARN that can be used to tag phone number resources.
         /// </para>
-        ///  </important>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// 
@@ -9389,15 +9819,79 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListSecurityProfileApplications
+
+        /// <summary>
+        /// Returns a list of third party applications in a specific security profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityProfileApplications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
+        public virtual ListSecurityProfileApplicationsResponse ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfileApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityProfileApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityProfileApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
+        public virtual IAsyncResult BeginListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityProfileApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityProfileApplications.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityProfileApplicationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
+        public virtual ListSecurityProfileApplicationsResponse EndListSecurityProfileApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityProfileApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSecurityProfilePermissions
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the permissions granted to a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilePermissions service method.</param>
         /// 
@@ -10026,6 +10520,161 @@ namespace Amazon.Connect
         public virtual ListUsersResponse EndListUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListViews
+
+        /// <summary>
+        /// Returns views in the given instance.
+        /// 
+        ///  
+        /// <para>
+        /// Results are sorted primarily by type, and secondarily by name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListViews service method.</param>
+        /// 
+        /// <returns>The response from the ListViews service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">REST API Reference for ListViews Operation</seealso>
+        public virtual ListViewsResponse ListViews(ListViewsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListViewsResponseUnmarshaller.Instance;
+
+            return Invoke<ListViewsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListViews operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListViews operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListViews
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">REST API Reference for ListViews Operation</seealso>
+        public virtual IAsyncResult BeginListViews(ListViewsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListViewsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListViews operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListViews.</param>
+        /// 
+        /// <returns>Returns a  ListViewsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">REST API Reference for ListViews Operation</seealso>
+        public virtual ListViewsResponse EndListViews(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListViewsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListViewVersions
+
+        /// <summary>
+        /// Returns all the available versions for the specified Amazon Connect instance and view
+        /// identifier.
+        /// 
+        ///  
+        /// <para>
+        /// Results will be sorted from highest to lowest.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListViewVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListViewVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">REST API Reference for ListViewVersions Operation</seealso>
+        public virtual ListViewVersionsResponse ListViewVersions(ListViewVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListViewVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListViewVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListViewVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListViewVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListViewVersions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListViewVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">REST API Reference for ListViewVersions Operation</seealso>
+        public virtual IAsyncResult BeginListViewVersions(ListViewVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListViewVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListViewVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListViewVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListViewVersions.</param>
+        /// 
+        /// <returns>Returns a  ListViewVersionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">REST API Reference for ListViewVersions Operation</seealso>
+        public virtual ListViewVersionsResponse EndListViewVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListViewVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -11682,7 +12331,8 @@ namespace Amazon.Connect
         #region  StopContact
 
         /// <summary>
-        /// Ends the specified contact. This call does not work for the following initiation methods:
+        /// Ends the specified contact. This call does not work for voice contacts that use the
+        /// following initiation methods:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -11696,14 +12346,18 @@ namespace Amazon.Connect
         /// <para>
         /// QUEUE_TRANSFER
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Chat and task contacts, however, can be terminated in any state, regardless of initiation
+        /// method.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
         /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat, Task, or Voice Callback.
+        /// calls only, not to Chat or Task contacts.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -13880,25 +14534,31 @@ namespace Amazon.Connect
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// If the number being used in the input is claimed to a traffic distribution group,
-        /// and you are calling this API using an instance in the Amazon Web Services Region where
-        /// the traffic distribution group was created, you can use either a full phone number
-        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-        /// request body parameter. However, if the number is claimed to a traffic distribution
-        /// group and you are calling this API using an instance in the alternate Amazon Web Services
-        /// Region associated with the traffic distribution group, you must provide a full phone
-        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// If the phone number is claimed to a traffic distribution group that was created in
+        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// However, if the phone number is claimed to a traffic distribution group that is in
+        /// one Region, and you are calling this API from an instance in another Amazon Web Services
+        /// Region that is associated with the traffic distribution group, you must provide a
+        /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
+        /// <code>ResourceNotFoundException</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
         /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
         /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// If you plan to use IAM policies to allow/deny access to this API for phone number
+        /// resources claimed to a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+        /// or Deny queue API actions for phone numbers in a replica Region</a>.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
         /// 
@@ -14611,12 +15271,7 @@ namespace Amazon.Connect
         #region  UpdateSecurityProfile
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates a security profile.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile service method.</param>
         /// 
@@ -14763,8 +15418,9 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// You can change the <code>SignInConfig</code> only for a default <code>TrafficDistributionGroup</code>.
-        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
         /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
         /// is returned.
         /// </para>
@@ -15338,6 +15994,169 @@ namespace Amazon.Connect
         public virtual UpdateUserSecurityProfilesResponse EndUpdateUserSecurityProfiles(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserSecurityProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateViewContent
+
+        /// <summary>
+        /// Updates the view content of the given view identifier in the specified Amazon Connect
+        /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// It performs content validation if <code>Status</code> is set to <code>SAVED</code>
+        /// and performs full content validation if <code>Status</code> is <code>PUBLISHED</code>.
+        /// Note that the <code>$SAVED</code> alias' content will always be updated, but the <code>$LATEST</code>
+        /// alias' content will only be updated if <code>Status</code> is <code>PUBLISHED</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateViewContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">REST API Reference for UpdateViewContent Operation</seealso>
+        public virtual UpdateViewContentResponse UpdateViewContent(UpdateViewContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateViewContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateViewContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateViewContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateViewContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewContent operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateViewContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">REST API Reference for UpdateViewContent Operation</seealso>
+        public virtual IAsyncResult BeginUpdateViewContent(UpdateViewContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateViewContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateViewContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateViewContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateViewContent.</param>
+        /// 
+        /// <returns>Returns a  UpdateViewContentResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">REST API Reference for UpdateViewContent Operation</seealso>
+        public virtual UpdateViewContentResponse EndUpdateViewContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateViewContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateViewMetadata
+
+        /// <summary>
+        /// Updates the view metadata. Note that either <code>Name</code> or <code>Description</code>
+        /// must be provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateViewMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.TooManyRequestsException">
+        /// Displayed when rate-related API limits are exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">REST API Reference for UpdateViewMetadata Operation</seealso>
+        public virtual UpdateViewMetadataResponse UpdateViewMetadata(UpdateViewMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateViewMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateViewMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateViewMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateViewMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateViewMetadata operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateViewMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">REST API Reference for UpdateViewMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateViewMetadata(UpdateViewMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateViewMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateViewMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateViewMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateViewMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateViewMetadataResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">REST API Reference for UpdateViewMetadata Operation</seealso>
+        public virtual UpdateViewMetadataResponse EndUpdateViewMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateViewMetadataResponse>(asyncResult);
         }
 
         #endregion

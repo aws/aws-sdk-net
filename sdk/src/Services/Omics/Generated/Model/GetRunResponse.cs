@@ -45,6 +45,7 @@ namespace Amazon.Omics.Model
         private Amazon.Runtime.Documents.Document _parameters;
         private int? _priority;
         private Dictionary<string, string> _resourceDigests = new Dictionary<string, string>();
+        private RunRetentionMode _retentionMode;
         private string _roleArn;
         private string _runGroupId;
         private string _runId;
@@ -281,6 +282,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetResourceDigests()
         {
             return this._resourceDigests != null && this._resourceDigests.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionMode. 
+        /// <para>
+        /// The run's retention mode.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public RunRetentionMode RetentionMode
+        {
+            get { return this._retentionMode; }
+            set { this._retentionMode = value; }
+        }
+
+        // Check to see if RetentionMode property is set
+        internal bool IsSetRetentionMode()
+        {
+            return this._retentionMode != null;
         }
 
         /// <summary>

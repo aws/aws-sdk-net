@@ -106,11 +106,6 @@ namespace Amazon.EC2.Model
         /// If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code>
         /// error.
         /// </para>
-        ///  
-        /// <para>
-        /// You cannot use a network border group with EC2 Classic. If you attempt this operation
-        /// on EC2 classic, you receive an <code>InvalidParameterCombination</code> error.
-        /// </para>
         /// </summary>
         public string NetworkBorderGroup
         {

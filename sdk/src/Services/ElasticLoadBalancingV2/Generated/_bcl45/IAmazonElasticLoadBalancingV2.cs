@@ -1071,6 +1071,32 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
+        /// The load balancer stops sending requests to targets that are deregistering, but uses
+        /// connection draining to ensure that in-flight traffic completes on the existing connections.
+        /// This deregistration delay is configured by default but can be updated for each target
+        /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay">
+        /// Deregistration delay</a> in the <i>Application Load Balancers User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay">
+        /// Deregistration delay</a> in the <i>Network Load Balancers User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+        /// Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// Note: If the specified target does not exist, the action returns successfully.
         /// </para>
         /// </summary>
@@ -1094,6 +1120,32 @@ namespace Amazon.ElasticLoadBalancingV2
         /// are deregistered, they no longer receive traffic from the load balancer.
         /// 
         ///  
+        /// <para>
+        /// The load balancer stops sending requests to targets that are deregistering, but uses
+        /// connection draining to ensure that in-flight traffic completes on the existing connections.
+        /// This deregistration delay is configured by default but can be updated for each target
+        /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay">
+        /// Deregistration delay</a> in the <i>Application Load Balancers User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay">
+        /// Deregistration delay</a> in the <i>Network Load Balancers User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+        /// Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Note: If the specified target does not exist, the action returns successfully.
         /// </para>

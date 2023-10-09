@@ -106,6 +106,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFlacSettings())
+            {
+                context.Writer.WritePropertyName("flacSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FlacSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FlacSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMp2Settings())
             {
                 context.Writer.WritePropertyName("mp2Settings");

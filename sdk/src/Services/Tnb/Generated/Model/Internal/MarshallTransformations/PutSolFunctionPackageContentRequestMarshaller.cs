@@ -64,6 +64,10 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             request.AddPathResource("{vnfPkgId}", StringUtils.FromString(publicRequest.VnfPkgId));
             request.ResourcePath = "/sol/vnfpkgm/v1/vnf_packages/{vnfPkgId}/package_content";
             request.ContentStream =  publicRequest.File ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

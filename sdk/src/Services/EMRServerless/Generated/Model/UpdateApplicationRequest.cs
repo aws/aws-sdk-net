@@ -43,8 +43,10 @@ namespace Amazon.EMRServerless.Model
         private ImageConfigurationInput _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = new Dictionary<string, InitialCapacityConfig>();
         private MaximumAllowedResources _maximumCapacity;
+        private MonitoringConfiguration _monitoringConfiguration;
         private NetworkConfiguration _networkConfiguration;
         private string _releaseLabel;
+        private List<Configuration> _runtimeConfiguration = new List<Configuration>();
         private Dictionary<string, WorkerTypeSpecificationInput> _workerTypeSpecifications = new Dictionary<string, WorkerTypeSpecificationInput>();
 
         /// <summary>
@@ -200,6 +202,24 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// The configuration setting for monitoring.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkConfiguration.
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -232,6 +252,28 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeConfiguration. 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+        /// specifications to use when updating an application. Each configuration consists of
+        /// a classification and properties. This configuration is applied across all the job
+        /// runs submitted under the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<Configuration> RuntimeConfiguration
+        {
+            get { return this._runtimeConfiguration; }
+            set { this._runtimeConfiguration = value; }
+        }
+
+        // Check to see if RuntimeConfiguration property is set
+        internal bool IsSetRuntimeConfiguration()
+        {
+            return this._runtimeConfiguration != null && this._runtimeConfiguration.Count > 0; 
         }
 
         /// <summary>

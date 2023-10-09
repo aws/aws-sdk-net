@@ -347,6 +347,47 @@ namespace Amazon.AWSHealth
 
         #endregion
         
+        #region  DescribeEntityAggregatesForOrganization
+
+
+        /// <summary>
+        /// Returns a list of entity aggregates for your Organizations that are affected by each
+        /// of the specified events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregatesForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEntityAggregatesForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">REST API Reference for DescribeEntityAggregatesForOrganization Operation</seealso>
+        DescribeEntityAggregatesForOrganizationResponse DescribeEntityAggregatesForOrganization(DescribeEntityAggregatesForOrganizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEntityAggregatesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregatesForOrganization operation on AmazonAWSHealthClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEntityAggregatesForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">REST API Reference for DescribeEntityAggregatesForOrganization Operation</seealso>
+        IAsyncResult BeginDescribeEntityAggregatesForOrganization(DescribeEntityAggregatesForOrganizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEntityAggregatesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEntityAggregatesForOrganization.</param>
+        /// 
+        /// <returns>Returns a  DescribeEntityAggregatesForOrganizationResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">REST API Reference for DescribeEntityAggregatesForOrganization Operation</seealso>
+        DescribeEntityAggregatesForOrganizationResponse EndDescribeEntityAggregatesForOrganization(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeEventAggregates
 
 

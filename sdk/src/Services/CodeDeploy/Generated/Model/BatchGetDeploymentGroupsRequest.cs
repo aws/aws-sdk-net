@@ -40,7 +40,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an CodeDeploy application associated with the applicable IAM or Amazon
+        /// The name of an CodeDeploy application associated with the applicable user or Amazon
         /// Web Services account.
         /// </para>
         /// </summary>

@@ -64,6 +64,10 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             request.AddPathResource("{nsdInfoId}", StringUtils.FromString(publicRequest.NsdInfoId));
             request.ResourcePath = "/sol/nsd/v1/ns_descriptors/{nsdInfoId}/nsd_content";
             request.ContentStream =  publicRequest.File ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

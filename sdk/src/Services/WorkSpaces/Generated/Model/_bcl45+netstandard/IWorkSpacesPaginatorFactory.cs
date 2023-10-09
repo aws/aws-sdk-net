@@ -26,6 +26,16 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeApplicationAssociations operation
+        ///</summary>
+        IDescribeApplicationAssociationsPaginator DescribeApplicationAssociations(DescribeApplicationAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeApplications operation
+        ///</summary>
+        IDescribeApplicationsPaginator DescribeApplications(DescribeApplicationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeWorkspaceBundles operation
         ///</summary>
         IDescribeWorkspaceBundlesPaginator DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request);

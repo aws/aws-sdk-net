@@ -140,11 +140,35 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for ListReviewTemplateAnswers operation
+        ///</summary>
+        public IListReviewTemplateAnswersPaginator ListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request) 
+        {
+            return new ListReviewTemplateAnswersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReviewTemplates operation
+        ///</summary>
+        public IListReviewTemplatesPaginator ListReviewTemplates(ListReviewTemplatesRequest request) 
+        {
+            return new ListReviewTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListShareInvitations operation
         ///</summary>
         public IListShareInvitationsPaginator ListShareInvitations(ListShareInvitationsRequest request) 
         {
             return new ListShareInvitationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTemplateShares operation
+        ///</summary>
+        public IListTemplateSharesPaginator ListTemplateShares(ListTemplateSharesRequest request) 
+        {
+            return new ListTemplateSharesPaginator(this.client, request);
         }
 
         /// <summary>

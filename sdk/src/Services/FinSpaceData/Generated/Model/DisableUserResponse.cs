@@ -38,7 +38,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier for the disabled user account.
+        /// The unique identifier for the deactivated user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=26)]

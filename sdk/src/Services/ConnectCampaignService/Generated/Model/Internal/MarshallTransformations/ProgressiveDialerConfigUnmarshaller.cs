@@ -70,6 +70,12 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
                     unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dialingCapacity", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.DialingCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

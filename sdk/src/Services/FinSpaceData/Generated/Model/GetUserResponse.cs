@@ -100,8 +100,8 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The timestamp at which the user account was created in FinSpace. The value is determined
-        /// as epoch time in milliseconds. 
+        /// The timestamp at which the user was created in FinSpace. The value is determined as
+        /// epoch time in milliseconds. 
         /// </para>
         /// </summary>
         public long CreateTime
@@ -157,8 +157,8 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property LastDisabledTime. 
         /// <para>
-        /// Describes the last time the user account was disabled. The value is determined as
-        /// epoch time in milliseconds.
+        /// Describes the last time the user was deactivated. The value is determined as epoch
+        /// time in milliseconds.
         /// </para>
         /// </summary>
         public long LastDisabledTime
@@ -176,8 +176,8 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property LastEnabledTime. 
         /// <para>
-        /// Describes the last time the user account was enabled. The value is determined as epoch
-        /// time in milliseconds.
+        /// Describes the last time the user was activated. The value is determined as epoch time
+        /// in milliseconds.
         /// </para>
         /// </summary>
         public long LastEnabledTime
@@ -214,8 +214,8 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// Describes the last time the user account was updated. The value is determined as epoch
-        /// time in milliseconds.
+        /// Describes the last time the user details were updated. The value is determined as
+        /// epoch time in milliseconds.
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -252,19 +252,19 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the user account. 
+        /// The current status of the user. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> – The user account creation is in progress.
+        ///  <code>CREATING</code> – The creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user account is created and is currently active.
+        ///  <code>ENABLED</code> – The user is created and is currently active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user account is currently inactive.
+        ///  <code>DISABLED</code> – The user is currently inactive.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -312,7 +312,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier for the user account that is retrieved.
+        /// The unique identifier for the user that is retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=26)]

@@ -399,6 +399,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Ac3AttenuationControl.
+    /// </summary>
+    public class Ac3AttenuationControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTENUATE_3_DB for Ac3AttenuationControl
+        /// </summary>
+        public static readonly Ac3AttenuationControl ATTENUATE_3_DB = new Ac3AttenuationControl("ATTENUATE_3_DB");
+        /// <summary>
+        /// Constant NONE for Ac3AttenuationControl
+        /// </summary>
+        public static readonly Ac3AttenuationControl NONE = new Ac3AttenuationControl("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac3AttenuationControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac3AttenuationControl FindValue(string value)
+        {
+            return FindValue<Ac3AttenuationControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac3AttenuationControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Ac3BitstreamMode.
     /// </summary>
     public class Ac3BitstreamMode : ConstantClass
@@ -7859,6 +7909,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type IncludeFillerNalUnits.
+    /// </summary>
+    public class IncludeFillerNalUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for IncludeFillerNalUnits
+        /// </summary>
+        public static readonly IncludeFillerNalUnits AUTO = new IncludeFillerNalUnits("AUTO");
+        /// <summary>
+        /// Constant DROP for IncludeFillerNalUnits
+        /// </summary>
+        public static readonly IncludeFillerNalUnits DROP = new IncludeFillerNalUnits("DROP");
+        /// <summary>
+        /// Constant INCLUDE for IncludeFillerNalUnits
+        /// </summary>
+        public static readonly IncludeFillerNalUnits INCLUDE = new IncludeFillerNalUnits("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeFillerNalUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeFillerNalUnits FindValue(string value)
+        {
+            return FindValue<IncludeFillerNalUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeFillerNalUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputClass.
     /// </summary>
     public class InputClass : ConstantClass
@@ -8113,6 +8217,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputDeviceCodec.
+    /// </summary>
+    public class InputDeviceCodec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVC for InputDeviceCodec
+        /// </summary>
+        public static readonly InputDeviceCodec AVC = new InputDeviceCodec("AVC");
+        /// <summary>
+        /// Constant HEVC for InputDeviceCodec
+        /// </summary>
+        public static readonly InputDeviceCodec HEVC = new InputDeviceCodec("HEVC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceCodec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceCodec FindValue(string value)
+        {
+            return FindValue<InputDeviceCodec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputDeviceConfiguredInput.
     /// </summary>
     public class InputDeviceConfiguredInput : ConstantClass
@@ -8260,6 +8414,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputDeviceIpScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputDeviceOutputType.
+    /// </summary>
+    public class InputDeviceOutputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEDIACONNECT_FLOW for InputDeviceOutputType
+        /// </summary>
+        public static readonly InputDeviceOutputType MEDIACONNECT_FLOW = new InputDeviceOutputType("MEDIACONNECT_FLOW");
+        /// <summary>
+        /// Constant MEDIALIVE_INPUT for InputDeviceOutputType
+        /// </summary>
+        public static readonly InputDeviceOutputType MEDIALIVE_INPUT = new InputDeviceOutputType("MEDIALIVE_INPUT");
+        /// <summary>
+        /// Constant NONE for InputDeviceOutputType
+        /// </summary>
+        public static readonly InputDeviceOutputType NONE = new InputDeviceOutputType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputDeviceOutputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputDeviceOutputType FindValue(string value)
+        {
+            return FindValue<InputDeviceOutputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputDeviceOutputType(string value)
         {
             return FindValue(value);
         }
@@ -10356,6 +10564,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator M2tsTimedMetadataBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type M3u8KlvBehavior.
+    /// </summary>
+    public class M3u8KlvBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PASSTHROUGH for M3u8KlvBehavior
+        /// </summary>
+        public static readonly M3u8KlvBehavior NO_PASSTHROUGH = new M3u8KlvBehavior("NO_PASSTHROUGH");
+        /// <summary>
+        /// Constant PASSTHROUGH for M3u8KlvBehavior
+        /// </summary>
+        public static readonly M3u8KlvBehavior PASSTHROUGH = new M3u8KlvBehavior("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M3u8KlvBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M3u8KlvBehavior FindValue(string value)
+        {
+            return FindValue<M3u8KlvBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M3u8KlvBehavior(string value)
         {
             return FindValue(value);
         }

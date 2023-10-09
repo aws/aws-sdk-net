@@ -69,6 +69,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     response.DeviceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceQueueInfo", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeviceQueueInfo, DeviceQueueInfoUnmarshaller>(DeviceQueueInfoUnmarshaller.Instance);
+                    response.DeviceQueueInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deviceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

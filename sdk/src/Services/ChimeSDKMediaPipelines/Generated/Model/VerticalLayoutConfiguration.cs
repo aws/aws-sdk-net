@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// Defines the configuration settings for a vertial layout.
+    /// Defines the configuration settings for a vertical layout.
     /// </summary>
     public partial class VerticalLayoutConfiguration
     {

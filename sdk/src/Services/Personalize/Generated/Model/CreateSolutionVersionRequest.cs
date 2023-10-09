@@ -77,7 +77,9 @@ namespace Amazon.Personalize.Model
     /// If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
     /// key, which describes why the job failed.
     /// </para>
-    ///  <p class="title"> <b>Related APIs</b> 
+    ///  
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -56,6 +56,22 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLineItemFilters())
+            {
+                context.Writer.WritePropertyName("LineItemFilters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLineItemFiltersListValue in requestObject.LineItemFilters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LineItemFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLineItemFiltersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPercentage())
             {
                 context.Writer.WritePropertyName("Percentage");

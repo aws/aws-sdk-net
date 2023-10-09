@@ -88,9 +88,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeleteAutomatedBackups. 
         /// <para>
-        /// A value that indicates whether to remove automated backups immediately after the DB
-        /// cluster is deleted. This parameter isn't case-sensitive. The default is to remove
-        /// automated backups immediately after the DB cluster is deleted.
+        /// Specifies whether to remove automated backups immediately after the DB cluster is
+        /// deleted. This parameter isn't case-sensitive. The default is to remove automated backups
+        /// immediately after the DB cluster is deleted.
         /// </para>
         /// </summary>
         public bool DeleteAutomatedBackups
@@ -149,11 +149,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
-        /// A value that indicates whether to skip the creation of a final DB cluster snapshot
-        /// before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
-        /// created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster
-        /// is deleted. By default, skip isn't specified, and the DB cluster snapshot is created.
-        /// By default, this parameter is disabled.
+        /// Specifies whether to skip the creation of a final DB cluster snapshot before the DB
+        /// cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip
+        /// isn't specified, a DB cluster snapshot is created before the DB cluster is deleted.
+        /// By default, skip isn't specified, and the DB cluster snapshot is created. By default,
+        /// this parameter is disabled.
         /// </para>
         ///  <note> 
         /// <para>

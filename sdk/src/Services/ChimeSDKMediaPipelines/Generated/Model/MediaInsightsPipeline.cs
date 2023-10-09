@@ -34,6 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class MediaInsightsPipeline
     {
         private DateTime? _createdTimestamp;
+        private List<MediaInsightsPipelineElementStatus> _elementStatuses = new List<MediaInsightsPipelineElementStatus>();
         private KinesisVideoStreamRecordingSourceRuntimeConfiguration _kinesisVideoStreamRecordingSourceRuntimeConfiguration;
         private KinesisVideoStreamSourceRuntimeConfiguration _kinesisVideoStreamSourceRuntimeConfiguration;
         private string _mediaInsightsPipelineConfigurationArn;
@@ -59,6 +60,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetCreatedTimestamp()
         {
             return this._createdTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElementStatuses. 
+        /// <para>
+        /// The statuses that the elements in a media insights pipeline can have during data processing.
+        /// </para>
+        /// </summary>
+        public List<MediaInsightsPipelineElementStatus> ElementStatuses
+        {
+            get { return this._elementStatuses; }
+            set { this._elementStatuses = value; }
+        }
+
+        // Check to see if ElementStatuses property is set
+        internal bool IsSetElementStatuses()
+        {
+            return this._elementStatuses != null && this._elementStatuses.Count > 0; 
         }
 
         /// <summary>

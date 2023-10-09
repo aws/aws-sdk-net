@@ -47,7 +47,7 @@ namespace Amazon.AuditManager.Model
         /// <code>GetEvidenceFileUploadUrl</code> </a> API response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string EvidenceFileName
         {
             get { return this._evidenceFileName; }
@@ -85,7 +85,7 @@ namespace Amazon.AuditManager.Model
         /// The plain text response that's entered and saved as manual evidence.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string TextResponse
         {
             get { return this._textResponse; }

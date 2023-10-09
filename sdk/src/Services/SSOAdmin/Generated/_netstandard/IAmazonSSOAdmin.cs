@@ -31,23 +31,21 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// Interface for accessing SSOAdmin
     ///
-    /// AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create,
-    /// or connect, your workforce identities and manage their access centrally across AWS
+    /// IAM Identity Center (successor to Single Sign-On) helps you securely create, or connect,
+    /// your workforce identities and manage their access centrally across Amazon Web Services
     /// accounts and applications. IAM Identity Center is the recommended approach for workforce
-    /// authentication and authorization in AWS, for organizations of any size and type.
+    /// authentication and authorization in Amazon Web Services, for organizations of any
+    /// size and type.
     /// 
     ///  <note> 
     /// <para>
-    /// Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code>
-    /// API namespaces will continue to retain their original name for backward compatibility
-    /// purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM
-    /// Identity Center rename</a>.
+    /// IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
     /// </para>
     ///  </note> 
     /// <para>
     /// This reference guide provides information on single sign-on operations which could
-    /// be used for access management of AWS accounts. For information about IAM Identity
-    /// Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
+    /// be used for access management of Amazon Web Services accounts. For information about
+    /// IAM Identity Center features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
     /// Identity Center User Guide</a>.
     /// </para>
     ///  
@@ -59,11 +57,12 @@ namespace Amazon.SSOAdmin
     /// </para>
     ///  <note> 
     /// <para>
-    /// AWS provides SDKs that consist of libraries and sample code for various programming
-    /// languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide
-    /// a convenient way to create programmatic access to IAM Identity Center and other AWS
-    /// services. For more information about the AWS SDKs, including how to download and install
-    /// them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// Amazon Web Services provides SDKs that consist of libraries and sample code for various
+    /// programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The
+    /// SDKs provide a convenient way to create programmatic access to IAM Identity Center
+    /// and other Amazon Web Services services. For more information about the Amazon Web
+    /// Services SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -125,7 +124,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an AWS managed policy ARN to a permission set.
+        /// Attaches an Amazon Web Services managed policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -178,8 +177,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Assigns access to a principal for a specified AWS account using a specified permission
-        /// set.
+        /// Assigns access to a principal for a specified Amazon Web Services account using a
+        /// specified permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -298,8 +297,8 @@ namespace Amazon.SSOAdmin
         /// 
         ///  <note> 
         /// <para>
-        /// To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a>
-        /// </code>.
+        /// To grant users and groups access to Amazon Web Services account resources, use <code>
+        /// <a>CreateAccountAssignment</a> </code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -345,12 +344,12 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Deletes a principal's access from a specified AWS account using a specified permission
-        /// set.
+        /// Deletes a principal's access from a specified Amazon Web Services account using a
+        /// specified permission set.
         /// 
         ///  <note> 
         /// <para>
-        /// After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+        /// After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code>
         /// to describe the status of an assignment deletion request.
         /// </para>
         ///  </note>
@@ -766,7 +765,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Detaches the attached AWS managed policy ARN from the specified permission set.
+        /// Detaches the attached Amazon Web Services managed policy ARN from the specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -874,8 +874,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the status of the AWS account assignment creation requests for a specified IAM
-        /// Identity Center instance.
+        /// Lists the status of the Amazon Web Services account assignment creation requests for
+        /// a specified IAM Identity Center instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentCreationStatus service method.</param>
         /// <param name="cancellationToken">
@@ -909,8 +909,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the status of the AWS account assignment deletion requests for a specified IAM
-        /// Identity Center instance.
+        /// Lists the status of the Amazon Web Services account assignment deletion requests for
+        /// a specified IAM Identity Center instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentDeletionStatus service method.</param>
         /// <param name="cancellationToken">
@@ -944,7 +944,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the assignee of the specified AWS account with the specified permission set.
+        /// Lists the assignee of the specified Amazon Web Services account with the specified
+        /// permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignments service method.</param>
         /// <param name="cancellationToken">
@@ -978,7 +979,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists all the AWS accounts where the specified permission set is provisioned.
+        /// Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountsForProvisionedPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -1077,7 +1078,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the AWS managed policy that is attached to a specified permission set.
+        /// Lists the Amazon Web Services managed policy that is attached to a specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -1180,7 +1182,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists all the permission sets that are provisioned to a specified AWS account.
+        /// Lists all the permission sets that are provisioned to a specified Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSetsProvisionedToAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1340,8 +1343,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an AWS managed or customer managed policy to the specified <a>PermissionSet</a>
-        /// as a permissions boundary.
+        /// Attaches an Amazon Web Services managed or customer managed policy to the specified
+        /// <a>PermissionSet</a> as a permissions boundary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>
         /// <param name="cancellationToken">

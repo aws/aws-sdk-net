@@ -621,6 +621,21 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.FlacSettings.BitDepth</property>
+    <min>16</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.FlacSettings.Channels</property>
+    <min>1</min>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.FlacSettings.SampleRate</property>
+    <min>22050</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ForceIncludeRenditionSize.Height</property>
     <min>32</min>
     <max>8192</max>
@@ -1250,6 +1265,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M2tsSettings.PtsOffset</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.M2tsSettings.Scte35Pid</property>
     <min>32</min>
     <max>8182</max>
@@ -1308,6 +1328,11 @@
     <property>Amazon.MediaConvert.Model.M3u8Settings.ProgramNumber</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M3u8Settings.PtsOffset</property>
+    <min>0</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.M3u8Settings.Scte35Pid</property>
@@ -1689,7 +1714,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.Url</property>
-    <pattern>^https:\/\/</pattern>
+    <pattern>^https:\/\/[^:@\/]*(:\d*)?(\/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProviderCmaf.CertificateArn</property>
@@ -1701,7 +1726,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProviderCmaf.Url</property>
-    <pattern>^https:\/\/</pattern>
+    <pattern>^https:\/\/[^:@\/]*(:\d*)?(\/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.StaticKeyProvider.KeyFormat</property>
@@ -1782,6 +1807,32 @@
     <property>Amazon.MediaConvert.Model.VideoDescription.Width</property>
     <min>32</min>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlay.EndTimecode</property>
+    <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlay.StartTimecode</property>
+    <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlayInput.FileInput</property>
+    <pattern>^s3://([^\/]+\/+)+((([^\/]*)))|^https?://[^\/].*[^&amp;]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlayInput.TimecodeStart</property>
+    <min>11</min>
+    <max>11</max>
+    <pattern>^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlayInputClipping.EndTimecode</property>
+    <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlayInputClipping.StartTimecode</property>
+    <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VideoSelector.Pid</property>

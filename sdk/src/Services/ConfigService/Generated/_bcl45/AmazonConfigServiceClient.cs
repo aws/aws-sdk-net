@@ -5843,7 +5843,9 @@ namespace Amazon.ConfigService
         /// of resources that Config is recording in this region for your Amazon Web Services
         /// account. 
         /// 
-        ///  <p class="title"> <b>Example</b> 
+        ///  
+        /// <para>
+        ///  <b>Example</b> 
         /// </para>
         ///  <ol> <li> 
         /// <para>
@@ -5939,7 +5941,9 @@ namespace Amazon.ConfigService
         /// of resources that Config is recording in this region for your Amazon Web Services
         /// account. 
         /// 
-        ///  <p class="title"> <b>Example</b> 
+        ///  
+        /// <para>
+        ///  <b>Example</b> 
         /// </para>
         ///  <ol> <li> 
         /// <para>

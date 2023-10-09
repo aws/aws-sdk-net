@@ -27,6 +27,23 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial interface IDynamoDBContext : IDisposable
     {
+        #region Public methods
+        /// <summary>
+        /// Adds a <see cref="Table"/> to this context's internal cache, which
+        /// will avoid the need to fetch table metadata automatically from DynamoDB.
+        /// This may be used in conjunction with an <see cref="ITableBuilder"/>.
+        /// </summary>
+        /// <remarks>
+        /// Using this method can avoid latency and thread starvation due to blocking asynchronous 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> calls that are used to populate 
+        /// the SDK's cache of table metadata. It requires that the table's index schema described accurately, 
+        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change. 
+        /// </remarks>
+        /// <param name="table">Table to add to the internal cache</param>
+        void RegisterTableDefinition(Table table);
+
+        #endregion
+
         #region Save/serialize
 
         /// <summary>
@@ -162,7 +179,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
         /// 
         /// In scenarios when the valuesType is known at compile-time, the 
-        /// `BatchWrite<T> CreateBatchWrite<T>()` method is generally preferred.
+        /// <see cref="CreateBatchWrite{T}()"/> method is generally preferred.
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
@@ -176,7 +193,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
         /// 
         /// In scenarios when the valuesType is known at compile-time, the 
-        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
+        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
@@ -200,7 +217,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
         /// 
         /// In scenarios when the valuesType is known at compile-time, the 
-        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
+        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>

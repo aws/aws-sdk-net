@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ManagedScaling. 
         /// <para>
-        /// he managed scaling settings for the Auto Scaling group capacity provider.
+        /// The managed scaling settings for the Auto Scaling group capacity provider.
         /// </para>
         /// </summary>
         public ManagedScaling ManagedScaling

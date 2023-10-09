@@ -30,7 +30,7 @@ namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateModel operation.
-    /// Creates an ML model for data inference. 
+    /// Creates a machine learning model for data inference. 
     /// 
     ///  
     /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the dataset for the ML model being created. 
+        /// The name of the dataset for the machine learning model being created. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -135,7 +135,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DatasetSchema. 
         /// <para>
-        /// The data schema for the ML model being created. 
+        /// The data schema for the machine learning model being created. 
         /// </para>
         /// </summary>
         public DatasetSchema DatasetSchema
@@ -154,7 +154,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property EvaluationDataEndTime. 
         /// <para>
         ///  Indicates the time reference in the dataset that should be used to end the subset
-        /// of evaluation data for the ML model. 
+        /// of evaluation data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime EvaluationDataEndTime
@@ -173,7 +173,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property EvaluationDataStartTime. 
         /// <para>
         /// Indicates the time reference in the dataset that should be used to begin the subset
-        /// of evaluation data for the ML model. 
+        /// of evaluation data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime EvaluationDataStartTime
@@ -191,8 +191,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property LabelsInputConfiguration. 
         /// <para>
-        /// The input configuration for the labels being used for the ML model that's being created.
-        /// 
+        /// The input configuration for the labels being used for the machine learning model that's
+        /// being created. 
         /// </para>
         /// </summary>
         public LabelsInputConfiguration LabelsInputConfiguration
@@ -210,7 +210,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name for the ML model to be created.
+        /// The name for the machine learning model to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -251,7 +251,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of a role with permission to access the data source
-        /// being used to create the ML model. 
+        /// being used to create the machine learning model. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -290,7 +290,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Any tags associated with the ML model being created. 
+        ///  Any tags associated with the machine learning model being created. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -310,7 +310,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property TrainingDataEndTime. 
         /// <para>
         /// Indicates the time reference in the dataset that should be used to end the subset
-        /// of training data for the ML model. 
+        /// of training data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime TrainingDataEndTime
@@ -329,7 +329,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property TrainingDataStartTime. 
         /// <para>
         /// Indicates the time reference in the dataset that should be used to begin the subset
-        /// of training data for the ML model. 
+        /// of training data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime TrainingDataStartTime

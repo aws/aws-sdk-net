@@ -45,7 +45,7 @@ namespace Amazon.AuditManager.Model
         /// be PCI DSS or HIPAA. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }
@@ -102,7 +102,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the framework. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }

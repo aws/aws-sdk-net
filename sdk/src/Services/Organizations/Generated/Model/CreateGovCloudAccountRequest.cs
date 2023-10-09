@@ -56,7 +56,7 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
     /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
-    /// and Service-Linked Roles</a> in the <i>Organizations User Guide.</i> 
+    /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.Organizations.Model
     /// in the Amazon Web Services GovCloud (US) Region can invite it to that organization.
     /// For more information on inviting standalone accounts in the Amazon Web Services GovCloud
     /// (US) to join an organization, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
-    /// in the <i>Amazon Web Services GovCloud User Guide.</i> 
+    /// in the <i>Amazon Web Services GovCloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -111,8 +111,8 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information
-    /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-    /// the Activity in Your Organization</a> in the <i>Organizations User Guide.</i> 
+    /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
+    /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul>  
     /// <para>
@@ -131,13 +131,12 @@ namespace Amazon.Organizations.Model
     /// account that can be assumed by the Amazon Web Services GovCloud (US) account that
     /// is associated with the management account of the commercial organization. For more
     /// information and to view a diagram that explains how account access works, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
-    /// in the <i>Amazon Web Services GovCloud User Guide.</i> 
+    /// in the <i>Amazon Web Services GovCloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
-    /// an Amazon Web Services account in Your Organization</a> in the <i>Organizations User
-    /// Guide.</i> 
+    /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>
@@ -146,9 +145,8 @@ namespace Amazon.Organizations.Model
     /// account is <i>not</i> automatically collected. This includes a payment method and
     /// signing the end user license agreement (EULA). If you must remove an account from
     /// your organization later, you can do so only after you provide the missing information.
-    /// Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
-    /// To leave an organization as a member account</a> in the <i>Organizations User Guide.</i>
-    /// 
+    /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+    /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -168,7 +166,7 @@ namespace Amazon.Organizations.Model
     /// recommended. You can only close an account from the Amazon Web Services Billing and
     /// Cost Management console, and you must be signed in as the root user. For information
     /// on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
-    /// an Amazon Web Services account</a> in the <i>Organizations User Guide</i>.
+    /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul> </important> <note> 
     /// <para>
@@ -178,7 +176,7 @@ namespace Amazon.Organizations.Model
     /// view billing information for the account. If you disable it, only the account root
     /// user can access billing information. For information about how to disable this switch
     /// for an account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-    /// Access to Your Billing Information and Tools</a>.
+    /// access to your billing information and tools</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -292,9 +290,9 @@ namespace Amazon.Organizations.Model
         /// If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
         /// IAM users to access account billing information <i>if</i> they have the required permissions.
         /// If set to <code>DENY</code>, only the root user of the new account can access account
-        /// billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-        /// Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services
-        /// Billing and Cost Management User Guide.</i> 
+        /// billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+        /// IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services
+        /// Billing and Cost Management User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -335,13 +333,21 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about how to use this role to access the member account, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-        /// and Administering the Member Accounts in Your Organization</a> in the <i>Organizations
-        /// User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-        /// Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM
-        /// User Guide.</i> 
+        /// the following links:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+        /// the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations
+        /// User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+        /// Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a>
+        /// in the <i>IAM User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate
         /// this parameter. The pattern can include uppercase letters, lowercase letters, digits

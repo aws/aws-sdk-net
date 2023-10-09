@@ -51,6 +51,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoPromotionResult", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoPromotionResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoPromotionResultReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoPromotionResultReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -157,6 +169,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OffCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PriorModelMetrics", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PriorModelMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetrainingAvailableDataInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.RetrainingAvailableDataInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))

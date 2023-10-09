@@ -59,10 +59,32 @@ namespace Amazon.GlobalAccelerator.Model
             set { this._endpointConfigurations = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="EndpointConfigurations"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsEndpointConfigurationsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._endpointConfigurations);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._endpointConfigurations);
+            }
+        }
+
         // Check to see if EndpointConfigurations property is set
         internal bool IsSetEndpointConfigurations()
         {
-            return this._endpointConfigurations != null && this._endpointConfigurations.Count > 0; 
+            return this.IsEndpointConfigurationsSet; 
         }
 
         /// <summary>
@@ -186,10 +208,32 @@ namespace Amazon.GlobalAccelerator.Model
             set { this._portOverrides = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="PortOverrides"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsPortOverridesSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._portOverrides);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._portOverrides);
+            }
+        }
+
         // Check to see if PortOverrides property is set
         internal bool IsSetPortOverrides()
         {
-            return this._portOverrides != null && this._portOverrides.Count > 0; 
+            return this.IsPortOverridesSet; 
         }
 
         /// <summary>

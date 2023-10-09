@@ -67,6 +67,18 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetHiddenFromGlobalAddressList())
+                {
+                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

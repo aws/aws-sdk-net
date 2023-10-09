@@ -51,6 +51,28 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ObjectPath);
             }
 
+            if(requestObject.IsSetPaginationConfig())
+            {
+                context.Writer.WritePropertyName("paginationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAPODataPaginationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PaginationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetParallelismConfig())
+            {
+                context.Writer.WritePropertyName("parallelismConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAPODataParallelismConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ParallelismConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

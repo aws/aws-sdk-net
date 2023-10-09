@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePackage operation.
-    /// Updates the supported fields for a specific package.
+    /// Updates the supported fields for a specific software package.
     /// 
     ///  
     /// <para>
@@ -113,7 +113,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// The name of the target package.
+        /// The name of the target software package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

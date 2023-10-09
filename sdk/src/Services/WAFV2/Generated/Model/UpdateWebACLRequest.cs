@@ -71,13 +71,13 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     ///  A web ACL defines a collection of rules to use to inspect and control web requests.
-    /// Each rule has an action defined (allow, block, or count) for requests that match the
-    /// statement of the rule. In the web ACL, you assign a default action to take (allow,
-    /// block) for any request that does not match any of the rules. The rules in a web ACL
-    /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
-    /// group. You can associate a web ACL with one or more Amazon Web Services resources
-    /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+    /// Each rule has a statement that defines what to look for in web requests and an action
+    /// that WAF applies to requests that match the statement. In the web ACL, you assign
+    /// a default action to take (allow, block) for any request that does not match any of
+    /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
+    /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
+    /// resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
+    /// API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
     /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
     /// instance. 
     /// </para>
@@ -107,7 +107,7 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Use this to customize the maximum size of the request body that your protected CloudFront
-        /// distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+        /// distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).
         /// 
         /// </para>
         ///  <note> 
@@ -311,9 +311,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The <a>Rule</a> statements used to identify the web requests that you want to allow,
-        /// block, or count. Each rule includes one top-level statement that WAF uses to identify
-        /// matching web requests, and parameters that govern how WAF handles them. 
+        /// The <a>Rule</a> statements used to identify the web requests that you want to manage.
+        /// Each rule includes one top-level statement that WAF uses to identify matching web
+        /// requests, and parameters that govern how WAF handles them. 
         /// </para>
         /// </summary>
         public List<Rule> Rules

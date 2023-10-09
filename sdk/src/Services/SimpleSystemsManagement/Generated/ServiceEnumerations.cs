@@ -1385,11 +1385,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Constant Connected for ConnectionStatus
         /// </summary>
-        public static readonly ConnectionStatus Connected = new ConnectionStatus("Connected");
+        public static readonly ConnectionStatus Connected = new ConnectionStatus("connected");
         /// <summary>
-        /// Constant NotConnected for ConnectionStatus
+        /// Constant Notconnected for ConnectionStatus
         /// </summary>
-        public static readonly ConnectionStatus NotConnected = new ConnectionStatus("NotConnected");
+        public static readonly ConnectionStatus Notconnected = new ConnectionStatus("notconnected");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4596,10 +4596,6 @@ namespace Amazon.SimpleSystemsManagement
     public class ResourceType : ConstantClass
     {
 
-        /// <summary>
-        /// Constant Document for ResourceType
-        /// </summary>
-        public static readonly ResourceType Document = new ResourceType("Document");
         /// <summary>
         /// Constant EC2Instance for ResourceType
         /// </summary>

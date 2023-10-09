@@ -84,7 +84,8 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
         /// The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]
@@ -181,8 +182,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// TargetID is an AWS account identifier, typically a 10-12 digit string (For example,
-        /// 123456789012).
+        /// TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

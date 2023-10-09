@@ -160,6 +160,25 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if compression trait is available and if so, <see cref="RequestCompressionConfiguration"/> object
+        /// is instantiated and returned using the data inside the compression trait
+        /// </summary>
+        public RequestCompressionConfiguration CompressionAlgorithmEncodings
+        {
+            get
+            {
+                var requestCompressionJsonData = data[ServiceModel.RequestCompressionKey];
+                if (requestCompressionJsonData != null)
+                {
+                    var payload = this.RequestPayloadMember;
+                    return new RequestCompressionConfiguration(requestCompressionJsonData, payload);
+                }
+
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Determines whether this operation's marshaller needs to call the checksum
         /// handling in Core. This means it either requires a MD5 checksum and/or supports
         /// flexible checksums.

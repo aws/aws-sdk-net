@@ -46,6 +46,11 @@ namespace Amazon.LakeFormation.Model
         IListDataCellsFilterPaginator ListDataCellsFilter(ListDataCellsFilterRequest request);
 
         /// <summary>
+        /// Paginator for ListLakeFormationOptIns operation
+        ///</summary>
+        IListLakeFormationOptInsPaginator ListLakeFormationOptIns(ListLakeFormationOptInsRequest request);
+
+        /// <summary>
         /// Paginator for ListLFTags operation
         ///</summary>
         IListLFTagsPaginator ListLFTags(ListLFTagsRequest request);

@@ -54,6 +54,7 @@ namespace Amazon.AppConfig.Model
         private float? _percentageComplete;
         private DateTime? _startedAt;
         private DeploymentState _state;
+        private string _versionLabel;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -379,11 +380,10 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
-        /// The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to
-        /// encrypt the configuration data using a customer managed key. 
+        /// The Key Management Service key identifier (key ID, key alias, or key ARN) provided
+        /// when the resource was created or updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyIdentifier
         {
             get { return this._kmsKeyIdentifier; }
@@ -449,6 +449,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// A user-defined label for an AppConfig hosted configuration version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }

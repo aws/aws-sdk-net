@@ -33,9 +33,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputDeviceConfigurableSettings
     {
+        private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
         private int? _latencyMs;
         private int? _maxBitrate;
+        private InputDeviceMediaConnectConfigurableSettings _mediaconnectSettings;
+
+        /// <summary>
+        /// Gets and sets the property Codec. Choose the codec for the video that the device produces.
+        /// Only UHD devices can specify this parameter.
+        /// </summary>
+        public InputDeviceCodec Codec
+        {
+            get { return this._codec; }
+            set { this._codec = value; }
+        }
+
+        // Check to see if Codec property is set
+        internal bool IsSetCodec()
+        {
+            return this._codec != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfiguredInput. The input source that you want to use.
@@ -85,6 +103,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMaxBitrate()
         {
             return this._maxBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaconnectSettings. To attach this device to a MediaConnect
+        /// flow, specify these parameters. To detach an existing flow, enter {} for the value
+        /// of mediaconnectSettings. Only UHD devices can specify this parameter.
+        /// </summary>
+        public InputDeviceMediaConnectConfigurableSettings MediaconnectSettings
+        {
+            get { return this._mediaconnectSettings; }
+            set { this._mediaconnectSettings = value; }
+        }
+
+        // Check to see if MediaconnectSettings property is set
+        internal bool IsSetMediaconnectSettings()
+        {
+            return this._mediaconnectSettings != null;
         }
 
     }

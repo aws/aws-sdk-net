@@ -88,6 +88,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     unmarshalledObject.Period = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuotaAppliedAtLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QuotaAppliedAtLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QuotaArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QuotaContext", targetDepth))
+                {
+                    var unmarshaller = QuotaContextInfoUnmarshaller.Instance;
+                    unmarshalledObject.QuotaContext = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("QuotaName", targetDepth))

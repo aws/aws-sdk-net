@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.CreateRetrainingScheduler(Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.CreateRetrainingScheduler(Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Creates a retraining scheduler with manual promote mode"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="creates-a-retraining-scheduler-with-manual-promote-mode-1694018486212" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.CreateRetrainingScheduler(Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.CreateRetrainingScheduler(Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.CreateRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Creates a retraining scheduler with a specific start date"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="creates-a-retraining-scheduler-with-a-specific-start-date-1694018790519" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.DeleteRetrainingScheduler(Amazon.LookoutEquipment.Model.DeleteRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.DeleteRetrainingScheduler(Amazon.LookoutEquipment.Model.DeleteRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.DeleteRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.DeleteRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Deletes a retraining scheduler"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="deletes-a-retraining-scheduler-1694019240097" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.DescribeRetrainingScheduler(Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.DescribeRetrainingScheduler(Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.DescribeRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Describes a retraining scheduler"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="describes-a-retraining-scheduler-1694019344252" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.ListRetrainingSchedulers(Amazon.LookoutEquipment.Model.ListRetrainingSchedulersRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.ListRetrainingSchedulers(Amazon.LookoutEquipment.Model.ListRetrainingSchedulersRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.ListRetrainingSchedulersRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.ListRetrainingSchedulersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Listing retraining schedulers"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="listing-retraining-schedulers-1694016740503" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.StartRetrainingScheduler(Amazon.LookoutEquipment.Model.StartRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.StartRetrainingScheduler(Amazon.LookoutEquipment.Model.StartRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.StartRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.StartRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Starts a retraining scheduler"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="starts-a-retraining-scheduler-1694019629413" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.StopRetrainingScheduler(Amazon.LookoutEquipment.Model.StopRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.StopRetrainingScheduler(Amazon.LookoutEquipment.Model.StopRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.StopRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.StopRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Stops a retraining scheduler"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="stops-a-retraining-scheduler-1694019734149" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.UpdateModel(Amazon.LookoutEquipment.Model.UpdateModelRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.UpdateModel(Amazon.LookoutEquipment.Model.UpdateModelRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.UpdateModelRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.UpdateModelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updates a model"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="updates-a-model-1694020683458" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.LookoutEquipment.IAmazonLookoutEquipment.UpdateRetrainingScheduler(Amazon.LookoutEquipment.Model.UpdateRetrainingSchedulerRequest)" />
+            <member name="M:Amazon.LookoutEquipment.AmazonLookoutEquipmentClient.UpdateRetrainingScheduler(Amazon.LookoutEquipment.Model.UpdateRetrainingSchedulerRequest)" />
+            <member name="T:Amazon.LookoutEquipment.Model.UpdateRetrainingSchedulerRequest" />
+            <member name="T:Amazon.LookoutEquipment.Model.UpdateRetrainingSchedulerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updates a retraining scheduler"
+                    source=".\AWSSDKDocSamples\LookoutEquipment\LookoutEquipment.GeneratedSamples.cs"
+                    region="updates-a-retraining-scheduler-1694019840918" />
+            </example>
+        </value>
+    </doc>
+</docs>

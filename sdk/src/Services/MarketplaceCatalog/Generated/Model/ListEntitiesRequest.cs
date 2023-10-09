@@ -140,7 +140,13 @@ namespace Amazon.MarketplaceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnershipType.
+        /// Gets and sets the property OwnershipType. 
+        /// <para>
+        /// Filters the returned set of entities based on their owner. The default is <code>SELF</code>.
+        /// To list entities shared with you through AWS Resource Access Manager (AWS RAM), set
+        /// to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code>
+        /// operation can't be discovered through the <code>SHARED</code> parameter.
+        /// </para>
         /// </summary>
         public OwnershipType OwnershipType
         {

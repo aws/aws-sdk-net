@@ -30,13 +30,15 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingConfiguration operation.
-    /// Delete an App Runner automatic scaling configuration resource. You can delete a specific
-    /// revision or the latest active revision. You can't delete a configuration that's used
-    /// by one or more App Runner services.
+    /// Delete an App Runner automatic scaling configuration resource. You can delete a top
+    /// level auto scaling configuration, a specific revision of one, or all revisions associated
+    /// with the top level configuration. You can't delete the default auto scaling configuration
+    /// or a configuration that's used by one or more App Runner services.
     /// </summary>
     public partial class DeleteAutoScalingConfigurationRequest : AmazonAppRunnerRequest
     {
         private string _autoScalingConfigurationArn;
+        private bool? _deleteAllRevisions;
 
         /// <summary>
         /// Gets and sets the property AutoScalingConfigurationArn. 
@@ -62,6 +64,30 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetAutoScalingConfigurationArn()
         {
             return this._autoScalingConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteAllRevisions. 
+        /// <para>
+        /// Set to <code>true</code> to delete all of the revisions associated with the <code>AutoScalingConfigurationArn</code>
+        /// parameter value.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value
+        /// for the Amazon Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+        /// </para>
+        /// </summary>
+        public bool DeleteAllRevisions
+        {
+            get { return this._deleteAllRevisions.GetValueOrDefault(); }
+            set { this._deleteAllRevisions = value; }
+        }
+
+        // Check to see if DeleteAllRevisions property is set
+        internal bool IsSetDeleteAllRevisions()
+        {
+            return this._deleteAllRevisions.HasValue; 
         }
 
     }

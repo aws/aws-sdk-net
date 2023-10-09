@@ -375,7 +375,7 @@ namespace Amazon.MarketplaceCatalog
         #region  DeleteResourcePolicy
 
         /// <summary>
-        /// Deletes a resource-based policy on an Entity that is identified by its resource ARN.
+        /// Deletes a resource-based policy on an entity that is identified by its resource ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// 
@@ -660,7 +660,7 @@ namespace Amazon.MarketplaceCatalog
         #region  GetResourcePolicy
 
         /// <summary>
-        /// Gets a resource-based policy of an Entity that is identified by its resource ARN.
+        /// Gets a resource-based policy of an entity that is identified by its resource ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -1039,7 +1039,7 @@ namespace Amazon.MarketplaceCatalog
         #region  PutResourcePolicy
 
         /// <summary>
-        /// Attaches a resource-based policy to an Entity. Examples of an entity include: <code>AmiProduct</code>
+        /// Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code>
         /// and <code>ContainerProduct</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -1150,9 +1150,9 @@ namespace Amazon.MarketplaceCatalog
         ///  
         /// <para>
         /// For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-        /// Working with change sets</a>. For information on change types for single-AMI products,
+        /// Working with change sets</a>. For information about change types for single-AMI products,
         /// see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-        /// with single-AMI products</a>. Als, for more information on change types available
+        /// with single-AMI products</a>. Also, for more information about change types available
         /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
         /// with container products</a>.
         /// </para>

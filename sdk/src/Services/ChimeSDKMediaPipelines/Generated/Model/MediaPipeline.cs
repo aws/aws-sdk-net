@@ -37,6 +37,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private MediaConcatenationPipeline _mediaConcatenationPipeline;
         private MediaInsightsPipeline _mediaInsightsPipeline;
         private MediaLiveConnectorPipeline _mediaLiveConnectorPipeline;
+        private MediaStreamPipeline _mediaStreamPipeline;
 
         /// <summary>
         /// Gets and sets the property MediaCapturePipeline. 
@@ -108,6 +109,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetMediaLiveConnectorPipeline()
         {
             return this._mediaLiveConnectorPipeline != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaStreamPipeline. 
+        /// <para>
+        /// Designates a media pipeline as a media stream pipeline.
+        /// </para>
+        /// </summary>
+        public MediaStreamPipeline MediaStreamPipeline
+        {
+            get { return this._mediaStreamPipeline; }
+            set { this._mediaStreamPipeline = value; }
+        }
+
+        // Check to see if MediaStreamPipeline property is set
+        internal bool IsSetMediaStreamPipeline()
+        {
+            return this._mediaStreamPipeline != null;
         }
 
     }

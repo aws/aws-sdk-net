@@ -74,17 +74,37 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-        /// App Runner uses if you don't provide a custome one). You can't use it to create a
-        /// new auto scaling configuration, and you can't create a revision of it.
+        /// Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+        /// scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was
+        /// reserved. 
         /// </para>
         ///  
         /// <para>
-        /// When you want to use your own auto scaling configuration for your App Runner service,
-        /// <i>create a configuration with a different name</i>, and then provide it when you
-        /// create or update your service.
+        /// This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code>
+        /// the same way you manage your custom auto scaling configurations. This means you can
+        /// do the following with the <code>DefaultConfiguration</code> that App Runner provides:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create new revisions of the <code>DefaultConfiguration</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete the revisions of the <code>DefaultConfiguration</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code>
+        /// was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you delete the auto scaling configuration you can create another custom auto scaling
+        /// configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code>
+        /// resource provided by App Runner remains in your account unless you make changes to
+        /// it.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=32)]
         public string AutoScalingConfigurationName

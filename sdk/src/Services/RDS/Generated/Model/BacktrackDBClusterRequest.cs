@@ -135,8 +135,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// A value that indicates whether to force the DB cluster to backtrack when binary logging
-        /// is enabled. Otherwise, an error occurs when binary logging is enabled.
+        /// Specifies whether to force the DB cluster to backtrack when binary logging is enabled.
+        /// Otherwise, an error occurs when binary logging is enabled.
         /// </para>
         /// </summary>
         public bool Force
@@ -154,10 +154,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseEarliestTimeOnPointInTimeUnavailable. 
         /// <para>
-        /// A value that indicates whether to backtrack the DB cluster to the earliest possible
-        /// backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
-        /// backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a
-        /// timestamp earlier than the earliest backtrack time, an error occurs.
+        /// Specifies whether to backtrack the DB cluster to the earliest possible backtrack time
+        /// when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack
+        /// time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp
+        /// earlier than the earliest backtrack time, an error occurs.
         /// </para>
         /// </summary>
         public bool UseEarliestTimeOnPointInTimeUnavailable

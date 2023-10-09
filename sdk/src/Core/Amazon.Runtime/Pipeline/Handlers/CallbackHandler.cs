@@ -38,7 +38,7 @@ namespace Amazon.Runtime.Internal
         /// in the pipeline.
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
+        /// request and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
             PreInvoke(executionContext);

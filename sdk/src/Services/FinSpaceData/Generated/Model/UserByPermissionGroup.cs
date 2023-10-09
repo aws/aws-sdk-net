@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// The structure of a user account associated with a permission group.
+    /// The structure of a user associated with a permission group.
     /// </summary>
     public partial class UserByPermissionGroup
     {
@@ -150,16 +150,16 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property MembershipStatus. 
         /// <para>
-        /// Indicates the status of the user account within a permission group.
+        /// Indicates the status of the user within a permission group.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to
-        /// the permission group.
+        ///  <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission
+        /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission
+        ///  <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission
         /// group.
         /// </para>
         ///  </li> <li> 
@@ -184,19 +184,19 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the user account. 
+        /// The current status of the user. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> – The user account creation is in progress.
+        ///  <code>CREATING</code> – The user creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user account is created and is currently active.
+        ///  <code>ENABLED</code> – The user is created and is currently active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user account is currently inactive.
+        ///  <code>DISABLED</code> – The user is currently inactive.
         /// </para>
         ///  </li> </ul>
         /// </summary>

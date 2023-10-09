@@ -67,6 +67,10 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             request.AddPathResource("{ConfigurationProfileId}", StringUtils.FromString(publicRequest.ConfigurationProfileId));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions";
             request.ContentStream =  publicRequest.Content ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

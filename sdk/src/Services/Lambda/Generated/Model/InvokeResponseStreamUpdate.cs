@@ -44,6 +44,8 @@ namespace Amazon.Lambda.Model
     {
         Payload = new MemoryStream(message.Payload);
     }
+
+    partial void Deserialize(IEventStreamMessage message);
         private MemoryStream _payload;
 
         /// <summary>

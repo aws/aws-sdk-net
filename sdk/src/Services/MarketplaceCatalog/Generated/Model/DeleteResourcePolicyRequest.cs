@@ -30,7 +30,7 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourcePolicy operation.
-    /// Deletes a resource-based policy on an Entity that is identified by its resource ARN.
+    /// Deletes a resource-based policy on an entity that is identified by its resource ARN.
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonMarketplaceCatalogRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Entity resource that is associated with the
+        /// The Amazon Resource Name (ARN) of the entity resource that is associated with the
         /// resource policy.
         /// </para>
         /// </summary>

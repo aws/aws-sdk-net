@@ -38,9 +38,10 @@ namespace Amazon.ServiceQuotas
     /// <summary>
     /// Implementation for accessing ServiceQuotas
     ///
-    /// With Service Quotas, you can view and manage your quotas easily as your AWS workloads
-    /// grow. Quotas, also referred to as limits, are the maximum number of resources that
-    /// you can create in your AWS account. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
+    /// With Service Quotas, you can view and manage your quotas easily as your Amazon Web
+    /// Services workloads grow. Quotas, also referred to as limits, are the maximum number
+    /// of resources that you can create in your Amazon Web Services account. For more information,
+    /// see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
     /// Quotas User Guide</a>.
     /// </summary>
     public partial class AmazonServiceQuotasClient : AmazonServiceClient, IAmazonServiceQuotas
@@ -284,10 +285,10 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Associates your quota request template with your organization. When a new account
-        /// is created in your organization, the quota increase requests in the template are automatically
-        /// applied to the account. You can add a quota increase request for any adjustable quota
-        /// to your template.
+        /// Associates your quota request template with your organization. When a new Amazon Web
+        /// Services account is created in your organization, the quota increase requests in the
+        /// template are automatically applied to the account. You can add a quota increase request
+        /// for any adjustable quota to your template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateServiceQuotaTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -306,16 +307,17 @@ namespace Amazon.ServiceQuotas
         /// You can't perform this action because a dependency does not have access.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.OrganizationNotInAllFeaturesModeException">
-        /// The organization that your account belongs to is not in All Features mode.
+        /// The organization that your Amazon Web Services account belongs to is not in All Features
+        /// mode.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -370,7 +372,7 @@ namespace Amazon.ServiceQuotas
         /// Invalid input was provided.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
         /// The specified resource does not exist.
@@ -379,7 +381,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -412,8 +414,9 @@ namespace Amazon.ServiceQuotas
 
         /// <summary>
         /// Disables your quota request template. After a template is disabled, the quota increase
-        /// requests in the template are not applied to new accounts in your organization. Disabling
-        /// a quota request template does not apply its quota increase requests.
+        /// requests in the template are not applied to new Amazon Web Services accounts in your
+        /// organization. Disabling a quota request template does not apply its quota increase
+        /// requests.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceQuotaTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -432,7 +435,7 @@ namespace Amazon.ServiceQuotas
         /// You can't perform this action because a dependency does not have access.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
         /// Something went wrong.
@@ -441,7 +444,7 @@ namespace Amazon.ServiceQuotas
         /// The quota request template is not associated with your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -492,7 +495,7 @@ namespace Amazon.ServiceQuotas
         /// You can't perform this action because a dependency does not have access.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
         /// Something went wrong.
@@ -501,7 +504,7 @@ namespace Amazon.ServiceQuotas
         /// The quota request template is not associated with your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -709,7 +712,7 @@ namespace Amazon.ServiceQuotas
         /// Invalid input was provided.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
         /// The specified resource does not exist.
@@ -718,7 +721,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -750,8 +753,8 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the default values for the quotas for the specified AWS service. A default value
-        /// does not reflect any quota increases.
+        /// Lists the default values for the quotas for the specified Amazon Web Service. A default
+        /// value does not reflect any quota increases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSDefaultServiceQuotas service method.</param>
         /// <param name="cancellationToken">
@@ -804,7 +807,7 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Retrieves the quota increase requests for the specified service.
+        /// Retrieves the quota increase requests for the specified Amazon Web Service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistory service method.</param>
         /// <param name="cancellationToken">
@@ -932,13 +935,13 @@ namespace Amazon.ServiceQuotas
         /// Invalid input was provided.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -970,9 +973,9 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the applied quota values for the specified AWS service. For some quotas, only
-        /// the default values are available. If the applied quota value is not available for
-        /// a quota, the quota is not retrieved.
+        /// Lists the applied quota values for the specified Amazon Web Service. For some quotas,
+        /// only the default values are available. If the applied quota value is not available
+        /// for a quota, the quota is not retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotas service method.</param>
         /// <param name="cancellationToken">
@@ -1025,7 +1028,7 @@ namespace Amazon.ServiceQuotas
 
 
         /// <summary>
-        /// Lists the names and codes for the services integrated with Service Quotas.
+        /// Lists the names and codes for the Amazon Web Services integrated with Service Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// <param name="cancellationToken">
@@ -1147,7 +1150,7 @@ namespace Amazon.ServiceQuotas
         /// Invalid input was provided.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoAvailableOrganizationException">
-        /// The account making this call is not a member of an organization.
+        /// The Amazon Web Services account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
         /// The specified resource does not exist.
@@ -1160,7 +1163,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in this AWS Region.
+        /// The Service Quotas template is not available in this Amazon Web Services Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or

@@ -70,6 +70,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Flat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LineItemFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LineItemFilter, LineItemFilterUnmarshaller>(LineItemFilterUnmarshaller.Instance);
+                    unmarshalledObject.LineItemFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Percentage", targetDepth))
                 {
                     var unmarshaller = ListCustomLineItemPercentageChargeDetailsUnmarshaller.Instance;

@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private Parameters _parameters;
         private AnalysisSourceEntity _sourceEntity;
         private string _themeArn;
+        private ValidationStrategy _validationStrategy;
 
         /// <summary>
         /// Gets and sets the property AnalysisId. 
@@ -178,6 +179,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetThemeArn()
         {
             return this._themeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStrategy. 
+        /// <para>
+        /// The option to relax the validation needed to update an analysis with definition objects.
+        /// This skips the validation step for specific errors.
+        /// </para>
+        /// </summary>
+        public ValidationStrategy ValidationStrategy
+        {
+            get { return this._validationStrategy; }
+            set { this._validationStrategy = value; }
+        }
+
+        // Check to see if ValidationStrategy property is set
+        internal bool IsSetValidationStrategy()
+        {
+            return this._validationStrategy != null;
         }
 
     }

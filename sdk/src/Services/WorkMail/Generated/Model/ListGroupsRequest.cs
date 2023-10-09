@@ -34,9 +34,29 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListGroupsRequest : AmazonWorkMailRequest
     {
+        private ListGroupsFilters _filters;
         private int? _maxResults;
         private string _nextToken;
         private string _organizationId;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Limit the search results based on the filter criteria. Only one filter per request
+        /// is supported.
+        /// </para>
+        /// </summary>
+        public ListGroupsFilters Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

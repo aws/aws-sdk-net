@@ -149,7 +149,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
         /// (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system
-        /// that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:
+        /// that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -157,8 +157,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when
-        /// setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+        /// 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code>
+        /// is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -430,7 +430,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The Microsoft Windows configuration for the file system that's being created. 
+        /// The Microsoft Windows configuration for the file system that's being created.
         /// </para>
         /// </summary>
         public CreateFileSystemWindowsConfiguration WindowsConfiguration

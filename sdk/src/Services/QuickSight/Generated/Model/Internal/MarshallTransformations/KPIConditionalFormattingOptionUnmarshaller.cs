@@ -64,6 +64,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActualValue", targetDepth))
+                {
+                    var unmarshaller = KPIActualValueConditionalFormattingUnmarshaller.Instance;
+                    unmarshalledObject.ActualValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ComparisonValue", targetDepth))
+                {
+                    var unmarshaller = KPIComparisonValueConditionalFormattingUnmarshaller.Instance;
+                    unmarshalledObject.ComparisonValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PrimaryValue", targetDepth))
                 {
                     var unmarshaller = KPIPrimaryValueConditionalFormattingUnmarshaller.Instance;

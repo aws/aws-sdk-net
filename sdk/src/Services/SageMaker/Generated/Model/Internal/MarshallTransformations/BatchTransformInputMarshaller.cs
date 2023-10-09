@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndTimeOffset);
             }
 
+            if(requestObject.IsSetExcludeFeaturesAttribute())
+            {
+                context.Writer.WritePropertyName("ExcludeFeaturesAttribute");
+                context.Writer.Write(requestObject.ExcludeFeaturesAttribute);
+            }
+
             if(requestObject.IsSetFeaturesAttribute())
             {
                 context.Writer.WritePropertyName("FeaturesAttribute");

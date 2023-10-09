@@ -64,7 +64,6 @@ namespace Amazon.QuickSight.Model
         /// The field that is used in a metric comparison from value setup.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MeasureField FromValue
         {
             get { return this._fromValue; }
@@ -101,7 +100,6 @@ namespace Amazon.QuickSight.Model
         /// The field that is used in a metric comparison to value setup.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MeasureField TargetValue
         {
             get { return this._targetValue; }
@@ -120,7 +118,6 @@ namespace Amazon.QuickSight.Model
         /// The time field that is used in a computation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DimensionField Time
         {
             get { return this._time; }

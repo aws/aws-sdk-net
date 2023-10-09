@@ -30,7 +30,7 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJob operation.
-    /// Retrieve the JSON for a specific completed transcoding job.
+    /// Retrieve the JSON for a specific transcoding job.
     /// </summary>
     public partial class GetJobRequest : AmazonMediaConvertRequest
     {

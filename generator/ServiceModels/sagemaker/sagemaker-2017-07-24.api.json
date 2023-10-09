@@ -3513,6 +3513,22 @@
       "max":15,
       "min":1
     },
+    "AdditionalS3DataSource":{
+      "type":"structure",
+      "required":[
+        "S3DataType",
+        "S3Uri"
+      ],
+      "members":{
+        "S3DataType":{"shape":"AdditionalS3DataSourceDataType"},
+        "S3Uri":{"shape":"S3Uri"},
+        "CompressionType":{"shape":"CompressionType"}
+      }
+    },
+    "AdditionalS3DataSourceDataType":{
+      "type":"string",
+      "enum":["S3Object"]
+    },
     "AgentVersion":{
       "type":"structure",
       "required":[
@@ -4680,7 +4696,8 @@
         "ProbabilityAttribute":{"shape":"String"},
         "ProbabilityThresholdAttribute":{"shape":"ProbabilityThresholdAttribute"},
         "StartTimeOffset":{"shape":"MonitoringTimeOffsetString"},
-        "EndTimeOffset":{"shape":"MonitoringTimeOffsetString"}
+        "EndTimeOffset":{"shape":"MonitoringTimeOffsetString"},
+        "ExcludeFeaturesAttribute":{"shape":"ExcludeFeaturesAttribute"}
       }
     },
     "BestObjectiveNotImproving":{
@@ -4831,7 +4848,8 @@
       "members":{
         "TimeSeriesForecastingSettings":{"shape":"TimeSeriesForecastingSettings"},
         "ModelRegisterSettings":{"shape":"ModelRegisterSettings"},
-        "WorkspaceSettings":{"shape":"WorkspaceSettings"}
+        "WorkspaceSettings":{"shape":"WorkspaceSettings"},
+        "IdentityProviderOAuthSettings":{"shape":"IdentityProviderOAuthSettings"}
       }
     },
     "CapacitySize":{
@@ -5372,6 +5390,13 @@
       "min":1,
       "pattern":"[\\w-]+_[0-9a-zA-Z]+"
     },
+    "CollectionConfig":{
+      "type":"structure",
+      "members":{
+        "VectorConfig":{"shape":"VectorConfig"}
+      },
+      "union":true
+    },
     "CollectionConfiguration":{
       "type":"structure",
       "members":{
@@ -5397,6 +5422,14 @@
       "value":{"shape":"ConfigValue"},
       "max":20,
       "min":0
+    },
+    "CollectionType":{
+      "type":"string",
+      "enum":[
+        "List",
+        "Set",
+        "Vector"
+      ]
     },
     "CompilationJobArn":{
       "type":"string",
@@ -5650,6 +5683,12 @@
       "members":{
         "CompleteOnConvergence":{"shape":"CompleteOnConvergence"}
       }
+    },
+    "CountryCode":{
+      "type":"string",
+      "max":2,
+      "min":2,
+      "pattern":"[A-Z]{2}"
     },
     "CreateActionRequest":{
       "type":"structure",
@@ -6494,7 +6533,8 @@
         "Domain":{"shape":"String"},
         "Task":{"shape":"String"},
         "SamplePayloadUrl":{"shape":"S3Uri"},
-        "AdditionalInferenceSpecifications":{"shape":"AdditionalInferenceSpecifications"}
+        "AdditionalInferenceSpecifications":{"shape":"AdditionalInferenceSpecifications"},
+        "SkipModelValidation":{"shape":"SkipModelValidation"}
       }
     },
     "CreateModelPackageOutput":{
@@ -7108,6 +7148,13 @@
         "S3DataSource":{"shape":"S3DataSource"},
         "FileSystemDataSource":{"shape":"FileSystemDataSource"}
       }
+    },
+    "DataSourceName":{
+      "type":"string",
+      "enum":[
+        "SalesforceGenie",
+        "Snowflake"
+      ]
     },
     "Database":{
       "type":"string",
@@ -7734,6 +7781,12 @@
         "DeviceNames":{"shape":"DeviceNames"}
       }
     },
+    "DerivedInformation":{
+      "type":"structure",
+      "members":{
+        "DerivedDataInputConfig":{"shape":"DataInputConfig"}
+      }
+    },
     "DescribeActionRequest":{
       "type":"structure",
       "required":["ActionName"],
@@ -8013,7 +8066,8 @@
         "RoleArn":{"shape":"RoleArn"},
         "InputConfig":{"shape":"InputConfig"},
         "OutputConfig":{"shape":"OutputConfig"},
-        "VpcConfig":{"shape":"NeoVpcConfig"}
+        "VpcConfig":{"shape":"NeoVpcConfig"},
+        "DerivedInformation":{"shape":"DerivedInformation"}
       }
     },
     "DescribeContextRequest":{
@@ -8966,7 +9020,8 @@
         "Domain":{"shape":"String"},
         "Task":{"shape":"String"},
         "SamplePayloadUrl":{"shape":"String"},
-        "AdditionalInferenceSpecifications":{"shape":"AdditionalInferenceSpecifications"}
+        "AdditionalInferenceSpecifications":{"shape":"AdditionalInferenceSpecifications"},
+        "SkipModelValidation":{"shape":"SkipModelValidation"}
       }
     },
     "DescribeModelQualityJobDefinitionRequest":{
@@ -9683,6 +9738,11 @@
       "type":"list",
       "member":{"shape":"Device"}
     },
+    "Dimension":{
+      "type":"integer",
+      "max":8192,
+      "min":1
+    },
     "DirectInternetAccess":{
       "type":"string",
       "enum":[
@@ -10198,7 +10258,8 @@
         "ProbabilityAttribute":{"shape":"String"},
         "ProbabilityThresholdAttribute":{"shape":"ProbabilityThresholdAttribute"},
         "StartTimeOffset":{"shape":"MonitoringTimeOffsetString"},
-        "EndTimeOffset":{"shape":"MonitoringTimeOffsetString"}
+        "EndTimeOffset":{"shape":"MonitoringTimeOffsetString"},
+        "ExcludeFeaturesAttribute":{"shape":"ExcludeFeaturesAttribute"}
       }
     },
     "EndpointInputConfiguration":{
@@ -10366,6 +10427,10 @@
       "max":1024,
       "pattern":"[\\S\\s]*"
     },
+    "ExcludeFeaturesAttribute":{
+      "type":"string",
+      "max":100
+    },
     "ExecutionRoleIdentityConfig":{
       "type":"string",
       "enum":[
@@ -10512,7 +10577,9 @@
       "type":"structure",
       "members":{
         "FeatureName":{"shape":"FeatureName"},
-        "FeatureType":{"shape":"FeatureType"}
+        "FeatureType":{"shape":"FeatureType"},
+        "CollectionType":{"shape":"CollectionType"},
+        "CollectionConfig":{"shape":"CollectionConfig"}
       }
     },
     "FeatureDefinitions":{
@@ -11110,6 +11177,18 @@
       "member":{"shape":"Group"},
       "max":10,
       "min":1
+    },
+    "HolidayConfig":{
+      "type":"list",
+      "member":{"shape":"HolidayConfigAttributes"},
+      "max":1,
+      "min":1
+    },
+    "HolidayConfigAttributes":{
+      "type":"structure",
+      "members":{
+        "CountryCode":{"shape":"CountryCode"}
+      }
     },
     "HookParameters":{
       "type":"map",
@@ -11792,6 +11871,19 @@
       "max":128,
       "min":32
     },
+    "IdentityProviderOAuthSetting":{
+      "type":"structure",
+      "members":{
+        "DataSourceName":{"shape":"DataSourceName"},
+        "Status":{"shape":"FeatureStatus"},
+        "SecretArn":{"shape":"SecretArn"}
+      }
+    },
+    "IdentityProviderOAuthSettings":{
+      "type":"list",
+      "member":{"shape":"IdentityProviderOAuthSetting"},
+      "max":20
+    },
     "Image":{
       "type":"structure",
       "required":[
@@ -12234,7 +12326,6 @@
       "type":"structure",
       "required":[
         "S3Uri",
-        "DataInputConfig",
         "Framework"
       ],
       "members":{
@@ -15192,7 +15283,8 @@
         "AdditionalInferenceSpecifications":{"shape":"AdditionalInferenceSpecifications"},
         "Tags":{"shape":"TagList"},
         "CustomerMetadataProperties":{"shape":"CustomerMetadataMap"},
-        "DriftCheckBaselines":{"shape":"DriftCheckBaselines"}
+        "DriftCheckBaselines":{"shape":"DriftCheckBaselines"},
+        "SkipModelValidation":{"shape":"SkipModelValidation"}
       }
     },
     "ModelPackageArn":{
@@ -15220,7 +15312,8 @@
         "ModelInput":{"shape":"ModelInput"},
         "Framework":{"shape":"String"},
         "FrameworkVersion":{"shape":"ModelPackageFrameworkVersion"},
-        "NearestModelName":{"shape":"String"}
+        "NearestModelName":{"shape":"String"},
+        "AdditionalS3DataSource":{"shape":"AdditionalS3DataSource"}
       }
     },
     "ModelPackageContainerDefinitionList":{
@@ -16332,7 +16425,8 @@
       "members":{
         "SecurityConfig":{"shape":"OnlineStoreSecurityConfig"},
         "EnableOnlineStore":{"shape":"Boolean"},
-        "TtlDuration":{"shape":"TtlDuration"}
+        "TtlDuration":{"shape":"TtlDuration"},
+        "StorageType":{"shape":"StorageType"}
       }
     },
     "OnlineStoreConfigUpdate":{
@@ -17309,7 +17403,8 @@
         "ml.inf2.xlarge",
         "ml.inf2.8xlarge",
         "ml.inf2.24xlarge",
-        "ml.inf2.48xlarge"
+        "ml.inf2.48xlarge",
+        "ml.p5.48xlarge"
       ]
     },
     "ProductionVariantList":{
@@ -18543,7 +18638,9 @@
       "type":"structure",
       "required":["ScheduleExpression"],
       "members":{
-        "ScheduleExpression":{"shape":"ScheduleExpression"}
+        "ScheduleExpression":{"shape":"ScheduleExpression"},
+        "DataAnalysisStartTime":{"shape":"String"},
+        "DataAnalysisEndTime":{"shape":"String"}
       }
     },
     "ScheduleExpression":{
@@ -18699,10 +18796,7 @@
     },
     "SelectiveExecutionConfig":{
       "type":"structure",
-      "required":[
-        "SourcePipelineExecutionArn",
-        "SelectedSteps"
-      ],
+      "required":["SelectedSteps"],
       "members":{
         "SourcePipelineExecutionArn":{"shape":"PipelineExecutionArn"},
         "SelectedSteps":{"shape":"SelectedStepList"}
@@ -18846,6 +18940,13 @@
     "SingleSignOnUserIdentifier":{
       "type":"string",
       "pattern":"UserName"
+    },
+    "SkipModelValidation":{
+      "type":"string",
+      "enum":[
+        "All",
+        "None"
+      ]
     },
     "SnsTopicArn":{
       "type":"string",
@@ -19310,6 +19411,13 @@
         "MaxWaitTimeInSeconds":{"shape":"MaxWaitTimeInSeconds"}
       }
     },
+    "StorageType":{
+      "type":"string",
+      "enum":[
+        "Standard",
+        "InMemory"
+      ]
+    },
     "String":{"type":"string"},
     "String1024":{
       "type":"string",
@@ -19721,7 +19829,8 @@
         "ForecastHorizon":{"shape":"ForecastHorizon"},
         "ForecastQuantiles":{"shape":"ForecastQuantiles"},
         "Transformations":{"shape":"TimeSeriesTransformations"},
-        "TimeSeriesConfig":{"shape":"TimeSeriesConfig"}
+        "TimeSeriesConfig":{"shape":"TimeSeriesConfig"},
+        "HolidayConfig":{"shape":"HolidayConfig"}
       }
     },
     "TimeSeriesForecastingSettings":{
@@ -20077,7 +20186,8 @@
         "SupportsDistributedTraining":{"shape":"Boolean"},
         "MetricDefinitions":{"shape":"MetricDefinitionList"},
         "TrainingChannels":{"shape":"ChannelSpecifications"},
-        "SupportedTuningJobObjectiveMetrics":{"shape":"HyperParameterTuningJobObjectives"}
+        "SupportedTuningJobObjectiveMetrics":{"shape":"HyperParameterTuningJobObjectives"},
+        "AdditionalS3DataSource":{"shape":"AdditionalS3DataSource"}
       }
     },
     "TrainingTimeInSeconds":{
@@ -21287,6 +21397,13 @@
     "VariantWeight":{
       "type":"float",
       "min":0
+    },
+    "VectorConfig":{
+      "type":"structure",
+      "required":["Dimension"],
+      "members":{
+        "Dimension":{"shape":"Dimension"}
+      }
     },
     "VendorGuidance":{
       "type":"string",

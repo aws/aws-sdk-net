@@ -200,7 +200,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property TagSpecifications. 
         /// <para>
         /// The key-value pair for tagging the EC2 Fleet request on creation. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
         /// your resources</a>.
         /// </para>
         ///  

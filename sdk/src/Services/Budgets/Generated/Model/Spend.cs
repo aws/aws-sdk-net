@@ -33,8 +33,8 @@ namespace Amazon.Budgets.Model
     /// 
     ///  
     /// <para>
-    /// For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage has the following
-    /// parameters:
+    ///  <i>Cost example:</i> A <code>Spend</code> for <code>3 USD</code> of costs has the
+    /// following parameters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -42,7 +42,20 @@ namespace Amazon.Budgets.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>unit</code> of <code>GB</code> 
+    /// A <code>Unit</code> of <code>USD</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Usage example:</i> A <code>Spend</code> for <code>3 GB</code> of S3 usage has
+    /// the following parameters:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// An <code>Amount</code> of <code>3</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <code>Unit</code> of <code>GB</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -75,7 +88,7 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// The unit of measurement that's used for the budget forecast, actual spend, or budget
-        /// threshold, such as USD or GBP.
+        /// threshold.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]

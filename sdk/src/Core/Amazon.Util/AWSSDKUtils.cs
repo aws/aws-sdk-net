@@ -258,6 +258,31 @@ namespace Amazon.Util
             return GetParametersAsString(request.ParameterCollection);
         }
 
+        /// <summary>
+        /// Returns the request parameters in the form of a query string.
+        /// </summary>
+        /// <param name="request">The request instance</param>
+        /// <param name="usesQueryString">Optional parameter: if true, we will return an empty string</param>
+        /// <returns>Request parameters in query string byte array format</returns>
+        public static byte[] GetRequestPayloadBytes(IRequest request, bool? usesQueryString = null)
+        {
+            if (request.Content != null)
+                return request.Content;
+
+            string content;
+
+            if(usesQueryString.HasValue && usesQueryString.Value)
+            {
+                content = string.Empty;
+            }
+            else
+            {
+                content = GetParametersAsString(request);
+            }
+
+            return Encoding.UTF8.GetBytes(content);
+        }
+
         /**
          * Convert Dictionary of parameters to Url encoded query string
          */
@@ -1056,11 +1081,30 @@ namespace Amazon.Util
                 }
                 else
                 {
-                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    encoded.Append('%');
+
+                    // Break apart the byte into two four-bit components and
+                    // then convert each into their hexadecimal equivalent.
+                    byte b = (byte)symbol;
+                    int hiNibble = b >> 4;
+                    int loNibble = b & 0xF;
+                    encoded.Append(ToUpperHex(hiNibble));
+                    encoded.Append(ToUpperHex(loNibble));
                 }
             }
 
             return encoded.ToString();
+        }
+
+        private static char ToUpperHex(int value)
+        {
+            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
+            if (value <= 9)
+            {
+                return (char)(value + '0');
+            }
+            // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
+            return (char)(value - 10 + 'A');
         }
                 
         internal static string UrlEncodeSlash(string data)
@@ -1163,6 +1207,11 @@ namespace Amazon.Util
             return hash;
         }
 
+        /// <remarks> 
+        /// Note, this was called directly from service packages prior to compression support
+        /// being added shortly after 3.7.200. It's important to preserve the signature and functionality
+        /// until the next minor version for those older 3.7.* service packages.
+        /// </remarks>
         /// <summary>
         /// Generates an MD5 Digest for the string-based content
         /// </summary>

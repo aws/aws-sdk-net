@@ -847,8 +847,10 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Discovers registered instances for a specified namespace and service. You can use
-        /// <code>DiscoverInstances</code> to discover instances for any type of namespace. For
-        /// public and private DNS namespaces, you can also use DNS queries to discover instances.
+        /// <code>DiscoverInstances</code> to discover instances for any type of namespace. <code>DiscoverInstances</code>
+        /// returns a randomized list of instances allowing customers to distribute traffic evenly
+        /// across instances. For public and private DNS namespaces, you can also use DNS queries
+        /// to discover instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DiscoverInstances service method.</param>
         /// 
@@ -911,6 +913,76 @@ namespace Amazon.ServiceDiscovery
         public virtual DiscoverInstancesResponse EndDiscoverInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DiscoverInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DiscoverInstancesRevision
+
+        /// <summary>
+        /// Discovers the increasing revision associated with an instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DiscoverInstancesRevision service method.</param>
+        /// 
+        /// <returns>The response from the DiscoverInstancesRevision service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
+        /// No namespace exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
+        /// The operation can't be completed because you've reached the quota for the number of
+        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
+        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision">REST API Reference for DiscoverInstancesRevision Operation</seealso>
+        public virtual DiscoverInstancesRevisionResponse DiscoverInstancesRevision(DiscoverInstancesRevisionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DiscoverInstancesRevisionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DiscoverInstancesRevisionResponseUnmarshaller.Instance;
+
+            return Invoke<DiscoverInstancesRevisionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DiscoverInstancesRevision operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DiscoverInstancesRevision operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDiscoverInstancesRevision
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision">REST API Reference for DiscoverInstancesRevision Operation</seealso>
+        public virtual IAsyncResult BeginDiscoverInstancesRevision(DiscoverInstancesRevisionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DiscoverInstancesRevisionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DiscoverInstancesRevisionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DiscoverInstancesRevision operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDiscoverInstancesRevision.</param>
+        /// 
+        /// <returns>Returns a  DiscoverInstancesRevisionResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision">REST API Reference for DiscoverInstancesRevision Operation</seealso>
+        public virtual DiscoverInstancesRevisionResponse EndDiscoverInstancesRevision(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DiscoverInstancesRevisionResponse>(asyncResult);
         }
 
         #endregion
@@ -1121,7 +1193,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Gets information about any operation that returns an operation ID in the response,
-        /// such as a <code>CreateService</code> request.
+        /// such as a <code>CreateHttpNamespace</code> request.
         /// 
         ///  <note> 
         /// <para>

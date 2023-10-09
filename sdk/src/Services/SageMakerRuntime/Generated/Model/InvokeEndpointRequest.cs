@@ -82,7 +82,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property Accept. 
         /// <para>
-        /// The desired MIME type of the inference in the response.
+        /// The desired MIME type of the inference response from the model container.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -150,7 +150,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// forwarded verbatim. You could use this value, for example, to provide an ID that you
         /// can use to track a request or to provide other metadata that a service endpoint was
         /// programmed to process. The value must consist of no more than 1024 visible US-ASCII
-        /// characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
+        /// characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
         /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). 
         /// </para>
         ///  
@@ -159,12 +159,12 @@ namespace Amazon.SageMakerRuntime.Model
         /// in the response. If your code does not set this value in the response, an empty value
         /// is returned. For example, if a custom attribute represents the trace ID, your model
         /// can prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-        /// function.
+        /// function. 
         /// </para>
         ///  
         /// <para>
         /// This feature is currently supported in the Amazon Web Services SDKs but not in the
-        /// Amazon SageMaker Python SDK.
+        /// Amazon SageMaker Python SDK. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=1024)]
@@ -206,7 +206,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <para>
         /// The name of the endpoint that you specified when you created the endpoint using the
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-        /// API. 
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

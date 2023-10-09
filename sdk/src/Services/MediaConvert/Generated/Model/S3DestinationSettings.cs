@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private S3DestinationAccessControl _accessControl;
         private S3EncryptionSettings _encryption;
+        private S3StorageClass _storageClass;
 
         /// <summary>
         /// Gets and sets the property AccessControl. Optional. Have MediaConvert automatically
@@ -67,6 +68,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageClass. Specify the S3 storage class to use for this
+        /// output. To use your destination's default storage class: Keep the default value, Not
+        /// set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this._storageClass; }
+            set { this._storageClass = value; }
+        }
+
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
+        {
+            return this._storageClass != null;
         }
 
     }

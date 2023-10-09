@@ -68,7 +68,7 @@ namespace Amazon.AuditManager.Model
         /// file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=300)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=300)]
         public string FileName
         {
             get { return this._fileName; }

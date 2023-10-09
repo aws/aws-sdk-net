@@ -266,8 +266,8 @@ namespace Amazon.FinSpaceData
         #region  AssociateUserToPermissionGroup
 
         /// <summary>
-        /// Adds a user account to a permission group to grant permissions for actions a user
-        /// can perform in FinSpace.
+        /// Adds a user to a permission group to grant permissions for actions a user can perform
+        /// in FinSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUserToPermissionGroup service method.</param>
         /// 
@@ -927,7 +927,7 @@ namespace Amazon.FinSpaceData
         #region  DisassociateUserFromPermissionGroup
 
         /// <summary>
-        /// Removes a user account from a permission group.
+        /// Removes a user from a permission group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateUserFromPermissionGroup service method.</param>
         /// 
@@ -1437,7 +1437,9 @@ namespace Amazon.FinSpaceData
         #region  GetProgrammaticAccessCredentials
 
         /// <summary>
-        /// Request programmatic credentials to use with FinSpace SDK.
+        /// Request programmatic credentials to use with FinSpace SDK. For more information, see
+        /// <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step
+        /// 2. Access credentials programmatically using IAM access key id and secret access key</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProgrammaticAccessCredentials service method.</param>
         /// 
@@ -1915,7 +1917,7 @@ namespace Amazon.FinSpaceData
         #region  ListPermissionGroupsByUser
 
         /// <summary>
-        /// Lists all the permission groups that are associated with a specific user account.
+        /// Lists all the permission groups that are associated with a specific user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroupsByUser service method.</param>
         /// 
@@ -1984,7 +1986,7 @@ namespace Amazon.FinSpaceData
         #region  ListUsers
 
         /// <summary>
-        /// Lists all available user accounts in FinSpace.
+        /// Lists all available users in FinSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
@@ -2409,7 +2411,7 @@ namespace Amazon.FinSpaceData
         #region  UpdateUser
 
         /// <summary>
-        /// Modifies the details of the specified user account. You cannot update the <code>userId</code>
+        /// Modifies the details of the specified user. You cannot update the <code>userId</code>
         /// for a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>

@@ -61,8 +61,22 @@ namespace Amazon.WorkMail.Model
         /// <para>
         /// The identifier of the resource to be deleted.
         /// </para>
+        ///  
+        /// <para>
+        /// The identifier can accept <i>ResourceId</i>, or <i>Resourcename</i>. The following
+        /// identity formats are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Resource ID: r-0123456789a0123456789b0123456789
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Resource name: resource
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=34, Max=34)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceId
         {
             get { return this._resourceId; }

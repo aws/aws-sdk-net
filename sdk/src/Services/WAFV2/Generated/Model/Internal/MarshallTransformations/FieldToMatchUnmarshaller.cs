@@ -94,6 +94,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JA3Fingerprint", targetDepth))
+                {
+                    var unmarshaller = JA3FingerprintUnmarshaller.Instance;
+                    unmarshalledObject.JA3Fingerprint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JsonBody", targetDepth))
                 {
                     var unmarshaller = JsonBodyUnmarshaller.Instance;

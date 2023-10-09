@@ -43,9 +43,9 @@ namespace Amazon.SageMakerRuntime.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon SageMaker strips all <code>POST</code> headers except those supported by the
-    /// API. Amazon SageMaker might add additional headers. You should not rely on the behavior
-    /// of headers outside those enumerated in the request syntax.
+    /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
+    /// SageMaker might add additional headers. You should not rely on the behavior of headers
+    /// outside those enumerated in the request syntax. 
     /// </para>
     ///  
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property Accept. 
         /// <para>
-        /// The desired MIME type of the inference in the response.
+        /// The desired MIME type of the inference response from the model container.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -119,7 +119,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// The code in your model is responsible for setting or updating any custom attributes
         /// in the response. If your code does not set this value in the response, an empty value
         /// is returned. For example, if a custom attribute represents the trace ID, your model
-        /// can prepend the custom attribute with <code>Trace ID</code>: in your post-processing
+        /// can prepend the custom attribute with <code>Trace ID:</code> in your post-processing
         /// function. 
         /// </para>
         ///  
@@ -145,8 +145,8 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property EndpointName. 
         /// <para>
         /// The name of the endpoint that you specified when you created the endpoint using the
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-        /// <code>CreateEndpoint</code> </a> API.
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

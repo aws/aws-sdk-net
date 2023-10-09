@@ -86,6 +86,22 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
+        ///  <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs
+        /// on the instance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources
+        /// with the unified CloudWatch Agent installed on them. For more information, see <a
+        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+        /// NVIDIA GPU utilization with the CloudWatch Agent</a>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
         ///  <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS
         /// volumes attached to the instance in a specified period of time.
         /// </para>

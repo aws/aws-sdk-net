@@ -163,6 +163,21 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3
+        /// fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming
+        /// request. This fingerprint serves as a unique identifier for the client's TLS configuration.
+        /// You can use this choice only with a string match <code>ByteMatchStatement</code> with
+        /// the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF
+        /// is able to calculate the fingerprint, it includes it in the logs. For information
+        /// about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+        /// fields</a> in the <i>WAF Developer Guide</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>HeaderOrder</code>: The comma-separated list of header names to match for.
         /// WAF creates a string that contains the ordered list of header names, from the headers
         /// in the web request, and then matches against that string. 
@@ -221,7 +236,8 @@ namespace Amazon.WAFV2.Model
         /// inspecting it, and they're used in rate-based rule statements, to transform request
         /// components before using them as custom aggregation keys. If you specify one or more
         /// transformations to apply, WAF performs all transformations on the specified content,
-        /// starting from the lowest priority setting, and then uses the component contents. 
+        /// starting from the lowest priority setting, and then uses the transformed component
+        /// contents. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

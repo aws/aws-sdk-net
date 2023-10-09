@@ -142,8 +142,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this
-        /// role to create resources on your behalf as part of workflow execution.
+        /// The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role
+        /// to create resources on your behalf as part of workflow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

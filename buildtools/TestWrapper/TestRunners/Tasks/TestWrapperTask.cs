@@ -21,6 +21,8 @@ namespace TestWrapper
         public ITaskItem Configuration { get; set; }
         public ITaskItem TestExecutionProfile { get; set; }
         public ITaskItem KeepTestResults { get; set; }
+        public ITaskItem TargetFramework { get; set; }
+        public ITaskItem TestResultsPath { get; set; }
 
         protected FileInfo TestContainerFileInfo { get { return new FileInfo(TestContainer.ItemSpec); } }
         protected string TestSuiteRunnerFileInfo { get { return TestSuiteRunner.ItemSpec; } }

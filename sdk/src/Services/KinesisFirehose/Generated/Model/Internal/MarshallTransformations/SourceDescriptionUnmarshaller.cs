@@ -70,6 +70,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.KinesisStreamSourceDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MSKSourceDescription", targetDepth))
+                {
+                    var unmarshaller = MSKSourceDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.MSKSourceDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -74,6 +74,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The Amazon Web Services account ID in which a finding was generated. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> AwsAccountId
         {
@@ -92,6 +96,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The name of the company for the product that generated the finding. For control-based
         /// findings, the company is Amazon Web Services. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> CompanyName
@@ -114,6 +122,10 @@ namespace Amazon.SecurityHub.Model
         /// in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
         /// API response.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ComplianceAssociatedStandardsId
         {
@@ -133,6 +145,10 @@ namespace Amazon.SecurityHub.Model
         ///  The security control ID for which a finding was generated. Security control IDs are
         /// the same across standards.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ComplianceSecurityControlId
         {
@@ -151,6 +167,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The result of a security check. This field is only used for findings generated from
         /// controls. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> ComplianceStatus
@@ -174,7 +194,11 @@ namespace Amazon.SecurityHub.Model
         /// <code>100</code> means 100 percent confidence. For example, a data exfiltration detection
         /// based on a statistical deviation of network traffic has low confidence because an
         /// actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a>
-        /// in the <i>Security Hub User Guide</i>. 
+        /// in the <i>Security Hub User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<NumberFilter> Confidence
@@ -200,6 +224,10 @@ namespace Amazon.SecurityHub.Model
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
         /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<DateFilter> CreatedAt
         {
@@ -223,6 +251,10 @@ namespace Amazon.SecurityHub.Model
         /// most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a>
         /// in the <i>Security Hub User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<NumberFilter> Criticality
         {
@@ -240,6 +272,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Description. 
         /// <para>
         ///  A finding's description. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> Description
@@ -266,6 +302,10 @@ namespace Amazon.SecurityHub.Model
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
         /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<DateFilter> FirstObservedAt
         {
@@ -284,6 +324,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The identifier for the solution-specific component that generated a finding. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> GeneratorId
         {
@@ -301,6 +345,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Id. 
         /// <para>
         ///  The product-specific identifier for a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> Id
@@ -327,6 +375,10 @@ namespace Amazon.SecurityHub.Model
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
         /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<DateFilter> LastObservedAt
         {
@@ -344,6 +396,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NoteText. 
         /// <para>
         ///  The text of a user-defined note that's added to a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> NoteText
@@ -366,6 +422,10 @@ namespace Amazon.SecurityHub.Model
         /// Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<DateFilter> NoteUpdatedAt
         {
@@ -383,6 +443,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NoteUpdatedBy. 
         /// <para>
         ///  The principal that created a note. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> NoteUpdatedBy
@@ -403,6 +467,10 @@ namespace Amazon.SecurityHub.Model
         ///  The Amazon Resource Name (ARN) for a third-party product that generated a finding
         /// in Security Hub. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ProductArn
         {
@@ -422,6 +490,10 @@ namespace Amazon.SecurityHub.Model
         ///  Provides the name of the product that generated the finding. For control-based findings,
         /// the product name is Security Hub. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ProductName
         {
@@ -439,6 +511,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RecordState. 
         /// <para>
         ///  Provides the current state of a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> RecordState
@@ -458,6 +534,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The product-generated identifier for a related finding. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> RelatedFindingsId
         {
@@ -476,6 +556,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The ARN for the product that generated a related finding. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> RelatedFindingsProductArn
         {
@@ -493,6 +577,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ResourceDetailsOther. 
         /// <para>
         ///  Custom fields and values about the resource that a finding pertains to. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<MapFilter> ResourceDetailsOther
@@ -516,6 +604,10 @@ namespace Amazon.SecurityHub.Model
         /// that created the resource. For non-Amazon Web Services resources, this is a unique
         /// identifier that is associated with the resource. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ResourceId
         {
@@ -536,6 +628,10 @@ namespace Amazon.SecurityHub.Model
         /// is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped
         /// to one partition. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ResourcePartition
         {
@@ -554,6 +650,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The Amazon Web Services Region where the resource that a finding pertains to is located.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> ResourceRegion
@@ -574,6 +674,10 @@ namespace Amazon.SecurityHub.Model
         ///  A list of Amazon Web Services tags associated with a resource at the time the finding
         /// was processed. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<MapFilter> ResourceTags
         {
@@ -592,6 +696,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The type of resource that the finding pertains to. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> ResourceType
         {
@@ -609,6 +717,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SeverityLabel. 
         /// <para>
         ///  The severity value of the finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> SeverityLabel
@@ -629,6 +741,10 @@ namespace Amazon.SecurityHub.Model
         ///  Provides a URL that links to a page about the current finding in the finding product.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> SourceUrl
         {
@@ -646,6 +762,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Title. 
         /// <para>
         ///  A finding's title. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> Title
@@ -665,7 +785,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  One or more finding types in the format of namespace/category/classifier that classify
         /// a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
-        /// taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. 
+        /// taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> Type
@@ -691,6 +815,10 @@ namespace Amazon.SecurityHub.Model
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
         /// For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<DateFilter> UpdatedAt
         {
@@ -708,6 +836,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property UserDefinedFields. 
         /// <para>
         ///  A list of user-defined name and value string pairs added to a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<MapFilter> UserDefinedFields
@@ -727,6 +859,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Provides the veracity of a finding. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
         /// </summary>
         public List<StringFilter> VerificationState
         {
@@ -744,6 +880,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property WorkflowStatus. 
         /// <para>
         ///  Provides information about the status of the investigation into a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
         /// </summary>
         public List<StringFilter> WorkflowStatus

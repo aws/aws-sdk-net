@@ -46,6 +46,11 @@ namespace Amazon.WorkMail.Model
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListGroupsForEntity operation
+        ///</summary>
+        IListGroupsForEntityPaginator ListGroupsForEntity(ListGroupsForEntityRequest request);
+
+        /// <summary>
         /// Paginator for ListImpersonationRoles operation
         ///</summary>
         IListImpersonationRolesPaginator ListImpersonationRoles(ListImpersonationRolesRequest request);

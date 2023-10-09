@@ -81,9 +81,9 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Addresses. 
         /// <para>
         /// Contains an array of strings that specifies zero or more IP addresses or blocks of
-        /// IP addresses. All addresses must be specified using Classless Inter-Domain Routing
-        /// (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
-        /// 
+        /// IP addresses that you want WAF to inspect for in incoming requests. All addresses
+        /// must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports
+        /// all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. 
         /// </para>
         ///  
         /// <para>
@@ -91,24 +91,22 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To configure WAF to allow, block, or count requests that originated from the IP address
-        /// 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To configure WAF to allow, block, or count requests that originated from IP addresses
-        /// from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+        /// For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+        /// <code>192.0.2.0/24</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To configure WAF to allow, block, or count requests that originated from the IP address
-        /// 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To configure WAF to allow, block, or count requests that originated from IP addresses
-        /// 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff,
-        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+        /// For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000
+        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -145,10 +143,32 @@ namespace Amazon.WAFV2.Model
             set { this._addresses = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Addresses"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsAddressesSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._addresses);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._addresses);
+            }
+        }
+
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this.IsAddressesSet; 
         }
 
         /// <summary>

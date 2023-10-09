@@ -30,8 +30,8 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateUserToPermissionGroup operation.
-    /// Adds a user account to a permission group to grant permissions for actions a user
-    /// can perform in FinSpace.
+    /// Adds a user to a permission group to grant permissions for actions a user can perform
+    /// in FinSpace.
     /// </summary>
     public partial class AssociateUserToPermissionGroupRequest : AmazonFinSpaceDataRequest
     {

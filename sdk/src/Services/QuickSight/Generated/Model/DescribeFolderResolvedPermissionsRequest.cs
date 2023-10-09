@@ -37,6 +37,9 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private string _folderId;
+        private int? _maxResults;
+        private string _awsNamespace;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -74,6 +77,62 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFolderId()
         {
             return this._folderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to be returned per request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace of the folder whose permissions you want described.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token for the next set of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

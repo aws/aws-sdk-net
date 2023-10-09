@@ -45,7 +45,7 @@ namespace Amazon.SimSpaceWeaver.Model
         /// Service User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string BucketName
         {
             get { return this._bucketName; }

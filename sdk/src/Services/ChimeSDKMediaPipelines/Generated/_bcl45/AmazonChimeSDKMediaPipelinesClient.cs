@@ -693,6 +693,186 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  CreateMediaPipelineKinesisVideoStreamPool
+
+
+        /// <summary>
+        /// Creates an Kinesis video stream pool for the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual CreateMediaPipelineKinesisVideoStreamPoolResponse CreateMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Kinesis video stream pool for the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual Task<CreateMediaPipelineKinesisVideoStreamPoolResponse> CreateMediaPipelineKinesisVideoStreamPoolAsync(CreateMediaPipelineKinesisVideoStreamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMediaStreamPipeline
+
+
+        /// <summary>
+        /// Creates a streaming media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaStreamPipeline service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaStreamPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
+        public virtual CreateMediaStreamPipelineResponse CreateMediaStreamPipeline(CreateMediaStreamPipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaStreamPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaStreamPipelineResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMediaStreamPipelineResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a streaming media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaStreamPipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMediaStreamPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
+        public virtual Task<CreateMediaStreamPipelineResponse> CreateMediaStreamPipelineAsync(CreateMediaStreamPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMediaStreamPipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMediaStreamPipelineResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMediaStreamPipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMediaCapturePipeline
 
 
@@ -879,6 +1059,10 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
@@ -920,6 +1104,10 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
@@ -946,6 +1134,97 @@ namespace Amazon.ChimeSDKMediaPipelines
             options.ResponseUnmarshaller = DeleteMediaPipelineResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteMediaPipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMediaPipelineKinesisVideoStreamPool
+
+
+        /// <summary>
+        /// Deletes an Kinesis video stream pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual DeleteMediaPipelineKinesisVideoStreamPoolResponse DeleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Kinesis video stream pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual Task<DeleteMediaPipelineKinesisVideoStreamPoolResponse> DeleteMediaPipelineKinesisVideoStreamPoolAsync(DeleteMediaPipelineKinesisVideoStreamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1199,6 +1478,255 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  GetMediaPipelineKinesisVideoStreamPool
+
+
+        /// <summary>
+        /// Gets an Kinesis video stream pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the GetMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual GetMediaPipelineKinesisVideoStreamPoolResponse GetMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<GetMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets an Kinesis video stream pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual Task<GetMediaPipelineKinesisVideoStreamPoolResponse> GetMediaPipelineKinesisVideoStreamPoolAsync(GetMediaPipelineKinesisVideoStreamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSpeakerSearchTask
+
+
+        /// <summary>
+        /// Retrieves the details of the specified speaker search task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeakerSearchTask service method.</param>
+        /// 
+        /// <returns>The response from the GetSpeakerSearchTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
+        public virtual GetSpeakerSearchTaskResponse GetSpeakerSearchTask(GetSpeakerSearchTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpeakerSearchTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of the specified speaker search task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeakerSearchTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSpeakerSearchTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
+        public virtual Task<GetSpeakerSearchTaskResponse> GetSpeakerSearchTaskAsync(GetSpeakerSearchTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSpeakerSearchTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVoiceToneAnalysisTask
+
+
+        /// <summary>
+        /// Retrieves the details of a voice tone analysis task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceToneAnalysisTask service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceToneAnalysisTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
+        public virtual GetVoiceToneAnalysisTaskResponse GetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceToneAnalysisTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a voice tone analysis task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceToneAnalysisTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceToneAnalysisTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
+        public virtual Task<GetVoiceToneAnalysisTaskResponse> GetVoiceToneAnalysisTaskAsync(GetVoiceToneAnalysisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMediaCapturePipelines
 
 
@@ -1365,6 +1893,89 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  ListMediaPipelineKinesisVideoStreamPools
+
+
+        /// <summary>
+        /// Lists the video stream pools in the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaPipelineKinesisVideoStreamPools service method.</param>
+        /// 
+        /// <returns>The response from the ListMediaPipelineKinesisVideoStreamPools service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
+        public virtual ListMediaPipelineKinesisVideoStreamPoolsResponse ListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMediaPipelineKinesisVideoStreamPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMediaPipelineKinesisVideoStreamPoolsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the video stream pools in the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaPipelineKinesisVideoStreamPools service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMediaPipelineKinesisVideoStreamPools service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
+        public virtual Task<ListMediaPipelineKinesisVideoStreamPoolsResponse> ListMediaPipelineKinesisVideoStreamPoolsAsync(ListMediaPipelineKinesisVideoStreamPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMediaPipelineKinesisVideoStreamPoolsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMediaPipelineKinesisVideoStreamPoolsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMediaPipelines
 
 
@@ -1527,6 +2138,410 @@ namespace Amazon.ChimeSDKMediaPipelines
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSpeakerSearchTask
+
+
+        /// <summary>
+        /// Starts a speaker search task.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before starting any speaker search tasks, you must provide all notices and obtain
+        /// all consents from the speaker as required under applicable privacy and biometrics
+        /// laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS
+        /// service terms</a> for the Amazon Chime SDK.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeakerSearchTask service method.</param>
+        /// 
+        /// <returns>The response from the StartSpeakerSearchTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
+        public virtual StartSpeakerSearchTaskResponse StartSpeakerSearchTask(StartSpeakerSearchTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartSpeakerSearchTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a speaker search task.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before starting any speaker search tasks, you must provide all notices and obtain
+        /// all consents from the speaker as required under applicable privacy and biometrics
+        /// laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS
+        /// service terms</a> for the Amazon Chime SDK.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeakerSearchTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSpeakerSearchTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
+        public virtual Task<StartSpeakerSearchTaskResponse> StartSpeakerSearchTaskAsync(StartSpeakerSearchTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSpeakerSearchTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartVoiceToneAnalysisTask
+
+
+        /// <summary>
+        /// Starts a voice tone analysis task. For more information about voice tone analysis,
+        /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/voice-analytics.html">Using
+        /// Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before starting any voice tone analysis tasks, you must provide all notices and obtain
+        /// all consents from the speaker as required under applicable privacy and biometrics
+        /// laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS
+        /// service terms</a> for the Amazon Chime SDK.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVoiceToneAnalysisTask service method.</param>
+        /// 
+        /// <returns>The response from the StartVoiceToneAnalysisTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
+        public virtual StartVoiceToneAnalysisTaskResponse StartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartVoiceToneAnalysisTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a voice tone analysis task. For more information about voice tone analysis,
+        /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/voice-analytics.html">Using
+        /// Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before starting any voice tone analysis tasks, you must provide all notices and obtain
+        /// all consents from the speaker as required under applicable privacy and biometrics
+        /// laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS
+        /// service terms</a> for the Amazon Chime SDK.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartVoiceToneAnalysisTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartVoiceToneAnalysisTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
+        public virtual Task<StartVoiceToneAnalysisTaskResponse> StartVoiceToneAnalysisTaskAsync(StartVoiceToneAnalysisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopSpeakerSearchTask
+
+
+        /// <summary>
+        /// Stops a speaker search task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSpeakerSearchTask service method.</param>
+        /// 
+        /// <returns>The response from the StopSpeakerSearchTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
+        public virtual StopSpeakerSearchTaskResponse StopSpeakerSearchTask(StopSpeakerSearchTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StopSpeakerSearchTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a speaker search task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSpeakerSearchTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSpeakerSearchTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
+        public virtual Task<StopSpeakerSearchTaskResponse> StopSpeakerSearchTaskAsync(StopSpeakerSearchTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopSpeakerSearchTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopVoiceToneAnalysisTask
+
+
+        /// <summary>
+        /// Stops a voice tone analysis task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopVoiceToneAnalysisTask service method.</param>
+        /// 
+        /// <returns>The response from the StopVoiceToneAnalysisTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
+        public virtual StopVoiceToneAnalysisTaskResponse StopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StopVoiceToneAnalysisTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a voice tone analysis task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopVoiceToneAnalysisTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopVoiceToneAnalysisTask service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
+        public virtual Task<StopVoiceToneAnalysisTaskResponse> StopVoiceToneAnalysisTaskAsync(StopVoiceToneAnalysisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopVoiceToneAnalysisTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1877,6 +2892,97 @@ namespace Amazon.ChimeSDKMediaPipelines
             options.ResponseUnmarshaller = UpdateMediaInsightsPipelineStatusResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateMediaInsightsPipelineStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMediaPipelineKinesisVideoStreamPool
+
+
+        /// <summary>
+        /// Updates an Kinesis video stream pool in a media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual UpdateMediaPipelineKinesisVideoStreamPoolResponse UpdateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMediaPipelineKinesisVideoStreamPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an Kinesis video stream pool in a media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMediaPipelineKinesisVideoStreamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMediaPipelineKinesisVideoStreamPool service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
+        public virtual Task<UpdateMediaPipelineKinesisVideoStreamPoolResponse> UpdateMediaPipelineKinesisVideoStreamPoolAsync(UpdateMediaPipelineKinesisVideoStreamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMediaPipelineKinesisVideoStreamPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion

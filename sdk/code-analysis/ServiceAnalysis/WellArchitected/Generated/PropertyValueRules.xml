@@ -131,6 +131,59 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.Description</property>
+    <min>3</min>
+    <max>250</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.TemplateName</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateReviewTemplateResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateTemplateShareRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateTemplateShareRequest.SharedWith</property>
+    <min>12</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateTemplateShareRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateTemplateShareResponse.ShareId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateTemplateShareResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.ArchitecturalDesign</property>
     <max>2048</max>
     <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
@@ -246,6 +299,32 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteProfileShareRequest.ShareId</property>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteReviewTemplateRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteReviewTemplateRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteTemplateShareRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteTemplateShareRequest.ShareId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteTemplateShareRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteWorkloadRequest.ClientRequestToken</property>
@@ -468,6 +547,56 @@
     <min>1</min>
     <max>32</max>
     <pattern>^[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateAnswerRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateAnswerRequest.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateAnswerRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateAnswerResponse.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateAnswerResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateLensReviewRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateLensReviewRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetReviewTemplateLensReviewResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetWorkloadRequest.WorkloadId</property>
@@ -700,6 +829,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListNotificationsRequest.ResourceArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListNotificationsRequest.WorkloadId</property>
     <min>32</min>
     <max>32</max>
@@ -741,6 +876,43 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersResponse.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.LensNamePrefix</property>
     <max>100</max>
   </property-value-rule>
@@ -755,8 +927,34 @@
     <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.TemplateNamePrefix</property>
+    <max>100</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.WorkloadNamePrefix</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListTemplateSharesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListTemplateSharesRequest.SharedWithPrefix</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListTemplateSharesRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListTemplateSharesResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListWorkloadsRequest.MaxResults</property>
@@ -850,6 +1048,80 @@
     <min>3</min>
     <max>100</max>
     <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.Description</property>
+    <min>3</min>
+    <max>250</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.TemplateName</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerRequest.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerRequest.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerResponse.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateLensReviewRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateLensReviewRequest.LensNotes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateLensReviewRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateReviewTemplateLensReviewResponse.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateShareInvitationRequest.ShareInvitationId</property>
@@ -950,6 +1222,22 @@
     <min>32</min>
     <max>32</max>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpgradeReviewTemplateLensReviewRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpgradeReviewTemplateLensReviewRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpgradeReviewTemplateLensReviewRequest.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Answer.HelpfulResourceDisplayText</property>
@@ -1263,6 +1551,17 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.LensUpgradeSummary.ResourceArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.LensUpgradeSummary.ResourceName</property>
+    <min>3</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensUpgradeSummary.WorkloadId</property>
     <min>32</min>
     <max>32</max>
@@ -1535,6 +1834,149 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplate.Description</property>
+    <min>3</min>
+    <max>250</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplate.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplate.Owner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplate.ShareInvitationId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplate.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplate.TemplateName</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.HelpfulResourceDisplayText</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.HelpfulResourceUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.ImprovementPlanUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.QuestionDescription</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.QuestionTitle</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswerSummary.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswerSummary.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateAnswerSummary.QuestionTitle</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateLensReview.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateLensReview.LensName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateLensReview.LensVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateLensReview.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplatePillarReviewSummary.Notes</property>
+    <max>2084</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplatePillarReviewSummary.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplatePillarReviewSummary.PillarName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.Description</property>
+    <min>3</min>
+    <max>250</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.Owner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.TemplateName</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.LensAlias</property>
     <min>1</min>
     <max>128</max>
@@ -1547,6 +1989,12 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.ShareInvitationId</property>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ShareInvitation.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.WorkloadId</property>
@@ -1586,6 +2034,18 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ShareInvitationSummary.TemplateArn</property>
+    <min>50</min>
+    <max>250</max>
+    <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ShareInvitationSummary.TemplateName</property>
+    <min>3</min>
+    <max>100</max>
+    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.WorkloadId</property>
     <min>32</min>
     <max>32</max>
@@ -1595,6 +2055,20 @@
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.WorkloadName</property>
     <min>3</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TemplateShareSummary.SharedWith</property>
+    <min>12</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TemplateShareSummary.ShareId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TemplateShareSummary.StatusMessage</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.ArchitecturalDesign</property>

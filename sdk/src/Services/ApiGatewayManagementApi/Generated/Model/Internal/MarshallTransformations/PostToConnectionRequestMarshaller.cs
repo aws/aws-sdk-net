@@ -64,6 +64,10 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
             request.AddPathResource("{connectionId}", StringUtils.FromString(publicRequest.ConnectionId));
             request.ResourcePath = "/@connections/{connectionId}";
             request.ContentStream =  publicRequest.Data ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

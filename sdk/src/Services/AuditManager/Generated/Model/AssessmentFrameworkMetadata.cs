@@ -71,7 +71,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }

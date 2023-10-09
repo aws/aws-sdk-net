@@ -125,6 +125,200 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicationAssociatedResourceType.
+    /// </summary>
+    public class ApplicationAssociatedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUNDLE for ApplicationAssociatedResourceType
+        /// </summary>
+        public static readonly ApplicationAssociatedResourceType BUNDLE = new ApplicationAssociatedResourceType("BUNDLE");
+        /// <summary>
+        /// Constant IMAGE for ApplicationAssociatedResourceType
+        /// </summary>
+        public static readonly ApplicationAssociatedResourceType IMAGE = new ApplicationAssociatedResourceType("IMAGE");
+        /// <summary>
+        /// Constant WORKSPACE for ApplicationAssociatedResourceType
+        /// </summary>
+        public static readonly ApplicationAssociatedResourceType WORKSPACE = new ApplicationAssociatedResourceType("WORKSPACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationAssociatedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationAssociatedResourceType FindValue(string value)
+        {
+            return FindValue<ApplicationAssociatedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationAssociatedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationErrorCode.
+    /// </summary>
+    public class AssociationErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeploymentErrorInternalServerError for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode DeploymentErrorInternalServerError = new AssociationErrorCode("DeploymentError.InternalServerError");
+        /// <summary>
+        /// Constant DeploymentErrorWorkspaceUnreachable for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode DeploymentErrorWorkspaceUnreachable = new AssociationErrorCode("DeploymentError.WorkspaceUnreachable");
+        /// <summary>
+        /// Constant ValidationErrorInsufficientDiskSpace for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode ValidationErrorInsufficientDiskSpace = new AssociationErrorCode("ValidationError.InsufficientDiskSpace");
+        /// <summary>
+        /// Constant ValidationErrorInsufficientMemory for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode ValidationErrorInsufficientMemory = new AssociationErrorCode("ValidationError.InsufficientMemory");
+        /// <summary>
+        /// Constant ValidationErrorUnsupportedOperatingSystem for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode ValidationErrorUnsupportedOperatingSystem = new AssociationErrorCode("ValidationError.UnsupportedOperatingSystem");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationErrorCode FindValue(string value)
+        {
+            return FindValue<AssociationErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationState.
+    /// </summary>
+    public class AssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for AssociationState
+        /// </summary>
+        public static readonly AssociationState COMPLETED = new AssociationState("COMPLETED");
+        /// <summary>
+        /// Constant ERROR for AssociationState
+        /// </summary>
+        public static readonly AssociationState ERROR = new AssociationState("ERROR");
+        /// <summary>
+        /// Constant INSTALLING for AssociationState
+        /// </summary>
+        public static readonly AssociationState INSTALLING = new AssociationState("INSTALLING");
+        /// <summary>
+        /// Constant PENDING_INSTALL for AssociationState
+        /// </summary>
+        public static readonly AssociationState PENDING_INSTALL = new AssociationState("PENDING_INSTALL");
+        /// <summary>
+        /// Constant PENDING_INSTALL_DEPLOYMENT for AssociationState
+        /// </summary>
+        public static readonly AssociationState PENDING_INSTALL_DEPLOYMENT = new AssociationState("PENDING_INSTALL_DEPLOYMENT");
+        /// <summary>
+        /// Constant PENDING_UNINSTALL for AssociationState
+        /// </summary>
+        public static readonly AssociationState PENDING_UNINSTALL = new AssociationState("PENDING_UNINSTALL");
+        /// <summary>
+        /// Constant PENDING_UNINSTALL_DEPLOYMENT for AssociationState
+        /// </summary>
+        public static readonly AssociationState PENDING_UNINSTALL_DEPLOYMENT = new AssociationState("PENDING_UNINSTALL_DEPLOYMENT");
+        /// <summary>
+        /// Constant REMOVED for AssociationState
+        /// </summary>
+        public static readonly AssociationState REMOVED = new AssociationState("REMOVED");
+        /// <summary>
+        /// Constant UNINSTALLING for AssociationState
+        /// </summary>
+        public static readonly AssociationState UNINSTALLING = new AssociationState("UNINSTALLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationState FindValue(string value)
+        {
+            return FindValue<AssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssociationStatus.
     /// </summary>
     public class AssociationStatus : ConstantClass
@@ -180,6 +374,52 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BundleAssociatedResourceType.
+    /// </summary>
+    public class BundleAssociatedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION for BundleAssociatedResourceType
+        /// </summary>
+        public static readonly BundleAssociatedResourceType APPLICATION = new BundleAssociatedResourceType("APPLICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BundleAssociatedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BundleAssociatedResourceType FindValue(string value)
+        {
+            return FindValue<BundleAssociatedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BundleAssociatedResourceType(string value)
         {
             return FindValue(value);
         }
@@ -785,6 +1025,52 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ImageAssociatedResourceType.
+    /// </summary>
+    public class ImageAssociatedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION for ImageAssociatedResourceType
+        /// </summary>
+        public static readonly ImageAssociatedResourceType APPLICATION = new ImageAssociatedResourceType("APPLICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageAssociatedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageAssociatedResourceType FindValue(string value)
+        {
+            return FindValue<ImageAssociatedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageAssociatedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageType.
     /// </summary>
     public class ImageType : ConstantClass
@@ -982,6 +1268,92 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModificationStateEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperatingSystemName.
+    /// </summary>
+    public class OperatingSystemName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON_LINUX_2 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName AMAZON_LINUX_2 = new OperatingSystemName("AMAZON_LINUX_2");
+        /// <summary>
+        /// Constant UBUNTU_18_04 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName UBUNTU_18_04 = new OperatingSystemName("UBUNTU_18_04");
+        /// <summary>
+        /// Constant UBUNTU_20_04 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName UBUNTU_20_04 = new OperatingSystemName("UBUNTU_20_04");
+        /// <summary>
+        /// Constant UBUNTU_22_04 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName UBUNTU_22_04 = new OperatingSystemName("UBUNTU_22_04");
+        /// <summary>
+        /// Constant UNKNOWN for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName UNKNOWN = new OperatingSystemName("UNKNOWN");
+        /// <summary>
+        /// Constant WINDOWS_10 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_10 = new OperatingSystemName("WINDOWS_10");
+        /// <summary>
+        /// Constant WINDOWS_11 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_11 = new OperatingSystemName("WINDOWS_11");
+        /// <summary>
+        /// Constant WINDOWS_7 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_7 = new OperatingSystemName("WINDOWS_7");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2016 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_SERVER_2016 = new OperatingSystemName("WINDOWS_SERVER_2016");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2019 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_SERVER_2019 = new OperatingSystemName("WINDOWS_SERVER_2019");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2022 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_SERVER_2022 = new OperatingSystemName("WINDOWS_SERVER_2022");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperatingSystemName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperatingSystemName FindValue(string value)
+        {
+            return FindValue<OperatingSystemName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperatingSystemName(string value)
         {
             return FindValue(value);
         }
@@ -1397,6 +1769,160 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type WorkSpaceApplicationLicenseType.
+    /// </summary>
+    public class WorkSpaceApplicationLicenseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LICENSED for WorkSpaceApplicationLicenseType
+        /// </summary>
+        public static readonly WorkSpaceApplicationLicenseType LICENSED = new WorkSpaceApplicationLicenseType("LICENSED");
+        /// <summary>
+        /// Constant UNLICENSED for WorkSpaceApplicationLicenseType
+        /// </summary>
+        public static readonly WorkSpaceApplicationLicenseType UNLICENSED = new WorkSpaceApplicationLicenseType("UNLICENSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkSpaceApplicationLicenseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkSpaceApplicationLicenseType FindValue(string value)
+        {
+            return FindValue<WorkSpaceApplicationLicenseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkSpaceApplicationLicenseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkSpaceApplicationState.
+    /// </summary>
+    public class WorkSpaceApplicationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for WorkSpaceApplicationState
+        /// </summary>
+        public static readonly WorkSpaceApplicationState AVAILABLE = new WorkSpaceApplicationState("AVAILABLE");
+        /// <summary>
+        /// Constant ERROR for WorkSpaceApplicationState
+        /// </summary>
+        public static readonly WorkSpaceApplicationState ERROR = new WorkSpaceApplicationState("ERROR");
+        /// <summary>
+        /// Constant PENDING for WorkSpaceApplicationState
+        /// </summary>
+        public static readonly WorkSpaceApplicationState PENDING = new WorkSpaceApplicationState("PENDING");
+        /// <summary>
+        /// Constant UNINSTALL_ONLY for WorkSpaceApplicationState
+        /// </summary>
+        public static readonly WorkSpaceApplicationState UNINSTALL_ONLY = new WorkSpaceApplicationState("UNINSTALL_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkSpaceApplicationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkSpaceApplicationState FindValue(string value)
+        {
+            return FindValue<WorkSpaceApplicationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkSpaceApplicationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkSpaceAssociatedResourceType.
+    /// </summary>
+    public class WorkSpaceAssociatedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION for WorkSpaceAssociatedResourceType
+        /// </summary>
+        public static readonly WorkSpaceAssociatedResourceType APPLICATION = new WorkSpaceAssociatedResourceType("APPLICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkSpaceAssociatedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkSpaceAssociatedResourceType FindValue(string value)
+        {
+            return FindValue<WorkSpaceAssociatedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkSpaceAssociatedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceBundleState.
     /// </summary>
     public class WorkspaceBundleState : ConstantClass
@@ -1556,6 +2082,152 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WorkspaceDirectoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceImageErrorDetailCode.
+    /// </summary>
+    public class WorkspaceImageErrorDetailCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AdditionalDrivesAttached for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AdditionalDrivesAttached = new WorkspaceImageErrorDetailCode("AdditionalDrivesAttached");
+        /// <summary>
+        /// Constant AntiVirusInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AntiVirusInstalled = new WorkspaceImageErrorDetailCode("AntiVirusInstalled");
+        /// <summary>
+        /// Constant AutoLogonEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AutoLogonEnabled = new WorkspaceImageErrorDetailCode("AutoLogonEnabled");
+        /// <summary>
+        /// Constant AutoMountDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AutoMountDisabled = new WorkspaceImageErrorDetailCode("AutoMountDisabled");
+        /// <summary>
+        /// Constant AzureDomainJoined for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AzureDomainJoined = new WorkspaceImageErrorDetailCode("AzureDomainJoined");
+        /// <summary>
+        /// Constant DHCPDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DHCPDisabled = new WorkspaceImageErrorDetailCode("DHCPDisabled");
+        /// <summary>
+        /// Constant DiskFreeSpace for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DiskFreeSpace = new WorkspaceImageErrorDetailCode("DiskFreeSpace");
+        /// <summary>
+        /// Constant DiskSizeExceeded for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DiskSizeExceeded = new WorkspaceImageErrorDetailCode("DiskSizeExceeded");
+        /// <summary>
+        /// Constant DomainJoined for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DomainJoined = new WorkspaceImageErrorDetailCode("DomainJoined");
+        /// <summary>
+        /// Constant FirewallEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode FirewallEnabled = new WorkspaceImageErrorDetailCode("FirewallEnabled");
+        /// <summary>
+        /// Constant IncompatiblePartitioning for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode IncompatiblePartitioning = new WorkspaceImageErrorDetailCode("IncompatiblePartitioning");
+        /// <summary>
+        /// Constant InPlaceUpgrade for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InPlaceUpgrade = new WorkspaceImageErrorDetailCode("InPlaceUpgrade");
+        /// <summary>
+        /// Constant MultipleBootPartition for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode MultipleBootPartition = new WorkspaceImageErrorDetailCode("MultipleBootPartition");
+        /// <summary>
+        /// Constant OfficeInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode OfficeInstalled = new WorkspaceImageErrorDetailCode("OfficeInstalled");
+        /// <summary>
+        /// Constant OSNotSupported for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode OSNotSupported = new WorkspaceImageErrorDetailCode("OSNotSupported");
+        /// <summary>
+        /// Constant OutdatedPowershellVersion for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode OutdatedPowershellVersion = new WorkspaceImageErrorDetailCode("OutdatedPowershellVersion");
+        /// <summary>
+        /// Constant PCoIPAgentInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode PCoIPAgentInstalled = new WorkspaceImageErrorDetailCode("PCoIPAgentInstalled");
+        /// <summary>
+        /// Constant PendingReboot for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode PendingReboot = new WorkspaceImageErrorDetailCode("PendingReboot");
+        /// <summary>
+        /// Constant RealTimeUniversalDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode RealTimeUniversalDisabled = new WorkspaceImageErrorDetailCode("RealTimeUniversalDisabled");
+        /// <summary>
+        /// Constant Requires64BitOS for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode Requires64BitOS = new WorkspaceImageErrorDetailCode("Requires64BitOS");
+        /// <summary>
+        /// Constant UEFINotSupported for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UEFINotSupported = new WorkspaceImageErrorDetailCode("UEFINotSupported");
+        /// <summary>
+        /// Constant VMWareToolsInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode VMWareToolsInstalled = new WorkspaceImageErrorDetailCode("VMWareToolsInstalled");
+        /// <summary>
+        /// Constant WindowsUpdatesEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WindowsUpdatesEnabled = new WorkspaceImageErrorDetailCode("WindowsUpdatesEnabled");
+        /// <summary>
+        /// Constant WorkspacesBYOLAccountDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WorkspacesBYOLAccountDisabled = new WorkspaceImageErrorDetailCode("WorkspacesBYOLAccountDisabled");
+        /// <summary>
+        /// Constant WorkspacesBYOLAccountNotFound for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WorkspacesBYOLAccountNotFound = new WorkspaceImageErrorDetailCode("WorkspacesBYOLAccountNotFound");
+        /// <summary>
+        /// Constant ZeroRearmCount for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode ZeroRearmCount = new WorkspaceImageErrorDetailCode("ZeroRearmCount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceImageErrorDetailCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceImageErrorDetailCode FindValue(string value)
+        {
+            return FindValue<WorkspaceImageErrorDetailCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceImageErrorDetailCode(string value)
         {
             return FindValue(value);
         }

@@ -105,6 +105,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly AdministrativeActionType IOPS_OPTIMIZATION = new AdministrativeActionType("IOPS_OPTIMIZATION");
         /// <summary>
+        /// Constant MISCONFIGURED_STATE_RECOVERY for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType MISCONFIGURED_STATE_RECOVERY = new AdministrativeActionType("MISCONFIGURED_STATE_RECOVERY");
+        /// <summary>
         /// Constant RELEASE_NFS_V3_LOCKS for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType RELEASE_NFS_V3_LOCKS = new AdministrativeActionType("RELEASE_NFS_V3_LOCKS");

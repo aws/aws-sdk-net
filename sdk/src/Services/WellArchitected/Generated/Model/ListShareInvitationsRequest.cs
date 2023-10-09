@@ -30,7 +30,14 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListShareInvitations operation.
-    /// List the workload invitations.
+    /// List the share invitations.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>,
+    /// and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that
+    /// matches your <code>ShareResourceType</code>.
+    /// </para>
     /// </summary>
     public partial class ListShareInvitationsRequest : AmazonWellArchitectedRequest
     {
@@ -39,6 +46,7 @@ namespace Amazon.WellArchitected.Model
         private string _nextToken;
         private string _profileNamePrefix;
         private ShareResourceType _shareResourceType;
+        private string _templateNamePrefix;
         private string _workloadNamePrefix;
 
         /// <summary>
@@ -97,7 +105,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ProfileNamePrefix. 
         /// <para>
-        /// Profile name prefix.
+        /// An optional string added to the beginning of each profile name returned in the results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -129,6 +137,26 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetShareResourceType()
         {
             return this._shareResourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateNamePrefix. 
+        /// <para>
+        /// An optional string added to the beginning of each review template name returned in
+        /// the results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string TemplateNamePrefix
+        {
+            get { return this._templateNamePrefix; }
+            set { this._templateNamePrefix = value; }
+        }
+
+        // Check to see if TemplateNamePrefix property is set
+        internal bool IsSetTemplateNamePrefix()
+        {
+            return this._templateNamePrefix != null;
         }
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace Amazon.AuditManager.Model
         ///  The recommended actions to carry out if the control isn't fulfilled. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string ActionPlanInstructions
         {
             get { return this._actionPlanInstructions; }
@@ -67,7 +67,7 @@ namespace Amazon.AuditManager.Model
         ///  The title of the action plan for remediating the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=300)]
+        [AWSProperty(Sensitive=true, Max=300)]
         public string ActionPlanTitle
         {
             get { return this._actionPlanTitle; }
@@ -162,7 +162,7 @@ namespace Amazon.AuditManager.Model
         ///  The steps that you should follow to determine if the control is met. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string TestingInformation
         {
             get { return this._testingInformation; }

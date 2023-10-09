@@ -70,6 +70,10 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
                 request.Parameters.Add("snapshotId", StringUtils.FromString(publicRequest.SnapshotId));
             request.ResourcePath = "/projects";
             request.ContentStream =  publicRequest.Contents ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

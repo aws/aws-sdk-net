@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputDeviceConfigurableSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCodec())
+            {
+                context.Writer.WritePropertyName("codec");
+                context.Writer.Write(requestObject.Codec);
+            }
+
             if(requestObject.IsSetConfiguredInput())
             {
                 context.Writer.WritePropertyName("configuredInput");
@@ -61,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("maxBitrate");
                 context.Writer.Write(requestObject.MaxBitrate);
+            }
+
+            if(requestObject.IsSetMediaconnectSettings())
+            {
+                context.Writer.WritePropertyName("mediaconnectSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputDeviceMediaConnectConfigurableSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaconnectSettings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

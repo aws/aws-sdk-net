@@ -347,7 +347,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/insights</code> 
+        ///  <code>/aws/insight</code> 
         /// </para>
         ///  
         /// <para>

@@ -38,29 +38,27 @@ namespace Amazon.EntityResolution
     /// <summary>
     /// Implementation for accessing EntityResolution
     ///
-    /// Welcome to the <i>AWS Entity Resolution API Reference</i>.
+    /// Welcome to the <i>Entity Resolution API Reference</i>.
     /// 
     ///  
     /// <para>
-    /// AWS Entity Resolution is an AWS service that provides pre-configured entity resolution
-    /// capabilities that enable developers and analysts at advertising and marketing companies
-    /// to build an accurate and complete view of their consumers.
+    /// Entity Resolution is an Amazon Web Services service that provides pre-configured entity
+    /// resolution capabilities that enable developers and analysts at advertising and marketing
+    /// companies to build an accurate and complete view of their consumers.
     /// </para>
     ///  
     /// <para>
-    ///  With AWS Entity Resolution, you have the ability to match source records containing
-    /// consumer identifiers, such as name, email address, and phone number. This holds true
-    /// even when these records have incomplete or conflicting identifiers. For example, AWS
-    /// Entity Resolution can effectively match a source record from a customer relationship
-    /// management (CRM) system, which includes account information like first name, last
-    /// name, postal address, phone number, and email address, with a source record from a
-    /// marketing system containing campaign information, such as username and email address.
+    ///  With Entity Resolution, you can match source records containing consumer identifiers,
+    /// such as name, email address, and phone number. This is true even when these records
+    /// have incomplete or conflicting identifiers. For example, Entity Resolution can effectively
+    /// match a source record from a customer relationship management (CRM) system with a
+    /// source record from a marketing system containing campaign information.
     /// </para>
     ///  
     /// <para>
-    /// To learn more about AWS Entity Resolution concepts, procedures, and best practices,
-    /// see the <a href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">AWS
-    /// Entity Resolution User Guide</a>.
+    /// To learn more about Entity Resolution concepts, procedures, and best practices, see
+    /// the <a href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">Entity
+    /// Resolution User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonEntityResolutionClient : AmazonServiceClient, IAmazonEntityResolution
@@ -309,18 +307,18 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
         /// <code>HTTP Status Code: 402</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">REST API Reference for CreateMatchingWorkflow Operation</seealso>
@@ -357,18 +355,18 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
         /// <code>HTTP Status Code: 402</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">REST API Reference for CreateMatchingWorkflow Operation</seealso>
@@ -406,18 +404,18 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
         /// <code>HTTP Status Code: 402</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping">REST API Reference for CreateSchemaMapping Operation</seealso>
@@ -454,18 +452,18 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
         /// <code>HTTP Status Code: 402</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping">REST API Reference for CreateSchemaMapping Operation</seealso>
@@ -495,14 +493,14 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
@@ -531,14 +529,14 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
@@ -575,14 +573,14 @@ namespace Amazon.EntityResolution
         /// running, etc. <code>HTTP Status Code: 400</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">REST API Reference for DeleteSchemaMapping Operation</seealso>
@@ -618,14 +616,14 @@ namespace Amazon.EntityResolution
         /// running, etc. <code>HTTP Status Code: 400</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">REST API Reference for DeleteSchemaMapping Operation</seealso>
@@ -654,8 +652,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -664,7 +662,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">REST API Reference for GetMatchId Operation</seealso>
@@ -692,8 +690,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -702,7 +700,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">REST API Reference for GetMatchId Operation</seealso>
@@ -732,8 +730,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -742,7 +740,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">REST API Reference for GetMatchingJob Operation</seealso>
@@ -771,8 +769,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -781,7 +779,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">REST API Reference for GetMatchingJob Operation</seealso>
@@ -810,8 +808,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -820,7 +818,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
@@ -848,8 +846,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -858,7 +856,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
@@ -887,8 +885,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -897,7 +895,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">REST API Reference for GetSchemaMapping Operation</seealso>
@@ -925,8 +923,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -935,7 +933,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">REST API Reference for GetSchemaMapping Operation</seealso>
@@ -964,8 +962,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -974,7 +972,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs">REST API Reference for ListMatchingJobs Operation</seealso>
@@ -1002,8 +1000,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1012,7 +1010,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs">REST API Reference for ListMatchingJobs Operation</seealso>
@@ -1032,7 +1030,7 @@ namespace Amazon.EntityResolution
 
         /// <summary>
         /// Returns a list of all the <code>MatchingWorkflows</code> that have been created for
-        /// an AWS account.
+        /// an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMatchingWorkflows service method.</param>
         /// 
@@ -1042,14 +1040,14 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">REST API Reference for ListMatchingWorkflows Operation</seealso>
@@ -1065,7 +1063,7 @@ namespace Amazon.EntityResolution
 
         /// <summary>
         /// Returns a list of all the <code>MatchingWorkflows</code> that have been created for
-        /// an AWS account.
+        /// an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMatchingWorkflows service method.</param>
         /// <param name="cancellationToken">
@@ -1078,14 +1076,14 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">REST API Reference for ListMatchingWorkflows Operation</seealso>
@@ -1105,7 +1103,7 @@ namespace Amazon.EntityResolution
 
         /// <summary>
         /// Returns a list of all the <code>SchemaMappings</code> that have been created for an
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchemaMappings service method.</param>
         /// 
@@ -1115,14 +1113,14 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">REST API Reference for ListSchemaMappings Operation</seealso>
@@ -1138,7 +1136,7 @@ namespace Amazon.EntityResolution
 
         /// <summary>
         /// Returns a list of all the <code>SchemaMappings</code> that have been created for an
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchemaMappings service method.</param>
         /// <param name="cancellationToken">
@@ -1151,14 +1149,14 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">REST API Reference for ListSchemaMappings Operation</seealso>
@@ -1177,21 +1175,21 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution,
+        /// Displays the tags associated with an Entity Resolution resource. In Entity Resolution,
         /// <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
@@ -1206,7 +1204,7 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution,
+        /// Displays the tags associated with an Entity Resolution resource. In Entity Resolution,
         /// <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1216,14 +1214,14 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
@@ -1259,12 +1257,12 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
         /// <code>HTTP Status Code: 402</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1273,7 +1271,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob">REST API Reference for StartMatchingJob Operation</seealso>
@@ -1308,12 +1306,12 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS Entity Resolution account limits. The error message describes the limit exceeded.
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
         /// <code>HTTP Status Code: 402</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1322,7 +1320,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob">REST API Reference for StartMatchingJob Operation</seealso>
@@ -1341,12 +1339,12 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution
-        /// resource. Tags can help you organize and categorize your resources. You can also use
-        /// them to scope user permissions by granting a user permission to access or change only
-        /// resources with certain tag values. In Entity Resolution, <code>SchemaMapping</code>,
-        /// and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning
-        /// to AWS and are interpreted strictly as strings of characters. You can use the <code>TagResource</code>
+        /// Assigns one or more tags (key-value pairs) to the specified Entity Resolution resource.
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions by granting a user permission to access or change only resources
+        /// with certain tag values. In Entity Resolution, <code>SchemaMapping</code> and <code>MatchingWorkflow</code>
+        /// can be tagged. Tags don't have any semantic meaning to Amazon Web Services and are
+        /// interpreted strictly as strings of characters. You can use the <code>TagResource</code>
         /// action with a resource that already has tags. If you specify a new tag key, this tag
         /// is appended to the list of tags associated with the resource. If you specify a tag
         /// key that is already associated with the resource, the new tag value that you specify
@@ -1356,14 +1354,14 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the TagResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
@@ -1378,12 +1376,12 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution
-        /// resource. Tags can help you organize and categorize your resources. You can also use
-        /// them to scope user permissions by granting a user permission to access or change only
-        /// resources with certain tag values. In Entity Resolution, <code>SchemaMapping</code>,
-        /// and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning
-        /// to AWS and are interpreted strictly as strings of characters. You can use the <code>TagResource</code>
+        /// Assigns one or more tags (key-value pairs) to the specified Entity Resolution resource.
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions by granting a user permission to access or change only resources
+        /// with certain tag values. In Entity Resolution, <code>SchemaMapping</code> and <code>MatchingWorkflow</code>
+        /// can be tagged. Tags don't have any semantic meaning to Amazon Web Services and are
+        /// interpreted strictly as strings of characters. You can use the <code>TagResource</code>
         /// action with a resource that already has tags. If you specify a new tag key, this tag
         /// is appended to the list of tags associated with the resource. If you specify a tag
         /// key that is already associated with the resource, the new tag value that you specify
@@ -1396,14 +1394,14 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the TagResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
@@ -1422,15 +1420,15 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Removes one or more tags from the specified AWS Entity Resolution resource. In Entity
+        /// Removes one or more tags from the specified Entity Resolution resource. In Entity
         /// Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1447,7 +1445,7 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Removes one or more tags from the specified AWS Entity Resolution resource. In Entity
+        /// Removes one or more tags from the specified Entity Resolution resource. In Entity
         /// Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1457,8 +1455,8 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the UntagResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1491,8 +1489,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1501,7 +1499,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">REST API Reference for UpdateMatchingWorkflow Operation</seealso>
@@ -1531,8 +1529,8 @@ namespace Amazon.EntityResolution
         /// 403</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Entity Resolution
-        /// service. <code>HTTP Status Code: 500</code>
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
         /// The resource could not be found. <code>HTTP Status Code: 404</code>
@@ -1541,7 +1539,7 @@ namespace Amazon.EntityResolution
         /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
         /// Status Code: 400</code>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">REST API Reference for UpdateMatchingWorkflow Operation</seealso>

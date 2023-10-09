@@ -264,6 +264,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return TagsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TrailAlreadyExistsException"))
                 {
                     return TrailAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

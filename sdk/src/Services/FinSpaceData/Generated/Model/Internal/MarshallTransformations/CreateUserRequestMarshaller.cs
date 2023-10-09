@@ -67,7 +67,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetApiAccess())
                 {
-                    context.Writer.WritePropertyName("ApiAccess");
+                    context.Writer.WritePropertyName("apiAccess");
                     context.Writer.Write(publicRequest.ApiAccess);
                 }
 

@@ -355,7 +355,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        ///  The name of the server on the MongoDB source endpoint. 
+        ///  The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide
+        /// the server name for any of the servers in the replication set.
         /// </para>
         /// </summary>
         public string ServerName

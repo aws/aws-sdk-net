@@ -71,6 +71,20 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Constructs an instance of PartETag from an CopyPart response
+        /// </summary>
+        /// <param name="copyPartResponse">CopyPart response</param>
+        public PartETag(CopyPartResponse copyPartResponse)
+        {
+            partNumber = copyPartResponse.PartNumber;
+            eTag = copyPartResponse.ETag;
+            ChecksumCRC32C = copyPartResponse.ChecksumCRC32C;
+            ChecksumCRC32 = copyPartResponse.ChecksumCRC32;
+            ChecksumSHA1 = copyPartResponse.ChecksumSHA1;
+            ChecksumSHA256 = copyPartResponse.ChecksumSHA256;
+        }
+
+        /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>

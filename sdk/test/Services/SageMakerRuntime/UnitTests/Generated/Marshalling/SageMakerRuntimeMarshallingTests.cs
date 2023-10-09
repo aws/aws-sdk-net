@@ -417,5 +417,248 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as InvokeEndpointWithResponseStreamResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStream_InternalFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStream_InternalStreamFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalStreamFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalStreamFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStream_ModelErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ModelErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ModelErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStream_ModelStreamErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ModelStreamErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ModelStreamErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStream_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpointWithResponseStream_ValidationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpointWithResponseStream", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     {
         private List<MetricDataV2> _collections = new List<MetricDataV2>();
         private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
+        private MetricInterval _metricInterval;
 
         /// <summary>
         /// Gets and sets the property Collections. 
@@ -70,6 +71,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricInterval. 
+        /// <para>
+        /// The interval period with the start and end time for the metrics.
+        /// </para>
+        /// </summary>
+        public MetricInterval MetricInterval
+        {
+            get { return this._metricInterval; }
+            set { this._metricInterval = value; }
+        }
+
+        // Check to see if MetricInterval property is set
+        internal bool IsSetMetricInterval()
+        {
+            return this._metricInterval != null;
         }
 
     }

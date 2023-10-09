@@ -1279,6 +1279,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EventSourceName OnContactEvaluationSubmit = new EventSourceName("OnContactEvaluationSubmit");
         /// <summary>
+        /// Constant OnMetricDataUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnMetricDataUpdate = new EventSourceName("OnMetricDataUpdate");
+        /// <summary>
         /// Constant OnPostCallAnalysisAvailable for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnPostCallAnalysisAvailable = new EventSourceName("OnPostCallAnalysisAvailable");
@@ -1879,6 +1883,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant APPLICATION for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType APPLICATION = new IntegrationType("APPLICATION");
+        /// <summary>
         /// Constant CASES_DOMAIN for IntegrationType
         /// </summary>
         public static readonly IntegrationType CASES_DOMAIN = new IntegrationType("CASES_DOMAIN");
@@ -1932,6 +1940,72 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IntegrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntervalPeriod.
+    /// </summary>
+    public class IntervalPeriod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAY for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod DAY = new IntervalPeriod("DAY");
+        /// <summary>
+        /// Constant FIFTEEN_MIN for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod FIFTEEN_MIN = new IntervalPeriod("FIFTEEN_MIN");
+        /// <summary>
+        /// Constant HOUR for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod HOUR = new IntervalPeriod("HOUR");
+        /// <summary>
+        /// Constant THIRTY_MIN for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod THIRTY_MIN = new IntervalPeriod("THIRTY_MIN");
+        /// <summary>
+        /// Constant TOTAL for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod TOTAL = new IntervalPeriod("TOTAL");
+        /// <summary>
+        /// Constant WEEK for IntervalPeriod
+        /// </summary>
+        public static readonly IntervalPeriod WEEK = new IntervalPeriod("WEEK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntervalPeriod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntervalPeriod FindValue(string value)
+        {
+            return FindValue<IntervalPeriod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntervalPeriod(string value)
         {
             return FindValue(value);
         }
@@ -4790,6 +4864,106 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UseCaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ViewStatus.
+    /// </summary>
+    public class ViewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLISHED for ViewStatus
+        /// </summary>
+        public static readonly ViewStatus PUBLISHED = new ViewStatus("PUBLISHED");
+        /// <summary>
+        /// Constant SAVED for ViewStatus
+        /// </summary>
+        public static readonly ViewStatus SAVED = new ViewStatus("SAVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewStatus FindValue(string value)
+        {
+            return FindValue<ViewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ViewType.
+    /// </summary>
+    public class ViewType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for ViewType
+        /// </summary>
+        public static readonly ViewType AWS_MANAGED = new ViewType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for ViewType
+        /// </summary>
+        public static readonly ViewType CUSTOMER_MANAGED = new ViewType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewType FindValue(string value)
+        {
+            return FindValue<ViewType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewType(string value)
         {
             return FindValue(value);
         }

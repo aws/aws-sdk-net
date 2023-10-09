@@ -156,7 +156,7 @@ namespace Amazon.Detective.Model
         /// member accounts.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string Message
         {
             get { return this._message; }

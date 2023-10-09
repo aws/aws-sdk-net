@@ -39,7 +39,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
-    /// Organizational Units</a> in the <i>Organizations User Guide.</i> 
+    /// organizational units (OUs)</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  
     /// <para>

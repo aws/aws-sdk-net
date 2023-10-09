@@ -93,6 +93,18 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     response.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InteroperabilityEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.InteroperabilityEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MigrationAdmin", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MigrationAdmin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrganizationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

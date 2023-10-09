@@ -61,7 +61,7 @@ namespace Amazon.EventBridge.Model
         /// The client secret assciated with the client ID to use for OAuth authorization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=1, Max=512)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

@@ -42,7 +42,7 @@ namespace Amazon.EventBridge.Model
         /// The password associated with the user name to use for Basic authorization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=1, Max=512)]
         public string Password
         {
             get { return this._password; }

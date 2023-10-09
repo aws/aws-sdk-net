@@ -148,7 +148,14 @@ namespace Amazon.Kendra
         /// <para>
         /// The documents are deleted asynchronously. You can see the progress of the deletion
         /// by using Amazon Web Services CloudWatch. Any error messages related to the processing
-        /// of the batch are sent to you CloudWatch log.
+        /// of the batch are sent to your Amazon Web Services CloudWatch log. You can also use
+        /// the <code>BatchGetDocumentStatus</code> API to monitor the progress of deleting your
+        /// documents.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting documents from an index using <code>BatchDeleteDocument</code> could take
+        /// up to an hour or more, depending on the number of documents you want to delete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDocument service method.</param>
@@ -304,7 +311,8 @@ namespace Amazon.Kendra
         /// <para>
         /// The documents are indexed asynchronously. You can see the progress of the batch using
         /// Amazon Web Services CloudWatch. Any error messages related to processing the batch
-        /// are sent to your Amazon Web Services CloudWatch log.
+        /// are sent to your Amazon Web Services CloudWatch log. You can also use the <code>BatchGetDocumentStatus</code>
+        /// API to monitor the progress of indexing your documents.
         /// </para>
         ///  
         /// <para>
@@ -733,8 +741,9 @@ namespace Amazon.Kendra
         /// 
         ///  
         /// <para>
-        /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
-        /// API or using one of the supported data sources.
+        /// Once the index is active, you can index your documents using the <code>BatchPutDocument</code>
+        /// API or using one of the supported <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html">data
+        /// sources</a>.
         /// </para>
         ///  
         /// <para>
@@ -971,6 +980,13 @@ namespace Amazon.Kendra
         /// <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
         /// API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
         /// Data Sources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting an entire data source or re-syncing your index after deleting specific documents
+        /// from a data source could take up to an hour or more, depending on the number of documents
+        /// you want to delete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -2610,9 +2626,9 @@ namespace Amazon.Kendra
         /// passages of up to 200 token words and up to 100 semantically relevant passages. This
         /// doesn't include question-answer or FAQ type responses from your index. The passages
         /// are text excerpts that can be semantically extracted from multiple documents and multiple
-        /// parts of the same document. If in extreme cases your documents produce no relevant
-        /// passages using the <code>Retrieve</code> API, you can alternatively use the <code>Query</code>
-        /// API.
+        /// parts of the same document. If in extreme cases your documents produce zero passages
+        /// using the <code>Retrieve</code> API, you can alternatively use the <code>Query</code>
+        /// API and its types of responses.
         /// </para>
         ///  
         /// <para>
@@ -2634,6 +2650,13 @@ namespace Amazon.Kendra
         /// <para>
         /// You can also include certain fields in the response that might provide useful additional
         /// information.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Retrieve</code> API shares the number of <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query
+        /// capacity units</a> that you set for your index. For more information on what's included
+        /// in a single capacity unit and the default base capacity for an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+        /// capacity</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Retrieve service method.</param>
@@ -2685,6 +2708,13 @@ namespace Amazon.Kendra
         /// Starts a synchronization job for a data source connector. If a synchronization job
         /// is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code>
         /// exception.
+        /// 
+        ///  
+        /// <para>
+        /// Re-syncing your data source with your index after modifying, adding, or deleting documents
+        /// from your data source respository could take up to an hour or more, depending on the
+        /// number of documents to sync.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataSourceSyncJob service method.</param>
         /// <param name="cancellationToken">

@@ -76,6 +76,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statuses", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.Statuses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

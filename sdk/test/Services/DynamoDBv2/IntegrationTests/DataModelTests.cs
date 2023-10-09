@@ -44,7 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestEnums(conversion);
 
                 TestHashObjects();
-                TestHashRangeObjects();
+                TestHashRangeObjects<Employee>();
                 TestOtherContextOperations();
                 TestBatchOperations();
                 TestTransactionOperations();
@@ -71,6 +71,152 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CreateContext(DynamoDBEntryConversion.V2, isEmptyStringEnabled);
 
             TestEmptyStringsWithFeatureDisabled();
+        }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can be invoked successfully based on the table info 
+        /// supplied only via class attributes.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_DisableFetchingTableMetadata_WithFullAttributes()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            TestHashRangeObjects<AnnotatedEmployee>();
+        }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can be invoked successfully based on the table info 
+        /// supplied via a combination of class attributes and the app config.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_DisableFetchingTableMetadata_WithPartialAttributes()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            TestHashRangeObjects<PartiallyAnnotatedEmployee>();
+        }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can be invoked successfully based on the table info 
+        /// supplied via attributes on the parent class.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_DisableFetchingTableMetadata_WithNonAnnotatedChildClass()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            TestHashRangeObjects<EmployeeChild>();
+        }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can be invoked successfully based on a Datetime attribute as the hash key that is stored as epoch.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_DisableFetchingTableMetadata_DateTimeAsHashKey()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            var employee = new AnnotatedNumericEpochEmployee
+            {
+                Name = "Bob",
+                Age = 45,
+                CreationTime = EpochDate,
+                EpochDate2 = EpochDate,
+                NonEpochDate1 = EpochDate,
+                NonEpochDate2 = EpochDate
+            };
+
+            Context.Save(employee);
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
+            ApproximatelyEqual(EpochDate, storedEmployee.EpochDate2);
+            ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
+
+
+        /// <summary>
+        /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,
+        /// but using table definitions created by <see cref="TableBuilder"/> instead of the internal <see cref="IAmazonDynamoDB.DescribeTable"/> call
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestWithBuilderTables()
+        {
+            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            {
+                // Cleanup existing data in the tables
+                CleanupTables();
+
+                // Clear existing SDK-wide cache
+                TableCache.Clear();
+
+                // Redeclare Context, which will start with empty caches
+                Context = new DynamoDBContext(Client, new DynamoDBContextConfig
+                {
+                    IsEmptyStringValueEnabled = true,
+                    Conversion = conversion
+                });
+
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashRangeTable")
+                                                    .AddHashKey("Name", DynamoDBEntryType.String)
+                                                    .AddRangeKey("Age", DynamoDBEntryType.Numeric)
+                                                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Score", DynamoDBEntryType.Numeric)
+                                                    .AddLocalSecondaryIndex("LocalIndex", "Manager", DynamoDBEntryType.String)
+                                                    .Build());
+
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
+                                                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                                                    .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price", DynamoDBEntryType.Numeric)
+                                                    .Build());
+
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-NumericHashRangeTable")
+                                                    .AddHashKey("CreationTime", DynamoDBEntryType.Numeric)
+                                                    .AddRangeKey("Name", DynamoDBEntryType.String)
+                                                    .Build());
+
+                TestEmptyStringsWithFeatureEnabled();
+
+                TestEnumHashKeyObjects();
+
+                TestEmptyCollections(conversion);
+
+                TestUnsupportedTypes();
+                TestEnums(conversion);
+
+                TestHashObjects();
+                TestHashRangeObjects<Employee>();
+                TestOtherContextOperations();
+                TestBatchOperations();
+                TestTransactionOperations();
+                TestMultiTableTransactionOperations();
+
+                TestStoreAsEpoch();
+            }
         }
 
         private static void TestEmptyStringsWithFeatureEnabled()
@@ -655,10 +801,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private void TestHashRangeObjects()
+        private void TestHashRangeObjects<T>() where T : Employee, new()
         {
             // Create and save item
-            Employee employee = new Employee
+            T employee = new T
             {
                 Name = "Alan",
                 Age = 31,
@@ -673,7 +819,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context.Save(employee);
 
             // Load item
-            Employee retrieved = Context.Load(employee);
+            T retrieved = Context.Load(employee);
             Assert.AreEqual(employee.Name, retrieved.Name);
             Assert.AreEqual(employee.Age, retrieved.Age);
             Assert.AreEqual(employee.CompanyName, retrieved.CompanyName);
@@ -697,7 +843,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Data.Length, retrieved.Data.Length);
 
             // Create more items
-            Employee employee2 = new Employee
+            T employee2 = new T
             {
                 Name = "Diane",
                 Age = 40,
@@ -713,7 +859,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             employee2.Score = 101;
             Context.Save(employee2);
 
-            retrieved = Context.Load<Employee>("Alan", 31);
+            retrieved = Context.Load<T>("Alan", 31);
             Assert.AreEqual(retrieved.Name, "Alan");
             retrieved = Context.Load(employee);
             Assert.AreEqual(retrieved.Name, "Chuck");
@@ -722,35 +868,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(retrieved.Age, 24);
 
             // Scan for all items
-            var employees = Context.Scan<Employee>().ToList();
+            var employees = Context.Scan<T>().ToList();
             Assert.AreEqual(4, employees.Count);
 
             // Query for items with Hash-Key = "Diane"
-            employees = Context.Query<Employee>("Diane").ToList();
+            employees = Context.Query<T>("Diane").ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query for items with Hash-Key = "Diane" and Range-Key > 30
-            employees = Context.Query<Employee>("Diane", QueryOperator.GreaterThan, 30).ToList();
+            employees = Context.Query<T>("Diane", QueryOperator.GreaterThan, 30).ToList();
             Assert.AreEqual(1, employees.Count);
 
             
             // Index Query
 
             // Query local index for items with Hash-Key = "Diane"
-            employees = Context.Query<Employee>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+            employees = Context.Query<T>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
-            employees = Context.Query<Employee>("Diane", QueryOperator.Equal, new object[] { "Eva" },
+            employees = Context.Query<T>("Diane", QueryOperator.Equal, new object[] { "Eva" },
                 new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River"
-            employees = Context.Query<Employee>("Big River", new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
+            employees = Context.Query<T>("Big River", new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
-            employees = Context.Query<Employee>("Big River",
+            employees = Context.Query<T>("Big River",
                 new DynamoDBOperationConfig
                 {
                     IndexName = "GlobalIndex",
@@ -765,13 +911,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Index Scan
 
             // Scan local index for items with Hash-Key = "Diane"
-            employees = Context.Scan<Employee>(
+            employees = Context.Scan<T>(
                 new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
                 new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
-            employees = Context.Scan<Employee>(
+            employees = Context.Scan<T>(
                 new List<ScanCondition>
                 {
                     new ScanCondition("Name", ScanOperator.Equal, "Diane"),
@@ -781,13 +927,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River"
-            employees = Context.Scan<Employee>(
+            employees = Context.Scan<T>(
                 new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
                 new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
-            employees = Context.Scan<Employee>(
+            employees = Context.Scan<T>(
                 new List<ScanCondition>
                 {
                     new ScanCondition("CompanyName", ScanOperator.Equal, "Big River"),
@@ -1414,19 +1560,73 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class Employee
         {
             // Hash key
-            public string Name { get; set; }
+            public virtual string Name { get; set; }
             public string MiddleName { get; set; }
             // Range key
-            public int Age { get; set; }
+            public virtual int Age { get; set; }
 
-            public string CompanyName { get; set; }
-            public int Score { get; set; }
-            public string ManagerName { get; set; }
+            public virtual string CompanyName { get; set; }
+            public virtual int Score { get; set; }
+            public virtual string ManagerName { get; set; }
             public byte[] Data { get; set; }
             public Status CurrentStatus { get; set; }
             public List<string> Aliases { get; set; }
 
             public string InternalId { get; set; }
+        }
+
+        /// <summary>
+        /// Same structure as <see cref="Employee"/>, but the indices are fully annotated
+        /// </summary>
+        [DynamoDBTable("HashRangeTable")]
+        public class AnnotatedEmployee : Employee
+        {
+            // Hash key
+            [DynamoDBHashKey]
+            public override string Name { get; set; }
+
+            // Range key
+            [DynamoDBRangeKey]
+            public override int Age { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+            public override string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public override int Score { get; set; }
+
+            [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex", AttributeName = "Manager")]
+            public override string ManagerName { get; set; }
+        }
+
+        /// <summary>
+        /// Same structure as <see cref="AnnotatedEmployee"/>, but it does not have the <see cref="DynamoDBTableAttribute"/> and attribute names overrides.
+        /// </summary>
+        public class PartiallyAnnotatedEmployee : Employee
+        {
+            // Hash key
+            [DynamoDBHashKey]
+            public override string Name { get; set; }
+
+            // Range key
+            [DynamoDBRangeKey]
+            public override int Age { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex")]
+            public override string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public override int Score { get; set; }
+
+            [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex")]
+            public override string ManagerName { get; set; }
+        }
+
+        /// <summary>
+        /// Child class of <see cref="AnnotatedEmployee"/> without any attributes.
+        /// </summary>
+        public class EmployeeChild : AnnotatedEmployee
+        {
         }
 
         /// <summary>
@@ -1467,7 +1667,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class EpochEmployee : Employee
         {
             [DynamoDBProperty(StoreAsEpoch = true)]
-            public DateTime CreationTime { get; set; }
+            public virtual DateTime CreationTime { get; set; }
 
             public DateTime EpochDate2 { get; set; }
 
@@ -1484,6 +1684,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class NumericEpochEmployee : EpochEmployee
         {
 
+        }
+
+        /// <summary>
+        /// Same structure as <see cref="NumericEpochEmployee"/>, but the Hash key is annotated
+        /// </summary>
+        [DynamoDBTable("NumericHashRangeTable")]
+        public class AnnotatedNumericEpochEmployee : EpochEmployee
+        {
+            [DynamoDBHashKey(StoreAsEpoch = true)]
+            public override DateTime CreationTime { get; set; }
+
+            [DynamoDBRangeKey]
+            public override string Name { get; set; }
         }
 
         #endregion

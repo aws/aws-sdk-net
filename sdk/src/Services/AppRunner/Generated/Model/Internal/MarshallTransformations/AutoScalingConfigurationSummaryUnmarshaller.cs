@@ -82,6 +82,30 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoScalingConfigurationRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HasAssociatedService", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasAssociatedService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsDefault", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

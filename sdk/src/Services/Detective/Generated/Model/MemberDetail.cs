@@ -148,7 +148,7 @@ namespace Amazon.Detective.Model
         /// The Amazon Web Services account root user email address for the member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

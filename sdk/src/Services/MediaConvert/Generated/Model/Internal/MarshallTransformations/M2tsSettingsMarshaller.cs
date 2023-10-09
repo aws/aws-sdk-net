@@ -244,6 +244,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ProgramNumber);
             }
 
+            if(requestObject.IsSetPtsOffset())
+            {
+                context.Writer.WritePropertyName("ptsOffset");
+                context.Writer.Write(requestObject.PtsOffset);
+            }
+
+            if(requestObject.IsSetPtsOffsetMode())
+            {
+                context.Writer.WritePropertyName("ptsOffsetMode");
+                context.Writer.Write(requestObject.PtsOffsetMode);
+            }
+
             if(requestObject.IsSetRateMode())
             {
                 context.Writer.WritePropertyName("rateMode");

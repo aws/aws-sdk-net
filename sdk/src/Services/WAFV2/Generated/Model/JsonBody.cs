@@ -168,10 +168,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384
-        /// kilobytes) for CloudFront distributions. For CloudFront distributions, you can increase
-        /// the limit in the web ACL <code>AssociationConfig</code>, for additional processing
-        /// fees. 
+        /// The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes)
+        /// for CloudFront distributions. For CloudFront distributions, you can increase the limit
+        /// in the web ACL <code>AssociationConfig</code>, for additional processing fees. 
         /// </para>
         ///  
         /// <para>

@@ -8,7 +8,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK.UnitTests.Custom.Net45.Custom.Runtime
+namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class ClientConfigTests
@@ -37,6 +37,31 @@ namespace AWSSDK.UnitTests.Custom.Net45.Custom.Runtime
 
             Assert.AreEqual(config.UseFIPSEndpoint, expectedUseFIPS, "config.UseFIPSEndpoint");
             Assert.AreEqual(config.RegionEndpoint.SystemName, expectedResolvedRegion, "config.RegionEndpoint.SystemName");
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        [DataRow(0, true)]
+        [DataRow(10485760, true)]
+        [DataRow(128, true)]
+        [DataRow(-1, false)]
+        [DataRow(10485761, false)]
+        public void TestRequestMinCompressionValidation(long requestMinCompression, bool isValid)
+        {
+            if (!isValid)
+            {
+                Assert.ThrowsException<ArgumentException>( 
+                    () => new TestClientConfig { RequestMinCompressionSizeBytes = requestMinCompression }
+                );
+            }
+            else
+            {
+                new TestClientConfig
+                {
+                    RequestMinCompressionSizeBytes = requestMinCompression
+                };
+            }
         }
     }
 

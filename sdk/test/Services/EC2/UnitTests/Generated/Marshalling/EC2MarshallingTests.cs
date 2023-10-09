@@ -8847,6 +8847,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableImageBlockPublicAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableImageBlockPublicAccess");
+
+            var request = InstantiateClassGenerator.Execute<DisableImageBlockPublicAccessRequest>();
+            var marshaller = new DisableImageBlockPublicAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableImageBlockPublicAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableImageBlockPublicAccessResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableImageDeprecationMarshallTest()
         {
             var operation = service_model.FindOperation("DisableImageDeprecation");
@@ -9447,6 +9471,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableFastSnapshotRestoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableImageBlockPublicAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableImageBlockPublicAccess");
+
+            var request = InstantiateClassGenerator.Execute<EnableImageBlockPublicAccessRequest>();
+            var marshaller = new EnableImageBlockPublicAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableImageBlockPublicAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableImageBlockPublicAccessResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -10061,6 +10109,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetHostReservationPurchasePreviewResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetImageBlockPublicAccessStateMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetImageBlockPublicAccessState");
+
+            var request = InstantiateClassGenerator.Execute<GetImageBlockPublicAccessStateRequest>();
+            var marshaller = new GetImageBlockPublicAccessStateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetImageBlockPublicAccessStateResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

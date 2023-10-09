@@ -51,6 +51,30 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("City", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.City = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Company", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Company = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Country", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Country = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Department", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Department = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DisabledDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -75,16 +99,76 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     response.EnabledDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirstName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FirstName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HiddenFromGlobalAddressList", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.HiddenFromGlobalAddressList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Initials", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Initials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobTitle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobTitle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MailboxDeprovisionedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.MailboxDeprovisionedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MailboxProvisionedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.MailboxProvisionedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Office", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Office = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Street", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Street = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Telephone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Telephone = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserId", targetDepth))
@@ -97,6 +181,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ZipCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ZipCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

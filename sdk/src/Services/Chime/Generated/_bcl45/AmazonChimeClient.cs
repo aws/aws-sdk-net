@@ -13857,7 +13857,9 @@ namespace Amazon.Chime
         /// Lists all Channels created under a single Chime App as a paginated list. You can specify
         /// filters to narrow results.
         /// 
-        ///  <p class="title"> <b>Functionality &amp; restrictions</b> 
+        ///  
+        /// <para>
+        ///  <b>Functionality &amp; restrictions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -13924,7 +13926,9 @@ namespace Amazon.Chime
         /// Lists all Channels created under a single Chime App as a paginated list. You can specify
         /// filters to narrow results.
         /// 
-        ///  <p class="title"> <b>Functionality &amp; restrictions</b> 
+        ///  
+        /// <para>
+        ///  <b>Functionality &amp; restrictions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -100,9 +100,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetRole. 
         /// <para>
-        /// A value that indicates whether the DB proxy endpoint can be used for read/write or
-        /// read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies
-        /// for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.
+        /// The role of the DB proxy endpoint. The role determines whether the endpoint can be
+        /// used for read/write or only read operations. The default is <code>READ_WRITE</code>.
+        /// The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.
         /// </para>
         /// </summary>
         public DBProxyEndpointTargetRole TargetRole

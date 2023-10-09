@@ -49,7 +49,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }
@@ -141,7 +141,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }
@@ -160,6 +160,7 @@ namespace Amazon.AuditManager.Model
         ///  The roles that are associated with the assessment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Role> Roles
         {
             get { return this._roles; }

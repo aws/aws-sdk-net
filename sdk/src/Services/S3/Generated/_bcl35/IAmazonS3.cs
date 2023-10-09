@@ -584,9 +584,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, you must restore a copy of this object
-        /// before you can use it as a source object for the copy operation. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the source object's storage class is GLACIER or DEEP_ARCHIVE, or the object's storage
+        /// class is INTELLIGENT_TIERING and it's <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">
+        /// S3 Intelligent-Tiering access tier</a> is Archive Access or Deep Archive Access, you
+        /// must restore a copy of this object before you can use it as a source object for the
+        /// copy operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
         /// Objects</a>.
         /// </para>
@@ -849,9 +851,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, you must restore a copy of this object
-        /// before you can use it as a source object for the copy operation. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the source object's storage class is GLACIER or DEEP_ARCHIVE, or the object's storage
+        /// class is INTELLIGENT_TIERING and it's <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">
+        /// S3 Intelligent-Tiering access tier</a> is Archive Access or Deep Archive Access, you
+        /// must restore a copy of this object before you can use it as a source object for the
+        /// copy operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
         /// Objects</a>.
         /// </para>
@@ -1115,9 +1119,11 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// If the source object's storage class is GLACIER, you must restore a copy of this object
-        /// before you can use it as a source object for the copy operation. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+        /// If the source object's storage class is GLACIER or DEEP_ARCHIVE, or the object's storage
+        /// class is INTELLIGENT_TIERING and it's <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">
+        /// S3 Intelligent-Tiering access tier</a> is Archive Access or Deep Archive Access, you
+        /// must restore a copy of this object before you can use it as a source object for the
+        /// copy operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
         /// Objects</a>.
         /// </para>
@@ -2746,7 +2752,9 @@ namespace Amazon.S3
         /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Related Resources</b> 
+        ///  
+        /// <para>
+        ///  <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2780,7 +2788,9 @@ namespace Amazon.S3
         /// For information about <code>cors</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Related Resources</b> 
+        ///  
+        /// <para>
+        ///  <b>Related Resources</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -9353,10 +9363,12 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
-        /// specify a Region in the request body. You might choose a Region to optimize latency,
-        /// minimize costs, or address regulatory requirements. For example, if you reside in
-        /// Europe, you will probably find it advantageous to create buckets in the Europe (Ireland)
-        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
+        /// specify a Region in the request body. To constrain the bucket creation to a specific
+        /// Region, you can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketConfiguration.html">
+        /// <code>LocationConstraint</code> </a> condition key. You might choose a Region to optimize
+        /// latency, minimize costs, or address regulatory requirements. For example, if you reside
+        /// in Europe, you will probably find it advantageous to create buckets in the Europe
+        /// (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
         /// a bucket</a>.
         /// </para>
         ///  <note> 
@@ -9466,10 +9478,12 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// By default, the bucket is created in the US East (N. Virginia) Region. You can optionally
-        /// specify a Region in the request body. You might choose a Region to optimize latency,
-        /// minimize costs, or address regulatory requirements. For example, if you reside in
-        /// Europe, you will probably find it advantageous to create buckets in the Europe (Ireland)
-        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
+        /// specify a Region in the request body. To constrain the bucket creation to a specific
+        /// Region, you can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketConfiguration.html">
+        /// <code>LocationConstraint</code> </a> condition key. You might choose a Region to optimize
+        /// latency, minimize costs, or address regulatory requirements. For example, if you reside
+        /// in Europe, you will probably find it advantageous to create buckets in the Europe
+        /// (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing
         /// a bucket</a>.
         /// </para>
         ///  <note> 
@@ -9829,13 +9843,12 @@ namespace Amazon.S3
         /// By default, all buckets have a default encryption configuration that uses server-side
         /// encryption with Amazon S3 managed keys (SSE-S3). You can optionally configure default
         /// encryption for a bucket by using server-side encryption with Key Management Service
-        /// (KMS) keys (SSE-KMS), dual-layer server-side encryption with Amazon Web Services KMS
-        /// keys (DSSE-KMS), or server-side encryption with customer-provided keys (SSE-C). If
-        /// you specify default encryption by using SSE-KMS, you can also configure Amazon S3
-        /// Bucket Keys. For information about bucket default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-        /// S3 bucket default encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
-        /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
-        /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// (KMS) keys (SSE-KMS) or dual-layer server-side encryption with Amazon Web Services
+        /// KMS keys (DSSE-KMS). If you specify default encryption by using SSE-KMS, you can also
+        /// configure <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
+        /// S3 Bucket Keys</a>. If you use PutBucketEncryption to set your <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">default
+        /// bucket encryption</a> to SSE-KMS, you should verify that your KMS key ID is correct.
+        /// Amazon S3 does not validate the KMS key ID provided in PutBucketEncryption requests.
         /// </para>
         ///  <important> 
         /// <para>
@@ -10774,7 +10787,9 @@ namespace Amazon.S3
         /// Specify the replication configuration in the request body. In the replication configuration,
         /// you provide the name of the destination bucket or buckets where you want Amazon S3
         /// to replicate objects, the IAM role that Amazon S3 can assume to replicate objects
-        /// on your behalf, and other relevant information.
+        /// on your behalf, and other relevant information. You can invoke this request for a
+        /// specific Amazon Web Services Region by using the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requestedregion">
+        /// <code>aws:RequestedRegion</code> </a> condition key.
         /// </para>
         ///  
         /// <para>
@@ -10990,7 +11005,7 @@ namespace Amazon.S3
         /// resources with a specific application name, and then organize your billing information
         /// to see the total cost of that application across several services. For more information,
         /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-        /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
+        /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
         /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
         ///  <note> 
@@ -11009,45 +11024,31 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutBucketTagging</code> has the following special errors:
+        ///  <code>PutBucketTagging</code> has the following special errors. For more Amazon S3
+        /// errors see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// Responses</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Error code: <code>InvalidTagError</code> 
+        ///  <code>InvalidTag</code> - The tag provided was not a valid tag. This error can occur
+        /// if the tag did not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
+        /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// Description: The tag provided was not a valid tag. This error can occur if the tag
-        /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
-        /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
+        ///  <code>MalformedXML</code> - The XML provided does not match the schema.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// Error code: <code>MalformedXMLError</code> 
+        ///  <code>OperationAborted</code> - A conflicting conditional action is currently in
+        /// progress against this resource. Please try again.
         /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// Description: The XML provided does not match the schema.
+        ///  <code>InternalError</code> - The service was unable to apply the provided tag to
+        /// the bucket.
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>OperationAbortedError </code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: A conflicting conditional action is currently in progress against this
-        /// resource. Please try again.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>InternalError</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: The service was unable to apply the provided tag to the bucket.
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The following operations are related to <code>PutBucketTagging</code>:
         /// </para>
@@ -11082,7 +11083,7 @@ namespace Amazon.S3
         /// resources with a specific application name, and then organize your billing information
         /// to see the total cost of that application across several services. For more information,
         /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-        /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
+        /// Allocation and Tagging</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
         /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
         ///  <note> 
@@ -11101,45 +11102,31 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutBucketTagging</code> has the following special errors:
+        ///  <code>PutBucketTagging</code> has the following special errors. For more Amazon S3
+        /// errors see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// Responses</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Error code: <code>InvalidTagError</code> 
+        ///  <code>InvalidTag</code> - The tag provided was not a valid tag. This error can occur
+        /// if the tag did not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">Using
+        /// Cost Allocation in Amazon S3 Bucket Tags</a>.
         /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// Description: The tag provided was not a valid tag. This error can occur if the tag
-        /// did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-        /// Tag Restrictions</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">Amazon
-        /// Web Services-Generated Cost Allocation Tag Restrictions</a>.
+        ///  <code>MalformedXML</code> - The XML provided does not match the schema.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// Error code: <code>MalformedXMLError</code> 
+        ///  <code>OperationAborted</code> - A conflicting conditional action is currently in
+        /// progress against this resource. Please try again.
         /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// Description: The XML provided does not match the schema.
+        ///  <code>InternalError</code> - The service was unable to apply the provided tag to
+        /// the bucket.
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>OperationAbortedError </code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: A conflicting conditional action is currently in progress against this
-        /// resource. Please try again.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Error code: <code>InternalError</code> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Description: The service was unable to apply the provided tag to the bucket.
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The following operations are related to <code>PutBucketTagging</code>:
         /// </para>
@@ -11405,6 +11392,10 @@ namespace Amazon.S3
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring
         /// an Object Redirect</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum request length is limited to 128 KB.
+        /// </para>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
         /// <param name="websiteConfiguration">Container for the request.</param>
@@ -11526,6 +11517,10 @@ namespace Amazon.S3
         /// more than 50 routing rules, you can use object redirect. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring
         /// an Object Redirect</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum request length is limited to 128 KB.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
@@ -12307,13 +12302,15 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the supplied tag-set to an object that already exists in a bucket.
+        /// Sets the supplied tag-set to an object that already exists in a bucket. A tag is a
+        /// key-value pair. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html">Object
+        /// Tagging</a>.
         /// 
         ///  
         /// <para>
-        /// A tag is a key-value pair. You can associate tags with an object by sending a PUT
-        /// request against the tagging subresource that is associated with the object. You can
-        /// retrieve tags by sending a GET request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>.
+        /// You can associate tags with an object by sending a PUT request against the tagging
+        /// subresource that is associated with the object. You can retrieve tags by sending a
+        /// GET request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>.
         /// </para>
         ///  
         /// <para>
@@ -12334,49 +12331,31 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// For information about the Amazon S3 object tagging feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
+        ///  <code>PutObjectTagging</code> has the following special errors. For more Amazon S3
+        /// errors see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// Responses</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>InvalidTag</code> - The tag provided was not a valid tag. This error can occur
+        /// if the tag did not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html">Object
         /// Tagging</a>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>PutObjectTagging</code> has the following special errors:
-        /// </para>
-        ///  <ul> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code: InvalidTagError </i> 
+        ///  <code>MalformedXML</code> - The XML provided does not match the schema.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: The tag provided was not a valid tag. This error can occur if the tag did
-        /// not pass input validation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-        /// Tagging</a>.</i> 
-        /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code: MalformedXMLError </i> 
+        ///  <code>OperationAborted</code> - A conflicting conditional action is currently in
+        /// progress against this resource. Please try again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: The XML provided does not match the schema.</i> 
+        ///  <code>InternalError</code> - The service was unable to apply the provided tag to
+        /// the object.
         /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code: OperationAbortedError </i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Cause: A conflicting conditional action is currently in progress against this
-        /// resource. Please try again.</i> 
-        /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code: InternalError</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Cause: The service was unable to apply the provided tag to the object.</i> 
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The following operations are related to <code>PutObjectTagging</code>:
         /// </para>
@@ -12441,8 +12420,8 @@ namespace Amazon.S3
         /// or an object, it checks the <code>PublicAccessBlock</code> configuration for both
         /// the bucket (or the bucket that contains the object) and the bucket owner's account.
         /// If the <code>PublicAccessBlock</code> configurations are different between the bucket
-        /// and the account, Amazon S3 uses the most restrictive combination of the bucket-level
-        /// and account-level settings.
+        /// and the account, S3 uses the most restrictive combination of the bucket-level and
+        /// account-level settings.
         /// </para>
         ///  </important> 
         /// <para>

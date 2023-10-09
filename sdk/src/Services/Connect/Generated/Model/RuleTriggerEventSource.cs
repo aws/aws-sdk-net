@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// The name of the event source. This field is required if <code>TriggerEventSource</code>
     /// is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code>
-    /// | <code>OnSalesforceCaseCreate</code>
+    /// | <code>OnSalesforceCaseCreate</code> | <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code>.
     /// </summary>
     public partial class RuleTriggerEventSource
     {

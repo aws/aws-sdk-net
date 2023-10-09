@@ -30,7 +30,7 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Lists all available user accounts in FinSpace.
+    /// Lists all available users in FinSpace.
     /// </summary>
     public partial class ListUsersRequest : AmazonFinSpaceDataRequest
     {

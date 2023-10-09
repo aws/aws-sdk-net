@@ -36,6 +36,8 @@ namespace Amazon.MediaLive.Model
         private int? _audioFramesPerPes;
         private string _audioPids;
         private string _ecmPid;
+        private M3u8KlvBehavior _klvBehavior;
+        private string _klvDataPids;
         private M3u8NielsenId3Behavior _nielsenId3Behavior;
         private int? _patInterval;
         private M3u8PcrControl _pcrControl;
@@ -98,6 +100,40 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEcmPid()
         {
             return this._ecmPid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvBehavior. If set to passthrough, passes any KLV data
+        /// from the input source to this output.
+        /// </summary>
+        public M3u8KlvBehavior KlvBehavior
+        {
+            get { return this._klvBehavior; }
+            set { this._klvBehavior = value; }
+        }
+
+        // Check to see if KlvBehavior property is set
+        internal bool IsSetKlvBehavior()
+        {
+            return this._klvBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvDataPids. Packet Identifier (PID) for input source KLV
+        /// data to this output. Multiple values are accepted, and can be entered in ranges and/or
+        /// by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified
+        /// must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+        /// </summary>
+        public string KlvDataPids
+        {
+            get { return this._klvDataPids; }
+            set { this._klvDataPids = value; }
+        }
+
+        // Check to see if KlvDataPids property is set
+        internal bool IsSetKlvDataPids()
+        {
+            return this._klvDataPids != null;
         }
 
         /// <summary>

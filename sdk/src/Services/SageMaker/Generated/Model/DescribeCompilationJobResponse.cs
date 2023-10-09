@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private CompilationJobStatus _compilationJobStatus;
         private DateTime? _compilationStartTime;
         private DateTime? _creationTime;
+        private DerivedInformation _derivedInformation;
         private string _failureReason;
         private string _inferenceImage;
         private InputConfig _inputConfig;
@@ -171,6 +172,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DerivedInformation. 
+        /// <para>
+        /// Information that SageMaker Neo automatically derived about the model.
+        /// </para>
+        /// </summary>
+        public DerivedInformation DerivedInformation
+        {
+            get { return this._derivedInformation; }
+            set { this._derivedInformation = value; }
+        }
+
+        // Check to see if DerivedInformation property is set
+        internal bool IsSetDerivedInformation()
+        {
+            return this._derivedInformation != null;
         }
 
         /// <summary>

@@ -655,7 +655,7 @@ namespace Amazon.FSx
         /// Creates an Amazon FSx for Lustre data repository association (DRA). A data repository
         /// association is a link between a directory on the file system and an Amazon S3 bucket
         /// or prefix. You can have a maximum of 8 data repository associations on a file system.
-        /// Data repository associations are supported on all FSx for Lustre 2.12 and newer file
+        /// Data repository associations are supported on all FSx for Lustre 2.12 and 2.15 file
         /// systems, excluding <code>scratch_1</code> deployment type.
         /// 
         ///  
@@ -741,7 +741,7 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// You use release data repository tasks to release data from your file system for files
-        /// that are archived to S3. The metadata of released files remains on the file system
+        /// that are exported to S3. The metadata of released files remains on the file system
         /// so users or applications can still access released files by reading the files again,
         /// which will restore data from Amazon S3 to the FSx for Lustre file system.
         /// </para>
@@ -1466,7 +1466,7 @@ namespace Amazon.FSx
         /// the data repository association unlinks the file system from the Amazon S3 bucket.
         /// When deleting a data repository association, you have the option of deleting the data
         /// in the file system that corresponds to the data repository association. Data repository
-        /// associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding
+        /// associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
         /// <code>scratch_1</code> deployment type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataRepositoryAssociation service method.</param>
@@ -1600,6 +1600,21 @@ namespace Amazon.FSx
         /// By default, when you delete an Amazon FSx for Windows File Server file system, a final
         /// backup is created upon deletion. This final backup isn't subject to the file system's
         /// retention policy, and must be manually deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete an Amazon FSx for Lustre file system, first <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a>
+        /// it from every connected Amazon EC2 instance, then provide a <code>FileSystemId</code>
+        /// value to the <code>DeleFileSystem</code> operation. By default, Amazon FSx will not
+        /// take a final backup when the <code>DeleteFileSystem</code> operation is invoked. On
+        /// file systems not linked to an Amazon S3 bucket, set <code>SkipFinalBackup</code> to
+        /// <code>false</code> to take a final backup of the file system you are deleting. Backups
+        /// cannot be enabled on S3-linked file systems. To ensure all of your data is written
+        /// back to S3 before deleting your file system, you can either monitor for the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/monitoring-cloudwatch.html#auto-import-export-metrics">AgeOfOldestQueuedMessage</a>
+        /// metric to be zero (if using automatic export) or you can run an <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repo-task-dra.html">export
+        /// data repository task</a>. If you have automatic export enabled and want to use an
+        /// export data repository task, you have to disable automatic export before executing
+        /// the export data repository task.
         /// </para>
         ///  
         /// <para>
@@ -1913,7 +1928,7 @@ namespace Amazon.FSx
         /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
         /// repository associations, if one or more <code>AssociationIds</code> values are provided
         /// in the request, or if filters are used in the request. Data repository associations
-        /// are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and newer
+        /// are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and 2,15
         /// file systems, excluding <code>scratch_1</code> deployment type.
         /// 
         ///  
@@ -2630,6 +2645,51 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  StartMisconfiguredStateRecovery
+
+        internal virtual StartMisconfiguredStateRecoveryResponse StartMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMisconfiguredStateRecoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMisconfiguredStateRecoveryResponseUnmarshaller.Instance;
+
+            return Invoke<StartMisconfiguredStateRecoveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// After performing steps to repair the Active Directory configuration of an FSx for
+        /// Windows File Server file system, use this action to initiate the process of Amazon
+        /// FSx attempting to reconnect to the file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMisconfiguredStateRecovery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMisconfiguredStateRecovery service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
+        public virtual Task<StartMisconfiguredStateRecoveryResponse> StartMisconfiguredStateRecoveryAsync(StartMisconfiguredStateRecoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMisconfiguredStateRecoveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMisconfiguredStateRecoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartMisconfiguredStateRecoveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2746,7 +2806,7 @@ namespace Amazon.FSx
         /// <summary>
         /// Updates the configuration of an existing data repository association on an Amazon
         /// FSx for Lustre file system. Data repository associations are supported on all FSx
-        /// for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment
+        /// for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code> deployment
         /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataRepositoryAssociation service method.</param>
@@ -2983,6 +3043,10 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>AddRouteTableIds</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AutomaticBackupRetentionDays</code> 
         /// </para>
         ///  </li> <li> 
@@ -3000,6 +3064,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RemoveRouteTableIds</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

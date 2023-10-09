@@ -73,6 +73,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSourceDirectory())
+            {
+                context.Writer.WritePropertyName("SourceDirectory");
+                context.Writer.Write(requestObject.SourceDirectory);
+            }
+
         }
 
         /// <summary>

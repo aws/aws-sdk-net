@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model
         ///  The comment body text for the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Sensitive=true, Max=500)]
         public string CommentBody
         {
             get { return this._commentBody; }

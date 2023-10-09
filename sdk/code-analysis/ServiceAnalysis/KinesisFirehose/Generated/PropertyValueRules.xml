@@ -300,6 +300,12 @@
     <max>7200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.AuthenticationConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.BufferingHints.IntervalInSeconds</property>
     <min>60</min>
     <max>900</max>
@@ -664,6 +670,30 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.MSKSourceConfiguration.MSKClusterARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.MSKSourceConfiguration.TopicName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9\\._\\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.MSKSourceDescription.MSKClusterARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.MSKSourceDescription.TopicName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9\\._\\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.OrcSerDe.BlockSizeBytes</property>
     <min>67108864</min>
   </property-value-rule>
@@ -721,7 +751,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
+    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationConfiguration.Password</property>
@@ -745,7 +775,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
+    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationDescription.RoleARN</property>
@@ -763,7 +793,7 @@
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.ClusterJDBCURL</property>
     <min>1</min>
     <max>512</max>
-    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
+    <pattern>jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?&lt;!-)\.)+(redshift(-serverless)?)\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.Password</property>

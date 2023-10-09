@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Prerequisites:
+        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
         /// Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>

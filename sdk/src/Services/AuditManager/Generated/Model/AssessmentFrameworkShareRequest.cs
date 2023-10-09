@@ -74,7 +74,7 @@ namespace Amazon.AuditManager.Model
         /// The compliance type that the shared custom framework supports, such as CIS or HIPAA.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }

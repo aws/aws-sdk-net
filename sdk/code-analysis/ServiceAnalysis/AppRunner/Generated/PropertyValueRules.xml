@@ -333,6 +333,29 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListServicesForAutoScalingConfigurationRequest.AutoScalingConfigurationArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListServicesForAutoScalingConfigurationRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListServicesForAutoScalingConfigurationRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListServicesForAutoScalingConfigurationResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRunner.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -416,6 +439,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.UpdateDefaultAutoScalingConfigurationRequest.AutoScalingConfigurationArn</property>
     <min>1</min>
     <max>1011</max>
     <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
@@ -517,6 +546,12 @@
     <min>0</min>
     <max>51200</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.CodeRepository.SourceDirectory</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[^\x00]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.Connection.ConnectionArn</property>

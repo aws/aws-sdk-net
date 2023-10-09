@@ -91,6 +91,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AdditionalS3DataSourceDataType.
+    /// </summary>
+    public class AdditionalS3DataSourceDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3Object for AdditionalS3DataSourceDataType
+        /// </summary>
+        public static readonly AdditionalS3DataSourceDataType S3Object = new AdditionalS3DataSourceDataType("S3Object");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalS3DataSourceDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalS3DataSourceDataType FindValue(string value)
+        {
+            return FindValue<AdditionalS3DataSourceDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalS3DataSourceDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggregationTransformationValue.
     /// </summary>
     public class AggregationTransformationValue : ConstantClass
@@ -3169,6 +3215,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type CollectionType.
+    /// </summary>
+    public class CollectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant List for CollectionType
+        /// </summary>
+        public static readonly CollectionType List = new CollectionType("List");
+        /// <summary>
+        /// Constant Set for CollectionType
+        /// </summary>
+        public static readonly CollectionType Set = new CollectionType("Set");
+        /// <summary>
+        /// Constant Vector for CollectionType
+        /// </summary>
+        public static readonly CollectionType Vector = new CollectionType("Vector");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CollectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CollectionType FindValue(string value)
+        {
+            return FindValue<CollectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CompilationJobStatus.
     /// </summary>
     public class CompilationJobStatus : ConstantClass
@@ -3578,6 +3678,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataDistributionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSourceName.
+    /// </summary>
+    public class DataSourceName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SalesforceGenie for DataSourceName
+        /// </summary>
+        public static readonly DataSourceName SalesforceGenie = new DataSourceName("SalesforceGenie");
+        /// <summary>
+        /// Constant Snowflake for DataSourceName
+        /// </summary>
+        public static readonly DataSourceName Snowflake = new DataSourceName("Snowflake");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceName FindValue(string value)
+        {
+            return FindValue<DataSourceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceName(string value)
         {
             return FindValue(value);
         }
@@ -11101,6 +11251,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlP4de24xlarge = new ProductionVariantInstanceType("ml.p4de.24xlarge");
         /// <summary>
+        /// Constant MlP548xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlP548xlarge = new ProductionVariantInstanceType("ml.p5.48xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlR512xlarge = new ProductionVariantInstanceType("ml.r5.12xlarge");
@@ -12861,6 +13015,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SkipModelValidation.
+    /// </summary>
+    public class SkipModelValidation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for SkipModelValidation
+        /// </summary>
+        public static readonly SkipModelValidation All = new SkipModelValidation("All");
+        /// <summary>
+        /// Constant None for SkipModelValidation
+        /// </summary>
+        public static readonly SkipModelValidation None = new SkipModelValidation("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SkipModelValidation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SkipModelValidation FindValue(string value)
+        {
+            return FindValue<SkipModelValidation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SkipModelValidation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortActionsBy.
     /// </summary>
     public class SortActionsBy : ConstantClass
@@ -13900,6 +14104,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StepStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageType.
+    /// </summary>
+    public class StorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InMemory for StorageType
+        /// </summary>
+        public static readonly StorageType InMemory = new StorageType("InMemory");
+        /// <summary>
+        /// Constant Standard for StorageType
+        /// </summary>
+        public static readonly StorageType Standard = new StorageType("Standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageType FindValue(string value)
+        {
+            return FindValue<StorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageType(string value)
         {
             return FindValue(value);
         }

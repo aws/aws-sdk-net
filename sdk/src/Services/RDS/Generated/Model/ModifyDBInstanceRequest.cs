@@ -497,6 +497,19 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Default: Uses existing setting
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are modifying the DB instance class and upgrading the engine version at the
+        /// same time, the currently running engine version must be supported on the specified
+        /// DB instance class. Otherwise, the operation returns an error. In this case, first
+        /// run the operation to modify the DB instance class, and then run it again to upgrade
+        /// the engine version.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBInstanceClass
         {
@@ -1127,6 +1140,19 @@ namespace Amazon.RDS.Model
         /// In RDS Custom for Oracle, this parameter is supported for read replicas only if they
         /// are in the <code>PATCH_DB_FAILURE</code> lifecycle.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are upgrading the engine version and modifying the DB instance class at the
+        /// same time, the currently running engine version must be supported on the specified
+        /// DB instance class. Otherwise, the operation returns an error. In this case, first
+        /// run the operation to modify the DB instance class, and then run it again to upgrade
+        /// the engine version.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EngineVersion
         {

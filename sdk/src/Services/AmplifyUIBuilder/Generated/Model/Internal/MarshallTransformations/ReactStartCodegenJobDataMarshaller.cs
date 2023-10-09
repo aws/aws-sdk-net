@@ -56,6 +56,20 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDependencies())
+            {
+                context.Writer.WritePropertyName("dependencies");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectDependenciesKvp in requestObject.Dependencies)
+                {
+                    context.Writer.WritePropertyName(requestObjectDependenciesKvp.Key);
+                    var requestObjectDependenciesValue = requestObjectDependenciesKvp.Value;
+
+                        context.Writer.Write(requestObjectDependenciesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInlineSourceMap())
             {
                 context.Writer.WritePropertyName("inlineSourceMap");

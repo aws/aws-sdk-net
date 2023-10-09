@@ -38,14 +38,18 @@ namespace Amazon.Runtime.Internal.Util
             return $"x-amz-checksum-{checksumAlgorithm.ToString().ToLower()}";
         }
 
+        /// <remarks> 
+        /// Note, this was called directly from service packages prior to compression support
+        /// being added shortly after 3.7.200. It's important to preserve the signature and functionality
+        /// until the next minor version for those older 3.7.* service packages.
+        /// </remarks>
         /// <summary>
         /// Attempts to select and then calculate the checksum for a request
         /// </summary>
         /// <param name="request">Request to calculate the checksum for</param>
         /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
         /// <param name="fallbackToMD5">If checksumAlgorithm is <see cref="CoreChecksumAlgorithm.NONE"/>,
-        /// this flag controls whether or not to fallback to using a MD5 to generate a checksum.
-        /// </param>
+        /// this flag controls whether or not to fallback to using a MD5 to generate a checksum. </param>
         public static void SetRequestChecksum(IRequest request, string checksumAlgorithm, bool fallbackToMD5 = true)
         {
             var coreChecksumAlgoritm = ChecksumUtils.ConvertToCoreChecksumAlgorithm(checksumAlgorithm);
@@ -85,6 +89,11 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
+        /// <remarks> 
+        /// Note, this was called directly from service packages prior to compression support
+        /// being added shortly after 3.7.200. It's important to preserve the signature and functionality
+        /// until the next minor version for those older 3.7.* service packages.
+        /// </remarks>
         /// <summary>
         /// Attempts to select and then calculate a MD5 checksum for a request
         /// </summary>
@@ -246,5 +255,54 @@ namespace Amazon.Runtime.Internal.Util
             return selectedCoreChecksumAlgorithm;
         }
 
+        /// <summary>
+        /// Set checksum data in marshaller in order to call method <see cref="SetRequestChecksum"/> 
+        /// after compressing request payload in <see cref="CompressionHandler"/> class
+        /// </summary>
+        /// <param name="request">Request to calculate the checksum for </param>
+        /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
+        /// <param name="fallbackToMD5">If checksumAlgorithm is <see cref="CoreChecksumAlgorithm.NONE"/>,
+        /// this flag controls whether or not to fallback to using a MD5 to generate a checksum. </param>
+        public static void SetChecksumData(IRequest request, string checksumAlgorithm, bool fallbackToMD5 = true)
+        {
+            request.ChecksumData = new ChecksumData(checksumAlgorithm, false, fallbackToMD5);
+        }
+
+        /// <summary>
+        /// Set checksum data in marshaller in order to call method <see cref="SetRequestChecksumMD5"/> 
+        /// after compressing request payload in <see cref="CompressionHandler"/> class
+        /// </summary>
+        /// <param name="request">Request to calculate the checksum for</param>
+        public static void SetChecksumData(IRequest request)
+        {
+            request.ChecksumData = new ChecksumData(null, true, null);
+        }
+    }
+
+    /// <summary>
+    /// Class containing necessary data to calculate checksum
+    /// </summary>
+    public class ChecksumData
+    {
+        /// <summary>
+        /// Checksum algorithm to use, specified on the request using a service-specific enum
+        /// </summary>
+        public string SelectedChecksum { get; }
+        /// <summary>
+        /// Flag to check if we want to call method <see cref="ChecksumUtils.SetRequestChecksumMD5"/>
+        /// </summary>
+        public bool IsMD5Checksum { get; }
+        /// <summary>
+        /// This flag controls whether or not to fallback to using a MD5 to generate a checksum if
+        /// <see cref="SelectedChecksum"/> is not set to NONE
+        /// </summary>
+        public bool? FallbackToMD5 { get; }
+
+        public ChecksumData(string selectedChecksum, bool MD5Checksum, bool? fallbackToMD5)
+        {
+            this.SelectedChecksum = selectedChecksum;
+            this.IsMD5Checksum = MD5Checksum;
+            this.FallbackToMD5 = fallbackToMD5;
+        }
     }
 }

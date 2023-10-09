@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTask operation.
-    /// Updates the metadata associated with a task.
+    /// Updates the configuration of a DataSync transfer task.
     /// </summary>
     public partial class UpdateTaskRequest : AmazonDataSyncRequest
     {
@@ -41,6 +41,7 @@ namespace Amazon.DataSync.Model
         private Options _options;
         private TaskSchedule _schedule;
         private string _taskArn;
+        private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupArn. 
@@ -176,6 +177,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskArn()
         {
             return this._taskArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskReportConfig. 
+        /// <para>
+        /// Specifies how you want to configure a task report, which provides detailed information
+        /// about for your DataSync transfer.
+        /// </para>
+        /// </summary>
+        public TaskReportConfig TaskReportConfig
+        {
+            get { return this._taskReportConfig; }
+            set { this._taskReportConfig = value; }
+        }
+
+        // Check to see if TaskReportConfig property is set
+        internal bool IsSetTaskReportConfig()
+        {
+            return this._taskReportConfig != null;
         }
 
     }

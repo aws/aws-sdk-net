@@ -64,7 +64,7 @@ namespace Amazon.AuditManager.Model
         ///  The comment that's related to the status update. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=350)]
+        [AWSProperty(Required=true, Sensitive=true, Max=350)]
         public string Comment
         {
             get { return this._comment; }

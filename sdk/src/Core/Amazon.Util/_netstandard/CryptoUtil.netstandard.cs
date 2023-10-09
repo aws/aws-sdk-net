@@ -30,11 +30,14 @@ namespace Amazon.Util
         partial class CryptoUtil : ICryptoUtil
         {
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
+                => HMACSign(new ArraySegment<byte>(data, 0, data.Length), key, algorithmName);
+
+            private string HMACSign(ArraySegment<byte> data, string key, SigningAlgorithm algorithmName)
             {
                 if (String.IsNullOrEmpty(key))
                     throw new ArgumentNullException("key", "Please specify a Secret Signing Key.");
 
-                if (data == null || data.Length == 0)
+                if (data == null || data.Count == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
                 KeyedHashAlgorithm algorithm = CreateKeyedHashAlgorithm(algorithmName);
@@ -44,7 +47,7 @@ namespace Amazon.Util
                 try
                 {
                     algorithm.Key = Encoding.UTF8.GetBytes(key);
-                    byte[] bytes = algorithm.ComputeHash(data);
+                    byte[] bytes = algorithm.ComputeHash(data.Array, data.Offset, data.Count);
                     return Convert.ToBase64String(bytes);
                 }
                 finally
@@ -77,7 +80,7 @@ namespace Amazon.Util
                 }
             }
 
-            KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)
+            static KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)
             {
                 KeyedHashAlgorithm algorithm;
                 switch (algorithmName)

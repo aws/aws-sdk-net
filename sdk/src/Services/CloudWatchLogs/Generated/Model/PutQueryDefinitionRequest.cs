@@ -52,10 +52,31 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class PutQueryDefinitionRequest : AmazonCloudWatchLogsRequest
     {
+        private string _clientToken;
         private List<string> _logGroupNames = new List<string>();
         private string _name;
         private string _queryDefinitionId;
         private string _queryString;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Used as an idempotency token, to avoid returning an exception if the service receives
+        /// the same request twice because of a network error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=128)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogGroupNames. 

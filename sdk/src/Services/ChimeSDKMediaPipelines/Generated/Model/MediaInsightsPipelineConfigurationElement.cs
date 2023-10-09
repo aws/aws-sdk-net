@@ -42,6 +42,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private SqsQueueSinkConfiguration _sqsQueueSinkConfiguration;
         private MediaInsightsPipelineConfigurationElementType _type;
         private VoiceAnalyticsProcessorConfiguration _voiceAnalyticsProcessorConfiguration;
+        private VoiceEnhancementSinkConfiguration _voiceEnhancementSinkConfiguration;
 
         /// <summary>
         /// Gets and sets the property AmazonTranscribeCallAnalyticsProcessorConfiguration. 
@@ -212,6 +213,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetVoiceAnalyticsProcessorConfiguration()
         {
             return this._voiceAnalyticsProcessorConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceEnhancementSinkConfiguration. 
+        /// <para>
+        /// The configuration settings for voice enhancement sink in a media insights pipeline
+        /// configuration element.
+        /// </para>
+        /// </summary>
+        public VoiceEnhancementSinkConfiguration VoiceEnhancementSinkConfiguration
+        {
+            get { return this._voiceEnhancementSinkConfiguration; }
+            set { this._voiceEnhancementSinkConfiguration = value; }
+        }
+
+        // Check to see if VoiceEnhancementSinkConfiguration property is set
+        internal bool IsSetVoiceEnhancementSinkConfiguration()
+        {
+            return this._voiceEnhancementSinkConfiguration != null;
         }
 
     }

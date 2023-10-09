@@ -30,8 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccountAssignment operation.
-    /// Assigns access to a principal for a specified AWS account using a specified permission
-    /// set.
+    /// Assigns access to a principal for a specified Amazon Web Services account using a
+    /// specified permission set.
     /// 
     ///  <note> 
     /// <para>
@@ -68,7 +68,8 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -147,8 +148,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// TargetID is an AWS account identifier, typically a 10-12 digit string (For example,
-        /// 123456789012).
+        /// TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

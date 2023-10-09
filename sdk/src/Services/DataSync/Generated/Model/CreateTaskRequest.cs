@@ -30,13 +30,13 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTask operation.
-    /// Configures a task, which defines where and how DataSync transfers your data.
+    /// Configures a transfer task, which defines where and how DataSync moves your data.
     /// 
     ///  
     /// <para>
-    /// A task includes a source location, a destination location, and the preferences for
-    /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
-    /// among other options).
+    /// A task includes a source location, destination location, and the options for how and
+    /// when you want to transfer your data (such as bandwidth limits, scheduling, among other
+    /// options).
     /// </para>
     ///  <important> 
     /// <para>
@@ -57,6 +57,7 @@ namespace Amazon.DataSync.Model
         private TaskSchedule _schedule;
         private string _sourceLocationArn;
         private List<TagListEntry> _tags = new List<TagListEntry>();
+        private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupArn. 
@@ -247,6 +248,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskReportConfig. 
+        /// <para>
+        /// Specifies how you want to configure a task report, which provides detailed information
+        /// about for your DataSync transfer.
+        /// </para>
+        /// </summary>
+        public TaskReportConfig TaskReportConfig
+        {
+            get { return this._taskReportConfig; }
+            set { this._taskReportConfig = value; }
+        }
+
+        // Check to see if TaskReportConfig property is set
+        internal bool IsSetTaskReportConfig()
+        {
+            return this._taskReportConfig != null;
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the browser settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string BrowserSettingsArn
         {
             get { return this._browserSettingsArn; }

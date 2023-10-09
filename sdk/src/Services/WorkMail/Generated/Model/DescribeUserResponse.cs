@@ -33,14 +33,105 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class DescribeUserResponse : AmazonWebServiceResponse
     {
+        private string _city;
+        private string _company;
+        private string _country;
+        private string _department;
         private DateTime? _disabledDate;
         private string _displayName;
         private string _email;
         private DateTime? _enabledDate;
+        private string _firstName;
+        private bool? _hiddenFromGlobalAddressList;
+        private string _initials;
+        private string _jobTitle;
+        private string _lastName;
+        private DateTime? _mailboxDeprovisionedDate;
+        private DateTime? _mailboxProvisionedDate;
         private string _name;
+        private string _office;
         private EntityState _state;
+        private string _street;
+        private string _telephone;
         private string _userId;
         private UserRole _userRole;
+        private string _zipCode;
+
+        /// <summary>
+        /// Gets and sets the property City. 
+        /// <para>
+        /// City where the user is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string City
+        {
+            get { return this._city; }
+            set { this._city = value; }
+        }
+
+        // Check to see if City property is set
+        internal bool IsSetCity()
+        {
+            return this._city != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Company. 
+        /// <para>
+        /// Company of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Company
+        {
+            get { return this._company; }
+            set { this._company = value; }
+        }
+
+        // Check to see if Company property is set
+        internal bool IsSetCompany()
+        {
+            return this._company != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// Country where the user is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Country
+        {
+            get { return this._country; }
+            set { this._country = value; }
+        }
+
+        // Check to see if Country property is set
+        internal bool IsSetCountry()
+        {
+            return this._country != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Department. 
+        /// <para>
+        /// Department of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Department
+        {
+            get { return this._department; }
+            set { this._department = value; }
+        }
+
+        // Check to see if Department property is set
+        internal bool IsSetDepartment()
+        {
+            return this._department != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisabledDate. 
@@ -67,7 +158,7 @@ namespace Amazon.WorkMail.Model
         /// The display name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -119,6 +210,136 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FirstName. 
+        /// <para>
+        /// First name of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string FirstName
+        {
+            get { return this._firstName; }
+            set { this._firstName = value; }
+        }
+
+        // Check to see if FirstName property is set
+        internal bool IsSetFirstName()
+        {
+            return this._firstName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HiddenFromGlobalAddressList. 
+        /// <para>
+        /// If enabled, the user is hidden from the global address list.
+        /// </para>
+        /// </summary>
+        public bool HiddenFromGlobalAddressList
+        {
+            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            set { this._hiddenFromGlobalAddressList = value; }
+        }
+
+        // Check to see if HiddenFromGlobalAddressList property is set
+        internal bool IsSetHiddenFromGlobalAddressList()
+        {
+            return this._hiddenFromGlobalAddressList.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Initials. 
+        /// <para>
+        /// Initials of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Initials
+        {
+            get { return this._initials; }
+            set { this._initials = value; }
+        }
+
+        // Check to see if Initials property is set
+        internal bool IsSetInitials()
+        {
+            return this._initials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTitle. 
+        /// <para>
+        /// Job title of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string JobTitle
+        {
+            get { return this._jobTitle; }
+            set { this._jobTitle = value; }
+        }
+
+        // Check to see if JobTitle property is set
+        internal bool IsSetJobTitle()
+        {
+            return this._jobTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastName. 
+        /// <para>
+        /// Last name of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string LastName
+        {
+            get { return this._lastName; }
+            set { this._lastName = value; }
+        }
+
+        // Check to see if LastName property is set
+        internal bool IsSetLastName()
+        {
+            return this._lastName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MailboxDeprovisionedDate. 
+        /// <para>
+        /// The date when the mailbox was removed for the user.
+        /// </para>
+        /// </summary>
+        public DateTime MailboxDeprovisionedDate
+        {
+            get { return this._mailboxDeprovisionedDate.GetValueOrDefault(); }
+            set { this._mailboxDeprovisionedDate = value; }
+        }
+
+        // Check to see if MailboxDeprovisionedDate property is set
+        internal bool IsSetMailboxDeprovisionedDate()
+        {
+            return this._mailboxDeprovisionedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MailboxProvisionedDate. 
+        /// <para>
+        /// The date when the mailbox was created for the user.
+        /// </para>
+        /// </summary>
+        public DateTime MailboxProvisionedDate
+        {
+            get { return this._mailboxProvisionedDate.GetValueOrDefault(); }
+            set { this._mailboxProvisionedDate = value; }
+        }
+
+        // Check to see if MailboxProvisionedDate property is set
+        internal bool IsSetMailboxProvisionedDate()
+        {
+            return this._mailboxProvisionedDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name for the user.
@@ -138,6 +359,25 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Office. 
+        /// <para>
+        /// Office where the user is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Office
+        {
+            get { return this._office; }
+            set { this._office = value; }
+        }
+
+        // Check to see if Office property is set
+        internal bool IsSetOffice()
+        {
+            return this._office != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The state of a user: enabled (registered to WorkMail) or disabled (deregistered or
@@ -154,6 +394,44 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Street. 
+        /// <para>
+        /// Street where the user is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Street
+        {
+            get { return this._street; }
+            set { this._street = value; }
+        }
+
+        // Check to see if Street property is set
+        internal bool IsSetStreet()
+        {
+            return this._street != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Telephone. 
+        /// <para>
+        /// User's contact number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string Telephone
+        {
+            get { return this._telephone; }
+            set { this._telephone = value; }
+        }
+
+        // Check to see if Telephone property is set
+        internal bool IsSetTelephone()
+        {
+            return this._telephone != null;
         }
 
         /// <summary>
@@ -182,7 +460,7 @@ namespace Amazon.WorkMail.Model
         /// resources are imported into WorkMail as users. Because different WorkMail organizations
         /// rely on different directory types, administrators can distinguish between an unregistered
         /// user (account is disabled and has a user role) and the directory administrators. The
-        /// values are USER, RESOURCE, and SYSTEM_USER.
+        /// values are USER, RESOURCE, SYSTEM_USER, and REMOTE_USER.
         /// </para>
         /// </summary>
         public UserRole UserRole
@@ -195,6 +473,25 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetUserRole()
         {
             return this._userRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZipCode. 
+        /// <para>
+        /// Zip code of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string ZipCode
+        {
+            get { return this._zipCode; }
+            set { this._zipCode = value; }
+        }
+
+        // Check to see if ZipCode property is set
+        internal bool IsSetZipCode()
+        {
+            return this._zipCode != null;
         }
 
     }

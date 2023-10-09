@@ -64,10 +64,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DocDbSettings", targetDepth))
+                {
+                    var unmarshaller = DocDbDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MariaDbSettings", targetDepth))
+                {
+                    var unmarshaller = MariaDbDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MariaDbSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MicrosoftSqlServerSettings", targetDepth))
                 {
                     var unmarshaller = MicrosoftSqlServerDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.MicrosoftSqlServerSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MongoDbSettings", targetDepth))
+                {
+                    var unmarshaller = MongoDbDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MySqlSettings", targetDepth))
@@ -86,6 +104,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PostgreSqlDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.PostgreSqlSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RedshiftSettings", targetDepth))
+                {
+                    var unmarshaller = RedshiftDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

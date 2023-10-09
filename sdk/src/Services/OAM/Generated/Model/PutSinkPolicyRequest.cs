@@ -51,6 +51,11 @@ namespace Amazon.OAM.Model
     /// <para>
     ///  <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Application Insights - Applications</b> - Specify with <code>AWS::ApplicationInsights::Application</code>
+    /// 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// See the examples in this section to see how to specify permitted source accounts and

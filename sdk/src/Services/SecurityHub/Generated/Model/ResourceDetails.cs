@@ -68,6 +68,9 @@ namespace Amazon.SecurityHub.Model
         private AwsCloudTrailTrailDetails _awsCloudTrailTrail;
         private AwsCloudWatchAlarmDetails _awsCloudWatchAlarm;
         private AwsCodeBuildProjectDetails _awsCodeBuildProject;
+        private AwsDmsEndpointDetails _awsDmsEndpoint;
+        private AwsDmsReplicationInstanceDetails _awsDmsReplicationInstance;
+        private AwsDmsReplicationTaskDetails _awsDmsReplicationTask;
         private AwsDynamoDbTableDetails _awsDynamoDbTable;
         private AwsEc2EipDetails _awsEc2Eip;
         private AwsEc2InstanceDetails _awsEc2Instance;
@@ -97,6 +100,8 @@ namespace Amazon.SecurityHub.Model
         private AwsElbLoadBalancerDetails _awsElbLoadBalancer;
         private AwsElbv2LoadBalancerDetails _awsElbv2LoadBalancer;
         private AwsEventSchemasRegistryDetails _awsEventSchemasRegistry;
+        private AwsEventsEndpointDetails _awsEventsEndpoint;
+        private AwsEventsEventbusDetails _awsEventsEventbus;
         private AwsGuardDutyDetectorDetails _awsGuardDutyDetector;
         private AwsIamAccessKeyDetails _awsIamAccessKey;
         private AwsIamGroupDetails _awsIamGroup;
@@ -107,6 +112,7 @@ namespace Amazon.SecurityHub.Model
         private AwsKmsKeyDetails _awsKmsKey;
         private AwsLambdaFunctionDetails _awsLambdaFunction;
         private AwsLambdaLayerVersionDetails _awsLambdaLayerVersion;
+        private AwsMskClusterDetails _awsMskCluster;
         private AwsNetworkFirewallFirewallDetails _awsNetworkFirewallFirewall;
         private AwsNetworkFirewallFirewallPolicyDetails _awsNetworkFirewallFirewallPolicy;
         private AwsNetworkFirewallRuleGroupDetails _awsNetworkFirewallRuleGroup;
@@ -118,6 +124,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
         private AwsRdsEventSubscriptionDetails _awsRdsEventSubscription;
         private AwsRedshiftClusterDetails _awsRedshiftCluster;
+        private AwsRoute53HostedZoneDetails _awsRoute53HostedZone;
         private AwsS3AccountPublicAccessBlockDetails _awsS3AccountPublicAccessBlock;
         private AwsS3BucketDetails _awsS3Bucket;
         private AwsS3ObjectDetails _awsS3Object;
@@ -470,6 +477,64 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsCodeBuildProject()
         {
             return this._awsCodeBuildProject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDmsEndpoint. 
+        /// <para>
+        ///  Provides details about an Database Migration Service (DMS) endpoint. An endpoint
+        /// provides connection, data store type, and location information about your data store.
+        /// </para>
+        /// </summary>
+        public AwsDmsEndpointDetails AwsDmsEndpoint
+        {
+            get { return this._awsDmsEndpoint; }
+            set { this._awsDmsEndpoint = value; }
+        }
+
+        // Check to see if AwsDmsEndpoint property is set
+        internal bool IsSetAwsDmsEndpoint()
+        {
+            return this._awsDmsEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDmsReplicationInstance. 
+        /// <para>
+        ///  Provides details about an DMS replication instance. DMS uses a replication instance
+        /// to connect to your source data store, read the source data, and format the data for
+        /// consumption by the target data store.
+        /// </para>
+        /// </summary>
+        public AwsDmsReplicationInstanceDetails AwsDmsReplicationInstance
+        {
+            get { return this._awsDmsReplicationInstance; }
+            set { this._awsDmsReplicationInstance = value; }
+        }
+
+        // Check to see if AwsDmsReplicationInstance property is set
+        internal bool IsSetAwsDmsReplicationInstance()
+        {
+            return this._awsDmsReplicationInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDmsReplicationTask. 
+        /// <para>
+        ///  Provides details about an DMS replication task. A replication task moves a set of
+        /// data from the source endpoint to the target endpoint.
+        /// </para>
+        /// </summary>
+        public AwsDmsReplicationTaskDetails AwsDmsReplicationTask
+        {
+            get { return this._awsDmsReplicationTask; }
+            set { this._awsDmsReplicationTask = value; }
+        }
+
+        // Check to see if AwsDmsReplicationTask property is set
+        internal bool IsSetAwsDmsReplicationTask()
+        {
+            return this._awsDmsReplicationTask != null;
         }
 
         /// <summary>
@@ -1002,6 +1067,45 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEventsEndpoint. 
+        /// <para>
+        ///  Provides details about an Amazon EventBridge global endpoint. The endpoint can improve
+        /// your application’s availability by making it Regional-fault tolerant.
+        /// </para>
+        /// </summary>
+        public AwsEventsEndpointDetails AwsEventsEndpoint
+        {
+            get { return this._awsEventsEndpoint; }
+            set { this._awsEventsEndpoint = value; }
+        }
+
+        // Check to see if AwsEventsEndpoint property is set
+        internal bool IsSetAwsEventsEndpoint()
+        {
+            return this._awsEventsEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEventsEventbus. 
+        /// <para>
+        ///  Provides details about Amazon EventBridge event bus for an endpoint. An event bus
+        /// is a router that receives events and delivers them to zero or more destinations, or
+        /// targets.
+        /// </para>
+        /// </summary>
+        public AwsEventsEventbusDetails AwsEventsEventbus
+        {
+            get { return this._awsEventsEventbus; }
+            set { this._awsEventsEventbus = value; }
+        }
+
+        // Check to see if AwsEventsEventbus property is set
+        internal bool IsSetAwsEventsEventbus()
+        {
+            return this._awsEventsEventbus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsGuardDutyDetector. 
         /// <para>
         ///  Provides details about an Amazon GuardDuty detector. A detector is an object that
@@ -1181,6 +1285,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsLambdaLayerVersion()
         {
             return this._awsLambdaLayerVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsMskCluster. 
+        /// <para>
+        ///  Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK)
+        /// cluster.
+        /// </para>
+        /// </summary>
+        public AwsMskClusterDetails AwsMskCluster
+        {
+            get { return this._awsMskCluster; }
+            set { this._awsMskCluster = value; }
+        }
+
+        // Check to see if AwsMskCluster property is set
+        internal bool IsSetAwsMskCluster()
+        {
+            return this._awsMskCluster != null;
         }
 
         /// <summary>
@@ -1379,6 +1502,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsRedshiftCluster()
         {
             return this._awsRedshiftCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRoute53HostedZone. 
+        /// <para>
+        ///  Provides details about an Amazon Route 53 hosted zone, including the four name servers
+        /// assigned to the hosted zone. A hosted zone represents a collection of records that
+        /// can be managed together, belonging to a single parent domain name.
+        /// </para>
+        /// </summary>
+        public AwsRoute53HostedZoneDetails AwsRoute53HostedZone
+        {
+            get { return this._awsRoute53HostedZone; }
+            set { this._awsRoute53HostedZone = value; }
+        }
+
+        // Check to see if AwsRoute53HostedZone property is set
+        internal bool IsSetAwsRoute53HostedZone()
+        {
+            return this._awsRoute53HostedZone != null;
         }
 
         /// <summary>

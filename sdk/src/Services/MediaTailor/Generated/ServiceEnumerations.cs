@@ -31,6 +31,10 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant AUTODETECT_SIGV4 for AccessType
+        /// </summary>
+        public static readonly AccessType AUTODETECT_SIGV4 = new AccessType("AUTODETECT_SIGV4");
+        /// <summary>
         /// Constant S3_SIGV4 for AccessType
         /// </summary>
         public static readonly AccessType S3_SIGV4 = new AccessType("S3_SIGV4");

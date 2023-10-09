@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private VerifiedAccessEndpointLoadBalancerOptions _loadBalancerOptions;
         private VerifiedAccessEndpointEniOptions _networkInterfaceOptions;
         private List<string> _securityGroupIds = new List<string>();
+        private VerifiedAccessSseSpecificationResponse _sseSpecification;
         private VerifiedAccessEndpointStatus _status;
         private List<Tag> _tags = new List<Tag>();
         private string _verifiedAccessEndpointId;
@@ -291,6 +292,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseSpecification. 
+        /// <para>
+        ///  Describes the options in use for server side encryption. 
+        /// </para>
+        /// </summary>
+        public VerifiedAccessSseSpecificationResponse SseSpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SseSpecification property is set
+        internal bool IsSetSseSpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

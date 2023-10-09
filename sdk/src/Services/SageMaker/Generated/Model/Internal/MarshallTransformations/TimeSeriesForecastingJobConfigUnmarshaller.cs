@@ -94,6 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ForecastQuantiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HolidayConfig", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HolidayConfigAttributes, HolidayConfigAttributesUnmarshaller>(HolidayConfigAttributesUnmarshaller.Instance);
+                    unmarshalledObject.HolidayConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TimeSeriesConfig", targetDepth))
                 {
                     var unmarshaller = TimeSeriesConfigUnmarshaller.Instance;

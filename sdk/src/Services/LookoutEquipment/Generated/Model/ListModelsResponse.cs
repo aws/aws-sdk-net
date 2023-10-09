@@ -58,8 +58,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  An opaque pagination token indicating where to continue the listing of ML models.
-        /// 
+        ///  An opaque pagination token indicating where to continue the listing of machine learning
+        /// models. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeCertificatesResponse : AmazonWebServiceResponse
     {
         private List<Certificate> _certificates = new List<Certificate>();
+        private string _defaultCertificateForNewLaunches;
         private string _marker;
 
         /// <summary>
@@ -52,6 +53,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetCertificates()
         {
             return this._certificates != null && this._certificates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCertificateForNewLaunches. 
+        /// <para>
+        /// The default root CA for new databases created by your Amazon Web Services account.
+        /// This is either the root CA override set on your Amazon Web Services account or the
+        /// system default CA for the Region if no override exists. To override the default CA,
+        /// use the <code>ModifyCertificates</code> operation.
+        /// </para>
+        /// </summary>
+        public string DefaultCertificateForNewLaunches
+        {
+            get { return this._defaultCertificateForNewLaunches; }
+            set { this._defaultCertificateForNewLaunches = value; }
+        }
+
+        // Check to see if DefaultCertificateForNewLaunches property is set
+        internal bool IsSetDefaultCertificateForNewLaunches()
+        {
+            return this._defaultCertificateForNewLaunches != null;
         }
 
         /// <summary>

@@ -336,8 +336,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TrimSpaceInChar. 
         /// <para>
-        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR
-        /// and NCHAR data types during migration. The default value is <code>true</code>.
+        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on
+        /// CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does
+        /// not left-trim data. The default value is <code>true</code>.
         /// </para>
         /// </summary>
         public bool TrimSpaceInChar

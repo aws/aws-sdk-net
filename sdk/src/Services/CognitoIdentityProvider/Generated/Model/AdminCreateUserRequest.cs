@@ -81,7 +81,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// for this API operation. For this operation, you must use IAM credentials to authorize
     /// requests, and you must grant yourself the corresponding IAM permission in a policy.
     /// </para>
-    ///  <p class="title"> <b>Learn more</b> 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -330,9 +332,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username for the user. Must be unique within the user pool. Must be a UTF-8 string
-        /// between 1 and 128 characters. After the user is created, the username can't be changed.
+        /// The value that you want to set as the username sign-in attribute. The following conditions
+        /// apply to the username parameter.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The username can't be a duplicate of another username in the same user pool.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't change the value of a username after you create it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can only provide a value if usernames are a valid sign-in attribute for your user
+        /// pool. If your user pool only supports phone numbers or email addresses as sign-in
+        /// attributes, Amazon Cognito automatically generates a username value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+        /// sign-in attributes</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username

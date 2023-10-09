@@ -40,13 +40,6 @@ namespace Amazon.DataSync.Model
     /// Once generated, you can view your recommendations by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
     /// operation.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// If your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">discovery
-    /// job completes successfully</a>, you don't need to use this operation. DataSync Discovery
-    /// generates the recommendations for you automatically.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class GenerateRecommendationsRequest : AmazonDataSyncRequest
     {

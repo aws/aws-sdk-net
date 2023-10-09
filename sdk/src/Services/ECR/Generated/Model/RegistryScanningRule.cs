@@ -61,7 +61,8 @@ namespace Amazon.ECR.Model
         /// The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code>
         /// scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code>
         /// and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified,
-        /// the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.
+        /// the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not
+        /// specified, then the <code>MANUAL</code> scan frequency is set by default.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

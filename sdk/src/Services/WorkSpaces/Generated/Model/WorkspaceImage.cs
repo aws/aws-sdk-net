@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
         private DateTime? _created;
         private string _description;
         private string _errorCode;
+        private List<ErrorDetails> _errorDetails = new List<ErrorDetails>();
         private string _errorMessage;
         private string _imageId;
         private string _name;
@@ -100,6 +101,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetErrorCode()
         {
             return this._errorCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorDetails. 
+        /// <para>
+        /// Additional details of the error returned for the image, including the possible causes
+        /// of the errors and troubleshooting information.
+        /// </para>
+        /// </summary>
+        public List<ErrorDetails> ErrorDetails
+        {
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
+        }
+
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
+        {
+            return this._errorDetails != null && this._errorDetails.Count > 0; 
         }
 
         /// <summary>

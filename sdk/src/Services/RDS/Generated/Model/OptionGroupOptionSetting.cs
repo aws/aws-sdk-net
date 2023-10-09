@@ -101,8 +101,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        /// Boolean value where true indicates that this option group option can be changed from
-        /// the default value.
+        /// Indicates whether this option group option can be changed from the default value.
         /// </para>
         /// </summary>
         public bool IsModifiable
@@ -120,8 +119,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsRequired. 
         /// <para>
-        /// Boolean value where true indicates that a value must be specified for this option
-        /// setting of the option group option.
+        /// Indicates whether a value must be specified for this option setting of the option
+        /// group option.
         /// </para>
         /// </summary>
         public bool IsRequired

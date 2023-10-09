@@ -40,6 +40,7 @@ namespace Amazon.QuickSight.Model
         private string _name;
         private string _parentFolderArn;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
+        private SharingModel _sharingModel;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -162,6 +163,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPermissions()
         {
             return this._permissions != null && this._permissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingModel. 
+        /// <para>
+        /// An optional parameter that determines the sharing scope of the folder. The default
+        /// value for this parameter is <code>ACCOUNT</code>.
+        /// </para>
+        /// </summary>
+        public SharingModel SharingModel
+        {
+            get { return this._sharingModel; }
+            set { this._sharingModel = value; }
+        }
+
+        // Check to see if SharingModel property is set
+        internal bool IsSetSharingModel()
+        {
+            return this._sharingModel != null;
         }
 
         /// <summary>

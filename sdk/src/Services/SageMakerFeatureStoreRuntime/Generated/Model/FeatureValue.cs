@@ -35,6 +35,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     {
         private string _featureName;
         private string _valueAsString;
+        private List<string> _valueAsStringList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property FeatureName. 
@@ -58,11 +59,12 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property ValueAsString. 
         /// <para>
-        /// The value associated with a feature, in string format. Note that features types can
-        /// be String, Integral, or Fractional. This value represents all three types as a string.
+        /// The value in string format associated with a feature. Used when your <code>CollectionType</code>
+        /// is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>,
+        /// or <code>Fractional</code>. This value represents all three types as a string.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=358400)]
+        [AWSProperty(Max=358400)]
         public string ValueAsString
         {
             get { return this._valueAsString; }
@@ -73,6 +75,28 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         internal bool IsSetValueAsString()
         {
             return this._valueAsString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueAsStringList. 
+        /// <para>
+        /// The list of values in string format associated with a feature. Used when your <code>CollectionType</code>
+        /// is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features
+        /// types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>.
+        /// These values represents all three types as a string.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=358400)]
+        public List<string> ValueAsStringList
+        {
+            get { return this._valueAsStringList; }
+            set { this._valueAsStringList = value; }
+        }
+
+        // Check to see if ValueAsStringList property is set
+        internal bool IsSetValueAsStringList()
+        {
+            return this._valueAsStringList != null && this._valueAsStringList.Count > 0; 
         }
 
     }

@@ -67,6 +67,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStorageClass())
+            {
+                context.Writer.WritePropertyName("storageClass");
+                context.Writer.Write(requestObject.StorageClass);
+            }
+
         }
 
         /// <summary>

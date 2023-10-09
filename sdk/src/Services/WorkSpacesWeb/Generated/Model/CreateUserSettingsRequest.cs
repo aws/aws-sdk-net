@@ -36,8 +36,11 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class CreateUserSettingsRequest : AmazonWorkSpacesWebRequest
     {
+        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
         private string _clientToken;
+        private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
+        private string _customerManagedKey;
         private int? _disconnectTimeoutInMinutes;
         private EnabledType _downloadAllowed;
         private int? _idleDisconnectTimeoutInMinutes;
@@ -45,6 +48,24 @@ namespace Amazon.WorkSpacesWeb.Model
         private EnabledType _printAllowed;
         private List<Tag> _tags = new List<Tag>();
         private EnabledType _uploadAllowed;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalEncryptionContext. 
+        /// <para>
+        /// The additional encryption context of the user settings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AdditionalEncryptionContext
+        {
+            get { return this._additionalEncryptionContext; }
+            set { this._additionalEncryptionContext = value; }
+        }
+
+        // Check to see if AdditionalEncryptionContext property is set
+        internal bool IsSetAdditionalEncryptionContext()
+        {
+            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -74,6 +95,26 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CookieSynchronizationConfiguration. 
+        /// <para>
+        /// The configuration that specifies which cookies should be synchronized from the end
+        /// user's local browser to the remote browser.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public CookieSynchronizationConfiguration CookieSynchronizationConfiguration
+        {
+            get { return this._cookieSynchronizationConfiguration; }
+            set { this._cookieSynchronizationConfiguration = value; }
+        }
+
+        // Check to see if CookieSynchronizationConfiguration property is set
+        internal bool IsSetCookieSynchronizationConfiguration()
+        {
+            return this._cookieSynchronizationConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CopyAllowed. 
         /// <para>
         /// Specifies whether the user can copy text from the streaming session to the local device.
@@ -90,6 +131,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetCopyAllowed()
         {
             return this._copyAllowed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerManagedKey. 
+        /// <para>
+        /// The customer managed key used to encrypt sensitive information in the user settings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CustomerManagedKey
+        {
+            get { return this._customerManagedKey; }
+            set { this._customerManagedKey = value; }
+        }
+
+        // Check to see if CustomerManagedKey property is set
+        internal bool IsSetCustomerManagedKey()
+        {
+            return this._customerManagedKey != null;
         }
 
         /// <summary>

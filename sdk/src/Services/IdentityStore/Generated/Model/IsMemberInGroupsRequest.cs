@@ -32,6 +32,14 @@ namespace Amazon.IdentityStore.Model
     /// Container for the parameters to the IsMemberInGroups operation.
     /// Checks the user's membership in all requested groups and returns if the member exists
     /// in all queried groups.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you have administrator access to a member account, you can use this API from the
+    /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+    /// accounts</a> in the <i>Organizations User Guide</i>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class IsMemberInGroupsRequest : AmazonIdentityStoreRequest
     {

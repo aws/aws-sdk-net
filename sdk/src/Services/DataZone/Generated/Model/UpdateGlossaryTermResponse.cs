@@ -1,0 +1,200 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the datazone-2018-05-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.DataZone.Model
+{
+    /// <summary>
+    /// This is the response object from the UpdateGlossaryTerm operation.
+    /// </summary>
+    public partial class UpdateGlossaryTermResponse : AmazonWebServiceResponse
+    {
+        private string _domainId;
+        private string _glossaryId;
+        private string _id;
+        private string _longDescription;
+        private string _name;
+        private string _shortDescription;
+        private GlossaryTermStatus _status;
+        private TermRelations _termRelations;
+
+        /// <summary>
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The identifier of the Amazon DataZone domain in which a business glossary term is
+        /// to be updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string DomainId
+        {
+            get { return this._domainId; }
+            set { this._domainId = value; }
+        }
+
+        // Check to see if DomainId property is set
+        internal bool IsSetDomainId()
+        {
+            return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlossaryId. 
+        /// <para>
+        /// The identifier of the business glossary in which a term is to be updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string GlossaryId
+        {
+            get { return this._glossaryId; }
+            set { this._glossaryId = value; }
+        }
+
+        // Check to see if GlossaryId property is set
+        internal bool IsSetGlossaryId()
+        {
+            return this._glossaryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier of the business glossary term that is to be updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LongDescription. 
+        /// <para>
+        /// The long description to be updated as part of the <code>UpdateGlossaryTerm</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
+        public string LongDescription
+        {
+            get { return this._longDescription; }
+            set { this._longDescription = value; }
+        }
+
+        // Check to see if LongDescription property is set
+        internal bool IsSetLongDescription()
+        {
+            return this._longDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name to be updated as part of the <code>UpdateGlossaryTerm</code> action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShortDescription. 
+        /// <para>
+        /// The short description to be updated as part of the <code>UpdateGlossaryTerm</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
+        public string ShortDescription
+        {
+            get { return this._shortDescription; }
+            set { this._shortDescription = value; }
+        }
+
+        // Check to see if ShortDescription property is set
+        internal bool IsSetShortDescription()
+        {
+            return this._shortDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status to be updated as part of the <code>UpdateGlossaryTerm</code> action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public GlossaryTermStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TermRelations. 
+        /// <para>
+        /// The term relations to be updated as part of the <code>UpdateGlossaryTerm</code> action.
+        /// </para>
+        /// </summary>
+        public TermRelations TermRelations
+        {
+            get { return this._termRelations; }
+            set { this._termRelations = value; }
+        }
+
+        // Check to see if TermRelations property is set
+        internal bool IsSetTermRelations()
+        {
+            return this._termRelations != null;
+        }
+
+    }
+}

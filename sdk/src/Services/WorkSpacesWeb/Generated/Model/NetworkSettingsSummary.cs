@@ -42,7 +42,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the network settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string NetworkSettingsArn
         {
             get { return this._networkSettingsArn; }

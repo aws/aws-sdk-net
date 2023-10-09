@@ -123,6 +123,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.ResourceDigests = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retentionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RetentionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

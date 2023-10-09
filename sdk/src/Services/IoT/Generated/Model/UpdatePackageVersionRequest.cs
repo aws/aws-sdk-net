@@ -72,8 +72,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// Metadata that can be used to define a package version’s configuration. For example,
-        /// the S3 file location, configuration options that are being sent to the device or fleet.
-        /// 
+        /// the Amazon S3 file location, configuration options that are being sent to the device
+        /// or fleet. 
         /// </para>
         ///  
         /// <para>

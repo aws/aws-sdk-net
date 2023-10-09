@@ -33,6 +33,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class UserSettingsSummary
     {
+        private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
         private int? _disconnectTimeoutInMinutes;
         private EnabledType _downloadAllowed;
@@ -41,6 +42,26 @@ namespace Amazon.WorkSpacesWeb.Model
         private EnabledType _printAllowed;
         private EnabledType _uploadAllowed;
         private string _userSettingsArn;
+
+        /// <summary>
+        /// Gets and sets the property CookieSynchronizationConfiguration. 
+        /// <para>
+        /// The configuration that specifies which cookies should be synchronized from the end
+        /// user's local browser to the remote browser.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public CookieSynchronizationConfiguration CookieSynchronizationConfiguration
+        {
+            get { return this._cookieSynchronizationConfiguration; }
+            set { this._cookieSynchronizationConfiguration = value; }
+        }
+
+        // Check to see if CookieSynchronizationConfiguration property is set
+        internal bool IsSetCookieSynchronizationConfiguration()
+        {
+            return this._cookieSynchronizationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyAllowed. 
@@ -179,7 +200,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the user settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string UserSettingsArn
         {
             get { return this._userSettingsArn; }

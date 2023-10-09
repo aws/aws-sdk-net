@@ -112,10 +112,22 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuotaContext", targetDepth))
+                {
+                    var unmarshaller = QuotaContextInfoUnmarshaller.Instance;
+                    unmarshalledObject.QuotaContext = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QuotaName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuotaName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QuotaRequestedAtLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QuotaRequestedAtLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Requester", targetDepth))

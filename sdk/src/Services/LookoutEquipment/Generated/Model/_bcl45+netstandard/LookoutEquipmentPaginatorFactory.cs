@@ -108,6 +108,14 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Paginator for ListRetrainingSchedulers operation
+        ///</summary>
+        public IListRetrainingSchedulersPaginator ListRetrainingSchedulers(ListRetrainingSchedulersRequest request) 
+        {
+            return new ListRetrainingSchedulersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSensorStatistics operation
         ///</summary>
         public IListSensorStatisticsPaginator ListSensorStatistics(ListSensorStatisticsRequest request) 

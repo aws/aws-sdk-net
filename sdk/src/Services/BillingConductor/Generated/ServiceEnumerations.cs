@@ -349,6 +349,144 @@ namespace Amazon.BillingConductor
 
 
     /// <summary>
+    /// Constants used for properties of type LineItemFilterAttributeName.
+    /// </summary>
+    public class LineItemFilterAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINE_ITEM_TYPE for LineItemFilterAttributeName
+        /// </summary>
+        public static readonly LineItemFilterAttributeName LINE_ITEM_TYPE = new LineItemFilterAttributeName("LINE_ITEM_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LineItemFilterAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LineItemFilterAttributeName FindValue(string value)
+        {
+            return FindValue<LineItemFilterAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LineItemFilterAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LineItemFilterValue.
+    /// </summary>
+    public class LineItemFilterValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAVINGS_PLAN_NEGATION for LineItemFilterValue
+        /// </summary>
+        public static readonly LineItemFilterValue SAVINGS_PLAN_NEGATION = new LineItemFilterValue("SAVINGS_PLAN_NEGATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LineItemFilterValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LineItemFilterValue FindValue(string value)
+        {
+            return FindValue<LineItemFilterValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LineItemFilterValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MatchOption.
+    /// </summary>
+    public class MatchOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_EQUAL for MatchOption
+        /// </summary>
+        public static readonly MatchOption NOT_EQUAL = new MatchOption("NOT_EQUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatchOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatchOption FindValue(string value)
+        {
+            return FindValue<MatchOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatchOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PricingRuleScope.
     /// </summary>
     public class PricingRuleScope : ConstantClass

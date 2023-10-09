@@ -139,6 +139,17 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TaskArn);
                 }
 
+                if(publicRequest.IsSetTaskReportConfig())
+                {
+                    context.Writer.WritePropertyName("TaskReportConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskReportConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaskReportConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

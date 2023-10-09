@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// Information about a service.
+    /// Information about an Amazon Web Service.
     /// </summary>
     public partial class ServiceInfo
     {
@@ -39,7 +39,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The service identifier.
+        /// Specifies the service identifier. To find the service code value for an Amazon Web
+        /// Services service, use the <a>ListServices</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -58,7 +59,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// Specifies the service name.
         /// </para>
         /// </summary>
         public string ServiceName

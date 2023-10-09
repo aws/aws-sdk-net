@@ -42,10 +42,28 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of the user, group, or resource for which to list mailbox permissions.
+        /// The identifier of the user, or resource for which to list mailbox permissions.
         /// </para>
+        ///  
+        /// <para>
+        /// The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>,
+        /// or <i>email</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Email address: entity@domain.tld
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Entity name: entity
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }

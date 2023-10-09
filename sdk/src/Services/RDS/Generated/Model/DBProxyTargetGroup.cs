@@ -108,9 +108,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsDefault. 
         /// <para>
-        /// Whether this target group is the first one used for connection requests by the associated
-        /// proxy. Because each proxy is currently associated with a single target group, currently
-        /// this setting is always <code>true</code>.
+        /// Indicates whether this target group is the first one used for connection requests
+        /// by the associated proxy. Because each proxy is currently associated with a single
+        /// target group, currently this setting is always <code>true</code>.
         /// </para>
         /// </summary>
         public bool IsDefault

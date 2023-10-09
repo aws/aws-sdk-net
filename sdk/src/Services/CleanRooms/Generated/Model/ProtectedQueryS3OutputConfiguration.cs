@@ -62,6 +62,7 @@ namespace Amazon.CleanRooms.Model
         /// The S3 prefix to unload the protected query results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string KeyPrefix
         {
             get { return this._keyPrefix; }

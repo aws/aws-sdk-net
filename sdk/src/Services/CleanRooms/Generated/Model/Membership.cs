@@ -40,6 +40,7 @@ namespace Amazon.CleanRooms.Model
         private string _collaborationId;
         private string _collaborationName;
         private DateTime? _createTime;
+        private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private string _id;
         private List<string> _memberAbilities = new List<string>();
         private MembershipQueryLogStatus _queryLogStatus;
@@ -178,6 +179,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultResultConfiguration. 
+        /// <para>
+        /// The default protected query result configuration as specified by the member who can
+        /// receive results.
+        /// </para>
+        /// </summary>
+        public MembershipProtectedQueryResultConfiguration DefaultResultConfiguration
+        {
+            get { return this._defaultResultConfiguration; }
+            set { this._defaultResultConfiguration = value; }
+        }
+
+        // Check to see if DefaultResultConfiguration property is set
+        internal bool IsSetDefaultResultConfiguration()
+        {
+            return this._defaultResultConfiguration != null;
         }
 
         /// <summary>

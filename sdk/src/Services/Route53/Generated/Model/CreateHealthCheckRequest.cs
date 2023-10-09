@@ -116,7 +116,12 @@ namespace Amazon.Route53.Model
         /// If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code>
         /// but settings identical to an existing health check, Route 53 creates the health check.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Route 53 does not store the <code>CallerReference</code> for a deleted health check
+        /// indefinitely. The <code>CallerReference</code> for a deleted health check will be
+        /// deleted after a number of days.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string CallerReference

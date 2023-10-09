@@ -50,7 +50,9 @@ namespace Amazon.Snowball.Model
     /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
     /// Web Services Regional Services</a>.
     /// </para>
-    ///  </note>  <p class="title"> <b>Snow Family devices and their capacities.</b> 
+    ///  </note>  
+    /// <para>
+    ///  <b>Snow Family devices and their capacities.</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

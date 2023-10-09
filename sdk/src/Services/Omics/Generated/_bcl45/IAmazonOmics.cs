@@ -4926,7 +4926,15 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a run.
+        /// Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The
+        /// remaining parameters are copied from the previous run.
+        /// 
+        ///  
+        /// <para>
+        /// The total number of runs in your account is subject to a quota per Region. To avoid
+        /// needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>.
+        /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>
         /// 
@@ -4961,7 +4969,15 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a run.
+        /// Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The
+        /// remaining parameters are copied from the previous run.
+        /// 
+        ///  
+        /// <para>
+        /// The total number of runs in your account is subject to a quota per Region. To avoid
+        /// needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>.
+        /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>
         /// <param name="cancellationToken">

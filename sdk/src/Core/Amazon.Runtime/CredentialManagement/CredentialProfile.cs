@@ -144,6 +144,18 @@ namespace Amazon.Runtime.CredentialManagement
         public string EndpointUrl { get; set; }
 
         /// <summary>
+        /// Controls whether request payloads are automatically compressed for supported operations.
+        /// This setting only applies to operations that support compression.
+        /// The default value is "false". Set to "true" to disable compression.
+        /// </summary>
+        public bool? DisableRequestCompression { get; set; }
+
+        /// <summary>
+        /// Minimum size in bytes that a request body should be to trigger compression.
+        /// </summary>
+        public long? RequestMinCompressionSizeBytes { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

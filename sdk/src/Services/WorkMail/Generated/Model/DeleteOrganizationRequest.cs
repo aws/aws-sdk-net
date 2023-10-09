@@ -39,6 +39,7 @@ namespace Amazon.WorkMail.Model
     {
         private string _clientToken;
         private bool? _deleteDirectory;
+        private bool? _forceDelete;
         private string _organizationId;
 
         /// <summary>
@@ -77,6 +78,24 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetDeleteDirectory()
         {
             return this._deleteDirectory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceDelete. 
+        /// <para>
+        /// Deletes a WorkMail organization even if the organization has enabled users.
+        /// </para>
+        /// </summary>
+        public bool ForceDelete
+        {
+            get { return this._forceDelete.GetValueOrDefault(); }
+            set { this._forceDelete = value; }
+        }
+
+        // Check to see if ForceDelete property is set
+        internal bool IsSetForceDelete()
+        {
+            return this._forceDelete.HasValue; 
         }
 
         /// <summary>

@@ -44,7 +44,7 @@ namespace Amazon.FSx.Model
     ///  
     /// <para>
     /// You use release data repository tasks to release data from your file system for files
-    /// that are archived to S3. The metadata of released files remains on the file system
+    /// that are exported to S3. The metadata of released files remains on the file system
     /// so users or applications can still access released files by reading the files again,
     /// which will restore data from Amazon S3 to the FSx for Lustre file system.
     /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.FSx.Model
         /// A list of paths for the data repository task to use when the task is processed. If
         /// a path that you provide isn't valid, the task fails. If you don't provide paths, the
         /// default behavior is to export all files to S3 (for export tasks), import all files
-        /// from S3 (for import tasks), or release all archived files that meet the last accessed
+        /// from S3 (for import tasks), or release all exported files that meet the last accessed
         /// time criteria (for release tasks).
         /// </para>
         ///  <ul> <li> 
@@ -147,9 +147,9 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// For release tasks, the list contains directory or file paths on the FSx for Lustre
-        /// file system from which to release archived files. If a directory is specified, files
+        /// file system from which to release exported files. If a directory is specified, files
         /// within the directory are released. If a file path is specified, only that file is
-        /// released. To release all archived files in the file system, specify a forward slash
+        /// released. To release all exported files in the file system, specify a forward slash
         /// (/) as the path.
         /// </para>
         ///  <note> 
@@ -248,7 +248,8 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-        /// for Lustre file system that are archived and that meet your specified release criteria.
+        /// for Lustre file system that have been exported to a linked S3 bucket and that meet
+        /// your specified release criteria.
         /// </para>
         ///  </li> <li> 
         /// <para>

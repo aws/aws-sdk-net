@@ -79,6 +79,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetQuotaRequestedAtLevel())
+                {
+                    context.Writer.WritePropertyName("QuotaRequestedAtLevel");
+                    context.Writer.Write(publicRequest.QuotaRequestedAtLevel);
+                }
+
                 if(publicRequest.IsSetServiceCode())
                 {
                     context.Writer.WritePropertyName("ServiceCode");

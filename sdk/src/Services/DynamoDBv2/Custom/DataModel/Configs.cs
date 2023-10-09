@@ -63,6 +63,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             TableNamePrefix = AWSConfigsDynamoDB.Context.TableNamePrefix;
             Conversion = DynamoDBEntryConversion.CurrentConversion;
+            MetadataCachingMode = AWSConfigsDynamoDB.Context.MetadataCachingMode;
+            DisableFetchingTableMetadata = AWSConfigsDynamoDB.Context.DisableFetchingTableMetadata;
         }
 
         /// <summary>
@@ -87,6 +89,18 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableNamePrefix { get; set; }
 
         /// <summary>
+        /// The object persistence model API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// </summary>
+        /// <remarks>
+        /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
+        /// For <see cref="MetadataCachingMode.TableNameOnly"/> the cache key will only consist of the table name. This reduces cache misses in contexts
+        /// where you are accessing tables with identical structure but using different credentials or endpoints (such as a multi-tenant application).
+        /// </remarks>
+        public MetadataCachingMode? MetadataCachingMode { get; set; }
+
+        /// <summary>
         /// Property that directs DynamoDBContext to ignore null values
         /// on attributes during a Save operation.
         /// If the property is false (or not set), null values will be
@@ -107,6 +121,18 @@ namespace Amazon.DynamoDBv2.DataModel
         /// .NET and DynamoDB types happens.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
+
+        /// <summary>
+        /// If true disables fetching table metadata automatically from DynamoDB. Table metadata must be 
+        /// defined by <see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
+        /// </summary>
+        /// <remarks>
+        /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> calls that are used to populate the SDK's cache of 
+        /// table metadata. It requires that the table's index schema be accurately described via the above methods, 
+        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
+        /// </remarks>
+        public bool? DisableFetchingTableMetadata { get; set; }
     }
 
     /// <summary>
@@ -288,7 +314,8 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
             Conversion = null,
-            IsEmptyStringValueEnabled = null
+            IsEmptyStringValueEnabled = null,
+            MetadataCachingMode = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -297,7 +324,8 @@ namespace Amazon.DynamoDBv2.DataModel
             TableNamePrefix = null,
             IgnoreNullValues = null,
             Conversion = null,
-            IsEmptyStringValueEnabled = null
+            IsEmptyStringValueEnabled = null,
+            MetadataCachingMode = null
         };
 
         public DynamoDBFlatConfig(DynamoDBOperationConfig operationConfig, DynamoDBContextConfig contextConfig)
@@ -310,6 +338,8 @@ namespace Amazon.DynamoDBv2.DataModel
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
+            bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
+
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             string overrideTableName =
                 !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
@@ -322,6 +352,7 @@ namespace Amazon.DynamoDBv2.DataModel
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
+            MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
@@ -334,6 +365,8 @@ namespace Amazon.DynamoDBv2.DataModel
             QueryFilter = queryFilter;
             ConditionalOperator = conditionalOperator;
             Conversion = conversion;
+            MetadataCachingMode = metadataCachingMode;
+            DisableFetchingTableMetadata = disableFetchingTableMetadata;
 
             State = new OperationState();
         }
@@ -358,6 +391,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// table names are used.
         /// </summary>
         public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// The object mapping API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// </summary>
+        public MetadataCachingMode? MetadataCachingMode { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to ignore null values
@@ -415,6 +455,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// .NET and DynamoDB types happens.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
+
+        /// <inheritdoc cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
+        public bool DisableFetchingTableMetadata { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }

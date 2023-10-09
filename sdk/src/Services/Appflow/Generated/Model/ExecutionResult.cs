@@ -36,6 +36,8 @@ namespace Amazon.Appflow.Model
         private long? _bytesProcessed;
         private long? _bytesWritten;
         private ErrorInfo _errorInfo;
+        private long? _maxPageSize;
+        private long? _numParallelProcesses;
         private long? _recordsProcessed;
 
         /// <summary>
@@ -90,6 +92,44 @@ namespace Amazon.Appflow.Model
         internal bool IsSetErrorInfo()
         {
             return this._errorInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxPageSize. 
+        /// <para>
+        /// The maximum number of records that Amazon AppFlow receives in each page of the response
+        /// from your SAP application.
+        /// </para>
+        /// </summary>
+        public long MaxPageSize
+        {
+            get { return this._maxPageSize.GetValueOrDefault(); }
+            set { this._maxPageSize = value; }
+        }
+
+        // Check to see if MaxPageSize property is set
+        internal bool IsSetMaxPageSize()
+        {
+            return this._maxPageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumParallelProcesses. 
+        /// <para>
+        /// The number of processes that Amazon AppFlow ran at the same time when it retrieved
+        /// your data.
+        /// </para>
+        /// </summary>
+        public long NumParallelProcesses
+        {
+            get { return this._numParallelProcesses.GetValueOrDefault(); }
+            set { this._numParallelProcesses = value; }
+        }
+
+        // Check to see if NumParallelProcesses property is set
+        internal bool IsSetNumParallelProcesses()
+        {
+            return this._numParallelProcesses.HasValue; 
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class UserSettings
     {
         private List<string> _associatedPortalArns = new List<string>();
+        private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
         private int? _disconnectTimeoutInMinutes;
         private EnabledType _downloadAllowed;
@@ -61,6 +62,26 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetAssociatedPortalArns()
         {
             return this._associatedPortalArns != null && this._associatedPortalArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CookieSynchronizationConfiguration. 
+        /// <para>
+        /// The configuration that specifies which cookies should be synchronized from the end
+        /// user's local browser to the remote browser.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public CookieSynchronizationConfiguration CookieSynchronizationConfiguration
+        {
+            get { return this._cookieSynchronizationConfiguration; }
+            set { this._cookieSynchronizationConfiguration = value; }
+        }
+
+        // Check to see if CookieSynchronizationConfiguration property is set
+        internal bool IsSetCookieSynchronizationConfiguration()
+        {
+            return this._cookieSynchronizationConfiguration != null;
         }
 
         /// <summary>

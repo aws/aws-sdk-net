@@ -181,6 +181,11 @@ namespace Amazon.Connect.Model
         IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
 
         /// <summary>
+        /// Paginator for ListSecurityProfileApplications operation
+        ///</summary>
+        IListSecurityProfileApplicationsPaginator ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityProfilePermissions operation
         ///</summary>
         IListSecurityProfilePermissionsPaginator ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request);
@@ -219,6 +224,16 @@ namespace Amazon.Connect.Model
         /// Paginator for ListUsers operation
         ///</summary>
         IListUsersPaginator ListUsers(ListUsersRequest request);
+
+        /// <summary>
+        /// Paginator for ListViews operation
+        ///</summary>
+        IListViewsPaginator ListViews(ListViewsRequest request);
+
+        /// <summary>
+        /// Paginator for ListViewVersions operation
+        ///</summary>
+        IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request);
 
         /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation

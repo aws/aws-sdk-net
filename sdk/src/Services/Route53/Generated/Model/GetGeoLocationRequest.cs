@@ -128,6 +128,10 @@ namespace Amazon.Route53.Model
         /// Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
         /// standard 3166-1 alpha-2</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Route 53 also supports the contry code <b>UA</b> forr Ukraine.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public string CountryCode

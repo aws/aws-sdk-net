@@ -106,6 +106,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultResultConfiguration", targetDepth))
+                {
+                    var unmarshaller = MembershipProtectedQueryResultConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DefaultResultConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

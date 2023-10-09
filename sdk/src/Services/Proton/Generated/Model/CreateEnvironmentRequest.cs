@@ -33,8 +33,9 @@ namespace Amazon.Proton.Model
     /// Deploy a new environment. An Proton environment is created from an environment template
     /// that defines infrastructure and resources that can be shared across services.
     /// 
-    ///  <p class="title"> <b>You can provision environments using the following methods:</b>
-    /// 
+    ///  
+    /// <para>
+    ///  <b>You can provision environments using the following methods:</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -90,13 +90,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ClearTable(numericHashRangeTableName);
         }
 
-        public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
+        public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, bool disableFetchingTableMetadata = false)
         {
             var config = new DynamoDBContextConfig
             {
                 //IgnoreNullValues = true
                 IsEmptyStringValueEnabled = isEmptyStringValueEnabled,
-                Conversion = conversion
+                Conversion = conversion,
+                DisableFetchingTableMetadata = disableFetchingTableMetadata
             };
             Context = new DynamoDBContext(Client, config);
         }

@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// the connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=512)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

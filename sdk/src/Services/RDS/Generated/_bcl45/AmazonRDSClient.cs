@@ -2447,8 +2447,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code>
-        /// operation to create a DB instance for an Aurora DB cluster.
+        /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
+        /// DB cluster, use the <code>CreateDBInstance</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -2560,8 +2560,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code>
-        /// operation to create a DB instance for an Aurora DB cluster.
+        /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
+        /// DB cluster, use the <code>CreateDBInstance</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -4084,17 +4084,15 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
-        /// delete a DB instance, all automated backups for that instance are deleted and can't
-        /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
-        /// are not deleted.
+        /// Deletes a previously provisioned DB instance. When you delete a DB instance, all automated
+        /// backups for that instance are deleted and can't be recovered. However, manual DB snapshots
+        /// of the DB instance aren't deleted.
         /// 
         ///  
         /// <para>
-        /// If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
-        /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
-        /// used to monitor the status of this operation. The action can't be canceled or reverted
-        /// once submitted.
+        /// If you request a final DB snapshot, the status of the Amazon RDS DB instance is <code>deleting</code>
+        /// until the DB snapshot is created. This operation can't be canceled or reverted after
+        /// it begins. To monitor the status of this operation, use <code>DescribeDBInstance</code>.
         /// </para>
         ///  
         /// <para>
@@ -4118,11 +4116,19 @@ namespace Amazon.RDS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-        /// API action to promote the DB cluster so it's no longer a read replica. After the promotion
-        /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
-        /// instance in the DB cluster.
+        /// To delete a DB instance in this case, first use the <code>PromoteReadReplicaDBCluster</code>
+        /// operation to promote the DB cluster so that it's no longer a read replica. After the
+        /// promotion completes, use the <code>DeleteDBInstance</code> operation to delete the
+        /// final instance in the DB cluster.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For RDS Custom DB instances, deleting the DB instance permanently deletes the EC2
+        /// instance and the associated EBS volumes. Make sure that you don't terminate or delete
+        /// these resources before you delete the DB instance. Otherwise, deleting the DB instance
+        /// and creation of the final snapshot might fail.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// 
@@ -4159,17 +4165,15 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
-        /// delete a DB instance, all automated backups for that instance are deleted and can't
-        /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
-        /// are not deleted.
+        /// Deletes a previously provisioned DB instance. When you delete a DB instance, all automated
+        /// backups for that instance are deleted and can't be recovered. However, manual DB snapshots
+        /// of the DB instance aren't deleted.
         /// 
         ///  
         /// <para>
-        /// If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
-        /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
-        /// used to monitor the status of this operation. The action can't be canceled or reverted
-        /// once submitted.
+        /// If you request a final DB snapshot, the status of the Amazon RDS DB instance is <code>deleting</code>
+        /// until the DB snapshot is created. This operation can't be canceled or reverted after
+        /// it begins. To monitor the status of this operation, use <code>DescribeDBInstance</code>.
         /// </para>
         ///  
         /// <para>
@@ -4193,11 +4197,19 @@ namespace Amazon.RDS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-        /// API action to promote the DB cluster so it's no longer a read replica. After the promotion
-        /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
-        /// instance in the DB cluster.
+        /// To delete a DB instance in this case, first use the <code>PromoteReadReplicaDBCluster</code>
+        /// operation to promote the DB cluster so that it's no longer a read replica. After the
+        /// promotion completes, use the <code>DeleteDBInstance</code> operation to delete the
+        /// final instance in the DB cluster.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For RDS Custom DB instances, deleting the DB instance permanently deletes the EC2
+        /// instance and the associated EBS volumes. Make sure that you don't terminate or delete
+        /// these resources before you delete the DB instance. Otherwise, deleting the DB instance
+        /// and creation of the final snapshot might fail.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// <param name="cancellationToken">
@@ -5106,8 +5118,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
-        /// account.
+        /// Lists the set of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5136,8 +5148,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services
-        /// account.
+        /// Lists the set of certificate authority (CA) certificates provided by Amazon RDS for
+        /// this Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5747,7 +5759,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list of the available DB engines.
+        /// Describes the properties of specific versions of DB engines.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
@@ -5759,7 +5771,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list of the available DB engines.
+        /// Describes the properties of specific versions of DB engines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions service method.</param>
         /// 
@@ -5776,7 +5788,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list of the available DB engines.
+        /// Describes the properties of specific versions of DB engines.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5790,7 +5802,7 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Returns a list of the available DB engines.
+        /// Describes the properties of specific versions of DB engines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions service method.</param>
         /// <param name="cancellationToken">
@@ -11473,6 +11485,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
         /// </exception>
@@ -11579,6 +11595,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
@@ -12306,8 +12326,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Restores a DB instance to an arbitrary point in time. You can restore to any point
-        /// in time before the time identified by the LatestRestorableTime property. You can restore
-        /// to a point up to the number of days specified by the BackupRetentionPeriod property.
+        /// in time before the time identified by the <code>LatestRestorableTime</code> property.
+        /// You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code>
+        /// property.
         /// 
         ///  
         /// <para>
@@ -12422,8 +12443,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Restores a DB instance to an arbitrary point in time. You can restore to any point
-        /// in time before the time identified by the LatestRestorableTime property. You can restore
-        /// to a point up to the number of days specified by the BackupRetentionPeriod property.
+        /// in time before the time identified by the <code>LatestRestorableTime</code> property.
+        /// You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code>
+        /// property.
         /// 
         ///  
         /// <para>

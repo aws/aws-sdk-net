@@ -74,7 +74,7 @@ namespace Amazon.AuditManager.Model
         ///  The compliance type that the framework supports, such as CIS or HIPAA. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }
@@ -93,7 +93,7 @@ namespace Amazon.AuditManager.Model
         ///  The control sets that are associated with the framework. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public List<ControlSet> ControlSets
         {
             get { return this._controlSets; }
@@ -149,7 +149,7 @@ namespace Amazon.AuditManager.Model
         ///  The user or role that created the framework. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string CreatedBy
         {
             get { return this._createdBy; }
@@ -224,7 +224,7 @@ namespace Amazon.AuditManager.Model
         ///  The user or role that most recently updated the framework. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string LastUpdatedBy
         {
             get { return this._lastUpdatedBy; }

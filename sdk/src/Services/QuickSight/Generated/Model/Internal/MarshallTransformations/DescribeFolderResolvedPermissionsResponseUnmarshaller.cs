@@ -63,6 +63,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.FolderId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Permissions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourcePermission, ResourcePermissionUnmarshaller>(ResourcePermissionUnmarshaller.Instance);
@@ -106,6 +112,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
+                {
+                    return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {

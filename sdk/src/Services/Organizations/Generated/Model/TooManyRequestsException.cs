@@ -35,7 +35,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
-    /// for Organizations</a>in the <i>Organizations User Guide.</i> 
+    /// for Organizations</a> in the <i>Organizations User Guide</i>.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

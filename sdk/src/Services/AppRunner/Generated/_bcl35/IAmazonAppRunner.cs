@@ -232,8 +232,9 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// A connection resource is needed to access GitHub repositories. GitHub requires a user
-        /// interface approval process through the App Runner console before you can use the connection.
+        /// A connection resource is needed to access GitHub and Bitbucket repositories. Both
+        /// require a user interface approval process through the App Runner console before you
+        /// can use the connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
@@ -553,9 +554,10 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an App Runner automatic scaling configuration resource. You can delete a specific
-        /// revision or the latest active revision. You can't delete a configuration that's used
-        /// by one or more App Runner services.
+        /// Delete an App Runner automatic scaling configuration resource. You can delete a top
+        /// level auto scaling configuration, a specific revision of one, or all revisions associated
+        /// with the top level configuration. You can't delete the default auto scaling configuration
+        /// or a configuration that's used by one or more App Runner services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingConfiguration service method.</param>
         /// 
@@ -1535,6 +1537,57 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  ListServicesForAutoScalingConfiguration
+
+
+        /// <summary>
+        /// Returns a list of the associated App Runner services using an auto scaling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesForAutoScalingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ListServicesForAutoScalingConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration">REST API Reference for ListServicesForAutoScalingConfiguration Operation</seealso>
+        ListServicesForAutoScalingConfigurationResponse ListServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServicesForAutoScalingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServicesForAutoScalingConfiguration operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServicesForAutoScalingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration">REST API Reference for ListServicesForAutoScalingConfiguration Operation</seealso>
+        IAsyncResult BeginListServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServicesForAutoScalingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServicesForAutoScalingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ListServicesForAutoScalingConfigurationResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration">REST API Reference for ListServicesForAutoScalingConfiguration Operation</seealso>
+        ListServicesForAutoScalingConfigurationResponse EndListServicesForAutoScalingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1980,6 +2033,58 @@ namespace Amazon.AppRunner
         /// <returns>Returns a  UntagResourceResult from AppRunner.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDefaultAutoScalingConfiguration
+
+
+        /// <summary>
+        /// Update an auto scaling configuration to be the default. The existing default auto
+        /// scaling configuration will be set to non-default automatically.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultAutoScalingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDefaultAutoScalingConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration">REST API Reference for UpdateDefaultAutoScalingConfiguration Operation</seealso>
+        UpdateDefaultAutoScalingConfigurationResponse UpdateDefaultAutoScalingConfiguration(UpdateDefaultAutoScalingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDefaultAutoScalingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultAutoScalingConfiguration operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDefaultAutoScalingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration">REST API Reference for UpdateDefaultAutoScalingConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateDefaultAutoScalingConfiguration(UpdateDefaultAutoScalingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDefaultAutoScalingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDefaultAutoScalingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateDefaultAutoScalingConfigurationResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration">REST API Reference for UpdateDefaultAutoScalingConfiguration Operation</seealso>
+        UpdateDefaultAutoScalingConfigurationResponse EndUpdateDefaultAutoScalingConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

@@ -120,6 +120,18 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsDisposed);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestStoringContextAttributes()
+        {
+            var requestContext = new RequestContext(true, new NullSigner());
+
+            requestContext.ContextAttributes["foo"] = "bar";
+            Assert.AreEqual("bar", requestContext.ContextAttributes["foo"]);
+        }
+
+
 #elif !BCL45 && BCL
 
         [TestMethod][TestCategory("UnitTest")]

@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.CognitoIdentityProvider.Model
 {
@@ -93,7 +94,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// This allows authentication of the user as part of the MFA setup process.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }
@@ -106,5 +107,13 @@ namespace Amazon.CognitoIdentityProvider.Model
             return this._session != null;
         }
 
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new NullSigner();
+        }
     }
 }

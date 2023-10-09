@@ -35,9 +35,29 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class UpdateResourceRequest : AmazonLakeFormationRequest
     {
+        private bool? _hybridAccessEnabled;
         private string _resourceArn;
         private string _roleArn;
         private bool? _withFederation;
+
+        /// <summary>
+        /// Gets and sets the property HybridAccessEnabled. 
+        /// <para>
+        ///  Specifies whether the data access of tables pointing to the location can be managed
+        /// by both Lake Formation permissions as well as Amazon S3 bucket policies. 
+        /// </para>
+        /// </summary>
+        public bool HybridAccessEnabled
+        {
+            get { return this._hybridAccessEnabled.GetValueOrDefault(); }
+            set { this._hybridAccessEnabled = value; }
+        }
+
+        // Check to see if HybridAccessEnabled property is set
+        internal bool IsSetHybridAccessEnabled()
+        {
+            return this._hybridAccessEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 

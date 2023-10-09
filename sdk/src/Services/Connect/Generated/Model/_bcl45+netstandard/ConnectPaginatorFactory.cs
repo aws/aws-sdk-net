@@ -284,6 +284,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityProfileApplications operation
+        ///</summary>
+        public IListSecurityProfileApplicationsPaginator ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request) 
+        {
+            return new ListSecurityProfileApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityProfilePermissions operation
         ///</summary>
         public IListSecurityProfilePermissionsPaginator ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request) 
@@ -345,6 +353,22 @@ namespace Amazon.Connect.Model
         public IListUsersPaginator ListUsers(ListUsersRequest request) 
         {
             return new ListUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListViews operation
+        ///</summary>
+        public IListViewsPaginator ListViews(ListViewsRequest request) 
+        {
+            return new ListViewsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListViewVersions operation
+        ///</summary>
+        public IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request) 
+        {
+            return new ListViewVersionsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -2922,6 +2922,66 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  StartInputDevice
+
+        internal virtual StartInputDeviceResponse StartInputDevice(StartInputDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInputDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<StartInputDeviceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start an input device that is attached to a MediaConnect flow. (There is no need to
+        /// start a device that is attached to a MediaLive input; MediaLive starts the device
+        /// when the channel starts.)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInputDevice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartInputDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice">REST API Reference for StartInputDevice Operation</seealso>
+        public virtual Task<StartInputDeviceResponse> StartInputDeviceAsync(StartInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInputDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartInputDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartInputDeviceMaintenanceWindow
 
         internal virtual StartInputDeviceMaintenanceWindowResponse StartInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request)
@@ -3099,6 +3159,66 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopInputDevice
+
+        internal virtual StopInputDeviceResponse StopInputDevice(StopInputDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopInputDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<StopInputDeviceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stop an input device that is attached to a MediaConnect flow. (There is no need to
+        /// stop a device that is attached to a MediaLive input; MediaLive automatically stops
+        /// the device when the channel stops.)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInputDevice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopInputDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice">REST API Reference for StopInputDevice Operation</seealso>
+        public virtual Task<StopInputDeviceResponse> StopInputDeviceAsync(StopInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopInputDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopInputDeviceResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -156,6 +156,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMSKSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("MSKSourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MSKSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MSKSourceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRedshiftDestinationConfiguration())
                 {
                     context.Writer.WritePropertyName("RedshiftDestinationConfiguration");

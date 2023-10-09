@@ -36,6 +36,7 @@ namespace Amazon.VPCLattice.Model
     {
         private HealthCheckConfig _healthCheck;
         private IpAddressType _ipAddressType;
+        private LambdaEventStructureVersion _lambdaEventStructureVersion;
         private int? _port;
         private TargetGroupProtocol _protocol;
         private TargetGroupProtocolVersion _protocolVersion;
@@ -80,13 +81,31 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LambdaEventStructureVersion. 
+        /// <para>
+        /// Lambda event structure version
+        /// </para>
+        /// </summary>
+        public LambdaEventStructureVersion LambdaEventStructureVersion
+        {
+            get { return this._lambdaEventStructureVersion; }
+            set { this._lambdaEventStructureVersion = value; }
+        }
+
+        // Check to see if LambdaEventStructureVersion property is set
+        internal bool IsSetLambdaEventStructureVersion()
+        {
+            return this._lambdaEventStructureVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port on which the targets are listening. For HTTP, the default is <code>80</code>.
         /// For HTTPS, the default is <code>443</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65535)]
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -106,7 +125,6 @@ namespace Amazon.VPCLattice.Model
         /// a target group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TargetGroupProtocol Protocol
         {
             get { return this._protocol; }
@@ -143,7 +161,7 @@ namespace Amazon.VPCLattice.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=50)]
+        [AWSProperty(Min=5, Max=50)]
         public string VpcIdentifier
         {
             get { return this._vpcIdentifier; }

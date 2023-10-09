@@ -65,6 +65,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DestinationArn);
             }
 
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("headers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHeadersListValue in requestObject.Headers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KafkaActionHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");

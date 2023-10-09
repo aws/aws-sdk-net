@@ -125,8 +125,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
-        /// of the restored DB cluster. The default is not to copy them.
+        /// Specifies whether to copy all tags from the restored DB cluster to snapshots of the
+        /// restored DB cluster. The default is not to copy them.
         /// </para>
         ///  
         /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For the full list of DB instance classes, and availability for your engine, see <a
         /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// instance class</a> in the <i>Amazon RDS User Guide.</i> 
+        /// instance class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -217,9 +217,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        /// The name of the DB cluster parameter group to associate with this DB cluster. If this
-        /// argument is omitted, the default DB cluster parameter group for the specified engine
-        /// is used.
+        /// The name of the custom DB cluster parameter group to associate with this DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default
+        /// DB cluster parameter group for the specified engine is used.
         /// </para>
         ///  
         /// <para>
@@ -291,9 +294,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB cluster has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled.
+        /// Specifies whether to enable deletion protection for the DB cluster. The database can't
+        /// be deleted when deletion protection is enabled. By default, deletion protection isn't
+        /// enabled.
         /// </para>
         ///  
         /// <para>
@@ -315,8 +318,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
-        /// must be created prior to this operation.
+        /// The Active Directory directory ID to restore the DB cluster in. The domain must be
+        /// created prior to this operation.
         /// </para>
         ///  
         /// <para>
@@ -344,8 +347,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        /// Specify the name of the IAM role to be used when making API calls to the Directory
-        /// Service.
+        /// The name of the IAM role to be used when making API calls to the Directory Service.
         /// </para>
         ///  
         /// <para>
@@ -433,8 +435,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -578,7 +580,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -671,7 +673,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB cluster is publicly accessible.
+        /// Specifies whether the DB cluster is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -925,7 +927,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
         /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
@@ -967,9 +969,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// A value that indicates whether to restore the DB cluster to the latest restorable
-        /// backup time. By default, the DB cluster isn't restored to the latest restorable backup
-        /// time.
+        /// Specifies whether to restore the DB cluster to the latest restorable backup time.
+        /// By default, the DB cluster isn't restored to the latest restorable backup time.
         /// </para>
         ///  
         /// <para>

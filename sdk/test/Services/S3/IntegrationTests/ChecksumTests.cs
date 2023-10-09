@@ -220,6 +220,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
+        /// Tests copying object using multipart upload with a signed body
+        /// </summary>
+        [DataTestMethod]
+        [DynamicData(nameof(GetAlgorithmsToTest))]
+        public void TestSignedCopyObjectUsingMultipartUpload(CoreChecksumAlgorithm algorithm)
+        {
+            CopyObjectUsingMultipartTestHelper(algorithm, _bucketName);
+        }
+
+        /// <summary>
         /// Tests a SigV4 multipart upload with a signed body
         /// </summary>
         [DataTestMethod]
@@ -260,6 +270,116 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
+        /// Test helper to test copy object using multipart upload.
+        /// </summary>
+        /// <param name="algorithm">checksum algorithm</param>
+        /// <param name="bucketName">bucket to upload the object to</param>
+        private void CopyObjectUsingMultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName)
+        {
+            var random = new Random();
+            var nextRandom = random.Next();
+            var filePath = Path.Combine(Path.GetTempPath(), "multipartcopy-" + nextRandom + ".txt");
+            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retreived-" + nextRandom + ".txt");
+            var totalSize = MegSize * 15;
+
+            UtilityMethods.GenerateFile(filePath, totalSize);
+            string sourceKey = "sourceKey-" + random.Next();
+            string copiedKey = "sourceKey-" + random.Next() + "-copy";
+
+            try
+            {
+                // Upload the source file for testing copy using multipartupload.
+                var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
+                var transfer = new TransferUtility(Client, transferConfig);
+                transfer.Upload(new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = sourceKey,
+                    FilePath = filePath
+                });
+
+                // Test copy using multipartupload with ChecksumAlgorithm set.
+                List<CopyPartResponse> copyResponses = new List<CopyPartResponse>();
+                InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
+                {
+                    BucketName = bucketName,
+                    Key = copiedKey,
+                    ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString())
+                };
+
+                InitiateMultipartUploadResponse initResponse = Client.InitiateMultipartUpload(initRequest);
+
+                // Get the size of the object.
+                GetObjectMetadataRequest metadataRequest = new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = sourceKey
+                };
+
+                GetObjectMetadataResponse metadataResponse = Client.GetObjectMetadata(metadataRequest);
+                long objectSize = metadataResponse.ContentLength; // Length in bytes.
+
+                // Copy the parts.
+                long partSize = 5 * (long)Math.Pow(2, 20); // Part size is 5 MB.
+
+                long bytePosition = 0;
+                for (int i = 1; bytePosition < objectSize; i++)
+                {
+                    CopyPartRequest copyRequest = new CopyPartRequest
+                    {
+                        DestinationBucket = bucketName,
+                        DestinationKey = copiedKey,
+                        SourceBucket = bucketName,
+                        SourceKey = sourceKey,
+                        UploadId = initResponse.UploadId,
+                        FirstByte = bytePosition,
+                        LastByte = bytePosition + partSize - 1 >= objectSize ? objectSize - 1 : bytePosition + partSize - 1,
+                        PartNumber = i
+                    };
+
+                    copyResponses.Add(Client.CopyPart(copyRequest));
+
+                    bytePosition += partSize;
+                }
+
+                // Set up to complete the copy.
+                CompleteMultipartUploadRequest completeRequest =
+                new CompleteMultipartUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = copiedKey,
+                    UploadId = initResponse.UploadId
+                };
+                completeRequest.AddPartETags(copyResponses);
+
+                // Complete the copy.
+                CompleteMultipartUploadResponse completeUploadResponse = Client.CompleteMultipartUpload(completeRequest);
+
+                Assert.IsNotNull(completeUploadResponse.ETag);
+                Assert.AreEqual(copiedKey, completeUploadResponse.Key);
+                Assert.IsNotNull(completeUploadResponse.Location);
+
+                // Get the file back from S3 and assert it is still the same.
+                var getRequest = new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = copiedKey
+                };
+
+                var getResponse = Client.GetObject(getRequest);
+                getResponse.WriteResponseStreamToFile(retrievedFilepath);
+                UtilityMethods.CompareFiles(filePath, retrievedFilepath);
+            }
+            finally
+            {
+                if (File.Exists(filePath))
+                    File.Delete(filePath);
+                if (File.Exists(retrievedFilepath))
+                    File.Delete(retrievedFilepath);
+            }
+        }
+
+        /// <summary>
         /// Test helper to test a multipart upload without using the Transfer Utility
         /// </summary>
         /// <param name="algorithm">checksum algorithm</param>
@@ -274,7 +394,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var totalSize = MegSize * 15;
 
             UtilityMethods.GenerateFile(filePath, totalSize);
-            string key = "key-" + random.Next();
+            string key = "sourceKey-" + random.Next();
 
             Stream inputStream = File.OpenRead(filePath);
             try

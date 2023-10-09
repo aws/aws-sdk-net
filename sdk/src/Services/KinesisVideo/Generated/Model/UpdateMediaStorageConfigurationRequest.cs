@@ -30,9 +30,16 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMediaStorageConfiguration operation.
+    /// <important> 
+    /// <para>
+    /// This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
+    /// Ingestion</a> and is only available in the <code>us-west-2</code> region.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Associates a <code>SignalingChannel</code> to a stream to store the media. There are
     /// two signaling modes that can specified :
-    /// 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     /// If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>

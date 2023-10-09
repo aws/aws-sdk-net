@@ -39,7 +39,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilterScopeConfiguration
     {
+        private AllSheetsFilterScopeConfiguration _allSheets;
         private SelectedSheetsFilterScopeConfiguration _selectedSheets;
+
+        /// <summary>
+        /// Gets and sets the property AllSheets. 
+        /// <para>
+        /// The configuration for applying a filter to all sheets.
+        /// </para>
+        /// </summary>
+        public AllSheetsFilterScopeConfiguration AllSheets
+        {
+            get { return this._allSheets; }
+            set { this._allSheets = value; }
+        }
+
+        // Check to see if AllSheets property is set
+        internal bool IsSetAllSheets()
+        {
+            return this._allSheets != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SelectedSheets. 

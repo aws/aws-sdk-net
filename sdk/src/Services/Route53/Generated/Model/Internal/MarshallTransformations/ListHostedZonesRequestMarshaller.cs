@@ -65,6 +65,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDelegationSetId())
                 request.Parameters.Add("delegationsetid", StringUtils.FromString(publicRequest.DelegationSetId));
+            
+            if (publicRequest.IsSetHostedZoneType())
+                request.Parameters.Add("hostedzonetype", StringUtils.FromString(publicRequest.HostedZoneType));
             request.ResourcePath = "/2013-04-01/hostedzone";
 
 

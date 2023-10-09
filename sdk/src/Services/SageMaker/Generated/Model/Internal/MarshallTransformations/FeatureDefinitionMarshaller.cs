@@ -45,6 +45,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FeatureDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCollectionConfig())
+            {
+                context.Writer.WritePropertyName("CollectionConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CollectionConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CollectionConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCollectionType())
+            {
+                context.Writer.WritePropertyName("CollectionType");
+                context.Writer.Write(requestObject.CollectionType);
+            }
+
             if(requestObject.IsSetFeatureName())
             {
                 context.Writer.WritePropertyName("FeatureName");

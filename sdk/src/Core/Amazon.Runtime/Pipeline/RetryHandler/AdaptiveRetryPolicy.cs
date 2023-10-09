@@ -80,11 +80,11 @@ namespace Amazon.Runtime.Internal
 
                 if (executionContext.RequestContext.ClientConfig.FastFailRequests)
                 {
-                    throw new AmazonClientException($"{whyFail}. The client is configured to fail fast and there is insufficent capacity to attempt the request.", exception);
+                    throw new AmazonClientException($"{whyFail}. The client is configured to fail fast and there is insufficient capacity to attempt the request.", exception);
                 }
 
                 //Else we were unable to obtain capacity after looping. 
-                throw new AmazonClientException($"{whyFail}. There is insufficent capacity to attempt the request after attempting to obtain capacity multiple times.", exception);
+                throw new AmazonClientException($"{whyFail}. There is insufficient capacity to attempt the request after attempting to obtain capacity multiple times.", exception);
             }
         }                
 

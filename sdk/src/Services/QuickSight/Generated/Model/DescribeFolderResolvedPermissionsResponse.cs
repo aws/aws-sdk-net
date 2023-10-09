@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _arn;
         private string _folderId;
+        private string _nextToken;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
         private string _requestId;
         private int? _status;
@@ -74,6 +75,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFolderId()
         {
             return this._folderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token for the next set of results, or null if there are no more results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

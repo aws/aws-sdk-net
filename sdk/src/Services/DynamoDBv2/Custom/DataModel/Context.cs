@@ -53,6 +53,49 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region Public methods
+        /// <inheritdoc/>
+        public void RegisterTableDefinition(Table table)
+        {
+            try
+            {
+                _readerWriterLockSlim.EnterReadLock();
+
+                if (tablesMap.ContainsKey(table.TableName))
+                {
+                    return;
+                }
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsReadLockHeld)
+                {
+                    _readerWriterLockSlim.ExitReadLock();
+                }
+            }
+
+            try
+            {
+                _readerWriterLockSlim.EnterWriteLock();
+
+                // Check to see if another thread got the write lock before this thread and filled the cache.
+                if (tablesMap.ContainsKey(table.TableName))
+                {
+                    return;
+                }
+
+                tablesMap[table.TableName] = table;
+            }
+            finally
+            {
+                if (_readerWriterLockSlim.IsWriteLockHeld)
+                {
+                    _readerWriterLockSlim.ExitWriteLock();
+                }
+            }
+        }
+        #endregion
+
         #region Constructors
 
 #if !NETSTANDARD
@@ -233,7 +276,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// This is intended for use only when the valuesType is not known at compile-time, for example,
         /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
         /// 
-        /// In scenarios when the valuesType is known at compile-time, the `BatchWrite<T> CreateBatchWrite<T>()`
+        /// In scenarios when the valuesType is known at compile-time, the <see cref="CreateBatchWrite{T}()"/>
         /// method is generally preferred.
         /// </summary>
         /// <param name="valuesType">Type of objects to write</param>
@@ -251,7 +294,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
         /// 
         /// In scenarios when the valuesType is known at compile-time, the 
-        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
+        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
         /// </summary>
         /// <param name="valuesType">Type of objects to write</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>

@@ -46,6 +46,7 @@ namespace Amazon.ManagedGrafana.Model
         /// role to.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> Admin
         {
             get { return this._admin; }
@@ -65,6 +66,7 @@ namespace Amazon.ManagedGrafana.Model
         /// role to.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<string> Editor
         {
             get { return this._editor; }

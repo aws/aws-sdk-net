@@ -25,7 +25,7 @@
 					<#=example.Description#>
 				</para>
 				<code
-					title="<#=example.Title#>"
+					title="<#=example.Title.Replace("\"", "&quot;")#>"
 					source=".\AWSSDKDocSamples\\<#=servicename#>\\<#=servicename#>.GeneratedSamples.cs"
 					region="<#=example.Id#>" />
 			</example>

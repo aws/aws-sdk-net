@@ -392,13 +392,13 @@
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -409,13 +409,13 @@
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallsRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallsResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -426,13 +426,13 @@
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListRuleGroupsRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListRuleGroupsResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -443,7 +443,7 @@
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListTagsForResourceRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -455,7 +455,7 @@
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListTagsForResourceResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -466,13 +466,13 @@
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListTLSInspectionConfigurationsRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListTLSInspectionConfigurationsResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>

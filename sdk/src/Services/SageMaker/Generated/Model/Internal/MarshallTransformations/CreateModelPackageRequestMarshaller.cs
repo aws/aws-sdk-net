@@ -194,6 +194,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SamplePayloadUrl);
                 }
 
+                if(publicRequest.IsSetSkipModelValidation())
+                {
+                    context.Writer.WritePropertyName("SkipModelValidation");
+                    context.Writer.Write(publicRequest.SkipModelValidation);
+                }
+
                 if(publicRequest.IsSetSourceAlgorithmSpecification())
                 {
                     context.Writer.WritePropertyName("SourceAlgorithmSpecification");

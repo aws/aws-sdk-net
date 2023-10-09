@@ -88,6 +88,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("etag", targetDepth))
+                {
+                    var unmarshaller = ETagUnmarshaller.Instance;
+                    unmarshalledObject.Etag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

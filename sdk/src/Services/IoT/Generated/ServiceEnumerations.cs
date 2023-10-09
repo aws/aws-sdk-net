@@ -2735,6 +2735,14 @@ namespace Amazon.IoT
         /// </summary>
         public static readonly LogTargetType DEFAULT = new LogTargetType("DEFAULT");
         /// <summary>
+        /// Constant DEVICE_DEFENDER for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType DEVICE_DEFENDER = new LogTargetType("DEVICE_DEFENDER");
+        /// <summary>
+        /// Constant EVENT_TYPE for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType EVENT_TYPE = new LogTargetType("EVENT_TYPE");
+        /// <summary>
         /// Constant PRINCIPAL_ID for LogTargetType
         /// </summary>
         public static readonly LogTargetType PRINCIPAL_ID = new LogTargetType("PRINCIPAL_ID");

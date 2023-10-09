@@ -56,6 +56,8 @@ namespace ServiceClientGenerator
         public const string RequestAlgorithmMemberKey = "requestAlgorithmMember";
         public const string RequestValidationModeMemberKey = "requestValidationModeMember";
         public const string ResponseAlgorithmsKey = "responseAlgorithms";
+        public const string RequestCompressionKey = "requestcompression";
+        public const string EncodingsKey = "encodings";
 
         // shapes
         public const string ShapesKey = "shapes";

@@ -294,7 +294,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1)]
         public string Policy
         {
             get { return this._policy; }

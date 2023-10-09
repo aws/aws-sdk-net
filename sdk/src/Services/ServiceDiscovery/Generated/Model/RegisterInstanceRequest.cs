@@ -143,8 +143,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Auto naming currently doesn't support creating alias records that route traffic to
-        /// Amazon Web Services resources other than Elastic Load Balancing load balancers.
+        /// Cloud Map currently doesn't support creating alias records that route traffic to Amazon
+        /// Web Services resources other than Elastic Load Balancing load balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>

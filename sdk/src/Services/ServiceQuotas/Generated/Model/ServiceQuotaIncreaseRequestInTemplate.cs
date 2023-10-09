@@ -45,7 +45,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The AWS Region.
+        /// The Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -101,7 +101,9 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The quota identifier.
+        /// Specifies the quota identifier. To find the quota code for a specific quota, use the
+        /// <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response
+        /// in the output for the quota you want.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -120,7 +122,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaName. 
         /// <para>
-        /// The quota name.
+        /// Specifies the quota name.
         /// </para>
         /// </summary>
         public string QuotaName
@@ -138,7 +140,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The service identifier.
+        /// Specifies the service identifier. To find the service code value for an Amazon Web
+        /// Services service, use the <a>ListServices</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -157,7 +160,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// Specifies the service name.
         /// </para>
         /// </summary>
         public string ServiceName

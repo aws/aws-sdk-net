@@ -45,7 +45,9 @@ namespace Amazon.ACMPCA.Model
     /// action and listed with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
     /// action. 
     /// </para>
-    ///  <p class="title"> <b>About Permissions</b> 
+    ///  
+    /// <para>
+    ///  <b>About Permissions</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -90,6 +90,7 @@ namespace Amazon.BackupStorage.Model.Internal.MarshallTransformations
             request.ContentStream =  publicRequest.InlineChunk ?? new MemoryStream();
             if (request.ContentStream.CanSeek)
             {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
                 request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                     request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             }

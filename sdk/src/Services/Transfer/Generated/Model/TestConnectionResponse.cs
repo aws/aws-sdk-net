@@ -78,27 +78,26 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property StatusMessage. 
         /// <para>
         /// Returns <code>Connection succeeded</code> if the test is successful. Or, returns a
-        /// descriptive error message if the test fails. The following list provides the details
-        /// for some error messages and troubleshooting steps for each.
+        /// descriptive error message if the test fails. The following list provides troubleshooting
+        /// details, depending on the error message that you receive.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Unable to access secrets manager</b>: Verify that your secret name aligns with
-        /// the one in Transfer Role permissions.
+        /// Verify that your secret name aligns with the one in Transfer Role permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Unknown Host/Connection failed</b>: Verify the server URL in the connector configuration
-        /// , and verify that the login credentials work successfully outside of the connector.
+        /// Verify the server URL in the connector configuration , and verify that the login credentials
+        /// work successfully outside of the connector.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Private key not found</b>: Verify that the secret exists and is formatted correctly.
+        /// Verify that the secret exists and is formatted correctly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Invalid trusted host keys</b>: Verify that the trusted host key in the connector
-        /// configuration matches the <code>ssh-keyscan</code> output.
+        /// Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code>
+        /// output.
         /// </para>
         ///  </li> </ul>
         /// </summary>

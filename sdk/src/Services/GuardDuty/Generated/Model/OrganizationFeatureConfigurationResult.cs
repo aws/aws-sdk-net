@@ -59,19 +59,27 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Describes how The status of the feature that are configured for the member accounts
-        /// within the organization.
+        /// Describes the status of the feature that is configured for the member accounts within
+        /// the organization.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured
-        /// for only the new accounts when they join the organization.
+        ///  <code>NEW</code>: Indicates that when a new account joins the organization, they
+        /// will have the feature enabled automatically. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured
-        /// for the accounts when they join the organization.
+        ///  <code>ALL</code>: Indicates that all accounts in the organization have the feature
+        /// enabled automatically. This includes <code>NEW</code> accounts that join the organization
+        /// and accounts that may have been suspended or removed from the organization in GuardDuty.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Indicates that the feature will not be automatically enabled for
+        /// any account in the organization. In this case, each account will be managed individually
+        /// by the administrator.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OrgFeatureStatus AutoEnable
         {

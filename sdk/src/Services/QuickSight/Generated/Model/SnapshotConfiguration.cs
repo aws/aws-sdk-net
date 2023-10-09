@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// configurations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6)]
+        [AWSProperty(Required=true, Min=1, Max=7)]
         public List<SnapshotFileGroup> FileGroups
         {
             get { return this._fileGroups; }

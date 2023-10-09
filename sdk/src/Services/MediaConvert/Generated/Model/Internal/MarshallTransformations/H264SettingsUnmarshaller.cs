@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DynamicSubGop = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endOfStreamMarkers", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndOfStreamMarkers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entropyEncoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -62,6 +62,11 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// A list of possible values an attribute can take.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of values that can be defined for a LF-Tag is 1000. A single API
+        /// call supports 50 values. You can use multiple API calls to add more values.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagValues

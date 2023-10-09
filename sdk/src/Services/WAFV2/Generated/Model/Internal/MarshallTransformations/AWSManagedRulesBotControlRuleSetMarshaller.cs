@@ -45,6 +45,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AWSManagedRulesBotControlRuleSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEnableMachineLearning())
+            {
+                context.Writer.WritePropertyName("EnableMachineLearning");
+                context.Writer.Write(requestObject.EnableMachineLearning);
+            }
+
             if(requestObject.IsSetInspectionLevel())
             {
                 context.Writer.WritePropertyName("InspectionLevel");

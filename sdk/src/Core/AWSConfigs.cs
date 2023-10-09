@@ -45,7 +45,7 @@ namespace Amazon
     ///   &lt;proxy host="localhost" port="8888" username="1" password="1" /&gt;
     ///   
     ///   &lt;dynamoDB&gt;
-    ///     &lt;dynamoDBContext tableNamePrefix="Prod-"&gt;
+    ///     &lt;dynamoDBContext tableNamePrefix="Prod-" metadataCachingMode="Default" disableFetchingTableMetadata="false"&gt;
     /// 
     ///       &lt;tableAliases&gt;
     ///         &lt;alias fromTable="FakeTable" toTable="People" /&gt;

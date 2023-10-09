@@ -35,6 +35,7 @@ namespace Amazon.InternetMonitor.Endpoints
         /// </summary>
         public InternetMonitorEndpointParameters()
         {
+            UseDualStack = false;
             UseFIPS = false;
         }
 
@@ -45,6 +46,15 @@ namespace Amazon.InternetMonitor.Endpoints
         { 
             get { return (string)this["Region"]; }
             set { this["Region"] = value; } 
+        }
+
+        /// <summary>
+        /// UseDualStack parameter
+        /// </summary>
+        public bool? UseDualStack 
+        { 
+            get { return (bool?)this["UseDualStack"]; }
+            set { this["UseDualStack"] = value; } 
         }
 
         /// <summary>

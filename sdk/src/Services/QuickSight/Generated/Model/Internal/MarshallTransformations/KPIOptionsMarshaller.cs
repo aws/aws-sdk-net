@@ -106,6 +106,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSparkline())
+            {
+                context.Writer.WritePropertyName("Sparkline");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KPISparklineOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sparkline, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrendArrows())
             {
                 context.Writer.WritePropertyName("TrendArrows");
@@ -113,6 +124,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = TrendArrowOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrendArrows, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVisualLayoutOptions())
+            {
+                context.Writer.WritePropertyName("VisualLayoutOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KPIVisualLayoutOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualLayoutOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }

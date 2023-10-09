@@ -188,7 +188,7 @@
     <property>Amazon.WorkSpacesWeb.Model.CreateIdentityProviderResponse.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36}){2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.CreateIpAccessSettingsRequest.ClientToken</property>
@@ -299,6 +299,12 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreateUserSettingsRequest.CustomerManagedKey</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:key\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.CreateUserSettingsRequest.DisconnectTimeoutInMinutes</property>
     <min>1</min>
     <max>600</max>
@@ -324,7 +330,7 @@
     <property>Amazon.WorkSpacesWeb.Model.DeleteIdentityProviderRequest.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36}){2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.DeleteIpAccessSettingsRequest.IpAccessSettingsArn</property>
@@ -408,7 +414,7 @@
     <property>Amazon.WorkSpacesWeb.Model.GetIdentityProviderRequest.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36}){2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.GetIpAccessSettingsRequest.IpAccessSettingsArn</property>
@@ -693,7 +699,7 @@
     <property>Amazon.WorkSpacesWeb.Model.UpdateIdentityProviderRequest.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36}){2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UpdateIdentityProviderRequest.IdentityProviderName</property>
@@ -863,10 +869,27 @@
     <pattern>^[A-Fa-f0-9]{64}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CookieSpecification.Domain</property>
+    <min>0</min>
+    <max>253</max>
+    <pattern>^(\.?)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CookieSpecification.Name</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CookieSpecification.Path</property>
+    <min>0</min>
+    <max>2000</max>
+    <pattern>^/(\S)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.IdentityProvider.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36}){2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.IdentityProvider.IdentityProviderName</property>
@@ -878,7 +901,7 @@
     <property>Amazon.WorkSpacesWeb.Model.IdentityProviderSummary.IdentityProviderArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36}){2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.IdentityProviderSummary.IdentityProviderName</property>

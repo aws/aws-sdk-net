@@ -33,6 +33,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class InstanceRecommendationOption
     {
+        private GpuInfo _instanceGpuInfo;
         private string _instanceType;
         private MigrationEffort _migrationEffort;
         private double? _performanceRisk;
@@ -40,6 +41,24 @@ namespace Amazon.ComputeOptimizer.Model
         private List<UtilizationMetric> _projectedUtilizationMetrics = new List<UtilizationMetric>();
         private int? _rank;
         private SavingsOpportunity _savingsOpportunity;
+
+        /// <summary>
+        /// Gets and sets the property InstanceGpuInfo. 
+        /// <para>
+        ///  Describes the GPU accelerator settings for the recommended instance type. 
+        /// </para>
+        /// </summary>
+        public GpuInfo InstanceGpuInfo
+        {
+            get { return this._instanceGpuInfo; }
+            set { this._instanceGpuInfo = value; }
+        }
+
+        // Check to see if InstanceGpuInfo property is set
+        internal bool IsSetInstanceGpuInfo()
+        {
+            return this._instanceGpuInfo != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceType. 

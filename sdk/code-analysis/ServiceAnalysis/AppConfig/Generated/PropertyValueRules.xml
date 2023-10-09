@@ -34,6 +34,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.KmsKeyIdentifier</property>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.LocationUri</property>
     <min>1</min>
     <max>2048</max>
@@ -65,6 +69,16 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Id</property>
     <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.KmsKeyIdentifier</property>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.LocationUri</property>
@@ -179,8 +193,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionRequest.Name</property>
-    <min>1</min>
-    <max>64</max>
+    <pattern>^[^\/#:\n]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Arn</property>
@@ -276,6 +289,12 @@
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.Description</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.VersionLabel</property>
@@ -394,6 +413,16 @@
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.KmsKeyIdentifier</property>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.LocationUri</property>
     <min>1</min>
     <max>2048</max>
@@ -480,13 +509,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyIdentifier</property>
-    <min>1</min>
-    <max>2048</max>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.PercentageComplete</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetDeploymentResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyRequest.DeploymentStrategyId</property>
@@ -624,6 +658,12 @@
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.Description</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.VersionLabel</property>
@@ -834,8 +874,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.KmsKeyIdentifier</property>
-    <min>1</min>
-    <max>2048</max>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ApplicationId</property>
@@ -896,13 +935,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyIdentifier</property>
-    <min>1</min>
-    <max>2048</max>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.PercentageComplete</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartDeploymentResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentRequest.ApplicationId</property>
@@ -971,13 +1015,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyIdentifier</property>
-    <min>1</min>
-    <max>2048</max>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.PercentageComplete</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopDeploymentResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.TagResourceRequest.ResourceArn</property>
@@ -1033,6 +1082,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.KmsKeyIdentifier</property>
+    <pattern>^\s{0,1}|[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -1055,6 +1108,16 @@
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Id</property>
     <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.KmsKeyIdentifier</property>
+    <pattern>^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\d{1}:\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.LocationUri</property>
@@ -1347,6 +1410,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeploymentSummary.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1400,6 +1469,12 @@
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.Description</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.VersionLabel</property>

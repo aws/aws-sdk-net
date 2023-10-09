@@ -109,6 +109,9 @@ namespace Amazon.WorkMail
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         AssociateDelegateToResourceResponse AssociateDelegateToResource(AssociateDelegateToResourceRequest request);
 
@@ -748,6 +751,9 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in WorkMail.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         CreateResourceResponse CreateResource(CreateResourceRequest request);
@@ -1435,6 +1441,9 @@ namespace Amazon.WorkMail
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         DeleteResourceResponse DeleteResource(DeleteResourceRequest request);
 
@@ -1765,6 +1774,60 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DescribeEntity
+
+
+        /// <summary>
+        /// Returns basic details about an entity in WorkMail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEntity service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
+        DescribeEntityResponse DescribeEntity(DescribeEntityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEntity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntity operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEntity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
+        IAsyncResult BeginDescribeEntity(DescribeEntityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEntity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEntity.</param>
+        /// 
+        /// <returns>Returns a  DescribeEntityResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
+        DescribeEntityResponse EndDescribeEntity(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeGroup
 
 
@@ -1991,6 +2054,9 @@ namespace Amazon.WorkMail
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         DescribeResourceResponse DescribeResource(DescribeResourceRequest request);
 
@@ -2102,6 +2168,9 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         DisassociateDelegateFromResourceResponse DisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request);
@@ -2441,6 +2510,9 @@ namespace Amazon.WorkMail
         /// <returns>The response from the GetMailboxDetails service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -2914,6 +2986,64 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListGroupsForEntity
+
+
+        /// <summary>
+        /// Returns all the groups to which an entity belongs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupsForEntity service method.</param>
+        /// 
+        /// <returns>The response from the ListGroupsForEntity service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity">REST API Reference for ListGroupsForEntity Operation</seealso>
+        ListGroupsForEntityResponse ListGroupsForEntity(ListGroupsForEntityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGroupsForEntity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupsForEntity operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupsForEntity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity">REST API Reference for ListGroupsForEntity Operation</seealso>
+        IAsyncResult BeginListGroupsForEntity(ListGroupsForEntityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGroupsForEntity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupsForEntity.</param>
+        /// 
+        /// <returns>Returns a  ListGroupsForEntityResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity">REST API Reference for ListGroupsForEntity Operation</seealso>
+        ListGroupsForEntityResponse EndListGroupsForEntity(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListImpersonationRoles
 
 
@@ -3299,6 +3429,9 @@ namespace Amazon.WorkMail
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         ListResourceDelegatesResponse ListResourceDelegates(ListResourceDelegatesRequest request);
 
@@ -3349,6 +3482,9 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         ListResourcesResponse ListResources(ListResourcesRequest request);
@@ -4100,6 +4236,9 @@ namespace Amazon.WorkMail
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
@@ -4364,6 +4503,67 @@ namespace Amazon.WorkMail
         /// <returns>Returns a  UpdateDefaultMailDomainResult from WorkMail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
         UpdateDefaultMailDomainResponse EndUpdateDefaultMailDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGroup
+
+
+        /// <summary>
+        /// Updates attibutes in a group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateGroupResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4652,6 +4852,9 @@ namespace Amazon.WorkMail
         /// The configuration for a resource isn't valid. A resource must either be able to auto-respond
         /// to requests or have at least one delegate associated that can do so on its behalf.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
         /// The domain specified is not found in your organization.
         /// </exception>
@@ -4669,6 +4872,9 @@ namespace Amazon.WorkMail
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         UpdateResourceResponse UpdateResource(UpdateResourceRequest request);
@@ -4698,6 +4904,75 @@ namespace Amazon.WorkMail
         /// <returns>Returns a  UpdateResourceResult from WorkMail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         UpdateResourceResponse EndUpdateResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateUser
+
+
+        /// <summary>
+        /// Updates data for the user. To have the latest information, it must be preceded by
+        /// a <a>DescribeUser</a> call. The dataset in the request should be the one expected
+        /// when performing another <code>DescribeUser</code> call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUser service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
+        /// The directory is unavailable. It might be located in another Region or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        UpdateUserResponse UpdateUser(UpdateUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUser operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUser.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult);
 
         #endregion
                 

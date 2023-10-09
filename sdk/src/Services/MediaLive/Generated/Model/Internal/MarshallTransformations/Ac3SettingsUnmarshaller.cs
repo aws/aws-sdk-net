@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("attenuationControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttenuationControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bitrate", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

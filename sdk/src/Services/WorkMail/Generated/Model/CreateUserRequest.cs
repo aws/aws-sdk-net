@@ -36,9 +36,13 @@ namespace Amazon.WorkMail.Model
     public partial class CreateUserRequest : AmazonWorkMailRequest
     {
         private string _displayName;
+        private string _firstName;
+        private bool? _hiddenFromGlobalAddressList;
+        private string _lastName;
         private string _name;
         private string _organizationId;
         private string _password;
+        private UserRole _role;
 
         /// <summary>
         /// Gets and sets the property DisplayName. 
@@ -46,7 +50,7 @@ namespace Amazon.WorkMail.Model
         /// The display name for the new user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -57,6 +61,62 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirstName. 
+        /// <para>
+        /// The first name of the new user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string FirstName
+        {
+            get { return this._firstName; }
+            set { this._firstName = value; }
+        }
+
+        // Check to see if FirstName property is set
+        internal bool IsSetFirstName()
+        {
+            return this._firstName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HiddenFromGlobalAddressList. 
+        /// <para>
+        /// If this parameter is enabled, the user will be hidden from the address book.
+        /// </para>
+        /// </summary>
+        public bool HiddenFromGlobalAddressList
+        {
+            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            set { this._hiddenFromGlobalAddressList = value; }
+        }
+
+        // Check to see if HiddenFromGlobalAddressList property is set
+        internal bool IsSetHiddenFromGlobalAddressList()
+        {
+            return this._hiddenFromGlobalAddressList.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastName. 
+        /// <para>
+        /// The last name of the new user. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=256)]
+        public string LastName
+        {
+            get { return this._lastName; }
+            set { this._lastName = value; }
+        }
+
+        // Check to see if LastName property is set
+        internal bool IsSetLastName()
+        {
+            return this._lastName != null;
         }
 
         /// <summary>
@@ -104,7 +164,7 @@ namespace Amazon.WorkMail.Model
         /// The password for the new user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -115,6 +175,29 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Role. 
+        /// <para>
+        /// The role of the new user.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When
+        /// a user role is not selected, the default role of <i>USER</i> is selected.
+        /// </para>
+        /// </summary>
+        public UserRole Role
+        {
+            get { return this._role; }
+            set { this._role = value; }
+        }
+
+        // Check to see if Role property is set
+        internal bool IsSetRole()
+        {
+            return this._role != null;
         }
 
     }

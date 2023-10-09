@@ -116,6 +116,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PolicyReferenceName", StringUtils.FromString(publicRequest.PolicyReferenceName));
                 }
+                if(publicRequest.IsSetSseSpecification())
+                {
+                    if(publicRequest.SseSpecification.IsSetCustomerManagedKeyEnabled())
+                    {
+                        request.Parameters.Add("SseSpecification" + "." + "CustomerManagedKeyEnabled", StringUtils.FromBool(publicRequest.SseSpecification.CustomerManagedKeyEnabled));
+                    }
+                    if(publicRequest.SseSpecification.IsSetKmsKeyArn())
+                    {
+                        request.Parameters.Add("SseSpecification" + "." + "KmsKeyArn", StringUtils.FromString(publicRequest.SseSpecification.KmsKeyArn));
+                    }
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

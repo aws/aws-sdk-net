@@ -228,6 +228,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimecodeStart);
             }
 
+            if(requestObject.IsSetVideoOverlays())
+            {
+                context.Writer.WritePropertyName("videoOverlays");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVideoOverlaysListValue in requestObject.VideoOverlays)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VideoOverlayMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVideoOverlaysListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetVideoSelector())
             {
                 context.Writer.WritePropertyName("videoSelector");

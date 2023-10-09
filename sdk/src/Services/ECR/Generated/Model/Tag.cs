@@ -46,6 +46,7 @@ namespace Amazon.ECR.Model
         /// that acts like a category for more specific tag values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -64,6 +65,7 @@ namespace Amazon.ECR.Model
         /// A <code>value</code> acts as a descriptor within a tag category (key).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

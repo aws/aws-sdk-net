@@ -81,7 +81,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property IamUserArn. 
         /// <para>
-        /// The IAM user ARN associated with the on-premises instance.
+        /// The user ARN associated with the on-premises instance.
         /// </para>
         /// </summary>
         public string IamUserArn

@@ -131,7 +131,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
         /// Sets the version for the Amazon FSx for Lustre file system that you're creating from
-        /// a backup. Valid values are <code>2.10</code> and <code>2.12</code>.
+        /// a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
         /// </para>
         ///  
         /// <para>

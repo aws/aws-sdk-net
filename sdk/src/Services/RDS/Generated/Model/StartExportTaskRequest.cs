@@ -66,8 +66,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ExportOnly. 
         /// <para>
-        /// The data to be exported from the snapshot or cluster. If this parameter is not provided,
-        /// all of the data is exported. Valid values are the following:
+        /// The data to be exported from the snapshot or cluster. If this parameter isn't provided,
+        /// all of the data is exported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

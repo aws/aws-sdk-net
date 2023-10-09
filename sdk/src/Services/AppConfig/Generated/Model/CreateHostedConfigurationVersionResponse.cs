@@ -38,6 +38,7 @@ namespace Amazon.AppConfig.Model
         private MemoryStream _content;
         private string _contentType;
         private string _description;
+        private string _kmsKeyArn;
         private string _versionLabel;
         private int? _versionNumber;
 
@@ -133,6 +134,27 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name of the Key Management Service key that was used to encrypt
+        /// this specific version of the configuration data in the AppConfig hosted configuration
+        /// store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

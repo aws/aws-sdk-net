@@ -31,8 +31,10 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Container for the parameters to the DiscoverInstances operation.
     /// Discovers registered instances for a specified namespace and service. You can use
-    /// <code>DiscoverInstances</code> to discover instances for any type of namespace. For
-    /// public and private DNS namespaces, you can also use DNS queries to discover instances.
+    /// <code>DiscoverInstances</code> to discover instances for any type of namespace. <code>DiscoverInstances</code>
+    /// returns a randomized list of instances allowing customers to distribute traffic evenly
+    /// across instances. For public and private DNS namespaces, you can also use DNS queries
+    /// to discover instances.
     /// </summary>
     public partial class DiscoverInstancesRequest : AmazonServiceDiscoveryRequest
     {

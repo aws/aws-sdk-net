@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
         private string _clusterName;
         private long? _compatibleNodes;
         private long? _coveredNodes;
+        private ManagementType _managementType;
 
         /// <summary>
         /// Gets and sets the property AddonDetails. 
@@ -109,6 +110,34 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCoveredNodes()
         {
             return this._coveredNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagementType. 
+        /// <para>
+        /// Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this
+        /// resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage
+        /// the Amazon EKS add-on GuardDuty agent for this resource.
+        /// </para>
+        /// </summary>
+        public ManagementType ManagementType
+        {
+            get { return this._managementType; }
+            set { this._managementType = value; }
+        }
+
+        // Check to see if ManagementType property is set
+        internal bool IsSetManagementType()
+        {
+            return this._managementType != null;
         }
 
     }

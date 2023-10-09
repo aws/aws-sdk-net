@@ -112,6 +112,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExportTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExportType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExportType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncrementalExportSpecification", targetDepth))
+                {
+                    var unmarshaller = IncrementalExportSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.IncrementalExportSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ItemCount", targetDepth))

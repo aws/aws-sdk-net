@@ -49,8 +49,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the URL <code>https://example.com/web/signup</code>, you would provide
-        /// the path <code>/web/signup</code>.
+        /// For example, for the URL <code>https://example.com/web/newaccount</code>, you would
+        /// provide the path <code>/web/newaccount</code>. Account creation page paths that start
+        /// with the path that you provide are considered a match. For example <code>/web/newaccount</code>
+        /// matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+        /// <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't
+        /// match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -97,8 +102,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For example, for the URL <code>https://example.com/web/register</code>, you would
-        /// provide the path <code>/web/register</code>.
+        /// For example, for the URL <code>https://example.com/web/registration</code>, you would
+        /// provide the path <code>/web/registration</code>. Registration page paths that start
+        /// with the path that you provide are considered a match. For example <code>/web/registration</code>
+        /// matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>,
+        /// <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but
+        /// doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

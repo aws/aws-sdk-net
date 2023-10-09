@@ -74,7 +74,7 @@
     <property>Amazon.ConnectCampaignService.Model.ListTagsForResourceRequest.Arn</property>
     <min>20</min>
     <max>500</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.PauseCampaignRequest.Id</property>
@@ -110,13 +110,13 @@
     <property>Amazon.ConnectCampaignService.Model.TagResourceRequest.Arn</property>
     <min>20</min>
     <max>500</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.UntagResourceRequest.Arn</property>
     <min>20</min>
     <max>500</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.UpdateCampaignDialerConfigRequest.Id</property>
@@ -147,6 +147,10 @@
     <property>Amazon.ConnectCampaignService.Model.UpdateCampaignOutboundCallConfigRequest.Id</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignService.Model.AgentlessDialerConfig.DialingCapacity</property>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.Campaign.Arn</property>
@@ -254,8 +258,16 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignService.Model.PredictiveDialerConfig.DialingCapacity</property>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.ProgressiveDialerConfig.BandwidthAllocation</property>
     <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignService.Model.ProgressiveDialerConfig.DialingCapacity</property>
     <max>1</max>
   </property-value-rule>
   <property-value-rule>

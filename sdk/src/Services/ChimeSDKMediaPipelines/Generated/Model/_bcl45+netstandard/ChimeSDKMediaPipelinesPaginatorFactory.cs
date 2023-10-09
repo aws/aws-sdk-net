@@ -52,6 +52,14 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
+        /// Paginator for ListMediaPipelineKinesisVideoStreamPools operation
+        ///</summary>
+        public IListMediaPipelineKinesisVideoStreamPoolsPaginator ListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request) 
+        {
+            return new ListMediaPipelineKinesisVideoStreamPoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMediaPipelines operation
         ///</summary>
         public IListMediaPipelinesPaginator ListMediaPipelines(ListMediaPipelinesRequest request) 

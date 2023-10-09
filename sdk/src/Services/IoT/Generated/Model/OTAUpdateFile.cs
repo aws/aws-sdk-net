@@ -43,7 +43,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A list of name/attribute pairs.
+        /// A list of name-attribute pairs. They won't be sent to devices as a part of the Job
+        /// document.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

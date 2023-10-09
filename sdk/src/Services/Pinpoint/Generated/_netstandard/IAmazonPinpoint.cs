@@ -3580,8 +3580,9 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Removes one or more attributes, of the same attribute type, from all the endpoints
-        /// that are associated with an application.
+        /// Removes one or more custom attributes, of the same attribute type, from the application.
+        /// Existing endpoints still have the attributes but Amazon Pinpoint will stop capturing
+        /// new or changed values for these attributes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAttributes service method.</param>
         /// <param name="cancellationToken">

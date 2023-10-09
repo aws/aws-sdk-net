@@ -2,6 +2,120 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.CancelExportJob(Amazon.SimpleEmailV2.Model.CancelExportJobRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.CancelExportJob(Amazon.SimpleEmailV2.Model.CancelExportJobRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.CancelExportJobRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.CancelExportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Cancels the export job with ID ef28cf62-9d8e-4b60-9283-b09816c99a99
+                </para>
+                <code
+                    title="Cancel export job"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="cancel-export-job-1685699696331" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.CreateExportJob(Amazon.SimpleEmailV2.Model.CreateExportJobRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.CreateExportJob(Amazon.SimpleEmailV2.Model.CreateExportJobRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.CreateExportJobRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.CreateExportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new export job for Metrics data
+                </para>
+                <code
+                    title="Create Metrics export job"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="create-export-job-1685701853690" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.CreateExportJob(Amazon.SimpleEmailV2.Model.CreateExportJobRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.CreateExportJob(Amazon.SimpleEmailV2.Model.CreateExportJobRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.CreateExportJobRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.CreateExportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new export job for Message Insights data
+                </para>
+                <code
+                    title="Create Message Insights export job"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="create-export-job-1689957853323" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.GetExportJob(Amazon.SimpleEmailV2.Model.GetExportJobRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.GetExportJob(Amazon.SimpleEmailV2.Model.GetExportJobRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.GetExportJobRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.GetExportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Gets the export job with ID ef28cf62-9d8e-4b60-9283-b09816c99a99
+                </para>
+                <code
+                    title="Get export job"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="get-export-job-1685699942772" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.GetMessageInsights(Amazon.SimpleEmailV2.Model.GetMessageInsightsRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.GetMessageInsights(Amazon.SimpleEmailV2.Model.GetMessageInsightsRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.GetMessageInsightsRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.GetMessageInsightsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Provides information about a specific message.
+                </para>
+                <code
+                    title="Get Message Insights"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="get-message-insights-1689955713493" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.ListExportJobs(Amazon.SimpleEmailV2.Model.ListExportJobsRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.ListExportJobs(Amazon.SimpleEmailV2.Model.ListExportJobsRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.ListExportJobsRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.ListExportJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists export jobs of type METRICS_DATA and status PROCESSING
+                </para>
+                <code
+                    title="List export jobs"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="list-export-jobs-1685702074256" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.PutDedicatedIpPoolScalingAttributes(Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest)" />
             <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.PutDedicatedIpPoolScalingAttributes(Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest)" />
             <member name="T:Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest" />

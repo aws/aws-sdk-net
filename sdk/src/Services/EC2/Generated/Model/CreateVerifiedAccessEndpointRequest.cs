@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private CreateVerifiedAccessEndpointEniOptions _networkInterfaceOptions;
         private string _policyDocument;
         private List<string> _securityGroupIds = new List<string>();
+        private VerifiedAccessSseSpecificationRequest _sseSpecification;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _verifiedAccessGroupId;
 
@@ -255,6 +256,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseSpecification. 
+        /// <para>
+        ///  Options for server side encryption. 
+        /// </para>
+        /// </summary>
+        public VerifiedAccessSseSpecificationRequest SseSpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SseSpecification property is set
+        internal bool IsSetSseSpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

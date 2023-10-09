@@ -59,7 +59,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// for this API operation. For this operation, you must use IAM credentials to authorize
     /// requests, and you must grant yourself the corresponding IAM permission in a policy.
     /// </para>
-    ///  <p class="title"> <b>Learn more</b> 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -186,6 +188,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// with user devices in your user pool</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> ChallengeResponses
         {
             get { return this._challengeResponses; }
@@ -340,7 +343,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

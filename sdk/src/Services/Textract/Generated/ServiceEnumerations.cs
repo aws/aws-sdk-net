@@ -39,6 +39,46 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly BlockType KEY_VALUE_SET = new BlockType("KEY_VALUE_SET");
         /// <summary>
+        /// Constant LAYOUT_FIGURE for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_FIGURE = new BlockType("LAYOUT_FIGURE");
+        /// <summary>
+        /// Constant LAYOUT_FOOTER for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_FOOTER = new BlockType("LAYOUT_FOOTER");
+        /// <summary>
+        /// Constant LAYOUT_HEADER for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_HEADER = new BlockType("LAYOUT_HEADER");
+        /// <summary>
+        /// Constant LAYOUT_KEY_VALUE for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_KEY_VALUE = new BlockType("LAYOUT_KEY_VALUE");
+        /// <summary>
+        /// Constant LAYOUT_LIST for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_LIST = new BlockType("LAYOUT_LIST");
+        /// <summary>
+        /// Constant LAYOUT_PAGE_NUMBER for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_PAGE_NUMBER = new BlockType("LAYOUT_PAGE_NUMBER");
+        /// <summary>
+        /// Constant LAYOUT_SECTION_HEADER for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_SECTION_HEADER = new BlockType("LAYOUT_SECTION_HEADER");
+        /// <summary>
+        /// Constant LAYOUT_TABLE for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_TABLE = new BlockType("LAYOUT_TABLE");
+        /// <summary>
+        /// Constant LAYOUT_TEXT for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_TEXT = new BlockType("LAYOUT_TEXT");
+        /// <summary>
+        /// Constant LAYOUT_TITLE for BlockType
+        /// </summary>
+        public static readonly BlockType LAYOUT_TITLE = new BlockType("LAYOUT_TITLE");
+        /// <summary>
         /// Constant LINE for BlockType
         /// </summary>
         public static readonly BlockType LINE = new BlockType("LINE");
@@ -260,6 +300,10 @@ namespace Amazon.Textract
         /// Constant FORMS for FeatureType
         /// </summary>
         public static readonly FeatureType FORMS = new FeatureType("FORMS");
+        /// <summary>
+        /// Constant LAYOUT for FeatureType
+        /// </summary>
+        public static readonly FeatureType LAYOUT = new FeatureType("LAYOUT");
         /// <summary>
         /// Constant QUERIES for FeatureType
         /// </summary>

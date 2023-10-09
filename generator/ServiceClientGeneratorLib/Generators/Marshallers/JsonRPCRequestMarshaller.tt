@@ -35,7 +35,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
 		{
 			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace #>");
-<# if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
+<#
+   SetCompressionAlgorithmEncoding(this.Operation);
+
+   if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
 	{
 #>
 			string target = "<#=this.Config.ServiceModel.TargetPrefix #>.<#=this.Operation.Name #>";
@@ -138,6 +141,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 			if (request.ContentStream.CanSeek)
 			{
+				request.ContentStream.Seek(0, SeekOrigin.Begin);
 				request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
 					request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
 			}
@@ -159,6 +163,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 			}
 #>
+			if(request.ContentStream.CanSeek)
+			{
+				request.ContentStream.Seek(0, SeekOrigin.Begin);
+			}
 			request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
 				request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
 <#

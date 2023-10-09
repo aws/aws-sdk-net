@@ -45,6 +45,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceNowConnectorProfileCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetOAuth2Credentials())
+            {
+                context.Writer.WritePropertyName("oAuth2Credentials");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OAuth2CredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuth2Credentials, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("password");

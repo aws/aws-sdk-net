@@ -77,16 +77,15 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization
-        /// have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that
-        /// join the organization and accounts that may have been suspended or removed from the
-        /// organization in GuardDuty.
+        ///  <code>ALL</code>: Indicates that all accounts in the organization have GuardDuty
+        /// enabled automatically. This includes <code>NEW</code> accounts that join the organization
+        /// and accounts that may have been suspended or removed from the organization in GuardDuty.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for
-        /// any accounts in the organization. GuardDuty must be managed for each account individually
-        /// by the administrator.
+        /// any account in the organization. The administrator must manage GuardDuty for each
+        /// account in the organization individually.
         /// </para>
         ///  </li> </ul>
         /// </summary>

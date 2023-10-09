@@ -63,6 +63,7 @@ namespace Amazon.AWSHealth.Model
         private string _locale;
         private int? _maxResults;
         private string _nextToken;
+        private List<EntityAccountFilter> _organizationEntityAccountFilters = new List<EntityAccountFilter>();
         private List<EventAccountFilter> _organizationEntityFilters = new List<EventAccountFilter>();
 
         /// <summary>
@@ -128,12 +129,33 @@ namespace Amazon.AWSHealth.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OrganizationEntityAccountFilters. 
+        /// <para>
+        /// A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code>
+        /// and a set of <code>statusCodes</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<EntityAccountFilter> OrganizationEntityAccountFilters
+        {
+            get { return this._organizationEntityAccountFilters; }
+            set { this._organizationEntityAccountFilters = value; }
+        }
+
+        // Check to see if OrganizationEntityAccountFilters property is set
+        internal bool IsSetOrganizationEntityAccountFilters()
+        {
+            return this._organizationEntityAccountFilters != null && this._organizationEntityAccountFilters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OrganizationEntityFilters. 
         /// <para>
         /// A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [Obsolete("This property is deprecated, use organizationEntityAccountFilters instead.")]
+        [AWSProperty(Min=1, Max=10)]
         public List<EventAccountFilter> OrganizationEntityFilters
         {
             get { return this._organizationEntityFilters; }

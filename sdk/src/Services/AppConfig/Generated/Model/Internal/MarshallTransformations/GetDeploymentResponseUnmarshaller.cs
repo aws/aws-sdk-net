@@ -177,6 +177,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     response.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VersionLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

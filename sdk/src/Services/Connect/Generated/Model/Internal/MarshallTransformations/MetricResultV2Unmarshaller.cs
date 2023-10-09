@@ -76,6 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetricInterval", targetDepth))
+                {
+                    var unmarshaller = MetricIntervalUnmarshaller.Instance;
+                    unmarshalledObject.MetricInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

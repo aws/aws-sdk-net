@@ -94,6 +94,18 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HasAssociatedService", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasAssociatedService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsDefault", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Latest", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

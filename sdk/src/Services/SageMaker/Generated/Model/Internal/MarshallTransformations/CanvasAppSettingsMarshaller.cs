@@ -45,6 +45,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanvasAppSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIdentityProviderOAuthSettings())
+            {
+                context.Writer.WritePropertyName("IdentityProviderOAuthSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIdentityProviderOAuthSettingsListValue in requestObject.IdentityProviderOAuthSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderOAuthSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIdentityProviderOAuthSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetModelRegisterSettings())
             {
                 context.Writer.WritePropertyName("ModelRegisterSettings");

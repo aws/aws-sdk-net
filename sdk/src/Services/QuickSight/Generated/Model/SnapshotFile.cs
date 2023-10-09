@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FormatType. 
         /// <para>
-        /// The format of the snapshot file to be generated. You can choose between <code>CSV</code>
-        /// or <code>PDF</code>.
+        /// The format of the snapshot file to be generated. You can choose between <code>CSV</code>,
+        /// <code>Excel</code>, or <code>PDF</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,10 +63,10 @@ namespace Amazon.QuickSight.Model
         /// A list of <code>SnapshotFileSheetSelection</code> objects that contain information
         /// on the dashboard sheet that is exported. These objects provide information about the
         /// snapshot artifacts that are generated during the job. This structure can hold a maximum
-        /// of 5 CSV configurations or 1 configuration for PDF.
+        /// of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<SnapshotFileSheetSelection> SheetSelections
         {
             get { return this._sheetSelections; }

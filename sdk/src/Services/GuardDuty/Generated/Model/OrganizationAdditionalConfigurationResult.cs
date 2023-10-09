@@ -39,19 +39,33 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Describes how The status of the additional configuration that are configured for the
-        /// member accounts within the organization.
+        /// Describes the status of the additional configuration that is configured for the member
+        /// accounts within the organization. One of the following values is the status for the
+        /// entire organization:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NEW</code>: Indicates that when a new account joins the organization, they
+        /// will have the additional configuration enabled automatically. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code>: Indicates that all accounts in the organization have the additional
+        /// configuration enabled automatically. This includes <code>NEW</code> accounts that
+        /// join the organization and accounts that may have been suspended or removed from the
+        /// organization in GuardDuty.
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured
-        /// for only the new accounts when they join the organization.
+        /// It may take up to 24 hours to update the configuration for all the member accounts.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured
-        /// for the accounts when they join the organization.
+        ///  <code>NONE</code>: Indicates that the additional configuration will not be automatically
+        /// enabled for any account in the organization. The administrator must manage the additional
+        /// configuration for each account individually.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OrgFeatureStatus AutoEnable
         {

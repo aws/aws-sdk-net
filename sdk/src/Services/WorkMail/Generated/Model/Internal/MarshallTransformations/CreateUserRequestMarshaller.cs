@@ -73,6 +73,24 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
+                if(publicRequest.IsSetFirstName())
+                {
+                    context.Writer.WritePropertyName("FirstName");
+                    context.Writer.Write(publicRequest.FirstName);
+                }
+
+                if(publicRequest.IsSetHiddenFromGlobalAddressList())
+                {
+                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
+                }
+
+                if(publicRequest.IsSetLastName())
+                {
+                    context.Writer.WritePropertyName("LastName");
+                    context.Writer.Write(publicRequest.LastName);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
@@ -89,6 +107,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Password");
                     context.Writer.Write(publicRequest.Password);
+                }
+
+                if(publicRequest.IsSetRole())
+                {
+                    context.Writer.WritePropertyName("Role");
+                    context.Writer.Write(publicRequest.Role);
                 }
 
                 writer.WriteObjectEnd();

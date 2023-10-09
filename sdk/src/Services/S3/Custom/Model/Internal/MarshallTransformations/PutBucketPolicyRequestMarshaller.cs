@@ -61,7 +61,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.ContentStream = new MemoryStream(Encoding.UTF8.GetBytes(putBucketPolicyRequest.Policy));
 
-            ChecksumUtils.SetRequestChecksum(request, putBucketPolicyRequest.ChecksumAlgorithm);
+            ChecksumUtils.SetChecksumData(request, putBucketPolicyRequest.ChecksumAlgorithm);
 
             return request;
         }

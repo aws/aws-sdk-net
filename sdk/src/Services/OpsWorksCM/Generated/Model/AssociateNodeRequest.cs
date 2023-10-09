@@ -75,8 +75,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// Engine attributes used for associating the node. 
         /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b>
-        /// 
+        ///  
+        /// <para>
+        ///  <b>Attributes accepted in a AssociateNode request for Chef</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -88,8 +89,9 @@ namespace Amazon.OpsWorksCM.Model
         ///  <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required
         /// for the <code>chef-client</code> agent to access the Chef API. 
         /// </para>
-        ///  </li> </ul> <p class="title"> <b>Attributes accepted in a AssociateNode request for
-        /// Puppet</b> 
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Attributes accepted in a AssociateNode request for Puppet</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

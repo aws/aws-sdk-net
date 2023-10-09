@@ -256,7 +256,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
         }
 
-        [Fact]
+        [Fact(Skip = "Excluding flaky Route53 delegation set test.")]
         [Trait(CategoryAttribute,"Route53")]
         public void DelegationSetTests()
         {

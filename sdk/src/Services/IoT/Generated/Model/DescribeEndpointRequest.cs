@@ -67,6 +67,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint
         /// type to avoid issues related to the widespread distrust of Symantec certificate authorities.
+        /// ATS Signed Certificates are more secure and are trusted by most popular browsers.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

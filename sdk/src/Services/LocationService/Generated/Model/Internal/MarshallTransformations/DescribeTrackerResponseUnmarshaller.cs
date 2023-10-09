@@ -69,6 +69,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     response.EventBridgeEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyEnableGeospatialQueries", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.KmsKeyEnableGeospatialQueries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

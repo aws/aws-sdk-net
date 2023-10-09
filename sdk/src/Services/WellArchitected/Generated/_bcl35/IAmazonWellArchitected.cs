@@ -535,6 +535,170 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  CreateReviewTemplate
+
+
+        /// <summary>
+        /// Create a review template.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include or gather personal identifiable information (PII) of end users or other
+        /// identifiable individuals in or via your review templates. If your review template
+        /// or those shared with you and used in your account do include or collect PII you are
+        /// responsible for: ensuring that the included PII is processed in accordance with applicable
+        /// law, providing adequate privacy notices, and obtaining necessary consents for processing
+        /// such data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReviewTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate">REST API Reference for CreateReviewTemplate Operation</seealso>
+        CreateReviewTemplateResponse CreateReviewTemplate(CreateReviewTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReviewTemplate operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReviewTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate">REST API Reference for CreateReviewTemplate Operation</seealso>
+        IAsyncResult BeginCreateReviewTemplate(CreateReviewTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReviewTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateReviewTemplateResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate">REST API Reference for CreateReviewTemplate Operation</seealso>
+        CreateReviewTemplateResponse EndCreateReviewTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTemplateShare
+
+
+        /// <summary>
+        /// Create a review template share.
+        /// 
+        ///  
+        /// <para>
+        /// The owner of a review template can share it with other Amazon Web Services accounts,
+        /// users, an organization, and organizational units (OUs) in the same Amazon Web Services
+        /// Region. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Shared access to a review template is not removed until the review template share
+        /// invitation is deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you share a review template with an organization or OU, all accounts in the organization
+        /// or OU are granted access to the review template.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your review template with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your review template available to those other accounts.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplateShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateTemplateShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare">REST API Reference for CreateTemplateShare Operation</seealso>
+        CreateTemplateShareResponse CreateTemplateShare(CreateTemplateShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTemplateShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplateShare operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTemplateShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare">REST API Reference for CreateTemplateShare Operation</seealso>
+        IAsyncResult BeginCreateTemplateShare(CreateTemplateShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTemplateShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTemplateShare.</param>
+        /// 
+        /// <returns>Returns a  CreateTemplateShareResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare">REST API Reference for CreateTemplateShare Operation</seealso>
+        CreateTemplateShareResponse EndCreateTemplateShare(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateWorkload
 
 
@@ -562,7 +726,28 @@ namespace Amazon.WellArchitected
         /// You also must specify <code>ReviewOwner</code>, even though the parameter is listed
         /// as not being required in the following section. 
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// When creating a workload using a review template, you must have the following IAM
+        /// permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>wellarchitected:GetReviewTemplate</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wellarchitected:GetReviewTemplateAnswer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wellarchitected:ListReviewTemplateAnswers</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wellarchitected:GetReviewTemplateLensReview</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkload service method.</param>
         /// 
@@ -980,6 +1165,140 @@ namespace Amazon.WellArchitected
         /// <returns>Returns a  DeleteProfileShareResult from WellArchitected.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare">REST API Reference for DeleteProfileShare Operation</seealso>
         DeleteProfileShareResponse EndDeleteProfileShare(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteReviewTemplate
+
+
+        /// <summary>
+        /// Delete a review template.
+        /// 
+        ///  
+        /// <para>
+        /// Only the owner of a review template can delete it.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the review template is deleted, Amazon Web Services accounts, users, organizations,
+        /// and organizational units (OUs) that you shared the review template with will no longer
+        /// be able to apply it to new workloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReviewTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate">REST API Reference for DeleteReviewTemplate Operation</seealso>
+        DeleteReviewTemplateResponse DeleteReviewTemplate(DeleteReviewTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReviewTemplate operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReviewTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate">REST API Reference for DeleteReviewTemplate Operation</seealso>
+        IAsyncResult BeginDeleteReviewTemplate(DeleteReviewTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReviewTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteReviewTemplateResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate">REST API Reference for DeleteReviewTemplate Operation</seealso>
+        DeleteReviewTemplateResponse EndDeleteReviewTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTemplateShare
+
+
+        /// <summary>
+        /// Delete a review template share.
+        /// 
+        ///  
+        /// <para>
+        /// After the review template share is deleted, Amazon Web Services accounts, users, organizations,
+        /// and organizational units (OUs) that you shared the review template with will no longer
+        /// be able to apply it to new workloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTemplateShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare">REST API Reference for DeleteTemplateShare Operation</seealso>
+        DeleteTemplateShareResponse DeleteTemplateShare(DeleteTemplateShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTemplateShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplateShare operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTemplateShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare">REST API Reference for DeleteTemplateShare Operation</seealso>
+        IAsyncResult BeginDeleteTemplateShare(DeleteTemplateShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTemplateShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTemplateShare.</param>
+        /// 
+        /// <returns>Returns a  DeleteTemplateShareResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare">REST API Reference for DeleteTemplateShare Operation</seealso>
+        DeleteTemplateShareResponse EndDeleteTemplateShare(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1806,6 +2125,171 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  GetReviewTemplate
+
+
+        /// <summary>
+        /// Get review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate">REST API Reference for GetReviewTemplate Operation</seealso>
+        GetReviewTemplateResponse GetReviewTemplate(GetReviewTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplate operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReviewTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate">REST API Reference for GetReviewTemplate Operation</seealso>
+        IAsyncResult BeginGetReviewTemplate(GetReviewTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReviewTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetReviewTemplateResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate">REST API Reference for GetReviewTemplate Operation</seealso>
+        GetReviewTemplateResponse EndGetReviewTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetReviewTemplateAnswer
+
+
+        /// <summary>
+        /// Get review template answer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplateAnswer service method.</param>
+        /// 
+        /// <returns>The response from the GetReviewTemplateAnswer service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer">REST API Reference for GetReviewTemplateAnswer Operation</seealso>
+        GetReviewTemplateAnswerResponse GetReviewTemplateAnswer(GetReviewTemplateAnswerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReviewTemplateAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplateAnswer operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReviewTemplateAnswer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer">REST API Reference for GetReviewTemplateAnswer Operation</seealso>
+        IAsyncResult BeginGetReviewTemplateAnswer(GetReviewTemplateAnswerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReviewTemplateAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReviewTemplateAnswer.</param>
+        /// 
+        /// <returns>Returns a  GetReviewTemplateAnswerResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer">REST API Reference for GetReviewTemplateAnswer Operation</seealso>
+        GetReviewTemplateAnswerResponse EndGetReviewTemplateAnswer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetReviewTemplateLensReview
+
+
+        /// <summary>
+        /// Get a lens review associated with a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplateLensReview service method.</param>
+        /// 
+        /// <returns>The response from the GetReviewTemplateLensReview service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview">REST API Reference for GetReviewTemplateLensReview Operation</seealso>
+        GetReviewTemplateLensReviewResponse GetReviewTemplateLensReview(GetReviewTemplateLensReviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReviewTemplateLensReview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReviewTemplateLensReview operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReviewTemplateLensReview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview">REST API Reference for GetReviewTemplateLensReview Operation</seealso>
+        IAsyncResult BeginGetReviewTemplateLensReview(GetReviewTemplateLensReviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReviewTemplateLensReview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReviewTemplateLensReview.</param>
+        /// 
+        /// <returns>Returns a  GetReviewTemplateLensReviewResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview">REST API Reference for GetReviewTemplateLensReview Operation</seealso>
+        GetReviewTemplateLensReviewResponse EndGetReviewTemplateLensReview(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetWorkload
 
 
@@ -2605,11 +3089,125 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ListReviewTemplateAnswers
+
+
+        /// <summary>
+        /// List the answers of a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReviewTemplateAnswers service method.</param>
+        /// 
+        /// <returns>The response from the ListReviewTemplateAnswers service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers">REST API Reference for ListReviewTemplateAnswers Operation</seealso>
+        ListReviewTemplateAnswersResponse ListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReviewTemplateAnswers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReviewTemplateAnswers operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReviewTemplateAnswers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers">REST API Reference for ListReviewTemplateAnswers Operation</seealso>
+        IAsyncResult BeginListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReviewTemplateAnswers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReviewTemplateAnswers.</param>
+        /// 
+        /// <returns>Returns a  ListReviewTemplateAnswersResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers">REST API Reference for ListReviewTemplateAnswers Operation</seealso>
+        ListReviewTemplateAnswersResponse EndListReviewTemplateAnswers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListReviewTemplates
+
+
+        /// <summary>
+        /// List review templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReviewTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListReviewTemplates service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates">REST API Reference for ListReviewTemplates Operation</seealso>
+        ListReviewTemplatesResponse ListReviewTemplates(ListReviewTemplatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReviewTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReviewTemplates operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReviewTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates">REST API Reference for ListReviewTemplates Operation</seealso>
+        IAsyncResult BeginListReviewTemplates(ListReviewTemplatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReviewTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReviewTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListReviewTemplatesResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates">REST API Reference for ListReviewTemplates Operation</seealso>
+        ListReviewTemplatesResponse EndListReviewTemplates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListShareInvitations
 
 
         /// <summary>
-        /// List the workload invitations.
+        /// List the share invitations.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>,
+        /// and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that
+        /// matches your <code>ShareResourceType</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListShareInvitations service method.</param>
         /// 
@@ -2665,7 +3263,8 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+        /// or review template ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2706,6 +3305,61 @@ namespace Amazon.WellArchitected
         /// <returns>Returns a  ListTagsForResourceResult from WellArchitected.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTemplateShares
+
+
+        /// <summary>
+        /// List review template shares.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateShares service method.</param>
+        /// 
+        /// <returns>The response from the ListTemplateShares service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares">REST API Reference for ListTemplateShares Operation</seealso>
+        ListTemplateSharesResponse ListTemplateShares(ListTemplateSharesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTemplateShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTemplateShares operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTemplateShares
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares">REST API Reference for ListTemplateShares Operation</seealso>
+        IAsyncResult BeginListTemplateShares(ListTemplateSharesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTemplateShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTemplateShares.</param>
+        /// 
+        /// <returns>Returns a  ListTemplateSharesResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares">REST API Reference for ListTemplateShares Operation</seealso>
+        ListTemplateSharesResponse EndListTemplateShares(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2824,7 +3478,8 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+        /// or review template ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2876,7 +3531,8 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN,
+        /// or review template ARN.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3154,6 +3810,180 @@ namespace Amazon.WellArchitected
         /// <returns>Returns a  UpdateProfileResult from WellArchitected.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         UpdateProfileResponse EndUpdateProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateReviewTemplate
+
+
+        /// <summary>
+        /// Update a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReviewTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate">REST API Reference for UpdateReviewTemplate Operation</seealso>
+        UpdateReviewTemplateResponse UpdateReviewTemplate(UpdateReviewTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplate operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReviewTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate">REST API Reference for UpdateReviewTemplate Operation</seealso>
+        IAsyncResult BeginUpdateReviewTemplate(UpdateReviewTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateReviewTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReviewTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateReviewTemplateResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate">REST API Reference for UpdateReviewTemplate Operation</seealso>
+        UpdateReviewTemplateResponse EndUpdateReviewTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateReviewTemplateAnswer
+
+
+        /// <summary>
+        /// Update a review template answer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplateAnswer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReviewTemplateAnswer service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer">REST API Reference for UpdateReviewTemplateAnswer Operation</seealso>
+        UpdateReviewTemplateAnswerResponse UpdateReviewTemplateAnswer(UpdateReviewTemplateAnswerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReviewTemplateAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplateAnswer operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReviewTemplateAnswer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer">REST API Reference for UpdateReviewTemplateAnswer Operation</seealso>
+        IAsyncResult BeginUpdateReviewTemplateAnswer(UpdateReviewTemplateAnswerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateReviewTemplateAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReviewTemplateAnswer.</param>
+        /// 
+        /// <returns>Returns a  UpdateReviewTemplateAnswerResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer">REST API Reference for UpdateReviewTemplateAnswer Operation</seealso>
+        UpdateReviewTemplateAnswerResponse EndUpdateReviewTemplateAnswer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateReviewTemplateLensReview
+
+
+        /// <summary>
+        /// Update a lens review associated with a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplateLensReview service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReviewTemplateLensReview service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview">REST API Reference for UpdateReviewTemplateLensReview Operation</seealso>
+        UpdateReviewTemplateLensReviewResponse UpdateReviewTemplateLensReview(UpdateReviewTemplateLensReviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReviewTemplateLensReview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReviewTemplateLensReview operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReviewTemplateLensReview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview">REST API Reference for UpdateReviewTemplateLensReview Operation</seealso>
+        IAsyncResult BeginUpdateReviewTemplateLensReview(UpdateReviewTemplateLensReviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateReviewTemplateLensReview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReviewTemplateLensReview.</param>
+        /// 
+        /// <returns>Returns a  UpdateReviewTemplateLensReviewResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview">REST API Reference for UpdateReviewTemplateLensReview Operation</seealso>
+        UpdateReviewTemplateLensReviewResponse EndUpdateReviewTemplateLensReview(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3451,6 +4281,64 @@ namespace Amazon.WellArchitected
         /// <returns>Returns a  UpgradeProfileVersionResult from WellArchitected.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion">REST API Reference for UpgradeProfileVersion Operation</seealso>
         UpgradeProfileVersionResponse EndUpgradeProfileVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpgradeReviewTemplateLensReview
+
+
+        /// <summary>
+        /// Upgrade the lens review of a review template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeReviewTemplateLensReview service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeReviewTemplateLensReview service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview">REST API Reference for UpgradeReviewTemplateLensReview Operation</seealso>
+        UpgradeReviewTemplateLensReviewResponse UpgradeReviewTemplateLensReview(UpgradeReviewTemplateLensReviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeReviewTemplateLensReview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeReviewTemplateLensReview operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpgradeReviewTemplateLensReview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview">REST API Reference for UpgradeReviewTemplateLensReview Operation</seealso>
+        IAsyncResult BeginUpgradeReviewTemplateLensReview(UpgradeReviewTemplateLensReviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpgradeReviewTemplateLensReview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpgradeReviewTemplateLensReview.</param>
+        /// 
+        /// <returns>Returns a  UpgradeReviewTemplateLensReviewResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview">REST API Reference for UpgradeReviewTemplateLensReview Operation</seealso>
+        UpgradeReviewTemplateLensReviewResponse EndUpgradeReviewTemplateLensReview(IAsyncResult asyncResult);
 
         #endregion
                 

@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _lastUpdatedTime;
         private OidcOptions _oidcOptions;
         private string _policyReferenceName;
+        private VerifiedAccessSseSpecificationResponse _sseSpecification;
         private List<Tag> _tags = new List<Tag>();
         private TrustProviderType _trustProviderType;
         private UserTrustProviderType _userTrustProviderType;
@@ -169,6 +170,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPolicyReferenceName()
         {
             return this._policyReferenceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseSpecification. 
+        /// <para>
+        ///  Describes the options in use for server side encryption. 
+        /// </para>
+        /// </summary>
+        public VerifiedAccessSseSpecificationResponse SseSpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SseSpecification property is set
+        internal bool IsSetSseSpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

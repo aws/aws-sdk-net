@@ -77,6 +77,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
+                }
+
                 if(publicRequest.IsSetWorkloadId())
                 {
                     context.Writer.WritePropertyName("WorkloadId");

@@ -41,7 +41,9 @@ namespace Amazon.ACMPCA.Model
     /// action and revoke them with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
     /// action.
     /// </para>
-    ///  <p class="title"> <b>About Permissions</b> 
+    ///  
+    /// <para>
+    ///  <b>About Permissions</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

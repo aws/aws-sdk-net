@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         ///  The API request to batch create delegations in Audit Manager. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public List<CreateDelegationRequest> CreateDelegationRequests
         {
             get { return this._createDelegationRequests; }

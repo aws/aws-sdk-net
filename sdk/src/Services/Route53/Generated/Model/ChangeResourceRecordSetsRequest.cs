@@ -106,8 +106,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UPSERT</code>: If a resource set exists Route 53 updates it with the values
-    /// in the request. 
+    ///  <code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource
+    /// set exists Route 53 updates it with the values in the request. 
     /// </para>
     ///  </li> </ul> 
     /// <para>

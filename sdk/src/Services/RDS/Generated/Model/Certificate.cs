@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CustomerOverride. 
         /// <para>
-        /// Whether there is an override for the default certificate identifier.
+        /// Indicates whether there is an override for the default certificate identifier.
         /// </para>
         /// </summary>
         public bool CustomerOverride

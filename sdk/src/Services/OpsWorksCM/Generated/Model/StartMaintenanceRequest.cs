@@ -53,8 +53,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// Engine attributes that are specific to the server on which you want to run maintenance.
         /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b>
-        /// 
+        ///  
+        /// <para>
+        ///  <b>Attributes accepted in a StartMaintenance request for Chef</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

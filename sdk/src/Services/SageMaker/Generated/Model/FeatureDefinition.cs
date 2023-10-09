@@ -35,8 +35,62 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class FeatureDefinition
     {
+        private CollectionConfig _collectionConfig;
+        private CollectionType _collectionType;
         private string _featureName;
         private FeatureType _featureType;
+
+        /// <summary>
+        /// Gets and sets the property CollectionConfig. 
+        /// <para>
+        /// Configuration for your collection.
+        /// </para>
+        /// </summary>
+        public CollectionConfig CollectionConfig
+        {
+            get { return this._collectionConfig; }
+            set { this._collectionConfig = value; }
+        }
+
+        // Check to see if CollectionConfig property is set
+        internal bool IsSetCollectionConfig()
+        {
+            return this._collectionConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollectionType. 
+        /// <para>
+        /// A grouping of elements where each element within the collection must have the same
+        /// feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>List</code>: An ordered collection of elements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Set</code>: An unordered collection of unique elements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Vector</code>: A specialized list that represents a fixed-size array of elements.
+        /// The vector dimension is determined by you. Must have elements with fractional feature
+        /// types. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CollectionType CollectionType
+        {
+            get { return this._collectionType; }
+            set { this._collectionType = value; }
+        }
+
+        // Check to see if CollectionType property is set
+        internal bool IsSetCollectionType()
+        {
+            return this._collectionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FeatureName. 

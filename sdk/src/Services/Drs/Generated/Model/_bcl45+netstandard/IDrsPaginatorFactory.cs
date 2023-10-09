@@ -71,6 +71,11 @@ namespace Amazon.Drs.Model
         IListExtensibleSourceServersPaginator ListExtensibleSourceServers(ListExtensibleSourceServersRequest request);
 
         /// <summary>
+        /// Paginator for ListLaunchActions operation
+        ///</summary>
+        IListLaunchActionsPaginator ListLaunchActions(ListLaunchActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListStagingAccounts operation
         ///</summary>
         IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request);

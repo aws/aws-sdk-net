@@ -80,6 +80,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptionData);
             }
 
+            if(requestObject.IsSetIncludeFillerNalUnits())
+            {
+                context.Writer.WritePropertyName("includeFillerNalUnits");
+                context.Writer.Write(requestObject.IncludeFillerNalUnits);
+            }
+
             if(requestObject.IsSetInputLossAction())
             {
                 context.Writer.WritePropertyName("inputLossAction");

@@ -35,7 +35,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// This operation can be called only from the organization's management account or by
+    /// a member account that is a delegated administrator for an Amazon Web Services service.
     /// </para>
     /// </summary>
     public partial class UpdatePolicyRequest : AmazonOrganizationsRequest
@@ -50,8 +51,8 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// If provided, the new content for the policy. The text must be correctly formatted
         /// JSON that complies with the syntax for the policy's type. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-        /// Control Policy Syntax</a> in the <i>Organizations User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP
+        /// syntax</a> in the <i>Organizations User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000000)]

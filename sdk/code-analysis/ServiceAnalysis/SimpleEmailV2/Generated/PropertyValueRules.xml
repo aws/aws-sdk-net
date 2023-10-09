@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CancelExportJobRequest.JobId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.CreateCustomVerificationEmailTemplateRequest.TemplateName</property>
     <min>1</min>
   </property-value-rule>
@@ -23,6 +27,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.CreateEmailTemplateRequest.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateExportJobResponse.JobId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -79,12 +87,30 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetExportJobRequest.JobId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetExportJobResponse.JobId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.GetImportJobRequest.JobId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.GetImportJobResponse.JobId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetMessageInsightsResponse.FromEmailAddress</property>
+    <min>1</min>
+    <max>320</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetMessageInsightsResponse.Subject</property>
+    <min>1</min>
+    <max>998</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutAccountDetailsRequest.UseCaseDescription</property>
@@ -187,7 +213,20 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.EmailInsights.Destination</property>
+    <min>1</min>
+    <max>320</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.EmailTemplateMetadata.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ExportDestination.S3Url</property>
+    <pattern>^s3:\/\/([^\/]+)\/(.*?([^\/]+)\/?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ExportJobSummary.JobId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -201,6 +240,11 @@
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ImportJobSummary.JobId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.MessageInsightsDataSource.MaxResults</property>
+    <min>1</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.MetricDataError.Id</property>

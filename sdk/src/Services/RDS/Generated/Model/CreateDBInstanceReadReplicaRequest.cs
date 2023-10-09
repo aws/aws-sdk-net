@@ -40,8 +40,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code>
-    /// operation to create a DB instance for an Aurora DB cluster.
+    /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
+    /// DB cluster, use the <code>CreateDBInstance</code> operation.
     /// </para>
     ///  
     /// <para>
@@ -144,16 +144,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether minor engine upgrades are applied automatically to
-        /// the read replica during the maintenance window.
+        /// Specifies whether to automatically apply minor engine upgrades to the read replica
+        /// during the maintenance window.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         ///  
         /// <para>
-        /// Default: Inherits from the source DB instance
+        /// Default: Inherits the value from the source DB instance.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -198,8 +198,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the read replica to snapshots
-        /// of the read replica. By default, tags are not copied.
+        /// Specifies whether to copy all tags from the read replica to snapshots of the read
+        /// replica. By default, tags aren't copied.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -240,7 +240,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is required for RDS Custom.
+        /// This setting is required for RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string CustomIamInstanceProfile
@@ -266,7 +266,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Inherits from the source DB instance.
+        /// Default: Inherits the value from the source DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -308,15 +308,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-        /// uses the <code>DBParameterGroup</code> of source DB instance for a same Region read
-        /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine
+        /// If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
+        /// uses the <code>DBParameterGroup</code> of the source DB instance for a same Region
+        /// read replica, or the default <code>DBParameterGroup</code> for the specified DB engine
         /// for a cross-Region read replica.
         /// </para>
         ///  
         /// <para>
-        /// Specifying a parameter group for this operation is only supported for MySQL and Oracle
-        /// DB instances. It isn't supported for RDS Custom.
+        /// Specifying a parameter group for this operation is only supported for MySQL DB instances
+        /// for cross-Region read replicas and for Oracle DB instances. It isn't supported for
+        /// MySQL DB instances for same Region read replicas or for RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -328,11 +329,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// First character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -351,9 +352,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// Specifies a DB subnet group for the DB instance. The new DB instance is created in
-        /// the VPC associated with the DB subnet group. If no DB subnet group is specified, then
-        /// the new DB instance isn't created in a VPC.
+        /// A DB subnet group for the DB instance. The new DB instance is created in the VPC associated
+        /// with the DB subnet group. If no DB subnet group is specified, then the new DB instance
+        /// isn't created in a VPC.
         /// </para>
         ///  
         /// <para>
@@ -361,7 +362,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the name of an existing DBSubnetGroup.
+        /// If supplied, must match the name of an existing DB subnet group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -371,7 +372,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// All read replicas in one Amazon Web Services Region that are created from the same
-        /// source DB instance must either:&gt;
+        /// source DB instance must either:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -403,9 +404,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB instance has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// Specifies whether to enable deletion protection for the DB instance. The database
+        /// can't be deleted when deletion protection is enabled. By default, deletion protection
+        /// isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
@@ -435,7 +436,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string Domain
@@ -538,11 +539,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        /// The name of the IAM role to be used when making API calls to the Directory Service.
+        /// The name of the IAM role to use when making API calls to the Directory Service.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string DomainIAMRoleName
@@ -601,7 +602,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -619,8 +620,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCustomerOwnedIp. 
         /// <para>
-        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
-        /// RDS on Outposts read replica.
+        /// Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts
+        /// read replica.
         /// </para>
         ///  
         /// <para>
@@ -655,8 +656,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -666,7 +667,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -684,7 +685,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// A value that indicates whether to enable Performance Insights for the read replica.
+        /// Specifies whether to enable Performance Insights for the read replica.
         /// </para>
         ///  
         /// <para>
@@ -693,7 +694,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -711,8 +712,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance.
+        /// The amount of Provisioned IOPS (input/output operations per second) to initially allocate
+        /// for the DB instance.
         /// </para>
         /// </summary>
         public int Iops
@@ -805,21 +806,25 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringInterval. 
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
-        /// for the read replica. To disable collecting Enhanced Monitoring metrics, specify 0.
-        /// The default is 0.
+        /// for the read replica. To disable collection of Enhanced Monitoring metrics, specify
+        /// <code>0</code>. The default is <code>0</code>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
-        /// to a value other than 0.
+        /// If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code>
+        /// to a value other than <code>0</code>.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         ///  
         /// <para>
         /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>0</code> 
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -850,7 +855,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -868,7 +873,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates whether the read replica is in a Multi-AZ deployment.
+        /// Specifies whether the read replica is in a Multi-AZ deployment.
         /// </para>
         ///  
         /// <para>
@@ -879,7 +884,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -901,7 +906,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -938,8 +943,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// The option group the DB instance is associated with. If omitted, the option group
-        /// associated with the source instance or cluster is used.
+        /// The option group to associate the DB instance with. If not specified, RDS uses the
+        /// option group associated with the source DB instance or cluster.
         /// </para>
         ///  <note> 
         /// <para>
@@ -947,7 +952,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -982,7 +987,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1000,49 +1005,38 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
         /// <para>
-        /// The number of days to retain Performance Insights data. The default is 7 days. The
-        /// following values are valid:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 7
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 731
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, the following values are valid:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 93 (3 months * 31)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 341 (11 months * 31)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 589 (19 months * 31)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 731
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you specify a retention period such as 94, which isn't a valid value, RDS issues
-        /// an error.
+        /// The number of days to retain Performance Insights data.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
+        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
+        /// (19 months * 31)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>731</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>7</code> days
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a retention period that isn't valid, such as <code>94</code>, Amazon
+        /// RDS returns an error.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1064,11 +1058,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Inherits from the source DB instance
+        /// Valid Values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Default: Inherits the value from the source DB instance.
         /// </para>
         /// </summary>
         public int Port
@@ -1171,7 +1165,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string PreSignedUrl
@@ -1194,7 +1188,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public List<ProcessorFeature> ProcessorFeatures
@@ -1212,7 +1206,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible.
+        /// Specifies whether the DB instance is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1399,7 +1393,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom or Amazon Aurora.
+        /// This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.
         /// </para>
         /// </summary>
         public int StorageThroughput
@@ -1417,11 +1411,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the read replica.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// The storage type to associate with the read replica.
         /// </para>
         ///  
         /// <para>
@@ -1430,8 +1420,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>gp2</code> 
+        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise,
+        /// <code>gp2</code>.
         /// </para>
         /// </summary>
         public string StorageType
@@ -1464,12 +1458,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseDefaultProcessorFeatures. 
         /// <para>
-        /// A value that indicates whether the DB instance class of the DB instance uses its default
-        /// processor features.
+        /// Specifies whether the DB instance class of the DB instance uses its default processor
+        /// features.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public bool UseDefaultProcessorFeatures
@@ -1491,7 +1485,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         ///  
         /// <para>

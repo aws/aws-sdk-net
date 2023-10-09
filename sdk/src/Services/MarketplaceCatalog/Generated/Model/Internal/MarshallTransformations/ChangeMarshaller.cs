@@ -63,6 +63,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Details);
             }
 
+            if(requestObject.IsSetDetailsDocument())
+            {
+                context.Writer.WritePropertyName("DetailsDocument");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.DetailsDocument);
+            }
+
             if(requestObject.IsSetEntity())
             {
                 context.Writer.WritePropertyName("Entity");

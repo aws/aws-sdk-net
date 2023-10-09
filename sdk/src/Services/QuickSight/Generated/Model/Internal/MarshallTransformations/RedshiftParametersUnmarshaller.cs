@@ -82,6 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Host = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IAMParameters", targetDepth))
+                {
+                    var unmarshaller = RedshiftIAMParametersUnmarshaller.Instance;
+                    unmarshalledObject.IAMParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

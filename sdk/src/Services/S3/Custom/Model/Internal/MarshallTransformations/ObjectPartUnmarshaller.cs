@@ -84,7 +84,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Size", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = LongUnmarshaller.Instance;
                         unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }

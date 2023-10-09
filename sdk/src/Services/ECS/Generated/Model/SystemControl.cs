@@ -82,7 +82,22 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
+        /// The namespaced kernel parameter to set a <code>value</code> for.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+        /// | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>,
+        /// and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// All of these values are supported by Fargate.
         /// </para>
         /// </summary>
         public string Value

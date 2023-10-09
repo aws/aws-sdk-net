@@ -44,6 +44,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SSOOIDC.Net45", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.BearerTokenAuthTest.Net45", "test\Services\BearerTokenAuthTest\AWSSDK.BearerTokenAuthTest.Net45.csproj", "{033B52EA-A8ED-4FFD-9F27-027DA720EC2A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatch.Net45", "src\Services\CloudWatch\AWSSDK.CloudWatch.Net45.csproj", "{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,10 @@ Global
 		{033B52EA-A8ED-4FFD-9F27-027DA720EC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{033B52EA-A8ED-4FFD-9F27-027DA720EC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{033B52EA-A8ED-4FFD-9F27-027DA720EC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +151,7 @@ Global
 		{35CAE7E9-0F2B-4F64-A8A7-D47BE84B459B} = {5AB643DB-79E0-47A4-BCFF-FCB51B100447}
 		{AD3F4E3E-C215-47DA-B14D-01DEB04A8F27} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 		{033B52EA-A8ED-4FFD-9F27-027DA720EC2A} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
+		{4608625B-B089-49B0-A3C3-F18DC5FFCEA5} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBAD3467-3B24-41C1-898E-1B34BB9931DE}

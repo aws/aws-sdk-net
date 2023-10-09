@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelPackageContainerDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalS3DataSource())
+            {
+                context.Writer.WritePropertyName("AdditionalS3DataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AdditionalS3DataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdditionalS3DataSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContainerHostname())
             {
                 context.Writer.WritePropertyName("ContainerHostname");

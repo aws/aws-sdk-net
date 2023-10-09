@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// 
+    /// Describes the replication configuration for a specific file system.
     /// </summary>
     public partial class ReplicationConfigurationDescription
     {

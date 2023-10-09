@@ -404,6 +404,61 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  DeleteLaunchAction
+
+
+        /// <summary>
+        /// Deletes a resource launch action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLaunchAction service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
+        DeleteLaunchActionResponse DeleteLaunchAction(DeleteLaunchActionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLaunchAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchAction operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLaunchAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
+        IAsyncResult BeginDeleteLaunchAction(DeleteLaunchActionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLaunchAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLaunchAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteLaunchActionResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
+        DeleteLaunchActionResponse EndDeleteLaunchAction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteLaunchConfigurationTemplate
 
 
@@ -1578,6 +1633,61 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  ListLaunchActions
+
+
+        /// <summary>
+        /// Lists resource launch actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLaunchActions service method.</param>
+        /// 
+        /// <returns>The response from the ListLaunchActions service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
+        ListLaunchActionsResponse ListLaunchActions(ListLaunchActionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLaunchActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLaunchActions operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLaunchActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
+        IAsyncResult BeginListLaunchActions(ListLaunchActionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLaunchActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLaunchActions.</param>
+        /// 
+        /// <returns>Returns a  ListLaunchActionsResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
+        ListLaunchActionsResponse EndListLaunchActions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListStagingAccounts
 
 
@@ -1685,6 +1795,65 @@ namespace Amazon.Drs
         /// <returns>Returns a  ListTagsForResourceResult from Drs.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutLaunchAction
+
+
+        /// <summary>
+        /// Puts a resource launch action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLaunchAction service method.</param>
+        /// 
+        /// <returns>The response from the PutLaunchAction service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
+        PutLaunchActionResponse PutLaunchAction(PutLaunchActionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLaunchAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLaunchAction operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLaunchAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
+        IAsyncResult BeginPutLaunchAction(PutLaunchActionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutLaunchAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLaunchAction.</param>
+        /// 
+        /// <returns>Returns a  PutLaunchActionResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
+        PutLaunchActionResponse EndPutLaunchAction(IAsyncResult asyncResult);
 
         #endregion
         

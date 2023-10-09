@@ -76,6 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("headers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KafkaActionHeader, KafkaActionHeaderUnmarshaller>(KafkaActionHeaderUnmarshaller.Instance);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

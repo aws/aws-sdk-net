@@ -1347,6 +1347,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AudioChannelTag CS = new AudioChannelTag("CS");
         /// <summary>
+        /// Constant HI for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag HI = new AudioChannelTag("HI");
+        /// <summary>
         /// Constant L for AudioChannelTag
         /// </summary>
         public static readonly AudioChannelTag L = new AudioChannelTag("L");
@@ -1359,6 +1363,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AudioChannelTag LFE = new AudioChannelTag("LFE");
         /// <summary>
+        /// Constant LFE2 for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LFE2 = new AudioChannelTag("LFE2");
+        /// <summary>
         /// Constant LS for AudioChannelTag
         /// </summary>
         public static readonly AudioChannelTag LS = new AudioChannelTag("LS");
@@ -1366,6 +1374,22 @@ namespace Amazon.MediaConvert
         /// Constant LSD for AudioChannelTag
         /// </summary>
         public static readonly AudioChannelTag LSD = new AudioChannelTag("LSD");
+        /// <summary>
+        /// Constant LT for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LT = new AudioChannelTag("LT");
+        /// <summary>
+        /// Constant LW for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag LW = new AudioChannelTag("LW");
+        /// <summary>
+        /// Constant M for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag M = new AudioChannelTag("M");
+        /// <summary>
+        /// Constant NAR for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag NAR = new AudioChannelTag("NAR");
         /// <summary>
         /// Constant R for AudioChannelTag
         /// </summary>
@@ -1382,6 +1406,34 @@ namespace Amazon.MediaConvert
         /// Constant RSD for AudioChannelTag
         /// </summary>
         public static readonly AudioChannelTag RSD = new AudioChannelTag("RSD");
+        /// <summary>
+        /// Constant RSL for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RSL = new AudioChannelTag("RSL");
+        /// <summary>
+        /// Constant RSR for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RSR = new AudioChannelTag("RSR");
+        /// <summary>
+        /// Constant RT for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RT = new AudioChannelTag("RT");
+        /// <summary>
+        /// Constant RW for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag RW = new AudioChannelTag("RW");
+        /// <summary>
+        /// Constant TBC for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag TBC = new AudioChannelTag("TBC");
+        /// <summary>
+        /// Constant TBL for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag TBL = new AudioChannelTag("TBL");
+        /// <summary>
+        /// Constant TBR for AudioChannelTag
+        /// </summary>
+        public static readonly AudioChannelTag TBR = new AudioChannelTag("TBR");
         /// <summary>
         /// Constant TCS for AudioChannelTag
         /// </summary>
@@ -1460,6 +1512,10 @@ namespace Amazon.MediaConvert
         /// Constant EAC3_ATMOS for AudioCodec
         /// </summary>
         public static readonly AudioCodec EAC3_ATMOS = new AudioCodec("EAC3_ATMOS");
+        /// <summary>
+        /// Constant FLAC for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec FLAC = new AudioCodec("FLAC");
         /// <summary>
         /// Constant MP2 for AudioCodec
         /// </summary>
@@ -2104,6 +2160,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Av1BitDepth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1FilmGrainSynthesis.
+    /// </summary>
+    public class Av1FilmGrainSynthesis : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1FilmGrainSynthesis
+        /// </summary>
+        public static readonly Av1FilmGrainSynthesis DISABLED = new Av1FilmGrainSynthesis("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Av1FilmGrainSynthesis
+        /// </summary>
+        public static readonly Av1FilmGrainSynthesis ENABLED = new Av1FilmGrainSynthesis("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1FilmGrainSynthesis(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1FilmGrainSynthesis FindValue(string value)
+        {
+            return FindValue<Av1FilmGrainSynthesis>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1FilmGrainSynthesis(string value)
         {
             return FindValue(value);
         }
@@ -4756,6 +4862,10 @@ namespace Amazon.MediaConvert
         /// Constant ALTERNATE_AUDIO_NOT_AUTO_SELECT for CmfcAudioTrackType
         /// </summary>
         public static readonly CmfcAudioTrackType ALTERNATE_AUDIO_NOT_AUTO_SELECT = new CmfcAudioTrackType("ALTERNATE_AUDIO_NOT_AUTO_SELECT");
+        /// <summary>
+        /// Constant AUDIO_ONLY_VARIANT_STREAM for CmfcAudioTrackType
+        /// </summary>
+        public static readonly CmfcAudioTrackType AUDIO_ONLY_VARIANT_STREAM = new CmfcAudioTrackType("AUDIO_ONLY_VARIANT_STREAM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -9367,6 +9477,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H264EndOfStreamMarkers.
+    /// </summary>
+    public class H264EndOfStreamMarkers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCLUDE for H264EndOfStreamMarkers
+        /// </summary>
+        public static readonly H264EndOfStreamMarkers INCLUDE = new H264EndOfStreamMarkers("INCLUDE");
+        /// <summary>
+        /// Constant SUPPRESS for H264EndOfStreamMarkers
+        /// </summary>
+        public static readonly H264EndOfStreamMarkers SUPPRESS = new H264EndOfStreamMarkers("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264EndOfStreamMarkers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264EndOfStreamMarkers FindValue(string value)
+        {
+            return FindValue<H264EndOfStreamMarkers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264EndOfStreamMarkers(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H264EntropyEncoding.
     /// </summary>
     public class H264EntropyEncoding : ConstantClass
@@ -10742,6 +10902,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265DynamicSubGop(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265EndOfStreamMarkers.
+    /// </summary>
+    public class H265EndOfStreamMarkers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCLUDE for H265EndOfStreamMarkers
+        /// </summary>
+        public static readonly H265EndOfStreamMarkers INCLUDE = new H265EndOfStreamMarkers("INCLUDE");
+        /// <summary>
+        /// Constant SUPPRESS for H265EndOfStreamMarkers
+        /// </summary>
+        public static readonly H265EndOfStreamMarkers SUPPRESS = new H265EndOfStreamMarkers("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265EndOfStreamMarkers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265EndOfStreamMarkers FindValue(string value)
+        {
+            return FindValue<H265EndOfStreamMarkers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265EndOfStreamMarkers(string value)
         {
             return FindValue(value);
         }
@@ -19709,6 +19919,76 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type S3StorageClass.
+    /// </summary>
+    public class S3StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_ARCHIVE for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass DEEP_ARCHIVE = new S3StorageClass("DEEP_ARCHIVE");
+        /// <summary>
+        /// Constant GLACIER for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant ONEZONE_IA for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass ONEZONE_IA = new S3StorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant REDUCED_REDUNDANCY for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass REDUCED_REDUNDANCY = new S3StorageClass("REDUCED_REDUNDANCY");
+        /// <summary>
+        /// Constant STANDARD for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD = new S3StorageClass("STANDARD");
+        /// <summary>
+        /// Constant STANDARD_IA for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD_IA = new S3StorageClass("STANDARD_IA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3StorageClass FindValue(string value)
+        {
+            return FindValue<S3StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3StorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SampleRangeConversion.
     /// </summary>
     public class SampleRangeConversion : ConstantClass
@@ -20314,6 +20594,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimedMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TsPtsOffset.
+    /// </summary>
+    public class TsPtsOffset : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for TsPtsOffset
+        /// </summary>
+        public static readonly TsPtsOffset AUTO = new TsPtsOffset("AUTO");
+        /// <summary>
+        /// Constant SECONDS for TsPtsOffset
+        /// </summary>
+        public static readonly TsPtsOffset SECONDS = new TsPtsOffset("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TsPtsOffset(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TsPtsOffset FindValue(string value)
+        {
+            return FindValue<TsPtsOffset>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TsPtsOffset(string value)
         {
             return FindValue(value);
         }

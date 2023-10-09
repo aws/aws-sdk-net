@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.PolicyEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sseSpecification", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessSseSpecificationResponseUnmarshaller.Instance;
+                        response.SseSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

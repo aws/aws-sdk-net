@@ -91,6 +91,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
         /// <summary>
@@ -105,6 +106,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -117,6 +119,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult);
 
         #endregion
@@ -157,6 +160,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHapgResponse CreateHapg(string label);
 
         /// <summary>
@@ -192,6 +196,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHapgResponse CreateHapg(CreateHapgRequest request);
 
         /// <summary>
@@ -206,6 +211,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginCreateHapg(CreateHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -218,6 +224,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  CreateHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHapgResponse EndCreateHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -271,6 +278,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHsmResponse CreateHsm(CreateHsmRequest request);
 
         /// <summary>
@@ -285,6 +293,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginCreateHsm(CreateHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -297,6 +306,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  CreateHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -336,6 +346,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request);
 
         /// <summary>
@@ -350,6 +361,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginCreateLunaClient(CreateLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -362,6 +374,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  CreateLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateLunaClientResponse EndCreateLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -401,6 +414,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHapgResponse DeleteHapg(string hapgArn);
 
         /// <summary>
@@ -435,6 +449,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHapgResponse DeleteHapg(DeleteHapgRequest request);
 
         /// <summary>
@@ -449,6 +464,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginDeleteHapg(DeleteHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -461,6 +477,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DeleteHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHapgResponse EndDeleteHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -501,6 +518,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHsmResponse DeleteHsm(string hsmArn);
 
         /// <summary>
@@ -536,6 +554,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHsmResponse DeleteHsm(DeleteHsmRequest request);
 
         /// <summary>
@@ -550,6 +569,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginDeleteHsm(DeleteHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -562,6 +582,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DeleteHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHsmResponse EndDeleteHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -601,6 +622,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteLunaClientResponse DeleteLunaClient(string clientArn);
 
         /// <summary>
@@ -635,6 +657,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request);
 
         /// <summary>
@@ -649,6 +672,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginDeleteLunaClient(DeleteLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -661,6 +685,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DeleteLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteLunaClientResponse EndDeleteLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -700,6 +725,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHapgResponse DescribeHapg(string hapgArn);
 
         /// <summary>
@@ -734,6 +760,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHapgResponse DescribeHapg(DescribeHapgRequest request);
 
         /// <summary>
@@ -748,6 +775,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginDescribeHapg(DescribeHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -760,6 +788,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DescribeHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHapgResponse EndDescribeHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -800,6 +829,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHsmResponse DescribeHsm(string hsmArn);
 
         /// <summary>
@@ -835,6 +865,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHsmResponse DescribeHsm(DescribeHsmRequest request);
 
         /// <summary>
@@ -849,6 +880,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginDescribeHsm(DescribeHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -861,6 +893,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DescribeHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHsmResponse EndDescribeHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -900,6 +933,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request);
 
         /// <summary>
@@ -914,6 +948,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginDescribeLunaClient(DescribeLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -926,6 +961,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  DescribeLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeLunaClientResponse EndDescribeLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -966,6 +1002,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         GetConfigResponse GetConfig(GetConfigRequest request);
 
         /// <summary>
@@ -980,6 +1017,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfig
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginGetConfig(GetConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -992,6 +1030,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  GetConfigResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         GetConfigResponse EndGetConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1030,6 +1069,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListAvailableZonesResponse ListAvailableZones();
 
         /// <summary>
@@ -1064,6 +1104,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request);
 
         /// <summary>
@@ -1078,6 +1119,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailableZones
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginListAvailableZones(ListAvailableZonesRequest request, AsyncCallback callback, object state);
 
 
@@ -1090,6 +1132,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListAvailableZonesResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListAvailableZonesResponse EndListAvailableZones(IAsyncResult asyncResult);
 
         #endregion
@@ -1135,6 +1178,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHapgsResponse ListHapgs();
 
         /// <summary>
@@ -1176,6 +1220,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHapgsResponse ListHapgs(ListHapgsRequest request);
 
         /// <summary>
@@ -1190,6 +1235,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHapgs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginListHapgs(ListHapgsRequest request, AsyncCallback callback, object state);
 
 
@@ -1202,6 +1248,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListHapgsResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHapgsResponse EndListHapgs(IAsyncResult asyncResult);
 
         #endregion
@@ -1247,6 +1294,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHsmsResponse ListHsms();
 
         /// <summary>
@@ -1288,6 +1336,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHsmsResponse ListHsms(ListHsmsRequest request);
 
         /// <summary>
@@ -1302,6 +1351,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHsms
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginListHsms(ListHsmsRequest request, AsyncCallback callback, object state);
 
 
@@ -1314,6 +1364,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListHsmsResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHsmsResponse EndListHsms(IAsyncResult asyncResult);
 
         #endregion
@@ -1359,6 +1410,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListLunaClientsResponse ListLunaClients();
 
         /// <summary>
@@ -1400,6 +1452,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request);
 
         /// <summary>
@@ -1414,6 +1467,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLunaClients
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginListLunaClients(ListLunaClientsRequest request, AsyncCallback callback, object state);
 
 
@@ -1426,6 +1480,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListLunaClientsResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListLunaClientsResponse EndListLunaClients(IAsyncResult asyncResult);
 
         #endregion
@@ -1465,6 +1520,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -1479,6 +1535,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1491,6 +1548,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1530,6 +1588,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyHapgResponse ModifyHapg(ModifyHapgRequest request);
 
         /// <summary>
@@ -1544,6 +1603,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHapg
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginModifyHapg(ModifyHapgRequest request, AsyncCallback callback, object state);
 
 
@@ -1556,6 +1616,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyHapgResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyHapgResponse EndModifyHapg(IAsyncResult asyncResult);
 
         #endregion
@@ -1603,6 +1664,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyHsmResponse ModifyHsm(ModifyHsmRequest request);
 
         /// <summary>
@@ -1617,6 +1679,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHsm
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginModifyHsm(ModifyHsmRequest request, AsyncCallback callback, object state);
 
 
@@ -1629,6 +1692,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyHsmResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyHsmResponse EndModifyHsm(IAsyncResult asyncResult);
 
         #endregion
@@ -1667,6 +1731,7 @@ namespace Amazon.CloudHSM
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request);
 
         /// <summary>
@@ -1681,6 +1746,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyLunaClient
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginModifyLunaClient(ModifyLunaClientRequest request, AsyncCallback callback, object state);
 
 
@@ -1693,6 +1759,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyLunaClientResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyLunaClientResponse EndModifyLunaClient(IAsyncResult asyncResult);
 
         #endregion
@@ -1737,6 +1804,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
         /// <summary>
@@ -1751,6 +1819,7 @@ namespace Amazon.CloudHSM
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1763,6 +1832,7 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from CloudHSM.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult);
 
         #endregion

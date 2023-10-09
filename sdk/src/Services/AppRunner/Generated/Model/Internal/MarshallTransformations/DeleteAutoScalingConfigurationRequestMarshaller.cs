@@ -73,6 +73,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoScalingConfigurationArn);
                 }
 
+                if(publicRequest.IsSetDeleteAllRevisions())
+                {
+                    context.Writer.WritePropertyName("DeleteAllRevisions");
+                    context.Writer.Write(publicRequest.DeleteAllRevisions);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

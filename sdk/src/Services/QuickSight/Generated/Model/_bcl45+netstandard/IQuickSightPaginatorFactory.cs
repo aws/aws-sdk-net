@@ -26,6 +26,16 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeFolderPermissions operation
+        ///</summary>
+        IDescribeFolderPermissionsPaginator DescribeFolderPermissions(DescribeFolderPermissionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeFolderResolvedPermissions operation
+        ///</summary>
+        IDescribeFolderResolvedPermissionsPaginator DescribeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAnalyses operation
         ///</summary>
         IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request);
@@ -59,6 +69,16 @@ namespace Amazon.QuickSight.Model
         /// Paginator for ListDataSources operation
         ///</summary>
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListFolderMembers operation
+        ///</summary>
+        IListFolderMembersPaginator ListFolderMembers(ListFolderMembersRequest request);
+
+        /// <summary>
+        /// Paginator for ListFolders operation
+        ///</summary>
+        IListFoldersPaginator ListFolders(ListFoldersRequest request);
 
         /// <summary>
         /// Paginator for ListGroupMemberships operation
@@ -154,6 +174,11 @@ namespace Amazon.QuickSight.Model
         /// Paginator for SearchDataSources operation
         ///</summary>
         ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchFolders operation
+        ///</summary>
+        ISearchFoldersPaginator SearchFolders(SearchFoldersRequest request);
 
         /// <summary>
         /// Paginator for SearchGroups operation

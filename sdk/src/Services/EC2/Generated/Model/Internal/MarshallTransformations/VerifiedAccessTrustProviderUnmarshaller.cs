@@ -96,6 +96,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PolicyReferenceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sseSpecification", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessSseSpecificationResponseUnmarshaller.Instance;
+                        unmarshalledObject.SseSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;

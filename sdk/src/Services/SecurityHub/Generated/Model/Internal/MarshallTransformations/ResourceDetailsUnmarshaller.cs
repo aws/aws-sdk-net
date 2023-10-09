@@ -172,6 +172,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsCodeBuildProject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsDmsEndpoint", targetDepth))
+                {
+                    var unmarshaller = AwsDmsEndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsDmsEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsDmsReplicationInstance", targetDepth))
+                {
+                    var unmarshaller = AwsDmsReplicationInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsDmsReplicationInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsDmsReplicationTask", targetDepth))
+                {
+                    var unmarshaller = AwsDmsReplicationTaskDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsDmsReplicationTask = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsDynamoDbTable", targetDepth))
                 {
                     var unmarshaller = AwsDynamoDbTableDetailsUnmarshaller.Instance;
@@ -346,6 +364,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEventSchemasRegistry = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEventsEndpoint", targetDepth))
+                {
+                    var unmarshaller = AwsEventsEndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEventsEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsEventsEventbus", targetDepth))
+                {
+                    var unmarshaller = AwsEventsEventbusDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEventsEventbus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsGuardDutyDetector", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDetailsUnmarshaller.Instance;
@@ -404,6 +434,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsLambdaLayerVersionDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsLambdaLayerVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsMskCluster", targetDepth))
+                {
+                    var unmarshaller = AwsMskClusterDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsMskCluster = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsNetworkFirewallFirewall", targetDepth))
@@ -470,6 +506,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsRedshiftClusterDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsRedshiftCluster = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsRoute53HostedZone", targetDepth))
+                {
+                    var unmarshaller = AwsRoute53HostedZoneDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRoute53HostedZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsS3AccountPublicAccessBlock", targetDepth))

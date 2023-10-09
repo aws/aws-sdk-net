@@ -665,6 +665,66 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateConnector
+
+        /// <summary>
+        /// Create Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnector service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual IAsyncResult BeginCreateConnector(CreateConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnector.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectorResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual CreateConnectorResponse EndCreateConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLaunchConfigurationTemplate
 
         /// <summary>
@@ -915,6 +975,69 @@ namespace Amazon.Mgn
         public virtual DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConnector
+
+        /// <summary>
+        /// Delete Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnector(DeleteConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnector.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectorResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual DeleteConnectorResponse EndDeleteConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectorResponse>(asyncResult);
         }
 
         #endregion
@@ -2187,6 +2310,66 @@ namespace Amazon.Mgn
         public virtual ListApplicationsResponse EndListApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<ListApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListConnectors
+
+        /// <summary>
+        /// List Connectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual IAsyncResult BeginListConnectors(ListConnectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectors.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual ListConnectorsResponse EndListConnectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConnectorsResponse>(asyncResult);
         }
 
         #endregion
@@ -4072,6 +4255,69 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  UpdateConnector
+
+        /// <summary>
+        /// Update Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnector service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnector(UpdateConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnector.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectorResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual UpdateConnectorResponse EndUpdateConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateLaunchConfiguration
 
         /// <summary>
@@ -4337,6 +4583,70 @@ namespace Amazon.Mgn
         public virtual UpdateReplicationConfigurationTemplateResponse EndUpdateReplicationConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateReplicationConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSourceServer
+
+        /// <summary>
+        /// Update Source Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceServer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSourceServer service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer">REST API Reference for UpdateSourceServer Operation</seealso>
+        public virtual UpdateSourceServerResponse UpdateSourceServer(UpdateSourceServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceServerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSourceServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceServer operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSourceServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer">REST API Reference for UpdateSourceServer Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSourceServer(UpdateSourceServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSourceServer.</param>
+        /// 
+        /// <returns>Returns a  UpdateSourceServerResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer">REST API Reference for UpdateSourceServer Operation</seealso>
+        public virtual UpdateSourceServerResponse EndUpdateSourceServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSourceServerResponse>(asyncResult);
         }
 
         #endregion

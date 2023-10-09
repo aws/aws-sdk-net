@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// A list of <code>OutputAttribute</code> objects, each of which have the fields Name
-    /// and Hashed. Each of these objects selects a column to be included in the output table,
-    /// and whether the values of the column should be hashed.
+    /// A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code>
+    /// and <code>Hashed</code>. Each of these objects selects a column to be included in
+    /// the output table, and whether the values of the column should be hashed.
     /// </summary>
     public partial class OutputAttribute
     {

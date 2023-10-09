@@ -38,6 +38,8 @@ namespace Amazon.DynamoDBv2.Model
         private string _clientToken;
         private ExportFormat _exportFormat;
         private DateTime? _exportTime;
+        private ExportType _exportType;
+        private IncrementalExportSpecification _incrementalExportSpecification;
         private string _s3Bucket;
         private string _s3BucketOwner;
         private string _s3Prefix;
@@ -114,6 +116,44 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetExportTime()
         {
             return this._exportTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportType. 
+        /// <para>
+        /// Choice of whether to execute as a full export or incremental export. Valid values
+        /// are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code>
+        /// is provided, the <code>IncrementalExportSpecification</code> must also be used.
+        /// </para>
+        /// </summary>
+        public ExportType ExportType
+        {
+            get { return this._exportType; }
+            set { this._exportType = value; }
+        }
+
+        // Check to see if ExportType property is set
+        internal bool IsSetExportType()
+        {
+            return this._exportType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncrementalExportSpecification. 
+        /// <para>
+        /// Optional object containing the parameters specific to an incremental export.
+        /// </para>
+        /// </summary>
+        public IncrementalExportSpecification IncrementalExportSpecification
+        {
+            get { return this._incrementalExportSpecification; }
+            set { this._incrementalExportSpecification = value; }
+        }
+
+        // Check to see if IncrementalExportSpecification property is set
+        internal bool IsSetIncrementalExportSpecification()
+        {
+            return this._incrementalExportSpecification != null;
         }
 
         /// <summary>

@@ -66,7 +66,7 @@ namespace Amazon.S3Control.Internal
                     {
                         if (Equals(refs["UseDualStack"], true))
                         {
-                            throw new AmazonClientException("S3 Snow does not support Dual-stack");
+                            throw new AmazonClientException("S3 Snow does not support DualStack");
                         }
                         if (Equals(refs["UseFIPS"], true))
                         {
@@ -74,7 +74,6 @@ namespace Amazon.S3Control.Internal
                         }
                         return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                     }
-                    throw new AmazonClientException("A valid partition could not be determined");
                 }
                 if (IsSet(refs["OutpostId"]))
                 {
@@ -114,7 +113,6 @@ namespace Amazon.S3Control.Internal
                         }
                         throw new AmazonClientException("Invalid region: region was not a valid DNS name.");
                     }
-                    throw new AmazonClientException("A valid partition could not be determined");
                 }
                 if (IsSet(refs["AccessPointName"]) && (refs["accessPointArn"] = ParseArn((string)refs["AccessPointName"])) != null)
                 {
@@ -180,9 +178,7 @@ namespace Amazon.S3Control.Internal
                                             }
                                             throw new AmazonClientException(Interpolate(@"Client was configured for partition `{partitionResult#name}` but ARN has `{arnPartition#name}`", refs));
                                         }
-                                        throw new AmazonClientException(Interpolate(@"Could not load partition for ARN region `{accessPointArn#region}`", refs));
                                     }
-                                    throw new AmazonClientException("A valid partition could not be determined");
                                 }
                                 throw new AmazonClientException(Interpolate(@"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `{outpostId}`", refs));
                             }
@@ -255,9 +251,7 @@ namespace Amazon.S3Control.Internal
                                             }
                                             throw new AmazonClientException(Interpolate(@"Client was configured for partition `{partitionResult#name}` but ARN has `{arnPartition#name}`", refs));
                                         }
-                                        throw new AmazonClientException("A valid partition could not be determined");
                                     }
-                                    throw new AmazonClientException(Interpolate(@"Could not load partition for ARN region `{bucketArn#region}`", refs));
                                 }
                                 throw new AmazonClientException(Interpolate(@"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `{outpostId}`", refs));
                             }
@@ -286,7 +280,7 @@ namespace Amazon.S3Control.Internal
                         {
                             if (Equals(refs["UseDualStack"], true))
                             {
-                                throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
+                                throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
                             }
                             if (IsSet(refs["RequiresAccountId"]) && Equals(refs["RequiresAccountId"], true) && IsSet(refs["AccountId"]))
                             {
@@ -329,7 +323,6 @@ namespace Amazon.S3Control.Internal
                     }
                     throw new AmazonClientException("Invalid region: region was not a valid DNS name.");
                 }
-                throw new AmazonClientException("A valid partition could not be determined");
             }
             throw new AmazonClientException("Region must be set");
 

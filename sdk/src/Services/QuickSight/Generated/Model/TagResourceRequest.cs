@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging
-    /// on data set, data source, dashboard, template, and topic. 
+    /// on data set, data source, dashboard, template, topic, and user. 
     /// </para>
     ///  
     /// <para>
@@ -55,10 +55,9 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can't use tags to track costs for Amazon QuickSight. This isn't possible because
-    /// you can't tag the resources that Amazon QuickSight costs are based on, for example
-    /// Amazon QuickSight storage capacity (SPICE), number of users, type of users, and usage
-    /// metrics.
+    /// Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources
+    /// that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session
+    /// usage, alert consumption, or reporting units.
     /// </para>
     ///  </li> <li> 
     /// <para>

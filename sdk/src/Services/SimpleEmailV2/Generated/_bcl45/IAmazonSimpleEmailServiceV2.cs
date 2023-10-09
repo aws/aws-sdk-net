@@ -119,6 +119,52 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CancelExportJob
+
+
+        /// <summary>
+        /// Cancels an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob">REST API Reference for CancelExportJob Operation</seealso>
+        CancelExportJobResponse CancelExportJob(CancelExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Cancels an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob">REST API Reference for CancelExportJob Operation</seealso>
+        Task<CancelExportJobResponse> CancelExportJobAsync(CancelExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateConfigurationSet
 
 
@@ -918,6 +964,68 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         Task<CreateEmailTemplateResponse> CreateEmailTemplateAsync(CreateEmailTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateExportJob
+
+
+        /// <summary>
+        /// Creates an export job for a data source and destination.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
+        CreateExportJobResponse CreateExportJob(CreateExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates an export job for a data source and destination.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
+        Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2481,6 +2589,52 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetExportJob
+
+
+        /// <summary>
+        /// Provides information about an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
+        GetExportJobResponse GetExportJob(GetExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Provides information about an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExportJob service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
+        Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetImportJob
 
 
@@ -2524,6 +2678,64 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetMessageInsights
+
+
+        /// <summary>
+        /// Provides information about a specific message, including the from address, the subject,
+        /// the recipient address, email tags, as well as events associated with the message.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageInsights service method.</param>
+        /// 
+        /// <returns>The response from the GetMessageInsights service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights">REST API Reference for GetMessageInsights Operation</seealso>
+        GetMessageInsightsResponse GetMessageInsights(GetMessageInsightsRequest request);
+
+
+
+        /// <summary>
+        /// Provides information about a specific message, including the from address, the subject,
+        /// the recipient address, email tags, as well as events associated with the message.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMessageInsights service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights">REST API Reference for GetMessageInsights Operation</seealso>
+        Task<GetMessageInsightsResponse> GetMessageInsightsAsync(GetMessageInsightsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3016,6 +3228,46 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates">REST API Reference for ListEmailTemplates Operation</seealso>
         Task<ListEmailTemplatesResponse> ListEmailTemplatesAsync(ListEmailTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExportJobs
+
+
+        /// <summary>
+        /// Lists all of the export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListExportJobs service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs">REST API Reference for ListExportJobs Operation</seealso>
+        ListExportJobsResponse ListExportJobs(ListExportJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all of the export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExportJobs service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs">REST API Reference for ListExportJobs Operation</seealso>
+        Task<ListExportJobsResponse> ListExportJobsAsync(ListExportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

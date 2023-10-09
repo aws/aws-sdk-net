@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterScopeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAllSheets())
+            {
+                context.Writer.WritePropertyName("AllSheets");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AllSheetsFilterScopeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AllSheets, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSelectedSheets())
             {
                 context.Writer.WritePropertyName("SelectedSheets");

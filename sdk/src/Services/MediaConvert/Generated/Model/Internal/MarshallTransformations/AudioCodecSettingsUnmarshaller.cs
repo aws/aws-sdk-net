@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Eac3Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("flacSettings", targetDepth))
+                {
+                    var unmarshaller = FlacSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FlacSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mp2Settings", targetDepth))
                 {
                     var unmarshaller = Mp2SettingsUnmarshaller.Instance;

@@ -57,6 +57,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     response.BookingOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DisabledDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.EnabledDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HiddenFromGlobalAddressList", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.HiddenFromGlobalAddressList = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -137,6 +149,10 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OrganizationStateException"))
                 {
                     return OrganizationStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonWorkMailException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

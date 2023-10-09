@@ -104,7 +104,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JobDurationInSeconds. 
         /// <para>
-        /// Specifies the maximum duration of the job, in seconds. The maximum value is 7200.
+        /// Specifies the maximum duration of the job, in seconds. The maximum value is 18,000
+        /// seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

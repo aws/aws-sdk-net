@@ -61,7 +61,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the user access logging settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string UserAccessLoggingSettingsArn
         {
             get { return this._userAccessLoggingSettingsArn; }

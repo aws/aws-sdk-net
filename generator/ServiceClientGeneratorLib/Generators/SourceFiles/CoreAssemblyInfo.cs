@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -37,48 +37,38 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "embly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (.NET Core 3.1)" +
                     " - Core Runtime\")]\r\n#elif NET8_0\r\n[assembly: AssemblyDescription(\"The Amazon Web" +
                     " Services SDK for .NET (.NET 8.0) - Core Runtime\")]\r\n#else\r\n#error Unknown platf" +
-                    "orm constant - unable to set correct AssemblyDescription\r\n#endif\r\n// this is for" +
-                    " the dev snk\r\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.Net45, PublicKey=0" +
-                    "024000004800000940000000602000000240000525341310004000001000100516caa6311db961cb" +
-                    "07702d63876c5b8cbd661557cd18bde9fb966bb30a4442abb27a4a5aca5af15c97b77f3f8f683eb1" +
-                    "ca32cd7e8d1edcbbb1a62fe215001d507c2437f052b29540b7a11edbdc7dfe12de00c37f9e70c7e8" +
-                    "5a04541858ca46bb2581099780121ee8041732b7214ec9b5c483ef13c1db6d5f86a71fcc014dcaf\"" +
-                    ")]\r\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.Net35, PublicKey=00240000048" +
-                    "00000940000000602000000240000525341310004000001000100516caa6311db961cb07702d6387" +
-                    "6c5b8cbd661557cd18bde9fb966bb30a4442abb27a4a5aca5af15c97b77f3f8f683eb1ca32cd7e8d" +
-                    "1edcbbb1a62fe215001d507c2437f052b29540b7a11edbdc7dfe12de00c37f9e70c7e85a04541858" +
-                    "ca46bb2581099780121ee8041732b7214ec9b5c483ef13c1db6d5f86a71fcc014dcaf\")]\r\n//this" +
-                    " is for the prod snk\r\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.Net45, Pub" +
-                    "licKey=0024000004800000940000000602000000240000525341310004000001000100db5f59f09" +
-                    "8d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecf" +
-                    "a8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d5" +
-                    "3491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db3" +
-                    "73518b4\")]\r\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.Net35, PublicKey=002" +
-                    "4000004800000940000000602000000240000525341310004000001000100db5f59f098d27276c78" +
-                    "33875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626" +
-                    "fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a4" +
-                    "79967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]" +
-                    "\r\n\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon We" +
-                    "b Services SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[ass" +
-                    "embly: AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affiliates. All Righ" +
-                    "ts Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")]\r\n[assembly: AssemblyCulture(\"" +
-                    "\")]\r\n\r\n// Setting ComVisible to false makes the types in this assembly not visib" +
-                    "le \r\n// to COM components.  If you need to access a type in this assembly from \r" +
-                    "\n// COM, set the ComVisible attribute to true on that type.\r\n[assembly: ComVisib" +
-                    "le(false)]\r\n\r\n// Version information for an assembly consists of the following f" +
-                    "our values:\r\n//\r\n//      Major Version\r\n//      Minor Version \r\n//      Build Nu" +
-                    "mber\r\n//      Revision\r\n//\r\n// You can specify all the values or you can default" +
-                    " the Build and Revision Numbers \r\n// by using the \'*\' as shown below:\r\n// [assem" +
-                    "bly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
+                    "orm constant - unable to set correct AssemblyDescription\r\n#endif\r\n[assembly: Int" +
+                    "ernalsVisibleTo(\"AWSSDK.UnitTests.Net45, PublicKey=00240000048000009400000006020" +
+                    "00000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9d" +
+                    "f0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09" +
+                    "d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf12" +
+                    "52ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: InternalsVisi" +
+                    "bleTo(\"AWSSDK.UnitTests.Net35, PublicKey=002400000480000094000000060200000024000" +
+                    "0525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe" +
+                    "7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84ee" +
+                    "cd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a241" +
+                    "3f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n\r\n[assembly: AssemblyConfiguration" +
+                    "(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]\r\n[assembl" +
+                    "y: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright " +
+                    "Amazon.com, Inc. or its affiliates. All Rights Reserved.\")]\r\n[assembly: Assembly" +
+                    "Trademark(\"\")]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisible to fals" +
+                    "e makes the types in this assembly not visible \r\n// to COM components.  If you n" +
+                    "eed to access a type in this assembly from \r\n// COM, set the ComVisible attribut" +
+                    "e to true on that type.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version information" +
+                    " for an assembly consists of the following four values:\r\n//\r\n//      Major Versi" +
+                    "on\r\n//      Minor Version \r\n//      Build Number\r\n//      Revision\r\n//\r\n// You c" +
+                    "an specify all the values or you can default the Build and Revision Numbers \r\n//" +
+                    " by using the \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[ass" +
+                    "embly: AssemblyVersion(\"");
             
-            #line 55 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 56 "C:\gitrepos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default

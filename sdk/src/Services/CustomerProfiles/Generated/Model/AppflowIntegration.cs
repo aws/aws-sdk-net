@@ -57,7 +57,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property FlowDefinition.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public FlowDefinition FlowDefinition
         {
             get { return this._flowDefinition; }

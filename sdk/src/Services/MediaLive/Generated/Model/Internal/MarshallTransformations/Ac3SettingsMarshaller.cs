@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Ac3Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAttenuationControl())
+            {
+                context.Writer.WritePropertyName("attenuationControl");
+                context.Writer.Write(requestObject.AttenuationControl);
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");

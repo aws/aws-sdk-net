@@ -88,6 +88,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaLiveConnectorPipeline = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MediaStreamPipeline", targetDepth))
+                {
+                    var unmarshaller = MediaStreamPipelineUnmarshaller.Instance;
+                    unmarshalledObject.MediaStreamPipeline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

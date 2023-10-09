@@ -87,6 +87,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("postLaunchEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.PostLaunchEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceServerID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

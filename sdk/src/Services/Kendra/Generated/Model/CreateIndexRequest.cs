@@ -37,8 +37,9 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
-    /// API or using one of the supported data sources.
+    /// Once the index is active, you can index your documents using the <code>BatchPutDocument</code>
+    /// API or using one of the supported <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html">data
+    /// sources</a>.
     /// </para>
     ///  
     /// <para>

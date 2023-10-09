@@ -20,7 +20,9 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>        
+    <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
+
+    <SignAssembly>True</SignAssembly>
   </PropertyGroup>
     <!-- Async Enumerable Compatibility -->
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">

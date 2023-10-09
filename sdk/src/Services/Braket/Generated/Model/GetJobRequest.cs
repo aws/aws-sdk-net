@@ -34,7 +34,26 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class GetJobRequest : AmazonBraketRequest
     {
+        private List<string> _additionalAttributeNames = new List<string>();
         private string _jobArn;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAttributeNames. 
+        /// <para>
+        /// A list of attributes to return information for.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalAttributeNames
+        {
+            get { return this._additionalAttributeNames; }
+            set { this._additionalAttributeNames = value; }
+        }
+
+        // Check to see if AdditionalAttributeNames property is set
+        internal bool IsSetAdditionalAttributeNames()
+        {
+            return this._additionalAttributeNames != null && this._additionalAttributeNames.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property JobArn. 

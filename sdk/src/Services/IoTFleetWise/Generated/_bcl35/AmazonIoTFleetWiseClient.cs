@@ -1696,6 +1696,76 @@ namespace Amazon.IoTFleetWise
 
         #endregion
         
+        #region  GetEncryptionConfiguration
+
+        /// <summary>
+        /// Retrieves the encryption configuration for resources and data in Amazon Web Services
+        /// IoT FleetWise.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetEncryptionConfiguration service method, as returned by IoTFleetWise.</returns>
+        /// <exception cref="Amazon.IoTFleetWise.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.InternalServerException">
+        /// The request couldn't be completed because the server temporarily failed.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
+        /// The request couldn't be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">REST API Reference for GetEncryptionConfiguration Operation</seealso>
+        public virtual GetEncryptionConfigurationResponse GetEncryptionConfiguration(GetEncryptionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEncryptionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfiguration operation on AmazonIoTFleetWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEncryptionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">REST API Reference for GetEncryptionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetEncryptionConfiguration(GetEncryptionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEncryptionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetEncryptionConfigurationResult from IoTFleetWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">REST API Reference for GetEncryptionConfiguration Operation</seealso>
+        public virtual GetEncryptionConfigurationResponse EndGetEncryptionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEncryptionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetFleet
 
         /// <summary>
@@ -3318,6 +3388,82 @@ namespace Amazon.IoTFleetWise
         public virtual ListVehiclesInFleetResponse EndListVehiclesInFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVehiclesInFleetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEncryptionConfiguration
+
+        /// <summary>
+        /// Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise
+        /// can encrypt your data and resources using an Amazon Web Services managed key. Or,
+        /// you can use a KMS key that you own and manage. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data
+        /// encryption</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEncryptionConfiguration service method, as returned by IoTFleetWise.</returns>
+        /// <exception cref="Amazon.IoTFleetWise.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ConflictException">
+        /// The request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.InternalServerException">
+        /// The request couldn't be completed because the server temporarily failed.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
+        /// The request couldn't be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">REST API Reference for PutEncryptionConfiguration Operation</seealso>
+        public virtual PutEncryptionConfigurationResponse PutEncryptionConfiguration(PutEncryptionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutEncryptionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfiguration operation on AmazonIoTFleetWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEncryptionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">REST API Reference for PutEncryptionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutEncryptionConfiguration(PutEncryptionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEncryptionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutEncryptionConfigurationResult from IoTFleetWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">REST API Reference for PutEncryptionConfiguration Operation</seealso>
+        public virtual PutEncryptionConfigurationResponse EndPutEncryptionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEncryptionConfigurationResponse>(asyncResult);
         }
 
         #endregion

@@ -33,8 +33,46 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class KPIConditionalFormattingOption
     {
+        private KPIActualValueConditionalFormatting _actualValue;
+        private KPIComparisonValueConditionalFormatting _comparisonValue;
         private KPIPrimaryValueConditionalFormatting _primaryValue;
         private KPIProgressBarConditionalFormatting _progressBar;
+
+        /// <summary>
+        /// Gets and sets the property ActualValue. 
+        /// <para>
+        /// The conditional formatting for the actual value of a KPI visual.
+        /// </para>
+        /// </summary>
+        public KPIActualValueConditionalFormatting ActualValue
+        {
+            get { return this._actualValue; }
+            set { this._actualValue = value; }
+        }
+
+        // Check to see if ActualValue property is set
+        internal bool IsSetActualValue()
+        {
+            return this._actualValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComparisonValue. 
+        /// <para>
+        /// The conditional formatting for the comparison value of a KPI visual.
+        /// </para>
+        /// </summary>
+        public KPIComparisonValueConditionalFormatting ComparisonValue
+        {
+            get { return this._comparisonValue; }
+            set { this._comparisonValue = value; }
+        }
+
+        // Check to see if ComparisonValue property is set
+        internal bool IsSetComparisonValue()
+        {
+            return this._comparisonValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PrimaryValue. 

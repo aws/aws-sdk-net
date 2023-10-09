@@ -55,6 +55,7 @@ namespace Amazon.QuickSight.Model
         private DashboardSourceEntity _sourceEntity;
         private List<Tag> _tags = new List<Tag>();
         private string _themeArn;
+        private ValidationStrategy _validationStrategy;
         private string _versionDescription;
 
         /// <summary>
@@ -302,6 +303,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetThemeArn()
         {
             return this._themeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStrategy. 
+        /// <para>
+        /// The option to relax the validation needed to create a dashboard with definition objects.
+        /// This option skips the validation step for specific errors.
+        /// </para>
+        /// </summary>
+        public ValidationStrategy ValidationStrategy
+        {
+            get { return this._validationStrategy; }
+            set { this._validationStrategy = value; }
+        }
+
+        // Check to see if ValidationStrategy property is set
+        internal bool IsSetValidationStrategy()
+        {
+            return this._validationStrategy != null;
         }
 
         /// <summary>

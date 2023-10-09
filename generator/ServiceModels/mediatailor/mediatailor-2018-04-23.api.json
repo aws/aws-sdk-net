@@ -498,7 +498,8 @@
       "type":"string",
       "enum":[
         "S3_SIGV4",
-        "SECRETS_MANAGER_ACCESS_TOKEN"
+        "SECRETS_MANAGER_ACCESS_TOKEN",
+        "AUTODETECT_SIGV4"
       ]
     },
     "AdBreak":{
@@ -515,6 +516,17 @@
     "AdBreakMetadataList":{
       "type":"list",
       "member":{"shape":"KeyValuePair"}
+    },
+    "AdBreakOpportunities":{
+      "type":"list",
+      "member":{"shape":"AdBreakOpportunity"}
+    },
+    "AdBreakOpportunity":{
+      "type":"structure",
+      "required":["OffsetMillis"],
+      "members":{
+        "OffsetMillis":{"shape":"__long"}
+      }
     },
     "AdMarkerPassthrough":{
       "type":"structure",
@@ -1265,6 +1277,7 @@
     "DescribeVodSourceResponse":{
       "type":"structure",
       "members":{
+        "AdBreakOpportunities":{"shape":"AdBreakOpportunities"},
         "Arn":{"shape":"__string"},
         "CreationTime":{"shape":"__timestampUnix"},
         "HttpPackageConfigurations":{"shape":"HttpPackageConfigurations"},

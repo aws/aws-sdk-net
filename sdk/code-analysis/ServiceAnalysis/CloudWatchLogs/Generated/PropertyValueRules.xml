@@ -576,6 +576,12 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.ClientToken</property>
+    <min>36</min>
+    <max>128</max>
+    <pattern>\S{36,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.Name</property>
     <min>1</min>
     <max>255</max>

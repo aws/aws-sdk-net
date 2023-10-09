@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetFIPSEnabled())
+                {
+                    request.Parameters.Add("FIPSEnabled", StringUtils.FromBool(publicRequest.FIPSEnabled));
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -1167,6 +1167,222 @@ namespace Amazon.Drs
 
 
     /// <summary>
+    /// Constants used for properties of type LaunchActionCategory.
+    /// </summary>
+    public class LaunchActionCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIGURATION for LaunchActionCategory
+        /// </summary>
+        public static readonly LaunchActionCategory CONFIGURATION = new LaunchActionCategory("CONFIGURATION");
+        /// <summary>
+        /// Constant MONITORING for LaunchActionCategory
+        /// </summary>
+        public static readonly LaunchActionCategory MONITORING = new LaunchActionCategory("MONITORING");
+        /// <summary>
+        /// Constant OTHER for LaunchActionCategory
+        /// </summary>
+        public static readonly LaunchActionCategory OTHER = new LaunchActionCategory("OTHER");
+        /// <summary>
+        /// Constant SECURITY for LaunchActionCategory
+        /// </summary>
+        public static readonly LaunchActionCategory SECURITY = new LaunchActionCategory("SECURITY");
+        /// <summary>
+        /// Constant VALIDATION for LaunchActionCategory
+        /// </summary>
+        public static readonly LaunchActionCategory VALIDATION = new LaunchActionCategory("VALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchActionCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchActionCategory FindValue(string value)
+        {
+            return FindValue<LaunchActionCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchActionCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchActionParameterType.
+    /// </summary>
+    public class LaunchActionParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for LaunchActionParameterType
+        /// </summary>
+        public static readonly LaunchActionParameterType DYNAMIC = new LaunchActionParameterType("DYNAMIC");
+        /// <summary>
+        /// Constant SSM_STORE for LaunchActionParameterType
+        /// </summary>
+        public static readonly LaunchActionParameterType SSM_STORE = new LaunchActionParameterType("SSM_STORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchActionParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchActionParameterType FindValue(string value)
+        {
+            return FindValue<LaunchActionParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchActionParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchActionRunStatus.
+    /// </summary>
+    public class LaunchActionRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LaunchActionRunStatus
+        /// </summary>
+        public static readonly LaunchActionRunStatus FAILED = new LaunchActionRunStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LaunchActionRunStatus
+        /// </summary>
+        public static readonly LaunchActionRunStatus IN_PROGRESS = new LaunchActionRunStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for LaunchActionRunStatus
+        /// </summary>
+        public static readonly LaunchActionRunStatus SUCCEEDED = new LaunchActionRunStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchActionRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchActionRunStatus FindValue(string value)
+        {
+            return FindValue<LaunchActionRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchActionRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchActionType.
+    /// </summary>
+    public class LaunchActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSM_AUTOMATION for LaunchActionType
+        /// </summary>
+        public static readonly LaunchActionType SSM_AUTOMATION = new LaunchActionType("SSM_AUTOMATION");
+        /// <summary>
+        /// Constant SSM_COMMAND for LaunchActionType
+        /// </summary>
+        public static readonly LaunchActionType SSM_COMMAND = new LaunchActionType("SSM_COMMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchActionType FindValue(string value)
+        {
+            return FindValue<LaunchActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LaunchDisposition.
     /// </summary>
     public class LaunchDisposition : ConstantClass

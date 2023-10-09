@@ -301,7 +301,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// Optional engine attributes on a specified server. 
         /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a Chef createServer request:</b> 
+        ///  
+        /// <para>
+        ///  <b>Attributes accepted in a Chef createServer request:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -318,8 +320,9 @@ namespace Amazon.OpsWorksCM.Model
         /// one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD
         /// is set, one is generated and returned in the response.
         /// </para>
-        ///  </li> </ul> <p class="title"> <b>Attributes accepted in a Puppet createServer request:</b>
-        /// 
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Attributes accepted in a Puppet createServer request:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -45,7 +45,7 @@ namespace Amazon.AuditManager.Model
         ///  A comment that's related to the delegation request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=350)]
+        [AWSProperty(Sensitive=true, Max=350)]
         public string Comment
         {
             get { return this._comment; }

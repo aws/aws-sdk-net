@@ -86,6 +86,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DynamicSubGop);
             }
 
+            if(requestObject.IsSetEndOfStreamMarkers())
+            {
+                context.Writer.WritePropertyName("endOfStreamMarkers");
+                context.Writer.Write(requestObject.EndOfStreamMarkers);
+            }
+
             if(requestObject.IsSetEntropyEncoding())
             {
                 context.Writer.WritePropertyName("entropyEncoding");

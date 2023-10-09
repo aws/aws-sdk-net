@@ -33,6 +33,8 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class DescribeModelResponse : AmazonWebServiceResponse
     {
+        private DateTime? _accumulatedInferenceDataEndTime;
+        private DateTime? _accumulatedInferenceDataStartTime;
         private long? _activeModelVersion;
         private string _activeModelVersionArn;
         private DateTime? _createdAt;
@@ -46,14 +48,22 @@ namespace Amazon.LookoutEquipment.Model
         private DateTime? _importJobStartTime;
         private LabelsInputConfiguration _labelsInputConfiguration;
         private DateTime? _lastUpdatedTime;
+        private int? _latestScheduledRetrainingAvailableDataInDays;
+        private string _latestScheduledRetrainingFailedReason;
+        private long? _latestScheduledRetrainingModelVersion;
+        private DateTime? _latestScheduledRetrainingStartTime;
+        private ModelVersionStatus _latestScheduledRetrainingStatus;
         private string _modelArn;
         private string _modelMetrics;
         private string _modelName;
         private DateTime? _modelVersionActivatedAt;
+        private DateTime? _nextScheduledRetrainingStartDate;
         private string _offCondition;
         private long? _previousActiveModelVersion;
         private string _previousActiveModelVersionArn;
         private DateTime? _previousModelVersionActivatedAt;
+        private string _priorModelMetrics;
+        private RetrainingSchedulerStatus _retrainingSchedulerStatus;
         private string _roleArn;
         private string _schema;
         private string _serverSideKmsKeyId;
@@ -63,6 +73,42 @@ namespace Amazon.LookoutEquipment.Model
         private DateTime? _trainingDataStartTime;
         private DateTime? _trainingExecutionEndTime;
         private DateTime? _trainingExecutionStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AccumulatedInferenceDataEndTime. 
+        /// <para>
+        /// Indicates the end time of the inference data that has been accumulated. 
+        /// </para>
+        /// </summary>
+        public DateTime AccumulatedInferenceDataEndTime
+        {
+            get { return this._accumulatedInferenceDataEndTime.GetValueOrDefault(); }
+            set { this._accumulatedInferenceDataEndTime = value; }
+        }
+
+        // Check to see if AccumulatedInferenceDataEndTime property is set
+        internal bool IsSetAccumulatedInferenceDataEndTime()
+        {
+            return this._accumulatedInferenceDataEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccumulatedInferenceDataStartTime. 
+        /// <para>
+        /// Indicates the start time of the inference data that has been accumulated. 
+        /// </para>
+        /// </summary>
+        public DateTime AccumulatedInferenceDataStartTime
+        {
+            get { return this._accumulatedInferenceDataStartTime.GetValueOrDefault(); }
+            set { this._accumulatedInferenceDataStartTime = value; }
+        }
+
+        // Check to see if AccumulatedInferenceDataStartTime property is set
+        internal bool IsSetAccumulatedInferenceDataStartTime()
+        {
+            return this._accumulatedInferenceDataStartTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ActiveModelVersion. 
@@ -107,7 +153,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Indicates the time and date at which the ML model was created. 
+        /// Indicates the time and date at which the machine learning model was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -154,8 +200,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DatasetArn. 
         /// <para>
-        /// The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described.
-        /// 
+        /// The Amazon Resouce Name (ARN) of the dataset used to create the machine learning model
+        /// being described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -174,7 +220,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the dataset being used by the ML being described. 
+        /// The name of the dataset being used by the machine learning being described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -194,7 +240,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property EvaluationDataEndTime. 
         /// <para>
         ///  Indicates the time reference in the dataset that was used to end the subset of evaluation
-        /// data for the ML model. 
+        /// data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime EvaluationDataEndTime
@@ -213,7 +259,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property EvaluationDataStartTime. 
         /// <para>
         ///  Indicates the time reference in the dataset that was used to begin the subset of
-        /// evaluation data for the ML model. 
+        /// evaluation data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime EvaluationDataStartTime
@@ -231,8 +277,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property FailedReason. 
         /// <para>
-        /// If the training of the ML model failed, this indicates the reason for that failure.
-        /// 
+        /// If the training of the machine learning model failed, this indicates the reason for
+        /// that failure. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
@@ -308,8 +354,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// Indicates the last time the ML model was updated. The type of update is not specified.
-        /// 
+        /// Indicates the last time the machine learning model was updated. The type of update
+        /// is not specified. 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -325,9 +371,103 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LatestScheduledRetrainingAvailableDataInDays. 
+        /// <para>
+        /// Indicates the number of days of data used in the most recent scheduled retraining
+        /// run. 
+        /// </para>
+        /// </summary>
+        public int LatestScheduledRetrainingAvailableDataInDays
+        {
+            get { return this._latestScheduledRetrainingAvailableDataInDays.GetValueOrDefault(); }
+            set { this._latestScheduledRetrainingAvailableDataInDays = value; }
+        }
+
+        // Check to see if LatestScheduledRetrainingAvailableDataInDays property is set
+        internal bool IsSetLatestScheduledRetrainingAvailableDataInDays()
+        {
+            return this._latestScheduledRetrainingAvailableDataInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestScheduledRetrainingFailedReason. 
+        /// <para>
+        /// If the model version was generated by retraining and the training failed, this indicates
+        /// the reason for that failure. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
+        public string LatestScheduledRetrainingFailedReason
+        {
+            get { return this._latestScheduledRetrainingFailedReason; }
+            set { this._latestScheduledRetrainingFailedReason = value; }
+        }
+
+        // Check to see if LatestScheduledRetrainingFailedReason property is set
+        internal bool IsSetLatestScheduledRetrainingFailedReason()
+        {
+            return this._latestScheduledRetrainingFailedReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestScheduledRetrainingModelVersion. 
+        /// <para>
+        /// Indicates the most recent model version that was generated by retraining. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long LatestScheduledRetrainingModelVersion
+        {
+            get { return this._latestScheduledRetrainingModelVersion.GetValueOrDefault(); }
+            set { this._latestScheduledRetrainingModelVersion = value; }
+        }
+
+        // Check to see if LatestScheduledRetrainingModelVersion property is set
+        internal bool IsSetLatestScheduledRetrainingModelVersion()
+        {
+            return this._latestScheduledRetrainingModelVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestScheduledRetrainingStartTime. 
+        /// <para>
+        /// Indicates the start time of the most recent scheduled retraining run. 
+        /// </para>
+        /// </summary>
+        public DateTime LatestScheduledRetrainingStartTime
+        {
+            get { return this._latestScheduledRetrainingStartTime.GetValueOrDefault(); }
+            set { this._latestScheduledRetrainingStartTime = value; }
+        }
+
+        // Check to see if LatestScheduledRetrainingStartTime property is set
+        internal bool IsSetLatestScheduledRetrainingStartTime()
+        {
+            return this._latestScheduledRetrainingStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestScheduledRetrainingStatus. 
+        /// <para>
+        /// Indicates the status of the most recent scheduled retraining run. 
+        /// </para>
+        /// </summary>
+        public ModelVersionStatus LatestScheduledRetrainingStatus
+        {
+            get { return this._latestScheduledRetrainingStatus; }
+            set { this._latestScheduledRetrainingStatus = value; }
+        }
+
+        // Check to see if LatestScheduledRetrainingStatus property is set
+        internal bool IsSetLatestScheduledRetrainingStatus()
+        {
+            return this._latestScheduledRetrainingStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the ML model being described. 
+        /// The Amazon Resource Name (ARN) of the machine learning model being described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -367,7 +507,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the ML model being described. 
+        /// The name of the machine learning model being described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -399,6 +539,25 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetModelVersionActivatedAt()
         {
             return this._modelVersionActivatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextScheduledRetrainingStartDate. 
+        /// <para>
+        /// Indicates the date and time that the next scheduled retraining run will start on.
+        /// Lookout for Equipment truncates the time you provide to the nearest UTC day.
+        /// </para>
+        /// </summary>
+        public DateTime NextScheduledRetrainingStartDate
+        {
+            get { return this._nextScheduledRetrainingStartDate.GetValueOrDefault(); }
+            set { this._nextScheduledRetrainingStartDate = value; }
+        }
+
+        // Check to see if NextScheduledRetrainingStartDate property is set
+        internal bool IsSetNextScheduledRetrainingStartDate()
+        {
+            return this._nextScheduledRetrainingStartDate.HasValue; 
         }
 
         /// <summary>
@@ -481,10 +640,49 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PriorModelMetrics. 
+        /// <para>
+        /// If the model version was retrained, this field shows a summary of the performance
+        /// of the prior model on the new training range. You can use the information in this
+        /// JSON-formatted object to compare the new model version and the prior model version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
+        public string PriorModelMetrics
+        {
+            get { return this._priorModelMetrics; }
+            set { this._priorModelMetrics = value; }
+        }
+
+        // Check to see if PriorModelMetrics property is set
+        internal bool IsSetPriorModelMetrics()
+        {
+            return this._priorModelMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrainingSchedulerStatus. 
+        /// <para>
+        /// Indicates the status of the retraining scheduler. 
+        /// </para>
+        /// </summary>
+        public RetrainingSchedulerStatus RetrainingSchedulerStatus
+        {
+            get { return this._retrainingSchedulerStatus; }
+            set { this._retrainingSchedulerStatus = value; }
+        }
+
+        // Check to see if RetrainingSchedulerStatus property is set
+        internal bool IsSetRetrainingSchedulerStatus()
+        {
+            return this._retrainingSchedulerStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of a role with permission to access the data source
-        /// for the ML model being described. 
+        /// for the machine learning model being described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -583,7 +781,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property TrainingDataEndTime. 
         /// <para>
         ///  Indicates the time reference in the dataset that was used to end the subset of training
-        /// data for the ML model. 
+        /// data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime TrainingDataEndTime
@@ -602,7 +800,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property TrainingDataStartTime. 
         /// <para>
         ///  Indicates the time reference in the dataset that was used to begin the subset of
-        /// training data for the ML model. 
+        /// training data for the machine learning model. 
         /// </para>
         /// </summary>
         public DateTime TrainingDataStartTime
@@ -620,7 +818,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property TrainingExecutionEndTime. 
         /// <para>
-        /// Indicates the time at which the training of the ML model was completed. 
+        /// Indicates the time at which the training of the machine learning model was completed.
+        /// 
         /// </para>
         /// </summary>
         public DateTime TrainingExecutionEndTime
@@ -638,7 +837,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property TrainingExecutionStartTime. 
         /// <para>
-        /// Indicates the time at which the training of the ML model began. 
+        /// Indicates the time at which the training of the machine learning model began. 
         /// </para>
         /// </summary>
         public DateTime TrainingExecutionStartTime

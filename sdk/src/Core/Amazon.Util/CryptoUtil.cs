@@ -16,6 +16,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 using AWSSDK.Runtime.Internal.Util;
+using System;
+#if NETCOREAPP3_1_OR_GREATER
+using System.Buffers;
+#endif
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -98,8 +102,26 @@ namespace Amazon.Util
             /// <returns>Computed hash code</returns>
             public string HMACSign(string data, string key, SigningAlgorithm algorithmName)
             {
-                var binaryData = Encoding.UTF8.GetBytes(data);
+#if NETCOREAPP3_1_OR_GREATER
+                Encoding encoding = Encoding.UTF8;
+                int maxSize = encoding.GetMaxByteCount(data.Length);
+                byte[] buffer = ArrayPool<byte>.Shared.Rent(maxSize);
+
+                try
+                {
+                    int size = encoding.GetBytes(data, buffer);
+                    ArraySegment<byte> binaryData = new ArraySegment<byte>(buffer, 0, size);
+
+                    return HMACSign(binaryData, key, algorithmName);
+                }
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(buffer);
+                }
+#else
+                byte[] binaryData = Encoding.UTF8.GetBytes(data);
                 return HMACSign(binaryData, key, algorithmName);
+#endif
             }
 
             /// <summary>

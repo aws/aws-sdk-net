@@ -41,7 +41,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExportTaskId. 
         /// <para>
-        /// The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+        /// The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code>
+        /// and <code>ExportImage</code> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

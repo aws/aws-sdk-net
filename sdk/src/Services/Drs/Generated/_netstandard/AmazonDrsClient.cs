@@ -591,6 +591,55 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  DeleteLaunchAction
+
+        internal virtual DeleteLaunchActionResponse DeleteLaunchAction(DeleteLaunchActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a resource launch action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLaunchAction service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
+        public virtual Task<DeleteLaunchActionResponse> DeleteLaunchActionAsync(DeleteLaunchActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLaunchActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLaunchConfigurationTemplate
 
         internal virtual DeleteLaunchConfigurationTemplateResponse DeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request)
@@ -1639,6 +1688,55 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  ListLaunchActions
+
+        internal virtual ListLaunchActionsResponse ListLaunchActions(ListLaunchActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLaunchActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLaunchActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLaunchActionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists resource launch actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLaunchActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLaunchActions service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
+        public virtual Task<ListLaunchActionsResponse> ListLaunchActionsAsync(ListLaunchActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLaunchActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLaunchActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLaunchActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStagingAccounts
 
         internal virtual ListStagingAccountsResponse ListStagingAccounts(ListStagingAccountsRequest request)
@@ -1733,6 +1831,59 @@ namespace Amazon.Drs
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutLaunchAction
+
+        internal virtual PutLaunchActionResponse PutLaunchAction(PutLaunchActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLaunchActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLaunchActionResponseUnmarshaller.Instance;
+
+            return Invoke<PutLaunchActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Puts a resource launch action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLaunchAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutLaunchAction service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
+        public virtual Task<PutLaunchActionResponse> PutLaunchActionAsync(PutLaunchActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutLaunchActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLaunchActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutLaunchActionResponse>(request, options, cancellationToken);
         }
 
         #endregion

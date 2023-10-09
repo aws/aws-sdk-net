@@ -40,7 +40,9 @@ namespace Amazon.Personalize.Model
     /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
     /// dataset group. You specify a schema when you call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
     /// </para>
-    ///  <p class="title"> <b>Related APIs</b> 
+    ///  
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

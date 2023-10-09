@@ -30,8 +30,16 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMediaStorageConfiguration operation.
+    /// <important> 
+    /// <para>
+    /// This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
+    /// Ingestion</a> and is only available in the <code>us-west-2</code> region.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Returns the most current information about the channel. Specify the <code>ChannelName</code>
     /// or <code>ChannelARN</code> in the input.
+    /// </para>
     /// </summary>
     public partial class DescribeMediaStorageConfigurationRequest : AmazonKinesisVideoRequest
     {

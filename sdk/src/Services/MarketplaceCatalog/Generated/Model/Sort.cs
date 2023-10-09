@@ -40,7 +40,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Gets and sets the property SortBy. 
         /// <para>
         /// For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code>
-        /// (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.
+        /// (default) and <code>EntityId</code>. In addition to <code>LastModifiedDate</code>
+        /// and <code>EntityId</code>, each <code>EntityType</code> might support additional fields.
         /// </para>
         ///  
         /// <para>

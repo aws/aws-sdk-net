@@ -20,12 +20,16 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Security;
+using System.Threading;
 
 namespace Amazon.Runtime
 {
     // Credentials fallback mechanism
     public static class FallbackCredentialsFactory
     {
+        // Lock to control caching credentials across multiple threads.
+        private static ReaderWriterLockSlim cachedCredentialsLock = new ReaderWriterLockSlim();
+    
         internal const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         internal const string DefaultProfileName = "default";
 
@@ -45,18 +49,26 @@ namespace Amazon.Runtime
 
         public static void Reset(IWebProxy proxy)
         {
-            cachedCredentials = null;
-            CredentialsGenerators = new List<CredentialsGenerator>
+            try
             {
+                cachedCredentialsLock.EnterWriteLock();
+                cachedCredentials = null;
+                CredentialsGenerators = new List<CredentialsGenerator>
+                {
 #if BCL
                 () => new AppConfigAWSCredentials(),            // Test explicit keys/profile name first.
 #endif
-                () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
-                // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
-                () => GetAWSCredentials(credentialProfileChain),
-                () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
-                () => ECSEC2CredentialsWrapper(proxy),      // either get ECS credentials or instance profile credentials
-            };
+                    () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
+                    // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
+                    () => GetAWSCredentials(credentialProfileChain),
+                    () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
+                    () => ECSEC2CredentialsWrapper(proxy), // either get ECS credentials or instance profile credentials
+                };
+            }
+            finally
+            {
+                cachedCredentialsLock.ExitWriteLock();
+            }
         }
 
         internal static string GetProfileName()
@@ -153,61 +165,84 @@ namespace Amazon.Runtime
 
         public static AWSCredentials GetCredentials(bool fallbackToAnonymous)
         {
-            if (cachedCredentials != null)
-                return cachedCredentials;
-
-            List<Exception> errors = new List<Exception>();
-
-            foreach (CredentialsGenerator generator in CredentialsGenerators)
+            try
             {
-                try
-                {
-                    cachedCredentials = generator();
-                }
-                // Breaking the FallbackCredentialFactory chain in case a ProcessAWSCredentialException exception 
-                // is encountered. ProcessAWSCredentialException is thrown by the ProcessAWSCredential provider
-                // when an exception is encountered when running a user provided process to obtain Basic/Session 
-                // credentials. The motivation behind this is that, if the user has provided a process to be run
-                // he expects to use the credentials obtained by running the process. Therefore the exception is
-                // surfaced to the user.
-                catch (ProcessAWSCredentialException)
-                {
-                    throw;
-                }
-                catch (Exception e)
-                {
-                    cachedCredentials = null;
-                    errors.Add(e);
-                }
-
+                cachedCredentialsLock.EnterReadLock();
                 if (cachedCredentials != null)
-                    break;
-            }
-
-            if (cachedCredentials == null)
-            {
-                if (fallbackToAnonymous)
                 {
-                    return new AnonymousAWSCredentials();
+                    return cachedCredentials;
                 }
-
-                using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
+            }
+            finally
+            {
+                cachedCredentialsLock.ExitReadLock();
+            }
+            
+            try
+            {
+                cachedCredentialsLock.EnterWriteLock();
+                if (cachedCredentials != null)
                 {
-                    writer.WriteLine("Unable to find credentials");
-                    writer.WriteLine();
-                    for (int i = 0; i < errors.Count; i++)
+                    return cachedCredentials;
+                }
+                
+                List<Exception> errors = new List<Exception>();
+                foreach (CredentialsGenerator generator in CredentialsGenerators)
+                {
+                    try
                     {
-                        Exception e = errors[i];
-                        writer.WriteLine("Exception {0} of {1}:", i + 1, errors.Count);
-                        writer.WriteLine(e.ToString());
-                        writer.WriteLine();
+                        cachedCredentials = generator();
+                    }
+                    // Breaking the FallbackCredentialFactory chain in case a ProcessAWSCredentialException exception 
+                    // is encountered. ProcessAWSCredentialException is thrown by the ProcessAWSCredential provider
+                    // when an exception is encountered when running a user provided process to obtain Basic/Session 
+                    // credentials. The motivation behind this is that, if the user has provided a process to be run
+                    // he expects to use the credentials obtained by running the process. Therefore the exception is
+                    // surfaced to the user.
+                    catch (ProcessAWSCredentialException)
+                    {
+                        throw;
+                    }
+                    catch (Exception e)
+                    {
+                        cachedCredentials = null;
+
+                        errors.Add(e);
                     }
 
-                    throw new AmazonServiceException(writer.ToString());
+                    if (cachedCredentials != null)
+                        break;
                 }
-            }
 
-            return cachedCredentials;
+                if (cachedCredentials == null)
+                {
+                    if (fallbackToAnonymous)
+                    {
+                        return new AnonymousAWSCredentials();
+                    }
+
+                    using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
+                    {
+                        writer.WriteLine("Unable to find credentials");
+                        writer.WriteLine();
+                        for (int i = 0; i < errors.Count; i++)
+                        {
+                            Exception e = errors[i];
+                            writer.WriteLine("Exception {0} of {1}:", i + 1, errors.Count);
+                            writer.WriteLine(e.ToString());
+                            writer.WriteLine();
+                        }
+
+                        throw new AmazonServiceException(writer.ToString());
+                    }
+                }
+
+                return cachedCredentials;
+            }
+            finally
+            {
+                cachedCredentialsLock.ExitWriteLock();
+            }
         }
     }
 }

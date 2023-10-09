@@ -76,6 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricFilterValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Negate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Negate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -64,7 +64,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the trust store.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string TrustStoreArn
         {
             get { return this._trustStoreArn; }

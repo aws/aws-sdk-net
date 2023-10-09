@@ -63,6 +63,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         private const string SsoAccountId = "sso_account_id";
         private const string SsoRegion = "sso_region";
+        private const string SsoRegistrationScopes = "sso_registration_scopes";
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
         private const string SsoSession = "sso_session";
@@ -84,6 +85,7 @@ namespace Amazon.Runtime.CredentialManagement
             MaxAttemptsField,
             SsoAccountId,
             SsoRegion,
+            SsoRegistrationScopes,
             SsoRoleName,
             SsoStartUrl,
             EndpointUrlField,
@@ -115,6 +117,9 @@ namespace Amazon.Runtime.CredentialManagement
 #if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
+                    // Not implemented for NetSDKCredentials. Applicable only
+                    // for SharedCredentials
+                    { nameof(CredentialProfileOptions.SsoRegistrationScopes), SsoRegistrationScopes },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession}

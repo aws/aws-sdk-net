@@ -157,6 +157,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
+            }
+
             if(requestObject.IsSetTaskRoleArn())
             {
                 context.Writer.WritePropertyName("TaskRoleArn");

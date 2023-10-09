@@ -75,6 +75,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.EstimatedBytesToTransfer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EstimatedFilesToDelete", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.EstimatedFilesToDelete = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EstimatedFilesToTransfer", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -87,10 +93,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.Excludes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilesDeleted", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FilesDeleted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FilesSkipped", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FilesSkipped = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilesTransferred", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.FilesTransferred = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FilesVerified", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FilesVerified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Includes", targetDepth))
@@ -103,6 +127,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OptionsUnmarshaller.Instance;
                     response.Options = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReportResult", targetDepth))
+                {
+                    var unmarshaller = ReportResultUnmarshaller.Instance;
+                    response.ReportResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Result", targetDepth))
@@ -127,6 +157,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskExecutionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TaskReportConfig", targetDepth))
+                {
+                    var unmarshaller = TaskReportConfigUnmarshaller.Instance;
+                    response.TaskReportConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

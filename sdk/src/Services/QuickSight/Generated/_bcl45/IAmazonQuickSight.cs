@@ -5570,6 +5570,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
@@ -5607,6 +5610,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -5647,6 +5653,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
         /// </exception>
@@ -5685,6 +5694,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10989,6 +11001,10 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// 1 Excel workbook
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// 5 CSVs
         /// </para>
         ///  </li> </ul> 
@@ -11056,6 +11072,10 @@ namespace Amazon.QuickSight
         ///  <ul> <li> 
         /// <para>
         /// 1 paginated PDF
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1 Excel workbook
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11142,7 +11162,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging
-        /// on data set, data source, dashboard, template, and topic. 
+        /// on data set, data source, dashboard, template, topic, and user. 
         /// </para>
         ///  
         /// <para>
@@ -11151,10 +11171,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use tags to track costs for Amazon QuickSight. This isn't possible because
-        /// you can't tag the resources that Amazon QuickSight costs are based on, for example
-        /// Amazon QuickSight storage capacity (SPICE), number of users, type of users, and usage
-        /// metrics.
+        /// Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources
+        /// that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session
+        /// usage, alert consumption, or reporting units.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11208,7 +11227,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging
-        /// on data set, data source, dashboard, template, and topic. 
+        /// on data set, data source, dashboard, template, topic, and user. 
         /// </para>
         ///  
         /// <para>
@@ -11217,10 +11236,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use tags to track costs for Amazon QuickSight. This isn't possible because
-        /// you can't tag the resources that Amazon QuickSight costs are based on, for example
-        /// Amazon QuickSight storage capacity (SPICE), number of users, type of users, and usage
-        /// metrics.
+        /// Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources
+        /// that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session
+        /// usage, alert consumption, or reporting units.
         /// </para>
         ///  </li> <li> 
         /// <para>

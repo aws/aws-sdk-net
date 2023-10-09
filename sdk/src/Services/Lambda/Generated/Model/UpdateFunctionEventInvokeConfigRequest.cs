@@ -51,7 +51,9 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// A destination for events after they have been sent to a function for processing.
         /// </para>
-        ///  <p class="title"> <b>Destinations</b> 
+        ///  
+        /// <para>
+        ///  <b>Destinations</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -88,7 +90,9 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The name of the Lambda function, version, or alias.
         /// </para>
-        ///  <p class="title"> <b>Name formats</b> 
+        ///  
+        /// <para>
+        ///  <b>Name formats</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

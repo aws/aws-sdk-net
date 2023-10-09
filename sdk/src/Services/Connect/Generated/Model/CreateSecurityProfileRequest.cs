@@ -30,16 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSecurityProfile operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates a security profile.
-    /// </para>
     /// </summary>
     public partial class CreateSecurityProfileRequest : AmazonConnectRequest
     {
         private Dictionary<string, string> _allowedAccessControlTags = new Dictionary<string, string>();
+        private List<Application> _applications = new List<Application>();
         private string _description;
         private string _instanceId;
         private List<string> _permissions = new List<string>();
@@ -65,6 +61,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetAllowedAccessControlTags()
         {
             return this._allowedAccessControlTags != null && this._allowedAccessControlTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// </para>
+        ///  
+        /// <para>
+        /// A list of third party applications that the security profile will give access to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<Application> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
         }
 
         /// <summary>

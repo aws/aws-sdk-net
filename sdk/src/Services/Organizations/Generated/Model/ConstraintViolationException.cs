@@ -52,8 +52,7 @@ namespace Amazon.Organizations.Model
     /// from the organization that doesn't yet have enough information to exist as a standalone
     /// account. This account requires you to first complete phone verification. Follow the
     /// steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
-    /// a member account from your organization</a> in the <i>Organizations User Guide.</i>
-    /// 
+    /// a member account from your organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,7 +67,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-    /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
+    /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
     /// Web Services Support</a> to request an increase in your limit. 
     /// </para>
     ///  
@@ -85,10 +84,15 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// If you get this exception when running a command immediately after creating the organization,
     /// wait one hour and try again. After an hour, if the command continues to fail with
-    /// this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web
-    /// Services Support</a>.
+    /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
+    /// Web Services Support</a>.
     /// </para>
     ///  </important> </li> <li> 
+    /// <para>
+    /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
+    /// a suspended account as a delegated administrator.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
     /// account of the organization as a delegated administrator for an Amazon Web Services
@@ -174,15 +178,14 @@ namespace Amazon.Organizations.Model
     /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
     /// must have an associated account in the Amazon Web Services GovCloud (US-West) Region.
     /// For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
-    /// in the <i>Amazon Web Services GovCloud User Guide.</i> 
+    /// in the <i>Amazon Web Services GovCloud User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
     /// account, you first must associate a valid payment instrument, such as a credit card,
-    /// with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
-    /// leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>Organizations User Guide.</i> 
+    /// with the account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+    /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -203,9 +206,8 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
     /// account, you first must associate a valid payment instrument, such as a credit card,
-    /// with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
-    /// leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>Organizations User Guide.</i> 
+    /// with the account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+    /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>

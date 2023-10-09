@@ -86,7 +86,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=16)]
+        [AWSProperty(Min=4, Max=16)]
         public string KeyCheckValue
         {
             get { return this._keyCheckValue; }

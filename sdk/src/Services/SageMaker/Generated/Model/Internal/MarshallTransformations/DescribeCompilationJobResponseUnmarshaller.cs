@@ -87,6 +87,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DerivedInformation", targetDepth))
+                {
+                    var unmarshaller = DerivedInformationUnmarshaller.Instance;
+                    response.DerivedInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

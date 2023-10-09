@@ -30,8 +30,9 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableOrganizationAdminAccount operation.
-    /// Enables an Amazon Web Services account within the organization as the GuardDuty delegated
-    /// administrator.
+    /// Designates an Amazon Web Services account within the organization as your GuardDuty
+    /// delegated administrator. Only the organization's management account can run this API
+    /// operation.
     /// </summary>
     public partial class EnableOrganizationAdminAccountRequest : AmazonGuardDutyRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The Amazon Web Services Account ID for the organization account to be enabled as a
+        /// The Amazon Web Services account ID for the organization account to be enabled as a
         /// GuardDuty delegated administrator.
         /// </para>
         /// </summary>

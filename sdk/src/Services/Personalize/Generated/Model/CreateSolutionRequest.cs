@@ -76,7 +76,9 @@ namespace Amazon.Personalize.Model
     /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
     /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
     /// </para>
-    ///  <p class="title"> <b>Related APIs</b> 
+    ///  
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

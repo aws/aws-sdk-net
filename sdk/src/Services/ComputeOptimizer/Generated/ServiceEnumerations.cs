@@ -829,6 +829,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentConfigurationMinSize = new ExportableAutoScalingGroupField("CurrentConfigurationMinSize");
         /// <summary>
+        /// Constant CurrentInstanceGpuInfo for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentInstanceGpuInfo = new ExportableAutoScalingGroupField("CurrentInstanceGpuInfo");
+        /// <summary>
         /// Constant CurrentMemory for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentMemory = new ExportableAutoScalingGroupField("CurrentMemory");
@@ -913,6 +917,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableAutoScalingGroupField("RecommendationOptionsEstimatedMonthlySavingsValue");
         /// <summary>
+        /// Constant RecommendationOptionsInstanceGpuInfo for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsInstanceGpuInfo = new ExportableAutoScalingGroupField("RecommendationOptionsInstanceGpuInfo");
+        /// <summary>
         /// Constant RecommendationOptionsMemory for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsMemory = new ExportableAutoScalingGroupField("RecommendationOptionsMemory");
@@ -936,6 +944,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
@@ -996,6 +1012,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuMemoryPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsGpuMemoryPercentageMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuPercentageMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsGpuPercentageMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
@@ -1201,6 +1225,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField AccountId = new ExportableInstanceField("AccountId");
         /// <summary>
+        /// Constant CurrentInstanceGpuInfo for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField CurrentInstanceGpuInfo = new ExportableInstanceField("CurrentInstanceGpuInfo");
+        /// <summary>
         /// Constant CurrentInstanceType for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField CurrentInstanceType = new ExportableInstanceField("CurrentInstanceType");
@@ -1269,6 +1297,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField FindingReasonCodes = new ExportableInstanceField("FindingReasonCodes");
         /// <summary>
+        /// Constant Idle for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField Idle = new ExportableInstanceField("Idle");
+        /// <summary>
         /// Constant InferredWorkloadTypes for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField InferredWorkloadTypes = new ExportableInstanceField("InferredWorkloadTypes");
@@ -1301,6 +1333,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableInstanceField("RecommendationOptionsEstimatedMonthlySavingsValue");
         /// <summary>
+        /// Constant RecommendationOptionsInstanceGpuInfo for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsInstanceGpuInfo = new ExportableInstanceField("RecommendationOptionsInstanceGpuInfo");
+        /// <summary>
         /// Constant RecommendationOptionsInstanceType for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsInstanceType = new ExportableInstanceField("RecommendationOptionsInstanceType");
@@ -1332,6 +1368,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsCpuMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
@@ -1404,6 +1448,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuMemoryPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsGpuMemoryPercentageMaximum = new ExportableInstanceField("UtilizationMetricsGpuMemoryPercentageMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGpuPercentageMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsGpuPercentageMaximum = new ExportableInstanceField("UtilizationMetricsGpuPercentageMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
@@ -1611,6 +1663,132 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type ExportableLicenseField.
+    /// </summary>
+    public class ExportableLicenseField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField AccountId = new ExportableLicenseField("AccountId");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationInstanceType for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationInstanceType = new ExportableLicenseField("CurrentLicenseConfigurationInstanceType");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationLicenseEdition for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationLicenseEdition = new ExportableLicenseField("CurrentLicenseConfigurationLicenseEdition");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationLicenseModel for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationLicenseModel = new ExportableLicenseField("CurrentLicenseConfigurationLicenseModel");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationLicenseName for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationLicenseName = new ExportableLicenseField("CurrentLicenseConfigurationLicenseName");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationLicenseVersion for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationLicenseVersion = new ExportableLicenseField("CurrentLicenseConfigurationLicenseVersion");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationMetricsSource for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationMetricsSource = new ExportableLicenseField("CurrentLicenseConfigurationMetricsSource");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationNumberOfCores for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationNumberOfCores = new ExportableLicenseField("CurrentLicenseConfigurationNumberOfCores");
+        /// <summary>
+        /// Constant CurrentLicenseConfigurationOperatingSystem for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField CurrentLicenseConfigurationOperatingSystem = new ExportableLicenseField("CurrentLicenseConfigurationOperatingSystem");
+        /// <summary>
+        /// Constant Finding for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField Finding = new ExportableLicenseField("Finding");
+        /// <summary>
+        /// Constant FindingReasonCodes for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField FindingReasonCodes = new ExportableLicenseField("FindingReasonCodes");
+        /// <summary>
+        /// Constant LastRefreshTimestamp for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField LastRefreshTimestamp = new ExportableLicenseField("LastRefreshTimestamp");
+        /// <summary>
+        /// Constant LookbackPeriodInDays for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField LookbackPeriodInDays = new ExportableLicenseField("LookbackPeriodInDays");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableLicenseField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableLicenseField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsLicenseEdition for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField RecommendationOptionsLicenseEdition = new ExportableLicenseField("RecommendationOptionsLicenseEdition");
+        /// <summary>
+        /// Constant RecommendationOptionsLicenseModel for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField RecommendationOptionsLicenseModel = new ExportableLicenseField("RecommendationOptionsLicenseModel");
+        /// <summary>
+        /// Constant RecommendationOptionsOperatingSystem for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField RecommendationOptionsOperatingSystem = new ExportableLicenseField("RecommendationOptionsOperatingSystem");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField RecommendationOptionsSavingsOpportunityPercentage = new ExportableLicenseField("RecommendationOptionsSavingsOpportunityPercentage");
+        /// <summary>
+        /// Constant ResourceArn for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField ResourceArn = new ExportableLicenseField("ResourceArn");
+        /// <summary>
+        /// Constant Tags for ExportableLicenseField
+        /// </summary>
+        public static readonly ExportableLicenseField Tags = new ExportableLicenseField("Tags");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportableLicenseField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportableLicenseField FindValue(string value)
+        {
+            return FindValue<ExportableLicenseField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportableLicenseField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportableVolumeField.
     /// </summary>
     public class ExportableVolumeField : ConstantClass
@@ -1620,6 +1798,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant AccountId for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField AccountId = new ExportableVolumeField("AccountId");
+        /// <summary>
+        /// Constant CurrentConfigurationRootVolume for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField CurrentConfigurationRootVolume = new ExportableVolumeField("CurrentConfigurationRootVolume");
         /// <summary>
         /// Constant CurrentConfigurationVolumeBaselineIOPS for ExportableVolumeField
         /// </summary>
@@ -2253,6 +2435,56 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceIdle.
+    /// </summary>
+    public class InstanceIdle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant False for InstanceIdle
+        /// </summary>
+        public static readonly InstanceIdle False = new InstanceIdle("False");
+        /// <summary>
+        /// Constant True for InstanceIdle
+        /// </summary>
+        public static readonly InstanceIdle True = new InstanceIdle("True");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceIdle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceIdle FindValue(string value)
+        {
+            return FindValue<InstanceIdle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceIdle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceRecommendationFindingReasonCode.
     /// </summary>
     public class InstanceRecommendationFindingReasonCode : ConstantClass
@@ -2298,6 +2530,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant EBSThroughputUnderprovisioned for InstanceRecommendationFindingReasonCode
         /// </summary>
         public static readonly InstanceRecommendationFindingReasonCode EBSThroughputUnderprovisioned = new InstanceRecommendationFindingReasonCode("EBSThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant GPUMemoryOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUMemoryOverprovisioned = new InstanceRecommendationFindingReasonCode("GPUMemoryOverprovisioned");
+        /// <summary>
+        /// Constant GPUMemoryUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUMemoryUnderprovisioned = new InstanceRecommendationFindingReasonCode("GPUMemoryUnderprovisioned");
+        /// <summary>
+        /// Constant GPUOverprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUOverprovisioned = new InstanceRecommendationFindingReasonCode("GPUOverprovisioned");
+        /// <summary>
+        /// Constant GPUUnderprovisioned for InstanceRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly InstanceRecommendationFindingReasonCode GPUUnderprovisioned = new InstanceRecommendationFindingReasonCode("GPUUnderprovisioned");
         /// <summary>
         /// Constant MemoryOverprovisioned for InstanceRecommendationFindingReasonCode
         /// </summary>
@@ -2895,6 +3143,326 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type LicenseEdition.
+    /// </summary>
+    public class LicenseEdition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enterprise for LicenseEdition
+        /// </summary>
+        public static readonly LicenseEdition Enterprise = new LicenseEdition("Enterprise");
+        /// <summary>
+        /// Constant Free for LicenseEdition
+        /// </summary>
+        public static readonly LicenseEdition Free = new LicenseEdition("Free");
+        /// <summary>
+        /// Constant NoLicenseEditionFound for LicenseEdition
+        /// </summary>
+        public static readonly LicenseEdition NoLicenseEditionFound = new LicenseEdition("NoLicenseEditionFound");
+        /// <summary>
+        /// Constant Standard for LicenseEdition
+        /// </summary>
+        public static readonly LicenseEdition Standard = new LicenseEdition("Standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseEdition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseEdition FindValue(string value)
+        {
+            return FindValue<LicenseEdition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseEdition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LicenseFinding.
+    /// </summary>
+    public class LicenseFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InsufficientMetrics for LicenseFinding
+        /// </summary>
+        public static readonly LicenseFinding InsufficientMetrics = new LicenseFinding("InsufficientMetrics");
+        /// <summary>
+        /// Constant NotOptimized for LicenseFinding
+        /// </summary>
+        public static readonly LicenseFinding NotOptimized = new LicenseFinding("NotOptimized");
+        /// <summary>
+        /// Constant Optimized for LicenseFinding
+        /// </summary>
+        public static readonly LicenseFinding Optimized = new LicenseFinding("Optimized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseFinding FindValue(string value)
+        {
+            return FindValue<LicenseFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LicenseFindingReasonCode.
+    /// </summary>
+    public class LicenseFindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatchApplicationInsightsError for LicenseFindingReasonCode
+        /// </summary>
+        public static readonly LicenseFindingReasonCode CloudWatchApplicationInsightsError = new LicenseFindingReasonCode("CloudWatchApplicationInsightsError");
+        /// <summary>
+        /// Constant InvalidCloudWatchApplicationInsightsSetup for LicenseFindingReasonCode
+        /// </summary>
+        public static readonly LicenseFindingReasonCode InvalidCloudWatchApplicationInsightsSetup = new LicenseFindingReasonCode("InvalidCloudWatchApplicationInsightsSetup");
+        /// <summary>
+        /// Constant LicenseOverprovisioned for LicenseFindingReasonCode
+        /// </summary>
+        public static readonly LicenseFindingReasonCode LicenseOverprovisioned = new LicenseFindingReasonCode("LicenseOverprovisioned");
+        /// <summary>
+        /// Constant Optimized for LicenseFindingReasonCode
+        /// </summary>
+        public static readonly LicenseFindingReasonCode Optimized = new LicenseFindingReasonCode("Optimized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseFindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseFindingReasonCode FindValue(string value)
+        {
+            return FindValue<LicenseFindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseFindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LicenseModel.
+    /// </summary>
+    public class LicenseModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BringYourOwnLicense for LicenseModel
+        /// </summary>
+        public static readonly LicenseModel BringYourOwnLicense = new LicenseModel("BringYourOwnLicense");
+        /// <summary>
+        /// Constant LicenseIncluded for LicenseModel
+        /// </summary>
+        public static readonly LicenseModel LicenseIncluded = new LicenseModel("LicenseIncluded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseModel FindValue(string value)
+        {
+            return FindValue<LicenseModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LicenseName.
+    /// </summary>
+    public class LicenseName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SQLServer for LicenseName
+        /// </summary>
+        public static readonly LicenseName SQLServer = new LicenseName("SQLServer");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseName FindValue(string value)
+        {
+            return FindValue<LicenseName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LicenseRecommendationFilterName.
+    /// </summary>
+    public class LicenseRecommendationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding for LicenseRecommendationFilterName
+        /// </summary>
+        public static readonly LicenseRecommendationFilterName Finding = new LicenseRecommendationFilterName("Finding");
+        /// <summary>
+        /// Constant FindingReasonCode for LicenseRecommendationFilterName
+        /// </summary>
+        public static readonly LicenseRecommendationFilterName FindingReasonCode = new LicenseRecommendationFilterName("FindingReasonCode");
+        /// <summary>
+        /// Constant LicenseName for LicenseRecommendationFilterName
+        /// </summary>
+        public static readonly LicenseRecommendationFilterName LicenseName = new LicenseRecommendationFilterName("LicenseName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseRecommendationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseRecommendationFilterName FindValue(string value)
+        {
+            return FindValue<LicenseRecommendationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricName.
     /// </summary>
     public class MetricName : ConstantClass
@@ -2936,6 +3504,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant EBS_WRITE_OPS_PER_SECOND for MetricName
         /// </summary>
         public static readonly MetricName EBS_WRITE_OPS_PER_SECOND = new MetricName("EBS_WRITE_OPS_PER_SECOND");
+        /// <summary>
+        /// Constant GPU_MEMORY_PERCENTAGE for MetricName
+        /// </summary>
+        public static readonly MetricName GPU_MEMORY_PERCENTAGE = new MetricName("GPU_MEMORY_PERCENTAGE");
+        /// <summary>
+        /// Constant GPU_PERCENTAGE for MetricName
+        /// </summary>
+        public static readonly MetricName GPU_PERCENTAGE = new MetricName("GPU_PERCENTAGE");
         /// <summary>
         /// Constant Memory for MetricName
         /// </summary>
@@ -2986,6 +3562,52 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricSourceProvider.
+    /// </summary>
+    public class MetricSourceProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatchApplicationInsights for MetricSourceProvider
+        /// </summary>
+        public static readonly MetricSourceProvider CloudWatchApplicationInsights = new MetricSourceProvider("CloudWatchApplicationInsights");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricSourceProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricSourceProvider FindValue(string value)
+        {
+            return FindValue<MetricSourceProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricSourceProvider(string value)
         {
             return FindValue(value);
         }
@@ -3246,6 +3868,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant LambdaFunction for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType LambdaFunction = new RecommendationSourceType("LambdaFunction");
+        /// <summary>
+        /// Constant License for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType License = new RecommendationSourceType("License");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3308,6 +3934,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant LambdaFunction for ResourceType
         /// </summary>
         public static readonly ResourceType LambdaFunction = new ResourceType("LambdaFunction");
+        /// <summary>
+        /// Constant License for ResourceType
+        /// </summary>
+        public static readonly ResourceType License = new ResourceType("License");
         /// <summary>
         /// Constant NotApplicable for ResourceType
         /// </summary>

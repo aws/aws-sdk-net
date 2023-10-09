@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _creationTime;
         private string _description;
+        private bool? _fipsEnabled;
         private string _lastUpdatedTime;
         private List<Tag> _tags = new List<Tag>();
         private string _verifiedAccessInstanceId;
@@ -74,6 +75,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FipsEnabled. 
+        /// <para>
+        /// Describes whether support for Federal Information Processing Standards (FIPS) is enabled
+        /// on the instance.
+        /// </para>
+        /// </summary>
+        public bool FipsEnabled
+        {
+            get { return this._fipsEnabled.GetValueOrDefault(); }
+            set { this._fipsEnabled = value; }
+        }
+
+        // Check to see if FipsEnabled property is set
+        internal bool IsSetFipsEnabled()
+        {
+            return this._fipsEnabled.HasValue; 
         }
 
         /// <summary>

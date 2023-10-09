@@ -46,7 +46,6 @@ namespace Amazon.QuickSight.Model
         /// The category field that is used in a computation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DimensionField Category
         {
             get { return this._category; }

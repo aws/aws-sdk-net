@@ -127,6 +127,11 @@ namespace Amazon.ECR.Model
         /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
         /// the repository into a category (such as <code>project-a/nginx-web-app</code>).
         /// </para>
+        ///  
+        /// <para>
+        /// The repository name must start with a letter and can only contain lowercase letters,
+        /// numbers, hyphens, underscores, and forward slashes.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName

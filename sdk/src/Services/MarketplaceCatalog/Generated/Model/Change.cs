@@ -36,6 +36,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _changeName;
         private string _changeType;
         private string _details;
+        private Amazon.Runtime.Documents.Document _detailsDocument;
         private Entity _entity;
         private List<Tag> _entityTags = new List<Tag>();
 
@@ -65,7 +66,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Each change type is unique for each <code>EntityType</code> provided in the change's
         /// scope. For more information on change types available for single-AMI products, see
         /// <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-        /// with single-AMI products</a>. Also, for more information on change types available
+        /// with single-AMI products</a>. Also, for more information about change types available
         /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
         /// with container products</a>.
         /// </para>
@@ -87,13 +88,14 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// This object contains details specific to the change type of the requested change.
-        /// For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-        /// with single-AMI products</a>. Also, for more information on change types available
+        /// For more information about change types available for single-AMI products, see <a
+        /// href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+        /// with single-AMI products</a>. Also, for more information about change types available
         /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
         /// with container products</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=16384)]
+        [AWSProperty(Min=2, Max=16384)]
         public string Details
         {
             get { return this._details; }
@@ -104,6 +106,26 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetDetails()
         {
             return this._details != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailsDocument. 
+        /// <para>
+        /// Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code>
+        /// details. You can use either <code>Details</code> or <code>DetailsDocument</code>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document DetailsDocument
+        {
+            get { return this._detailsDocument; }
+            set { this._detailsDocument = value; }
+        }
+
+        // Check to see if DetailsDocument property is set
+        internal bool IsSetDetailsDocument()
+        {
+            return !this._detailsDocument.IsNull();
         }
 
         /// <summary>

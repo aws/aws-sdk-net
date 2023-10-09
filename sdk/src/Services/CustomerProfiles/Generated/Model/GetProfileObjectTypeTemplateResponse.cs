@@ -69,6 +69,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A map of the name and ObjectType field.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, ObjectTypeField> Fields
         {
             get { return this._fields; }
@@ -87,6 +88,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A list of unique keys that can be used to map data to the profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<ObjectTypeKey>> Keys
         {
             get { return this._keys; }

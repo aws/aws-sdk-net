@@ -189,8 +189,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the previously trained ML model being used to create the inference scheduler.
-        /// 
+        /// The name of the previously trained machine learning model being used to create the
+        /// inference scheduler. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

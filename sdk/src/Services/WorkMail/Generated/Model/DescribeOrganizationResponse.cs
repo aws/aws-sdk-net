@@ -40,6 +40,8 @@ namespace Amazon.WorkMail.Model
         private string _directoryId;
         private string _directoryType;
         private string _errorMessage;
+        private bool? _interoperabilityEnabled;
+        private string _migrationAdmin;
         private string _organizationId;
         private string _state;
 
@@ -175,6 +177,43 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InteroperabilityEnabled. 
+        /// <para>
+        /// Indicates if interoperability is enabled for this organization.
+        /// </para>
+        /// </summary>
+        public bool InteroperabilityEnabled
+        {
+            get { return this._interoperabilityEnabled.GetValueOrDefault(); }
+            set { this._interoperabilityEnabled = value; }
+        }
+
+        // Check to see if InteroperabilityEnabled property is set
+        internal bool IsSetInteroperabilityEnabled()
+        {
+            return this._interoperabilityEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MigrationAdmin. 
+        /// <para>
+        /// The user ID of the migration admin if migration is enabled for the organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=256)]
+        public string MigrationAdmin
+        {
+            get { return this._migrationAdmin; }
+            set { this._migrationAdmin = value; }
+        }
+
+        // Check to see if MigrationAdmin property is set
+        internal bool IsSetMigrationAdmin()
+        {
+            return this._migrationAdmin != null;
         }
 
         /// <summary>

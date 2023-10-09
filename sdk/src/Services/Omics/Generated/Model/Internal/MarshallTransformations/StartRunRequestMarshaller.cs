@@ -106,6 +106,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("requestId");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetRetentionMode())
+                {
+                    context.Writer.WritePropertyName("retentionMode");
+                    context.Writer.Write(publicRequest.RetentionMode);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

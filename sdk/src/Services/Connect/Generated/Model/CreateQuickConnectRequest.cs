@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the quick connect.
+        /// A unique name of the quick connect.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]

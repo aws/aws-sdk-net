@@ -30,8 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountAssignmentDeletionStatus operation.
-    /// Lists the status of the AWS account assignment deletion requests for a specified IAM
-    /// Identity Center instance.
+    /// Lists the status of the Amazon Web Services account assignment deletion requests for
+    /// a specified IAM Identity Center instance.
     /// </summary>
     public partial class ListAccountAssignmentDeletionStatusRequest : AmazonSSOAdminRequest
     {
@@ -63,7 +63,8 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -105,7 +106,7 @@ namespace Amazon.SSOAdmin.Model
         /// of previous API calls to make subsequent calls.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

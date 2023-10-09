@@ -70,7 +70,9 @@ namespace Amazon.Personalize.Model
     /// <para>
     /// To get the status of the dataset, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.
     /// </para>
-    ///  <p class="title"> <b>Related APIs</b> 
+    ///  
+    /// <para>
+    ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

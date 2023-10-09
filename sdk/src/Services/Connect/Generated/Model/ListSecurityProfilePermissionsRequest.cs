@@ -30,12 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecurityProfilePermissions operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Lists the permissions granted to a security profile.
-    /// </para>
     /// </summary>
     public partial class ListSecurityProfilePermissionsRequest : AmazonConnectRequest
     {

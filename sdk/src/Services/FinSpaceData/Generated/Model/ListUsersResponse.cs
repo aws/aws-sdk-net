@@ -57,7 +57,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        /// A list of all the user accounts.
+        /// A list of all the users.
         /// </para>
         /// </summary>
         public List<User> Users

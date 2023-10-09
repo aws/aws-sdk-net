@@ -29,8 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Maps a column or attribute in the data source to an index field. You must first create
-    /// the fields in the index using the <code>UpdateIndex</code> API.
+    /// Maps attributes or field names of the documents synced from the data source to Amazon
+    /// Kendra index field names. You can set up field mappings for each data source when
+    /// calling <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CreateDataSource.html">CreateDataSource</a>
+    /// or <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_UpdateDataSource.html">UpdateDataSource</a>
+    /// API. To create custom fields, use the <code>UpdateIndex</code> API to first create
+    /// an index field and then map to the data source field. For more information, see <a
+    /// href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data
+    /// source fields</a>.
     /// </summary>
     public partial class DataSourceToIndexFieldMapping
     {
@@ -41,7 +47,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DataSourceFieldName. 
         /// <para>
-        /// The name of the column or attribute in the data source.
+        /// The name of the field in the data source. You must first create the index field using
+        /// the <code>UpdateIndex</code> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -60,7 +67,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DateFieldFormat. 
         /// <para>
-        /// The type of data stored in the column or attribute.
+        /// The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code>
+        /// is a date field, you must specify the date format. If the field is not a date field,
+        /// an exception is thrown.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -79,7 +88,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexFieldName. 
         /// <para>
-        /// The name of the field in the index.
+        /// The name of the index field to map to the data source field. The index field type
+        /// must match the data source field type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]

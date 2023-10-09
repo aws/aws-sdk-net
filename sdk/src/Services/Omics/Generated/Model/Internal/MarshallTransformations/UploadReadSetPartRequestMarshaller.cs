@@ -77,6 +77,10 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 throw new System.InvalidOperationException("Cannot determine stream length for the payload when content-length is required.");
             }
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 

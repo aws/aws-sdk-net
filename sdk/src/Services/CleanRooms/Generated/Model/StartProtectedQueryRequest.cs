@@ -30,7 +30,7 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// Container for the parameters to the StartProtectedQuery operation.
-    /// Creates a protected query that is started by Clean Rooms .
+    /// Creates a protected query that is started by Clean Rooms.
     /// </summary>
     public partial class StartProtectedQueryRequest : AmazonCleanRoomsRequest
     {
@@ -65,7 +65,6 @@ namespace Amazon.CleanRooms.Model
         /// The details needed to write the query results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProtectedQueryResultConfiguration ResultConfiguration
         {
             get { return this._resultConfiguration; }

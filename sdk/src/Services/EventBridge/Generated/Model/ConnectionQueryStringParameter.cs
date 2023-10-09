@@ -82,7 +82,7 @@ namespace Amazon.EventBridge.Model
         /// The value associated with the key for the query string parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Sensitive=true, Max=512)]
         public string Value
         {
             get { return this._value; }

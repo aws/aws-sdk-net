@@ -212,8 +212,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described.
-        /// 
+        /// The Amazon Resource Name (ARN) of the machine learning model of the inference scheduler
+        /// being described. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -232,7 +232,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the ML model of the inference scheduler being described. 
+        /// The name of the machine learning model of the inference scheduler being described.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

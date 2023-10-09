@@ -37,6 +37,7 @@ namespace Amazon.AWSHealth.Model
     {
         private int? _count;
         private string _eventArn;
+        private Dictionary<string, int> _statuses = new Dictionary<string, int>();
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -83,6 +84,24 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetEventArn()
         {
             return this._eventArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statuses. 
+        /// <para>
+        /// The number of affected entities aggregated by the entity status codes.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, int> Statuses
+        {
+            get { return this._statuses; }
+            set { this._statuses = value; }
+        }
+
+        // Check to see if Statuses property is set
+        internal bool IsSetStatuses()
+        {
+            return this._statuses != null && this._statuses.Count > 0; 
         }
 
     }

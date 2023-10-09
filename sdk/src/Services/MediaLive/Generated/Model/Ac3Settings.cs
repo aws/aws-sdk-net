@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class Ac3Settings
     {
+        private Ac3AttenuationControl _attenuationControl;
         private double? _bitrate;
         private Ac3BitstreamMode _bitstreamMode;
         private Ac3CodingMode _codingMode;
@@ -40,6 +41,22 @@ namespace Amazon.MediaLive.Model
         private Ac3DrcProfile _drcProfile;
         private Ac3LfeFilter _lfeFilter;
         private Ac3MetadataControl _metadataControl;
+
+        /// <summary>
+        /// Gets and sets the property AttenuationControl. Applies a 3 dB attenuation to the surround
+        /// channels. Applies only when the coding mode parameter is CODING_MODE_3_2_LFE.
+        /// </summary>
+        public Ac3AttenuationControl AttenuationControl
+        {
+            get { return this._attenuationControl; }
+            set { this._attenuationControl = value; }
+        }
+
+        // Check to see if AttenuationControl property is set
+        internal bool IsSetAttenuationControl()
+        {
+            return this._attenuationControl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates

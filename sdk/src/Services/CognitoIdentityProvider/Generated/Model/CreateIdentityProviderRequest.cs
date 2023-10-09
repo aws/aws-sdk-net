@@ -38,7 +38,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// for this API operation. For this operation, you must use IAM credentials to authorize
     /// requests, and you must grant yourself the corresponding IAM permission in a policy.
     /// </para>
-    ///  <p class="title"> <b>Learn more</b> 
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -250,7 +252,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The IdP name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string ProviderName
         {
             get { return this._providerName; }

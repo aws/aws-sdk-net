@@ -35,7 +35,7 @@ namespace Amazon.Organizations.Model
     /// you enable all features, you have access only to consolidated billing, and you can't
     /// use any of the advanced account administration features that Organizations supports.
     /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-    /// All Features in Your Organization</a> in the <i>Organizations User Guide.</i> 
+    /// all features in your organization</a> in the <i>Organizations User Guide</i>.
     /// 
     ///  <important> 
     /// <para>

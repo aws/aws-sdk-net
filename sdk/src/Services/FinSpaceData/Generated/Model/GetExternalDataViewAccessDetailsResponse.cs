@@ -42,6 +42,7 @@ namespace Amazon.FinSpaceData.Model
         /// The credentials required to access the external Dataview from the S3 location.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public AwsCredentials Credentials
         {
             get { return this._credentials; }

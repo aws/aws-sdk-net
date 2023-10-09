@@ -31,7 +31,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// A set of key-value pairs that are used to manage the resource. Tags can only be applied
     /// to permission sets and cannot be applied to corresponding roles that IAM Identity
-    /// Center creates in AWS accounts.
+    /// Center creates in Amazon Web Services accounts.
     /// </summary>
     public partial class Tag
     {

@@ -36,6 +36,7 @@ namespace Amazon.AppRunner.Model
         private CodeConfiguration _codeConfiguration;
         private string _repositoryUrl;
         private SourceCodeVersion _sourceCodeVersion;
+        private string _sourceDirectory;
 
         /// <summary>
         /// Gets and sets the property CodeConfiguration. 
@@ -96,6 +97,27 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetSourceCodeVersion()
         {
             return this._sourceCodeVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDirectory. 
+        /// <para>
+        /// The path of the directory that stores source code and configuration files. The build
+        /// and start commands also execute from here. The path is absolute from root and, if
+        /// not specified, defaults to the repository root.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string SourceDirectory
+        {
+            get { return this._sourceDirectory; }
+            set { this._sourceDirectory = value; }
+        }
+
+        // Check to see if SourceDirectory property is set
+        internal bool IsSetSourceDirectory()
+        {
+            return this._sourceDirectory != null;
         }
 
     }

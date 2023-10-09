@@ -63,7 +63,9 @@ namespace Amazon.Imagebuilder.Model
         /// Image Builder returns results based on the request filter. If you didn't specify a
         /// filter in the request, the type defaults to <code>accountId</code>.
         /// </para>
-        ///  <p class="title"> <b>Aggregation types</b> 
+        ///  
+        /// <para>
+        ///  <b>Aggregation types</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

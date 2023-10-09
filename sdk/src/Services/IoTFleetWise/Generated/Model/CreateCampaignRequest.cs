@@ -116,7 +116,9 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// Amazon S3 optimizes the cost of data storage and provides additional mechanisms to
         /// use vehicle data, such as data lakes, centralized data storage, data processing pipelines,
-        /// and analytics. 
+        /// and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery
+        /// to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers
+        /// for redundancy and high availability.
         /// </para>
         ///  
         /// <para>

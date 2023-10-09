@@ -178,6 +178,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServiceIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Users", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TraceUser, TraceUserUnmarshaller>(TraceUserUnmarshaller.Instance);

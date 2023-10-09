@@ -31,7 +31,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Container for the parameters to the GetOperation operation.
     /// Gets information about any operation that returns an operation ID in the response,
-    /// such as a <code>CreateService</code> request.
+    /// such as a <code>CreateHttpNamespace</code> request.
     /// 
     ///  <note> 
     /// <para>

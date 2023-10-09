@@ -139,7 +139,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsCollection. 
         /// <para>
-        /// Indicates if the option setting is part of a collection.
+        /// Indicates whether the option setting is part of a collection.
         /// </para>
         /// </summary>
         public bool IsCollection
@@ -157,8 +157,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        /// A Boolean value that, when true, indicates the option setting can be modified from
-        /// the default.
+        /// Indicates whether the option setting can be modified from the default.
         /// </para>
         /// </summary>
         public bool IsModifiable

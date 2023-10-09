@@ -23,6 +23,14 @@
     <pattern>^d-[0-9a-f]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociateWorkspaceApplicationRequest.ApplicationId</property>
+    <pattern>^wsa-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociateWorkspaceApplicationRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.AuthorizeIpRulesRequest.GroupId</property>
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
@@ -215,6 +223,10 @@
     <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DeployWorkspaceApplicationsRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeregisterWorkspaceDirectoryRequest.DirectoryId</property>
     <min>10</min>
     <max>65</max>
@@ -233,6 +245,48 @@
     <property>Amazon.WorkSpaces.Model.DescribeAccountModificationsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationAssociationsRequest.ApplicationId</property>
+    <pattern>^wsa-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationsRequest.Owner</property>
+    <pattern>^\d{12}|AMAZON$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeApplicationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeBundleAssociationsRequest.BundleId</property>
+    <pattern>^wsb-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeClientBrandingRequest.ResourceId</property>
@@ -308,6 +362,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeImageAssociationsRequest.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeIpGroupsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
@@ -325,6 +383,10 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeTagsRequest.ResourceId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeWorkspaceAssociationsRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceBundlesRequest.NextToken</property>
@@ -444,6 +506,14 @@
     <min>10</min>
     <max>65</max>
     <pattern>^d-[0-9a-f]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DisassociateWorkspaceApplicationRequest.ApplicationId</property>
+    <pattern>^wsa-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DisassociateWorkspaceApplicationRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ImportClientBrandingRequest.ResourceId</property>
@@ -621,6 +691,27 @@
     <pattern>(^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ApplicationResourceAssociation.ApplicationId</property>
+    <pattern>^wsa-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ApplicationResourceAssociation.AssociatedResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociationStateReason.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.BundleResourceAssociation.AssociatedResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.BundleResourceAssociation.BundleId</property>
+    <pattern>^wsb-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.CertificateBasedAuthProperties.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
@@ -750,6 +841,14 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImageResourceAssociation.AssociatedResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImageResourceAssociation.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.IosClientBrandingAttributes.ForgotPasswordLink</property>
     <min>1</min>
     <max>200</max>
@@ -852,6 +951,10 @@
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ResourceInUseException.ResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ResourceNotFoundException.ResourceId</property>
     <min>1</min>
   </property-value-rule>
@@ -940,6 +1043,23 @@
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkSpaceApplication.ApplicationId</property>
+    <pattern>^wsa-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkSpaceApplication.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkSpaceApplication.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkSpaceApplication.Owner</property>
+    <pattern>^\d{12}|AMAZON$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspaceBundle.BundleId</property>
     <pattern>^wsb-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
@@ -1021,6 +1141,14 @@
     <property>Amazon.WorkSpaces.Model.WorkspaceRequest.UserName</property>
     <min>1</min>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspaceResourceAssociation.AssociatedResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspaceResourceAssociation.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspacesIpGroup.GroupId</property>

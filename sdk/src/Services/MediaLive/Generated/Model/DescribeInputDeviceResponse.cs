@@ -41,8 +41,10 @@ namespace Amazon.MediaLive.Model
         private InputDeviceHdSettings _hdDeviceSettings;
         private string _id;
         private string _macAddress;
+        private List<string> _medialiveInputArns = new List<string>();
         private string _name;
         private InputDeviceNetworkSettings _networkSettings;
+        private InputDeviceOutputType _outputType;
         private string _serialNumber;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private InputDeviceType _type;
@@ -177,6 +179,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MedialiveInputArns. An array of the ARNs for the MediaLive
+        /// inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+        /// </summary>
+        public List<string> MedialiveInputArns
+        {
+            get { return this._medialiveInputArns; }
+            set { this._medialiveInputArns = value; }
+        }
+
+        // Check to see if MedialiveInputArns property is set
+        internal bool IsSetMedialiveInputArns()
+        {
+            return this._medialiveInputArns != null && this._medialiveInputArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. A name that you specify for the input device.
         /// </summary>
         public string Name
@@ -204,6 +222,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetNetworkSettings()
         {
             return this._networkSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputType. The output attachment type of the input device.
+        /// Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow.
+        /// Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+        /// </summary>
+        public InputDeviceOutputType OutputType
+        {
+            get { return this._outputType; }
+            set { this._outputType = value; }
+        }
+
+        // Check to see if OutputType property is set
+        internal bool IsSetOutputType()
+        {
+            return this._outputType != null;
         }
 
         /// <summary>

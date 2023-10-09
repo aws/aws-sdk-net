@@ -36,6 +36,7 @@ namespace Amazon.SecurityHub.Model
         private string _activityStreamStatus;
         private int? _allocatedStorage;
         private List<AwsRdsDbClusterAssociatedRole> _associatedRoles = new List<AwsRdsDbClusterAssociatedRole>();
+        private bool? _autoMinorVersionUpgrade;
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _clusterCreateTime;
@@ -141,6 +142,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAssociatedRoles()
         {
             return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        ///  Indicates if minor version upgrades are automatically applied to the cluster.
+        /// </para>
+        /// </summary>
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>

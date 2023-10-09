@@ -88,6 +88,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lambdaEventStructureVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LambdaEventStructureVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

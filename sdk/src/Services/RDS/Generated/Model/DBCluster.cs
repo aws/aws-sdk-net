@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private DateTime? _automaticRestartTime;
         private bool? _autoMinorVersionUpgrade;
         private List<string> _availabilityZones = new List<string>();
+        private string _awsBackupRecoveryPointArn;
         private long? _backtrackConsumedChangeRecords;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
@@ -311,6 +312,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupRecoveryPointArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
+        /// </para>
+        /// </summary>
+        public string AwsBackupRecoveryPointArn
+        {
+            get { return this._awsBackupRecoveryPointArn; }
+            set { this._awsBackupRecoveryPointArn = value; }
+        }
+
+        // Check to see if AwsBackupRecoveryPointArn property is set
+        internal bool IsSetAwsBackupRecoveryPointArn()
+        {
+            return this._awsBackupRecoveryPointArn != null;
         }
 
         /// <summary>
@@ -868,7 +887,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalWriteForwardingRequested. 
         /// <para>
-        /// Specifies whether write forwarding is enabled for a secondary cluster in an Aurora
+        /// Indicates whether write forwarding is enabled for a secondary cluster in an Aurora
         /// global database. Because write forwarding takes time to enable, check the value of
         /// <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed
         /// before using the write forwarding feature for this cluster.
@@ -1060,7 +1079,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LocalWriteForwardingStatus. 
         /// <para>
-        /// Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not
+        /// Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not
         /// enabled, requested, or is in the process of enabling it.
         /// </para>
         /// </summary>

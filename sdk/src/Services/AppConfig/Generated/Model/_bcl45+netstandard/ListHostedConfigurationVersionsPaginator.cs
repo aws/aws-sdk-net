@@ -41,6 +41,12 @@ namespace Amazon.AppConfig.Model
         /// </summary>
         public IPaginatedEnumerable<ListHostedConfigurationVersionsResponse> Responses => new PaginatedResponse<ListHostedConfigurationVersionsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Items
+        /// </summary>
+        public IPaginatedEnumerable<HostedConfigurationVersionSummary> Items => 
+            new PaginatedResultKeyResponse<ListHostedConfigurationVersionsResponse, HostedConfigurationVersionSummary>(this, (i) => i.Items);
+
         internal ListHostedConfigurationVersionsPaginator(IAmazonAppConfig client, ListHostedConfigurationVersionsRequest request)
         {
             this._client = client;

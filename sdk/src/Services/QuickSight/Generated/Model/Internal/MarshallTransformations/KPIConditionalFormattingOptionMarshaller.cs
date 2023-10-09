@@ -45,6 +45,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KPIConditionalFormattingOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActualValue())
+            {
+                context.Writer.WritePropertyName("ActualValue");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KPIActualValueConditionalFormattingMarshaller.Instance;
+                marshaller.Marshall(requestObject.ActualValue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetComparisonValue())
+            {
+                context.Writer.WritePropertyName("ComparisonValue");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KPIComparisonValueConditionalFormattingMarshaller.Instance;
+                marshaller.Marshall(requestObject.ComparisonValue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPrimaryValue())
             {
                 context.Writer.WritePropertyName("PrimaryValue");

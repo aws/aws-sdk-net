@@ -352,6 +352,34 @@ namespace Amazon.AppConfig
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
         /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -447,6 +475,34 @@ namespace Amazon.AppConfig
         /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">REST API Reference for CreateConfigurationProfile Operation</seealso>
         public virtual Task<CreateConfigurationProfileResponse> CreateConfigurationProfileAsync(CreateConfigurationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -489,6 +545,34 @@ namespace Amazon.AppConfig
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateDeploymentStrategy">REST API Reference for CreateDeploymentStrategy Operation</seealso>
         public virtual Task<CreateDeploymentStrategyResponse> CreateDeploymentStrategyAsync(CreateDeploymentStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -539,6 +623,34 @@ namespace Amazon.AppConfig
         /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -572,9 +684,30 @@ namespace Amazon.AppConfig
         ///  
         /// <para>
         /// You can create your own extensions or use the Amazon Web Services authored extensions
-        /// provided by AppConfig. For most use cases, to create your own extension, you must
-        /// create an Lambda function to perform any computation and processing defined in the
-        /// extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// provided by AppConfig. For an AppConfig extension that uses Lambda, you must create
+        /// a Lambda function to perform any computation and processing defined in the extension.
+        /// If you plan to create custom versions of the Amazon Web Services authored notification
+        /// extensions, you only need to specify an Amazon Resource Name (ARN) in the <code>Uri</code>
+        /// field for the new extension version.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a custom EventBridge notification extension, enter the ARN of the EventBridge
+        /// default events in the <code>Uri</code> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a custom Amazon SNS notification extension, enter the ARN of an Amazon SNS topic
+        /// in the <code>Uri</code> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a custom Amazon SQS notification extension, enter the ARN of an Amazon SQS message
+        /// queue in the <code>Uri</code> field. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
         /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
         /// </para>
         /// </summary>
@@ -595,8 +728,32 @@ namespace Amazon.AppConfig
         /// There was an internal failure in the AppConfig service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
-        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-        /// configuration store. Delete one or more versions and try again.
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
         public virtual Task<CreateExtensionResponse> CreateExtensionAsync(CreateExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -651,8 +808,32 @@ namespace Amazon.AppConfig
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
-        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-        /// configuration store. Delete one or more versions and try again.
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
         public virtual Task<CreateExtensionAssociationResponse> CreateExtensionAssociationAsync(CreateExtensionAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -705,8 +886,32 @@ namespace Amazon.AppConfig
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
-        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-        /// configuration store. Delete one or more versions and try again.
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment strategies: 20 max
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuration profiles: 100 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// Environments: 20 max per application
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
         public virtual Task<CreateHostedConfigurationVersionResponse> CreateHostedConfigurationVersionAsync(CreateHostedConfigurationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

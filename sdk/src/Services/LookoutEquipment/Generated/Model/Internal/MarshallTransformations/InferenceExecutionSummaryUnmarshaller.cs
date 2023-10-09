@@ -124,6 +124,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScheduledStartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -132,7 +132,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -212,7 +214,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -292,7 +296,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -433,7 +439,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -549,7 +557,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -628,7 +638,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -742,7 +754,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -830,7 +844,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -909,7 +925,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -988,7 +1006,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1070,7 +1090,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1150,7 +1172,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1250,7 +1274,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1384,7 +1410,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1474,7 +1502,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1553,7 +1583,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1633,7 +1665,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1715,7 +1749,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1826,7 +1862,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1955,7 +1993,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2092,7 +2132,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2201,7 +2243,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2286,7 +2330,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2364,7 +2410,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2446,7 +2494,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2544,7 +2594,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  </note> 
         /// <para>
         /// Updates the specified user's attributes, including developer attributes, as an administrator.
-        /// Works on any user.
+        /// Works on any user. To delete an attribute from your user, submit the attribute in
+        /// your API request with a blank value.
         /// </para>
         ///  
         /// <para>
@@ -2562,7 +2613,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2682,7 +2735,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3241,7 +3296,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3325,7 +3382,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3408,7 +3467,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3488,7 +3549,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3599,7 +3662,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3702,7 +3767,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3788,7 +3855,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4601,7 +4670,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4681,7 +4752,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6023,7 +6096,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6099,7 +6174,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6175,7 +6252,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6317,7 +6396,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6393,7 +6474,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6469,7 +6552,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6541,7 +6626,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6617,7 +6704,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8035,7 +8124,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8111,7 +8202,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8197,7 +8290,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8443,7 +8538,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8554,7 +8651,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8679,7 +8778,9 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
         /// </para>
-        ///  <p class="title"> <b>Learn more</b> 
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

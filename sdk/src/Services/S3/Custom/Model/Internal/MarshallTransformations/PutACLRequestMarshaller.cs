@@ -113,7 +113,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                ChecksumUtils.SetRequestChecksum(request, putObjectAclRequest.ChecksumAlgorithm);
+                ChecksumUtils.SetChecksumData(request, putObjectAclRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

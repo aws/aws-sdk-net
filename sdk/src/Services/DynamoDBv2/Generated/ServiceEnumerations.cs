@@ -853,6 +853,106 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type ExportType.
+    /// </summary>
+    public class ExportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_EXPORT for ExportType
+        /// </summary>
+        public static readonly ExportType FULL_EXPORT = new ExportType("FULL_EXPORT");
+        /// <summary>
+        /// Constant INCREMENTAL_EXPORT for ExportType
+        /// </summary>
+        public static readonly ExportType INCREMENTAL_EXPORT = new ExportType("INCREMENTAL_EXPORT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportType FindValue(string value)
+        {
+            return FindValue<ExportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportViewType.
+    /// </summary>
+    public class ExportViewType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEW_AND_OLD_IMAGES for ExportViewType
+        /// </summary>
+        public static readonly ExportViewType NEW_AND_OLD_IMAGES = new ExportViewType("NEW_AND_OLD_IMAGES");
+        /// <summary>
+        /// Constant NEW_IMAGE for ExportViewType
+        /// </summary>
+        public static readonly ExportViewType NEW_IMAGE = new ExportViewType("NEW_IMAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportViewType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportViewType FindValue(string value)
+        {
+            return FindValue<ExportViewType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportViewType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlobalTableStatus.
     /// </summary>
     public class GlobalTableStatus : ConstantClass

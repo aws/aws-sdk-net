@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents key, value pair to be matched against given resource property.
+    /// Represents the <code>key:value</code> pair to be matched against given resource property.
     /// </summary>
     public partial class ScanConditionPair
     {
@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Represents <i>key</i> <b/> in the map condition.
+        /// Represents the <b>key</b> in the map condition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -58,8 +58,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Represents optional <i>value</i> <b/> in the map condition. If not specified, only
-        /// <i>key</i> <b/> will be matched.
+        /// Represents optional <b>value</b> in the map condition. If not specified, only the
+        /// <b>key</b> will be matched.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

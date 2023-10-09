@@ -30,8 +30,8 @@ namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInferenceScheduler operation.
-    /// Deletes an inference scheduler that has been set up. Already processed output results
-    /// are not affected.
+    /// Deletes an inference scheduler that has been set up. Prior inference results will
+    /// not be deleted.
     /// </summary>
     public partial class DeleteInferenceSchedulerRequest : AmazonLookoutEquipmentRequest
     {

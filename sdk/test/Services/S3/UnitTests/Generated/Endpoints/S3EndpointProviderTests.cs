@@ -231,7 +231,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["Endpoint"] = "https://beta.example.com";
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
@@ -591,10 +590,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -610,10 +607,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -631,10 +626,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -2456,7 +2449,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -2475,7 +2467,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3.dualstack.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -2494,7 +2485,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-accelerate.dualstack.amazonaws.com", endpoint.URL);
         }
@@ -2513,7 +2503,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-accelerate.amazonaws.com", endpoint.URL);
         }
@@ -2532,7 +2521,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -2551,7 +2539,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-fips.dualstack.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -2571,7 +2558,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2589,7 +2575,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -2608,7 +2593,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3.dualstack.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -2663,7 +2647,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -2682,7 +2665,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3.dualstack.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -2701,7 +2683,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-accelerate.dualstack.amazonaws.com", endpoint.URL);
         }
@@ -2720,7 +2701,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-accelerate.amazonaws.com", endpoint.URL);
         }
@@ -2739,7 +2719,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-fips.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -2758,7 +2737,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.s3-fips.dualstack.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -2778,7 +2756,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2796,7 +2773,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.us-west-2.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -2833,7 +2809,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2851,7 +2826,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.dualstack.us-west-2.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -2869,10 +2843,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["ForcePathStyle"] = true;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2890,7 +2862,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.us-west-2.amazonaws.com/99a_b", endpoint.URL);
         }
@@ -2908,7 +2879,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.us-west-2.amazonaws.com/99a_b", endpoint.URL);
         }
@@ -2927,7 +2897,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.cn-north-1.amazonaws.com.cn/bucket-name", endpoint.URL);
         }
@@ -2965,7 +2934,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -2983,7 +2951,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.dualstack.cn-north-1.amazonaws.com.cn/bucket-name", endpoint.URL);
         }
@@ -3001,10 +2968,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["ForcePathStyle"] = true;
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3022,7 +2987,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.cn-north-1.amazonaws.com.cn/99a_b", endpoint.URL);
         }
@@ -3040,7 +3004,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.cn-north-1.amazonaws.com.cn/99a_b", endpoint.URL);
         }
@@ -3059,7 +3022,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.af-south-1.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -3097,7 +3059,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3115,7 +3076,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.dualstack.af-south-1.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -3133,10 +3093,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["ForcePathStyle"] = true;
             parameters["Region"] = "af-south-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3154,7 +3112,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.af-south-1.amazonaws.com/99a_b", endpoint.URL);
         }
@@ -3172,7 +3129,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3.af-south-1.amazonaws.com/99a_b", endpoint.URL);
         }
@@ -3192,7 +3148,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("http://bucket-name.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com", endpoint.URL);
         }
@@ -3212,7 +3167,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -3233,7 +3187,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3253,7 +3206,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3273,7 +3225,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3290,10 +3241,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["Endpoint"] = "https://beta.example.com";
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.beta.example.com", endpoint.URL);
         }
@@ -3313,7 +3262,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com", endpoint.URL);
         }
@@ -3333,7 +3281,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -3372,7 +3319,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3408,10 +3354,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["Endpoint"] = "https://beta.example.com";
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.beta.example.com", endpoint.URL);
         }
@@ -3431,7 +3375,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://bucket-name.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com", endpoint.URL);
         }
@@ -3451,7 +3394,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com/bucket-name", endpoint.URL);
         }
@@ -3472,7 +3414,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3492,7 +3433,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3512,7 +3452,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3529,10 +3468,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["Endpoint"] = "https://beta.example.com";
             parameters["Region"] = "af-south-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.beta.example.com", endpoint.URL);
         }
@@ -3549,10 +3486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -3569,10 +3504,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -3590,10 +3523,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3609,10 +3540,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint-fips.dualstack.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -3629,10 +3558,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -3650,7 +3577,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
@@ -3669,10 +3595,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3689,7 +3613,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
@@ -3707,10 +3630,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "af-south-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -3727,10 +3648,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "af-south-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint-fips.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -3748,10 +3667,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "af-south-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3767,10 +3684,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "af-south-1";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myendpoint-123456789012.s3-accesspoint-fips.dualstack.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -3824,10 +3739,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3846,10 +3759,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -3866,10 +3777,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -3886,10 +3795,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
             parameters["ForcePathStyle"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -3908,10 +3815,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -4448,10 +4353,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["ForcePathStyle"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            parameters["___key"] = "key";
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
         }
 

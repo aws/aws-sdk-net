@@ -1140,6 +1140,16 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderPermissionsRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeFolderPermissionsResponse.FolderId</property>
     <min>1</min>
     <max>2048</max>
@@ -1156,6 +1166,16 @@
     <min>1</min>
     <max>2048</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeFolderResolvedPermissionsResponse.FolderId</property>
@@ -3888,6 +3908,10 @@
     <pattern>[0-9a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.KPISparklineOptions.Color</property>
+    <pattern>^#[A-F0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.KPIVisual.VisualId</property>
     <min>1</min>
     <max>512</max>
@@ -4396,6 +4420,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RedshiftIAMParameters.DatabaseUser</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.RedshiftIAMParameters.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RedshiftParameters.ClusterId</property>
     <min>1</min>
     <max>64</max>
@@ -4451,11 +4485,11 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Schema</property>
-    <max>64</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RelativeDatesFilter.FilterId</property>

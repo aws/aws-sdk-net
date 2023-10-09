@@ -30,7 +30,7 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPermissionGroupsByUser operation.
-    /// Lists all the permission groups that are associated with a specific user account.
+    /// Lists all the permission groups that are associated with a specific user.
     /// </summary>
     public partial class ListPermissionGroupsByUserRequest : AmazonFinSpaceDataRequest
     {

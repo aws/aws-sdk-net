@@ -73,6 +73,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAutoMinorVersionUpgrade())
+            {
+                context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
+                context.Writer.Write(requestObject.AutoMinorVersionUpgrade);
+            }
+
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("AvailabilityZones");

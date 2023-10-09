@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// The requested resource does not exist.
+    /// The requested resource does not exist, or exists in a region other than the one specified
+    /// for the command.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Line. 
         /// <para>
-        /// Indicates if the file should be read as a json object per line. 
+        /// Indicates if the file should be read as a JSON object per line. 
         /// </para>
         /// </summary>
         public bool Line

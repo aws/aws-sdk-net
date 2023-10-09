@@ -46,6 +46,8 @@ namespace AWSSDK.UnitTests.Mocking
             {
                 new NoopPipelineHandler(),
                 new Signer(),
+                new ChecksumHandler(),
+                new CompressionHandler(),
                 new EndpointResolver(),
                 new Marshaller()
             };

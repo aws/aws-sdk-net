@@ -61,10 +61,22 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the deployment event. Descriptions include, but are not limited to,
-        /// the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the
-        /// percentage of hosts that received the deployment, or in the case of an internal error,
-        /// a recommendation to attempt a new deployment.
+        /// the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated
+        /// a rollback.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The percentage of hosts that received the deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A recommendation to attempt a new deployment (in the case of an internal error).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string Description

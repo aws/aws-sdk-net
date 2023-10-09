@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Information about a document attribute. You can use document attributes as facets.
+    /// Information about a document attribute or field. You can use document attributes as
+    /// facets.
     /// 
     ///  
     /// <para>

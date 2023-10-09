@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.
+        /// The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing DBCluster.
+        /// Must match the identifier of an existing DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

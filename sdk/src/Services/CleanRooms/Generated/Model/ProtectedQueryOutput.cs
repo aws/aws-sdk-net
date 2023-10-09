@@ -33,7 +33,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQueryOutput
     {
+        private List<ProtectedQuerySingleMemberOutput> _memberList = new List<ProtectedQuerySingleMemberOutput>();
         private ProtectedQueryS3Output _s3;
+
+        /// <summary>
+        /// Gets and sets the property MemberList. 
+        /// <para>
+        /// The list of member Amazon Web Services account(s) that received the results of the
+        /// query. 
+        /// </para>
+        /// </summary>
+        public List<ProtectedQuerySingleMemberOutput> MemberList
+        {
+            get { return this._memberList; }
+            set { this._memberList = value; }
+        }
+
+        // Check to see if MemberList property is set
+        internal bool IsSetMemberList()
+        {
+            return this._memberList != null && this._memberList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property S3. 

@@ -61,7 +61,11 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobArn())
                 throw new AmazonBraketException("Request object does not have required field JobArn set");
             request.AddPathResource("{jobArn}", StringUtils.FromString(publicRequest.JobArn));
+            
+            if (publicRequest.IsSetAdditionalAttributeNames())
+                request.ParameterCollection.Add("additionalAttributeNames", publicRequest.AdditionalAttributeNames);
             request.ResourcePath = "/job/{jobArn}";
+            request.UseQueryString = true;
 
             return request;
         }

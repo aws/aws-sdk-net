@@ -70,6 +70,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ObjectPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("paginationConfig", targetDepth))
+                {
+                    var unmarshaller = SAPODataPaginationConfigUnmarshaller.Instance;
+                    unmarshalledObject.PaginationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("parallelismConfig", targetDepth))
+                {
+                    var unmarshaller = SAPODataParallelismConfigUnmarshaller.Instance;
+                    unmarshalledObject.ParallelismConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

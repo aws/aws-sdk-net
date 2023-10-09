@@ -81,7 +81,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The value associated with the key.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Sensitive=true, Max=512)]
         public string Value
         {
             get { return this._value; }

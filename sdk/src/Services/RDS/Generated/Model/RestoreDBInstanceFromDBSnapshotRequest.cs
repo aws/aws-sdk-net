@@ -145,8 +145,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether minor version upgrades are applied automatically to
-        /// the DB instance during the maintenance window.
+        /// Specifies whether to automatically apply minor version upgrades to the DB instance
+        /// during the maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -228,8 +228,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB instance to snapshots
-        /// of the DB instance.
+        /// Specifies whether to copy all tags from the restored DB instance to snapshots of the
+        /// DB instance.
         /// </para>
         ///  
         /// <para>
@@ -556,9 +556,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB instance has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// Specifies whether to enable deletion protection for the DB instance. The database
+        /// can't be deleted when deletion protection is enabled. By default, deletion protection
+        /// isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
@@ -613,7 +613,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be longer than 64 characters.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
         /// 
@@ -777,8 +781,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCustomerOwnedIp. 
         /// <para>
-        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
-        /// RDS on Outposts DB instance.
+        /// Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts
+        /// DB instance.
         /// </para>
         ///  
         /// <para>
@@ -817,8 +821,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -970,7 +974,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// Valid Values: <code>license-included</code> | <code>bring-your-own-license</code>
         /// | <code>general-public-license</code> 
         /// </para>
         /// </summary>
@@ -989,7 +993,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates whether the DB instance is a Multi-AZ deployment.
+        /// Specifies whether the DB instance is a Multi-AZ deployment.
         /// </para>
         ///  
         /// <para>
@@ -1020,7 +1024,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1134,7 +1138,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible.
+        /// Specifies whether the DB instance is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1196,7 +1200,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
         /// <para>
@@ -1283,8 +1287,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseDefaultProcessorFeatures. 
         /// <para>
-        /// A value that indicates whether the DB instance class of the DB instance uses its default
-        /// processor features.
+        /// Specifies whether the DB instance class of the DB instance uses its default processor
+        /// features.
         /// </para>
         ///  
         /// <para>

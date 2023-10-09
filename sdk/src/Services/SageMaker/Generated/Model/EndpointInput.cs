@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _endpointName;
         private string _endTimeOffset;
+        private string _excludeFeaturesAttribute;
         private string _featuresAttribute;
         private string _inferenceAttribute;
         private string _localPath;
@@ -83,6 +84,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndTimeOffset()
         {
             return this._endTimeOffset != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeFeaturesAttribute. 
+        /// <para>
+        /// The attributes of the input data to exclude from the analysis.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string ExcludeFeaturesAttribute
+        {
+            get { return this._excludeFeaturesAttribute; }
+            set { this._excludeFeaturesAttribute = value; }
+        }
+
+        // Check to see if ExcludeFeaturesAttribute property is set
+        internal bool IsSetExcludeFeaturesAttribute()
+        {
+            return this._excludeFeaturesAttribute != null;
         }
 
         /// <summary>
@@ -179,8 +199,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
-        /// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3
-        /// key. Defaults to <code>FullyReplicated</code> 
+        /// Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon
+        /// S3 key. Defaults to <code>FullyReplicated</code> 
         /// </para>
         /// </summary>
         public ProcessingS3DataDistributionType S3DataDistributionType

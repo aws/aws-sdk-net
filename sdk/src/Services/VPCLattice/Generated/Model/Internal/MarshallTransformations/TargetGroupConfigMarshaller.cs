@@ -62,6 +62,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IpAddressType);
             }
 
+            if(requestObject.IsSetLambdaEventStructureVersion())
+            {
+                context.Writer.WritePropertyName("lambdaEventStructureVersion");
+                context.Writer.Write(requestObject.LambdaEventStructureVersion);
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");

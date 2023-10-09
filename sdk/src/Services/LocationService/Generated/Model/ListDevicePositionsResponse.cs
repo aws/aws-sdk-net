@@ -39,9 +39,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Contains details about each device's last known position. These details includes the
-        /// device ID, the time when the position was sampled on the device, the time that the
-        /// service received the update, and the most recent coordinates.
+        /// Contains details about each device's last known position.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

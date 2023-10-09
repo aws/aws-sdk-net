@@ -159,16 +159,16 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property MembershipStatus. 
         /// <para>
-        /// Indicates the status of the user account within a permission group.
+        /// Indicates the status of the user within a permission group.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to
-        /// the permission group.
+        ///  <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission
+        /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission
+        ///  <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission
         /// group.
         /// </para>
         ///  </li> <li> 

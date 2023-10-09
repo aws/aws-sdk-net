@@ -44,7 +44,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property DatasetNameBeginsWith. 
         /// <para>
-        /// The beginning of the name of the dataset of the ML models to be listed. 
+        /// The beginning of the name of the dataset of the machine learning models to be listed.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -63,7 +64,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Specifies the maximum number of ML models to list. 
+        ///  Specifies the maximum number of machine learning models to list. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -82,7 +83,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelNameBeginsWith. 
         /// <para>
-        /// The beginning of the name of the ML models being listed. 
+        /// The beginning of the name of the machine learning models being listed. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -101,8 +102,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  An opaque pagination token indicating where to continue the listing of ML models.
-        /// 
+        ///  An opaque pagination token indicating where to continue the listing of machine learning
+        /// models. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -121,7 +122,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the ML model. 
+        /// The status of the machine learning model. 
         /// </para>
         /// </summary>
         public ModelStatus Status

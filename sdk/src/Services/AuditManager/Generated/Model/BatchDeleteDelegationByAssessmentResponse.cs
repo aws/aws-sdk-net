@@ -42,6 +42,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<BatchDeleteDelegationByAssessmentError> Errors
         {
             get { return this._errors; }

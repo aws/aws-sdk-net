@@ -37,6 +37,7 @@ namespace Amazon.AppConfig.Model
         private string _applicationId;
         private string _configurationProfileId;
         private string _description;
+        private string _kmsKeyIdentifier;
         private string _name;
         private string _retrievalRoleArn;
         private List<Validator> _validators = new List<Validator>();
@@ -96,6 +97,29 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier for a Key Management Service key to encrypt new configuration data
+        /// versions in the AppConfig hosted configuration store. This attribute is only used
+        /// for <code>hosted</code> configuration types. The identifier can be an KMS key ID,
+        /// alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed
+        /// in other configuration stores, see the documentation for how to specify an KMS key
+        /// for that particular service.
+        /// </para>
+        /// </summary>
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

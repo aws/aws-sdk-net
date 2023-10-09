@@ -31,14 +31,6 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// The collection of settings used by an AutoML job V2 for the time-series forecasting
     /// problem type.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <code>TimeSeriesForecastingJobConfig</code> problem type is only available in
-    /// private beta. Contact Amazon Web Services Support or your account manager to learn
-    /// more about access privileges.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class TimeSeriesForecastingJobConfig
     {
@@ -47,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _forecastFrequency;
         private int? _forecastHorizon;
         private List<string> _forecastQuantiles = new List<string>();
+        private List<HolidayConfigAttributes> _holidayConfig = new List<HolidayConfigAttributes>();
         private TimeSeriesConfig _timeSeriesConfig;
         private TimeSeriesTransformations _transformations;
 
@@ -214,6 +207,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetForecastQuantiles()
         {
             return this._forecastQuantiles != null && this._forecastQuantiles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HolidayConfig. 
+        /// <para>
+        /// The collection of holiday featurization attributes used to incorporate national holiday
+        /// information into your forecasting model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<HolidayConfigAttributes> HolidayConfig
+        {
+            get { return this._holidayConfig; }
+            set { this._holidayConfig = value; }
+        }
+
+        // Check to see if HolidayConfig property is set
+        internal bool IsSetHolidayConfig()
+        {
+            return this._holidayConfig != null && this._holidayConfig.Count > 0; 
         }
 
         /// <summary>

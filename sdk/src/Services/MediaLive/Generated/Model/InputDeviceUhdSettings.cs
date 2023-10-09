@@ -35,12 +35,14 @@ namespace Amazon.MediaLive.Model
     public partial class InputDeviceUhdSettings
     {
         private InputDeviceActiveInput _activeInput;
+        private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
         private InputDeviceState _deviceState;
         private double? _framerate;
         private int? _height;
         private int? _latencyMs;
         private int? _maxBitrate;
+        private InputDeviceMediaConnectSettings _mediaconnectSettings;
         private InputDeviceScanType _scanType;
         private int? _width;
 
@@ -58,6 +60,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetActiveInput()
         {
             return this._activeInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Codec. The codec for the video that the device produces.
+        /// </summary>
+        public InputDeviceCodec Codec
+        {
+            get { return this._codec; }
+            set { this._codec = value; }
+        }
+
+        // Check to see if Codec property is set
+        internal bool IsSetCodec()
+        {
+            return this._codec != null;
         }
 
         /// <summary>
@@ -151,6 +168,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMaxBitrate()
         {
             return this._maxBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaconnectSettings. Information about the MediaConnect
+        /// flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
+        /// </summary>
+        public InputDeviceMediaConnectSettings MediaconnectSettings
+        {
+            get { return this._mediaconnectSettings; }
+            set { this._mediaconnectSettings = value; }
+        }
+
+        // Check to see if MediaconnectSettings property is set
+        internal bool IsSetMediaconnectSettings()
+        {
+            return this._mediaconnectSettings != null;
         }
 
         /// <summary>

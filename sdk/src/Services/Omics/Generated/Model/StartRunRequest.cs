@@ -25,13 +25,20 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartRun operation.
-    /// Starts a run.
+    /// Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The
+    /// remaining parameters are copied from the previous run.
+    /// 
+    ///  
+    /// <para>
+    /// The total number of runs in your account is subject to a quota per Region. To avoid
+    /// needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>.
+    /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+    /// </para>
     /// </summary>
     public partial class StartRunRequest : AmazonOmicsRequest
     {
@@ -41,6 +48,7 @@ namespace Amazon.Omics.Model
         private Amazon.Runtime.Documents.Document _parameters;
         private int? _priority;
         private string _requestId;
+        private RunRetentionMode _retentionMode;
         private string _roleArn;
         private string _runGroupId;
         private string _runId;
@@ -163,6 +171,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetentionMode. 
+        /// <para>
+        /// The retention mode for the run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public RunRetentionMode RetentionMode
+        {
+            get { return this._retentionMode; }
+            set { this._retentionMode = value; }
+        }
+
+        // Check to see if RetentionMode property is set
+        internal bool IsSetRetentionMode()
+        {
+            return this._retentionMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// A service role for the run.
@@ -203,7 +230,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        /// The run's ID.
+        /// The ID of a run to duplicate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=18)]
@@ -278,7 +305,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        /// The run's workflows type.
+        /// The run's workflow type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -294,13 +321,5 @@ namespace Amazon.Omics.Model
             return this._workflowType != null;
         }
 
-        /// <summary>
-        /// Get the signer to use for this request.
-        /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }
     }
 }

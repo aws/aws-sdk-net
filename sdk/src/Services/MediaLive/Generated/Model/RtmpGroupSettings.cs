@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private RtmpCacheFullBehavior _cacheFullBehavior;
         private int? _cacheLength;
         private RtmpCaptionData _captionData;
+        private IncludeFillerNalUnits _includeFillerNalUnits;
         private InputLossActionForRtmpOut _inputLossAction;
         private int? _restartDelay;
 
@@ -129,6 +130,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptionData()
         {
             return this._captionData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFillerNalUnits. Applies only when the rate control
+        /// mode (in the codec settings) is CBR (constant bit rate). Controls whether the RTMP
+        /// output stream is padded (with FILL NAL units) in order to achieve a constant bit rate
+        /// that is truly constant. When there is no padding, the bandwidth varies (up to the
+        /// bitrate value in the codec settings). We recommend that you choose Auto.
+        /// </summary>
+        public IncludeFillerNalUnits IncludeFillerNalUnits
+        {
+            get { return this._includeFillerNalUnits; }
+            set { this._includeFillerNalUnits = value; }
+        }
+
+        // Check to see if IncludeFillerNalUnits property is set
+        internal bool IsSetIncludeFillerNalUnits()
+        {
+            return this._includeFillerNalUnits != null;
         }
 
         /// <summary>

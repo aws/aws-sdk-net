@@ -115,7 +115,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property FirewallPolicy. 
         /// <para>
-        /// The updated firewall policy to use for the firewall. 
+        /// The updated firewall policy to use for the firewall. You can't add or remove a <a>TLSInspectionConfiguration</a>
+        /// after you create a firewall policy. However, you can replace an existing TLS inspection
+        /// configuration with another <code>TLSInspectionConfiguration</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

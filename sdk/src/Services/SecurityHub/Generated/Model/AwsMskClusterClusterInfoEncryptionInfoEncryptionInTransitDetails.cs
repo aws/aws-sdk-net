@@ -1,0 +1,78 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityhub-2018-10-26.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// The settings for encrypting data in transit.
+    /// </summary>
+    public partial class AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails
+    {
+        private string _clientBroker;
+        private bool? _inCluster;
+
+        /// <summary>
+        /// Gets and sets the property ClientBroker. 
+        /// <para>
+        ///  Indicates the encryption setting for data in transit between clients and brokers.
+        /// </para>
+        /// </summary>
+        public string ClientBroker
+        {
+            get { return this._clientBroker; }
+            set { this._clientBroker = value; }
+        }
+
+        // Check to see if ClientBroker property is set
+        internal bool IsSetClientBroker()
+        {
+            return this._clientBroker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InCluster. 
+        /// <para>
+        ///  When set to <code>true</code>, it indicates that data communication among the broker
+        /// nodes of the cluster is encrypted. When set to <code>false</code>, the communication
+        /// happens in plain text. The default value is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool InCluster
+        {
+            get { return this._inCluster.GetValueOrDefault(); }
+            set { this._inCluster = value; }
+        }
+
+        // Check to see if InCluster property is set
+        internal bool IsSetInCluster()
+        {
+            return this._inCluster.HasValue; 
+        }
+
+    }
+}

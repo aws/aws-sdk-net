@@ -40,8 +40,14 @@ namespace Amazon.SSOAdmin.Model
         /// <para>
         /// The inline policy that is attached to the permission set.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <code>Length Constraints</code>, if a valid ARN is provided for a permission set,
+        /// it is possible for an empty inline policy to be returned.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=10240)]
+        [AWSProperty(Min=1, Max=32768)]
         public string InlinePolicy
         {
             get { return this._inlinePolicy; }

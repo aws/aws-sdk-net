@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// If there was an error adding a document to an index the error is reported in your
         /// Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
-        /// Amazon Kendra with Amazon CloudWatch Logs</a> 
+        /// Amazon Kendra with Amazon CloudWatch logs</a>.
         /// </para>
         /// </summary>
         public List<BatchPutDocumentResponseFailedDocument> FailedDocuments

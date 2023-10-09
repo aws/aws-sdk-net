@@ -153,7 +153,9 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new List<IPipelineHandler>
             {
-                new S3ArnTestUtils.NoopPipelineHandler(),                
+                new S3ArnTestUtils.NoopPipelineHandler(),
+                new ChecksumHandler(),
+                new CompressionHandler(),
                 new Marshaller()
             });
 

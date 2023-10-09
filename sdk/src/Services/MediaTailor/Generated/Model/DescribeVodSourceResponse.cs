@@ -33,6 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class DescribeVodSourceResponse : AmazonWebServiceResponse
     {
+        private List<AdBreakOpportunity> _adBreakOpportunities = new List<AdBreakOpportunity>();
         private string _arn;
         private DateTime? _creationTime;
         private List<HttpPackageConfiguration> _httpPackageConfigurations = new List<HttpPackageConfiguration>();
@@ -40,6 +41,24 @@ namespace Amazon.MediaTailor.Model
         private string _sourceLocationName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _vodSourceName;
+
+        /// <summary>
+        /// Gets and sets the property AdBreakOpportunities. 
+        /// <para>
+        /// The ad break opportunities within the VOD source.
+        /// </para>
+        /// </summary>
+        public List<AdBreakOpportunity> AdBreakOpportunities
+        {
+            get { return this._adBreakOpportunities; }
+            set { this._adBreakOpportunities = value; }
+        }
+
+        // Check to see if AdBreakOpportunities property is set
+        internal bool IsSetAdBreakOpportunities()
+        {
+            return this._adBreakOpportunities != null && this._adBreakOpportunities.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

@@ -34,6 +34,8 @@ namespace Amazon.LakeFormation.Model
     public partial class PrincipalResourcePermissions
     {
         private DetailsMap _additionalDetails;
+        private DateTime? _lastUpdated;
+        private string _lastUpdatedBy;
         private List<string> _permissions = new List<string>();
         private List<string> _permissionsWithGrantOption = new List<string>();
         private DataLakePrincipal _principal;
@@ -56,6 +58,43 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetAdditionalDetails()
         {
             return this._additionalDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdated. 
+        /// <para>
+        /// The date and time when the resource was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdated
+        {
+            get { return this._lastUpdated.GetValueOrDefault(); }
+            set { this._lastUpdated = value; }
+        }
+
+        // Check to see if LastUpdated property is set
+        internal bool IsSetLastUpdated()
+        {
+            return this._lastUpdated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedBy. 
+        /// <para>
+        /// The user who updated the record.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string LastUpdatedBy
+        {
+            get { return this._lastUpdatedBy; }
+            set { this._lastUpdatedBy = value; }
+        }
+
+        // Check to see if LastUpdatedBy property is set
+        internal bool IsSetLastUpdatedBy()
+        {
+            return this._lastUpdatedBy != null;
         }
 
         /// <summary>

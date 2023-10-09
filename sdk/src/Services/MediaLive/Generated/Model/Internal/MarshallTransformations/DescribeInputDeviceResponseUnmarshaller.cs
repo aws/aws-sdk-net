@@ -99,6 +99,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.MacAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("medialiveInputArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.MedialiveInputArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = InputDeviceNetworkSettingsUnmarshaller.Instance;
                     response.NetworkSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OutputType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serialNumber", targetDepth))

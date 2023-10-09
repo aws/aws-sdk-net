@@ -538,6 +538,13 @@ namespace Amazon.Runtime.Internal
             var isTransferEncodingHeaderChunked = hasTransferEncodingHeader && wrappedRequest.Headers[HeaderKeys.TransferEncodingHeader] == "chunked";
             var hasTrailingHeaders = wrappedRequest.TrailingHeaders?.Count > 0;
 
+            // The goal of this logic is to wrap the request's ContentStream with:
+            //   ChunkedUploadWrapperStream - if using chunked signing (with or without trailing checksums)
+            //   TrailingHeadersWrapperStream - if using trailing checksums (without chunked signing)
+            // Otherwise return the request's current stream (which could be our compression wrapper stream, or else the original stream that the user set on the request)
+            //
+            // The indication to use chunked signing from earlier in the SDK is if we have SigV4 or SigV4a signingResult,
+            // which contains the header signature that is the input to the first chunk signature.
             if (requestHasConfigForChunkStream || isTransferEncodingHeaderChunked)
             {
                 AWSSigningResultBase signingResult;
@@ -549,23 +556,25 @@ namespace Amazon.Runtime.Internal
                 {
                     signingResult = wrappedRequest.AWS4SignerResult;
                 }
-
-                if (hasTrailingHeaders)
+                if (signingResult != null)
                 {
+                    if (hasTrailingHeaders)
+                    {
                         return new ChunkedUploadWrapperStream(originalStream,
                                                      requestContext.ClientConfig.BufferSize,
                                                      signingResult,
                                                      wrappedRequest.SelectedChecksum,
                                                      wrappedRequest.TrailingHeaders);
-                }
-                else // no trailing headers
-                {
+                    }
+                    else // no trailing headers
+                    {
                         return new ChunkedUploadWrapperStream(originalStream,
                                                      requestContext.ClientConfig.BufferSize,
                                                      signingResult);
+                    }
                 }
             }
-            else if (hasTrailingHeaders) // and is unsigned/unchunked
+            if (hasTrailingHeaders) // and is unsigned/unchunked
             {
                 if (wrappedRequest.SelectedChecksum != CoreChecksumAlgorithm.NONE)
                 {
@@ -576,10 +585,7 @@ namespace Amazon.Runtime.Internal
                     return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders);
                 }
             }
-            else
-            {
-                return originalStream;
-            }
+            return originalStream;
         }
     }
 }

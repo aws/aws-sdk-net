@@ -71,6 +71,11 @@ namespace Amazon.LookoutEquipment.Model
         IListModelVersionsPaginator ListModelVersions(ListModelVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListRetrainingSchedulers operation
+        ///</summary>
+        IListRetrainingSchedulersPaginator ListRetrainingSchedulers(ListRetrainingSchedulersRequest request);
+
+        /// <summary>
         /// Paginator for ListSensorStatistics operation
         ///</summary>
         IListSensorStatisticsPaginator ListSensorStatistics(ListSensorStatisticsRequest request);

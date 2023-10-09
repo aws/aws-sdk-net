@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// either <code>Failed</code> or <code>Success</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string SourcePipelineExecutionArn
         {
             get { return this._sourcePipelineExecutionArn; }

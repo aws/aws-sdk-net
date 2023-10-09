@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// The contact with the specified ID is not active or does not exist. Applies to Voice
-    /// calls only, not to Chat, Task, or Voice Callback.
+    /// calls only, not to Chat or Task contacts.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

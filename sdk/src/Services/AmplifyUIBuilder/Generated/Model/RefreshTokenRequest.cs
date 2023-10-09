@@ -30,7 +30,15 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the RefreshToken operation.
-    /// Refreshes a previously issued access token that might have expired.
+    /// <note> 
+    /// <para>
+    /// This is for internal use.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Amplify uses this action to refresh a previously issued access token that might have
+    /// expired.
+    /// </para>
     /// </summary>
     public partial class RefreshTokenRequest : AmazonAmplifyUIBuilderRequest
     {

@@ -82,6 +82,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.Details = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DetailsDocument", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.DetailsDocument = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Entity", targetDepth))
                 {
                     var unmarshaller = EntityUnmarshaller.Instance;

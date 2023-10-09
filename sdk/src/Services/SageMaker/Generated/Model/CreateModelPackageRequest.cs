@@ -72,6 +72,7 @@ namespace Amazon.SageMaker.Model
         private string _modelPackageGroupName;
         private string _modelPackageName;
         private string _samplePayloadUrl;
+        private SkipModelValidation _skipModelValidation;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
         private List<Tag> _tags = new List<Tag>();
         private string _task;
@@ -384,6 +385,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSamplePayloadUrl()
         {
             return this._samplePayloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipModelValidation. 
+        /// <para>
+        /// Indicates if you want to skip model validation.
+        /// </para>
+        /// </summary>
+        public SkipModelValidation SkipModelValidation
+        {
+            get { return this._skipModelValidation; }
+            set { this._skipModelValidation = value; }
+        }
+
+        // Check to see if SkipModelValidation property is set
+        internal bool IsSetSkipModelValidation()
+        {
+            return this._skipModelValidation != null;
         }
 
         /// <summary>

@@ -544,7 +544,7 @@ namespace Amazon.Runtime.Internal.Auth
                     computedContentHash = request.ComputeContentStreamHash();
                 else
                 {
-                    byte[] payloadBytes = GetRequestPayloadBytes(request);
+                    byte[] payloadBytes = AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString);
                     byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
                     computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
                 }
@@ -1031,19 +1031,6 @@ namespace Amazon.Runtime.Internal.Auth
             return canonicalQueryString.ToString();
         }
 
-        /// <summary>
-        /// Returns the request parameters in the form of a query string.
-        /// </summary>
-        /// <param name="request">The request instance</param>
-        /// <returns>Request parameters in query string format</returns>
-        static byte[] GetRequestPayloadBytes(IRequest request)
-        {
-            if (request.Content != null)
-                return request.Content;
-
-            var content = request.UseQueryString ? string.Empty : AWSSDKUtils.GetParametersAsString(request);
-            return Encoding.UTF8.GetBytes(content);
-        }
         #endregion
     }
 

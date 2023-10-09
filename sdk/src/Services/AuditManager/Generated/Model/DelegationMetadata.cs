@@ -66,7 +66,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the associated assessment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=300)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300)]
         public string AssessmentName
         {
             get { return this._assessmentName; }

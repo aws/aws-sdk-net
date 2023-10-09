@@ -59,7 +59,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier for the user account that you want to enable.
+        /// The unique identifier for the user that you want to activate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=26)]

@@ -82,6 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedRoles = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AvailabilityZones", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

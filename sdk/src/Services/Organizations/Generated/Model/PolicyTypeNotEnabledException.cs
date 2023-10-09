@@ -32,7 +32,7 @@ namespace Amazon.Organizations.Model
     /// The specified policy type isn't currently enabled in this root. You can't attach policies
     /// of the specified type to entities in a root until you enable that type in the root.
     /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-    /// All Features in Your Organization</a> in the <i>Organizations User Guide.</i>
+    /// all features in your organization</a> in the <i>Organizations User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

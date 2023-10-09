@@ -33,8 +33,24 @@ namespace Amazon.ConnectCampaignService.Model
     /// </summary>
     public partial class DialerConfig
     {
+        private AgentlessDialerConfig _agentlessDialerConfig;
         private PredictiveDialerConfig _predictiveDialerConfig;
         private ProgressiveDialerConfig _progressiveDialerConfig;
+
+        /// <summary>
+        /// Gets and sets the property AgentlessDialerConfig.
+        /// </summary>
+        public AgentlessDialerConfig AgentlessDialerConfig
+        {
+            get { return this._agentlessDialerConfig; }
+            set { this._agentlessDialerConfig = value; }
+        }
+
+        // Check to see if AgentlessDialerConfig property is set
+        internal bool IsSetAgentlessDialerConfig()
+        {
+            return this._agentlessDialerConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PredictiveDialerConfig.

@@ -20,7 +20,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace AWSSDK_DotNet35.UnitTests.Custom.Runtime
+namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class EnvironmentalVariableTest

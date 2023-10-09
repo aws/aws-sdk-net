@@ -142,8 +142,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Information about the OpsItem. 
+        /// User-defined text that contains information about the OpsItem, in Markdown format.
+        /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Provide enough information so that users viewing this OpsItem for the first time understand
+        /// the issue. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Description
@@ -245,7 +252,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/insights</code> 
+        ///  <code>/aws/insight</code> 
         /// </para>
         ///  
         /// <para>

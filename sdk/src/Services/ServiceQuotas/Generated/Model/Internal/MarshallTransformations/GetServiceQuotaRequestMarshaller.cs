@@ -67,6 +67,12 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContextId())
+                {
+                    context.Writer.WritePropertyName("ContextId");
+                    context.Writer.Write(publicRequest.ContextId);
+                }
+
                 if(publicRequest.IsSetQuotaCode())
                 {
                     context.Writer.WritePropertyName("QuotaCode");

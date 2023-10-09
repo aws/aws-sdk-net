@@ -229,6 +229,10 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         public static readonly ParticipantRole AGENT = new ParticipantRole("AGENT");
         /// <summary>
+        /// Constant CUSTOM_BOT for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole CUSTOM_BOT = new ParticipantRole("CUSTOM_BOT");
+        /// <summary>
         /// Constant CUSTOMER for ParticipantRole
         /// </summary>
         public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
@@ -266,6 +270,76 @@ namespace Amazon.ConnectParticipant
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTACT for ResourceType
+        /// </summary>
+        public static readonly ResourceType CONTACT = new ResourceType("CONTACT");
+        /// <summary>
+        /// Constant CONTACT_FLOW for ResourceType
+        /// </summary>
+        public static readonly ResourceType CONTACT_FLOW = new ResourceType("CONTACT_FLOW");
+        /// <summary>
+        /// Constant HIERARCHY_GROUP for ResourceType
+        /// </summary>
+        public static readonly ResourceType HIERARCHY_GROUP = new ResourceType("HIERARCHY_GROUP");
+        /// <summary>
+        /// Constant HIERARCHY_LEVEL for ResourceType
+        /// </summary>
+        public static readonly ResourceType HIERARCHY_LEVEL = new ResourceType("HIERARCHY_LEVEL");
+        /// <summary>
+        /// Constant INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType INSTANCE = new ResourceType("INSTANCE");
+        /// <summary>
+        /// Constant PARTICIPANT for ResourceType
+        /// </summary>
+        public static readonly ResourceType PARTICIPANT = new ResourceType("PARTICIPANT");
+        /// <summary>
+        /// Constant USER for ResourceType
+        /// </summary>
+        public static readonly ResourceType USER = new ResourceType("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }

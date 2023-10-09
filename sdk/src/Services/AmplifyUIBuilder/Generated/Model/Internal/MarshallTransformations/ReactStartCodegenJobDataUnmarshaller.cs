@@ -70,6 +70,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dependencies", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Dependencies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inlineSourceMap", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

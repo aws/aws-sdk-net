@@ -118,10 +118,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 				request.Content = Encoding.UTF8.GetBytes(content);
 				request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-				var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-				request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
-			}
+                ChecksumUtils.SetChecksumData(request);
+            }
 			catch (EncoderFallbackException e)
 			{
 				throw new AmazonServiceException("Unable to marshall request to XML", e);

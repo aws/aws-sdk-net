@@ -34,6 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class AutoScalingGroupRecommendationOption
     {
         private AutoScalingGroupConfiguration _configuration;
+        private GpuInfo _instanceGpuInfo;
         private MigrationEffort _migrationEffort;
         private double? _performanceRisk;
         private List<UtilizationMetric> _projectedUtilizationMetrics = new List<UtilizationMetric>();
@@ -56,6 +57,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceGpuInfo. 
+        /// <para>
+        ///  Describes the GPU accelerator settings for the recommended instance type of the Auto
+        /// Scaling group. 
+        /// </para>
+        /// </summary>
+        public GpuInfo InstanceGpuInfo
+        {
+            get { return this._instanceGpuInfo; }
+            set { this._instanceGpuInfo = value; }
+        }
+
+        // Check to see if InstanceGpuInfo property is set
+        internal bool IsSetInstanceGpuInfo()
+        {
+            return this._instanceGpuInfo != null;
         }
 
         /// <summary>

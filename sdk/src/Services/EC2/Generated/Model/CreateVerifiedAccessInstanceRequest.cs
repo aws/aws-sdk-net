@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private string _description;
+        private bool? _fipsEnabled;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
@@ -75,6 +76,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FIPSEnabled. 
+        /// <para>
+        /// Enable or disable support for Federal Information Processing Standards (FIPS) on the
+        /// instance.
+        /// </para>
+        /// </summary>
+        public bool FIPSEnabled
+        {
+            get { return this._fipsEnabled.GetValueOrDefault(); }
+            set { this._fipsEnabled = value; }
+        }
+
+        // Check to see if FIPSEnabled property is set
+        internal bool IsSetFIPSEnabled()
+        {
+            return this._fipsEnabled.HasValue; 
         }
 
         /// <summary>

@@ -477,7 +477,9 @@ namespace Amazon.Personalize
         /// Wait until the <code>status</code> of the campaign is <code>ACTIVE</code> before asking
         /// the campaign for recommendations.
         /// </para>
-        ///  </note> <p class="title"> <b>Related APIs</b> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -611,7 +613,9 @@ namespace Amazon.Personalize
         /// <para>
         /// To get the status of the dataset, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.
         /// </para>
-        ///  <p class="title"> <b>Related APIs</b> 
+        ///  
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -856,7 +860,9 @@ namespace Amazon.Personalize
         /// group. If you specify a KMS key, you must also include an Identity and Access Management
         /// (IAM) role that has permission to access the key.
         /// </para>
-        ///  <p class="title"> <b>APIs that require a dataset group ARN in the request</b> 
+        ///  
+        /// <para>
+        ///  <b>APIs that require a dataset group ARN in the request</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -873,7 +879,9 @@ namespace Amazon.Personalize
         ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
         /// 
         /// </para>
-        ///  </li> </ul> <p class="title"> <b>Related APIs</b> 
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -994,7 +1002,9 @@ namespace Amazon.Personalize
         /// Importing takes time. You must wait until the status shows as ACTIVE before training
         /// a model using the dataset.
         /// </para>
-        ///  </note> <p class="title"> <b>Related APIs</b> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1115,7 +1125,9 @@ namespace Amazon.Personalize
         /// <para>
         /// The event tracker must be in the ACTIVE state before using the tracking ID.
         /// </para>
-        ///  </note> <p class="title"> <b>Related APIs</b> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1418,7 +1430,9 @@ namespace Amazon.Personalize
         /// Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before
         /// asking the recommender for recommendations.
         /// </para>
-        ///  </note> <p class="title"> <b>Related APIs</b> 
+        ///  </note> 
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1522,7 +1536,9 @@ namespace Amazon.Personalize
         /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
         /// dataset group. You specify a schema when you call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </para>
-        ///  <p class="title"> <b>Related APIs</b> 
+        ///  
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1648,7 +1664,9 @@ namespace Amazon.Personalize
         /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
         /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
         /// </para>
-        ///  <p class="title"> <b>Related APIs</b> 
+        ///  
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1799,7 +1817,9 @@ namespace Amazon.Personalize
         /// If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
         /// key, which describes why the job failed.
         /// </para>
-        ///  <p class="title"> <b>Related APIs</b> 
+        ///  
+        /// <para>
+        ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

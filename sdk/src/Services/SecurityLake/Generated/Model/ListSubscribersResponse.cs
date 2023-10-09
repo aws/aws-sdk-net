@@ -43,6 +43,7 @@ namespace Amazon.SecurityLake.Model
         /// using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

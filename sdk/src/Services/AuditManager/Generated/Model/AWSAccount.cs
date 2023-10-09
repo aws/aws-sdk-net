@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         ///  The email address that's associated with the Amazon Web Services account. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=320)]
+        [AWSProperty(Sensitive=true, Min=1, Max=320)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

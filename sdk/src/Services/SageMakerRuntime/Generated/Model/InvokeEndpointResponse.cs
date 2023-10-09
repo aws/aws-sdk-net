@@ -71,7 +71,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The MIME type of the inference returned in the response body.
+        /// The MIME type of the inference returned from the model container.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

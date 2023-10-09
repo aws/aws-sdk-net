@@ -494,13 +494,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Configures a task, which defines where and how DataSync transfers your data.
+        /// Configures a transfer task, which defines where and how DataSync moves your data.
         /// 
         ///  
         /// <para>
-        /// A task includes a source location, a destination location, and the preferences for
-        /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
-        /// among other options).
+        /// A task includes a source location, destination location, and the options for how and
+        /// when you want to transfer your data (such as bandwidth limits, scheduling, among other
+        /// options).
         /// </para>
         ///  <important> 
         /// <para>
@@ -583,7 +583,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes an DataSync task.
+        /// Deletes an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTask service method.</param>
         /// <param name="cancellationToken">
@@ -1039,7 +1039,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides information about an DataSync transfer task that's running.
+        /// Provides information about an execution of your DataSync task. You can use this operation
+        /// to help monitor the progress of an ongoing transfer or check the results of the transfer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1073,13 +1074,6 @@ namespace Amazon.DataSync
         /// Once generated, you can view your recommendations by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
         /// operation.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">discovery
-        /// job completes successfully</a>, you don't need to use this operation. DataSync Discovery
-        /// generates the recommendations for you automatically.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -1347,7 +1341,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Starts an DataSync task. For each task, you can only run one task execution at a time.
+        /// Starts an DataSync transfer task. For each task, you can only run one task execution
+        /// at a time.
         /// 
         ///  
         /// <para>
@@ -1678,7 +1673,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates the metadata associated with a task.
+        /// Updates the configuration of a DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTask service method.</param>
         /// <param name="cancellationToken">
@@ -1702,13 +1697,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Modifies a running DataSync task.
+        /// Updates the configuration of a running DataSync task execution.
         /// 
         ///  <note> 
         /// <para>
         /// Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code>
         /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-        /// </code>, which throttles bandwidth for a running or queued task.
+        /// </code>, which throttles bandwidth for a running or queued task execution.
         /// </para>
         ///  </note>
         /// </summary>

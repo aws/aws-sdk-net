@@ -30,7 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTaskExecution operation.
-    /// Starts an DataSync task. For each task, you can only run one task execution at a time.
+    /// Starts an DataSync transfer task. For each task, you can only run one task execution
+    /// at a time.
     /// 
     ///  
     /// <para>
@@ -52,6 +53,7 @@ namespace Amazon.DataSync.Model
         private Options _overrideOptions;
         private List<TagListEntry> _tags = new List<TagListEntry>();
         private string _taskArn;
+        private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property Excludes. 
@@ -154,6 +156,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskArn()
         {
             return this._taskArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskReportConfig. 
+        /// <para>
+        /// Specifies how you want to configure a task report, which provides detailed information
+        /// about for your DataSync transfer.
+        /// </para>
+        /// </summary>
+        public TaskReportConfig TaskReportConfig
+        {
+            get { return this._taskReportConfig; }
+            set { this._taskReportConfig = value; }
+        }
+
+        // Check to see if TaskReportConfig property is set
+        internal bool IsSetTaskReportConfig()
+        {
+            return this._taskReportConfig != null;
         }
 
     }

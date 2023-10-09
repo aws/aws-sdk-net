@@ -88,6 +88,7 @@ namespace Amazon.AppConfig.Model
     {
         private string _applicationId;
         private string _description;
+        private string _kmsKeyIdentifier;
         private string _locationUri;
         private string _name;
         private string _retrievalRoleArn;
@@ -134,6 +135,29 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier for an Key Management Service key to encrypt new configuration data
+        /// versions in the AppConfig hosted configuration store. This attribute is only used
+        /// for <code>hosted</code> configuration types. The identifier can be an KMS key ID,
+        /// alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed
+        /// in other configuration stores, see the documentation for how to specify an KMS key
+        /// for that particular service.
+        /// </para>
+        /// </summary>
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
         /// A URI to locate the configuration. You can specify the following:
@@ -150,7 +174,12 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://&lt;secret
+        /// For an Amazon Web Services CodePipeline pipeline, specify the URI in the following
+        /// format: <code>codepipeline</code>://&lt;pipeline name&gt;.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
         /// name&gt;.
         /// </para>
         ///  </li> <li> 

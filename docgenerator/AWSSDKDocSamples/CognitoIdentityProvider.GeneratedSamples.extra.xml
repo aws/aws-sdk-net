@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.AdminCreateUser(Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.AdminCreateUser(Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.AdminCreateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This request submits a value for all possible parameters for AdminCreateUser.
+                </para>
+                <code
+                    title="An AdminCreateUser request for for a test user named John."
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="an-admincreateuser-request-for-for-a-test-user-named-john-1689980900481" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPool(Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a user pool with all configurable properties set to an example value. The resulting user pool allows sign-in with username or email address, has optional MFA, and has a Lambda function assigned to each possible trigger.
+                </para>
+                <code
+                    title="Example user pool with email and username sign-in"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-user-pool-with-email-and-username-sign-in-1689722835145" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPoolClient(Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPoolClient(Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolClientResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an app client with all configurable properties set to an example value. The resulting user pool client connects to an analytics client, allows sign-in with username and password, and has two external identity providers associated with it.
+                </para>
+                <code
+                    title="Example user pool app client with email and username sign-in"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-user-pool-app-client-with-email-and-username-sign-in-1689885750745" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example signs in the user mytestuser with analytics data, client metadata, and user context data for advanced security.
+                </para>
+                <code
+                    title="Example username and password sign-in for a user who has TOTP MFA"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-username-and-password-sign-in-for-a-user-who-has-totp-mfa-1689887395219" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This request submits a value for all possible parameters for ListUsers. By iterating the PaginationToken, you can page through and collect all users in a user pool.
+                </para>
+                <code
+                    title="A ListUsers request for the next 3 users whose email address starts with &quot;testuser.&quot;"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246" />
+            </example>
+        </value>
+    </doc>
+</docs>

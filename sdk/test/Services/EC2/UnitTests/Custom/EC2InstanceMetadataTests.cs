@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Reflection;
 using Amazon.Util;
+using AWSSDK.UnitTests;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

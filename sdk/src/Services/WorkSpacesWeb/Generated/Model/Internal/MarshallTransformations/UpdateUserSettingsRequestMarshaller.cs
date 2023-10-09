@@ -79,6 +79,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCookieSynchronizationConfiguration())
+                {
+                    context.Writer.WritePropertyName("cookieSynchronizationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CookieSynchronizationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CookieSynchronizationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCopyAllowed())
                 {
                     context.Writer.WritePropertyName("copyAllowed");

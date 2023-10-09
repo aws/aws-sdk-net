@@ -45,8 +45,8 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
-    /// file upload notification</a> in the <i>Storage Gateway User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+    /// file upload notification</a> in the <i>Amazon S3 File Gateway User Guide</i>.
     /// </para>
     /// </summary>
     public partial class NotifyWhenUploadedRequest : AmazonStorageGatewayRequest

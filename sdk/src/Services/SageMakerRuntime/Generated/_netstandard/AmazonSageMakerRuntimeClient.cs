@@ -364,9 +364,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker strips all <code>POST</code> headers except those supported by the
-        /// API. Amazon SageMaker might add additional headers. You should not rely on the behavior
-        /// of headers outside those enumerated in the request syntax.
+        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
+        /// SageMaker might add additional headers. You should not rely on the behavior of headers
+        /// outside those enumerated in the request syntax. 
         /// </para>
         ///  
         /// <para>
@@ -398,6 +398,104 @@ namespace Amazon.SageMakerRuntime
             options.ResponseUnmarshaller = InvokeEndpointAsyncResponseUnmarshaller.Instance;
 
             return InvokeAsync<InvokeEndpointAsyncResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InvokeEndpointWithResponseStream
+
+        internal virtual InvokeEndpointWithResponseStreamResponse InvokeEndpointWithResponseStream(InvokeEndpointWithResponseStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeEndpointWithResponseStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeEndpointWithResponseStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Invokes a model at the specified endpoint to return the inference response as a stream.
+        /// The inference stream provides the response payload incrementally as a series of parts.
+        /// Before you can get an inference stream, you must have access to a model that's deployed
+        /// using Amazon SageMaker hosting services, and the container for that model must support
+        /// inference streaming.
+        /// 
+        ///  
+        /// <para>
+        /// For more information that can help you use this API, see the following sections in
+        /// the <i>Amazon SageMaker Developer Guide</i>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For information about how to add streaming support to a model, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-code-how-containe-serves-requests">How
+        /// Containers Serve Requests</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For information about how to process the streaming response, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-test-endpoints.html">Invoke
+        /// real-time endpoints</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
+        /// SageMaker might add additional headers. You should not rely on the behavior of headers
+        /// outside those enumerated in the request syntax. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Calls to <code>InvokeEndpointWithResponseStream</code> are authenticated by using
+        /// Amazon Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointWithResponseStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeEndpointWithResponseStream service method, as returned by SageMakerRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalStreamFailureException">
+        /// The stream processing failed because of an unknown error, exception or failure. Try
+        /// your request again.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ModelErrorException">
+        /// Model (owned by the customer in the container) returned 4xx or 5xx error code.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ModelStreamErrorException">
+        /// An error occurred while streaming the response body. This error can have the following
+        /// error codes:
+        /// 
+        ///  <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> 
+        /// <para>
+        /// The model failed to finish sending the response within the timeout period allowed
+        /// by Amazon SageMaker.
+        /// </para>
+        ///  </dd> <dt>StreamBroken</dt> <dd> 
+        /// <para>
+        /// The Transmission Control Protocol (TCP) connection between the client and the model
+        /// was reset or closed.
+        /// </para>
+        ///  </dd> </dl>
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
+        /// The service is unavailable. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ValidationErrorException">
+        /// Inspect your request and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointWithResponseStream">REST API Reference for InvokeEndpointWithResponseStream Operation</seealso>
+        public virtual Task<InvokeEndpointWithResponseStreamResponse> InvokeEndpointWithResponseStreamAsync(InvokeEndpointWithResponseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeEndpointWithResponseStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InvokeEndpointWithResponseStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion

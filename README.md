@@ -174,6 +174,10 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the first public release of AWS Backup Storage. We are exposing some previously-internal APIs for use by external services. These APIs are not meant to be used directly by customers.
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
+* [AWSSDK.Bedrock](https://www.nuget.org/packages/AWSSDK.Bedrock/)
+	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
+* [AWSSDK.BedrockRuntime](https://www.nuget.org/packages/AWSSDK.BedrockRuntime/)
+	* Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
 * [AWSSDK.BillingConductor](https://www.nuget.org/packages/AWSSDK.BillingConductor/)
 	* This is the initial SDK release for AWS Billing Conductor. The AWS Billing Conductor is a customizable billing service, allowing you to customize your billing data to match your desired business structure.
 * [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)
@@ -294,6 +298,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.
 * [AWSSDK.DataSync](https://www.nuget.org/packages/AWSSDK.DataSync/)
 	* AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.
+* [AWSSDK.DataZone](https://www.nuget.org/packages/AWSSDK.DataZone/)
+	* Initial release of Amazon DataZone
 * [AWSSDK.DAX](https://www.nuget.org/packages/AWSSDK.DAX/)
 	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
 * [AWSSDK.Detective](https://www.nuget.org/packages/AWSSDK.Detective/)
@@ -574,6 +580,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* (New Service) Amazon MWAA is a managed service for Apache Airflow that makes it easy for data engineers and data scientists to execute data processing workflows in the cloud.
 * [AWSSDK.Neptune](https://www.nuget.org/packages/AWSSDK.Neptune/)
 	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
+* [AWSSDK.Neptunedata](https://www.nuget.org/packages/AWSSDK.Neptunedata/)
+	* Allows customers to execute data plane actions like bulk loading graphs, issuing graph queries using Gremlin and openCypher directly from the SDK.
 * [AWSSDK.NetworkFirewall](https://www.nuget.org/packages/AWSSDK.NetworkFirewall/)
 	* (New Service) AWS Network Firewall is a managed network layer firewall service that makes it easy to secure your virtual private cloud (VPC) networks and block malicious traffic.
 * [AWSSDK.NetworkManager](https://www.nuget.org/packages/AWSSDK.NetworkManager/)
@@ -604,6 +612,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Initial release of AWS Payment Cryptography Control Plane service for creating and managing cryptographic keys used during card payment processing.
 * [AWSSDK.PaymentCryptographyData](https://www.nuget.org/packages/AWSSDK.PaymentCryptographyData/)
 	* Initial release of AWS Payment Cryptography DataPlane Plane service for performing cryptographic operations typically used during card payment processing.
+* [AWSSDK.PcaConnectorAd](https://www.nuget.org/packages/AWSSDK.PcaConnectorAd/)
+	* The Connector for AD allows you to use a fully-managed AWS Private CA as a drop-in replacement for your self-managed enterprise CAs without local agents or proxy servers. Enterprises that use AD to manage Windows environments can reduce their private certificate authority (CA) costs and complexity.
 * [AWSSDK.Personalize](https://www.nuget.org/packages/AWSSDK.Personalize/)
 	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
 * [AWSSDK.PersonalizeEvents](https://www.nuget.org/packages/AWSSDK.PersonalizeEvents/)

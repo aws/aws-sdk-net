@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MatchOperator);
             }
 
+            if(requestObject.IsSetNullOption())
+            {
+                context.Writer.WritePropertyName("NullOption");
+                context.Writer.Write(requestObject.NullOption);
+            }
+
             if(requestObject.IsSetSelectAllOptions())
             {
                 context.Writer.WritePropertyName("SelectAllOptions");

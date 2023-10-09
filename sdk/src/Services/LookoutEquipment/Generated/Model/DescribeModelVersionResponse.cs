@@ -33,6 +33,8 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class DescribeModelVersionResponse : AmazonWebServiceResponse
     {
+        private AutoPromotionResult _autoPromotionResult;
+        private string _autoPromotionResultReason;
         private DateTime? _createdAt;
         private DataPreProcessingConfiguration _dataPreProcessingConfiguration;
         private string _datasetArn;
@@ -51,6 +53,8 @@ namespace Amazon.LookoutEquipment.Model
         private long? _modelVersion;
         private string _modelVersionArn;
         private string _offCondition;
+        private string _priorModelMetrics;
+        private int? _retrainingAvailableDataInDays;
         private string _roleArn;
         private string _schema;
         private string _serverSideKmsKeyId;
@@ -61,6 +65,48 @@ namespace Amazon.LookoutEquipment.Model
         private DateTime? _trainingDataStartTime;
         private DateTime? _trainingExecutionEndTime;
         private DateTime? _trainingExecutionStartTime;
+
+        /// <summary>
+        /// Gets and sets the property AutoPromotionResult. 
+        /// <para>
+        /// Indicates whether the model version was promoted to be the active version after retraining
+        /// or if there was an error with or cancellation of the retraining. 
+        /// </para>
+        /// </summary>
+        public AutoPromotionResult AutoPromotionResult
+        {
+            get { return this._autoPromotionResult; }
+            set { this._autoPromotionResult = value; }
+        }
+
+        // Check to see if AutoPromotionResult property is set
+        internal bool IsSetAutoPromotionResult()
+        {
+            return this._autoPromotionResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoPromotionResultReason. 
+        /// <para>
+        /// Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model
+        /// might not be promoted if its performance was worse than the active version, if there
+        /// was an error during training, or if the retraining scheduler was using <code>MANUAL</code>
+        /// promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the
+        /// performance is better than the previous model. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AutoPromotionResultReason
+        {
+            get { return this._autoPromotionResultReason; }
+            set { this._autoPromotionResultReason = value; }
+        }
+
+        // Check to see if AutoPromotionResultReason property is set
+        internal bool IsSetAutoPromotionResultReason()
+        {
+            return this._autoPromotionResultReason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -399,6 +445,46 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetOffCondition()
         {
             return this._offCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PriorModelMetrics. 
+        /// <para>
+        /// If the model version was retrained, this field shows a summary of the performance
+        /// of the prior model on the new training range. You can use the information in this
+        /// JSON-formatted object to compare the new model version and the prior model version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
+        public string PriorModelMetrics
+        {
+            get { return this._priorModelMetrics; }
+            set { this._priorModelMetrics = value; }
+        }
+
+        // Check to see if PriorModelMetrics property is set
+        internal bool IsSetPriorModelMetrics()
+        {
+            return this._priorModelMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrainingAvailableDataInDays. 
+        /// <para>
+        /// Indicates the number of days of data used in the most recent scheduled retraining
+        /// run. 
+        /// </para>
+        /// </summary>
+        public int RetrainingAvailableDataInDays
+        {
+            get { return this._retrainingAvailableDataInDays.GetValueOrDefault(); }
+            set { this._retrainingAvailableDataInDays = value; }
+        }
+
+        // Check to see if RetrainingAvailableDataInDays property is set
+        internal bool IsSetRetrainingAvailableDataInDays()
+        {
+            return this._retrainingAvailableDataInDays.HasValue; 
         }
 
         /// <summary>

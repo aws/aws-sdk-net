@@ -37,9 +37,12 @@ namespace Amazon.WorkMail.Model
     public partial class UpdateResourceRequest : AmazonWorkMailRequest
     {
         private BookingOptions _bookingOptions;
+        private string _description;
+        private bool? _hiddenFromGlobalAddressList;
         private string _name;
         private string _organizationId;
         private string _resourceId;
+        private ResourceType _type;
 
         /// <summary>
         /// Gets and sets the property BookingOptions. 
@@ -57,6 +60,43 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetBookingOptions()
         {
             return this._bookingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Updates the resource description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HiddenFromGlobalAddressList. 
+        /// <para>
+        /// If enabled, the resource is hidden from the global address list.
+        /// </para>
+        /// </summary>
+        public bool HiddenFromGlobalAddressList
+        {
+            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            set { this._hiddenFromGlobalAddressList = value; }
+        }
+
+        // Check to see if HiddenFromGlobalAddressList property is set
+        internal bool IsSetHiddenFromGlobalAddressList()
+        {
+            return this._hiddenFromGlobalAddressList.HasValue; 
         }
 
         /// <summary>
@@ -102,8 +142,26 @@ namespace Amazon.WorkMail.Model
         /// <para>
         /// The identifier of the resource to be updated.
         /// </para>
+        ///  
+        /// <para>
+        /// The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+        /// The following identity formats are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Resource ID: r-0123456789a0123456789b0123456789
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Email address: resource@domain.tld
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Resource name: resource
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=34, Max=34)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -114,6 +172,24 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Updates the resource type.
+        /// </para>
+        /// </summary>
+        public ResourceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

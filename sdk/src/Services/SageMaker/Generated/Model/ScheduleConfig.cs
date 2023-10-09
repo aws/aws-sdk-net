@@ -33,7 +33,75 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ScheduleConfig
     {
+        private string _dataAnalysisEndTime;
+        private string _dataAnalysisStartTime;
         private string _scheduleExpression;
+
+        /// <summary>
+        /// Gets and sets the property DataAnalysisEndTime. 
+        /// <para>
+        /// Sets the end time for a monitoring job window. Express this time as an offset to the
+        /// times that you schedule your monitoring jobs to run. You schedule monitoring jobs
+        /// with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601
+        /// duration format. For example, if you want to end the window one hour before the start
+        /// of each monitoring job, you would specify: <code>"-PT1H"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The end time that you specify must not follow the start time that you specify by more
+        /// than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is
+        /// required.
+        /// </para>
+        /// </summary>
+        public string DataAnalysisEndTime
+        {
+            get { return this._dataAnalysisEndTime; }
+            set { this._dataAnalysisEndTime = value; }
+        }
+
+        // Check to see if DataAnalysisEndTime property is set
+        internal bool IsSetDataAnalysisEndTime()
+        {
+            return this._dataAnalysisEndTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataAnalysisStartTime. 
+        /// <para>
+        /// Sets the start time for a monitoring job window. Express this time as an offset to
+        /// the times that you schedule your monitoring jobs to run. You schedule monitoring jobs
+        /// with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601
+        /// duration format. For example, if you want to monitor the five hours of data in your
+        /// dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The start time that you specify must not precede the end time that you specify by
+        /// more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is
+        /// required.
+        /// </para>
+        /// </summary>
+        public string DataAnalysisStartTime
+        {
+            get { return this._dataAnalysisStartTime; }
+            set { this._dataAnalysisStartTime = value; }
+        }
+
+        // Check to see if DataAnalysisStartTime property is set
+        internal bool IsSetDataAnalysisStartTime()
+        {
+            return this._dataAnalysisStartTime != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
@@ -42,11 +110,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently the only supported cron expressions are:
+        /// The supported cron expressions are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you want to set the job to start every hour, please use the following:
+        /// If you want to set the job to start every hour, use the following:
         /// </para>
         ///  
         /// <para>
@@ -59,6 +127,14 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         ///  <code>cron(0 [00-23] ? * * *)</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to run the job one time, immediately, use the following keyword:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>NOW</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -102,7 +178,11 @@ namespace Amazon.SageMaker.Model
         /// We recommend that if you would like a daily schedule, you do not provide this parameter.
         /// Amazon SageMaker will pick a time for running every day.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> 
+        /// <para>
+        /// You can also specify the keyword <code>NOW</code> to run the monitoring job immediately,
+        /// one time, without recurring.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string ScheduleExpression

@@ -61,6 +61,11 @@ namespace Amazon.Mgn.Model
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListExportErrors operation
         ///</summary>
         IListExportErrorsPaginator ListExportErrors(ListExportErrorsRequest request);

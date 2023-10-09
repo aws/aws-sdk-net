@@ -31,18 +31,21 @@ namespace Amazon.IdentityStore
     /// <summary>
     /// Interface for accessing IdentityStore
     ///
-    /// The Identity Store service used by AWS IAM Identity Center (successor to AWS Single
-    /// Sign-On) provides a single place to retrieve all of your identities (users and groups).
-    /// For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
+    /// The Identity Store service used by IAM Identity Center provides a single place to
+    /// retrieve all of your identities (users and groups). For more information, see the
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
     /// Identity Center User Guide</a>.
     /// 
-    ///  <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt;
-    /// and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain
-    /// their original name for backward compatibility purposes. For more information, see
-    /// &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM
-    /// Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference
-    /// guide describes the identity store operations that you can call programatically and
-    /// includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
+    ///  
+    /// <para>
+    /// This reference guide describes the identity store operations that you can call programmatically
+    /// and includes detailed information about data types and errors.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonIdentityStore : IAmazonService, IDisposable
     {
@@ -361,6 +364,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// Retrieves the group metadata and attributes from <code>GroupId</code> in an identity
         /// store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroup service method.</param>
         /// <param name="cancellationToken">
@@ -396,6 +407,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// Retrieves membership metadata and attributes from <code>MembershipId</code> in an
         /// identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
         /// <param name="cancellationToken">
@@ -431,6 +450,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// Retrieves the user metadata and attributes from the <code>UserId</code> in an identity
         /// store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
         /// <param name="cancellationToken">
@@ -465,6 +492,14 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// Retrieves <code>GroupId</code> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupId service method.</param>
         /// <param name="cancellationToken">
@@ -499,6 +534,14 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// Retrieves the <code>MembershipId</code> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupMembershipId service method.</param>
         /// <param name="cancellationToken">
@@ -533,6 +576,14 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// Retrieves the <code>UserId</code> in an identity store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserId service method.</param>
         /// <param name="cancellationToken">
@@ -568,6 +619,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// Checks the user's membership in all requested groups and returns if the member exists
         /// in all queried groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IsMemberInGroups service method.</param>
         /// <param name="cancellationToken">
@@ -603,6 +662,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
         /// objects and returns results in paginated form.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -638,6 +705,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// For the specified member in the specified identity store, returns the list of all
         /// <code>GroupMembership</code> objects and returns results in paginated form.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupMembershipsForMember service method.</param>
         /// <param name="cancellationToken">
@@ -674,6 +749,14 @@ namespace Amazon.IdentityStore
         /// Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code>
         /// objects. Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute
         /// is deprecated. Instead, use the <code>GetGroupId</code> API action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// <param name="cancellationToken">
@@ -710,6 +793,14 @@ namespace Amazon.IdentityStore
         /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
         /// objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute
         /// is deprecated. Instead, use the <code>GetUserId</code> API action.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you have administrator access to a member account, you can use this API from the
+        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+        /// accounts</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// <param name="cancellationToken">

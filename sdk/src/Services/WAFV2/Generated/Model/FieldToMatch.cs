@@ -59,6 +59,7 @@ namespace Amazon.WAFV2.Model
         private Cookies _cookies;
         private HeaderOrder _headerOrder;
         private Headers _headers;
+        private JA3Fingerprint _ja3Fingerprint;
         private JsonBody _jsonBody;
         private Method _method;
         private QueryString _queryString;
@@ -95,9 +96,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for
-        /// CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions,
-        /// you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
+        /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
+        /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
+        /// can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
         /// processing fees. 
         /// </para>
         ///  
@@ -196,6 +197,45 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JA3Fingerprint. 
+        /// <para>
+        /// Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
+        /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
+        /// as a unique identifier for the client's TLS configuration. WAF calculates and logs
+        /// this fingerprint for each request that has enough TLS Client Hello information for
+        /// the calculation. Almost all web requests include this information.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this choice only with a string match <code>ByteMatchStatement</code> with
+        /// the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF
+        /// is able to calculate the fingerprint, it includes it in the logs. For information
+        /// about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+        /// fields</a> in the <i>WAF Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide the JA3 fingerprint string from the logs in your string match statement specification,
+        /// to match with any future requests that have the same TLS configuration.
+        /// </para>
+        /// </summary>
+        public JA3Fingerprint JA3Fingerprint
+        {
+            get { return this._ja3Fingerprint; }
+            set { this._ja3Fingerprint = value; }
+        }
+
+        // Check to see if JA3Fingerprint property is set
+        internal bool IsSetJA3Fingerprint()
+        {
+            return this._ja3Fingerprint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JsonBody. 
         /// <para>
         /// Inspect the request body as JSON. The request body immediately follows the request
@@ -206,9 +246,9 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 kilobytes) and for
-        /// CloudFront distributions, the limit is 16 KB (16,384 kilobytes). For CloudFront distributions,
-        /// you can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
+        /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
+        /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
+        /// can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
         /// processing fees. 
         /// </para>
         ///  

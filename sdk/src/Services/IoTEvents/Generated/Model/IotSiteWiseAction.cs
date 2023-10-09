@@ -37,7 +37,9 @@ namespace Amazon.IoTEvents.Model
     /// You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The
     /// expressions accept literals, operators, functions, references, and substitutions templates.
     /// </para>
-    ///  <p class="title"> <b>Examples</b> 
+    ///  
+    /// <para>
+    ///  <b>Examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

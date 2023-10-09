@@ -30,8 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableOrganizationAdminAccount operation.
-    /// Disables an Amazon Web Services account within the Organization as the GuardDuty delegated
-    /// administrator.
+    /// Removes the existing GuardDuty delegated administrator of the organization. Only the
+    /// organization's management account can run this API operation.
     /// </summary>
     public partial class DisableOrganizationAdminAccountRequest : AmazonGuardDutyRequest
     {

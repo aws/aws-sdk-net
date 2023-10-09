@@ -68,9 +68,12 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-    /// Redshift, or Splunk. You must specify only one of the following destination configuration
-    /// parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
+    /// A delivery stream is configured with a single destination, such as Amazon Simple Storage
+    /// Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch
+    /// Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported
+    /// by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB,
+    /// New Relic, and Sumo Logic. You must specify only one of the following destination
+    /// configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
     /// <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>,
     /// or <code>SplunkDestinationConfiguration</code>.
     /// </para>
@@ -131,6 +134,7 @@ namespace Amazon.KinesisFirehose.Model
         private ExtendedS3DestinationConfiguration _extendedS3DestinationConfiguration;
         private HttpEndpointDestinationConfiguration _httpEndpointDestinationConfiguration;
         private KinesisStreamSourceConfiguration _kinesisStreamSourceConfiguration;
+        private MSKSourceConfiguration _mskSourceConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
         private SplunkDestinationConfiguration _splunkDestinationConfiguration;
@@ -315,6 +319,21 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetKinesisStreamSourceConfiguration()
         {
             return this._kinesisStreamSourceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MSKSourceConfiguration.
+        /// </summary>
+        public MSKSourceConfiguration MSKSourceConfiguration
+        {
+            get { return this._mskSourceConfiguration; }
+            set { this._mskSourceConfiguration = value; }
+        }
+
+        // Check to see if MSKSourceConfiguration property is set
+        internal bool IsSetMSKSourceConfiguration()
+        {
+            return this._mskSourceConfiguration != null;
         }
 
         /// <summary>

@@ -88,7 +88,7 @@
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.VpcID</property>
@@ -107,6 +107,16 @@
     <min>24</min>
     <max>24</max>
     <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteLaunchActionRequest.ActionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteLaunchActionRequest.ResourceId</property>
+    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
@@ -419,6 +429,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.ListLaunchActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListLaunchActionsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListLaunchActionsRequest.ResourceId</property>
+    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListLaunchActionsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.ListStagingAccountsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -438,6 +467,84 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:.{16,2044}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionCode</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([A-Za-z0-9-])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[0-9a-zA-Z ():/.,'-_#*; ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9 /_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.Order</property>
+    <min>2</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionRequest.ResourceId</property>
+    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionCode</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([A-Za-z0-9-])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[0-9a-zA-Z ():/.,'-_#*; ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9 /_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.Order</property>
+    <min>2</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.PutLaunchActionResponse.ResourceId</property>
+    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationRequest.SourceServerID</property>
@@ -778,7 +885,7 @@
     <property>Amazon.Drs.Model.DataReplicationInfo.StagingAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInfoReplicatedDisk.BackloggedStorageBytes</property>
@@ -847,7 +954,7 @@
     <property>Amazon.Drs.Model.DescribeSourceNetworksRequestFilters.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeSourceServersRequestFilters.HardwareId</property>
@@ -940,6 +1047,65 @@
     <min>0</min>
     <max>255</max>
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchAction.ActionCode</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([A-Za-z0-9-])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchAction.ActionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchAction.ActionVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[0-9a-zA-Z ():/.,'-_#*; ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchAction.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9 /_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchAction.Order</property>
+    <min>2</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchActionParameter.Value</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^[A-Za-z0-9.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchActionRun.FailureReason</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[0-9a-zA-Z ():/.,'-_#*;]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchActionRun.RunId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchActionsStatus.SsmAgentDiscoveryDatetime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchConfigurationTemplate.Arn</property>
@@ -1056,7 +1222,7 @@
     <property>Amazon.Drs.Model.RecoveryInstance.OriginAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.PointInTimeSnapshotDateTime</property>
@@ -1097,7 +1263,7 @@
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.StagingAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfoReplicatedDisk.BackloggedStorageBytes</property>
@@ -1285,13 +1451,13 @@
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.Arn</property>
@@ -1332,7 +1498,7 @@
     <property>Amazon.Drs.Model.SourceNetwork.SourceRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.SourceVpcID</property>

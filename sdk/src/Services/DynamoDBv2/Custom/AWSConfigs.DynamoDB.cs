@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 using System.Xml.Linq;
 
@@ -15,6 +13,8 @@ using System.Configuration;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
+using Amazon.DynamoDBv2.DataModel;
 
 namespace Amazon
 {
@@ -46,7 +46,7 @@ namespace Amazon
                 // configure the context config to the default.
                 if (Context == null)
                 {
-                    Context = new DynamoDBContextConfig();
+                    Context = new Util.DynamoDBContextConfig();
                     ConversionSchema = ConversionSchema.V1;;
                 }
             }
@@ -92,12 +92,12 @@ namespace Amazon
         /// <summary>
         /// Settings for DynamoDBContext.
         /// </summary>
-        public static DynamoDBContextConfig Context { get; private set; }
+        public static Util.DynamoDBContextConfig Context { get; private set; }
 
 #if BCL
         internal static void Configure(DynamoDBSection section)
         {
-            Context = new DynamoDBContextConfig();
+            Context = new Util.DynamoDBContextConfig();
             ConversionSchema = ConversionSchema.V1;
 
             if (section != null && section.ElementInformation.IsPresent)
@@ -144,6 +144,30 @@ namespace Amazon.Util
         public Dictionary<Type, TypeMapping> TypeMappings { get; private set; }
 
         /// <summary>
+        /// The object persistence API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
+        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// </summary>
+        /// <remarks>
+        /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
+        /// For <see cref="MetadataCachingMode.TableNameOnly"/> the cache key will only consist of the table name. This reduces cache misses in contexts
+        /// where you are accessing tables with identical structure but using different credentials or endpoints (such as a multi-tenant application).
+        /// </remarks>
+        public MetadataCachingMode? MetadataCachingMode { get; set; }
+
+        /// <summary>
+        /// If true disables fetching table metadata automatically from DynamoDB. Table metadata must be 
+        /// defined by <see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
+        /// </summary>
+        /// <remarks>
+        /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
+        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> calls that are used to populate the SDK's cache of 
+        /// table metadata. It requires that the table's index schema be accurately described via the above methods, 
+        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
+        /// </remarks>
+        public bool? DisableFetchingTableMetadata { get; set; }
+
+        /// <summary>
         /// Adds a TableAlias to the TableAliases property.
         /// An exception is thrown if there is already a TableAlias with the same FromTable configured.
         /// </summary>
@@ -177,6 +201,8 @@ namespace Amazon.Util
             if (section != null && section.ElementInformation.IsPresent)
             {
                 TableNamePrefix = section.TableNamePrefix;
+                MetadataCachingMode = section.MetadataCachingMode;
+                DisableFetchingTableMetadata = section.DisableFetchingTableMetadata;
 
                 InternalSDKUtils.FillDictionary(section.TypeMappings.Items, t => t.Type, t => new TypeMapping(t), TypeMappings);
                 InternalSDKUtils.FillDictionary(section.TableAliases.Items, t => t.FromTable, t => t.ToTable, TableAliases);
@@ -394,6 +420,8 @@ namespace Amazon.Util
         private const string tableNamePrefixKey = "tableNamePrefix";
         private const string tableAliasesKey = "tableAliases";
         private const string mappingsKey = "mappings";
+        private const string metadataCachingModeKey = "metadataCachingMode";
+        private const string disableFetchingTableMetadataKey = "disableFetchingTableMetadata";
 
         [ConfigurationProperty(tableNamePrefixKey)]
         public string TableNamePrefix
@@ -415,6 +443,21 @@ namespace Amazon.Util
             get { return (TypeMappingsCollection)this[mappingsKey]; }
             set { this[mappingsKey] = value; }
         }
+
+        [ConfigurationProperty(metadataCachingModeKey)]
+        public MetadataCachingMode? MetadataCachingMode
+        {
+            get { return (MetadataCachingMode?)this[metadataCachingModeKey]; }
+            set { this[metadataCachingModeKey] = value; }
+        }
+
+        [ConfigurationProperty(disableFetchingTableMetadataKey)]
+        public bool? DisableFetchingTableMetadata
+        {
+            get { return (bool?)this[disableFetchingTableMetadataKey]; }
+            set { this[disableFetchingTableMetadataKey] = value; }
+        }
+
     }
 
     /// <summary>

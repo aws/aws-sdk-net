@@ -166,6 +166,13 @@ namespace Amazon.S3.Transfer.Internal
                 Key = this._fileTransporterRequest.Key,
                 UploadId = initResponse.UploadId
             };
+
+            if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
+                && this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None)
+            {
+                compRequest.SSECustomerAlgorithm = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod.ToString();
+            }
+
             compRequest.AddPartETags(this._uploadResponses);
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(this.RequestEventHandler);
             return compRequest;

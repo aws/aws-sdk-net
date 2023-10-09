@@ -91,9 +91,24 @@ namespace Amazon.WellArchitected.Model
         IListProfileSharesPaginator ListProfileShares(ListProfileSharesRequest request);
 
         /// <summary>
+        /// Paginator for ListReviewTemplateAnswers operation
+        ///</summary>
+        IListReviewTemplateAnswersPaginator ListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request);
+
+        /// <summary>
+        /// Paginator for ListReviewTemplates operation
+        ///</summary>
+        IListReviewTemplatesPaginator ListReviewTemplates(ListReviewTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListShareInvitations operation
         ///</summary>
         IListShareInvitationsPaginator ListShareInvitations(ListShareInvitationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTemplateShares operation
+        ///</summary>
+        IListTemplateSharesPaginator ListTemplateShares(ListTemplateSharesRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloads operation

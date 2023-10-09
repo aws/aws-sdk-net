@@ -57,7 +57,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AdditionalParameters. 
         /// <para>
-        /// A list of additional OTA update parameters which are name-value pairs.
+        /// A list of additional OTA update parameters, which are name-value pairs. They won't
+        /// be sent to devices as a part of the Job document.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalParameters

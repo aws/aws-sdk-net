@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
     {
         private Dictionary<string, string> _clientProperties = new Dictionary<string, string>();
         private string _destinationArn;
+        private List<KafkaActionHeader> _headers = new List<KafkaActionHeader>();
         private string _key;
         private string _partition;
         private string _topic;
@@ -76,6 +77,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetDestinationArn()
         {
             return this._destinationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The list of Kafka headers that you specify.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<KafkaActionHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && this._headers.Count > 0; 
         }
 
         /// <summary>

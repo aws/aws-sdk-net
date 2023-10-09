@@ -31,7 +31,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Container for the parameters to the ListMatchingWorkflows operation.
     /// Returns a list of all the <code>MatchingWorkflows</code> that have been created for
-    /// an AWS account.
+    /// an Amazon Web Services account.
     /// </summary>
     public partial class ListMatchingWorkflowsRequest : AmazonEntityResolutionRequest
     {

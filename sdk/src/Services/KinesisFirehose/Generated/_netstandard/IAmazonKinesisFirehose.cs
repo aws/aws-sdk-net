@@ -84,9 +84,12 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon
-        /// Redshift, or Splunk. You must specify only one of the following destination configuration
-        /// parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
+        /// A delivery stream is configured with a single destination, such as Amazon Simple Storage
+        /// Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch
+        /// Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported
+        /// by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB,
+        /// New Relic, and Sumo Logic. You must specify only one of the following destination
+        /// configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
         /// <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>,
         /// or <code>SplunkDestinationConfiguration</code>.
         /// </para>
@@ -368,6 +371,14 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
+        /// Kinesis Data Firehose accumulates and publishes a particular metric for a customer
+        /// account in one minute intervals. It is possible that the bursts of incoming bytes/records
+        /// ingested to a delivery stream last only for a few seconds. Due to this, the actual
+        /// spikes in the traffic might not be fully visible in the customer's 1 minute CloudWatch
+        /// metrics.
+        /// </para>
+        ///  
+        /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KiB in size, and any
         /// kind of data. For example, it can be a segment from a log file, geographic location
@@ -390,8 +401,15 @@ namespace Amazon.KinesisFirehose
         ///  
         /// <para>
         /// If the <code>PutRecord</code> operation throws a <code>ServiceUnavailableException</code>,
-        /// back off and retry. If the exception persists, it is possible that the throughput
-        /// limits have been exceeded for the delivery stream. 
+        /// the API is automatically reinvoked (retried) 3 times. If the exception persists, it
+        /// is possible that the throughput limits have been exceeded for the delivery stream.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Re-invoking the Put API operations (for example, PutRecord and PutRecordBatch) can
+        /// result in data duplicates. For larger data assets, allow for a longer time out before
+        /// retrying Put API operations.
         /// </para>
         ///  
         /// <para>
@@ -450,6 +468,14 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
+        /// Kinesis Data Firehose accumulates and publishes a particular metric for a customer
+        /// account in one minute intervals. It is possible that the bursts of incoming bytes/records
+        /// ingested to a delivery stream last only for a few seconds. Due to this, the actual
+        /// spikes in the traffic might not be fully visible in the customer's 1 minute CloudWatch
+        /// metrics.
+        /// </para>
+        ///  
+        /// <para>
         /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
         /// The data record consists of a data blob that can be up to 1,000 KiB in size, and any
         /// kind of data. For example, it can be a segment from a log file, geographic location
@@ -472,8 +498,15 @@ namespace Amazon.KinesisFirehose
         ///  
         /// <para>
         /// If the <code>PutRecord</code> operation throws a <code>ServiceUnavailableException</code>,
-        /// back off and retry. If the exception persists, it is possible that the throughput
-        /// limits have been exceeded for the delivery stream. 
+        /// the API is automatically reinvoked (retried) 3 times. If the exception persists, it
+        /// is possible that the throughput limits have been exceeded for the delivery stream.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Re-invoking the Put API operations (for example, PutRecord and PutRecordBatch) can
+        /// result in data duplicates. For larger data assets, allow for a longer time out before
+        /// retrying Put API operations.
         /// </para>
         ///  
         /// <para>
@@ -528,6 +561,14 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
+        /// Kinesis Data Firehose accumulates and publishes a particular metric for a customer
+        /// account in one minute intervals. It is possible that the bursts of incoming bytes/records
+        /// ingested to a delivery stream last only for a few seconds. Due to this, the actual
+        /// spikes in the traffic might not be fully visible in the customer's 1 minute CloudWatch
+        /// metrics.
+        /// </para>
+        ///  
+        /// <para>
         /// For information about service quota, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Quota</a>.
         /// </para>
@@ -585,9 +626,15 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, back off
-        /// and retry. If the exception persists, it is possible that the throughput limits have
-        /// been exceeded for the delivery stream.
+        /// If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, the API
+        /// is automatically reinvoked (retried) 3 times. If the exception persists, it is possible
+        /// that the throughput limits have been exceeded for the delivery stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Re-invoking the Put API operations (for example, PutRecord and PutRecordBatch) can
+        /// result in data duplicates. For larger data assets, allow for a longer time out before
+        /// retrying Put API operations.
         /// </para>
         ///  
         /// <para>
@@ -639,6 +686,14 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
+        /// Kinesis Data Firehose accumulates and publishes a particular metric for a customer
+        /// account in one minute intervals. It is possible that the bursts of incoming bytes/records
+        /// ingested to a delivery stream last only for a few seconds. Due to this, the actual
+        /// spikes in the traffic might not be fully visible in the customer's 1 minute CloudWatch
+        /// metrics.
+        /// </para>
+        ///  
+        /// <para>
         /// For information about service quota, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Data Firehose Quota</a>.
         /// </para>
@@ -696,9 +751,15 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, back off
-        /// and retry. If the exception persists, it is possible that the throughput limits have
-        /// been exceeded for the delivery stream.
+        /// If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, the API
+        /// is automatically reinvoked (retried) 3 times. If the exception persists, it is possible
+        /// that the throughput limits have been exceeded for the delivery stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Re-invoking the Put API operations (for example, PutRecord and PutRecordBatch) can
+        /// result in data duplicates. For larger data assets, allow for a longer time out before
+        /// retrying Put API operations.
         /// </para>
         ///  
         /// <para>
@@ -776,6 +837,12 @@ namespace Amazon.KinesisFirehose
         /// the new CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose creates
         /// a grant that enables it to use the new CMK to encrypt and decrypt data and to manage
         /// the grant.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the KMS grant creation to be successful, Kinesis Data Firehose APIs <code>StartDeliveryStreamEncryption</code>
+        /// and <code>CreateDeliveryStream</code> should not be called with session credentials
+        /// that are more than 6 hours old.
         /// </para>
         ///  
         /// <para>
@@ -999,8 +1066,9 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Switching between Amazon ES and other services is not supported. For an Amazon ES
-        /// destination, you can only update to another Amazon ES destination.
+        /// Switching between Amazon OpenSearch Service and other services is not supported. For
+        /// an Amazon OpenSearch Service destination, you can only update to another Amazon OpenSearch
+        /// Service destination.
         /// </para>
         ///  
         /// <para>

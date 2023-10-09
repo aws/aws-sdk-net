@@ -42,6 +42,8 @@ namespace Amazon.WellArchitected.Model
         private string _sharedWith;
         private string _shareInvitationId;
         private ShareResourceType _shareResourceType;
+        private string _templateArn;
+        private string _templateName;
         private string _workloadId;
         private string _workloadName;
 
@@ -198,6 +200,44 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetShareResourceType()
         {
             return this._shareResourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateArn. 
+        /// <para>
+        /// The review template ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=250)]
+        public string TemplateArn
+        {
+            get { return this._templateArn; }
+            set { this._templateArn = value; }
+        }
+
+        // Check to see if TemplateArn property is set
+        internal bool IsSetTemplateArn()
+        {
+            return this._templateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the review template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=100)]
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
         /// <summary>

@@ -112,6 +112,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScheduleExpressionTimezone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleExpressionTimezone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartWindowMinutes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

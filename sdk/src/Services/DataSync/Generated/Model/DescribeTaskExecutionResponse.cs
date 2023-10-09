@@ -37,15 +37,21 @@ namespace Amazon.DataSync.Model
         private long? _bytesTransferred;
         private long? _bytesWritten;
         private long? _estimatedBytesToTransfer;
+        private long? _estimatedFilesToDelete;
         private long? _estimatedFilesToTransfer;
         private List<FilterRule> _excludes = new List<FilterRule>();
+        private long? _filesDeleted;
+        private long? _filesSkipped;
         private long? _filesTransferred;
+        private long? _filesVerified;
         private List<FilterRule> _includes = new List<FilterRule>();
         private Options _options;
+        private ReportResult _reportResult;
         private TaskExecutionResultDetail _result;
         private DateTime? _startTime;
         private TaskExecutionStatus _status;
         private string _taskExecutionArn;
+        private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property BytesCompressed. 
@@ -89,8 +95,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BytesWritten. 
         /// <para>
-        /// The number of logical bytes written to the destination Amazon Web Services storage
-        /// resource.
+        /// The number of logical bytes written to the destination location.
         /// </para>
         /// </summary>
         public long BytesWritten
@@ -108,7 +113,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EstimatedBytesToTransfer. 
         /// <para>
-        /// The estimated physical number of bytes that is to be transferred over the network.
+        /// The estimated physical number of bytes that will transfer over the network.
         /// </para>
         /// </summary>
         public long EstimatedBytesToTransfer
@@ -124,13 +129,34 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EstimatedFilesToDelete. 
+        /// <para>
+        /// The expected number of files, objects, and directories that DataSync will delete in
+        /// your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
+        /// your task</a> to delete data in the destination that isn't in the source, the value
+        /// is always <code>0</code>.
+        /// </para>
+        /// </summary>
+        public long EstimatedFilesToDelete
+        {
+            get { return this._estimatedFilesToDelete.GetValueOrDefault(); }
+            set { this._estimatedFilesToDelete = value; }
+        }
+
+        // Check to see if EstimatedFilesToDelete property is set
+        internal bool IsSetEstimatedFilesToDelete()
+        {
+            return this._estimatedFilesToDelete.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EstimatedFilesToTransfer. 
         /// <para>
-        /// The expected number of files that is to be transferred over the network. This value
-        /// is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code>
-        /// phase of the task execution. This value is the expected number of files to be transferred.
-        /// It's calculated based on comparing the content of the source and destination locations
-        /// and finding the delta that needs to be transferred. 
+        /// The expected number of files, objects, and directories that DataSync will transfer
+        /// over the network. This value is calculated during the task execution's <code>PREPARING</code>
+        /// phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing
+        /// the content of the source and destination locations and finding the difference that
+        /// needs to be transferred. 
         /// </para>
         /// </summary>
         public long EstimatedFilesToTransfer
@@ -167,19 +193,57 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilesDeleted. 
+        /// <para>
+        /// The number of files, objects, and directories that DataSync deleted in your destination
+        /// location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
+        /// your task</a> to delete data in the destination that isn't in the source, the value
+        /// is always <code>0</code>.
+        /// </para>
+        /// </summary>
+        public long FilesDeleted
+        {
+            get { return this._filesDeleted.GetValueOrDefault(); }
+            set { this._filesDeleted = value; }
+        }
+
+        // Check to see if FilesDeleted property is set
+        internal bool IsSetFilesDeleted()
+        {
+            return this._filesDeleted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilesSkipped. 
+        /// <para>
+        /// The number of files, objects, and directories that DataSync skipped during your transfer.
+        /// </para>
+        /// </summary>
+        public long FilesSkipped
+        {
+            get { return this._filesSkipped.GetValueOrDefault(); }
+            set { this._filesSkipped = value; }
+        }
+
+        // Check to see if FilesSkipped property is set
+        internal bool IsSetFilesSkipped()
+        {
+            return this._filesSkipped.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FilesTransferred. 
         /// <para>
-        /// The actual number of files that was transferred over the network. This value is calculated
-        /// and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the
-        /// task execution. It's updated periodically when each file is read from the source and
-        /// sent over the network. 
+        /// The actual number of files, objects, and directories that DataSync transferred over
+        /// the network. This value is updated periodically during the task execution's <code>TRANSFERRING</code>
+        /// phase when something is read from the source and sent over the network.
         /// </para>
         ///  
         /// <para>
-        /// If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>.
+        /// If DataSync fails to transfer something, this value can be less than <code>EstimatedFilesToTransfer</code>.
         /// In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>.
         /// This element is implementation-specific for some location types, so don't use it as
-        /// an indicator for a correct file number or to monitor your task execution.
+        /// an exact indication of what transferred or to monitor your task execution.
         /// </para>
         /// </summary>
         public long FilesTransferred
@@ -192,6 +256,24 @@ namespace Amazon.DataSync.Model
         internal bool IsSetFilesTransferred()
         {
             return this._filesTransferred.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilesVerified. 
+        /// <para>
+        /// The number of files, objects, and directories that DataSync verified during your transfer.
+        /// </para>
+        /// </summary>
+        public long FilesVerified
+        {
+            get { return this._filesVerified.GetValueOrDefault(); }
+            set { this._filesVerified = value; }
+        }
+
+        // Check to see if FilesVerified property is set
+        internal bool IsSetFilesVerified()
+        {
+            return this._filesVerified.HasValue; 
         }
 
         /// <summary>
@@ -231,6 +313,25 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReportResult. 
+        /// <para>
+        /// Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+        /// report</a> for your transfer.
+        /// </para>
+        /// </summary>
+        public ReportResult ReportResult
+        {
+            get { return this._reportResult; }
+            set { this._reportResult = value; }
+        }
+
+        // Check to see if ReportResult property is set
+        internal bool IsSetReportResult()
+        {
+            return this._reportResult != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
         /// The result of the task execution.
@@ -251,7 +352,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time that the task execution was started.
+        /// The time when the task execution started.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -271,11 +372,6 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The status of the task execution. 
         /// </para>
-        ///  
-        /// <para>
-        /// For detailed information about task execution statuses, see Understanding Task Statuses
-        /// in the <i>DataSync User Guide.</i> 
-        /// </para>
         /// </summary>
         public TaskExecutionStatus Status
         {
@@ -292,7 +388,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code>
+        /// The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code>
         /// is hierarchical and includes <code>TaskArn</code> for the task that was executed.
         /// 
         /// </para>
@@ -314,6 +410,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskExecutionArn()
         {
             return this._taskExecutionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskReportConfig. 
+        /// <para>
+        /// The configuration of your task report, which provides detailed information about for
+        /// your DataSync transfer.
+        /// </para>
+        /// </summary>
+        public TaskReportConfig TaskReportConfig
+        {
+            get { return this._taskReportConfig; }
+            set { this._taskReportConfig = value; }
+        }
+
+        // Check to see if TaskReportConfig property is set
+        internal bool IsSetTaskReportConfig()
+        {
+            return this._taskReportConfig != null;
         }
 
     }

@@ -1373,6 +1373,18 @@ namespace Amazon.EC2
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
         /// IP address quotas</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you associate an EIP or secondary EIPs with a public NAT gateway, the network
+        /// border group of the EIPs must match the network border group of the Availability Zone
+        /// (AZ) that the public NAT gateway is in. If it's not the same, the EIP will fail to
+        /// associate. You can see the network border group for the subnet's AZ by viewing the
+        /// details of the subnet. Similarly, you can view the network border group of an EIP
+        /// by viewing the details of the EIP address. For more information about network border
+        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+        /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
         /// <param name="cancellationToken">
@@ -4259,6 +4271,18 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
         /// gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you create a public NAT gateway and assign it an EIP or secondary EIPs, the network
+        /// border group of the EIPs must match the network border group of the Availability Zone
+        /// (AZ) that the public NAT gateway is in. If it's not the same, the NAT gateway will
+        /// fail to launch. You can see the network border group for the subnet's AZ by viewing
+        /// the details of the subnet. Similarly, you can view the network border group of an
+        /// EIP by viewing the details of the EIP address. For more information about network
+        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+        /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
         /// <param name="cancellationToken">
@@ -6897,7 +6921,9 @@ namespace Amazon.EC2
         /// For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet
         /// is deleted. A deleted <code>instant</code> fleet with running instances is not supported.
         /// </para>
-        ///  <p class="title"> <b>Restrictions</b> 
+        ///  
+        /// <para>
+        ///  <b>Restrictions</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -9030,7 +9056,8 @@ namespace Amazon.EC2
         /// are associated with the VPC before you can delete it. For example, you must terminate
         /// all instances running in the VPC, delete all security groups associated with the VPC
         /// (except the default one), delete all route tables associated with the VPC (except
-        /// the default one), and so on.
+        /// the default one), and so on. When you delete the VPC, it deletes the VPC's default
+        /// security group, network ACL, and route table.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method.</param>
         /// <param name="cancellationToken">
@@ -13127,6 +13154,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your network interfaces.
+        /// 
+        ///  
+        /// <para>
+        /// If you have a large number of network interfaces, the operation fails unless you use
+        /// pagination or one of the following filters: <code>group-id</code>, <code>mac-address</code>,
+        /// <code>private-dns-name</code>, <code>private-ip-address</code>, <code>private-dns-name</code>,
+        /// <code>subnet-id</code>, or <code>vpc-id</code>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13143,6 +13178,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your network interfaces.
+        /// 
+        ///  
+        /// <para>
+        /// If you have a large number of network interfaces, the operation fails unless you use
+        /// pagination or one of the following filters: <code>group-id</code>, <code>mac-address</code>,
+        /// <code>private-dns-name</code>, <code>private-ip-address</code>, <code>private-dns-name</code>,
+        /// <code>subnet-id</code>, or <code>vpc-id</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces service method.</param>
         /// <param name="cancellationToken">
@@ -16885,6 +16928,56 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImageBlockPublicAccess
+
+        internal virtual DisableImageBlockPublicAccessResponse DisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableImageBlockPublicAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableImageBlockPublicAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DisableImageBlockPublicAccessResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This removes the <i>block public access</i> restriction
+        /// from your account. With the restriction removed, you can publicly share your AMIs
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>block-new-sharing</code>. When the API has completed the
+        /// configuration, the response will be <code>unblocked</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageBlockPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
+        public virtual Task<DisableImageBlockPublicAccessResponse> DisableImageBlockPublicAccessAsync(DisableImageBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableImageBlockPublicAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableImageBlockPublicAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableImageBlockPublicAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableImageDeprecation
 
         internal virtual DisableImageDeprecationResponse DisableImageDeprecation(DisableImageDeprecationRequest request)
@@ -17938,6 +18031,55 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableImageBlockPublicAccess
+
+        internal virtual EnableImageBlockPublicAccessResponse EnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableImageBlockPublicAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableImageBlockPublicAccessResponseUnmarshaller.Instance;
+
+            return Invoke<EnableImageBlockPublicAccessResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables <i>block public access for AMIs</i> at the account level in the specified
+        /// Amazon Web Services Region. This prevents the public sharing of your AMIs. However,
+        /// if you already have public AMIs, they will remain publicly available.
+        /// 
+        ///  
+        /// <para>
+        /// The API can take up to 10 minutes to configure this setting. During this time, if
+        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+        /// the response will be <code>unblocked</code>. When the API has completed the configuration,
+        /// the response will be <code>block-new-sharing</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageBlockPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableImageBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
+        public virtual Task<EnableImageBlockPublicAccessResponse> EnableImageBlockPublicAccessAsync(EnableImageBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableImageBlockPublicAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableImageBlockPublicAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableImageBlockPublicAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableImageDeprecation
 
         internal virtual EnableImageDeprecationResponse EnableImageDeprecation(EnableImageDeprecationRequest request)
@@ -18971,6 +19113,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetHostReservationPurchasePreviewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetImageBlockPublicAccessState
+
+        internal virtual GetImageBlockPublicAccessStateResponse GetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImageBlockPublicAccessStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
+
+            return Invoke<GetImageBlockPublicAccessStateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the current state of <i>block public access for AMIs</i> at the account level
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageBlockPublicAccessState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImageBlockPublicAccessState service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
+        public virtual Task<GetImageBlockPublicAccessStateResponse> GetImageBlockPublicAccessStateAsync(GetImageBlockPublicAccessStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImageBlockPublicAccessStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetImageBlockPublicAccessStateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -25321,6 +25504,12 @@ namespace Amazon.EC2
         /// For a default VPC, if the values you specify do not match the existing rule's values,
         /// no error is returned, and the output describes the security group rules that were
         /// not revoked.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a non-default VPC, if the values you specify do not match the existing rule's
+        /// values, an <code>InvalidPermission.NotFound</code> client error is returned, and no
+        /// rules are revoked.
         /// </para>
         ///  
         /// <para>

@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CodeAnalysisProjectFile : BaseGenerator
     {
@@ -36,21 +36,21 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ProjectGuid>");
             
-            #line 12 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
             #line hidden
             this.Write("</ProjectGuid>\r\n    <RootNamespace>");
             
-            #line 13 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 14 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -77,7 +77,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     </EmbeddedResource>
 ");
             
-            #line 34 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
 
     foreach(string resource in ((IList<string>)this.Session["EmbeddedResources"]))
     {
@@ -87,7 +87,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 38 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 38 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource));
             
             #line default
@@ -95,7 +95,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             this.Write("\">\r\n      <CopyToOutputDirectory>Always</CopyToOutputDirectory>\r\n    </EmbeddedRe" +
                     "source>\r\n");
             
-            #line 41 "C:\Dev\repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
 
     }
 

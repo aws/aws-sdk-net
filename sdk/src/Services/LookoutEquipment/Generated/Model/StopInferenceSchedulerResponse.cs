@@ -80,8 +80,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being
-        /// stopped. 
+        /// The Amazon Resource Name (ARN) of the machine learning model used by the inference
+        /// scheduler being stopped. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -100,7 +100,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the ML model used by the inference scheduler being stopped. 
+        /// The name of the machine learning model used by the inference scheduler being stopped.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

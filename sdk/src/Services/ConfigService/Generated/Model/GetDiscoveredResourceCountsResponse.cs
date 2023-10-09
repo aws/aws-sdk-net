@@ -82,7 +82,9 @@ namespace Amazon.ConfigService.Model
         /// If you specify resource types in the request, Config returns only the total number
         /// of resources for those resource types.
         /// </para>
-        ///  <p class="title"> <b>Example</b> 
+        ///  
+        /// <para>
+        ///  <b>Example</b> 
         /// </para>
         ///  <ol> <li> 
         /// <para>

@@ -61,8 +61,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalWriteForwardingStatus. 
         /// <para>
-        /// Specifies whether a secondary cluster in the global cluster has write forwarding enabled,
-        /// not enabled, or is in the process of enabling it.
+        /// The status of write forwarding for a secondary cluster in the global cluster.
         /// </para>
         /// </summary>
         public WriteForwardingStatus GlobalWriteForwardingStatus
@@ -80,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsWriter. 
         /// <para>
-        /// Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write
+        /// Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write
         /// capability) for the global cluster with which it is associated.
         /// </para>
         /// </summary>

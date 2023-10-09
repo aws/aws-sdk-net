@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AdditionalDataPending. 
         /// <para>
-        /// Boolean value that if true, indicates there is more data to be downloaded.
+        /// A Boolean value that, if true, indicates there is more data to be downloaded.
         /// </para>
         /// </summary>
         public bool AdditionalDataPending

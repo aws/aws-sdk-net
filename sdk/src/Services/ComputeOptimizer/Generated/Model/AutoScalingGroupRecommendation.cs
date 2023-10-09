@@ -37,6 +37,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _autoScalingGroupArn;
         private string _autoScalingGroupName;
         private AutoScalingGroupConfiguration _currentConfiguration;
+        private GpuInfo _currentInstanceGpuInfo;
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private Finding _finding;
@@ -116,6 +117,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentConfiguration()
         {
             return this._currentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentInstanceGpuInfo. 
+        /// <para>
+        ///  Describes the GPU accelerator settings for the current instance type of the Auto
+        /// Scaling group. 
+        /// </para>
+        /// </summary>
+        public GpuInfo CurrentInstanceGpuInfo
+        {
+            get { return this._currentInstanceGpuInfo; }
+            set { this._currentInstanceGpuInfo = value; }
+        }
+
+        // Check to see if CurrentInstanceGpuInfo property is set
+        internal bool IsSetCurrentInstanceGpuInfo()
+        {
+            return this._currentInstanceGpuInfo != null;
         }
 
         /// <summary>

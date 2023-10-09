@@ -54,7 +54,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// This operation can be called only from the organization's management account or by
+    /// a member account that is a delegated administrator for an Amazon Web Services service.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonOrganizationsRequest

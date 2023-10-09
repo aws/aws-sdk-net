@@ -237,8 +237,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code>
-        /// field. The default is <code>CreationTime</code>.
+        /// Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>,
+        /// or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.
         /// </para>
         /// </summary>
         public MonitoringScheduleSortKey SortBy

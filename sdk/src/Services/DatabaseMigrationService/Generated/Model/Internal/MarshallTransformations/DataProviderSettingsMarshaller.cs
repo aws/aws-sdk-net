@@ -45,6 +45,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataProviderSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDocDbSettings())
+            {
+                context.Writer.WritePropertyName("DocDbSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DocDbDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DocDbSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMariaDbSettings())
+            {
+                context.Writer.WritePropertyName("MariaDbSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MariaDbDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MariaDbSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMicrosoftSqlServerSettings())
             {
                 context.Writer.WritePropertyName("MicrosoftSqlServerSettings");
@@ -52,6 +74,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
                 var marshaller = MicrosoftSqlServerDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MicrosoftSqlServerSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMongoDbSettings())
+            {
+                context.Writer.WritePropertyName("MongoDbSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MongoDbDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MongoDbSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -85,6 +118,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
                 var marshaller = PostgreSqlDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostgreSqlSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRedshiftSettings())
+            {
+                context.Writer.WritePropertyName("RedshiftSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RedshiftDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RedshiftSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

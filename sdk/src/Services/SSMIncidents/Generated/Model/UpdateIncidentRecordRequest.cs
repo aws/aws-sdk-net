@@ -109,7 +109,9 @@ namespace Amazon.SSMIncidents.Model
         /// Defines the impact of the incident to customers and applications. If you provide an
         /// impact for an incident, it overwrites the impact provided by the response plan.
         /// </para>
-        ///  <p class="title"> <b>Possible impacts:</b> 
+        ///  
+        /// <para>
+        ///  <b>Possible impacts:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -91,6 +91,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
 
@@ -134,6 +135,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -174,6 +176,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHapgResponse CreateHapg(string label);
 
         /// <summary>
@@ -209,6 +212,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHapgResponse CreateHapg(CreateHapgRequest request);
 
 
@@ -248,6 +252,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<CreateHapgResponse> CreateHapgAsync(string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -287,6 +292,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<CreateHapgResponse> CreateHapgAsync(CreateHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -340,6 +346,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateHsmResponse CreateHsm(CreateHsmRequest request);
 
 
@@ -393,6 +400,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -432,6 +440,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request);
 
 
@@ -471,6 +480,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<CreateLunaClientResponse> CreateLunaClientAsync(CreateLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -510,6 +520,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHapgResponse DeleteHapg(string hapgArn);
 
         /// <summary>
@@ -544,6 +555,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHapgResponse DeleteHapg(DeleteHapgRequest request);
 
 
@@ -582,6 +594,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DeleteHapgResponse> DeleteHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -620,6 +633,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DeleteHapgResponse> DeleteHapgAsync(DeleteHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -660,6 +674,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHsmResponse DeleteHsm(string hsmArn);
 
         /// <summary>
@@ -695,6 +710,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteHsmResponse DeleteHsm(DeleteHsmRequest request);
 
 
@@ -734,6 +750,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DeleteHsmResponse> DeleteHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -773,6 +790,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -812,6 +830,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteLunaClientResponse DeleteLunaClient(string clientArn);
 
         /// <summary>
@@ -846,6 +865,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request);
 
 
@@ -884,6 +904,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DeleteLunaClientResponse> DeleteLunaClientAsync(string clientArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -922,6 +943,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DeleteLunaClientResponse> DeleteLunaClientAsync(DeleteLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -961,6 +983,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHapgResponse DescribeHapg(string hapgArn);
 
         /// <summary>
@@ -995,6 +1018,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHapgResponse DescribeHapg(DescribeHapgRequest request);
 
 
@@ -1033,6 +1057,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DescribeHapgResponse> DescribeHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1071,6 +1096,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DescribeHapgResponse> DescribeHapgAsync(DescribeHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1111,6 +1137,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHsmResponse DescribeHsm(string hsmArn);
 
         /// <summary>
@@ -1146,6 +1173,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeHsmResponse DescribeHsm(DescribeHsmRequest request);
 
 
@@ -1185,6 +1213,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DescribeHsmResponse> DescribeHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1224,6 +1253,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DescribeHsmResponse> DescribeHsmAsync(DescribeHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1263,6 +1293,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request);
 
 
@@ -1302,6 +1333,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<DescribeLunaClientResponse> DescribeLunaClientAsync(DescribeLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1342,6 +1374,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         GetConfigResponse GetConfig(GetConfigRequest request);
 
 
@@ -1382,6 +1415,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1420,6 +1454,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListAvailableZonesResponse ListAvailableZones();
 
         /// <summary>
@@ -1454,6 +1489,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request);
 
 
@@ -1491,6 +1527,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListAvailableZonesResponse> ListAvailableZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1529,6 +1566,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListAvailableZonesResponse> ListAvailableZonesAsync(ListAvailableZonesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1574,6 +1612,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHapgsResponse ListHapgs();
 
         /// <summary>
@@ -1615,6 +1654,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHapgsResponse ListHapgs(ListHapgsRequest request);
 
 
@@ -1659,6 +1699,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListHapgsResponse> ListHapgsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1704,6 +1745,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListHapgsResponse> ListHapgsAsync(ListHapgsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1749,6 +1791,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHsmsResponse ListHsms();
 
         /// <summary>
@@ -1790,6 +1833,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListHsmsResponse ListHsms(ListHsmsRequest request);
 
 
@@ -1834,6 +1878,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListHsmsResponse> ListHsmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1879,6 +1924,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListHsmsResponse> ListHsmsAsync(ListHsmsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1924,6 +1970,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListLunaClientsResponse ListLunaClients();
 
         /// <summary>
@@ -1965,6 +2012,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request);
 
 
@@ -2009,6 +2057,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListLunaClientsResponse> ListLunaClientsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -2054,6 +2103,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListLunaClientsResponse> ListLunaClientsAsync(ListLunaClientsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2093,6 +2143,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -2132,6 +2183,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2171,6 +2223,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyHapgResponse ModifyHapg(ModifyHapgRequest request);
 
 
@@ -2210,6 +2263,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ModifyHapgResponse> ModifyHapgAsync(ModifyHapgRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2257,6 +2311,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyHsmResponse ModifyHsm(ModifyHsmRequest request);
 
 
@@ -2304,6 +2359,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ModifyHsmResponse> ModifyHsmAsync(ModifyHsmRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2342,6 +2398,7 @@ namespace Amazon.CloudHSM
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request);
 
 
@@ -2380,6 +2437,7 @@ namespace Amazon.CloudHSM
         /// Indicates that an exception occurred in the AWS CloudHSM service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2424,6 +2482,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
 
@@ -2468,6 +2527,7 @@ namespace Amazon.CloudHSM
         /// Indicates that one or more of the request parameters are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        [Obsolete("This API is deprecated.")]
         Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

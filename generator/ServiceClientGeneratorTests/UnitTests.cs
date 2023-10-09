@@ -11,8 +11,8 @@ namespace ServiceClientGeneratorTests
     [Trait("Category", "UnitTests")]
     public class UnitTests
     {
-        private const string _modelsPath = "../../../Content/TestModel.json";
-        private const string _paginatorsPath = "../../../Content/TestPaginators.json";
+        private const string _modelsPath = "../../Content/TestModel.json";
+        private const string _paginatorsPath = "../../Content/TestPaginators.json";
 
         [Theory]
         [InlineData("notJmespath", false)]

@@ -45,6 +45,17 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DialerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAgentlessDialerConfig())
+            {
+                context.Writer.WritePropertyName("agentlessDialerConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AgentlessDialerConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AgentlessDialerConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPredictiveDialerConfig())
             {
                 context.Writer.WritePropertyName("predictiveDialerConfig");

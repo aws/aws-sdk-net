@@ -82,6 +82,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentIdOptions", targetDepth))
+                {
+                    var unmarshaller = DocumentIdOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DocumentIdOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

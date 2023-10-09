@@ -40,7 +40,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the event inegration.
+        /// The description of the event integration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

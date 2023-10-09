@@ -42,6 +42,7 @@ namespace Amazon.Braket.Model
         private string _outputs3Bucket;
         private string _outputs3Directory;
         private string _quantumTaskArn;
+        private QuantumTaskQueueInfo _queueInfo;
         private long? _shots;
         private QuantumTaskStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -201,7 +202,7 @@ namespace Amazon.Braket.Model
         /// The ARN of the task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string QuantumTaskArn
         {
             get { return this._quantumTaskArn; }
@@ -212,6 +213,26 @@ namespace Amazon.Braket.Model
         internal bool IsSetQuantumTaskArn()
         {
             return this._quantumTaskArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueueInfo. 
+        /// <para>
+        /// Queue information for the requested quantum task. Only returned if <code>QueueInfo</code>
+        /// is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+        /// API request.
+        /// </para>
+        /// </summary>
+        public QuantumTaskQueueInfo QueueInfo
+        {
+            get { return this._queueInfo; }
+            set { this._queueInfo = value; }
+        }
+
+        // Check to see if QueueInfo property is set
+        internal bool IsSetQueueInfo()
+        {
+            return this._queueInfo != null;
         }
 
         /// <summary>

@@ -41,6 +41,12 @@ namespace Amazon.AppConfig.Model
         /// </summary>
         public IPaginatedEnumerable<ListExtensionsResponse> Responses => new PaginatedResponse<ListExtensionsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Items
+        /// </summary>
+        public IPaginatedEnumerable<ExtensionSummary> Items => 
+            new PaginatedResultKeyResponse<ListExtensionsResponse, ExtensionSummary>(this, (i) => i.Items);
+
         internal ListExtensionsPaginator(IAmazonAppConfig client, ListExtensionsRequest request)
         {
             this._client = client;

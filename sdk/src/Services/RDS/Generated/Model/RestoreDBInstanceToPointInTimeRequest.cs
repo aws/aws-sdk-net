@@ -31,8 +31,9 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
     /// Restores a DB instance to an arbitrary point in time. You can restore to any point
-    /// in time before the time identified by the LatestRestorableTime property. You can restore
-    /// to a point up to the number of days specified by the BackupRetentionPeriod property.
+    /// in time before the time identified by the <code>LatestRestorableTime</code> property.
+    /// You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code>
+    /// property.
     /// 
     ///  
     /// <para>
@@ -105,7 +106,7 @@ namespace Amazon.RDS.Model
         /// Instantiates RestoreDBInstanceToPointInTimeRequest with the parameterized properties
         /// </summary>
         /// <param name="sourceDBInstanceIdentifier">The identifier of the source DB instance from which to restore. Constraints: <ul> <li> Must match the identifier of an existing DB instance. </li> </ul></param>
-        /// <param name="targetDBInstanceIdentifier">The name of the new DB instance to be created. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="targetDBInstanceIdentifier">The name of the new DB instance to create. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul></param>
         public RestoreDBInstanceToPointInTimeRequest(string sourceDBInstanceIdentifier, string targetDBInstanceIdentifier)
         {
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -140,8 +141,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether minor version upgrades are applied automatically to
-        /// the DB instance during the maintenance window.
+        /// Specifies whether minor version upgrades are applied automatically to the DB instance
+        /// during the maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -171,10 +172,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB
-        /// instance is a Multi-AZ deployment.
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+        /// a Multi-AZ deployment.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Example: <code>us-east-1a</code> 
         /// </para>
@@ -223,8 +228,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// A value that indicates whether to copy all tags from the restored DB instance to snapshots
-        /// of the DB instance. By default, tags are not copied.
+        /// Specifies whether to copy all tags from the restored DB instance to snapshots of the
+        /// DB instance. By default, tags are not copied.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -291,7 +296,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: The same DBInstanceClass as the original DB instance.
+        /// Default: The same DB instance class as the original DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -350,7 +355,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the name of an existing DBParameterGroup.
+        /// If supplied, must match the name of an existing DB parameter group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -385,9 +390,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If supplied, must match the name of an existing DB subnet group.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
@@ -407,9 +416,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// A value that indicates whether the DB instance has deletion protection enabled. The
-        /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// Specifies whether the DB instance has deletion protection enabled. The database can't
+        /// be deleted when deletion protection is enabled. By default, deletion protection isn't
+        /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
@@ -428,9 +437,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specify the Active Directory directory ID to restore the DB instance in. Create the
-        /// domain before running this command. Currently, you can create only the MySQL, Microsoft
-        /// SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.
+        /// The Active Directory directory ID to restore the DB instance in. Create the domain
+        /// before running this command. Currently, you can create only the MySQL, Microsoft SQL
+        /// Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.
         /// </para>
         ///  
         /// <para>
@@ -632,8 +641,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCustomerOwnedIp. 
         /// <para>
-        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
-        /// RDS on Outposts DB instance.
+        /// Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts
+        /// DB instance.
         /// </para>
         ///  
         /// <para>
@@ -672,8 +681,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
+        /// Specifies whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -706,14 +715,6 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// This setting doesn't apply to RDS Custom.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: The same as source
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraint: Must be compatible with the engine of the source
         /// </para>
         ///  
         /// <para>
@@ -763,6 +764,18 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <code>sqlserver-web</code> 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: The same as source
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be compatible with the engine of the source.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Engine
@@ -780,21 +793,22 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance.
+        /// The amount of Provisioned IOPS (input/output operations per second) to initially allocate
+        /// for the DB instance.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be an integer greater than 1000.
+        /// This setting doesn't apply to SQL Server.
         /// </para>
         ///  
         /// <para>
-        ///  <b>SQL Server</b> 
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Setting the IOPS value for the SQL Server database engine isn't supported.
+        /// Must be an integer greater than 1000.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int Iops
         {
@@ -811,7 +825,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// License model information for the restored DB instance.
+        /// The license model information for the restored DB instance.
         /// </para>
         ///  
         /// <para>
@@ -819,12 +833,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Same as source.
+        /// Valid Values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// | <code>general-public-license</code> 
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code> 
+        /// Default: Same as the source.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -872,7 +886,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates whether the DB instance is a Multi-AZ deployment.
+        /// Secifies whether the DB instance is a Multi-AZ deployment.
         /// </para>
         ///  
         /// <para>
@@ -880,9 +894,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB
-        /// instance is a Multi-AZ deployment.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+        /// a Multi-AZ deployment.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool MultiAZ
         {
@@ -903,18 +922,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>IPV4</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DUAL</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
         /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
         /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
@@ -924,6 +931,19 @@ namespace Amazon.RDS.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
         /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NetworkType
         {
@@ -940,7 +960,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// The name of the option group to be used for the restored DB instance.
+        /// The name of the option group to use for the restored DB instance.
         /// </para>
         ///  
         /// <para>
@@ -972,12 +992,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Default: The same port as the original DB instance.
         /// </para>
         ///  
         /// <para>
-        /// Default: The same port as the original DB instance.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The value must be <code>1150-65535</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int Port
         {
@@ -1017,7 +1042,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible.
+        /// Specifies whether the DB instance is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1057,19 +1082,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be before the latest restorable time for the DB instance
+        /// Must be a time in Universal Coordinated Time (UTC) format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
+        /// Must be before the latest restorable time for the DB instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1092,7 +1117,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBInstanceAutomatedBackupsArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the replicated automated backups from which to restore,
-        /// for example, <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
         /// </para>
         ///  
         /// <para>
@@ -1159,7 +1184,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
-        /// Specifies the storage throughput value for the DB instance.
+        /// The storage throughput value for the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -1181,22 +1206,27 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the DB instance.
+        /// The storage type to associate with the DB instance.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
+        /// <para>
+        /// Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
+        /// <code>gp2</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
         /// for the <code>Iops</code> parameter.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>gp2</code> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StorageType
         {
@@ -1228,7 +1258,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetDBInstanceIdentifier. 
         /// <para>
-        /// The name of the new DB instance to be created.
+        /// The name of the new DB instance to create.
         /// </para>
         ///  
         /// <para>
@@ -1236,15 +1266,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 letters, numbers, or hyphens
+        /// Must contain from 1 to 63 letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// First character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1308,8 +1338,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseDefaultProcessorFeatures. 
         /// <para>
-        /// A value that indicates whether the DB instance class of the DB instance uses its default
-        /// processor features.
+        /// Specifies whether the DB instance class of the DB instance uses its default processor
+        /// features.
         /// </para>
         ///  
         /// <para>
@@ -1331,13 +1361,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// A value that indicates whether the DB instance is restored from the latest backup
-        /// time. By default, the DB instance isn't restored from the latest backup time.
+        /// Specifies whether the DB instance is restored from the latest backup time. By default,
+        /// the DB instance isn't restored from the latest backup time.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be specified if the <code>RestoreTime</code> parameter is provided.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool UseLatestRestorableTime
         {
@@ -1392,19 +1427,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be before the latest restorable time for the DB instance
+        /// Must be a time in Universal Coordinated Time (UTC) format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
+        /// Must be before the latest restorable time for the DB instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>

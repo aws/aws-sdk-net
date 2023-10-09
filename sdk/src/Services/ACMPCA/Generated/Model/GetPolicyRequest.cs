@@ -39,7 +39,9 @@ namespace Amazon.ACMPCA.Model
     /// The policy can be attached or updated with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
     /// and removed with <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
     /// </para>
-    ///  <p class="title"> <b>About Policies</b> 
+    ///  
+    /// <para>
+    ///  <b>About Policies</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

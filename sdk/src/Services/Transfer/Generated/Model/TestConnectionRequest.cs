@@ -31,8 +31,8 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the TestConnection operation.
     /// Tests whether your SFTP connector is set up successfully. We highly recommend that
-    /// you call this operation to test your ability to transfer files between a Transfer
-    /// Family server and a trading partner's SFTP server.
+    /// you call this operation to test your ability to transfer files between local Amazon
+    /// Web Services storage and a trading partner's SFTP server.
     /// </summary>
     public partial class TestConnectionRequest : AmazonTransferRequest
     {

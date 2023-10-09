@@ -30,7 +30,7 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution,
+    /// Displays the tags associated with an Entity Resolution resource. In Entity Resolution,
     /// <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonEntityResolutionRequest

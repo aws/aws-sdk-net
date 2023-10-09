@@ -43,7 +43,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The ARN of the identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string IdentityProviderArn
         {
             get { return this._identityProviderArn; }

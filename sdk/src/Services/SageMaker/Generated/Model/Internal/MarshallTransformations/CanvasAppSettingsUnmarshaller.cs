@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("IdentityProviderOAuthSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IdentityProviderOAuthSetting, IdentityProviderOAuthSettingUnmarshaller>(IdentityProviderOAuthSettingUnmarshaller.Instance);
+                    unmarshalledObject.IdentityProviderOAuthSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelRegisterSettings", targetDepth))
                 {
                     var unmarshaller = ModelRegisterSettingsUnmarshaller.Instance;

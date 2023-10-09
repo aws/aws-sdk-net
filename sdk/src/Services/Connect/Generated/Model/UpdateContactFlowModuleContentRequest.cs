@@ -60,7 +60,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the flow module.
+        /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+        /// contact flow in Amazon Connect Flow language</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256000)]

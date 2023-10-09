@@ -145,10 +145,10 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Creating rules with built-in targets is supported only in the Management Console.
-    /// The built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances
-    /// API call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances
-    /// API call</code>. 
+    /// Creating rules with built-in targets is supported only in the Amazon Web Services
+    /// Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
+    /// <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>,
+    /// and <code>EC2 TerminateInstances API call</code>. 
     /// </para>
     ///  
     /// <para>

@@ -44,6 +44,7 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<AWSAccount> AwsAccounts
         {
             get { return this._awsAccounts; }

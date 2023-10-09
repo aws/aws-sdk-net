@@ -63,6 +63,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Host);
             }
 
+            if(requestObject.IsSetIAMParameters())
+            {
+                context.Writer.WritePropertyName("IAMParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RedshiftIAMParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.IAMParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");

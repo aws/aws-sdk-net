@@ -47,7 +47,7 @@ namespace Amazon.GuardDuty.Model
     /// <para>
     /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
     /// set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a
-    /// member account before removing them from your Amazon Web Services organization.
+    /// member account before removing them from your organization.
     /// </para>
     /// </summary>
     public partial class DisassociateMembersRequest : AmazonGuardDutyRequest
