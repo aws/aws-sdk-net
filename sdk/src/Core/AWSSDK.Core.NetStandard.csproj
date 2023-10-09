@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
-    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
     <CodeAnalysisRuleSet>..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>

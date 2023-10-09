@@ -254,8 +254,8 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             this.Write("  <PropertyGroup Condition=\"\'$(TargetFramework)\' == \'net8.0\'\">\r\n    <WarningsAsEr" +
-                    "rors>IL2026,IL2075</WarningsAsErrors>\r\n    <EnableTrimAnalyzer>true</EnableTrimA" +
-                    "nalyzer>\r\n  </PropertyGroup>\r\n");
+                    "rors>IL2026,IL2075</WarningsAsErrors>\r\n    <IsTrimmable>true</IsTrimmable>\r\n  </" +
+                    "PropertyGroup>\r\n");
             
             #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
