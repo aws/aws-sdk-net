@@ -10,17 +10,13 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
 {
     public class ImageUtilitiesTest : TestBase<AmazonEC2Client>
     {        
-        static string[] imgs = { "WINDOWS_2012R2_BASE", "WINDOWS_2012_BASE" };
-             
         [Trait(CategoryAttribute, "EC2")]
         [Fact]
         public async Task ImageTest()
         {
-            foreach (string img in imgs)
-            {
-                var image = await ImageUtilities.FindImageAsync(Client, img).ConfigureAwait(false);
-                Assert.NotNull(image);
-            }
+            var imageKey = "WINDOWS_2016_BASE";
+            var image = await ImageUtilities.FindImageAsync(Client, imageKey).ConfigureAwait(false);
+            Assert.NotNull(image);
         }
 
         [Trait(CategoryAttribute, "EC2")]
