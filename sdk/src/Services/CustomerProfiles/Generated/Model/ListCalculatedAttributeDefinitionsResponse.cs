@@ -42,6 +42,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The list of calculated attribute definitions.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<ListCalculatedAttributeDefinitionItem> Items
         {
             get { return this._items; }
