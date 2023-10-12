@@ -31,7 +31,8 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the ListEnabledControls operation.
     /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
-    /// and the accounts it contains.
+    /// and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+    /// <i>the AWS Control Tower User Guide</i> </a>
     /// </summary>
     public partial class ListEnabledControlsRequest : AmazonControlTowerRequest
     {
@@ -45,7 +46,7 @@ namespace Amazon.ControlTower.Model
         /// How many results to return per API call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=200)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,7 +80,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The ARN of the organizational unit.
+        /// The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// overview page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

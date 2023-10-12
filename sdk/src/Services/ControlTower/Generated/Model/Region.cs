@@ -29,29 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// This is the response object from the GetControlOperation operation.
+    /// An AWS Region in which AWS Control Tower expects to find the control deployed. 
+    /// 
+    ///  
+    /// <para>
+    /// The expected Regions are based on the Regions that are governed by the landing zone.
+    /// In certain cases, a control is not actually enabled in the Region as expected, such
+    /// as during drift, or <a href="https://docs.aws.amazon.com/controltower/latest/userguide/region-how.html#mixed-governance">mixed
+    /// governance</a>.
+    /// </para>
     /// </summary>
-    public partial class GetControlOperationResponse : AmazonWebServiceResponse
+    public partial class Region
     {
-        private ControlOperation _controlOperation;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property ControlOperation. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// An operation performed by the control.
+        ///  The AWS Region name. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ControlOperation ControlOperation
+        [AWSProperty(Min=1, Max=50)]
+        public string Name
         {
-            get { return this._controlOperation; }
-            set { this._controlOperation = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ControlOperation property is set
-        internal bool IsSetControlOperation()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._controlOperation != null;
+            return this._name != null;
         }
 
     }

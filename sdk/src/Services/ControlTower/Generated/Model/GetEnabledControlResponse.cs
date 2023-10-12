@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// This is the response object from the GetControlOperation operation.
+    /// This is the response object from the GetEnabledControl operation.
     /// </summary>
-    public partial class GetControlOperationResponse : AmazonWebServiceResponse
+    public partial class GetEnabledControlResponse : AmazonWebServiceResponse
     {
-        private ControlOperation _controlOperation;
+        private EnabledControlDetails _enabledControlDetails;
 
         /// <summary>
-        /// Gets and sets the property ControlOperation. 
+        /// Gets and sets the property EnabledControlDetails. 
         /// <para>
-        /// An operation performed by the control.
+        ///  Information about the enabled control. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ControlOperation ControlOperation
+        public EnabledControlDetails EnabledControlDetails
         {
-            get { return this._controlOperation; }
-            set { this._controlOperation = value; }
+            get { return this._enabledControlDetails; }
+            set { this._enabledControlDetails = value; }
         }
 
-        // Check to see if ControlOperation property is set
-        internal bool IsSetControlOperation()
+        // Check to see if EnabledControlDetails property is set
+        internal bool IsSetEnabledControlDetails()
         {
-            return this._controlOperation != null;
+            return this._enabledControlDetails != null;
         }
 
     }

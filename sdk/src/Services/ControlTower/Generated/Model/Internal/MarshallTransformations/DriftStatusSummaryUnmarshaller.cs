@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnabledControlSummary Object
+    /// Response Unmarshaller for DriftStatusSummary Object
     /// </summary>  
-    public class EnabledControlSummaryUnmarshaller : IUnmarshaller<EnabledControlSummary, XmlUnmarshallerContext>, IUnmarshaller<EnabledControlSummary, JsonUnmarshallerContext>
+    public class DriftStatusSummaryUnmarshaller : IUnmarshaller<DriftStatusSummary, XmlUnmarshallerContext>, IUnmarshaller<DriftStatusSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EnabledControlSummary IUnmarshaller<EnabledControlSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DriftStatusSummary IUnmarshaller<DriftStatusSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EnabledControlSummary Unmarshall(JsonUnmarshallerContext context)
+        public DriftStatusSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EnabledControlSummary unmarshalledObject = new EnabledControlSummary();
+            DriftStatusSummary unmarshalledObject = new DriftStatusSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("driftStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("controlIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ControlIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("driftStatusSummary", targetDepth))
-                {
-                    var unmarshaller = DriftStatusSummaryUnmarshaller.Instance;
-                    unmarshalledObject.DriftStatusSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusSummary", targetDepth))
-                {
-                    var unmarshaller = EnablementStatusSummaryUnmarshaller.Instance;
-                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static EnabledControlSummaryUnmarshaller _instance = new EnabledControlSummaryUnmarshaller();        
+        private static DriftStatusSummaryUnmarshaller _instance = new DriftStatusSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnabledControlSummaryUnmarshaller Instance
+        public static DriftStatusSummaryUnmarshaller Instance
         {
             get
             {

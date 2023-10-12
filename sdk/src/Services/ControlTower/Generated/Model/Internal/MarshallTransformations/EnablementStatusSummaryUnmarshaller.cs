@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnabledControlSummary Object
+    /// Response Unmarshaller for EnablementStatusSummary Object
     /// </summary>  
-    public class EnabledControlSummaryUnmarshaller : IUnmarshaller<EnabledControlSummary, XmlUnmarshallerContext>, IUnmarshaller<EnabledControlSummary, JsonUnmarshallerContext>
+    public class EnablementStatusSummaryUnmarshaller : IUnmarshaller<EnablementStatusSummary, XmlUnmarshallerContext>, IUnmarshaller<EnablementStatusSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EnabledControlSummary IUnmarshaller<EnabledControlSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnablementStatusSummary IUnmarshaller<EnablementStatusSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EnabledControlSummary Unmarshall(JsonUnmarshallerContext context)
+        public EnablementStatusSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EnabledControlSummary unmarshalledObject = new EnabledControlSummary();
+            EnablementStatusSummary unmarshalledObject = new EnablementStatusSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("lastOperationIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastOperationIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("controlIdentifier", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ControlIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("driftStatusSummary", targetDepth))
-                {
-                    var unmarshaller = DriftStatusSummaryUnmarshaller.Instance;
-                    unmarshalledObject.DriftStatusSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusSummary", targetDepth))
-                {
-                    var unmarshaller = EnablementStatusSummaryUnmarshaller.Instance;
-                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static EnabledControlSummaryUnmarshaller _instance = new EnabledControlSummaryUnmarshaller();        
+        private static EnablementStatusSummaryUnmarshaller _instance = new EnablementStatusSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnabledControlSummaryUnmarshaller Instance
+        public static EnablementStatusSummaryUnmarshaller Instance
         {
             get
             {

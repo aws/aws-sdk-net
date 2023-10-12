@@ -32,7 +32,9 @@ namespace Amazon.ControlTower.Model
     /// Container for the parameters to the EnableControl operation.
     /// This API call activates a control. It starts an asynchronous operation that creates
     /// AWS resources on the specified organizational unit and the accounts it contains. The
-    /// resources created will vary according to the control that you specify.
+    /// resources created will vary according to the control that you specify. For usage examples,
+    /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+    /// <i>the AWS Control Tower User Guide</i> </a>
     /// </summary>
     public partial class EnableControlRequest : AmazonControlTowerRequest
     {
@@ -43,7 +45,9 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
         /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>Region deny</b> guardrail.
+        /// are permitted, with the exception of the <b>Region deny</b> control. For information
+        /// on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// overview page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -62,7 +66,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The ARN of the organizational unit.
+        /// The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// overview page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnabledControlSummary Object
+    /// Response Unmarshaller for EnabledControlDetails Object
     /// </summary>  
-    public class EnabledControlSummaryUnmarshaller : IUnmarshaller<EnabledControlSummary, XmlUnmarshallerContext>, IUnmarshaller<EnabledControlSummary, JsonUnmarshallerContext>
+    public class EnabledControlDetailsUnmarshaller : IUnmarshaller<EnabledControlDetails, XmlUnmarshallerContext>, IUnmarshaller<EnabledControlDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EnabledControlSummary IUnmarshaller<EnabledControlSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnabledControlDetails IUnmarshaller<EnabledControlDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EnabledControlSummary Unmarshall(JsonUnmarshallerContext context)
+        public EnabledControlDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EnabledControlSummary unmarshalledObject = new EnabledControlSummary();
+            EnabledControlDetails unmarshalledObject = new EnabledControlDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -94,18 +94,24 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("targetRegions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Region, RegionUnmarshaller>(RegionUnmarshaller.Instance);
+                    unmarshalledObject.TargetRegions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static EnabledControlSummaryUnmarshaller _instance = new EnabledControlSummaryUnmarshaller();        
+        private static EnabledControlDetailsUnmarshaller _instance = new EnabledControlDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnabledControlSummaryUnmarshaller Instance
+        public static EnabledControlDetailsUnmarshaller Instance
         {
             get
             {

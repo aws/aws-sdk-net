@@ -29,15 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// A summary of enabled controls.
+    /// Information about the enabled control.
     /// </summary>
-    public partial class EnabledControlSummary
+    public partial class EnabledControlDetails
     {
         private string _arn;
         private string _controlIdentifier;
         private DriftStatusSummary _driftStatusSummary;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
+        private List<Region> _targetRegions = new List<Region>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -61,10 +62,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
-        /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>Region deny</b> control. For information
-        /// on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-        /// overview page</a>.
+        ///  The control identifier of the enabled control. For information on how to find the
+        /// <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// overview page</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -99,7 +99,10 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusSummary. <zonbook></zonbook><xhtml></xhtml>
+        /// Gets and sets the property StatusSummary. 
+        /// <para>
+        ///  The deployment summary of the enabled control. 
+        /// </para>
         /// </summary>
         public EnablementStatusSummary StatusSummary
         {
@@ -116,7 +119,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        ///  The ARN of the organizational unit. 
+        ///  The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// overview page</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -130,6 +135,24 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetTargetIdentifier()
         {
             return this._targetIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetRegions. 
+        /// <para>
+        ///  Target AWS Regions for the enabled control. 
+        /// </para>
+        /// </summary>
+        public List<Region> TargetRegions
+        {
+            get { return this._targetRegions; }
+            set { this._targetRegions = value; }
+        }
+
+        // Check to see if TargetRegions property is set
+        internal bool IsSetTargetRegions()
+        {
+            return this._targetRegions != null && this._targetRegions.Count > 0; 
         }
 
     }
