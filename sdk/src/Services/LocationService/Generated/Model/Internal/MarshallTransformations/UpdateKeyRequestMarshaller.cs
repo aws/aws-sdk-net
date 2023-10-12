@@ -109,7 +109,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             }
 
             
-            request.HostPrefix = $"metadata.";
+            request.HostPrefix = $"cp.metadata.";
 
             return request;
         }

@@ -63,7 +63,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.AddPathResource("{CollectionName}", StringUtils.FromString(publicRequest.CollectionName));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}";
             
-            request.HostPrefix = $"geofencing.";
+            request.HostPrefix = $"cp.geofencing.";
 
             return request;
         }

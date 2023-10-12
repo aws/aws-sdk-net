@@ -63,7 +63,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.AddPathResource("{CalculatorName}", StringUtils.FromString(publicRequest.CalculatorName));
             request.ResourcePath = "/routes/v0/calculators/{CalculatorName}";
             
-            request.HostPrefix = $"routes.";
+            request.HostPrefix = $"cp.routes.";
 
             return request;
         }

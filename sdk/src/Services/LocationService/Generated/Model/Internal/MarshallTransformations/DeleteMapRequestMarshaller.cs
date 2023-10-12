@@ -63,7 +63,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.AddPathResource("{MapName}", StringUtils.FromString(publicRequest.MapName));
             request.ResourcePath = "/maps/v0/maps/{MapName}";
             
-            request.HostPrefix = $"maps.";
+            request.HostPrefix = $"cp.maps.";
 
             return request;
         }

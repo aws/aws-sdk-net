@@ -83,7 +83,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             }
 
             
-            request.HostPrefix = $"geofencing.";
+            request.HostPrefix = $"cp.geofencing.";
 
             return request;
         }
