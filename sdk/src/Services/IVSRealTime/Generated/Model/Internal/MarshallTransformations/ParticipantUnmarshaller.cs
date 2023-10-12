@@ -70,10 +70,40 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("browserName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BrowserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("browserVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BrowserVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("firstJoinTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstJoinTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ispName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IspName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("osName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OsName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("osVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OsVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("participantId", targetDepth))
@@ -86,6 +116,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Published = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sdkVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SdkVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))

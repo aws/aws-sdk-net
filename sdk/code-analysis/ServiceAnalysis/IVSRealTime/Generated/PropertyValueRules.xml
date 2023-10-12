@@ -203,6 +203,42 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.BrowserName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.BrowserVersion</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.IspName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.OsName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.OsVersion</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.SdkVersion</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Participant.UserId</property>
     <min>0</min>
     <max>128</max>

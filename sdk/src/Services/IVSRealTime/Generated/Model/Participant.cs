@@ -34,9 +34,15 @@ namespace Amazon.IVSRealTime.Model
     public partial class Participant
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _browserName;
+        private string _browserVersion;
         private DateTime? _firstJoinTime;
+        private string _ispName;
+        private string _osName;
+        private string _osVersion;
         private string _participantId;
         private bool? _published;
+        private string _sdkVersion;
         private ParticipantState _state;
         private string _userId;
 
@@ -62,6 +68,44 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BrowserName. 
+        /// <para>
+        /// The participant’s browser.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string BrowserName
+        {
+            get { return this._browserName; }
+            set { this._browserName = value; }
+        }
+
+        // Check to see if BrowserName property is set
+        internal bool IsSetBrowserName()
+        {
+            return this._browserName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserVersion. 
+        /// <para>
+        /// The participant’s browser version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string BrowserVersion
+        {
+            get { return this._browserVersion; }
+            set { this._browserVersion = value; }
+        }
+
+        // Check to see if BrowserVersion property is set
+        internal bool IsSetBrowserVersion()
+        {
+            return this._browserVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FirstJoinTime. 
         /// <para>
         /// ISO 8601 timestamp (returned as a string) when the participant first joined the stage
@@ -78,6 +122,63 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetFirstJoinTime()
         {
             return this._firstJoinTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IspName. 
+        /// <para>
+        /// The participant’s Internet Service Provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string IspName
+        {
+            get { return this._ispName; }
+            set { this._ispName = value; }
+        }
+
+        // Check to see if IspName property is set
+        internal bool IsSetIspName()
+        {
+            return this._ispName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OsName. 
+        /// <para>
+        /// The participant’s operating system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string OsName
+        {
+            get { return this._osName; }
+            set { this._osName = value; }
+        }
+
+        // Check to see if OsName property is set
+        internal bool IsSetOsName()
+        {
+            return this._osName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OsVersion. 
+        /// <para>
+        /// The participant’s operating system version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string OsVersion
+        {
+            get { return this._osVersion; }
+            set { this._osVersion = value; }
+        }
+
+        // Check to see if OsVersion property is set
+        internal bool IsSetOsVersion()
+        {
+            return this._osVersion != null;
         }
 
         /// <summary>
@@ -114,6 +215,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetPublished()
         {
             return this._published.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SdkVersion. 
+        /// <para>
+        /// The participant’s SDK version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string SdkVersion
+        {
+            get { return this._sdkVersion; }
+            set { this._sdkVersion = value; }
+        }
+
+        // Check to see if SdkVersion property is set
+        internal bool IsSetSdkVersion()
+        {
+            return this._sdkVersion != null;
         }
 
         /// <summary>
