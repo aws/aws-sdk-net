@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
+        private bool? _dedicatedLogVolume;
         private string _engine;
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -195,6 +196,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DedicatedLogVolume. 
+        /// <para>
+        /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+        /// </para>
+        /// </summary>
+        public bool DedicatedLogVolume
+        {
+            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            set { this._dedicatedLogVolume = value; }
+        }
+
+        // Check to see if DedicatedLogVolume property is set
+        internal bool IsSetDedicatedLogVolume()
+        {
+            return this._dedicatedLogVolume.HasValue; 
         }
 
         /// <summary>

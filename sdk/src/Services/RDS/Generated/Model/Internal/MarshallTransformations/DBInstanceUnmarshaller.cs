@@ -262,6 +262,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DedicatedLogVolume", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DedicatedLogVolume = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
         private string _dbInstanceIdentifier;
         private string _dbiResourceId;
+        private bool? _dedicatedLogVolume;
         private bool? _encrypted;
         private string _engine;
         private string _engineVersion;
@@ -249,6 +250,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDbiResourceId()
         {
             return this._dbiResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DedicatedLogVolume. 
+        /// <para>
+        /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+        /// </para>
+        /// </summary>
+        public bool DedicatedLogVolume
+        {
+            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            set { this._dedicatedLogVolume = value; }
+        }
+
+        // Check to see if DedicatedLogVolume property is set
+        internal bool IsSetDedicatedLogVolume()
+        {
+            return this._dedicatedLogVolume.HasValue; 
         }
 
         /// <summary>

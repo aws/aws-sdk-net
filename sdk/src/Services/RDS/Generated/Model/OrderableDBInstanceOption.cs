@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private List<string> _supportedEngineModes = new List<string>();
         private List<string> _supportedNetworkTypes = new List<string>();
         private bool? _supportsClusters;
+        private bool? _supportsDedicatedLogVolume;
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsIAMDatabaseAuthentication;
@@ -546,6 +547,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsClusters()
         {
             return this._supportsClusters.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsDedicatedLogVolume. 
+        /// <para>
+        /// Indicates whether a DB instance supports using a dedicated log volume (DLV).
+        /// </para>
+        /// </summary>
+        public bool SupportsDedicatedLogVolume
+        {
+            get { return this._supportsDedicatedLogVolume.GetValueOrDefault(); }
+            set { this._supportsDedicatedLogVolume = value; }
+        }
+
+        // Check to see if SupportsDedicatedLogVolume property is set
+        internal bool IsSetSupportsDedicatedLogVolume()
+        {
+            return this._supportsDedicatedLogVolume.HasValue; 
         }
 
         /// <summary>
