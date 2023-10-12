@@ -33,9 +33,28 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class VpcConfigDetail
     {
+        private bool? _ipv6AllowedForDualStack;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6AllowedForDualStack. 
+        /// <para>
+        /// Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+        /// </para>
+        /// </summary>
+        public bool Ipv6AllowedForDualStack
+        {
+            get { return this._ipv6AllowedForDualStack.GetValueOrDefault(); }
+            set { this._ipv6AllowedForDualStack = value; }
+        }
+
+        // Check to see if Ipv6AllowedForDualStack property is set
+        internal bool IsSetIpv6AllowedForDualStack()
+        {
+            return this._ipv6AllowedForDualStack.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

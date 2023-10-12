@@ -45,6 +45,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIpv6AllowedForDualStack())
+            {
+                context.Writer.WritePropertyName("Ipv6AllowedForDualStack");
+                context.Writer.Write(requestObject.Ipv6AllowedForDualStack);
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
