@@ -4393,9 +4393,17 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly SourceControlProvider AWS_CODE_COMMIT = new SourceControlProvider("AWS_CODE_COMMIT");
         /// <summary>
+        /// Constant BITBUCKET for SourceControlProvider
+        /// </summary>
+        public static readonly SourceControlProvider BITBUCKET = new SourceControlProvider("BITBUCKET");
+        /// <summary>
         /// Constant GITHUB for SourceControlProvider
         /// </summary>
         public static readonly SourceControlProvider GITHUB = new SourceControlProvider("GITHUB");
+        /// <summary>
+        /// Constant GITLAB for SourceControlProvider
+        /// </summary>
+        public static readonly SourceControlProvider GITLAB = new SourceControlProvider("GITLAB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
