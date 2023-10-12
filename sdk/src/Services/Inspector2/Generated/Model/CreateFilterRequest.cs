@@ -30,7 +30,8 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFilter operation.
-    /// Creates a filter resource using specified filter criteria.
+    /// Creates a filter resource using specified filter criteria. When the filter action
+    /// is set to <code>SUPPRESS</code> this action creates a suppression rule.
     /// </summary>
     public partial class CreateFilterRequest : AmazonInspector2Request
     {

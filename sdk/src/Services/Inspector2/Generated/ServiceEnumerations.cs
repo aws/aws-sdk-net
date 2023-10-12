@@ -869,6 +869,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly Ec2Platform LINUX = new Ec2Platform("LINUX");
         /// <summary>
+        /// Constant MACOS for Ec2Platform
+        /// </summary>
+        public static readonly Ec2Platform MACOS = new Ec2Platform("MACOS");
+        /// <summary>
         /// Constant UNKNOWN for Ec2Platform
         /// </summary>
         public static readonly Ec2Platform UNKNOWN = new Ec2Platform("UNKNOWN");

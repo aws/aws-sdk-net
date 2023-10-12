@@ -338,7 +338,10 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// Contains information on the resources involved in a finding.
+        /// Contains information on the resources involved in a finding. The <code>resource</code>
+        /// value determines the valid values for <code>type</code> in your request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+        /// types</a> in the Amazon Inspector user guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -357,7 +360,10 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the finding.
+        /// The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code>
+        /// type findings that the vendor has not assigned a severity yet. For more information,
+        /// see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+        /// levels for findings</a> in the Amazon Inspector user guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -414,7 +420,9 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the finding.
+        /// The type of the finding. The <code>type</code> value determines the valid values for
+        /// <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+        /// types</a> in the Amazon Inspector user guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
