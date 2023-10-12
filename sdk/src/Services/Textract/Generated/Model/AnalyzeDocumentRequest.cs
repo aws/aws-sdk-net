@@ -101,10 +101,29 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class AnalyzeDocumentRequest : AmazonTextractRequest
     {
+        private AdaptersConfig _adaptersConfig;
         private Document _document;
         private List<string> _featureTypes = new List<string>();
         private HumanLoopConfig _humanLoopConfig;
         private QueriesConfig _queriesConfig;
+
+        /// <summary>
+        /// Gets and sets the property AdaptersConfig. 
+        /// <para>
+        /// Specifies the adapter to be used when analyzing a document.
+        /// </para>
+        /// </summary>
+        public AdaptersConfig AdaptersConfig
+        {
+            get { return this._adaptersConfig; }
+            set { this._adaptersConfig = value; }
+        }
+
+        // Check to see if AdaptersConfig property is set
+        internal bool IsSetAdaptersConfig()
+        {
+            return this._adaptersConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Document. 
@@ -138,12 +157,9 @@ namespace Amazon.Textract.Model
         /// A list of the types of analysis to perform. Add TABLES to the list to return information
         /// about the tables that are detected in the input document. Add FORMS to return detected
         /// form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT
-        /// to the list to return information about the layout of the document. To perform both
-        /// forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect
-        /// signatures within the document and within form data and table data, add SIGNATURES
-        /// to either TABLES or FORMS. All lines and words detected in the document are included
-        /// in the response (including text that isn't related to the value of <code>FeatureTypes</code>).
-        /// 
+        /// to the list to return information about the layout of the document. All lines and
+        /// words detected in the document are included in the response (including text that isn't
+        /// related to the value of <code>FeatureTypes</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

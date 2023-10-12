@@ -42,6 +42,24 @@ namespace Amazon.Textract
     {
         private static IServiceMetadata serviceMetadata = new AmazonTextractMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ITextractPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ITextractPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new TextractPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -617,6 +635,383 @@ namespace Amazon.Textract
 
         #endregion
         
+        #region  CreateAdapter
+
+        /// <summary>
+        /// Creates an adapter, which can be fine-tuned for enhanced performance on user provided
+        /// documents. Takes an AdapterName and FeatureType. Currently the only supported feature
+        /// type is <code>QUERIES</code>. You can also provide a Description, Tags, and a ClientRequestToken.
+        /// You can choose whether or not the adapter should be AutoUpdated with the AutoUpdate
+        /// argument. By default, AutoUpdate is set to DISABLED.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdapter service method.</param>
+        /// 
+        /// <returns>The response from the CreateAdapter service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ServiceQuotaExceededException">
+        /// Returned when a request cannot be completed as it would exceed a maximum service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter">REST API Reference for CreateAdapter Operation</seealso>
+        public virtual CreateAdapterResponse CreateAdapter(CreateAdapterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAdapterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAdapterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdapter operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAdapter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter">REST API Reference for CreateAdapter Operation</seealso>
+        public virtual IAsyncResult BeginCreateAdapter(CreateAdapterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAdapterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAdapter.</param>
+        /// 
+        /// <returns>Returns a  CreateAdapterResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter">REST API Reference for CreateAdapter Operation</seealso>
+        public virtual CreateAdapterResponse EndCreateAdapter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAdapterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAdapterVersion
+
+        /// <summary>
+        /// Creates a new version of an adapter. Operates on a provided AdapterId and a specified
+        /// dataset provided via the DatasetConfig argument. Requires that you specify an Amazon
+        /// S3 bucket with the OutputConfig argument. You can provide an optional KMSKeyId, an
+        /// optional ClientRequestToken, and optional tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdapterVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateAdapterVersion service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
+        /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+        /// key was entered incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ServiceQuotaExceededException">
+        /// Returned when a request cannot be completed as it would exceed a maximum service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion">REST API Reference for CreateAdapterVersion Operation</seealso>
+        public virtual CreateAdapterVersionResponse CreateAdapterVersion(CreateAdapterVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAdapterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAdapterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAdapterVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAdapterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdapterVersion operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAdapterVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion">REST API Reference for CreateAdapterVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateAdapterVersion(CreateAdapterVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAdapterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAdapterVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAdapterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAdapterVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateAdapterVersionResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion">REST API Reference for CreateAdapterVersion Operation</seealso>
+        public virtual CreateAdapterVersionResponse EndCreateAdapterVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAdapterVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAdapter
+
+        /// <summary>
+        /// Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the adapter specified
+        /// by the ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdapter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAdapter service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">REST API Reference for DeleteAdapter Operation</seealso>
+        public virtual DeleteAdapterResponse DeleteAdapter(DeleteAdapterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdapterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAdapterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdapter operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAdapter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">REST API Reference for DeleteAdapter Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAdapter(DeleteAdapterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdapterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAdapter.</param>
+        /// 
+        /// <returns>Returns a  DeleteAdapterResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">REST API Reference for DeleteAdapter Operation</seealso>
+        public virtual DeleteAdapterResponse EndDeleteAdapter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAdapterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAdapterVersion
+
+        /// <summary>
+        /// Deletes an Amazon Textract adapter version. Requires that you specify both an AdapterId
+        /// and a AdapterVersion. Deletes the adapter version specified by the AdapterId and the
+        /// AdapterVersion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdapterVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAdapterVersion service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion">REST API Reference for DeleteAdapterVersion Operation</seealso>
+        public virtual DeleteAdapterVersionResponse DeleteAdapterVersion(DeleteAdapterVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdapterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdapterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAdapterVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAdapterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdapterVersion operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAdapterVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion">REST API Reference for DeleteAdapterVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAdapterVersion(DeleteAdapterVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAdapterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAdapterVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAdapterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAdapterVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteAdapterVersionResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion">REST API Reference for DeleteAdapterVersion Operation</seealso>
+        public virtual DeleteAdapterVersionResponse EndDeleteAdapterVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAdapterVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DetectDocumentText
 
         /// <summary>
@@ -728,6 +1123,169 @@ namespace Amazon.Textract
         public virtual DetectDocumentTextResponse EndDetectDocumentText(IAsyncResult asyncResult)
         {
             return EndInvoke<DetectDocumentTextResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAdapter
+
+        /// <summary>
+        /// Gets configuration information for an adapter specified by an AdapterId, returning
+        /// information on AdapterName, Description, CreationTime, AutoUpdate status, and FeatureTypes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdapter service method.</param>
+        /// 
+        /// <returns>The response from the GetAdapter service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter">REST API Reference for GetAdapter Operation</seealso>
+        public virtual GetAdapterResponse GetAdapter(GetAdapterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdapterResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdapterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdapter operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdapter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter">REST API Reference for GetAdapter Operation</seealso>
+        public virtual IAsyncResult BeginGetAdapter(GetAdapterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdapterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdapter.</param>
+        /// 
+        /// <returns>Returns a  GetAdapterResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter">REST API Reference for GetAdapter Operation</seealso>
+        public virtual GetAdapterResponse EndGetAdapter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAdapterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAdapterVersion
+
+        /// <summary>
+        /// Gets configuration information for the specified adapter version, including: AdapterId,
+        /// AdapterVersion, FeatureTypes, Status, StatusMessage, DatasetConfig, KMSKeyId, OutputConfig,
+        /// Tags and EvaluationMetrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdapterVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetAdapterVersion service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion">REST API Reference for GetAdapterVersion Operation</seealso>
+        public virtual GetAdapterVersionResponse GetAdapterVersion(GetAdapterVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdapterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdapterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdapterVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdapterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdapterVersion operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdapterVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion">REST API Reference for GetAdapterVersion Operation</seealso>
+        public virtual IAsyncResult BeginGetAdapterVersion(GetAdapterVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdapterVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdapterVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAdapterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdapterVersion.</param>
+        /// 
+        /// <returns>Returns a  GetAdapterVersionResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion">REST API Reference for GetAdapterVersion Operation</seealso>
+        public virtual GetAdapterVersionResponse EndGetAdapterVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAdapterVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -1343,6 +1901,243 @@ namespace Amazon.Textract
 
         #endregion
         
+        #region  ListAdapters
+
+        /// <summary>
+        /// Lists all adapters that match the specified filtration criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdapters service method.</param>
+        /// 
+        /// <returns>The response from the ListAdapters service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">REST API Reference for ListAdapters Operation</seealso>
+        public virtual ListAdaptersResponse ListAdapters(ListAdaptersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdaptersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdaptersResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdaptersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAdapters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAdapters operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAdapters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">REST API Reference for ListAdapters Operation</seealso>
+        public virtual IAsyncResult BeginListAdapters(ListAdaptersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdaptersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdaptersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAdapters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAdapters.</param>
+        /// 
+        /// <returns>Returns a  ListAdaptersResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">REST API Reference for ListAdapters Operation</seealso>
+        public virtual ListAdaptersResponse EndListAdapters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAdaptersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAdapterVersions
+
+        /// <summary>
+        /// List all version of an adapter that meet the specified filtration criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdapterVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAdapterVersions service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">REST API Reference for ListAdapterVersions Operation</seealso>
+        public virtual ListAdapterVersionsResponse ListAdapterVersions(ListAdapterVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdapterVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdapterVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdapterVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAdapterVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAdapterVersions operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAdapterVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">REST API Reference for ListAdapterVersions Operation</seealso>
+        public virtual IAsyncResult BeginListAdapterVersions(ListAdapterVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAdapterVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdapterVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAdapterVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAdapterVersions.</param>
+        /// 
+        /// <returns>Returns a  ListAdapterVersionsResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">REST API Reference for ListAdapterVersions Operation</seealso>
+        public virtual ListAdapterVersionsResponse EndListAdapterVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAdapterVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists all tags for an Amazon Textract resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartDocumentAnalysis
 
         /// <summary>
@@ -1883,6 +2678,253 @@ namespace Amazon.Textract
         public virtual StartLendingAnalysisResponse EndStartLendingAnalysis(IAsyncResult asyncResult)
         {
             return EndInvoke<StartLendingAnalysisResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds one or more tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ServiceQuotaExceededException">
+        /// Returned when a request cannot be completed as it would exceed a maximum service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes any tags with the specified keys from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAdapter
+
+        /// <summary>
+        /// Update the configuration for an adapter. FeatureTypes configurations cannot be updated.
+        /// At least one new parameter must be specified as an argument.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdapter service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAdapter service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter">REST API Reference for UpdateAdapter Operation</seealso>
+        public virtual UpdateAdapterResponse UpdateAdapter(UpdateAdapterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdapterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAdapterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdapter operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAdapter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter">REST API Reference for UpdateAdapter Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAdapter(UpdateAdapterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAdapterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdapterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAdapter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAdapter.</param>
+        /// 
+        /// <returns>Returns a  UpdateAdapterResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter">REST API Reference for UpdateAdapter Operation</seealso>
+        public virtual UpdateAdapterResponse EndUpdateAdapter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAdapterResponse>(asyncResult);
         }
 
         #endregion
