@@ -423,7 +423,8 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.NotificationMetadata</property>
     <min>1</min>
-    <max>1023</max>
+    <max>4000</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007e]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.NotificationTargetARN</property>
@@ -1033,7 +1034,8 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.NotificationMetadata</property>
     <min>1</min>
-    <max>1023</max>
+    <max>4000</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007e]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.NotificationTargetARN</property>
@@ -1054,7 +1056,8 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.NotificationMetadata</property>
     <min>1</min>
-    <max>1023</max>
+    <max>4000</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007e]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.NotificationTargetARN</property>

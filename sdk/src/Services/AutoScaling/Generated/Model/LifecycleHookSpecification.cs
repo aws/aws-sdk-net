@@ -144,7 +144,7 @@ namespace Amazon.AutoScaling.Model
         /// a message to the notification target.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1023)]
+        [AWSProperty(Min=1, Max=4000)]
         public string NotificationMetadata
         {
             get { return this._notificationMetadata; }
