@@ -2181,6 +2181,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationInstancePlatform SUSELinux = new CapacityReservationInstancePlatform("SUSE Linux");
         /// <summary>
+        /// Constant UbuntuPro for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform UbuntuPro = new CapacityReservationInstancePlatform("Ubuntu Pro");
+        /// <summary>
         /// Constant Windows for CapacityReservationInstancePlatform
         /// </summary>
         public static readonly CapacityReservationInstancePlatform Windows = new CapacityReservationInstancePlatform("Windows");
@@ -6464,6 +6468,10 @@ namespace Amazon.EC2
         /// Constant Deregistered for ImageState
         /// </summary>
         public static readonly ImageState Deregistered = new ImageState("deregistered");
+        /// <summary>
+        /// Constant Disabled for ImageState
+        /// </summary>
+        public static readonly ImageState Disabled = new ImageState("disabled");
         /// <summary>
         /// Constant Error for ImageState
         /// </summary>

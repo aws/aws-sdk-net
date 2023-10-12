@@ -23007,6 +23007,99 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImage
+
+
+        /// <summary>
+        /// Sets the AMI state to <code>disabled</code> and removes all launch permissions from
+        /// the AMI. A disabled AMI can't be used for instance launches.
+        /// 
+        ///  
+        /// <para>
+        /// A disabled AMI can't be shared. If a public or shared AMI was previously shared, it
+        /// is made private. If an AMI was shared with an Amazon Web Services account, organization,
+        /// or Organizational Unit, they lose access to the disabled AMI. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A disabled AMI does not appear in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+        /// API calls by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can disable an AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can re-enable a disabled AMI using <a href="http://amazonaws.com/AWSEC2/latest/APIReference/API_EnableImage.html">EnableImage</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImage service method.</param>
+        /// 
+        /// <returns>The response from the DisableImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
+        public virtual DisableImageResponse DisableImage(DisableImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableImageResponseUnmarshaller.Instance;
+
+            return Invoke<DisableImageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets the AMI state to <code>disabled</code> and removes all launch permissions from
+        /// the AMI. A disabled AMI can't be used for instance launches.
+        /// 
+        ///  
+        /// <para>
+        /// A disabled AMI can't be shared. If a public or shared AMI was previously shared, it
+        /// is made private. If an AMI was shared with an Amazon Web Services account, organization,
+        /// or Organizational Unit, they lose access to the disabled AMI. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A disabled AMI does not appear in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+        /// API calls by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can disable an AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can re-enable a disabled AMI using <a href="http://amazonaws.com/AWSEC2/latest/APIReference/API_EnableImage.html">EnableImage</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
+        public virtual Task<DisableImageResponse> DisableImageAsync(DisableImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableImageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableImageBlockPublicAccess
 
 
@@ -24480,6 +24573,75 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableFastSnapshotRestoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableImage
+
+
+        /// <summary>
+        /// Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code>
+        /// and can be used for instance launches, appears in describe operations, and can be
+        /// shared. Amazon Web Services accounts, organizations, and Organizational Units that
+        /// lost access to the AMI when it was disabled do not regain access automatically. Once
+        /// the AMI is available, it can be shared with them again.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can re-enable a disabled AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImage service method.</param>
+        /// 
+        /// <returns>The response from the EnableImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
+        public virtual EnableImageResponse EnableImage(EnableImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableImageResponseUnmarshaller.Instance;
+
+            return Invoke<EnableImageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code>
+        /// and can be used for instance launches, appears in describe operations, and can be
+        /// shared. Amazon Web Services accounts, organizations, and Organizational Units that
+        /// lost access to the AMI when it was disabled do not regain access automatically. Once
+        /// the AMI is available, it can be shared with them again.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can re-enable a disabled AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
+        public virtual Task<EnableImageResponse> EnableImageAsync(EnableImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableImageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableImageResponse>(request, options, cancellationToken);
         }
 
         #endregion

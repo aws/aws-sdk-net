@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
+        private string _sourceInstanceId;
         private string _sriovNetSupport;
         private ImageState _state;
         private StateReason _stateReason;
@@ -196,7 +197,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// The hypervisor type of the image.
+        /// The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code>
+        /// is not supported.
         /// </para>
         /// </summary>
         public HypervisorType Hypervisor
@@ -490,6 +492,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetRootDeviceType()
         {
             return this._rootDeviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceInstanceId. 
+        /// <para>
+        /// The ID of the instance that the AMI was created from if the AMI was created using
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// This field only appears if the AMI was created using CreateImage.
+        /// </para>
+        /// </summary>
+        public string SourceInstanceId
+        {
+            get { return this._sourceInstanceId; }
+            set { this._sourceInstanceId = value; }
+        }
+
+        // Check to see if SourceInstanceId property is set
+        internal bool IsSetSourceInstanceId()
+        {
+            return this._sourceInstanceId != null;
         }
 
         /// <summary>

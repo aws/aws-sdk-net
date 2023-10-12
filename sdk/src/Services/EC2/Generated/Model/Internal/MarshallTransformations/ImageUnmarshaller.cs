@@ -194,6 +194,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sourceInstanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceInstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("sriovNetSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

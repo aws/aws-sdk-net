@@ -8847,6 +8847,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableImage");
+
+            var request = InstantiateClassGenerator.Execute<DisableImageRequest>();
+            var marshaller = new DisableImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableImageBlockPublicAccessMarshallTest()
         {
             var operation = service_model.FindOperation("DisableImageBlockPublicAccess");
@@ -9471,6 +9495,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableFastSnapshotRestoresResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableFastSnapshotRestoresResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableImage");
+
+            var request = InstantiateClassGenerator.Execute<EnableImageRequest>();
+            var marshaller = new EnableImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableImageResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
