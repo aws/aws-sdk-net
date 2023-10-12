@@ -30,12 +30,20 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceConfigHistory operation.
+    /// <important> 
+    /// <para>
+    /// For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+    /// resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+    /// Which Resources Config Records</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Returns a list of <code>ConfigurationItems</code> for the specified resource. The
     /// list contains details about each state of the resource during the specified time interval.
     /// If you specified a retention period to retain your <code>ConfigurationItems</code>
     /// between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns
     /// the <code>ConfigurationItems</code> for the specified retention period. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The response is paginated. By default, Config returns a limit of 10 configuration
@@ -83,9 +91,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EarlierTime. 
         /// <para>
-        /// The time stamp that indicates an earlier time. If not specified, the action returns
-        /// paginated results that contain configuration items that start when the first configuration
-        /// item was recorded.
+        /// The chronologically earliest time in the time range for which the history requested.
+        /// If not specified, the action returns paginated results that contain configuration
+        /// items that start when the first configuration item was recorded.
         /// </para>
         /// </summary>
         public DateTime EarlierTime
@@ -103,7 +111,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property LaterTime. 
         /// <para>
-        /// The time stamp that indicates a later time. If not specified, current time is taken.
+        /// The chronologically latest time in the time range for which the history requested.
+        /// If not specified, current time is taken.
         /// </para>
         /// </summary>
         public DateTime LaterTime

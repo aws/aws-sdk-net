@@ -211,11 +211,7 @@ namespace Amazon.ConfigService.Model
         /// ResourceDeletedNotRecorded – The resource was deleted but its configuration was not
         /// recorded since the recorder excludes the recording of resources of this type
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// The CIs do not incur any cost.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public ConfigurationItemStatus ConfigurationItemStatus
         {

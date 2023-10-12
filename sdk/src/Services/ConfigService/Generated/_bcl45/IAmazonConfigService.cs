@@ -5409,12 +5409,20 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+        /// resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+        /// Which Resources Config Records</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns a list of <code>ConfigurationItems</code> for the specified resource. The
         /// list contains details about each state of the resource during the specified time interval.
         /// If you specified a retention period to retain your <code>ConfigurationItems</code>
         /// between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns
         /// the <code>ConfigurationItems</code> for the specified retention period. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The response is paginated. By default, Config returns a limit of 10 configuration
@@ -5472,12 +5480,20 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+        /// resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+        /// Which Resources Config Records</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns a list of <code>ConfigurationItems</code> for the specified resource. The
         /// list contains details about each state of the resource during the specified time interval.
         /// If you specified a retention period to retain your <code>ConfigurationItems</code>
         /// between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns
         /// the <code>ConfigurationItems</code> for the specified retention period. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The response is paginated. By default, Config returns a limit of 10 configuration
@@ -7137,8 +7153,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates a delivery channel object to deliver configuration information to an Amazon
-        /// S3 bucket and Amazon SNS topic.
+        /// Creates a delivery channel object to deliver configuration information and other compliance
+        /// information to an Amazon S3 bucket and Amazon SNS topic. For more information, see
+        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+        /// that Config Sends to an Amazon SNS topic</a>.
         /// 
         ///  
         /// <para>
@@ -7192,8 +7210,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates a delivery channel object to deliver configuration information to an Amazon
-        /// S3 bucket and Amazon SNS topic.
+        /// Creates a delivery channel object to deliver configuration information and other compliance
+        /// information to an Amazon S3 bucket and Amazon SNS topic. For more information, see
+        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+        /// that Config Sends to an Amazon SNS topic</a>.
         /// 
         ///  
         /// <para>

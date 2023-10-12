@@ -29,9 +29,67 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Specifies whether the configuration recorder excludes resource types from being recorded.
-    /// Use the <code>resourceTypes</code> field to enter a comma-separated list of resource
-    /// types to exclude as exemptions.
+    /// Specifies whether the configuration recorder excludes certain resource types from
+    /// being recorded. Use the <code>resourceTypes</code> field to enter a comma-separated
+    /// list of resource types you want to exclude from recording.
+    /// 
+    ///  
+    /// <para>
+    /// By default, when Config adds support for a new resource type in the Region where you
+    /// set up the configuration recorder, including global resource types, Config starts
+    /// recording resources of that type automatically.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <b>How to use</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+    /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Config will then record configuration changes for all supported resource types, except
+    /// the resource types that you specify to exclude from being recorded.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Globally recorded resources</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will
+    /// be recorded automatically in all supported Config Regions were the configuration recorder
+    /// is enabled. IAM users, groups, roles, and customer managed policies will be recorded
+    /// automatically in all enabled Config Regions where Config was available before February
+    /// 2022. This list does not include the following Regions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Asia Pacific (Hyderabad)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Melbourne)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Europe (Spain)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Europe (Zurich)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Israel (Tel Aviv)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Middle East (UAE)
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class ExclusionByResourceTypes
     {
