@@ -1,3 +1,48 @@
+### 3.7.662.0 (2023-10-12 18:36 UTC)
+* AuditManager (3.7.202.0)
+	* This release introduces a new limit to the awsAccounts parameter. When you create or update an assessment, there is now a limit of 200 AWS accounts that can be specified in the assessment scope.
+* AutoScaling (3.7.203.0)
+	* Update the NotificationMetadata field to only allow visible ascii characters. Add paginators to DescribeInstanceRefreshes, DescribeLoadBalancers, and DescribeLoadBalancerTargetGroups
+* ConfigService (3.7.202.0)
+	* Add enums for resource types supported by Config
+* ControlTower (3.7.201.0)
+	* Added new EnabledControl resource details to ListEnabledControls API and added new GetEnabledControl API.
+* CustomerProfiles (3.7.203.0)
+	* Adds sensitive trait to various shapes in Customer Profiles Calculated Attribute API model.
+* EC2 (3.7.220.0)
+	* This release adds Ubuntu Pro as a supported platform for On-Demand Capacity Reservations and adds support for setting an Amazon Machine Image (AMI) to disabled state. Disabling the AMI makes it private if it was previously shared, and prevents new EC2 instance launches from it.
+* ElasticLoadBalancingV2 (3.7.201.39)
+	* This release enables routing policies with Availability Zone affinity for Network Load Balancers.
+* Glue (3.7.207.0)
+	* Extending version control support to GitLab and Bitbucket from AWSGlue
+* Inspector2 (3.7.202.0)
+	* Add MacOs ec2 platform support
+* IVSRealTime (3.7.202.0)
+	* Update GetParticipant to return additional metadata.
+* Lambda (3.7.202.0)
+	* Adds support for Lambda functions to access Dual-Stack subnets over IPv6, via an opt-in flag in CreateFunction and UpdateFunctionConfiguration APIs
+* LocationService (3.7.202.0)
+	* This release adds endpoint updates for all AWS Location resource operations.
+* MachineLearning (3.7.201.0)
+	* This release marks Password field as sensitive
+* Pricing (3.7.200.54)
+	* Documentation updates for Price List
+* RDS (3.7.210.0)
+	* This release adds support for adding a dedicated log volume to open-source RDS instances.
+* Rekognition (3.7.201.0)
+	* Amazon Rekognition introduces support for Custom Moderation. This allows the enhancement of accuracy for detect moderation labels operations by creating custom adapters tuned on customer data.
+* SageMaker (3.7.218.0)
+	* Amazon SageMaker Canvas adds KendraSettings and DirectDeploySettings support for CanvasAppSettings
+* Textract (3.7.202.0)
+	* This release adds 9 new APIs for adapter and adapter version management, 3 new APIs for tagging, and updates AnalyzeDocument and StartDocumentAnalysis API parameters for using adapters.
+* TranscribeService (3.7.202.0)
+	* This release is to enable m4a format to customers
+* WorkSpaces (3.7.202.2)
+	* Updated the CreateWorkspaces action documentation to clarify that the PCoIP protocol is only available for Windows bundles.
+* Core 3.7.204.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.661.0 (2023-10-07 04:59 UTC)
 * Core 3.7.204.0
 	* Add ContextAttributes property to IRequestContext to store request state in custom pipeline handlers.
