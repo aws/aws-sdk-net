@@ -64,6 +64,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BaseModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BillableTrainingTimeInSeconds", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -80,6 +86,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EvaluationResultUnmarshaller.Instance;
                     unmarshalledObject.EvaluationResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Feature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Feature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FeatureConfig", targetDepth))
+                {
+                    var unmarshaller = CustomizationFeatureConfigUnmarshaller.Instance;
+                    unmarshalledObject.FeatureConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyId", targetDepth))
@@ -152,6 +170,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.TrainingEndTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VersionDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

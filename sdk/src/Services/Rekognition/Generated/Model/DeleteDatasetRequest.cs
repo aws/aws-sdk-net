@@ -30,12 +30,18 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataset operation.
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might
     /// take while. Use <a>DescribeDataset</a> to check the current status. The dataset is
     /// still deleting if the value of <code>Status</code> is <code>DELETE_IN_PROGRESS</code>.
     /// If you try to access the dataset after it is deleted, you get a <code>ResourceNotFoundException</code>
     /// exception. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can't delete a dataset while it is creating (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>)

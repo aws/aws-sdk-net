@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The dataset used for training.
+    /// Feature specific configuration for the training job. Configuration provided for the
+    /// job must match the feature type parameter associated with project. If configuration
+    /// and feature type do not match an InvalidParameterException is returned.
     /// </summary>
-    public partial class TrainingData
+    public partial class CustomizationFeatureConfig
     {
-        private List<Asset> _assets = new List<Asset>();
+        private CustomizationFeatureContentModerationConfig _contentModeration;
 
         /// <summary>
-        /// Gets and sets the property Assets. 
+        /// Gets and sets the property ContentModeration. 
         /// <para>
-        /// A manifest file that contains references to the training images and ground-truth annotations.
+        /// Configuration options for Custom Moderation training.
         /// </para>
         /// </summary>
-        public List<Asset> Assets
+        public CustomizationFeatureContentModerationConfig ContentModeration
         {
-            get { return this._assets; }
-            set { this._assets = value; }
+            get { return this._contentModeration; }
+            set { this._contentModeration = value; }
         }
 
-        // Check to see if Assets property is set
-        internal bool IsSetAssets()
+        // Check to see if ContentModeration property is set
+        internal bool IsSetContentModeration()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._contentModeration != null;
         }
 
     }

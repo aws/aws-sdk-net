@@ -381,6 +381,56 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type CustomizationFeature.
+    /// </summary>
+    public class CustomizationFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTENT_MODERATION for CustomizationFeature
+        /// </summary>
+        public static readonly CustomizationFeature CONTENT_MODERATION = new CustomizationFeature("CONTENT_MODERATION");
+        /// <summary>
+        /// Constant CUSTOM_LABELS for CustomizationFeature
+        /// </summary>
+        public static readonly CustomizationFeature CUSTOM_LABELS = new CustomizationFeature("CUSTOM_LABELS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomizationFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomizationFeature FindValue(string value)
+        {
+            return FindValue<CustomizationFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomizationFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DatasetStatus.
     /// </summary>
     public class DatasetStatus : ConstantClass
@@ -1369,6 +1419,56 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type ProjectAutoUpdate.
+    /// </summary>
+    public class ProjectAutoUpdate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ProjectAutoUpdate
+        /// </summary>
+        public static readonly ProjectAutoUpdate DISABLED = new ProjectAutoUpdate("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ProjectAutoUpdate
+        /// </summary>
+        public static readonly ProjectAutoUpdate ENABLED = new ProjectAutoUpdate("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProjectAutoUpdate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectAutoUpdate FindValue(string value)
+        {
+            return FindValue<ProjectAutoUpdate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectAutoUpdate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProjectStatus.
     /// </summary>
     public class ProjectStatus : ConstantClass
@@ -1444,6 +1544,14 @@ namespace Amazon.Rekognition
         /// Constant DELETING for ProjectVersionStatus
         /// </summary>
         public static readonly ProjectVersionStatus DELETING = new ProjectVersionStatus("DELETING");
+        /// <summary>
+        /// Constant DEPRECATED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus DEPRECATED = new ProjectVersionStatus("DEPRECATED");
+        /// <summary>
+        /// Constant EXPIRED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus EXPIRED = new ProjectVersionStatus("EXPIRED");
         /// <summary>
         /// Constant FAILED for ProjectVersionStatus
         /// </summary>

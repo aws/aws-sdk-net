@@ -30,9 +30,15 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DetectCustomLabels operation.
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels
     /// model. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You specify which version of a model version to use by using the <code>ProjectVersionArn</code>
@@ -158,7 +164,10 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProjectVersionArn. 
         /// <para>
-        /// The ARN of the model version that you want to use.
+        /// The ARN of the model version that you want to use. Only models associated with Custom
+        /// Labels projects accepted by the operation. If a provided ARN refers to a model version
+        /// associated with a project for a different feature type, then an InvalidParameterException
+        /// is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

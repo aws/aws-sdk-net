@@ -29,13 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A description of a version of an Amazon Rekognition Custom Labels model.
+    /// A description of a version of a Amazon Rekognition project version.
     /// </summary>
     public partial class ProjectVersionDescription
     {
+        private string _baseModelVersion;
         private long? _billableTrainingTimeInSeconds;
         private DateTime? _creationTimestamp;
         private EvaluationResult _evaluationResult;
+        private CustomizationFeature _feature;
+        private CustomizationFeatureConfig _featureConfig;
         private string _kmsKeyId;
         private GroundTruthManifest _manifestSummary;
         private int? _maxInferenceUnits;
@@ -48,6 +51,25 @@ namespace Amazon.Rekognition.Model
         private TestingDataResult _testingDataResult;
         private TrainingDataResult _trainingDataResult;
         private DateTime? _trainingEndTimestamp;
+        private string _versionDescription;
+
+        /// <summary>
+        /// Gets and sets the property BaseModelVersion. 
+        /// <para>
+        /// The base detection model version used to create the project version.
+        /// </para>
+        /// </summary>
+        public string BaseModelVersion
+        {
+            get { return this._baseModelVersion; }
+            set { this._baseModelVersion = value; }
+        }
+
+        // Check to see if BaseModelVersion property is set
+        internal bool IsSetBaseModelVersion()
+        {
+            return this._baseModelVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BillableTrainingTimeInSeconds. 
@@ -107,6 +129,42 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Feature. 
+        /// <para>
+        /// The feature that was customized.
+        /// </para>
+        /// </summary>
+        public CustomizationFeature Feature
+        {
+            get { return this._feature; }
+            set { this._feature = value; }
+        }
+
+        // Check to see if Feature property is set
+        internal bool IsSetFeature()
+        {
+            return this._feature != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureConfig. 
+        /// <para>
+        /// Feature specific configuration that was applied during training.
+        /// </para>
+        /// </summary>
+        public CustomizationFeatureConfig FeatureConfig
+        {
+            get { return this._featureConfig; }
+            set { this._featureConfig = value; }
+        }
+
+        // Check to see if FeatureConfig property is set
+        internal bool IsSetFeatureConfig()
+        {
+            return this._featureConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The identifer for the AWS Key Management Service key (AWS KMS key) that was used to
@@ -148,8 +206,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MaxInferenceUnits. 
         /// <para>
-        /// The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale
-        /// the model. For more information, see <a>StartProjectVersion</a>.
+        /// The maximum number of inference units Amazon Rekognition uses to auto-scale the model.
+        /// Applies only to Custom Labels projects. For more information, see <a>StartProjectVersion</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -168,8 +226,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MinInferenceUnits. 
         /// <para>
-        /// The minimum number of inference units used by the model. For more information, see
-        /// <a>StartProjectVersion</a>.
+        /// The minimum number of inference units used by the model. Applies only to Custom Labels
+        /// projects. For more information, see <a>StartProjectVersion</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -206,7 +264,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProjectVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model version. 
+        /// The Amazon Resource Name (ARN) of the project version. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -330,6 +388,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetTrainingEndTimestamp()
         {
             return this._trainingEndTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionDescription. 
+        /// <para>
+        /// A user-provided description of the project version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string VersionDescription
+        {
+            get { return this._versionDescription; }
+            set { this._versionDescription = value; }
+        }
+
+        // Check to see if VersionDescription property is set
+        internal bool IsSetVersionDescription()
+        {
+            return this._versionDescription != null;
         }
 
     }

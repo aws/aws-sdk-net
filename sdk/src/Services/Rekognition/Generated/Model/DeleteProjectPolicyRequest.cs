@@ -30,8 +30,14 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProjectPolicy operation.
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes an existing project policy.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>.

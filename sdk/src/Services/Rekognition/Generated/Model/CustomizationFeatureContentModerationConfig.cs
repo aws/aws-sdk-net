@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The dataset used for training.
+    /// Configuration options for Content Moderation training.
     /// </summary>
-    public partial class TrainingData
+    public partial class CustomizationFeatureContentModerationConfig
     {
-        private List<Asset> _assets = new List<Asset>();
+        private float? _confidenceThreshold;
 
         /// <summary>
-        /// Gets and sets the property Assets. 
+        /// Gets and sets the property ConfidenceThreshold. 
         /// <para>
-        /// A manifest file that contains references to the training images and ground-truth annotations.
+        /// The confidence level you plan to use to identify if unsafe content is present during
+        /// inference.
         /// </para>
         /// </summary>
-        public List<Asset> Assets
+        [AWSProperty(Min=0, Max=100)]
+        public float ConfidenceThreshold
         {
-            get { return this._assets; }
-            set { this._assets = value; }
+            get { return this._confidenceThreshold.GetValueOrDefault(); }
+            set { this._confidenceThreshold = value; }
         }
 
-        // Check to see if Assets property is set
-        internal bool IsSetAssets()
+        // Check to see if ConfidenceThreshold property is set
+        internal bool IsSetConfidenceThreshold()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._confidenceThreshold.HasValue; 
         }
 
     }

@@ -30,11 +30,17 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyProjectVersion operation.
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Copies a version of an Amazon Rekognition Custom Labels model from a source project
     /// to a destination project. The source and destination projects can be in different
     /// AWS accounts but must be in the same AWS Region. You can't copy a model to another
     /// AWS service. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To copy a model version to a different AWS account, you need to create a resource-based
@@ -53,6 +59,10 @@ namespace Amazon.Rekognition.Model
     /// need to create a project policy.
     /// </para>
     ///  <note> 
+    /// <para>
+    /// Copying project versions is supported only for Custom Labels models. 
+    /// </para>
+    ///  
     /// <para>
     /// To copy a model, the destination project, source project, and source model version
     /// must already exist.

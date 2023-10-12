@@ -30,10 +30,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProjectVersions operation.
-    /// Lists and describes the versions of a model in an Amazon Rekognition Custom Labels
-    /// project. You can specify up to 10 model versions in <code>ProjectVersionArns</code>.
-    /// If you don't specify a value, descriptions for all model versions in the project are
-    /// returned.
+    /// Lists and describes the versions of an Amazon Rekognition project. You can specify
+    /// up to 10 model or adapter versions in <code>ProjectVersionArns</code>. If you don't
+    /// specify a value, descriptions for all model/adapter versions in the project are returned.
     /// 
     ///  
     /// <para>
@@ -73,8 +72,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous response was incomplete (because there is more results to retrieve),
-        /// Amazon Rekognition Custom Labels returns a pagination token in the response. You can
-        /// use this pagination token to retrieve the next set of results. 
+        /// Amazon Rekognition returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -93,8 +92,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProjectArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the project that contains the models you want to
-        /// describe.
+        /// The Amazon Resource Name (ARN) of the project that contains the model/adapter you
+        /// want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -113,10 +112,11 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property VersionNames. 
         /// <para>
-        /// A list of model version names that you want to describe. You can add up to 10 model
-        /// version names to the list. If you don't specify a value, all model descriptions are
-        /// returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code>
-        /// is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.
+        /// A list of model or project version names that you want to describe. You can add up
+        /// to 10 model or project version names to the list. If you don't specify a value, all
+        /// project version descriptions are returned. A version name is part of a project version
+        /// ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in
+        /// the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

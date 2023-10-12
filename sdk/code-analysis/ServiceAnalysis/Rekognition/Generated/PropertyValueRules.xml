@@ -129,6 +129,12 @@
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.VersionDescription</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateProjectVersionRequest.VersionName</property>
     <min>1</min>
     <max>255</max>
@@ -359,6 +365,18 @@
     <property>Amazon.Rekognition.Model.DetectModerationLabelsRequest.MinConfidence</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectModerationLabelsRequest.ProjectVersion</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectModerationLabelsResponse.ProjectVersion</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DisassociateFacesRequest.ClientRequestToken</property>
@@ -1232,6 +1250,11 @@
     <max>4</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CustomizationFeatureContentModerationConfig.ConfidenceThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CustomLabel.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -1611,6 +1634,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProjectVersionDescription.VersionDescription</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProtectiveEquipmentBodyPart.Confidence</property>

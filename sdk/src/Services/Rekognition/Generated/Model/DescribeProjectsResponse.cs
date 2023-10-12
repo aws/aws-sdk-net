@@ -40,8 +40,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous response was incomplete (because there is more results to retrieve),
-        /// Amazon Rekognition Custom Labels returns a pagination token in the response. You can
-        /// use this pagination token to retrieve the next set of results. 
+        /// Amazon Rekognition returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

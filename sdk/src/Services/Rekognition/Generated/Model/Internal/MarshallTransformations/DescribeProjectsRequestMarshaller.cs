@@ -67,6 +67,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("Features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                            context.Writer.Write(publicRequestFeaturesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

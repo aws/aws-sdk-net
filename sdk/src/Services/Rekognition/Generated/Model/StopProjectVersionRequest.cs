@@ -30,9 +30,16 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the StopProjectVersion operation.
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Stops a running model. The operation might take a while to complete. To check the
-    /// current status, call <a>DescribeProjectVersions</a>. 
-    /// 
+    /// current status, call <a>DescribeProjectVersions</a>. Only applies to Custom Labels
+    /// projects.
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
@@ -46,7 +53,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProjectVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model version that you want to delete.
+        /// The Amazon Resource Name (ARN) of the model version that you want to stop.
         /// </para>
         ///  
         /// <para>
