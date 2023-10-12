@@ -117,7 +117,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon SageMaker Runs Your Training Image</a> for more information.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=100)]
         public List<string> ContainerEntrypoint
         {
             get { return this._containerEntrypoint; }

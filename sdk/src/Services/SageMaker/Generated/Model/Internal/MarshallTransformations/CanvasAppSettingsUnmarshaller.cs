@@ -64,10 +64,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DirectDeploySettings", targetDepth))
+                {
+                    var unmarshaller = DirectDeploySettingsUnmarshaller.Instance;
+                    unmarshalledObject.DirectDeploySettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityProviderOAuthSettings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<IdentityProviderOAuthSetting, IdentityProviderOAuthSettingUnmarshaller>(IdentityProviderOAuthSettingUnmarshaller.Instance);
                     unmarshalledObject.IdentityProviderOAuthSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KendraSettings", targetDepth))
+                {
+                    var unmarshaller = KendraSettingsUnmarshaller.Instance;
+                    unmarshalledObject.KendraSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelRegisterSettings", targetDepth))

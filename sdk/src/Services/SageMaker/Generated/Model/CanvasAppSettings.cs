@@ -33,10 +33,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CanvasAppSettings
     {
+        private DirectDeploySettings _directDeploySettings;
         private List<IdentityProviderOAuthSetting> _identityProviderOAuthSettings = new List<IdentityProviderOAuthSetting>();
+        private KendraSettings _kendraSettings;
         private ModelRegisterSettings _modelRegisterSettings;
         private TimeSeriesForecastingSettings _timeSeriesForecastingSettings;
         private WorkspaceSettings _workspaceSettings;
+
+        /// <summary>
+        /// Gets and sets the property DirectDeploySettings. 
+        /// <para>
+        /// The model deployment settings for the SageMaker Canvas application.
+        /// </para>
+        /// </summary>
+        public DirectDeploySettings DirectDeploySettings
+        {
+            get { return this._directDeploySettings; }
+            set { this._directDeploySettings = value; }
+        }
+
+        // Check to see if DirectDeploySettings property is set
+        internal bool IsSetDirectDeploySettings()
+        {
+            return this._directDeploySettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityProviderOAuthSettings. 
@@ -55,6 +75,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetIdentityProviderOAuthSettings()
         {
             return this._identityProviderOAuthSettings != null && this._identityProviderOAuthSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KendraSettings. 
+        /// <para>
+        /// The settings for document querying.
+        /// </para>
+        /// </summary>
+        public KendraSettings KendraSettings
+        {
+            get { return this._kendraSettings; }
+            set { this._kendraSettings = value; }
+        }
+
+        // Check to see if KendraSettings property is set
+        internal bool IsSetKendraSettings()
+        {
+            return this._kendraSettings != null;
         }
 
         /// <summary>
@@ -78,7 +116,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TimeSeriesForecastingSettings. 
         /// <para>
-        /// Time series forecast settings for the Canvas application.
+        /// Time series forecast settings for the SageMaker Canvas application.
         /// </para>
         /// </summary>
         public TimeSeriesForecastingSettings TimeSeriesForecastingSettings
