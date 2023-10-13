@@ -1,0 +1,7 @@
+{
+  "core": {
+    "changeLogMessages": ["Add trimming support for .NET 8."],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
