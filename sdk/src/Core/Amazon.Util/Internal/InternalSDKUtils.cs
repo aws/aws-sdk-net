@@ -144,6 +144,23 @@ namespace Amazon.Util.Internal
             }
         }
 
+        // Depending on how System.Types are loaded they are not guaranteed to be compare as equal even when they
+        // are the same type. In particular an interface loaded from a Type.GetInterfaces() call will not compare
+        // equal to the same interface loaded via typeof(<interface-name>).
+        //
+        // This method was needed a result of the removal of SDK's TypeInfo wrapper done as part of the trimmable work.
+        public static bool AreTypesEqual(Type type1, Type type2)
+        {
+            if (type1.Assembly != type2.Assembly)
+                return false;
+            if (type1.Namespace != type2.Namespace)
+                return false;
+            if (type1.Name != type2.Name)
+                return false;
+
+            return true;
+        }
+
         public static void AddToDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
         {
             if (dictionary.ContainsKey(key))
