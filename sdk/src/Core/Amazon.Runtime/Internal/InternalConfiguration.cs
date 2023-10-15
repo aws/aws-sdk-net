@@ -182,9 +182,17 @@ namespace Amazon.Runtime.Internal
                 {
                     convertedValue = int.Parse(value);
                 }
+                else if (typeof(T) == typeof(long))
+                {
+                    convertedValue = long.Parse(value);
+                }
                 else if (typeof(T).IsEnum)
                 {
-                    convertedValue = Enum.Parse(typeof(T), value);
+                    convertedValue = Enum.Parse(typeof(T), value, true);
+                }
+                else if (typeof(T) == typeof(string))
+                {
+                    convertedValue = value.ToString();
                 }
                 else
                 {
