@@ -1,3 +1,30 @@
+### 3.7.663.0 (2023-10-16 18:23 UTC)
+* CloudFormation (3.7.204.0)
+	* SDK and documentation updates for UpdateReplacePolicy
+* Drs (3.7.203.0)
+	* Updated exsiting API to allow AWS Elastic Disaster Recovery support of launching recovery into existing EC2 instances.
+* EntityResolution (3.7.202.0)
+	* This launch expands our matching techniques to include provider-based matching to help customer match, link, and enhance records with minimal data movement. With data service providers, we have removed the need for customers to build bespoke integrations,.
+* ManagedBlockchainQuery (3.7.201.0)
+	* This release introduces two new APIs: GetAssetContract and ListAssetContracts. This release also adds support for Bitcoin Testnet.
+* MediaPackageV2 (3.7.201.0)
+	* This release allows customers to manage MediaPackage v2 resource using CloudFormation.
+* OpenSearchService (3.7.201.0)
+	* This release allows customers to list and associate optional plugin packages with compatible Amazon OpenSearch Service clusters for enhanced functionality.
+* Redshift (3.7.201.0)
+	* Added support for managing credentials of provisioned cluster admin using AWS Secrets Manager.
+* RedshiftServerless (3.7.201.0)
+	* Added support for managing credentials of serverless namespace admin using AWS Secrets Manager.
+* SimpleEmailV2 (3.7.202.0)
+	* This release provides enhanced visibility into your SES identity verification status. This will offer you more actionable insights, enabling you to promptly address any verification-related issues.
+* Transfer (3.7.202.3)
+	* Documentation updates for AWS Transfer Family
+* XRay (3.7.202.0)
+	* This releases enhances GetTraceSummaries API to support new TimeRangeType Service to query trace summaries by segment end time.
+* Core 3.7.204.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.662.0 (2023-10-12 18:36 UTC)
 * AuditManager (3.7.202.0)
 	* This release introduces a new limit to the awsAccounts parameter. When you create or update an assessment, there is now a limit of 200 AWS accounts that can be specified in the assessment scope.
