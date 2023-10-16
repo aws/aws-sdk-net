@@ -16,33 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the managedblockchain-query-2023-05-04.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// Paginators for the ManagedBlockchainQuery service
+    /// Paginator for the ListAssetContracts operation
     ///</summary>
-    public interface IManagedBlockchainQueryPaginatorFactory
+    public interface IListAssetContractsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListAssetContractsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListAssetContracts operation
-        ///</summary>
-        IListAssetContractsPaginator ListAssetContracts(ListAssetContractsRequest request);
-
-        /// <summary>
-        /// Paginator for ListTokenBalances operation
-        ///</summary>
-        IListTokenBalancesPaginator ListTokenBalances(ListTokenBalancesRequest request);
-
-        /// <summary>
-        /// Paginator for ListTransactionEvents operation
-        ///</summary>
-        IListTransactionEventsPaginator ListTransactionEvents(ListTransactionEventsRequest request);
-
-        /// <summary>
-        /// Paginator for ListTransactions operation
-        ///</summary>
-        IListTransactionsPaginator ListTransactions(ListTransactionsRequest request);
+        /// Enumerable containing all of the Contracts
+        /// </summary>
+        IPaginatedEnumerable<AssetContract> Contracts { get; }
     }
 }

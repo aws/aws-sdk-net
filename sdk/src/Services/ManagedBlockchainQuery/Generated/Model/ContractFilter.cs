@@ -29,44 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the identifier for the token including the unique token ID and its
-    /// blockchain network.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
-    /// are supported.
-    /// </para>
-    ///  </note>
+    /// The contract or wallet address by which to filter the request.
     /// </summary>
-    public partial class TokenIdentifier
+    public partial class ContractFilter
     {
-        private string _contractAddress;
+        private string _deployerAddress;
         private QueryNetwork _network;
-        private string _tokenId;
+        private QueryTokenStandard _tokenStandard;
 
         /// <summary>
-        /// Gets and sets the property ContractAddress. 
+        /// Gets and sets the property DeployerAddress. 
         /// <para>
-        /// This is the token's contract address.
+        /// The network address of the deployer.
         /// </para>
         /// </summary>
-        public string ContractAddress
+        [AWSProperty(Required=true)]
+        public string DeployerAddress
         {
-            get { return this._contractAddress; }
-            set { this._contractAddress = value; }
+            get { return this._deployerAddress; }
+            set { this._deployerAddress = value; }
         }
 
-        // Check to see if ContractAddress property is set
-        internal bool IsSetContractAddress()
+        // Check to see if DeployerAddress property is set
+        internal bool IsSetDeployerAddress()
         {
-            return this._contractAddress != null;
+            return this._deployerAddress != null;
         }
 
         /// <summary>
         /// Gets and sets the property Network. 
         /// <para>
-        /// The blockchain network of the token.
+        /// The blockchain network of the contract.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,28 +76,22 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TokenId. 
+        /// Gets and sets the property TokenStandard. 
         /// <para>
-        /// The unique identifier of the token.
+        /// The container for the token standard.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You must specify this container with <code>btc</code> for the native BTC token, and
-        /// <code>eth</code> for the native ETH token. For all other token types you must specify
-        /// the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.
-        /// </para>
-        ///  </note>
         /// </summary>
-        public string TokenId
+        [AWSProperty(Required=true)]
+        public QueryTokenStandard TokenStandard
         {
-            get { return this._tokenId; }
-            set { this._tokenId = value; }
+            get { return this._tokenStandard; }
+            set { this._tokenStandard = value; }
         }
 
-        // Check to see if TokenId property is set
-        internal bool IsSetTokenId()
+        // Check to see if TokenStandard property is set
+        internal bool IsSetTokenStandard()
         {
-            return this._tokenId != null;
+            return this._tokenStandard != null;
         }
 
     }

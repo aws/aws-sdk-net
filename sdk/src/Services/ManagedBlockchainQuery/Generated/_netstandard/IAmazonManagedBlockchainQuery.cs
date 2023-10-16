@@ -54,7 +54,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Gets the token balance for a batch of tokens by using the <code>GetTokenBalance</code>
+        /// Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code>
         /// action for every token in the request.
         /// 
         ///  <note> 
@@ -93,6 +93,56 @@ namespace Amazon.ManagedBlockchainQuery
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/BatchGetTokenBalance">REST API Reference for BatchGetTokenBalance Operation</seealso>
         Task<BatchGetTokenBalanceResponse> BatchGetTokenBalanceAsync(BatchGetTokenBalanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAssetContract
+
+
+
+        /// <summary>
+        /// Gets the information about a specific contract deployed on the blockchain.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The Bitcoin blockchain networks do not support this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Metadata is currently only available for some <code>ERC-20</code> contracts. Metadata
+        /// will be available for additional contracts in the future.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssetContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssetContract service method, as returned by ManagedBlockchainQuery.</returns>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.AccessDeniedException">
+        /// The Amazon Web Services account doesn’t have access to this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.InternalServerException">
+        /// The request processing has failed because of an internal error in the service.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is when you create resources that exceed
+        /// your service limit for this resource type. Request a limit increase or delete unused
+        /// resources, if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ValidationException">
+        /// The resource passed is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetAssetContract">REST API Reference for GetAssetContract Operation</seealso>
+        Task<GetAssetContractResponse> GetAssetContractAsync(GetAssetContractRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -182,16 +232,58 @@ namespace Amazon.ManagedBlockchainQuery
 
         #endregion
                 
+        #region  ListAssetContracts
+
+
+
+        /// <summary>
+        /// Lists all the contracts for a given contract type deployed by an address (either a
+        /// contract address or a wallet address).
+        /// 
+        ///  
+        /// <para>
+        /// The Bitcoin blockchain networks do not support this operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetContracts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetContracts service method, as returned by ManagedBlockchainQuery.</returns>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.AccessDeniedException">
+        /// The Amazon Web Services account doesn’t have access to this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.InternalServerException">
+        /// The request processing has failed because of an internal error in the service.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is when you create resources that exceed
+        /// your service limit for this resource type. Request a limit increase or delete unused
+        /// resources, if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ValidationException">
+        /// The resource passed is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListAssetContracts">REST API Reference for ListAssetContracts Operation</seealso>
+        Task<ListAssetContractsResponse> ListAssetContractsAsync(ListAssetContractsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTokenBalances
 
 
 
         /// <summary>
-        /// This action returns the following for a given a blockchain network:
+        /// This action returns the following for a given blockchain network:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Lists all token balances owned by an address (either a contact address or a wallet
+        /// Lists all token balances owned by an address (either a contract address or a wallet
         /// address).
         /// </para>
         ///  </li> <li> 

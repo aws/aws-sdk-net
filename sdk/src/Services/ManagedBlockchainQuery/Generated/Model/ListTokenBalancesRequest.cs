@@ -30,11 +30,11 @@ namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTokenBalances operation.
-    /// This action returns the following for a given a blockchain network:
+    /// This action returns the following for a given blockchain network:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Lists all token balances owned by an address (either a contact address or a wallet
+    /// Lists all token balances owned by an address (either a contract address or a wallet
     /// address).
     /// </para>
     ///  </li> <li> 
@@ -121,8 +121,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Gets and sets the property TokenFilter. 
         /// <para>
         /// The contract address or a token identifier on the blockchain network by which to filter
-        /// the request. You must specify the contractAddress property of this container when
-        /// listing tokens minted by a contract.
+        /// the request. You must specify the <code>contractAddress</code> property of this container
+        /// when listing tokens minted by a contract.
         /// </para>
         ///  <note> 
         /// <para>

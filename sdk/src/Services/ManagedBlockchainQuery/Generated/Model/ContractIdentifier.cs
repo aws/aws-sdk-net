@@ -29,28 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the identifier for the token including the unique token ID and its
-    /// blockchain network.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
-    /// are supported.
-    /// </para>
-    ///  </note>
+    /// Container for the blockchain address and network information about a contract.
     /// </summary>
-    public partial class TokenIdentifier
+    public partial class ContractIdentifier
     {
         private string _contractAddress;
         private QueryNetwork _network;
-        private string _tokenId;
 
         /// <summary>
         /// Gets and sets the property ContractAddress. 
         /// <para>
-        /// This is the token's contract address.
+        /// Container for the blockchain address about a contract.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContractAddress
         {
             get { return this._contractAddress; }
@@ -66,7 +58,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Network. 
         /// <para>
-        /// The blockchain network of the token.
+        /// The blockchain network of the contract.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,31 +72,6 @@ namespace Amazon.ManagedBlockchainQuery.Model
         internal bool IsSetNetwork()
         {
             return this._network != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TokenId. 
-        /// <para>
-        /// The unique identifier of the token.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You must specify this container with <code>btc</code> for the native BTC token, and
-        /// <code>eth</code> for the native ETH token. For all other token types you must specify
-        /// the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        public string TokenId
-        {
-            get { return this._tokenId; }
-            set { this._tokenId = value; }
-        }
-
-        // Check to see if TokenId property is set
-        internal bool IsSetTokenId()
-        {
-            return this._tokenId != null;
         }
 
     }
