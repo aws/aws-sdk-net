@@ -281,6 +281,10 @@ namespace Amazon.XRay
         /// </summary>
         public static readonly TimeRangeType Event = new TimeRangeType("Event");
         /// <summary>
+        /// Constant Service for TimeRangeType
+        /// </summary>
+        public static readonly TimeRangeType Service = new TimeRangeType("Service");
+        /// <summary>
         /// Constant TraceId for TimeRangeType
         /// </summary>
         public static readonly TimeRangeType TraceId = new TimeRangeType("TraceId");

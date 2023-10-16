@@ -185,7 +185,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property TimeRangeType. 
         /// <para>
-        /// A parameter to indicate whether to query trace summaries by TraceId or Event time.
+        /// A parameter to indicate whether to query trace summaries by TraceId, Event (trace
+        /// update time), or Service (segment end time).
         /// </para>
         /// </summary>
         public TimeRangeType TimeRangeType
