@@ -3522,7 +3522,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Contains information for custom domain associations for a cluster.
+        /// Contains information about custom domain associations for a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomainAssociations service method.</param>
         /// <param name="cancellationToken">

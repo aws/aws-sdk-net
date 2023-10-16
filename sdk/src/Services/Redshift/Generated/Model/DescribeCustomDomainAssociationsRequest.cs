@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCustomDomainAssociations operation.
-    /// Contains information for custom domain associations for a cluster.
+    /// Contains information about custom domain associations for a cluster.
     /// </summary>
     public partial class DescribeCustomDomainAssociationsRequest : AmazonRedshiftRequest
     {

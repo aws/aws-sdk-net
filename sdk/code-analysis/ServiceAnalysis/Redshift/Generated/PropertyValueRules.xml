@@ -258,11 +258,11 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUsername</property>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUserPassword</property>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUsername</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1391,7 +1391,7 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.ModifyClusterRequest.MasterUserPassword</property>
+    <property>Amazon.Redshift.Model.ModifyClusterRequest.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1707,6 +1707,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.MasterPasswordSecretKmsKeyId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.NodeType</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1985,6 +1989,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MaintenanceTrackName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.MasterPasswordSecretArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2379,10 +2391,6 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.PendingModifiedValues.MasterUserPassword</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.NodeType</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2492,6 +2500,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.MaintenanceTrackName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Snapshot.MasterPasswordSecretArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Snapshot.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

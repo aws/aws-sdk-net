@@ -70,7 +70,9 @@ namespace Amazon.Redshift.Model
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
         private string _maintenanceTrackName;
+        private bool? _manageMasterPassword;
         private int? _manualSnapshotRetentionPeriod;
+        private string _masterPasswordSecretKmsKeyId;
         private string _nodeType;
         private int? _numberOfNodes;
         private string _ownerAccount;
@@ -564,6 +566,27 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManageMasterPassword. 
+        /// <para>
+        /// If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored
+        /// cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not
+        /// set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot
+        /// was taken.
+        /// </para>
+        /// </summary>
+        public bool ManageMasterPassword
+        {
+            get { return this._manageMasterPassword.GetValueOrDefault(); }
+            set { this._manageMasterPassword = value; }
+        }
+
+        // Check to see if ManageMasterPassword property is set
+        internal bool IsSetManageMasterPassword()
+        {
+            return this._manageMasterPassword.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ManualSnapshotRetentionPeriod. 
         /// <para>
         /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot
@@ -585,6 +608,27 @@ namespace Amazon.Redshift.Model
         internal bool IsSetManualSnapshotRetentionPeriod()
         {
             return this._manualSnapshotRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterPasswordSecretKmsKeyId. 
+        /// <para>
+        /// The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's
+        /// admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code>
+        /// is true.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MasterPasswordSecretKmsKeyId
+        {
+            get { return this._masterPasswordSecretKmsKeyId; }
+            set { this._masterPasswordSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterPasswordSecretKmsKeyId property is set
+        internal bool IsSetMasterPasswordSecretKmsKeyId()
+        {
+            return this._masterPasswordSecretKmsKeyId != null;
         }
 
         /// <summary>

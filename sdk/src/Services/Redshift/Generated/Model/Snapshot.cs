@@ -52,6 +52,8 @@ namespace Amazon.Redshift.Model
         private string _maintenanceTrackName;
         private int? _manualSnapshotRemainingDays;
         private int? _manualSnapshotRetentionPeriod;
+        private string _masterPasswordSecretArn;
+        private string _masterPasswordSecretKmsKeyId;
         private string _masterUsername;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -440,6 +442,45 @@ namespace Amazon.Redshift.Model
         internal bool IsSetManualSnapshotRetentionPeriod()
         {
             return this._manualSnapshotRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterPasswordSecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MasterPasswordSecretArn
+        {
+            get { return this._masterPasswordSecretArn; }
+            set { this._masterPasswordSecretArn = value; }
+        }
+
+        // Check to see if MasterPasswordSecretArn property is set
+        internal bool IsSetMasterPasswordSecretArn()
+        {
+            return this._masterPasswordSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterPasswordSecretKmsKeyId. 
+        /// <para>
+        /// The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's
+        /// admin credentials secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MasterPasswordSecretKmsKeyId
+        {
+            get { return this._masterPasswordSecretKmsKeyId; }
+            set { this._masterPasswordSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterPasswordSecretKmsKeyId property is set
+        internal bool IsSetMasterPasswordSecretKmsKeyId()
+        {
+            return this._masterPasswordSecretKmsKeyId != null;
         }
 
         /// <summary>
