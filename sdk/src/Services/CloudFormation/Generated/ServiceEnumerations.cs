@@ -1958,6 +1958,10 @@ namespace Amazon.CloudFormation
         /// Constant UpdatePolicy for ResourceAttribute
         /// </summary>
         public static readonly ResourceAttribute UpdatePolicy = new ResourceAttribute("UpdatePolicy");
+        /// <summary>
+        /// Constant UpdateReplacePolicy for ResourceAttribute
+        /// </summary>
+        public static readonly ResourceAttribute UpdateReplacePolicy = new ResourceAttribute("UpdateReplacePolicy");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
