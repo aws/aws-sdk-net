@@ -100,6 +100,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchDisposition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("launchIntoSourceInstance", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.LaunchIntoSourceInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("licensing", targetDepth))
                 {
                     var unmarshaller = LicensingUnmarshaller.Instance;

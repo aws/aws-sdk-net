@@ -472,7 +472,7 @@
     <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionCode</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^([A-Za-z0-9-])+$</pattern>
+    <pattern>^([A-Za-z0-9-/:])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionId</property>
@@ -511,7 +511,7 @@
     <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionCode</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^([A-Za-z0-9-])+$</pattern>
+    <pattern>^([A-Za-z0-9-/:])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionId</property>
@@ -1052,7 +1052,7 @@
     <property>Amazon.Drs.Model.LaunchAction.ActionCode</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^([A-Za-z0-9-])+$</pattern>
+    <pattern>^([A-Za-z0-9-/:])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.ActionId</property>
@@ -1124,6 +1124,12 @@
     <min>21</min>
     <max>21</max>
     <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.LaunchIntoInstanceProperties.LaunchIntoEC2InstanceID</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycle.AddedToServiceDateTime</property>
