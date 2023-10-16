@@ -92,7 +92,7 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         /// The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code>
-        /// is set to <code>LOGICAL</code>.
+        /// is set to <code>PATH</code>.
         /// </para>
         ///  </note>
         /// </summary>
